@@ -1,5 +1,10 @@
 # Sprite Packer가 동작하지 않는 현상
 
+## Sprite Packer?
+* Unity 4.6부터 UGUI제공한다.
+* NGUI는 직접적으로 Atlas파일을 생성하지만 UGUI에서는 추상적으로 packing.
+* UGUI에서 만들어지는 Atlas는 Library/AtalsCashe에 생성해 관리한다.
+
 ## 상황
 
 [영상](https://www.youtube.com/watch?v=Pj8Y48ecBZY)을 따라 Atlas를 생성하려고 하였으나 **pack** 버튼을 눌러도 아무 반응이 없음.
