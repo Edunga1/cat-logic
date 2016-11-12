@@ -1,3 +1,3 @@
-# TIL
+# OIT
 
-Today I Learned
+One day I Thought.
