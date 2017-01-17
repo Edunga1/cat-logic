@@ -36,8 +36,9 @@ public class MallardDuck extends Duck {
 Cat cat = (Cat)animal;
 ```
 
-반면 다운캐스팅은 제법 생소했다. Cat에 있는 속성과 행동들이 Animal에 없는 거라면 어떻게 작동할 것인가?
+반면 다운캐스팅은 좀 생소했다. 자식(Cat)에 있는 속성과 행동들이 부모(Animal)에 없다면 어떻게 작동할 것인가?
 
-C#에서는 형변환 하는데는 문제가 없지만 부모에 없는 속성과 행동은 null이다.
+C#에서는 형변환은 문제 없지만 자식(Cat)만의 상태와 기능에 접근하려면 ```null``` 이다.
 
-하지만 upcasting 했던 객체를 다시 downcasting 하는데는 문제 없다.
+하지만 **upcasting 했던 객체**를 **다시 downcasting** 했다면
+자식의 속성과 기능에 접근하는데 문제 없다.
