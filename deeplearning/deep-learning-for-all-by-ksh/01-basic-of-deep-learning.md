@@ -18,15 +18,11 @@ Y : 결과, "bird"라는 문자열이 된다.
 
 스팸 메일 필터를 구현하려면 많은 조건들로 인해 구현이 어려울 것이고,
 
-자동 운전 시스템을 구현하려면 셀 수 없이 많은 조건과 주변 환경을 고려해야 할 것이다.
+자동 주행 시스템을 구현하려면 셀 수 없이 많은 조건을 고려해야 할 것이다.
 
 > Field of study that gives
 > computers the ability to learn without being
 > explicitly programmed - *Authur Samuel (1951)*
-
-수 많은 경우의 수를 컴퓨터에게 학습케하는 것.
-
-W의 pool을 구성 하는 것이 목적이라고 생각한다.
 
 ## Supervised / Unsupervised learning
 
