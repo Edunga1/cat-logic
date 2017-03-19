@@ -50,4 +50,6 @@ C의 Makefile와 비슷하다.
 
     호스트의 파일을 이미지에 추가
 
-    `ADD <src> ... <dest>`
+    `ADD <src> <dest>`
+    
+    ```COPY```도 비슷한 역할을 한다.
