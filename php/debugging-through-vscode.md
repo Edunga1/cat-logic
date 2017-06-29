@@ -12,7 +12,6 @@
 brew tap homebrew/php
 brew tap homebrew/apache
 
-# with-privileged-ports: 1024 미만의 포트를 이용가능케 함 (80)
 $ brew install httpd24 --with-privileged-ports --with-http2
 $ brew install php56 --with-httpd24 --with-libmysql
 $ brew install php56-xdebug
