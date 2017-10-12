@@ -1,4 +1,4 @@
-# Visual Studio Code에서 정적 타이핑 하기
+# Visual Studio Code에서 타입 힌팅 사용하기
 
 **NodeJS**, 웹 개발 등 **Javascript**로 개발을 하다보면
 [정적 타입](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C%ED%98%95_%EC%B2%B4%EA%B3%84) 언어가
