@@ -1,5 +1,28 @@
 # Johnpapa's AngularJS Style Guide - Component
 
+## 컨트롤러
+
+### [`contollerAs`와 `vm` 사용하기](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032)
+
+controllerAS + vm 사용하고 `this` 변수에 담고 직접 사용하지 않는다.
+
+```javascript
+/* avoid */
+function CustomerController() {
+    this.name = {};
+    this.sendMessage = function() { };
+}
+```
+
+```javascript
+/* recommended */
+function CustomerController() {
+    var vm = this;
+    vm.name = {};
+    vm.sendMessage = function() { };
+}
+```
+
 ## 서비스 (service, factory, provider)
 
 ### [서비스 코드 작성은 Revealing Module Pattern](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y052)
