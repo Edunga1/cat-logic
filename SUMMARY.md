@@ -1,6 +1,5 @@
 # Summary
 
-## Sites
+## Javascript
 
-* [Naver](https//www.naver.com)
-* [Daum](https://www.daum.net)
+* [BASIC](javascript/javascript-basic.md)
