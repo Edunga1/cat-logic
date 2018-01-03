@@ -67,6 +67,7 @@
 ## Database
 
 * [정규화](database/database-normalization.md)
+* [Style - Table Naming Convention - 단수?복수? camelCase?snake_case?](database/table-naming-convention.md)
 
 ## Data Structure
 
