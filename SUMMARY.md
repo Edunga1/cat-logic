@@ -1,17 +1,18 @@
 # Summary
 
+## 🐱 Logic
+
+보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
+
+* [The Twelve-Factor App](cat-logic/the-twelve-factor-app.md)
+* [TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학](cat-logic/ted-linustorvalds.md)
+* [객체 지향적 사고](cat-logic/object-oriented-thinking.md)
+* [개발에 대한 사소한 생각 - 트렌드](cat-logic/minor-thinking-about-development.md)
+
 ## Offline
 
 * [구글캠퍼스 - 구글 플레이에서 꼭 지켜야 할 두 가지](offline/google-campus-two-things-you-must-keep-in-google-play.md)
 * [GDG WebTech Workshop: 측정하는 놈, 로딩하는 놈, 그리는 놈](offline/gdg-webtech-workshop-nnn.md)
-
-## consideration - 고찰
-
-* [The Twelve-Factor App](consideration/the-twelve-factor-app.md)
-* [TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학](consideration/ted-linustorvalds.md)
-* [객체 지향적 사고](consideration/object-oriented-thinking.md)
-* [개발에 대한 사소한 생각 - 트렌드](consideration/minor-thinking-about-development.md)
-* [간혈적 에러](consideration/error-handling-intermittent-occurrence.md)
 
 ## methodology
 
