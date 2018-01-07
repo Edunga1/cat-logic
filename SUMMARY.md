@@ -8,6 +8,7 @@
 * [TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학](cat-logic/ted-linustorvalds.md)
 * [객체 지향적 사고](cat-logic/object-oriented-thinking.md)
 * [개발에 대한 사소한 생각 - 트렌드](cat-logic/minor-thinking-about-development.md)
+* [용어 - 테스트 관련](cat-logic/jargon-pertinent-to-test.md)
 
 ## Offline
 
