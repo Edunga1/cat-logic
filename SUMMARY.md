@@ -40,6 +40,7 @@
 ## Shell
 
 * [Command - scp](shell/scp-secure-copy.md)
+* [Command - set -x](shell/set-option-ex.md)
 
 ## CSS
 
