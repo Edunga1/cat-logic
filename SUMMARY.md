@@ -10,6 +10,7 @@
 * [개발에 대한 사소한 생각 - 트렌드](cat-logic/minor-thinking-about-development.md)
 * [초콜릿 문제](cat-logic/chocolate-problem.md)
 * [용어 - 테스트 관련](cat-logic/jargon-pertinent-to-test.md)
+* [용어 - bash**rc** rc?](cat-logic/jargon-rc.md)
 
 ## Offline
 
