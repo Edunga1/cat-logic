@@ -8,7 +8,7 @@
     ],
     "pluginsConfig": {
         "disqus": {
-            "shortName": "Edunga1"
+            "shortName": "cat-logic"
         },
         "ga": {
             "token": "UA-112751852-1"
