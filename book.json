@@ -1,7 +1,17 @@
 {
     "plugins": [
-        "theme-faq" , "-fontsettings", "-sharing",
+        "theme-faq", "-fontsettings", "-sharing",
         "search",
-        "lunr"
-    ]
+        "lunr",
+        "disqus",
+        "ga"
+    ],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "Edunga1"
+        },
+        "ga": {
+            "token": "UA-112751852-1"
+        }
+    }
 }
