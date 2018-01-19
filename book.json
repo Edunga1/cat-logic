@@ -3,13 +3,9 @@
         "theme-faq", "-fontsettings", "-sharing",
         "search",
         "lunr",
-        "disqus",
         "ga"
     ],
     "pluginsConfig": {
-        "disqus": {
-            "shortName": "cat-logic"
-        },
         "ga": {
             "token": "UA-112751852-1"
         }
