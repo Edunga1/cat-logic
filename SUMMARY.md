@@ -42,6 +42,7 @@
 
 * [Command - scp](shell/scp-secure-copy.md)
 * [Command - set -x](shell/set-option-ex.md)
+* [Command - curl - downloaded file is too small.](shell/curl-downloaded-file-but-zero-size.md)
 
 ## CSS
 
