@@ -53,6 +53,7 @@
 * [자바스크립트 기본](javascript/javascript-basic.md)
 * [string.search 사용 시 예외](javascript/string.search-exception.md)
 * [foo = (bar = 1, bar + 1)](javascript/two-operations-at-once.md)
+* [Javascript: The Good Parts - 자바스크립트에서 권장하지 않는 것](javascript/javascript-good-parts-reconsidered.md)
 
 ## AngularJS
 
