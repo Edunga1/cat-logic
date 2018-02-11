@@ -11,6 +11,7 @@
 * [초콜릿 문제](cat-logic/chocolate-problem.md)
 * [용어 - 테스트 관련](cat-logic/jargon-pertinent-to-test.md)
 * [용어 - bash**rc** rc?](cat-logic/jargon-rc.md)
+* [용어 - Business Rule, Business Logic, Logic](cat-logic/jargon-business-logic-rule.md)
 
 ## Offline
 
