@@ -8,7 +8,7 @@
 
 비즈니스 로직은 말 그대로 비즈니스와 관계되어 있다.
 
-'퀴즈 맞추기' 기능을 구현한다고 하면 다음 처럼 구현할 수 있을 것이다:
+'출금' 기능을 구현한다고 하면 다음 처럼 구현할 수 있을 것이다:
 
 ```javascript
 if (amount <= balance) {            // 잔고가 충분하면
@@ -54,7 +54,7 @@ if (amount <= balance) {            // 잔고가 충분하면
 
 위 코드들이 서로 섞여 있어서 가독성이 그렇게 좋지 않다는 것이다.
 따라서 어떤 코드를 변경해야 사용자에 대한 알림이 가지 않는지, 그리고 해당 코드는 몇 줄에 걸쳐 나타나는지 분석해야 한다.
-쿼리 수정을 할 떄도 이런 문제는 발생한다.
+쿼리 수정을 할 때도 이런 문제는 발생한다.
 
 [Clean Architecture](https://blog.coderifleman.com/2017/12/18/the-clean-architecture/?utm_medium=social&utm_source=gaerae.com&utm_campaign=%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%8A%A4%EB%9F%BD%EB%8B%A4)는
 비즈니스를 규칙을 명시적으로 작성하고 비즈니스 로직과 계층을 분리하고, 비즈니스 로직을 작게 만들도록 한다.
