@@ -62,6 +62,7 @@
 * [Johnpapa's AngularJS Style Guide - Component](javascript-angularjs/angularjs-style-component.md)
 * [AngularJS 테스트하기](javascript-angularjs/angularjs-testing.md)
 * [VSCode - AngualrJS에서 ViewModel 정적 타이핑하기](javascript-angularjs/static-typing.md)
+* [Migrating 1.5 to 1.6](javascript-angularjs/migration-1.5-to-1.6.md)
 
 ## NodeJS
 
