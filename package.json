@@ -1,0 +1,23 @@
+{
+  "name": "cat-logic",
+  "version": "1.0.0",
+  "description": "![intro](_images/cat-logic.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edunga1/cat-logic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edunga1/cat-logic/issues"
+  },
+  "homepage": "https://github.com/Edunga1/cat-logic#readme",
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}

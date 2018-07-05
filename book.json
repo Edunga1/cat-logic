@@ -1,13 +1,14 @@
 {
-    "plugins": [
-        "theme-faq", "-fontsettings", "-sharing",
-        "search",
-        "lunr",
-        "ga"
-    ],
-    "pluginsConfig": {
-        "ga": {
-            "token": "UA-112751852-1"
-        }
+  "root": "./docs",
+  "plugins": [
+    "theme-faq", "-fontsettings", "-sharing",
+    "search",
+    "lunr",
+    "ga"
+  ],
+  "pluginsConfig": {
+    "ga": {
+      "token": "UA-112751852-1"
     }
+  }
 }
