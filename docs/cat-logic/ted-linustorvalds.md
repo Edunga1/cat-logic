@@ -1,3 +1,6 @@
+---
+id: 2
+---
 # TED - Linus Torvalds
 
 [TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=ko)
