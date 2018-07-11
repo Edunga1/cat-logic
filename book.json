@@ -4,11 +4,16 @@
     "theme-faq", "-fontsettings", "-sharing",
     "search",
     "lunr",
-    "ga"
+    "multiple-footers"
   ],
   "pluginsConfig": {
     "ga": {
       "token": "UA-112751852-1"
+    },
+    "multiple-footers": {
+      "paths": [
+        "layouts/uterrances-comment.md"
+      ]
     }
   }
 }
