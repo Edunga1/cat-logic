@@ -4,6 +4,8 @@
   "description": "![intro](_images/cat-logic.jpg)",
   "main": "index.js",
   "scripts": {
+    "build": "gitbook build",
+    "publish": "./publish-to-gh.sh",
     "serve": "gitbook serve"
   },
   "repository": {
