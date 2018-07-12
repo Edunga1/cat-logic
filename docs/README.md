@@ -1,5 +1,3 @@
-# Cat Logic
-
 ![intro]($images/cat-logic.jpg)
 
 cat logic은 고양이의 엉뚱하고도 자유로운 사고방식을 말한다.
