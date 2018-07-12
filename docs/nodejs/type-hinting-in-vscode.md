@@ -28,15 +28,15 @@ function foo(arg1) {
 
 VSCode는 기본적인 타입 추론 기능을 제공합니다:
 
-<img src="../_images/vscode-intellisense-example.png">
+<img src="../$images/vscode-intellisense-example.png">
 
 변수 `foo` 가 문자열 타입인 것을 알 수 있기 때문에 `split()` 메서드가 자동 완성 목록에 나타납니다. 하지만 **매개변수(parameter)** 라면 어떨까요?
 
-<img src="../_images/vscode-intellisense-example2.png">
+<img src="../$images/vscode-intellisense-example2.png">
 
 **Object** 또한 힌트를 제대로 받을 수 없습니다.
 
-<img src="../_images/vscode-intellisense-example3.png">
+<img src="../$images/vscode-intellisense-example3.png">
 
 ## JSDoc을 이용하여 타입 추론
 
@@ -68,7 +68,7 @@ function func(obj) {
 }
 ```
 
-<img src="../_images/vscode-intellisense-example4.png">
+<img src="../$images/vscode-intellisense-example4.png">
 
 `bar` 타입이 `number` 인 것과 프로퍼티 `foo`, `bar`가 출력됩니다!
 
@@ -117,7 +117,7 @@ function func(arg) {
 
 매개변수와 리턴 타입이 똑같이 출력 됩니다:
 
-<img src="../_images/vscode-intellisense-example5.png">
+<img src="../$images/vscode-intellisense-example5.png">
 
 #### Promise
 

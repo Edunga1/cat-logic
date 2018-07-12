@@ -33,7 +33,7 @@ UI에 투자하기 힘들다면 가장 무난한 선택이 될 것이다.
 
 #### 탐색 서랍(Navigation Drawer)
 
-<img src="../_images/material-design-navigation-drawer-ex.png" alt="navigation-drawer" width="200px">
+<img src="../$images/material-design-navigation-drawer-ex.png" alt="navigation-drawer" width="200px">
 
 자주 사용하는 기능이나 관계 없는 기능을 모아두는데 사용한다.
 
@@ -41,7 +41,7 @@ UI에 투자하기 힘들다면 가장 무난한 선택이 될 것이다.
 
 #### 미니 서랍(Mini Navigation Drawer)
 
-<img src="../_images/material-design-mini-drawer-ex.gif" alt="navigation-drawer" width="400px">
+<img src="../$images/material-design-mini-drawer-ex.gif" alt="navigation-drawer" width="400px">
 
 탐색 서랍과 비슷하나 아이콘으로 된 것으로 탐색 서랍처럼 사용된다.
 
@@ -106,7 +106,7 @@ Runtiem Permission을 사용하면 실제로 특정 기능을 사용할 때 사�
 
 #### Google Play Game
 
-<img src="../_images/google-play-game.png" width="400px">
+<img src="../$images/google-play-game.png" width="400px">
 
 게임 앱의 경우 Google Play Game을 사용하면 업적, 리더 보드 등 사용 가능하다.
 

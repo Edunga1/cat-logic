@@ -17,7 +17,7 @@ Flex Layout과 비교해서 레이아웃 내에 있는 아이템들을 모두 `f
 
 아이템들을 겹쳐서 표현할 때 그 간단함과 직관성이 드러난다.
 
-![grid layout stacked items](../_images/grid-layout-stacked-items.png)
+![grid layout stacked items](../$images/grid-layout-stacked-items.png)
 
 ## 스크롤 없는 화면의 레이아웃 구성 시 유용할 거 같다.
 

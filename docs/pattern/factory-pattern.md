@@ -2,7 +2,7 @@
 
 객체의 인스턴스를 생성하는 패턴.
 
-![uml-factory](../_images/dp-factory.png)
+![uml-factory](../$images/dp-factory.png)
 
 특정 클래스의 메소드로 둘 수 있으나,
 

@@ -2,7 +2,7 @@
 
 다양한 Collection을 일관적인 방법으로 순회할 수 있도록 함
 
-![uml-iterator](../_images/dp-iterator.gif)
+![uml-iterator](../$images/dp-iterator.gif)
 
 Java의 경우 ArrayList, Vector, LinkedList와 같은 컬렉션 클래스들은 java.util.Iterator를 구현하여
 iterator() 메소드를 통해 iterator를 반환 해 준다.

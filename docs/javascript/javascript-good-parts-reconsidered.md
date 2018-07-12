@@ -2,7 +2,7 @@
 
 ## Good Parts Reconsidered
 
-![reconsidered slide 1](../_images/js-good-parts-reconsidered-slide1.png)
+![reconsidered slide 1](../$images/js-good-parts-reconsidered-slide1.png)
 
 - I stopped using **new** years ago.
 - I have stopped using **Object.create**
@@ -31,7 +31,7 @@ falsiness는 좋은 아이디어지만 크락포드는 논리식에서 falsiness
 
 ## Loops Reconsidered
 
-![reconsidered slide 2](../_images/js-good-parts-reconsidered-slide2.png)
+![reconsidered slide 2](../$images/js-good-parts-reconsidered-slide2.png)
 
 - I don't use `for`
 - I don't use `for in`

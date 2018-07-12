@@ -22,7 +22,7 @@
 
 **소프트웨어 렌더링 실행 구조**
 
-![software rendering](../_images/software-rendering.png)
+![software rendering](../$images/software-rendering.png)
 
 계산, 메모리에 올리는 일, 출력하는 일을 모두 도맡아 하게 된다.
 
@@ -92,7 +92,7 @@ GPU의 데이터는 CPU에서 생성 후 전송한다.
 
 CPU가 이 레이어를 생성한다. 즉, 레이어에서 생성되는 이미지는 CPU 시간 소모.
 
-![4 layers](../_images/four-layers.png)
+![4 layers](../$images/four-layers.png)
 
 웹 페이지는 레이어들의 겹침으로 표현된다.
 
@@ -100,7 +100,7 @@ CPU가 이 레이어를 생성한다. 즉, 레이어에서 생성되는 이미�
 
 각 요소들을 텍스쳐 이미지를 합치는 GPU의 작업.
 
-![composite](../_images/composite.png)
+![composite](../$images/composite.png)
 
 ### 렌더링 이슈
 
@@ -108,7 +108,7 @@ CPU가 이 레이어를 생성한다. 즉, 레이어에서 생성되는 이미�
 
 DOM 노드가 가지는 레이아웃 정보가 변경되면 재배치를 위한 계산이 필요하다.
 
-![reflow](../_images/reflow.png)
+![reflow](../$images/reflow.png)
 
 레이아웃의 변경이 트리를 따라 전파되고, 많은 경우 레이어 이미지의 갱신이 필요하다.
 
@@ -324,7 +324,7 @@ HTTP/2를 사용하려면 https를 사용해야 한다.
 
 #### 기능: 오프라인 캐쉬
 
-![chrome offline](../_images/chrome-offline.png)
+![chrome offline](../$images/chrome-offline.png)
 
 크롬 브라우저는 오프라인일 때 간단한 게임을 할 수 있는 서비스 페이지를 제공한다.
 

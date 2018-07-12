@@ -1,7 +1,7 @@
 {
   "name": "cat-logic",
   "version": "1.0.0",
-  "description": "![intro](_images/cat-logic.jpg)",
+  "description": "my knowledge base.",
   "main": "index.js",
   "scripts": {
     "build": "gitbook build",
