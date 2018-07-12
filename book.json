@@ -4,7 +4,8 @@
     "theme-faq", "-fontsettings", "-sharing",
     "search",
     "lunr",
-    "multiple-footers"
+    "multiple-footers",
+    "ga"
   ],
   "pluginsConfig": {
     "ga": {
