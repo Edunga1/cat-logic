@@ -1,4 +1,4 @@
-{% if file.path === 'README.md' %}
+{% if file.path === readme.file.path %}
 <!-- README.md 비워둠 -->
 {% elseif page.id %}
 <!-- front matter에 id가 있는 페이지만 댓글 출력 -->
