@@ -1,3 +1,6 @@
+---
+id: page-31
+---
 # Johnpapa's AngularJS Style Guide - Modularity
 
 ## [데이터 서비스를 분리하기](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#data-services)

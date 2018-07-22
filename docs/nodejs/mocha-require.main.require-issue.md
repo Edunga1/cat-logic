@@ -1,3 +1,6 @@
+---
+id: page-42
+---
 # Mocha 사용 시 require.main.require 이슈
 
 ```mocha``` 명령어로 코드 실행 시 ```require``` 가 아닌 ```require.main.require``` 구문을 사용한 파일이 있으면 제대로 모듈을 가져오지 못한다.

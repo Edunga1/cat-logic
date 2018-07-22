@@ -1,3 +1,6 @@
+---
+id: page-39
+---
 # TDD - 테스트 주도 개발 (Test Driven Development)
 
 로직 작성 전에 어떻게 테스트 할 것인지 먼저 결정하는 것을 말한다.

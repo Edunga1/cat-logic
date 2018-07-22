@@ -1,3 +1,6 @@
+---
+id: page-52
+---
 # Dependency Inversion (SOLI**D**)
 
 참조:

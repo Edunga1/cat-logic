@@ -1,3 +1,6 @@
+---
+id: page-55
+---
 # Iterator Pattern
 
 다양한 Collection을 일관적인 방법으로 순회할 수 있도록 함

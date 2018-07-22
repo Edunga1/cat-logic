@@ -1,3 +1,6 @@
+---
+id: page-15
+---
 # Database
 
 ## 정규화 (Normalization)

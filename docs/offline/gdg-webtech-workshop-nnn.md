@@ -1,3 +1,6 @@
+---
+id: page-49
+---
 # GDG WebTech Workshop: 측정하는 놈, 로딩하는 놈, 그리는 놈
 
 2016-08-27 WebTech Workshop 내용입니다.

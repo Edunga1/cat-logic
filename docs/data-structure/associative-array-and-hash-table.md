@@ -1,3 +1,6 @@
+---
+id: page-11
+---
 # Associative Array와 Hash Table
 
 ## Associative Array (연관 배열)

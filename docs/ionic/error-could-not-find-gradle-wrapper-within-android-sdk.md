@@ -1,3 +1,6 @@
+---
+id: page-28
+---
 # Error - Could not find gradle wrapper within Android SDK
 
 |Env.|Version|

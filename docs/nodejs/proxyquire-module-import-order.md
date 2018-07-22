@@ -1,3 +1,6 @@
+---
+id: page-44
+---
 # proxyquire 모듈 로드 순서 문제
 
 ```bash

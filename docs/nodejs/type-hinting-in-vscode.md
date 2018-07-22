@@ -1,3 +1,6 @@
+---
+id: page-48
+---
 # Visual Studio Code에서 타입 힌팅 사용하기
 
 **NodeJS**, 웹 개발 등 **Javascript**로 개발을 하다보면

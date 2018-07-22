@@ -1,3 +1,6 @@
+---
+id: page-12
+---
 # Graph
 
 Vertex와 Edge로 이루어진 자료구조.

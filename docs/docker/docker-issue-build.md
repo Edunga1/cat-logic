@@ -1,3 +1,6 @@
+---
+id: page-18
+---
 # 도커 이미지 빌드 시 유의사항
 
 `docker build -t NAME .`

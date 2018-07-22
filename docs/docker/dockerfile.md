@@ -1,3 +1,6 @@
+---
+id: page-20
+---
 # Dockerfile
 
 C의 Makefile와 비슷하다.

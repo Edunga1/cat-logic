@@ -1,3 +1,6 @@
+---
+id: page-34
+---
 # AngualrJS에서 ViewModel 정적 타이핑하기 (VSCode)
 
 컨트롤러 내에서 `vm`(ViewModel)으로 뷰 모델을 관리 할 때 타입 힌팅을 제대로 얻을 수 없다.

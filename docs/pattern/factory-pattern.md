@@ -1,3 +1,6 @@
+---
+id: page-54
+---
 # Factory Pattern
 
 객체의 인스턴스를 생성하는 패턴.

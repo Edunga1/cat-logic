@@ -1,3 +1,6 @@
+---
+id: page-33
+---
 # Migrating 1.5 to 1.6
 
 ## Component

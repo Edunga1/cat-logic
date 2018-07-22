@@ -1,3 +1,6 @@
+---
+id: page-56
+---
 # MVC Pattern
 
 Model - View - Controller

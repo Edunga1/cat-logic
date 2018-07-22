@@ -1,3 +1,6 @@
+---
+id: page-5
+---
 # Business Rule, Business Logic, Logic
 
 아키텍처에 대한 이야기가 나오면 위 단어들이 빠지지 않는다.

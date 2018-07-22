@@ -1,3 +1,6 @@
+---
+id: page-16
+---
 # 테이블 이름 컨벤션
 
 ## `camelCase` vs. `snake_case`

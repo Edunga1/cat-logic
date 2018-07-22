@@ -1,3 +1,6 @@
+---
+id: page-43
+---
 # TypeScript로 Nodejs 개발하기
 
 [ENG - http://brianflove.com/2016/03/29/typescript-express-node-js/](http://brianflove.com/2016/03/29/typescript-express-node-js/)

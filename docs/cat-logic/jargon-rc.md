@@ -1,3 +1,6 @@
+---
+id: page-7
+---
 # .bash**rc** rc의 의미?
 
 **R**un **C**ommand.

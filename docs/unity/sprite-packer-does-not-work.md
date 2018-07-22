@@ -1,3 +1,6 @@
+---
+id: page-69
+---
 # Sprite Packer가 동작하지 않는 현상
 
 ## Sprite Packer?

@@ -1,3 +1,6 @@
+---
+id: page-58
+---
 # Robert C. Martin: Principles of Component Design.
 
 https://amara.org/ko/videos/XJGyts0sfDVQ/info/robert-c-martin-principles-of-component-design/

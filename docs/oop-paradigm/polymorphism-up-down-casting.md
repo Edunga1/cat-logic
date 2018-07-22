@@ -1,3 +1,6 @@
+---
+id: page-51
+---
 # 다형성 - upcasting & downcasting
 
 명시적 downcasting 한 객체를 다시 upcasting 해야하는 일이 생겼다.

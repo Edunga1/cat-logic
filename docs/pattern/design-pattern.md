@@ -1,3 +1,6 @@
+---
+id: page-53
+---
 # Design Pattern
 
 Design pattern은 OOP 원칙을 아래에서 작성된다.

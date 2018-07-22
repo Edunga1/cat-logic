@@ -1,3 +1,6 @@
+---
+id: page-46
+---
 # Sinon.JS
 
 자바스크립트를 위한 테스트 spies, stubs, mocks.

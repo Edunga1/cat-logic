@@ -1,3 +1,6 @@
+---
+id: page-45
+---
 # Proxyquire vs. rewire
 
 테스트 할 때 Dependency Injection 하는데 사용하는 도구 2가지 비교.

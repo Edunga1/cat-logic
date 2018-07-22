@@ -1,3 +1,6 @@
+---
+id: page-57
+---
 # VSCode로 PHP 디버깅 하기
 
 * OSX 기준

@@ -1,3 +1,6 @@
+---
+id: page-29
+---
 # in-app-brwoser
 
 링크나 redirect를 현재 앱이나 내장 브라우저로 열 수 있다.

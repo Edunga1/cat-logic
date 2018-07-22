@@ -1,3 +1,6 @@
+---
+id: page-30
+---
 # Johnpapa's AngularJS Style Guide - Component
 
 ## 컨트롤러

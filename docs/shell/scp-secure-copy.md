@@ -1,3 +1,6 @@
+---
+id: page-63
+---
 # scp
 
 **Remote - Local 간 파일 전송**
