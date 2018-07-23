@@ -1,5 +1,6 @@
 ---
 id: page-71
+time: 2018-07-23 21:59:00
 ---
 # 안정된 의존관계 원칙(Stable Dependencies Principle)
 
