@@ -4,6 +4,7 @@
 
 보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
 
+* [안정된 의존관계 원칙(Stable Dependencies Principle)](cat-logic/stable-dependencies-principle.md)
 * [The Twelve-Factor App](cat-logic/the-twelve-factor-app.md)
 * [TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학](cat-logic/ted-linustorvalds.md)
 * [객체 지향적 사고](cat-logic/object-oriented-thinking.md)
