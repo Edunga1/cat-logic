@@ -1,5 +1,5 @@
 ---
-id: 2
+id: page-2
 ---
 # TED - Linus Torvalds
 
