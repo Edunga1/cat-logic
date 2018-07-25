@@ -4,6 +4,7 @@
 
 보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
 
+* [NodeJS 서버 로컬 요청만 허용하기](cat-logic/5a662df6f9cfe4dcf1ebb542a2def358.md)
 * [pm2 deploy 시 주의할 점](cat-logic/nodejs-pm2-deploy-note.md)
 * [안정된 의존관계 원칙(Stable Dependencies Principle)](cat-logic/stable-dependencies-principle.md)
 * [The Twelve-Factor App](cat-logic/the-twelve-factor-app.md)
