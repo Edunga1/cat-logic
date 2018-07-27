@@ -4,6 +4,7 @@
 
 보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
 
+* [[Linux] sed - 파일 특정 라인만 읽기](cat-logic/c07d9e8105ed9102e926a0542ce9c880.md)
 * [JSDoc 파라미터 상수 정의하기 + VSCode Rename Symbol!](cat-logic/e148c978eb45347beb4f2cf9a971cf81.md)
 * [NodeJS 서버 로컬 요청만 허용하기](cat-logic/5a662df6f9cfe4dcf1ebb542a2def358.md)
 * [pm2 deploy 시 주의할 점](cat-logic/nodejs-pm2-deploy-note.md)
