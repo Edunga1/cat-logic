@@ -4,6 +4,7 @@
 
 보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
 
+* [객체 지향 프로그래밍 (OOP)](cat-logic/e99ecf640015fd820093db0aaaaec50f.md)
 * [Google Analytics 수동 테스트하는데 활성화 사용자가 0으로 뜨는 현상. 트래픽 쫓아가기.](cat-logic/eeccbf9da173e02874538756fc0c4909.md)
 * [[Linux] sed - 파일 특정 라인만 읽기](cat-logic/c07d9e8105ed9102e926a0542ce9c880.md)
 * [JSDoc 파라미터 상수 정의하기 + VSCode Rename Symbol!](cat-logic/e148c978eb45347beb4f2cf9a971cf81.md)
@@ -12,7 +13,6 @@
 * [안정된 의존관계 원칙(Stable Dependencies Principle)](cat-logic/stable-dependencies-principle.md)
 * [The Twelve-Factor App](cat-logic/the-twelve-factor-app.md)
 * [TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학](cat-logic/ted-linustorvalds.md)
-* [객체 지향적 사고](cat-logic/object-oriented-thinking.md)
 * [개발에 대한 사소한 생각 - 트렌드](cat-logic/minor-thinking-about-development.md)
 * [초콜릿 문제](cat-logic/chocolate-problem.md)
 * [용어 - 테스트 관련](cat-logic/jargon-pertinent-to-test.md)
