@@ -4,6 +4,7 @@
 
 보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
 
+* [[KSUG Seminar] Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향](cat-logic/929cad8b0fafa2a9c0cc86f21be15939.md)
 * [객체 지향 프로그래밍 (OOP)](cat-logic/e99ecf640015fd820093db0aaaaec50f.md)
 * [Google Analytics 수동 테스트하는데 활성화 사용자가 0으로 뜨는 현상. 트래픽 쫓아가기.](cat-logic/eeccbf9da173e02874538756fc0c4909.md)
 * [[Linux] sed - 파일 특정 라인만 읽기](cat-logic/c07d9e8105ed9102e926a0542ce9c880.md)
