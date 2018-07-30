@@ -4,6 +4,9 @@
 
 보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
 
+* [Generic Repository vs. Specific Repository](cat-logic/fc63256b426a5289c80dde7c953d1cc2.md)
+* ["Database Abstraction Layers Must Die!"라는 글을 읽고](cat-logic/c9875c187a06ca42d069474cd880a901.md)
+* [Repository Pattern](cat-logic/eb07f52e34e9a50e19a6db50aeacd1e8.md)
 * [[KSUG Seminar] Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향](cat-logic/929cad8b0fafa2a9c0cc86f21be15939.md)
 * [객체 지향 프로그래밍 (OOP)](cat-logic/e99ecf640015fd820093db0aaaaec50f.md)
 * [Google Analytics 수동 테스트하는데 활성화 사용자가 0으로 뜨는 현상. 트래픽 쫓아가기.](cat-logic/eeccbf9da173e02874538756fc0c4909.md)
