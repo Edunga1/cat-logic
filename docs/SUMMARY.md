@@ -4,6 +4,7 @@
 
 보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
 
+* [Kubernetes service types](cat-logic/kubernetes-service-types.md)
 * [중지된 도커 컨테이너에서 파일을 복사해 올 수 있다](cat-logic/df1d61cef837085c0508f89aeb2cf192.md)
 * [Generic Repository vs. Specific Repository](cat-logic/fc63256b426a5289c80dde7c953d1cc2.md)
 * ["Database Abstraction Layers Must Die!"라는 글을 읽고](cat-logic/c9875c187a06ca42d069474cd880a901.md)
