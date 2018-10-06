@@ -4,6 +4,7 @@
 
 보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
 
+* [SFML 프로젝트 빌드하기](cat-logic/build-sfml-project.md)
 * [C++로 게임 만들기: 테트리스](cat-logic/lets-make-game-in-cpp-tetris.md)
 * [Kubernetes service types](cat-logic/kubernetes-service-types.md)
 * [중지된 도커 컨테이너에서 파일을 복사해 올 수 있다](cat-logic/df1d61cef837085c0508f89aeb2cf192.md)
