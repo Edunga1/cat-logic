@@ -5,7 +5,8 @@ tags: game, C++
 ---
 # C++로 게임 만들기: 테트리스
 
-https://youtu.be/zH_omFPqMO4
+https://youtu.be/zH_omFPqMO4<br>
+소스코드: https://drive.google.com/uc?export=download&id=1naW_v6WAWYPgCIWNDskxtBsM84FoaOLh
 
 * 절차지향으로 작성하는 코드지만 짧아서 복잡하지 않아 보인다. 생각보다 짧다.
 * [SFML](https://namu.wiki/w/SFML)이라는 그래픽 라이브러리를 사용하여 만든다.
