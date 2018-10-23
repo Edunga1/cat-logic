@@ -9,6 +9,7 @@ tag: sfml, C++
 OSX 기준.
 
 1. SFML 라이브러리를 다운받는다. **homebrew**로 설치하면 간단하다. `$ brew install sfml`
+1. 빌드 도구 CMake를 다운받는다. **homebrew**는 `$ brew install cmake`
 
 **아래부터는 [이 링크](https://github.com/SFML/SFML/wiki/Tutorial%3A-Build-your-SFML-project-with-CMake)에 따름**
 
