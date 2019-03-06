@@ -3,7 +3,7 @@
 ## 🐱 Logic
 
 보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
-
+* [Jupyter Notebook + NodeJS 도커라이징 기록](cat-logic/dockerize-jupyter-notebook-nodejs.md)
 * [React 뒤로가기 시 비동기로 가져온 데이터 유지하기](cat-logic/react-remaining-async-data-on-back.md)
 * [React 개발환경 구성하기](cat-logic/configuring-the-react-environment.md)
 * [SFML 프로젝트 빌드하기](cat-logic/build-sfml-project.md)
