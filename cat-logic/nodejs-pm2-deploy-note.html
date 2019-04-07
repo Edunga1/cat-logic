@@ -1,0 +1,445 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        pm2 deploy 시 주의할 점 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                pm2 deploy 시 주의할 점
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>🐱 Logic</li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">pm2 deploy 시 주의할 점</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="pm2-deploy-&#xC2DC;-&#xC8FC;&#xC758;&#xD560;-&#xC810;">pm2 deploy &#xC2DC; &#xC8FC;&#xC758;&#xD560; &#xC810;</h1>
+<p><a href="http://pm2.keymetrics.io/docs/usage/deployment/#complete-tutorial" target="_blank">pm2 deploy tutorial</a>
+&#xCC98;&#xB7FC; <code>post-deploy</code>&#xB97C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xC870;&#xC2EC;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;post-deploy&quot;</span>: <span class="hljs-string">&quot;npm install &amp;&amp; pm2 startOrRestart ecosystem.json --env production&quot;</span>
+</code></pre>
+<p><code>pm2 deploy</code> &#xD558;&#xBA74; &#xB2E4;&#xC74C; &#xC808;&#xCC28;&#xB85C; &#xC77C;&#xC774; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;:</p>
+<ol>
+<li>&#xB85C;&#xCEEC; <code>ecosystem.json</code>&#xACFC; &#xAC19;&#xC740; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xC5B4;&#xB4E4;&#xC784;</li>
+<li>&#xBA85;&#xC138;&#xD55C; &#xC11C;&#xBC84; &#xC815;&#xBCF4;(<code>user</code>, <code>host</code>)&#xB85C; &#xB9AC;&#xBAA8;&#xD2B8; &#xC11C;&#xBC84;&#xC5D0; &#xC811;&#xC18D;</li>
+<li>(&#xB9AC;&#xBAA8;&#xD2B8; &#xC11C;&#xBC84;&#xC5D0;&#xC11C;) git pull</li>
+<li>(&#xB9AC;&#xBAA8;&#xD2B8; &#xC11C;&#xBC84;&#xC5D0;&#xC11C;) npm install</li>
+<li>(&#xB9AC;&#xBAA8;&#xD2B8; &#xC11C;&#xBC84;&#xC5D0;&#xC11C;) pm2 startOrRestart ecosystem.json --env production</li>
+<li>(&#xB9AC;&#xBAA8;&#xD2B8; &#xC11C;&#xBC84;&#xC5D0;&#xC11C;) &#xC704; &#xBA85;&#xB839;&#xC5B4;&#xC5D0; &#xC758;&#xD55C; <code>ecosystem.json</code> &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xC5B4;&#xB4E4;&#xC784;</li>
+<li><code>apps</code> &#xBA85;&#xC138;&#xC5D0; &#xB530;&#xB978; &#xBC30;&#xD3EC;</li>
+</ol>
+<p>&#xADF8;&#xB7EC;&#xB2C8;&#xAE4C; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC740; &#xB85C;&#xCEEC;&#xC5D0;&#xC11C;, &#xB9AC;&#xBAA8;&#xD2B8;&#xC5D0;&#xC11C; &#xCD1D; 2&#xBC88; &#xC77D;&#xC5B4;&#xB4E4;&#xC778;&#xB2E4;.</p>
+<p>&#xADF8;&#xB798;&#xC11C; pm2&#xB294; &#xD604;&#xC7AC; &#xBE0C;&#xB79C;&#xCE58;&#xAC00; &#xD2B8;&#xB798;&#xD0B9; &#xC911;&#xC778; &#xB9AC;&#xBAA8;&#xD2B8; &#xBE0C;&#xB79C;&#xCE58;&#xC640; &#xB2EC;&#xB77C;&#xC9C0;&#xBA74; &#xC2F1;&#xD06C;&#xB97C; &#xB9DE;&#xCD94;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;: <code>push your changes before deploying</code></p>
+<p>&#xB85C;&#xCEEC;&#xC774;&#xB791; &#xC11C;&#xBC84;&#xB791; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC774; &#xC548;&#xB9DE;&#xC73C;&#xBA74; &#xACE8;&#xCE58;&#xC544;&#xD30C;&#xC9C4;&#xB2E4;. &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xC791;&#xC5C5;&#xC774; &#xC774;&#xB8E8;&#xC5B4;&#xC9C0;&#xC9C0; &#xC54A;&#xC744; &#xC218;&#xB3C4; &#xC788;&#xB2E4;.
+&#xC6D0;&#xC778;&#xC740; &#xB85C;&#xCEEC;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xBA85;&#xB839;&#xC5B4;&#xC758; &#xBA85;&#xC138;&#xC778; <code>deploy</code>, &#xB9AC;&#xBAA8;&#xD2B8; &#xC11C;&#xBC84;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xBA85;&#xB839;&#xC5B4;&#xC758; &#xBA85;&#xC138;&#xC778; <code>apps</code>&#xB97C; &#xBCF4;&#xD1B5; &#xD558;&#xB098;&#xC758; &#xD30C;&#xC77C;&#xC5D0;&#xC11C; &#xAD00;&#xB9AC;&#xD558;&#xACE0;
+&#xCF54;&#xB4DC;&#xBCA0;&#xC774;&#xC2A4;&#xC5D0; &#xD3EC;&#xD568;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC778;&#xB370;, &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xB978; &#xC704;&#xCE58;&#xC5D0; &#xB450;&#xBA74; &#xB85C;&#xCEEC;&#xACFC; &#xB9AC;&#xBAA8;&#xD2B8;&#xC758; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC758; &#xC2F1;&#xD06C;&#xB97C; &#xBCF4;&#xC7A5;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.</p>
+<hr>
+<p>pm2&#xB85C; &#xBC30;&#xD3EC; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xAD00;&#xB9AC;&#xD558;&#xACE0; &#xC2F6;&#xC5B4;&#xC11C; &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD558;&#xC600;&#xC73C;&#xB098;, &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4; &#xBE44;&#xBC00;&#xBC88;&#xD638;&#xB97C; <code>env</code>&#xC5D0; &#xC800;&#xC7A5;&#xD558;&#xBA74; &#xCF54;&#xB4DC;&#xBCA0;&#xC774;&#xC2A4;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;,
+&#xB2E4;&#xB978; repository&#xB85C; &#xBD84;&#xB9AC;&#xD558;&#xB824; &#xD588;&#xB2E4;.</p>
+<p>&#xADF8;&#xB798;&#xC11C; <code>npm run deploy</code>&#xD558;&#xBA74; &#xC178; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB3C4;&#xB85D; &#xD588;&#xB2E4;:</p>
+<ol>
+<li>pm2 &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xC800;&#xC7A5;&#xC18C;<code>git clone git@github.com:user/repo.git .config</code></li>
+<li><code>pm2 deploy .config/ecosystem.json production</code></li>
+</ol>
+<p>&#xB9AC;&#xBAA8;&#xD2B8; &#xC11C;&#xBC84;&#xC5D0;&#xB294; <code>config</code> &#xC800;&#xC7A5;&#xC18C;&#xB97C; &#xD558;&#xB098; &#xD074;&#xB860; &#xBC1B;&#xC544;&#xB193;&#xACE0; &#xC801;&#xC808;&#xD55C; &#xACF3;&#xC5D0; &#xB450;&#xACE0;
+<code>post-deploy</code>&#xB97C; <code>&quot;npm install &amp;&amp; pm2 startOrRestart /home/node/config/ecosystem.json --env production&quot;</code>
+&#xC124;&#xC815; &#xD30C;&#xC77C;&#xC758; &#xC704;&#xCE58;&#xB97C; &#xD574;&#xB2F9; &#xC704;&#xCE58;&#xB97C; &#xAC00;&#xB9AC;&#xD0A4;&#xB3C4;&#xB85D; &#xD588;&#xB2E4;.</p>
+<p>&#xC774;&#xB7EC;&#xB2E4;&#xBCF4;&#xB2C8; &#xC124;&#xC815; &#xC815;&#xBCF4;&#xB97C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD574;&#xB3C4; &#xB9AC;&#xBAA8;&#xD2B8;&#xC5D0;&#xC11C; &#xB2E4;&#xC2DC; pull &#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xB85C;&#xCEEC;&#xC5D0;&#xC11C;&#xB294; &#xCD5C;&#xC2E0; &#xC124;&#xC815;&#xC744;, &#xB9AC;&#xBAA8;&#xD2B8;&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xC804; &#xC124;&#xC815;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBB38;&#xC81C;&#xAC00; &#xC788;&#xB2E4;.</p>
+<p>&#xB530;&#xB77C;&#xC11C; &#xB9AC;&#xBAA8;&#xD2B8;&#xC5D0;&#xC11C;&#xB3C4; &#xD56D;&#xC0C1; <code>config</code> &#xC800;&#xC7A5;&#xC18C;&#xB97C; clone &#xD6C4; <code>pm2 startOrRestart</code> &#xD558;&#xB3C4;&#xB85D; &#xD574;&#xC57C;&#xACA0;&#xB2E4;.
+<!-- front matter에 id가 있는 페이지만 댓글 출력 --></p>
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-72" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-72","time":"2018-07-24T23:44:00.000Z","title":"pm2 deploy 시 주의할 점","level":"1.22","depth":1,"next":{"title":"안정된 의존관계 원칙(Stable Dependencies Principle)","level":"1.23","depth":1,"path":"cat-logic/stable-dependencies-principle.md","ref":"cat-logic/stable-dependencies-principle.md","articles":[]},"previous":{"title":"NodeJS 서버 로컬 요청만 허용하기","level":"1.21","depth":1,"path":"cat-logic/5a662df6f9cfe4dcf1ebb542a2def358.md","ref":"cat-logic/5a662df6f9cfe4dcf1ebb542a2def358.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"cat-logic/nodejs-pm2-deploy-note.md","mtime":"2019-03-25T13:36:56.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

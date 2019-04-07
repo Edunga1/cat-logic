@@ -1,0 +1,428 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        "Database Abstraction Layers Must Die!"라는 글을 읽고 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                "Database Abstraction Layers Must Die!"라는 글을 읽고
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>🐱 Logic</li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">"Database Abstraction Layers Must Die!"라는 글을 읽고</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="database-abstraction-layers-must-die&#xB77C;&#xB294;-&#xAE00;&#xC744;-&#xC77D;&#xACE0;">&quot;Database Abstraction Layers Must Die!&quot;&#xB77C;&#xB294; &#xAE00;&#xC744; &#xC77D;&#xACE0;</h1>
+<p><a href="http://jeremy.zawodny.com/blog/archives/002194.html" target="_blank">http://jeremy.zawodny.com/blog/archives/002194.html</a></p>
+<p>&#xCD94;&#xC0C1;&#xD654;&#xC758; &#xC7A5;&#xC810;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBC18;&#xBC15;&#xD55C;&#xB2E4;. &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4; &#xACC4;&#xCE35;&#xC744; &#xCD94;&#xC0C1;&#xD654;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xC0AC;&#xB78C;&#xB4E4;&#xC758; &#xC8FC;&#xC7A5;:</p>
+<p><em>&#xCD94;&#xC0C1; &#xACC4;&#xCE35;&#xC744; &#xC798; &#xB9CC;&#xB4E4;&#xBA74; $this_database&#xC5D0;&#xC11C; $other_database&#xB85C; &#xC774;&#xB3D9;&#xD558;&#xB294;&#xB370; &#xB35C; &#xACE0;&#xD1B5;&#xC2A4;&#xB7FD;&#xB2E4;(&#xC27D;&#xB2E4;).</em></p>
+<blockquote>
+<p>&#xC808;&#xB300; &#xC27D;&#xC9C0; &#xC54A;&#xB2E4;. &#xC5B4;&#xB290; &#xB204;&#xAD6C;&#xB3C4; &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xAC83;&#xC744; &#xC26C;&#xC6B4; &#xC77C;&#xB85C; &#xC0DD;&#xAC01;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.
+&quot;(&#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;) &#xC804;&#xD658;&#xC774; &#xB35C; &#xACE0;&#xD1B5;&#xC2A4;&#xB7EC;&#xC6B8; &#xAC83;&#xC774;&#xB2E4;&quot;&#xB294; &#xD310;&#xD0C0;&#xC9C0;&#xB2E4;.
+&#xC88B;&#xC740; &#xAC1C;&#xBC1C;&#xC790;&#xB294; &#xAC1C;&#xBC1C;&#xD558;&#xB294;&#xB370; &#xAC00;&#xC7A5; &#xCD5C;&#xC120;&#xC758; &#xB3C4;&#xAD6C;(&#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;)&#xB97C; &#xC120;&#xD0DD;&#xD55C;&#xB2E4;.
+&#xADF8;&#xB9AC;&#xACE0; &#xB3C4;&#xAD6C;&#xC758; &#xAC15;&#xB825;&#xD558;&#xACE0; &#xC720;&#xB2C8;&#xD06C;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74;&#xC11C; &#xC774;&#xC810;&#xC744; &#xAC00;&#xC9C4;&#xB2E4;.
+&#xBAA8;&#xB4E0; RDBMS&#xC758; &#xACF5;&#xD1B5; &#xAE30;&#xB2A5;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xC81C;&#xD55C;&#xD55C;&#xB2E4;&#xBA74; &#xC790;&#xC2E0;&#xACFC; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xB9C9;&#xB300;&#xD55C; &#xC190;&#xD574;&#xB97C; &#xC785;&#xD788;&#xB294; &#xAC83;&#xC774;&#xB2E4;.
+&#xC774;&#xB294; &#xC774;&#xB807;&#xAC8C; &#xB9D0;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xB2E4;. &quot;&#xB098;&#xB294; Perl, C, PHP &#xACF5;&#xD1B5; &#xAE30;&#xB2A5;&#xC73C;&#xB85C; &#xC81C;&#xD55C;&#xD558;&#xB824;&#xACE0; &#xD574;&#xC694;. &#xC65C;&#xB0D0;&#xD558;&#xBA74; &#xC5B8;&#xC820;&#xAC00; &#xC5B8;&#xC5B4;&#xB97C; &#xBC14;&#xAFD4;&#xC57C; &#xD55C;&#xB2E4;&#xBA74; &#xB35C; &#xACE0;&#xD1B5;&#xC2A4;&#xB7EC;&#xC6E0;&#xC73C;&#xBA74; &#xD558;&#xAC70;&#xB4E0;&#xC694;.&quot;</p>
+</blockquote>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xAC1C;&#xBC1C;, &#xBC30;&#xCE58; &#xD6C4;&#xC5D0; &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;&#xB97C; &#xAD50;&#xCCB4;&#xD558;&#xB294; &#xBE44;&#xC6A9;&#xC740; &#xAF64; &#xB192;&#xB2E4;.</p>
+<p>&#xC2A4;&#xD0A4;&#xB9C8;&#xC640; &#xC778;&#xB371;&#xC2A4;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xACE0; &#xBB38;&#xBC95;&#xB3C4; &#xBCC0;&#xACBD;&#xD558;&#xACE0; &#xCD5C;&#xC801;&#xD654;&#xC640; &#xD29C;&#xB2DD;&#xB3C4; &#xB2E4;&#xC2DC; &#xD574;&#xC57C;&#xD55C;&#xB2E4;.<br>
+&#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC0AC;&#xC758; &#xD78C;&#xD2B8;&#xB3C4; &#xC870;&#xC815;&#xD558;&#xAC70;&#xB098; &#xC81C;&#xAC70;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.<br>
+mysql_foo()&#xB97C; oracle_foo()&#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xAC83;&#xC740; &#xBB38;&#xC81C;&#xC810; &#xC911;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xC791;&#xC740; &#xBD80;&#xBD84;&#xC774;&#xB2E4;.
+<!-- front matter에 id가 있는 페이지만 댓글 출력 --></p>
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-79" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-79","time":"2018-07-30T22:46:24.000Z","tags":"design pattern, database","title":"\"Database Abstraction Layers Must Die!\"라는 글을 읽고","level":"1.14","depth":1,"next":{"title":"Repository Pattern","level":"1.15","depth":1,"path":"cat-logic/eb07f52e34e9a50e19a6db50aeacd1e8.md","ref":"cat-logic/eb07f52e34e9a50e19a6db50aeacd1e8.md","articles":[]},"previous":{"title":"Generic Repository vs. Specific Repository","level":"1.13","depth":1,"path":"cat-logic/fc63256b426a5289c80dde7c953d1cc2.md","ref":"cat-logic/fc63256b426a5289c80dde7c953d1cc2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"cat-logic/c9875c187a06ca42d069474cd880a901.md","mtime":"2019-03-25T13:36:56.011Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

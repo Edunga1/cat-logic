@@ -1,0 +1,437 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        MVC Pattern · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                MVC Pattern
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>Design Pattern</li>
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">MVC Pattern</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="mvc-pattern">MVC Pattern</h1>
+<p>Model - View - Controller</p>
+<h2 id="mvc-&#xD328;&#xD134;&#xC758;-&#xBAA9;&#xC801;&#xACFC;-&#xC774;&#xC810;">MVC &#xD328;&#xD134;&#xC758; &#xBAA9;&#xC801;&#xACFC; &#xC774;&#xC810;</h2>
+<p>MVC &#xD328;&#xD134;&#xB294; &#xC0AC;&#xC6A9;&#xC790; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC640; &#xC2DC;&#xC2A4;&#xD15C; &#xB85C;&#xC9C1;&#xC744; &#xBD84;&#xB9AC;&#xD558;&#xB294; &#xAC83;&#xC744; &#xBAA9;&#xC801;&#xC73C;&#xB85C; &#xB454;&#xB2E4;.</p>
+<p>&#xBD84;&#xB9AC;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xC5BB;&#xB294; &#xC774;&#xC810;&#xC740; &#xB2E4;&#xB978; &#xD658;&#xACBD;&#xC5D0;&#xC11C; &#xC7AC;&#xC0AC;&#xC6A9; &#xD560; &#xC218; &#xC788;&#xB294; &#xCF54;&#xB4DC;&#xAC00; &#xC0DD;&#xAE30;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; C# &#xC708;&#xB3C4;&#xC6B0; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0; &#xC885;&#xC18D;&#xB418;&#xB294; &#xC720;&#xC800; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xAD00;&#xB828; &#xCF54;&#xB4DC;&#xB4E4;&#xACFC; &#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xB3CC;&#xC544;&#xAC00;&#xB294;&#xB370;
+&#xD544;&#xC694;&#xD55C; &#xCF54;&#xB4DC;(model)&#xB97C; &#xBD84;&#xB9AC;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xC720;&#xB2C8;&#xD2F0; &#xAC1C;&#xBC1C; &#xD658;&#xACBD;&#xC73C;&#xB85C; &#xC27D;&#xAC8C; &#xC774;&#xC2DD;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</p>
+<h2 id="compound-pattern">Compound Pattern</h2>
+<p>MVC &#xD328;&#xD134;&#xC740; &#xB2E4;&#xB978; &#xB514;&#xC790;&#xC778; &#xD328;&#xD134;&#xC73C;&#xB85C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xCEF4;&#xD30C;&#xC6B4;&#xB4DC; &#xD328;&#xD134;&#xC774;&#xB2E4;.</p>
+<h3 id="observer-pattern">Observer Pattern</h3>
+<p>Model - View&#xC758; &#xAD00;&#xACC4;</p>
+<p>&#xC720;&#xC800; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC640; &#xC2DC;&#xC2A4;&#xD15C; &#xB85C;&#xC9C1;&#xC744; &#xBD84;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xD574;&#xC8FC;&#xB294; &#xD575;&#xC2EC; &#xD328;&#xD134;&#xC73C;&#xB85C; &#xBAA8;&#xB378;&#xC740; &#xC0C1;&#xD0DC; &#xBCC0;&#xACBD;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xBA74;
+&#xBDF0;&#xC5D0; &#xC0C1;&#xD0DC; &#xBCC0;&#xACBD;&#xC744; &#xD1B5;&#xBCF4;&#xD55C;&#xB2E4;.</p>
+<p>&#xADF8;&#xB7EC;&#xBA74; &#xBDF0;&#xB294; &#xBAA8;&#xB378;&#xC5D0;&#xC11C; &#xD544;&#xC694;&#xD55C; &#xC815;&#xBCF4;&#xB4E4;&#xC744; &#xAC00;&#xC838;&#xC640; &#xC0AC;&#xC6A9;&#xC790; &#xD654;&#xBA74;&#xC744; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xD55C;&#xB2E4;.</p>
+<p>&#xBAA8;&#xB378;&#xC774; &#xBDF0;&#xC5D0; &#xD1B5;&#xBCF4;&#xD560; &#xB54C; &#xC0C1;&#xD0DC; &#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xB0B4;&#xC8FC;&#xB294; push-model &#xBCF4;&#xB2E4;
+&#xD1B5;&#xBCF4; &#xD6C4; &#xBDF0;&#xAC00; &#xD544;&#xC694;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xC54C;&#xC544;&#xC11C; &#xAC00;&#xC838;&#xAC00;&#xB294; pull-model&#xC774; &#xB354; &#xC120;&#xD638;&#xB41C;&#xB2E4;.</p>
+<h3 id="strategy-pattern">Strategy Pattern</h3>
+<p>View - Controller&#xC758; &#xAD00;&#xACC4;</p>
+<p>Controller&#xB294; View&#xC5D0; &#xB300;&#xD55C; Behavior&#xAC00; &#xB41C;&#xB2E4;.</p>
+<p>&#xAC19;&#xC740; View&#xB77C;&#xACE0; &#xD558;&#xB354;&#xB77C;&#xB3C4; Controller&#xB97C; &#xBCC0;&#xACBD;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xB2E4;&#xB974;&#xAC8C; &#xC2E4;&#xD589;&#xB418;&#xB3C4;&#xB85D; &#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<p>&#xB530;&#xB77C;&#xC11C; View&#xC5D0; Concrete Controller&#xAC00; &#xC544;&#xB2CC; Interface Controller&#xB97C; &#xC81C;&#xACF5;&#xD55C;&#xB2E4;.</p>
+<h3 id="composite-pattern">Composite Pattern</h3>
+<p>View &#xB0B4;&#xC5D0;&#xC11C; Component&#xB4E4; &#xAC04;&#xC758; &#xAD00;&#xACC4;</p>
+<p>&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xC790; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC758; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB4E4;&#xC740; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xC548;&#xC5D0; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB85C; &#xD45C;&#xD604;&#xD55C;&#xB2E4;.</p>
+<p>&#xC774; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB4E4;&#xC744; iterator&#xB97C; &#xD1B5;&#xD574; &#xC77C;&#xAD00;&#xC131;&#xC788;&#xAC8C; &#xC811;&#xADFC;&#xD558;&#xC5EC; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xC2DC;&#xD0A8;&#xB2E4;.</p>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-56" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-56","title":"MVC Pattern","level":"5.5","depth":1,"next":{"title":"땅따먹기 게임","level":"6.1","depth":1,"path":"algorithm-practice/hopscotch.md","ref":"algorithm-practice/hopscotch.md","articles":[]},"previous":{"title":"Factory Pattern","level":"5.4","depth":1,"path":"pattern/factory-pattern.md","ref":"pattern/factory-pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"pattern/mvc-pattern.md","mtime":"2019-03-25T13:36:56.161Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

@@ -1,0 +1,462 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        [KSUG Seminar] Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                [KSUG Seminar] Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>🐱 Logic</li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">[KSUG Seminar] Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="ksug-seminar-growing-application---2nd-&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;-&#xC544;&#xD0A4;&#xD14D;&#xCC98;&#xC640;-&#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5;">[KSUG Seminar] Growing Application - 2nd. &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xC544;&#xD0A4;&#xD14D;&#xCC98;&#xC640; &#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5;</h1>
+<p><a href="https://www.youtube.com/watch?v=26S4VFUWlJM" target="_blank">https://www.youtube.com/watch?v=26S4VFUWlJM</a></p>
+<p>&#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB85C;&#xC9C1;&#xACFC; &#xB3C4;&#xBA54;&#xC778; &#xB85C;&#xC9C1;&#xC744; &#xBD84;&#xB9AC;&#xD558;&#xACE0;, &#xC5B4;&#xB5BB;&#xAC8C; &#xAC1D;&#xCCB4;&#xC5D0; &#xCD08;&#xC810;&#xC744; &#xB454; &#xB85C;&#xC9C1;&#xC744; &#xC791;&#xC131;&#xD558;&#xB294;&#xC9C0; &#xC54C;&#xB824;&#xC8FC;&#xB294; &#xC601;&#xC0C1;.
+&#xC808;&#xCC28;&#xC9C0;&#xD5A5; &#xCF54;&#xB4DC;&#xC640; &#xAC1D;&#xCCB4;&#xC9C0;&#xD5A5; &#xCF54;&#xB4DC; &#xC608;&#xC2DC;&#xB97C; &#xD1B5;&#xD574; &#xBE44;&#xAD50;&#xD55C;&#xB2E4;.</p>
+<hr>
+<p><a href="https://youtu.be/26S4VFUWlJM?t=46m57s" target="_blank">https://youtu.be/26S4VFUWlJM?t=46m57s</a></p>
+<ul>
+<li>&#xC774; &#xCF54;&#xB4DC; &#xAC00;&#xC9C0;&#xACE0;&#xB9CC; &#xC2E4;&#xC81C; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC9E4; &#xC218;&#xB294; &#xC5C6;&#xC74C;. &#xB370;&#xC774;&#xD130;&#xB294; DB&#xC5D0; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;</li>
+<li>800&#xC6D0; &#xD560;&#xC778;&#xC774;&#xB77C;&#xB294; &#xC815;&#xBCF4;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC544;&#xB2C8;&#xB77C; &#xB514;&#xBE44;&#xC5D0; &#xC788;&#xB2E4;.</li>
+<li>&quot;&#xC5EC;&#xAE30;&#xC11C; &#xC65C; &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;&#xB97C; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xCF54;&#xB4DC;&#xB97C; &#xB9DE;&#xCD94;&#xB294;&#xAC8C; &#xC544;&#xB2C8;&#xB77C; &#xCF54;&#xB4DC;&#xB97C; &#xAE30;&#xC900;&#xC774; &#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB294;&#xC9C0; &#xC54C; &#xAC70; &#xAC19;&#xB2E4;&quot;</li>
+<li>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB85C;&#xC9C1;<ul>
+<li>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xD50C;&#xB85C;&#xC6B0;</li>
+<li>&#xB3C4;&#xBA54;&#xC778; &#xB85C;&#xC9C1;&#xC758; &#xC804; &#xD6C4;&#xC5D0; &#xC874;&#xC7AC;</li>
+<li>&#xC21C;&#xC218;&#xD55C; &#xAC1D;&#xCCB4;(&#xB3C4;&#xBA54;&#xC778; &#xAC1D;&#xCCB4;)&#xC5D0; &#xB123;&#xC9C0; &#xC54A;&#xC74C;</li>
+<li>&#xB123;&#xC73C;&#xBA74; &#xB514;&#xBE44;&#xB098; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC5D0; &#xC758;&#xC874;&#xC774; &#xC0DD;&#xAE40;</li>
+<li>&#xB3C4;&#xBA54;&#xC778;&#xACFC; &#xBB34;&#xAD00;&#xD55C; &#xAE30;&#xC220;&#xC801;&#xC778; &#xB0B4;&#xC6A9;&#xB4E4;&#xC744; &#xC758;&#xBBF8;&#xD568;</li>
+<li>&#xB3C4;&#xBA54;&#xC778; &#xB85C;&#xC9C1;&#xC744; &#xCEA1;&#xC290;&#xD654; &#xD574;&#xC900;&#xB2E4;</li>
+<li>&#xC11C;&#xBE44;&#xC2A4;</li>
+</ul>
+</li>
+</ul>
+<p><img src="../$images/2018-07-29-23-50-26.png" alt="&#xC11C;&#xBE44;&#xC2A4; &#xB808;&#xC774;&#xC5B4; &#xD2B9;&#xC9D5;"></p>
+<ul>
+<li>&#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC758; &#xACBD;&#xACC4;</li>
+<li>&#xC11C;&#xBE44;&#xC2A4; &#xC2DC;&#xC791;&#xACFC; &#xB05D;&#xC740; &#xD2B8;&#xB79C;&#xC7AD;&#xC158;&#xC758; &#xC2DC;&#xC791; &#xB05D;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;</li>
+<li>&#xB370;&#xC774;&#xD130;&#xB97C; &#xC900;&#xBE44;&#xD558;&#xACE0;, &#xB3C4;&#xBA54;&#xC778; &#xB85C;&#xC9C1;&#xC5D0; &#xC704;&#xC784;&#xD55C;&#xB2E4;.</li>
+</ul>
+<p><img src="../$images/2018-07-29-23-52-38.png" alt="&#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC608;"></p>
+<ul>
+<li>&#xC808;&#xCE58; &#xC9C0;&#xD5A5;&#xC774; &#xB418;&#xBA74; fat &#xC11C;&#xBE44;&#xC2A4;&#xAC00; &#xB41C;&#xB2E4;. &#xC88B;&#xC740; &#xC11C;&#xBE44;&#xC2A4;&#xB294; thin &#xC11C;&#xBE44;&#xC2A4;</li>
+</ul>
+<p><a href="https://youtu.be/26S4VFUWlJM?t=55m37s" target="_blank">https://youtu.be/26S4VFUWlJM?t=55m37s</a></p>
+<p><img src="../$images/2018-07-29-23-53-38.png" alt="&#xAC1D;&#xCCB4;-&#xAD00;&#xACC4; &#xC784;&#xD53C;&#xB358;&#xC2A4; &#xBD88;&#xC77C;&#xCE58;"></p>
+<ul>
+<li>&#xC784;&#xD53C;&#xB358;&#xC2A4; &#xBBF8;&#xC2A4;&#xB9E4;&#xCE58;</li>
+<li>&#xB3C4;&#xBA54;&#xC778; &#xC704;&#xC8FC;&#xB85C; &#xC791;&#xC131;&#xD558;&#xACE0; &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;&#xB97C; &#xAD6C;&#xD604; &#xD558;&#xBA74; &#xC5B4;&#xB835;&#xB2E4;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xC788;&#xB2E4;.</li>
+<li>&#xC704;&#xCC98;&#xB7FC; &#xD074;&#xB798;&#xC2A4;&#xC640; &#xD14C;&#xC774;&#xBE14;&#xC774; &#xC77C;&#xCE58;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD604;&#xC0C1;&#xB3C4; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;.</li>
+<li>&quot;&#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5;&#xC801;&#xC73C;&#xB85C; &#xAC08;&#xC218;&#xB85D; &#xAC2D;&#xC740; &#xBA40;&#xC5B4;&#xC9C4;&#xB2E4;. &#xC774;&#xB97C; &#xC784;&#xD53C;&#xB358;&#xC2A4; &#xBBF8;&#xC2A4;&#xB9E4;&#xCE58;&#xB77C; &#xD55C;&#xB2E4;&quot;</li>
+</ul>
+<p><a href="https://youtu.be/26S4VFUWlJM?t=56m36s" target="_blank">https://youtu.be/26S4VFUWlJM?t=56m36s</a></p>
+<ul>
+<li>&#xD14C;&#xC774;&#xBE14;&#xC744; &#xD074;&#xB798;&#xC2A4;&#xB85C; &#xB9E4;&#xD551;&#xD558;&#xB294; &#xB370;&#xC774;&#xD130; &#xB9E4;&#xD37C; &#xC791;&#xC131;&#xC774; &#xC5B4;&#xB824;&#xC6CC; &#xC9C0;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; ORM&#xACFC; &#xAC19;&#xC740; &#xAE30;&#xC220;&#xC744; &#xC4F4;&#xB2E4;.</li>
+<li>&quot;&#xD074;&#xB798;&#xC2A4;&#xC640; &#xD14C;&#xC774;&#xBE14;&#xC758; &#xAC04;&#xACA9;&#xC774; &#xBA40;&#xC5B4;&#xC11C; &#xB9E4;&#xD551;&#xD558;&#xAE30;&#xAC00; &#xB108;&#xBB34; &#xC5B4;&#xB824;&#xC6CC;&#xC11C; JPA(ROM)&#xC744; &#xC4F0;&#xB294; &#xAC83;&#xC774;&#xB2E4;.&quot;</li>
+</ul>
+<p><a href="https://youtu.be/26S4VFUWlJM?t=1h6m57s" target="_blank">https://youtu.be/26S4VFUWlJM?t=1h6m57s</a></p>
+<ul>
+<li>&#xD2B8;&#xB79C;&#xC7AD;&#xC158; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC218;&#xC815; &#xD560; &#xB54C; &#xCD5C;&#xB300; &#xB2E8;&#xC810;&#xC740; &#xB3C4;&#xBA54;&#xC778;&#xC774; &#xCF54;&#xB4DC;&#xC5D0; &#xC554;&#xBB35;&#xC801;&#xC73C;&#xB85C; &#xB179;&#xC544; &#xC788;&#xB2E4;.</li>
+<li>&#xCF54;&#xB4DC;&#xC5D0; &quot;&#xC911;&#xBCF5;&#xD560;&#xC778;&quot;&#xC774;&#xB77C;&#xB294; &#xB9D0;&#xC740; &#xC5C6;&#xB2E4;. &#xADF8;&#xB0E5; N&#xAC1C;&#xC758; &#xD560;&#xC778;&#xC774;&#xB77C;&#xB294; &#xCF54;&#xB4DC;&#xAC00; &#xC788;&#xC744; &#xBFD0;</li>
+<li>(&#xD558;&#xB098;&#xB9CC; &#xD560;&#xC778; =&gt; &#xC911;&#xBCF5; &#xD560;&#xC778; &#xD5C8;&#xC6A9; &#xC2DC;)</li>
+<li>&quot;&#xC6B0;&#xB9B0; &#xC911;&#xBCF5; &#xD560;&#xC778; &#xD5C8;&#xC6A9;&#xD574;&quot; &#xB77C;&#xACE0; &#xD558;&#xC9C0;&#xB9CC; &#xCF54;&#xB4DC;&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3CC;&#xC544;&#xAC00;&#xB294;&#xC9C0; &#xBD10;&#xC57C;&#xB9CC; &#xC54C; &#xC218; &#xC788;&#xB2E4;.<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<style>
+.utterances {
+  margin-top: 8em;
+}
+</style><script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-77" crossorigin="anonymous" async>
+</script>
+
+</li>
+</ul>
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-77","time":"2018-07-29T23:33:21.000Z","title":"[KSUG Seminar] Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향","level":"1.16","depth":1,"next":{"title":"객체 지향 프로그래밍 (OOP)","level":"1.17","depth":1,"path":"cat-logic/e99ecf640015fd820093db0aaaaec50f.md","ref":"cat-logic/e99ecf640015fd820093db0aaaaec50f.md","articles":[]},"previous":{"title":"Repository Pattern","level":"1.15","depth":1,"path":"cat-logic/eb07f52e34e9a50e19a6db50aeacd1e8.md","ref":"cat-logic/eb07f52e34e9a50e19a6db50aeacd1e8.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"cat-logic/929cad8b0fafa2a9c0cc86f21be15939.md","mtime":"2019-03-25T13:36:56.008Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

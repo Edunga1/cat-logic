@@ -1,0 +1,448 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        정규화 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                정규화
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                                <li>Database</li>
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">정규화</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="database">Database</h1>
+<h2 id="&#xC815;&#xADDC;&#xD654;-normalization">&#xC815;&#xADDC;&#xD654; (Normalization)</h2>
+<p>&#xB370;&#xC774;&#xD130; &#xC911;&#xBCF5;&#xC744; &#xCD5C;&#xC18C;&#xD654;&#xD558;&#xB294; &#xC791;&#xC5C5;</p>
+<h3 id="&#xC81C;-1-&#xC815;&#xADDC;&#xD654;-first-normal-form">&#xC81C; 1 &#xC815;&#xADDC;&#xD654; (First Normal Form)</h3>
+<p>inflexible &#xBD80;&#xBD84;&#xC744; &#xC81C;&#xAC70;&#xD558;&#xB294; &#xAC83;&#xC774; &#xBAA9;&#xC801;</p>
+<pre><code>------------------------------------------------------------------------
+| name | email           | email2             | email...               |
+------------------------------------------------------------------------
+| john | apple@gmail.com | banana@hanmail.net |                        |
+| paul | cat@gmail.com   | null               |                        |
+------------------------------------------------------------------------
+</code></pre><p>&#xC0AC;&#xC6A9;&#xC790;&#xC5D0; &#xB300;&#xD55C; &#xC774;&#xBA54;&#xC77C; &#xBAA9;&#xB85D;&#xC744; &#xAD00;&#xB9AC;&#xD558;&#xACE0;&#xC790; &#xD560; &#xB54C;, &#xD14C;&#xC774;&#xBE14;&#xC774; &#xD558;&#xB098;&#xB77C;&#xBA74; <strong>&#xC774;&#xBA54;&#xC77C;&#xC774; &#xCD94;&#xAC00;</strong>&#xB418;&#xBA74; &#xCEEC;&#xB7FC;&#xC774; &#xB298;&#xC5B4;&#xB098;&#xAC8C; &#xB41C;&#xB2E4;.</p>
+<p>&#xB610;&#xD55C; paul&#xC740; &#xD558;&#xB098;&#xC758; &#xC774;&#xBA54;&#xC77C;&#xC744; &#xAC00;&#xC9C0;&#xC9C0;&#xB9CC; &#xC5EC;&#xB7EC;&#xAC1C;&#xC758; &#xBA54;&#xC77C;&#xC744; &#xAC00;&#xC9C4; john&#xC5D0; &#xC758;&#xD574; &#xBE48; &#xD544;&#xB4DC;&#xB97C; &#xAC00;&#xC838;&#xC57C;&#xB9CC; &#xD55C;&#xB2E4;.</p>
+<p>&#xC774; &#xBB38;&#xC81C;&#xB97C; 1:N or N:N &#xAD00;&#xACC4;&#xB85C; &#xBD84;&#xB9AC;&#xD558;&#xC5EC; &#xD574;&#xACB0;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC81C; 1 &#xC815;&#xADDC;&#xD654;.</p>
+<h3 id="&#xC81C;-2-&#xC815;&#xADDC;&#xD654;-second-normal-form">&#xC81C; 2 &#xC815;&#xADDC;&#xD654; (Second Normal Form)</h3>
+<p><strong>Composite Key</strong>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xC77C;&#xBC18; &#xD544;&#xB4DC;&#xAC00; Composite Key &#xC911; <strong>&#xC77C;&#xBD80;&#xBD84;</strong>&#xC5D0; &#xC758;&#xC874;&#xD560; &#xB54C; &#xBB38;&#xC81C;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;.</p>
+<pre><code>-----------------------------------------------------------------------
+| Cours  | Date      | CourseTitle      | Room | Capacity | Available |
+-----------------------------------------------------------------------
+| SQL101 | 3/1/2013  | SQL Fundamentals | 4A   | 12       | 4         |
+| DB202  | 3/1/2013  | Database Design  | 7B   | 14       | 7         |
+| SQL101 | 4/14/2013 | SQL Fundamentals | 7B   | 14       | 10        |
+| SQL101 | 5/28/2013 | SQL Fundamentals | 12A  | 8        | 8         |
+| CS200  | 4/15/2012 | C Programming    | 4A   | 12       | 11        |
+-----------------------------------------------------------------------
+</code></pre><p>Cours + Date&#xAC00; <strong>Composite primary key</strong>&#xB77C;&#xACE0; &#xD560; &#xB54C;</p>
+<p>CourseTitle&#xC740; Course&#xC5D0; <strong>&#xC758;&#xC874;&#xB41C;&#xB2E4;.</strong></p>
+<p>CourseTitle&#xC744; Course&#xB97C; FK, PK&#xB85C; &#xD55C; &#xD14C;&#xC774;&#xBE14;&#xB85C; &#xBD84;&#xB9AC;&#xD558;&#xC5EC; &#xD574;&#xACB0;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC81C; 2 &#xC815;&#xADDC;&#xD654;.</p>
+<h3 id="&#xC81C;-3-&#xC815;&#xADDC;&#xD654;-third-normal-form">&#xC81C; 3 &#xC815;&#xADDC;&#xD654; (Third Normal Form)</h3>
+<p>&#xC77C;&#xBC18; &#xD544;&#xB4DC;&#xAC00; &#xC77C;&#xBC18; &#xD544;&#xB4DC;&#xC5D0; &#xC758;&#xC874;&#xB420; &#xB54C; &#xBC1C;&#xC0DD;.</p>
+<p>2 &#xC815;&#xADDC;&#xD654;&#xC640; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xD14C;&#xC774;&#xBE14;&#xB85C; &#xBD84;&#xB9AC;&#xD558;&#xC9C0;&#xB9CC; &#xCC28;&#xC774; &#xC810;&#xC740; &#xAE30;&#xC874; &#xD14C;&#xC774;&#xBE14;&#xC5D0;&#xC11C; &#xBD84;&#xB9AC;&#xD55C; &#xD14C;&#xC774;&#xBE14;&#xC744; &#xCC38;&#xC870;&#xD558;&#xB294; &#xAC83;</p>
+<h3 id="&#xC5ED;-&#xC815;&#xADDC;&#xD654;-denormalization">&#xC5ED; &#xC815;&#xADDC;&#xD654; (Denormalization)</h3>
+<p>&#xD2B9;&#xBCC4;&#xD55C; &#xACBD;&#xC6B0; <strong>&#xD3B8;&#xB9AC;&#xB97C; &#xC704;&#xD574;&#xC11C;</strong> &#xC5ED;&#xC815;&#xADDC;&#xD654;&#xB97C; &#xD558;&#xAE30;&#xB3C4; &#xD55C;&#xB2E4;. &#xD2B9;&#xD788; &#xC81C; 3 &#xC815;&#xADDC;&#xD654;&#xC5D0;&#xC11C; &#xC5ED;&#xC815;&#xADDC;&#xD654;&#xB97C; &#xD558;&#xB294;&#xB370;</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xBA74; Zip code&#xC758; &#xACBD;&#xC6B0; State + City&#xC5D0; &#xC758;&#xD574; &#xACB0;&#xC815;&#xB418;&#xB294;&#xB370;
+&#xC774;&#xB97C; &#xC800;&#xC7A5; &#xD574; &#xB193;&#xC73C;&#xBA74; &#xC11C;&#xBC84;&#xC5D0;&#xC11C; &#xACC4;&#xC0B0;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xBD80;&#xBD84;&#xC774;&#xBBC0;&#xB85C; &#xC800;&#xC7A5; &#xD574; &#xB193;&#xC73C;&#xBA74; &#xB2E8;&#xC21C;&#xD788; Select &#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C;
+Zip code&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;.</p>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-15" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-15","title":"정규화","level":"12.1","depth":1,"next":{"title":"Style - Table Naming Convention - 단수?복수? camelCase?snake_case?","level":"12.2","depth":1,"path":"database/table-naming-convention.md","ref":"database/table-naming-convention.md","articles":[]},"previous":{"title":"VSCode - 타입 힌팅 사용하기 (blog)","level":"11.8","depth":1,"path":"nodejs/type-hinting-in-vscode.md","ref":"nodejs/type-hinting-in-vscode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"database/database-normalization.md","mtime":"2019-03-25T13:36:56.141Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

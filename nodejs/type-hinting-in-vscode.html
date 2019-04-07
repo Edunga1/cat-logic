@@ -1,0 +1,513 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        VSCode - 타입 힌팅 사용하기 (blog) · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                VSCode - 타입 힌팅 사용하기 (blog)
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>NodeJS</li>
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">VSCode - 타입 힌팅 사용하기 (blog)</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="visual-studio-code&#xC5D0;&#xC11C;-&#xD0C0;&#xC785;-&#xD78C;&#xD305;-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;">Visual Studio Code&#xC5D0;&#xC11C; &#xD0C0;&#xC785; &#xD78C;&#xD305; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</h1>
+<p><strong>NodeJS</strong>, &#xC6F9; &#xAC1C;&#xBC1C; &#xB4F1; <strong>Javascript</strong>&#xB85C; &#xAC1C;&#xBC1C;&#xC744; &#xD558;&#xB2E4;&#xBCF4;&#xBA74;
+<a href="https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C%ED%98%95_%EC%B2%B4%EA%B3%84" target="_blank">&#xC815;&#xC801; &#xD0C0;&#xC785;</a> &#xC5B8;&#xC5B4;&#xAC00;
+&#xADF8;&#xB807;&#xAC8C;&#xB098; &#xADF8;&#xB9AC;&#xC6B8; &#xC218;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xD558;&#xB294; &#xC5EC;&#xB7EC;&#xBD84;&#xC740; &#xAC70;&#xC758; &#xB9E4;&#xC77C;</p>
+<p><code>Uncaught SyntaxError: Invalid or unexpected token</code></p>
+<p><code>Uncaught TypeError: arg1.trim is not a function</code></p>
+<p>&#xC704;&#xC640;&#xAC19;&#xC740; &#xBB38;&#xAD6C;&#xB97C; &#xB9C8;&#xC8FC;&#xCE58;&#xC2E4; &#xAC81;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">arg1</span>) </span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">var</span> str = arg1.trim(); <span class="hljs-comment">// Uncaught TypeError ...</span>
+}
+</code></pre>
+<p>&#xB2E8;&#xC9C0; &#xC704;&#xCC98;&#xB7FC; &#xAC04;&#xB2E8;&#xD55C; &#xCF54;&#xB4DC;&#xC784;&#xC5D0;&#xB3C4; &#xBD88;&#xAD6C;&#xD55C;&#xB370; &#xB9D0;&#xC774;&#xC5D0;&#xC694;!</p>
+<p>&#xC774; &#xAE00;&#xC5D0;&#xC11C;&#xB294; <strong>Visual Studio Code</strong>&#xC5D0;&#xC11C; <strong>JSDoc</strong>&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; <strong>&#xD0C0;&#xC785; &#xCD94;&#xB860;</strong> &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9; &#xD574;&#xBD05;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xAE30;&#xBCF8;-&#xC9C0;&#xC6D0;">&#xAE30;&#xBCF8; &#xC9C0;&#xC6D0;</h2>
+<p>VSCode&#xB294; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xD0C0;&#xC785; &#xCD94;&#xB860; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;:</p>
+<p><img src="../$images/vscode-intellisense-example.png"></p>
+<p>&#xBCC0;&#xC218; <code>foo</code> &#xAC00; &#xBB38;&#xC790;&#xC5F4; &#xD0C0;&#xC785;&#xC778; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>split()</code> &#xBA54;&#xC11C;&#xB4DC;&#xAC00; &#xC790;&#xB3D9; &#xC644;&#xC131; &#xBAA9;&#xB85D;&#xC5D0; &#xB098;&#xD0C0;&#xB0A9;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; <strong>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;(parameter)</strong> &#xB77C;&#xBA74; &#xC5B4;&#xB5A8;&#xAE4C;&#xC694;?</p>
+<p><img src="../$images/vscode-intellisense-example2.png"></p>
+<p><strong>Object</strong> &#xB610;&#xD55C; &#xD78C;&#xD2B8;&#xB97C; &#xC81C;&#xB300;&#xB85C; &#xBC1B;&#xC744; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="../$images/vscode-intellisense-example3.png"></p>
+<h2 id="jsdoc&#xC744;-&#xC774;&#xC6A9;&#xD558;&#xC5EC;-&#xD0C0;&#xC785;-&#xCD94;&#xB860;">JSDoc&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xD0C0;&#xC785; &#xCD94;&#xB860;</h2>
+<p>&#xBA3C;&#xC800; &#xC774; &#xBC29;&#xBC95;&#xC740; <strong>&#xC57D;&#xC18D;</strong>&#xC5D0; &#xC758;&#xD55C; &#xD0C0;&#xC785; &#xCD94;&#xB860; &#xBC29;&#xBC95;&#xC784;&#xC744; &#xAC15;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><strong>JSDoc</strong>&#xC740; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; <strong>&#xBB38;&#xC11C;&#xD654;</strong>&#xB97C; &#xC704;&#xD55C; &#xC8FC;&#xC11D; &#xD3EC;&#xB9F7;&#xC785;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; &#xB2E4;&#xC74C;&#xC744; &#xCC38;&#xC870; &#xD558;&#xC138;&#xC694;:</p>
+<p><a href="http://usejsdoc.org/about-getting-started.html" target="_blank">http://usejsdoc.org/about-getting-started.html</a></p>
+<h3 id="&#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC640;-&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;-&#xD78C;&#xD305;">&#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC640; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xD78C;&#xD305;</h3>
+<p>&#xD0C0;&#xC785;&#xC774; <code>Object</code> &#xC778; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC758; &#xD78C;&#xD2B8;&#xB97C; &#xC5BB;&#xC5B4; &#xBD05;&#xC2DC;&#xB2E4;.</p>
+<pre><code class="lang-javascript">{
+    foo: <span class="hljs-string">&apos;foo&apos;</span>,
+    bar: <span class="hljs-number">95</span>
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * @param {{foo: string, bar: number}} obj
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params">obj</span>) </span>{
+    <span class="hljs-keyword">var</span> foo = obj.foo;
+    <span class="hljs-keyword">var</span> bar = obj.bar;
+
+    <span class="hljs-comment">// foo. &#xAE4C;&#xC9C0;&#xB9CC; &#xD0C0;&#xC774;&#xD551;&#xD558;&#xBA74; &#xBB38;&#xC790;&#xC5F4;&#xC5D0; &#xB300;&#xD55C; &#xBA54;&#xC11C;&#xB4DC; &#xBAA9;&#xB85D;&#xC774; &#xCD9C;&#xB825;&#xB41C;&#xB2E4;!</span>
+}
+</code></pre>
+<p><img src="../$images/vscode-intellisense-example4.png"></p>
+<p><code>bar</code> &#xD0C0;&#xC785;&#xC774; <code>number</code> &#xC778; &#xAC83;&#xACFC; &#xD504;&#xB85C;&#xD37C;&#xD2F0; <code>foo</code>, <code>bar</code>&#xAC00; &#xCD9C;&#xB825;&#xB429;&#xB2C8;&#xB2E4;!</p>
+<p>&#xD568;&#xC218;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xC544;&#xB2CC; &#xBC18;&#xD658;&#xAC12;&#xC774;&#xB77C;&#xBA74; <code>@return</code>&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * @return {{foo: string, bar: number}}
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> obj = {};
+    obj.foo = <span class="hljs-string">&apos;foo&apos;</span>;
+    obj.bar = <span class="hljs-number">95</span>;
+
+    <span class="hljs-keyword">return</span> obj;
+}
+
+func(). <span class="hljs-comment">// &#xC5EC;&#xAE30;&#xAE4C;&#xC9C0;&#xB9CC; &#xD0C0;&#xC774;&#xD551;&#xD558;&#xBA74; &#xD504;&#xB85C;&#xD37C;&#xD2F0; foo, bar&#xAC00; &#xC874;&#xC7AC;&#xD568;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;!</span>
+</code></pre>
+<h3 id="generic-type-&#xD78C;&#xD305;">Generic Type &#xD78C;&#xD305;</h3>
+<p>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xADF8;&#xB300;&#xB85C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xAC04;&#xB2E8;&#xD55C; &#xD568;&#xC218;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params">arg</span>) </span>{
+    <span class="hljs-keyword">return</span> arg;
+}
+</code></pre>
+<p>&#xC704;&#xCC98;&#xB7FC; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xD0C0;&#xC785;&#xC5D0; &#xB530;&#xB77C; &#xBC18;&#xD658;&#xAC12;&#xC774; &#xACB0;&#xC815;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * @template T
+ */</span>
+
+<span class="hljs-comment">/**
+ * @param {T} arg
+ * @return {T}
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params">arg</span>) </span>{
+    <span class="hljs-keyword">return</span> arg;
+}
+</code></pre>
+<p>&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xB9AC;&#xD134; &#xD0C0;&#xC785;&#xC774; &#xB611;&#xAC19;&#xC774; &#xCD9C;&#xB825; &#xB429;&#xB2C8;&#xB2E4;:</p>
+<p><img src="../$images/vscode-intellisense-example5.png"></p>
+<h4 id="promise">Promise</h4>
+<p>Promise &#xB610;&#xD55C; Generic Type&#xC744; &#xC0AC;&#xC6A9;&#xD568;&#xC73C;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD45C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * @return {Promise&lt;string&gt;}
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// ... &#xAD6C;&#xD604; &#xBD80;&#xBD84; &#xC0DD;&#xB7B5; ...</span>
+    <span class="hljs-comment">// &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xB118;&#xACA8;&#xC8FC;&#xB294; Promise</span>
+    <span class="hljs-keyword">return</span> promise;
+}
+
+func().then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">result</span>) </span>{
+    result. <span class="hljs-comment">// result&#xAC00; &#xBB38;&#xC790;&#xC5F4;&#xC778; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;!</span>
+});
+</code></pre>
+<h2 id="&#xB9C8;&#xCE58;&#xBA70;">&#xB9C8;&#xCE58;&#xBA70;...</h2>
+<p>&#xC6B0;&#xB9AC;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC5B8;&#xC5B4;&#xC758; &#xB3D9;&#xC801; &#xD0C0;&#xC774;&#xD551;&#xC73C;&#xB85C; &#xC0DD;&#xC0B0;&#xC131;&#xACFC; &#xB2E4;&#xB978; &#xC774;&#xC810;&#xC744; &#xC5BB;&#xC5C8;&#xC9C0;&#xB9CC;
+&#xB610;&#xD55C; &#xB9CE;&#xC740; &#xC774;&#xC810;&#xB4E4;&#xC744; &#xC783;&#xC5B4; &#xACE0;&#xD1B5;&#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; &#xC0DD;&#xD0DC;&#xACC4;&#xAC00; &#xCEE4;&#xC9C8;&#xC218;&#xB85D; &#xD0C0;&#xC785;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; &#xC778;&#xAE30;&#xB3C4; &#xADF8;&#xB9CC;&#xD07C; &#xC99D;&#xAC00;&#xD558;&#xACE0; &#xC788;&#xC8E0;.</p>
+<p>&#xC644;&#xBCBD;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC9C0;&#xB9CC; JSDoc&#xC744; &#xC774;&#xC6A9;&#xD558;&#xBA74; &#xBB38;&#xC11C;&#xD654;&#xB97C; &#xC790;&#xB3D9;&#xD654;&#xD558;&#xACE0; &#xD0C0;&#xC785; &#xD78C;&#xD2B8;&#xB3C4; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-48" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-48","title":"VSCode - 타입 힌팅 사용하기 (blog)","level":"11.8","depth":1,"next":{"title":"정규화","level":"12.1","depth":1,"path":"database/database-normalization.md","ref":"database/database-normalization.md","articles":[]},"previous":{"title":"Testing - proxyquire - 모듈 로드 순서 문제","level":"11.7","depth":1,"path":"nodejs/proxyquire-module-import-order.md","ref":"nodejs/proxyquire-module-import-order.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"nodejs/type-hinting-in-vscode.md","mtime":"2019-03-25T13:36:56.156Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

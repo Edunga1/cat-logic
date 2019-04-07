@@ -1,0 +1,507 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        SFML 프로젝트 빌드하기 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                SFML 프로젝트 빌드하기
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>🐱 Logic</li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">SFML 프로젝트 빌드하기</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="sfml-&#xD504;&#xB85C;&#xC81D;&#xD2B8;-&#xBE4C;&#xB4DC;&#xD558;&#xAE30;">SFML &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xBE4C;&#xB4DC;&#xD558;&#xAE30;</h1>
+<p>OSX &#xAE30;&#xC900;.</p>
+<ol>
+<li>SFML &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xB2E4;&#xC6B4;&#xBC1B;&#xB294;&#xB2E4;. <strong>homebrew</strong>&#xB85C; &#xC124;&#xCE58;&#xD558;&#xBA74; &#xAC04;&#xB2E8;&#xD558;&#xB2E4;. <code>$ brew install sfml</code></li>
+<li>&#xBE4C;&#xB4DC; &#xB3C4;&#xAD6C; CMake&#xB97C; &#xB2E4;&#xC6B4;&#xBC1B;&#xB294;&#xB2E4;. <strong>homebrew</strong>&#xB294; <code>$ brew install cmake</code></li>
+</ol>
+<p><strong>&#xC544;&#xB798;&#xBD80;&#xD130;&#xB294; <a href="https://github.com/SFML/SFML/wiki/Tutorial%3A-Build-your-SFML-project-with-CMake" target="_blank">&#xC774; &#xB9C1;&#xD06C;</a>&#xC5D0; &#xB530;&#xB984;</strong></p>
+<ol>
+<li>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; <code>cmake_modules</code> &#xD3F4;&#xB354;&#xB97C; &#xC0DD;&#xC131;</li>
+<li><a href="https://github.com/SFML/SFML-Game-Development-Book/blob/master/CMake/FindSFML.cmake" target="_blank">FindSFML.cmake</a> &#xC791;&#xC131;&#xD558;&#xACE0;, <code>cmake_modules</code> &#xC548;&#xC5D0; &#xB454;&#xB2E4;.</li>
+<li><code>CmakeLists.txt</code> &#xC791;&#xC131;&#xD558;&#xC5EC; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB8E8;&#xD2B8;&#xC5D0; &#xB454;&#xB2E4;. &#xC704; &#xD3F4;&#xB354;&#xC640;&#xB294; &#xAD00;&#xB828; &#xC5C6;&#xB2E4;.
+ ```c++<h1 id="change-this-if-you-need-to-target-a-specific-cmake-version">Change this if you need to target a specific CMake version</h1>
+ cmake_minimum_required(VERSION 2.6)</li>
+</ol>
+<pre><code># Enable debug symbols by default
+# must be done before project() statement
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Debug CACHE STRING &quot;Choose the type of build (Debug or Release)&quot; FORCE)
+endif()
+# (you can also set it on the command line: -D CMAKE_BUILD_TYPE=Release)
+
+project(myproject)
+
+# Set version information in a config.h file
+set(myproject_VERSION_MAJOR 1)
+set(myproject_VERSION_MINOR 0)
+configure_file(
+  &quot;${PROJECT_SOURCE_DIR}/config.h.in&quot;
+  &quot;${PROJECT_BINARY_DIR}/config.h&quot;
+  )
+include_directories(&quot;${PROJECT_BINARY_DIR}&quot;)
+
+# Define sources and executable
+set(EXECUTABLE_NAME &quot;myproject&quot;)
+add_executable(${EXECUTABLE_NAME} main.cpp)
+
+
+# Detect and add SFML
+set(CMAKE_MODULE_PATH &quot;${CMAKE_SOURCE_DIR}/cmake_modules&quot; ${CMAKE_MODULE_PATH})
+#Find any version 2.X of SFML
+#See the FindSFML.cmake file for additional details and instructions
+find_package(SFML 2 REQUIRED network audio graphics window system)
+if(SFML_FOUND)
+  include_directories(${SFML_INCLUDE_DIR})
+  target_link_libraries(${EXECUTABLE_NAME} ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+endif()
+
+
+# Install target
+install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)
+
+
+# CPack packaging
+include(InstallRequiredSystemLibraries)
+set(CPACK_RESOURCE_FILE_LICENSE &quot;${CMAKE_SOURCE_DIR}/COPYING&quot;)
+set(CPACK_PACKAGE_VERSION_MAJOR &quot;${myproject_VERSION_MAJOR}&quot;)
+set(CPACK_PACKAGE_VERSION_MINOR &quot;${myproject_VERSION_MINOR}&quot;)
+include(CPack)
+```
+</code></pre><ol>
+<li><p>&#xC608;&#xC81C; &#xCF54;&#xB4DC; <code>main.cpp</code>&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;.</p>
+<pre><code class="lang-c++"> #include &quot;config.h&quot;
+ #include &lt;iostream&gt;
+ #include &lt;SFML/Graphics.hpp&gt;
+ using namespace std;
+
+ int main(int argc, char* argv[]) {
+
+   // Code adapted from the SFML 2 &quot;Window&quot; example.
+
+   cout &lt;&lt; &quot;Version &quot; &lt;&lt; myproject_VERSION_MAJOR &lt;&lt; &quot;.&quot; &lt;&lt; myproject_VERSION_MINOR &lt;&lt; endl;
+
+   sf::Window App(sf::VideoMode(800, 600), &quot;myproject&quot;);
+
+   while (App.isOpen()) {
+     sf::Event Event;
+     while (App.pollEvent(Event)) {
+       if (Event.type == sf::Event::Closed)
+         App.close();
+     }
+     App.display();
+   }
+ }
+</code></pre>
+<ul>
+<li>&#xC5EC;&#xAE30;&#xC11C; &#xC54C; &#xC218; &#xC788;&#xB294;&#xAC83;&#xC740; <code>config.h</code>&#xC5D0;&#xC11C; &#xC124;&#xC815; &#xC815;&#xBCF4;&#xB97C; &#xC77D;&#xC5B4;&#xC640; &#xCD9C;&#xB825;&#xD558;&#xB294; &#xAC83;.</li>
+</ul>
+</li>
+<li><code>config.h.in</code> &#xD30C;&#xC77C;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD55C;&#xB2E4;. <strong>cmake</strong>&#xB97C; &#xD1B5;&#xD574;&#xC11C; <code>config.h</code>&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xAC83;&#xC774;&#xB2E4;.<pre><code class="lang-c++"> <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> myproject_VERSION_MAJOR @myproject_VERSION_MAJOR@</span>
+ <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> myproject_VERSION_MINOR @myproject_VERSION_MINOR@</span>
+</code></pre>
+</li>
+<li><code>$ cmake .</code> &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xBE4C;&#xB4DC;&#xD55C;&#xB2E4;. <code>Makefile</code>, <code>config.h</code> &#xB4F1;&#xC774; &#xC0DD;&#xC131;&#xB41C;&#xB2E4;.</li>
+<li><code>make</code> &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xD55C;&#xB2E4;. <code>myproject</code> &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xD30C;&#xC77C;&#xC774; &#xC0DD;&#xC131;&#xB41C;&#xB2E4;. <code>$ ./myproject</code>&#xB85C; &#xC2E4;&#xD589;&#xD574;&#xBCFC; &#xC218; &#xC788;&#xB2E4;.</li>
+</ol>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-84" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-84","time":"2018-10-07T06:26:32.000Z","tag":"sfml, C++","title":"SFML 프로젝트 빌드하기","level":"1.9","depth":1,"next":{"title":"C++로 게임 만들기: 테트리스","level":"1.10","depth":1,"path":"cat-logic/lets-make-game-in-cpp-tetris.md","ref":"cat-logic/lets-make-game-in-cpp-tetris.md","articles":[]},"previous":{"title":"React 개발환경 구성하기","level":"1.8","depth":1,"path":"cat-logic/configuring-the-react-environment.md","ref":"cat-logic/configuring-the-react-environment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"cat-logic/build-sfml-project.md","mtime":"2019-03-25T13:36:56.009Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

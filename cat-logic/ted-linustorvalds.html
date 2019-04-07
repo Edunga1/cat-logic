@@ -1,0 +1,476 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>🐱 Logic</li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="ted---linus-torvalds">TED - Linus Torvalds</h1>
+<p><a href="https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=ko" target="_blank">TED - &#xB9AC;&#xB204;&#xC2A4; &#xD1A0;&#xBC1C;&#xC2A4;(Linus Torvalds): &#xB9AC;&#xB205;&#xC2A4;&#xC758; &#xAE30;&#xBCF8; &#xCCA0;&#xD559;</a></p>
+<h2 id="&#xC88B;&#xC740;-&#xCF54;&#xB4DC;">&#xC88B;&#xC740; &#xCF54;&#xB4DC;</h2>
+<p>14:20 &#xC7A5;&#xBA74;&#xC744; &#xBCF4;&#xBA74; Linked list&#xC758; node&#xB97C; &#xC81C;&#xAC70;&#xD558;&#xB294; method&#xB97C; &#xAD6C;&#xD604;&#xD55C; 2&#xAC00;&#xC9C0; &#xCF54;&#xB4DC;&#xB97C; &#xBE44;&#xAD50;&#xD558;&#xC5EC; &#xBCF4;&#xC5EC;&#xC900;&#xB2E4;.</p>
+<p><strong>Code 1</strong></p>
+<pre><code class="lang-c">remove_list_entry(entry)
+{
+    prev = <span class="hljs-literal">NULL</span>;
+    walk = head;
+
+    <span class="hljs-comment">// Walk the lsit</span>
+
+    <span class="hljs-keyword">while</span> (walk != entry) {
+        prev = walk;
+        walk = walk-&gt;next;
+    }
+
+    <span class="hljs-comment">// Remove the entry by updating the</span>
+    <span class="hljs-comment">// head or the previous entry</span>
+
+    <span class="hljs-keyword">if</span> (!prev)
+        head = entry-&gt;next;
+    <span class="hljs-keyword">else</span>
+        prev-&gt;next = entry-&gt;next;
+}
+</code></pre>
+<p><strong>Code 2</strong></p>
+<pre><code class="lang-c">remove_list_entry(entry)
+{
+    <span class="hljs-comment">// The &quot;indirect&quot; pointer points to the</span>
+    <span class="hljs-comment">// *address* of the thing we&apos;ll update</span>
+
+    indirect = &amp;head;
+
+    <span class="hljs-comment">// Walk the list, looking for the thing that</span>
+    <span class="hljs-comment">// points to the entry we want to remove</span>
+
+    <span class="hljs-keyword">while</span> ((*indirect) != entry)
+        indirect = &amp;(*indirect)-&gt;next;
+
+    <span class="hljs-comment">// ... and just remove it</span>
+    *indirect = entry-&gt;next;
+}
+</code></pre>
+<p>&#xCC28;&#xC774;&#xC810;&#xC740; &#xB9C8;&#xC9C0;&#xB9C9; &#xBD80;&#xBD84;&#xC758; if-else &#xD0A4;&#xC6CC;&#xB4DC;&#xC758; &#xC720;&#xBB34;&#xC774;&#xB2E4;.</p>
+<p>&#xCCAB; &#xBC88;&#xC9F8; &#xCF54;&#xB4DC;&#xB294; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xC870;&#xAC74;&#xBB38;&#xC744; &#xD1B5;&#xD574; &#xC81C;&#xAC70;&#xD558;&#xB824; &#xD558;&#xB294; &#xB178;&#xB4DC;&#xAC00; &#xCCAB; &#xBC88;&#xC9F8; &#xB178;&#xB4DC;&#xC778;&#xC9C0; &#xC544;&#xB2CC;&#xC9C0;&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xB974;&#xAC8C; &#xCC98;&#xB9AC;&#xD55C;&#xB2E4;.
+&#xADF8;&#xB7EC;&#xB098; &#xB450; &#xBC88;&#xC9F8; &#xCF54;&#xB4DC;&#xB294; &#xC81C;&#xAC70;&#xD558;&#xB824;&#xB294; &#xB178;&#xB4DC;&#xAC00; &#xAC00;&#xB9AC;&#xD0A4;&#xB294; &#xC8FC;&#xC18C;&#xB97C; &#xB2E4;&#xC74C; &#xB178;&#xB4DC;&#xB85C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.</p>
+<p>&#xB9AC;&#xB204;&#xC2A4; &#xD1A0;&#xBC1C;&#xC2A4;&#xAC00; &#xB9D0;&#xD558;&#xB294; &#xAC83;&#xC740; &#xD2B9;&#xC218; &#xC870;&#xAC74;&#xC774; &#xC0AC;&#xB77C;&#xC9C0;&#xBA74;&#xC11C; &#xCF54;&#xB4DC;&#xAC00; &#xB354; &#xAC04;&#xACB0;&#xD574; &#xC9C4;&#xB2E4;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p>&#xC54C;&#xACE0;&#xB9AC;&#xC998; &#xC21C;&#xC11C;&#xB3C4; &#xB9CC; &#xBCF4;&#xB354;&#xB77C;&#xB3C4; &#xBD84;&#xAE30;&#xAC00; &#xC0DD;&#xAE30;&#xBA74; &#xBCF5;&#xC7A1;&#xD55C; &#xADF8;&#xB9BC;&#xC774; &#xB41C;&#xB2E4;.</p>
+<h3 id="&#xADF8;&#xB7EC;&#xB098;-&#xD56D;&#xC0C1;-&#xB450;-&#xBC88;&#xC9F8;-&#xCF54;&#xB4DC;&#xB9CC;-&#xC88B;&#xC740;-&#xCF54;&#xB4DC;&#xC778;&#xAC00;">&#xADF8;&#xB7EC;&#xB098; &#xD56D;&#xC0C1; &#xB450; &#xBC88;&#xC9F8; &#xCF54;&#xB4DC;&#xB9CC; &#xC88B;&#xC740; &#xCF54;&#xB4DC;&#xC778;&#xAC00;?</h3>
+<p>&#xC9C1;&#xAD00;&#xC801;&#xC778; &#xAC83;&#xC744; &#xB530;&#xC9C0;&#xBA74; &#xB450; &#xBC88;&#xC9F8; &#xCF54;&#xB4DC;&#xBCF4;&#xB2E4; &#xCCAB; &#xBC88;&#xC9F8; &#xCF54;&#xB4DC;&#xAC00; &#xB354; &#xC9C1;&#xAD00;&#xC801;&#xC774;&#xB2E4;.
+&#xC0AC;&#xB78C;&#xC774; &#xC0DD;&#xAC01;&#xD558;&#xB294; &#xAC83;&#xC744; &#xB530;&#xB77C;&#xAC00; &#xBCF4;&#xBA74; &#xC774;&#xC804; &#xB178;&#xB4DC;&#xAC00; &#xC5C6;&#xB294; <strong>&#xCCAB; &#xBC88;&#xC9F8; &#xB178;&#xB4DC;</strong>&#xC640; &#xC774;&#xC804; &#xB178;&#xB4DC;&#xAC00; &#xC788;&#xB294; <strong>&#xADF8; &#xC678; &#xB178;&#xB4DC;</strong>&#xB4E4;&#xC740;
+&#xB2E4;&#xB974;&#xAC8C; &#xCC98;&#xB9AC; &#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB294; &#xAC83;&#xC774; &#xB9DE;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xC774; &#xC0DD;&#xAC01;&#xC744; &#xADF8;&#xB300;&#xB85C; &#xC62E;&#xAE34; &#xAC83;&#xC774; &#xCCAB; &#xBC88;&#xC9F8; &#xCF54;&#xB4DC;&#xAC00; &#xB418;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p>&#xC704; &#xCF54;&#xB4DC;&#xB4E4;&#xC740; &#xC815;&#xB9D0; &#xAC04;&#xB2E8;&#xD558;&#xC9C0;&#xB9CC;, &#xB354; &#xD070; &#xBAA8;&#xB4C8;&#xC774; &#xB41C;&#xB2E4;&#xBA74; &#xB450; &#xBC88;&#xC9F8; &#xCF54;&#xB4DC;&#xC640; &#xAC19;&#xC740; &#xBC29;&#xC2DD;&#xC740; &#xC774;&#xD574;&#xD558;&#xB294;&#xB370; &#xC2DC;&#xAC04;&#xC774; &#xAC78;&#xB9B4; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p><strong>&#xADF8;&#xB7EC;&#xB098;</strong> &#xAC1C;&#xBC1C;&#xC790;&#xB4E4;&#xC740; &#xD611;&#xC5C5;&#xD558;&#xBA74;&#xC11C; &#xC11C;&#xB85C;&#xC758; &#xBAA8;&#xB4C8;&#xC744; &#xAC74;&#xB4DC;&#xB9AC;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.
+&#xC11C;&#xB85C;&#xAC00; &#xAD6C;&#xD604;&#xD55C; &#xBAA8;&#xB4C8;&#xC758; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB9CC; &#xC54C;&#xBA74; &#xB41C;&#xB2E4;.
+&#xB0B4;&#xAC00; &#xB2E4;&#xB978; &#xC0AC;&#xB78C;&#xC758; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xC5B4;&#xB5A4; &#xAC12;&#xC744; &#xC8FC;&#xC5B4;&#xC11C; &#xACB0;&#xACFC;&#xB9CC; &#xC798; &#xB098;&#xC624;&#xBA74; &#xB41C;&#xB2E4;.</p>
+<p>&#xADF8;&#xB7EC;&#xBA74; &#xC5B4;&#xB5A4; &#xBC29;&#xBC95;&#xC774; &#xB354; &#xB098;&#xC740; &#xAC83;&#xC778;&#xAC00;? - END -</p>
+<h2 id="&#xB9AC;&#xB204;&#xC2A4;-&#xD1A0;&#xBC1C;&#xC2A4;&#xC758;-&#xAC1C;&#xBC1C;&#xC790;-&#xC790;&#xC138;">&#xB9AC;&#xB204;&#xC2A4; &#xD1A0;&#xBC1C;&#xC2A4;&#xC758; &#xAC1C;&#xBC1C;&#xC790; &#xC790;&#xC138;</h2>
+<p>16:40 &#xC7A5;&#xBA74;&#xBD80;&#xD130;</p>
+<p>&#xC790;&#xC2E0;&#xC740; git, linux&#xC640; &#xAC19;&#xC740; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xB9CC;&#xB4E4;&#xC5C8;&#xC74C;&#xC5D0;&#xB3C4; &#xC608;&#xC9C0;&#xC790;&#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</p>
+<p>&#xD558;&#xB298;&#xC744; &#xBCF4;&#xBA70; &#xAC77;&#xB294;(&#xBBF8;&#xB798; &#xC9C0;&#xD5A5;&#xC801;&#xC778;) &#xC0AC;&#xB78C;&#xB4E4;&#xACFC; &#xC77C;&#xD558;&#xB294; &#xAC8C; &#xC88B;&#xC73C;&#xBA70;,
+&#xC790;&#xC2E0;&#xC740; &#xADF8; <strong>&#xC0AC;&#xB78C;&#xB4E4;&#xC774; &#xAD6C;&#xBA4D;&#xC5D0; &#xBE60;&#xC9C0;&#xC9C0; &#xC54A;&#xAC8C; &#xAD6C;&#xBA4D;&#xC744; &#xBA54;&#xC6B0;&#xB294; &#xC77C;</strong>&#xC744; &#xD55C;&#xB2E4;&#xACE0; &#xD55C;&#xB2E4;.</p>
+<p>&#xD68C;&#xC0AC;&#xB77C;&#xBA74; &#xC778;&#xD504;&#xB77C;&#xB97C; &#xAD6C;&#xCD95;&#xD558;&#xB294; &#xC77C;&#xC744; &#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;. &#xC815;&#xB9D0; &#xBA4B;&#xC9C4; &#xC790;&#xC138;&#xC778; &#xAC70; &#xAC19;&#xB2E4;.</p>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-2" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-2","title":"TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학","level":"1.25","depth":1,"next":{"title":"개발에 대한 사소한 생각 - 트렌드","level":"1.26","depth":1,"path":"cat-logic/minor-thinking-about-development.md","ref":"cat-logic/minor-thinking-about-development.md","articles":[]},"previous":{"title":"The Twelve-Factor App","level":"1.24","depth":1,"path":"cat-logic/the-twelve-factor-app.md","ref":"cat-logic/the-twelve-factor-app.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"cat-logic/ted-linustorvalds.md","mtime":"2019-03-25T13:36:56.137Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

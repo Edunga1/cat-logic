@@ -1,0 +1,427 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        SOLID - Dependency Inversion · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                SOLID - Dependency Inversion
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                                <li>Design Pattern</li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">SOLID - Dependency Inversion</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="dependency-inversion-solid">Dependency Inversion (SOLI<strong>D</strong>)</h1>
+<p>&#xCC38;&#xC870;:</p>
+<p><a href="http://vandbt.tistory.com/42" target="_blank">http://vandbt.tistory.com/42</a></p>
+<p>&#xC9C0;&#xAE08;&#xAE4C;&#xC9C0; &#xC774; &#xC6D0;&#xCE59;&#xC744; &#xB2E8;&#xC21C;&#xD788; &#xCD94;&#xC0C1; &#xD074;&#xB798;&#xC2A4; / &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB85C; &#xCF58;&#xD06C;&#xB9AC;&#xD2B8; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xBCC0;&#xD658;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA74; &#xB41C;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD588;&#xB2E4;.
+&#xB2E4;&#xD615;&#xC131; &#xB9D0;&#xC774;&#xB2E4;. &#xCC98;&#xC74C; &#xBC30;&#xC6B8; &#xB54C;&#xB3C4; &#xC81C;&#xBAA9;&#xACFC; &#xAC1C;&#xC694;&#xB9CC; &#xC77D;&#xACE0; &#xB300;&#xCDA9; &#xC774;&#xD574;&#xD558;&#xACE0; &#xB118;&#xC5B4;&#xAC14;&#xC5C8;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xC704; &#xAC8C;&#xC2DC;&#xAE00;&#xC744; &#xC77D;&#xACE0; &#xADF8;&#xB7F0; &#xB2E8;&#xC21C;&#xD55C; &#xC6D0;&#xCE59;&#xC774; &#xC544;&#xB2D8;&#xC744; &#xAE68;&#xB2EC;&#xC558;&#xB2E4;. &#xC774;&#xB984;&#xC5D0; &#xBAA8;&#xB4E0; &#xAC83;&#xC774; &#xB2F4;&#xACA8; &#xC788;&#xB2E4;.</p>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC758;&#xC874; &#xAD00;&#xACC4;&#xC5D0; &#xC788;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC758;&#xC874; &#xAD00;&#xACC4;&#xB97C; &#xAC00;&#xC9C0;&#xC9C0; &#xB9D0;&#xACE0;
+&#xD574;&#xB2F9; &#xD074;&#xB798;&#xC2A4;&#xAC00; <strong>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xCF54;&#xB4DC;&#xB97C; &#xAC00;&#xC9C4; &#xD074;&#xB798;&#xC2A4;</strong>&#xB97C; &#xC758;&#xC874;&#xD558;&#xB3C4;&#xB85D; &#xB9CC;&#xB4DC;&#xB294; &#xAC83;&#xC774;&#xB2E4;.
+&#xC774;&#xB97C; &#xAD6C;&#xD604;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; <strong>Dependency Injection</strong>, <strong>SoC</strong>, <strong>IoC</strong> &#xAC1C;&#xB150;&#xC774; &#xC801;&#xC6A9;&#xB41C;&#xB2E4;.</p>
+<blockquote>
+<p>&#xCCAB;&#xC9F8;, &#xC0C1;&#xC704; &#xBAA8;&#xB4C8;&#xC740; &#xD558;&#xC704; &#xBAA8;&#xB4C8;&#xC5D0; &#xC758;&#xC874;&#xD574;&#xC11C;&#xB294; &#xC548;&#xB41C;&#xB2E4;. &#xC0C1;&#xC704; &#xBAA8;&#xB4C8;&#xACFC; &#xD558;&#xC704; &#xBAA8;&#xB4C8; &#xBAA8;&#xB450; &#xCD94;&#xC0C1;&#xD654;&#xC5D0; &#xC758;&#xC874;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.
+&#xB458;&#xC9F8;, &#xCD94;&#xC0C1;&#xD654;&#xB294; &#xC138;&#xBD80; &#xC0AC;&#xD56D;&#xC5D0; &#xC758;&#xC874;&#xD574;&#xC11C;&#xB294; &#xC548;&#xB41C;&#xB2E4;. &#xC138;&#xBD80;&#xC0AC;&#xD56D;&#xC774; &#xCD94;&#xC0C1;&#xD654;&#xC5D0; &#xC758;&#xC874;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
+</blockquote>
+<p>&#xC704; &#xC6D0;&#xCE59; &#xC124;&#xBA85;&#xC744; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xBAA8;&#xB978;&#xCC44; &#xC774;&#xD574;&#xD55C;&#xB2E4;&#xBA74; &#xC815;&#xB9D0; <strong>&#xCF58;&#xD06C;&#xB9AC;&#xD2B8; &#xD074;&#xB798;&#xC2A4;&#xAC00; &#xC544;&#xB2CC; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xCC38;&#xC870;</strong>&#xB85C; &#xC774;&#xD574;&#xD560; &#xC218; &#xC788;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xB984;&#xC744; &#xC815;&#xD655;&#xD558;&#xAC8C; &#xC774;&#xD574;&#xD55C;&#xB2E4;&#xBA74; &#xC124;&#xBA85;&#xC774; &#xBA85;&#xD655;&#xD558;&#xAC8C; &#xC774;&#xD574;&#xB418;&#xAE30; &#xC2DC;&#xC791;&#xD55C;&#xB2E4;.</p>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-52" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-52","title":"SOLID - Dependency Inversion","level":"5.1","depth":1,"next":{"title":"Design Pattern","level":"5.2","depth":1,"path":"pattern/design-pattern.md","ref":"pattern/design-pattern.md","articles":[]},"previous":{"title":"다형성 - upcasting & downcasting","level":"4.1","depth":1,"path":"oop-paradigm/polymorphism-up-down-casting.md","ref":"oop-paradigm/polymorphism-up-down-casting.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"pattern/dependency-inversion.md","mtime":"2019-03-25T13:36:56.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

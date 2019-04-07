@@ -1,0 +1,547 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        git rebase -i COMMIT: Squashing · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                git rebase -i COMMIT: Squashing
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>🐱 Logic</li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">git rebase -i COMMIT: Squashing</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="git-rebase--i-commit-squashing"><code>git rebase -i COMMIT</code>: Squashing</h1>
+<p><a href="https://meetup.toast.com/posts/39" target="_blank">https://meetup.toast.com/posts/39</a></p>
+<p>&#xC5EC;&#xB7EC;&#xAC1C;&#xC758; &#xCEE4;&#xBC0B;&#xC744; &#xBB36;&#xB294;&#xB370;, <code>git reset HEAD~#</code> &#xD6C4; &#xB2E4;&#xC2DC; &#xCEE4;&#xBC0B;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC;,
+&#xC5EC;&#xB7EC;&#xAC1C;&#xC758; &#xCEE4;&#xBC0B;&#xC744; &#xB0A8;&#xACBC;&#xC744; &#xACBD;&#xC6B0;, &#xBA54;&#xC2DC;&#xC9C0;&#xB4E4;&#xC774; &#xC0AC;&#xB77C;&#xC9C4;&#xB2E4;&#xB294; &#xB2E8;&#xC810;&#xC774; &#xC788;&#xB2E4;.
+&#xC560;&#xCD08;&#xC5D0; &#xC77C;&#xB828;&#xC758; &#xACFC;&#xC815;&#xC774; &#xC544;&#xB2C8;&#xB77C;, &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xD589;&#xB3D9; &#xC790;&#xCCB4;&#xC5D0;&#xC11C; &#xAEBC;&#xB9BC;&#xCE59;&#xD568;&#xC744; &#xB290;&#xB080;&#xB2E4;.</p>
+<p>&#xC704; &#xAE00;&#xC740; <code>git rebase -i</code>&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC5B4;&#xB5A4; &#xCEE4;&#xBC0B;&#xC744; &#xD558;&#xB098;&#xB85C; &#xD569;&#xCE60;&#xC9C0; &#xC54C;&#xB824;&#xC900;&#xB2E4;.
+&#xD558;&#xC9C0;&#xB9CC; &#xC815;&#xB9D0; &#xC720;&#xC6A9;&#xD55C; &#xAE30;&#xB2A5; &#xD558;&#xB098;&#xAC00; &#xBE60;&#xC838;&#xC788;&#xB294;&#xB370;, &#xCEE4;&#xBC0B; &#xC21C;&#xC11C;&#xB97C; &#xC815;&#xB82C;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC83;&#xC774;&#xB2E4;.
+&#xC774;&#xB294; <code>git rebase -i</code>&#xD558;&#xBA74; &#xB098;&#xC624;&#xB294; &#xC124;&#xBA85;&#xC5D0;&#xB3C4; &#xB098;&#xC628;&#xB2E4;
+<code>These lines can be re-ordered;</code></p>
+<p>&#xAC01; &#xCEE4;&#xBC0B;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xB294; &#xB77C;&#xC778;&#xC744; &#xB2E4;&#xC2DC; &#xC815;&#xB82C;&#xD558;&#xBA74; git history&#xAC00; &#xADF8;&#xB807;&#xAC8C; &#xBC14;&#xB010;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; A&#xB77C;&#xB294; &#xC791;&#xC5C5;&#xACFC; B&#xB77C;&#xB294; &#xC791;&#xC5C5;&#xC774; &#xC788;&#xB2E4;.
+A&#xB294; &#xAE30;&#xB2A5; &#xD558;&#xB098;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC774;&#xACE0;, B&#xB294; A &#xC791;&#xC5C5;&#xC744; &#xD558;&#xB2E4;&#xBCF4;&#xB2C8; &#xD30C;&#xC77C;&#xC744; &#xC62E;&#xAE30;&#xACE0;, &#xC2A4;&#xD0C0;&#xC77C;&#xC744; &#xBC14;&#xAFB8;&#xB294; &#xC791;&#xC5C5;&#xB4E4;&#xC744; &#xD588;&#xB2E4;.</p>
+<pre><code class="lang-bash">* 5d31146 (HEAD -&gt; master) A2
+* 90bb25a B
+* b94056d A1
+* 5<span class="hljs-built_in">fc</span>47ec A
+* 325da60 init
+</code></pre>
+<p>&#xBB38;&#xC81C;&#xB294; A &#xC791;&#xC5C5;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; 3&#xAC1C;&#xC758; &#xCEE4;&#xBC0B;&#xC744; &#xB0A8;&#xACBC;&#xB294;&#xB370;, &#xADF8; &#xC0AC;&#xC774;&#xC5D0; B &#xC791;&#xC5C5;&#xC774; &#xAEF4; &#xC788;&#xC744; &#xB54C;&#xB2E4;.</p>
+<p>&#xC774; &#xB54C; <code>git rebase -i 325da60</code> &#xC218;&#xC815;&#xD560; &#xC218; &#xC788;&#xB294; &#xD654;&#xBA74;&#xC774; &#xB72C;&#xB2E4;.</p>
+<pre><code class="lang-bash">pick 5<span class="hljs-built_in">fc</span>47ec A
+pick b94056d A1
+pick 90bb25a B
+pick 5d31146 A2
+
+<span class="hljs-comment"># Rebase 325da60..5d31146 onto 325da60 (4 commands)</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Commands:</span>
+<span class="hljs-comment"># p, pick = use commit</span>
+<span class="hljs-comment"># r, reword = use commit, but edit the commit message</span>
+<span class="hljs-comment"># e, edit = use commit, but stop for amending</span>
+<span class="hljs-comment"># s, squash = use commit, but meld into previous commit</span>
+<span class="hljs-comment"># f, fixup = like &quot;squash&quot;, but discard this commit&apos;s log message</span>
+<span class="hljs-comment"># x, exec = run command (the rest of the line) using shell</span>
+<span class="hljs-comment"># d, drop = remove commit</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># These lines can be re-ordered; they are executed from top to bottom.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># If you remove a line here THAT COMMIT WILL BE LOST.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># However, if you remove everything, the rebase will be aborted.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Note that empty commits are commented out</span>
+</code></pre>
+<p>&#xB0B4;&#xAC00; &#xC6D0;&#xD558;&#xB294; &#xD788;&#xC2A4;&#xD1A0;&#xB9AC;&#xB294;</p>
+<pre><code>B
+A
+init
+</code></pre><p>&#xC774;&#xB7F0; &#xC21C;&#xC11C;&#xB2E4;.</p>
+<p>&#xBC11;&#xC5D0; &#xCEE4;&#xBC0B;&#xC774; &#xC704;&#xB85C; &#xD569;&#xCCD0;&#xC9C0;&#xBBC0;&#xB85C;, &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBC14;&#xAFBC;&#xB2E4;.</p>
+<pre><code class="lang-bash">pick 5<span class="hljs-built_in">fc</span>47ec A
+squash b94056d A1
+squash 5d31146 A2
+pick 90bb25a B
+
+<span class="hljs-comment"># Rebase 325da60..5d31146 onto 325da60 (4 commands)</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Commands:</span>
+<span class="hljs-comment"># p, pick = use commit</span>
+<span class="hljs-comment"># r, reword = use commit, but edit the commit message</span>
+<span class="hljs-comment"># e, edit = use commit, but stop for amending</span>
+<span class="hljs-comment"># s, squash = use commit, but meld into previous commit</span>
+<span class="hljs-comment"># f, fixup = like &quot;squash&quot;, but discard this commit&apos;s log message</span>
+<span class="hljs-comment"># x, exec = run command (the rest of the line) using shell</span>
+<span class="hljs-comment"># d, drop = remove commit</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># These lines can be re-ordered; they are executed from top to bottom.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># If you remove a line here THAT COMMIT WILL BE LOST.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># However, if you remove everything, the rebase will be aborted.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Note that empty commits are commented out</span>
+</code></pre>
+<p>B&#xB97C; &#xAC00;&#xC7A5; &#xBC11;&#xC73C;&#xB85C; &#xBE7C;&#xACE0;, A1&#xACFC; A2&#xB294; squash&#xB85C; &#xBC14;&#xAFBC;&#xB2E4;. &#xC774;&#xB7EC;&#xBA74; A&#xC640; B&#xB9CC; &#xB0A8;&#xB294;&#xB2E4;.</p>
+<p>&#xC774;&#xC81C; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xB098;&#xC624;&#xBA74;..</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># This is a combination of 3 commits.</span>
+<span class="hljs-comment"># This is the 1st commit message:</span>
+
+A
+
+<span class="hljs-comment"># This is the commit message #2:</span>
+
+A1
+
+<span class="hljs-comment"># This is the commit message #3:</span>
+
+A2
+
+<span class="hljs-comment"># Please enter the commit message for your changes. Lines starting</span>
+<span class="hljs-comment"># with &apos;#&apos; will be ignored, and an empty message aborts the commit.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Date:      Mon Mar 25 22:49:24 2019 +0900</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># interactive rebase in progress; onto 325da60</span>
+<span class="hljs-comment"># Last commands done (3 commands done):</span>
+<span class="hljs-comment">#    squash b94056d A1</span>
+<span class="hljs-comment">#    squash 5d31146 A2</span>
+<span class="hljs-comment"># Next command to do (1 remaining command):</span>
+<span class="hljs-comment">#    pick 90bb25a B</span>
+<span class="hljs-comment"># You are currently rebasing branch &apos;master&apos; on &apos;325da60&apos;.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Changes to be committed:</span>
+<span class="hljs-comment">#    modified:   README</span>
+<span class="hljs-comment">#</span>
+</code></pre>
+<p>A + A1 + A2&#xC5D0; &#xB300;&#xD55C; &#xCEE4;&#xBC0B; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC791;&#xC131;&#xD558;&#xAC8C; &#xB41C;&#xB2E4;.</p>
+<pre><code class="lang-bash">A
+
+- 1
+- 2
+<span class="hljs-comment"># Please enter the commit message for your changes. Lines starting</span>
+<span class="hljs-comment"># with &apos;#&apos; will be ignored, and an empty message aborts the commit.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Date:      Mon Mar 25 22:49:24 2019 +0900</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># interactive rebase in progress; onto 325da60</span>
+<span class="hljs-comment"># Last commands done (3 commands done):</span>
+<span class="hljs-comment">#    squash b94056d A1</span>
+<span class="hljs-comment">#    squash 5d31146 A2</span>
+<span class="hljs-comment"># Next command to do (1 remaining command):</span>
+<span class="hljs-comment">#    pick 90bb25a B</span>
+<span class="hljs-comment"># You are currently rebasing branch &apos;master&apos; on &apos;325da60&apos;.</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># Changes to be committed:</span>
+<span class="hljs-comment">#    modified:   README</span>
+<span class="hljs-comment">#</span>
+</code></pre>
+<p>&#xC704;&#xCC98;&#xB7FC; &#xCEE4;&#xBC0B;&#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC791;&#xC131;&#xD558;&#xACE0;, <code>log</code>&#xB97C; &#xBCF4;&#xBA74; &#xC758;&#xB3C4;&#xD55C;&#xB300;&#xB85C; &#xC815;&#xB9AC;&#xB41C; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ glog
+* e3c5f82 (HEAD -&gt; master) B
+* aa6f7ef A
+* 325da60 init
+</code></pre>
+<p>&#xB9CC;&#xC57D; A&#xC640; B&#xAC00; &#xAC19;&#xC740; &#xD30C;&#xC77C;&#xC744; &#xC791;&#xC5C5;&#xD558;&#xAC8C; &#xB418;&#xBA74;, &#xB2F9;&#xC5F0;&#xD558;&#xAC8C;&#xB3C4; conflict &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;.</p>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-89" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-89","time":"2019-03-25T22:39:38.000Z","tag":"git","title":"git rebase -i COMMIT: Squashing","level":"1.4","depth":1,"next":{"title":"Kubernetes 컨테이너간 볼륨 공유","level":"1.5","depth":1,"path":"cat-logic/k8s-shared-volume-between-contaienrs.md","ref":"cat-logic/k8s-shared-volume-between-contaienrs.md","articles":[]},"previous":{"title":"깃 커밋 해시 충돌에 관하여","level":"1.3","depth":1,"path":"cat-logic/git-commit-hash-collision.md","ref":"cat-logic/git-commit-hash-collision.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"cat-logic/git-rebase-option-i.md","mtime":"2019-03-25T14:06:49.616Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

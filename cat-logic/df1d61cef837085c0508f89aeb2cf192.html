@@ -1,0 +1,425 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        중지된 도커 컨테이너에서 파일을 복사해 올 수 있다 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                중지된 도커 컨테이너에서 파일을 복사해 올 수 있다
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>🐱 Logic</li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">중지된 도커 컨테이너에서 파일을 복사해 올 수 있다</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="&#xC911;&#xC9C0;&#xB41C;-&#xB3C4;&#xCEE4;-&#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC5D0;&#xC11C;-&#xD30C;&#xC77C;&#xC744;-&#xBCF5;&#xC0AC;&#xD574;-&#xC62C;-&#xC218;-&#xC788;&#xB2E4;">&#xC911;&#xC9C0;&#xB41C; &#xB3C4;&#xCEE4; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC5D0;&#xC11C; &#xD30C;&#xC77C;&#xC744; &#xBCF5;&#xC0AC;&#xD574; &#xC62C; &#xC218; &#xC788;&#xB2E4;</h1>
+<p><code>docker ps -a</code>&#xB85C; &#xC911;&#xC9C0;&#xB41C; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xAC00; &#xC788;&#xB2E4;&#xBA74; &#xADF8; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xB85C;&#xBD80;&#xD130; &#xD30C;&#xC77C;&#xC744; &#xD638;&#xC2A4;&#xD2B8;&#xB85C; &#xBCF5;&#xC0AC;&#xD574;&#xC62C; &#xC218; &#xC788;&#xB2E4;</p>
+<p><code>docker cp &#xCEE8;&#xD14C;&#xC774;&#xB108;:&#xACBD;&#xB85C; &#xD638;&#xC2A4;&#xD2B8;&#xACBD;&#xB85C;</code>&#xB85C; &#xBCF5;&#xC0AC;&#xD55C;&#xB2E4;.<br>
+&#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC640; &#xD638;&#xC2A4;&#xD2B8;&#xB97C; &#xBC18;&#xB300;&#xB85C; &#xC785;&#xB825;&#xD558;&#xC5EC; &#xC911;&#xC9C0;&#xB41C; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC5D0; &#xD30C;&#xC77C;&#xC744; &#xC8FC;&#xC785;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC744; &#xAC70; &#xAC19;&#xB2E4;.</p>
+<p>&#xBC18;&#xBA74; <code>docker exec</code>&#xB294; &#xC911;&#xC9C0;&#xB41C; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC5D0; &#xC811;&#xC18D;&#xD560; &#xC218; &#xC5C6;&#xB2E4;.</p>
+<hr>
+<p>ionic&#xC73C;&#xB85C; &#xBE4C;&#xB4DC;&#xB97C; &#xD558;&#xACE0;, jarsginer&#xB85C; &#xC11C;&#xBA85;&#xAE4C;&#xC9C0;&#xD558;&#xC5EC; &#xB9B4;&#xB9AC;&#xC988; apk&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xB3C4;&#xCEE4;&#xD30C;&#xC77C;&#xC744; &#xC791;&#xC131;&#xD588;&#xB2E4;.<br>
+&#xADF8;&#xB9AC;&#xACE0; apk&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xBA74; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xB294; &#xC885;&#xB8CC;&#xB41C;&#xB2E4;.<br>
+&#xC820;&#xD0A8;&#xC2A4;&#xC5D0; &#xB4F1;&#xB85D;&#xD558;&#xC5EC; master &#xBE0C;&#xB79C;&#xCE58;&#xAC00; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xB420; &#xB54C;&#xB9C8;&#xB2E4; apk&#xB97C; &#xBF51;&#xC544;&#xC11C;, GCP bucket&#xC5D0; &#xC5C5;&#xB85C;&#xB4DC;&#xD558;&#xB3C4;&#xB85D; &#xC791;&#xC131;&#xD588;&#xB2E4;.<br></p>
+<p>&#xCC98;&#xC74C;&#xC5D4; &#xBCFC;&#xB968;&#xC744; &#xC5F0;&#xACB0;&#xD558;&#xC5EC; &#xD638;&#xC2A4;&#xD2B8;&#xC5D0; &#xC0DD;&#xC131;&#xB418;&#xB3C4;&#xB85D; &#xD588;&#xC73C;&#xB098; <code>mkdir /root/workspace: read-only file system.</code>&#xC5D0;&#xB7EC;&#xAC00; &#xB72C;&#xB2E4;.<br>
+&#xC820;&#xD0A8;&#xC2A4; slave&#xC758; &#xBB38;&#xC81C;&#xC778;&#xC9C0;. &#xC5B4;&#xCC28;&#xD53C; &#xBCFC;&#xB968;&#xC73C;&#xB85C; &#xBFDC;&#xC5B4;&#xB0B4;&#xB294; &#xBC29;&#xC2DD;&#xC774; &#xB0B4;&#xD0A4;&#xC9C0; &#xC54A;&#xC544;&#xC11C; &#xB2E4;&#xB978; &#xBC29;&#xC2DD;&#xC744; &#xCC3E;&#xC558;&#xB2E4;.<br>
+&#xBB34;&#xD55C; &#xB8E8;&#xD504;&#xB97C; &#xB3CC;&#xB3C4;&#xB85D;&#xD574;&#xC11C; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xAC00; &#xC8FD;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D;&#xD558;&#xC5EC; &#xBCF5;&#xC0AC;&#xD574;&#xC62C;&#xAE4C; &#xD558;&#xB2E4;&#xAC00;, &#xC911;&#xC9C0;&#xB41C; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC5D0;&#xC11C; &#xAC00;&#xC838;&#xC62C; &#xC218; &#xC788;&#xC5C8;&#xB2E4;.</p>
+<p>&#xC911;&#xC9C0;&#xB41C; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xAC00; &#xB2E4;&#xB978; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC5D0; &#xBCFC;&#xB968;&#xC744; &#xACF5;&#xC720;&#xD558;&#xB294; data-only &#xD328;&#xD134;&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xBC29;&#xC2DD;&#xC778;&#xB4EF;?
+<!-- front matter에 id가 있는 페이지만 댓글 출력 --></p>
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-81" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-81","time":"2018-08-02T22:58:41.000Z","tags":"docker","title":"중지된 도커 컨테이너에서 파일을 복사해 올 수 있다","level":"1.12","depth":1,"next":{"title":"Generic Repository vs. Specific Repository","level":"1.13","depth":1,"path":"cat-logic/fc63256b426a5289c80dde7c953d1cc2.md","ref":"cat-logic/fc63256b426a5289c80dde7c953d1cc2.md","articles":[]},"previous":{"title":"Kubernetes service types","level":"1.11","depth":1,"path":"cat-logic/kubernetes-service-types.md","ref":"cat-logic/kubernetes-service-types.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"cat-logic/df1d61cef837085c0508f89aeb2cf192.md","mtime":"2019-03-25T13:36:56.013Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

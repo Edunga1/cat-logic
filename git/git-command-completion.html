@@ -1,0 +1,425 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        Git 명령어 자동 완성 사용하기 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                Git 명령어 자동 완성 사용하기
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                                <li>Git</li>
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">Git 명령어 자동 완성 사용하기</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="&#xD130;&#xBBF8;&#xB110;&#xC5D0;&#xC11C;-git-&#xBA85;&#xB839;&#xC5B4;-&#xC790;&#xB3D9;-&#xC644;&#xC131;">&#xD130;&#xBBF8;&#xB110;&#xC5D0;&#xC11C; Git &#xBA85;&#xB839;&#xC5B4; &#xC790;&#xB3D9; &#xC644;&#xC131;</h1>
+<p>&#xC11C;&#xBC84; &#xD130;&#xBBF8;&#xB110;&#xC5D0;&#xC11C; <code>git chec</code> &#xAE4C;&#xC9C0;&#xB9CC; &#xD0C0;&#xC774;&#xD551;&#xD558;&#xACE0; tab &#xD0A4;&#xB97C; &#xB204;&#xB974;&#xBA74; checkout&#xC774; &#xC790;&#xB3D9; &#xC644;&#xC131; &#xB418;&#xC5C8;&#xB2E4;.</p>
+<p>&#xC2EC;&#xC9C0;&#xC5B4; &#xBE0C;&#xB79C;&#xCE58; &#xC774;&#xB984;&#xB3C4; &#xC790;&#xB3D9; &#xC644;&#xC131;&#xB41C;&#xB2E4;.</p>
+<p>&#xC5B4;&#xB5BB;&#xAC8C; &#xADF8;&#xB807;&#xAC8C; &#xB418;&#xB294;&#xAC00; &#xCC3E;&#xC544;&#xBCF4;&#xB2C8; &#xD130;&#xBBF8;&#xB110; &#xB3C4;&#xAD6C;&#xB97C; &#xC124;&#xCE58;&#xD574;&#xC57C; &#xD558;&#xB354;&#xB77C;.</p>
+<p>&#xC5EC;&#xAE30;&#xC5D0; &#xAC01; OS&#xC5D0; &#xB9DE;&#xAC8C; &#xC798; &#xB098;&#xC640;&#xC788;&#xB2E4;.</p>
+<p><a href="https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion" target="_blank">https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion</a></p>
+<h2 id="windows">Windows</h2>
+<p>&#xADF8;&#xB0E5; git bash for windows &#xAE30;&#xBCF8; &#xAE30;&#xB2A5;&#xC73C;&#xB85C; &#xC9C0;&#xC6D0;&#xD55C;&#xB2E4;.</p>
+<h2 id="mac">Mac</h2>
+<p>&#xC704; &#xB9C1;&#xD06C;&#xB370;&#xB85C; Homebrew&#xB85C; &#xAE54;&#xC544;&#xB3C4; &#xC548;&#xB3FC;&#xC11C; &#xB354; &#xCC3E;&#xC544;&#xBCF4;&#xB2C8;..</p>
+<p><a href="https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks" target="_blank">https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks</a></p>
+<p>git-scm&#xC5D0; &#xB2E4;&#xB978; &#xBC29;&#xBC95;&#xC774; &#xB098;&#xC640;&#xC788;&#xB2E4;.</p>
+<p>&#xC694;&#xC57D;&#xD558;&#xBA74; git-completion &#xB77C;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xBC1B;&#xC544;&#xC11C; .bash_profile &#xC5D0; &#xB4F1;&#xB85D;&#xD558;&#xBA74; &#xB41C;&#xB2E4;.</p>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-23" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-23","title":"Git 명령어 자동 완성 사용하기","level":"15.2","depth":1,"next":{"title":"Git ssh 사용하여 자동 로그인 사용하기","level":"15.3","depth":1,"path":"git/git-ssh.md","ref":"git/git-ssh.md","articles":[]},"previous":{"title":"3rd - cherry-pick","level":"15.1","depth":1,"path":"git/git-cherry-pick.md","ref":"git/git-cherry-pick.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"git/git-command-completion.md","mtime":"2019-03-25T13:36:56.145Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

@@ -1,0 +1,658 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        GDG WebTech Workshop: 측정하는 놈, 로딩하는 놈, 그리는 놈 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                GDG WebTech Workshop: 측정하는 놈, 로딩하는 놈, 그리는 놈
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                                <li>Offline</li>
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">GDG WebTech Workshop: 측정하는 놈, 로딩하는 놈, 그리는 놈</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="gdg-webtech-workshop-&#xCE21;&#xC815;&#xD558;&#xB294;-&#xB188;-&#xB85C;&#xB529;&#xD558;&#xB294;-&#xB188;-&#xADF8;&#xB9AC;&#xB294;-&#xB188;">GDG WebTech Workshop: &#xCE21;&#xC815;&#xD558;&#xB294; &#xB188;, &#xB85C;&#xB529;&#xD558;&#xB294; &#xB188;, &#xADF8;&#xB9AC;&#xB294; &#xB188;</h1>
+<p>2016-08-27 WebTech Workshop &#xB0B4;&#xC6A9;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="slides">Slides</h2>
+<ul>
+<li><a href="http://www.slideshare.net/cwdoh/gdg-webtech-1" target="_blank">http://www.slideshare.net/cwdoh/gdg-webtech-1</a></li>
+<li><a href="http://www.slideshare.net/cwdoh/instant-and-offline-apps-with-service-worker" target="_blank">http://www.slideshare.net/cwdoh/instant-and-offline-apps-with-service-worker</a></li>
+<li><a href="http://www.slideshare.net/cwdoh/service-worker-101" target="_blank">http://www.slideshare.net/cwdoh/service-worker-101</a></li>
+<li><a href="http://www.slideshare.net/cwdoh/overview-how-to-measure-your-web-app" target="_blank">http://www.slideshare.net/cwdoh/overview-how-to-measure-your-web-app</a></li>
+</ul>
+<hr>
+<h2 id="&#x1111;&#x1173;&#x1105;&#x1169;&#x11AB;&#x1110;&#x1173;&#x110B;&#x1166;&#x11AB;&#x1103;&#x1173;-&#x1100;&#x1162;&#x1107;&#x1161;&#x11AF;&#x110C;&#x1161;&#x1105;&#x1173;&#x11AF;-&#x110B;&#x1171;&#x1112;&#x1161;&#x11AB;-&#x110F;&#x1173;&#x1105;&#x1169;&#x11B7;-&#x1105;&#x1166;&#x11AB;&#x1103;&#x1165;&#x1105;&#x1175;&#x11BC;-&#x1109;&#x1165;&#x11BC;&#x1102;&#x1173;&#x11BC;-&#x110B;&#x1175;&#x11AB;&#x110C;&#x1161;-&#x110B;&#x1175;&#x1112;&#x1162;&#xD558;&#xAE30;">&#x1111;&#x1173;&#x1105;&#x1169;&#x11AB;&#x1110;&#x1173;&#x110B;&#x1166;&#x11AB;&#x1103;&#x1173; &#x1100;&#x1162;&#x1107;&#x1161;&#x11AF;&#x110C;&#x1161;&#x1105;&#x1173;&#x11AF; &#x110B;&#x1171;&#x1112;&#x1161;&#x11AB; &#x110F;&#x1173;&#x1105;&#x1169;&#x11B7; &#x1105;&#x1166;&#x11AB;&#x1103;&#x1165;&#x1105;&#x1175;&#x11BC; &#x1109;&#x1165;&#x11BC;&#x1102;&#x1173;&#x11BC; &#x110B;&#x1175;&#x11AB;&#x110C;&#x1161; &#x110B;&#x1175;&#x1112;&#x1162;&#xD558;&#xAE30;</h2>
+<p>&#xC6F9; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;(&#xD2B9;&#xD788; &#xD06C;&#xB86C;)&#xC5D0;&#xC11C; &#xB80C;&#xB354;&#xB9C1;&#xC758; &#xC131;&#xB2A5;&#xC744; &#xACB0;&#xC815;&#xD558;&#xB294;&#xB370; &#xC911;&#xC694;&#xD55C; &#xAC83;&#xC774; &#xBB34;&#xC5C7;&#xC778;&#xC9C0; &#xC54C;&#xC544;&#xBCF4;&#xACE0; &#xADF8; &#xAC83;&#xC758; &#xAC1C;&#xB150;&#xACFC;
+&#xAC1C;&#xC120;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xBC29;&#xBC95;&#xC744; &#xC54C;&#xC544;&#xBCF8;&#xB2E4;.</p>
+<h3 id="&#xD558;&#xB4DC;&#xC6E8;&#xC5B4;-&#xAC00;&#xC18D;">&#xD558;&#xB4DC;&#xC6E8;&#xC5B4; &#xAC00;&#xC18D;</h3>
+<p>&#xD558;&#xB4DC;&#xC6E8;&#xC5B4; &#xAC00;&#xC18D;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC740; &#xAC19;&#xC740; &#xAE30;&#xB2A5;&#xC744; &#xD558;&#xB4DC;&#xC6E8;&#xC5B4;(GPU)&#xC758; &#xB3C4;&#xC6C0;&#xC744; &#xBC1B;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</p>
+<p><strong>&#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4; &#xB80C;&#xB354;&#xB9C1; &#xC2E4;&#xD589; &#xAD6C;&#xC870;</strong></p>
+<p><img src="../$images/software-rendering.png" alt="software rendering"></p>
+<p>&#xACC4;&#xC0B0;, &#xBA54;&#xBAA8;&#xB9AC;&#xC5D0; &#xC62C;&#xB9AC;&#xB294; &#xC77C;, &#xCD9C;&#xB825;&#xD558;&#xB294; &#xC77C;&#xC744; &#xBAA8;&#xB450; &#xB3C4;&#xB9E1;&#xC544; &#xD558;&#xAC8C; &#xB41C;&#xB2E4;.</p>
+<p><em>&#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4; &#xB80C;&#xB354;&#xB9C1; &#xC131;&#xB2A5; = &#xC8FC;&#xC694; &#xAE30;&#xB2A5;&#xC758; &#xC218;&#xD589;&#xC2DC;&#xAC04; + &#xADF8;&#xB798;&#xD53D;&#xC2A4; &#xCD9C;&#xB825; &#xC2DC;&#xAC04;</em></p>
+<p>&#xB530;&#xB77C;&#xC11C; &#xC8FC;&#xC694; &#xAE30;&#xB2A5;&#xC758; &#xC218;&#xD589;&#xC740; CPU&#xC5D0; &#xB9E1;&#xAE30;&#xACE0; &#xADF8;&#xB798;&#xD53D; &#xAD00;&#xB828; &#xCC98;&#xB9AC;&#xB97C; GPU&#xC5D0; &#xB9E1;&#xAE30;&#xB294; &#xAC83;&#xC774; &#xD3EC;&#xC778;&#xD2B8;.</p>
+<h3 id="cpu&#xC640;-gpu-&#xC0AC;&#xC774;&#xC5D0;-&#xC874;&#xC7AC;&#xD558;&#xB294;-&#xC774;&#xC288;">CPU&#xC640; GPU &#xC0AC;&#xC774;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xC774;&#xC288;</h3>
+<h4 id="1-&#xC11C;&#xB85C;-&#xB2E4;&#xB978;-&#xBA54;&#xBAA8;&#xB9AC;-&#xACF5;&#xAC04;">1. &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xBA54;&#xBAA8;&#xB9AC; &#xACF5;&#xAC04;</h4>
+<p>CPU&#xAC00; &#xC5B4;&#xB5A4; &#xAC83;&#xC744; &#xADF8;&#xB824;&#xC57C; &#xD558;&#xB294;&#xC9C0; GPU&#xC5D0; &#xB118;&#xACA8; &#xC8FC;&#xB294;&#xB370; &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xBA54;&#xBAA8;&#xB9AC; &#xACF5;&#xAC04;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;
+BUS&#xB97C; &#xD1B5;&#xD574; CPU -&gt; GPU &#xC804;&#xB2EC;&#xD55C;&#xB2E4;. &#xBB38;&#xC81C;&#xB294; &#xC774; BUS&#xB97C; &#xD1B5;&#xD55C; &#xCEE4;&#xBBA4;&#xB2C8;&#xCF00;&#xC774;&#xC158;&#xC774; &#xB290;&#xB9AC;&#xB2E4;&#xB294; &#xAC83;.</p>
+<h4 id="2-&#xBA54;&#xBAA8;&#xB9AC;-&#xD55C;&#xACC4;">2. &#xBA54;&#xBAA8;&#xB9AC; &#xD55C;&#xACC4;</h4>
+<p>&#xCC98;&#xB9AC;&#xD560; &#xBAA8;&#xB4E0; &#xB370;&#xC774;&#xD130;&#xB294; &#xBA54;&#xBAA8;&#xB9AC;&#xC5D0; &#xC788;&#xC9C0;&#xB9CC;, &#xC774; &#xBA54;&#xBAA8;&#xB9AC;&#xB294; &#xD55C;&#xACC4;&#xAC00; &#xC788;&#xB2E4;&#xB294; &#xAC83;.</p>
+<h4 id="3-&#xB370;&#xC774;&#xD130;&#xAC00;-&#xC790;&#xC8FC;-&#xBCC0;&#xACBD;&#xB41C;&#xB2E4;">3. &#xB370;&#xC774;&#xD130;&#xAC00; &#xC790;&#xC8FC; &#xBCC0;&#xACBD;&#xB41C;&#xB2E4;.</h4>
+<p>CPU&#xC758; &#xB370;&#xC774;&#xD130; &#xBCC0;&#xACBD; &#xC2DC; GPU &#xBA54;&#xBAA8;&#xB9AC;&#xB3C4; &#xBCC0;&#xACBD;&#xB418;&#xC5B4;&#xC57C; &#xBC18;&#xC601;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<h3 id="gpu">GPU</h3>
+<p>GPU&#xB294; &#xACF5;&#xAC04; &#xC88C;&#xD45C;(Vertex)&#xB97C; &#xBAA8;&#xC544; &#xB3C4;&#xD615;(Polygon)&#xC744; &#xB9CC;&#xB4E4;&#xACE0; &#xC5EC;&#xAE30;&#xC5D0; &#xC774;&#xBBF8;&#xC9C0;(Texture)&#xB97C; &#xC50C;&#xC6CC; &#xADF8;&#xB9B0;&#xB2E4;(Mapping).</p>
+<h4 id="gpu&#xAC00;-&#xC798;&#xD558;&#xB294;-&#xAC83;">GPU&#xAC00; &#xC798;&#xD558;&#xB294; &#xAC83;</h4>
+<p>GPU&#xB294; &#xC218;&#xC2E0;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB85C; &#xBB34;&#xC5B8;&#xAC00;&#xB97C; &#xADF8;&#xB9AC;&#xB294;&#xB370; &#xC801;&#xD569;&#xD558;&#xB2E4;.</p>
+<ol>
+<li>&#xD14D;&#xC2A4;&#xCCD0;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xBE60;&#xB974;&#xAC8C; &#xCD9C;&#xB825; &#xAC00;&#xB2A5;</li>
+<li>&#xC774;&#xBBF8; &#xAC00;&#xC9C4; &#xD14D;&#xC2A4;&#xCCD0;&#xB294; &#xB2E4;&#xC2DC; &#xBC1B;&#xC9C0; &#xC54A;&#xACE0; &#xC7AC;&#xD65C;&#xC6A9;</li>
+<li>&#xBCC0;&#xD658;(Transform, &#xD68C;&#xC804;, &#xD655;&#xB300;, &#xCD95;&#xC18C;, &#xAE30;&#xC6B8;&#xC784;) &#xBC18;&#xD22C;&#xBA85; &#xCC98;&#xB9AC; &#xB4F1;</li>
+<li>&#xC704; &#xAE30;&#xB2A5;&#xB4E4;&#xC744; &#xB3D9;&#xC2DC;&#xC5D0; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xAC83;&#xB3C4; &#xB9E4;&#xC6B0; &#xCD5C;&#xC801;&#xD654;</li>
+</ol>
+<h4 id="gpu&#xC758;-&#xC57D;&#xC810;">GPU&#xC758; &#xC57D;&#xC810;</h4>
+<p>CPU -[BUS]-&gt; GPU &#xB370;&#xC774;&#xD130; &#xC804;&#xC1A1; &#xC18D;&#xB3C4;</p>
+<h5 id="&#xD558;&#xC9C0;&#xB9CC;-&#xB354;-&#xD070;-&#xC774;&#xC288;&#xB294;-cpu&#xC758;-&#xCC98;&#xB9AC;-&#xC2DC;&#xAC04;">&#xD558;&#xC9C0;&#xB9CC; &#xB354; &#xD070; &#xC774;&#xC288;&#xB294; <strong>CPU&#xC758; &#xCC98;&#xB9AC; &#xC2DC;&#xAC04;</strong></h5>
+<p>GPU&#xC758; &#xB370;&#xC774;&#xD130;&#xB294; CPU&#xC5D0;&#xC11C; &#xC0DD;&#xC131; &#xD6C4; &#xC804;&#xC1A1;&#xD55C;&#xB2E4;.</p>
+<p>&#xC989;, CPU&#xC5D0;&#xC11C; &#xB370;&#xC774;&#xD130; &#xAC00;&#xACF5; &#xC2DC;&#xAC04; + CPU -&gt; GPU &#xB370;&#xC774;&#xD130; &#xC804;&#xB2EC; &#xC2DC;&#xAC04;&#xC774; &#xBB38;&#xC81C;&#xC774;&#xB2E4;.</p>
+<h3 id="&#xB80C;&#xB354;&#xB9C1;-&#xC131;&#xB2A5;&#xC758;-&#xC8FC;&#xC694;-&#xC778;&#xC790;">&#xB80C;&#xB354;&#xB9C1; &#xC131;&#xB2A5;&#xC758; &#xC8FC;&#xC694; &#xC778;&#xC790;</h3>
+<ol>
+<li>&#xBCC0;&#xD658;(&#xD68C;&#xC804;, &#xD655;&#xB300;, &#xCD95;&#xC18C;, &#xAE30;&#xC6B8;&#xC784;)&#xACFC; &#xBC18;&#xD22C;&#xBA85; &#xCC98;&#xB9AC; &#xB4F1;&#xC740; GPU&#xAC00; &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD55C;&#xB2E4;.</li>
+<li>CPU&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xC791;&#xC5C5;&#xC740; &#xCD5C;&#xC18C;&#xD654;&#xD55C;&#xB2E4;.</li>
+<li>CPU -&gt; GPU &#xB370;&#xC774;&#xD130; &#xC804;&#xC1A1;&#xC744; &#xCD5C;&#xC18C;&#xD654; &#xD55C;&#xB2E4;.</li>
+</ol>
+<h2 id="&#xD06C;&#xB86C;&#xC758;-&#xD558;&#xB4DC;&#xC6E8;&#xC5B4;-&#xAC00;&#xC18D;-&#xB80C;&#xB354;&#xB9C1;-&#xBA54;&#xCEE4;&#xB2C8;&#xC998;">&#xD06C;&#xB86C;&#xC758; &#xD558;&#xB4DC;&#xC6E8;&#xC5B4; &#xAC00;&#xC18D; &#xB80C;&#xB354;&#xB9C1; &#xBA54;&#xCEE4;&#xB2C8;&#xC998;</h2>
+<h3 id="&#xC6F9;&#xD398;&#xC774;&#xC9C0;&#xC758;-&#xB80C;&#xB354;&#xB9C1;">&#xC6F9;&#xD398;&#xC774;&#xC9C0;&#xC758; &#xB80C;&#xB354;&#xB9C1;</h3>
+<pre><code>[DOM Tree] --------
+                  | --- [Render tree] --- [Paint!]
+[Styles struct] ---
+</code></pre><p>&#xC704;&#xC5D0; &#xC11C;&#xC220;&#xD55C; &#xBD80;&#xBD84;&#xB4E4;&#xC740; &#xBAA8;&#xB450; Render tree &#xBD80;&#xBD84;&#xC774;&#xB2E4;.</p>
+<h3 id="&#xB808;&#xC774;&#xC5B4;-&#xBAA8;&#xB378;">&#xB808;&#xC774;&#xC5B4; &#xBAA8;&#xB378;</h3>
+<p>&#xB808;&#xC774;&#xC5B4;(Layer)&#xB294; &#xC6F9;&#xD398;&#xC774;&#xC9C0;&#xB97C; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xAE30; &#xC704;&#xD574; &#xD544;&#xC694;&#xD55C; &#xC774;&#xBBF8;&#xC9C0; &#xB2E8;&#xC704; &#xC694;&#xC18C;.</p>
+<p>CPU&#xAC00; &#xC774; &#xB808;&#xC774;&#xC5B4;&#xB97C; &#xC0DD;&#xC131;&#xD55C;&#xB2E4;. &#xC989;, &#xB808;&#xC774;&#xC5B4;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xB418;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xB294; CPU &#xC2DC;&#xAC04; &#xC18C;&#xBAA8;.</p>
+<p><img src="../$images/four-layers.png" alt="4 layers"></p>
+<p>&#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xB294; &#xB808;&#xC774;&#xC5B4;&#xB4E4;&#xC758; &#xACB9;&#xCE68;&#xC73C;&#xB85C; &#xD45C;&#xD604;&#xB41C;&#xB2E4;.</p>
+<h3 id="&#xCEF4;&#xD3EC;&#xC9C0;&#xD2B8;-composite">&#xCEF4;&#xD3EC;&#xC9C0;&#xD2B8; (Composite)</h3>
+<p>&#xAC01; &#xC694;&#xC18C;&#xB4E4;&#xC744; &#xD14D;&#xC2A4;&#xCCD0; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xD569;&#xCE58;&#xB294; GPU&#xC758; &#xC791;&#xC5C5;.</p>
+<p><img src="../$images/composite.png" alt="composite"></p>
+<h3 id="&#xB80C;&#xB354;&#xB9C1;-&#xC774;&#xC288;">&#xB80C;&#xB354;&#xB9C1; &#xC774;&#xC288;</h3>
+<h4 id="reflow">Reflow</h4>
+<p>DOM &#xB178;&#xB4DC;&#xAC00; &#xAC00;&#xC9C0;&#xB294; &#xB808;&#xC774;&#xC544;&#xC6C3; &#xC815;&#xBCF4;&#xAC00; &#xBCC0;&#xACBD;&#xB418;&#xBA74; &#xC7AC;&#xBC30;&#xCE58;&#xB97C; &#xC704;&#xD55C; &#xACC4;&#xC0B0;&#xC774; &#xD544;&#xC694;&#xD558;&#xB2E4;.</p>
+<p><img src="../$images/reflow.png" alt="reflow"></p>
+<p>&#xB808;&#xC774;&#xC544;&#xC6C3;&#xC758; &#xBCC0;&#xACBD;&#xC774; &#xD2B8;&#xB9AC;&#xB97C; &#xB530;&#xB77C; &#xC804;&#xD30C;&#xB418;&#xACE0;, &#xB9CE;&#xC740; &#xACBD;&#xC6B0; &#xB808;&#xC774;&#xC5B4; &#xC774;&#xBBF8;&#xC9C0;&#xC758; &#xAC31;&#xC2E0;&#xC774; &#xD544;&#xC694;&#xD558;&#xB2E4;.</p>
+<h4 id="repaint">Repaint</h4>
+<p>&#xB808;&#xC774;&#xC544;&#xC6C3; &#xB0B4; &#xCEE8;&#xD150;&#xCE20; &#xBCC0;&#xACBD; &#xC2DC; &#xD14D;&#xC2A4;&#xCCD0;&#xB97C; &#xC0C8;&#xB85C; &#xC0DD;&#xC131; &#xD544;&#xC694;.</p>
+<h4 id="reflow--repaint-&#xBC1C;&#xC0DD;-&#xC694;&#xC778;">Reflow / Repaint &#xBC1C;&#xC0DD; &#xC694;&#xC778;</h4>
+<ul>
+<li>DOM &#xB178;&#xB4DC;&#xC758; &#xB3D9;&#xC801;&#xC778; &#xCD94;&#xAC00; / &#xC0AD;&#xC81C; / &#xC5C5;&#xB370;&#xC774;&#xD2B8;</li>
+<li>DOM &#xB178;&#xB4DC;&#xC758; &#xAC10;&#xCDA4; / &#xD45C;&#xC2DC;<ul>
+<li>display: none / visibility: hidden</li>
+</ul>
+</li>
+<li>DOM &#xB178;&#xB4DC;&#xC758; &#xC774;&#xB3D9;, &#xC560;&#xB2C8;&#xBA54;&#xC774;&#xC158;</li>
+<li>&#xC2A4;&#xD0C0;&#xC77C;&#xC2DC;&#xD2B8;&#xC758; &#xCD94;&#xAC00; &#xD639;&#xC740; &#xC2A4;&#xD0C0;&#xC77C; &#xC18D;&#xC131;&#xC758; &#xBCC0;&#xACBD;<ul>
+<li>&#xBBF8;&#xB514;&#xC5B4; &#xCFFC;&#xB9AC;</li>
+</ul>
+</li>
+<li>&#xBE0C;&#xB77C;&#xC6B0;&#xC800; &#xC0AC;&#xC774;&#xC988; &#xBCC0;&#xACBD;</li>
+<li>&#xD3F0;&#xD2B8; &#xBCC0;&#xACBD;</li>
+<li>&#xC2A4;&#xD06C;&#xB864;</li>
+</ul>
+<h3 id="&#xD06C;&#xB86C;-&#xAC1C;&#xBC1C;&#xC790;&#xB3C4;&#xAD6C;">&#xD06C;&#xB86C; &#xAC1C;&#xBC1C;&#xC790;&#xB3C4;&#xAD6C;</h3>
+<h4 id="timeline">Timeline</h4>
+<p><a href="https://developers.google.com/web/tools/chrome-devtools/profile/evaluate-performance/timeline-tool?hl=ko#timeline-overview" target="_blank">https://developers.google.com/web/tools/chrome-devtools/profile/evaluate-performance/timeline-tool?hl=ko#timeline-overview</a></p>
+<p>&#xC5B4;&#xB5A4; &#xB178;&#xB4DC;&#xAC00; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xB294;&#xB370; &#xC624;&#xB798; &#xAC78;&#xB9AC;&#xB294;&#xC9C0; &#xC54C; &#xC218; &#xC788;&#xB2E4;.</p>
+<h4 id="elements--rendering">Elements &gt; Rendering</h4>
+<h5 id="paint-flashing">Paint Flashing</h5>
+<p>&#xCCB4;&#xD06C;&#xD558;&#xBA74; repaint &#xB418;&#xB294; &#xBD80;&#xBD84;&#xC744; &#xAC15;&#xC870; &#xD45C;&#xC2DC;&#xD574; &#xC900;&#xB2E4;.</p>
+<p>&#xC560;&#xB2C8;&#xBA54;&#xC774;&#xC158;&#xC774; &#xC77C;&#xC5B4;&#xB098;&#xB294; &#xBD80;&#xBD84;&#xB4E4;&#xC740; &#xC27D;&#xAC8C; &#xBCFC; &#xC218; &#xC788;&#xB2E4;.</p>
+<h5 id="layer-borders">Layer Borders</h5>
+<p>&#xCCB4;&#xD06C;&#xD558;&#xBA74; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC758; &#xB808;&#xC774;&#xC5B4; &#xAD6C;&#xC870;&#xB97C; &#xBCFC; &#xC218; &#xC788;&#xB2E4;.</p>
+<p>&#xC624;&#xB80C;&#xC9C0;&#xC0C9; &#xC120;&#xC774; &#xB808;&#xC774;&#xC5B4;&#xC774;&#xBA70;, &#xC774;&#xB294; GPU&#xC5D0; &#xC758;&#xD574; &#xB80C;&#xB354;&#xB9C1; &#xB418;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</p>
+<h4 id="user-timing">User Timing</h4>
+<p>&#xD06C;&#xB86C; &#xAC1C;&#xBC1C;&#xC790; &#xB3C4;&#xAD6C;&#xB294; GUI&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xBBC0;&#xB85C; &#xB514;&#xD14C;&#xC77C;&#xD55C; &#xC2DC;&#xAC04;&#xC73C;&#xB85C; &#xCE90;&#xCE58;&#xD558;&#xAE30; &#xD798;&#xB4E4;&#xB2E4;.</p>
+<p>&#xC774;&#xB97C; &#xC704;&#xD574;&#xC11C; &#xCF54;&#xB4DC; &#xB0B4;&#xC5D0;&#xC11C; &#xCE90;&#xCE58;&#xD560; &#xC218; &#xC788;&#xB294; API&#xAC00; &#xC874;&#xC7AC;&#xD55C;&#xB2E4;.</p>
+<p><em>&#xC2E4;&#xC81C;&#xB85C; &#xC0AC;&#xC6A9;&#xD574;&#xBCF4;&#xC9C0; &#xC54A;&#xC558;&#xC74C;.</em></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark" target="_blank">window.performance.mark</a></p>
+<p><em>&#xC774;&#xD558;&#xB294; &#xD06C;&#xB86C;&#xC5D0;&#xC11C;&#xB9CC; &#xB3D9;&#xC791;&#xD560; &#xAC83;</em></p>
+<p>Reference: <a href="https://developers.google.com/web/tools/chrome-devtools/debug/console/console-reference" target="_blank">https://developers.google.com/web/tools/chrome-devtools/debug/console/console-reference</a></p>
+<p>console.timeline</p>
+<h3 id="&#xD06C;&#xB86C;&#xC5D0;&#xC11C;&#xC758;-&#xC804;&#xBC18;&#xC801;&#xC778;-&#xB80C;&#xB354;&#xB9C1;-&#xD750;&#xB984;">&#xD06C;&#xB86C;&#xC5D0;&#xC11C;&#xC758; &#xC804;&#xBC18;&#xC801;&#xC778; &#xB80C;&#xB354;&#xB9C1; &#xD750;&#xB984;</h3>
+<ol>
+<li>DOM&#xC73C;&#xB85C;&#xBD80;&#xD130; &#xB178;&#xB4DC;&#xB4E4;&#xC744; &#xB808;&#xC774;&#xC5B4; &#xB2E8;&#xC704;&#xB85C; &#xBD84;&#xB9AC;</li>
+<li>&#xB808;&#xC774;&#xC544;&#xC6C3;&#xC744; &#xACC4;&#xC0B0;&#xD558;&#xACE0; &#xAC01; &#xB808;&#xC774;&#xC5B4;&#xAC00; &#xADF8;&#xB824;&#xC838;&#xC57C; &#xD560; &#xC601;&#xC5ED;&#xC758; &#xD06C;&#xAE30;, &#xC704;&#xCE58; &#xB4F1;&#xC744; &#xACC4;&#xC0B0;<ul>
+<li>&#xD06C;&#xAE30;, &#xC704;&#xCE58; &#xC815;&#xBCF4; &#xB4F1;&#xC744; &#xACC4;&#xC0B0;&#xD558;&#xAE30; &#xC704;&#xD55C; <strong>CPU &#xACC4;&#xC0B0; &#xC624;&#xBC84;&#xD5E4;&#xB4DC;</strong> &#xBC1C;&#xC0DD;</li>
+</ul>
+</li>
+<li>&#xB808;&#xC774;&#xC5B4;&#xB4E4; &#xAC01;&#xAC01;&#xC740; &#xB80C;&#xB354;&#xB9C1;&#xC744; &#xC704;&#xD574; &#xBE44;&#xD2B8;&#xB9F5; &#xCD9C;&#xB825;<ul>
+<li><strong>CPU&#xC5D0;&#xC11C; &#xB808;&#xC774;&#xC5B4; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xC624;&#xBC84;&#xD5E4;&#xB4DC;</strong> &#xBC1C;&#xC0DD;</li>
+</ul>
+</li>
+<li>&#xC0DD;&#xC131;&#xB41C; &#xBE44;&#xD2B8;&#xB9F5;&#xC744; GPU&#xC5D0; &#xC5C5;&#xB85C;&#xB4DC;<ul>
+<li><strong>GPU&#xC758; &#xBE44;&#xB514;&#xC624; &#xBA54;&#xBAA8;&#xB9AC;&#xB85C; &#xC804;&#xC1A1;&#xD558;&#xB294; &#xC624;&#xBC84;&#xD5E4;&#xB4DC;</strong> &#xBC1C;&#xC0DD;</li>
+</ul>
+</li>
+<li>&#xACC4;&#xC0B0;&#xB41C; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC73C;&#xB85C; &#xB808;&#xC774;&#xC5B4; &#xD14D;&#xC2A4;&#xCCD0; &#xC774;&#xBBF8;&#xC9C0;&#xB4E4;&#xC744; &#xCD5C;&#xC885; &#xC2A4;&#xD06C;&#xB9B0; &#xC774;&#xBBF8;&#xC9C0;&#xB85C; &#xD569;&#xC131;</li>
+</ol>
+<h2 id="&#xB80C;&#xB354;&#xB9C1;-&#xCD5C;&#xC801;&#xD654;-&#xBC29;&#xBC95;">&#xB80C;&#xB354;&#xB9C1; &#xCD5C;&#xC801;&#xD654; &#xBC29;&#xBC95;</h2>
+<h3 id="&#xAC00;&#xC7A5;-&#xAC04;&#xB2E8;&#xD55C;-&#xBC29;&#xBC95;--&#xCD5C;&#xC18C;&#xD55C;&#xC73C;&#xB85C;-&#xB808;&#xC774;&#xC5B4;-&#xBD84;&#xB9AC;">&#xAC00;&#xC7A5; &#xAC04;&#xB2E8;&#xD55C; &#xBC29;&#xBC95; : &#xCD5C;&#xC18C;&#xD55C;&#xC73C;&#xB85C; &#xB808;&#xC774;&#xC5B4; &#xBD84;&#xB9AC;</h3>
+<p>&#xB808;&#xC774;&#xC5B4;&#xB294; GPU&#xAC00; &#xADF8;&#xB9AC;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBE60;&#xB978; &#xC131;&#xB2A5;&#xC744; &#xC694;&#xAD6C;&#xD558;&#xB294; &#xBD80;&#xBD84;&#xC744; &#xB808;&#xC774;&#xC5B4;&#xB85C; &#xBD84;&#xB9AC;&#xD558;&#xC5EC; GPU&#xAC00; &#xADF8;&#xB9AC;&#xAC8C; &#xD558;&#xB294; &#xAC83;.</p>
+<p>&#xD558;&#xC9C0;&#xB9CC; &#xBAA8;&#xB4E0; &#xB80C;&#xB354;&#xB9C1;&#xC744; GPU&#xC5D0; &#xC804;&#xAC00;&#xD558;&#xB294; &#xAC83; &#xB610;&#xD55C; &#xBCD1;&#xBAA9;&#xD604;&#xC0C1;&#xC744; &#xC720;&#xBC1C;&#xD558;&#xBBC0;&#xB85C; <strong>&#xCD5C;&#xC18C;&#xD55C;</strong>&#xC73C;&#xB85C; &#xBD84;&#xB9AC;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xB2E4;.</p>
+<p><strong>&#xD06C;&#xB86C;&#xC5D0;&#xC11C; DOM &#xB178;&#xB4DC;&#xAC00; &#xB808;&#xC774;&#xC5B4;&#xB85C; &#xBD84;&#xB9AC;&#xB418;&#xB294; &#xC870;&#xAC74;</strong></p>
+<ol>
+<li>3D &#xD639;&#xC740; Perspective&#xB97C; &#xD45C;&#xD604;&#xD558;&#xB294; CSS transform &#xC18D;&#xC131;&#xC744; &#xAC00;&#xC9C4; &#xACBD;&#xC6B0;</li>
+<li>&#xD558;&#xB4DC;&#xC6E8;&#xC5B4; &#xAC00;&#xC18D; &#xB514;&#xCF54;&#xB529;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>&lt;video&gt;</code> Element</li>
+<li>3D Context &#xB610;&#xB294; &#xAC00;&#xC18D; 2D Context&#xB97C; &#xAC00;&#xC9C0;&#xB294; <code>&lt;canvas&gt;</code> Element</li>
+<li>(&#xD50C;&#xB798;&#xC2DC; &#xB4F1;) &#xD50C;&#xB7EC;&#xADF8;&#xC778; &#xC601;&#xC5ED;</li>
+<li>opacity &#xC18D;&#xC131;, transform &#xC560;&#xB2C8;&#xBA54;&#xC774;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;</li>
+<li>&#xAC00;&#xC18D; &#xAC00;&#xB2A5;&#xD55C; CSS &#xD544;&#xD130;&#xB97C; &#xAC00;&#xC9C4; &#xACBD;&#xC6B0;</li>
+<li>Compositing Layer&#xB97C; &#xD558;&#xC704; &#xB178;&#xB4DC;&#xB85C; &#xAC00;&#xC9C0;&#xB294; &#xACBD;&#xC6B0;</li>
+<li>&#xB0AE;&#xC740; z-index&#xB97C; &#xAC00;&#xC9C4; &#xD615;&#xC81C; &#xB178;&#xB4DC;&#xAC00; Compositing Layer&#xB97C; &#xAC00;&#xC9C4; &#xACBD;&#xC6B0;</li>
+</ol>
+<h4 id="translatez0">translateZ(0)</h4>
+<p>Z&#xCD95; &#xAC12;&#xC73C;&#xB85C; 0&#xC744; &#xC8FC;&#xB294; &#xBB34;&#xC758;&#xBBF8;&#xD55C; &#xCF54;&#xB4DC;&#xC774;&#xB098; &#xB808;&#xC774;&#xC5B4; &#xBD84;&#xB9AC; &#xC870;&#xAC74;&#xC5D0; &#xB4E4;&#xC5B4;&#xAC04;&#xB2E4;.</p>
+<p>&#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;&#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xBA74; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xB2E4;.</p>
+<h3 id="&#xAC15;&#xC81C;&#xC801;&#xC778;-&#xB808;&#xC774;&#xC5B4;-&#xBD84;&#xB9AC;&#xAC00;-&#xB9CC;&#xB2A5;&#xC774;-&#xC544;&#xB2CC;-&#xC774;&#xC720;">&#xAC15;&#xC81C;&#xC801;&#xC778; &#xB808;&#xC774;&#xC5B4; &#xBD84;&#xB9AC;&#xAC00; &#xB9CC;&#xB2A5;&#xC774; &#xC544;&#xB2CC; &#xC774;&#xC720;</h3>
+<h4 id="&#xB808;&#xC774;&#xC5B4;-&#xBD84;&#xB9AC;&#xB294;-&#xD14D;&#xC2A4;&#xCCD0;-&#xC774;&#xBBF8;&#xC9C0;&#xC758;-&#xBD84;&#xB9AC;&#xB97C;-&#xC758;&#xBBF8;&#xD55C;&#xB2E4;">&#xB808;&#xC774;&#xC5B4; &#xBD84;&#xB9AC;&#xB294; &#xD14D;&#xC2A4;&#xCCD0; &#xC774;&#xBBF8;&#xC9C0;&#xC758; &#xBD84;&#xB9AC;&#xB97C; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;.</h4>
+<p>&#xC774;&#xB294; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xC18C;&#xBAA8;&#xD568;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;, &#xBA54;&#xBAA8;&#xB9AC;&#xB294; &#xC720;&#xD55C;&#xD558;&#xB2E4;.</p>
+<p>&#xBA54;&#xBAA8;&#xB9AC; &#xACF5;&#xAC04;&#xC774; &#xBD80;&#xC871;&#xD574;&#xC9C0;&#xBA74; &#xAE30;&#xC874; &#xB370;&#xC774;&#xD130; &#xB9B4;&#xB9AC;&#xC988; &#xD6C4; &#xC0C8;&#xB85C;&#xC6B4; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xC5C5;&#xB85C;&#xB4DC; &#xD55C;&#xB2E4;.</p>
+<p>&#xC774; &#xACBD;&#xC6B0;&#xAC00; &#xBC18;&#xBCF5;&#xB418;&#xBA74; &#xB808;&#xC774;&#xC5B4; &#xBD84;&#xB9AC;&#xB97C; &#xD1B5;&#xD55C; &#xC131;&#xB2A5; &#xC774;&#xC810;&#xC774; &#xC624;&#xBC84;&#xD5E4;&#xB4DC;&#xB85C; &#xC0C1;&#xC1C4;&#xB41C;&#xB2E4;.</p>
+<h3 id="css-will-change">CSS: will-change</h3>
+<p><strong>will-change: &#xC18D;&#xC131;&#xBA85;;</strong></p>
+<p>&#xC774; &#xC18D;&#xC131;&#xC774; &#xBCC0;&#xACBD; &#xB420; &#xC218; &#xC788;&#xC74C;&#xC744; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0; &#xD78C;&#xD2B8;&#xB97C; &#xC900;&#xB2E4;. &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB294; &#xC2E4;&#xC81C; &#xC694;&#xC18C;&#xAC00; &#xBCC0;&#xD654;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xC801;&#xC808;&#xD558;&#xAC8C; &#xCD5C;&#xC801;&#xD654; &#xD560; &#xC218; &#xC788;&#xAC8C; &#xB41C;&#xB2E4;.<sup><a href="#fn_&#xC124;&#xBA85;" id="reffn_&#xC124;&#xBA85;">&#xC124;&#xBA85;</a></sup><sup><a href="#fn_&#xD301;" id="reffn_&#xD301;">&#xD301;</a></sup></p>
+<hr>
+<h2 id="instant-and-offline-apps">Instant and offline apps</h2>
+<h3 id="instant-loading">Instant Loading</h3>
+<p>&#xB85C;&#xB529;&#xC744; &#xAC1C;&#xC120;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xBAA9;&#xD45C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;:</p>
+<ul>
+<li>&#xD070; &#xC774;&#xBBF8;&#xC9C0; &#xC0AC;&#xC6A9; &#xAE08;&#xC9C0;</li>
+<li>&#xD544;&#xC694;&#xD55C; &#xAC83;&#xB9CC; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;</li>
+<li>&#xAC00;&#xAE09;&#xC801;&#xC774;&#xBA74; &#xBC14;&#xB010; &#xBD80;&#xBD84;&#xB9CC; &#xB2E4;&#xC6B4;&#xB85C;&#xB4DC;</li>
+</ul>
+<p>&#xADF8;&#xB7EC;&#xBA74; &#xC704; &#xBAA9;&#xD45C;&#xB4E4;&#xC744; &#xC704;&#xD574;&#xC11C; &#xBB34;&#xC5C7;&#xC744; &#xD574;&#xC57C; &#xD560;&#xAE4C;?</p>
+<h4 id="&#xC555;&#xCD95;">&#xC555;&#xCD95;</h4>
+<ul>
+<li>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;, &#xC2A4;&#xD0C0;&#xC77C;&#xC2DC;&#xD2B8; &#xD30C;&#xC77C; &#xC555;&#xCD95;&#xD558;&#xAE30;</li>
+<li>webp &#xC555;&#xCD95; &#xC774;&#xBBF8;&#xC9C0; &#xD3EC;&#xB9F7; &#xC0AC;&#xC6A9; (&#xD06C;&#xB86C;&#xACFC; &#xD2B9;&#xC815; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB9CC; &#xC9C0;&#xC6D0;)</li>
+</ul>
+<h4 id="&#xC791;&#xC740;-&#xC774;&#xBBF8;&#xC9C0;-&#xC0AC;&#xC6A9;">&#xC791;&#xC740; &#xC774;&#xBBF8;&#xC9C0; &#xC0AC;&#xC6A9;</h4>
+<ul>
+<li>&#xB2E4;&#xC591;&#xD55C; &#xC0AC;&#xC774;&#xC988;&#xC640; &#xD3EC;&#xB9F7;&#xC744; &#xC9C0;&#xC6D0;&#xD55C;&#xB2E4;.</li>
+<li>img &#xD0DC;&#xADF8;&#xC758; sizes &#xC18D;&#xC131;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xBC18;&#xC751;&#xD615; &#xC9C0;&#xC6D0; &#xAC00;&#xB2A5;</li>
+</ul>
+<h4 id="round-trips-&#xC904;&#xC774;&#xAE30;">Round Trips &#xC904;&#xC774;&#xAE30;</h4>
+<ul>
+<li>Redirect&#xC740; Round Trip&#xC744; &#xC57C;&#xAE30;&#xD55C;&#xB2E4;.</li>
+<li>link &#xD0DC;&#xADF8; rel &#xC18D;&#xC131;&#xC5D0; &#xD78C;&#xD2B8; &#xC815;&#xC758;&#xD558;&#xAE30;<ul>
+<li>rel=&quot;dns-prefetch&quot;</li>
+<li>rel=&quot;preconnect&quot;</li>
+<li>rel=&quot;preload&quot;</li>
+<li>rel=&quot;prefetch&quot;</li>
+</ul>
+</li>
+</ul>
+<h4 id="be-interactive">Be interactive</h4>
+<ul>
+<li>script &#xD0DC;&#xADF8;&#xC5D0; defer, async &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBCD1;&#xB82C; &#xB85C;&#xB4DC;</li>
+</ul>
+<h4 id="iframe">iFrame</h4>
+<p>iFrame&#xC740; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC74C;&#xC5D0;&#xB3C4; &#xBA54;&#xC778;&#xC774; &#xB85C;&#xB4DC;&#xB420; &#xB54C; &#xD568;&#xAED8; &#xB85C;&#xB4DC;&#xB41C;&#xB2E4;. &#xBA54;&#xC778; &#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xB85C;&#xB4DC; &#xB418;&#xB294; &#xAC83;&#xC744; &#xBC29;&#xD574;&#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xD1B5;&#xD574; &#xBA54;&#xC778; &#xC2DC;&#xC2A4;&#xD15C; &#xB85C;&#xB4DC; &#xD6C4; &#xB85C;&#xB4DC;&#xB420; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xD55C;&#xB2E4;.</p>
+<p><strong>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC608;</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">&quot;https://example.com&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">firame</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">&quot;https://another.example.com&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">firame</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">&apos;load&apos;</span>, () =&gt; {
+        <span class="hljs-built_in">Array</span>.from(<span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&apos;iframe&apos;</span>))
+            .forEach(iframe =&gt; iframe.src = iframe.dataset.src);
+    });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h4 id="http2">HTTP/2</h4>
+<p>&#xAE30;&#xC874;&#xC758; HTTP 1.1&#xC740; &#xBD84;&#xD560;&#xB41C; &#xC774;&#xBBF8;&#xC9C0;&#xAC00; &#xC788;&#xC73C;&#xBA74; &#xC694;&#xCCAD;&#xC744; &#xBD84;&#xD560;&#xD558;&#xC5EC; &#xC5EC;&#xB7EC;&#xBC88; &#xB098;&#xB220;&#xC11C; &#xC694;&#xCCAD;&#xD55C;&#xB2E4;.</p>
+<p>&#xC774;&#xBBF8;&#xC9C0;&#xB97C; 255&#xC870;&#xAC01; &#xB0B4;&#xC5C8;&#xB2E4;&#xBA74; &#xC694;&#xCCAD;&#xC744; 255&#xBC88; &#xD558;&#xB294; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p>&#xBC18;&#xBA74;&#xC5D0; HTTP/2&#xB294; &#xD55C; &#xBC88;&#xC5D0; &#xBAA8;&#xB450; &#xC694;&#xCCAD;&#xD55C;&#xB2E4;.</p>
+<p>HTTP/2&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; https&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
+<hr>
+<h2 id="service-worker">Service Worker</h2>
+<p>&#xC624;&#xD504;&#xB77C;&#xC778;&#xC5D0; &#xB300;&#xC751;&#xD560; &#xC218; &#xC788;&#xACE0;, &#xC2F1;&#xAE00; &#xC2A4;&#xB808;&#xB4DC;&#xC778; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C; &#xBD84;&#xB9AC;&#xB41C; &#xC2A4;&#xB808;&#xB4DC;&#xB85C; &#xC571;&#xC758; &#xBC31;&#xADF8;&#xB77C;&#xC6B4;&#xB4DC;&#xC5D0;&#xC11C; &#xB3D9;&#xC791;&#xD558;&#xB294;
+&#xC11C;&#xBE44;&#xC2A4; &#xC6CC;&#xCEE4;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xC544;&#xBCF8;&#xB2E4;.</p>
+<h3 id="&#xC624;&#xD504;&#xB77C;&#xC778;-&#xB85C;&#xB529;">&#xC624;&#xD504;&#xB77C;&#xC778; &#xB85C;&#xB529;</h3>
+<p>&#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xAC00; &#xC560;&#xB9E4;&#xD55C; &#xACBD;&#xC6B0; (Lie-fi &#xB77C;&#xACE0; &#xD55C;&#xB2E4;.) &#xC571;&#xC740; &#xB290;&#xB9B0; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB97C; &#xD1B5;&#xD574; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBC1B;&#xC544; &#xC624;&#xB824;&#xACE0; &#xC2DC;&#xB3C4;&#xD558;&#xACE0;
+&#xC0AC;&#xC6A9;&#xC790;&#xB294; &#xC5B8;&#xC81C; &#xB85C;&#xB4DC; &#xB420;&#xC9C0; &#xC54C; &#xC218; &#xC5C6;&#xB294; &#xCEE8;&#xD150;&#xCE20;&#xB97C; &#xD558;&#xC5FC;&#xC5C6;&#xC774; &#xAE30;&#xB2E4;&#xB824;&#xC57C; &#xD55C;&#xB2E4;.</p>
+<p>&#xC11C;&#xBE44;&#xC2A4; &#xC6CC;&#xCEE4;&#xC758; &#xCE90;&#xC2F1;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC694;&#xCCAD; &#xC911; &#xC624;&#xD504;&#xB77C;&#xC778;&#xC774; &#xB418;&#xAC70;&#xB098; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xCEE8;&#xD150;&#xCE20;&#xB97C; &#xBC1B;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C;
+&#xC800;&#xC7A5;&#xB41C; &#xCE90;&#xC2F1; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBCF4;&#xC5EC;&#xC904; &#xC218; &#xC788;&#xB2E4;.</p>
+<h3 id="web-worker">Web worker</h3>
+<p>&#xC11C;&#xBE44;&#xC2A4; &#xC6CC;&#xCEE4;&#xB294; &#xD2B9;&#xC815;&#xD55C; &#xC6CC;&#xCEE4; &#xC911; &#xD558;&#xB098;&#xC774;&#xB2E4;.</p>
+<p>&#xADF8;&#xB9AC;&#xACE0; &#xC6F9; &#xC6CC;&#xCEE4;&#xB294; &#xBA54;&#xC778; &#xD398;&#xC774;&#xC9C0;&#xC640; &#xBCD1;&#xB82C; <strong>&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xBC31;&#xADF8;&#xB77C;&#xC6B4;&#xB4DC; &#xC6CC;&#xCEE4;&#xB97C; &#xC0DD;&#xC131;</strong>&#xD558;&#xB294; API&#xB2E4;.</p>
+<p><strong>&#xBA54;&#xC2DC;&#xC9C0; &#xC804;&#xC1A1; &#xAE30;&#xBC18;&#xC758; Thread&#xC640; &#xC720;&#xC0AC;&#xD55C; &#xB3D9;&#xC791;</strong>&#xC744; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD55C;&#xB2E4;.</p>
+<p><strong>&#xC989;, &#xBCD1;&#xB82C; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC2E4;&#xD589;&#xC744; &#xC704;&#xD55C; API.</strong></p>
+<p>&#xD2B9;&#xC9D5;&#xC73C;&#xB85C;&#xB294;</p>
+<ul>
+<li>DOM &#xC9C1;&#xC811; &#xC811;&#xADFC;, &#xC870;&#xC791; &#xBD88;&#xAC00;</li>
+<li>&#xC790;&#xCCB4; &#xAE00;&#xB85C;&#xBC8C; &#xC2A4;&#xCF54;&#xD504; (window&#xAC00; &#xC544;&#xB2D8;)</li>
+<li>window&#xAC00; &#xC544;&#xB2C8;&#xBBC0;&#xB85C; &#xC77C;&#xBD80; &#xC18D;&#xC131;&#xACFC; API&#xB9CC; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;</li>
+</ul>
+<h3 id="service-worker">Service Worker</h3>
+<p><strong>&#xC9C0;&#xC18D;&#xC801;&#xC778; &#xBC31;&#xADF8;&#xB77C;&#xC6B4;&#xB4DC; &#xCC98;&#xB9AC;&#xB97C; &#xD558;&#xB294; &#xC6CC;&#xCEE4;</strong>&#xB85C; <strong>&#xC774;&#xBCA4;&#xD2B8; &#xB4DC;&#xB9AC;&#xBE10; &#xBAA8;&#xB378;</strong>&#xC774;&#xB2E4;.</p>
+<p>&#xC9C0;&#xC18D;&#xC801;&#xC774;&#xB77C;&#xB294; &#xC758;&#xBBF8;&#xB294; <strong>&#xD398;&#xC774;&#xC9C0;&#xAC00; &#xB85C;&#xB529;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB54C;&#xB3C4; &#xB3D9;&#xC791;</strong>&#xD55C;&#xB2E4;.</p>
+<p>&#xB530;&#xB77C;&#xC11C; &#xD398;&#xC774;&#xC9C0;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xC9C0; &#xC54A;&#xB354;&#xB77C;&#xB3C4; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xAD00;&#xB9AC;&#xD55C;&#xB2E4;.</p>
+<h4 id="&#xAE30;&#xB2A5;-&#xC624;&#xD504;&#xB77C;&#xC778;-&#xCE90;&#xC26C;">&#xAE30;&#xB2A5;: &#xC624;&#xD504;&#xB77C;&#xC778; &#xCE90;&#xC26C;</h4>
+<p><img src="../$images/chrome-offline.png" alt="chrome offline"></p>
+<p>&#xD06C;&#xB86C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB294; &#xC624;&#xD504;&#xB77C;&#xC778;&#xC77C; &#xB54C; &#xAC04;&#xB2E8;&#xD55C; &#xAC8C;&#xC784;&#xC744; &#xD560; &#xC218; &#xC788;&#xB294; &#xC11C;&#xBE44;&#xC2A4; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xC81C;&#xACF5;&#xD55C;&#xB2E4;.</p>
+<p>&#xC624;&#xD504;&#xB77C;&#xC778; &#xCE90;&#xC26C;&#xB294; &#xC774;&#xC6A9;&#xC790;&#xAC00; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC694;&#xCCAD;&#xC2DC; <strong>&#xC11C;&#xBC84;&#xB85C; &#xBC14;&#xB85C; &#xAC00;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xB77C;</strong>
+&#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xD560; &#xAC83;&#xC778;&#xC9C0; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xB294; &#xAE30;&#xB2A5;&#xC774;&#xB2E4;.</p>
+<h4 id="&#xAE30;&#xB2A5;-&#xBC31;&#xADF8;&#xB77C;&#xC6B4;&#xB4DC;-&#xB3D9;&#xAE30;&#xD654;">&#xAE30;&#xB2A5;: &#xBC31;&#xADF8;&#xB77C;&#xC6B4;&#xB4DC; &#xB3D9;&#xAE30;&#xD654;</h4>
+<p>&#xC704;&#xC5D0;&#xC11C; <strong>&#xD398;&#xC774;&#xC9C0;&#xAC00; &#xB85C;&#xB529;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB584;&#xB3C4; &#xB3D9;&#xC791;</strong>&#xD55C;&#xB2E4;&#xACE0; &#xD558;&#xC600;&#xB2E4;.</p>
+<p>&#xC774;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB370;&#xC774;&#xD130; &#xC785;&#xB825; &#xC911; &#xC778;&#xD130;&#xB137;&#xC774; &#xB04A;&#xC5B4;&#xC9C0;&#xB354;&#xB77C;&#xB3C4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC800;&#xC7A5;&#xD574; &#xB450;&#xC5C8;&#xB2E4;&#xAC00;
+&#xB098;&#xC911;&#xC5D0; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC5F0;&#xACB0;&#xC774; &#xB418;&#xBA74; <strong>&#xC571;&#xC744; &#xB2E4;&#xC2DC; &#xC2E4;&#xD589;&#xD558;&#xC9C0; &#xC54A;&#xB354;&#xB77C;&#xB3C4;</strong> &#xB370;&#xC774;&#xD130;&#xB97C; &#xC11C;&#xBC84;&#xC5D0; &#xBCF4;&#xB0BC; &#xC218;
+&#xAE30;&#xB2A5;&#xC744; &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<h4 id="&#xADDC;&#xCE59;-&#xC7A5;&#xC810;">&#xADDC;&#xCE59;, &#xC7A5;&#xC810;</h4>
+<p>Https&#xB97C; &#xD544;&#xC235;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
+<p>&#xB370;&#xC774;&#xD130;&#xC758; &#xC2E0;&#xB8B0;&#xC131;&#xC774; &#xBCF4;&#xC7A5;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC758;&#xB3C4;&#xC640;&#xB294; &#xB2E4;&#xB978; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC11C;&#xBC84;&#xC5D0; &#xC804;&#xC1A1;&#xD560; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</p>
+<p>Polyfill&#xC774; &#xC5C6;&#xC5B4;&#xC11C; &#xC2DC;&#xC2A4;&#xD15C;&#xC5D0;&#xC11C; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xADF8;&#xB0E5; &#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</p>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. &#xC124;&#xBA85;: <a href="https://developer.mozilla.org/ko/docs/Web/CSS/will-change" target="_blank">https://developer.mozilla.org/ko/docs/Web/CSS/will-change</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. &#xD301;: <a href="https://dev.opera.com/articles/ko/css-will-change-property/" target="_blank">https://dev.opera.com/articles/ko/css-will-change-property/</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
+</blockquote>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-49" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-49","title":"GDG WebTech Workshop: 측정하는 놈, 로딩하는 놈, 그리는 놈","level":"2.2","depth":1,"next":{"title":"테스트 도구","level":"3.1","depth":1,"path":"methodology/tools-for-tdd.md","ref":"methodology/tools-for-tdd.md","articles":[]},"previous":{"title":"구글캠퍼스 - 구글 플레이에서 꼭 지켜야 할 두 가지","level":"2.1","depth":1,"path":"offline/google-campus-two-things-you-must-keep-in-google-play.md","ref":"offline/google-campus-two-things-you-must-keep-in-google-play.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"offline/gdg-webtech-workshop-nnn.md","mtime":"2019-03-25T13:36:56.156Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

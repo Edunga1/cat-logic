@@ -1,0 +1,427 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        Issue - Sprite Packer가 동작하지 않는 현상 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                Issue - Sprite Packer가 동작하지 않는 현상
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>Unity</li>
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">Issue - Sprite Packer가 동작하지 않는 현상</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="sprite-packer&#xAC00;-&#xB3D9;&#xC791;&#xD558;&#xC9C0;-&#xC54A;&#xB294;-&#xD604;&#xC0C1;">Sprite Packer&#xAC00; &#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xD604;&#xC0C1;</h1>
+<h2 id="sprite-packer">Sprite Packer?</h2>
+<ul>
+<li>Unity 4.6&#xBD80;&#xD130; UGUI&#xC81C;&#xACF5;&#xD55C;&#xB2E4;.</li>
+<li>NGUI&#xB294; &#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C; Atlas&#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xC9C0;&#xB9CC; UGUI&#xC5D0;&#xC11C;&#xB294; &#xCD94;&#xC0C1;&#xC801;&#xC73C;&#xB85C; packing.</li>
+<li>UGUI&#xC5D0;&#xC11C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C0;&#xB294; Atlas&#xB294; Library/AtalsCashe&#xC5D0; &#xC0DD;&#xC131;&#xD574; &#xAD00;&#xB9AC;&#xD55C;&#xB2E4;.</li>
+</ul>
+<h2 id="&#xC0C1;&#xD669;">&#xC0C1;&#xD669;</h2>
+<p><a href="https://www.youtube.com/watch?v=Pj8Y48ecBZY" target="_blank">&#xC601;&#xC0C1;</a>&#xC744; &#xB530;&#xB77C; Atlas&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB824;&#xACE0; &#xD558;&#xC600;&#xC73C;&#xB098; <strong>pack</strong> &#xBC84;&#xD2BC;&#xC744; &#xB20C;&#xB7EC;&#xB3C4; &#xC544;&#xBB34; &#xBC18;&#xC751;&#xC774; &#xC5C6;&#xC74C;.</p>
+<h2 id="&#xD574;&#xACB0;">&#xD574;&#xACB0;</h2>
+<p><strong>Assets/Resources</strong> &#xD3F4;&#xB354; &#xB0B4;&#xC5D0; &#xC788;&#xB294; &#xC774;&#xBBF8;&#xC9C0;&#xB4E4;&#xC740; Atals&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC5C6;&#xC74C;. &#xC774;&#xB294; &#xC758;&#xB3C4; &#xB41C; &#xAC83;&#xC73C;&#xB85C;</p>
+<p>Resources &#xD3F4;&#xB354; &#xB0B4;&#xC5D0; &#xC788;&#xB294; &#xB9AC;&#xC18C;&#xC2A4;&#xB4E4;&#xC740; &#xBE4C;&#xB4DC; &#xC2DC; &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xAC00;&#xC838;&#xC624;&#xBBC0;&#xB85C; Atlas&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xB450; &#xBC88; &#xBD88;&#xB7EC;&#xC624;&#xB294; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xC758;&#xB3C4;&#xC801;&#xC73C;&#xB85C; &#xB9C9;&#xC544; &#xB193;&#xC740; &#xAC83;</p>
+<h2 id="&#xCC38;&#xC870;">&#xCC38;&#xC870;</h2>
+<p><a href="http://gamedev.stackexchange.com/questions/75716/unity-4-5-sprite-packer-does-not-pack-images-inside-resources-folder" target="_blank">http://gamedev.stackexchange.com/questions/75716/unity-4-5-sprite-packer-does-not-pack-images-inside-resources-folder</a></p>
+<p><a href="https://forum.unity3d.com/threads/unity-4-5-sprite-packer-does-not-pack-images-inside-resources-folder.248349/" target="_blank">https://forum.unity3d.com/threads/unity-4-5-sprite-packer-does-not-pack-images-inside-resources-folder.248349/</a></p>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-69" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-69","title":"Issue - Sprite Packer가 동작하지 않는 현상","level":"20.4","depth":1,"next":{"title":"Postman - API Management","level":"21.1","depth":1,"path":"tools/postman.md","ref":"tools/postman.md","articles":[]},"previous":{"title":"MonoBehaviour","level":"20.3","depth":1,"path":"unity/mono-behaviour.md","ref":"unity/mono-behaviour.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"unity/sprite-packer-does-not-work.md","mtime":"2019-03-25T13:36:56.171Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+

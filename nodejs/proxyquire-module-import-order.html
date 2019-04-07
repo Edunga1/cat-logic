@@ -1,0 +1,459 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>
+    
+        Testing - proxyquire - 모듈 로드 순서 문제 · c atl og i c
+    
+</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+        integrity="sha384-I6JCnqxMbC2DuiHjsoCiLa15NVbKRf8/ooANRLsXD87zD2dVqzlz6Oqjvj470ztk"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        
+<nav class="faq-navbar navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">
+                c atl og i c
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            
+        </div>
+    </div>
+</nav>
+
+<div class="faq-header">
+    <div class="container">
+    <h1>
+        
+            
+                Testing - proxyquire - 모듈 로드 순서 문제
+            
+        
+    </h1>
+
+    
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="&gt;" />
+</div>
+
+
+    
+    </div>
+</div>
+
+<div class="faq-page-container">
+
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+    
+    
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ol class="breadcrumb">
+                    <li><a href="..">FAQ</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <li>NodeJS</li>
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                            
+                        
+                    
+                    <li class="active">Testing - proxyquire - 모듈 로드 순서 문제</li>
+                </ol>
+                <div class="faq-page">
+                <h1 id="proxyquire-&#xBAA8;&#xB4C8;-&#xB85C;&#xB4DC;-&#xC21C;&#xC11C;-&#xBB38;&#xC81C;">proxyquire &#xBAA8;&#xB4C8; &#xB85C;&#xB4DC; &#xC21C;&#xC11C; &#xBB38;&#xC81C;</h1>
+<pre><code class="lang-bash">src/
+    router/
+        auth.js
+    find-basic-member.js
+    app.js
+<span class="hljs-built_in">test</span>/
+    test.js
+</code></pre>
+<p><code>app.js</code> -&gt; <code>auth.js</code> -&gt; <code>find-basic-member.js</code> &#xC774;&#xC640;&#xAC19;&#xC740; &#xBAA8;&#xB4C8; &#xC758;&#xC874; &#xAD00;&#xACC4;&#xAC00; &#xC788;&#xB2E4;.</p>
+<p>&#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC740; <code>app.js</code>.</p>
+<p>&#xD14C;&#xC2A4;&#xD2B8; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; DB&#xC5D0; &#xC811;&#xADFC;&#xD558;&#xB294; <code>find-basic-member.js</code>&#xB97C; Mocking &#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;
+<code>auth.js</code>&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; <code>find-basic-member.js</code>&#xC744; Mocking &#xD55C;&#xB2E4;:</p>
+<pre><code class="lang-javascript">proxyquire(<span class="hljs-string">&apos;../src/router/auth&apos;</span>, {
+    <span class="hljs-string">&apos;../find-basic-member&apos;</span>: mockFindBasicMember
+});
+<span class="hljs-keyword">const</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../src/app&apos;</span>); <span class="hljs-comment">// app uses mock find-basic-member</span>
+</code></pre>
+<p>&#xC758;&#xC874; &#xAD00;&#xACC4;&#xB97C; &#xC9C0;&#xC815;&#xD574; &#xC8FC;&#xC9C0; &#xC54A;&#xC558;&#xB294;&#xB370;&#xB3C4; <code>app.js</code>&#xB294; Mock &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC810;&#xC740; &#xB9C8;&#xC74C;&#xC5D0; &#xB4E4;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</p>
+<p>&#xC704; &#xCF54;&#xB4DC;&#xAC00; Mocking &#xC774; &#xB418;&#xB294; &#xC774;&#xC720;&#xB294;
+<code>app.js</code> -&gt; <code>auth.js</code>&#xC758; <code>require(&apos;../find-basic-member&apos;)</code>&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB354;&#xB77C;&#xB3C4;
+<code>proxyrequire</code>&#xC5D0; &#xC758;&#xD574; &#xCE90;&#xC2DC;&#xB41C; &#xBAA8;&#xB4C8;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xB2E4;.</p>
+<p>&#xCC38;&#xACE0;&#xB85C; nodejs <code>require</code> &#xB610;&#xD55C; &#xCE90;&#xC2DC;&#xB41C; &#xC815;&#xBCF4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5EC;&#xB7EC;&#xBC88; <code>require</code> &#xD574;&#xB3C4; &#xC2E4;&#xC81C; &#xD30C;&#xC77C;&#xC744; &#xC77D;&#xB294;&#xAC74; &#xD55C; &#xBC88; &#xBFD0;&#xC774;&#xB2E4;.</p>
+<blockquote>
+<p><em>Forcing proxyquire to reload modules</em> &#xB2E8;&#xB77D; &#xCC38;&#xACE0;</p>
+<p><a href="https://github.com/thlorenz/proxyquire" target="_blank">https://github.com/thlorenz/proxyquire</a></p>
+</blockquote>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xD638;&#xCD9C; &#xC21C;&#xC11C;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xBA74; &#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4; :</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../src/app&apos;</span>); <span class="hljs-comment">// app uses original find-basic-member</span>
+proxyquire(<span class="hljs-string">&apos;../src/router/auth&apos;</span>, {
+    <span class="hljs-string">&apos;../find-basic-member&apos;</span>: mockFindBasicMember
+});
+</code></pre>
+<p><code>proxyquire</code>&#xAC00; <code>app.js</code> -&gt; <code>auth.js</code>&#xC758; <code>require(&apos;../find-basic-member&apos;)</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</p>
+<h2 id="requireproxyquirenopreservecache-&#xC0AC;&#xC6A9;&#xD558;&#xAE30;"><code>require(&apos;proxyquire&apos;).noPreserveCache()</code> &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</h2>
+<p>&#xC704;&#xC758; &#xC608;&#xC81C;&#xCC98;&#xB7FC; &#xC0AC;&#xC6A9;&#xD55C; &#xACBD;&#xC6B0; <code>proxyquire()</code> &#xC774;&#xD6C4;&#xC5D0; &#xB85C;&#xB4DC;&#xD558;&#xB294; &#xBAA8;&#xB4C8;&#xC740; &#xBAA8;&#xB450; Mock Module&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</p>
+<p>&#xB530;&#xB77C;&#xC11C; &#xBA85;&#xD655;&#xD558;&#xAC8C; Mock Module &#xC758;&#xC874;&#xC744; &#xC8FC;&#xC785;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC788;&#xB2E4;.</p>
+<p><code>noPreserveCache()</code>&#xB294; &#xCE90;&#xC2DC;&#xB41C; &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xB2E4;&#xC2DC; &#xBAA8;&#xB4C8;&#xC744; &#xB85C;&#xB4DC;&#xD55C;&#xB2E4;.</p>
+<p><code>proxyquire()</code>&#xC758; &#xBC18;&#xD658;&#xC740; Mock Module &#xC774;&#xB2E4;. &#xC774;&#xB97C; &#xC774;&#xC6A9;&#xD574; &#xC758;&#xC874;&#xC131;&#xC744; &#xC9C1;&#xC811; &#xC8FC;&#xC785;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> mockAuth = proxyquire(<span class="hljs-string">&apos;../src/router/auth&apos;</span>, {
+    <span class="hljs-string">&apos;../find-basic-member&apos;</span>: mockFindBasicMember
+});
+<span class="hljs-keyword">const</span> mockApp = proxyquire(<span class="hljs-string">&apos;../src/app&apos;</span>, {
+    <span class="hljs-string">&apos;./router/auth&apos;</span>: mockAuth
+});
+</code></pre>
+<p>&#xC758;&#xC874;&#xC758; &#xC758;&#xC874;&#xC744; &#xBAA8;&#xB450; &#xBA85;&#xC2DC;&#xD55C;&#xB2E4;.</p>
+<!-- front matter에 id가 있는 페이지만 댓글 출력 -->
+<p><style>
+  .utterances {
+    margin-top: 8em;
+  }
+</style></p>
+<script src="https://utteranc.es/client.js" repo="Edunga1/cat-logic-comments" issue-term="page-44" crossorigin="anonymous" async>
+</script>
+
+
+                </div>
+            </div>
+        </div>
+
+        
+            
+        
+    
+
+
+    
+    <div class="faq-page-footer">
+        <a href="https://www.gitbook.com" target="_blank">Published with GitBook</a> ·
+        <span>Last edit March 25th 2019</span>
+    </div>
+    
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results for "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+</div>
+
+        
+<script src="../gitbook/gitbook.js"></script>
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    
+
+    
+    <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+(function() {
+    gitbook.page.hasChanged({"page":{"id":"page-44","title":"Testing - proxyquire - 모듈 로드 순서 문제","level":"11.7","depth":1,"next":{"title":"VSCode - 타입 힌팅 사용하기 (blog)","level":"11.8","depth":1,"path":"nodejs/type-hinting-in-vscode.md","ref":"nodejs/type-hinting-in-vscode.md","articles":[]},"previous":{"title":"Testing - proxyquire - vs. rewire","level":"11.6","depth":1,"path":"nodejs/proxyquire-vs-rewire.md","ref":"nodejs/proxyquire-vs-rewire.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-faq","-fontsettings","-sharing","search","lunr","multiple-footers","ga"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-112751852-1"},"multiple-footers":{"paths":["layouts/uterrances-comment.md"]},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"highlight":{},"theme-faq":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"c atl og i c","gitbook":"*"},"file":{"path":"nodejs/proxyquire-module-import-order.md","mtime":"2019-03-25T13:36:56.154Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-07T15:31:26.191Z"},"basePath":"..","book":{"language":""}})
+})();
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+
