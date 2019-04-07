@@ -3,6 +3,7 @@
 ## 🐱 Logic
 
 보고 들은 것에 대한 생각, 용어 정의 등을 자유롭게 씁니다.
+* [`ngrok`을 이용하여 맥에서 Remote Login 하기](cat-logic/mac-osx-remote-login-with-ngrok.md)
 * [깃 커밋 해시 충돌에 관하여](cat-logic/git-commit-hash-collision.md)
 * [`git rebase -i COMMIT`: Squashing](cat-logic/git-rebase-option-i.md)
 * [Kubernetes 컨테이너간 볼륨 공유](cat-logic/k8s-shared-volume-between-contaienrs.md)
