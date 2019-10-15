@@ -15,6 +15,18 @@ tags: linux, shell, scheduling
 1. 터미널을 꺼도 동작하고 있는가?
 1. `nohup`으로 실행한 프로세스를 어떻게 찾아서 끌 수 있는가?
 
+사용방법:
+
+```bash
+$ nohup COMMAND
+```
+
+*COMMAND* 에 환경변수를 전달하려면:
+
+```bash
+$ FOO='foo' nohup COMMAND
+```
+
 ## 로그를 실시간으로 확인할 수 있는가?
 
 가능 했다. 스크립트의 출력이 `nohup.out`에 저장되고 있었다.
