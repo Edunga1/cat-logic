@@ -23,4 +23,4 @@ jobs:
     - name: npm install, and publish
       run: |
         npm ci
-        ./publish-to-gh.sh
+        npm run publish

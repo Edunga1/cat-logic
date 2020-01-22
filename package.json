@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gitbook build",
-    "publish": "./publish-to-gh.sh",
+    "publish": "gitbook install && ./publish-to-gh.sh",
     "serve": "gitbook serve",
     "test": "jest"
   },
