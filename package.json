@@ -4,8 +4,8 @@
   "description": "my knowledge base.",
   "main": "index.js",
   "scripts": {
-    "build": "gitbook build",
-    "publish": "gitbook install && ./publish-to-gh.sh",
+    "build": "gitbook install && gitbook build",
+    "publish": "./publish-to-gh.sh",
     "serve": "gitbook serve",
     "test": "jest"
   },
