@@ -5,6 +5,12 @@ tags: vim
 ---
 # Vim
 
+## command mode
+
+`ctrl + f` 누르면 normal mode 처럼 편집할 수 있다.
+이것은 NERDTree의 파일명 수정이나 파일 생성 시에도 동작한다.
+매번 파일 이름 수정할 때 마다 단어 단위로 이동할 수 없어서 불편했는데, `ctrl + f`를 눌러 `hjkl` `wb` 등으로 이동하자.
+
 ## vim variables
 
 ### path
