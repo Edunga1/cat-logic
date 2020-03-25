@@ -33,3 +33,53 @@ link: https://packaging.python.org/guides/tool-recommendations/
 
 ubuntu 14.04에서는 다른 선택지가 없어서 `pip install`로 설치해봤는데 `2018.11.26` 버전이 설치됐다.
 구버전 같아 보이는데 아직 제대로 사용해보지 않아서, 최적화된 버전 일지도 모르겠다.
+
+
+## Packaging
+
+### `__all__`
+
+`my_module.py`라는 파일이 있다고 하자:
+
+```python
+__all__ = ['foo', 'Bar']
+
+
+def foo():
+  pass
+
+ 
+class Bar:
+  pass
+
+
+_baz = 1
+```
+
+파일 최상단에 `__all__`을 사용한다고 `my_module.py`을 임포트 했을 때 `_baz`에 접근하지 못하게 할 수는 없다.
+
+`from my_module import _baz`
+
+하지만 `__all__`을 사용하면 `__init__.py`를 사용했을 때 효과가 있다.
+
+```
+my_module/
+  __init__.py
+  my_module.py
+```
+
+위 구조로 만들어 두고 `__init__.py`에서 `my_module.py`를 asterisk를 이용하여 임포트한다:
+
+
+```python
+from my_module.my_module import *  # NOQA
+```
+
+flake8이 경고를 출력하므로 `# NOQA`로 무시하도록 했다.
+
+이렇게하면 `my_module`을 사용하는 곳에선 `foo`, `bar`만 가져올 수 있다.
+
+```python
+from my_module import foo, bar  # 가능
+from my_module import _baz  # 불가능
+```
