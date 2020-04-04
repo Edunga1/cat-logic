@@ -34,6 +34,10 @@ link: https://packaging.python.org/guides/tool-recommendations/
 ubuntu 14.04에서는 다른 선택지가 없어서 `pip install`로 설치해봤는데 `2018.11.26` 버전이 설치됐다.
 구버전 같아 보이는데 아직 제대로 사용해보지 않아서, 최적화된 버전 일지도 모르겠다.
 
+Dockerize 하는데 이슈가 있다. 빌드 할 때 pipenv를 결국 설치해야 하는데, 로직을 돌리는데 불필요한 존재기 때문이다.
+그래서 multi-stage build를 하는 것이 필요하다. 빌드 스테이지에서 pipenv를 설치하고, pipenv를 이용하여 requirements.txt를 생성하고,
+requirements.txt를 가지고 실행 스테이지에서 의존 모듈을 설치한다. 그러면 프로덕션 레벨에서 pipenv를 감출 수 있다.
+
 
 ## Packaging
 
