@@ -1,5 +1,6 @@
 ---
 id: page-5
+tags: jargon
 ---
 # Business Rule, Business Logic, Logic
 

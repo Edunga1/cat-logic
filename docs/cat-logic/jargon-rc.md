@@ -1,5 +1,6 @@
 ---
 id: page-7
+tags: jargon
 ---
 # .bash**rc** rc의 의미?
 

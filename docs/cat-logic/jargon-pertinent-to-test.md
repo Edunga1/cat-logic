@@ -1,5 +1,6 @@
 ---
 id: page-6
+tags: jargon
 ---
 # 테스트와 관련된 용어들
 
