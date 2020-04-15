@@ -1,7 +1,7 @@
 ---
 id: 1a26613878a6463f075083d15a498c78
 time: 2020-01-29 17:21:31
-tags: kotlin
+tags: language, kotlin
 ---
 # Kotlin
 
