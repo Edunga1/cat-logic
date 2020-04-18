@@ -1,5 +1,6 @@
 ---
 id: page-31
+tags: javascript, angularjs
 ---
 # Johnpapa's AngularJS Style Guide - Modularity
 

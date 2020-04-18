@@ -1,5 +1,6 @@
 ---
 id: page-38
+tags: javascript
 ---
 # var foo = (bar = 1, bar + 1);
 

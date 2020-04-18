@@ -1,5 +1,6 @@
 ---
 id: page-32
+tags: javascript, angularjs
 ---
 # AngularJS 테스트하기
 

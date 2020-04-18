@@ -1,5 +1,6 @@
 ---
 id: page-36
+tags: javascript
 ---
 # Douglas Crockford's Javascript The Good Parts - 권장하지 않는 것.
 

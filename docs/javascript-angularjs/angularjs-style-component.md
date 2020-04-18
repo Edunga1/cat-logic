@@ -1,5 +1,6 @@
 ---
 id: page-30
+tags: javascript, angularjs
 ---
 # Johnpapa's AngularJS Style Guide - Component
 

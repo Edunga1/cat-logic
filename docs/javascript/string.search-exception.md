@@ -1,5 +1,6 @@
 ---
 id: page-37
+tags: javascript
 ---
 # string.search 사용 시 예외
 

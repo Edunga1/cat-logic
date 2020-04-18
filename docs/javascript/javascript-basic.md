@@ -1,5 +1,6 @@
 ---
 id: page-35
+tags: javascript
 ---
 # Javascript
 

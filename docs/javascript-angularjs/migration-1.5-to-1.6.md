@@ -1,5 +1,6 @@
 ---
 id: page-33
+tags: javascript, angularjs
 ---
 # Migrating 1.5 to 1.6
 

@@ -1,5 +1,6 @@
 ---
 id: page-34
+tags: javascript, angularjs
 ---
 # AngualrJS에서 ViewModel 정적 타이핑하기 (VSCode)
 
