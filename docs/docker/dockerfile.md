@@ -1,5 +1,6 @@
 ---
 id: page-20
+tags: docker
 ---
 # Dockerfile
 

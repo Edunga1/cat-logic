@@ -1,5 +1,6 @@
 ---
 id: page-21
+tags: docker
 ---
 # OSX 에서 Docker 환경 구성하기 - 간단 버전
 

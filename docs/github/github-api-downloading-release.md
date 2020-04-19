@@ -1,5 +1,6 @@
 ---
 id: page-26
+tags: github
 ---
 # Github API로 Release 된 파일 다운받기
 

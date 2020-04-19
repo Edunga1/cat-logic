@@ -1,5 +1,6 @@
 ---
 id: page-24
+tags: git
 ---
 # Git ssh
 

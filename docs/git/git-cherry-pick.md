@@ -1,5 +1,6 @@
 ---
 id: page-22
+tags: git
 ---
 # Cherry Pick
 

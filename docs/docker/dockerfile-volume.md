@@ -1,5 +1,6 @@
 ---
 id: page-19
+tags: docker
 ---
 # Dockerfile의 Volume 명령어
 
