@@ -1,5 +1,6 @@
 ---
 id: page-16
+tags: database
 ---
 # 테이블 이름 컨벤션
 

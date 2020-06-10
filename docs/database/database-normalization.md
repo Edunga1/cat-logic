@@ -1,5 +1,6 @@
 ---
 id: page-15
+tags: database
 ---
 # Database
 

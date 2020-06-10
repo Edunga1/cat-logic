@@ -1,5 +1,6 @@
 ---
 id: page-28
+tags: ionic
 ---
 # Error - Could not find gradle wrapper within Android SDK
 
