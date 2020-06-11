@@ -1,5 +1,6 @@
 ---
 id: page-63
+tags: linux
 ---
 # scp
 

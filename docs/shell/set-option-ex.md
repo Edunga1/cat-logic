@@ -1,5 +1,6 @@
 ---
 id: page-64
+tags: linux
 ---
 # 명령어 - set -ex
 

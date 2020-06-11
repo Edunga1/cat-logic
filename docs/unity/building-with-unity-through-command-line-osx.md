@@ -1,5 +1,6 @@
 ---
 id: page-67
+tags: unity
 ---
 # OSX 커맨드라인으로 유니티 빌드하기
 

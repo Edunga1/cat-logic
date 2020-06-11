@@ -1,5 +1,6 @@
 ---
 id: page-69
+tags: unity
 ---
 # Sprite Packer가 동작하지 않는 현상
 

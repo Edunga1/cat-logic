@@ -1,5 +1,6 @@
 ---
 id: page-62
+tags: linux
 ---
 # curl -O를 통해서 다운된 파일 사이즈가 0인 경우
 
