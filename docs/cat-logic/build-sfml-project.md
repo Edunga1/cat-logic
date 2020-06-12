@@ -1,7 +1,7 @@
 ---
 id: page-84
 time: 2018-10-07 06:26:32
-tag: sfml, C++
+tag: sfml, C++, game
 ---
 
 # SFML 프로젝트 빌드하기
