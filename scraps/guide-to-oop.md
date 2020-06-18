@@ -1,5 +1,6 @@
 ---
 id: page-60
+tags: OOP
 ---
 # OOP 입문
 
