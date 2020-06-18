@@ -1,5 +1,6 @@
 ---
 id: page-61
+tags: http
 ---
 # RESTFul API에서 알맞은 상태 코드를 결정하는 방법
 
