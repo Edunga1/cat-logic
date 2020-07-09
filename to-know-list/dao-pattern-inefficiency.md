@@ -1,5 +1,6 @@
 ---
 id: page-65
+tags: design pattern
 ---
 # Dao 패턴의 비효율성?
 

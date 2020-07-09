@@ -1,5 +1,6 @@
 ---
 id: page-58
+tags: testing, OOP
 ---
 # Robert C. Martin: Principles of Component Design.
 
