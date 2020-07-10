@@ -1,5 +1,6 @@
 ---
 id: page-12
+tags: data structure
 ---
 # Graph
 

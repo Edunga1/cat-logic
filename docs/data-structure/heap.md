@@ -1,5 +1,6 @@
 ---
 id: page-13
+tags: data structure
 ---
 # Heap
 

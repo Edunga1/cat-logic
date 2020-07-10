@@ -1,5 +1,6 @@
 ---
 id: page-14
+tags: data structure
 ---
 # Set - 집합
 

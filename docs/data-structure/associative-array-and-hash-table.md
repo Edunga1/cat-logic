@@ -1,5 +1,6 @@
 ---
 id: page-11
+tags: data structure
 ---
 # Associative Array와 Hash Table
 
