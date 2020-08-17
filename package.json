@@ -22,6 +22,6 @@
   "homepage": "https://github.com/Edunga1/cat-logic#readme",
   "devDependencies": {
     "gitbook-cli": "^2.3.2",
-    "glob": "^7.1.2"
+    "glob": "^7.1.6"
   }
 }
