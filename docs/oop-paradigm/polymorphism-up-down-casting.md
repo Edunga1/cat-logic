@@ -1,5 +1,6 @@
 ---
 id: page-51
+tags: OOP
 ---
 # 다형성 - upcasting & downcasting
 

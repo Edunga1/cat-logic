@@ -1,5 +1,6 @@
 ---
 id: page-49
+ags: html, chrome, javascript, graphic
 ---
 # GDG WebTech Workshop: 측정하는 놈, 로딩하는 놈, 그리는 놈
 
