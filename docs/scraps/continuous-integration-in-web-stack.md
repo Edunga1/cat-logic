@@ -1,5 +1,6 @@
 ---
 id: page-59
+tags: CI/CD
 ---
 # Web Stack 에서의 CI
 

@@ -1,5 +1,6 @@
 ---
 id: page-43
+tags: nodejs, typescript
 ---
 # TypeScript로 Nodejs 개발하기
 

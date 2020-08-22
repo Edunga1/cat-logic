@@ -1,5 +1,6 @@
 ---
 id: page-42
+tags: nodejs
 ---
 # Mocha 사용 시 require.main.require 이슈
 

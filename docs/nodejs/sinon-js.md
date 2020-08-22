@@ -1,5 +1,6 @@
 ---
 id: page-46
+tags: nodejs
 ---
 # Sinon.JS
 

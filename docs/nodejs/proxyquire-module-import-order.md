@@ -1,5 +1,6 @@
 ---
 id: page-44
+tags: nodejs
 ---
 # proxyquire 모듈 로드 순서 문제
 

@@ -1,5 +1,6 @@
 ---
 id: page-45
+tags: nodejs
 ---
 # Proxyquire vs. rewire
 
