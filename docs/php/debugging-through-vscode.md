@@ -1,6 +1,6 @@
 ---
 id: page-57
-tags: php
+tags: php, debugging
 ---
 # VSCode로 PHP 디버깅 하기
 

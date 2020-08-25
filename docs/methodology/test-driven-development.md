@@ -1,6 +1,6 @@
 ---
 id: page-39
-tags: methodology
+tags: methodology, testing
 ---
 # TDD - 테스트 주도 개발 (Test Driven Development)
 

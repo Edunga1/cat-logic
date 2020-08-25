@@ -3,6 +3,8 @@ id: page-25
 ---
 # Gitbook
 
+v1은 이제 죽었다. 다른 라이브러리로 갈아타야 할 때.
+
 ## Issues
 
 ### 폴더 명에 javascript를 사용해선 안됨
