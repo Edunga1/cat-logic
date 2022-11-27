@@ -1,4 +1,6 @@
-# Vim
+# 개요
+
+vim 보다 [neovim](https://github.com/neovim/neovim).
 
 My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 
