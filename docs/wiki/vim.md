@@ -50,6 +50,8 @@ netrw, find 사용법
 
 # [[language server protocol|Language Server Protocol]]
 
+vim을 IDE처럼 사용하기 위한 설정. 이제 LSP로 통일되고 있다.
+
 [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33)
 
 ```
@@ -62,3 +64,21 @@ Plug 'jose-elias-alvarez/null-ls.nvim'    " Inject LSP diagnostics, code actions
 [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) 만으로 LSP 설정할 수 있다.
 [mason](https://github.com/williamboman/mason.nvim) language server, 추가 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.
 [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) diagnostic, linter, code action을 연동해 준다.
+
+
+# Profiling
+
+이유없이 느려진다면 프로파일링 해보자.
+
+아래 함수 내용을 직접 실행하거나, 번거로우니 함수 자체를 정의해두고 `:call StartProfiling()` 호출하자.
+느려지게 만드는 액션을 하고 `:profile stop` 또는 vim에서 나가면, `vim-profiling.log` 파일이 생성된다.
+
+```vim
+function! StartProfiling()
+  :profile start vim-profiling.log
+  :profile file *
+  :profile func *
+  echo 'profiling is started. log file: vim-profiling.log'
+endfunction
+```
+
