@@ -4,6 +4,7 @@ vim 보다 [neovim](https://github.com/neovim/neovim).
 
 My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 
+
 # quickfix & location list
 
 `:h quickfix` `:h location-list`
@@ -30,6 +31,7 @@ location-list의 명령어는 prefix `c` -> `l` 바꾸면 대응한다.
 
 e.g. `:vimgrep /myfunc/ **/*.c`
 
+
 # variables
 
 ## `path`
@@ -44,3 +46,19 @@ netrw, find 사용법
 `set path+=**` `**`를 추가하면 현재 폴더 내 모든 범위를 검색한다.
 `**` 사용하기 전과 비교해보면 검색 수가 달라지는 것을 알 수 있다.
 `.gitignore`의 무시한 파일, `node_modules` 같이 무거운 폴더도 검색된다.
+
+
+# [[language server protocol|Language Server Protocol]]
+
+[.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33)
+
+```
+Plug 'neovim/nvim-lspconfig'              " Quickstart configs for Nvim LSP
+Plug 'williamboman/mason.nvim'            " Portable package manager for Neovim
+Plug 'williamboman/mason-lspconfig.nvim'  " Extension to mason.nvim
+Plug 'jose-elias-alvarez/null-ls.nvim'    " Inject LSP diagnostics, code actions, and more via Lua
+```
+
+[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) 만으로 LSP 설정할 수 있다.
+[mason](https://github.com/williamboman/mason.nvim) language server, 추가 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.
+[null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) diagnostic, linter, code action을 연동해 준다.
