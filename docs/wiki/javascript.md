@@ -1,7 +1,26 @@
----
-id: page-36
-tags: javascript
----
+# 개요
+
+<!--toc:start-->
+- [개요](#개요)
+- [자바스크립트와 이벤트 루프](#자바스크립트와-이벤트-루프)
+- [Douglas Crockford's Javascript The Good Parts - 권장하지 않는 것.](#douglas-crockfords-javascript-the-good-parts-권장하지-않는-것)
+  - [Good Parts Reconsidered](#good-parts-reconsidered)
+    - [No prototypal pattern에 대한 이야기](#no-prototypal-pattern에-대한-이야기)
+    - [null, falsiness에 대한 이야기](#null-falsiness에-대한-이야기)
+  - [Loops Reconsidered](#loops-reconsidered)
+  - [요약](#요약)
+- [var foo = (bar = 1, bar + 1);](#var-foo-bar-1-bar-1)
+<!--toc:end-->
+
+# 자바스크립트와 이벤트 루프
+
+http://meetup.toast.com/posts/89
+자바스크립트가 어떻게 싱글 스레드에서 UI, 비동기 처리를 하는지에 대해 설명하는 글.
+
+https://vimeo.com/96425312
+이벤트 루프에 대해서 설명하는 동영상.
+
+
 # Douglas Crockford's Javascript The Good Parts - 권장하지 않는 것.
 
 ## Good Parts Reconsidered
@@ -50,3 +69,16 @@ falsiness는 좋은 아이디어지만 크락포드는 논리식에서 falsiness
 
 반복문은 `for` 구문보다 `Array.protoype.forEach`와 같은 배열 메서드를 이용하거나, 꼬리 재귀 함수를 사용하자.
 오브젝트를 순회하고 싶다면 `Object.keys(obj)`로 키를 배열화하여 사용한다.
+
+
+# var foo = (bar = 1, bar + 1);
+
+```javascript
+var foo = (bar = 1, bar + 1);
+console.log(bar); // 1
+console.log(foo); // 2
+```
+
+`bar = 1` 이후 `bar + 1`의 반환.
+
+`Array.prototype.reduce` 같은 메서드에서 유용하다.
