@@ -82,3 +82,9 @@ console.log(foo); // 2
 `bar = 1` 이후 `bar + 1`의 반환.
 
 `Array.prototype.reduce` 같은 메서드에서 유용하다.
+
+
+# [[angular-js|AngularJS]]
+
+Angular가 아닌 AngularJS에 대한 이야기.
+이제는 사용하지 않지만 [스타일가이드](https://github.com/johnpapa/angular-styleguide/)의 철학은 한 번 읽어볼만 하다.
