@@ -1,8 +1,4 @@
----
-id: page-63
-tags: linux
----
-# scp
+# 개요
 
 **Remote - Local 간 파일 전송**
 
