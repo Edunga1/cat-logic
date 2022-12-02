@@ -26,8 +26,7 @@ location-list의 명령어는 prefix `c` -> `l` 바꾸면 대응한다.
 
 `:h vimgrep` `:grep` `:lgrep`(location-list)
 
-패턴을 검색한다. quickfix를 사용한다.
-`vimgrep`을 internal grep, `grep`을 external grep으로 메뉴얼에서 설명한다.
+패턴을 검색하고 결과를 quickfix 목록으로 만든다.
 
 e.g. `:vimgrep /myfunc/ **/*.c`
 
