@@ -23,3 +23,7 @@ ref. [[삶과 추억] ‘카피·페이스트’ 개발자 래리 테슬러](htt
 larry의 원칙(principle)을 세웠는데, 누구도 mode에 얽매이지 않게 하는 것이다.
 
 원칙을 중요하게 생각한 게 https://nomodes.com/Larry_Tesler_Consulting/Home.html 이런 사이트도 만들었다. :0
+
+## Programmers! Learn when to stop! Don't over-engineer your code.
+
+https://youtu.be/-AQfQFcXac8
