@@ -6,16 +6,18 @@
 
 https://kotlinlang.org/docs/scope-functions.html
 
-코드 가독성을 높이는데 도움을 주는 함수.
-context object와 관련된 코드를 scope function block 내에서만 사용한다.
-그러면 다른 부분을 더럽히지 않는 장점이 있다.
 
-scope function은 모두 같은 일을 한다.
+e.g. `run`
+```kotlin
+val totalPrice = item.run { price * amount }
+```
+
+scope functions 모두 같은 일을 한다.
 context object를 어떻게 접근하는 지, 반환 값은 무엇인지에 따라 적절하게 골라서 사용하면 좋다.
 예를들어, context object로 추가 로직을 처리하고, 특별히 반환할 것이 없으면 `also`.
 context object의 상태로 계산하여 반환하고 싶으면 `let`을 사용하면 의미가 맞다.
 
-헷갈린다면 문서 내 표를 참고하자:  https://kotlinlang.org/docs/scope-functions.html#function-selection
+어떤 함수를 사용할 지 시나리오를 공식 문서에서 설명한다:  https://kotlinlang.org/docs/scope-functions.html#function-selection
 
 
 # Testing
