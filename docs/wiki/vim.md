@@ -9,10 +9,12 @@ My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 
 `:h quickfix` `:h location-list`
 
-파일 지점을 목록화하고 이동한다.
-quickfix는 모든 창에서 지점을 공유하고, location list는 현재 창에서만 관리한다.
+파일 위치를 목록으로 관리한다.
+quickfix는 모든 창에서, location-list는 현재 창에서만 유지한다는 점이 다르다.
 
 ref. https://freshman.tech/vim-quickfix-and-location-list/
+
+목록에 나타난 코드를 한꺼번에 수정할 수 있는데, 동시에 여러 파일을 수정하는 용도로 사용한다.
 
 ## commands
 
@@ -31,7 +33,24 @@ location-list의 명령어는 prefix `c` -> `l` 바꾸면 대응한다.
 e.g. `:vimgrep /myfunc/ **/*.c`
 
 
-# variables
+# mapping 시 `:...<cr>` vs `<cmd>...<cr>`
+
+* `nnoremap [w :lprevious<cr>`
+* `nnoremap [w <cmd>lprevious<cr>`
+
+두 코드 모두 `[w` 단축키에 `lprevious<cr>` 명령을 매핑한다.
+
+`:h <cmd>`
+> The <Cmd> pseudokey begins a "command mapping", which executes the command
+> directly (without changing modes).  Where you might use ":...<CR>" in the
+> {rhs} of a mapping, you can instead use "<Cmd>...<CR>".
+
+`<cmd>`는 모드 변경없이 명령을 실행한다고 되어있다.
+
+두 방식을 비교해보면, `:...<cr>`는 실행한 명령어가 입력창에 남아있다.
+반면에 `<cmd>...<cr>`는 남아있지 않다.
+
+# Variables
 
 ## `path`
 
