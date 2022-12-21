@@ -54,6 +54,11 @@ normalize('NFC', u'그린빌')
 '그린빌'.normalize('NFC')
 ```
 
+NFC -> NFD도 가능하다:
+```javascript
+'그린빌'.normalize('NFD')
+```
+
 ### Reference
 
 * https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_%EB%93%B1%EA%B0%80%EC%84%B1
