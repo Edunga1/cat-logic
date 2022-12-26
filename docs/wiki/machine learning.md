@@ -1,3 +1,24 @@
+<!--toc:start-->
+- [개요](#개요)
+- [ChatGPT](#chatgpt)
+  - [Try ChatGPT!](#try-chatgpt)
+  - [ChatGPT를 Virtual Machine으로 만들기](#chatgpt를-virtual-machine으로-만들기)
+- [Stable Diffusion](#stable-diffusion)
+  - [promptbook](#promptbook)
+    - [책갈피](#책갈피)
+  - [따라하기](#따라하기)
+    - [Colab Notebook](#colab-notebook)
+    - [stable-diffusion-webui](#stable-diffusion-webui)
+      - [Trouble Shooting](#trouble-shooting)
+<!--toc:end-->
+
+# 개요
+
+[페이스북 그룹 덧글 중에서](https://www.facebook.com/groups/255834461424286/?multi_permalinks=1929705450703837):
+> Sung Kim: 학생이나 교수나 누구나 이런 ai를 사용해서 본인의 performance를 올리는 사람이 승자가 될것이라 생각합니다. 마치 계산기가 나온 초기 시절 그래도 주판이나 암산이 편하고 빠르다고 한 사람들이 있었었죠. 앞으로 이런 글쓰기와 추론등도 계산기를 사용하듯 일반화된 인간의 tool로 보편화 되어 사용될것 같습니다.
+
+만들지는 못하더라도 적극적으로 사용해 보자. 이 바람을 피할 수는 없다.
+
 # ChatGPT
 
 https://openai.com/blog/chatgpt/
@@ -46,6 +67,15 @@ OP: https://www.engraved.blog/building-a-virtual-machine-inside/
 
 text-to-image 모델.
 
+## promptbook
+
+프롬프트를 설명하는 ebook:
+https://openart.ai/promptbook
+
+### 책갈피
+
+SD는 [LAION-5B](https://laion.ai/blog/laion-5b/) 데이터 세트의 이미지로 트레이닝 했다.
+
 ## 따라하기
 
 ### Colab Notebook
@@ -61,3 +91,24 @@ Web UI로 제공하는 버전:
 https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
 코드 작성할 필요 없이 웹페이지에서 모든 작업을 처리할 수 있다.
+
+#### Trouble Shooting
+
+WSL2 Ubuntu에서 환경 구축을 하는데 이슈가 좀 있었다.
+
+environment:
+* python 3.10.8
+* pyenv + virtual env
+
+**실행 시 `ModuleNotFoundError: No module named '_bz2'` 에러**
+
+`sudo apt-get install libbz2-dev` 후 파이썬(pyenv) 재설치. 파이썬 설치 시점에 제공해야 한다.
+
+**실행 시 `ModuleNotFoundError: No module named '_lzma'` 에러**
+
+`brew install xz` 설치하고, 파이썬 설치 시 패키지 위치를 전달해야 한다:
+```bash
+CFLAGS="-I$(brew --prefix xz)/include" LDFLAGS="-L$(brew --prefix xz)/lib" pyenv install 3.10.8
+```
+
+파이썬 설치 후 경고 메시지가 출력되고 있었다: `WARNING: The Python lzma extension was not compiled. Missing the lzma lib?`
