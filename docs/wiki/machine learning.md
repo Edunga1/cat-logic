@@ -1,5 +1,3 @@
-# 개요
-
 # ChatGPT
 
 https://openai.com/blog/chatgpt/
@@ -43,3 +41,23 @@ OP: https://www.engraved.blog/building-a-virtual-machine-inside/
 * 그 외에 명령어와 python code를 실행하는 명령어도 잘 동작한다.
 
 추가로 ChatGPT로 IQ 테스트를 했다는 글: https://twitter.com/SergeyI49013776/status/1598430479878856737
+
+# Stable Diffusion
+
+text-to-image 모델.
+
+## 따라하기
+
+### Colab Notebook
+
+Colab Notebook으로 공유되어 있어서 따라하기 쉽다:
+https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/stable_diffusion.ipynb
+
+Hugging Face에서 모델을 다운로드 받기 위해 로그인을 필요로 한다. 웹 연동이 되므로 쉽게 가능.
+
+### stable-diffusion-webui
+
+Web UI로 제공하는 버전:
+https://github.com/AUTOMATIC1111/stable-diffusion-webui
+
+코드 작성할 필요 없이 웹페이지에서 모든 작업을 처리할 수 있다.
