@@ -10,7 +10,13 @@
   - [Loops Reconsidered](#loops-reconsidered)
   - [요약](#요약)
 - [var foo = (bar = 1, bar + 1);](#var-foo-bar-1-bar-1)
-- [[[angular-js|AngularJS]]](#angular-jsangularjs)
+- [[AngularJS](angular-js)](#angularjsangular-js)
+- [Visual Studio Code에서 타입 힌팅 사용하기](#visual-studio-code에서-타입-힌팅-사용하기)
+  - [기본 지원](#기본-지원)
+  - [JSDoc을 이용하여 타입 추론](#jsdoc을-이용하여-타입-추론)
+    - [오브젝트와 매개변수 힌팅](#오브젝트와-매개변수-힌팅)
+    - [Generic Type](#generic-type)
+      - [Promise](#promise)
 <!--toc:end-->
 
 # 자바스크립트와 이벤트 루프
@@ -66,7 +72,7 @@ falsiness는 좋은 아이디어지만 크락포드는 논리식에서 falsiness
 **new**, **Object.create**, **this**, prototyping 모두 사용하지 않는 것을 권장한다.
 함수형 패러다임을 사용하는 것을 추천한다.
 
-**null** 대신 **undefined**를 사용하는 것을 권장하고, `''` 같은 falsy value를 사용하지 말고 명시적으로 비교문을 작성하자.
+**null** 대신 **undefined** 사용하는 것을 권장하고, `''` 같은 falsy value를 사용하지 말고 명시적으로 비교문을 작성하자.
 
 반복문은 `for` 구문보다 `Array.protoype.forEach`와 같은 배열 메서드를 이용하거나, 꼬리 재귀 함수를 사용하자.
 오브젝트를 순회하고 싶다면 `Object.keys(obj)`로 키를 배열화하여 사용한다.
@@ -85,7 +91,131 @@ console.log(foo); // 2
 `Array.prototype.reduce` 같은 메서드에서 유용하다.
 
 
-# [[angular-js|AngularJS]]
+# [AngularJS](angular-js)
 
 Angular가 아닌 AngularJS에 대한 이야기.
 이제는 사용하지 않지만 [스타일가이드](https://github.com/johnpapa/angular-styleguide/)의 철학은 한 번 읽어볼만 하다.
+
+# Visual Studio Code에서 타입 힌팅 사용하기
+
+Javascript 개발을 하다보면 이런 문구를 많이 만나게 된다:
+
+`Uncaught SyntaxError: Invalid or unexpected token`\
+`Uncaught TypeError: arg1.trim is not a function`
+
+
+```javascript
+function foo(arg1) {
+    var str = arg1.trim(); // Uncaught TypeError ...
+}
+```
+
+이럴때면 [정적 타입](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C%ED%98%95_%EC%B2%B4%EA%B3%84) 언어의 IDE가 제공하는
+타입힌트가 그리워진다.
+
+Visual Studio Code(또는 [LSP](language-server-protocol)를 사용하는 에디터라면)에서
+**JSDoc** 활용하면 에디터에서 타입 힌트를 제공받을 수 있다.
+
+## 기본 지원
+
+VSCode는 기본적인 타입 추론 기능을 제공한다:
+
+![vscode intellisense](../$images/vscode-intellisense-example.png)
+
+변수 `foo`가 문자열 타입인 것을 알 수 있기 때문에 `split()` 메서드가 자동 완성 목록에 나타난다.
+
+하지만 매개변수라면?
+
+![vscode intellisense](../$images/vscode-intellisense-example2.png)
+
+**Object** 또한 힌트를 제대로 받을 수 없다.
+
+![vscode intellisense](../$images/vscode-intellisense-example3.png)
+
+## JSDoc을 이용하여 타입 추론
+
+JSDoc은 자바스크립트의 문서화하기 위한 주석 포맷이다.
+
+ref. http://usejsdoc.org/about-getting-started.html
+
+### 오브젝트와 매개변수 힌팅
+
+타입이 `Object` 인 매개변수의 힌트를 얻어 본다.
+```javascript
+{
+    foo: 'foo',
+    bar: 95
+}
+```
+
+```javascript
+/**
+ * @param {{foo: string, bar: number}} obj
+ */
+function func(obj) {
+    var foo = obj.foo;
+    var bar = obj.bar;
+}
+```
+
+![vscode intellisense](../$images/vscode-intellisense-example4.png)
+
+`foo`, `bar` 모두 타입을 알 수 있다.
+
+함수의 반환값이라면 `@return`을 사용하면 된다:
+
+```javascript
+/**
+ * @return {{foo: string, bar: number}}
+ */
+function func() {
+    const obj = {};
+    obj.foo = 'foo';
+    obj.bar = 95;
+
+    return obj;
+}
+
+func(). // foo, bar 타입 힌트를 확인할 수 있다.
+```
+
+### Generic Type
+
+매개변수를 그대로 반환하는 간단한 함수가 있다고 하면:
+
+```javascript
+/**
+ * @template T
+ */
+
+/**
+ * @param {T} arg
+ * @return {T}
+ */
+function func(arg) {
+    return arg;
+}
+```
+
+매개변수와 리턴 타입이 똑같이 출력 된다:
+
+![vscode intellisense](../$images/vscode-intellisense-example5.png)
+
+#### Promise
+
+Promise 또한 Generic을 사용함으로 다음과 같이 표현할 수 있다:
+
+```javascript
+/**
+ * @return {Promise<string>}
+ */
+function func() {
+    // ... 구현 부분 생략 ...
+    // 문자열을 넘겨주는 Promise
+    return promise;
+}
+
+func().then(function (result) {
+    result. // result가 문자열인 것을 알 수 있다.
+});
+```
