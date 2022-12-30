@@ -66,7 +66,7 @@ netrw, find 사용법
 `.gitignore`의 무시한 파일, `node_modules` 같이 무거운 폴더도 검색된다.
 
 
-# [[language server protocol|Language Server Protocol]]
+# [Language Server Protocol](language-server-protocol)
 
 vim을 IDE처럼 사용하기 위한 설정. 이제 LSP로 통일되고 있다.
 

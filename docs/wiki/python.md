@@ -24,7 +24,8 @@ sources = {
 ## pyright
 
 https://github.com/microsoft/pyright
-[[language server protocol|language server]] for python.
+
+[language server](language-server-protocol) for python.
 
 ## pylint
 
