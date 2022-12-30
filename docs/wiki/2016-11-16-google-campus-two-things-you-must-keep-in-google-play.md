@@ -1,10 +1,6 @@
----
-id: page-50
-tags: google
----
-# 구글캠퍼스 - 구글 플레이에서 꼭 지켜야 할 두 가지
+# 개요
 
-2016-11-16 캠퍼스 스타트업 스쿨의 구글 플레이 생존기 내용
+2016-11-16 캠퍼스 스타트업 스쿨의 "구글 플레이에서 꼭 지켜야 할 두 가지"
 
 2가지 주제로 진행되었다.
 
@@ -18,6 +14,28 @@ tags: google
 [https://developer.android.com/index.html](https://developer.android.com/index.html)
 
 여기에 있는 정보들을 더 자세하게 알려주는 것이 모임의 목표라고.. :D
+
+<!--toc:start-->
+- [구글캠퍼스 - 구글 플레이에서 꼭 지켜야 할 두 가지](#구글캠퍼스-구글-플레이에서-꼭-지켜야-할-두-가지)
+  - [머터리얼 디자인 (Material Design)](#머터리얼-디자인-material-design)
+    - [용도별로 알맞은 컴포넌트 사용하기](#용도별로-알맞은-컴포넌트-사용하기)
+      - [탭(Tab)](#탭tab)
+      - [탐색 서랍(Navigation Drawer)](#탐색-서랍navigation-drawer)
+      - [미니 서랍(Mini Navigation Drawer)](#미니-서랍mini-navigation-drawer)
+    - [머터리얼 디자인의 우수 사례](#머터리얼-디자인의-우수-사례)
+  - [개발](#개발)
+    - [단말기 다양성 고려하기](#단말기-다양성-고려하기)
+      - [최소한의 Manifest 설정](#최소한의-manifest-설정)
+      - [용량 최소화](#용량-최소화)
+      - [Manifest의 Target SDK Version 맞추기](#manifest의-target-sdk-version-맞추기)
+    - [유용한 기능](#유용한-기능)
+      - [알람 (Notification)](#알람-notification)
+      - [Runtime Permission](#runtime-permission)
+      - [Google Play Game](#google-play-game)
+  - [그 외](#그-외)
+    - [A / B 테스팅](#a-b-테스팅)
+    - [머터리얼 디자인을 잘 사용하면 직접 추천 앱에 노출시켜 준다!](#머터리얼-디자인을-잘-사용하면-직접-추천-앱에-노출시켜-준다)
+<!--toc:end-->
 
 ## 머터리얼 디자인 (Material Design)
 
