@@ -1,6 +1,3 @@
----
-id: page-3
----
 # 땅따먹기 게임
 
 https://programmers.co.kr/learn/challenge_codes/36
