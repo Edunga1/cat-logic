@@ -25,3 +25,15 @@ DB 상태를 다시 복구할 수 있다.
 
 Django는 테스트 시 데이터 삭제 여부에 대한 옵션이 있다:<br>
 https://docs.djangoproject.com/en/2.2/topics/testing/advanced/#django-db-connection-creation
+
+Spring에서 테스트에 `@Transactional` 사용하지 말 것을 설명하는 글도 있다:\
+[Don’t Use @Transactional in Tests](https://dev.to/henrykeys/don-t-use-transactional-in-tests-40eb)
+
+테스트에 `@Transactional`을 붙이면 위와 테스트를 트랜잭션으로 묶을 수 있다. 하지만 그러면서 발생하는 문제점도 있다.
+
+* [false negative](https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93_%EC%96%91%EC%84%B1%EA%B3%BC_%EA%B1%B0%EC%A7%93_%EC%9D%8C%EC%84%B1)으로 테스트를 망침
+* 운영코드에는 버그가 있지만, 테스트에서 성공하는 것을 **false negative** 라고한다.
+* 이는 개발자의 테스트에 대한 신뢰도 감소로 이어진다. 테스트를 덜 작성하게 될 것이다.
+* 직접 테스트하지 않는 이상 발견할 수 없는 버그가 운영 코드에 포함된다.
+
+글에서 설명하는 false negative 예제: 운영 코드에는 `@Transactional` 빠졌지만, 테스트에는 있어서 성공하고, 직접 호출하면 실패한다.
