@@ -1,8 +1,13 @@
----
-id: page-84
-time: 2018-10-07 06:26:32
-tag: sfml, C++, game
----
+# 개요
+
+Simple and Fast Multimedia Library. 줄여서 SFML이라 한다.
+C++ 기반 멀티미디어를 가져오거나 그리고, Window를 만드는 API를 제공한다.
+
+https://www.youtube.com/@FamTrinli
+
+*Let's make 16 games in C++/SFML!*<br>
+SFML을 이용해 테트리스, 레이싱 게임, 애니팡 like 게임을 만드는 시리즈.
+배속이지만, 5분이내로 짧게 요약하고 있다. 상세설명 란에 코드도 공개하고 있다.
 
 # SFML 프로젝트 빌드하기
 
