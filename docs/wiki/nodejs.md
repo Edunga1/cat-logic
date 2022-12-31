@@ -1,11 +1,9 @@
 # 개요
 
-node.js로 개발을 하고있지 않아서.. 내용이 2016년 정도에 머물러 있다.
-
-지금은 [Jest](https://github.com/facebook/jest)를 사용하고 있다.
-이거 하나면 대부분 가능하더라.
+node.js로 개발을 하고있지 않아서.. 대부분 내용이 2016년 정도에 머물러 있다.
 
 <!--toc:start-->
+- [개요](#개요)
 - [NodeJS Test Tools](#nodejs-test-tools)
   - [Mocha - Framework](#mocha-framework)
   - [Chai - Library](#chai-library)
@@ -20,11 +18,15 @@ node.js로 개발을 하고있지 않아서.. 내용이 2016년 정도에 머물
   - [rewire 제한사항](#rewire-제한사항)
 - [Sinon.JS](#sinonjs)
   - [`new Date()` 조작하기](#new-date-조작하기)
+- [NodeJS data validation](#nodejs-data-validation)
+- [NodeJS 서버 로컬 요청만 허용하기](#nodejs-서버-로컬-요청만-허용하기)
+- [pm2 deploy 시 주의할 점](#pm2-deploy-시-주의할-점)
 <!--toc:end-->
 
 # NodeJS Test Tools
 
-Framework - Library - Coverage Tool 한 세트로 사용한다.
+지금은 [Jest](https://github.com/facebook/jest)를 사용하고 있다.
+이거 하나면 대부분 가능하더라.
 
 ## Mocha - Framework
 
@@ -248,3 +250,89 @@ console.log(new Date()); // Fri Dec 01 2000 00:00:00 GMT+0900 (KST)
 clock1.restore();
 console.log(new Date()); // now
 ```
+
+# NodeJS data validation
+
+웹 서버를 작성할 때, 요청 데이터를 수동으로 검증하는 일은 너무 피곤하다.
+
+Python Django는 자체적으로 Form 클래스를 제공한다:\
+https://developer.mozilla.org/ko/docs/Learn/Server-side/Django/Forms
+
+Django Form은 정말 다양한 필드를 지원한다.
+
+Python Flask는 WTForm 또는 Marshmallow을 사용한다:
+
+* https://github.com/wtforms/wtforms
+* https://github.com/marshmallow-code/marshmallow
+
+WTForm이 경량하게 사용할 수 있었고, Marshmallow는 사용해보지 않았다.
+Marshmallow는 Django의 Form과 영속성을 결합한 Model Form과 비슷한 기능을 지원하는 거 같다.
+
+NodeJS는 아직까지 사용해본 적이 없다.
+이때까지 수동으로 처리해왔는데 너무 힘들었다.
+이런거도 해보려다가 말았다:\
+https://github.com/Edunga1/grooming-type-checker
+
+expressjs나 다른 프레임워크는 어떻게 처리하는지 찾아보니 Joi를 사용하는가 보다.
+Joi는 hapijs의 생태계에서 개발되었다.
+
+hapijs에 종속되지 않아서 어느 곳에서나 사용할 수 있다:
+
+> The most powerful schema description language and data validator for JavaScript.
+
+# NodeJS 서버 로컬 요청만 허용하기
+
+https://stackoverflow.com/questions/14043926/node-js-connect-only-works-on-localhost<br>
+여기에서 힌트를 얻었음
+
+https://nodejs.org/api/net.html#net_server_listen_port_host_backlog_callback<br>
+`server.listen()` 스펙을 보면 포트 번호와 함께 host(ip)를 입력하면 해당 ip만 허용한다.
+
+기본값은 `0.0.0.0`이고 '지정되지 않음'을 의미하며 외부 ip의 연결도 허용하지만, `127.0.0.1`으로 두면 로컬 연결만 허용된다.
+
+근데, 이렇게 로컬 요청을 구분하는 것은 좋지 않은 것으로 보인다.
+MSA 환경 구축하면 다른 머신의 연결도 있을테니까.
+virtual host 또는 방화벽으로 막는게 합리적으로 보인다.
+
+# pm2 deploy 시 주의할 점
+
+[pm2 deploy tutorial](http://pm2.keymetrics.io/docs/usage/deployment/#complete-tutorial)
+처럼 `post-deploy`를 다음과 같이 저장하는 경우 조심해야 한다.
+
+```json
+"post-deploy": "npm install && pm2 startOrRestart ecosystem.json --env production"
+```
+
+`pm2 deploy` 하면 다음 절차로 일이 발생한다:
+1. 로컬 `ecosystem.json`과 같은 설정 파일을 읽어들임
+1. 명세한 서버 정보(`user`, `host`)로 리모트 서버에 접속
+1. (리모트 서버에서) git pull
+1. (리모트 서버에서) npm install
+1. (리모트 서버에서) pm2 startOrRestart ecosystem.json --env production
+1. (리모트 서버에서) 위 명령어에 의한 `ecosystem.json` 설정 파일을 읽어들임
+1. `apps` 명세에 따른 배포
+
+그러니까 설정 파일은 로컬에서, 리모트에서 총 2번 읽어들인다.
+
+그래서 pm2는 현재 브랜치가 트래킹 중인 리모트 브랜치와 달라지면 싱크를 맞추라고 한다: `push your changes before deploying`
+
+로컬이랑 서버랑 설정 파일이 안맞으면 골치아파진다. 서로 다른 설정 파일을 읽기 때문에 원하는 대로 작업이 이루어지지 않을 수도 있다.
+원인은 로컬에서 실행되는 명령어의 명세인 `deploy`, 리모트 서버에서 실행되는 명령어의 명세인 `apps`를 보통 하나의 파일에서 관리하고
+코드베이스에 포함하기 때문인데, 설정 파일을 다른 위치에 두면 로컬과 리모트의 설정 파일의 싱크를 보장할 수 없다.
+
+---
+
+pm2로 배포 프로세스를 관리하고 싶어서 설정 파일을 작성하였으나, 데이터베이스 비밀번호를 `env`에 저장하면 코드베이스에 포함되기 때문에,
+다른 repository로 분리하려 했다.
+
+그래서 `npm run deploy`하면 셸 스크립트를 실행하도록 했다:
+1. pm2 설정 파일을 가지는 저장소`git clone git@github.com:user/repo.git .config`
+2. `pm2 deploy .config/ecosystem.json production`
+
+리모트 서버에는 `config` 저장소를 하나 클론 받아놓고 적절한 곳에 두고
+`post-deploy`를 `"npm install && pm2 startOrRestart /home/node/config/ecosystem.json --env production"`
+설정 파일의 위치를 해당 위치를 가리키도록 했다.
+
+이러다보니 설정 정보를 업데이트해도 리모트에서 다시 pull 하지 않으면 로컬에서는 최신 설정을, 리모트에서는 이전 설정을 사용하는 문제가 있다.
+
+따라서 리모트에서도 항상 `config` 저장소를 clone 후 `pm2 startOrRestart` 하도록 해야겠다.
