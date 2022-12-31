@@ -1,17 +1,10 @@
----
-id: page-81
-time: 2019-08-27 15:55:09
-tags: testing
----
-# Testing
-
-## Setup and Teardown
+# Setup and Teardown
 
 각 테스트를 실행하기 전/후 할 일을 각각 **Setup** **Teardown** 이라한다.
 
-### Transaction Start - Rollback
+## Transaction Start - Rollback
 
-데이터베이스를 Mocking 하지 않고 테스트용 데이터베이스를 띄워서한다고 가정한다.
+데이터베이스를 Mocking 하지 않고 테스트용 데이터베이스를 띄운다고 가정한다.
 
 일반적으로 테스트는
 
