@@ -25,6 +25,21 @@ https://amara.org/ko/videos/XJGyts0sfDVQ/info/robert-c-martin-principles-of-comp
 * 뷰(GUI)도 불안정하다. 쉽게 변경될 수 있어야 하므로 다른 컴포넌트가 뷰를 참조해선 안된다.
 * 따라서 뷰를 테스트하는 것은 테스트 코드를 자주 수정케 한다.
 
+OOP 장점이 현실 세계를 잘 비춘다고 적었었다. 그런데 Robert C. Martin은 아니라고 한다.
+
+38:59를 보면 이야기가 시작된다. 객체 지향은 무엇인지? 왜 사람들이 객체 지향을 좋아하는지.
+
+> (청중) 현실 세계를 모델링 할 수 있습니다.
+
+> (Robert C. Martin) 현실 세계를 모델링 할 수 있다. 감사합니다.
+내가 이렇게 답하라고 저 사람을 여러분 사이에 심어놨습니다.
+내가 저사람의 답변을 발기 발기 찢어버리려고요.아닙니다. 아주 터무니없는 이야기에요. ...
+
+> (Robert C. Martin) 객체지향에 특별할 것은 없습니다.
+하지만 객체지향으로 인해 가능해진 게 하나 있긴 합니다.
+예전에는 위험해서 잘 안 썼지요.
+다형성입니다. 아주 사용하기 쉬운 다형성이지요. ...
+
 # Robert C. Martin - Clean Architecture and Design
 
 같은 분이 번역해 주시고, 마찬가지로 밥 아저씨의 [Clean Architecture and Design](https://amara.org/videos/0AtjY87egE3m/url/1216370/) 영상도 좋다.
