@@ -40,3 +40,21 @@ zip 파일 받아서 압축 해제한다.
 5. shiori 로그인 팝업 출력되면 입력:
 Server: `http://localhost:8080`
 Username: `shiori` Password: `gopher`
+
+# MySQL
+
+## MySQL Workbench
+
+https://www.mysql.com/products/workbench/
+
+`brew cask install mysqlworkbench`
+
+가끔씩 발생하는 버그가 답답해서 요즘은 Datagrip을 많이 쓴다. 유로다.
+
+## mycli
+
+https://www.mycli.net
+
+기본 mysql cli 보다 다양한 기능을 제공하는 도구.
+
+`\dt`, `\G` 등 유용한 shortcuts.
