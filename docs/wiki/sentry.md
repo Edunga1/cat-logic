@@ -1,10 +1,4 @@
----
-id: 0387c602ae38a10378ce2a13f8af38d2
-time: 2020-02-03 19:22:35
----
-# Sentry
-
-## Timezone을 KST로 변경하기.
+# Timezone을 KST로 변경하기.
 
 `User settings -> Preferences -> Timezone`에서 한국 시간(`(UTC+0900) Asia/Seoul`)으로 변경할 수 있다.
 기본값으로 사용하면 매우 헷갈리니 변경했다.
@@ -12,7 +6,7 @@ time: 2020-02-03 19:22:35
 추가로 같은 설정에 있는 `Use a 24-hour clock`도 설정해서 AM/PM 구분하지 않도록 했다.
 훨신 가독성이 좋다.
 
-## 이슈 검색에 태그 이용하기
+# 이슈 검색에 태그 이용하기
 
 `is:unresolved url:*user*` 이런식으로 검색하면 Url에 `user`가 포함된 이슈를 검색할 수 있다.
 `url`은 태그고, `*user*`는 값. `*`는 wildcard로 적용된다.
