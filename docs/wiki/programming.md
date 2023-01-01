@@ -4,12 +4,87 @@ Programming은 광범위한 단어이다. 잘 정리되지 않는 주제는 여�
 
 <!--toc:start-->
 - [개요](#개요)
+- [TED - Linus Torvalds: 리눅스의 기본 철학](#ted-linus-torvalds-리눅스의-기본-철학)
+  - [좋은 코드](#좋은-코드)
+  - [리누스 토발스의 개발자 자세](#리누스-토발스의-개발자-자세)
 - [개발에 대한 사소한 생각](#개발에-대한-사소한-생각)
   - [코드 스타일](#코드-스타일)
   - [언어](#언어)
   - [집중](#집중)
   - [프로그래밍](#프로그래밍)
 <!--toc:end-->
+
+# TED - Linus Torvalds: 리눅스의 기본 철학
+
+[TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=ko)
+
+## 좋은 코드
+
+14:20 장면을 보면 Linked list의 node를 제거하는 method를 구현한 2가지 코드를 비교하여 보여준다.
+
+**Code 1**
+```c
+remove_list_entry(entry)
+{
+    prev = NULL;
+    walk = head;
+
+    // Walk the lsit
+
+    while (walk != entry) {
+        prev = walk;
+        walk = walk->next;
+    }
+
+    // Remove the entry by updating the
+    // head or the previous entry
+
+    if (!prev)
+        head = entry->next;
+    else
+        prev->next = entry->next;
+}
+```
+
+**Code 2**
+```c
+remove_list_entry(entry)
+{
+    // The "indirect" pointer points to the
+    // *address* of the thing we'll update
+
+    indirect = &head;
+
+    // Walk the list, looking for the thing that
+    // points to the entry we want to remove
+
+    while ((*indirect) != entry)
+        indirect = &(*indirect)->next;
+
+    // ... and just remove it
+    *indirect = entry->next;
+}
+```
+
+차이점은 마지막 부분의 if-else 키워드의 유무이다.
+
+첫 번째 코드는 명시적으로 조건문을 통해 제거하려 하는 노드가 첫 번째 노드인지 아닌지에 따라 다르게 처리한다.
+그러나 두 번째 코드는 제거하려는 노드가 가리키는 주소를 다음 노드로 변경한다.
+
+리누스 토발스가 말하는 것은 특수 조건이 사라지면서 코드가 더 간결해 진다는 것이다.
+
+알고리즘 순서도 만 보더라도 분기가 생기면 복잡한 그림이 된다.
+
+## 리누스 토발스의 개발자 자세
+
+16:40 장면부터
+
+자신은 git, linux와 같은 프로젝트를 만들었음에도 예지자가 아니라고 한다.
+
+하늘을 보며 걷는(미래 지향적인) 사람들과 일하는 게 좋으며,
+자신은 그 **사람들이 구멍에 빠지지 않게 구멍을 메우는 일**을 한다고 한다.
+
+Wow..
 
 # 개발에 대한 사소한 생각
 
