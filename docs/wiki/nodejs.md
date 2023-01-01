@@ -21,6 +21,7 @@ node.js로 개발을 하고있지 않아서.. 대부분 내용이 2016년 정도
 - [NodeJS data validation](#nodejs-data-validation)
 - [NodeJS 서버 로컬 요청만 허용하기](#nodejs-서버-로컬-요청만-허용하기)
 - [pm2 deploy 시 주의할 점](#pm2-deploy-시-주의할-점)
+- [Jupyter notebook 사용하기](#jupyter-notebook-사용하기)
 <!--toc:end-->
 
 # NodeJS Test Tools
@@ -336,3 +337,7 @@ pm2로 배포 프로세스를 관리하고 싶어서 설정 파일을 작성하�
 이러다보니 설정 정보를 업데이트해도 리모트에서 다시 pull 하지 않으면 로컬에서는 최신 설정을, 리모트에서는 이전 설정을 사용하는 문제가 있다.
 
 따라서 리모트에서도 항상 `config` 저장소를 clone 후 `pm2 startOrRestart` 하도록 해야겠다.
+
+# Jupyter notebook 사용하기
+
+[Jupyter Docker Stacks](docker#Jupyter Docker Stacks)
