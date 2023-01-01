@@ -1,3 +1,32 @@
+<!--toc:start-->
+- [The Twelve-Factor App](#the-twelve-factor-app)
+  - [I. 코드베이스](#i-코드베이스)
+    - [버전 관리되는 하나의 코드베이스와 다양한 배포](#버전-관리되는-하나의-코드베이스와-다양한-배포)
+  - [II. 종속성](#ii-종속성)
+    - [명시적으로 선언되고 분리된 종속성](#명시적으로-선언되고-분리된-종속성)
+  - [III. 설정](#iii-설정)
+    - [환경(environment)에 저장된 설정](#환경environment에-저장된-설정)
+  - [IV. 백엔드 서비스](#iv-백엔드-서비스)
+    - [백엔드 서비스를 연결된 리소스로 취급](#백엔드-서비스를-연결된-리소스로-취급)
+  - [V. 빌드, 릴리즈, 실행](#v-빌드-릴리즈-실행)
+    - [철저하게 분리된 빌드와 실행 단계](#철저하게-분리된-빌드와-실행-단계)
+  - [VI. 프로세스](#vi-프로세스)
+    - [애플리케이션을 하나 혹은 여러개의 무상태(stateless) 프로세스로 실행](#애플리케이션을-하나-혹은-여러개의-무상태stateless-프로세스로-실행)
+  - [VII. 포트 바인딩](#vii-포트-바인딩)
+    - [포트 바인딩을 사용해서 서비스를 공개함](#포트-바인딩을-사용해서-서비스를-공개함)
+  - [VIII. 동시성(Concurrency)](#viii-동시성concurrency)
+    - [프로세스 모델을 사용한 확장](#프로세스-모델을-사용한-확장)
+  - [IX. 폐기 가능(Disposability)](#ix-폐기-가능disposability)
+    - [빠른 시작과 그레이스풀 셧다운(graceful shutdown)을 통한 안정성 극대화](#빠른-시작과-그레이스풀-셧다운graceful-shutdown을-통한-안정성-극대화)
+  - [X. dev/prod 일치](#x-devprod-일치)
+    - [development, staging, production 환경을 최대한 비슷하게 유지](#development-staging-production-환경을-최대한-비슷하게-유지)
+  - [XI. 로그](#xi-로그)
+    - [로그를 이벤트 스트림으로 취급](#로그를-이벤트-스트림으로-취급)
+  - [XII. Admin 프로세스](#xii-admin-프로세스)
+    - [admin/maintenance 작업을 일회성 프로세스로 실행](#adminmaintenance-작업을-일회성-프로세스로-실행)
+- [안정된 의존관계 원칙(Stable Dependencies Principle)](#안정된-의존관계-원칙stable-dependencies-principle)
+<!--toc:end-->
+
 # The Twelve-Factor App
 
 https://12factor.net/
@@ -78,3 +107,40 @@ https://12factor.net/
 ## XII. Admin 프로세스
 
 ### admin/maintenance 작업을 일회성 프로세스로 실행
+
+# 안정된 의존관계 원칙(Stable Dependencies Principle)
+
+DIP를 지킨다고 모든 의존성을 주입받아야 될까? 그런 클래스가 있다면 너무 사용하기 어려울 것이다.
+
+[엉클 밥의 principles of component design (한글 자막)](https://amara.org/ko/videos/XJGyts0sfDVQ/info/robert-c-martin-principles-of-component-design/)
+에서 어떤 클래스를 주입 받아야 하는지 알려준다. 주제는 컴포넌트 설계에 대한 내용이다.
+우아한 형제들 기술 블로그 [안정된 의존관계 원칙과 안정된 추상화 원칙에 대하여 - 손권남님](https://woowabros.github.io/study/2018/03/05/sdp-sap.html)
+에서는 안정된 의존관계 원칙에 대해서 집중 조명한다.
+
+String 클래스를 주입받아 사용하지는 않는다. 이러한 유틸 클래스를 모두 주입하면 코드의 복잡도는 더욱 증가할 거 같다.
+
+두 글을 읽어보면 '변경되는', '변경되지 않는' 이라는 말이 자주 나온다.
+어째서 String 클래스는 변경되지 않는 **안정된** 클래스일까?
+
+일단 *모든 코드는 변경될 수 있으니까, 불안정하다고 봐야겠네* 라고 접근하는 건 아닌게 확실하다.
+
+**변경되지 않는다는 말은 용도가 명확하다** 라고 생각하면 이해하면 될 거 같다.
+자바스크립트에서 String 클래스의 메서드를 사용하는 이유는 명확해 보인다.
+정규식으로 특정 문자열을 뽑아내기 위해서 `.match()`를 쓰고, 특정 범위를 추출하기 위해서 `.substr()`를 쓴다.
+각각 `(string, REGEX) => string`, `(string) => string`이다. 다른 변수가 끼어들만한 것은 없어 보인다.
+
+그러니까 여러개의 정책을 가질 필요가 없어보인다. 단 하나의 정책만 있으면 된다고 생각한다.
+
+불안정한 클래스의 대표적인 예는 [마틴 파울러의 제어의 역전(IoC)에 대한 글](http://gyumee.egloos.com/2512493)이다.
+`MovieLister` 클래스와 `MovieFinder` 클래스 관계에 대한 이야기가 나온다.
+여기서 `MovieFinder` 클래스는 정책을 가진다. 이름 목록을 텍스트 파일에서 데이터베이스에서 웹 서비스에서, 어디서든 가져올 수 있다.
+그래서 `MovieFinder` 클래스는 추상 클래스가 되어, 내부 구현은 어떻든 이름 목록만 반환하도록 한다.
+
+---
+
+깃북 관리 페이지를 만들어 보려다가 마크다운 파일의 Front Matter를 파싱해야 하는 일이 생겼다.
+마침 npm에 좋은 라이브러리가 있어서 가져다 쓰려고 했다. ([front-matter](https://www.npmjs.com/package/front-matter))
+이 모듈을 필요로하는 클래스에서 `require`해서 사용하다가 *외부 라이브러리니까 주입 받아야되지 않을까?* 라고 생각했다.
+
+기나긴 시간동안 고민을 통해... **특정 상황에 따라서 파싱 라이브러리를 바꾸지는 않겠구나** 싶어서 그냥 그대로 두었다.
+바꾼다면 라이브러리를 사용하는 클래스를 고치겠구나.
