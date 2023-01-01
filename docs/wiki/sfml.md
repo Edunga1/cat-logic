@@ -1,13 +1,53 @@
+<!--toc:start-->
+- [개요](#개요)
+- [SFML 프로젝트 빌드하기](#sfml-프로젝트-빌드하기)
+- [Let's make 16 games in C++/SFML!](#lets-make-16-games-in-csfml)
+<!--toc:end-->
+
 # 개요
 
 Simple and Fast Multimedia Library. 줄여서 SFML이라 한다.
 C++ 기반 멀티미디어를 가져오거나 그리고, Window를 만드는 API를 제공한다.
 
-https://www.youtube.com/@FamTrinli
+SDL코드라는 그래픽 라이브러리가 유명한데, SFML은 나오지 얼마되지 않았지만, 좋다고 한다. 오픈헥사곤도 이것으로 만들어 졌다.
 
-*Let's make 16 games in C++/SFML!*<br>
-SFML을 이용해 테트리스, 레이싱 게임, 애니팡 like 게임을 만드는 시리즈.
-배속이지만, 5분이내로 짧게 요약하고 있다. 상세설명 란에 코드도 공개하고 있다.
+[공식문서](https://www.sfml-dev.org/tutorials/2.5/graphics-draw.php)에 나와있는 튜토리얼 중 하나:
+
+```c++
+#include <SFML/Graphics.hpp>
+
+int main()
+{
+    // create the window
+    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+
+    // run the program as long as the window is open
+    while (window.isOpen())
+    {
+        // check all the window's events that were triggered since the last iteration of the loop
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            // "close requested" event: we close the window
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        // clear the window with black color
+        window.clear(sf::Color::Black);
+
+        // draw everything here...
+        // window.draw(...);
+
+        // end the current frame
+        window.display();
+    }
+
+    return 0;
+}
+```
+
+윈도우를 생성하고, 반복문에서 이벤트를 계속 처리하는 구조다.
 
 # SFML 프로젝트 빌드하기
 
@@ -97,10 +137,17 @@ OSX 기준.
     }
     ```
     - 여기서 알 수 있는것은 `config.h`에서 설정 정보를 읽어와 출력하는 것.
-2. `config.h.in` 파일을 다음과 같이 작성한다. **cmake**를 통해서 `config.h`를 생성할 것이다.
+2. `config.h.in` 파일을 다음과 같이 작성한다. `cmake`를 통해서 `config.h`를 생성할 것이다.
     ```c++
     #define myproject_VERSION_MAJOR @myproject_VERSION_MAJOR@
     #define myproject_VERSION_MINOR @myproject_VERSION_MINOR@
     ```
-2. `$ cmake .` 명령어로 빌드한다. `Makefile`, `config.h` 등이 생성된다.
+1. `$ cmake .` 명령어로 빌드한다. `Makefile`, `config.h` 등이 생성된다.
 2. `make` 명령어로 컴파일한다. `myproject` 이름으로 실행파일이 생성된다. `$ ./myproject`로 실행해볼 수 있다.
+
+# Let's make 16 games in C++/SFML!
+
+https://www.youtube.com/@FamTrinli
+
+SFML을 이용해 테트리스, 레이싱 게임, 애니팡 like 게임을 만드는 시리즈.
+배속이지만, 5분이내로 짧게 요약하고 있다. 상세설명 란에 코드도 공개하고 있다.
