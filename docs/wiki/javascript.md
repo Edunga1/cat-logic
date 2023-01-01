@@ -21,6 +21,7 @@
   - [Create React App 이용하기](#create-react-app-이용하기)
   - [ESlint 구성](#eslint-구성)
   - [`prop-types` 사용하기](#prop-types-사용하기)
+- [JSDoc 파라미터 상수 정의하기 + VSCode Rename Symbol!](#jsdoc-파라미터-상수-정의하기-vscode-rename-symbol)
 <!--toc:end-->
 
 # 자바스크립트와 이벤트 루프
@@ -311,3 +312,26 @@ MyComponent.propTypes = {
 잘못된 타입을 건네주면 런타임 때 잡아 내준다.
 
 자세한 사용 방식은 [https://www.npmjs.com/package/prop-types](https://www.npmjs.com/package/prop-types) 에서 얻을 수 있다.
+
+# JSDoc 파라미터 상수 정의하기 + VSCode Rename Symbol!
+
+상수(또는 predefined parameter)를 인자로 받도록 JSDoc 정의하자.
+
+```javascript
+/**
+ * @property {'new'|'associate'|'regular'|'sc'|'vip'} memberGrade
+ */
+function something(memberGrade) {/* ... */}
+```
+
+VSCode Intellisense가 함수 인자 추천해 줄 때 상수 목록도 보여줘서 유용하다.
+
+심지어 VSCode의 **Rename Symbol** 기능도 잘 동작한다.
+
+JSDoc의 type에 커서를 두고 Rename Symbol(`F2`)으로 변경해도 되고,
+
+```javascript
+something('regular');
+```
+
+함수 호출 코드에서 값에 커서를 두고 Rename Symbol해도 JSDoc과 참조하는 모든 코드를 변경한다.
