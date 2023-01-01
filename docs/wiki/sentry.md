@@ -1,3 +1,5 @@
+# Sentry App
+
 # Timezone을 KST로 변경하기.
 
 `User settings -> Preferences -> Timezone`에서 한국 시간(`(UTC+0900) Asia/Seoul`)으로 변경할 수 있다.

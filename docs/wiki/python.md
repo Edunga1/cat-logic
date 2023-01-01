@@ -1,7 +1,7 @@
-# 개요
+# Python
 
 <!--toc:start-->
-- [개요](#개요)
+- [Python](#python)
 - [개발도구](#개발도구)
   - [pyright](#pyright)
   - [pylint](#pylint)

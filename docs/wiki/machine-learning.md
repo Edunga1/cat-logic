@@ -1,5 +1,12 @@
+# Machine Learning
+
+[페이스북 그룹 덧글 중에서](https://www.facebook.com/groups/255834461424286/?multi_permalinks=1929705450703837):
+> Sung Kim: 학생이나 교수나 누구나 이런 ai를 사용해서 본인의 performance를 올리는 사람이 승자가 될것이라 생각합니다. 마치 계산기가 나온 초기 시절 그래도 주판이나 암산이 편하고 빠르다고 한 사람들이 있었었죠. 앞으로 이런 글쓰기와 추론등도 계산기를 사용하듯 일반화된 인간의 tool로 보편화 되어 사용될것 같습니다.
+
+만들지는 못하더라도 적극적으로 사용해 보자. 이 바람을 피할 수는 없다.
+
 <!--toc:start-->
-- [개요](#개요)
+- [Machine Learning](#machine-learning)
 - [ChatGPT](#chatgpt)
   - [Try ChatGPT!](#try-chatgpt)
   - [ChatGPT를 Virtual Machine으로 만들기](#chatgpt를-virtual-machine으로-만들기)
@@ -10,14 +17,8 @@
     - [Colab Notebook](#colab-notebook)
     - [stable-diffusion-webui](#stable-diffusion-webui)
       - [Trouble Shooting](#trouble-shooting)
+- [Open API](#open-api)
 <!--toc:end-->
-
-# 개요
-
-[페이스북 그룹 덧글 중에서](https://www.facebook.com/groups/255834461424286/?multi_permalinks=1929705450703837):
-> Sung Kim: 학생이나 교수나 누구나 이런 ai를 사용해서 본인의 performance를 올리는 사람이 승자가 될것이라 생각합니다. 마치 계산기가 나온 초기 시절 그래도 주판이나 암산이 편하고 빠르다고 한 사람들이 있었었죠. 앞으로 이런 글쓰기와 추론등도 계산기를 사용하듯 일반화된 인간의 tool로 보편화 되어 사용될것 같습니다.
-
-만들지는 못하더라도 적극적으로 사용해 보자. 이 바람을 피할 수는 없다.
 
 # ChatGPT
 

@@ -1,4 +1,7 @@
+# 자료구조
+
 <!--toc:start-->
+- [자료구조](#자료구조)
 - [Associative Array와 Hash Table](#associative-array와-hash-table)
   - [Associative Array (연관 배열)](#associative-array-연관-배열)
     - [특징](#특징)

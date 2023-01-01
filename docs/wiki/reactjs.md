@@ -1,9 +1,9 @@
-# 개요
+# React JS
 
 React는 실무에서 사용해보 않았다. 개인 프로젝트에서만 사용해본 정도.
 
 <!--toc:start-->
-- [개요](#개요)
+- [React JS](#react-js)
 - [React 개발환경 구성하기](#react-개발환경-구성하기)
   - [Create React App 이용하기](#create-react-app-이용하기)
   - [ESlint 구성](#eslint-구성)

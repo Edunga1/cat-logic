@@ -1,4 +1,4 @@
-# TDD - 테스트 주도 개발 (Test Driven Development)
+# 테스트 주도 개발 (Test Driven Development)
 
 구현보다 테스트 코드를 먼저 작성하는 개발 방법이다.
 구현 대상을 어떻게 사용할 것인지 구체적으로 생각하게 만든다.

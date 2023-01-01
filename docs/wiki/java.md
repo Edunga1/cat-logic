@@ -1,3 +1,14 @@
+# Java
+
+<!--toc:start-->
+- [Java](#java)
+- [Jakarta EE (a.k.a. Java EE)](#jakarta-ee-aka-java-ee)
+  - [포함하는 기술](#포함하는-기술)
+    - [HTTP](#http)
+    - [JNDI (Java Naming and Directory Interface)](#jndi-java-naming-and-directory-interface)
+    - [JTA (JAva Transaction API)](#jta-java-transaction-api)
+<!--toc:end-->
+
 # Jakarta EE (a.k.a. Java EE)
 
 https://www.samsungsds.com/kr/insights/java_jakarta.html

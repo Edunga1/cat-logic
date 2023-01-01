@@ -1,4 +1,4 @@
-# 개요
+# Vim
 
 vim 보다 [neovim](https://github.com/neovim/neovim).
 

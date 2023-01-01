@@ -1,15 +1,18 @@
+# Database
+
 <!--toc:start-->
 - [Database](#database)
+- [설계](#설계)
   - [정규화 (Normalization)](#정규화-normalization)
     - [제 1 정규화 (First Normal Form)](#제-1-정규화-first-normal-form)
     - [제 2 정규화 (Second Normal Form)](#제-2-정규화-second-normal-form)
     - [제 3 정규화 (Third Normal Form)](#제-3-정규화-third-normal-form)
     - [역 정규화 (Denormalization)](#역-정규화-denormalization)
 - [테이블 이름 컨벤션](#테이블-이름-컨벤션)
-  - [테이블 이름: 단수 vs. 복수](#테이블-이름-단수-vs-복수)
+  - [단수 vs. 복수](#단수-vs-복수)
 <!--toc:end-->
 
-# Database
+# 설계
 
 ## 정규화 (Normalization)
 

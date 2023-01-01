@@ -1,8 +1,5 @@
----
-id: page-92
-time: 2019-04-07 22:03:35
-tag: ssh, osx, network
----
+# Mac OS
+
 # `ngrok`을 이용하여 맥에서 Remote Login 하기
 
 공인 IP없이 맥북에 ssh로 접속하기 위해선 중계자가 필수적이다.

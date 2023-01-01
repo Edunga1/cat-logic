@@ -1,3 +1,5 @@
+# 알고리즘 연습
+
 # 땅따먹기 게임
 
 https://programmers.co.kr/learn/challenge_codes/36

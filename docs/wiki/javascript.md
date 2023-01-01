@@ -1,7 +1,7 @@
-# 개요
+# Javscript
 
 <!--toc:start-->
-- [개요](#개요)
+- [Javscript](#javscript)
 - [자바스크립트와 이벤트 루프](#자바스크립트와-이벤트-루프)
 - [Douglas Crockford's Javascript The Good Parts - 권장하지 않는 것.](#douglas-crockfords-javascript-the-good-parts-권장하지-않는-것)
   - [Good Parts Reconsidered](#good-parts-reconsidered)

@@ -1,4 +1,4 @@
-# 신규 입사자를 위한 핸드북
+# Valve사의 신규 입사자를 위한 핸드북
 
 https://www.google.com/search?q=valve+%EC%9E%85%EC%82%AC%EC%9E%90%EB%A5%BC+%EC%9C%84%ED%95%9C+%ED%95%B8%EB%93%9C%EB%B6%81
 

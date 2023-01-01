@@ -1,9 +1,9 @@
-# 개요
+# Angular JS
 
 AngularJS에 대한 이야기. 2017-11에 작성됨.
 
 <!--toc:start-->
-- [개요](#개요)
+- [Angular JS](#angular-js)
 - [Johnpapa's AngularJS Style Guide](#johnpapas-angularjs-style-guide)
   - [Component](#component)
     - [컨트롤러](#컨트롤러)
@@ -21,7 +21,6 @@ AngularJS에 대한 이야기. 2017-11에 작성됨.
   - [Component Lifecycle](#component-lifecycle)
   - [$http](#http)
 <!--toc:end-->
-
 
 # Johnpapa's AngularJS Style Guide
 
