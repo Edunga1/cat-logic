@@ -1,8 +1,3 @@
----
-id: page-76
-time: 2018-07-28 23:04:42
-tags: deploy
----
 # Google Analytics 수동 테스트하는데 활성화 사용자가 0으로 뜨는 현상. 트래픽 쫓아가기.
 
 https://stackoverflow.com/questions/27945501/307-redirect-when-loading-analytics-js-in-chrome
