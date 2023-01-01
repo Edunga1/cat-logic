@@ -1,9 +1,4 @@
----
-id: page-90
-time: 2019-03-26 22:41:36
-tag: vuejs, component
----
-# VueJS `<transition>`
+# `<transition>`
 
 `<transition>`을 이용한 모달 컴포넌트:<br>
 https://kr.vuejs.org/v2/examples/modal.html
