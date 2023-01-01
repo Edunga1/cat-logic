@@ -27,7 +27,7 @@
 - [Mac OS](mac)
 - [Machine Learning](machine-learning)
 - [Node JS](nodejs)
-- [Object Oriented Programming](object-oriented-progamming)
+- [Object Oriented Programming](object-oriented-programming)
 - [Physics](physics)
 - [Programming](programming)
 - [Programming Paradigm](programming-paradigm)
