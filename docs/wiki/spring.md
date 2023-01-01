@@ -1,9 +1,4 @@
----
-id: page-97
-time: 2020-01-21 19:55:36
-tags: kotlin, spring, JPA
----
-# Spring JPA Repository
+# JPA Repository
 
 JPA를 이용해서 어떤 방법으로 데이터를 가져오는지 알아본다.
 
