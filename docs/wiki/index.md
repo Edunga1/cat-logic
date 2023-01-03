@@ -4,6 +4,7 @@
 
 - [알고리즘 연습](algorithm-practice)
 - [Angular JS](angularjs)
+- [Amazon Web Service](aws)
 - [책](book)
 - [CI/CD](continuous-integration-and-deployment)
 - [CSS](css)
@@ -24,6 +25,7 @@
 - [Kotlin](kotlin)
 - [Kubernetes](kubernetes)
 - [Language Server Protocol](language-server-protocol)
+- [Logging](logging)
 - [Mac OS](mac)
 - [Machine Learning](machine-learning)
 - [Node JS](nodejs)
