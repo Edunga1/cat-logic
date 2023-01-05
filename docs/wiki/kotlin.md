@@ -90,3 +90,50 @@ https://github.com/fwcd/kotlin-language-server
 
 2022-11-29 아직 퍼포먼스가 안나온다. 자주 끊기고, 느리다.
 ref. https://www.reddit.com/r/neovim/comments/yf0v86/kotlin_language_server_very_slow/
+
+# ranges
+
+https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/
+
+`IntRange`를 사용하면 다음과 같은 일을 할 수 있다.
+
+범위 비교:
+```kotlin
+if (30 in 1..100) {
+  // true
+}
+```
+
+순회:
+```kotlin
+for (i in 1.rangeTo(100)) {
+  // 1, 2, 3, 4, 5...100
+}
+```
+
+Step 순회:
+```kotlin
+for (i in 1.rangeTo(100) step 5) {
+  // 1, 6, 11...96
+}
+```
+
+항상 end 값은 포함(inclusive)한다.
+
+Char, Int, Long 등 비교할 수 있는 타입이라면 내장된 `Range` 클래스를 제공한다.
+
+## Hierarchy
+
+```
+IntRange --|> IntProgression    --|> Iterable<Int>
+         --|> ClosedRange<Int>  --|> Comparable<Int>
+```
+
+Iterable을 구현함으로써 순회할 수 있고, Comparable을 구현함으로써 범위를 비교할 수 있다.
+
+응용하면 `LocalDate` 같은 것도 만들 수 있다:
+https://www.netguru.com/blog/traversing-through-dates-with-kotlin-range-expressions
+
+보통 순회, 비교 모두 당장 필요하지는 않을텐데,\
+예를들면, 날짜 범위를 나타내는 클래스를 구현하고 싶다면 `ClosedRange<LocalDate>`만 구현해도 충분하다.
+`Pair<LocalDate, LocalDate>` 보다는 좀 더 명확할 것이다.
