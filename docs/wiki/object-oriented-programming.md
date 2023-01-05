@@ -43,13 +43,6 @@ OOP 장점이 현실 세계를 잘 비춘다고 적었었다. 그런데 Robert C
 예전에는 위험해서 잘 안 썼지요.
 다형성입니다. 아주 사용하기 쉬운 다형성이지요. ...
 
-# Robert C. Martin - Clean Architecture and Design
-
-같은 분이 번역해 주시고, 마찬가지로 밥 아저씨의 [Clean Architecture and Design](https://amara.org/videos/0AtjY87egE3m/url/1216370/) 영상도 좋다.
-2018년 처음 접했을 때 많은 생각을 들었다. 지금은 이 아키텍처 이야기로 책도 나오고 많이 언급된다.
-왜 대부분 프로젝트의 구조가 같은지 의문에서 시작한다. 회사마다 관심있는 것은 다른데 왜 같은 구조를 가지는 것인가.
-그에 반해 설계 도면은 어떤 건물을 말하는지 알기 쉽다고 한다.
-
 # KSUG Seminar - Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향
 
 https://www.youtube.com/watch?v=26S4VFUWlJM
