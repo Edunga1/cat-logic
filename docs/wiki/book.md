@@ -30,3 +30,20 @@
 너무 늘어지는 문제가 생기면 이 것은 '초콜릿 문제'가 아닌가 생각해본다.
 
 내가 문제를 정확히 이해하고 있는지 다시 한 번 고민해봐야 할 때다.
+
+# Implementation patterns (a.k.a smalltalk best practice patterns, kent beck)
+
+직접 읽은 것은 아니고, 보고 싶은 책. 내용은 패턴에 대해서 이야기한다.
+
+[JUnit의 구현을 설명하는 글](https://curlunit.sourceforge.net/doc/cookstour/cookstour.htm)에서 언급된 책이다:
+> The Smalltalk Best Practice Patterns (see Beck, K. Smalltalk Best Practice Patterns, Prentice Hall, 1996) has a pattern that is applicable. It is called Collecting Parameter.
+
+*Collecting Parameter* 라는 단순한 개념에 관심이 생겼다가, 어떤 이야기를 하는 책인가 후기를 찾아보게 되었다.
+
+http://m.egloos.zum.com/gyumee/v/2263191
+
+> Code for others as well as myself and my buddy the CPU. (원서)
+> 자기 자신과 CPU뿐 아니라, 자신의 코드를 보고 사용할 다른 사람들을 배려해서 코딩해야 한다. (번역서)
+
+단순히 패턴만 설명하는 책은 아닌가 보다.
+
