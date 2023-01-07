@@ -10,6 +10,8 @@ https://youtu.be/sbUaqX4mX00
 
 한국 R 컨퍼런스에서 NC소프트, 게임 데이터로 인과 추론 분석 발표 내용.
 
+![difference-in-difference](../$images/data-analysis-difference-in-difference.png)
+
 이중차분법은 말 그대로 차분을 두 번하는 것.
 
 e.g.) 이벤트 쿠폰의 효과를 검증하고 싶다.
