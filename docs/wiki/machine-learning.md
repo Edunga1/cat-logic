@@ -64,6 +64,17 @@ OP: https://www.engraved.blog/building-a-virtual-machine-inside/
 
 추가로 ChatGPT로 IQ 테스트를 했다는 글: https://twitter.com/SergeyI49013776/status/1598430479878856737
 
+## 번역 및 문법확인 요청하기
+
+Git 커밋 메시지를 주로 영어로 작성하는데, ChatGTP에 주로 확인을 맡긴다. (Grammarly는 너무 많은 것을 수집한다.)
+
+예를들면:
+
+Q: `Update architecture.md to add "Entity Component System"`\
+ChatGPT: `위 문장의 문법은 전반적으로 정상적입니다. 그러나 좀 더 일반적인 언어로 표현하면 "Update the architecture.md document to include information about the 'Entity Component System'"가 될 수 있습니다. 제가 제시한 구절은 좀 더 상세한 정보를 제공합니다.`
+
+번역과 함께 나은 표현을 알려주기도 하고, 추가적으로 왜 그런 표현을 사용하는 지에 대해서 물어보면 상황별로 적절한 단어를 알려준다.
+
 # Stable Diffusion
 
 text-to-image 모델.
