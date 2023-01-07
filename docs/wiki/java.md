@@ -13,6 +13,9 @@
         - [@Query](#query)
         - [Query By Example (QBE)](#query-by-example-qbe)
         - [QueryDSL](#querydsl)
+          - [querydsl-sql](#querydsl-sql)
+          - [infobip-spring-data-querydsl](#infobip-spring-data-querydsl)
+      - [JPA 기본 메서드는 다른 method의 위임 용으로만 사용해야 한다.](#jpa-기본-메서드는-다른-method의-위임-용으로만-사용해야-한다)
 <!--toc:end-->
 
 # Jakarta EE (a.k.a. Java EE)
@@ -157,3 +160,36 @@ session.query(User).filter(User.name == 'Edwardo').all()
 
 sqlalchemy의 경우 python의 연산자 오버로딩을 힘입어 높은 가독성을 가진다.
 numpy와 같은 [python](python) 라이브러리도 같은 이유에서 사용하기 편리한 인터페이스를 가졌다.
+
+###### querydsl-sql
+
+http://querydsl.com/static/querydsl/latest/reference/html/ch02s03.html
+
+native query의 대안. Union 등 제공하지 않는 쿼리는 이 솔루션의 사용을 고려할 수 있다.
+다만 JPA를 사용하지 않아서 좀 불편하다.
+
+https://youtu.be/zMAX7g6rO_Y?t=1169
+
+영상에서도 설명하는데, 실제로도 해보면 사용하기 매우 번거롭다.
+local db로부터 q-class를 생성해야 한다. 이 것 때문에 배포 전략을 다시 변경해야 할 수도 있다.
+querydsl-jpa가 entity로부터 생성한 q-class를 함께 사용할 수 없다.
+
+###### infobip-spring-data-querydsl
+
+https://github.com/infobip/infobip-spring-data-querydsl
+
+또다른 native query의 대안. Union 쿼리 등 동작하는 것을 확인했다.
+
+#### JPA 기본 메서드는 다른 method의 위임 용으로만 사용해야 한다.
+
+https://github.com/infobip/infobip-spring-data-querydsl
+
+> In production code persistence layer (SQL) shouldn't leak to service layer. See [this answer](https://stackoverflow.com/a/26563841/607767) by Oliver Drotbohm (Spring Data Project Lead @ Pivotal) on how to approach encapsulating persistence logic.
+
+persistence layer (SQL) 코드가 서비스에 노출되지 말아야 한다고 한다. Spring Data Project Lead 개발자가 stackoverflow에서 답변함.
+
+Stackoverflow Post: https://stackoverflow.com/questions/26543612/should-i-use-java-8-default-methods-for-manually-implemented-spring-data-reposit/26563841#26563841
+
+> Default methods should only be used to delegate calls to other repository methods. Default methods - by definition - cannot access any state of an instance (as an interface has none). They only can delegate to other interface methods or call static ones of other classes.
+
+*다른 메서드의 위임 용도로만 기본 메서드를 사용해야 합니다.*
