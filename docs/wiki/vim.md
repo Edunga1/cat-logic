@@ -5,14 +5,16 @@ vim 보다 [neovim](https://github.com/neovim/neovim).
 My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 
 <!--toc:start-->
-- [개요](#개요)
+- [Vim](#vim)
+- [neovim](#neovim)
+  - [Lua 가이드](#lua-가이드)
+  - [[Language Server Protocol](language-server-protocol)](#language-server-protocollanguage-server-protocol)
 - [quickfix & location list](#quickfix-location-list)
   - [commands](#commands)
   - [grep](#grep)
 - [mapping 시 `:...<cr>` vs `<cmd>...<cr>`](#mapping-시-cr-vs-cmdcr)
 - [Variables](#variables)
   - [`path`](#path)
-- [[Language Server Protocol](language-server-protocol)](#language-server-protocollanguage-server-protocol)
 - [Profiling](#profiling)
   - [Troubleshooting](#troubleshooting)
     - [`vim-colors-solarized` colorscheme 플러그인이 너무 느려지게 만드는 현상](#vim-colors-solarized-colorscheme-플러그인이-너무-느려지게-만드는-현상)
@@ -20,6 +22,46 @@ My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
   - [vim-pythonsense](#vim-pythonsense)
   - [vim-expand-region](#vim-expand-region)
 <!--toc:end-->
+
+# neovim
+
+## Lua 가이드
+
+https://github.com/nanotee/nvim-lua-guide#modules
+
+* 내 custom lua 파일을 가져올 때 lua/ 내에서 찾는다.
+  * runtimepath간 이름 충돌이 발생할 수 있다.
+
+## [Language Server Protocol](language-server-protocol)
+
+vim을 IDE처럼 사용하기 위한 설정. 이제 LSP로 통일되고 있다.
+
+[.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33)
+
+```
+Plug 'neovim/nvim-lspconfig'              " Quickstart configs for Nvim LSP
+Plug 'williamboman/mason.nvim'            " Portable package manager for Neovim
+Plug 'williamboman/mason-lspconfig.nvim'  " Extension to mason.nvim
+Plug 'jose-elias-alvarez/null-ls.nvim'    " Inject LSP diagnostics, code actions, and more via Lua
+```
+
+[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) LSP 설정할 수 있다. 이것만 필수사항.
+[mason](https://github.com/williamboman/mason.nvim) language server, 추가 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.
+[null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) diagnostic, linter, code action을 연동해 준다.
+
+Language Server 설치 예시: `:MasonInstall kotlin-language-server`
+
+![mason example](../$images/nvim-mason-example.png)
+
+init.lua에서 설정 필요:
+```lua
+-- LSP manager
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+-- LSPs
+require'lspconfig'.kotlin_language_server.setup{}
+```
 
 # quickfix & location list
 
@@ -80,25 +122,6 @@ netrw, find 사용법
 `set path+=**` `**`를 추가하면 현재 폴더 내 모든 범위를 검색한다.
 `**` 사용하기 전과 비교해보면 검색 수가 달라지는 것을 알 수 있다.
 `.gitignore`의 무시한 파일, `node_modules` 같이 무거운 폴더도 검색된다.
-
-
-# [Language Server Protocol](language-server-protocol)
-
-vim을 IDE처럼 사용하기 위한 설정. 이제 LSP로 통일되고 있다.
-
-[.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33)
-
-```
-Plug 'neovim/nvim-lspconfig'              " Quickstart configs for Nvim LSP
-Plug 'williamboman/mason.nvim'            " Portable package manager for Neovim
-Plug 'williamboman/mason-lspconfig.nvim'  " Extension to mason.nvim
-Plug 'jose-elias-alvarez/null-ls.nvim'    " Inject LSP diagnostics, code actions, and more via Lua
-```
-
-[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) 만으로 LSP 설정할 수 있다.
-[mason](https://github.com/williamboman/mason.nvim) language server, 추가 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.
-[null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) diagnostic, linter, code action을 연동해 준다.
-
 
 # Profiling
 
