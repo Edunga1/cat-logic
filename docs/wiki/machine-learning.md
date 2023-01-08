@@ -10,9 +10,9 @@
 - [ChatGPT](#chatgpt)
   - [Try ChatGPT!](#try-chatgpt)
   - [ChatGPT를 Virtual Machine으로 만들기](#chatgpt를-virtual-machine으로-만들기)
+  - [번역 및 문법확인 요청하기](#번역-및-문법확인-요청하기)
 - [Stable Diffusion](#stable-diffusion)
   - [promptbook](#promptbook)
-    - [책갈피](#책갈피)
   - [따라하기](#따라하기)
     - [Colab Notebook](#colab-notebook)
     - [stable-diffusion-webui](#stable-diffusion-webui)
@@ -84,9 +84,7 @@ text-to-image 모델.
 프롬프트를 설명하는 ebook:
 https://openart.ai/promptbook
 
-### 책갈피
-
-SD는 [LAION-5B](https://laion.ai/blog/laion-5b/) 데이터 세트의 이미지로 트레이닝 했다.
+* SD는 [LAION-5B](https://laion.ai/blog/laion-5b/) 데이터 세트의 이미지로 트레이닝 했다.
 
 ## 따라하기
 
