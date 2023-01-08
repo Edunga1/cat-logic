@@ -2,12 +2,19 @@
 - [MVC Pattern](#mvc-pattern)
   - [MVC 패턴의 목적과 이점](#mvc-패턴의-목적과-이점)
   - [Compound Pattern](#compound-pattern)
-    - [Observer Pattern](#observer-pattern)
-    - [Strategy Pattern](#strategy-pattern)
-    - [Composite Pattern](#composite-pattern)
+    - [1. Observer Pattern](#1-observer-pattern)
+    - [2. Strategy Pattern](#2-strategy-pattern)
+    - [3. Composite Pattern](#3-composite-pattern)
 - [Iterator Pattern](#iterator-pattern)
 - [Repository Pattern](#repository-pattern)
   - [Generic Repository vs. Specific Repository](#generic-repository-vs-specific-repository)
+- [state pattern and state machine](#state-pattern-and-state-machine)
+  - [state pattern](#state-pattern)
+  - [state machine](#state-machine)
+    - [구현체](#구현체)
+      - [Spring](#spring)
+      - [Pytohn](#pytohn)
+  - [references](#references)
 <!--toc:end-->
 
 # MVC Pattern
@@ -27,7 +34,7 @@ MVC 패턴는 사용자 인터페이스와 시스템 로직을 분리하는 것�
 
 MVC 패턴은 다른 디자인 패턴으로 이루어진 컴파운드 패턴이다.
 
-### Observer Pattern
+### 1. Observer Pattern
 
 Model - View의 관계
 
@@ -39,7 +46,7 @@ Model - View의 관계
 모델이 뷰에 통보할 때 상태 정보를 보내주는 push-model 보다
 통보 후 뷰가 필요한 정보를 알아서 가져가는 pull-model이 더 선호된다.
 
-### Strategy Pattern
+### 2. Strategy Pattern
 
 View - Controller의 관계
 
@@ -49,7 +56,7 @@ Controller는 View에 대한 Behavior가 된다.
 
 따라서 View에 Concrete Controller가 아닌 Interface Controller를 제공한다.
 
-### Composite Pattern
+### 3. Composite Pattern
 
 View 내에서 Component들 간의 관계
 
