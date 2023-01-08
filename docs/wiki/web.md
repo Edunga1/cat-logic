@@ -20,3 +20,9 @@ https://velog.io/@superlipbalm/blogged-answers-a-mostly-complete-guide-to-react-
 > return <button onClick={() => {}}>Click Me</button>
 
 사용자가 만든 커스텀 컴포넌트와 구분한다. html 기본 제공하는 컴포넌트.
+
+# HTML Entity: `&amp;`, `&gt;`
+
+https://developer.mozilla.org/en-US/docs/Glossary/Entity
+
+`&amp;` 는 `&` 를 나타내고, `&gt;` 는 `>` 을 나타낸다. Entity라고 부르며, 이 중 특수문자를 Reserved characters라고 한다.
