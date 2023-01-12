@@ -29,6 +29,7 @@
 - [Kotlin](kotlin)
 - [Kubernetes](kubernetes)
 - [Language Server Protocol](language-server-protocol)
+- [Linux](linux)
 - [Logging](logging)
 - [Mac OS](mac)
 - [Machine Learning](machine-learning)
