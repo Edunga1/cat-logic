@@ -10,6 +10,9 @@
     - [역 정규화 (Denormalization)](#역-정규화-denormalization)
 - [테이블 이름 컨벤션](#테이블-이름-컨벤션)
   - [단수 vs. 복수](#단수-vs-복수)
+- [데이터베이스는 큐가 아닙니다.](#데이터베이스는-큐가-아닙니다)
+  - [Why not a database?](#why-not-a-database)
+  - [Redis를 사용하는 것은 어떨까?](#redis를-사용하는-것은-어떨까)
 <!--toc:end-->
 
 # 설계
@@ -117,3 +120,34 @@ https://stackoverflow.com/questions/338156/table-naming-dilemma-singular-vs-plur
 * *OrderDetails*
 
 규칙이 깨지는 느낌을 받는다. *테이블 이름을 Orders로 지었으니 OrdersDetails 였던가?*
+
+# 데이터베이스는 큐가 아닙니다.
+
+[시스템 설계 자료 모음](https://news.hada.io/topic?id=6686)에서
+Message Queue Antipattern 단락의 [A Database Is Not a Queue](https://blog.codepath.com/2012/11/15/asynchronous-processing-in-web-applications-part-1-a-database-is-not-a-queue/) 글을 읽었다.
+
+데이터베이스를 큐로 사용하면 안된다는 내용이지만, 다른 관점으로는 메시지 큐 서비스가 제공하는 기능은 무엇인지 말하는 내용이기도 하다.
+
+## Why not a database?
+
+웹 스택에 새로운 기술을 도입하는 것을 꺼리기 때문에 데이터베이스를 그냥 사용하고 싶은 유독을 받을 수도 있을거라고 한다.
+이미 RDMBS를 사용하고 있을 것이므로, 백그라운드처리 용도로 사용하면 빠르게 끝났다고 생각하겠지만 거기엔 많은 제약 사항과 고려할 점이 있다.
+
+먼저 consuming 방식이다. producer는 테이블에 명령을 쌓고 consumer는 주기적으로 데이터를 polling 하는 것으로 구현하게 된다. 중요한 task면 초 단위로, 그렇지 않으면 몇 분이나 몇 시간마다 할 것이다.
+문제는 짧은 주기의 polling이 긴 주기의 polling에 영향을 받는 거다. 모든 polling의 합 만큼 짧은 주기의 polling이 지연된다. 즉각적으로 처리해야 하는 task의 실행을 보장하기 어려워 진다.
+
+consumer가 많아지면 중복 처리를 막기 위해 읽기 lock을 걸 수 밖에 없다. 그러면 consumer간 경쟁하게 된다.
+모두 처리하기 전까지는 계속 lock을 걸테고 그러면 다른 consumer는 처리할 수 없다. 처리가 늦으면 producer가 생산하는 명령은 무한정 쌓인다.
+
+완료한 작업을 삭제하는데도 문제가 있다. task가 쌓이기만 하면 계속 커질것이므로 주기적으로 삭제해야 한다.
+task 처리하면서 발생하는 업데이트 쿼리와 삭제 쿼리가 함께 자주 발생하는 것은 효율적인 방식은 아니다.
+
+이런 문제들이 합쳐지면 scaling하기 어렵다.
+
+## Redis를 사용하는 것은 어떨까?
+
+redis를 사용하는 것은 어떻게 생각하는지 물어보는 덧글이 있다.
+ruby 생태계에서는 [resque](https://github.com/resque/resque) 프로젝트가 있는데, 백그라운드 잡 관리용으로 redis를 사용하는 것이 흔하다고 한다.
+다만 메시지 큐를 완전히 대체한다고 보긴 어렵고, 장기적으로 확장성, 잡 처리량, 메시지 처리 제어, 에러 핸들링에 놓치는 것이 있을 수 있다고 한다.
+
+> I am really glad you brought this up. This is something I will covering in greater detail in my next post. In the ruby ecosystem, Redis is used very frequently as a job queue to some success with resque [https://github.com/defunkt/resque](https://github.com/defunkt/resque) but that doesn’t mean redis is a true replacement for a MQ by any stretch. And I think by trying to replace the need for a true MQ with Redis, depending on requirements you may be missing out on more then initially realized in terms of long term scalability, job throughput, message delivery control, robust error handling, etc.
