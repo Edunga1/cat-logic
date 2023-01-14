@@ -1,5 +1,16 @@
 # Programming Paradigm
 
+<!--toc:start-->
+- [Programming Paradigm](#programming-paradigm)
+- [Object Oriented Progamming](#object-oriented-progamming)
+- ["Database Abstraction Layers Must Die!"라는 글을 읽고](#database-abstraction-layers-must-die라는-글을-읽고)
+- [Expression Problem - 표현 문제](#expression-problem-표현-문제)
+  - [https://m.facebook.com/story.php?story_fbid=2581087648844171&id=1676787645940847](#httpsmfacebookcomstoryphpstoryfbid2581087648844171id1676787645940847)
+  - [https://edykim.com/ko/post/expression-problem/](#httpsedykimcomkopostexpression-problem)
+  - [감상](#감상)
+- [coroutine, generator, async, monad](#coroutine-generator-async-monad)
+<!--toc:end-->
+
 # Object Oriented Progamming
 
 [Object Oriented Progamming](object-oriented-programming)
@@ -50,3 +61,11 @@ FP는 함수가 써드파티 라이브러리라면, 어떻게 새로운 타입�
 OOP는 써드파티 라이브러리의 인터페이스를 구현했다면, 새 메서드가 추가될 때
 내가 구현한 클래스가 수정되어야 한다. 그래도 FP 쪽 보다는 형편이 나아보인다.
 FP에서 이런 문제를 해결하기 위한 납득 가능한 방법이 있을 거 같다.
+
+# coroutine, generator, async, monad
+
+[Monad란 무엇인가? - NAVER engineering](https://tv.naver.com/v/5340169)
+
+[WaitForSeconds - Unity 3D](https://docs.unity3d.com/ScriptReference/WaitForSeconds.html)
+
+Unity의 `WaitForSeconds`는 일정 시간 동안 코루틴 실행을 중단(suspend)한다.
