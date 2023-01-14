@@ -21,6 +21,9 @@ My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 - [Vim에서 python text object 사용하기](#vim에서-python-text-object-사용하기)
   - [vim-pythonsense](#vim-pythonsense)
   - [vim-expand-region](#vim-expand-region)
+- [Plugins](#plugins)
+  - [chrisbra/csv.vim](#chrisbracsvvim)
+    - [Features](#features)
 <!--toc:end-->
 
 # neovim
@@ -223,3 +226,19 @@ call expand_region#custom_text_objects('python', {
   \ 'ic' :1,
   \ })
 ```
+
+# Plugins
+
+사용중인 플러그인.
+
+## chrisbra/csv.vim
+
+![csv.vim sample](../$images/csv-vim-sample.png)
+
+csv 파일의 highlighting, 열과 행에 대한 처리 도구를 제공한다.
+
+newline이 포함되면 큰 따옴표로 묶어서 표현되기도 하는데, 인식 못하는 문제가 있다.
+
+### Features
+
+`:DeleteColumn 2-4` 2~4열 제거. `:DeleteColumn 2` 2열만 제거
