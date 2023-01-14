@@ -133,9 +133,24 @@ ref. https://stackoverflow.com/questions/17385794/how-to-get-the-process-id-to-k
 
 # .bash**rc** rc의 의미?
 
-**r**un **c**ommands.
+Run Commands.
 
 https://superuser.com/questions/173165/what-does-the-rc-in-bashrc-etc-mean<br>
 https://en.wikipedia.org/wiki/RUNCOM
 
 `.bashrc`, `.npmrc` 등 자주 보여서 찾아봤다.
+
+# Custom Tools
+
+## marker - the terminal command palette
+
+![marker sample](../$images/cli-marker-sample.png)
+
+https://github.com/pindexis/marker
+
+CTRL + SPACE 입력하면 저장한 명령어나 히스토리를 선택할 수 있다.
+자주 사용하지만 너무 긴 명령어를 기록하는데 사용한다.
+자주 히스토리에서 찾아서 입력하는 명령을 등록해서 사용하면 유용하다.
+
+* `marker mark` - 명령어를 북마크한다.
+* `marker remove` - 북마크를 삭제한다.
