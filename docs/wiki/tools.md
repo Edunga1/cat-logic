@@ -11,6 +11,7 @@
   - [mycli](#mycli)
 - [API Client 비교 Postman, Insomnia, IntelliJ builtin `.http`](#api-client-비교-postman-insomnia-intellij-builtin-http)
   - [비교](#비교)
+- [IntelliJ IDEA, DataGrip 버전을 fallback 버전으로 다운그레이드했다.](#intellij-idea-datagrip-버전을-fallback-버전으로-다운그레이드했다)
 <!--toc:end-->
 
 # 북마크 매니저 shiori
@@ -111,3 +112,48 @@ IntelliJ는 메인으로 사용해선 안되겠다. 개발하면서 에디터 �
 IntelliJ 버전에 따른 변경사항이 있는 상황에서, 라이센스 문제로 버전을 바꾸다보니 잘 사용하던 것을 못쓰게 되기도 한다. (fallback license로 회귀)
 구글 드라이브에 동기화 해놓고 사용하면 편리하긴 한데, 충돌이 잦다. 방금 수정한 데이터가 클라우드 버전과 맞지 않아 어느 것을 사용할 것인지 계속 물어본다.
 그리고 이쪽이 부가기능이라 기능이 좀 부실하다. 개발 도구가 IntelliJ라면 접근성은 가장 좋다. Endpoints, Spring Annotation으로부터 바로 생성할 수도 있다.
+
+# IntelliJ IDEA, DataGrip 버전을 fallback 버전으로 다운그레이드했다.
+
+회사 라이센스가 만료되어 `2022.3` 버전에서 `2021.1` 버전으로 돌아갔다.
+구매 요청하면 되지만, [perpetual 라이센스](https://sales.jetbrains.com/hc/en-gb/articles/207240845-What-is-a-perpetual-fallback-license)를 제공해서 사용하겠다 했다.
+경험해보고 만족하면 개인적으로도 구매할 수 있을 거 같고, 최신 버전 사용하지 못한다고 해서 개발을 못한다고 생각하면 그건 또 자존심 상할 문제라고 생각했다.
+
+어쨌든.. 다운그레이드했고, 몇가지 문제점은 있었다.
+
+2023년 1월 기준 8개월 정도 사용했고, 커밋할 때 마다 매번 모두 검사하는 불편함은 있지만, 개발하는데 지장은 없다.
+
+## 문제점 기록
+
+### IntelliJ scratches 폴더 미인식
+
+[scratches](https://www.jetbrains.com/help/idea/scratches.html) 폴더를 내가 별도 설정하여 쓰고 있다.
+
+구글 드라이브의 공유 폴더였고, 간단한 코드 조각들을 집, 회사 모두에서 쉽게 볼 수 있게하는 것이 목적이었다.
+당시 kotlin 입문한 상황이라 이는 공부하는데 매우 유용한 방식이었다.
+
+`Edit Custom Properties` 기능으로 `idea.scratch.path/scratches` 프로퍼티에 경로를 설정하였으나 먹히지 않았다.
+
+해당 변수는 `2021.2` 버전부터 추가된 것으로 추정하고 있다.
+
+`2021.2` 이전 버전에서는 `idea.scratch.path` 이 프로퍼티에 `scratches` 디렉토리가 있는 폴더의 경로로 설정해야 한다.
+
+### 프로젝트 열면 즉시 멈추거나 꺼지는 문제
+
+처음에는 라이센스 문제인 줄 알았다. 현재 fallback license를 삭제하고 free tier로 하면 되었기 때문.
+
+정확한 문제는 fallback license를 사용하기 위해서 로그인하고, 로그인한 계정을 동기화하면서 발생했다.
+
+플러그인을 동기화하면서 문제가 되었는데, 플러그인 중 **[Spring Initializr and Assistant](https://plugins.jetbrains.com/plugin/18622-spring-initializr-and-assistant)** 을 제거하니까 해당 증상이 사라졌다.
+
+아무튼 IntelliJ에서는 어떤 이유로 종료된 것인지 메시지 없이 종료되기 때문에 찾기 어려웠다.
+특히 문제가된 플러그인은 직접 설치한 것은 아닌 것으로 기억한다.
+
+### DataGrip 디렉토리 추가 안 됨
+
+scratches 폴더 추가하는 것처럼 쿼리를 모아놓은 폴더를 추가하여 사용 중이다.
+`Attach directory to project` 메뉴로 그냥 추가하면 된다. 문제는 해당 기능을 눌러도 아무 반응이 없다.
+
+아직 이유를 찾지 못했지만, 새로운 프로젝트를 추가하여 재현해보면 잘 됐다. 그래서 거기다 추가하고 connection 정보도 옮겨서 사용했다.
+
+이 문제도 메뉴를 선택해도 무반응이며, 에러 메시지도 없다.
