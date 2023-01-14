@@ -12,6 +12,8 @@
     - [background로 띄운 경우 좀 더 알기 쉬움](#background로-띄운-경우-좀-더-알기-쉬움)
     - [좀 더 똑똑한 방법](#좀-더-똑똑한-방법)
 - [.bash**rc** rc의 의미?](#bashrc-rc의-의미)
+- [Custom Tools](#custom-tools)
+  - [marker - the terminal command palette](#marker-the-terminal-command-palette)
 <!--toc:end-->
 
 # `set -ex`
