@@ -12,6 +12,7 @@
     - [background로 띄운 경우 좀 더 알기 쉬움](#background로-띄운-경우-좀-더-알기-쉬움)
     - [좀 더 똑똑한 방법](#좀-더-똑똑한-방법)
 - [.bash**rc** rc의 의미?](#bashrc-rc의-의미)
+- [`ping` 명령어](#ping-명령어)
 - [Custom Tools](#custom-tools)
   - [marker - the terminal command palette](#marker-the-terminal-command-palette)
 <!--toc:end-->
@@ -141,6 +142,35 @@ https://superuser.com/questions/173165/what-does-the-rc-in-bashrc-etc-mean<br>
 https://en.wikipedia.org/wiki/RUNCOM
 
 `.bashrc`, `.npmrc` 등 자주 보여서 찾아봤다.
+
+# `ping` 명령어
+
+```bash
+ping 123.123.123.123
+ping www.google.com
+```
+
+네트워크 진단 도구. [포트 번호를 받지 않는다. ICMP 메시지를 이용한다.](network)
+
+호스트 전송 실패 예시:
+```bash
+❯ ping 123.123.123.123
+PING 123.123.123.123 (123.123.123.123): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+Request timeout for icmp_seq 2
+Request timeout for icmp_seq 3
+```
+
+호스트 응답 성공 예시:
+```bash
+❯ ping www.google.com
+PING www.google.com (142.250.199.100): 56 data bytes
+64 bytes from 142.250.199.100: icmp_seq=0 ttl=112 time=61.641 ms
+64 bytes from 142.250.199.100: icmp_seq=1 ttl=112 time=68.523 ms
+64 bytes from 142.250.199.100: icmp_seq=2 ttl=112 time=70.667 ms
+64 bytes from 142.250.199.100: icmp_seq=3 ttl=112 time=67.562 ms
+```
 
 # Custom Tools
 
