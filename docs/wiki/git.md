@@ -11,6 +11,7 @@
     - [https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/](#httpszariskiwordpresscom20170225sha-1-ecb6a9eb8f8c)
     - [https://www.mathstat.dal.ca/~selinger/md5collision](#httpswwwmathstatdalcaselingermd5collision)
 - [`git rebase -i`](#git-rebase-i)
+- [`git revert -m`](#git-revert-m)
 <!--toc:end-->
 
 # 명령어 자동완성하기
@@ -273,3 +274,24 @@ $ glog
 ```
 
 만약 A와 B가 같은 파일을 작업하게 되면, 당연하게도 conflict 발생한다.
+
+# `git revert -m`
+
+`-m`, `--mainline` 옵션은 merge commit을 되돌리는데 사용한다. merge는 2개의 커밋을 병합하는 것이므로, 둘 중 어느 상태로 돌릴 것인지 결정해야 한다.
+
+> Usually you cannot revert a merge because you do not know which side of the merge should be considered the mainline. - `git revert --help`
+
+따라서 사용법은 다음과 같다: `git revert -m 1` or `git revert -m 2`
+
+revert는 새 커밋에 되돌리는 작업이 포함되므로 history로는 어떤 커밋을 선택했는지 알 수 없다.
+
+친절하게도 커밋 메시지에 둘 중 어떤 커밋으로 되돌아가는지 알려준다:
+
+```
+Revert "Add a feature"
+
+This reverts commit 5c54ea679164eaca0bab639667bfcebb88769e63, reversing
+changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
+```
+
+`5c54ea` 되돌려서 parent commit 중 하나인 `b73ce1`로 돌아간다. 물론 새로운 커밋이기 떄문에 hash는 별개다.
