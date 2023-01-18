@@ -11,6 +11,8 @@
 - [Jupyter Notebook + NodeJS 도커라이징 기록](#jupyter-notebook-nodejs-도커라이징-기록)
   - [Jupyter Docker Stacks](#jupyter-docker-stacks)
   - [End](#end)
+- [`host.docker.internal`로 호스트 서비스 접근하기](#hostdockerinternal로-호스트-서비스-접근하기)
+  - [대체는?](#대체는)
 <!--toc:end-->
 
 # OSX 에서 Docker 환경 구성하기
@@ -286,3 +288,39 @@ Jupyter Notebook NodeJS 도커라이징한 것은 여기에 올렸다:<br>
 https://github.com/Edunga1/jupyter-notebook-nodejs
 
 Dockerfile 작성하면서 `MAINTAINER`가 deprecated, `LABEL`을 사용해야 하는 것을 알았다: https://stackoverflow.com/questions/38899977/how-do-i-declare-multiple-maintainers-in-my-dockerfile
+
+# `host.docker.internal`로 호스트 서비스 접근하기
+
+`host.docker.internal`은 호스트의 ip를 가르키는 DNS name이다.
+[container에서 호스트의 서비스에 접근](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host)이 필요할 때 사용한다.
+
+> This is for development purpose and does not work in a production environment outside of Docker Desktop.
+
+주의할 점은 **docker-desktop** 에서 제공하는 것이다. rancher-desktop 등 다른 도구로 docker 구성했다면 사용할 수 없다.
+
+## 대체는?
+
+`docker` 명령어:
+```bash
+docker run --add-host=host.docker.internal:host-gateway
+```
+
+`docker-compose.yml`:
+
+```yaml
+my_app:
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+```
+
+반드시 `host.docker.internal` 필요는 없다. 편한 것으로 수정하면 된다.
+
+`host-gateway`의 정보는 잘 모르겠다. 가상화 도구 중 `dockerd`만 제공하는 것으로 보인다.
+
+`dockerd` cli 문서만 있고, 간단하게 설명되어 있다:
+
+https://docs.docker.com/engine/reference/commandline/dockerd/
+
+> --host-gateway-ip ip
+> IP address that the special 'host-gateway' string in --add-host resolves to.
+> Defaults to the IP address of the default bridge
