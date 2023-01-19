@@ -13,6 +13,8 @@
 - [데이터베이스는 큐가 아닙니다.](#데이터베이스는-큐가-아닙니다)
   - [Why not a database?](#why-not-a-database)
   - [Redis를 사용하는 것은 어떨까?](#redis를-사용하는-것은-어떨까)
+- [MySQL Docker Image](#mysql-docker-image)
+  - [이미지 내에 데이터 포함하기](#이미지-내에-데이터-포함하기)
 <!--toc:end-->
 
 # 설계
@@ -151,3 +153,41 @@ ruby 생태계에서는 [resque](https://github.com/resque/resque) 프로젝트�
 다만 메시지 큐를 완전히 대체한다고 보긴 어렵고, 장기적으로 확장성, 잡 처리량, 메시지 처리 제어, 에러 핸들링에 놓치는 것이 있을 수 있다고 한다.
 
 > I am really glad you brought this up. This is something I will covering in greater detail in my next post. In the ruby ecosystem, Redis is used very frequently as a job queue to some success with resque [https://github.com/defunkt/resque](https://github.com/defunkt/resque) but that doesn’t mean redis is a true replacement for a MQ by any stretch. And I think by trying to replace the need for a true MQ with Redis, depending on requirements you may be missing out on more then initially realized in terms of long term scalability, job throughput, message delivery control, robust error handling, etc.
+
+# MySQL Docker Image
+
+Official mysql image: https://hub.docker.com/_/mysql
+
+공식 이미지는 시작 시 `docker-entrypoint-initdb.d/` 폴더에 sql, sh, gz 파일을 두면 자동으로 실행하는 구조로 되어있다.:
+
+> it will execute files with extensions .sh, .sql and .sql.gz that are found in /docker-entrypoint-initdb.d
+
+## 이미지 내에 데이터 포함하기
+
+파일, 내용이 많으면 `docker-entrypoint-initdb.d/`에 두는 것만으로는 시작이 오래 걸린다.
+이를 해결하기 위해서 데이터를 이미지 내에 포함할 수 있다. 대신 이미지 크기가 그만큼 늘어난다.
+개인적으로는 이 방법으로 테이블만 생성하고, integration 테스트하는데 사용하고 있다.
+
+```
+FROM mysql:5.6 AS builder
+
+RUN ["sed", "-i", "s/exec \"$@\"/echo \"not running $@\"/", "/usr/local/bin/docker-entrypoint.sh"]
+
+ENV MYSQL_ROOT_PASSWORD=0000 \
+    MYSQL_DATABASE=test_quicket \
+    MYSQL_USER=testuser \
+    MYSQL_PASSWORD=testpassword
+
+COPY schema /docker-entrypoint-initdb.d
+
+RUN ["/usr/local/bin/docker-entrypoint.sh", "mysqld", "--datadir", "/initialized-db"]
+
+FROM mysql:5.6
+
+ENV TZ=Asia/Seoul
+
+COPY --from=builder /initialized-db /var/lib/mysql
+```
+
+* multi-stage build 이용하여 builder stage에서 설정 및 sql 파일을 복사하고 부트스트래핑 스크립트를 직접 실행한다.
+* main stage에서 builder의 DB 데이터를 COPY하고 실행한다.
