@@ -5,6 +5,7 @@
 - [개발도구](#개발도구)
   - [pyright](#pyright)
   - [pylint](#pylint)
+  - [Django Stubs](#django-stubs)
 - [Python mock](#python-mock)
   - [Decorator를 사용한 mocking.](#decorator를-사용한-mocking)
   - [`@patch('requests.get')`](#patchrequestsget)
@@ -49,6 +50,14 @@ https://github.com/microsoft/pyright
 https://github.com/PyCQA/pylint
 정적 분석 도구.
 
+## Django Stubs
+
+https://github.com/typeddjango/django-stubs
+
+django는 `objects` 등 마법을 사용해서 타입 제공을 제대로 받을 수 없다.
+pylint, pyright도 type을 알 수 없기 때문에 런타임에서 문제가 없지만 정적분석 시에는 에러로 취급한다.
+
+djang-stubs는 django와 관련된 타입 정보를 제공한다.
 
 # Python mock
 
