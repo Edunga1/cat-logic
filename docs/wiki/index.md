@@ -59,5 +59,5 @@
 - [Vim](vim)
 - [Vimwiki](vimwiki)
 - [Vue JS](vuejs)
-- [웹 개발](web)
+- [web](web)
 - [Windows Subsystem for Linux (WSL)](windows-subsytem-for-linux)
