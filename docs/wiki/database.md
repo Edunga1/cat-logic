@@ -15,6 +15,8 @@
   - [Redis를 사용하는 것은 어떨까?](#redis를-사용하는-것은-어떨까)
 - [MySQL Docker Image](#mysql-docker-image)
   - [이미지 내에 데이터 포함하기](#이미지-내에-데이터-포함하기)
+- [H2 Database](#h2-database)
+  - [`NumberFormatException: for input String: "..."` 에러](#numberformatexception-for-input-string-에러)
 <!--toc:end-->
 
 # 설계
@@ -191,3 +193,11 @@ COPY --from=builder /initialized-db /var/lib/mysql
 
 * multi-stage build 이용하여 builder stage에서 설정 및 sql 파일을 복사하고 부트스트래핑 스크립트를 직접 실행한다.
 * main stage에서 builder의 DB 데이터를 COPY하고 실행한다.
+
+# H2 Database
+
+## `NumberFormatException: for input String: "..."` 에러
+
+`UNION ALL` 쿼리로 3개의 테이블을 포함하고, 컬럼 하나가 integer 타입일 때 발생했다.
+
+`CAST(foo as char)` 명시적으로 타입 캐스팅을 통해 통일하여 해결했다.
