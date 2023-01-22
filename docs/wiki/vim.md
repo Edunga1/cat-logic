@@ -24,6 +24,8 @@ My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 - [Plugins](#plugins)
   - [chrisbra/csv.vim](#chrisbracsvvim)
     - [Features](#features)
+- [`:make` and `makeprg`](#make-and-makeprg)
+  - [build integration - How to Do 90% of What Plugins Do](#build-integration-how-to-do-90-of-what-plugins-do)
 <!--toc:end-->
 
 # neovim
@@ -242,3 +244,29 @@ newline이 포함되면 큰 따옴표로 묶어서 표현되기도 하는데, �
 ### Features
 
 `:DeleteColumn 2-4` 2~4열 제거. `:DeleteColumn 2` 2열만 제거
+
+# `:make` and `makeprg`
+
+`:make` 명령은 `makeprg`에 설정한 것을 실행한다.
+출력이 quickfix 양식이면 quckfix과 연동할 수 있다!
+
+## build integration - How to Do 90% of What Plugins Do
+
+https://youtu.be/XA2WjJbmmoM?t=3062
+
+영상 52분의 build integration 주제에서 설명한다.
+vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickfix를 통해 실패 지점으로 네비게이션할 수 있다.
+
+영상 일련 과정:
+
+1. `makeprg` 설정한다.: `set makeprg=bundle\ exec\ rspec\ -f\ QuckfixFormatter`
+2. `:make` 명령으로 `rspec` 테스트 실행한다.
+3. 테스트 실패한 지점을 quickfix로 보여준다.
+
+`rspec`명령에 `--format QuckfixFormatter` 옵션으로 quickfix에서 사용할 수 있는 양식으로 출력된다.
+
+![rspec formatter](../$images/rspec-formatter.png)
+
+다만 기본 제공되는 것은 아니고, 플러그인 같아 보인다. 문서에는 `QuickfixFormatter`에 대한 내용이 없다.
+
+ref. python traceback을 quickfix와 연동할 수 없냐는 질문: [Quickfix support for Python tracebacks](https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks)
