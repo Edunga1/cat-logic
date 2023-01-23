@@ -15,6 +15,7 @@
 - [`ping` 명령어](#ping-명령어)
 - [Custom Tools](#custom-tools)
   - [marker - the terminal command palette](#marker-the-terminal-command-palette)
+- [parameter fallback (default value)](#parameter-fallback-default-value)
 <!--toc:end-->
 
 # `set -ex`
@@ -186,3 +187,21 @@ CTRL + SPACE 입력하면 저장한 명령어나 히스토리를 선택할 수 �
 
 * `marker mark` - 명령어를 북마크한다.
 * `marker remove` - 북마크를 삭제한다.
+
+# parameter fallback (default value)
+
+```
+echo ${VARIABLE:-word}
+```
+
+`$VARIABLE`이 null 또는 unset 상태면 `word`를 반환한다.
+
+oh-my-zsh의 사용 예시:
+
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+`$ZSH_CUSTOM`이 없으면 `~/.oh-my-zsh/custom`을 사용한다는 의미.
+
+ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
