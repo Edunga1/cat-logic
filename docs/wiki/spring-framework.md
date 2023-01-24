@@ -28,7 +28,7 @@ https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initial
 3. 내장된 transport 라이브러리들
 4. 보안과 관련된 라이브러리들
 
-# request mapping narrowing
+# `RequestMapping` Request mapping narrowing
 
 [RequestMapping - Spring API](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html)
 
