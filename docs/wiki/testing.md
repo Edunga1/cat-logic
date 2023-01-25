@@ -1,5 +1,12 @@
 # Testing
 
+<!--toc:start-->
+- [Testing](#testing)
+- [Setup and Teardown](#setup-and-teardown)
+  - [Transaction Start - Rollback](#transaction-start-rollback)
+- [왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?](#왜-유닛-테스트에서-의존성을-테스트하지-않는-것이-중요한가요)
+<!--toc:end-->
+
 # Setup and Teardown
 
 각 테스트를 실행하기 전/후 할 일을 각각 **Setup** **Teardown** 이라한다.
@@ -39,3 +46,17 @@ Spring에서 테스트에 `@Transactional` 사용하지 말 것을 설명하는 
 * 직접 테스트하지 않는 이상 발견할 수 없는 버그가 운영 코드에 포함된다.
 
 글에서 설명하는 false negative 예제: 운영 코드에는 `@Transactional` 빠졌지만, 테스트에는 있어서 성공하고, 직접 호출하면 실패한다.
+
+# 왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?
+
+[(Why) is it important that a unit test not test dependencies?](https://softwareengineering.stackexchange.com/questions/65477/why-is-it-important-that-a-unit-test-not-test-dependencies)
+
+Stackexchange의 질문:
+* 의존성을 테스트하지 말고, 검증 대상만 테스트하는 것이 중요하다고 한다.
+* 내 생각은 의존성을 테스트하는 것을 피하기 위해서, Mocking/Stubbing 하는 것은 테스트의 복잡성을 증가 시킨다.
+
+답변:
+* 이건 단어 정의 문제다.
+* 의존성까지 테스트하는 것은 Integration Test. unit test가 아니라 통합 테스트에 대해서 말한 것으로 보인다.
+* 통합 테스트는 오래 걸리기 때문에 빌드 프로세스에 포함하지 않을 수도 있다.
+* 우리 제품은.. 매 빌드마다 유닛 테스트를 돌리는데 몇 초가 걸리고, 매 check-in 마다 통합 테스트를 돌리는데 10분 정도가 걸리고, 매일 밤 완전(full)-통합 테스트를 돌리는데 4시간이 걸린다.
