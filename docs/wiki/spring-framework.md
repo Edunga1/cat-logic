@@ -1,7 +1,7 @@
 <!--toc:start-->
 - [Spring framework](#spring-framework)
 - [WebClient 첫 요청이 느린 문제](#webclient-첫-요청이-느린-문제)
-- [request mapping narrowing](#request-mapping-narrowing)
+- [`RequestMapping` Request mapping narrowing](#requestmapping-request-mapping-narrowing)
   - [parameters](#parameters)
     - [`value` (alias of `path`)](#value-alias-of-path)
     - [`params`](#params)
