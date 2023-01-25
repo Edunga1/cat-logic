@@ -1,9 +1,7 @@
-# Programming
-
-Programming은 광범위한 단어이다. 잘 정리되지 않는 주제는 여기에 두자.
+# 개발 철학
 
 <!--toc:start-->
-- [Programming](#programming)
+- [개발 철학](#개발-철학)
 - [TED - Linus Torvalds: 리눅스의 기본 철학](#ted-linus-torvalds-리눅스의-기본-철학)
   - [좋은 코드](#좋은-코드)
   - [리누스 토발스의 개발자 자세](#리누스-토발스의-개발자-자세)
