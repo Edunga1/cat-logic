@@ -1,5 +1,7 @@
 # Architecture
 
+소프트웨어 아키텍처와 디자인.
+
 <!--toc:start-->
 - [Architecture](#architecture)
 - [Robert C. Martin - Clean Architecture and Design](#robert-c-martin-clean-architecture-and-design)
@@ -139,3 +141,76 @@ QA 툴 커뮤니티로 보이는데, 모든 경우의 수, 직교(Orthogonal), P
 > 순차        착신    Live
 > 순차반복    Hold    Live
 > 순차반복    착신    Off
+
+# Domain Driven Design (DDD)
+
+## AWS DDD initiative program
+
+2021/11 진행한 AWS 파트너사 세미나. DDD를 주제로 이야기했다.
+
+서비스를 event storming을 통해 비즈니스를 분리하는 노하우에 대한 이야기.
+
+DDD의 boundary context가 MSA를 구분짓는 토대가 된다.
+
+**DDD란?**
+
+* 도메인 별로 나눠서 설계하는 방식
+* 사전적 의미는 영역, 집합
+* loosely coupling과 high cohesion을 핵심 목표로 함
+
+**시스템 설계**
+
+* 시스템 모델인 객체와 event의 변화가 일으키는 행동(behavior)을 먼저 식별한다.
+* ubiquitous language, 보편적인 언어를 사용해서 메인 모델을 식별하자
+  * 같은 단어라도 이해 당사자에 따라서 생각하는 것이 달라진다. (커피하면 떠오르는 것? 스위치라는 단어에서 연상되는 것?)
+* code as model. 모델 용어를 코드로 기술해본다.
+* protecting domain knowledge. 도메인 모델이 다른 도메인에 의해 손상되지 않도록 한다.
+  * ubiquitous language에서 결정된 단어가 다른 도메인으로 인해서 해석이 달라지면 안된다.
+  * 같은 단어를 사용하면 도메인을 분리한다.
+
+**DDD**
+
+* 설계 방법에는 전략 Strategic, 전술 Tactical 방식으로 나뉜다.
+* 전술
+  * context 내에서 컴포넌트를 어떻게 나눌 것인지를 결정한다.
+  * 컴포넌트는 pattern도 포함된다.
+  * 대표적인 컴포넌트에는 layered architecture가 있다.
+  * 전략 보다는 좀 더 구체적인 일들을 한다.
+* 전략
+  * ubiquitous language, bounded context, context map...
+
+**ubiquitous language**
+
+![ubiquitous language example](../$images/ddd-ubiquitous-language.png)
+
+* 개발자와 사업 담당자가 같은 용어를 통해 대화할 수 있는 용어
+
+**bounded context**
+
+* "customer"라고 했을 때, 도메인에 따라서 의미가 달라진다. 이걸 구분짓는 최소 단위를 bounded context라 한다.
+* bounded context 내에서 어떤 단어는 하나만 의미한다. (무결성)
+* e.g. 토마토는 과학적 맥락에서는 과일, 요리적 맥락에서는 채소를 의미함
+
+**event storming**
+
+* bounded context를 식별하기 위한 방법 중 하나
+* 복잡한 비즈니스 도메인을 빠르게 탐색하고 학습할 수 있는 워크숍
+* steps
+  1. 도메인 이벤트를 식별한다
+    * 각자 알고있는 이벤트를 작성하고, 토론하지 말고, 각자 판단으로 모두 기록한다.
+  2. 커맨드를 식별한다
+  3. Aggregate를 식별한다
+    * 커맨드와 도메인 이벤트가 영향을 주는 데이터 요소
+    * 명령이 수행되고 이벤트가 발생하는 도메인 오브젝트 집합
+  4. Bounded Context
+    * 한 번에 Bounded Context를 결정하기는 어려움. iteration을 통해 지속적으로 정제한다.
+    * 필요에 따라 액터와 시스템을 구분한다.
+    * 단순히 '사용자' '고객' 보다는 구체적인 Role을 설정한다.
+    * 외부 시스템, 레거시 모두 명세한다.
+    * 정책 Policy. e.g. 회원가입 할 때 입력한 이메일로 컨펌 메일을 발송한다.
+  5. Context Map
+    * Context 간의 관계를 나타낸다.
+    * e.g.
+      * json, yaml, grpc 등으로 커뮤니이션한다 → Published Language
+      * graphql, restapi로 통신한다 → Open Host Service
+      * Upstream, Downstream 관계를 나타내고, 정책이 변경되면 따라간다 → Conformist
