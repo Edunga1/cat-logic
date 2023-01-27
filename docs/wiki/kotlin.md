@@ -8,6 +8,9 @@
   - [Kotest Specs](#kotest-specs)
     - [Better Specs](#better-specs)
 - [[Language Server](language-server-protocol)](#language-serverlanguage-server-protocol)
+- [ranges](#ranges)
+  - [Hierarchy](#hierarchy)
+- [Kotlin DSL](#kotlin-dsl)
 <!--toc:end-->
 
 # Features
@@ -137,3 +140,75 @@ https://www.netguru.com/blog/traversing-through-dates-with-kotlin-range-expressi
 보통 순회, 비교 모두 당장 필요하지는 않을텐데,\
 예를들면, 날짜 범위를 나타내는 클래스를 구현하고 싶다면 `ClosedRange<LocalDate>`만 구현해도 충분하다.
 `Pair<LocalDate, LocalDate>` 보다는 좀 더 명확할 것이다.
+
+# Kotlin DSL
+
+https://kotlinlang.org/docs/type-safe-builders.html
+
+> Type-safe builders allow creating Kotlin-based domain-specific languages (DSLs) suitable for building complex hierarchical data structures in a semi-declarative way. 
+
+Type-safe 빌더는 비 선언적인 방법으로, 복잡한 계층의 데이터 구조를 만드는데 적합한 Kotlin DSL을 만들 수 있습니다.
+
+대표적인 예시인 [Kotr](https://ktor.io/docs/routing-in-ktor.html#define_route)의 route handler:
+
+```kotlin
+import io.ktor.server.routing.*
+import io.ktor.http.*
+import io.ktor.server.response.*
+
+routing {
+    route("/hello", HttpMethod.Get) {
+        handle {
+            call.respondText("Hello")
+        }
+    }
+}
+```
+
+builder 유형의 모듈을 만드는데 유용한 방법이다.
+
+위 코드에서 `routing` `route` `handle`는 각각 lambda 표현식을 받는 함수이다.
+lambda 함수의 [this](https://kotlinlang.org/docs/this-expressions.html)를 정의함으로써 DSL을 만들 수 있다.
+
+```kotlin
+html {
+ // ...
+}
+```
+
+이런 표현을 가능케 하려면 다음과 같이 `html` 함수를 만든다:
+
+```kotlin
+fun html(init: HTML.() -> Unit): HTML {
+    val html = HTML()
+    html.init()
+    return html
+}
+```
+
+`html {}`의 lambda 표현식의 this는 이제 `HTML` 객체가 된다.
+`HTML` 클래스에 다시 lambda expression을 받도록 함수를 제공하면 중첩된 표현이 가능해진다:
+
+```kotlin
+class HTML {
+    fun head(init: Head.() -> Unit): Head {
+        val head = Head()
+        head.init()
+        children.add(head)
+        return head
+    }
+    fun body(init: Body.() -> Unit): Body {
+        val body = Body()
+        body.init()
+        children.add(body)
+        return body
+    }
+}
+```
+
+```kotlin
+html {
+    head { ... }
+    body { ... }
+}
+```

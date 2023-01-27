@@ -69,3 +69,16 @@ FP에서 이런 문제를 해결하기 위한 납득 가능한 방법이 있을 
 [WaitForSeconds - Unity 3D](https://docs.unity3d.com/ScriptReference/WaitForSeconds.html)
 
 Unity의 `WaitForSeconds`는 일정 시간 동안 코루틴 실행을 중단(suspend)한다.
+
+# 작은 언어는 프로그래밍의 미래입니다.
+
+https://news.hada.io/topic?id=8009
+
+> "Little Language"란?
+> * '작은 언어'는 특정 문제를 해결하기 위한 목적을 가지고 만들어진 언어들
+>   → SQL, RegEx, Dhall,..
+>   → 또한 DSL이라고도 불려짐
+
+핵심 주제에 집중하는 언어를 작은 언어라 한다. 이런 언어를 사용하면 문제 해결을 더 쉽게한다.
+
+[kotlin은 언어 차원에서 DSL](kotlin#Kotin DSL)을 제공한다.
