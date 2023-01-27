@@ -9,6 +9,7 @@
   - [https://edykim.com/ko/post/expression-problem/](#httpsedykimcomkopostexpression-problem)
   - [감상](#감상)
 - [coroutine, generator, async, monad](#coroutine-generator-async-monad)
+- [작은 언어는 프로그래밍의 미래입니다.](#작은-언어는-프로그래밍의-미래입니다)
 <!--toc:end-->
 
 # Object Oriented Progamming
