@@ -12,6 +12,9 @@ My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 - [quickfix & location list](#quickfix-location-list)
   - [commands](#commands)
   - [grep](#grep)
+  - [`cdo`, `ldo` 검색된 모든 entry에 명령어 적용](#cdo-ldo-검색된-모든-entry에-명령어-적용)
+  - [`cfdo`, `lfdo` 검색된 모든 파일에 명령어 적용](#cfdo-lfdo-검색된-모든-파일에-명령어-적용)
+    - [`bufdo` 모든 buffer 파일에 명령어 적용](#bufdo-모든-buffer-파일에-명령어-적용)
 - [mapping 시 `:...<cr>` vs `<cmd>...<cr>`](#mapping-시-cr-vs-cmdcr)
 - [Variables](#variables)
   - [`path`](#path)
@@ -89,12 +92,38 @@ location-list의 명령어는 prefix `c` -> `l` 바꾸면 대응한다.
 
 ## grep
 
+e.g. `:vimgrep /myfunc/ **/*.c`
+
 `:h vimgrep` `:grep` `:lgrep`(location-list)
 
 패턴을 검색하고 결과를 quickfix 목록으로 만든다.
 
-e.g. `:vimgrep /myfunc/ **/*.c`
+## `cdo`, `ldo` 검색된 모든 entry에 명령어 적용
 
+`cdo s/foo/bar` `ldo s/foo/bar`
+
+quickfix, location-list 검색 결과에 명령어를 적용한다.
+
+grep으로 검색하고, cdo로 적용, 예시:
+1. `:vimgrep foo **/*.md` 모든 `md` 파일에서 `foo` 검색한다.
+2. `:copen` 검색 결과 확인하고.
+3. `cdo s/foo/bar` 검색 결과에서 `foo` -> `bar` 대체한다.
+
+`:cdo s/foo/bar | update`
+
+`| update`를 사용하면 수정과 함께 저장한다.
+
+## `cfdo`, `lfdo` 검색된 모든 파일에 명령어 적용
+
+`:cfdo %s/foo/bar` or `:ldo %s/foo/bar`
+
+`cdo`와 차이점은 파일 모든 내용에 대해서 적용한다는 점이 다르다. 검색 목록에서 보이지 않는 라인도 적용되니 주의.
+
+### `bufdo` 모든 buffer 파일에 명령어 적용
+
+`:bufdo %s/foo/bar`
+
+모든 buffer에 대해서 적용하므로 `:buffers`등 명령어로 적용 대상을 잘 확인하자.
 
 # mapping 시 `:...<cr>` vs `<cmd>...<cr>`
 
