@@ -1,7 +1,6 @@
-# Database
+[#](#) Database
 
 <!--toc:start-->
-- [Database](#database)
 - [설계](#설계)
   - [정규화 (Normalization)](#정규화-normalization)
     - [제 1 정규화 (First Normal Form)](#제-1-정규화-first-normal-form)
@@ -17,6 +16,13 @@
   - [이미지 내에 데이터 포함하기](#이미지-내에-데이터-포함하기)
 - [H2 Database](#h2-database)
   - [`NumberFormatException: for input String: "..."` 에러](#numberformatexception-for-input-string-에러)
+- [SQLite의 알려지지 않은 이야기](#sqlite의-알려지지-않은-이야기)
+  - [용어 및 단어](#용어-및-단어)
+    - [MC/DC Coverage](#mcdc-coverage)
+    - [DO-127B](#do-127b)
+    - [covering index](#covering-index)
+    - [Fossil](#fossil)
+  - [인상깊은 부분](#인상깊은-부분)
 <!--toc:end-->
 
 # 설계
@@ -201,3 +207,86 @@ COPY --from=builder /initialized-db /var/lib/mysql
 `UNION ALL` 쿼리로 3개의 테이블을 포함하고, 컬럼 하나가 integer 타입일 때 발생했다.
 
 `CAST(foo as char)` 명시적으로 타입 캐스팅을 통해 통일하여 해결했다.
+
+# SQLite의 알려지지 않은 이야기
+
+https://news.hada.io/topic?id=4558
+
+많은 개발 토픽이 담겨있다.
+
+## 용어 및 단어
+
+본문에 나오는 모르는 용어들을 검색해본다.
+
+### MC/DC Coverage
+
+본문 중:
+> 실제로 DO-178B의 프로세스를 따르기 시작했고, 그중 하나가 100% MCDC Test Coverage
+> - MCDC(Modified Condition / Decision Coverage) [3] 는 테스트가 개별 분기를 적어도 한번 이상 통과해야 하는 것
+> - SQLite 가 MCDC 100% 가 되는데 주당 60시간 기준으로 1년이 걸렸음. 정말 정말 어려웠음. 매일 12시간을 해야 했고 정말 피곤.
+> - 90~95% 의 테스트 커버리지는 쉬운데 나머지 5%가 정말 어려움. 하지만 1년간 그렇게 해서 최종적으로 100%에 도달하자 Android 에서 버그리포트가 오지 않게 되었음
+> - 그때부터 작동하기 시작했고, 큰 차이를 내었음. 그 이후 8~-9년동안 버그가 없었음.
+
+> MCDC 100% 커버리지는 TH3 라고 부르고 공개하지 않음 (proprietary)
+
+[MC/DC 커버리지 의미 아시는분?](https://www.sten.or.kr/bbs/board.php?bo_table=free&wr_id=24033)
+
+> 전체 경우의 수의 테이블을 보고 위와 같은 식으로 A, B, C 각각의 개별조건식이 전체 조건식(D)에 영향을 주는 TC를 찾아내면 MC/DC 커버리지 100%를 충족하게 됩니다.
+
+MC/DC Coverage는 expression에서 모든 branch를 커버하기 위한 Test Case를 만들기 위한 방법으로 보인다.
+
+### DO-127B
+
+본문 중:
+> 실제로 DO-178B의 프로세스를 따르기 시작했고, 그중 하나가 100% MCDC Test Coverage
+
+[DO-178B - Wikipedia](https://ko.wikipedia.org/wiki/DO-178B)
+
+> DO-178B (항공기 시스템과 장비 인증에 관한 소프트웨어 고려사항)는 RTCA 사에 의해 발표된 소프트웨어 개발 표준이다.
+
+### covering index
+
+본문 중:
+> 예를 들어서, 나는 Covering Index에 대해서는 전혀 몰랐는데, 독일에서 열린 PHP 컨퍼런스에 참석했을 때, MySQL의 David Axmark도 참여해서 강연을 했음
+ㅤ→ 그 강연에서 MysQL 이 어떻게 Covering Index를 만들었는지 설명함
+ㅤ→ DB의 인덱스에 여러개 컬럼이 있을때, 인덱스의 앞쪽 컬럼에 대해서만 쿼리하고 답이 나머지 컬럼에 있다면 DB는 원본 테이블 조회없이 인덱스만으로도 사용 가능해서 작업이 빨라짐
+ㅤ→ 그래서 집으로 돌아오는 비행기에서 사람이 별로 없길래, 랩탑을 열고 대서양 상공에서 SQLite 의 커버링 인덱스를 구현했음
+
+[CUBRID 커버링 인덱스(covering index) 이야기](https://www.cubrid.com/blog/3821500)
+
+> 아래 예제-1)에서 SELECT 질의의 WHERE 조건에 사용된 컬럼 i와, SELECT 리스트로 주어진 컬럼 j는 모두 인덱스 idx를 구성하는 컬럼입니다. 이와 같은 경우에 CUBRID는 SELECT 질의를 수행할 때 커버링 인덱스를 스캔 하게 됩니다, 이는 하나의 인덱스가 SELECT 문이 요구하는 조건과 결과를 모두 포함하고 있기 때문에 가능한 일입니다.
+>
+> 예제-1)
+> CREATE TABLE tbl (i INT, j INT);
+> CREATE INDEX idx ON tbl(i, j);
+> SELECT j FROM tbl WHERE i > 0;
+
+### Fossil
+
+본문 중:
+> Fossil 구축
+> - Git 과 Mercurial 을 보고 요구사항을 정리한뒤 직접 버전관리 시스템을 개발하기로 함
+> - 이제 Fossil 은 잘 동작해서, 자체 프로젝트가 되었음
+> - 토발즈가 Linux Kernel 개발을 지원하기 위해 Git을 만들었기에, Linux Kernel 관련 일을 한다면 Git 이 완벽한 버전관리 시스템
+
+[Fossile](https://www.fossil-scm.org/home/doc/trunk/www/index.wiki)
+
+> **Quick Start**
+> 
+> 1. [Download](https://www.fossil-scm.org/home/uv/download.html) or install using a package manager or [compile from sources](https://www.fossil-scm.org/home/doc/trunk/www/build.wiki).
+> 2. fossil init REPOSITORY-DIR/new-repository
+> 3. fossil open REPOSITORY-DIR/new-repository
+> 4. fossil add files-or-directories
+> 5. fossil commit -m "commit message"
+> 6. fossil ui
+
+git 사용법과 흡사하다.
+
+## 인상깊은 부분
+
+> 90~95% 의 테스트 커버리지는 쉬운데 나머지 5%가 정말 어려움. 하지만 1년간 그렇게 해서 최종적으로 100%에 도달하자 Android 에서 버그리포트가 오지 않게 되었음
+
+이게 정말 가능할까? 본문을 읽어보면 테스트 케에스에 진심으로 보이는데, 모든 branch도 100% 달성했을 가능성이 있다.
+내 경우 새 기능을 추가할 때 별다른 노력 없이도 커버리지 90%에 근접했다.
+나머지는 언어 특성으로 인해 테스트를 위해 코드를 재작성이 필요하거나, 너무 사소하다고 생각되는 부분이었다.
+하지만 100% 달성에 노력하는 것은 매우 가치있는 일인 거 같다.
