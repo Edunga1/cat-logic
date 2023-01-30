@@ -42,6 +42,11 @@ https://github.com/nanotee/nvim-lua-guide#modules
 
 ## [Language Server Protocol](language-server-protocol)
 
+TL;DR
+* [nvim-lspconfig/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) 제공하는 language server 목록
+* `:Mason` 설치 가능한 language server 목록
+* [null-js/BUILTIN_CONFIG](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md) 제공하는 lsp 도구 목록
+
 vim을 IDE처럼 사용하기 위한 설정. 이제 LSP로 통일되고 있다.
 
 [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33)
