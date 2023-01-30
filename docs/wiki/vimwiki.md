@@ -1,5 +1,12 @@
 # Vimwiki
 
+# 자주 사용하는 기능
+
+* `<leader>ww` wiki index 열기
+* `<enter>` 문서 열기
+* `<backspace>` 이전 문서로 돌아가기
+* `:VWB` 현재 문서를 참조하는 모든 문서 검색 (location-list)
+
 # 버그
 
 ## 강조체, 기울임체가 단어 일부분에만 적용할 수 없는 문제
