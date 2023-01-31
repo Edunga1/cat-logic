@@ -82,4 +82,4 @@ https://news.hada.io/topic?id=8009
 
 핵심 주제에 집중하는 언어를 작은 언어라 한다. 이런 언어를 사용하면 문제 해결을 더 쉽게한다.
 
-[kotlin은 언어 차원에서 DSL](kotlin#Kotin DSL)을 제공한다.
+[kotlin은 언어 차원에서 DSL](kotlin.md#Kotin DSL)을 제공한다.

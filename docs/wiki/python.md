@@ -43,7 +43,7 @@ sources = {
 
 https://github.com/microsoft/pyright
 
-[language server](language-server-protocol) for python.
+[language server](language-server-protocol.md) for python.
 
 ## pylint
 
