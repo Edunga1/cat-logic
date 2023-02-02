@@ -69,3 +69,50 @@ EBS의 스냅샷은 전체 Copy가 아니라 Incremental을 저장하므로, 스
 S3 에서 사용하는 스토리지 타입
 
 HOT - COLD는 오브젝트에 접근했을 때 반응에 대한 내용. Observable과 같은 맥락 같다.
+
+# Networking
+
+2021-09-31 AWS CEP 내용 정리한 것.
+
+![aws-global-infrastructure](../$images/aws-global-infrastructure.png)
+
+Region에는 2개의 Transit이 존재한다. 다른 Region, 외부와의 연결 통로가 된다.
+
+AZ간 통신은 내부망을 통해서만 이루어진다.
+
+## 주요 네트워킹 서비스
+
+* VPC: AWS 클라우드상에 만드는 가상 네트워크
+* VPN: On-premise 데이터 센터와 VPC의 IPSec VPN 연결 
+* Direct Connect: On-premise 데이터 센터와 VPC의 전용선 연결
+* Route 53: 관리형 DNS 서비스
+
+AWS에서 자원 레벨은 Global과 Regional으로 나뉜다.
+EC2는 Regional 서비스에 포함된다.
+
+AWS에서는 Static의 반대되는 용어로 `Elastic`을 사용한다.
+
+### VPC - Virtual Private Cloud
+
+독립된 가상 클라우드 네트워크. 나만의 네트워크라고 이해하면 된다.
+
+IP 대역은 CIDR(Classes Inter-Domain Routing) 블록 /16 ~ /28 까지 사용 가능하다.
+
+공인 IP는 비싼 자원이므로 서버 Stop시 해제된다는 등 제약이 있다.
+
+DNS는 기본으로 제공되는 Private, Public DNS가 제공됨
+
+**IP 대역**\
+172.16.0.0/16 CIDR 내에서 네트워크 구성된다.
+
+**VPC Peering**
+* 동일 Region 내 VPC간 네트워크 연결 옵션
+* VPC간 IP가 중복 불가하며, 하나의 Peering만 제공
+
+### Direct Connect
+
+Direct Connect는 물리적으로 전용선으로 연결한다.
+
+### Route 53
+
+Route53은 FQDN + 다양한 기능을 제공한다.
