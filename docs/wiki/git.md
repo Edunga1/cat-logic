@@ -1,3 +1,5 @@
+# git
+
 <!--toc:start-->
 - [명령어 자동완성하기](#명령어-자동완성하기)
   - [Windows](#windows)
@@ -12,6 +14,10 @@
     - [https://www.mathstat.dal.ca/~selinger/md5collision](#httpswwwmathstatdalcaselingermd5collision)
 - [`git rebase -i`](#git-rebase-i)
 - [`git revert -m`](#git-revert-m)
+- [`git log --graph`](#git-log-graph)
+  - [`--date-order` 로 피라미드 그래프 방지하기](#date-order-로-피라미드-그래프-방지하기)
+    - [옵션 설명](#옵션-설명)
+  - [`--date-order` 와 `--author-date-order` 비교](#date-order-와-author-date-order-비교)
 <!--toc:end-->
 
 # 명령어 자동완성하기
@@ -46,7 +52,7 @@ git-scm에 다른 방법이 나와있다.
 
 keychain으로 비밀번호를 관리하는게 아닌가 싶다.
 
-다른 환경에서는 매번 로그인 과정이 필요했다.  
+다른 환경에서는 매번 로그인 과정이 필요했다.
 
 이 때는 github에 ssh public key를 등록하면 된다.
 
@@ -95,7 +101,7 @@ git@github.com:<USERNAME>/<REPOSITORY>.git
 
 ### https://www.codentalks.com/t/topic/2973
 
->뻘글) git 불안해서 못쓰겟음니다 -.-;
+> 뻘글) git 불안해서 못쓰겟음니다 -.-;
 
 찾다가 나온 유머글 ㅎㅎ. [덧글에 있는 만화](https://www.codentalks.com/uploads/default/original/2X/9/98fa43031c7cfbf44c714ad5819ea504ef37e70c.jpg)처럼
 걱정, 우려만 해서는 안되겠다.
@@ -295,3 +301,83 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 ```
 
 `5c54ea` 되돌려서 parent commit 중 하나인 `b73ce1`로 돌아간다. 물론 새로운 커밋이기 떄문에 hash는 별개다.
+
+# `git log --graph`
+
+TL;DR
+
+- `--date-order` 로 그래프를 정렬하는데 힌트를 줄 수 있다.
+- `--author-date-order` 로 작성자 및 날짜 정렬
+- 옵션에 대한 정보: https://git-scm.com/docs/git-log#_commit_ordering
+- 기본 값은 `--topo-order`로 보인다.
+
+## `--date-order` 로 피라미드 그래프 방지하기
+
+```bash
+git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)<%an>%C(reset)%C(bold yellow)%d%C(reset)' --all
+```
+
+git log를 그래프로 보기위해 이렇게 사용 중이다.
+
+문제는 `staging -> master` 머지 커밋이 아래 이미지와 같이 피라미드로 보여진다.
+
+![pyramid graph](../$images/git-log-graph-pyramid.png)
+
+머지 커밋의 경우 2개의 부모를 가지고 있기 때문에, 두 부모 중 어느 것을 우선적으로 보여줄 지 힌트가 없다.
+따라서 피라미드로 보여지는 것으로 추정한다.
+
+`--date-order` 옵션을 추가하여, 시간 기준으로 보여주도록 옵션을 주면 완화된다:
+
+```bash
+git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)<%an>%C(reset)%C(bold yellow)%d%C(reset)' --all --date-order
+```
+
+![with --date-order](../$images/git-log-graph-date-order.png)
+
+### 옵션 설명
+
+`git log --help` 에서 정렬과 관련된 내용을 확인하면 어떻게 정렬 방법에 대해서 설명하고 있다.
+
+```bash
+Commit Ordering
+       By default, the commits are shown in reverse chronological order.
+
+       --date-order
+           Show no parents before all of its children are shown, but otherwise show commits in the commit timestamp order.
+
+       --author-date-order
+           Show no parents before all of its children are shown, but otherwise show commits in the author timestamp order.
+
+       --topo-order
+           Show no parents before all of its children are shown, and avoid showing commits on multiple lines of history intermixed.
+
+           For example, in a commit history like this:
+
+                   ---1----2----4----7
+                       \              \
+                        3----5----6----8---
+
+           where the numbers denote the order of commit timestamps, git rev-list and friends with --date-order show the commits in the timestamp order: 8 7 6 5 4 3 2 1.
+
+           With --topo-order, they would show 8 6 5 3 7 4 2 1 (or 8 7 4 2 6 5 3 1); some older commits are shown before newer ones in order to avoid showing the commits from two
+           parallel development track mixed together.
+```
+
+`--topo-order`에 대한 내용을 보면
+
+```bash
+                   ---1----2----4----7
+                       \              \
+                        3----5----6----8---
+```
+
+위 그래프가 있을 때, 숫자는 시간 순서로 작성되었다고 하자.
+
+- `--topo-order` 8 6 5 3 7 4 2 1 순서로 표기한다.
+- `--date-order` 8 7 6 5 4 3 2 1 순서로 표기한다.
+
+## `--date-order` 와 `--author-date-order` 비교
+
+![--date-order and --author-date-order comparison](../$images/git-log-graph-author-date-order-comparison.png)
+
+왼쪽이 `--date-order` 오른쪽이 `--author-date-order`이다.
