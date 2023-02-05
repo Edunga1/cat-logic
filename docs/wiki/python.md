@@ -4,6 +4,9 @@
 - [Python](#python)
 - [개발도구](#개발도구)
   - [pyright](#pyright)
+    - [pyright 설치](#pyright-설치)
+    - [`pyrightconfig.json`로 설정관리](#pyrightconfigjson로-설정관리)
+      - [타입 힌트를 사용하지 않으려면](#타입-힌트를-사용하지-않으려면)
   - [pylint](#pylint)
   - [Django Stubs](#django-stubs)
 - [Python mock](#python-mock)
@@ -44,6 +47,25 @@ sources = {
 https://github.com/microsoft/pyright
 
 [language server](language-server-protocol.md) for python.
+
+### pyright 설치
+
+* nvim-lspconfig은 `Mason`을 사용하자: `:MasonInstall pyright`
+* [coc-nvim](https://github.com/fannheyward/coc-pyright): `:CocInstall coc-pyright`
+
+### `pyrightconfig.json`로 설정관리
+
+프로젝트 root에 `pyrightconfig.json`을 생성한다.
+
+#### 타입 힌트를 사용하지 않으려면
+
+```json
+{
+  "reportGeneralTypeIssues": false
+}
+```
+
+타입 명세하지 않는 프로젝트의 경우 무수한 에러 메시지가 출력된다. disable 하는 편이 낫다.
 
 ## pylint
 
