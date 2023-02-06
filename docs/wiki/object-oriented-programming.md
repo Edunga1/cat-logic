@@ -3,7 +3,6 @@
 <!--toc:start-->
 - [Object Oriented Programming](#object-oriented-programming)
 - [Robert C. Martin: Principles of Component Design.](#robert-c-martin-principles-of-component-design)
-- [Robert C. Martin - Clean Architecture and Design](#robert-c-martin-clean-architecture-and-design)
 - [KSUG Seminar - Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향](#ksug-seminar-growing-application-2nd-애플리케이션-아키텍처와-객체지향)
 - [스크랩](#스크랩)
 <!--toc:end-->
@@ -147,3 +146,60 @@ http://okky.kr/article/342405
 
 이 글은 OOP에서의 getter, setter 위치에 대해서 설명하고
 스칼라에서 getter, setter는 어떻게 표현되는지 보여준다.
+
+# 우아한 객체지향 - 우아한 테크 세미나
+
+slide: https://www.slideshare.net/baejjae93/ss-151545329
+video: https://youtu.be/dJ5C4qRqAgA
+
+어떻게 객체지향 코드를 작성할 수 있는지 설명하는 글.
+코드를 단계별로 개선해나가는 방식으로 설명해서 이해하기 쉽다.
+
+## 때로는 절차지향이 객체지향보다 좋다.
+
+![object vs procedural comparison 125p](../$images/woowahanoop-comparison-125p.png)
+
+[1:20:25](https://youtu.be/dJ5C4qRqAgA?t=4825)
+
+두 가지 이유:
+1. 객체지향 코드는 설계적으로 이뻐 보이지만, 주문 검증하는 로직이 분산되어 있어서 탐색하기 어렵다.
+2. 주문 모델에 검증 로직이 있으면서 응집도가 떨어진다. 모델에 주문 처리와 검증 로직 모두 있다. 변경 주기가 다른 코드가 한 곳에 모여있는건 좋지 않다.
+
+절차적 코드와 객체지향 코드의 trade-off를 잘 고려해서 사용한다.
+
+## 객체 참조 끊기
+
+![object reference 91p](../$images/woowahanoop-object-reference-91p.png)
+![object reference uml 92p](../$images/woowahanoop-object-reference-uml-92p.png)
+
+[1:04:27](https://youtu.be/dJ5C4qRqAgA?t=3867)
+
+ORM을 통한 객체 참조는 가장 강한 결합도를 가진다.
+
+![weak coupling 98p](../$images/woowahanoop-weak-coupling-98p.png)
+
+객체 대신 ID를 사용하면 결합도를 약하게 만들 수 있다.
+
+![how sepration 99p](../$images/woowahanoop-how-separation-99p.png)
+
+결합도를 낮추고, 관련있는 객체끼리 packaging 한다.
+
+![id reference 105p](../$images/woowahanoop-id-reference-uml-105p.png)
+
+같은 도메인(패키지)는 객체 참조, 경계 밖에 있는 도메인은 ID로 연관 관계 가지는 것도 좋다.
+
+## 참조를 끊고, 로직 옮기기 (컴파일 에러!)
+
+![object reference compile error 114p](../$images/woowahanoop-object-reference-compile-error-114p.png)
+
+[1:18:35](https://youtu.be/dJ5C4qRqAgA?t=4715)
+
+모델 내에서 객체 참조로 구현했던 로직은 더 이상 사용할 수 없다.
+
+각각 다른 도메인의 객체를 조합해서 비즈니스 로직을 작성할 새로운 객체가 필요하다.
+
+![validation logic 119p](../$images/woowahanoop-validation-logic-119p.png)
+
+각 객체를 조합해서 검증 로직을 담당하는 새로운 객체를 만든다.
+
+이런 절차지향 코드는 한 눈에 볼 수 있고, 검증 로직을 변경하기 위해서만 수정하기 때문에 응집도가 높다.
