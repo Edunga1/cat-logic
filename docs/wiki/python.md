@@ -9,6 +9,7 @@
       - [타입 힌트를 사용하지 않으려면](#타입-힌트를-사용하지-않으려면)
   - [pylint](#pylint)
   - [Django Stubs](#django-stubs)
+  - [python code formatter: autopep8 vs black vs yapf](#python-code-formatter-autopep8-vs-black-vs-yapf)
 - [Python mock](#python-mock)
   - [Decorator를 사용한 mocking.](#decorator를-사용한-mocking)
   - [`@patch('requests.get')`](#patchrequestsget)
@@ -80,6 +81,62 @@ django는 `objects` 등 마법을 사용해서 타입 제공을 제대로 받을
 pylint, pyright도 type을 알 수 없기 때문에 런타임에서 문제가 없지만 정적분석 시에는 에러로 취급한다.
 
 djang-stubs는 django와 관련된 타입 정보를 제공한다.
+
+## python code formatter: autopep8 vs black vs yapf
+
+파이썬 코드 formatter 3종 비교.
+
+[coc.nvim](https://github.com/neoclide/coc.nvim)에서는 파이썬 파일을 열 때 3개 중 하나를 선택하도록 한다:
+
+```sh
+Formatter autopep8 is not installed. Install?:
+1. Yes
+2. Use black
+3. Use yapf
+```
+
+[Blog: A comparison of autopep8, black, and yapf - Code formatters for Python](https://www.reddit.com/r/Python/comments/8oqy03/blog_a_comparison_of_autopep8_black_and_yapf_code/.md)\
+3개를 비교한 다른 글. 덧글에는 black을 사용하고 만족했다나.
+
+| name                                           | stars | description                      |
+|------------------------------------------------|-------|----------------------------------|
+| [autopep8](https://github.com/hhatto/autopep8) | 4.3k  | pep8 스타일 사용. 가장 많은 커밋 |
+| [black](https://github.com/psf/black)          | 31.2k | 가장 많은 star                   |
+| [yapf](https://github.com/google/yapf)         | 13k   | 구글이 maintainer                |
+
+**실제 사용 비교**
+
+비교 대상 코드
+```python
+{
+  "refundDeposit": self.refund_deposit and _deposit_to_dict(self.refund_deposit)
+}
+```
+
+**black**
+```python
+{
+  "refundDeposit": self.refund_deposit
+  and _deposit_to_dict(self.refund_deposit)
+}
+```
+
+이게 맞나?
+
+**yapf**
+```python
+{
+  "refundDeposit":
+  self.refund_deposit and _deposit_to_dict(self.refund_deposit)
+}
+```
+
+이게 맞나?2
+
+**autopep8**
+코드를 변경하지 않는다.
+
+개인적으로는 black, yapf의 스타일이 별로라서 autopep8을 사용하고 있다.
 
 # Python mock
 
