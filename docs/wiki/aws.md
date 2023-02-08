@@ -4,10 +4,16 @@
 - [Amazon Web Service](#amazon-web-service)
 - [`awscli`](#awscli)
   - [ECR 로그인하기](#ecr-로그인하기)
+  - [IAM 관련](#iam-관련)
 - [Storage Service](#storage-service)
   - [EBS - Elastic Block Storage](#ebs-elastic-block-storage)
   - [EFS - Elastic File System](#efs-elastic-file-system)
   - [Object Storage](#object-storage)
+- [Networking](#networking)
+  - [주요 네트워킹 서비스](#주요-네트워킹-서비스)
+    - [VPC - Virtual Private Cloud](#vpc-virtual-private-cloud)
+    - [Direct Connect](#direct-connect)
+    - [Route 53](#route-53)
 <!--toc:end-->
 
 # `awscli`
@@ -33,6 +39,41 @@ aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS
 ref:
 * https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html
+
+## IAM 관련
+
+[비밀번호 변경](https://docs.aws.amazon.com/cli/latest/reference/iam/change-password.html)(응답 메시지 없음):\
+`aws iam change-password --old-password <OLD_PASSWORD> --new-password <NEW_PASSWORD>`
+
+[Access Key 교체](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_credentials_access-keys.html#rotating_access_keys_cli)
+
+플로우가 조금 복잡하다. 새 access key 생성 -> 새 access key로 도구 업데이트 -> 기존 access key 비활성화 순서로 진행한다.
+
+기존 access key는 비활성화만 하고 나중에 직접 삭제하자.
+
+1. [새 access key 생성](https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html):\
+foreground로 읽으니 파일로 저장하자.
+```sh
+aws iam create-access-key > access-key.json
+```
+
+2. [새 access key로 도구 업데이트](https://docs.aws.amazon.com/cli/latest/reference/configure/):\
+```sh
+aws configure
+```
+
+3. [기존 access key 비활성화](https://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html):\
+```sh
+aws iam update-access-key --access-key-id <OLD_ACCESS_KEY_ID> --status Inactive
+```
+
+2번에서 [aws configure cli](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/import.html) 명으로로 `--csv` 포맷의 파일을 읽어서 업데이트 할 수 있다.
+그러면 interactive로 secret key를 입력하지 않고 자동화할 수 있을 듯한데, 1번의 생성 명령어에서 csv 포맷을 제공하지 않는다.
+
+기존 access-key를 확인하려면 [list-access-keys](https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)를 사용하면 된다:
+```sh
+aws iam list-access-keys
+```
 
 # Storage Service
 
