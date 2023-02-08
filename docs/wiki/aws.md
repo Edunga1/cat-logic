@@ -57,12 +57,12 @@ foreground로 읽으니 파일로 저장하자.
 aws iam create-access-key > access-key.json
 ```
 
-2. [새 access key로 도구 업데이트](https://docs.aws.amazon.com/cli/latest/reference/configure/):\
+2. [새 access key로 도구 업데이트](https://docs.aws.amazon.com/cli/latest/reference/configure/):
 ```sh
 aws configure
 ```
 
-3. [기존 access key 비활성화](https://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html):\
+3. [기존 access key 비활성화](https://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html):
 ```sh
 aws iam update-access-key --access-key-id <OLD_ACCESS_KEY_ID> --status Inactive
 ```
