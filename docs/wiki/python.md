@@ -9,6 +9,7 @@
       - [타입 힌트를 사용하지 않으려면](#타입-힌트를-사용하지-않으려면)
   - [pylint](#pylint)
   - [Django Stubs](#django-stubs)
+  - [mypy](#mypy)
   - [python code formatter: autopep8 vs black vs yapf](#python-code-formatter-autopep8-vs-black-vs-yapf)
 - [Python mock](#python-mock)
   - [Decorator를 사용한 mocking.](#decorator를-사용한-mocking)
@@ -17,7 +18,7 @@
   - [`@patch.object(mymodule, 'requests', new=MyRequests)`](#patchobjectmymodule-requests-newmyrequests)
   - [`@patch.object(mymodule, 'method', return_value=None)`](#patchobjectmymodule-method-returnvaluenone)
 - [Package manager](#package-manager)
-  - [[pipenv](https://github.com/pypa/pipenv)](#pipenvhttpsgithubcompypapipenv)
+  - [pipenv](#pipenv)
 - [Packaging](#packaging)
   - [`__all__`](#all)
 <!--toc:end-->
@@ -81,6 +82,23 @@ django는 `objects` 등 마법을 사용해서 타입 제공을 제대로 받을
 pylint, pyright도 type을 알 수 없기 때문에 런타임에서 문제가 없지만 정적분석 시에는 에러로 취급한다.
 
 djang-stubs는 django와 관련된 타입 정보를 제공한다.
+
+## mypy
+
+https://github.com/python/mypy
+
+> Optional static typing for Python
+
+정적 타입 검사 도구.
+
+타입 명세를 할 수 없는 경우에는 `Need type annotation for "variable"` 에러 메시지를 막기 위해 `my.ini` 생성하고 다음과 같이 설정하자:
+
+```
+[mypy]
+
+# disable error 'Need type annotation for "variable"'
+disallow_untyped_defs = False
+```
 
 ## python code formatter: autopep8 vs black vs yapf
 
@@ -226,7 +244,9 @@ Django만 설치했는데, Django가 사용하는 다른 패키지도 포함된�
 
 아무튼, 간단하지만 그만큼 이런저런 불편함이 있는 기본 도구다.
 
-## [pipenv](https://github.com/pypa/pipenv)
+## pipenv
+
+https://github.com/pypa/pipenv
 
 이런 불편함을 알았는지 환경 분리도 가능하고, lock 파일도 별도로 관리할 수 있는
 [pipenv](https://github.com/pypa/pipenv)가 있다. `pyenv`와 좀 헷갈린다.
