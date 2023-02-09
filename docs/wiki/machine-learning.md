@@ -27,7 +27,7 @@ https://openai.com/blog/chatgpt/
 ChatGPT는 대화에 최적화된 언어 모델이다.
 
 https://chat.openai.com/
-여기서 심험해 볼 수 있다.
+여기서 시험해 볼 수 있다.
 
 ## Try ChatGPT!
 
@@ -38,8 +38,6 @@ https://chat.openai.com/
 
 이제 자유롭게 입력하면 된다. 어떠한 주제나 방식이어도 관계 없다. 너무나 자연스럽게 동작한다.
 한글로 간단한 대화를 시작해 보았다.
-
-![ChatGPT chatting journal 1](../$images/chatgpt-01.png)
 
 ![ChatGPT chatting journal 2](../$images/chatgpt-02.png)
 
