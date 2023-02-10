@@ -2,6 +2,12 @@
 
 REST 웹 서비스를 위한 문서화 도구
 
+<!--toc:start-->
+- [Swagger](#swagger)
+- [Swagger Core](#swagger-core)
+  - [enum class에서 Jackson `@JsonFormat`이 적용되지 않는 문제](#enum-class에서-jackson-jsonformat이-적용되지-않는-문제)
+<!--toc:end-->
+
 # Swagger Core
 
 https://github.com/swagger-api/swagger-core
