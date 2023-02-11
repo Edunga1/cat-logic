@@ -5,6 +5,7 @@
 - [Setup and Teardown](#setup-and-teardown)
   - [Transaction Start - Rollback](#transaction-start-rollback)
 - [왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?](#왜-유닛-테스트에서-의존성을-테스트하지-않는-것이-중요한가요)
+- [유닛 테스트에서 상수를 사용하지 마세요.](#유닛-테스트에서-상수를-사용하지-마세요)
 <!--toc:end-->
 
 # Setup and Teardown
@@ -62,3 +63,28 @@ Stackexchange의 질문:
 * 우리 제품은.. 매 빌드마다 유닛 테스트를 돌리는데 몇 초가 걸리고, 매 check-in 마다 통합 테스트를 돌리는데 10분 정도가 걸리고, 매일 밤 완전(full)-통합 테스트를 돌리는데 4시간이 걸린다.
 
 될 수 있다면 mock 객체를 전달하는 편이 낫다. 그렇지 않으면 의존성이 반환하는 다양한 경우를 모두 테스트하는 욕구에 빠진다. 의존성의 테스트에서 중복되는 문제도 있다.
+
+# 유닛 테스트에서 상수를 사용하지 마세요.
+
+[Don't use non-test constants in unit tests](https://dev.to/scottshipp/don-t-use-non-test-constants-in-unit-tests-3ej0)
+
+> Tests will pass when the code is wrong
+>
+> More importantly, tests that reference production constants can cause a situation where the code is actually wrong but the unit test passes anyway.
+>
+> Consider the case where there's a misspelling in "Fizz" or even the wrong value, as here where it has the value "Buzz":
+>
+> public class FizzBuzz {
+>    public static final String FIZZ = "Buzz";
+>    // . . .
+>
+> The unit test will still pass, because the test is referencing against the same wrong `FizzBuzz.FIZZ` variable that the production code is referencing.
+
+테스트가 프로덕션 상수를 참조하면, 실제로 코드가 잘못되어도 테스트는 통과할 수 있다.
+`FizzBuzz.FIZZ` 변수를 참조하기 때문에 프로덕션 코드가 참조하는 것과 같은 잘못된 값으로 테스트가 통과할 수 있다.
+
+덧글 중:
+
+> There's a third one, readability. Like you say, re-use is good, and if done right you can argue it's readable. However, in a test you need to know EXACTLY what the test is doing right there and then.
+
+가독성 측면에서도 상수를 테스트에서 사용하지 않는 것이 좋다고 한다.
