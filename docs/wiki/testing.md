@@ -6,6 +6,7 @@
   - [Transaction Start - Rollback](#transaction-start-rollback)
 - [왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?](#왜-유닛-테스트에서-의존성을-테스트하지-않는-것이-중요한가요)
 - [유닛 테스트에서 상수를 사용하지 마세요.](#유닛-테스트에서-상수를-사용하지-마세요)
+- [유닛 테스트에서 "DAMP not DRY"는 무엇을 의미하나요?](#유닛-테스트에서-damp-not-dry는-무엇을-의미하나요)
 <!--toc:end-->
 
 # Setup and Teardown
@@ -88,3 +89,35 @@ Stackexchange의 질문:
 > There's a third one, readability. Like you say, re-use is good, and if done right you can argue it's readable. However, in a test you need to know EXACTLY what the test is doing right there and then.
 
 가독성 측면에서도 상수를 테스트에서 사용하지 않는 것이 좋다고 한다.
+
+# 유닛 테스트에서 "DAMP not DRY"는 무엇을 의미하나요?
+
+SO 질문: https://stackoverflow.com/questions/6453235/what-does-damp-not-dry-mean-when-talking-about-unit-tests
+
+- DAMP: Descriptive And Meaningful Phrases. 설명적이고 의미 있는 구문을 사용하는 것. 코드의 가독성을 높여준다.
+- DRY: Don't Repeat Yourself. 반복하지 않는 것.
+
+답변 중:
+
+> It's a balance, not a contradiction
+
+테스트코드는 둘 사이에 균형을 잡아야 한다.
+
+> **DAMP (Descriptive And Meaningful Phrases) promotes the readability of the code.**
+>
+> To maintain code, you first need to understand the code. To understand it, you have to read it. Consider for a moment how much time you spend reading code. It's a lot. DAMP increases maintainability by reducing the time necessary to read and understand the code.
+
+코드를 유지보수하려면 먼저 코드를 이해해야 한다. 이해하려면 읽어야한다. 코드를 읽는데 얼마나 많은 시간을 할애하는지 생각해보자.
+DAMP는 코드를 읽고 이해하는데 필요한 시간을 줄여 유지보수성을 높인다.
+
+> So, why is duplication more acceptable in tests?
+
+테스트는 동일한 항목을 반복하기 때문에 중복이 더 허용된다.
+
+답변의 덧글 중:
+
+> DRYing out test code has the potential to create an obscure test by introducing a [mystery guest](http://xunitpatterns.com/Obscure%20Test.html#Mystery%20Guest)
+
+테스트 코드를 DRY하면, 모호한 테스트를 만들게 되어 mystery guest가 발생하게 된다.
+
+mystery guest: 테스트를 읽는 사람이 Fixture와 Verification 로직이 테스트 메서드 외부에서 동작하여 이해할 수 없게 되는 것.
