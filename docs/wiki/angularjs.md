@@ -7,11 +7,11 @@ AngularJS에 대한 이야기. 2017-11에 작성됨.
 - [Johnpapa's AngularJS Style Guide](#johnpapas-angularjs-style-guide)
   - [Component](#component)
     - [컨트롤러](#컨트롤러)
-      - [[`contollerAs`와 `vm` 사용하기](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032)](#contolleras와-vm-사용하기httpsgithubcomjohnpapaangular-styleguideblobmastera1readmemdstyle-y032)
+      - [`contollerAs`와 `vm` 사용하기](#contolleras와-vm-사용하기)
     - [서비스 (service, factory, provider)](#서비스-service-factory-provider)
-      - [[서비스 코드 작성은 Revealing Module Pattern](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y052)](#서비스-코드-작성은-revealing-module-patternhttpsgithubcomjohnpapaangular-styleguideblobmastera1readmemdstyle-y052)
+      - [서비스 코드 작성은 Revealing Module Pattern](#서비스-코드-작성은-revealing-module-pattern)
   - [Modularity](#modularity)
-    - [[데이터 서비스를 분리하기](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#data-services)](#데이터-서비스를-분리하기httpsgithubcomjohnpapaangular-styleguideblobmastera1readmemddata-services)
+    - [데이터 서비스를 분리하기](#데이터-서비스를-분리하기)
 - [테스트](#테스트)
   - [테스트 환경 모듈](#테스트-환경-모듈)
   - [karma.conf.js](#karmaconfjs)
@@ -33,7 +33,9 @@ https://github.com/johnpapa/angular-styleguide
 
 ### 컨트롤러
 
-#### [`contollerAs`와 `vm` 사용하기](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032)
+#### `contollerAs`와 `vm` 사용하기
+
+https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032
 
 controllerAS + vm 사용하고 `this` 변수에 담고 직접 사용하지 않는다.
 
@@ -56,7 +58,9 @@ function CustomerController() {
 
 ### 서비스 (service, factory, provider)
 
-#### [서비스 코드 작성은 Revealing Module Pattern](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y052)
+#### 서비스 코드 작성은 Revealing Module Pattern
+
+https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y052
 
 멤버 변수 및 함수는 상단에 위치하여 바로 구분할 수 있도록한다:
 [Revealing Module Pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript)
@@ -110,7 +114,9 @@ function dataService() {
 
 ## Modularity
 
-### [데이터 서비스를 분리하기](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#data-services)
+### 데이터 서비스를 분리하기
+
+https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#data-services
 
 XHR calls, local storage, stashing in memory 등으로 부터 데이터를 얻는 로직은 factory로 분리한다.
 

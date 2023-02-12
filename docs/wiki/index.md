@@ -1,5 +1,3 @@
-
-
 # Generated Links
 
 - [Airflow](airflow.md)
@@ -9,6 +7,7 @@
 - [Amazon Web Service](aws.md)
 - [책](book.md)
 - [CI/CD](continuous-integration-and-deployment.md)
+- [crontab](crontab.md)
 - [CSS](css.md)
 - [Data analysis](data-analysis.md)
 - [자료구조](data-structure.md)
@@ -63,5 +62,5 @@
 - [Vim](vim.md)
 - [Vimwiki](vimwiki.md)
 - [Vue JS](vuejs.md)
-- [web](web.md)
+- [웹 개발](web.md)
 - [Windows Subsystem for Linux (WSL)](windows-subsytem-for-linux.md)
