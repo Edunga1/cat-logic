@@ -9,6 +9,8 @@ My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 - [neovim](#neovim)
   - [Lua 가이드](#lua-가이드)
   - [[Language Server Protocol](language-server-protocol)](#language-server-protocollanguage-server-protocol)
+- [Use cases](#use-cases)
+  - [파일 검색](#파일-검색)
 - [quickfix & location list](#quickfix-location-list)
   - [commands](#commands)
   - [grep](#grep)
@@ -75,6 +77,30 @@ require("mason-lspconfig").setup()
 -- LSPs
 require'lspconfig'.kotlin_language_server.setup{}
 ```
+
+# Use cases
+
+## 파일 검색
+
+[fzf.vim](https://github.com/junegunn/fzf.vim)이 제공하는 기능 몇가지를 사용한다.
+
+1. ctrl + p
+
+```vim
+nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
+```
+
+이 방법은 별도 검색창이 출력되고, interactive하게 파일 이름을 검색한다.
+
+2. `:Rg` or `:Ag`
+
+각각 [ripgrep](https://github.com/BurntSushi/ripgrep), [the_silver_searcher를](https://github.com/ggreer/the_silver_searcher) 사용한다.
+따라서 각 도구 설치가 필요하다.
+
+보통 `:Rg wiki`와 같은 방법으로 명령어를 통해서 1차 검색하고 검색창에서 추가 필터링한다.
+이 방법은 파일 내용도 함께 검색한다.
+
+두 도구 차이점은 모르겠다. 검색 결과는 조금 다르다.
 
 # quickfix & location list
 
