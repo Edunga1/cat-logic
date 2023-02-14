@@ -4,6 +4,8 @@
 - [Testing](#testing)
 - [Setup and Teardown](#setup-and-teardown)
   - [Transaction Start - Rollback](#transaction-start-rollback)
+- [Better Specs](#better-specs)
+  - [Single Expectation(단일 검증)](#single-expectation단일-검증)
 - [왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?](#왜-유닛-테스트에서-의존성을-테스트하지-않는-것이-중요한가요)
 - [유닛 테스트에서 상수를 사용하지 마세요.](#유닛-테스트에서-상수를-사용하지-마세요)
 - [유닛 테스트에서 "DAMP not DRY"는 무엇을 의미하나요?](#유닛-테스트에서-damp-not-dry는-무엇을-의미하나요)
@@ -48,6 +50,44 @@ Spring에서 테스트에 `@Transactional` 사용하지 말 것을 설명하는 
 * 직접 테스트하지 않는 이상 발견할 수 없는 버그가 운영 코드에 포함된다.
 
 글에서 설명하는 false negative 예제: 운영 코드에는 `@Transactional` 빠졌지만, 테스트에는 있어서 성공하고, 직접 호출하면 실패한다.
+
+
+# Better Specs
+
+https://www.betterspecs.org/
+
+> Better Specs is a collection of best practices developers learned while testing apps that you can use to improve your coding skills, or simply for inspiration. Better Specs came to life at Lelylan (open source IoT cloud platform) and checking out its test suite may be of inspiration.
+
+Better Specs는 테스트 작성에 대한 모범 사례(best practice) 모음이다.
+
+사이트에서 소개하는 예시는 Rails의 RSpec을 사용하지만, 다른 언어/프레임워크에서도 적용하는 것을 목표로 한다.
+
+## Single Expectation(단일 검증)
+
+https://www.betterspecs.org/#single
+
+```ruby
+it { is_expected.to respond_with_content_type(:json) }
+it { is_expected.to assign_to(:resource) }
+```
+
+한 번에 하나만 검증하는 것은 가독성, 테스트 실패 시 원인 파악이 쉽다는 장점이 있다.
+하지만 DB 등 호출 비용이 큰 경우에는 여러 개를 한 번에 검증하는 것도 허용한다.
+
+```ruby
+it 'creates a resource' do
+  expect(response).to respond_with_content_type(:json)
+  expect(response).to assign_to(:resource)
+end
+```
+
+관련 SO 질문이 있다: [Is it OK to have multiple asserts in a single unit test?](https://softwareengineering.stackexchange.com/q/7823)
+
+답변 채택은 single expectation을 권장하고 테스트를 작성하다보면 결국 하나의 검증만 하게 될거라는 것.
+하지만 더 많은 추천을 받은 답변은 multiple expectation을 하는 것이다.
+
+[Arrange, Act, Assert](http://wiki.c2.com/?ArrangeActAssert)패턴에 따라, 동일한 동작에 대한 여러 검증을 볼 수 있어서 좋다는 것.
+그러나 에러 문구가 상세하지 않다는 것은 인지하고 있어야 한다.
 
 # 왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?
 
