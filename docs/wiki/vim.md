@@ -8,7 +8,7 @@ My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 - [Vim](#vim)
 - [neovim](#neovim)
   - [Lua 가이드](#lua-가이드)
-  - [[Language Server Protocol](language-server-protocol)](#language-server-protocollanguage-server-protocol)
+  - [내장 Language Server Protocol 사용하기](#내장-language-server-protocol-사용하기)
 - [Use cases](#use-cases)
   - [파일 검색](#파일-검색)
 - [quickfix & location list](#quickfix-location-list)
@@ -42,7 +42,9 @@ https://github.com/nanotee/nvim-lua-guide#modules
 * 내 custom lua 파일을 가져올 때 lua/ 내에서 찾는다.
   * runtimepath간 이름 충돌이 발생할 수 있다.
 
-## [Language Server Protocol](language-server-protocol)
+## 내장 Language Server Protocol 사용하기
+
+[Language Server Protocol](language-server-protocol)
 
 TL;DR
 * [nvim-lspconfig/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) 제공하는 language server 목록
