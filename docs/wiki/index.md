@@ -44,6 +44,7 @@
 - [Programming Paradigm](programming-paradigm.md)
 - [개발 철학](programming-philosophy.md)
 - [Python](python.md)
+- [Reactive Extensions (Reactive X, RX)](reactive-extensions.md)
 - [React JS](reactjs.md)
 - [SCP](scp.md)
 - [Sentry App](sentry.md)
@@ -64,3 +65,10 @@
 - [Vue JS](vuejs.md)
 - [웹 개발](web.md)
 - [Windows Subsystem for Linux (WSL)](windows-subsytem-for-linux.md)
+
+# Work In Progress: Personal Static Site
+
+- [ ] Use gatsbyjs as static site generator
+- [ ] Use npm gh-pages to deploy static site to github pages
+- [ ] Use github actions to automate deployment
+- [ ] Isolate gatsbyjs project as possible as it can be
