@@ -1,4 +1,7 @@
+# Docker
+
 <!--toc:start-->
+- [Docker](#docker)
 - [OSX 에서 Docker 환경 구성하기](#osx-에서-docker-환경-구성하기)
   - [1. Homebrew로 Docker와 Docker-machine 설치](#1-homebrew로-docker와-docker-machine-설치)
   - [2. Homebrew로 Virtualbox 설치](#2-homebrew로-virtualbox-설치)
@@ -13,11 +16,12 @@
   - [End](#end)
 - [`host.docker.internal`로 호스트 서비스 접근하기](#hostdockerinternal로-호스트-서비스-접근하기)
   - [대체는?](#대체는)
+- [References](#references)
 <!--toc:end-->
 
 # OSX 에서 Docker 환경 구성하기
 
-docker desktop 또는 rancher desktop이 나와서 이 방법은 더 이상 사용하지 않는다.
+**docker desktop 또는 rancher desktop이 나와서 이 방법은 더 이상 사용하지 않는다.**
 
 ```bash
 brew install --cask docker
@@ -143,9 +147,7 @@ ACTIVE 속성이 `*`로 변경되었다.
 
 # Dockerfile
 
-Makefile와 비슷하다.
-
-도커 이미지를 생성해주는 스크립트를 명세한다.
+도커 이미지를 빌드하기 위한 명령어들을 모아놓은 파일.
 
 스크립트로 이루어져 있기 때문에 이미지를 관리하는 것보다 훨씬 비용이 적게 든다는 장점이 있다.
 
@@ -153,49 +155,53 @@ Makefile와 비슷하다.
 
 ## 명령어
 
-* **CMD**
+**CMD**
 
-    컨테이너 시작 시 실행 할 명령어
+컨테이너 시작 시 실행 할 명령어
+- `CMD <command>`
+- `CMD ["executable","param1","param2"]`
 
-    `CMD <command>`
+**RUN**
 
-    `CMD ["executable","param1","param2"]`
+빌드 시 실행할 명령어, 일반적으로 이미지의 환경을 구성하는데 사용한다.
 
-* **RUN**
+- `RUN <command>`
+- `RUN ["executable", "param1", "param2"]`
+- `RUN apt-get install -y nodejs`
 
-    빌드 시 실행할 명령어, 일반적으로 이미지의 환경을 구성하는데 사용한다.
+**ENV**
 
-    `RUN <command>`
+환경 변수 설정. RUN, CMD 명령어 모두에서 영향을 받는다.
 
-    `RUN ["executable", "param1", "param2"]`
+- `ENV <key> <value>`
+- `ENV <key>=<value>`
 
-    이미지에 NodeJS 구성 예) `RUN apt-get install -y nodejs`
+**WORKDIR**
 
-* **ENV**
+작업 디렉토리 설정. RUN, CMD 명령어의 실행 위치를 설정한다.
 
-    환경 변수 설정
+- `WORKDIR <path>`
 
-    `ENV <key> <value>`
+[ADD](https://docs.docker.com/engine/reference/builder/#add) or [COPY](https://docs.docker.com/engine/reference/builder/#copy)
 
-    `ENV <key>=<value>`
+호스트의 파일을 이미지에 추가.
 
-    RUN, CMD 명령어 모두에 영향을 미친다. (즉, 이미지 빌드, 컨테이너 실행 모두 영향)
+- `ADD <src> <dest>`
+- `ADD <git ref> <dir>` git 저장소에서 파일을 가져온다.
 
-* **WORKDIR**
+[ADD와 COPY 차이점](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#add-or-copy):
 
-    작업 디렉토리 설정
+> Although ADD and COPY are functionally similar, generally speaking, COPY is preferred. That’s because it’s more transparent than ADD. COPY only supports the basic copying of local files into the container, while ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious. Consequently, the best use for ADD is local tar file auto-extraction into the image, as in ADD rootfs.tar.xz /.
 
-    `WORKDIR <path>`
+Best Practice 문서에서 설명하기를, 기능 자체는 비슷하나 일반적(파일 복사)으로 `COPY`를 선호한다. 더 명확하기 때문이다.
+`ADD`에는 추가 기능이 있는데, tar 파일 압축 해제나 원격 URL 지원, git 저장소를 추가할 수 있다.
 
-    RUN, CMD 명령어의 실행 위치를 설정한다.
+[EXPOSE](https://docs.docker.com/engine/reference/builder/#expose)
 
-* **ADD**
+> The EXPOSE instruction does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published.
 
-    호스트의 파일을 이미지에 추가
-
-    `ADD <src> <dest>`
-    
-    ```COPY```도 비슷한 역할을 한다.
+`EXPOSE`는 포트를 실제로 열지 않는다. 이미지 빌드하는 사람과 컨테이너를 실행하는 사람 사이의 문서 역할을 한다.
+`-p` 옵션으로 포트를 열거나, docker-compose의 `ports`를 사용하여 포트를 열자.
 
 # 중지된 도커 컨테이너에서 파일 복사하기
 
@@ -324,3 +330,8 @@ https://docs.docker.com/engine/reference/commandline/dockerd/
 > --host-gateway-ip ip
 > IP address that the special 'host-gateway' string in --add-host resolves to.
 > Defaults to the IP address of the default bridge
+
+# References
+
+NodeJS 어플리케이션의 Dockerizing\
+https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
