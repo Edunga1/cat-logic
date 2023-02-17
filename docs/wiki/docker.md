@@ -203,6 +203,16 @@ Best Practice 문서에서 설명하기를, 기능 자체는 비슷하나 일반
 `EXPOSE`는 포트를 실제로 열지 않는다. 이미지 빌드하는 사람과 컨테이너를 실행하는 사람 사이의 문서 역할을 한다.
 `-p` 옵션으로 포트를 열거나, docker-compose의 `ports`를 사용하여 포트를 열자.
 
+`EXPOSE`를 주면, 컨테이너를 생성하여 `docker ps`로 컨테이너를 확인했을 때 `PORTS` 열에 포트 정보가 표시된다.
+
+```bash
+CONTAINER ID        IMAGE                          COMMAND                  CREATED             STATUS              PORTS                                                            NAMES
+9f8fa8cbf88c        grokzen/redis-cluster:latest   "/docker-entrypoint.…"   27 minutes ago      Up 27 minutes       5000-5002/tcp, 6379/tcp, 7001-7007/tcp, 0.0.0.0:6379->7000/tcp   redis-cluster
+```
+
+여기서 `5000-5002/tcp, 6379/tcp, 7001-7007/tcp`는 `EXPOSE`로 명세했지만 호스트에는 노출되지 않았다.
+즉, `EXPOSE`는 포트 대기중을 의미한다.
+
 # 중지된 도커 컨테이너에서 파일 복사하기
 
 `docker ps -a`로 중지된 컨테이너가 있다면 그 컨테이너로부터 파일을 호스트로 복사해올 수 있다
