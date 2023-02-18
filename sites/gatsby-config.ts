@@ -17,7 +17,20 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/content`,
       },
     },
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
   ],
 }
 

@@ -72,4 +72,4 @@
 - [ ] Use npm gh-pages to deploy static site to github pages
 - [ ] Use github actions to automate deployment
 - [ ] Isolate gatsbyjs project as possible as it can be
-- [ ] Resolve image inclusion issue
+- [X] Resolve image inclusion issue
