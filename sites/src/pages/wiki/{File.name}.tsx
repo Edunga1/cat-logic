@@ -9,7 +9,6 @@ export default function BlogPostTemplate({
   const { html, tableOfContents } = childMarkdownRemark
   return (
     <div>
-      <h1>{file.name}</h1>
       <div dangerouslySetInnerHTML={{ __html: tableOfContents }} />
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
@@ -20,7 +19,6 @@ export const pageQuery = graphql`
   query($id: String!) {
     file(id: { eq: $id }) {
       id
-      name
       childMarkdownRemark {
         tableOfContents
         html
