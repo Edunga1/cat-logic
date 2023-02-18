@@ -15,7 +15,7 @@ Issue & Project Tracking Software
 
 대시보드를 통해서 작업중인 이슈를 한눈에 볼 수 있다:
 
-![jira filter dashboard](../$images/jira-filter-dashboard.png)
+![jira filter dashboard](res/jira-filter-dashboard.png)
 
 나의 `Work In Progress` 필터는 다음과 같다.
 

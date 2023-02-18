@@ -19,16 +19,16 @@ https://chat.openai.com/
 2022-12-05 현재 Preview 단계라 무료로 체험해 볼 수 있다.
 구글 로그인으로 간단하게 로그인하면 채팅창이 보인다.
 
-![ChatGPT chatting page](../$images/chatgpt-01.png)
+![ChatGPT chatting page](res/chatgpt-01.png)
 
 이제 자유롭게 입력하면 된다. 어떠한 주제나 방식이어도 관계 없다. 너무나 자연스럽게 동작한다.
 한글로 간단한 대화를 시작해 보았다.
 
-![ChatGPT chatting journal 2](../$images/chatgpt-02.png)
+![ChatGPT chatting journal 2](res/chatgpt-02.png)
 
-![ChatGPT chatting journal 3](../$images/chatgpt-03.png)
+![ChatGPT chatting journal 3](res/chatgpt-03.png)
 
-![ChatGPT chatting journal 4](../$images/chatgpt-04.png)
+![ChatGPT chatting journal 4](res/chatgpt-04.png)
 
 ## ChatGPT를 Virtual Machine으로 만들기
 

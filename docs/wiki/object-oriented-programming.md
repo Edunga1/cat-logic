@@ -56,17 +56,17 @@ https://youtu.be/26S4VFUWlJM?t=46m57s
   * 도메인 로직을 캡슐화 해준다
   * 서비스
 
-![서비스 레이어 특징](../$images/2018-07-29-23-50-26.png)
+![서비스 레이어 특징](res/2018-07-29-23-50-26.png)
 * 어플리케이션의 경계
 * 서비스 시작과 끝은 트랜잭션의 시작 끝을 의미한다
 * 데이터를 준비하고, 도메인 로직에 위임한다.
 
-![트랜잭션 스크립트 예](../$images/2018-07-29-23-52-38.png)
+![트랜잭션 스크립트 예](res/2018-07-29-23-52-38.png)
 * 절치 지향이 되면 fat 서비스가 된다. 좋은 서비스는 thin 서비스
 
 https://youtu.be/26S4VFUWlJM?t=55m37s
 
-![객체-관계 임피던스 불일치](../$images/2018-07-29-23-53-38.png)
+![객체-관계 임피던스 불일치](res/2018-07-29-23-53-38.png)
 
 * impedance mismatch
 * 도메인 위주로 작성하고 데이터베이스를 구현 하면 어렵다는 단점이 있다.
@@ -150,7 +150,7 @@ video: https://youtu.be/dJ5C4qRqAgA
 
 ## 때로는 절차지향이 객체지향보다 좋다.
 
-![object vs procedural comparison 125p](../$images/woowahanoop-comparison-125p.png)
+![object vs procedural comparison 125p](res/woowahanoop-comparison-125p.png)
 
 [1:20:25](https://youtu.be/dJ5C4qRqAgA?t=4825)
 
@@ -162,28 +162,28 @@ video: https://youtu.be/dJ5C4qRqAgA
 
 ## 객체 참조 끊기
 
-![object reference 91p](../$images/woowahanoop-object-reference-91p.png)
-![object reference uml 92p](../$images/woowahanoop-object-reference-uml-92p.png)
+![object reference 91p](res/woowahanoop-object-reference-91p.png)
+![object reference uml 92p](res/woowahanoop-object-reference-uml-92p.png)
 
 [1:04:27](https://youtu.be/dJ5C4qRqAgA?t=3867)
 
 ORM을 통한 객체 참조는 가장 강한 결합도를 가진다.
 
-![weak coupling 98p](../$images/woowahanoop-weak-coupling-98p.png)
+![weak coupling 98p](res/woowahanoop-weak-coupling-98p.png)
 
 객체 대신 ID를 사용하면 결합도를 약하게 만들 수 있다.
 
-![how sepration 99p](../$images/woowahanoop-how-separation-99p.png)
+![how sepration 99p](res/woowahanoop-how-separation-99p.png)
 
 결합도를 낮추고, 관련있는 객체끼리 packaging 한다.
 
-![id reference 105p](../$images/woowahanoop-id-reference-uml-105p.png)
+![id reference 105p](res/woowahanoop-id-reference-uml-105p.png)
 
 같은 도메인(패키지)는 객체 참조, 경계 밖에 있는 도메인은 ID로 연관 관계 가지는 것도 좋다.
 
 ## 참조를 끊고, 로직 옮기기 (컴파일 에러!)
 
-![object reference compile error 114p](../$images/woowahanoop-object-reference-compile-error-114p.png)
+![object reference compile error 114p](res/woowahanoop-object-reference-compile-error-114p.png)
 
 [1:18:35](https://youtu.be/dJ5C4qRqAgA?t=4715)
 
@@ -191,7 +191,7 @@ ORM을 통한 객체 참조는 가장 강한 결합도를 가진다.
 
 각각 다른 도메인의 객체를 조합해서 비즈니스 로직을 작성할 새로운 객체가 필요하다.
 
-![validation logic 119p](../$images/woowahanoop-validation-logic-119p.png)
+![validation logic 119p](res/woowahanoop-validation-logic-119p.png)
 
 각 객체를 조합해서 검증 로직을 담당하는 새로운 객체를 만든다.
 

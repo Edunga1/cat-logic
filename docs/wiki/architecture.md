@@ -172,7 +172,7 @@ DDD의 boundary context가 MSA를 구분짓는 토대가 된다.
 
 **ubiquitous language**
 
-![ubiquitous language example](../$images/ddd-ubiquitous-language.png)
+![ubiquitous language example](res/ddd-ubiquitous-language.png)
 
 * 개발자와 사업 담당자가 같은 용어를 통해 대화할 수 있는 용어
 

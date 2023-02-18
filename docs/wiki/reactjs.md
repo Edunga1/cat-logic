@@ -51,25 +51,25 @@ Create Rect App으로 설치하면 eslint가 이미 존재하기 때문에 별�
 
 여기까지 적용하고, 아무 소스코드나 열어서 (예를 들면 `App.js`) 빈 라인을 몇 줄 추가해서 linter가 제대로 잡으면 된다.
 
-![eslint warning](../$images/eslint-no-multiple-empty-lines.png)
+![eslint warning](res/eslint-no-multiple-empty-lines.png)
 
 그리고 기존 airbnb 규칙에 3가지 규칙을 추가했는데, 그대로 사용하면 너무 불편하기 때문이다.
 
 **react/prefer-stateless-function**
 
-![eslint warning 2](../$images/eslint-react-prefer-stateless-function.png)
+![eslint warning 2](res/eslint-react-prefer-stateless-function.png)
 
 Class 형식의 리액트 컴포넌트 대신 함수형 방식을 사용하도록 하는 옵션인데, 클래스가 편한 입장에서 Off 하였다.
 
 **react/jsx-filename-extension**
 
-![eslint warning 3](../$images/eslint-react-jsx-filename-extension.png)
+![eslint warning 3](res/eslint-react-jsx-filename-extension.png)
 
 JSX 문법을 사용하기 위해서 `.jsx` 확장자만 허용하도록 하는 옵션인데, 마찬가지로 불편한 이유로 Off 했다.
 
 **react/jsx-one-expression-per-line**
 
-![eslint warning 4](../$images/eslint-react-jsx-one-expression-per-line.png)
+![eslint warning 4](res/eslint-react-jsx-one-expression-per-line.png)
 
 한 라인에 여러 표현식을 금지하는 것인데, 마찬가지로 불편하다.
 

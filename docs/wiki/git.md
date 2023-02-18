@@ -301,7 +301,7 @@ git log를 그래프로 보기위해 이렇게 사용 중이다.
 
 문제는 `staging -> master` 머지 커밋이 아래 이미지와 같이 피라미드로 보여진다.
 
-![pyramid graph](../$images/git-log-graph-pyramid.png)
+![pyramid graph](res/git-log-graph-pyramid.png)
 
 머지 커밋의 경우 2개의 부모를 가지고 있기 때문에, 두 부모 중 어느 것을 우선적으로 보여줄 지 힌트가 없다.
 따라서 피라미드로 보여지는 것으로 추정한다.
@@ -312,7 +312,7 @@ git log를 그래프로 보기위해 이렇게 사용 중이다.
 git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)<%an>%C(reset)%C(bold yellow)%d%C(reset)' --all --date-order
 ```
 
-![with --date-order](../$images/git-log-graph-date-order.png)
+![with --date-order](res/git-log-graph-date-order.png)
 
 ### 옵션 설명
 
@@ -358,6 +358,6 @@ Commit Ordering
 
 ## `--date-order` 와 `--author-date-order` 비교
 
-![--date-order and --author-date-order comparison](../$images/git-log-graph-author-date-order-comparison.png)
+![--date-order and --author-date-order comparison](res/git-log-graph-author-date-order-comparison.png)
 
 왼쪽이 `--date-order` 오른쪽이 `--author-date-order`이다.

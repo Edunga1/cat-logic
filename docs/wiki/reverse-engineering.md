@@ -25,12 +25,12 @@ https://korean.cdc.gov/coronavirus/2019-ncov/vaccines/different-vaccines/mrna.ht
 - 즉, 코돈은 3염기 = 6비트 = 2^6 = 64가지의 정보를 나타낼 수 있다.
 - RNA는 일종의 램으로써 소스 코드를 가지고 있다.
 
-![vaccine toc](../$images/vaccine-toc.png)
+![vaccine toc](res/vaccine-toc.png)
 
 - cap은 쉘 스크립트의 `#!` 와 같은 역할을 한다. 화이자 백신에서는 `GA` 값을 가지고 있다.
 - 5'(5-프라임)은 리보솜이 자리잡도록 하는 개시점이며, 메타데이터도 가진다. 리보솜이 언제, 얼마나 번역해야 하는지를 가진다.
 - 리보솜은 단백질용 3D 프린터 같은 것이다. RNA을 받아들여서, 아미노산 사슬을 내놓는다. 이 사슬을 접으면 단백질이 된다.
 
-![protein translation](../$images/protein-translation.gif)
+![protein translation](res/protein-translation.gif)
 
 - 아래 검은색 띠가 RNA, 녹색 부분에서 점점 길어지는 검은색 띠가 단백질. 들락거리는 것이 RNA에 부합하는 어댑터. 어댑터가 단백질에 쓰일 아미노산을 가져온다.

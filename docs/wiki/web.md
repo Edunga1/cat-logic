@@ -34,12 +34,12 @@ https://developer.mozilla.org/en-US/docs/Glossary/Entity
 
 **Youtube Use case**
 
-![youtube redirection 1](../$images/youtube-redirection1.png)
-![youtube redirection 2](../$images/youtube-redirection2.png)
+![youtube redirection 1](res/youtube-redirection1.png)
+![youtube redirection 2](res/youtube-redirection2.png)
 
 링크를 누르면 이동 대신 경고창으로 정말로 이동할 것인지 묻는다.
 
-![youtube redirection 3](../$images/youtube-redirection3.png)
+![youtube redirection 3](res/youtube-redirection3.png)
 
 나가기 버튼의 링크로 직접 이동하면 위와 같은 화면으로 이동한다.
 

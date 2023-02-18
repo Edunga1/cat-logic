@@ -39,7 +39,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim'    " Inject LSP diagnostics, code actions
 
 Language Server 설치 예시: `:MasonInstall kotlin-language-server`
 
-![mason example](../$images/nvim-mason-example.png)
+![mason example](res/nvim-mason-example.png)
 
 init.lua에서 설정 필요:
 ```lua
@@ -268,7 +268,7 @@ call expand_region#custom_text_objects('python', {
 
 ## chrisbra/csv.vim
 
-![csv.vim sample](../$images/csv-vim-sample.png)
+![csv.vim sample](res/csv-vim-sample.png)
 
 csv 파일의 highlighting, 열과 행에 대한 처리 도구를 제공한다.
 
@@ -298,7 +298,7 @@ vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickf
 
 `rspec`명령에 `--format QuckfixFormatter` 옵션으로 quickfix에서 사용할 수 있는 양식으로 출력된다.
 
-![rspec formatter](../$images/rspec-formatter.png)
+![rspec formatter](res/rspec-formatter.png)
 
 다만 기본 제공되는 것은 아니고, 플러그인 같아 보인다. 문서에는 `QuickfixFormatter`에 대한 내용이 없다.
 

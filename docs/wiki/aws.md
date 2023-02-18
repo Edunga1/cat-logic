@@ -89,7 +89,7 @@ EBS의 스냅샷은 전체 Copy가 아니라 Incremental을 저장하므로, 스
 
 ## Object Storage
 
-![object storage classes](../$images/aws-object-storage-classes.png)
+![object storage classes](res/aws-object-storage-classes.png)
 
 S3 에서 사용하는 스토리지 타입
 
@@ -99,7 +99,7 @@ HOT - COLD는 오브젝트에 접근했을 때 반응에 대한 내용. Observab
 
 2021-09-31 AWS CEP 내용 정리한 것.
 
-![aws-global-infrastructure](../$images/aws-global-infrastructure.png)
+![aws-global-infrastructure](res/aws-global-infrastructure.png)
 
 Region에는 2개의 Transit이 존재한다. 다른 Region, 외부와의 연결 통로가 된다.
 

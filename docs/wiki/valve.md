@@ -8,7 +8,7 @@ https://www.google.com/search?q=valve+%EC%9E%85%EC%82%AC%EC%9E%90%EB%A5%BC+%EC%9
 
 ## P52. 밸브가 잘 못하는 건 뭔가?
 
-![handbook p52](../$images/valve-handbook-p52.png)
+![handbook p52](res/valve-handbook-p52.png)
 
 이 챕터를 보면 뛰어난 개발자를 일컫는 문장이 있다.
 

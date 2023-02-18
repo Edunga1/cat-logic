@@ -159,7 +159,7 @@ PING www.google.com (142.250.199.100): 56 data bytes
 
 ## marker - the terminal command palette
 
-![marker sample](../$images/cli-marker-sample.png)
+![marker sample](res/cli-marker-sample.png)
 
 https://github.com/pindexis/marker
 

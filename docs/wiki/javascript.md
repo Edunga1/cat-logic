@@ -13,7 +13,7 @@ https://vimeo.com/96425312
 
 ## Good Parts Reconsidered
 
-![reconsidered slide 1](../$images/js-good-parts-reconsidered-slide1.png)
+![reconsidered slide 1](res/js-good-parts-reconsidered-slide1.png)
 
 - I stopped using **new** years ago.
 - I have stopped using **Object.create**
@@ -42,7 +42,7 @@ falsiness는 좋은 아이디어지만 크락포드는 논리식에서 falsiness
 
 ## Loops Reconsidered
 
-![reconsidered slide 2](../$images/js-good-parts-reconsidered-slide2.png)
+![reconsidered slide 2](res/js-good-parts-reconsidered-slide2.png)
 
 - I don't use `for`
 - I don't use `for in`
@@ -101,17 +101,17 @@ Visual Studio Code(또는 [LSP](language-server-protocol)를 사용하는 에디
 
 VSCode는 기본적인 타입 추론 기능을 제공한다:
 
-![vscode intellisense](../$images/vscode-intellisense-example.png)
+![vscode intellisense](res/vscode-intellisense-example.png)
 
 변수 `foo`가 문자열 타입인 것을 알 수 있기 때문에 `split()` 메서드가 자동 완성 목록에 나타난다.
 
 하지만 매개변수라면?
 
-![vscode intellisense](../$images/vscode-intellisense-example2.png)
+![vscode intellisense](res/vscode-intellisense-example2.png)
 
 **Object** 또한 힌트를 제대로 받을 수 없다.
 
-![vscode intellisense](../$images/vscode-intellisense-example3.png)
+![vscode intellisense](res/vscode-intellisense-example3.png)
 
 ## JSDoc을 이용하여 타입 추론
 
@@ -139,7 +139,7 @@ function func(obj) {
 }
 ```
 
-![vscode intellisense](../$images/vscode-intellisense-example4.png)
+![vscode intellisense](res/vscode-intellisense-example4.png)
 
 `foo`, `bar` 모두 타입을 알 수 있다.
 
@@ -180,7 +180,7 @@ function func(arg) {
 
 매개변수와 리턴 타입이 똑같이 출력 된다:
 
-![vscode intellisense](../$images/vscode-intellisense-example5.png)
+![vscode intellisense](res/vscode-intellisense-example5.png)
 
 #### Promise
 

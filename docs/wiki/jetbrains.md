@@ -29,4 +29,4 @@ https://youtrack.jetbrains.com/issue/IDEA-293604/IntelliJ-is-slow-hanging-when-w
 
 물론, 임시방편이고 TL;DR의 IntelliJ 관련 폴더를 검사 예외로 추가하면 해결된다.
 
-![windows defender exclusions](../$images/windows-defender-exclusions.png)
+![windows defender exclusions](res/windows-defender-exclusions.png)
