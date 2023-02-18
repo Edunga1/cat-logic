@@ -1,22 +1,5 @@
 # Unity 3D
 
-<!--toc:start-->
-- [Unity 3D](#unity-3d)
-  - [VSCode 연동](#vscode-연동)
-    - [intellisense 안되는 현상](#intellisense-안되는-현상)
-  - [MonoBehaviour](#monobehaviour)
-    - [Globals](#globals)
-      - [Rigidbody.velocity](#rigidbodyvelocity)
-      - [Rigidbody.AddForce(Vector3)](#rigidbodyaddforcevector3)
-      - [Input](#input)
-      - [GameObject](#gameobject)
-    - [Overrides](#overrides)
-      - [void OnCollisionEnter(Collision)](#void-oncollisionentercollision)
-      - [void OnTriggerEnter(Collision)](#void-ontriggerentercollision)
-- [Sprite Packer가 동작하지 않는 현상](#sprite-packer가-동작하지-않는-현상)
-- [OSX 커맨드라인으로 유니티 빌드하기](#osx-커맨드라인으로-유니티-빌드하기)
-<!--toc:end-->
-
 ## VSCode 연동
 
 * [Unity Plugin (Unity Visual Studio Code Integration)](https://github.com/dotBunny/VSCode) 설치

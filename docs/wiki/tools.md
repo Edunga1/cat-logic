@@ -2,18 +2,6 @@
 
 커맨드라인 도구는 [shell](shell)에서 관리한다.
 
-<!--toc:start-->
-- [개발/비개발 도구](#개발비개발-도구)
-- [북마크 매니저 shiori](#북마크-매니저-shiori)
-  - [간단하게 사용해보기](#간단하게-사용해보기)
-- [MySQL](#mysql)
-  - [MySQL Workbench](#mysql-workbench)
-  - [mycli](#mycli)
-- [API Client 비교 Postman, Insomnia, IntelliJ builtin `.http`](#api-client-비교-postman-insomnia-intellij-builtin-http)
-  - [비교](#비교)
-- [IntelliJ IDEA, DataGrip 버전을 fallback 버전으로 다운그레이드했다.](#intellij-idea-datagrip-버전을-fallback-버전으로-다운그레이드했다)
-<!--toc:end-->
-
 # 북마크 매니저 shiori
 
 [https://github.com/go-shiori/shior](https://github.com/go-shiori/shiori)

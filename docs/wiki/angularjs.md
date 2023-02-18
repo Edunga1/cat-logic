@@ -2,26 +2,6 @@
 
 AngularJS에 대한 이야기. 2017-11에 작성됨.
 
-<!--toc:start-->
-- [Angular JS](#angular-js)
-- [Johnpapa's AngularJS Style Guide](#johnpapas-angularjs-style-guide)
-  - [Component](#component)
-    - [컨트롤러](#컨트롤러)
-      - [`contollerAs`와 `vm` 사용하기](#contolleras와-vm-사용하기)
-    - [서비스 (service, factory, provider)](#서비스-service-factory-provider)
-      - [서비스 코드 작성은 Revealing Module Pattern](#서비스-코드-작성은-revealing-module-pattern)
-  - [Modularity](#modularity)
-    - [데이터 서비스를 분리하기](#데이터-서비스를-분리하기)
-- [테스트](#테스트)
-  - [테스트 환경 모듈](#테스트-환경-모듈)
-  - [karma.conf.js](#karmaconfjs)
-  - [실행](#실행)
-- [type hinting](#type-hinting)
-- [Migrating 1.5 to 1.6](#migrating-15-to-16)
-  - [Component Lifecycle](#component-lifecycle)
-  - [$http](#http)
-<!--toc:end-->
-
 # Johnpapa's AngularJS Style Guide
 
 https://github.com/johnpapa/angular-styleguide

@@ -2,15 +2,6 @@
 
 소프트웨어 아키텍처와 디자인.
 
-<!--toc:start-->
-- [Architecture](#architecture)
-- [Robert C. Martin - Clean Architecture and Design](#robert-c-martin-clean-architecture-and-design)
-- [JUnit A Cook's Tour](#junit-a-cooks-tour)
-- [Entity Component System (ECS)](#entity-component-system-ecs)
-  - [참조](#참조)
-- [wine은 어떻게 동작하는가?](#wine은-어떻게-동작하는가)
-<!--toc:end-->
-
 # Robert C. Martin - Clean Architecture and Design
 
 [Clean Architecture and Design](https://amara.org/videos/0AtjY87egE3m/url/1216370/)

@@ -1,17 +1,5 @@
 # Programming Paradigm
 
-<!--toc:start-->
-- [Programming Paradigm](#programming-paradigm)
-- [Object Oriented Progamming](#object-oriented-progamming)
-- ["Database Abstraction Layers Must Die!"라는 글을 읽고](#database-abstraction-layers-must-die라는-글을-읽고)
-- [Expression Problem - 표현 문제](#expression-problem-표현-문제)
-  - [https://m.facebook.com/story.php?story_fbid=2581087648844171&id=1676787645940847](#httpsmfacebookcomstoryphpstoryfbid2581087648844171id1676787645940847)
-  - [https://edykim.com/ko/post/expression-problem/](#httpsedykimcomkopostexpression-problem)
-  - [감상](#감상)
-- [coroutine, generator, async, monad](#coroutine-generator-async-monad)
-- [작은 언어는 프로그래밍의 미래입니다.](#작은-언어는-프로그래밍의-미래입니다)
-<!--toc:end-->
-
 # Object Oriented Progamming
 
 [Object Oriented Progamming](object-oriented-programming)

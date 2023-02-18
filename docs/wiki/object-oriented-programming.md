@@ -1,12 +1,5 @@
 # Object Oriented Programming
 
-<!--toc:start-->
-- [Object Oriented Programming](#object-oriented-programming)
-- [Robert C. Martin: Principles of Component Design.](#robert-c-martin-principles-of-component-design)
-- [KSUG Seminar - Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향](#ksug-seminar-growing-application-2nd-애플리케이션-아키텍처와-객체지향)
-- [스크랩](#스크랩)
-<!--toc:end-->
-
 # Robert C. Martin: Principles of Component Design.
 
 https://amara.org/ko/videos/XJGyts0sfDVQ/info/robert-c-martin-principles-of-component-design/

@@ -1,21 +1,5 @@
 # Amazon Web Service
 
-<!--toc:start-->
-- [Amazon Web Service](#amazon-web-service)
-- [`awscli`](#awscli)
-  - [ECR 로그인하기](#ecr-로그인하기)
-  - [IAM 관련](#iam-관련)
-- [Storage Service](#storage-service)
-  - [EBS - Elastic Block Storage](#ebs-elastic-block-storage)
-  - [EFS - Elastic File System](#efs-elastic-file-system)
-  - [Object Storage](#object-storage)
-- [Networking](#networking)
-  - [주요 네트워킹 서비스](#주요-네트워킹-서비스)
-    - [VPC - Virtual Private Cloud](#vpc-virtual-private-cloud)
-    - [Direct Connect](#direct-connect)
-    - [Route 53](#route-53)
-<!--toc:end-->
-
 # `awscli`
 
 ## ECR 로그인하기

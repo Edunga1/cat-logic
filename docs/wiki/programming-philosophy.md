@@ -1,17 +1,5 @@
 # 개발 철학
 
-<!--toc:start-->
-- [개발 철학](#개발-철학)
-- [TED - Linus Torvalds: 리눅스의 기본 철학](#ted-linus-torvalds-리눅스의-기본-철학)
-  - [좋은 코드](#좋은-코드)
-  - [리누스 토발스의 개발자 자세](#리누스-토발스의-개발자-자세)
-- [개발에 대한 사소한 생각](#개발에-대한-사소한-생각)
-  - [코드 스타일](#코드-스타일)
-  - [언어](#언어)
-  - [집중](#집중)
-  - [프로그래밍](#프로그래밍)
-<!--toc:end-->
-
 # TED - Linus Torvalds: 리눅스의 기본 철학
 
 [TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=ko)

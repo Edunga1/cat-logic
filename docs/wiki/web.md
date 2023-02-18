@@ -1,14 +1,5 @@
 # 웹 개발
 
-<!--toc:start-->
-- [웹 개발](#웹-개발)
-- [GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"](#gdg-webtech-workshop-측정하는-놈-로딩하는-놈-그리는-놈)
-- [React 렌더링 동작에 대한 완벽한 가이드](#react-렌더링-동작에-대한-완벽한-가이드)
-- [HTML Entity: `&amp;`, `&gt;`](#html-entity-amp-gt)
-- [외부 사이트 이동 기능. Redirect Token.](#외부-사이트-이동-기능-redirect-token)
-  - [redir_token?](#redirtoken)
-<!--toc:end-->
-
 # GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"
 
 [2016-08-27 GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"](2016-08-27-gdg-webtech-workshop-nnn)

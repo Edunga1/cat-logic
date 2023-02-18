@@ -3,12 +3,6 @@
 Simple and Fast Multimedia Library. 줄여서 SFML이라 한다.
 C++ 기반 멀티미디어를 가져오거나 그리고, Window를 만드는 API를 제공한다.
 
-<!--toc:start-->
-- [SFML](#sfml)
-- [SFML 프로젝트 빌드하기](#sfml-프로젝트-빌드하기)
-- [Let's make 16 games in C++/SFML!](#lets-make-16-games-in-csfml)
-<!--toc:end-->
-
 SDL코드라는 그래픽 라이브러리가 유명한데, SFML은 나오지 얼마되지 않았지만, 좋다고 한다. 오픈헥사곤도 이것으로 만들어 졌다.
 
 [공식문서](https://www.sfml-dev.org/tutorials/2.5/graphics-draw.php)에 나와있는 튜토리얼 중 하나:

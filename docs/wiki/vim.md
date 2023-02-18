@@ -4,35 +4,6 @@ vim 보다 [neovim](https://github.com/neovim/neovim).
 
 My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 
-<!--toc:start-->
-- [Vim](#vim)
-- [neovim](#neovim)
-  - [Lua 가이드](#lua-가이드)
-  - [내장 Language Server Protocol 사용하기](#내장-language-server-protocol-사용하기)
-- [Use cases](#use-cases)
-  - [파일 검색](#파일-검색)
-- [quickfix & location list](#quickfix-location-list)
-  - [commands](#commands)
-  - [grep](#grep)
-  - [`cdo`, `ldo` 검색된 모든 entry에 명령어 적용](#cdo-ldo-검색된-모든-entry에-명령어-적용)
-  - [`cfdo`, `lfdo` 검색된 모든 파일에 명령어 적용](#cfdo-lfdo-검색된-모든-파일에-명령어-적용)
-    - [`bufdo` 모든 buffer 파일에 명령어 적용](#bufdo-모든-buffer-파일에-명령어-적용)
-- [mapping 시 `:...<cr>` vs `<cmd>...<cr>`](#mapping-시-cr-vs-cmdcr)
-- [Variables](#variables)
-  - [`path`](#path)
-- [Profiling](#profiling)
-  - [Troubleshooting](#troubleshooting)
-    - [`vim-colors-solarized` colorscheme 플러그인이 너무 느려지게 만드는 현상](#vim-colors-solarized-colorscheme-플러그인이-너무-느려지게-만드는-현상)
-- [Vim에서 python text object 사용하기](#vim에서-python-text-object-사용하기)
-  - [vim-pythonsense](#vim-pythonsense)
-  - [vim-expand-region](#vim-expand-region)
-- [Plugins](#plugins)
-  - [chrisbra/csv.vim](#chrisbracsvvim)
-    - [Features](#features)
-- [`:make` and `makeprg`](#make-and-makeprg)
-  - [build integration - How to Do 90% of What Plugins Do](#build-integration-how-to-do-90-of-what-plugins-do)
-<!--toc:end-->
-
 # neovim
 
 ## Lua 가이드

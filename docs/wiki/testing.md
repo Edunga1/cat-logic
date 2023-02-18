@@ -1,16 +1,5 @@
 # Testing
 
-<!--toc:start-->
-- [Testing](#testing)
-- [Setup and Teardown](#setup-and-teardown)
-  - [Transaction Start - Rollback](#transaction-start-rollback)
-- [Better Specs](#better-specs)
-  - [Single Expectation(단일 검증)](#single-expectation단일-검증)
-- [왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?](#왜-유닛-테스트에서-의존성을-테스트하지-않는-것이-중요한가요)
-- [유닛 테스트에서 상수를 사용하지 마세요.](#유닛-테스트에서-상수를-사용하지-마세요)
-- [유닛 테스트에서 "DAMP not DRY"는 무엇을 의미하나요?](#유닛-테스트에서-damp-not-dry는-무엇을-의미하나요)
-<!--toc:end-->
-
 # Setup and Teardown
 
 각 테스트를 실행하기 전/후 할 일을 각각 **Setup** **Teardown** 이라한다.

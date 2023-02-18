@@ -5,21 +5,6 @@
 
 만들지는 못하더라도 적극적으로 사용해 보자. 이 바람을 피할 수는 없다.
 
-<!--toc:start-->
-- [Machine Learning](#machine-learning)
-- [ChatGPT](#chatgpt)
-  - [Try ChatGPT!](#try-chatgpt)
-  - [ChatGPT를 Virtual Machine으로 만들기](#chatgpt를-virtual-machine으로-만들기)
-  - [번역 및 문법확인 요청하기](#번역-및-문법확인-요청하기)
-- [Stable Diffusion](#stable-diffusion)
-  - [promptbook](#promptbook)
-  - [따라하기](#따라하기)
-    - [Colab Notebook](#colab-notebook)
-    - [stable-diffusion-webui](#stable-diffusion-webui)
-      - [Trouble Shooting](#trouble-shooting)
-- [Open API](#open-api)
-<!--toc:end-->
-
 # ChatGPT
 
 https://openai.com/blog/chatgpt/

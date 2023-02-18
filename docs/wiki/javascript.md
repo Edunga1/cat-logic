@@ -1,25 +1,5 @@
 # Javscript
 
-<!--toc:start-->
-- [Javscript](#javscript)
-- [자바스크립트와 이벤트 루프](#자바스크립트와-이벤트-루프)
-- [Douglas Crockford's Javascript The Good Parts - 권장하지 않는 것.](#douglas-crockfords-javascript-the-good-parts-권장하지-않는-것)
-  - [Good Parts Reconsidered](#good-parts-reconsidered)
-    - [No prototypal pattern에 대한 이야기](#no-prototypal-pattern에-대한-이야기)
-    - [null, falsiness에 대한 이야기](#null-falsiness에-대한-이야기)
-  - [Loops Reconsidered](#loops-reconsidered)
-  - [요약](#요약)
-- [var foo = (bar = 1, bar + 1);](#var-foo-bar-1-bar-1)
-- [[AngularJS](angular-js)](#angularjsangular-js)
-- [Visual Studio Code에서 타입 힌팅 사용하기](#visual-studio-code에서-타입-힌팅-사용하기)
-  - [기본 지원](#기본-지원)
-  - [JSDoc을 이용하여 타입 추론](#jsdoc을-이용하여-타입-추론)
-    - [오브젝트와 매개변수 힌팅](#오브젝트와-매개변수-힌팅)
-    - [Generic Type](#generic-type)
-      - [Promise](#promise)
-- [JSDoc 파라미터 상수 정의하기 + VSCode Rename Symbol!](#jsdoc-파라미터-상수-정의하기-vscode-rename-symbol)
-<!--toc:end-->
-
 # 자바스크립트와 이벤트 루프
 
 http://meetup.toast.com/posts/89

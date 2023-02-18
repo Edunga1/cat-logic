@@ -1,22 +1,4 @@
-<!--toc:start-->
-- [Iterator Pattern](#iterator-pattern)
-- [Repository Pattern](#repository-pattern)
-  - [Generic Repository vs. Specific Repository](#generic-repository-vs-specific-repository)
-- [state pattern and state machine](#state-pattern-and-state-machine)
-  - [state pattern](#state-pattern)
-  - [state machine](#state-machine)
-    - [구현체](#구현체)
-      - [Spring](#spring)
-      - [Pytohn](#pytohn)
-  - [references](#references)
-- [MVC Pattern](#mvc-pattern)
-  - [MVC 패턴의 목적과 이점](#mvc-패턴의-목적과-이점)
-  - [Compound Pattern](#compound-pattern)
-    - [1. Observer Pattern](#1-observer-pattern)
-    - [2. Strategy Pattern](#2-strategy-pattern)
-    - [3. Composite Pattern](#3-composite-pattern)
-- [참조](#참조)
-<!--toc:end-->
+# Design Pattern
 
 # Iterator Pattern
 

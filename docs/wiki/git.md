@@ -1,25 +1,5 @@
 # git
 
-<!--toc:start-->
-- [명령어 자동완성하기](#명령어-자동완성하기)
-  - [Windows](#windows)
-  - [OSX](#osx)
-- [Git ssh](#git-ssh)
-- [깃 커밋 해시 충돌에 관하여](#깃-커밋-해시-충돌에-관하여)
-    - [https://www.facebook.com/iamprogrammer.io/posts/1379005945454259](#httpswwwfacebookcomiamprogrammerioposts1379005945454259)
-    - [https://stackoverflow.com/questions/9392365](#httpsstackoverflowcomquestions9392365)
-    - [https://stackoverflow.com/questions/34764195](#httpsstackoverflowcomquestions34764195)
-    - [https://www.codentalks.com/t/topic/2973](#httpswwwcodentalkscomttopic2973)
-    - [https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/](#httpszariskiwordpresscom20170225sha-1-ecb6a9eb8f8c)
-    - [https://www.mathstat.dal.ca/~selinger/md5collision](#httpswwwmathstatdalcaselingermd5collision)
-- [`git rebase -i`](#git-rebase-i)
-- [`git revert -m`](#git-revert-m)
-- [`git log --graph`](#git-log-graph)
-  - [`--date-order` 로 피라미드 그래프 방지하기](#date-order-로-피라미드-그래프-방지하기)
-    - [옵션 설명](#옵션-설명)
-  - [`--date-order` 와 `--author-date-order` 비교](#date-order-와-author-date-order-비교)
-<!--toc:end-->
-
 # 명령어 자동완성하기
 
 서버 터미널에서 `git chec`까지만 타이핑하고 tab 키를 누르면 checkout이 자동 완성 되었다.

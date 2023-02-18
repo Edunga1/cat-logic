@@ -1,18 +1,5 @@
 # Kotlin
 
-<!--toc:start-->
-- [Kotlin](#kotlin)
-- [Features](#features)
-  - [Scope Functions](#scope-functions)
-- [Testing](#testing)
-  - [Kotest Specs](#kotest-specs)
-    - [Better Specs](#better-specs)
-- [[Language Server](language-server-protocol)](#language-serverlanguage-server-protocol)
-- [ranges](#ranges)
-  - [Hierarchy](#hierarchy)
-- [Kotlin DSL](#kotlin-dsl)
-<!--toc:end-->
-
 # Features
 
 ## Scope Functions

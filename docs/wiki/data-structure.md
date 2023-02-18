@@ -1,19 +1,5 @@
 # 자료구조
 
-<!--toc:start-->
-- [자료구조](#자료구조)
-- [Associative Array와 Hash Table](#associative-array와-hash-table)
-  - [Associative Array (연관 배열)](#associative-array-연관-배열)
-    - [특징](#특징)
-  - [Hash Table](#hash-table)
-    - [Hash?](#hash)
-      - [간단한 예](#간단한-예)
-    - [그 외](#그-외)
-- [Graph](#graph)
-- [Heap](#heap)
-- [Set - 집합](#set-집합)
-<!--toc:end-->
-
 # Associative Array와 Hash Table
 
 ## Associative Array (연관 배열)

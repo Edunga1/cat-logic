@@ -1,29 +1,4 @@
-[#](#) Database
-
-<!--toc:start-->
-- [설계](#설계)
-  - [정규화 (Normalization)](#정규화-normalization)
-    - [제 1 정규화 (First Normal Form)](#제-1-정규화-first-normal-form)
-    - [제 2 정규화 (Second Normal Form)](#제-2-정규화-second-normal-form)
-    - [제 3 정규화 (Third Normal Form)](#제-3-정규화-third-normal-form)
-    - [역 정규화 (Denormalization)](#역-정규화-denormalization)
-- [테이블 이름 컨벤션](#테이블-이름-컨벤션)
-  - [단수 vs. 복수](#단수-vs-복수)
-- [데이터베이스는 큐가 아닙니다.](#데이터베이스는-큐가-아닙니다)
-  - [Why not a database?](#why-not-a-database)
-  - [Redis를 사용하는 것은 어떨까?](#redis를-사용하는-것은-어떨까)
-- [MySQL Docker Image](#mysql-docker-image)
-  - [이미지 내에 데이터 포함하기](#이미지-내에-데이터-포함하기)
-- [H2 Database](#h2-database)
-  - [`NumberFormatException: for input String: "..."` 에러](#numberformatexception-for-input-string-에러)
-- [SQLite의 알려지지 않은 이야기](#sqlite의-알려지지-않은-이야기)
-  - [용어 및 단어](#용어-및-단어)
-    - [MC/DC Coverage](#mcdc-coverage)
-    - [DO-127B](#do-127b)
-    - [covering index](#covering-index)
-    - [Fossil](#fossil)
-  - [인상깊은 부분](#인상깊은-부분)
-<!--toc:end-->
+# Database
 
 # 설계
 

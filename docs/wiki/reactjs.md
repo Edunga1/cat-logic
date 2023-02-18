@@ -2,15 +2,6 @@
 
 React는 실무에서 사용해보 않았다. 개인 프로젝트에서만 사용해본 정도.
 
-<!--toc:start-->
-- [React JS](#react-js)
-- [React 개발환경 구성하기](#react-개발환경-구성하기)
-  - [Create React App 이용하기](#create-react-app-이용하기)
-  - [ESlint 구성](#eslint-구성)
-  - [`prop-types` 사용하기](#prop-types-사용하기)
-- [React 뒤로가기 시 비동기로 가져온 데이터 유지하기](#react-뒤로가기-시-비동기로-가져온-데이터-유지하기)
-<!--toc:end-->
-
 # React 개발환경 구성하기
 
 ## Create React App 이용하기

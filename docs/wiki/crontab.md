@@ -8,12 +8,6 @@
 
 각 명령어는 현재 사용자 기준으로 동작한다.
 
-<!--toc:start-->
-- [crontab](#crontab)
-- [crontab 등록 및 실행](#crontab-등록-및-실행)
-- [macOS의 경우 email로 결과가 전송된다.](#macos의-경우-email로-결과가-전송된다)
-<!--toc:end-->
-
 # crontab 등록 및 실행
 
 `crontab -e` 명령어를 입력하면 vi 에디터가 실행되며, 아래와 같이 작성한다.

@@ -2,29 +2,6 @@
 
 node.js로 개발을 하고있지 않아서.. 대부분 내용이 2016년 정도에 머물러 있다.
 
-<!--toc:start-->
-- [Node JS](#node-js)
-- [NodeJS Test Tools](#nodejs-test-tools)
-  - [Mocha - Framework](#mocha-framework)
-  - [Chai - Library](#chai-library)
-  - [Istanbul - Coverage Tool](#istanbul-coverage-tool)
-- [Proxyquire](#proxyquire)
-  - [proxyquire 모듈 로드 순서 문제](#proxyquire-모듈-로드-순서-문제)
-    - [`require('proxyquire').noPreserveCache()` 사용하기](#requireproxyquirenopreservecache-사용하기)
-- [Proxyquire vs. rewire](#proxyquire-vs-rewire)
-  - [어떤 차이가 있을까?](#어떤-차이가-있을까)
-    - [rewire: 테스트 대상 내에 선언한 변수를 가로채어 바꾼다.](#rewire-테스트-대상-내에-선언한-변수를-가로채어-바꾼다)
-    - [proxyquire: 테스트 대상이 `require`하는 모듈을 바꿔서 보내준다.](#proxyquire-테스트-대상이-require하는-모듈을-바꿔서-보내준다)
-  - [rewire 제한사항](#rewire-제한사항)
-- [Sinon.JS](#sinonjs)
-  - [`new Date()` 조작하기](#new-date-조작하기)
-- [NodeJS data validation](#nodejs-data-validation)
-- [NodeJS 서버 로컬 요청만 허용하기](#nodejs-서버-로컬-요청만-허용하기)
-- [pm2 deploy 시 주의할 점](#pm2-deploy-시-주의할-점)
-- [Jupyter notebook 사용하기](#jupyter-notebook-사용하기)
-- [Taming architecture complexity in v8](#taming-architecture-complexity-in-v8)
-<!--toc:end-->
-
 # NodeJS Test Tools
 
 지금은 [Jest](https://github.com/facebook/jest)를 사용하고 있다.

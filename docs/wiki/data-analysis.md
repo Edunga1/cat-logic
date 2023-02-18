@@ -1,13 +1,5 @@
 # Data analysis
 
-<!--toc:start-->
-- [Data analysis](#data-analysis)
-- [이중차분법](#이중차분법)
-  - [게임 데이터로 인과 추론 분석하기](#게임-데이터로-인과-추론-분석하기)
-- ["데이터 엔지니어 부업을 해봅시다" 라는 구인글](#데이터-엔지니어-부업을-해봅시다-라는-구인글)
-  - [문서(질문) 내용](#문서질문-내용)
-<!--toc:end-->
-
 # 이중차분법
 
 이중차분(difference in differences, DID)은 두 집단의 difference를 difference한 두 시기로 비교해보는 것이다.

@@ -1,23 +1,5 @@
 # Java
 
-<!--toc:start-->
-- [Java](#java)
-- [Jakarta EE (a.k.a. Java EE)](#jakarta-ee-aka-java-ee)
-  - [포함하는 기술](#포함하는-기술)
-    - [HTTP](#http)
-    - [JNDI (Java Naming and Directory Interface)](#jndi-java-naming-and-directory-interface)
-    - [JTA (Java Transaction API)](#jta-java-transaction-api)
-    - [Jakarta Persistence API (JPA, Java Persistence API)](#jakarta-persistence-api-jpa-java-persistence-api)
-      - [JPA Repository](#jpa-repository)
-        - [Query Methods](#query-methods)
-        - [@Query](#query)
-        - [Query By Example (QBE)](#query-by-example-qbe)
-        - [QueryDSL](#querydsl)
-          - [querydsl-sql](#querydsl-sql)
-          - [infobip-spring-data-querydsl](#infobip-spring-data-querydsl)
-      - [JPA 기본 메서드는 다른 method의 위임 용으로만 사용해야 한다.](#jpa-기본-메서드는-다른-method의-위임-용으로만-사용해야-한다)
-<!--toc:end-->
-
 # Jakarta EE (a.k.a. Java EE)
 
 https://www.samsungsds.com/kr/insights/java_jakarta.html

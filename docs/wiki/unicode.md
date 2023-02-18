@@ -1,14 +1,5 @@
 # Unicode
 
-<!--toc:start-->
-- [Unicode](#unicode)
-- [NFC, NFD](#nfc-nfd)
-  - [조합형 한글, 완성형 한글](#조합형-한글-완성형-한글)
-    - [NFD -> NFC 변환](#nfd-nfc-변환)
-    - [Reference](#reference)
-- [읽어볼만한 것](#읽어볼만한-것)
-<!--toc:end-->
-
 # NFC, NFD
 
 Normalization Form **C**

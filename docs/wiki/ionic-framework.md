@@ -2,13 +2,6 @@
 
 2017년에 작성된 내용.
 
-<!--toc:start-->
-- [개요](#개요)
-- [Caution to installing crosswalk-webview plugin](#caution-to-installing-crosswalk-webview-plugin)
-- [Error - Could not find gradle wrapper within Android SDK](#error-could-not-find-gradle-wrapper-within-android-sdk)
-- [in-app-brwoser](#in-app-brwoser)
-<!--toc:end-->
-
 # Caution to installing crosswalk-webview plugin
 
 crosswalk-webview 플러그인 설치 시 주의사항

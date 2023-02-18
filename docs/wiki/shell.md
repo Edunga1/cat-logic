@@ -1,23 +1,5 @@
 # Shell 명령어
 
-<!--toc:start-->
-- [Shell 명령어](#shell-명령어)
-- [`set -ex`](#set-ex)
-- [`sed` - 파일 특정 라인만 읽기](#sed-파일-특정-라인만-읽기)
-- [`nohup` - 멈추지 않고 명령어 실행하기](#nohup-멈추지-않고-명령어-실행하기)
-  - [로그를 실시간으로 확인할 수 있는가?](#로그를-실시간으로-확인할-수-있는가)
-  - [터미널을 꺼도 동작하고 있는가?](#터미널을-꺼도-동작하고-있는가)
-  - [`nohup`으로 실행한 프로세스를 어떻게 찾아서 끌 수 있는가?](#nohup으로-실행한-프로세스를-어떻게-찾아서-끌-수-있는가)
-    - [`ps aux`로 찾아보자](#ps-aux로-찾아보자)
-    - [background로 띄운 경우 좀 더 알기 쉬움](#background로-띄운-경우-좀-더-알기-쉬움)
-    - [좀 더 똑똑한 방법](#좀-더-똑똑한-방법)
-- [.bash**rc** rc의 의미?](#bashrc-rc의-의미)
-- [`ping` 명령어](#ping-명령어)
-- [Custom Tools](#custom-tools)
-  - [marker - the terminal command palette](#marker-the-terminal-command-palette)
-- [parameter fallback (default value)](#parameter-fallback-default-value)
-<!--toc:end-->
-
 # `set -ex`
 
 도커파일이나 스크립트를 보면 `set -ex` 구문이 많이 보인다.

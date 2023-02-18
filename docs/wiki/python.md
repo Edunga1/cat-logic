@@ -1,28 +1,5 @@
 # Python
 
-<!--toc:start-->
-- [Python](#python)
-- [개발도구](#개발도구)
-  - [pyright](#pyright)
-    - [pyright 설치](#pyright-설치)
-    - [`pyrightconfig.json`로 설정관리](#pyrightconfigjson로-설정관리)
-      - [타입 힌트를 사용하지 않으려면](#타입-힌트를-사용하지-않으려면)
-  - [pylint](#pylint)
-  - [Django Stubs](#django-stubs)
-  - [mypy](#mypy)
-  - [python code formatter: autopep8 vs black vs yapf](#python-code-formatter-autopep8-vs-black-vs-yapf)
-- [Python mock](#python-mock)
-  - [Decorator를 사용한 mocking.](#decorator를-사용한-mocking)
-  - [`@patch('requests.get')`](#patchrequestsget)
-  - [`@patch.object(mymodule, 'requests')`](#patchobjectmymodule-requests)
-  - [`@patch.object(mymodule, 'requests', new=MyRequests)`](#patchobjectmymodule-requests-newmyrequests)
-  - [`@patch.object(mymodule, 'method', return_value=None)`](#patchobjectmymodule-method-returnvaluenone)
-- [Package manager](#package-manager)
-  - [pipenv](#pipenv)
-- [Packaging](#packaging)
-  - [`__all__`](#all)
-<!--toc:end-->
-
 # 개발도구
 
 vim 기본 설정으로는 텍스트에디터 역할밖에 못한다.
