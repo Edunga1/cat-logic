@@ -11,10 +11,10 @@
 - [CSS](css.md)
 - [Data analysis](data-analysis.md)
 - [자료구조](data-structure.md)
-- [database](database.md)
-- [design-pattern](design-pattern.md)
+- [Database](database.md)
+- [Design Pattern](design-pattern.md)
 - [DevOps](devops.md)
-- [docker](docker.md)
+- [Docker](docker.md)
 - [experience-review](experience-review.md)
 - [git](git.md)
 - [Github API로 Release 된 파일 다운받기](github.md)
@@ -46,13 +46,14 @@
 - [Python](python.md)
 - [Reactive Extensions (Reactive X, RX)](reactive-extensions.md)
 - [React JS](reactjs.md)
+- [Reverse Engineering](reverse-engineering.md)
 - [SCP](scp.md)
 - [Sentry App](sentry.md)
 - [SFML](sfml.md)
 - [Shell 명령어](shell.md)
 - [사이드 프로젝트](side-project.md)
 - [소프트웨어 개발](software-development.md)
-- [spring-framework](spring-framework.md)
+- [Spring framework](spring-framework.md)
 - [Swagger](swagger.md)
 - [테스트 주도 개발 (Test Driven Development)](test-driven-development.md)
 - [Testing](testing.md)
@@ -73,3 +74,4 @@
 - [ ] Use github actions to automate deployment
 - [ ] Isolate gatsbyjs project as possible as it can be
 - [X] Resolve image inclusion issue
+- [ ] Resolve wiki path name issue
