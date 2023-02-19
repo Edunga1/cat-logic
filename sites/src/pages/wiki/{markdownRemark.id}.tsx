@@ -4,9 +4,8 @@ import { graphql } from "gatsby"
 export default function BlogPostTemplate({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { file } = data
-  const { childMarkdownRemark } = file
-  const { html, tableOfContents } = childMarkdownRemark
+  const { id, tableOfContents, html } = data.markdownRemark
+  console.log(data)
   return (
     <div>
       <div dangerouslySetInnerHTML={{ __html: tableOfContents }} />
@@ -17,12 +16,10 @@ export default function BlogPostTemplate({
 
 export const pageQuery = graphql`
   query($id: String!) {
-    file(id: { eq: $id }) {
+    markdownRemark(id: { eq: $id }) {
       id
-      childMarkdownRemark {
-        tableOfContents
-        html
-      }
+      tableOfContents
+      html
     }
   }
 `
