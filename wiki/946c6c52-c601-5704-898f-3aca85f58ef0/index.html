@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
+<li>
+<p><a href="#airflow">Airflow</a></p>
+<ul>
+<li><a href="#airflow-%EC%97%B0%EC%8A%B5">Airflow 연습</a></li>
+<li><a href="#airflow%EA%B0%80-dag-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%B8%EC%8B%9D%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D">airflow가 DAG 파일을 인식하는 방식</a></li>
+<li><a href="#%EB%8B%A4%EC%9D%8C-dag-%EC%8B%A4%ED%96%89-%EC%8B%9C%EA%B0%84">다음 DAG 실행 시간</a></li>
+</ul>
+</li>
+</ul></div><div><h1>Airflow</h1>
+<h2>Airflow 연습</h2>
+<p><a href="https://github.com/Edunga1/practice-airflow">https://github.com/Edunga1/practice-airflow</a></p>
+<p>docker-compose로 airflow 환경 구축하고 테스트할 수 있다.</p>
+<p><a href="https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html">Airflow 공식 문서</a>에서 docker로 실행하는 방법을 잘 설명해놓았다.</p>
+<h2>airflow가 DAG 파일을 인식하는 방식</h2>
+<p><a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html#loading-dags">Loading DAGs</a></p>
+<blockquote>
+<p>When searching for DAGs inside the DAG_FOLDER, Airflow only considers Python files that contain the strings airflow and dag (case-insensitively) as an optimization.</p>
+</blockquote>
+<p><code>airflow</code> 또는 <code>dag</code> 문자열을 포함하는 파이썬 파일만 DAG 파일로 인식한다.</p>
+<p>DAG 스크립트를 모듈화한다고 DAG 생성하는 부분을 중앙집중화한다면 DAG 파일을 인식하지 못할 수 있으니 주의해야 한다.</p>
+<blockquote>
+<p>To consider all Python files instead, disable the DAG_DISCOVERY_SAFE_MODE configuration flag.</p>
+</blockquote>
+<p>모든 파이썬 파일을 DAG 파일로 인식할 수 있는 옵션도 있다고 한다.</p>
+<h2>다음 DAG 실행 시간</h2>
+<pre><code class="language-sh">airflow dags next-execution &#x3C;DAG_ID>
+</code></pre>
+<p>Paused 상태인 DAG는 다음 실행 시간을 알 수 없다.</p>
+<p>Web UI에서 확인하는 방법은 없는 듯.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/946c6c52-c601-5704-898f-3aca85f58ef0/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-81fc23a5f8ac4aaeaf7f.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-89d74e54a256880c51c3.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-fadef40cbd25a864f6c5.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="c536f49ab3deb71fe994";</script><script src="/webpack-runtime-272c6e61ad500c88b893.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-81fc23a5f8ac4aaeaf7f.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

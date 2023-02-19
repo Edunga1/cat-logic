@@ -1,0 +1,522 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
+<li>
+<p><a href="#object-oriented-programming">Object Oriented Programming</a></p>
+</li>
+<li>
+<p><a href="#robert-c-martin-principles-of-component-design">Robert C. Martin: Principles of Component Design.</a></p>
+</li>
+<li>
+<p><a href="#ksug-seminar---growing-application---2nd-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EC%99%80-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5">KSUG Seminar - Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향</a></p>
+</li>
+<li>
+<p><a href="#%EC%8A%A4%ED%81%AC%EB%9E%A9">스크랩</a></p>
+</li>
+<li>
+<p><a href="#%EC%9A%B0%EC%95%84%ED%95%9C-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5---%EC%9A%B0%EC%95%84%ED%95%9C-%ED%85%8C%ED%81%AC-%EC%84%B8%EB%AF%B8%EB%82%98">우아한 객체지향 - 우아한 테크 세미나</a></p>
+<ul>
+<li><a href="#%EB%95%8C%EB%A1%9C%EB%8A%94-%EC%A0%88%EC%B0%A8%EC%A7%80%ED%96%A5%EC%9D%B4-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EB%B3%B4%EB%8B%A4-%EC%A2%8B%EB%8B%A4">때로는 절차지향이 객체지향보다 좋다.</a></li>
+<li><a href="#%EA%B0%9D%EC%B2%B4-%EC%B0%B8%EC%A1%B0-%EB%81%8A%EA%B8%B0">객체 참조 끊기</a></li>
+<li><a href="#%EC%B0%B8%EC%A1%B0%EB%A5%BC-%EB%81%8A%EA%B3%A0-%EB%A1%9C%EC%A7%81-%EC%98%AE%EA%B8%B0%EA%B8%B0-%EC%BB%B4%ED%8C%8C%EC%9D%BC-%EC%97%90%EB%9F%AC">참조를 끊고, 로직 옮기기 (컴파일 에러!)</a></li>
+</ul>
+</li>
+</ul></div><div><h1>Object Oriented Programming</h1>
+<h1>Robert C. Martin: Principles of Component Design.</h1>
+<p><a href="https://amara.org/ko/videos/XJGyts0sfDVQ/info/robert-c-martin-principles-of-component-design/">https://amara.org/ko/videos/XJGyts0sfDVQ/info/robert-c-martin-principles-of-component-design/</a></p>
+<p>너무 고마우신 분께서 한글자막까지 달아주셨다.</p>
+<ul>
+<li>Object Oriented의 장점은 현실 세계와 매핑하기 쉬운 것이 아니다.</li>
+<li>가장 큰 혜택은 다형성이다.</li>
+<li>순환 참조는 생산성을 떨어 뜨린다.</li>
+<li>여러개의 DLL을 만들면 변경한 DLL만 다시 컴파일하는 장점이 있다. (속도)</li>
+<li>지금은 성능이 좋아져서 하나로 모두 합쳐도 상관은 없다.</li>
+<li>순환 참조는 관계있는 컴포넌트까지 다시 컴파일해야 한다.</li>
+<li>Dependency Inversion으로 순환 참조를 깰 수 있다. (다형성!)</li>
+<li>안정적인 컴포넌트를 참조하고 추상화 하자.</li>
+<li>불안정한 컴포넌트(구체적인)는 추상화 할 필요가 없다.</li>
+<li>불안정한 컴포넌트의 변경은 내 컴포넌트도 변경의 위험에 있다.</li>
+<li>데이터베이스는 상세하며, 구체적이므로 불안정하다. 그러나 변경이 잦다.</li>
+<li>뷰(GUI)도 불안정하다. 쉽게 변경될 수 있어야 하므로 다른 컴포넌트가 뷰를 참조해선 안된다.</li>
+<li>따라서 뷰를 테스트하는 것은 테스트 코드를 자주 수정케 한다.</li>
+</ul>
+<p>OOP 장점이 현실 세계를 잘 비춘다고 적었었다. 그런데 Robert C. Martin은 아니라고 한다.</p>
+<p>38:59를 보면 이야기가 시작된다. 객체 지향은 무엇인지? 왜 사람들이 객체 지향을 좋아하는지.</p>
+<blockquote>
+<p>(청중) 현실 세계를 모델링 할 수 있습니다.</p>
+</blockquote>
+<blockquote>
+<p>(Robert C. Martin) 현실 세계를 모델링 할 수 있다. 감사합니다.</p>
+</blockquote>
+<p>내가 이렇게 답하라고 저 사람을 여러분 사이에 심어놨습니다.
+내가 저사람의 답변을 발기 발기 찢어버리려고요.아닙니다. 아주 터무니없는 이야기에요. ...</p>
+<blockquote>
+<p>(Robert C. Martin) 객체지향에 특별할 것은 없습니다.</p>
+</blockquote>
+<p>하지만 객체지향으로 인해 가능해진 게 하나 있긴 합니다.
+예전에는 위험해서 잘 안 썼지요.
+다형성입니다. 아주 사용하기 쉬운 다형성이지요. ...</p>
+<h1>KSUG Seminar - Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향</h1>
+<p><a href="https://www.youtube.com/watch?v=26S4VFUWlJM">https://www.youtube.com/watch?v=26S4VFUWlJM</a></p>
+<p>애플리케이션 로직과 도메인 로직을 분리하고, 어떻게 객체에 초점을 둔 로직을 작성하는지 알려주는 영상.
+절차지향 코드와 객체지향 코드 예시를 통해 비교한다.</p>
+<hr>
+<p><a href="https://youtu.be/26S4VFUWlJM?t=46m57s">https://youtu.be/26S4VFUWlJM?t=46m57s</a></p>
+<ul>
+<li>이 코드 가지고만 실제 어플리케이션을 짤 수는 없음. 데이터는 DB에 있기 때문에</li>
+<li>800원 할인이라는 정보는 클래스가 아니라 디비에 있다.</li>
+<li>어플리케이션 로직
+<ul>
+<li>어플리케이션의 플로우</li>
+<li>도메인 로직의 전 후에 존재</li>
+<li>순수한 객체(도메인 객체)에 넣지 않음</li>
+<li>넣으면 디비나 네트워크에 의존이 생김</li>
+<li>도메인과 무관한 기술적인 내용들을 의미함</li>
+<li>도메인 로직을 캡슐화 해준다</li>
+<li>서비스</li>
+</ul>
+</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a66f34cd9d85cf9fe15c230043344042/ac307/2018-07-29-23-50-26.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 58.78378378378378%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAADEklEQVR42jWN21MbdQCF9+/gVqVSLgHJBUKSIlIdrJQEAtnrb3eTXQLdQkooMtj6oE8OyoxO22m1Tq0dIJAbJUAdCdCWceDFGf+ozwH14ZtzXs53pJCwCSgGPbJKr2nRrRt06wKfqtMpa3TZNq3pNA2mRaNt05BJX2aTLmgyDJpVjWbNoFnRaJF1JH8ihU/W6VS0S0GnLmiTNdpUgw+ExVUrTYvr0OBkaPxflk7Toho0WzZX41O0Tqm8p4nLLvWOjhMQNj2TKl26Safjcm3a5Yqb4UrWocXN0Lg0R1Peoznv0bLg0WqYtFo272cdOpIK7ZMqbYpBRyKFFJE1Ym6WfitNyMkSys7w4b27dH21hG9lka7lBdrnbtPhzdCe87i2OIfPsvE5GbqFwB9PEkgk6Z2cxD+pIA0Kk+veHJGZ20TuzBHJ5RjIzf/LrEfQcQkZFkE7Q0ik6bcdQgvLBPNfEvbyRGdzhGfzhGfvEdFMpI9UlSFhcN2yiBkaMaERs00GTYNoxqLf1Om3BP7Zafo87/LU/2AV/4M1Br5eY+Cb7+i7v0pg+XuiqoUUziwQsnIErXlC6RxB5y7+mTy97iI92SW6vRUC3hcEUzIhx8HvThOanqdvOk84M0/Y9hgwPSLmHQanBFLwh00+fbbByItNRgsFxspFRivbfF7c4rPNAiObBW5trpN89iPJ549JvnhCfHudW1sFEuUtxqtF4tUSH689JCrbSMPL93EPK7hHZdLHJTInZazTV4h6DXG4j/VmH/OkgnFUwqiX0d9WMc52EGe76H/uoL2rYPx1QOLRt0RvxpFuKCn04yLisIioX4yK6EcVtONXqH9UUOsVtHoJ7XAbtV5EOS6iHJWQj0vIp1VSp1Xk8xo3nz4iNmUh3dA1tAvJSQ39aBe9XsN4s4t4V8V4W0G/4HQH9XwX9byGclZD/Q/lfA/lbA/57zpjD1eJDn2CNCyn0A8KiMMy2ustlL0N5IN1Ur9vkLrI/ZdM1X5jYudXJirPmSj/wnjxZxKFn4hvPGHs5WPiG08ZWVkkNjTMP1qtDyzyxD7KAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="서비스 레이어 특징"
+        title=""
+        src="/static/a66f34cd9d85cf9fe15c230043344042/fcda8/2018-07-29-23-50-26.png"
+        srcset="/static/a66f34cd9d85cf9fe15c230043344042/12f09/2018-07-29-23-50-26.png 148w,
+/static/a66f34cd9d85cf9fe15c230043344042/e4a3f/2018-07-29-23-50-26.png 295w,
+/static/a66f34cd9d85cf9fe15c230043344042/fcda8/2018-07-29-23-50-26.png 590w,
+/static/a66f34cd9d85cf9fe15c230043344042/efc66/2018-07-29-23-50-26.png 885w,
+/static/a66f34cd9d85cf9fe15c230043344042/c83ae/2018-07-29-23-50-26.png 1180w,
+/static/a66f34cd9d85cf9fe15c230043344042/ac307/2018-07-29-23-50-26.png 2058w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<ul>
+<li>어플리케이션의 경계</li>
+<li>서비스 시작과 끝은 트랜잭션의 시작 끝을 의미한다</li>
+<li>데이터를 준비하고, 도메인 로직에 위임한다.</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c414f4438c5fa2c5a4855923f5ca389d/92bb4/2018-07-29-23-52-38.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 64.86486486486486%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAADLklEQVR42jXQbU9bZRjA8fMpzGayOBYJyMKU2dF1hfmQtVBoe55PH05bHg4iMAya+MZXRl1MTIyZmojJ5mBtOV1PWzrW0q50sI1zmB/rb05xL37Jdb/557pu4bqS4qNcnmtZk2u5PGN6ijE9zXhhgfEVi4m76wxLCqPWMiPfbjH0zVdc2drgvfUveCeT5oJucFE3uJDSuWgYCB+KCuNZk6v5PGP5Ah+kTUYzWUZyOa6urzK6ucaItczw6grDWxu8//UGVzbXGLq7xrvWEpdyOS4tL3I5nWFINRCmtjaZL24T3fmdSPFPotW/mXG2iTp/cae2TbTxgOjBQyLNB8y0dpg92CHSfEj04BHzrRKx1i6xw8fEOkXm+jZC5LefSJ0dIHfKKP0K0kkV8WWTxFGTZK+O1LMRe3skOyUS3RKJdpH4sU3irEbCqxH3HOZ9rkPcdRBm7t8j5e2jNHfRumXUbgWp20Bs1ZFbNkqriNwuIR2WkDslJN9JBclzEL0qoueQ9LkOydMaQvSPn8l6TfTOHsbxE/SejdYpoT0vo72sor12UE9rqP82UN80UN40kL0asusgudVzpw7igB+8f4+su49+UMTo2aSeldHbZbSejfqqinJWR/HeqiENQv/HTt/GakivHcRXDsLsrz+SPnuK1q2g9aqovfMt1U4Z1d+0b6P2bZTeHkrfRu7vDU6Xj2yk52WkbhnJn/2/PnmCEPvle8yzNpl2nVS3jtGrYZxUB3SfVz/n1tDcOppbQz11UN06qttA8RrIbn1A8hoIsz98R8Ztku5WSPUrGMcVtGMb7YWN+mIP9aiM7OuVkLtFpMNdpMPHiO1dxNYu4rMdkk8fDST2/0H4RNH57MtVwkt5wisWIcsitGIxubpCcGmJ4MIiAWuZQGGBQL7Ax6ZJUNYIJmUm4yKT0XmCd2LciMwRiCURbkfmmBZ1QrNJboo6N9J5JhaXmLAsrpsFAmmTYK7AZCpHwPSji9yUDYKiRkjSuSWeCylpggkF4fbnEabjMtPpHFP5RcJmgZCZZ9oscEtUCSclPs3mmNIzhJMqU2qKsJEdxMI+/61nCatpgnGZ/wCKL2iIaGWg4AAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="트랜잭션 스크립트 예"
+        title=""
+        src="/static/c414f4438c5fa2c5a4855923f5ca389d/fcda8/2018-07-29-23-52-38.png"
+        srcset="/static/c414f4438c5fa2c5a4855923f5ca389d/12f09/2018-07-29-23-52-38.png 148w,
+/static/c414f4438c5fa2c5a4855923f5ca389d/e4a3f/2018-07-29-23-52-38.png 295w,
+/static/c414f4438c5fa2c5a4855923f5ca389d/fcda8/2018-07-29-23-52-38.png 590w,
+/static/c414f4438c5fa2c5a4855923f5ca389d/efc66/2018-07-29-23-52-38.png 885w,
+/static/c414f4438c5fa2c5a4855923f5ca389d/c83ae/2018-07-29-23-52-38.png 1180w,
+/static/c414f4438c5fa2c5a4855923f5ca389d/92bb4/2018-07-29-23-52-38.png 1824w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<ul>
+<li>절치 지향이 되면 fat 서비스가 된다. 좋은 서비스는 thin 서비스</li>
+</ul>
+<p><a href="https://youtu.be/26S4VFUWlJM?t=55m37s">https://youtu.be/26S4VFUWlJM?t=55m37s</a></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/426743ecfd6dd0a1e9e60d6afd34d599/e2cbf/2018-07-29-23-53-38.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAACiUlEQVR42h3QXW8SaQDFcb6ItrrStcW0FIEyM8/DTKvGjVG3L1JmgHlhYIYZWl6EUiilL9HdxBp0d5ts9mazbowXfsu/aS9+F+dcnIuTyOpPUbwGmb0y2apNxvZYM6vkgoC0V2etapMOQ9bPJyT7Xe7UfRaaTRYcj8VbLguOy2LF5l7FIZEpPmV95w2rZpVVy2bVqpGq2CxbNR46HkuOx4MoJDnosBC3uOP73G00WKw53Ks3SO6aPChVuF91WNopk8gqkjX9GY+ev2Tll9csb5f4uVwl1Y5ZHvdZOeqxNB7w08WI5HRIcjYkNeiQOmxzPwpYLlms7Jk8LFVJ3QyKZ89Rt3dRrSqFmku+HpAPI9ZPjkj/fkrmYkJmdszj4wGZ8YD0xZj85Ijc8C3ZfhfF9VEcH6UVka95JIr7FkatxmZ8gH7YQe/1kd0uShSjtVpoUYSI24hWjHbQRYRtNsKYfBij1jzkfhlpmeiuizQrJGTZo1hybslynZssy+6t4r6LcEJUO0R1mhQaTZSehzbyEUMPcWgiIxP9oIEa2sjIIWH8uo+MxmgX14jzP5HTj2yVHIzdKobpo579gXI6R1Z8NL+JetJCn88RV59RZlPkKCT34Qvp375QmF6R2HyxjbFjsWmHPAk6GHs1jFdv0F+V0F+WMNwWhhMg9myU6AT1bZ/Cp3/ZuP5O4f3fFIcdCp/+J/vxK/nxBxJPrAab8YStaMRW7wyjPaE4fIfsnCIH7xC9GaI7RZ1cIZptZGAh5v9QmP9H7qaL66h/fSX/+RuPR1ckDDdG9i+R7Qmif4nozNCG7xGdU7T+OSI6RgsGqL1LpB9RDErIjot281lgIg4clMtrcmfXbHTP+QGKUZTZHkyUIgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="객체-관계 임피던스 불일치"
+        title=""
+        src="/static/426743ecfd6dd0a1e9e60d6afd34d599/fcda8/2018-07-29-23-53-38.png"
+        srcset="/static/426743ecfd6dd0a1e9e60d6afd34d599/12f09/2018-07-29-23-53-38.png 148w,
+/static/426743ecfd6dd0a1e9e60d6afd34d599/e4a3f/2018-07-29-23-53-38.png 295w,
+/static/426743ecfd6dd0a1e9e60d6afd34d599/fcda8/2018-07-29-23-53-38.png 590w,
+/static/426743ecfd6dd0a1e9e60d6afd34d599/efc66/2018-07-29-23-53-38.png 885w,
+/static/426743ecfd6dd0a1e9e60d6afd34d599/c83ae/2018-07-29-23-53-38.png 1180w,
+/static/426743ecfd6dd0a1e9e60d6afd34d599/e2cbf/2018-07-29-23-53-38.png 2138w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<ul>
+<li>impedance mismatch</li>
+<li>도메인 위주로 작성하고 데이터베이스를 구현 하면 어렵다는 단점이 있다.</li>
+<li>위처럼 클래스와 테이블이 일치하지 않는 현상도 발생한다.</li>
+<li>"객체 지향적으로 갈수록 갭은 멀어진다. 이를 임피던스 미스매치라 한다"</li>
+</ul>
+<p><a href="https://youtu.be/26S4VFUWlJM?t=56m36s">https://youtu.be/26S4VFUWlJM?t=56m36s</a></p>
+<ul>
+<li>테이블을 클래스로 매핑하는 데이터 매퍼 작성이 어려워 지기 때문에 ORM과 같은 기술을 쓴다.</li>
+<li>"클래스와 테이블의 간격이 멀어서 매핑하기가 너무 어려워서 JPA(ROM)을 쓰는 것이다."</li>
+</ul>
+<p><a href="https://youtu.be/26S4VFUWlJM?t=1h6m57s">https://youtu.be/26S4VFUWlJM?t=1h6m57s</a></p>
+<ul>
+<li>트랜잭션 스크립트를 수정 할 때 최대 단점은 도메인이 코드에 암묵적으로 녹아 있다.</li>
+<li>코드에 "중복할인"이라는 말은 없다. 그냥 N개의 할인이라는 코드가 있을 뿐</li>
+<li>(하나만 할인 => 중복 할인 허용 시)</li>
+<li>"우린 중복 할인 허용해" 라고 하지만 코드가 어떻게 돌아가는지 봐야만 알 수 있다.</li>
+</ul>
+<h1>스크랩</h1>
+<p><strong>OOP (객체 지향 프로그래밍) 프로그래밍 실습용 좋은 책 추천 부탁드립니다.</strong><br>
+<a href="https://kldp.org/node/123799">https://kldp.org/node/123799</a></p>
+<p>헤드퍼스트 책, 자바 swing을 이용한 GUI 프로그래밍.
+Smalltalk를 직접 사용해 보는 것이 눈에 띈다.</p>
+<p><strong>책 - 객체지향적으로 생각하라</strong><br>
+<a href="http://book.daum.net/detail/book.do?bookid=KOR9788956744612">http://book.daum.net/detail/book.do?bookid=KOR9788956744612</a></p>
+<p><strong>책 - 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴</strong><br>
+<a href="http://www.yes24.com/24/goods/9179120">http://www.yes24.com/24/goods/9179120</a> - 책<br>
+<a href="http://epicdevs.com/14">http://epicdevs.com/14</a> - 후기</p>
+<p><strong>한국 스몰토크 사용자그룹</strong><br>
+<a href="http://smalltalk.kr/wiki/doku.php">http://smalltalk.kr/wiki/doku.php</a></p>
+<p>최초의 순수한 OOP 언어 스몰토크를 배울 수 있는 곳</p>
+<p><strong>초보 개발자에게 권장하는 객체지향 모델링 공부 방법</strong><br>
+<a href="http://okky.kr/article/358197">http://okky.kr/article/358197</a></p>
+<p>덧글에 자세하게 예시를 들어주셨다.</p>
+<p><strong>Anti-OOP: if를 피하는 법</strong><br>
+<a href="http://meetup.toast.com/posts/94">http://meetup.toast.com/posts/94</a></p>
+<p>함수형 프로그래밍도 객체지향 프로그래밍도 분기문을 지양한다.
+추적하기가 힘들어지기 때문이다.</p>
+<p>디자인 패턴의 모범 사례를 보여준다.</p>
+<p><strong>캡슐화(encapsulation)를 위한 getter, setter는 정말 필요한 걸까요?</strong><br>
+<a href="http://qna.iamprogrammer.io/t/encapsulation-getter-setter/193">http://qna.iamprogrammer.io/t/encapsulation-getter-setter/193</a></p>
+<p>validation, lazy loading, 접근 권한 등을 이유로 반드시 필요하다는 의견과
+getter, setter 남용에 대한 이야기 등.</p>
+<p><strong>객체 지향 프로그래밍 연습하기 좋은 방법은?</strong><br>
+<a href="https://slipp.net/questions/475">https://slipp.net/questions/475</a></p>
+<p>여기서 객체지향 생활체조가 눈에 와 닿았다.</p>
+<p><strong>객체지향 생활 체조 총정리</strong><br>
+<a href="https://developerfarm.wordpress.com/2012/02/03/object_calisthenics_summary/">https://developerfarm.wordpress.com/2012/02/03/object_calisthenics_summary/</a></p>
+<p>9가지 규칙(체조)을 통해 객체지향을 실천하자는 내용이다.
+이론적인 내용이 아니라 실철하도록 상세히 작성되었다.
+어떻게 보면 극단적으로 제약하고 있어, 실제로 해보면 고통스럽기도..</p>
+<p><strong>스칼라 강좌 (11) - getter 와 setter</strong><br>
+<a href="http://okky.kr/article/342405">http://okky.kr/article/342405</a></p>
+<p>이 글은 OOP에서의 getter, setter 위치에 대해서 설명하고
+스칼라에서 getter, setter는 어떻게 표현되는지 보여준다.</p>
+<h1>우아한 객체지향 - 우아한 테크 세미나</h1>
+<p>slide: <a href="https://www.slideshare.net/baejjae93/ss-151545329">https://www.slideshare.net/baejjae93/ss-151545329</a>
+video: <a href="https://youtu.be/dJ5C4qRqAgA">https://youtu.be/dJ5C4qRqAgA</a></p>
+<p>어떻게 객체지향 코드를 작성할 수 있는지 설명하는 글.
+코드를 단계별로 개선해나가는 방식으로 설명해서 이해하기 쉽다.</p>
+<h2>때로는 절차지향이 객체지향보다 좋다.</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ff2b9e0f900c4fcc52e01b699ae708e9/41be6/woowahanoop-comparison-125p.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 70.94594594594594%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAADoUlEQVR42l2TXVCUZRTH36suGrtqbLywsRjGmmlsGi8SGyYKBlPCMTYmxb0IS0sIQflSgQEWcGEDStZ2WVxA28YAYeVzSaBYQLLCu+qimRyFTRBy93333e9Pfo3vZhc9M2eeM3Oe53fO/5znESzXrWgvmegdHOFcawcdlj66Bkcw9lvpto7R2HWFnuEJ+qbs9E3NYpmYxmQdxzI+hWXye+p7rlFj+prT7Z3cmF1EKDxby5u5aj7TNHPgxClyiyt4v6QSVXEleeU1pOR9TF5lHcfqdKhrtOTXt5JToeFotRZVeR1JB9Ukv/chz6bnUPVVD0JpQwsd3Rbu3lvmjz/vcs/hYPmvBzjW1lh5sMrK6hpOUaTReJmXcj9i19GTvHL4E3bm5LNTdYwd+z9gt7qAF7KOUGvsRSjRNDM2PUc8EsftdhMKBYnGIvx/9VpHSD1RxpGaFjILynm3uIrskmrS8ot4XX2SbRmqBLBU28bozBzhYJSNjQ1EUeSh8yFOjwtfyIfP71eArd1XKdLp8YhBVh1r+Hxe/vY4ldgFg4ln9u5DY+pFOH/RxOT8bWKRGC6XiOgWkf0ysXhMsUgkqlzSdpr5tKmdkC/M/eVlXOIj1sV1JVZ/0cBTr6VSZzAjVOnN2OZvsxmNIrndyB4ZWZaJRhOgWCym7DpzL6XtBsWX5EdIHpGgL5io3nyDLbvfoupLI0K13sS4fZFIKIrT5USSRNZd6/gDCanRf4Ft5h6yCssYnl3gmm2aFcc6juVVJFHk/soq18en6BkYRDjbpsdmvwWbm3g8stKbcDT83zCeAFu7unk5+zDFWj1FTe1Mzi+ysHSH+aUlphd/RX9lgNbuXoQzTTqGb84SDUVwuVzIsluR7PV6FdlPJDfoDeScqlD8sM+Pz+PGE5AIRPx4vWG+GbJy+sLnCCUNLYzO2JWDfr+PQDCAP+BTYJubj3sYT1R4uZtU9XF++OkXbHML2OzzTMzN8d2tRe789juaS0YqdF8gnGnUMTw1SzwcRxIlvH6v8lweAyORMMFgSAF2fdvPi5mHSH4nh6TMQ2xPO8Dzbx8kaZ+K5P0qtu7NoOaiEaHgfC1DthkIgyy5lR6GQiEFFg6FCAQCiSkbOnn61RS2p2WxdU86z6VksO2NTHakZ5OUns2WXXso07YhXO0fwv7jzwSDQVyiiChJSG4Jt+xWfo4oiUqCgdExjp+rpaRRp1hZc7sCKNe2Udako7Baw6DtJv8AvqRhUJ7iZvkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="object vs procedural comparison 125p"
+        title=""
+        src="/static/ff2b9e0f900c4fcc52e01b699ae708e9/fcda8/woowahanoop-comparison-125p.png"
+        srcset="/static/ff2b9e0f900c4fcc52e01b699ae708e9/12f09/woowahanoop-comparison-125p.png 148w,
+/static/ff2b9e0f900c4fcc52e01b699ae708e9/e4a3f/woowahanoop-comparison-125p.png 295w,
+/static/ff2b9e0f900c4fcc52e01b699ae708e9/fcda8/woowahanoop-comparison-125p.png 590w,
+/static/ff2b9e0f900c4fcc52e01b699ae708e9/41be6/woowahanoop-comparison-125p.png 638w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><a href="https://youtu.be/dJ5C4qRqAgA?t=4825">1:20:25</a></p>
+<p>두 가지 이유:</p>
+<ol>
+<li>객체지향 코드는 설계적으로 이뻐 보이지만, 주문 검증하는 로직이 분산되어 있어서 탐색하기 어렵다.</li>
+<li>주문 모델에 검증 로직이 있으면서 응집도가 떨어진다. 모델에 주문 처리와 검증 로직 모두 있다. 변경 주기가 다른 코드가 한 곳에 모여있는건 좋지 않다.</li>
+</ol>
+<p>절차적 코드와 객체지향 코드의 trade-off를 잘 고려해서 사용한다.</p>
+<h2>객체 참조 끊기</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cb9a22b4ba27a2f748119c2d06dd62c3/e9beb/woowahanoop-object-reference-91p.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 69.5945945945946%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAADs0lEQVR42o2SXUxTBxzF7+NelizbsrlkyZIlywKGLMZsITN+DLACDprCFBgfQYGFCTgBmXbMjw7EiQqIQCoIAgEhLtmUJSbbmNleTNT4wZyCAoX2tre9ve1tS1uoLbe/ZX3dy05ykpP/w/+cnBwht6ySnSVVZFfUklVRS25NI7u/bCSn5jD6g1+TW9eE4dA3lJ1oZ5/pHBUtHZSbzpLfdJKib9vYd6qT0pNn0TeeoKHTjJC0bRf7jxynrvUsnx06irGzj70Nzei+qKfudBelxhZy6ozkNZk4cOYix8wjNHb1s3FPJW/p9vJGWh5vZxbyynY9WbVGhOT0T3n5gy1s2JHDhh25vLk9l/dyimg630Fr/zDHzYMcMw/Sdnmc769M0DY0zqnBMUzmYVr6RzF2mfnu0gjNPQOUG00IKbsMHD1zmkuTk/RO/MDl61NcvTmN6pFwS3Yciogv7Ob/oK3XjJC6p4wFiyVxiK1HUVSRgUv9PHk6hyguIzmWUSQPStBD+EWYOCSoxePE43E0Lc66piV0S3cvwpbSag63d9E9do2eiR8xdQ9QUF2HJNnxeOzI8hKizYrFacHplQj5QwTVEOsxjWh0nWg0muC/aLnQg5BeWc8vf/7G84VZ5hYXmbE+JRyJEIvGcDhcqF4Ft+LCF1S5d/8uj+7NsBaIsOILEQiECYeCRNZWIa5h6ryAkFF5kNl5K4psx2Z7hk1cZFm2sCA+x6+qBP1BtKiWSHDr11tMT/+e0JHIGqFggCPtHRQ0NJN/oJH8mgaEbSVVPHwyh6Ks4HS5cTld2CUHDqeES5ZRPB4e3H2E5ZkVt8OL7PZhl2TcioIsy6SV7Of1rVm89rGOXVVfIWzWF/Hz9E1sooUFq5V5cYkF2xIW0YbN7sDrX6Gnr4/bd+/g8niw2u0si3bcHi/jP93g/UwDyfoi3snQk11dj/ChoZg7Dx4i2ZeYX5rlieUxfy3N8Hh5Bou4SGAlgD/gR9O0/8zk6vUbvJSSyruZ+byamoGuohbhI8PnSC6FWOQF4RUvYb+K6nejBJy4A058qgqr8cQDVfWhqu5Ef7ZlK1U1dWwtriR9Xw2pBeUYahoRktJ2U996houj1+gcnuDC6ATdo5N0DY3TNTRGx8AI7eYhzg2MMPP3Q2SniCTLzIqzTE1PEQytsB6LJQxN5zsRMgrKSNbp2aQvZHNeMZtyC0nJMpC8M4fktGySPskkRadno07PH7fvE1nTUDx+fAEfkWgkUUl4dTUx7N7BK/wDaVxWvN/MResAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="object reference 91p"
+        title=""
+        src="/static/cb9a22b4ba27a2f748119c2d06dd62c3/fcda8/woowahanoop-object-reference-91p.png"
+        srcset="/static/cb9a22b4ba27a2f748119c2d06dd62c3/12f09/woowahanoop-object-reference-91p.png 148w,
+/static/cb9a22b4ba27a2f748119c2d06dd62c3/e4a3f/woowahanoop-object-reference-91p.png 295w,
+/static/cb9a22b4ba27a2f748119c2d06dd62c3/fcda8/woowahanoop-object-reference-91p.png 590w,
+/static/cb9a22b4ba27a2f748119c2d06dd62c3/e9beb/woowahanoop-object-reference-91p.png 730w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/61ea494e19f9da9e50e530a42059e353/c6d67/woowahanoop-object-reference-uml-92p.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 70.27027027027026%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAADlElEQVR42i2RW1MTBwBG96lP7YwzWgUhKiAEEKhRSCEGWMKGzWXDkk2yYc095LIQQq7chIS7VVBbh6p1WrRP/ZunI+3DeThv35xPqLWOKbfPKB+/pnb2hv33n9h+9wHz6JzGm0tWT86pX1yycfGB5MH5NfHWK4zdU9LHFxTPL8md/Yq+e0rr098IHiODsrKO36whrawT22qz3NxnLlNCb7ZwxIuolRdozUOsoQxjhsmoUcSqZbBqaXqVGINaBot3GbXWQpBjOX4Ym+KhN8IDT4R7CyF6fMv0+g2swRSPIiuMGUUms1UcuTr29Ab2VJnHRpGn8RIDgThPDJMBNclSdQ9h/vkK3w3auDMtc9sp0+vVGdZS2J4XcOSr2FMlpgsN3JU9ZswmrvVtRvUsPy3nGE+ucV/W6FOW6ZSCqNUXCEqhgj3exL12jLT+kp+zTZ6maoT2PxA/vSJ29hXv1mvE8gH60WeKv/1D9OgzUu0ljuIucuUX4u1LPJVXhOothEijzXRmm0jrDxZKJ4wnK0wWdpjNbqPuXCKtHjKmm9gSG4jFFnP5XaTVNhPxCiNREzG7RbhyjJhqoK41EML1Np2in5HYOn2eMH2eIFZFp98b5HGyxqgWZySUwGasMKansQaiDKoG/YEolnmVG+NOOhwuvrdNXR8rhGp73H4mM6yv0uH00OFY4O6MF4voYzS2wYBPp98XwRbNsrT9luTJX+j7H5nN7zCkxnAVWoQ33zKT2UVdbSCopSY37XMMh03uTErcmhCv/aZdxBox6ZGWeCCpWP1RpPwuWvUUpXTEeCTH4KKBXNzD+NY43URdrSPIaZMbT2YYjph0PpPpdMp0zwWwuBTGElX6fToDfp1+v8599yIP3ItYXH66XQoWSaVrzseAT+PW1DzKWh3BnSxy27HARHaTR8EE1oDBcDCBLbqCs3SAM13mqZH7r+VSnEeLzxnyR+kW/fw4JdEnh5lYztGzoBH4tlDJlfFtnJM8vGJp+3fEjRO8O2/QT74SOvyCfnSFVDnD3XiJdvAn0aMrIodXTJuHjGeaBPc+kjv5QmTrPaHSJsKcnuLmuIu+eY0+ScMy6+OhrHFv2kfXpESn3cWdCZG7jgV6xAC9osJ9p5cOu4sup0y/tMSQHKbbIeNO5BFKO21mo0mUQplFs3qNN2MiJ/PI8SxuI4UvXUROFvBl1/Dn1lHyZbS1+v/UCJkVPIkcm2fn/Av9vjF7LGGCSAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="object reference uml 92p"
+        title=""
+        src="/static/61ea494e19f9da9e50e530a42059e353/fcda8/woowahanoop-object-reference-uml-92p.png"
+        srcset="/static/61ea494e19f9da9e50e530a42059e353/12f09/woowahanoop-object-reference-uml-92p.png 148w,
+/static/61ea494e19f9da9e50e530a42059e353/e4a3f/woowahanoop-object-reference-uml-92p.png 295w,
+/static/61ea494e19f9da9e50e530a42059e353/fcda8/woowahanoop-object-reference-uml-92p.png 590w,
+/static/61ea494e19f9da9e50e530a42059e353/c6d67/woowahanoop-object-reference-uml-92p.png 734w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><a href="https://youtu.be/dJ5C4qRqAgA?t=3867">1:04:27</a></p>
+<p>ORM을 통한 객체 참조는 가장 강한 결합도를 가진다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ef7980cdadd98e953f3f75638e68bcad/d0cc0/woowahanoop-weak-coupling-98p.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 70.27027027027026%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAADx0lEQVR42lWSW0wbBABF++GvGqPRD5wG5iJKFN2iAgYDjEEL0m4rfUBLKVRaSlkLBbpS2lHerzG3uWRD5CUf2ySaxX0giZnfRkQEshcU+uDRBYQAQ5BSjgE/1Jvc3OR+3NybXIGlxk1hpROlxY660onWUY+svAZLy+fUXO06pKX1CnXdgzT13qRt4Dbnr3ZTe6Of9sFvaOi7ibHtC+TVjTiv9yNIlqoQ683Iy6rJMlWQUVzOJ5pi8uxu5JUusq1OMkw28mvbUblayHd3ILM3oqvvpLj5MmesLmKVeiKECsRlTgRJMg3PxSYQlS4lUiQjUpjN0U9zicrM5XiOnvj8UtJM50kqruSUyU6q0cZxtYmYbB3vKg1EipS8p9BzTJKH2FyNIFGm4dnYBI6clBCRLOaNzBxipPl8qDFyxuamsO4i9ss3qLrShbaunVxXE+/nFnFCZeCjAgvHsnJ5+6yW10VKsg4CT2r0vBiXSpQo+7DdB+pSJLZrqBsGkF/oIrXUjrjCTZrJRlZVKzn1/ShcXyJ1XCdOU8pRkYxoiYqoTAUSSzUCoaGC5+PTePWUlCNCGe8o9IjMF8k0d5BUUEN0lpIYuY43T6tJMV4graQdifUSKfpGXksS81KiiIgUMS8kpJGuL0OgP5hhc6CtqcPY0InB3Uahw43BVYdIV4yiyomsog5VdQNKWy2nS6xIzTbExRYy9GYyis6RWXSONJ0JnaMewbcjI6yvenmyFCSwvMDc6gzh/T3u+5dp773F6PgUvsAK3sAi0x4Pj70BvItPmPX58Xh9zPp8eLxe5nx+hu/9hGBo+B4+7yK/Tzxi9NdxfpkYZX55gRlfAIPNgdHppKOnh9buPi71DtLQexudo4nOvkFaugdo7uql7at/1HX5GoI7Iz9ygN3dEHuhEOGdfcKhvUNv6O5dHk+PszAfwDu/iGfZw/ZfO8zNefkv9vf3D/XnsTEEX3/3PU+3tlhZW2N1fYO1jQ1W19fZ3Nqi59YQntkZVlaWCAYX8fqmCQaDbG5usr25w/bTHcLhMHt7e/8GirRG3hKeJSFHR4KqiHSjFZmtFmFJJYWuZvbDf7L6R4ClBS9T0+M8DDxgKbjI7kaI0Fbof03HJycRxEkUPBN9gpc/TueVwwtkESWUHn4zXp7Pb5MPGR1/xNjEfaYeTDPj9zPrn8cTCODxB/D4/Mz4/Mz557kz/AOCAouNRLkGkc5EZpEZYaGJVPVnpORoSZbnIdbqUZRYkBrMyExWsk1W5KUV5JbZUZXZUZfbUVtsSPWlWOtb+Bvg9uRRV9NbkQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="weak coupling 98p"
+        title=""
+        src="/static/ef7980cdadd98e953f3f75638e68bcad/fcda8/woowahanoop-weak-coupling-98p.png"
+        srcset="/static/ef7980cdadd98e953f3f75638e68bcad/12f09/woowahanoop-weak-coupling-98p.png 148w,
+/static/ef7980cdadd98e953f3f75638e68bcad/e4a3f/woowahanoop-weak-coupling-98p.png 295w,
+/static/ef7980cdadd98e953f3f75638e68bcad/fcda8/woowahanoop-weak-coupling-98p.png 590w,
+/static/ef7980cdadd98e953f3f75638e68bcad/d0cc0/woowahanoop-weak-coupling-98p.png 732w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>객체 대신 ID를 사용하면 결합도를 약하게 만들 수 있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7d6d363bd325fb53a63a87598044d8d3/d125e/woowahanoop-how-separation-99p.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 69.5945945945946%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAADsUlEQVR42j2RWU9bBxCF71Oeq1SiSdTUihJIUCWWiJQAAWxiwAbb2CwGr4D3fbm+tsGAsdljO2ZLMVEpCSkQaNaHbkqCWrWV+rO+Cir1YTQ6R6Pz6WiEVH6F4Owi4fwjpLUyy7v7zGw+RSpukyhukShtk16vkN09YPPkHaXDV8zuPGNp75CV5ycs7B+zenBKenuP4g+vEDRWF912L8rJICpPFMfsEuZUll5PlM5zzyeii0zTF8kQKjwh+riCbb6Aa+Ex1tkVHnpERlJ5FB6RifkCgtrm4VJNI18qNFxVaC/mRt8oMpWRm1oL1Xo7dSYv9yYi1FsC1Jl9NJh9VOsd1A77kPWOUTvoQqY2MRDLIKgnfNSobcg9c7S7ZmgZF/l62EGTPUSnP0WrS6TDn6InnkUZmUElznPXEqDd5UYVcVM3PEqzzcot7RiG+ByCWcoibr0jsfGWePk10eIRrY44952xixB5YIp2r0SLI/Z/eN2YD2Nah3ehA5WnA0u6jWptP5rwNIJ5ahF7vkKkfEh04yX+0gsaTV5u663c0VupHrBwx2Cn1jBOw5gHbSSDLj7LgJijzRZGPhmkyxmmxx3FnllAMKUXaXelGEgsMZguoE+uYEiuMpRaRZ9YwjRX5oEzQb3JRctkhPCjrYsPhx9t4lss4M4uo/XHaRyyYUnNI0SLu0iVX8jsfSL99APz+x8onf5N5ruPSJXfyHz/OxO5HW7rRmmdCNITmkYVmkLhFmm2eKkfsnF3yM7lJjlqVxghXqwQKByRXH9JtHhIrHTI6vEfxDde41t+RrhwhDG5xjV5P5Nzy0jlHdwLRQIrZcTiFu7cGpZ0juYxB5pAAsGfKyHt/ETh5E9yz8/IPvtI/uCM3MEZ888/sXz0F961fa4rdbTb/YzEM/T54nQ5ghdb6QxR3Td8AdQFJQR/vkyk/IbMt++Jr78msX7Kxpt/mN79mVDxlMTmeyyZMo3DdtqsHuoHzDTozdTrxrjyoJeqtl5q+o1c6+xD6xcRTLEZHAu7xMqHREovkJ68Irv/K1OVt4jrx6S2f2QwsYzcGcI2nUcbENGHkhiCEvUGC7dUw9RqRrmu0KA/r6ww2rlUew+ZUo+se5AbvUNUq0eQden4Sq7halsPVfcfcqW1m6qWbqpae7j8TRefNcn5oqUbWZeWm8oBPm/qoGfcixCbW0RpcaL3xTCc030x+h1++sY9qK1Oei2TaM/1hA+dJ/LfnT+OMZxkJCxhDEuMBkV0Dj9Ta4/5F+GlarJcq24lAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="how sepration 99p"
+        title=""
+        src="/static/7d6d363bd325fb53a63a87598044d8d3/fcda8/woowahanoop-how-separation-99p.png"
+        srcset="/static/7d6d363bd325fb53a63a87598044d8d3/12f09/woowahanoop-how-separation-99p.png 148w,
+/static/7d6d363bd325fb53a63a87598044d8d3/e4a3f/woowahanoop-how-separation-99p.png 295w,
+/static/7d6d363bd325fb53a63a87598044d8d3/fcda8/woowahanoop-how-separation-99p.png 590w,
+/static/7d6d363bd325fb53a63a87598044d8d3/d125e/woowahanoop-how-separation-99p.png 737w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>결합도를 낮추고, 관련있는 객체끼리 packaging 한다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2fb2f1495dce4816de4b1569af148695/01645/woowahanoop-id-reference-uml-105p.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 69.5945945945946%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAADvElEQVR42h2Ta1OSCRiG35/RbDll2pq5mrq1u7SZGiggoqAIiPICYh4SQRBEeCUrOVieFVQ8pKm5HkjN2Kyt2cPsh77s/qZrZ/lwz3PP3Nc888wzcws1ejMPjDbUThdysQ9tvw9VzxC1Dheax360rgA6TxjLWAKzFKddStDojdAwGEYXeEr7k0kMo1GUgyH6EgsIhfcUWIclpPll2rwhnqbWccdn0A4MYw48wS5NYI/E6YnOElhI0xufp6jVQUGTlYKmTi7XtZLfaOFSXSu1j7wI12Ry8qpUFDd3UNRkoURvpdzkpNmfoCu+jj2axh5by+nxzA69U1t0T25ij65hi6axRBbpiq1hnVilN7GCoHB40XimaR1ZROl6gT3yEmMwRvfkIcGVC1yzp0S3fyN1/i/h9Edir78gpT8irWZJvfuHsY3PTGx/wTt/Rmwri+Ce2ia++wejqVOerV/QE1uj0tJHT3wT/8IR7qk9wiunvDj4m/DqGeHUMYGFA4LJYyZ/+SuXhZJHDE2/YWzlEEE1IGEem8M1vYU4scLDxxI39SI/2j00+59T2x/ijtWNzO7FmdjDt3iGa+6U5uGXVBgf0TG+gW/pnPbIBi0eCaFEL3KtXo/OHeS62sgNjZEyg40irRnLyDgyWz+3WkR+sA3wsGcEebefKtsQZTor+SoDtzQW7pl7KFIaqbX2IpTqOmkJvCC2+5nh5AnBlVNGlk8ILJ/xbOuC8FoWaT1LZPNXgun3SJsfCKyeE974QGjtPd6lTI4fWswQSh0gPBBdOOP7+Jbe45o+ZmLrE7OZr3jmzwgkzxmcyTC2es5c5iv+ZJZI+gO+xXcMzx0z//Yro6sXBFJZBqYzPF8/QbhapULdGyaUPGZoaif3+CevLvAvHOCb28c3+4bR5bc83f5EMJnBN7OLd2aX4bl9xl99JLB0lGPcUzuMLu0h5N2vp6BOhxiOclNnpVgn8p3BwW1jNxWmbn52eLjb0Ud5m4MSnci3DWYKVUauynV8U91IvrKN0hY711VGFM5BhMLaRkq0FpS9fm4bnFSYnVQ/8vCT2Eel0cH3JgeVbTZkYh+3mszkK5pzB+RVq7lSo+F6vZ4b6lYuV6uR2/oRbNI89ug+9uevcU7sUNPl5UaDkUJlC/lyba5FV2s05Mubcsv+V161hisP1LlZWK/nptrAJZmCKrMDYXz5kNmD34m9yrJ0/CedwQTFikbK1S2U1mkpVWhyvkypp7LJxB1dO3f1FmRtIjKDyH2Tjao2kQq1HtOAj/8AZ4t9yYOG/fEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="id reference 105p"
+        title=""
+        src="/static/2fb2f1495dce4816de4b1569af148695/fcda8/woowahanoop-id-reference-uml-105p.png"
+        srcset="/static/2fb2f1495dce4816de4b1569af148695/12f09/woowahanoop-id-reference-uml-105p.png 148w,
+/static/2fb2f1495dce4816de4b1569af148695/e4a3f/woowahanoop-id-reference-uml-105p.png 295w,
+/static/2fb2f1495dce4816de4b1569af148695/fcda8/woowahanoop-id-reference-uml-105p.png 590w,
+/static/2fb2f1495dce4816de4b1569af148695/efc66/woowahanoop-id-reference-uml-105p.png 885w,
+/static/2fb2f1495dce4816de4b1569af148695/01645/woowahanoop-id-reference-uml-105p.png 1091w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>같은 도메인(패키지)는 객체 참조, 경계 밖에 있는 도메인은 ID로 연관 관계 가지는 것도 좋다.</p>
+<h2>참조를 끊고, 로직 옮기기 (컴파일 에러!)</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cd75b68fa8c4a120e3a99ed788966acb/2c95d/woowahanoop-object-reference-compile-error-114p.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 69.5945945945946%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC3ElEQVR42oWS3W/TVhiH/R/tdrdoG2jSpO6iwICVbWKsoDSkJKMl7ShZgRXG+JqGBpvEza62adqfsAvupmlqEU7ShsZJ3aR2/O3YTuOPPAgnROmEtCM9eu0jn0fv7/gVTp7LcXhmllP5ZbLXvuXjxavMXP6a7Dd3OX7pCm9Nf8Lbp2Y5PFfk/dwyR7JF3stc5tDsl+n71OIqH+RXOHTuEvl7jxHePTrD6cIi1x8+4snvf/Lwl1+5+fgJP//2B8W7P/BhpsDJhRXOlG5xdvV2yhfXvuOzlTU+/eoGp5euc7Z0i3c+v8BUrohwvlhiRxZp7TaQ5F2qe1Xsrk2/3yeJY/53DQZpeSaKHMstIORKa2xvq1TKLZ4/r7G+sY5pmxPfD0YwYnCAOEmGwkqVE/kiQmHtDoZlIe3ISM0mtXqDmiwRJdF/hG9mLCyX+Wh+AWH5wSMU3adat5CaFnVJZaep4Dg2URSSjA4cTDmUvVrJhPBYtoBQfPATYRiy17KQtgzaDY12s8VOs4EsNzENA8VVqFt1ZFtGdmT8fX8snhROZy4iLN3/kTCKMDQXpaagtVrobRnP69LrBfSCAD/wsAMLwzcwAxO/7zMYJAc63BBFps9fQFi4/T1RHOGYXQxJwZHbOO0WTtfFC3yCXg9/P0Dvm8hei5bXpuN1iOPoDZHzCPOrN+mHMbZioYkNDElC2aywVxZRqxU6W1XUzQra5hbGVg1P3iUOw3HkeDRaqXAuj5AtraWbrtPDVH1UTUVsbFBuPkvr+vY//Lv9N/KeRPuFTEdpY5p6ereWZaZX8zry0cz8sMP9/RDDcNENFU3v0NHUFN3QcH0X3+3hdDwc1aNrecRJnEZ9xbhDUeT43EWEueVVojjG97x0VLqui9ft4th2+lOG2WCQDIaMxmVyhF4Lp87MIhSu3uBFXcJ2HEzbxrJtTMsaV90w0M1JzOGeMXzWdB3f9/nr6VMyS1d4CWgLzcWDp0ozAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="object reference compile error 114p"
+        title=""
+        src="/static/cd75b68fa8c4a120e3a99ed788966acb/fcda8/woowahanoop-object-reference-compile-error-114p.png"
+        srcset="/static/cd75b68fa8c4a120e3a99ed788966acb/12f09/woowahanoop-object-reference-compile-error-114p.png 148w,
+/static/cd75b68fa8c4a120e3a99ed788966acb/e4a3f/woowahanoop-object-reference-compile-error-114p.png 295w,
+/static/cd75b68fa8c4a120e3a99ed788966acb/fcda8/woowahanoop-object-reference-compile-error-114p.png 590w,
+/static/cd75b68fa8c4a120e3a99ed788966acb/efc66/woowahanoop-object-reference-compile-error-114p.png 885w,
+/static/cd75b68fa8c4a120e3a99ed788966acb/2c95d/woowahanoop-object-reference-compile-error-114p.png 1099w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><a href="https://youtu.be/dJ5C4qRqAgA?t=4715">1:18:35</a></p>
+<p>모델 내에서 객체 참조로 구현했던 로직은 더 이상 사용할 수 없다.</p>
+<p>각각 다른 도메인의 객체를 조합해서 비즈니스 로직을 작성할 새로운 객체가 필요하다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5cdb0e6a4780a501f4d54895276380e0/67fe0/woowahanoop-validation-logic-119p.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 70.27027027027026%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC3ElEQVR42oWS62scZRTG5w/zi6CCoEhEBL+IIl6ghV1tm6RI06qVaE2grSbGZN22cc2FWixIoYrg/+Dli0l2Z+eys7uz+85lZ965z09mYiDEgi8czvn0e8/zPEd5/fwHzL3b4LXmZV5tLvJKc5GXG5d57u0mc41FXjx/ieaN21y8tcmbH6/wzLkFnj23wNPvXOD5xoe8NP8RL7y/xFNvNbmycQ9l7o33WNn4hrs/PODO/R9Z7+yxtf+A29u7PPz1N9Y6++w9+pmdR7+wcf8hn2ze4/rWNtfW2yyttbi61uLa+rdcXPmSC5/fRJn/9AtUdYipO4yGE6yBgSOm5GlCGsfEMkQGATPPJZGSPI7JkxiKjLOvvbePMr+8gj0JMAyBrptouk5fG2OaIzRdo9froar9ev7bPOBgcIjwBWmaUZQlZVnWsCRNae3uoyzcuEmcJNi2i6aNMAwDVdUwDBPLsrCsAYapo45VLN9iGAyxZhZRFDHzZriue1yex9bOLsrVr1qEMmEycbCsIaPRiPF4XFcFHI0EliWwp3ZdEzFh7I4xPRPDNRCBoMgLojhms/M9SmVuEEYMh9V2et0rmG3bDAaD+hPdMJnYE7I0gxKKoiAvcvIypyiLWnKWZSfAFsKZ4ToS153hOA6OEHWvpHiuh+95+L5PEATkec6TXpqmbH7XQbly62tcT3JwMKTb1eh1D+l2j9C0Pr3+EX+pf/KH+jtDYZEkSb1ZyXEY5alQ0pMN55dXCWWEEFNse4yYTuqz8X0PxxHIKHziRieg08CtCnhpeZWpqNKSeJ5/LNlx8Dy3hrr/Sq/lex5hGNZ+ncD+A1z4bBXPjzg6tOjX56LVcgemgTUYoPc1DE1D1/q1itM+ngW2OjsojaXrhLIKJCYIYtI0qb2qTI6zCD/1kZn8f8lpylq7jbLW3mY2C5EyI4piwjBAypBISoI4QEiBH/n1qZwN4vRc2fDT48f8AymV4+4dXhqsAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="validation logic 119p"
+        title=""
+        src="/static/5cdb0e6a4780a501f4d54895276380e0/fcda8/woowahanoop-validation-logic-119p.png"
+        srcset="/static/5cdb0e6a4780a501f4d54895276380e0/12f09/woowahanoop-validation-logic-119p.png 148w,
+/static/5cdb0e6a4780a501f4d54895276380e0/e4a3f/woowahanoop-validation-logic-119p.png 295w,
+/static/5cdb0e6a4780a501f4d54895276380e0/fcda8/woowahanoop-validation-logic-119p.png 590w,
+/static/5cdb0e6a4780a501f4d54895276380e0/efc66/woowahanoop-validation-logic-119p.png 885w,
+/static/5cdb0e6a4780a501f4d54895276380e0/67fe0/woowahanoop-validation-logic-119p.png 1101w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>각 객체를 조합해서 검증 로직을 담당하는 새로운 객체를 만든다.</p>
+<p>이런 절차지향 코드는 한 눈에 볼 수 있고, 검증 로직을 변경하기 위해서만 수정하기 때문에 응집도가 높다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/d0e348cd-249b-5b8e-84b5-5470131f70ac/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-81fc23a5f8ac4aaeaf7f.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-89d74e54a256880c51c3.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-fadef40cbd25a864f6c5.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="c536f49ab3deb71fe994";</script><script src="/webpack-runtime-272c6e61ad500c88b893.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-81fc23a5f8ac4aaeaf7f.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
