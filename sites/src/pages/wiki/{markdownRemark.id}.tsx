@@ -4,8 +4,7 @@ import { graphql } from "gatsby"
 export default function BlogPostTemplate({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { id, tableOfContents, html } = data.markdownRemark
-  console.log(data)
+  const { tableOfContents, html } = data.markdownRemark
   return (
     <div>
       <div dangerouslySetInnerHTML={{ __html: tableOfContents }} />
