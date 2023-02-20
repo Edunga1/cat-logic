@@ -71,7 +71,7 @@
 
 - [X] Use gatsbyjs as static site generator
 - [X] Use npm gh-pages to deploy static site to github pages
-- [ ] Use github actions to automate deployment
+- [X] Use github actions to automate deployment
 - [ ] Isolate gatsbyjs project as possible as it can be
 - [X] Resolve image inclusion issue
 - [ ] Resolve wiki path name issue
