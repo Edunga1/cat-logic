@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import { graphql, HeadFC, PageProps } from "gatsby"
 
 const pageStyles = {
   color: "#232129",
@@ -12,15 +12,25 @@ const headingStyles = {
   maxWidth: 400,
 }
 
-const IndexPage: React.FC<PageProps> = (
+const IndexPage: React.FC<PageProps> = ({
   data,
-) => {
-  console.log(data)
+}) => {
+  const { edges } = data.allMarkdownRemark
+
   return (
     <main style={pageStyles}>
       <h1 style={headingStyles}>
         WORK IN PROGRESS
       </h1>
+      <ul>
+        {edges.map(({ node }) => (
+          <li key={node.id}>
+            <a href={`/wiki/${node.id}`}>
+              {node.headings[0]?.value ?? '(Untitled)'}
+            </a>
+          </li>
+        ))}
+      </ul>
     </main>
   )
 }
@@ -28,3 +38,18 @@ const IndexPage: React.FC<PageProps> = (
 export default IndexPage
 
 export const Head: HeadFC = () => <title>Home Page</title>
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          headings(depth: h1) {
+            value
+          }
+        }
+      }
+    }
+  }
+`
