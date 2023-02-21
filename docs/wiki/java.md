@@ -1,5 +1,32 @@
 # Java
 
+# 개념
+
+## Servlet Container (Web Container)
+
+https://en.wikipedia.org/wiki/Web_container
+
+> A web container (also known as a servlet container;[1] and compare "webcontainer"[2]) is the component of a web server that interacts with Jakarta Servlets.
+
+웹 컨테이너는 웹 서버의 컴포넌트로, Servlet을 실행하는 역할을 한다. 서블릿 컨테이너라고도 한다.
+
+톰캣 서버도 Servlet Container이다.
+
+Spring Boot에서 제공하는 `TomcatServletWebServerFactory`를 사용하면 쉽게 컨테이너를 만들고, 시작할 수 있다.
+
+```java
+public class Application {
+  public static void main(String[] args} {
+    ServletWebServerFactory factory = new TomcatServletWebServerFactory();
+    WebServer server = factory.getWebServer();
+    server.start();
+  }
+}
+```
+
+ref. [TomcatServletWebServerFactory](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/embedded/tomcat/TomcatServletWebServerFactory.html)
+ref. [WebServer](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/server/WebServer.html)
+
 # Jakarta EE (a.k.a. Java EE)
 
 https://www.samsungsds.com/kr/insights/java_jakarta.html
