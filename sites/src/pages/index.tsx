@@ -25,7 +25,7 @@ const IndexPage: React.FC<PageProps> = ({
       <ul>
         {edges.map(({ node }) => (
           <li key={node.id}>
-            <a href={`/wiki/${node.id}`}>
+            <a href={`./wiki/${node.id}`}>
               {node.headings[0]?.value ?? '(Untitled)'}
             </a>
           </li>
