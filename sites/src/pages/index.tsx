@@ -11,20 +11,26 @@ const headingStyles = {
   marginBottom: 64,
   maxWidth: 400,
 }
+const listItemStyles = {
+  listStyleType: "none",
+}
 
 const IndexPage: React.FC<PageProps> = ({
   data,
 }) => {
-  const { edges } = data.allMarkdownRemark
+  const { edges, totalCount } = data.allMarkdownRemark
 
   return (
     <main style={pageStyles}>
       <h1 style={headingStyles}>
         WORK IN PROGRESS
       </h1>
+      <h1>
+        {totalCount} Pages
+      </h1>
       <ul>
         {edges.map(({ node }) => (
-          <li key={node.id}>
+          <li key={node.id} style={listItemStyles}>
             <a href={`./wiki/${node.id}`}>
               {node.headings[0]?.value ?? '(Untitled)'}
             </a>
@@ -50,6 +56,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      totalCount
     }
   }
 `
