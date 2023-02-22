@@ -1,6 +1,4 @@
-# 개요
-
-2016-08-27 GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"에 대한 내용입니다.
+# 2016-08-27 GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"
 
 # Slides
 
