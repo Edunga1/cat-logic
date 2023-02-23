@@ -79,6 +79,17 @@
 <li><a href="#build-integration---how-to-do-90-of-what-plugins-do">build integration - How to Do 90% of What Plugins Do</a></li>
 </ul>
 </li>
+<li>
+<p><a href="#promgramming-languages">Promgramming Languages</a></p>
+<ul>
+<li>
+<p><a href="#typescript">Typescript</a></p>
+<ul>
+<li><a href="#filetype-%EB%AC%B8%EC%A0%9C">filetype 문제</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul></div><div><h1>Vim</h1>
 <p>vim 보다 <a href="https://github.com/neovim/neovim">neovim</a>.</p>
 <p>My <a href="https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc">.vimrc</a></p>
@@ -381,7 +392,25 @@ vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickf
   </a>
     </span></p>
 <p>다만 기본 제공되는 것은 아니고, 플러그인 같아 보인다. 문서에는 <code>QuickfixFormatter</code>에 대한 내용이 없다.</p>
-<p>ref. python traceback을 quickfix와 연동할 수 없냐는 질문: <a href="https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks">Quickfix support for Python tracebacks</a></p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/f3cef199-75c0-54c2-a582-b519e642d450/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>ref. python traceback을 quickfix와 연동할 수 없냐는 질문: <a href="https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks">Quickfix support for Python tracebacks</a></p>
+<h1>Promgramming Languages</h1>
+<h2>Typescript</h2>
+<h3>filetype 문제</h3>
+<p>typescript language server에서 JSX 문법을 확인하지 못한다면 파일 타입을 확인해보자.
+<code>:set ft?</code>로 확인했을 때 <code>typescriptreact</code>가 아니라 <code>typescript</code>면 문제가 있다.</p>
+<p><code>:set filetype=typescriptreact</code>로 변경하면 JSX의 하이라이팅이나 타입 체크가 정상적으로 동작한다.</p>
+<p><code>.vimrc</code>에 filetype을 변경하도록 설정하자:</p>
+<pre><code class="language-vim">" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+</code></pre>
+<p>ref. <a href="https://github.com/peitalin/vim-jsx-typescript#vim-jsx-typescript">https://github.com/peitalin/vim-jsx-typescript#vim-jsx-typescript</a></p>
+<blockquote>
+<p>Changelog: filetypes were updated from typescript.tsx to typescriptreact Please set filetypes as typescriptreact, not typescript.tsx as in prior versions in your .vimrc if you have any issues</p>
+</blockquote>
+<p>ref. <a href="https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-589954199">https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-589954199</a></p>
+<blockquote>
+<p>This brings a new problem. Typescript language server excepts from a typescript file to not have JSX in it. Which means that &#x3C;> is considered a type assertion, JSX is not recognized as JSX but as regular Typescript syntax and the list goes on.</p>
+</blockquote></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/f3cef199-75c0-54c2-a582-b519e642d450/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
