@@ -303,3 +303,26 @@ vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickf
 다만 기본 제공되는 것은 아니고, 플러그인 같아 보인다. 문서에는 `QuickfixFormatter`에 대한 내용이 없다.
 
 ref. python traceback을 quickfix와 연동할 수 없냐는 질문: [Quickfix support for Python tracebacks](https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks)
+
+# Promgramming Languages
+
+## Typescript
+
+### filetype 문제
+
+typescript language server에서 JSX 문법을 확인하지 못한다면 파일 타입을 확인해보자.
+`:set ft?`로 확인했을 때 `typescriptreact`가 아니라 `typescript`면 문제가 있다.
+
+`:set filetype=typescriptreact`로 변경하면 JSX의 하이라이팅이나 타입 체크가 정상적으로 동작한다.
+
+`.vimrc`에 filetype을 변경하도록 설정하자:
+```vim
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+```
+
+ref. https://github.com/peitalin/vim-jsx-typescript#vim-jsx-typescript
+> Changelog: filetypes were updated from typescript.tsx to typescriptreact Please set filetypes as typescriptreact, not typescript.tsx as in prior versions in your .vimrc if you have any issues
+
+ref. https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-589954199
+> This brings a new problem. Typescript language server excepts from a typescript file to not have JSX in it. Which means that <> is considered a type assertion, JSX is not recognized as JSX but as regular Typescript syntax and the list goes on.
