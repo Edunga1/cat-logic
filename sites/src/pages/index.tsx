@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql, HeadFC, PageProps } from "gatsby"
+import WikiList from "../components/WikiList"
 
 const pageStyles = {
   color: "#232129",
@@ -11,14 +12,16 @@ const headingStyles = {
   marginBottom: 64,
   maxWidth: 400,
 }
-const listItemStyles = {
-  listStyleType: "none",
-}
 
 const IndexPage: React.FC<PageProps> = ({
   data,
 }) => {
   const { edges, totalCount } = data.allMarkdownRemark
+  const items = edges.map(({ node }) => ({
+    id: node.id,
+    path: `./wiki/${node.id}`,
+    title: node.headings[0]?.value ?? "(Untitled)",
+  }))
 
   return (
     <main style={pageStyles}>
@@ -28,15 +31,7 @@ const IndexPage: React.FC<PageProps> = ({
       <h1>
         {totalCount} Pages
       </h1>
-      <ul>
-        {edges.map(({ node }) => (
-          <li key={node.id} style={listItemStyles}>
-            <a href={`./wiki/${node.id}`}>
-              {node.headings[0]?.value ?? '(Untitled)'}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <WikiList items={items} />
     </main>
   )
 }
