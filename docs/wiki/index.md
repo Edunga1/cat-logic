@@ -22,7 +22,7 @@
 - [Hardware](hardware.md)
 - [Generated Links](index.md)
 - [영감을 주는 것](inspiration.md)
-- [개요](ionic-framework.md)
+- [Ionic Framework](ionic-framework.md)
 - [개발 용어](jargon.md)
 - [Java](java.md)
 - [Javscript](javascript.md)
@@ -74,4 +74,4 @@
 - [X] Use github actions to automate deployment
 - [ ] Isolate gatsbyjs project as possible as it can be
 - [X] Resolve image inclusion issue
-- [ ] Resolve wiki path name issue
+- [X] Resolve wiki path name issue
