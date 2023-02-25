@@ -13,14 +13,14 @@ const headingStyles = {
   maxWidth: 400,
 }
 
-const IndexPage: React.FC<PageProps> = ({
-  data,
-}) => {
+export default function IndexPage(
+  { data }: PageProps<Queries.WikiListQuery>,
+) {
   const { edges, totalCount } = data.allMarkdownRemark
   const items = edges.map(({ node }) => ({
     id: node.id,
     path: `./wiki/${node.id}`,
-    title: node.headings[0]?.value ?? "(Untitled)",
+    title: node.headings?.at(0)?.value ?? "(Untitled)",
   }))
 
   return (
@@ -36,12 +36,10 @@ const IndexPage: React.FC<PageProps> = ({
   )
 }
 
-export default IndexPage
-
 export const Head: HeadFC = () => <title>Home Page</title>
 
 export const pageQuery = graphql`
-  query {
+  query WikiList {
     allMarkdownRemark {
       edges {
         node {
