@@ -1,4 +1,54 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
 <li>
 <p><a href="#docker">Docker</a></p>
 </li>
@@ -39,8 +89,8 @@
 <li>
 <p><a href="#references">References</a></p>
 </li>
-</ul></div><div><h1>Docker</h1>
-<h1>OSX 에서 Docker 환경 구성하기</h1>
+</ul></div><div><h1 id="docker" style="position:relative;"><a href="#docker" aria-label="docker permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker</h1>
+<h1 id="osx-에서-docker-환경-구성하기" style="position:relative;"><a href="#osx-%EC%97%90%EC%84%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="osx 에서 docker 환경 구성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OSX 에서 Docker 환경 구성하기</h1>
 <p><strong>docker desktop 또는 rancher desktop이 나와서 이 방법은 더 이상 사용하지 않는다.</strong></p>
 <pre><code class="language-bash">brew install --cask docker
 </code></pre>
@@ -48,20 +98,20 @@
 <pre><code class="language-bash">brew install --cask rancher
 </code></pre>
 <p>rancher desktop은 무료 사용 가능하다.</p>
-<h2>1. Homebrew로 Docker와 Docker-machine 설치</h2>
+<h2 id="1-homebrew로-docker와-docker-machine-설치" style="position:relative;"><a href="#1-homebrew%EB%A1%9C-docker%EC%99%80-docker-machine-%EC%84%A4%EC%B9%98" aria-label="1 homebrew로 docker와 docker machine 설치 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Homebrew로 Docker와 Docker-machine 설치</h2>
 <pre><code class="language-bash">$ brew install docker docker-machine
 </code></pre>
 <p>docker-machine: 맥을 마치 Host OS 처럼 사용 할 수 있도록 해주는 프로그램</p>
-<h2>2. Homebrew로 Virtualbox 설치</h2>
+<h2 id="2-homebrew로-virtualbox-설치" style="position:relative;"><a href="#2-homebrew%EB%A1%9C-virtualbox-%EC%84%A4%EC%B9%98" aria-label="2 homebrew로 virtualbox 설치 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Homebrew로 Virtualbox 설치</h2>
 <pre><code class="language-bash">$ brew cask install virtualbox
 </code></pre>
 <p>Virtualbox: 가상화 프로그램. 맥에서 docker-machine(Host OS, Linux)을 운영하기 위해서 사용</p>
-<h2>3. docker-machine 설정</h2>
+<h2 id="3-docker-machine-설정" style="position:relative;"><a href="#3-docker-machine-%EC%84%A4%EC%A0%95" aria-label="3 docker machine 설정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. docker-machine 설정</h2>
 <pre><code class="language-bash">$ docker-machine create -d virtualbox default
 </code></pre>
 <p>virtualbox driver를 이용하여 <code>default</code> 이름의 Docker-machine을 생성</p>
 <p>virtualbox에 Docker-machine이 올라간다.</p>
-<h2>4. 생성한 Docker-machine 활성화</h2>
+<h2 id="4-생성한-docker-machine-활성화" style="position:relative;"><a href="#4-%EC%83%9D%EC%84%B1%ED%95%9C-docker-machine-%ED%99%9C%EC%84%B1%ED%99%94" aria-label="4 생성한 docker machine 활성화 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. 생성한 Docker-machine 활성화</h2>
 <p>Docker-machine을 생성했지만, 아직 <code>docker</code> 명령어를 이용할 수 없다.</p>
 <p>Docker-machine을 여러개 관리할 수 있다. 따라서 사용하고자 하는 Docker-machine을 활성화해야 한다.</p>
 <pre><code class="language-bash">$ docker-machine ls
@@ -85,7 +135,7 @@ default   *        virtualbox   Running   tcp://192.168.99.100:2376           v1
 </code></pre>
 <p>ACTIVE 속성이 <code>*</code>로 변경되었다.</p>
 <p>이제 맥에서 <code>docker</code> 명령어를 사용할 수 있다!</p>
-<h1>Dockerfile의 Volume 명령어</h1>
+<h1 id="dockerfile의-volume-명령어" style="position:relative;"><a href="#dockerfile%EC%9D%98-volume-%EB%AA%85%EB%A0%B9%EC%96%B4" aria-label="dockerfile의 volume 명령어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dockerfile의 Volume 명령어</h1>
 <p>다음과 같이 컨테이너를 띄우면 <code>docker run -ti --rm -v $(pwd):/myvol --name foo ubuntu</code>
 현재 디렉토리를 컨테이너와 공유하여 사용할 수 있다.</p>
 <p>그런데 <strong>Dockerfile</strong> 내에서 <code>VOLUME</code> 키워드를 사용하면 호스트를 지정해 줄 수 없다.</p>
@@ -128,11 +178,11 @@ default   *        virtualbox   Running   tcp://192.168.99.100:2376           v1
 </ol>
 <p><code>ls myvol</code></p>
 <p>즉, 호스트 디렉토리 연결 없이 볼륨을 사용한다면 <code>--volumes-from</code> 옵션을 사용하는 컨테이너가 있음을 의미한다.</p>
-<h1>Dockerfile</h1>
+<h1 id="dockerfile" style="position:relative;"><a href="#dockerfile" aria-label="dockerfile permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dockerfile</h1>
 <p>도커 이미지를 빌드하기 위한 명령어들을 모아놓은 파일.</p>
 <p>스크립트로 이루어져 있기 때문에 이미지를 관리하는 것보다 훨씬 비용이 적게 든다는 장점이 있다.</p>
 <p>각 명령어 마다 이전 이미지로부터 새로운 이미지를 생성한다.(Layer)</p>
-<h2>명령어</h2>
+<h2 id="명령어" style="position:relative;"><a href="#%EB%AA%85%EB%A0%B9%EC%96%B4" aria-label="명령어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>명령어</h2>
 <p><strong>CMD</strong></p>
 <p>컨테이너 시작 시 실행 할 명령어</p>
 <ul>
@@ -181,7 +231,7 @@ default   *        virtualbox   Running   tcp://192.168.99.100:2376           v1
 </code></pre>
 <p>여기서 <code>5000-5002/tcp, 6379/tcp, 7001-7007/tcp</code>는 <code>EXPOSE</code>로 명세했지만 호스트에는 노출되지 않았다.
 즉, <code>EXPOSE</code>는 포트 대기중을 의미한다.</p>
-<h1>중지된 도커 컨테이너에서 파일 복사하기</h1>
+<h1 id="중지된-도커-컨테이너에서-파일-복사하기" style="position:relative;"><a href="#%EC%A4%91%EC%A7%80%EB%90%9C-%EB%8F%84%EC%BB%A4-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%97%90%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EB%B3%B5%EC%82%AC%ED%95%98%EA%B8%B0" aria-label="중지된 도커 컨테이너에서 파일 복사하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>중지된 도커 컨테이너에서 파일 복사하기</h1>
 <p><code>docker ps -a</code>로 중지된 컨테이너가 있다면 그 컨테이너로부터 파일을 호스트로 복사해올 수 있다</p>
 <p><code>docker cp 컨테이너:경로 호스트경로</code>로 복사한다.<br>
 컨테이너와 호스트를 반대로 입력하여 중지된 컨테이너에 파일을 주입할 수도 있을 거 같다.</p>
@@ -194,7 +244,7 @@ default   *        virtualbox   Running   tcp://192.168.99.100:2376           v1
 젠킨스 slave의 문제인지. 어차피 볼륨으로 뿜어내는 방식이 내키지 않아서 다른 방식을 찾았다.<br>
 무한 루프를 돌도록해서 컨테이너가 죽지 않도록하여 복사해올까 하다가, 중지된 컨테이너에서 가져올 수 있었다.</p>
 <p>중지된 컨테이너가 다른 컨테이너에 볼륨을 공유하는 data-only 패턴과 비슷한 방식인듯?</p>
-<h1>Jupyter Notebook + NodeJS 도커라이징 기록</h1>
+<h1 id="jupyter-notebook--nodejs-도커라이징-기록" style="position:relative;"><a href="#jupyter-notebook--nodejs-%EB%8F%84%EC%BB%A4%EB%9D%BC%EC%9D%B4%EC%A7%95-%EA%B8%B0%EB%A1%9D" aria-label="jupyter notebook  nodejs 도커라이징 기록 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jupyter Notebook + NodeJS 도커라이징 기록</h1>
 <p>Jupyter Notebook이 너무 유용한 거 같아서 NodeJS도 쓰고 싶어졌다.</p>
 <ol>
 <li>
@@ -255,7 +305,7 @@ base로 하고 있어서, 참고하여 Dockerfile을 다시 작성하기로 했�
 <p>그래서 간단하게 <code>RUN ijsinstall</code> 해 줘서, 원본 <code>start-notebook.sh</code>는 수정하지 않아도 잘 실행되도록 했다.</p>
 </li>
 </ol>
-<h2>Jupyter Docker Stacks</h2>
+<h2 id="jupyter-docker-stacks" style="position:relative;"><a href="#jupyter-docker-stacks" aria-label="jupyter docker stacks permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jupyter Docker Stacks</h2>
 <p>Jupyter Notebook의 도커 버전은 상당히 많은 시리즈로 되어 있다.
 도커 허브엔 설명이 적고 GitHub: <a href="https://github.com/jupyter/docker-stacks">https://github.com/jupyter/docker-stacks</a> 에 메뉴얼이 잘 되어 있다.</p>
 <p>Dockerfile 관계 트리를 보면 멋있다:<br>
@@ -263,18 +313,18 @@ base로 하고 있어서, 참고하여 Dockerfile을 다시 작성하기로 했�
 <p>커스터마이징하려면 <code>jupyter/notebook-minimal</code>을 기반으로 하면 될 거 같다.</p>
 <p><a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-base-notebook">https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-base-notebook</a>
 여기에 데이터과학, 머신러닝 등 각 분야에 자주 사용하는 모듈을 미리 설치한 이미지들 정보가 나와있다.</p>
-<h2>End</h2>
+<h2 id="end" style="position:relative;"><a href="#end" aria-label="end permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>End</h2>
 <p>Jupyter Notebook NodeJS 도커라이징한 것은 여기에 올렸다:<br>
 <a href="https://github.com/Edunga1/jupyter-notebook-nodejs">https://github.com/Edunga1/jupyter-notebook-nodejs</a></p>
 <p>Dockerfile 작성하면서 <code>MAINTAINER</code>가 deprecated, <code>LABEL</code>을 사용해야 하는 것을 알았다: <a href="https://stackoverflow.com/questions/38899977/how-do-i-declare-multiple-maintainers-in-my-dockerfile">https://stackoverflow.com/questions/38899977/how-do-i-declare-multiple-maintainers-in-my-dockerfile</a></p>
-<h1><code>host.docker.internal</code>로 호스트 서비스 접근하기</h1>
+<h1 id="hostdockerinternal로-호스트-서비스-접근하기" style="position:relative;"><a href="#hostdockerinternal%EB%A1%9C-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0" aria-label="hostdockerinternal로 호스트 서비스 접근하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>host.docker.internal</code>로 호스트 서비스 접근하기</h1>
 <p><code>host.docker.internal</code>은 호스트의 ip를 가르키는 DNS name이다.
 <a href="https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host">container에서 호스트의 서비스에 접근</a>이 필요할 때 사용한다.</p>
 <blockquote>
 <p>This is for development purpose and does not work in a production environment outside of Docker Desktop.</p>
 </blockquote>
 <p>주의할 점은 <strong>docker-desktop</strong> 에서 제공하는 것이다. rancher-desktop 등 다른 도구로 docker 구성했다면 사용할 수 없다.</p>
-<h2>대체는?</h2>
+<h2 id="대체는" style="position:relative;"><a href="#%EB%8C%80%EC%B2%B4%EB%8A%94" aria-label="대체는 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>대체는?</h2>
 <p><code>docker</code> 명령어:</p>
 <pre><code class="language-bash">docker run --add-host=host.docker.internal:host-gateway
 </code></pre>
@@ -292,12 +342,12 @@ base로 하고 있어서, 참고하여 Dockerfile을 다시 작성하기로 했�
 IP address that the special 'host-gateway' string in --add-host resolves to.
 Defaults to the IP address of the default bridge</p>
 </blockquote>
-<h1>References</h1>
+<h1 id="references" style="position:relative;"><a href="#references" aria-label="references permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>References</h1>
 <p>NodeJS 어플리케이션의 Dockerizing<br>
 <a href="https://nodejs.org/en/docs/guides/nodejs-docker-webapp/">https://nodejs.org/en/docs/guides/nodejs-docker-webapp/</a></p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/5e21a485-23ae-5561-9d9c-bd65b3da977c/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-fb9b913884e2c2380d69.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-e81159ca3c1612b8b4e1.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-865dcadb01184835b48a.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-e81159ca3c1612b8b4e1.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="f12dc344f05c79385963";</script><script src="/webpack-runtime-a2b15815c0584459e731.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-fb9b913884e2c2380d69.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="6037106e126f0c4a8b4f";</script><script src="/webpack-runtime-a2b15815c0584459e731.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-865dcadb01184835b48a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -1,4 +1,54 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
 <li>
 <p><a href="#python">Python</a></p>
 </li>
@@ -55,8 +105,8 @@
 <li><a href="#__all__"><code>__all__</code></a></li>
 </ul>
 </li>
-</ul></div><div><h1>Python</h1>
-<h1>개발도구</h1>
+</ul></div><div><h1 id="python" style="position:relative;"><a href="#python" aria-label="python permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Python</h1>
+<h1 id="개발도구" style="position:relative;"><a href="#%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC" aria-label="개발도구 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>개발도구</h1>
 <p>vim 기본 설정으로는 텍스트에디터 역할밖에 못한다.</p>
 <p>최소한 pyright는 사용하자.</p>
 <p>nvim-lspconfig, null-ls 이용하여 다음과 같이 설정, 사용하고 있다.</p>
@@ -71,31 +121,31 @@ sources = {
     null_ls.builtins.formatting.isort,
 },
 </code></pre>
-<h2>pyright</h2>
+<h2 id="pyright" style="position:relative;"><a href="#pyright" aria-label="pyright permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pyright</h2>
 <p><a href="https://github.com/microsoft/pyright">https://github.com/microsoft/pyright</a></p>
 <p><a href="language-server-protocol.md">language server</a> for python.</p>
-<h3>pyright 설치</h3>
+<h3 id="pyright-설치" style="position:relative;"><a href="#pyright-%EC%84%A4%EC%B9%98" aria-label="pyright 설치 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pyright 설치</h3>
 <ul>
 <li>nvim-lspconfig은 <code>Mason</code>을 사용하자: <code>:MasonInstall pyright</code></li>
 <li><a href="https://github.com/fannheyward/coc-pyright">coc-nvim</a>: <code>:CocInstall coc-pyright</code></li>
 </ul>
-<h3><code>pyrightconfig.json</code>로 설정관리</h3>
+<h3 id="pyrightconfigjson로-설정관리" style="position:relative;"><a href="#pyrightconfigjson%EB%A1%9C-%EC%84%A4%EC%A0%95%EA%B4%80%EB%A6%AC" aria-label="pyrightconfigjson로 설정관리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>pyrightconfig.json</code>로 설정관리</h3>
 <p>프로젝트 root에 <code>pyrightconfig.json</code>을 생성한다.</p>
-<h4>타입 힌트를 사용하지 않으려면</h4>
+<h4 id="타입-힌트를-사용하지-않으려면" style="position:relative;"><a href="#%ED%83%80%EC%9E%85-%ED%9E%8C%ED%8A%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EC%9C%BC%EB%A0%A4%EB%A9%B4" aria-label="타입 힌트를 사용하지 않으려면 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>타입 힌트를 사용하지 않으려면</h4>
 <pre><code class="language-json">{
   "reportGeneralTypeIssues": false
 }
 </code></pre>
 <p>타입 명세하지 않는 프로젝트의 경우 무수한 에러 메시지가 출력된다. disable 하는 편이 낫다.</p>
-<h2>pylint</h2>
+<h2 id="pylint" style="position:relative;"><a href="#pylint" aria-label="pylint permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pylint</h2>
 <p><a href="https://github.com/PyCQA/pylint">https://github.com/PyCQA/pylint</a>
 정적 분석 도구.</p>
-<h2>Django Stubs</h2>
+<h2 id="django-stubs" style="position:relative;"><a href="#django-stubs" aria-label="django stubs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Django Stubs</h2>
 <p><a href="https://github.com/typeddjango/django-stubs">https://github.com/typeddjango/django-stubs</a></p>
 <p>django는 <code>objects</code> 등 마법을 사용해서 타입 제공을 제대로 받을 수 없다.
 pylint, pyright도 type을 알 수 없기 때문에 런타임에서 문제가 없지만 정적분석 시에는 에러로 취급한다.</p>
 <p>djang-stubs는 django와 관련된 타입 정보를 제공한다.</p>
-<h2>mypy</h2>
+<h2 id="mypy" style="position:relative;"><a href="#mypy" aria-label="mypy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mypy</h2>
 <p><a href="https://github.com/python/mypy">https://github.com/python/mypy</a></p>
 <blockquote>
 <p>Optional static typing for Python</p>
@@ -107,7 +157,7 @@ pylint, pyright도 type을 알 수 없기 때문에 런타임에서 문제가 �
 # disable error 'Need type annotation for "variable"'
 disallow_untyped_defs = False
 </code></pre>
-<h2>python code formatter: autopep8 vs black vs yapf</h2>
+<h2 id="python-code-formatter-autopep8-vs-black-vs-yapf" style="position:relative;"><a href="#python-code-formatter-autopep8-vs-black-vs-yapf" aria-label="python code formatter autopep8 vs black vs yapf permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python code formatter: autopep8 vs black vs yapf</h2>
 <p>파이썬 코드 formatter 3종 비교.</p>
 <p><a href="https://github.com/neoclide/coc.nvim">coc.nvim</a>에서는 파이썬 파일을 열 때 3개 중 하나를 선택하도록 한다:</p>
 <pre><code class="language-sh">Formatter autopep8 is not installed. Install?:
@@ -166,10 +216,10 @@ disallow_untyped_defs = False
 <p><strong>autopep8</strong>
 코드를 변경하지 않는다.</p>
 <p>개인적으로는 black, yapf의 스타일이 별로라서 autopep8을 사용하고 있다.</p>
-<h1>Python mock</h1>
+<h1 id="python-mock" style="position:relative;"><a href="#python-mock" aria-label="python mock permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Python mock</h1>
 <p><a href="https://docs.python.org/3/library/unittest.mock.html">https://docs.python.org/3/library/unittest.mock.html</a></p>
 <p>설치: <code>pip install mock</code></p>
-<h2>Decorator를 사용한 mocking.</h2>
+<h2 id="decorator를-사용한-mocking" style="position:relative;"><a href="#decorator%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-mocking" aria-label="decorator를 사용한 mocking permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decorator를 사용한 mocking.</h2>
 <pre><code class="language-python">from mock import patch
 import mymodule
 
@@ -182,10 +232,10 @@ class Mytest(unittest.TestCase):
 <p>테스트는 주로 클래스로 하나의 테스트 슈트를 구성하고,
 Mocking은 각 테스트(method)에 <code>@patch.object</code>나 <code>@patch</code> decorator를 주로 사용하고 있다.</p>
 <p><code>requests</code> 모듈을 mocking 한다고 가정하자.</p>
-<h2><code>@patch('requests.get')</code></h2>
+<h2 id="patchrequestsget" style="position:relative;"><a href="#patchrequestsget" aria-label="patchrequestsget permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>@patch('requests.get')</code></h2>
 <p>어디서든 <code>requests.get()</code> 사용한다면, mock 객체를 반환한다.
 간단한 방법이지만, <code>mymodule</code>에서 <code>requests</code>를 사용함을 암시적으로 보여준다.</p>
-<h2><code>@patch.object(mymodule, 'requests')</code></h2>
+<h2 id="patchobjectmymodule-requests" style="position:relative;"><a href="#patchobjectmymodule-requests" aria-label="patchobjectmymodule requests permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>@patch.object(mymodule, 'requests')</code></h2>
 <p><code>mymodule</code> 내에서만 <code>requests</code>를 사용한다는 점을 명시적으로 표현한다.
 개인적으로 이 방법을 더 많이 사용한다.</p>
 <p><code>requests</code> 자체가 mock 객체이기 때문에, <code>requests</code>의 <code>get</code>, <code>post</code> 등 모든 함수들이
@@ -197,7 +247,7 @@ mock 객체가 된다.</p>
     mock_requests.get.return_value = None
 </code></pre>
 <p>테스트 내에서만 mocking 정보를 명시하기 때문에, 다른 테스트에서 재사용할 수 없다.</p>
-<h2><code>@patch.object(mymodule, 'requests', new=MyRequests)</code></h2>
+<h2 id="patchobjectmymodule-requests-newmyrequests" style="position:relative;"><a href="#patchobjectmymodule-requests-newmyrequests" aria-label="patchobjectmymodule requests newmyrequests permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>@patch.object(mymodule, 'requests', new=MyRequests)</code></h2>
 <p><code>requests</code>가 <code>MyRequests</code>로 대체된다.</p>
 <pre><code class="language-python">class MyRequests(object):
   @staticmethod
@@ -211,9 +261,9 @@ mock 객체가 된다.</p>
 <p>위와 같은 방법으로 <code>get</code> 함수만 내가 원하는 응답을 내려주게 하고,
 <code>post</code> 등 다른 함수는 기본 mock 객체를 내려준다.</p>
 <p>mocking 정보를 다른 테스트에서도 재사용할 수 있어서 유용하다.</p>
-<h2><code>@patch.object(mymodule, 'method', return_value=None)</code></h2>
+<h2 id="patchobjectmymodule-method-return_valuenone" style="position:relative;"><a href="#patchobjectmymodule-method-return_valuenone" aria-label="patchobjectmymodule method return_valuenone permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>@patch.object(mymodule, 'method', return_value=None)</code></h2>
 <p><code>mymodule.method()</code> 반환값을 <code>None</code>으로 대체한다.</p>
-<h1>Package manager</h1>
+<h1 id="package-manager" style="position:relative;"><a href="#package-manager" aria-label="package manager permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Package manager</h1>
 <p>파이썬의 패키지 매니저인 pip는 파이썬 설치 시 함께 제공된다.
 그러나 다른 언어의 패키지 매니저와 비교해 보면 안좋다.</p>
 <p><code>pip install PACKAGE_NAME</code>로 설치하고 <code>pip freeze > requirements.txt</code>로
@@ -223,7 +273,7 @@ Django만 설치했는데, Django가 사용하는 다른 패키지도 포함된�
 수동으로 관리해야 하는데, 프로덕션만 업데이트 하려고 해도 이미 개발 환경의 모듈이
 포함되어 있다.</p>
 <p>아무튼, 간단하지만 그만큼 이런저런 불편함이 있는 기본 도구다.</p>
-<h2>pipenv</h2>
+<h2 id="pipenv" style="position:relative;"><a href="#pipenv" aria-label="pipenv permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pipenv</h2>
 <p><a href="https://github.com/pypa/pipenv">https://github.com/pypa/pipenv</a></p>
 <p>이런 불편함을 알았는지 환경 분리도 가능하고, lock 파일도 별도로 관리할 수 있는
 <a href="https://github.com/pypa/pipenv">pipenv</a>가 있다. <code>pyenv</code>와 좀 헷갈린다.</p>
@@ -238,8 +288,8 @@ Django만 설치했는데, Django가 사용하는 다른 패키지도 포함된�
 <p>Dockerize 하는데 이슈가 있다. 빌드 할 때 pipenv를 결국 설치해야 하는데, 로직을 돌리는데 불필요한 존재기 때문이다.
 그래서 multi-stage build를 하는 것이 필요하다. 빌드 스테이지에서 pipenv를 설치하고, pipenv를 이용하여 requirements.txt를 생성하고,
 requirements.txt를 가지고 실행 스테이지에서 의존 모듈을 설치한다. 그러면 프로덕션 레벨에서 pipenv를 감출 수 있다.</p>
-<h1>Packaging</h1>
-<h2><code>__all__</code></h2>
+<h1 id="packaging" style="position:relative;"><a href="#packaging" aria-label="packaging permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Packaging</h1>
+<h2 id="__all__" style="position:relative;"><a href="#__all__" aria-label="__all__ permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>__all__</code></h2>
 <p><code>my_module.py</code>라는 파일이 있다고 하자:</p>
 <pre><code class="language-python">__all__ = ['foo', 'Bar']
 
@@ -272,6 +322,6 @@ from my_module import _baz  # 불가능
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-fb9b913884e2c2380d69.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-e81159ca3c1612b8b4e1.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-865dcadb01184835b48a.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-e81159ca3c1612b8b4e1.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="f12dc344f05c79385963";</script><script src="/webpack-runtime-a2b15815c0584459e731.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-fb9b913884e2c2380d69.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="6037106e126f0c4a8b4f";</script><script src="/webpack-runtime-a2b15815c0584459e731.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-865dcadb01184835b48a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

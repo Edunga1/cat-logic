@@ -1,4 +1,54 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
 <li>
 <p><a href="#git">Git</a></p>
 </li>
@@ -47,21 +97,21 @@
 </li>
 </ul>
 </li>
-</ul></div><div><h1>Git</h1>
-<h1>명령어 자동완성하기</h1>
+</ul></div><div><h1 id="git" style="position:relative;"><a href="#git" aria-label="git permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git</h1>
+<h1 id="명령어-자동완성하기" style="position:relative;"><a href="#%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="명령어 자동완성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>명령어 자동완성하기</h1>
 <p>서버 터미널에서 <code>git chec</code>까지만 타이핑하고 tab 키를 누르면 checkout이 자동 완성 되었다.</p>
 <p>심지어 브랜치 이름도 자동 완성된다.</p>
 <p>어떻게 그렇게 되는가 찾아보니 터미널 도구를 설치해야 하더라.</p>
 <p>여기에 각 OS에 맞게 잘 나와있다.</p>
 <p><a href="https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion">https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion</a></p>
-<h2>Windows</h2>
+<h2 id="windows" style="position:relative;"><a href="#windows" aria-label="windows permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Windows</h2>
 <p>그냥 git bash for windows 기본 기능으로 지원한다.</p>
-<h2>OSX</h2>
+<h2 id="osx" style="position:relative;"><a href="#osx" aria-label="osx permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OSX</h2>
 <p>위 링크데로 Homebrew로 깔아도 안돼서 더 찾아보니..</p>
 <p><a href="https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks">https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks</a></p>
 <p>git-scm에 다른 방법이 나와있다.</p>
 <p>요약하면 git-completion 라는 스크립트를 받아서 .bash_profile 에 등록하면 된다.</p>
-<h1>Git ssh</h1>
+<h1 id="git-ssh" style="position:relative;"><a href="#git-ssh" aria-label="git ssh permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git ssh</h1>
 <p>맥에서 Git을 사용하다 보면 특별한 경우가 아닌 이상 한 번 로그인하면 다시 로그인하는 일은 없다.</p>
 <p>keychain으로 비밀번호를 관리하는게 아닌가 싶다.</p>
 <p>다른 환경에서는 매번 로그인 과정이 필요했다.</p>
@@ -73,7 +123,7 @@
 </code></pre>
 <p>위와 같은 형태로 변경해야 한다.</p>
 <p>그렇지 않으면 fetch 등 remote url에 접근할 수 없다.</p>
-<h1>깃 커밋 해시 충돌에 관하여</h1>
+<h1 id="깃-커밋-해시-충돌에-관하여" style="position:relative;"><a href="#%EA%B9%83-%EC%BB%A4%EB%B0%8B-%ED%95%B4%EC%8B%9C-%EC%B6%A9%EB%8F%8C%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC" aria-label="깃 커밋 해시 충돌에 관하여 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>깃 커밋 해시 충돌에 관하여</h1>
 <p>갑자기 커밋 해시는 어떤 정보를 기반하여 만들어지는지 궁금했다.
 커밋 해시는 커밋 <code>git commit</code> 할 때 생성되고,
 주로 커밋 해시로 파일들을 특정 상태로 맞추는데 <code>git checkout</code> 사용한다.</p>
@@ -81,28 +131,28 @@
 <p>먼저, <a href="https://git-scm.com/book/ko/v1/Git-%EB%8F%84%EA%B5%AC-%EB%A6%AC%EB%B9%84%EC%A0%84-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0">git-scm</a>의 글
 <a href="https://git-scm.com/book/ko/v1/Git-%EB%8F%84%EA%B5%AC-%EB%A6%AC%EB%B9%84%EC%A0%84-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0#SHA-1-%ED%95%B4%EC%8B%9C-%EA%B0%92%EC%97%90-%EB%8C%80%ED%95%9C-%EB%8B%A8%EC%83%81">SHA-1 해시 값에 대한 단상</a>에서
 걱정에 대한 현실적인 조언을 해 준다. 또 실제로 발생하면 어떤 일이 일어나는지 알려준다.</p>
-<h3><a href="https://www.facebook.com/iamprogrammer.io/posts/1379005945454259">https://www.facebook.com/iamprogrammer.io/posts/1379005945454259</a></h3>
+<h3 id="httpswwwfacebookcomiamprogrammerioposts1379005945454259" style="position:relative;"><a href="#httpswwwfacebookcomiamprogrammerioposts1379005945454259" aria-label="httpswwwfacebookcomiamprogrammerioposts1379005945454259 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.facebook.com/iamprogrammer.io/posts/1379005945454259">https://www.facebook.com/iamprogrammer.io/posts/1379005945454259</a></h3>
 <p>그래도 운이 정말 나빠서, 해시 충돌이 나는 것이 우려된다면 리누스 토발즈도 이 이슈에 대해 언급했다.
 아쉽게도 원글이 있던 google+가 종료되어 볼 수 없지만 예전에 올라온 나프다 게시글에 누군가 요약해 주었다.</p>
 <p>사람이 소스코드의 변경을 지켜보고 있기 때문에 괜찮고, 또 대안은 있다고..</p>
-<h3><a href="https://stackoverflow.com/questions/9392365">https://stackoverflow.com/questions/9392365</a></h3>
+<h3 id="httpsstackoverflowcomquestions9392365" style="position:relative;"><a href="#httpsstackoverflowcomquestions9392365" aria-label="httpsstackoverflowcomquestions9392365 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://stackoverflow.com/questions/9392365">https://stackoverflow.com/questions/9392365</a></h3>
 <p>사실 가장 먼저 본 글은 SO의 글이다.
 <a href="https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081">답변</a>에서,
 기발하게도 해시 사이즈를 4-bit로 줄여서 실제로 재현했다. <code>push</code>, <code>clone</code> 할 때 에러가 난다.</p>
-<h3><a href="https://stackoverflow.com/questions/34764195">https://stackoverflow.com/questions/34764195</a></h3>
+<h3 id="httpsstackoverflowcomquestions34764195" style="position:relative;"><a href="#httpsstackoverflowcomquestions34764195" aria-label="httpsstackoverflowcomquestions34764195 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://stackoverflow.com/questions/34764195">https://stackoverflow.com/questions/34764195</a></h3>
 <p>커밋 해시가 무엇으로 결정되는지 알려주는 SO 글. 부모 커밋, 커미터, 메시지 등.</p>
-<h3><a href="https://www.codentalks.com/t/topic/2973">https://www.codentalks.com/t/topic/2973</a></h3>
+<h3 id="httpswwwcodentalkscomttopic2973" style="position:relative;"><a href="#httpswwwcodentalkscomttopic2973" aria-label="httpswwwcodentalkscomttopic2973 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.codentalks.com/t/topic/2973">https://www.codentalks.com/t/topic/2973</a></h3>
 <blockquote>
 <p>뻘글) git 불안해서 못쓰겟음니다 -.-;</p>
 </blockquote>
 <p>찾다가 나온 유머글 ㅎㅎ. <a href="https://www.codentalks.com/uploads/default/original/2X/9/98fa43031c7cfbf44c714ad5819ea504ef37e70c.jpg">덧글에 있는 만화</a>처럼
 걱정, 우려만 해서는 안되겠다.</p>
-<h3><a href="https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/">https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/</a></h3>
+<h3 id="httpszariskiwordpresscom20170225sha-1-ecb6a9eb8f8c" style="position:relative;"><a href="#httpszariskiwordpresscom20170225sha-1-ecb6a9eb8f8c" aria-label="httpszariskiwordpresscom20170225sha 1 ecb6a9eb8f8c permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/">https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/</a></h3>
 <p>sha1 충돌 이슈에 설명. 해시에 대한 기초 설명, 구글이 sha-1 충돌 재현에 대한 주변 설명.</p>
-<h3><a href="https://www.mathstat.dal.ca/~selinger/md5collision">https://www.mathstat.dal.ca/~selinger/md5collision</a></h3>
+<h3 id="httpswwwmathstatdalcaselingermd5collision" style="position:relative;"><a href="#httpswwwmathstatdalcaselingermd5collision" aria-label="httpswwwmathstatdalcaselingermd5collision permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.mathstat.dal.ca/~selinger/md5collision">https://www.mathstat.dal.ca/~selinger/md5collision</a></h3>
 <p>이 글엔 실제로 다른 파일인데 같은 MD5 sum을 가진 예제를 제공한다.
 근데 다운받아보면 실행도 안되고, 바이너리지만 열어보면 내용도 같아 보이는데.. 심지어 파일 크기도 같다 :(</p>
-<h1><code>git rebase -i</code></h1>
+<h1 id="git-rebase--i" style="position:relative;"><a href="#git-rebase--i" aria-label="git rebase  i permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>git rebase -i</code></h1>
 <p><a href="https://meetup.toast.com/posts/39">https://meetup.toast.com/posts/39</a></p>
 <p>여러개의 커밋을 묶는데, <code>git reset HEAD~#</code> 후 다시 커밋을 생성하는 방법도 있지만,
 여러개의 커밋을 남겼을 경우, 메시지들이 사라진다는 단점이 있다.
@@ -238,7 +288,7 @@ A2
 * 325da60 init
 </code></pre>
 <p>만약 A와 B가 같은 파일을 작업하게 되면, 당연하게도 conflict 발생한다.</p>
-<h1><code>git revert -m</code></h1>
+<h1 id="git-revert--m" style="position:relative;"><a href="#git-revert--m" aria-label="git revert  m permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>git revert -m</code></h1>
 <p><code>-m</code>, <code>--mainline</code> 옵션은 merge commit을 되돌리는데 사용한다. merge는 2개의 커밋을 병합하는 것이므로, 둘 중 어느 상태로 돌릴 것인지 결정해야 한다.</p>
 <blockquote>
 <p>Usually you cannot revert a merge because you do not know which side of the merge should be considered the mainline. - <code>git revert --help</code></p>
@@ -252,7 +302,7 @@ This reverts commit 5c54ea679164eaca0bab639667bfcebb88769e63, reversing
 changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 </code></pre>
 <p><code>5c54ea</code> 되돌려서 parent commit 중 하나인 <code>b73ce1</code>로 돌아간다. 물론 새로운 커밋이기 떄문에 hash는 별개다.</p>
-<h1><code>git log --graph</code></h1>
+<h1 id="git-log---graph" style="position:relative;"><a href="#git-log---graph" aria-label="git log   graph permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>git log --graph</code></h1>
 <p>TL;DR</p>
 <ul>
 <li><code>--date-order</code> 로 그래프를 정렬하는데 힌트를 줄 수 있다.</li>
@@ -260,7 +310,7 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 <li>옵션에 대한 정보: <a href="https://git-scm.com/docs/git-log#_commit_ordering">https://git-scm.com/docs/git-log#_commit_ordering</a></li>
 <li>기본 값은 <code>--topo-order</code>로 보인다.</li>
 </ul>
-<h2><code>--date-order</code> 로 피라미드 그래프 방지하기</h2>
+<h2 id="--date-order-로-피라미드-그래프-방지하기" style="position:relative;"><a href="#--date-order-%EB%A1%9C-%ED%94%BC%EB%9D%BC%EB%AF%B8%EB%93%9C-%EA%B7%B8%EB%9E%98%ED%94%84-%EB%B0%A9%EC%A7%80%ED%95%98%EA%B8%B0" aria-label="  date order 로 피라미드 그래프 방지하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--date-order</code> 로 피라미드 그래프 방지하기</h2>
 <pre><code class="language-bash">git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)&#x3C;%an>%C(reset)%C(bold yellow)%d%C(reset)' --all
 </code></pre>
 <p>git log를 그래프로 보기위해 이렇게 사용 중이다.</p>
@@ -336,7 +386,7 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
       />
   </a>
     </span></p>
-<h3>옵션 설명</h3>
+<h3 id="옵션-설명" style="position:relative;"><a href="#%EC%98%B5%EC%85%98-%EC%84%A4%EB%AA%85" aria-label="옵션 설명 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>옵션 설명</h3>
 <p><code>git log --help</code> 에서 정렬과 관련된 내용을 확인하면 어떻게 정렬 방법에 대해서 설명하고 있다.</p>
 <pre><code class="language-bash">Commit Ordering
        By default, the commits are shown in reverse chronological order.
@@ -371,7 +421,7 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 <li><code>--topo-order</code> 8 6 5 3 7 4 2 1 순서로 표기한다.</li>
 <li><code>--date-order</code> 8 7 6 5 4 3 2 1 순서로 표기한다.</li>
 </ul>
-<h2><code>--date-order</code> 와 <code>--author-date-order</code> 비교</h2>
+<h2 id="--date-order-와---author-date-order-비교" style="position:relative;"><a href="#--date-order-%EC%99%80---author-date-order-%EB%B9%84%EA%B5%90" aria-label="  date order 와   author date order 비교 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--date-order</code> 와 <code>--author-date-order</code> 비교</h2>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
@@ -407,6 +457,6 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-fb9b913884e2c2380d69.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-e81159ca3c1612b8b4e1.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-865dcadb01184835b48a.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-e81159ca3c1612b8b4e1.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="f12dc344f05c79385963";</script><script src="/webpack-runtime-a2b15815c0584459e731.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-fb9b913884e2c2380d69.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="6037106e126f0c4a8b4f";</script><script src="/webpack-runtime-a2b15815c0584459e731.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-865dcadb01184835b48a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
