@@ -28,6 +28,7 @@ const config: GatsbyConfig = {
               maxWidth: 590,
             },
           },
+          `gatsby-remark-autolink-headers`,
         ],
       },
     },
