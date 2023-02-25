@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, HeadFC, PageProps } from "gatsby"
-import WikiList from "../components/WikiList"
+import WikiList from "../components/molecules/WikiList"
 
 const pageStyles = {
   color: "#232129",

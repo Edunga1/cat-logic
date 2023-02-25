@@ -1,8 +1,6 @@
 import * as React from "react"
-
-const listItemStyles = {
-  listStyleType: "none",
-}
+import Link from "../atoms/Link/Link";
+import ListItem from "../atoms/ListItem/ListItem";
 
 export default function WikiList(
   { items }: WikiListProps,
@@ -10,11 +8,11 @@ export default function WikiList(
   return (
     <ul>
       {items.map((item) => (
-        <li key={item.id} style={listItemStyles}>
-          <a href={item.path}>
+        <ListItem key={item.id}>
+          <Link href={item.path}>
             {item.title}
-          </a>
-        </li>
+          </Link>
+        </ListItem>
       ))}
     </ul>
   )
