@@ -1,0 +1,99 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
+<li><a href="#computer-graphics">Computer Graphics</a></li>
+<li><a href="#%ED%99%94%EA%B0%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98painters-algorithm">화가 알고리즘(painter's algorithm)</a></li>
+</ul></div><div><h1 id="computer-graphics" style="position:relative;"><a href="#computer-graphics" aria-label="computer graphics permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Computer Graphics</h1>
+<h1 id="화가-알고리즘painters-algorithm" style="position:relative;"><a href="#%ED%99%94%EA%B0%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98painters-algorithm" aria-label="화가 알고리즘painters algorithm permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>화가 알고리즘(painter's algorithm)</h1>
+<p><a href="https://en.wikipedia.org/wiki/Painter%27s_algorithm">https://en.wikipedia.org/wiki/Painter%27s_algorithm</a></p>
+<p>가장 간단한 알고리즘. 먼 곳부터 순서대로 그리면서 가까운 물체가 이전에 그린 먼 물체를 가리는 방법이다.
+depth-sort 알고리즘 또는 priority fill 라고도 한다.</p>
+<p><strong>복잡하지 않다는 점</strong>, <strong>메모리 효율이</strong> 좋다는 장점이 있다.</p>
+<p>다만 제한 사항도 있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 269px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/84279b7d32ff9a2ce3a3072846bfba8b/98fe2/painters-algorithm-cyclical-overlapping.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 106.08108108108108%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsTAAALEwEAmpwYAAADbElEQVR42o2Ub2hVZRzHP89zjncKC5GKms1KiN70Lot8US9qibiKFv1x2L8XFUHSiwXOSnuRSEUEgwLBf1MaKUmQYc1usm6rpnMFsuHCf9f1B41wmlPm7r3nnOcXz+85t81X7oFz7u8+5zyf8/39hVms96dNuwteLcHafRTeOAxv98NTgujD25jl+gpTNwsnsRcEKwIyBfIKrwsc2QXCvTn4GkuY0rt/+Z255+G0h/Vwf20RAzUQZ7gi8Fk7HJpx7kmgA3ivvrEZeA1Yxk38Gi9mqWJ7WPzXcrZ5ZgYiliT1v/D7CWAu3AHM0XcNV7A8beEB4DoP/SEK8DNAS5NlYDtccl6VxTlLIpB6cAUyga831r0K14T/cwt82ByDGCj6jRj2d8LfF70SE1Q5QyqWLAvqJgVGirDpnmlYH1vpo1PtjTeHzXhzG5RHoSbhoCSQukiVBZcbGRo37FhZ0IO7gW+BrbQyiZAglBlk7Y3t8MdedSOqg1wGmY+Xd1nmcSrtok2GoNjNdp80s4APLPCl5Vg0omkUqno/b4UNzwvzT3kVIehRmquckBdY58Zo0I1j2O9zJ80mjd8QHQpxUUJihIwUya8zcxwvv+ngUnAxGv3xC27/NycnXv5R6BMihAbWKbD12Y/4/D7JIY4k9pYjiVyuOqV0p7Bq1T7fKedgzINqeWBHFRjSsD6keLADqsJjHycM31AHJ6r0arDjSNQ/XLCqMCVkZiYwKPwJiy2PqBd2vMrqNcLpRskhGY6UxDjEatJ+vlXddYmvG5CjhhDD+ZiuoLDXd0Ur0UQemnODtDy0kuPs5bKpgxOFV0gPNeM07TnwOHy3f4ueNAvexc6o6tIWTLFT7SdWhK2dtFFmlFqOrZAczIFVq60he+5inF6e+b8Mr26Vy9AMvLg81lY8oA9j00sn/3DRF9XBRQp0lVjdybatQPwHoxGKdLEkdFaAGqhY7CPQuAy4HvoJvXwBeJQm+ukeWBhiWI2C0h0t+KRVrE/lN+S9zN3Aw6ATZWnYOgt8AjwHC38h9tOoXeAknPWgWu7yzge1KiQa40RBp821xyHDdftx5pXhT01K5GuNandraIWGHtoZmuXE3lM3DA2/wZTvx0kTpsWnSxAOs9t/+CWZJXDDtBn1wOoSvHUA1pQM67t9JHJQcxP8B2eJ78X0EEIqAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="cyclical overlapping"
+        title=""
+        src="/static/84279b7d32ff9a2ce3a3072846bfba8b/98fe2/painters-algorithm-cyclical-overlapping.png"
+        srcset="/static/84279b7d32ff9a2ce3a3072846bfba8b/12f09/painters-algorithm-cyclical-overlapping.png 148w,
+/static/84279b7d32ff9a2ce3a3072846bfba8b/98fe2/painters-algorithm-cyclical-overlapping.png 269w"
+        sizes="(max-width: 269px) 100vw, 269px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>위와 같이 순환적으로 겹치는 경우에는 우선순위를 정할 수 없다.
+비슷한 문제로 물체를 관통하는 경우에도 처리할 수 없다.</p>
+<p>이 경우에는 물체를 잘라서 처리한다.</p>
+<p>효율성 문제도 있는데, 완성된 화면 기준으로 가려지는 부분도 먼저 그려야 하기 때문에, 물체가 많은 경우에는 느려질 수 있다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/88a3eb43-9004-5390-a01c-b85a6dc84d91/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-865dcadb01184835b48a.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-5b8bf8371ffe58b5cbfd.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="eee55d340ccbd6cae0ed";</script><script src="/webpack-runtime-14cbeaeacef0d63189c4.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-865dcadb01184835b48a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
