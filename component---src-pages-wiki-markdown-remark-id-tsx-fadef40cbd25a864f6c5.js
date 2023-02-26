@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcat_logic=self.webpackChunkcat_logic||[]).push([[323],{8667:function(e,t,n){n.r(t),n.d(t,{default:function(){return a}});var l=n(7294);function a(e){let{data:t}=e;const{id:n,tableOfContents:a,html:r}=t.markdownRemark;return console.log(t),l.createElement("div",null,l.createElement("div",{dangerouslySetInnerHTML:{__html:a}}),l.createElement("div",{dangerouslySetInnerHTML:{__html:r}}))}}}]);
-//# sourceMappingURL=component---src-pages-wiki-markdown-remark-id-tsx-fadef40cbd25a864f6c5.js.map
