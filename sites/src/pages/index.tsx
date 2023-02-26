@@ -17,9 +17,9 @@ export default function IndexPage(
   { data }: PageProps<Queries.WikiListQuery>,
 ) {
   const { edges, totalCount } = data.allMarkdownRemark
-  const items = edges.map(({ node }) => ({
-    id: node.id,
-    path: `./wiki/${node.id}`,
+  const items = edges.map(({ node }, i) => ({
+    id: i.toString(),
+    path: `./wiki${node.fields?.slug}`,
     title: node.headings?.at(0)?.value ?? "(Untitled)",
   }))
 
@@ -43,9 +43,11 @@ export const pageQuery = graphql`
     allMarkdownRemark {
       edges {
         node {
-          id
           headings(depth: h1) {
             value
+          }
+          fields {
+            slug
           }
         }
       }
