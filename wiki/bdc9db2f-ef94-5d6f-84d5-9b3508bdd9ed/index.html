@@ -1,0 +1,67 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
+<li><a href="#language-server-protocol">Language Server Protocol</a></li>
+</ul></div><div><h1 id="language-server-protocol" style="position:relative;"><a href="#language-server-protocol" aria-label="language server protocol permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Language Server Protocol</h1>
+<p><a href="https://microsoft.github.io/language-server-protocol">https://microsoft.github.io/language-server-protocol</a></p>
+<p>언어가 IDE 독립적으로 프로토콜을 통해 개발 기능을 제공한다.</p>
+<p>예를 들어 vim에서 파이썬 개발을 위해 설정한다면, <a href="https://github.com/davidhalter/jedi">jedi</a> 또는 <a href="https://github.com/python-rope/rope">rope</a> 결정하고, <a href="https://github.com/ycm-core/YouCompleteMe">ycm</a> 같은 completion 도구를 통해 사용했다.
+언어마다 플러그인이 또 달랐기 때문에 ycm 같은 도구가 인기가 많았으나, 무겁기도 하고 일반적인 GUI IDE와 비교했을 때 기능도 부족하다.</p>
+<p>LSP는 클라이언트와 서버만 선택하면 개발 설정 경험을 언어 공통적으로 가져갈 수 있어서 편리하다.</p>
+<p>VSCode가 대표적인 LSP 클라이언트다.</p>
+<p>vim에서는 <a href="https://github.com/neoclide/coc.nvim">coc.nvim</a> 또는 <a href="https://github.com/neovim/nvim-lspconfig">nvim 내장</a>된 것을 사용하면 된다.
+개인적으로는 coc.nvim 사용하다가 nvim으로 갈아탔는데, 더 쾌적하다. 다만 이것저것 설치할 플러그인이 많아서 처음 구성하기가 가따롭다. 반면에 coc.nvim은 설정이 편리하고, 플러그인 하나가 language server 설치 관리자 기능을 포함하고 있어서 처음 설정이 매우 편리하다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/bdc9db2f-ef94-5d6f-84d5-9b3508bdd9ed/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-865dcadb01184835b48a.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-5b8bf8371ffe58b5cbfd.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="88aaf53c19cf591cf5fd";</script><script src="/webpack-runtime-4198a1094290032f0210.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-865dcadb01184835b48a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
+<li>
+<p><a href="#programming-convention">Programming Convention</a></p>
+</li>
+<li>
+<p><a href="#x--prefix"><code>X-</code> prefix?</a></p>
+</li>
+<li>
+<p><a href="#iso-8601---%EB%82%A0%EC%A7%9C-%EC%8B%9C%EA%B0%84-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B5%AD%EC%A0%9C-%ED%91%9C%EC%A4%80">ISO 8601 - 날짜, 시간 관련 커뮤니케이션 국제 표준</a></p>
+<ul>
+<li><a href="#python%EC%9D%98-datetimeisoformat%EC%9D%80-iso-8601%EC%9D%84-%EC%9C%84%EB%B0%98%ED%95%9C%EB%8B%A4">python의 datetime.isoformat()은 ISO 8601을 위반한다.</a></li>
+</ul>
+</li>
+</ul></div><div><h1 id="programming-convention" style="position:relative;"><a href="#programming-convention" aria-label="programming convention permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Programming Convention</h1>
+<h1 id="x--prefix" style="position:relative;"><a href="#x--prefix" aria-label="x  prefix permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>X-</code> prefix?</h1>
+<p><code>experimental</code> 혹은 <code>extension</code>의 약자라고 한다.
+보통 비공식적(unofficial) 사양을 나타내는데 주로 사용한다.</p>
+<p>HTTP에는 <code>x-forwareded-for</code>처럼 <code>x</code>를 prefix로 하는 헤더가 많다.</p>
+<p>docker-compose.yml 명세할 때 사용자 정의 영역으로 구분하기 위해서도 쓴다.</p>
+<p>다음은 <a href="https://github.com/apache/airflow/blob/main/docs/apache-airflow/howto/docker-compose/docker-compose.yaml#L44">airflow Github</a>에서 제공하는 docker-compose.yml 예시:</p>
+<pre><code class="language-yaml">x-airflow-common:
+  &#x26;airflow-common
+  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.0.2}
+  environment:
+    &#x26;airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
+    AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
+    AIRFLOW__CORE__FERNET_KEY: ''
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+    AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
+
+services:
+  # ...
+</code></pre>
+<h1 id="iso-8601---날짜-시간-관련-커뮤니케이션-국제-표준" style="position:relative;"><a href="#iso-8601---%EB%82%A0%EC%A7%9C-%EC%8B%9C%EA%B0%84-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B5%AD%EC%A0%9C-%ED%91%9C%EC%A4%80" aria-label="iso 8601   날짜 시간 관련 커뮤니케이션 국제 표준 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ISO 8601 - 날짜, 시간 관련 커뮤니케이션 국제 표준</h1>
+<p>포맷 간단 요약: <a href="https://www.cryptosys.net/pki/manpki/pki_iso8601datetime.html">https://www.cryptosys.net/pki/manpki/pki_iso8601datetime.html</a></p>
+<p><strong>특징</strong></p>
+<ul>
+<li>타임존을 표기할 수 있다. <code>+hh:mm</code> 가 붙는다: <code>"2020-07-10T02:41:29.477+07:00"</code>
+<ul>
+<li><a href="https://ko.wikipedia.org/wiki/ISO_8601#%ED%91%9C%EC%A4%80_%EC%8B%9C%EA%B0%84%EB%8C%80_%EC%A7%80%EC%A0%95%EC%9E%90(time_zone_designator)">표준 시간대 지정자</a>라고 한다.</li>
+</ul>
+</li>
+<li>Z 문자가 붙으면 UTC를 의미한다.</li>
+<li><code>"2020-01-01T10:00:00+09:00"</code> 는 UTC <code>"2020-01-01T01:00:00Z"</code> 와 같다.
+<ul>
+<li>9시간으로 offset이 포함되어 있다는 의미다.</li>
+</ul>
+</li>
+<li>django는 json response 시 datetime 타입을 자동으로 iso 양식으로 변환한다.</li>
+<li>node도 toJSON() 을 구현한 것을 보면 자동으로 iso 양식으로 변환될 것이다.</li>
+<li>시간대 지정자를 표기하지 않으면 local time을 의미한다.</li>
+</ul>
+<p>사용하려면:</p>
+<ul>
+<li><a href="javascript.md">javascript</a>의 경우 <code>new Date().toJSON()</code>: <code>"2020-07-10T02:42:55.338Z"</code></li>
+<li><a href="python.md">python</a>의 경우 <code>datetime.now().isoformat()</code>: <code>'2020-07-10T02:43:36.933276'</code></li>
+</ul>
+<p><a href="python.md">python</a>의 경우 시간대 지정자 <code>Z</code>가 생략되었다.</p>
+<h2 id="python의-datetimeisoformat은-iso-8601을-위반한다" style="position:relative;"><a href="#python%EC%9D%98-datetimeisoformat%EC%9D%80-iso-8601%EC%9D%84-%EC%9C%84%EB%B0%98%ED%95%9C%EB%8B%A4" aria-label="python의 datetimeisoformat은 iso 8601을 위반한다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python의 datetime.isoformat()은 ISO 8601을 위반한다.</h2>
+<p><a href="https://stackoverflow.com/questions/19654578/python-utc-datetime-objects-iso-format-doesnt-include-z-zulu-or-zero-offset">https://stackoverflow.com/questions/19654578/python-utc-datetime-objects-iso-format-doesnt-include-z-zulu-or-zero-offset</a></p>
+<blockquote>
+<p>Python <code>datetime</code> objects don't have time zone info by default, and without it, Python actually violates the ISO 8601 specification (<a href="http://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators">if no time zone info is given, assumed to be local time</a>)</p>
+</blockquote>
+<p>위키 중:</p>
+<blockquote>
+<p>Time zones in ISO 8601 are represented as local time (with the location unspecified), as UTC, or as an offset from UTC.</p>
+</blockquote>
+<p>지정자를 생략하면 로컬 시각으로 간주된다고 한다.<br>
+서버-클라이언트간 통신에서 로컬 시각을 사용하지 말고, 오프셋을 명시적으로 표기하는 편이 좋다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/c4f18dd0-a68b-5bf6-a4e4-5298bf52f906/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-865dcadb01184835b48a.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-5b8bf8371ffe58b5cbfd.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="88aaf53c19cf591cf5fd";</script><script src="/webpack-runtime-4198a1094290032f0210.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-865dcadb01184835b48a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
+<li>
+<p><a href="#%EC%9B%B9-%EA%B0%9C%EB%B0%9C">웹 개발</a></p>
+</li>
+<li>
+<p><a href="#gdg-webtech-workshop-%EC%B8%A1%EC%A0%95%ED%95%98%EB%8A%94-%EB%86%88-%EB%A1%9C%EB%94%A9%ED%95%98%EB%8A%94-%EB%86%88-%EA%B7%B8%EB%A6%AC%EB%8A%94-%EB%86%88">GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"</a></p>
+</li>
+<li>
+<p><a href="#react-%EB%A0%8C%EB%8D%94%EB%A7%81-%EB%8F%99%EC%9E%91%EC%97%90-%EB%8C%80%ED%95%9C-%EC%99%84%EB%B2%BD%ED%95%9C-%EA%B0%80%EC%9D%B4%EB%93%9C">React 렌더링 동작에 대한 완벽한 가이드</a></p>
+</li>
+<li>
+<p><a href="#html-entity-amp-gt">HTML Entity: <code>&#x26;amp;</code>, <code>&#x26;gt;</code></a></p>
+</li>
+<li>
+<p><a href="#%EC%99%B8%EB%B6%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%9D%B4%EB%8F%99-%EA%B8%B0%EB%8A%A5-redirect-token">외부 사이트 이동 기능. Redirect Token.</a></p>
+<ul>
+<li><a href="#redir_token">redir_token?</a></li>
+</ul>
+</li>
+</ul></div><div><h1 id="웹-개발" style="position:relative;"><a href="#%EC%9B%B9-%EA%B0%9C%EB%B0%9C" aria-label="웹 개발 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>웹 개발</h1>
+<h1 id="gdg-webtech-workshop-측정하는-놈-로딩하는-놈-그리는-놈" style="position:relative;"><a href="#gdg-webtech-workshop-%EC%B8%A1%EC%A0%95%ED%95%98%EB%8A%94-%EB%86%88-%EB%A1%9C%EB%94%A9%ED%95%98%EB%8A%94-%EB%86%88-%EA%B7%B8%EB%A6%AC%EB%8A%94-%EB%86%88" aria-label="gdg webtech workshop 측정하는 놈 로딩하는 놈 그리는 놈 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"</h1>
+<p><a href="2016-08-27-gdg-webtech-workshop-nnn">2016-08-27 GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"</a></p>
+<p>웹 브라우저 특히 크롬의 렌더링 개선 방법과 오프라인 서비스에 대한 내용</p>
+<h1 id="react-렌더링-동작에-대한-완벽한-가이드" style="position:relative;"><a href="#react-%EB%A0%8C%EB%8D%94%EB%A7%81-%EB%8F%99%EC%9E%91%EC%97%90-%EB%8C%80%ED%95%9C-%EC%99%84%EB%B2%BD%ED%95%9C-%EA%B0%80%EC%9D%B4%EB%93%9C" aria-label="react 렌더링 동작에 대한 완벽한 가이드 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>React 렌더링 동작에 대한 완벽한 가이드</h1>
+<p><a href="https://velog.io/@superlipbalm/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior">https://velog.io/@superlipbalm/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior</a></p>
+<p><strong>jsx, createElement</strong></p>
+<blockquote>
+<p>컴포넌트 렌더 출력은 일반적으로 JSX 구문으로 작성되며 자바스크립트가 컴파일되고 배포를 위해 준비될때 React.createElement() 호출로 변환됩니다</p>
+</blockquote>
+<p><strong>호스트 컴포넌트?</strong></p>
+<blockquote>
+<p>// HTML 처럼 보이는 "호스트 컴포넌트"의 경우
+return &#x3C;button onClick={() => {}}>Click Me</button></p>
+</blockquote>
+<p>사용자가 만든 커스텀 컴포넌트와 구분한다. html 기본 제공하는 컴포넌트.</p>
+<h1 id="html-entity-amp-gt" style="position:relative;"><a href="#html-entity-amp-gt" aria-label="html entity amp gt permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTML Entity: <code>&#x26;amp;</code>, <code>&#x26;gt;</code></h1>
+<p><a href="https://developer.mozilla.org/en-US/docs/Glossary/Entity">https://developer.mozilla.org/en-US/docs/Glossary/Entity</a></p>
+<p><code>&#x26;amp;</code> 는 <code>&#x26;</code> 를 나타내고, <code>&#x26;gt;</code> 는 <code>></code> 을 나타낸다. Entity라고 부르며, 이 중 특수문자를 Reserved characters라고 한다.</p>
+<h1 id="외부-사이트-이동-기능-redirect-token" style="position:relative;"><a href="#%EC%99%B8%EB%B6%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%9D%B4%EB%8F%99-%EA%B8%B0%EB%8A%A5-redirect-token" aria-label="외부 사이트 이동 기능 redirect token permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>외부 사이트 이동 기능. Redirect Token.</h1>
+<p>유튜브 댓글에 다른 사용자가 하이퍼 링크를 입력하면 텍스트는 링크한 사이트로 표기되지만, 실제 링크는 유튜브의 redirection 페이지로 변경되어 있다.
+변경된 페이지로 이동 시 실제 사이트 주소와 추가 정보를 URL 포함하여 전달하는데, 그 용도에 대해서 알아본다.</p>
+<p><strong>Youtube Use case</strong></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/858ccb92372fd989aa766342a1655197/be86f/youtube-redirection1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 18.243243243243242%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAtklEQVR42oXK7WqDMBiGYU9iiak14KBqlbLENybxoz3/s7pHZeD2az8ueLh5Cm1bVDOg6htKKbTWP8pf+z/nt5hzIqSFSQKfTYMp9aHU6nDus5VH03+aMeZQDONAXHby9iIuTyTvuBCRuCJpxYXMnHceLjB+TcT1iZOMk0TIG5I2Yl7x3jOJUHwoQ9UJVSvUvWDHxLX12CFi7zN1H7D3SN1NXPv56PW7dx77/g8Je3twMYZLVfENHN1xY2XVoxUAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="youtube redirection 1"
+        title=""
+        src="/static/858ccb92372fd989aa766342a1655197/fcda8/youtube-redirection1.png"
+        srcset="/static/858ccb92372fd989aa766342a1655197/12f09/youtube-redirection1.png 148w,
+/static/858ccb92372fd989aa766342a1655197/e4a3f/youtube-redirection1.png 295w,
+/static/858ccb92372fd989aa766342a1655197/fcda8/youtube-redirection1.png 590w,
+/static/858ccb92372fd989aa766342a1655197/be86f/youtube-redirection1.png 662w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/fd4dc5101d73e65f7e8cc1d6497746cf/242e2/youtube-redirection2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 29.054054054054056%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxElEQVR42pWP6wqDMAyF+xCCttZra73U20QEwR++/0udkcgGGxtjPz5OmpOkiTDGwDkHay3KsmRN0xRaayZJkqe+8+6HYQixbRvO88S+71jXFcdxoGkaHk6ffeKbp5SCGMcR0zRhnmcsy4K6rtH3PTMMA/OIH0o1XdfBew/qpxwtIaWEoIDMtm05WRQFk+f5Cx/zWXZBfp5dGxpTPosJOucnfHYB23gY18LYCpW/IY5jCJpKq/5NFEEqDalifiudIggC3AE/CqgN0yjBgwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="youtube redirection 2"
+        title=""
+        src="/static/fd4dc5101d73e65f7e8cc1d6497746cf/fcda8/youtube-redirection2.png"
+        srcset="/static/fd4dc5101d73e65f7e8cc1d6497746cf/12f09/youtube-redirection2.png 148w,
+/static/fd4dc5101d73e65f7e8cc1d6497746cf/e4a3f/youtube-redirection2.png 295w,
+/static/fd4dc5101d73e65f7e8cc1d6497746cf/fcda8/youtube-redirection2.png 590w,
+/static/fd4dc5101d73e65f7e8cc1d6497746cf/242e2/youtube-redirection2.png 703w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>링크를 누르면 이동 대신 경고창으로 정말로 이동할 것인지 묻는다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 516px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/36618336fedc37b6b03cb691b315d031/75dcb/youtube-redirection3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.5945945945946%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQklEQVR42q2Sy07CQBSGeSg3bnXjk/hAJi7EDYkvYHwAWRAMJTUGoVKQSxBB2lIo04KAnX5mqoXiZWM8ycnMOZn/O5dMhk+Looi/WlqbUUGSmLguzWYTs17HMAx0XUcraQwHA26KRa7zeeqmSbFQoFQuc6vr9PvPG6jyHeA8CDBNk067zX2lQq1Wo9VqMZ1MqVWrcdzrPfHYaNDpdnkwDMauuwv8r5ETfQyUUuL7Pp7nMZvNEMJn5nk4joNt24wsm+HIwnLG2OMJ7mQauxAifqe0YRhud5hUUeBtp6qqjHPqvvVUZ1JuNDsjfx1XxeswYvmmHsGlueBEE2R1nzPd51QT5O4CEllanUnvIAFLGeHNQ+wg5HUlOb5y2cu+cJizOMhZ7J+POLqwCGX08w5/+1OJqU7FUiJW8uNcShbr7zAFfAdjMLExFMpgDgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="youtube redirection 3"
+        title=""
+        src="/static/36618336fedc37b6b03cb691b315d031/75dcb/youtube-redirection3.png"
+        srcset="/static/36618336fedc37b6b03cb691b315d031/12f09/youtube-redirection3.png 148w,
+/static/36618336fedc37b6b03cb691b315d031/e4a3f/youtube-redirection3.png 295w,
+/static/36618336fedc37b6b03cb691b315d031/75dcb/youtube-redirection3.png 516w"
+        sizes="(max-width: 516px) 100vw, 516px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>나가기 버튼의 링크로 직접 이동하면 위와 같은 화면으로 이동한다.</p>
+<h2 id="redir_token" style="position:relative;"><a href="#redir_token" aria-label="redir_token permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>redir_token?</h2>
+<p>변경된 링크는 아래처럼 생겼다:</p>
+<pre><code>https://www.youtube.com/redirect
+?event=comments
+&#x26;redir_token=QUFFLUhqbFY2dUdkYjFSNmxnTnZQdnJtLWdUdFNVLW42UXxBQ3Jtc0trdkt2UW1fMWRYdDY0MU1JVTh4ODg0SjVCSUhITi1ualBvN3dUU3ZVR0xjV2h1SnQ5NHdpM2hHdVZmT1JTTWszel9BZlBLQUp4RjJnSDNGVTBuVVdwVnR0VVZ3WURweGE3TUZXalFBQTJIOVhxNXpXdw
+&#x26;q=http%3A%2F%2Fwww.asianfans.net%2Fwatch-online-jewel-in-the-palace-episode-1-54248.html
+&#x26;stzid=Ugzm01czczwhYRrJQHV4AaABAg.96QNPi1HE5n96bf_VU_ja9
+</code></pre>
+<p>실제 이동할 사이트 주소를 가진 <code>q</code>와 알 수 없는 <code>redir_token</code>, <code>stzid</code>가 포함되어 있다.</p>
+<p><code>stzid</code> 의미는 이름에서 유추하기 어려워 보인다.
+<code>redir_token</code>은 redirect token을 의미하는 거 같은데, 어떤 용도로 사용하는지 그 정보가 많이 없다.</p>
+<p><a href="https://help.canary.tools/hc/en-gb/articles/360021010477-How-do-I-create-a-Slow-Fast-Redirect-Token-">https://help.canary.tools/hc/en-gb/articles/360021010477-How-do-I-create-a-Slow-Fast-Redirect-Token-</a></p>
+<p>여기선 slow redirect, fast redirect 방식에 따라 토큰에 포함되는 정보를 달리 하는데, 브라우저와 플러그인 정보의 포함 차이라 한다.</p>
+<p>사용자 세션에 따라 달라지는 값은 아니다.
+시크릿 탭에서 열어도 같은 값을 가진다. 따라서 사용자마다 생성하는 것은 아닌것으로 보인다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/5f37c736-5e0e-53ad-a4e7-d04b2e3319a5/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-865dcadb01184835b48a.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-5b8bf8371ffe58b5cbfd.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="88aaf53c19cf591cf5fd";</script><script src="/webpack-runtime-4198a1094290032f0210.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-865dcadb01184835b48a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

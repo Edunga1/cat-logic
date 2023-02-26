@@ -1,0 +1,227 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div><ul>
+<li>
+<p><a href="#kotlin">Kotlin</a></p>
+</li>
+<li>
+<p><a href="#features">Features</a></p>
+<ul>
+<li><a href="#scope-functions">Scope Functions</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#testing">Testing</a></p>
+<ul>
+<li>
+<p><a href="#kotest-specs">Kotest Specs</a></p>
+<ul>
+<li><a href="#better-specs">Better Specs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#language-server">Language Server</a></p>
+</li>
+<li>
+<p><a href="#ranges">ranges</a></p>
+<ul>
+<li><a href="#hierarchy">Hierarchy</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#kotlin-dsl">Kotlin DSL</a></p>
+</li>
+</ul></div><div><h1 id="kotlin" style="position:relative;"><a href="#kotlin" aria-label="kotlin permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kotlin</h1>
+<h1 id="features" style="position:relative;"><a href="#features" aria-label="features permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h1>
+<h2 id="scope-functions" style="position:relative;"><a href="#scope-functions" aria-label="scope functions permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scope Functions</h2>
+<p><a href="https://kotlinlang.org/docs/scope-functions.html">https://kotlinlang.org/docs/scope-functions.html</a></p>
+<p>e.g. <code>run</code></p>
+<pre><code class="language-kotlin">val totalPrice = item.run { price * amount }
+</code></pre>
+<p>scope functions 모두 같은 일을 한다.
+context object를 어떻게 접근하는 지, 반환 값은 무엇인지에 따라 적절하게 골라서 사용하면 좋다.
+예를들어, context object로 추가 로직을 처리하고, 특별히 반환할 것이 없으면 <code>also</code>.
+context object의 상태로 계산하여 반환하고 싶으면 <code>let</code>을 사용하면 의미가 맞다.</p>
+<p>어떤 함수를 사용할 지 시나리오를 공식 문서에서 설명한다:  <a href="https://kotlinlang.org/docs/scope-functions.html#function-selection">https://kotlinlang.org/docs/scope-functions.html#function-selection</a></p>
+<h1 id="testing" style="position:relative;"><a href="#testing" aria-label="testing permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing</h1>
+<p>test framework: <a href="https://github.com/kotest/kotest">Kotest</a>
+mocking: <a href="https://github.com/mockk/mockk">MockK</a></p>
+<p>junit + mockito 대신 Kotest + MockK를 사용하자.
+kotlin의 타입 관련 문제가 없고, kotlin DSL와 infix 함수로 테스트 코드의 가독성이 좋다.</p>
+<p>e.g. assertion</p>
+<pre><code class="language-kotlin">name shouldBe "john doe"
+3 + 5 shouldBe 8
+</code></pre>
+<p>e.g. mocking</p>
+<pre><code class="language-kotlin">every { obj.foo() } returns 'bar'
+justRun { obj.bar() }  // Unit 반환하는 경우
+</code></pre>
+<h2 id="kotest-specs" style="position:relative;"><a href="#kotest-specs" aria-label="kotest specs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kotest Specs</h2>
+<p><a href="https://kotest.io/docs/framework/testing-styles.html">https://kotest.io/docs/framework/testing-styles.html</a></p>
+<p>테스트 레이아웃을 다양한 스타일로 표현할 수 있다.
+내가 자주 사용하는 스타일은 <code>DescribeSpec</code>.</p>
+<p>Kotest의 Style은 모두 Kotlin DSL로 구성되어 있어 직관적인 구조를 가진다.</p>
+<h3 id="better-specs" style="position:relative;"><a href="#better-specs" aria-label="better specs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Better Specs</h3>
+<p><a href="https://www.betterspecs.org/">https://www.betterspecs.org/</a></p>
+<p>정확한 역사는 잘 모르지만, Ruby 쪽 테스트 도구인 RSpec으로 작성된 테스트 코드 Best Practice 모음이다.
+Kotest의 <code>DescribeSpec</code> 스타일을 사용하면 RSpec와 유사하게 작성할 수 있다.
+테스트 코드 구조도 참고하면 도움이 많이 된다. 큰 구조는 <code>describe</code> <code>context</code> <code>it</code> 3개의 범위로 이루어진다.</p>
+<p>e.g. 테스트 코드 예시</p>
+<pre><code class="language-kotlin">class BuyerSendingAddressServiceTest : DescribeSpec({
+  describe("add 함수는") {
+    beforeEach { /** 각 컨테이너 이전에 실행 할 코드. */ }
+    /** 여기는 context 이전에 실행된다. */
+
+    context("3과 5를 입력하면") {
+      it("8을 반환한다.") {
+        add(3, 5) shouldBe 8
+      }
+    }
+  }
+})
+</code></pre>
+<h1 id="language-server" style="position:relative;"><a href="#language-server" aria-label="language server permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="language-server-protocol">Language Server</a></h1>
+<p><a href="https://github.com/fwcd/kotlin-language-server">https://github.com/fwcd/kotlin-language-server</a></p>
+<p>2022-11-29 아직 퍼포먼스가 안나온다. 자주 끊기고, 느리다.
+ref. <a href="https://www.reddit.com/r/neovim/comments/yf0v86/kotlin_language_server_very_slow/">https://www.reddit.com/r/neovim/comments/yf0v86/kotlin_language_server_very_slow/</a></p>
+<h1 id="ranges" style="position:relative;"><a href="#ranges" aria-label="ranges permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ranges</h1>
+<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/">https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/</a></p>
+<p><code>IntRange</code>를 사용하면 다음과 같은 일을 할 수 있다.</p>
+<p>범위 비교:</p>
+<pre><code class="language-kotlin">if (30 in 1..100) {
+  // true
+}
+</code></pre>
+<p>순회:</p>
+<pre><code class="language-kotlin">for (i in 1.rangeTo(100)) {
+  // 1, 2, 3, 4, 5...100
+}
+</code></pre>
+<p>Step 순회:</p>
+<pre><code class="language-kotlin">for (i in 1.rangeTo(100) step 5) {
+  // 1, 6, 11...96
+}
+</code></pre>
+<p>항상 end 값은 포함(inclusive)한다.</p>
+<p>Char, Int, Long 등 비교할 수 있는 타입이라면 내장된 <code>Range</code> 클래스를 제공한다.</p>
+<h2 id="hierarchy" style="position:relative;"><a href="#hierarchy" aria-label="hierarchy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hierarchy</h2>
+<pre><code>IntRange --|> IntProgression    --|> Iterable&#x3C;Int>
+         --|> ClosedRange&#x3C;Int>  --|> Comparable&#x3C;Int>
+</code></pre>
+<p>Iterable을 구현함으로써 순회할 수 있고, Comparable을 구현함으로써 범위를 비교할 수 있다.</p>
+<p>응용하면 <code>LocalDate</code> 같은 것도 만들 수 있다:
+<a href="https://www.netguru.com/blog/traversing-through-dates-with-kotlin-range-expressions">https://www.netguru.com/blog/traversing-through-dates-with-kotlin-range-expressions</a></p>
+<p>보통 순회, 비교 모두 당장 필요하지는 않을텐데,<br>
+예를들면, 날짜 범위를 나타내는 클래스를 구현하고 싶다면 <code>ClosedRange&#x3C;LocalDate></code>만 구현해도 충분하다.
+<code>Pair&#x3C;LocalDate, LocalDate></code> 보다는 좀 더 명확할 것이다.</p>
+<h1 id="kotlin-dsl" style="position:relative;"><a href="#kotlin-dsl" aria-label="kotlin dsl permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kotlin DSL</h1>
+<p><a href="https://kotlinlang.org/docs/type-safe-builders.html">https://kotlinlang.org/docs/type-safe-builders.html</a></p>
+<blockquote>
+<p>Type-safe builders allow creating Kotlin-based domain-specific languages (DSLs) suitable for building complex hierarchical data structures in a semi-declarative way.</p>
+</blockquote>
+<p>Type-safe 빌더는 비 선언적인 방법으로, 복잡한 계층의 데이터 구조를 만드는데 적합한 Kotlin DSL을 만들 수 있습니다.</p>
+<p>대표적인 예시인 <a href="https://ktor.io/docs/routing-in-ktor.html#define_route">Kotr</a>의 route handler:</p>
+<pre><code class="language-kotlin">import io.ktor.server.routing.*
+import io.ktor.http.*
+import io.ktor.server.response.*
+
+routing {
+    route("/hello", HttpMethod.Get) {
+        handle {
+            call.respondText("Hello")
+        }
+    }
+}
+</code></pre>
+<p>builder 유형의 모듈을 만드는데 유용한 방법이다.</p>
+<p>위 코드에서 <code>routing</code> <code>route</code> <code>handle</code>는 각각 lambda 표현식을 받는 함수이다.
+lambda 함수의 <a href="https://kotlinlang.org/docs/this-expressions.html">this</a>를 정의함으로써 DSL을 만들 수 있다.</p>
+<pre><code class="language-kotlin">html {
+ // ...
+}
+</code></pre>
+<p>이런 표현을 가능케 하려면 다음과 같이 <code>html</code> 함수를 만든다:</p>
+<pre><code class="language-kotlin">fun html(init: HTML.() -> Unit): HTML {
+    val html = HTML()
+    html.init()
+    return html
+}
+</code></pre>
+<p><code>html {}</code>의 lambda 표현식의 this는 이제 <code>HTML</code> 객체가 된다.
+<code>HTML</code> 클래스에 다시 lambda expression을 받도록 함수를 제공하면 중첩된 표현이 가능해진다:</p>
+<pre><code class="language-kotlin">class HTML {
+    fun head(init: Head.() -> Unit): Head {
+        val head = Head()
+        head.init()
+        children.add(head)
+        return head
+    }
+    fun body(init: Body.() -> Unit): Body {
+        val body = Body()
+        body.init()
+        children.add(body)
+        return body
+    }
+}
+</code></pre>
+<pre><code class="language-kotlin">html {
+    head { ... }
+    body { ... }
+}
+</code></pre></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/4db7465a-214e-590a-877d-aa0abbf8d791/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-865dcadb01184835b48a.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-5b8bf8371ffe58b5cbfd.js\"],\"component---src-pages-wiki-markdown-remark-id-tsx\":[\"/component---src-pages-wiki-markdown-remark-id-tsx-b2b1547370b411798096.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="88aaf53c19cf591cf5fd";</script><script src="/webpack-runtime-4198a1094290032f0210.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-865dcadb01184835b48a.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
