@@ -67,11 +67,3 @@
 - [웹 개발](web.md)
 - [Windows Subsystem for Linux (WSL)](windows-subsytem-for-linux.md)
 
-# Work In Progress: Personal Static Site
-
-- [X] Use gatsbyjs as static site generator
-- [X] Use npm gh-pages to deploy static site to github pages
-- [X] Use github actions to automate deployment
-- [ ] Isolate gatsbyjs project as possible as it can be
-- [X] Resolve image inclusion issue
-- [X] Resolve wiki path name issue
