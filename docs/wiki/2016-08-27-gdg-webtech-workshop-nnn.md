@@ -340,7 +340,9 @@ HTTP/2를 사용하려면 https를 사용해야 한다.
 
 ### 규칙, 장점
 
-Https를 필숵으로 사용해야 한다.
+> Using service worker you can hijack connections, fabricate, and filter responses. Powerful stuff. While you would use these powers for good, a man-in-the-middle might not. To avoid this, you can only register for service workers on pages served over HTTPS, so we know the service worker the browser receives hasn't been tampered with during its journey through the network.
+
+Https를 필수적으로 사용해야 한다.
 
 데이터의 신뢰성이 보장되지 않으면 사용자의 의도와는 다른 데이터를 서버에 전송할 수 있기 때문이다.
 
