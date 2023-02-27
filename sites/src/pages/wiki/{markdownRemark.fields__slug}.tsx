@@ -1,32 +1,23 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 
 export default function BlogPostTemplate(
-  { data }: Props,
+  { data }: PageProps<Queries.WikiDetailQuery>,
 ) {
-  const { tableOfContents, html } = data.markdownRemark
+  const { tableOfContents, html } = data.markdownRemark ?? {}
   return (
     <div>
-      <div dangerouslySetInnerHTML={{ __html: tableOfContents }} />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      {tableOfContents && <div dangerouslySetInnerHTML={{ __html: tableOfContents }} />}
+      {html && <div dangerouslySetInnerHTML={{ __html: html }} />}
     </div>
   )
 }
 
 export const pageQuery = graphql`
-  query($id: String!) {
+  query WikiDetail($id: String!) {
     markdownRemark(id: { eq: $id }) {
       tableOfContents
       html
     }
   }
 `
-
-interface Props {
-  data: {
-    markdownRemark: {
-      tableOfContents: string
-      html: string
-    }
-  }
-}
