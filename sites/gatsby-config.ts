@@ -29,6 +29,7 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 }
 
