@@ -36,7 +36,7 @@ https://github.com/microsoft/pyright
 
 프로젝트 root에 `pyrightconfig.json`을 생성한다.
 
-#### 타입 힌트를 사용하지 않으려면
+#### 레거시를 위한 설정
 
 ```json
 {
@@ -45,6 +45,9 @@ https://github.com/microsoft/pyright
 ```
 
 타입 명세하지 않는 프로젝트의 경우 무수한 에러 메시지가 출력된다. disable 하는 편이 낫다.
+
+`reportGeneralTypeIssues`는 `Cannot access member "id" for type "UserFactory"   Member "id" is unknown` 같은 에러를 무시한다.
+django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.
 
 ## pylint
 
