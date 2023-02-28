@@ -68,7 +68,7 @@ data-styled.g1[id="markdownRemarkfields__slug__Toc-sc-cg714z-0"]{content:"hBiYrf
 <li>
 <p><a href="#pyrightconfigjson%EB%A1%9C-%EC%84%A4%EC%A0%95%EA%B4%80%EB%A6%AC"><code>pyrightconfig.json</code>로 설정관리</a></p>
 <ul>
-<li><a href="#%ED%83%80%EC%9E%85-%ED%9E%8C%ED%8A%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EC%9C%BC%EB%A0%A4%EB%A9%B4">타입 힌트를 사용하지 않으려면</a></li>
+<li><a href="#%EB%A0%88%EA%B1%B0%EC%8B%9C%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%84%A4%EC%A0%95">레거시를 위한 설정</a></li>
 </ul>
 </li>
 </ul>
@@ -135,12 +135,14 @@ sources = {
 </ul>
 <h3 id="pyrightconfigjson로-설정관리" style="position:relative;"><a href="#pyrightconfigjson%EB%A1%9C-%EC%84%A4%EC%A0%95%EA%B4%80%EB%A6%AC" aria-label="pyrightconfigjson로 설정관리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>pyrightconfig.json</code>로 설정관리</h3>
 <p>프로젝트 root에 <code>pyrightconfig.json</code>을 생성한다.</p>
-<h4 id="타입-힌트를-사용하지-않으려면" style="position:relative;"><a href="#%ED%83%80%EC%9E%85-%ED%9E%8C%ED%8A%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EC%95%8A%EC%9C%BC%EB%A0%A4%EB%A9%B4" aria-label="타입 힌트를 사용하지 않으려면 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>타입 힌트를 사용하지 않으려면</h4>
+<h4 id="레거시를-위한-설정" style="position:relative;"><a href="#%EB%A0%88%EA%B1%B0%EC%8B%9C%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%84%A4%EC%A0%95" aria-label="레거시를 위한 설정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>레거시를 위한 설정</h4>
 <pre><code class="language-json">{
   "reportGeneralTypeIssues": false
 }
 </code></pre>
 <p>타입 명세하지 않는 프로젝트의 경우 무수한 에러 메시지가 출력된다. disable 하는 편이 낫다.</p>
+<p><code>reportGeneralTypeIssues</code>는 <code>Cannot access member "id" for type "UserFactory"   Member "id" is unknown</code> 같은 에러를 무시한다.
+django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.</p>
 <h2 id="pylint" style="position:relative;"><a href="#pylint" aria-label="pylint permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pylint</h2>
 <p><a href="https://github.com/PyCQA/pylint">https://github.com/PyCQA/pylint</a>
 정적 분석 도구.</p>
