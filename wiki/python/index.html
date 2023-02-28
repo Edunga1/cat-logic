@@ -62,15 +62,7 @@ data-styled.g1[id="markdownRemarkfields__slug__Toc-sc-cg714z-0"]{content:"hBiYrf
 <li>
 <p><a href="#pyright">pyright</a></p>
 <ul>
-<li>
-<p><a href="#pyright-%EC%84%A4%EC%B9%98">pyright 설치</a></p>
-</li>
-<li>
-<p><a href="#pyrightconfigjson%EB%A1%9C-%EC%84%A4%EC%A0%95%EA%B4%80%EB%A6%AC"><code>pyrightconfig.json</code>로 설정관리</a></p>
-<ul>
-<li><a href="#%EB%A0%88%EA%B1%B0%EC%8B%9C%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%84%A4%EC%A0%95">레거시를 위한 설정</a></li>
-</ul>
-</li>
+<li><a href="#pyright-%EC%84%A4%EC%B9%98">pyright 설치</a></li>
 </ul>
 </li>
 <li>
@@ -84,6 +76,9 @@ data-styled.g1[id="markdownRemarkfields__slug__Toc-sc-cg714z-0"]{content:"hBiYrf
 </li>
 <li>
 <p><a href="#python-code-formatter-autopep8-vs-black-vs-yapf">python code formatter: autopep8 vs black vs yapf</a></p>
+</li>
+<li>
+<p><a href="#%EB%A0%88%EA%B1%B0%EC%8B%9C%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%84%A4%EC%A0%95">레거시를 위한 설정</a></p>
 </li>
 </ul>
 </li>
@@ -133,16 +128,6 @@ sources = {
 <li>nvim-lspconfig은 <code>Mason</code>을 사용하자: <code>:MasonInstall pyright</code></li>
 <li><a href="https://github.com/fannheyward/coc-pyright">coc-nvim</a>: <code>:CocInstall coc-pyright</code></li>
 </ul>
-<h3 id="pyrightconfigjson로-설정관리" style="position:relative;"><a href="#pyrightconfigjson%EB%A1%9C-%EC%84%A4%EC%A0%95%EA%B4%80%EB%A6%AC" aria-label="pyrightconfigjson로 설정관리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>pyrightconfig.json</code>로 설정관리</h3>
-<p>프로젝트 root에 <code>pyrightconfig.json</code>을 생성한다.</p>
-<h4 id="레거시를-위한-설정" style="position:relative;"><a href="#%EB%A0%88%EA%B1%B0%EC%8B%9C%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%84%A4%EC%A0%95" aria-label="레거시를 위한 설정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>레거시를 위한 설정</h4>
-<pre><code class="language-json">{
-  "reportGeneralTypeIssues": false
-}
-</code></pre>
-<p>타입 명세하지 않는 프로젝트의 경우 무수한 에러 메시지가 출력된다. disable 하는 편이 낫다.</p>
-<p><code>reportGeneralTypeIssues</code>는 <code>Cannot access member "id" for type "UserFactory"   Member "id" is unknown</code> 같은 에러를 무시한다.
-django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.</p>
 <h2 id="pylint" style="position:relative;"><a href="#pylint" aria-label="pylint permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pylint</h2>
 <p><a href="https://github.com/PyCQA/pylint">https://github.com/PyCQA/pylint</a>
 정적 분석 도구.</p>
@@ -222,6 +207,21 @@ disallow_untyped_defs = False
 <p><strong>autopep8</strong>
 코드를 변경하지 않는다.</p>
 <p>개인적으로는 black, yapf의 스타일이 별로라서 autopep8을 사용하고 있다.</p>
+<h2 id="레거시를-위한-설정" style="position:relative;"><a href="#%EB%A0%88%EA%B1%B0%EC%8B%9C%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%84%A4%EC%A0%95" aria-label="레거시를 위한 설정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>레거시를 위한 설정</h2>
+<p>pyright, mypy를 타입 명세하지 않는 등 레거시 프로젝트에서 사용하면 무수히 많은 에러 메시지가 출력된다.
+disable 하는 편이 차라리 낫다.</p>
+<p>파이썬 도구는 <code>pyrightconfig.json</code>, <code>mypy.ini</code> 등 설정 파일을 사용하거나, 공통 설정 파일인 <code>pyproject.toml</code>을 사용한다.</p>
+<pre><code class="language-toml">[tool.mypy]
+python_version = "3.8"
+disallow_untyped_defs = false
+
+
+[tool.pyright]
+reportGeneralTypeIssues = false
+</code></pre>
+<p><code>reportGeneralTypeIssues</code>는 <code>Cannot access member "id" for type "UserFactory"   Member "id" is unknown</code> 같은 에러를 무시한다.
+django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.</p>
+<p><code>disallow_untyped_defs</code>는 mypy에서 타입 명세하지 않으면 에러 메시지를 출력하는 옵션이다. 이것도 무시한다.</p>
 <h1 id="python-mock" style="position:relative;"><a href="#python-mock" aria-label="python mock permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Python mock</h1>
 <p><a href="https://docs.python.org/3/library/unittest.mock.html">https://docs.python.org/3/library/unittest.mock.html</a></p>
 <p>설치: <code>pip install mock</code></p>
