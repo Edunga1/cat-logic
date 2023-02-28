@@ -32,23 +32,6 @@ https://github.com/microsoft/pyright
 * nvim-lspconfig은 `Mason`을 사용하자: `:MasonInstall pyright`
 * [coc-nvim](https://github.com/fannheyward/coc-pyright): `:CocInstall coc-pyright`
 
-### `pyrightconfig.json`로 설정관리
-
-프로젝트 root에 `pyrightconfig.json`을 생성한다.
-
-#### 레거시를 위한 설정
-
-```json
-{
-  "reportGeneralTypeIssues": false
-}
-```
-
-타입 명세하지 않는 프로젝트의 경우 무수한 에러 메시지가 출력된다. disable 하는 편이 낫다.
-
-`reportGeneralTypeIssues`는 `Cannot access member "id" for type "UserFactory"   Member "id" is unknown` 같은 에러를 무시한다.
-django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.
-
 ## pylint
 
 https://github.com/PyCQA/pylint
@@ -135,6 +118,28 @@ Formatter autopep8 is not installed. Install?:
 코드를 변경하지 않는다.
 
 개인적으로는 black, yapf의 스타일이 별로라서 autopep8을 사용하고 있다.
+
+## 레거시를 위한 설정
+
+pyright, mypy를 타입 명세하지 않는 등 레거시 프로젝트에서 사용하면 무수히 많은 에러 메시지가 출력된다.
+disable 하는 편이 차라리 낫다.
+
+파이썬 도구는 `pyrightconfig.json`, `mypy.ini` 등 설정 파일을 사용하거나, 공통 설정 파일인 `pyproject.toml`을 사용한다.
+
+```toml
+[tool.mypy]
+python_version = "3.8"
+disallow_untyped_defs = false
+
+
+[tool.pyright]
+reportGeneralTypeIssues = false
+```
+
+`reportGeneralTypeIssues`는 `Cannot access member "id" for type "UserFactory"   Member "id" is unknown` 같은 에러를 무시한다.
+django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.
+
+`disallow_untyped_defs`는 mypy에서 타입 명세하지 않으면 에러 메시지를 출력하는 옵션이다. 이것도 무시한다.
 
 # Python mock
 
