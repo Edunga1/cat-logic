@@ -1,0 +1,125 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.3.6">.hBiYrf{margin:4rem 2rem 0 0;}/*!sc*/
+.hBiYrf ul{list-style:none;}/*!sc*/
+.hBiYrf ul p{margin:0;}/*!sc*/
+data-styled.g1[id="markdownRemarkfields__slug__Toc-sc-cg714z-0"]{content:"hBiYrf,"}/*!sc*/
+</style></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div style="display:grid;justify-items:center"><div style="display:grid;grid-template-columns:minmax(300px, 1fr) minmax(400px, 1000px);width:fit-content"><div class="markdownRemarkfields__slug__Toc-sc-cg714z-0 hBiYrf"><ul>
+<li><a href="#webgl">WebGL</a></li>
+<li><a href="#webgl2">WebGL2</a></li>
+<li><a href="#%EC%85%B0%EC%9D%B4%EB%8D%94shader">셰이더(Shader)</a></li>
+<li><a href="#references">References</a></li>
+</ul></div><div><h1 id="webgl" style="position:relative;"><a href="#webgl" aria-label="webgl permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WebGL</h1>
+<h1 id="webgl2" style="position:relative;"><a href="#webgl2" aria-label="webgl2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WebGL2</h1>
+<blockquote>
+<p>GPU에서 실행되는 코드를 제공해만 합니다. 그 코드는 두 개 함수 쌍 형태로 제공되어야 하고, 각각의 함수는 정점 셰이더(vertex shader)와 프래그먼트 셰이더(fragment shader)라고 불립니다. 각각은 매우 엄격한 타입(strictly-types)을 가지는 C/C++과 유사한 GLSL(GL Shader Language)로 작성되어야 합니다.</p>
+</blockquote>
+<p>WebGL2는 두 가지 언어로 개발한다.</p>
+<p>canvas와 context를 통해 WebGL2 API와 커뮤니케이션하는 Javascript 코드와:</p>
+<pre><code class="language-javascript">const canvas = document.querySelector("canvas")
+const gl = canvas.getContext("webgl2")
+</code></pre>
+<p>GLSL이라는 언어로 셰이더와 프라그먼트를 작성하는 코드로 이루어진다:</p>
+<pre><code class="language-glsl">#version 300 es
+
+precision highp float;
+
+uniform vec4 u_color;
+
+out vec4 outColor;
+
+void main() {
+  outColor = u_color;
+}
+</code></pre>
+<p>GLSL 코드는 JS 코드에서 template string을 통해 작성하거나 <script> 태그를 통해 작성할 수 있다:</p>
+<pre><code class="language-javascript">const vertexShaderSource = `#version 300 es
+
+in vec2 a_position;
+
+uniform vec2 u_resolution;
+
+void main() {
+  vec2 zeroToOne = a_position / u_resolution;
+  vec2 zeroToTwo = zeroToOne * 2.0;
+  vec2 clipSpace = zeroToTwo - 1.0;
+
+  gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
+}
+`
+</code></pre>
+<h1 id="셰이더shader" style="position:relative;"><a href="#%EC%85%B0%EC%9D%B4%EB%8D%94shader" aria-label="셰이더shader permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>셰이더(Shader)</h1>
+<blockquote>
+<p>WebGL은 단순한 래스터화(rasterization) 엔진일 뿐입니다. WebGL은 여러분이 작성한 코드로 점, 선 및 삼각형들을 그릴 뿐입니다.</p>
+</blockquote>
+<blockquote>
+<p>WebGL에서는 무언가를 그릴때 마다 두개의 셰이더가 필요합니다. 정점 셰이더와 프래그먼트 셰이더입니다.</p>
+</blockquote>
+<blockquote>
+<p>프래그먼트 셰이더의 역할은 현재 래스터화 되는 픽셀에 색상을 할당하는 것입니다.</p>
+</blockquote>
+<blockquote>
+<p>프래그먼트 셰이더는 픽셀당 한번씩 호출 됩니다. 호출 될 때마다 여러분이 지정한 out 변수를 어떤 색상으로 설정해야 합니다.</p>
+</blockquote>
+<p>셰이더는 정점 셰이더와 프래그먼트 셰이더 두 가지가 있다.</p>
+<p>정점 셰이더는 공간 좌표를 설정하고, 프래그먼트 셰이더는 픽셀에 색상을 할당한다.</p>
+<p>위에서 말하는 <strong>래스터화</strong> 의미는 정점 셰이더에 공간을 설정하면 그 공간을 채우는 픽셀을 프래그먼트 셰이더가 채운다는 의미이다.</p>
+<p>여기서 2D API와의 성능 차이가 나오는 것이 아닐까?<br>
+<a href="https://stackoverflow.com/questions/28867297/why-webgl-is-faster-than-canvas">Why WebGL is faster than Canvas?</a></p>
+<h1 id="references" style="position:relative;"><a href="#references" aria-label="references permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>References</h1>
+<p>WebGL2 기초:<br>
+<a href="https://webgl2fundamentals.org/webgl/lessons/ko/">https://webgl2fundamentals.org/webgl/lessons/ko/</a></p></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/webgl/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-58d846caffb5f79c0247.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-a6d255ad0e2dec90f2a0.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-b312f29a19551e6cfc8b.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="7f7d7e0d7c0f7d459242";</script><script src="/webpack-runtime-630fe0620a018aecd276.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-58d846caffb5f79c0247.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
