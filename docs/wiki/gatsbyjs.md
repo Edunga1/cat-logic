@@ -112,3 +112,22 @@ export const pageQuery = graphql`
 ```
 
 `fields.slug`로 접근하면 된다.
+
+# Issues
+
+## 다른 `.md` 파일에 대한 링크를 생성할 수 없는 문제
+
+[Is it possible to create a link in a Gatsby .md file using the markdown path, not the eventual url?](https://stackoverflow.com/questions/62013570/is-it-possible-to-create-a-link-in-a-gatsby-md-file-using-the-markdown-path-no)
+
+내가 원하는 동작은 깃허브 내에서도 `.md` 간 링크가 동작하는 것이다. 링크 뿐만 아니라 다른 기능도 마찬가지. gatsby의 정적 사이트에서도 마찬가지로 동작해야 한다.
+
+```markdown
+[Link to another document](./another-doc.md)
+```
+
+위 코드가 GitHub에서는 정상적으로 링크가 동작한다.\
+하지만 gatsby에서는 `./current-doc/another-doc.md`로 링크가 생성되고, 동작하지 않는다.
+
+내부 링크를 변경해주는 플러그인이 있긴 하지만, 이 이슈에 해결할 수 있는 플러그인은 없다.
+SO 질문도 이게 가능한지 묻는 것이고, 답변은 gatsby 빌드에 맞춰서 링크를 설정하라는 것이다.
+아쉬운 부분. 😢
