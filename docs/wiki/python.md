@@ -137,7 +137,9 @@ reportGeneralTypeIssues = false
 ```
 
 `reportGeneralTypeIssues`는 `Cannot access member "id" for type "UserFactory"   Member "id" is unknown` 같은 에러를 무시한다.
-django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.
+django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.\
+주의: 타입을 일부 잘 명세하는 경우, `Literal['foo', 'bar']` 와 같이 명세하고 에러를 리포트 받는 것은 매우 유용한데, 이런 에런 에러도 무시하게 된다.
+`cannot access member ~`만 무시하고 `Argument of type "Literal['foo', 'bar']" cannot be assigned to parameter "param_name" of type` 같은 에러는 리포트 받고 싶은데, 아직 방법을 찾지 못했다.
 
 `disallow_untyped_defs`는 mypy에서 타입 명세하지 않으면 에러 메시지를 출력하는 옵션이다. 이것도 무시한다.
 
