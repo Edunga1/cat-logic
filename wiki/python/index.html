@@ -69,10 +69,10 @@ data-styled.g1[id="markdownRemarkfields__slug__Toc-sc-cg714z-0"]{content:"hBiYrf
 <p><a href="#pylint">pylint</a></p>
 </li>
 <li>
-<p><a href="#django-stubs">Django Stubs</a></p>
-</li>
-<li>
 <p><a href="#mypy">mypy</a></p>
+<ul>
+<li><a href="#django-stubs">Django Stubs</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#python-code-formatter-autopep8-vs-black-vs-yapf">python code formatter: autopep8 vs black vs yapf</a></p>
@@ -131,11 +131,6 @@ sources = {
 <h2 id="pylint" style="position:relative;"><a href="#pylint" aria-label="pylint permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pylint</h2>
 <p><a href="https://github.com/PyCQA/pylint">https://github.com/PyCQA/pylint</a>
 정적 분석 도구.</p>
-<h2 id="django-stubs" style="position:relative;"><a href="#django-stubs" aria-label="django stubs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Django Stubs</h2>
-<p><a href="https://github.com/typeddjango/django-stubs">https://github.com/typeddjango/django-stubs</a></p>
-<p>django는 <code>objects</code> 등 마법을 사용해서 타입 제공을 제대로 받을 수 없다.
-pylint, pyright도 type을 알 수 없기 때문에 런타임에서 문제가 없지만 정적분석 시에는 에러로 취급한다.</p>
-<p>djang-stubs는 django와 관련된 타입 정보를 제공한다.</p>
 <h2 id="mypy" style="position:relative;"><a href="#mypy" aria-label="mypy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mypy</h2>
 <p><a href="https://github.com/python/mypy">https://github.com/python/mypy</a></p>
 <blockquote>
@@ -148,6 +143,10 @@ pylint, pyright도 type을 알 수 없기 때문에 런타임에서 문제가 �
 # disable error 'Need type annotation for "variable"'
 disallow_untyped_defs = False
 </code></pre>
+<h3 id="django-stubs" style="position:relative;"><a href="#django-stubs" aria-label="django stubs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Django Stubs</h3>
+<p><a href="https://github.com/typeddjango/django-stubs">https://github.com/typeddjango/django-stubs</a></p>
+<p>django는 <code>objects</code> 등 마법을 사용해서 타입 제공을 제대로 받을 수 없다.</p>
+<p>djang-stubs는 django 매직과 관련된 타입 정보를 제공한다.</p>
 <h2 id="python-code-formatter-autopep8-vs-black-vs-yapf" style="position:relative;"><a href="#python-code-formatter-autopep8-vs-black-vs-yapf" aria-label="python code formatter autopep8 vs black vs yapf permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python code formatter: autopep8 vs black vs yapf</h2>
 <p>파이썬 코드 formatter 3종 비교.</p>
 <p><a href="https://github.com/neoclide/coc.nvim">coc.nvim</a>에서는 파이썬 파일을 열 때 3개 중 하나를 선택하도록 한다:</p>
@@ -211,18 +210,48 @@ disallow_untyped_defs = False
 <p>pyright, mypy를 타입 명세하지 않는 등 레거시 프로젝트에서 사용하면 무수히 많은 에러 메시지가 출력된다.
 disable 하는 편이 차라리 낫다.</p>
 <p>파이썬 도구는 <code>pyrightconfig.json</code>, <code>mypy.ini</code> 등 설정 파일을 사용하거나, 공통 설정 파일인 <code>pyproject.toml</code>을 사용한다.</p>
+<p>아래는 <code>pyproject.toml</code>에 설정한 내용이다:</p>
 <pre><code class="language-toml">[tool.mypy]
 python_version = "3.8"
+plugins = ["mypy_django_plugin.main"]
 disallow_untyped_defs = false
 
 
+[tool.django-stubs]
+django_settings_module = "app.settings"
+
+
 [tool.pyright]
-reportGeneralTypeIssues = false
+reportGeneralTypeIssues = true
+
+
+[tool.pylint.master]
+load-plugins = [
+  "pylint_django",
+]
+django-settings-module = "app.settings"
+[tool.pylint.messages_control]
+disable = [
+  "missing-docstring",
+  "too-few-public-methods",
+  "too-many-instance-attributes",
+  "trailing-newlines",
+  "too-many-arguments",
+  "too-many-public-methods",
+  "invalid-name",
+  "too-many-locals",
+  "too-many-return-statements",
+  "too-many-lines",
+]
+[tool.pylint.format]
+max-line-length = 150
 </code></pre>
-<p><code>reportGeneralTypeIssues</code>는 <code>Cannot access member "id" for type "UserFactory"   Member "id" is unknown</code> 같은 에러를 무시한다.
+<p>mypy, pyright, pylint 설정을 모두 <code>pyproject.toml</code>에 넣었다.</p>
+<p><code>reportGeneralTypeIssues = false</code>는 <code>Cannot access member "id" for type "UserFactory"   Member "id" is unknown</code> 같은 에러를 무시한다.
 django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.<br>
-주의: 타입을 일부 잘 명세하는 경우, <code>Literal['foo', 'bar']</code> 와 같이 명세하고 에러를 리포트 받는 것은 매우 유용한데, 이런 에런 에러도 무시하게 된다.
-<code>cannot access member ~</code>만 무시하고 <code>Argument of type "Literal['foo', 'bar']" cannot be assigned to parameter "param_name" of type</code> 같은 에러는 리포트 받고 싶은데, 아직 방법을 찾지 못했다.</p>
+타입을 잘 명세하는 경우, <code>Literal['foo', 'bar']</code> 와 같이 명세하고 에러를 정적 체크하는 것은 매우 유용한데, 이런 에러도 무시하게 된다.
+<code>cannot access member ~</code>만 무시하고 <code>Argument of type "Literal['foo', 'bar']" cannot be assigned to parameter "param_name" of type</code> 같은 에러는 리포트 받고 싶은데, 아직 방법을 찾지 못했다.<br>
+일단 <code>true</code>로 설정하여 번거롭지만 <code>Cannot access member ~</code> 에러도 리포트 받도록 했다.</p>
 <p><code>disallow_untyped_defs</code>는 mypy에서 타입 명세하지 않으면 에러 메시지를 출력하는 옵션이다. 이것도 무시한다.</p>
 <h1 id="python-mock" style="position:relative;"><a href="#python-mock" aria-label="python mock permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Python mock</h1>
 <p><a href="https://docs.python.org/3/library/unittest.mock.html">https://docs.python.org/3/library/unittest.mock.html</a></p>
