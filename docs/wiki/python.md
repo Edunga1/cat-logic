@@ -37,15 +37,6 @@ https://github.com/microsoft/pyright
 https://github.com/PyCQA/pylint
 정적 분석 도구.
 
-## Django Stubs
-
-https://github.com/typeddjango/django-stubs
-
-django는 `objects` 등 마법을 사용해서 타입 제공을 제대로 받을 수 없다.
-pylint, pyright도 type을 알 수 없기 때문에 런타임에서 문제가 없지만 정적분석 시에는 에러로 취급한다.
-
-djang-stubs는 django와 관련된 타입 정보를 제공한다.
-
 ## mypy
 
 https://github.com/python/mypy
@@ -62,6 +53,14 @@ https://github.com/python/mypy
 # disable error 'Need type annotation for "variable"'
 disallow_untyped_defs = False
 ```
+
+### Django Stubs
+
+https://github.com/typeddjango/django-stubs
+
+django는 `objects` 등 마법을 사용해서 타입 제공을 제대로 받을 수 없다.
+
+djang-stubs는 django 매직과 관련된 타입 정보를 제공한다.
 
 ## python code formatter: autopep8 vs black vs yapf
 
@@ -126,20 +125,52 @@ disable 하는 편이 차라리 낫다.
 
 파이썬 도구는 `pyrightconfig.json`, `mypy.ini` 등 설정 파일을 사용하거나, 공통 설정 파일인 `pyproject.toml`을 사용한다.
 
+아래는 `pyproject.toml`에 설정한 내용이다:
+
 ```toml
 [tool.mypy]
 python_version = "3.8"
+plugins = ["mypy_django_plugin.main"]
 disallow_untyped_defs = false
 
 
+[tool.django-stubs]
+django_settings_module = "app.settings"
+
+
 [tool.pyright]
-reportGeneralTypeIssues = false
+reportGeneralTypeIssues = true
+
+
+[tool.pylint.master]
+load-plugins = [
+  "pylint_django",
+]
+django-settings-module = "app.settings"
+[tool.pylint.messages_control]
+disable = [
+  "missing-docstring",
+  "too-few-public-methods",
+  "too-many-instance-attributes",
+  "trailing-newlines",
+  "too-many-arguments",
+  "too-many-public-methods",
+  "invalid-name",
+  "too-many-locals",
+  "too-many-return-statements",
+  "too-many-lines",
+]
+[tool.pylint.format]
+max-line-length = 150
 ```
 
-`reportGeneralTypeIssues`는 `Cannot access member "id" for type "UserFactory"   Member "id" is unknown` 같은 에러를 무시한다.
+mypy, pyright, pylint 설정을 모두 `pyproject.toml`에 넣었다.
+
+`reportGeneralTypeIssues = false`는 `Cannot access member "id" for type "UserFactory"   Member "id" is unknown` 같은 에러를 무시한다.
 django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.\
-주의: 타입을 일부 잘 명세하는 경우, `Literal['foo', 'bar']` 와 같이 명세하고 에러를 리포트 받는 것은 매우 유용한데, 이런 에런 에러도 무시하게 된다.
-`cannot access member ~`만 무시하고 `Argument of type "Literal['foo', 'bar']" cannot be assigned to parameter "param_name" of type` 같은 에러는 리포트 받고 싶은데, 아직 방법을 찾지 못했다.
+타입을 잘 명세하는 경우, `Literal['foo', 'bar']` 와 같이 명세하고 에러를 정적 체크하는 것은 매우 유용한데, 이런 에러도 무시하게 된다.
+`cannot access member ~`만 무시하고 `Argument of type "Literal['foo', 'bar']" cannot be assigned to parameter "param_name" of type` 같은 에러는 리포트 받고 싶은데, 아직 방법을 찾지 못했다.\
+일단 `true`로 설정하여 번거롭지만 `Cannot access member ~` 에러도 리포트 받도록 했다.
 
 `disallow_untyped_defs`는 mypy에서 타입 명세하지 않으면 에러 메시지를 출력하는 옵션이다. 이것도 무시한다.
 
