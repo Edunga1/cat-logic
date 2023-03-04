@@ -19,7 +19,7 @@ Larry Tesler 이야기. [38:08](https://youtu.be/PUv66718DII?t=2287)
 ref. [컴퓨터 '복사해 붙이기' 기능 발명한 래리 테슬러 사망](https://www.1koreanpost.com/news/article/february/21/2020/%EC%BB%B4%ED%93%A8%ED%84%B0-'%EB%B3%B5%EC%82%AC%ED%95%B4-%EB%B6%99%EC%9D%B4%EA%B8%B0'-%EA%B8%B0%EB%8A%A5-%EB%B0%9C%EB%AA%85%ED%95%9C-%EB%9E%98%EB%A6%AC-%ED%85%8C%EC%8A%AC%EB%9F%AC-%EC%82%AC%EB%A7%9D)
 ref. [[삶과 추억] ‘카피·페이스트’ 개발자 래리 테슬러](https://news.koreadaily.com/2020/02/20/society/community/8048966.html)
 
-옛날(70s?) 소프트웨어 인터페이스는 'mode'로 디자인되었다. 텍스트 에디터는 [[vim]]처럼 'insert mode'로 전환해야 했다. 많은 사람들에게 이것은 컴퓨터에 대한 장벽이라 생각했다.
+옛날(70s?) 소프트웨어 인터페이스는 'mode'로 디자인되었다. 텍스트 에디터는 [vim](./vim.md)처럼 'insert mode'로 전환해야 했다. 많은 사람들에게 이것은 컴퓨터에 대한 장벽이라 생각했다.
 larry의 원칙(principle)을 세웠는데, 누구도 mode에 얽매이지 않게 하는 것이다.
 
 원칙을 중요하게 생각한 게 https://nomodes.com/Larry_Tesler_Consulting/Home.html 이런 사이트도 만들었다. :0

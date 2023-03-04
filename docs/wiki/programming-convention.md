@@ -45,10 +45,10 @@ services:
 * 시간대 지정자를 표기하지 않으면 local time을 의미한다.
 
 사용하려면:
-* [javascript](javascript.md)의 경우 `new Date().toJSON()`: `"2020-07-10T02:42:55.338Z"`
-* [python](python.md)의 경우 `datetime.now().isoformat()`: `'2020-07-10T02:43:36.933276'`
+* [javascript](./javascript.md)의 경우 `new Date().toJSON()`: `"2020-07-10T02:42:55.338Z"`
+* [python](./python.md)의 경우 `datetime.now().isoformat()`: `'2020-07-10T02:43:36.933276'`
 
-[python](python.md)의 경우 시간대 지정자 `Z`가 생략되었다.
+[python](./python.md)의 경우 시간대 지정자 `Z`가 생략되었다.
 
 ## python의 datetime.isoformat()은 ISO 8601을 위반한다.
 

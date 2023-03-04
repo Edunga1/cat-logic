@@ -1,5 +1,6 @@
 # Windows Subsystem for Linux (WSL)
 
+
 줄여서 WSL. 윈도우10부터 리눅스를 실행할 수 있다.
 
 # vim 설정

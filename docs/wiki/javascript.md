@@ -72,7 +72,7 @@ console.log(foo); // 2
 `Array.prototype.reduce` 같은 메서드에서 유용하다.
 
 
-# [AngularJS](angular-js)
+# [AngularJS](./angularjs.md)
 
 Angular가 아닌 AngularJS에 대한 이야기.
 이제는 사용하지 않지만 [스타일가이드](https://github.com/johnpapa/angular-styleguide/)의 철학은 한 번 읽어볼만 하다.
@@ -94,7 +94,7 @@ function foo(arg1) {
 이럴때면 [정적 타입](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C%ED%98%95_%EC%B2%B4%EA%B3%84) 언어의 IDE가 제공하는
 타입힌트가 그리워진다.
 
-Visual Studio Code(또는 [LSP](language-server-protocol)를 사용하는 에디터라면)에서
+Visual Studio Code(또는 [LSP](./language-server-protocol.md)를 사용하는 에디터라면)에서
 **JSDoc** 활용하면 에디터에서 타입 힌트를 제공받을 수 있다.
 
 ## 기본 지원

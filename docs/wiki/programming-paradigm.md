@@ -2,7 +2,7 @@
 
 # Object Oriented Progamming
 
-[Object Oriented Progamming](object-oriented-programming)
+[Object Oriented Progamming](./object-oriented-programming.md)
 
 # "Database Abstraction Layers Must Die!"라는 글을 읽고
 

@@ -17,7 +17,7 @@ iterator() 메소드를 통해 iterator를 반환 해 준다.
 RDBMS도 MySQL, MsSQL, Oracle 다 쿼리 스펙이 다르다. 그래서 데이터 소스(DB)와 커뮤니케이션할 추상 레이어를 둔다.
 데이터베이스의 변경 여지가 있기 때문에 추상화하기도 한다. MySQL -> MsSQL 전환, RDBMS -> NoSQL로의 전환도 언젠가 할지도 모른다.
 
-물론 DB 전환을 염두하고 추상화하지 말라는 뉘앙스의 글도 있다: ["Database Abstraction Layers Must Die!"라는 글을 읽고](c9875c187a06ca42d069474cd880a901.md)
+물론 DB 전환을 염두하고 추상화하지 말라는 뉘앙스의 글도 있다: ["Database Abstraction Layers Must Die!"라는 글을 읽고](./programming-paradigm.md)
 
 아무튼. Repository Pattern은 데이터의 중앙화와 API의 일관성을 유지하고 중복 코드를 제거해 준다.
 

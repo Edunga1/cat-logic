@@ -15,7 +15,7 @@ https://github.com/nanotee/nvim-lua-guide#modules
 
 ## 내장 Language Server Protocol 사용하기
 
-[Language Server Protocol](language-server-protocol)
+[Language Server Protocol](./language-server-protocol.md)
 
 TL;DR
 * [nvim-lspconfig/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) 제공하는 language server 목록

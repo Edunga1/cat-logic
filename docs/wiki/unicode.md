@@ -19,7 +19,7 @@ Normalization Form **D**
 
 1, 2는 서로 다른 문자열이다. 같아 보인다면 프로그램이 그렇게 보이도록 출력한 것이다.
 
-[Javascript](javascript.md) 기준으로 문자열 비교하면 실패한다:
+[Javascript](./javascript.md) 기준으로 문자열 비교하면 실패한다:
 
 ```javascript
 '그린빌 100 단지 아파트' == '그린빌 100 단지 아파트'  // false
@@ -44,14 +44,14 @@ Destructuring하면 자모 분리되어 표현된다:
 
 언어마다 내장된 라이브러리를 제공한다.
 
-[Python](python.md):
+[Python](./python.md):
 ```python
 from unicodedata import normalize
 
 normalize('NFC', u'그린빌')
 ```
 
-[Javascript](javascript.md):
+[Javascript](./javascript.md):
 ```javascript
 '그린빌'.normalize('NFC')
 ```

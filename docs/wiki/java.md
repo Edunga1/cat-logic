@@ -168,7 +168,7 @@ session.query(User).filter(User.name == 'Edwardo').all()
 ```
 
 sqlalchemy의 경우 python의 연산자 오버로딩을 힘입어 높은 가독성을 가진다.
-numpy와 같은 [python](python.md) 라이브러리도 같은 이유에서 사용하기 편리한 인터페이스를 가졌다.
+numpy와 같은 [python](./python.md) 라이브러리도 같은 이유에서 사용하기 편리한 인터페이스를 가졌다.
 
 ###### querydsl-sql
 

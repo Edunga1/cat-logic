@@ -20,7 +20,7 @@ PATH=/Users/username/bin:/usr/local/Cellar/pyenv-virtualenv/1.1.5/shims:/usr/loc
 
 이제 `cron`을 통해 실행되면, `~/workspace/my-api/script.log` 파일에 결과가 기록된다.
 실행되지 않으면 daemon(`cron`)이 실행되고 있지 않은 것이므로, `cron`을 실행한다.
-이는 운영체제마다 다를 것으로 보인다. ubuntu([wsl](windows-subsytem-for-linux.md))의 경우 `cron`을 직접 실행시켜야 했다.(`sudo cron`)
+이는 운영체제마다 다를 것으로 보인다. ubuntu([wsl](./windows-subsystem-for-linux.md))의 경우 `cron`을 직접 실행시켜야 했다.(`sudo cron`)
 
 - 명령어의 실행 위치는 home directory다. 상대 경로로 사용시 주의해야 한다.
 - 사용자 로그인을 통해 shell에 접속한 것이 아니므로 profile 파일을 읽지 않는다. 따라서 명령어의 경우 PATH 환경변수를 명시적으로 지정해야 한다.

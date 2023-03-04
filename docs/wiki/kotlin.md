@@ -74,7 +74,7 @@ class BuyerSendingAddressServiceTest : DescribeSpec({
 ```
 
 
-# [Language Server](language-server-protocol)
+# [Language Server](./language-server-protocol.md)
 
 https://github.com/fwcd/kotlin-language-server
 
