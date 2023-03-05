@@ -202,3 +202,14 @@ Stackoverflow Post: https://stackoverflow.com/questions/26543612/should-i-use-ja
 > Default methods should only be used to delegate calls to other repository methods. Default methods - by definition - cannot access any state of an instance (as an interface has none). They only can delegate to other interface methods or call static ones of other classes.
 
 *다른 메서드의 위임 용도로만 기본 메서드를 사용해야 합니다.*
+
+# 중첩 클래스(Nested Classes)
+
+> Terminology: Nested classes are divided into two categories: non-static and static. Non-static nested classes are called inner classes. Nested classes that are declared static are called static nested classes.
+
+중첩 클래스에는 두 가지 종류가 있다. static이 아닌 중첩 클래스는 **inner class**, static으로 선언된 중첩 클래스는 **static nested class**.\
+따라서 static이면서 inner class는 없다.
+
+# Reference
+
+https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html
