@@ -65,7 +65,12 @@ data-styled.g1[id="markdownRemarkfields__slug__Toc-sc-cg714z-0"]{content:"hBiYrf
 <li>
 <p><a href="#issues">Issues</a></p>
 <ul>
-<li><a href="#%EB%8B%A4%EB%A5%B8-md-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%8C%80%ED%95%9C-%EB%A7%81%ED%81%AC%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EB%AC%B8%EC%A0%9C">다른 <code>.md</code> 파일에 대한 링크를 생성할 수 없는 문제</a></li>
+<li>
+<p><a href="#%EB%8B%A4%EB%A5%B8-md-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%8C%80%ED%95%9C-%EB%A7%81%ED%81%AC%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EB%AC%B8%EC%A0%9C">다른 <code>.md</code> 파일에 대한 링크를 생성할 수 없는 문제</a></p>
+<ul>
+<li><a href="#%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95">해결 방법</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul></div><div><h1 id="gatsby" style="position:relative;"><a href="#gatsby" aria-label="gatsby permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gatsby</h1>
@@ -173,7 +178,25 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
 하지만 gatsby에서는 <code>./current-doc/another-doc.md</code>로 링크가 생성되고, 동작하지 않는다.</p>
 <p>내부 링크를 변경해주는 플러그인이 있긴 하지만, 이 이슈에 해결할 수 있는 플러그인은 없다.
 SO 질문도 이게 가능한지 묻는 것이고, 답변은 gatsby 빌드에 맞춰서 링크를 설정하라는 것이다.
-아쉬운 부분. 😢</p></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/gatsbyjs/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+아쉬운 부분. 😢</p>
+<h3 id="해결-방법" style="position:relative;"><a href="#%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95" aria-label="해결 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>해결 방법</h3>
+<p>처리한 방법:<br>
+<a href="https://github.com/Edunga1/cat-logic/commit/b2762545eb481fde2dfc8deb5ebbade31fab38a7">https://github.com/Edunga1/cat-logic/commit/b2762545eb481fde2dfc8deb5ebbade31fab38a7</a></p>
+<p><code>replaceAll</code>을 이용해서 <code>.md</code>를 제거하고, <code>../</code>를 추가한다:</p>
+<pre><code class="language-typescript">// replace markdown links to wiki pages with internal links
+// e.g. &#x3C;a href="./javascript.md"> -> &#x3C;a href="../javascript">
+export default function replaceWikiLinks(text: string) {
+  const regex = /&#x3C;a href="\.\/([^"]+)\.md">/g
+  return text.replaceAll(
+    regex,
+    (_, p1) => {
+      return `&#x3C;a href="../${p1}">`
+    }
+  )
+}
+</code></pre>
+<p><code>&#x3C;a href="./javascript.md"></code>를 <code>&#x3C;a href="../javascript"></code>로 변경하는 방법이다.</p>
+<p>와중에 주석만 작성하고, 코드는 copilot이 작성해줬다. 😎 (&#x3C;- 이 부분도 copilot이 작성해줬다. 괄호 안에 있는 것도!)</p></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/gatsbyjs/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
