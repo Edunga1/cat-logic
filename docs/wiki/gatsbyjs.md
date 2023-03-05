@@ -131,3 +131,27 @@ export const pageQuery = graphql`
 내부 링크를 변경해주는 플러그인이 있긴 하지만, 이 이슈에 해결할 수 있는 플러그인은 없다.
 SO 질문도 이게 가능한지 묻는 것이고, 답변은 gatsby 빌드에 맞춰서 링크를 설정하라는 것이다.
 아쉬운 부분. 😢
+
+### 해결 방법
+
+처리한 방법:\
+https://github.com/Edunga1/cat-logic/commit/b2762545eb481fde2dfc8deb5ebbade31fab38a7
+
+`replaceAll`을 이용해서 `.md`를 제거하고, `../`를 추가한다:
+```typescript
+// replace markdown links to wiki pages with internal links
+// e.g. <a href="./javascript.md"> -> <a href="../javascript">
+export default function replaceWikiLinks(text: string) {
+  const regex = /<a href="\.\/([^"]+)\.md">/g
+  return text.replaceAll(
+    regex,
+    (_, p1) => {
+      return `<a href="../${p1}">`
+    }
+  )
+}
+```
+
+`<a href="./javascript.md">`를 `<a href="../javascript">`로 변경하는 방법이다.
+
+와중에 주석만 작성하고, 코드는 copilot이 작성해줬다. 😎 (<- 이 부분도 copilot이 작성해줬다. 괄호 안에 있는 것도!)
