@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, PageProps } from "gatsby"
 import styled from "styled-components"
+import replaceWikiLinks from "../../utils/wiki"
 
 const ContainerStyles = {
   display: "grid",
@@ -27,11 +28,12 @@ export default function BlogPostTemplate(
   { data }: PageProps<Queries.WikiDetailQuery>,
 ) {
   const { tableOfContents, html } = data.markdownRemark ?? {}
+  const rhtml = html && replaceWikiLinks(html)
   return (
     <div style={ContainerStyles}>
       <div style={ContentStyles}>
         {tableOfContents && <Toc dangerouslySetInnerHTML={{ __html: tableOfContents }} />}
-        {html && <div dangerouslySetInnerHTML={{ __html: html }} />}
+        {rhtml && <div dangerouslySetInnerHTML={{ __html: rhtml }} />}
       </div>
     </div>
   )
