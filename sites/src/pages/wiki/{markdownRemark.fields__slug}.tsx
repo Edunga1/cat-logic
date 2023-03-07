@@ -3,12 +3,7 @@ import { graphql, PageProps } from "gatsby"
 import styled from "styled-components"
 import replaceWikiLinks from "../../utils/wiki"
 
-const ContainerStyles = {
-  display: "grid",
-  justifyItems: "center",
-}
-
-const Content = styled.div`
+const Container = styled.div`
   display: grid;
   grid-template-columns: minmax(300px, 1fr) minmax(400px, 1000px);
   width: fit-content;
@@ -28,6 +23,15 @@ const Toc = styled.div`
       margin: 0;
     }
   }
+  & a {
+    text-decoration: none;
+  }
+`
+
+const Content = styled.div`
+  & a {
+    text-decoration: none;
+  }
 `
 
 export default function BlogPostTemplate(
@@ -36,12 +40,10 @@ export default function BlogPostTemplate(
   const { tableOfContents, html } = data.markdownRemark ?? {}
   const rhtml = html && replaceWikiLinks(html)
   return (
-    <div style={ContainerStyles}>
-      <Content>
-        {tableOfContents && <Toc dangerouslySetInnerHTML={{ __html: tableOfContents }} />}
-        {rhtml && <div dangerouslySetInnerHTML={{ __html: rhtml }} />}
-      </Content>
-    </div>
+    <Container>
+      {tableOfContents && <Toc dangerouslySetInnerHTML={{ __html: tableOfContents }} />}
+      {rhtml && <Content dangerouslySetInnerHTML={{ __html: rhtml }} />}
+    </Container>
   )
 }
 
