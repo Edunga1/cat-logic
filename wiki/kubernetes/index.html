@@ -48,14 +48,17 @@
         }
       }
     })
-  </script><style data-styled="" data-styled-version="5.3.6">.BXxGL{display:grid;grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
-@media (max-width:1000px){.BXxGL{grid-template-columns:1fr;}.BXxGL > div:nth-child(1){display:none;}}/*!sc*/
-data-styled.g1[id="markdownRemarkfields__slug__Content-sc-cg714z-0"]{content:"BXxGL,"}/*!sc*/
-.pfWhm{margin:4rem 2rem 0 0;}/*!sc*/
-.pfWhm ul{list-style:none;}/*!sc*/
-.pfWhm ul p{margin:0;}/*!sc*/
-data-styled.g2[id="markdownRemarkfields__slug__Toc-sc-cg714z-1"]{content:"pfWhm,"}/*!sc*/
-</style></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div style="display:grid;justify-items:center"><div class="markdownRemarkfields__slug__Content-sc-cg714z-0 BXxGL"><div class="markdownRemarkfields__slug__Toc-sc-cg714z-1 pfWhm"><ul>
+  </script><style data-styled="" data-styled-version="5.3.6">.gVurN{display:grid;grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
+@media (max-width:1000px){.gVurN{grid-template-columns:1fr;}.gVurN > div:nth-child(1){display:none;}}/*!sc*/
+data-styled.g1[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"gVurN,"}/*!sc*/
+.lgmMAy{margin:4rem 2rem 0 0;}/*!sc*/
+.lgmMAy ul{list-style:none;}/*!sc*/
+.lgmMAy ul p{margin:0;}/*!sc*/
+.lgmMAy a{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g2[id="markdownRemarkfields__slug__Toc-sc-cg714z-1"]{content:"lgmMAy,"}/*!sc*/
+.eSmnmE a{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g3[id="markdownRemarkfields__slug__Content-sc-cg714z-2"]{content:"eSmnmE,"}/*!sc*/
+</style></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="markdownRemarkfields__slug__Container-sc-cg714z-0 gVurN"><div class="markdownRemarkfields__slug__Toc-sc-cg714z-1 lgmMAy"><ul>
 <li>
 <p><a href="#kubernetes">Kubernetes</a></p>
 </li>
@@ -68,7 +71,7 @@ data-styled.g2[id="markdownRemarkfields__slug__Toc-sc-cg714z-1"]{content:"pfWhm,
 <li><a href="#nodeport%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%EB%8D%B0%EB%8F%84-%EC%A0%91%EA%B7%BC%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EC%9D%B4%EC%8A%88">NodePort를 사용하는데도 접근할 수 없는 이슈</a></li>
 </ul>
 </li>
-</ul></div><div><h1 id="kubernetes" style="position:relative;"><a href="#kubernetes" aria-label="kubernetes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kubernetes</h1>
+</ul></div><div class="markdownRemarkfields__slug__Content-sc-cg714z-2 eSmnmE"><h1 id="kubernetes" style="position:relative;"><a href="#kubernetes" aria-label="kubernetes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kubernetes</h1>
 <h1 id="kubernetes-컨테이너간-볼륨-공유" style="position:relative;"><a href="#kubernetes-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EA%B0%84-%EB%B3%BC%EB%A5%A8-%EA%B3%B5%EC%9C%A0" aria-label="kubernetes 컨테이너간 볼륨 공유 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kubernetes 컨테이너간 볼륨 공유</h1>
 <p>하나의 Pod 내에서 여러개의 Container를 운영할 때,
 Docker Compose의 <code>volumes_from</code>과 같은 기능을 하려면.</p>
@@ -120,10 +123,10 @@ $ curl http://localhost:8001/api/v1/proxy/namespaces/default/services/gceme-back
 <a href="https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0">https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0</a></p>
 <h2 id="nodeport를-사용하는데도-접근할-수-없는-이슈" style="position:relative;"><a href="#nodeport%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%EB%8D%B0%EB%8F%84-%EC%A0%91%EA%B7%BC%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EC%9D%B4%EC%8A%88" aria-label="nodeport를 사용하는데도 접근할 수 없는 이슈 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NodePort를 사용하는데도 접근할 수 없는 이슈</h2>
 <p>Docker for mac을 사용하는데 상태바에서 주황색 원과 함께 <code>Kubernetes is starting...</code>라고 뜨면서 호스트에서 접근 할 수 없었다.</p>
-<p>Docker for mac을 완전 초기화(Reset -> Reset to factory defaults)하면 <code>running</code> 상태가 되고, 접속할 수 있었다.</p></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/kubernetes/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>Docker for mac을 완전 초기화(Reset -> Reset to factory defaults)하면 <code>running</code> 상태가 되고, 접속할 수 있었다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/kubernetes/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-c3df7cc128b1fd8badc3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-a6d255ad0e2dec90f2a0.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-f7165cd5e3e9f86e95c4.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-c3df7cc128b1fd8badc3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-a6d255ad0e2dec90f2a0.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-53b614638ada36bb99f1.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="deb3281ea5be5af53677";</script><script src="/webpack-runtime-77ddd475976a4b8c599d.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-c3df7cc128b1fd8badc3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="e8158fe77303107b8eb0";</script><script src="/webpack-runtime-38d5c81004aa5979d0dd.js" async></script><script src="/framework-9b6d338de49a676a1843.js" async></script><script src="/app-c3df7cc128b1fd8badc3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
