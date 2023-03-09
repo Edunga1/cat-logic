@@ -47,3 +47,60 @@ header 매핑.
 `@RequestMapping(value = "/something", headers = "content-type=text/*")`
 
 wildcard를 사용한 경우 `text/plain` `text/html` 모두 매핑한다.
+
+# Spring CLI
+
+Installation(Homebrew):
+```bash
+$ brew tap spring-io/tap
+$ brew install spring-boot
+```
+
+도움말 확인하려면 `spring help <command>`\
+e.g. `spring help init`
+
+## 빠른 시작
+
+Kotlin + Spring Boot + Gradle 프로젝트를 빠르게 생성 해보자.
+
+```bash
+spring init --language kotlin --type gradle-project-kotlin --extract demo
+```
+
+`demo` 디렉토리와 함께 프로젝트가 생성된다.\
+`--extract` 옵션을 생략하면 zip 파일로 생성된다.
+
+JDK 버전 등 설정되는 기본값을 확인하려면 `spring init --list`:
+```bash
+Parameters
++-------------+------------------------------------------+------------------------------+
+| Id          | Description                              | Default value                |
++-------------+------------------------------------------+------------------------------+
+| artifactId  | project coordinates (infer archive name) | demo                         |
+| bootVersion | spring boot version                      | 3.0.4                        |
+| description | project description                      | Demo project for Spring Boot |
+| groupId     | project coordinates                      | com.example                  |
+| javaVersion | language level                           | 17                           |
+| language    | programming language                     | java                         |
+| name        | project name (infer application name)    | demo                         |
+| packageName | root package                             | com.example.demo             |
+| packaging   | project packaging                        | jar                          |
+| type        | project type                             | gradle-project               |
+| version     | project version                          | 0.0.1-SNAPSHOT               |
++-------------+------------------------------------------+------------------------------+
+```
+
+기본 Application 코드를 생성해 주지만 `ApplicationRunner`로 간단하게 hello world 출력해보자:
+
+```kotlin
+@SpringBootApplication
+class DemoApplication: ApplicationRunner {
+    override fun run(args: ApplicationArguments) {
+        println("Hello, world!")
+    }
+}
+
+fun main(args: Array<String>) {
+    runApplication<DemoApplication>(*args)
+}
+```
