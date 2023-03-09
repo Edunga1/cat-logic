@@ -104,3 +104,8 @@ fun main(args: Array<String>) {
     runApplication<DemoApplication>(*args)
 }
 ```
+
+# Reference
+
+Spring CLI:\
+https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html
