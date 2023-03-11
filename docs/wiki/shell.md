@@ -170,6 +170,49 @@ CTRL + SPACE 입력하면 저장한 명령어나 히스토리를 선택할 수 �
 * `marker mark` - 명령어를 북마크한다.
 * `marker remove` - 북마크를 삭제한다.
 
+## Tmuxinator
+
+https://github.com/tmuxinator/tmuxinator
+
+설정 파일을 `~/.config/tmuxinator/`에 저장하여 전역으로 사용하거나
+프로젝트별로 `./.tmuxinator.yml`에 저장하여 사용할 수 있다.
+개인 프로젝트는 코드베이스에 포함하는 것도 좋겠다.
+
+### 지역적으로 사용할 경우
+
+```yaml
+project_name: my-project
+
+windows:
+  - editor: vi
+  - cli:
+  - server: npm run develop
+```
+
+```bash
+$ tmuxinator  # or tmuxinator start
+```
+
+start 시 설정 이름을 생략하면 `./.tmuxinator.yml`을 찾는다.
+
+### 전역적으로 사용할 경우
+
+```yaml
+name: my-project
+root: ~/workspace/my-project
+
+windows:
+  - editor: vi
+  - cli:
+  - server: npm run develop
+```
+
+```bash
+$ tmuxinator my-project  # or tmuxinator start my-project
+```
+
+start 시 설정 이름을 지정하면 `~/.config/tmuxinator/`에서 `name`을 찾는다.
+
 # parameter fallback (default value)
 
 ```
