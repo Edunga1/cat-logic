@@ -29,3 +29,35 @@ Flex Layout과 비교해서 레이아웃 내에 있는 아이템들을 모두 `f
 * 일반(스크롤이 있는) 화면은 요소를 쌓아 나가며, 다른 레이아웃 속성도 여기에 맞춰져 있다.
 * 반면에 그리드 레이아웃은 모든 아이템을 어디에 배치할 지 명시해야 한다.
     * A는 (1, 2)에 놓고, B는 (2, 4)에 놓고..
+
+# Media Queries
+
+미디어 쿼리의 구조는 media type과 media feature로 구성된다.
+
+```css
+@media media_type and (media_feature) {
+    /* CSS rules */
+}
+```
+
+실제 사용 예시는 다음과 같다.
+
+```css
+@media screen and (min-width: 600px) {
+    /* CSS rules */
+}
+```
+
+예시에서 `screen`은 media type이고, `min-width`는 media feature이다.
+구문을 자연어로 바꿔보면 "사이트가 스크린에서 보여지고, 화면의 너비가 600px 이상일 때"라고 해석할 수 있다.
+
+> The type is optional (assumed to be all)
+media type은 생략할 수 있다. 생략하면 `all`로 간주된다.
+
+# Reference
+
+Using Media Queries\
+https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+
+The complete guide to CSS media queries\
+https://polypane.app/blog/the-complete-guide-to-css-media-queries/
