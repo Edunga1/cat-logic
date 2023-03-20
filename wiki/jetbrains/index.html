@@ -66,6 +66,7 @@ data-styled.g3[id="markdownRemarkfields__slug__Content-sc-cg714z-2"]{content:"eS
 <p><a href="#intellij">IntelliJ</a></p>
 <ul>
 <li><a href="#wsl2%EC%97%90%EC%84%9C-freezing-%ED%98%84%EC%83%81">WSL2에서 Freezing 현상</a></li>
+<li><a href="#wsl2%EC%97%90%EC%84%9C-annotation-processor%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%B8%EC%8B%9D%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81">WSL2에서 annotation processor로 생성된 파일을 인식하지 못하는 현상</a></li>
 </ul>
 </li>
 </ul></div><div class="markdownRemarkfields__slug__Content-sc-cg714z-2 eSmnmE"><h1 id="jetbrains" style="position:relative;"><a href="#jetbrains" aria-label="jetbrains permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JetBrains</h1>
@@ -118,7 +119,17 @@ data-styled.g3[id="markdownRemarkfields__slug__Content-sc-cg714z-2"]{content:"eS
         decoding="async"
       />
   </a>
-    </span></p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/jetbrains/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+    </span></p>
+<h2 id="wsl2에서-annotation-processor로-생성된-파일을-인식하지-못하는-현상" style="position:relative;"><a href="#wsl2%EC%97%90%EC%84%9C-annotation-processor%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%B8%EC%8B%9D%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81" aria-label="wsl2에서 annotation processor로 생성된 파일을 인식하지 못하는 현상 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WSL2에서 annotation processor로 생성된 파일을 인식하지 못하는 현상</h2>
+<p><a href="https://youtrack.jetbrains.com/issue/IDEA-264036">https://youtrack.jetbrains.com/issue/IDEA-264036</a></p>
+<p>querydsl q-class를 생성하는데, 생성된 파일을 인식하지 못하는 현상.
+테스트나 실행도 잘 되지만, 에디터에서는 에러로 표시되어 불편하다.</p>
+<pre><code class="language-kotlin">sourceSets.main.get().java.srcDirs(
+    "build/generated",
+    "build/generated/sources/annotationProcessor",
+)
+</code></pre>
+<p><code>build.gradle.kts</code>에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/jetbrains/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
