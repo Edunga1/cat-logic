@@ -30,3 +30,19 @@ https://youtrack.jetbrains.com/issue/IDEA-293604/IntelliJ-is-slow-hanging-when-w
 물론, 임시방편이고 TL;DR의 IntelliJ 관련 폴더를 검사 예외로 추가하면 해결된다.
 
 ![windows defender exclusions](res/windows-defender-exclusions.png)
+
+## WSL2에서 annotation processor로 생성된 파일을 인식하지 못하는 현상
+
+https://youtrack.jetbrains.com/issue/IDEA-264036
+
+querydsl q-class를 생성하는데, 생성된 파일을 인식하지 못하는 현상.
+테스트나 실행도 잘 되지만, 에디터에서는 에러로 표시되어 불편하다.
+
+```kotlin
+sourceSets.main.get().java.srcDirs(
+    "build/generated",
+    "build/generated/sources/annotationProcessor",
+)
+```
+
+`build.gradle.kts`에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.
