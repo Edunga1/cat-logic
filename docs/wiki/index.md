@@ -35,7 +35,7 @@
 - [Language Server Protocol](language-server-protocol.md)
 - [Linux](linux.md)
 - [Logging](logging.md)
-- [Mac OS](mac.md)
+- [Mac OS](mac-os.md)
 - [Machine Learning](machine-learning.md)
 - [Mail](mail.md)
 - [Network](network.md)
