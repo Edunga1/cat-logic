@@ -155,3 +155,27 @@ export default function replaceWikiLinks(text: string) {
 `<a href="./javascript.md">`를 `<a href="../javascript">`로 변경하는 방법이다.
 
 와중에 주석만 작성하고, 코드는 copilot이 작성해줬다. 😎 (<- 이 부분도 copilot이 작성해줬다. 괄호 안에 있는 것도!)
+
+## 사이트에 중간 경로가 있으면 이미지가 보여지지 않는 문제
+
+[gatsby-remark-images](https://www.gatsbyjs.com/plugins/gatsby-remark-images/) 플러그인을 사용해서, markdown에서 이미지를 사용하는 경우 문제가 있다.
+이런 이미지를 inline image라고 부른다.
+컨텐츠가 아닌 사이트를 구성하는 이미지의 경우 [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/) 플러그인을 사용한다.
+
+`gatsby develop`로 로컬에서 확인할 때는 문제가 없지만, github pages나 netlify 등 사이트를 배포하게 되면 이미지 경로를 찾지 못하고 흐릿하게 표시된다.
+도메인 바로 뒤에 내 사이트를 나타내는 경로를 포함하여 호스팅되기 때문이다.
+
+사실 이미지 뿐만 아니라 다른 파일도 마찬가지기 때문에
+gatsby config는 [pathPrefix](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/) 옵션을 제공한다.
+
+> Many applications are hosted at something other than the root (/) of their domain. For example, a Gatsby blog could live at example.com/blog/, or a site could be hosted on GitHub Pages at example.github.io/my-gatsby-site/. Each of these sites needs a prefix added to all paths on the site. So a link to /my-sweet-blog-post/ should be rewritten as /blog/my-sweet-blog-post.
+
+특히 링크에서 그렇다. 왜 그런지는 모르겠지만, 상대 경로가 아닌 절대 경로로 생성하고 있어서 path prefix를 추가해야 한다.
+
+이미지 문제를 해결하기 위해 커뮤니티 플러그인이 개발되어 있었다:
+* https://www.gatsbyjs.com/plugins/gatsby-remark-images-anywhere
+* https://www.gatsbyjs.com/plugins/gatsby-remark-relative-images
+* https://www.gatsbyjs.com/plugins/gatsby-remark-relative-images-v2
+
+문제는 이 플러그인들은 더 이상 관리되지 않는다. 지금 설치하면 오래된 dependency로 취약점 경고가 많이 뜬다.
+`pathPrefix`를 사용하는 것은 너무 번거로워 보여서, 다른 방법을 찾아봐야 겠다.
