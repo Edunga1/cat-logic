@@ -30,6 +30,7 @@ const config: GatsbyConfig = {
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-catch-links`,
   ],
 }
 
