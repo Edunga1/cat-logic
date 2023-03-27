@@ -131,6 +131,12 @@ data-styled.g3[id="markdownRemarkfields__slug__Content-sc-cg714z-2"]{content:"eS
 <li><a href="#features">Features</a></li>
 </ul>
 </li>
+<li>
+<p><a href="#tpopevim-fugitive">tpope/vim-fugitive</a></p>
+<ul>
+<li><a href="#git"><code>:Git</code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -406,6 +412,35 @@ let g:is_pythonsense_alternate_motion_keymaps = 0
 <p>newline이 포함되면 큰 따옴표로 묶어서 표현되기도 하는데, 인식 못하는 문제가 있다.</p>
 <h3 id="features" style="position:relative;"><a href="#features" aria-label="features permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h3>
 <p><code>:DeleteColumn 2-4</code> 2~4열 제거. <code>:DeleteColumn 2</code> 2열만 제거</p>
+<h2 id="tpopevim-fugitive" style="position:relative;"><a href="#tpopevim-fugitive" aria-label="tpopevim fugitive permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>tpope/vim-fugitive</h2>
+<p><a href="https://github.com/tpope/vim-fugitive">https://github.com/tpope/vim-fugitive</a></p>
+<h3 id="git" style="position:relative;"><a href="#git" aria-label="git permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>:Git</code></h3>
+<p><a href="https://vi.stackexchange.com/a/28251.md">Git Fugitive how to git add a visually selected chunk of code - stackexchange</a></p>
+<p><code>:Git</code> 실행하면 현재 git status를 보여준다.
+여기서 꽤 많은 일을 처리할 수 있는데, <code>g?</code> 입력하면 도움말을 볼 수 있다.</p>
+<p>파일 경로에서 Enter 누르면 해당 파일의 Buffer를 연다.</p>
+<p>원하는 라인만 stage 또는 unstage 하거나, discard 하고 싶다면:</p>
+<ol>
+<li>먼저 변경하려는 파일에서 <code>></code> 눌러 변경 사항을 확인</li>
+<li>원하는 라인으로 이동해서 visual mode로 선택 후 실행</li>
+</ol>
+<ul>
+<li><code>s</code>: stage</li>
+<li><code>u</code>: unstage</li>
+<li><code>X</code>: discard</li>
+</ul>
+<p>unsage 하려면 Staged 목록에서 보여지므로 이동하여 <code>u</code> 눌러야 한다.</p>
+<p><code>:Git</code> 입력하면 이렇게 표시된다:</p>
+<pre><code class="language-fugitive">Head: main
+Merge: origin/main
+Help: g?
+
+Unstaged (1)
+M docs/wiki/vim.md
+
+Staged (1)
+M docs/wiki/vim.md
+</code></pre>
 <h1 id="make-and-makeprg" style="position:relative;"><a href="#make-and-makeprg" aria-label="make and makeprg permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>:make</code> and <code>makeprg</code></h1>
 <p><code>:make</code> 명령은 <code>makeprg</code>에 설정한 것을 실행한다.
 출력이 quickfix 양식이면 quckfix과 연동할 수 있다!</p>
