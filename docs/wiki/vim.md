@@ -278,6 +278,42 @@ newline이 포함되면 큰 따옴표로 묶어서 표현되기도 하는데, �
 
 `:DeleteColumn 2-4` 2~4열 제거. `:DeleteColumn 2` 2열만 제거
 
+## tpope/vim-fugitive
+
+https://github.com/tpope/vim-fugitive
+
+### `:Git`
+
+[Git Fugitive how to git add a visually selected chunk of code - stackexchange](https://vi.stackexchange.com/a/28251.md)
+
+`:Git` 실행하면 현재 git status를 보여준다.
+여기서 꽤 많은 일을 처리할 수 있는데, `g?` 입력하면 도움말을 볼 수 있다.
+
+파일 경로에서 Enter 누르면 해당 파일의 Buffer를 연다.
+
+원하는 라인만 stage 또는 unstage 하거나, discard 하고 싶다면:
+1. 먼저 변경하려는 파일에서 `>` 눌러 변경 사항을 확인
+2. 원하는 라인으로 이동해서 visual mode로 선택 후 실행
+  * `s`: stage
+  * `u`: unstage
+  * `X`: discard
+
+unsage 하려면 Staged 목록에서 보여지므로 이동하여 `u` 눌러야 한다.
+
+`:Git` 입력하면 이렇게 표시된다:
+
+```fugitive
+Head: main
+Merge: origin/main
+Help: g?
+
+Unstaged (1)
+M docs/wiki/vim.md
+
+Staged (1)
+M docs/wiki/vim.md
+```
+
 # `:make` and `makeprg`
 
 `:make` 명령은 `makeprg`에 설정한 것을 실행한다.
