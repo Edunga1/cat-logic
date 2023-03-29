@@ -126,3 +126,42 @@ quickstart: https://beta.openai.com/docs/quickstart
 
 토큰은 단어, 단어 뭉치, 문자 하나가 될 수 있으며 추천 단위가 토큰이다.
 예를들어 `Horses are my favorite` 문장을 입력하면 `animal`, `animals`, `\n`, `!` 등을 다음에 올 토큰으로 추천하는 식이다.
+
+# Github Copilot
+
+## Copilot CLI
+
+https://githubnext.com/projects/copilot-cli/
+
+shell 명령어를 작성하는데 도움을 주는 도구.
+
+2023-03-29 기준waitlit에 등록하면 사용할 수 있다.
+
+사용 예시:
+
+```bash
+❯ ?? listening port 5000
+
+ ──────────────────── Command ────────────────────
+
+lsof -i :5000
+
+ ────────────────── Explanation ──────────────────
+
+○ lsof is used to list open files.
+  ◆ -i specifies that we want to list network connections.
+  ◆ :5000 specifies that we want to list connections to port 5000.
+
+🕕  Hold on, executing commmand...
+COMMAND   PID  USER   FD   TYPE            DEVICE SIZE/OFF NODE NAME
+ControlCe 493 alleb   21u  IPv4 0x13aa2e8d9dde83f      0t0  TCP *:commplex-main (LISTEN)
+ControlCe 493 alleb   22u  IPv6 0x13aa2f274270ba7      0t0  TCP *:commplex-main (LISTEN)
+```
+
+`??`와 프롬프트를 입력하면 명령어를 추천해주고, 실행할 것인지 여부를 묻는다.
+copilot 만큼의 성능은 나오지 않는 거 같다. 프롬프트를 추가해도 같은 명령어를 추천하는 경우가 많다.
+
+한글도 잘 먹었는데, 간단한 것만 시도해서 그럴지도 모르겠다.
+
+`awk` 같이 규칙이 있어서 사용할 때 마다 헷갈리는 명령어를 사용하는데 특히 도움이 된다.
+`4번째 열 출력하는데, $로 구분되어 있다`와 같은 프롬프트를 잘 해석한다.
