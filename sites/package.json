@@ -10,11 +10,11 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "publish": "gatsby build --prefix-paths && gh-pages -d public"
+    "publish": "npm run build && gh-pages -d public"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.7",

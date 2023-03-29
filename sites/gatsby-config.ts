@@ -1,6 +1,7 @@
 import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
+  pathPrefix: process.env.GATSBY_PATH_PREFIX || `/`,
   siteMetadata: {
     title: `cat logic`,
     siteUrl: `https://www.yourdomain.tld`,
