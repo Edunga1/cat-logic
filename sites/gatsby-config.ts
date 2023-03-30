@@ -27,6 +27,7 @@ const config: GatsbyConfig = {
             },
           },
           `gatsby-remark-autolink-headers`,
+          `gatsby-remark-copy-linked-files`,
         ],
       },
     },
