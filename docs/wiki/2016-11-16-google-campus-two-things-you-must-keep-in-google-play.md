@@ -31,7 +31,7 @@ UI에 투자하기 힘들다면 가장 무난한 선택이 될 것이다.
 
 ### 탐색 서랍(Navigation Drawer)
 
-<img src="res/material-design-navigation-drawer-ex.png" alt="navigation-drawer" width="200px">
+![navigation drawer](res/material-design-navigation-drawer-ex.png)
 
 자주 사용하는 기능이나 관계 없는 기능을 모아두는데 사용한다.
 
