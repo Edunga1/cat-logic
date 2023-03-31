@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql, PageProps } from "gatsby"
 import styled from "styled-components"
 import replaceWikiLinks from "../../utils/wiki"
+import Toc from "../../components/molecules/Toc"
 
 const Container = styled.div`
   display: grid;
@@ -12,19 +13,6 @@ const Container = styled.div`
     & > div:nth-child(1) {
       display: none;
     }
-  }
-`
-
-const Toc = styled.div`
-  margin: 4rem 2rem 0 0;
-  & ul {
-    list-style: none;
-    & p {
-      margin: 0;
-    }
-  }
-  & a {
-    text-decoration: none;
   }
 `
 
@@ -41,7 +29,7 @@ export default function BlogPostTemplate(
   const rhtml = html && replaceWikiLinks(html)
   return (
     <Container>
-      {tableOfContents && <Toc dangerouslySetInnerHTML={{ __html: tableOfContents }} />}
+      {tableOfContents && <Toc contents={tableOfContents} />}
       {rhtml && <Content dangerouslySetInnerHTML={{ __html: rhtml }} />}
     </Container>
   )
