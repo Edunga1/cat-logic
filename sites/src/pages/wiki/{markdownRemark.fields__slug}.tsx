@@ -3,6 +3,7 @@ import { graphql, PageProps } from "gatsby"
 import styled from "styled-components"
 import replaceWikiLinks from "../../utils/wiki"
 import Toc from "../../components/molecules/Toc"
+import WikiContent from "../../components/molecules/WikiContent"
 
 const Container = styled.div`
   display: grid;
@@ -16,12 +17,6 @@ const Container = styled.div`
   }
 `
 
-const Content = styled.div`
-  & a {
-    text-decoration: none;
-  }
-`
-
 export default function BlogPostTemplate(
   { data }: PageProps<Queries.WikiDetailQuery>,
 ) {
@@ -30,7 +25,7 @@ export default function BlogPostTemplate(
   return (
     <Container>
       {tableOfContents && <Toc contents={tableOfContents} />}
-      {rhtml && <Content dangerouslySetInnerHTML={{ __html: rhtml }} />}
+      {rhtml && <WikiContent contents={rhtml} />}
     </Container>
   )
 }
