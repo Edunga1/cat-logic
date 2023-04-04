@@ -27,6 +27,25 @@ https://github.com/microsoft/pyright
 
 [language server](./language-server-protocol.md) for python.
 
+django 프로젝트라면 [django-types](https://github.com/sbdchd/django-types)를 설치하자.
+mypy와 django-stubs처럼 django model의 필드 타입을 제공한다.
+
+```python
+class User(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
+
+user = User.objects.get(id=1)
+user.age = 10  # should error
+```
+
+`age` 필드는 `IntegerField`로 추정하기 때문에 `user.age = 10`에서 타입 문제가 있다고 알려준다.
+django-types는 이런 문제를 해결해준다.
+
+django-types는 django-stubs의 fork project이다.
+
+> non-mypy type checkers like pyright will work better with Django.
+
 ### pyright 설치
 
 * nvim-lspconfig은 `Mason`을 사용하자: `:MasonInstall pyright`

@@ -131,6 +131,21 @@ sources = {
 <h2 id="pyright" style="position:relative;"><a href="#pyright" aria-label="pyright permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pyright</h2>
 <p><a href="https://github.com/microsoft/pyright">https://github.com/microsoft/pyright</a></p>
 <p><a href="/cat-logic/7056617538c1aded5f999a2ad07c36e5/language-server-protocol.md">language server</a> for python.</p>
+<p>django 프로젝트라면 <a href="https://github.com/sbdchd/django-types">django-types</a>를 설치하자.
+mypy와 django-stubs처럼 django model의 필드 타입을 제공한다.</p>
+<pre><code class="language-python">class User(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
+
+user = User.objects.get(id=1)
+user.age = 10  # should error
+</code></pre>
+<p><code>age</code> 필드는 <code>IntegerField</code>로 추정하기 때문에 <code>user.age = 10</code>에서 타입 문제가 있다고 알려준다.
+django-types는 이런 문제를 해결해준다.</p>
+<p>django-types는 django-stubs의 fork project이다.</p>
+<blockquote>
+<p>non-mypy type checkers like pyright will work better with Django.</p>
+</blockquote>
 <h3 id="pyright-설치" style="position:relative;"><a href="#pyright-%EC%84%A4%EC%B9%98" aria-label="pyright 설치 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pyright 설치</h3>
 <ul>
 <li>nvim-lspconfig은 <code>Mason</code>을 사용하자: <code>:MasonInstall pyright</code></li>
