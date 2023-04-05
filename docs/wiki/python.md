@@ -6,6 +6,9 @@ vim 기본 설정으로는 텍스트에디터 역할밖에 못한다.
 
 최소한 pyright는 사용하자.
 
+왠만해선 pyright + pylint + mypy는 권장한다. python 2 프로젝트라도 도움을 받을 수 있다.
+에러가 너무 많다면 설정을 타협하자. 아래 레거시를 위한 설정에서 다룬다.
+
 nvim-lspconfig, null-ls 이용하여 다음과 같이 설정, 사용하고 있다.
 
 ```lua
@@ -192,6 +195,10 @@ django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가
 일단 `true`로 설정하여 번거롭지만 `Cannot access member ~` 에러도 리포트 받도록 했다.
 
 `disallow_untyped_defs`는 mypy에서 타입 명세하지 않으면 에러 메시지를 출력하는 옵션이다. 이것도 무시한다.
+
+pyproject.toml은 최근에서야 대부분 도구가 지원하는 것 같다.
+도구 버전이 낮으면 toml 양식을 인식하지 못하는 경우가 있어서 최신 버전인지 확인해야 한다.
+도구마다 설정 파일을 각각 관리하기 어려워서 pyproject.toml 하나로 여러 프로젝트에서 사용하고 있다.
 
 # Python mock
 
