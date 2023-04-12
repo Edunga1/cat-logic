@@ -1,0 +1,99 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.0"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.3.6">.hbDcaS{box-sizing:border-box;padding:4rem 2rem 0 0;background-color:#f5f5f5;}/*!sc*/
+.hbDcaS ul{list-style:none;padding-left:1rem;font-size:.8rem;font-weight:bold;}/*!sc*/
+.hbDcaS ul ul{font-size:.6rem;font-weight:normal;}/*!sc*/
+.hbDcaS ul p{margin:0;}/*!sc*/
+.hbDcaS a{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g1[id="Toc__Container-sc-1f76i2s-0"]{content:"hbDcaS,"}/*!sc*/
+.iPgyli{padding-left:1rem;}/*!sc*/
+.iPgyli a{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g2[id="WikiContent__Container-sc-q3jb6a-0"]{content:"iPgyli,"}/*!sc*/
+.gVurN{display:grid;grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
+@media (max-width:1000px){.gVurN{grid-template-columns:1fr;}.gVurN > div:nth-child(1){display:none;}}/*!sc*/
+data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"gVurN,"}/*!sc*/
+</style></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="markdownRemarkfields__slug__Container-sc-cg714z-0 gVurN"><div class="Toc__Container-sc-1f76i2s-0 hbDcaS"><ul>
+<li>
+<p><a href="#clean-code">Clean Code</a></p>
+<ul>
+<li><a href="#%EB%B3%B4%EC%9D%BC%EB%9F%AC-%ED%94%8C%EB%A0%88%EC%9D%B4%ED%8A%B8-%EC%A4%84%EC%9D%B4%EA%B8%B0---redux-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%A4%91">보일러 플레이트 줄이기 - Redux 가이드 중</a></li>
+</ul>
+</li>
+</ul></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="clean-code" style="position:relative;"><a href="#clean-code" aria-label="clean code permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clean Code</h1>
+<h2 id="보일러-플레이트-줄이기---redux-가이드-중" style="position:relative;"><a href="#%EB%B3%B4%EC%9D%BC%EB%9F%AC-%ED%94%8C%EB%A0%88%EC%9D%B4%ED%8A%B8-%EC%A4%84%EC%9D%B4%EA%B8%B0---redux-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%A4%91" aria-label="보일러 플레이트 줄이기   redux 가이드 중 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>보일러 플레이트 줄이기 - Redux 가이드 중</h2>
+<p><a href="https://ko.redux.js.org/usage/reducing-boilerplate/#%EC%95%A1%EC%85%98">https://ko.redux.js.org/usage/reducing-boilerplate/#%EC%95%A1%EC%85%98</a></p>
+<blockquote>
+<p>Flux에서는 전통적으로 모든 액션 타입을 문자열 상수로 정의합니다:</p>
+</blockquote>
+<pre><code class="language-javascript">> const ADD_TODO = 'ADD_TODO'
+> const REMOVE_TODO = 'REMOVE_TODO'
+> const LOAD_ARTICLE = 'LOAD_ARTICLE'
+</code></pre>
+<blockquote>
+<p>이게 어떤 잇점이 있을까요? <strong>작은 프로젝트에서 상수는 불필요하다는 지적이 종종 있었고 옳은 말입니다.</strong> 큰 프로젝트에서는 액션 타입을 상수로 정의하는 잇점들이 있습니다:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>모든 액션 타입이 한 곳에 모이기 때문에 이름짓기의 일관성을 유지하는데 도움이 됩니다.</li>
+<li>새 기능을 만들기 전에 기존의 모든 액션을 한눈에 보고 싶을 때가 있을겁니다. 여러분이 필요로 하는 액션이 팀의 다른 사람에 의해 이미 추가되었지만 여러분이 모르고 있을 수도 있으니까요.</li>
+<li>추가되고, 제거되고, 변경된 액션 타입의 목록은 풀 리퀘스트에서 팀원 모두가 새 기능의 범위와 구현을 따라가는걸 도와줄겁니다.</li>
+<li>만약 여러분이 액션 상수를 불러오다가 오타를 내면 undefined가 나올겁니다. 액션을 보냈는데 아무 일도 일어나지 않는 것보다는 훨씬 알아차리기 쉽습니다.</li>
+</ul>
+</blockquote>
+<p>리덕스의 액션에 대한 예시지만 다양한 프로젝트에 적용할 수 있는 방법이다.
+상수를 한군데 작성함으로써 반복되어 보일러플레이트로 판단할 수도 있다.
+하지만 문자열에 의도를 표현하고, 한 군데서 관리할 수 있고, 기능 파악에 도움을 주고, 오타에 대한 대응이 있어서 좋은 방법이라고 설명한다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/clean-code/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-998ee84eb3ebeb66ddee.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-a6d255ad0e2dec90f2a0.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-2cb1554a7fa18f1e93a4.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="c6e254fa95a29207ddf5";</script><script src="/cat-logic/webpack-runtime-3549c8d96f5b42235b5b.js" async></script><script src="/cat-logic/framework-9b6d338de49a676a1843.js" async></script><script src="/cat-logic/app-998ee84eb3ebeb66ddee.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
