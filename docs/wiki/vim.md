@@ -359,3 +359,15 @@ colorscheme solarized
 
 colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. 하지만 곧바로 복구된다. colorscheme을 사용할 때는 한 번 느려지면 다시 vim 실행하기 전까지는 복구되지 않는다.
 
+## Ubuntu에 설치한 vim이 시작 시 `.vimrc`에서 많은 에러가 발생하는 현상
+
+askubuntu 질문: [vi, getting multiple "Sorry, the command is not available in this version..." after reinstall](https://askubuntu.com/questions/284957/vi-getting-multiple-sorry-the-command-is-not-available-in-this-version-af)
+
+올바른 vim 버전인지 확인하자. vim.tiny로 설치되었을 수 있다:
+```bash
+$ readlink -f `which vim`
+/usr/bin/vim.tiny
+```
+
+ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. `/usr/bin/vim.basic`을 가르켜야 한다.
+최근에는 neovim을 사용하고 있어서 이 편이 더 좋을지도.
