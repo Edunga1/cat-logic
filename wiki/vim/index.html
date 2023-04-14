@@ -108,14 +108,6 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </li>
 <li>
 <p><a href="#profiling">Profiling</a></p>
-<ul>
-<li>
-<p><a href="#troubleshooting">Troubleshooting</a></p>
-<ul>
-<li><a href="#vim-colors-solarized-colorscheme-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8%EC%9D%B4-%EB%84%88%EB%AC%B4-%EB%8A%90%EB%A0%A4%EC%A7%80%EA%B2%8C-%EB%A7%8C%EB%93%9C%EB%8A%94-%ED%98%84%EC%83%81"><code>vim-colors-solarized</code> colorscheme 플러그인이 너무 느려지게 만드는 현상</a></li>
-</ul>
-</li>
-</ul>
 </li>
 <li>
 <p><a href="#vim%EC%97%90%EC%84%9C-python-text-object-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">Vim에서 python text object 사용하기</a></p>
@@ -148,14 +140,11 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </ul>
 </li>
 <li>
-<p><a href="#promgramming-languages">Promgramming Languages</a></p>
+<p><a href="#issues">Issues</a></p>
 <ul>
-<li>
-<p><a href="#typescript">Typescript</a></p>
-<ul>
-<li><a href="#filetype-%EB%AC%B8%EC%A0%9C">filetype 문제</a></li>
-</ul>
-</li>
+<li><a href="#typescript-filetype-%EB%AC%B8%EC%A0%9C">Typescript filetype 문제</a></li>
+<li><a href="#vim-colors-solarized-colorscheme-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8%EC%9D%B4-%EC%A0%90%EC%A0%90-%EB%8A%90%EB%A0%A4%EC%A7%80%EA%B2%8C-%EB%A7%8C%EB%93%9C%EB%8A%94-%ED%98%84%EC%83%81"><code>vim-colors-solarized</code> colorscheme 플러그인이 점점 느려지게 만드는 현상</a></li>
+<li><a href="#ubuntu%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%9C-vim%EC%9D%B4-%EC%8B%9C%EC%9E%91-%EC%8B%9C-vimrc%EC%97%90%EC%84%9C-%EB%A7%8E%EC%9D%80-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81">Ubuntu에 설치한 vim이 시작 시 <code>.vimrc</code>에서 많은 에러가 발생하는 현상</a></li>
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="vim" style="position:relative;"><a href="#vim" aria-label="vim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vim</h1>
@@ -318,27 +307,6 @@ netrw, find 사용법</p>
   echo 'profiling is started. log file: vim-profiling.log'
 endfunction
 </code></pre>
-<h2 id="troubleshooting" style="position:relative;"><a href="#troubleshooting" aria-label="troubleshooting permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
-<h3 id="vim-colors-solarized-colorscheme-플러그인이-너무-느려지게-만드는-현상" style="position:relative;"><a href="#vim-colors-solarized-colorscheme-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8%EC%9D%B4-%EB%84%88%EB%AC%B4-%EB%8A%90%EB%A0%A4%EC%A7%80%EA%B2%8C-%EB%A7%8C%EB%93%9C%EB%8A%94-%ED%98%84%EC%83%81" aria-label="vim colors solarized colorscheme 플러그인이 너무 느려지게 만드는 현상 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>vim-colors-solarized</code> colorscheme 플러그인이 너무 느려지게 만드는 현상</h3>
-<p>vimwiki로 문서 수정할 때, <code>&#x3C;cr></code> <em>엔터를 꾹 누르고 있으면 점점 느려지는</em> 문제.
-vimwiki가 키보드 엔터 시 함수 호출이 많다. 그래서 더욱 돋보이는 듯 하다.</p>
-<p>프로파일링 결과:</p>
-<pre><code>FUNCTIONS SORTED ON TOTAL TIME
-count  total (s)   self (s)  function
-    4   1.671452   0.000150  &#x3C;SNR>199_CR()
-    4   1.669305   0.000430  vimwiki#lst#kbd_cr()
-    4   1.667958   0.000952  &#x3C;SNR>211_cr_on_empty_line()
-    1   0.261215   0.000028  vimwiki#u#count_exe()
-    1   0.261187   0.000350  vimwiki#lst#kbd_o()
-    5   0.093622   0.009607  &#x3C;SNR>211_get_corresponding_item()
-   16   0.087560   0.002484  airline#check_mode()
-</code></pre>
-<p>colorscheme 옵션을 제거하면 괜찮다.
-<code>soliarized</code>로 사용하고 있었다:</p>
-<pre><code class="language-vim">colorscheme solarized
-</code></pre>
-<p><code>:echo g:colors_name</code>로 현재 colorscheme을 알 수 있다. 변수를 찾을 수 없으면 사용하지 않는 것.</p>
-<p>colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. 하지만 곧바로 복구된다. colorscheme을 사용할 때는 한 번 느려지면 다시 vim 실행하기 전까지는 복구되지 않는다.</p>
 <h1 id="vim에서-python-text-object-사용하기" style="position:relative;"><a href="#vim%EC%97%90%EC%84%9C-python-text-object-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="vim에서 python text object 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vim에서 python text object 사용하기</h1>
 <p><code>viw</code>로 단어를, <code>vip</code>로 문단을 선택할 수 있다.
 파이썬의 함수와 메서드 그리고 클래스를 선택하려면 어떻게 해야할까?</p>
@@ -490,9 +458,8 @@ vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickf
     </span></p>
 <p>다만 기본 제공되는 것은 아니고, 플러그인 같아 보인다. 문서에는 <code>QuickfixFormatter</code>에 대한 내용이 없다.</p>
 <p>ref. python traceback을 quickfix와 연동할 수 없냐는 질문: <a href="https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks">Quickfix support for Python tracebacks</a></p>
-<h1 id="promgramming-languages" style="position:relative;"><a href="#promgramming-languages" aria-label="promgramming languages permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Promgramming Languages</h1>
-<h2 id="typescript" style="position:relative;"><a href="#typescript" aria-label="typescript permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Typescript</h2>
-<h3 id="filetype-문제" style="position:relative;"><a href="#filetype-%EB%AC%B8%EC%A0%9C" aria-label="filetype 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>filetype 문제</h3>
+<h1 id="issues" style="position:relative;"><a href="#issues" aria-label="issues permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Issues</h1>
+<h2 id="typescript-filetype-문제" style="position:relative;"><a href="#typescript-filetype-%EB%AC%B8%EC%A0%9C" aria-label="typescript filetype 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Typescript filetype 문제</h2>
 <p>typescript language server에서 JSX 문법을 확인하지 못한다면 파일 타입을 확인해보자.
 <code>:set ft?</code>로 확인했을 때 <code>typescriptreact</code>가 아니라 <code>typescript</code>면 문제가 있다.</p>
 <p><code>:set filetype=typescriptreact</code>로 변경하면 JSX의 하이라이팅이나 타입 체크가 정상적으로 동작한다.</p>
@@ -507,7 +474,35 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 <p>ref. <a href="https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-589954199">https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-589954199</a></p>
 <blockquote>
 <p>This brings a new problem. Typescript language server excepts from a typescript file to not have JSX in it. Which means that &#x3C;> is considered a type assertion, JSX is not recognized as JSX but as regular Typescript syntax and the list goes on.</p>
-</blockquote></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/vim/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</blockquote>
+<h2 id="vim-colors-solarized-colorscheme-플러그인이-점점-느려지게-만드는-현상" style="position:relative;"><a href="#vim-colors-solarized-colorscheme-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8%EC%9D%B4-%EC%A0%90%EC%A0%90-%EB%8A%90%EB%A0%A4%EC%A7%80%EA%B2%8C-%EB%A7%8C%EB%93%9C%EB%8A%94-%ED%98%84%EC%83%81" aria-label="vim colors solarized colorscheme 플러그인이 점점 느려지게 만드는 현상 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>vim-colors-solarized</code> colorscheme 플러그인이 점점 느려지게 만드는 현상</h2>
+<p>vimwiki로 문서 수정할 때, <code>&#x3C;cr></code> <em>엔터를 꾹 누르고 있으면 점점 느려지는</em> 문제.
+vimwiki가 키보드 엔터 시 함수 호출이 많다. 그래서 더욱 돋보이는 듯 하다.</p>
+<p>프로파일링 결과:</p>
+<pre><code>FUNCTIONS SORTED ON TOTAL TIME
+count  total (s)   self (s)  function
+    4   1.671452   0.000150  &#x3C;SNR>199_CR()
+    4   1.669305   0.000430  vimwiki#lst#kbd_cr()
+    4   1.667958   0.000952  &#x3C;SNR>211_cr_on_empty_line()
+    1   0.261215   0.000028  vimwiki#u#count_exe()
+    1   0.261187   0.000350  vimwiki#lst#kbd_o()
+    5   0.093622   0.009607  &#x3C;SNR>211_get_corresponding_item()
+   16   0.087560   0.002484  airline#check_mode()
+</code></pre>
+<p>colorscheme 옵션을 제거하면 괜찮다.
+<code>soliarized</code>로 사용하고 있었다:</p>
+<pre><code class="language-vim">colorscheme solarized
+</code></pre>
+<p><code>:echo g:colors_name</code>로 현재 colorscheme을 알 수 있다. 변수를 찾을 수 없으면 사용하지 않는 것.</p>
+<p>colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. 하지만 곧바로 복구된다. colorscheme을 사용할 때는 한 번 느려지면 다시 vim 실행하기 전까지는 복구되지 않는다.</p>
+<h2 id="ubuntu에-설치한-vim이-시작-시-vimrc에서-많은-에러가-발생하는-현상" style="position:relative;"><a href="#ubuntu%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%9C-vim%EC%9D%B4-%EC%8B%9C%EC%9E%91-%EC%8B%9C-vimrc%EC%97%90%EC%84%9C-%EB%A7%8E%EC%9D%80-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81" aria-label="ubuntu에 설치한 vim이 시작 시 vimrc에서 많은 에러가 발생하는 현상 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ubuntu에 설치한 vim이 시작 시 <code>.vimrc</code>에서 많은 에러가 발생하는 현상</h2>
+<p>askubuntu 질문: <a href="https://askubuntu.com/questions/284957/vi-getting-multiple-sorry-the-command-is-not-available-in-this-version-af">vi, getting multiple "Sorry, the command is not available in this version..." after reinstall</a></p>
+<p>올바른 vim 버전인지 확인하자. vim.tiny로 설치되었을 수 있다:</p>
+<pre><code class="language-bash">$ readlink -f `which vim`
+/usr/bin/vim.tiny
+</code></pre>
+<p>ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. <code>/usr/bin/vim.basic</code>을 가르켜야 한다.
+최근에는 neovim을 사용하고 있어서 이 편이 더 좋을지도.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/vim/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >

@@ -155,6 +155,15 @@ PING www.google.com (142.250.199.100): 56 data bytes
 64 bytes from 142.250.199.100: icmp_seq=3 ttl=112 time=67.562 ms
 ```
 
+# readlink
+
+```bash
+$ readlink -f `which node`
+/home/linuxbrew/.linuxbrew/Cellar/node/19.9.0/bin/node
+```
+
+심볼릭 링크를 따라가서 실제 경로를 알 수 있다.
+
 # Tools
 
 ## marker - the terminal command palette
