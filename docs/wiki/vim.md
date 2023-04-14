@@ -177,36 +177,6 @@ function! StartProfiling()
 endfunction
 ```
 
-## Troubleshooting
-
-### `vim-colors-solarized` colorscheme 플러그인이 너무 느려지게 만드는 현상
-
-vimwiki로 문서 수정할 때, `<cr>` *엔터를 꾹 누르고 있으면 점점 느려지는* 문제.
-vimwiki가 키보드 엔터 시 함수 호출이 많다. 그래서 더욱 돋보이는 듯 하다.
-
-프로파일링 결과:
-```
-FUNCTIONS SORTED ON TOTAL TIME
-count  total (s)   self (s)  function
-    4   1.671452   0.000150  <SNR>199_CR()
-    4   1.669305   0.000430  vimwiki#lst#kbd_cr()
-    4   1.667958   0.000952  <SNR>211_cr_on_empty_line()
-    1   0.261215   0.000028  vimwiki#u#count_exe()
-    1   0.261187   0.000350  vimwiki#lst#kbd_o()
-    5   0.093622   0.009607  <SNR>211_get_corresponding_item()
-   16   0.087560   0.002484  airline#check_mode()
-```
-
-colorscheme 옵션을 제거하면 괜찮다.
-`soliarized`로 사용하고 있었다:
-```vim
-colorscheme solarized
-```
-
-`:echo g:colors_name`로 현재 colorscheme을 알 수 있다. 변수를 찾을 수 없으면 사용하지 않는 것.
-
-colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. 하지만 곧바로 복구된다. colorscheme을 사용할 때는 한 번 느려지면 다시 vim 실행하기 전까지는 복구되지 않는다.
-
 # Vim에서 python text object 사용하기
 
 `viw`로 단어를, `vip`로 문단을 선택할 수 있다.
@@ -340,11 +310,9 @@ vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickf
 
 ref. python traceback을 quickfix와 연동할 수 없냐는 질문: [Quickfix support for Python tracebacks](https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks)
 
-# Promgramming Languages
+# Issues
 
-## Typescript
-
-### filetype 문제
+## Typescript filetype 문제
 
 typescript language server에서 JSX 문법을 확인하지 못한다면 파일 타입을 확인해보자.
 `:set ft?`로 확인했을 때 `typescriptreact`가 아니라 `typescript`면 문제가 있다.
@@ -362,3 +330,32 @@ ref. https://github.com/peitalin/vim-jsx-typescript#vim-jsx-typescript
 
 ref. https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-589954199
 > This brings a new problem. Typescript language server excepts from a typescript file to not have JSX in it. Which means that <> is considered a type assertion, JSX is not recognized as JSX but as regular Typescript syntax and the list goes on.
+
+## `vim-colors-solarized` colorscheme 플러그인이 점점 느려지게 만드는 현상
+
+vimwiki로 문서 수정할 때, `<cr>` *엔터를 꾹 누르고 있으면 점점 느려지는* 문제.
+vimwiki가 키보드 엔터 시 함수 호출이 많다. 그래서 더욱 돋보이는 듯 하다.
+
+프로파일링 결과:
+```
+FUNCTIONS SORTED ON TOTAL TIME
+count  total (s)   self (s)  function
+    4   1.671452   0.000150  <SNR>199_CR()
+    4   1.669305   0.000430  vimwiki#lst#kbd_cr()
+    4   1.667958   0.000952  <SNR>211_cr_on_empty_line()
+    1   0.261215   0.000028  vimwiki#u#count_exe()
+    1   0.261187   0.000350  vimwiki#lst#kbd_o()
+    5   0.093622   0.009607  <SNR>211_get_corresponding_item()
+   16   0.087560   0.002484  airline#check_mode()
+```
+
+colorscheme 옵션을 제거하면 괜찮다.
+`soliarized`로 사용하고 있었다:
+```vim
+colorscheme solarized
+```
+
+`:echo g:colors_name`로 현재 colorscheme을 알 수 있다. 변수를 찾을 수 없으면 사용하지 않는 것.
+
+colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. 하지만 곧바로 복구된다. colorscheme을 사용할 때는 한 번 느려지면 다시 vim 실행하기 전까지는 복구되지 않는다.
+
