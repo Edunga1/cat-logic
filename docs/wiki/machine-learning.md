@@ -129,6 +129,8 @@ quickstart: https://beta.openai.com/docs/quickstart
 
 # Github Copilot
 
+코드 작성을 도와주는 AI 도구.
+
 ## Copilot CLI
 
 https://githubnext.com/projects/copilot-cli/
@@ -169,6 +171,23 @@ copilot 만큼의 성능은 나오지 않는 거 같다. 프롬프트를 추가�
 비슷한 프로그램으로는 [tldr](https://github.com/tldr-pages/tldr)이 있다.
 다만 이건 메뉴얼을 좀 더 보기쉽게 커뮤니티 차원에서 치트시트를 만드는 것이다보니
 내 문맥에 따른 명령어를 추천해주는 것은 아니다.
+
+# AWS CodeWhisperer
+
+https://aws.amazon.com/ko/codewhisperer/
+
+Copilot과 마찬가지로 코드 작성을 도와주는 도구다.
+개인사용자는 무료로 사용할 수 있다.
+AWS 계정이 없어도 메일로 가입할 수 있다. AWS Builder 계정을 만드는데, 어떤 개념인지는 잘 모르겠다.
+
+2023-04-17 기준 neovim 플러그인이 없다.
+
+VSCode는 AWS Toolkit 플러그인으로 제공한다.
+잠깐 사용해보았는데 비슷한 성능같고, 네트워크 문제인지 반응이 조금 느리다.
+
+오픈 뉴스: [Amazon CodeWhisperer, Free for Individual Use, is Now Generally Available](https://aws.amazon.com/ko/blogs/aws/amazon-codewhisperer-free-for-individual-use-is-now-generally-available/)
+
+개인 코드 공유 여부를 설정할 수 있으니, 공유하고 싶지 않으면 바꿔주자.
 
 # Segment Anything Model(SAM): Meta가 만든 어떤 이미지에서든 객체를 잘라낼 수 있는 모델
 
