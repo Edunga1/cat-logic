@@ -186,6 +186,9 @@ disallow_untyped_defs = False
 기능은 부족하지만 매우 빠른 장점으로 앞으로 자주 사용할 것 같다.</p>
 <p>nvim은 <a href="https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#ruff">null-ls</a>에서 제공한다. diagnostic, formatter 두 개 소스로 제공한다.
 Pylint와 함께 사용해보면 Ruff의 반응이 빨라서 항상 Pylint보다 Ruff의 진단이 먼저 노출된다.</p>
+<p><strong>개발 환경 구성 시 주의해야 한다.</strong>
+Ruff 설명대로 rust로 작성되어 있어서 로컬 개발 환경이나, 개발용 Docker 환경 구성을 위해서 Rust 런타임 환경을 구성이 필요할 수 있다.
+macOS 기준으로는 별도 도구 없이 설치되었지만, python alpine 이미지 기준으로 설치에 실패한다.</p>
 <h2 id="python-code-formatter-autopep8-vs-black-vs-yapf" style="position:relative;"><a href="#python-code-formatter-autopep8-vs-black-vs-yapf" aria-label="python code formatter autopep8 vs black vs yapf permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python code formatter: autopep8 vs black vs yapf</h2>
 <p>파이썬 코드 formatter 3종 비교.</p>
 <p><a href="https://github.com/neoclide/coc.nvim">coc.nvim</a>에서는 파이썬 파일을 열 때 3개 중 하나를 선택하도록 한다:</p>
