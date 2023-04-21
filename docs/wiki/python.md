@@ -95,7 +95,7 @@ Pylint와 비교하여 매우 빠르다. README에 벤치마크가 있는데 Pyl
 실제로 Pylint로 1분 6초 걸리는 프로젝트에서 명령어 입력 즉시 결과가 나왔다.
 
 단점은 아직 Pylint보다 많은 기능을 제공하지 않는다.
-예를들어 Pylint는 [bare-except](https://pylint.pycqa.org/en/latest/user_guide/messages/warning/bare-except.html)와 [consider-using-f-string](https://pylint.readthedocs.io/en/latest/user_guide/messages/convention/consider-using-f-string.html)을 제공하지만 Ruff는 그렇지 않다.
+예를들어 Pylint는 [broad-exception-caught](https://pylint.readthedocs.io/en/latest/user_guide/messages/warning/broad-exception-caught.html)와 [consider-using-f-string](https://pylint.readthedocs.io/en/latest/user_guide/messages/convention/consider-using-f-string.html)을 잡아주지만 Ruff는 그렇지 않다.
 
 아직 많이 사용해보지 않아서 그 차이가 어느정도인지는 잘 모르겠다.
 기능은 부족하지만 매우 빠른 장점으로 앞으로 자주 사용할 것 같다.
