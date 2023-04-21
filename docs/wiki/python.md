@@ -103,6 +103,10 @@ Pylint와 비교하여 매우 빠르다. README에 벤치마크가 있는데 Pyl
 nvim은 [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#ruff)에서 제공한다. diagnostic, formatter 두 개 소스로 제공한다.
 Pylint와 함께 사용해보면 Ruff의 반응이 빨라서 항상 Pylint보다 Ruff의 진단이 먼저 노출된다.
 
+**개발 환경 구성 시 주의해야 한다.**
+Ruff 설명대로 rust로 작성되어 있어서 로컬 개발 환경이나, 개발용 Docker 환경 구성을 위해서 Rust 런타임 환경을 구성이 필요할 수 있다.
+macOS 기준으로는 별도 도구 없이 설치되었지만, python alpine 이미지 기준으로 설치에 실패한다.
+
 ## python code formatter: autopep8 vs black vs yapf
 
 파이썬 코드 formatter 3종 비교.
