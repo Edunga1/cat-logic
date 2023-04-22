@@ -104,8 +104,24 @@ nvim은 [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/d
 Pylint와 함께 사용해보면 Ruff의 반응이 빨라서 항상 Pylint보다 Ruff의 진단이 먼저 노출된다.
 
 **개발 환경 구성 시 주의해야 한다.**
+
 Ruff 설명대로 rust로 작성되어 있어서 로컬 개발 환경이나, 개발용 Docker 환경 구성을 위해서 Rust 런타임 환경을 구성이 필요할 수 있다.
 macOS 기준으로는 별도 도구 없이 설치되었지만, python alpine 이미지 기준으로 설치에 실패한다.
+
+flake8, isort 등에서 [lint rules](https://beta.ruff.rs/docs/rules/)을 가져왔다. 500+개의 규칙이 있다.
+
+isort와 마찬가지로 사용되지 않는 import는 제거한단다. isort가 필요 없을지도.
+
+[Apache Airflow](https://github.com/apache/airflow/blob/main/pyproject.toml#L29),
+[FastAPI](https://github.com/tiangolo/fastapi/blob/master/pyproject.toml#L164),
+[Hugging Face](https://github.com/huggingface/transformers/blob/main/pyproject.toml#L5),
+[Pandas](https://github.com/pandas-dev/pandas/blob/main/pyproject.toml#L194.md)
+[SciPy](https://github.com/scipy/scipy/blob/main/pyproject.toml#L121.md)
+등 대규모 프로젝트에서 ruff를 사용하고 있다. pylint와 함께 사용하는 곳도 아닌곳도 있다.
+
+> Ruff can be used to replace Flake8 (plus dozens of plugins), isort, pydocstyle, yesqa, eradicate, pyupgrade, and autoflake, all while executing tens or hundreds of times faster than any individual tool.
+
+Flake8, isort 등 도구를 대체할 수 있다고 한다.
 
 ## python code formatter: autopep8 vs black vs yapf
 
