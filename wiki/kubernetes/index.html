@@ -60,7 +60,7 @@ data-styled.g2[id="WikiContent__Container-sc-q3jb6a-0"]{content:"iPgyli,"}/*!sc*
 .gVurN{display:grid;grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
 @media (max-width:1000px){.gVurN{grid-template-columns:1fr;}.gVurN > div:nth-child(1){display:none;}}/*!sc*/
 data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"gVurN,"}/*!sc*/
-</style></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="markdownRemarkfields__slug__Container-sc-cg714z-0 gVurN"><div class="Toc__Container-sc-1f76i2s-0 hbDcaS"><ul>
+</style></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="markdownRemarkfields__slug__Container-sc-cg714z-0 gVurN"><div><div class="Toc__Container-sc-1f76i2s-0 hbDcaS"><ul>
 <li>
 <p><a href="#kubernetes">Kubernetes</a></p>
 </li>
@@ -73,7 +73,7 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li><a href="#nodeport%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%EB%8D%B0%EB%8F%84-%EC%A0%91%EA%B7%BC%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EC%9D%B4%EC%8A%88">NodePort를 사용하는데도 접근할 수 없는 이슈</a></li>
 </ul>
 </li>
-</ul></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="kubernetes" style="position:relative;"><a href="#kubernetes" aria-label="kubernetes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kubernetes</h1>
+</ul></div></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="kubernetes" style="position:relative;"><a href="#kubernetes" aria-label="kubernetes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kubernetes</h1>
 <h1 id="kubernetes-컨테이너간-볼륨-공유" style="position:relative;"><a href="#kubernetes-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EA%B0%84-%EB%B3%BC%EB%A5%A8-%EA%B3%B5%EC%9C%A0" aria-label="kubernetes 컨테이너간 볼륨 공유 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kubernetes 컨테이너간 볼륨 공유</h1>
 <p>하나의 Pod 내에서 여러개의 Container를 운영할 때,
 Docker Compose의 <code>volumes_from</code>과 같은 기능을 하려면.</p>
@@ -129,6 +129,6 @@ $ curl http://localhost:8001/api/v1/proxy/namespaces/default/services/gceme-back
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-998ee84eb3ebeb66ddee.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-a6d255ad0e2dec90f2a0.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-2cb1554a7fa18f1e93a4.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-23acf9067c23d58b9db4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-a6d255ad0e2dec90f2a0.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-40ec24b803c8c46a430e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="c6e254fa95a29207ddf5";</script><script src="/cat-logic/webpack-runtime-3549c8d96f5b42235b5b.js" async></script><script src="/cat-logic/framework-9b6d338de49a676a1843.js" async></script><script src="/cat-logic/app-998ee84eb3ebeb66ddee.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="51d9389186c93ceebac3";</script><script src="/cat-logic/webpack-runtime-b4e88552983183ae7411.js" async></script><script src="/cat-logic/framework-9b6d338de49a676a1843.js" async></script><script src="/cat-logic/app-23acf9067c23d58b9db4.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
