@@ -4,6 +4,7 @@ import styled from "styled-components"
 import replaceWikiLinks from "../../utils/wiki"
 import Toc from "../../components/molecules/Toc"
 import WikiContent from "../../components/molecules/WikiContent"
+import extractInternalLinks from "../../utils/internal-links"
 
 const Container = styled.div`
   display: grid;
@@ -17,14 +18,27 @@ const Container = styled.div`
   }
 `
 
+const relatedLinkStyle = {
+  fontSize: "0.5em",
+  marginRight: "0.5em",
+}
+
 export default function BlogPostTemplate(
   { data }: PageProps<Queries.WikiDetailQuery>,
 ) {
   const { tableOfContents, html } = data.markdownRemark ?? {}
   const rhtml = html && replaceWikiLinks(html)
+  const relatedLinks = html && extractInternalLinks(html) || []
+  const relatedLinksToc = relatedLinks.map(link => (
+    <a key={link} href={`../${link}`} style={relatedLinkStyle}>{link}</a>
+  ))
+
   return (
     <Container>
-      {tableOfContents && <Toc contents={tableOfContents} />}
+      <div>
+        {tableOfContents && <Toc contents={tableOfContents} />}
+        {relatedLinksToc}
+      </div>
       {rhtml && <WikiContent contents={rhtml} />}
     </Container>
   )
