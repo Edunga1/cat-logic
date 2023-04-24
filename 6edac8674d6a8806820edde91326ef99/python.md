@@ -1,5 +1,14 @@
 # Python
 
+# 개발환경 구성
+
+pyenv, pyenv-virtualenv로 파이썬 가상환경을 관리하자.
+
+```bash
+brew install pyenv
+brew install pyenv-virtualenv
+```
+
 # 개발도구
 
 vim 기본 설정으로는 텍스트에디터 역할밖에 못한다.
