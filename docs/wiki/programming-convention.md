@@ -1,5 +1,20 @@
 # Programming Convention
 
+# Semantic Versioning
+
+`9.12.3`과 같이 3개의 넘버링으로 소프트웨어 버전을 표현하는 방식이다.
+
+`X.Y.Z`를 각각 major, minor, patch 버전이라 부른다.
+
+https://semver.org/ 이런 사이트가 있지만 막상 버전 갱신하려면 헷갈린다.
+
+가끔 관점을 다르게 볼 때 명확해지기도 하는데, 다음 코멘트가 이런 상황에 딱 들어맞다고 생각한다:
+
+> Semver has its philosophy, but a pragmatic approach to versioning is:
+> <upgrades may break API> . <downgrades may break API> . <fine either way>
+
+쓰레드는 [리팩토링은 어떤 버전을 올려야 하나요?](https://users.rust-lang.org/t/semver-for-refactoring-change/81370/5)
+
 # `X-` prefix?
 
 `experimental` 혹은 `extension`의 약자라고 한다.
