@@ -322,6 +322,27 @@ https://docs.docker.com/engine/reference/commandline/dockerd/
 > IP address that the special 'host-gateway' string in --add-host resolves to.
 > Defaults to the IP address of the default bridge
 
+# 맥북 m2 이슈
+
+Intel CPU(amd64) -> M2(arm)로 옮기면서 발생한 문제
+
+## mysql:5.6
+
+mysql 8 버전 이하는 arm64 용으로[제공하지 않는 것](https://hub.docker.com/r/arm64v8/mysql/)으로 보인다.
+그래서 `docker pull mysql:5.6` 하면 manifest를 찾을 수 없다며 실패한다:
+
+```bash
+❯ docker pull mysql:5.6
+5.6: Pulling from library/mysql
+no matching manifest for linux/arm64/v8 in the manifest list entries
+```
+
+해결을 위해선 그냥 amd64 것을 사용해도 동작하므로 `--platform` 옵션을 줘서 amd64 것으로 받는다:
+
+```bash
+❯ docker pull --platform linux/amd64 mysql:5.6
+```
+
 # References
 
 NodeJS 어플리케이션의 Dockerizing\
