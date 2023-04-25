@@ -8,11 +8,15 @@
 aws ecr get-login-password --region <REGION> | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com
 ```
 
+`REGION`: 서울 리전이라면 `ap-northeast-2`
+
 `AWS_ACCOUNT_ID` 구하기:
 
 ```bash
 aws sts get-caller-identity
 ```
+
+`Account` 필드의 값이 `AWS_ACCOUNT_ID` 이다.
 
 e.g. account id = `1234`, region = `ap-northeast-2`:
 
