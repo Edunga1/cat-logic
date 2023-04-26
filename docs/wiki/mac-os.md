@@ -131,3 +131,37 @@ Host github.com-edunga
   User git
   PreferredAuthentications publickey
 ```
+
+# `arch` 명령어
+
+다른 명령어를 특정 아키텍처 모드로 실행한다.
+
+e.g.
+
+```bash
+arch -x86_64 <COMMAND>
+```
+
+예를들어 m2 맥북에서 `uname -m`로 확인하면 아키텍처가 `arm64` 이지만:
+
+```bash
+❯ uname -m
+arm64
+```
+
+`arch -x86_64`로 확인하면 `x86_64` 아키텍처로 나온다:
+
+```bash
+❯ arch -x86_64 uname -m
+x86_64
+```
+
+대부분 명령어들이 현재 아키텍처에 따라 적절한 바이너리를 선택하는데, arm64 용 바이너리를 못찾아서 에러가 나는 경우가 있다.
+x86_64 아키텍처 바이너리와 호환할 수 있는 경우도 있어서 `arch`로 모드를 변경하여 실행하는 용도로 사용하는 듯 하다.
+
+인자 없이 사용하는 경우 현재 아키텍처를 출력한다:
+
+```bash
+❯ arch
+arm64
+```
