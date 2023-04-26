@@ -1,5 +1,14 @@
 # Shell 명령어
 
+# `man` - 명령어 매뉴얼
+
+어떤 명령이든 `man COMMAND`로 메뉴얼을 확인하자. 내장 명령어라면 대부분 제공한다.
+
+[tldr](https://github.com/tldr-pages/tldr) 도구도 좋다.
+브라우저로 검색할 필요 없이 `tldr COMMAND`로 간단한 사용 예제도 볼 수 있다.
+
+Bash에 대한 내용도 `man bash`로 알 수 있다. `if [ -e file ]`에서 `-e`가 무엇인지 헷갈린다면 메뉴얼에서 확인할 수 있다.
+
 # `set -ex`
 
 도커파일이나 스크립트를 보면 `set -ex` 구문이 많이 보인다.
