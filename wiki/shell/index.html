@@ -65,6 +65,9 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><a href="#shell-%EB%AA%85%EB%A0%B9%EC%96%B4">Shell 명령어</a></p>
 </li>
 <li>
+<p><a href="#man---%EB%AA%85%EB%A0%B9%EC%96%B4-%EB%A7%A4%EB%89%B4%EC%96%BC"><code>man</code> - 명령어 매뉴얼</a></p>
+</li>
+<li>
 <p><a href="#set--ex"><code>set -ex</code></a></p>
 </li>
 <li>
@@ -117,6 +120,11 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><a href="#parameter-fallback-default-value">parameter fallback (default value)</a></p>
 </li>
 </ul></div><a href="../network" style="font-size:0.5em;margin-right:0.5em">network</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="shell-명령어" style="position:relative;"><a href="#shell-%EB%AA%85%EB%A0%B9%EC%96%B4" aria-label="shell 명령어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Shell 명령어</h1>
+<h1 id="man---명령어-매뉴얼" style="position:relative;"><a href="#man---%EB%AA%85%EB%A0%B9%EC%96%B4-%EB%A7%A4%EB%89%B4%EC%96%BC" aria-label="man   명령어 매뉴얼 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>man</code> - 명령어 매뉴얼</h1>
+<p>어떤 명령이든 <code>man COMMAND</code>로 메뉴얼을 확인하자. 내장 명령어라면 대부분 제공한다.</p>
+<p><a href="https://github.com/tldr-pages/tldr">tldr</a> 도구도 좋다.
+브라우저로 검색할 필요 없이 <code>tldr COMMAND</code>로 간단한 사용 예제도 볼 수 있다.</p>
+<p>Bash에 대한 내용도 <code>man bash</code>로 알 수 있다. <code>if [ -e file ]</code>에서 <code>-e</code>가 무엇인지 헷갈린다면 메뉴얼에서 확인할 수 있다.</p>
 <h1 id="set--ex" style="position:relative;"><a href="#set--ex" aria-label="set  ex permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>set -ex</code></h1>
 <p>도커파일이나 스크립트를 보면 <code>set -ex</code> 구문이 많이 보인다.</p>
 <ul>
