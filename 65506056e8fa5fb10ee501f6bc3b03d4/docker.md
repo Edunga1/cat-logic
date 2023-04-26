@@ -191,7 +191,7 @@ CONTAINER ID        IMAGE                          COMMAND                  CREA
 9f8fa8cbf88c        grokzen/redis-cluster:latest   "/docker-entrypoint.…"   27 minutes ago      Up 27 minutes       5000-5002/tcp, 6379/tcp, 7001-7007/tcp, 0.0.0.0:6379->7000/tcp   redis-cluster
 ```
 
-여기서 `5000-5002/tcp, 6379/tcp, 7001-7007/tcp`는 `EXPOSE`로 명세했지만 호스트에는 노출되지 않았다.
+여기서 `5000-5002/tcp, 6379/tcp, 7001-7007/tcp`는 `EXPOSE`로 명세했지만 호스트와 바인딩되지 않았음을 의미한다.
 즉, `EXPOSE`는 포트 대기중을 의미한다.
 
 # 중지된 도커 컨테이너에서 파일 복사하기
