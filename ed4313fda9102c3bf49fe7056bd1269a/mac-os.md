@@ -165,3 +165,5 @@ x86_64 아키텍처 바이너리와 호환할 수 있는 경우도 있어서 `ar
 ❯ arch
 arm64
 ```
+
+`-<ARCHITECTURE>` 옵션은 macos에서만 가능하다. linux에서는 옵션 없이 `arch`만 제공한다.
