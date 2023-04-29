@@ -77,16 +77,16 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><a href="#nohup---%EB%A9%88%EC%B6%94%EC%A7%80-%EC%95%8A%EA%B3%A0-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0"><code>nohup</code> - 멈추지 않고 명령어 실행하기</a></p>
 <ul>
 <li>
-<p><a href="#%EB%A1%9C%EA%B7%B8%EB%A5%BC-%EC%8B%A4%EC%8B%9C%EA%B0%84%EC%9C%BC%EB%A1%9C-%ED%99%95%EC%9D%B8%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94%EA%B0%80">로그를 실시간으로 확인할 수 있는가?</a></p>
+<p><a href="#stdout%EC%9D%80-nohupout%EC%97%90-%EC%A0%80%EC%9E%A5%EB%90%9C%EB%8B%A4">stdout은 <code>nohup.out</code>에 저장된다.</a></p>
 </li>
 <li>
-<p><a href="#%ED%84%B0%EB%AF%B8%EB%84%90%EC%9D%84-%EA%BA%BC%EB%8F%84-%EB%8F%99%EC%9E%91%ED%95%98%EA%B3%A0-%EC%9E%88%EB%8A%94%EA%B0%80">터미널을 꺼도 동작하고 있는가?</a></p>
+<p><a href="#background-job%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%98%EC%9E%90">Background Job으로 실행하자.</a></p>
 </li>
 <li>
-<p><a href="#nohup%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EB%A5%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%B0%BE%EC%95%84%EC%84%9C-%EB%81%8C-%EC%88%98-%EC%9E%88%EB%8A%94%EA%B0%80"><code>nohup</code>으로 실행한 프로세스를 어떻게 찾아서 끌 수 있는가?</a></p>
+<p><a href="#nohup%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EB%A5%BC-%EC%A2%85%EB%A3%8C%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95"><code>nohup</code>으로 실행한 프로세스를 종료하는 방법</a></p>
 <ul>
 <li><a href="#ps-aux%EB%A1%9C-%EC%B0%BE%EC%95%84%EB%B3%B4%EC%9E%90"><code>ps aux</code>로 찾아보자</a></li>
-<li><a href="#background%EB%A1%9C-%EB%9D%84%EC%9A%B4-%EA%B2%BD%EC%9A%B0-%EC%A2%80-%EB%8D%94-%EC%95%8C%EA%B8%B0-%EC%89%AC%EC%9B%80">background로 띄운 경우 좀 더 알기 쉬움</a></li>
+<li><a href="#background%EB%A1%9C-%EB%9D%84%EC%9A%B4-%EA%B2%BD%EC%9A%B0-%EC%A2%80-%EB%8D%94-%EC%95%8C%EA%B8%B0-%EC%89%BD%EB%8B%A4">background로 띄운 경우 좀 더 알기 쉽다.</a></li>
 <li><a href="#%EC%A2%80-%EB%8D%94-%EB%98%91%EB%98%91%ED%95%9C-%EB%B0%A9%EB%B2%95">좀 더 똑똑한 방법</a></li>
 </ul>
 </li>
@@ -124,7 +124,7 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p>어떤 명령이든 <code>man COMMAND</code>로 메뉴얼을 확인하자. 내장 명령어라면 대부분 제공한다.</p>
 <p><a href="https://github.com/tldr-pages/tldr">tldr</a> 도구도 좋다.
 브라우저로 검색할 필요 없이 <code>tldr COMMAND</code>로 간단한 사용 예제도 볼 수 있다.</p>
-<p>Bash에 대한 내용도 <code>man bash</code>로 알 수 있다. <code>if [ -e file ]</code>에서 <code>-e</code>가 무엇인지 헷갈린다면 메뉴얼에서 확인할 수 있다.</p>
+<p>Bash에 대한 내용도 <code>man bash</code>로 알 수 있다. <code>if [ -e file ]</code>에서 <code>-e</code>를 모르겠다면 메뉴얼에서 확인할 수 있다.</p>
 <h1 id="set--ex" style="position:relative;"><a href="#set--ex" aria-label="set  ex permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>set -ex</code></h1>
 <p>도커파일이나 스크립트를 보면 <code>set -ex</code> 구문이 많이 보인다.</p>
 <ul>
@@ -159,26 +159,23 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><em>COMMAND</em> 에 환경변수를 전달하려면:</p>
 <pre><code class="language-bash">$ FOO='foo' nohup COMMAND
 </code></pre>
-<h2 id="로그를-실시간으로-확인할-수-있는가" style="position:relative;"><a href="#%EB%A1%9C%EA%B7%B8%EB%A5%BC-%EC%8B%A4%EC%8B%9C%EA%B0%84%EC%9C%BC%EB%A1%9C-%ED%99%95%EC%9D%B8%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94%EA%B0%80" aria-label="로그를 실시간으로 확인할 수 있는가 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>로그를 실시간으로 확인할 수 있는가?</h2>
-<p>가능 했다. 스크립트의 출력이 <code>nohup.out</code>에 저장되고 있었다.
-<code>tail -F nohup.out</code> 으로 계속 로그를 실시간으로 확인할 수 있다.</p>
-<h2 id="터미널을-꺼도-동작하고-있는가" style="position:relative;"><a href="#%ED%84%B0%EB%AF%B8%EB%84%90%EC%9D%84-%EA%BA%BC%EB%8F%84-%EB%8F%99%EC%9E%91%ED%95%98%EA%B3%A0-%EC%9E%88%EB%8A%94%EA%B0%80" aria-label="터미널을 꺼도 동작하고 있는가 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>터미널을 꺼도 동작하고 있는가?</h2>
-<p>그냥 <code>&#x26;</code> 없이 실행하면 foregorund로 돈다. <code>nohup</code>만 사용한다고해서
-background로 빠지지 않는다. 이 상태에서 <code>ctrl + c</code>로 빠져나오면
-<strong>해당 스크립트가 종료된다.</strong> 그러나 <code>tmux</code> 기준으로 윈도우를 닫으면
-(터미널을 끈 것과 같은 상황?) 스크립트가 종료되지 않고, 계속 진행된다.</p>
-<p>foreground로 돌리면 의미가 줄기 때문에, 보통 <code>nohup COMMAND &#x26;</code>로
-background로 바로 빠져나가는 방식을 사용하는 거 같다.</p>
+<h2 id="stdout은-nohupout에-저장된다" style="position:relative;"><a href="#stdout%EC%9D%80-nohupout%EC%97%90-%EC%A0%80%EC%9E%A5%EB%90%9C%EB%8B%A4" aria-label="stdout은 nohupout에 저장된다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>stdout은 <code>nohup.out</code>에 저장된다.</h2>
+<p>stdout은 <code>nohup.out</code>에 저장된다.
+명령어가 실행중이라면 <code>tail -F nohup.out</code>으로 실시간으로 확인할 수 있다.</p>
+<h2 id="background-job으로-실행하자" style="position:relative;"><a href="#background-job%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%98%EC%9E%90" aria-label="background job으로 실행하자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background Job으로 실행하자.</h2>
+<p>그냥 <code>&#x26;</code> 없이 실행하면 foregorund로 돈다. <code>nohup</code>만 사용한다고해서 background로 전환되지 않는다.
+이 상태에서 <code>ctrl + c</code>로 빠져나오면 <strong>스크립트가 종료</strong>된다.</p>
+<p><code>nohup COMMAND &#x26;</code>로 백그라운드 잡으로 실행하자.</p>
 <p>ref. <a href="https://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html">https://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html</a></p>
-<h2 id="nohup으로-실행한-프로세스를-어떻게-찾아서-끌-수-있는가" style="position:relative;"><a href="#nohup%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EB%A5%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%B0%BE%EC%95%84%EC%84%9C-%EB%81%8C-%EC%88%98-%EC%9E%88%EB%8A%94%EA%B0%80" aria-label="nohup으로 실행한 프로세스를 어떻게 찾아서 끌 수 있는가 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>nohup</code>으로 실행한 프로세스를 어떻게 찾아서 끌 수 있는가?</h2>
+<h2 id="nohup으로-실행한-프로세스를-종료하는-방법" style="position:relative;"><a href="#nohup%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EB%A5%BC-%EC%A2%85%EB%A3%8C%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="nohup으로 실행한 프로세스를 종료하는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>nohup</code>으로 실행한 프로세스를 종료하는 방법</h2>
 <h3 id="ps-aux로-찾아보자" style="position:relative;"><a href="#ps-aux%EB%A1%9C-%EC%B0%BE%EC%95%84%EB%B3%B4%EC%9E%90" aria-label="ps aux로 찾아보자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>ps aux</code>로 찾아보자</h3>
 <p><em>X.</em> <code>ps aux | grep nohup</code> 결과는 없다.</p>
 <p><em>O.</em> <code>ps aux | grep COMMAND</code> 결과는 있다!</p>
 <p>예를 들어 <code>nohup ./tick.sh</code>로 실행한 경우 <code>ps aux | grep tick</code> 검색하면:</p>
 <pre><code class="language-bash">bash alleb 33723 0.0 0.0 4283996 1252 ?? S 11:16AM 0:00.29 /bin/bash ./tick.sh
 </code></pre>
-<p>PID를 알 수 있으므로 <code>kill -9 33723</code>으로 종료 가능.</p>
-<h3 id="background로-띄운-경우-좀-더-알기-쉬움" style="position:relative;"><a href="#background%EB%A1%9C-%EB%9D%84%EC%9A%B4-%EA%B2%BD%EC%9A%B0-%EC%A2%80-%EB%8D%94-%EC%95%8C%EA%B8%B0-%EC%89%AC%EC%9B%80" aria-label="background로 띄운 경우 좀 더 알기 쉬움 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>background로 띄운 경우 좀 더 알기 쉬움</h3>
+<p>PID를 알 수 있으므로 <code>kill -9 33723</code>으로 종료할 수 있다.</p>
+<h3 id="background로-띄운-경우-좀-더-알기-쉽다" style="position:relative;"><a href="#background%EB%A1%9C-%EB%9D%84%EC%9A%B4-%EA%B2%BD%EC%9A%B0-%EC%A2%80-%EB%8D%94-%EC%95%8C%EA%B8%B0-%EC%89%BD%EB%8B%A4" aria-label="background로 띄운 경우 좀 더 알기 쉽다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>background로 띄운 경우 좀 더 알기 쉽다.</h3>
 <pre><code class="language-bash">~/workspace/nohup-test
 ❯ nohup ./tick.sh &#x26;
 [1] 10809
@@ -188,15 +185,17 @@ appending output to nohup.out
 ❯ kill -9 10809
 [1]  + 10809 killed     nohup ./tick.sh
 </code></pre>
-<p><code>&#x26;</code>으로 background로 돌리면 PID가 바로 노출되므로, 알 수 있다.
-그런데 이걸 기억하고 있을 수는 없잖아?</p>
+<p>Background Job으로 실행하면 PID가 바로 출력되어 알 수 있다.</p>
 <h3 id="좀-더-똑똑한-방법" style="position:relative;"><a href="#%EC%A2%80-%EB%8D%94-%EB%98%91%EB%98%91%ED%95%9C-%EB%B0%A9%EB%B2%95" aria-label="좀 더 똑똑한 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>좀 더 똑똑한 방법</h3>
+<p>백그라운드로 전환 시 출력되는 PID를 파일로 저장하자.</p>
 <pre><code class="language-bash">nohup my_command > my.log 2>&#x26;1 &#x26;
 echo $! > save_pid.txt
 </code></pre>
-<p><code>$!</code>은 background로 돌린 PID를 저장하고 있으므로 <code>nohup</code> 실행 후
-<code>$!</code>를 파일로 저장하면, 터미널이 종료되어 PID를 찾을 수 없어도, 파일로 남는다.</p>
-<p>이렇게 종료할 수 있다: <code>kill -9 `cat save_pid.txt` </code></p>
+<p><code>$!</code>은 background로 돌린 PID를 저장하고 있다.<br>
+터미널이 종료되어 PID를 찾을 수 없어도 파일로 남아있으니 안심이다.</p>
+<p>파일의 PID를 읽어들여 종료할 수 있다:</p>
+<pre><code class="language-bash">kill -9 `cat save_pid.txt`
+</code></pre>
 <p>ref. <a href="https://stackoverflow.com/questions/17385794/how-to-get-the-process-id-to-kill-a-nohup-process/17389526">https://stackoverflow.com/questions/17385794/how-to-get-the-process-id-to-kill-a-nohup-process/17389526</a></p>
 <h1 id="bashrc-rc의-의미" style="position:relative;"><a href="#bashrc-rc%EC%9D%98-%EC%9D%98%EB%AF%B8" aria-label="bashrc rc의 의미 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.bash<strong>rc</strong> rc의 의미?</h1>
 <p>Run Commands.</p>
