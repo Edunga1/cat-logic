@@ -7,7 +7,7 @@
 [tldr](https://github.com/tldr-pages/tldr) 도구도 좋다.
 브라우저로 검색할 필요 없이 `tldr COMMAND`로 간단한 사용 예제도 볼 수 있다.
 
-Bash에 대한 내용도 `man bash`로 알 수 있다. `if [ -e file ]`에서 `-e`가 무엇인지 헷갈린다면 메뉴얼에서 확인할 수 있다.
+Bash에 대한 내용도 `man bash`로 알 수 있다. `if [ -e file ]`에서 `-e`를 모르겠다면 메뉴얼에서 확인할 수 있다.
 
 # `set -ex`
 
@@ -63,24 +63,21 @@ $ nohup COMMAND
 $ FOO='foo' nohup COMMAND
 ```
 
-## 로그를 실시간으로 확인할 수 있는가?
+## stdout은 `nohup.out`에 저장된다.
 
-가능 했다. 스크립트의 출력이 `nohup.out`에 저장되고 있었다.
-`tail -F nohup.out` 으로 계속 로그를 실시간으로 확인할 수 있다.
+stdout은 `nohup.out`에 저장된다.
+명령어가 실행중이라면 `tail -F nohup.out`으로 실시간으로 확인할 수 있다.
 
-## 터미널을 꺼도 동작하고 있는가?
+## Background Job으로 실행하자.
 
-그냥 `&` 없이 실행하면 foregorund로 돈다. `nohup`만 사용한다고해서
-background로 빠지지 않는다. 이 상태에서 `ctrl + c`로 빠져나오면
-**해당 스크립트가 종료된다.** 그러나 `tmux` 기준으로 윈도우를 닫으면
-(터미널을 끈 것과 같은 상황?) 스크립트가 종료되지 않고, 계속 진행된다.
+그냥 `&` 없이 실행하면 foregorund로 돈다. `nohup`만 사용한다고해서 background로 전환되지 않는다.
+이 상태에서 `ctrl + c`로 빠져나오면 **스크립트가 종료**된다.
 
-foreground로 돌리면 의미가 줄기 때문에, 보통 `nohup COMMAND &`로
-background로 바로 빠져나가는 방식을 사용하는 거 같다.
+`nohup COMMAND &`로 백그라운드 잡으로 실행하자.
 
 ref. https://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html
 
-## `nohup`으로 실행한 프로세스를 어떻게 찾아서 끌 수 있는가?
+## `nohup`으로 실행한 프로세스를 종료하는 방법
 
 ### `ps aux`로 찾아보자
 
@@ -94,9 +91,9 @@ ref. https://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a
 bash alleb 33723 0.0 0.0 4283996 1252 ?? S 11:16AM 0:00.29 /bin/bash ./tick.sh
 ```
 
-PID를 알 수 있으므로 `kill -9 33723`으로 종료 가능.
+PID를 알 수 있으므로 `kill -9 33723`으로 종료할 수 있다.
 
-### background로 띄운 경우 좀 더 알기 쉬움
+### background로 띄운 경우 좀 더 알기 쉽다.
 
 ```bash
 ~/workspace/nohup-test
@@ -109,20 +106,24 @@ appending output to nohup.out
 [1]  + 10809 killed     nohup ./tick.sh
 ```
 
-`&`으로 background로 돌리면 PID가 바로 노출되므로, 알 수 있다.
-그런데 이걸 기억하고 있을 수는 없잖아?
+Background Job으로 실행하면 PID가 바로 출력되어 알 수 있다.
 
 ### 좀 더 똑똑한 방법
+
+백그라운드로 전환 시 출력되는 PID를 파일로 저장하자.
 
 ```bash
 nohup my_command > my.log 2>&1 &
 echo $! > save_pid.txt
 ```
 
-`$!`은 background로 돌린 PID를 저장하고 있으므로 `nohup` 실행 후
-`$!`를 파일로 저장하면, 터미널이 종료되어 PID를 찾을 수 없어도, 파일로 남는다.
+`$!`은 background로 돌린 PID를 저장하고 있다.\
+터미널이 종료되어 PID를 찾을 수 없어도 파일로 남아있으니 안심이다.
 
-이렇게 종료할 수 있다: ``kill -9 `cat save_pid.txt` ``
+파일의 PID를 읽어들여 종료할 수 있다:
+```bash
+kill -9 `cat save_pid.txt`
+```
 
 ref. https://stackoverflow.com/questions/17385794/how-to-get-the-process-id-to-kill-a-nohup-process/17389526
 

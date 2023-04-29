@@ -68,7 +68,7 @@ https://news.hada.io/topic?id=7661
 * wine의 system dispatcher가 리눅스에서 윈도우 혹은 그 반대로 호출할 수 있도록 스택을 변환한다.
   * 리눅스 → 윈도우 변환은 왜 필요할까? posix에서 윈도우 프로그램을 실행하는 것인데 그 반대로 변환해야 하는 경우가 있는지?
 
-# 직교성 (Orthogonality)
+# 직교성(Orthogonality)
 
 내가 만들고 싶은 소프트웨어 형태이다. 직교성이 높은 것은 기능간 시너지가 좋다는 것이다.
 게임에서도 개체간 시너지가 좋을 때 재미있다. 시너지가 없으면 눈에 뻔하고 금방 지루하다.
@@ -85,7 +85,7 @@ https://news.hada.io/topic?id=7661
 > 작은 크기에 다양한 기능을 녹아 넣었다는 말일 수 있는데 보통은 직교성(A와 B라는 변수가 있을 때 각각의 변수를 독립적으로 조정해서 다양한 결과를 만들 수 있음을 의미)을 통해 가능하다. 한글이 좋은 예.
 > 근데 이게 쉽지가 않다. 소프트웨어 설계에 대해 많은 고민을 해서 만들었을 거라고 생각한다.
 
-ref. reaper? https://www.reaper.fm/download.php
+reaper? https://www.reaper.fm/download.php
 
 ## 지속 가능한 소프트웨어를 위한 코딩 방법 - NHN Meetup
 
