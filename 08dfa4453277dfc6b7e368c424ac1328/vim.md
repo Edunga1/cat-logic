@@ -129,23 +129,6 @@ grep으로 검색하고, cdo로 적용, 예시:
 
 모든 buffer에 대해서 적용하므로 `:buffers`등 명령어로 적용 대상을 잘 확인하자.
 
-# mapping 시 `:...<cr>` vs `<cmd>...<cr>`
-
-* `nnoremap [w :lprevious<cr>`
-* `nnoremap [w <cmd>lprevious<cr>`
-
-두 코드 모두 `[w` 단축키에 `lprevious<cr>` 명령을 매핑한다.
-
-`:h <cmd>`
-> The <Cmd> pseudokey begins a "command mapping", which executes the command
-> directly (without changing modes).  Where you might use ":...<CR>" in the
-> {rhs} of a mapping, you can instead use "<Cmd>...<CR>".
-
-`<cmd>`는 모드 변경없이 명령을 실행한다고 되어있다.
-
-두 방식을 비교해보면, `:...<cr>`는 실행한 명령어가 입력창에 남아있다.
-반면에 `<cmd>...<cr>`는 남아있지 않다.
-
 # Variables
 
 ## `path`
@@ -160,77 +143,6 @@ netrw, find 사용법
 `set path+=**` `**`를 추가하면 현재 폴더 내 모든 범위를 검색한다.
 `**` 사용하기 전과 비교해보면 검색 수가 달라지는 것을 알 수 있다.
 `.gitignore`의 무시한 파일, `node_modules` 같이 무거운 폴더도 검색된다.
-
-# Profiling
-
-이유없이 느려진다면 프로파일링 해보자.
-
-아래 함수 내용을 직접 실행하거나, 번거로우니 함수 자체를 정의해두고 `:call StartProfiling()` 호출하자.
-느려지게 만드는 액션을 하고 `:profile stop` 또는 vim에서 나가면, `vim-profiling.log` 파일이 생성된다.
-
-```vim
-function! StartProfiling()
-  :profile start vim-profiling.log
-  :profile file *
-  :profile func *
-  echo 'profiling is started. log file: vim-profiling.log'
-endfunction
-```
-
-# Vim에서 python text object 사용하기
-
-`viw`로 단어를, `vip`로 문단을 선택할 수 있다.
-파이썬의 함수와 메서드 그리고 클래스를 선택하려면 어떻게 해야할까?
-
-추정할 수 있는건, 언어마다 달라지는 특성을 플러그인의 도움 없이 모두 지원할 수 없을 거 같다.
-파이썬은 들여쓰기로 함수 블럭을 결정하고, 자바스크립트는 중괄호로 나타낸다.
-또 파이썬에서는 함수, 메서드, 클래스에 Decorator를 추가한다.
-
-파이썬에서 이런 기능을 제공하고,
-`Expand/Shrink Selection` 기능을 구성하는 방법에 대해서 알아본다.
-
-## vim-pythonsense
-
-[vim-pythonsense](https://github.com/jeetsukumaran/vim-pythonsense)
-
-[vim-textobj-python](https://github.com/bps/vim-textobj-python) 이건 제대로 동작하지 않았다.
-
-**vim-pythonsense** 플러그인은 파이썬의 Text Object를 제공한다.
-뿐만 아니라 Text Object로 점프하는 기능도 제공하는데,
-나는 이 기능은 막았다.
-
-설정을 통해 키 매핑을 비활성화 할 수 있다:
-
-```vim
-let g:is_pythonsense_suppress_motion_keymaps = 0
-let g:is_pythonsense_suppress_keymaps = 0
-let g:is_pythonsense_alternate_motion_keymaps = 0
-```
-
-## vim-expand-region
-
-[terryma/vim-expand-region](https://github.com/terryma/vim-expand-region)
-
-Expand Selection, Shrink Selection 기능을 제공하는 플러그인.
-
-VSCode, Intellij 에서도 이 기능이 있다.
-
-`+` 키를 누르면 단어 -> 문자열 -> 괄호 -> 한 줄 -> 함수 -> 클래스 순서로
-점진적으로 Selection 한다. `-` 키는 그 반대로 동작한다.
-
-`vim-textobj-python` 플러그인이 없으면, 함수, 클래스 레벨에서 제대로 동작하지 않는다.
-
-별다른 설정을 하지 않으면, 첫 레벨부터 렉이 있어서,
-다음과 같이 설정하여 사용하고 있다:
-
-```vim
-call expand_region#custom_text_objects('python', {
-  \ 'af' :1,
-  \ 'if' :1,
-  \ 'ac' :1,
-  \ 'ic' :1,
-  \ })
-```
 
 # Plugins
 
@@ -282,6 +194,121 @@ M docs/wiki/vim.md
 
 Staged (1)
 M docs/wiki/vim.md
+```
+
+# Tips
+
+## mapping 시 `:...<cr>` vs `<cmd>...<cr>`
+
+* `nnoremap [w :lprevious<cr>`
+* `nnoremap [w <cmd>lprevious<cr>`
+
+두 코드 모두 `[w` 단축키에 `lprevious<cr>` 명령을 매핑한다.
+
+`:h <cmd>`
+> The <Cmd> pseudokey begins a "command mapping", which executes the command
+> directly (without changing modes).  Where you might use ":...<CR>" in the
+> {rhs} of a mapping, you can instead use "<Cmd>...<CR>".
+
+`<cmd>`는 모드 변경없이 명령을 실행한다고 되어있다.
+
+두 방식을 비교해보면, `:...<cr>`는 실행한 명령어가 입력창에 남아있다.
+반면에 `<cmd>...<cr>`는 남아있지 않다.
+
+## 프로파일링 하기
+
+이유없이 느려진다면 프로파일링 해보자.
+
+아래 함수 내용을 직접 실행하거나, 번거로우니 함수 자체를 정의해두고 `:call StartProfiling()` 호출하자.
+느려지게 만드는 액션을 하고 `:profile stop` 또는 vim에서 나가면, `vim-profiling.log` 파일이 생성된다.
+
+```vim
+function! StartProfiling()
+  :profile start vim-profiling.log
+  :profile file *
+  :profile func *
+  echo 'profiling is started. log file: vim-profiling.log'
+endfunction
+```
+
+## text object 개선하기
+
+vim에서 기본적으로 `viw`로 단어를, `vip`로 문단을 선택할 수 있다.
+더 나아가서 각 언어에 맞게 함수, 클래스를 선택할 수 있는 방법이 있다.
+
+선택 단위를 text object라 한다. `:h text-objects` 참고하자.
+
+[Python](python.md)은 들여쓰기로, [Javscript](javascript.md)는 중괄호로 함수를 표현한다.
+이렇게 언어마다 달라지는 부분을 표현하기 위해서 저마다 설정이 필요하다.
+
+파이썬에 맞는 text object를 제공하거나,
+Selection을 점진적으로 확장/축소하는 기능을 제공하는 플러그인이 있다.
+
+### vim-pythonsense
+
+[vim-pythonsense](https://github.com/jeetsukumaran/vim-pythonsense)
+
+[vim-textobj-python](https://github.com/bps/vim-textobj-python) 이건 제대로 동작하지 않았다.
+
+**vim-pythonsense** 플러그인은 파이썬의 Text Object를 제공한다.
+뿐만 아니라 Text Object로 점프하는 기능도 제공하는데,
+나는 이 기능은 막았다.
+
+설정을 통해 키 매핑을 비활성화 할 수 있다:
+
+```vim
+let g:is_pythonsense_suppress_motion_keymaps = 0
+let g:is_pythonsense_suppress_keymaps = 0
+let g:is_pythonsense_alternate_motion_keymaps = 0
+```
+
+### vim-expand-region
+
+[terryma/vim-expand-region](https://github.com/terryma/vim-expand-region)
+
+Expand Selection, Shrink Selection 기능을 제공하는 플러그인.
+
+VSCode, Intellij 에서도 이 기능이 있다.
+
+`+` 키를 누르면 단어 -> 문자열 -> 괄호 -> 한 줄 -> 함수 -> 클래스 순서로
+점진적으로 Selection 한다. `-` 키는 그 반대로 동작한다.
+
+`vim-textobj-python` 플러그인이 없으면, 함수, 클래스 레벨에서 제대로 동작하지 않는다.
+
+별다른 설정을 하지 않으면, 첫 레벨부터 렉이 있어서,
+다음과 같이 설정하여 사용하고 있다:
+
+```vim
+call expand_region#custom_text_objects('python', {
+  \ 'af' :1,
+  \ 'if' :1,
+  \ 'ac' :1,
+  \ 'ic' :1,
+  \ })
+```
+
+## `command` 대신 `command!`를 사용하자.
+
+`.vimrc`를 리로드하면 이미 정의된 command라고 에러가 나는 경우가 있다:
+
+```bash
+Error detected while processing /home/pair/.vimrc:
+line  375:
+E174: Command already exists: add ! to replace it
+```
+
+해결하기 위해선 힌트 그대로, `!` 만 붙여주면 된다. 그러면 replace 하므로 에러가 발생하지 않는다.
+
+다음과 같은 구문이 있으면
+
+```bash
+command TestCore call <SID>run_test_core()
+```
+
+다음과 같이 변경해주면 된다.
+
+```bash
+command! TestCore call <SID>run_test_core()
 ```
 
 # `:make` and `makeprg`

@@ -98,22 +98,9 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </ul>
 </li>
 <li>
-<p><a href="#mapping-%EC%8B%9C-cr-vs-cmdcr">mapping 시 <code>:...&#x3C;cr></code> vs <code>&#x3C;cmd>...&#x3C;cr></code></a></p>
-</li>
-<li>
 <p><a href="#variables">Variables</a></p>
 <ul>
 <li><a href="#path"><code>path</code></a></li>
-</ul>
-</li>
-<li>
-<p><a href="#profiling">Profiling</a></p>
-</li>
-<li>
-<p><a href="#vim%EC%97%90%EC%84%9C-python-text-object-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">Vim에서 python text object 사용하기</a></p>
-<ul>
-<li><a href="#vim-pythonsense">vim-pythonsense</a></li>
-<li><a href="#vim-expand-region">vim-expand-region</a></li>
 </ul>
 </li>
 <li>
@@ -134,6 +121,27 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </ul>
 </li>
 <li>
+<p><a href="#tips">Tips</a></p>
+<ul>
+<li>
+<p><a href="#mapping-%EC%8B%9C-cr-vs-cmdcr">mapping 시 <code>:...&#x3C;cr></code> vs <code>&#x3C;cmd>...&#x3C;cr></code></a></p>
+</li>
+<li>
+<p><a href="#%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC%EB%A7%81-%ED%95%98%EA%B8%B0">프로파일링 하기</a></p>
+</li>
+<li>
+<p><a href="#text-object-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0">text object 개선하기</a></p>
+<ul>
+<li><a href="#vim-pythonsense">vim-pythonsense</a></li>
+<li><a href="#vim-expand-region">vim-expand-region</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#command-%EB%8C%80%EC%8B%A0-command%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%9E%90"><code>command</code> 대신 <code>command!</code>를 사용하자.</a></p>
+</li>
+</ul>
+</li>
+<li>
 <p><a href="#make-and-makeprg"><code>:make</code> and <code>makeprg</code></a></p>
 <ul>
 <li><a href="#build-integration---how-to-do-90-of-what-plugins-do">build integration - How to Do 90% of What Plugins Do</a></li>
@@ -147,7 +155,7 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li><a href="#ubuntu%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%9C-vim%EC%9D%B4-%EC%8B%9C%EC%9E%91-%EC%8B%9C-vimrc%EC%97%90%EC%84%9C-%EB%A7%8E%EC%9D%80-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81">Ubuntu에 설치한 vim이 시작 시 <code>.vimrc</code>에서 많은 에러가 발생하는 현상</a></li>
 </ul>
 </li>
-</ul></div><a href="../language-server-protocol" style="font-size:0.5em;margin-right:0.5em">language-server-protocol</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="vim" style="position:relative;"><a href="#vim" aria-label="vim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vim</h1>
+</ul></div><a href="../language-server-protocol" style="font-size:0.5em;margin-right:0.5em">language-server-protocol</a><a href="../python" style="font-size:0.5em;margin-right:0.5em">python</a><a href="../javascript" style="font-size:0.5em;margin-right:0.5em">javascript</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="vim" style="position:relative;"><a href="#vim" aria-label="vim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vim</h1>
 <p>vim 보다 <a href="https://github.com/neovim/neovim">neovim</a>.</p>
 <p>My <a href="https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc">.vimrc</a></p>
 <h1 id="neovim" style="position:relative;"><a href="#neovim" aria-label="neovim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>neovim</h1>
@@ -271,21 +279,6 @@ quickfix는 모든 창에서, location-list는 현재 창에서만 유지한다�
 <h3 id="bufdo-모든-buffer-파일에-명령어-적용" style="position:relative;"><a href="#bufdo-%EB%AA%A8%EB%93%A0-buffer-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9" aria-label="bufdo 모든 buffer 파일에 명령어 적용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>bufdo</code> 모든 buffer 파일에 명령어 적용</h3>
 <p><code>:bufdo %s/foo/bar</code></p>
 <p>모든 buffer에 대해서 적용하므로 <code>:buffers</code>등 명령어로 적용 대상을 잘 확인하자.</p>
-<h1 id="mapping-시-cr-vs-cmdcr" style="position:relative;"><a href="#mapping-%EC%8B%9C-cr-vs-cmdcr" aria-label="mapping 시 cr vs cmdcr permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mapping 시 <code>:...&#x3C;cr></code> vs <code>&#x3C;cmd>...&#x3C;cr></code></h1>
-<ul>
-<li><code>nnoremap [w :lprevious&#x3C;cr></code></li>
-<li><code>nnoremap [w &#x3C;cmd>lprevious&#x3C;cr></code></li>
-</ul>
-<p>두 코드 모두 <code>[w</code> 단축키에 <code>lprevious&#x3C;cr></code> 명령을 매핑한다.</p>
-<p><code>:h &#x3C;cmd></code></p>
-<blockquote>
-<p>The <Cmd> pseudokey begins a "command mapping", which executes the command
-directly (without changing modes).  Where you might use ":...<CR>" in the
-{rhs} of a mapping, you can instead use "<Cmd>...<CR>".</p>
-</blockquote>
-<p><code>&#x3C;cmd></code>는 모드 변경없이 명령을 실행한다고 되어있다.</p>
-<p>두 방식을 비교해보면, <code>:...&#x3C;cr></code>는 실행한 명령어가 입력창에 남아있다.
-반면에 <code>&#x3C;cmd>...&#x3C;cr></code>는 남아있지 않다.</p>
 <h1 id="variables" style="position:relative;"><a href="#variables" aria-label="variables permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variables</h1>
 <h2 id="path" style="position:relative;"><a href="#path" aria-label="path permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>path</code></h2>
 <p><code>:find</code> 검색 범위를 결정한다.
@@ -296,52 +289,6 @@ netrw, find 사용법</p>
 <p><code>set path+=**</code> <code>**</code>를 추가하면 현재 폴더 내 모든 범위를 검색한다.
 <code>**</code> 사용하기 전과 비교해보면 검색 수가 달라지는 것을 알 수 있다.
 <code>.gitignore</code>의 무시한 파일, <code>node_modules</code> 같이 무거운 폴더도 검색된다.</p>
-<h1 id="profiling" style="position:relative;"><a href="#profiling" aria-label="profiling permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Profiling</h1>
-<p>이유없이 느려진다면 프로파일링 해보자.</p>
-<p>아래 함수 내용을 직접 실행하거나, 번거로우니 함수 자체를 정의해두고 <code>:call StartProfiling()</code> 호출하자.
-느려지게 만드는 액션을 하고 <code>:profile stop</code> 또는 vim에서 나가면, <code>vim-profiling.log</code> 파일이 생성된다.</p>
-<pre><code class="language-vim">function! StartProfiling()
-  :profile start vim-profiling.log
-  :profile file *
-  :profile func *
-  echo 'profiling is started. log file: vim-profiling.log'
-endfunction
-</code></pre>
-<h1 id="vim에서-python-text-object-사용하기" style="position:relative;"><a href="#vim%EC%97%90%EC%84%9C-python-text-object-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="vim에서 python text object 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vim에서 python text object 사용하기</h1>
-<p><code>viw</code>로 단어를, <code>vip</code>로 문단을 선택할 수 있다.
-파이썬의 함수와 메서드 그리고 클래스를 선택하려면 어떻게 해야할까?</p>
-<p>추정할 수 있는건, 언어마다 달라지는 특성을 플러그인의 도움 없이 모두 지원할 수 없을 거 같다.
-파이썬은 들여쓰기로 함수 블럭을 결정하고, 자바스크립트는 중괄호로 나타낸다.
-또 파이썬에서는 함수, 메서드, 클래스에 Decorator를 추가한다.</p>
-<p>파이썬에서 이런 기능을 제공하고,
-<code>Expand/Shrink Selection</code> 기능을 구성하는 방법에 대해서 알아본다.</p>
-<h2 id="vim-pythonsense" style="position:relative;"><a href="#vim-pythonsense" aria-label="vim pythonsense permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>vim-pythonsense</h2>
-<p><a href="https://github.com/jeetsukumaran/vim-pythonsense">vim-pythonsense</a></p>
-<p><a href="https://github.com/bps/vim-textobj-python">vim-textobj-python</a> 이건 제대로 동작하지 않았다.</p>
-<p><strong>vim-pythonsense</strong> 플러그인은 파이썬의 Text Object를 제공한다.
-뿐만 아니라 Text Object로 점프하는 기능도 제공하는데,
-나는 이 기능은 막았다.</p>
-<p>설정을 통해 키 매핑을 비활성화 할 수 있다:</p>
-<pre><code class="language-vim">let g:is_pythonsense_suppress_motion_keymaps = 0
-let g:is_pythonsense_suppress_keymaps = 0
-let g:is_pythonsense_alternate_motion_keymaps = 0
-</code></pre>
-<h2 id="vim-expand-region" style="position:relative;"><a href="#vim-expand-region" aria-label="vim expand region permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>vim-expand-region</h2>
-<p><a href="https://github.com/terryma/vim-expand-region">terryma/vim-expand-region</a></p>
-<p>Expand Selection, Shrink Selection 기능을 제공하는 플러그인.</p>
-<p>VSCode, Intellij 에서도 이 기능이 있다.</p>
-<p><code>+</code> 키를 누르면 단어 -> 문자열 -> 괄호 -> 한 줄 -> 함수 -> 클래스 순서로
-점진적으로 Selection 한다. <code>-</code> 키는 그 반대로 동작한다.</p>
-<p><code>vim-textobj-python</code> 플러그인이 없으면, 함수, 클래스 레벨에서 제대로 동작하지 않는다.</p>
-<p>별다른 설정을 하지 않으면, 첫 레벨부터 렉이 있어서,
-다음과 같이 설정하여 사용하고 있다:</p>
-<pre><code class="language-vim">call expand_region#custom_text_objects('python', {
-  \ 'af' :1,
-  \ 'if' :1,
-  \ 'ac' :1,
-  \ 'ic' :1,
-  \ })
-</code></pre>
 <h1 id="plugins" style="position:relative;"><a href="#plugins" aria-label="plugins permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugins</h1>
 <p>사용중인 플러그인.</p>
 <h2 id="chrisbracsvvim" style="position:relative;"><a href="#chrisbracsvvim" aria-label="chrisbracsvvim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chrisbra/csv.vim</h2>
@@ -410,6 +357,81 @@ M docs/wiki/vim.md
 
 Staged (1)
 M docs/wiki/vim.md
+</code></pre>
+<h1 id="tips" style="position:relative;"><a href="#tips" aria-label="tips permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tips</h1>
+<h2 id="mapping-시-cr-vs-cmdcr" style="position:relative;"><a href="#mapping-%EC%8B%9C-cr-vs-cmdcr" aria-label="mapping 시 cr vs cmdcr permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mapping 시 <code>:...&#x3C;cr></code> vs <code>&#x3C;cmd>...&#x3C;cr></code></h2>
+<ul>
+<li><code>nnoremap [w :lprevious&#x3C;cr></code></li>
+<li><code>nnoremap [w &#x3C;cmd>lprevious&#x3C;cr></code></li>
+</ul>
+<p>두 코드 모두 <code>[w</code> 단축키에 <code>lprevious&#x3C;cr></code> 명령을 매핑한다.</p>
+<p><code>:h &#x3C;cmd></code></p>
+<blockquote>
+<p>The <Cmd> pseudokey begins a "command mapping", which executes the command
+directly (without changing modes).  Where you might use ":...<CR>" in the
+{rhs} of a mapping, you can instead use "<Cmd>...<CR>".</p>
+</blockquote>
+<p><code>&#x3C;cmd></code>는 모드 변경없이 명령을 실행한다고 되어있다.</p>
+<p>두 방식을 비교해보면, <code>:...&#x3C;cr></code>는 실행한 명령어가 입력창에 남아있다.
+반면에 <code>&#x3C;cmd>...&#x3C;cr></code>는 남아있지 않다.</p>
+<h2 id="프로파일링-하기" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC%EB%A7%81-%ED%95%98%EA%B8%B0" aria-label="프로파일링 하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로파일링 하기</h2>
+<p>이유없이 느려진다면 프로파일링 해보자.</p>
+<p>아래 함수 내용을 직접 실행하거나, 번거로우니 함수 자체를 정의해두고 <code>:call StartProfiling()</code> 호출하자.
+느려지게 만드는 액션을 하고 <code>:profile stop</code> 또는 vim에서 나가면, <code>vim-profiling.log</code> 파일이 생성된다.</p>
+<pre><code class="language-vim">function! StartProfiling()
+  :profile start vim-profiling.log
+  :profile file *
+  :profile func *
+  echo 'profiling is started. log file: vim-profiling.log'
+endfunction
+</code></pre>
+<h2 id="text-object-개선하기" style="position:relative;"><a href="#text-object-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0" aria-label="text object 개선하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>text object 개선하기</h2>
+<p>vim에서 기본적으로 <code>viw</code>로 단어를, <code>vip</code>로 문단을 선택할 수 있다.
+더 나아가서 각 언어에 맞게 함수, 클래스를 선택할 수 있는 방법이 있다.</p>
+<p>선택 단위를 text object라 한다. <code>:h text-objects</code> 참고하자.</p>
+<p><a href="/cat-logic/6edac8674d6a8806820edde91326ef99/python.md">Python</a>은 들여쓰기로, <a href="/cat-logic/0bddb9110ffcffa59369e208252f3807/javascript.md">Javscript</a>는 중괄호로 함수를 표현한다.
+이렇게 언어마다 달라지는 부분을 표현하기 위해서 저마다 설정이 필요하다.</p>
+<p>파이썬에 맞는 text object를 제공하거나,
+Selection을 점진적으로 확장/축소하는 기능을 제공하는 플러그인이 있다.</p>
+<h3 id="vim-pythonsense" style="position:relative;"><a href="#vim-pythonsense" aria-label="vim pythonsense permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>vim-pythonsense</h3>
+<p><a href="https://github.com/jeetsukumaran/vim-pythonsense">vim-pythonsense</a></p>
+<p><a href="https://github.com/bps/vim-textobj-python">vim-textobj-python</a> 이건 제대로 동작하지 않았다.</p>
+<p><strong>vim-pythonsense</strong> 플러그인은 파이썬의 Text Object를 제공한다.
+뿐만 아니라 Text Object로 점프하는 기능도 제공하는데,
+나는 이 기능은 막았다.</p>
+<p>설정을 통해 키 매핑을 비활성화 할 수 있다:</p>
+<pre><code class="language-vim">let g:is_pythonsense_suppress_motion_keymaps = 0
+let g:is_pythonsense_suppress_keymaps = 0
+let g:is_pythonsense_alternate_motion_keymaps = 0
+</code></pre>
+<h3 id="vim-expand-region" style="position:relative;"><a href="#vim-expand-region" aria-label="vim expand region permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>vim-expand-region</h3>
+<p><a href="https://github.com/terryma/vim-expand-region">terryma/vim-expand-region</a></p>
+<p>Expand Selection, Shrink Selection 기능을 제공하는 플러그인.</p>
+<p>VSCode, Intellij 에서도 이 기능이 있다.</p>
+<p><code>+</code> 키를 누르면 단어 -> 문자열 -> 괄호 -> 한 줄 -> 함수 -> 클래스 순서로
+점진적으로 Selection 한다. <code>-</code> 키는 그 반대로 동작한다.</p>
+<p><code>vim-textobj-python</code> 플러그인이 없으면, 함수, 클래스 레벨에서 제대로 동작하지 않는다.</p>
+<p>별다른 설정을 하지 않으면, 첫 레벨부터 렉이 있어서,
+다음과 같이 설정하여 사용하고 있다:</p>
+<pre><code class="language-vim">call expand_region#custom_text_objects('python', {
+  \ 'af' :1,
+  \ 'if' :1,
+  \ 'ac' :1,
+  \ 'ic' :1,
+  \ })
+</code></pre>
+<h2 id="command-대신-command를-사용하자" style="position:relative;"><a href="#command-%EB%8C%80%EC%8B%A0-command%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%9E%90" aria-label="command 대신 command를 사용하자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>command</code> 대신 <code>command!</code>를 사용하자.</h2>
+<p><code>.vimrc</code>를 리로드하면 이미 정의된 command라고 에러가 나는 경우가 있다:</p>
+<pre><code class="language-bash">Error detected while processing /home/pair/.vimrc:
+line  375:
+E174: Command already exists: add ! to replace it
+</code></pre>
+<p>해결하기 위해선 힌트 그대로, <code>!</code> 만 붙여주면 된다. 그러면 replace 하므로 에러가 발생하지 않는다.</p>
+<p>다음과 같은 구문이 있으면</p>
+<pre><code class="language-bash">command TestCore call &#x3C;SID>run_test_core()
+</code></pre>
+<p>다음과 같이 변경해주면 된다.</p>
+<pre><code class="language-bash">command! TestCore call &#x3C;SID>run_test_core()
 </code></pre>
 <h1 id="make-and-makeprg" style="position:relative;"><a href="#make-and-makeprg" aria-label="make and makeprg permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>:make</code> and <code>makeprg</code></h1>
 <p><code>:make</code> 명령은 <code>makeprg</code>에 설정한 것을 실행한다.
