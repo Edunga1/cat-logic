@@ -287,6 +287,30 @@ call expand_region#custom_text_objects('python', {
   \ })
 ```
 
+## `command` 대신 `command!`를 사용하자.
+
+`.vimrc`를 리로드하면 이미 정의된 command라고 에러가 나는 경우가 있다:
+
+```bash
+Error detected while processing /home/pair/.vimrc:
+line  375:
+E174: Command already exists: add ! to replace it
+```
+
+해결하기 위해선 힌트 그대로, `!` 만 붙여주면 된다. 그러면 replace 하므로 에러가 발생하지 않는다.
+
+다음과 같은 구문이 있으면
+
+```bash
+command TestCore call <SID>run_test_core()
+```
+
+다음과 같이 변경해주면 된다.
+
+```bash
+command! TestCore call <SID>run_test_core()
+```
+
 # `:make` and `makeprg`
 
 `:make` 명령은 `makeprg`에 설정한 것을 실행한다.
