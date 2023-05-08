@@ -406,3 +406,73 @@ flake8이 경고를 출력하므로 `# NOQA`로 무시하도록 했다.
 from my_module import foo, bar  # 가능
 from my_module import _baz  # 불가능
 ```
+
+# 프로젝트 구조
+
+## PyPA에서 프로젝트 구조를 `src/` 레이아웃으로 바꾸다.
+
+PR: https://github.com/pypa/sampleproject/pull/104
+
+PR 내용을 읽어보면 Pycon US 2019에서 src 레이아웃으로 전환하기로 했다고 한다.
+
+PyCon US Packaging Mini-Summit 2019 토론장: [https://discuss.python.org/t/pycon-us-packaging-mini-summit-2019/833](https://discuss.python.org/t/pycon-us-packaging-mini-summit-2019/833)
+
+PyCon Us Packaging Mini-Summit 2019 토픽 추천 토론장: [https://discuss.python.org/t/packaging-mini-summit-pycon-us-2019-topic-suggestions/1534/5](https://discuss.python.org/t/packaging-mini-summit-pycon-us-2019-topic-suggestions/1534/5)
+
+(토픽 추천 토론장에서) 2017년에 올라온 이슈로 인해서 논의하게 되었다 한다:
+
+> Background: This issue is still unresolved, but a lot of people are converting to the src/ layout. The canonical reference for why is Hynek’s post , though I will refrain from at-messaging him because I don’t think he wants to be the poster-boy for src/ layout.
+
+해당 이슈: https://github.com/pypa/packaging.python.org/issues/320
+
+https://hynek.me/articles/testing-packaging 글에서 src 레이아웃을 사용하는 이유를 말해준다고 한다.
+
+[https://github.com/pypa/packaging.python.org/issues/320#issuecomment-495990983](https://github.com/pypa/packaging.python.org/issues/320#issuecomment-495990983)\
+덧글에 논의 내용을 올려주었다.\
+**싱글 모듈**을 제외한 구조는 src 레이아웃을 따른다고 한다.
+    
+> This was discussed at the Packaging Mini Summit ([notes for that](https://docs.google.com/document/d/1Wz2-ECkicJgAmQDxMFivWmU2ZunKvPZ2UfQ59zDGj7g/edit#)). Here's my rough summary from memory + the notes:
+>
+> - We should use a name for non-src/ layout that isn't negative-tone:
+>     - suggestions at the summit: flat / natural / root / simple (please bikeshed elsewhere)
+> - Everyone agreed that there are benefits to the `src/` layout and that it should be documented.
+> - Final position after discussion:
+>     - single module packages should use flat layout.
+>         - REPL breaks when using `src/` (you can't `import module`) and we considered this to be an important detail for first-time packagers who only want to share a script.
+>     - Anything beyond a single module being packaged, should use the `src/` directory.
+
+[https://github.com/pypa/packaging.python.org/issues/320#issuecomment-496064900](https://github.com/pypa/packaging.python.org/issues/320#issuecomment-496064900)\
+싱글 모듈이란 `.py` 파일 하나만 있는 프로젝트가 싱글 모듈이라고 한다.
+
+> A single module = single `.py` file.
+>
+> requests is not a single module project. It's a package, containing multiple modules. Using terms from [https://packaging.python.org/glossary/](https://packaging.python.org/glossary/).
+
+구글 시트에서 토론 내용에 대해서 정리 해두었다.
+
+[https://docs.google.com/document/d/1Wz2-ECkicJgAmQDxMFivWmU2ZunKvPZ2UfQ59zDGj7g/edit#heading=h.2cgqnlxl8y3e](https://docs.google.com/document/d/1Wz2-ECkicJgAmQDxMFivWmU2ZunKvPZ2UfQ59zDGj7g/edit#heading=h.2cgqnlxl8y3e)
+
+> Currently the "non source" or "flat" layout is documented in the Packaging documentation, specifically the section on Packaging Python Projects. The "src" layout is not documented in the Packaging documentation.
+
+(이전에는 src 레이아웃이 아닌 최상위에 컴포넌트별 폴더를 두었는데) non source 또는 flat 레이아웃이라고 불렀고, 패키징 관련 문서에 설명했다고 한다.
+
+> Key Questions
+Should the src layout be documented?
+Should it be the default?
+
+논의 주제는 src 레이아웃을 명시할까? 그리고 기본 레이아웃으로 해도 될까?
+
+> Nick's opinion is that the flat case should be the example case as it is the simplest
+Donald and others mention that there are problems with the flat layout and for these reasons the beginner guide should use the src layout
+
+몇 가지 문제점이 있기 때문에 시작 가이드에서 src 레이아웃을 사용한다고 주장함
+
+재밌는 점. Non-src 레이아웃에 대해서 뭐라고 부를지 의논했는데 후보 중..
+
+> Flat (least-disliked option)
+Root (potentially non-obvious to beginners; potential confusion with, e.g., ‘filesystem root’)
+"Bad" (.....)
+Non-src (may imply unduly that “src” is preferred)
+Natural (may imply unduly that “src” is discouraged)
+
+Bad 레이아웃이 있다 ㅋㅋ

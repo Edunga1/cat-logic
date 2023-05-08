@@ -118,6 +118,12 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li><a href="#__all__"><code>__all__</code></a></li>
 </ul>
 </li>
+<li>
+<p><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0">프로젝트 구조</a></p>
+<ul>
+<li><a href="#pypa%EC%97%90%EC%84%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0%EB%A5%BC-src-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%EC%9C%BC%EB%A1%9C-%EB%B0%94%EA%BE%B8%EB%8B%A4">PyPA에서 프로젝트 구조를 <code>src/</code> 레이아웃으로 바꾸다.</a></li>
+</ul>
+</li>
 </ul></div><a href="../language-server-protocol" style="font-size:0.5em;margin-right:0.5em">language-server-protocol</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="python" style="position:relative;"><a href="#python" aria-label="python permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Python</h1>
 <h1 id="개발환경-구성" style="position:relative;"><a href="#%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1" aria-label="개발환경 구성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>개발환경 구성</h1>
 <p>pyenv, pyenv-virtualenv로 파이썬 가상환경을 관리하자.</p>
@@ -420,7 +426,75 @@ _baz = 1
 <p>이렇게하면 <code>my_module</code>을 사용하는 곳에선 <code>foo</code>, <code>bar</code>만 가져올 수 있다.</p>
 <pre><code class="language-python">from my_module import foo, bar  # 가능
 from my_module import _baz  # 불가능
-</code></pre></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</code></pre>
+<h1 id="프로젝트-구조" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0" aria-label="프로젝트 구조 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 구조</h1>
+<h2 id="pypa에서-프로젝트-구조를-src-레이아웃으로-바꾸다" style="position:relative;"><a href="#pypa%EC%97%90%EC%84%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0%EB%A5%BC-src-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%EC%9C%BC%EB%A1%9C-%EB%B0%94%EA%BE%B8%EB%8B%A4" aria-label="pypa에서 프로젝트 구조를 src 레이아웃으로 바꾸다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PyPA에서 프로젝트 구조를 <code>src/</code> 레이아웃으로 바꾸다.</h2>
+<p>PR: <a href="https://github.com/pypa/sampleproject/pull/104">https://github.com/pypa/sampleproject/pull/104</a></p>
+<p>PR 내용을 읽어보면 Pycon US 2019에서 src 레이아웃으로 전환하기로 했다고 한다.</p>
+<p>PyCon US Packaging Mini-Summit 2019 토론장: <a href="https://discuss.python.org/t/pycon-us-packaging-mini-summit-2019/833">https://discuss.python.org/t/pycon-us-packaging-mini-summit-2019/833</a></p>
+<p>PyCon Us Packaging Mini-Summit 2019 토픽 추천 토론장: <a href="https://discuss.python.org/t/packaging-mini-summit-pycon-us-2019-topic-suggestions/1534/5">https://discuss.python.org/t/packaging-mini-summit-pycon-us-2019-topic-suggestions/1534/5</a></p>
+<p>(토픽 추천 토론장에서) 2017년에 올라온 이슈로 인해서 논의하게 되었다 한다:</p>
+<blockquote>
+<p>Background: This issue is still unresolved, but a lot of people are converting to the src/ layout. The canonical reference for why is Hynek’s post , though I will refrain from at-messaging him because I don’t think he wants to be the poster-boy for src/ layout.</p>
+</blockquote>
+<p>해당 이슈: <a href="https://github.com/pypa/packaging.python.org/issues/320">https://github.com/pypa/packaging.python.org/issues/320</a></p>
+<p><a href="https://hynek.me/articles/testing-packaging">https://hynek.me/articles/testing-packaging</a> 글에서 src 레이아웃을 사용하는 이유를 말해준다고 한다.</p>
+<p><a href="https://github.com/pypa/packaging.python.org/issues/320#issuecomment-495990983">https://github.com/pypa/packaging.python.org/issues/320#issuecomment-495990983</a><br>
+덧글에 논의 내용을 올려주었다.<br>
+<strong>싱글 모듈</strong>을 제외한 구조는 src 레이아웃을 따른다고 한다.</p>
+<blockquote>
+<p>This was discussed at the Packaging Mini Summit (<a href="https://docs.google.com/document/d/1Wz2-ECkicJgAmQDxMFivWmU2ZunKvPZ2UfQ59zDGj7g/edit#">notes for that</a>). Here's my rough summary from memory + the notes:</p>
+<ul>
+<li>We should use a name for non-src/ layout that isn't negative-tone:
+<ul>
+<li>suggestions at the summit: flat / natural / root / simple (please bikeshed elsewhere)</li>
+</ul>
+</li>
+<li>Everyone agreed that there are benefits to the <code>src/</code> layout and that it should be documented.</li>
+<li>Final position after discussion:
+<ul>
+<li>single module packages should use flat layout.
+<ul>
+<li>REPL breaks when using <code>src/</code> (you can't <code>import module</code>) and we considered this to be an important detail for first-time packagers who only want to share a script.</li>
+</ul>
+</li>
+<li>Anything beyond a single module being packaged, should use the <code>src/</code> directory.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><a href="https://github.com/pypa/packaging.python.org/issues/320#issuecomment-496064900">https://github.com/pypa/packaging.python.org/issues/320#issuecomment-496064900</a><br>
+싱글 모듈이란 <code>.py</code> 파일 하나만 있는 프로젝트가 싱글 모듈이라고 한다.</p>
+<blockquote>
+<p>A single module = single <code>.py</code> file.</p>
+<p>requests is not a single module project. It's a package, containing multiple modules. Using terms from <a href="https://packaging.python.org/glossary/">https://packaging.python.org/glossary/</a>.</p>
+</blockquote>
+<p>구글 시트에서 토론 내용에 대해서 정리 해두었다.</p>
+<p><a href="https://docs.google.com/document/d/1Wz2-ECkicJgAmQDxMFivWmU2ZunKvPZ2UfQ59zDGj7g/edit#heading=h.2cgqnlxl8y3e">https://docs.google.com/document/d/1Wz2-ECkicJgAmQDxMFivWmU2ZunKvPZ2UfQ59zDGj7g/edit#heading=h.2cgqnlxl8y3e</a></p>
+<blockquote>
+<p>Currently the "non source" or "flat" layout is documented in the Packaging documentation, specifically the section on Packaging Python Projects. The "src" layout is not documented in the Packaging documentation.</p>
+</blockquote>
+<p>(이전에는 src 레이아웃이 아닌 최상위에 컴포넌트별 폴더를 두었는데) non source 또는 flat 레이아웃이라고 불렀고, 패키징 관련 문서에 설명했다고 한다.</p>
+<blockquote>
+<p>Key Questions</p>
+</blockquote>
+<p>Should the src layout be documented?
+Should it be the default?</p>
+<p>논의 주제는 src 레이아웃을 명시할까? 그리고 기본 레이아웃으로 해도 될까?</p>
+<blockquote>
+<p>Nick's opinion is that the flat case should be the example case as it is the simplest</p>
+</blockquote>
+<p>Donald and others mention that there are problems with the flat layout and for these reasons the beginner guide should use the src layout</p>
+<p>몇 가지 문제점이 있기 때문에 시작 가이드에서 src 레이아웃을 사용한다고 주장함</p>
+<p>재밌는 점. Non-src 레이아웃에 대해서 뭐라고 부를지 의논했는데 후보 중..</p>
+<blockquote>
+<p>Flat (least-disliked option)</p>
+</blockquote>
+<p>Root (potentially non-obvious to beginners; potential confusion with, e.g., ‘filesystem root’)
+"Bad" (.....)
+Non-src (may imply unduly that “src” is preferred)
+Natural (may imply unduly that “src” is discouraged)</p>
+<p>Bad 레이아웃이 있다 ㅋㅋ</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
