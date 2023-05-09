@@ -150,3 +150,18 @@ DAMP는 코드를 읽고 이해하는데 필요한 시간을 줄여 유지보수
 테스트 코드를 DRY하면, 모호한 테스트를 만들게 되어 mystery guest가 발생하게 된다.
 
 mystery guest: 테스트를 읽는 사람이 Fixture와 Verification 로직이 테스트 메서드 외부에서 동작하여 이해할 수 없게 되는 것.
+
+# A/B Test
+
+다른 주제와 같은 분류가 아닌 거 같지만, 일단 여기에 둔다.
+
+## VWO
+
+[VWO](https://vwo.com/)는 테스트 및 최적화 플랫폼이다.
+
+이 사이트에 A/B 테스트 기간 계산기라는 페이지가 있다: https://vwo.com/tools/ab-test-duration-calculator/
+
+현재 전환율, 목표로 하는 개선율, 조합 수, 일일 방문자 수, 테스트 대상 비율을 입력하면
+얼마동안 테스트를 진행하면 좋을지 계산해주는 페이지다.
+
+계산 식은 블로그에서 시트로 공개하고 있다: https://vwo.com/blog/ab-test-duration-calculator/

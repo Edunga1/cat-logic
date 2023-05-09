@@ -85,6 +85,12 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li>
 <p><a href="#%EC%9C%A0%EB%8B%9B-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C-damp-not-dry%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%84-%EC%9D%98%EB%AF%B8%ED%95%98%EB%82%98%EC%9A%94">유닛 테스트에서 "DAMP not DRY"는 무엇을 의미하나요?</a></p>
 </li>
+<li>
+<p><a href="#ab-test">A/B Test</a></p>
+<ul>
+<li><a href="#vwo">VWO</a></li>
+</ul>
+</li>
 </ul></div></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="testing" style="position:relative;"><a href="#testing" aria-label="testing permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing</h1>
 <h1 id="setup-and-teardown" style="position:relative;"><a href="#setup-and-teardown" aria-label="setup and teardown permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setup and Teardown</h1>
 <p>각 테스트를 실행하기 전/후 할 일을 각각 <strong>Setup</strong> <strong>Teardown</strong> 이라한다.</p>
@@ -199,7 +205,15 @@ DAMP는 코드를 읽고 이해하는데 필요한 시간을 줄여 유지보수
 <p>DRYing out test code has the potential to create an obscure test by introducing a <a href="http://xunitpatterns.com/Obscure%20Test.html#Mystery%20Guest">mystery guest</a></p>
 </blockquote>
 <p>테스트 코드를 DRY하면, 모호한 테스트를 만들게 되어 mystery guest가 발생하게 된다.</p>
-<p>mystery guest: 테스트를 읽는 사람이 Fixture와 Verification 로직이 테스트 메서드 외부에서 동작하여 이해할 수 없게 되는 것.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/testing/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>mystery guest: 테스트를 읽는 사람이 Fixture와 Verification 로직이 테스트 메서드 외부에서 동작하여 이해할 수 없게 되는 것.</p>
+<h1 id="ab-test" style="position:relative;"><a href="#ab-test" aria-label="ab test permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A/B Test</h1>
+<p>다른 주제와 같은 분류가 아닌 거 같지만, 일단 여기에 둔다.</p>
+<h2 id="vwo" style="position:relative;"><a href="#vwo" aria-label="vwo permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>VWO</h2>
+<p><a href="https://vwo.com/">VWO</a>는 테스트 및 최적화 플랫폼이다.</p>
+<p>이 사이트에 A/B 테스트 기간 계산기라는 페이지가 있다: <a href="https://vwo.com/tools/ab-test-duration-calculator/">https://vwo.com/tools/ab-test-duration-calculator/</a></p>
+<p>현재 전환율, 목표로 하는 개선율, 조합 수, 일일 방문자 수, 테스트 대상 비율을 입력하면
+얼마동안 테스트를 진행하면 좋을지 계산해주는 페이지다.</p>
+<p>계산 식은 블로그에서 시트로 공개하고 있다: <a href="https://vwo.com/blog/ab-test-duration-calculator/">https://vwo.com/blog/ab-test-duration-calculator/</a></p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/testing/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
