@@ -249,3 +249,27 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 `$ZSH_CUSTOM`이 없으면 `~/.oh-my-zsh/custom`을 사용한다는 의미.
 
 ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+
+# `time` 명령어 실행시간 측정
+
+```bash
+$ /usr/bin/time git fetch
+        2.28 real         0.03 user         0.02 sys
+```
+
+* real: 총 소요시간
+* user: user mode에서 소요된 CPU time
+* sys: kernal mode에서 소요된 CPU time
+
+`-h` 옵션으로 익숙한 시간 단위로 표기할 수 있다.
+
+```bash
+$ type -a time
+time is a reserved word
+time is /usr/bin/time
+```
+
+`time`은 셸 예약어로 되어있는데, 실행파일은 `/usr/bin/time`에 있다.
+예약어를 사용하면 `time g fetch`와 같이 alias를 사용할 수 있고, 직접 실행파일을 사용하면 alias를 사용할 수 없다.
+
+ref. https://linuxize.com/post/linux-time-command/
