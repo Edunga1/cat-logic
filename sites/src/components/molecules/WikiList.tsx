@@ -1,12 +1,20 @@
 import * as React from "react"
-import Link from "../atoms/Link/Link";
-import ListItem from "../atoms/ListItem/ListItem";
+import styled from "styled-components"
+import Link from "../atoms/Link/Link"
+import ListItem from "../atoms/ListItem/ListItem"
+import theme from "../../theme"
+
+const List = styled.ul`
+  padding: 1rem;
+  border: 1px solid ${theme.colors.accent};
+  border-radius: .5rem;
+`
 
 export default function WikiList(
   { items }: WikiListProps,
 ) {
   return (
-    <ul>
+    <List>
       {items.map((item) => (
         <ListItem key={item.id}>
           <Link href={item.path}>
@@ -14,7 +22,7 @@ export default function WikiList(
           </Link>
         </ListItem>
       ))}
-    </ul>
+    </List>
   )
 }
 

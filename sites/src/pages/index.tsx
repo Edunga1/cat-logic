@@ -1,17 +1,24 @@
 import * as React from "react"
 import { graphql, HeadFC, PageProps } from "gatsby"
 import WikiList from "../components/molecules/WikiList"
+import styled from "styled-components"
+import theme from "../theme"
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 400,
-}
+const StyledMain = styled.main`
+  padding: 9rem;
+  background-color: ${theme.colors.background};
+  color: ${theme.colors.foreground};
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 64;
+    max-width: 400;
+  }
+
+  a {
+    color: ${theme.colors.link};
+  }
+`
 
 export default function IndexPage(
   { data }: PageProps<Queries.WikiListQuery>,
@@ -24,15 +31,11 @@ export default function IndexPage(
   }))
 
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        WORK IN PROGRESS
-      </h1>
-      <h1>
-        {totalCount} Pages
-      </h1>
+    <StyledMain>
+      <h1>WORK IN PROGRESS</h1>
+      <h2>{totalCount} Pages</h2>
       <WikiList items={items} />
-    </main>
+    </StyledMain>
   )
 }
 
