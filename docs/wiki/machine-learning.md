@@ -89,6 +89,8 @@ ChatGPT는 나쁜 정보를 제공하지 않도록 되어 있는데, [이 또한
 Bing Chat도 같은 방식으로 전체 프롬프트가 유축되었다.
 [트위터 원글에 Bing Chat에 Ban을 당했다](https://twitter.com/kliu128/status/1623547265926459395)고 하는 것으로 봐선 정말로 이런 구조로 만들어진 것일지도.
 
+ref. https://news.hada.io/topic?id=9182
+
 # Products
 
 ## ChatGPT
@@ -286,3 +288,61 @@ VR기기를 예시로 매우 빠르게 객체를 구분해 내는 것을 보여�
 내가 찍은 사진을 업로드해서 해보면 매우 잘 동작한다.
 
 SAM으로 만든 웹페이지의 이미지로부터 객체를 추출하는 [Magic Copy](https://github.com/kevmo314/magic-copy)라는 구글 확장이 있다. 역시나 잘 동작하고, 쓸만해 보인다.
+
+## LMQL
+
+https://lmql.ai/
+
+자연어는 의도를 정확히 표현하기 어렵다. 그래서 대화를 핑퐁하여 서로를 이해한다.
+인공지능의 프롬프트도 마찬가지다보니 이런 제품이 나온 거 같다.
+
+```lmql
+argmax
+   """A list of good dad jokes. A indicates
+    ➥ the punchline
+   Q: How does a penguin build its house?
+   A: Igloos it together.
+   Q: Which knight invented King Arthur's
+    ➥ Round Table?
+   A: Sir Cumference.
+   Q:[JOKE]
+   A:[PUNCHLINE]"""
+from
+   "openai/text-davinci-003"
+where
+   len(JOKE) < 120 and 
+   STOPS_AT
+(JOKE, "?") and 
+   STOPS_AT(PUNCHLINE, "\n") and 
+   len(PUNCHLINE) > 1
+```
+
+위와 같이 얻고자 하는 결과의 조건을 명시하면 다음과 같은 결과를 얻을 수 있다:
+
+```text
+A list of good dad jokes. A indicates the punchline
+Q: How does a penguin build its house?
+A: Igloos it together.
+Q: Which knight invented King Arthur's Round Table?
+A: Sir Cumference.
+Q: JOKE What did the fish say when it hit the wall?
+A: PUNCHLINE Dam!
+```
+
+python으로 구현되어 있어서 쿼리에 파이썬 문법을 사용할 수 있다:
+
+```lmql
+sample(temperature=0.8)
+   "A list of things not to forget when
+    ➥ going to the sea (not travelling): \n"
+   "- Sunglasses \n"
+   for i in range(4):
+      "- [THING] \n"
+from
+   'openai/text-ada-001'
+where
+   THING in set
+(["Volleyball", "Sunscreen", "Bathing Suite"])
+```
+
+ref. https://news.hada.io/topic?id=9185
