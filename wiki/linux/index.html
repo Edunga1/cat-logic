@@ -61,8 +61,18 @@ data-styled.g2[id="WikiContent__Container-sc-q3jb6a-0"]{content:"iPgyli,"}/*!sc*
 @media (max-width:1000px){.gVurN{grid-template-columns:1fr;}.gVurN > div:nth-child(1){display:none;}}/*!sc*/
 data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"gVurN,"}/*!sc*/
 </style></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="markdownRemarkfields__slug__Container-sc-cg714z-0 gVurN"><div><div class="Toc__Container-sc-1f76i2s-0 hbDcaS"><ul>
-<li><a href="#linux">Linux</a></li>
-<li><a href="#systemd">systemd</a></li>
+<li>
+<p><a href="#linux">Linux</a></p>
+</li>
+<li>
+<p><a href="#systemd">systemd</a></p>
+</li>
+<li>
+<p><a href="#debian">Debian</a></p>
+<ul>
+<li><a href="#dpkg---debian-package-manager">dpkg - Debian package manager</a></li>
+</ul>
+</li>
 </ul></div></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="linux" style="position:relative;"><a href="#linux" aria-label="linux permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Linux</h1>
 <h1 id="systemd" style="position:relative;"><a href="#systemd" aria-label="systemd permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>systemd</h1>
 <p>pid 1번으로 실행되는 프로세스. 0번이 있기 때문에 2번째로 실행되는 프로세스다.</p>
@@ -116,7 +126,40 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </ul>
 </li>
 <li>대부분은 <code>qemu</code> 보다 더 빠른 <code>systemd-nspawn</code>를 통해서 실행될 수 있어야 한다.</li>
-</ul></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/linux/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</ul>
+<h1 id="debian" style="position:relative;"><a href="#debian" aria-label="debian permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debian</h1>
+<h2 id="dpkg---debian-package-manager" style="position:relative;"><a href="#dpkg---debian-package-manager" aria-label="dpkg   debian package manager permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dpkg - Debian package manager</h2>
+<p><code>apt</code>로 패키지를 제공하지 않고 <code>.deb</code> 파일로 설치해야 한다면 <code>dpkg</code>를 사용한다.</p>
+<p>ripgrep의 설치 예시:</p>
+<pre><code class="language-bash">$ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   648  100   648    0     0   2197      0 --:--:-- --:--:-- --:--:--  2204
+100 1416k  100 1416k    0     0   687k      0  0:00:02  0:00:02 --:--:-- 1138k
+
+$ sudo dpkg -i ripgrep_12.1.1_amd64.deb
+[sudo] password for pair:
+Selecting previously unselected package ripgrep.
+(Reading database ... 214762 files and directories currently installed.)
+Preparing to unpack ripgrep_12.1.1_amd64.deb ...
+Unpacking ripgrep (12.1.1) ...
+Setting up ripgrep (12.1.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+
+$ rg
+error: The following required arguments were not provided:
+    &#x3C;PATTERN>
+
+USAGE:
+
+    rg [OPTIONS] PATTERN [PATH ...]
+    rg [OPTIONS] [-e PATTERN ...] [-f PATTERNFILE ...] [PATH ...]
+    rg [OPTIONS] --files [PATH ...]
+    rg [OPTIONS] --type-list
+    command | rg [OPTIONS] PATTERN
+
+For more information try --help
+</code></pre></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/linux/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >

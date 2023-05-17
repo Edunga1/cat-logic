@@ -45,3 +45,42 @@ pid 1번으로 실행되는 프로세스. 0번이 있기 때문에 2번째로 �
 * 실행하기 위한 권한이 필요하며, 호스트에서 직접 실행하면 안전하지 않다. 따라서 기본적으로 이미지를 빌드하여 `qemu` 또는 `systemd-nspawn`을 통해 테스트를 실행한다.
   * 이는 유닛테스트와 대비된다. side-effect가 발생하는 것으로 보인다.
 * 대부분은 `qemu` 보다 더 빠른 `systemd-nspawn`를 통해서 실행될 수 있어야 한다.
+
+# Debian
+
+## dpkg - Debian package manager
+
+`apt`로 패키지를 제공하지 않고 `.deb` 파일로 설치해야 한다면 `dpkg`를 사용한다.
+
+ripgrep의 설치 예시:
+
+```bash
+$ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   648  100   648    0     0   2197      0 --:--:-- --:--:-- --:--:--  2204
+100 1416k  100 1416k    0     0   687k      0  0:00:02  0:00:02 --:--:-- 1138k
+
+$ sudo dpkg -i ripgrep_12.1.1_amd64.deb
+[sudo] password for pair:
+Selecting previously unselected package ripgrep.
+(Reading database ... 214762 files and directories currently installed.)
+Preparing to unpack ripgrep_12.1.1_amd64.deb ...
+Unpacking ripgrep (12.1.1) ...
+Setting up ripgrep (12.1.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+
+$ rg
+error: The following required arguments were not provided:
+    <PATTERN>
+
+USAGE:
+
+    rg [OPTIONS] PATTERN [PATH ...]
+    rg [OPTIONS] [-e PATTERN ...] [-f PATTERNFILE ...] [PATH ...]
+    rg [OPTIONS] --files [PATH ...]
+    rg [OPTIONS] --type-list
+    command | rg [OPTIONS] PATTERN
+
+For more information try --help
+```
