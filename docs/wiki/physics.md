@@ -28,3 +28,43 @@ https://www.youtube.com/playlist?list=PLo6lBZn6hgca1T7cNZXpiq4q395ljbEI_
 1에서 작용하지 않은 것으로 판단하면 2, 3을 진행하지 않는다.
 2에서 다음 프레임까지의 Delta Time 및 속도에 따라 겹치는 정도가 다르다. 팅겨내기 전에 표면으로 돌려보내기 위한 계산이다.
 3에서 물체 충돌 후 반작용을 위한 계산을 한다.
+
+# Movement
+
+Unity 기준.
+
+[What's the best way to move to a target?](https://forum.unity.com/threads/whats-the-best-way-to-move-to-a-target.224126/)
+
+간단하게 구현하면 다음과 같이 할 수 있다:
+
+```csharp
+transform.position += (target.position - transform.position).normalized * Time.deltaTime;
+```
+
+normalized로 vector 정규화하면 방향만 남고 크기는 1인 단위 벡터가 된다.
+여기에 deltaTime을 곱해주면 게임 엔진의 프레임을 고려한 속도가 된다.
+
+이 방법은 두 오브젝트가 서로를 향해 이동할 때 문제가 있다.
+서로를 넘어가는 시점부터 둘 다 같은 방향으로 이동하게 된다.
+
+부드러운 이동을 위해서는 다음과 같이 할 수 있다:
+
+```csharp
+transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
+```
+
+Lerp는 선형보간(Linear Interpolation)으로, 두 지점 사이의 중간 지점을 계산한다.
+마찬가지로 deltaTime을 곱해주므로 프레임을 고려하며, 가속도가 적용되기 때문에 부드러운 이동이 가능하다.
+
+게임 케릭터를 구현을 위해 위 로직을 사용하면 어색하다.
+가속도가 없고 목표 지점을 넘어가지 않는 `MoveTowards`를 사용하는 것이 좋다.
+
+```csharp
+transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+```
+
+케릭터의 속도 `speed`를 고려하는 방식이다.
+
+references:
+* [Khan Academy - 벡터 크기와 정규화](https://ko.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-vectors/a/vector-magnitude-normalization)
+* [Unity 3D Vector의 선형보간 Lerp 정확한 사용법](https://iygames.tistory.com/6)
