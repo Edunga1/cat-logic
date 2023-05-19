@@ -1,0 +1,107 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.9.1"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.3.6">.hbDcaS{box-sizing:border-box;padding:4rem 2rem 0 0;background-color:#f5f5f5;}/*!sc*/
+.hbDcaS ul{list-style:none;padding-left:1rem;font-size:.8rem;font-weight:bold;}/*!sc*/
+.hbDcaS ul ul{font-size:.6rem;font-weight:normal;}/*!sc*/
+.hbDcaS ul p{margin:0;}/*!sc*/
+.hbDcaS a{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g1[id="Toc__Container-sc-1f76i2s-0"]{content:"hbDcaS,"}/*!sc*/
+.iPgyli{padding-left:1rem;}/*!sc*/
+.iPgyli a{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g2[id="WikiContent__Container-sc-q3jb6a-0"]{content:"iPgyli,"}/*!sc*/
+.gVurN{display:grid;grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
+@media (max-width:1000px){.gVurN{grid-template-columns:1fr;}.gVurN > div:nth-child(1){display:none;}}/*!sc*/
+data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"gVurN,"}/*!sc*/
+</style></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="markdownRemarkfields__slug__Container-sc-cg714z-0 gVurN"><div><div class="Toc__Container-sc-1f76i2s-0 hbDcaS"><ul>
+<li><a href="#redis">Redis</a></li>
+<li><a href="#setnx-set--nx-%EA%B0%84%EB%8B%A8%ED%95%9C-locking-system-%EA%B5%AC%ED%98%84">SETNX, SET + NX 간단한 Locking System 구현</a></li>
+</ul></div></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="redis" style="position:relative;"><a href="#redis" aria-label="redis permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Redis</h1>
+<h1 id="setnx-set--nx-간단한-locking-system-구현" style="position:relative;"><a href="#setnx-set--nx-%EA%B0%84%EB%8B%A8%ED%95%9C-locking-system-%EA%B5%AC%ED%98%84" aria-label="setnx set  nx 간단한 locking system 구현 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SETNX, SET + NX 간단한 Locking System 구현</h1>
+<ul>
+<li><a href="https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode">https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode</a></li>
+<li><a href="https://redis.io/commands/set/">https://redis.io/commands/set/</a></li>
+</ul>
+<p><code>2.6.12</code>부터 <code>SETNX</code> Deprecated 되고, <code>set</code>에 <code>NX</code> 옵션을 주는 것으로 변경되었다.</p>
+<blockquote>
+<p>SETNX is short for "SET if Not eXists".</p>
+</blockquote>
+<p><code>NX</code>는 <code>Not eXists</code>의 약자로, 해당 키가 존재하지 않을 때만 <code>SET</code>을 수행한다.</p>
+<blockquote>
+<p>The command SET resource-name anystring NX EX max-lock-time is a simple way to implement a locking system with Redis.</p>
+</blockquote>
+<p><code>SET resource-name anystring NX EX max-lock-time</code>와 같이 사용하는 것은 Redis에서 Locking System을 구현하는 간단한 방법이다.</p>
+<p><code>EX max-lock-time</code>으로 인해 초 단위로 만료 시간을 지정할 수 있다.
+잘 설정되었다면 <code>"OK"</code>를 반환하고, 만료 시간이 지나기 전에 다시 호출하면 <code>nil</code>을 반환한다.</p>
+<p>이 방식으로 간단한 분산 Locking System을 구현할 수 있다.</p>
+<p>클라이언트A, 클라이언트B에서 각자 포인트를 적립, 차감하는 로직이 있다고 가정하자.</p>
+<p>Process:</p>
+<ul>
+<li>각 클라이언트은 위 명령어로 포인트를 처리하기 전에 Locking 한다: <code>SET point-user123 foo NX EX 60</code></li>
+<li>만약 Locking에 실패하면(<code>nil</code>을 반환하면) "다른 클라이언트에서 처리 중입니다."와 같은 메시지를 반환한다.</li>
+<li>Locking에 성공하면(<code>"OK"</code>를 반환하면) 포인트를 처리한다.</li>
+<li>처리가 끝나면 <code>DEL point-user123</code>로 Locking을 해제한다.</li>
+</ul>
+<p>설령 클라이언트A가 처리 중에 종료되더라도 60초 후에는 Locking이 해제되기 때문에 무한정 Locking이 되지 않는다.</p>
+<p>좀 더 견고하게 Unlocking 프로세스를 만들고 싶다면 <code>DEL</code> 명령어를 직접 사용하지 않고, 일련의 해제 프로세스를 호출하는 것이 좋다:</p>
+<ul>
+<li><code>foo</code>와 같은 고정 문자열 대신, 랜덤한 문자열을 사용한다.</li>
+<li>클라이언트은 포인트 처리 후 해제 프로세스에 위 문자열을 전달한다.</li>
+<li>해제 프로세스는 전달 받은 문자열과 <code>GET</code> 명령어로 해당 키의 값을 비교한다.</li>
+<li>같으면 <code>DEL</code> 명령어로 Locking을 해제한다.</li>
+</ul>
+<p>각 클라이언트에서 직접 삭제하는 대신, 해제 프로세스에 위임하는 방법이다.
+이러면 다른 클라이언트가 직접 해제하는 것을 방지할 수 있다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/redis/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-45f2cf7535f67509bc45.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-7bfef5ca48decc695459.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-5139ce25e57c0ab98423.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-1e85390e32b43ef47199.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="c10774622d2016c4a208";</script><script src="/cat-logic/webpack-runtime-7e00a96be35fecd97eff.js" async></script><script src="/cat-logic/framework-9b6d338de49a676a1843.js" async></script><script src="/cat-logic/app-45f2cf7535f67509bc45.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
