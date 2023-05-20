@@ -196,6 +196,51 @@ Staged (1)
 M docs/wiki/vim.md
 ```
 
+# 용어
+
+## `-- More --`라고 출력되는 pager
+
+`:h pager`로 pager에 대한 정보를 알 수 있다.
+
+`:let`이나 `:highlight` 등 명령어를 입력하면 `-- More --` 메시지가 있는 pager로 진입한다.
+
+```vim
+Special        xxx ctermfg=224 guifg=Orange
+SpecialChar    xxx links to Special
+Delimiter      xxx links to Special
+SpecialComment xxx links to Special
+Debug          xxx links to Special
+DiagnosticError xxx ctermfg=1 guifg=Red
+DiagnosticWarn xxx ctermfg=3 guifg=Orange
+DiagnosticInfo xxx ctermfg=4 guifg=LightBlue
+DiagnosticHint xxx ctermfg=7 guifg=LightGrey
+-- More -- SPACE/d/j: screen/page/line down, b/u/k: up, q: quit
+```
+
+다른 화면과 달라서 처음 만나면 당혹스럽다. 어쨌든 `q`를 입력하면 빠져나오고
+`hjklud`키로 이동도 된다. 하지만 검색 기능도 없고, 뭐라고 검색해야 할 지 모르니 당혹스럽다.\
+일단, 검색 기능은 없다 :(
+
+하지만 `:redir`을 통한 출력 전환으로 레지스터로 저장할 수 있다.
+
+```vim
+:redir @a    " a 레지스터에 출력을 전환
+:highlight   " pager로 출력되는 명령어 실행
+G<CR>        " 맨 아래로 이동하고 빠져나오자. 보여진 만큼만 저장된다.
+:redir end   " 출력 전환 종료
+"ap          " a 레지스터 내용 붙여넣기
+```
+
+[How can I perform a search when vim displays content using "more" pager?](https://vi.stackexchange.com/q/5729)\
+이 질문에서 정보를 얻었다.
+
+덧글에 pipeline을 통한 짧은 버전도 있다:
+
+```vim
+redir @a | highlight | redir end   " @a 전환, 명령, 전환 종료
+"ap                                " a 레지스터 붙여넣기
+```
+
 # Tips
 
 ## mapping 시 `:...<cr>` vs `<cmd>...<cr>`
