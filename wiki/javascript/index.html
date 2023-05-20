@@ -62,7 +62,7 @@ data-styled.g2[id="WikiContent__Container-sc-q3jb6a-0"]{content:"iPgyli,"}/*!sc*
 data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"gVurN,"}/*!sc*/
 </style></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="markdownRemarkfields__slug__Container-sc-cg714z-0 gVurN"><div><div class="Toc__Container-sc-1f76i2s-0 hbDcaS"><ul>
 <li>
-<p><a href="#javascript">Javascript</a></p>
+<p><a href="#javascript--typescript">Javascript &#x26; Typescript</a></p>
 </li>
 <li>
 <p><a href="#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84">자바스크립트와 이벤트 루프</a></p>
@@ -116,7 +116,10 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li>
 <p><a href="#jsdoc-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0-%EC%83%81%EC%88%98-%EC%A0%95%EC%9D%98%ED%95%98%EA%B8%B0--vscode-rename-symbol">JSDoc 파라미터 상수 정의하기 + VSCode Rename Symbol!</a></p>
 </li>
-</ul></div><a href="../angularjs" style="font-size:0.5em;margin-right:0.5em">angularjs</a><a href="../language-server-protocol" style="font-size:0.5em;margin-right:0.5em">language-server-protocol</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="javascript" style="position:relative;"><a href="#javascript" aria-label="javascript permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Javascript</h1>
+<li>
+<p><a href="#null-vs-undefined">null vs undefined</a></p>
+</li>
+</ul></div><a href="../angularjs" style="font-size:0.5em;margin-right:0.5em">angularjs</a><a href="../language-server-protocol" style="font-size:0.5em;margin-right:0.5em">language-server-protocol</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="javascript--typescript" style="position:relative;"><a href="#javascript--typescript" aria-label="javascript  typescript permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Javascript &#x26; Typescript</h1>
 <h1 id="자바스크립트와-이벤트-루프" style="position:relative;"><a href="#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84" aria-label="자바스크립트와 이벤트 루프 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>자바스크립트와 이벤트 루프</h1>
 <p><a href="http://meetup.toast.com/posts/89">http://meetup.toast.com/posts/89</a>
 자바스크립트가 어떻게 싱글 스레드에서 UI, 비동기 처리를 하는지에 대해 설명하는 글.</p>
@@ -484,7 +487,9 @@ function something(memberGrade) {/* ... */}
 <p>JSDoc의 type에 커서를 두고 Rename Symbol(<code>F2</code>)으로 변경해도 되고,</p>
 <pre><code class="language-javascript">something('regular');
 </code></pre>
-<p>함수 호출 코드에서 값에 커서를 두고 Rename Symbol해도 JSDoc과 참조하는 모든 코드를 변경한다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/javascript/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>함수 호출 코드에서 값에 커서를 두고 Rename Symbol해도 JSDoc과 참조하는 모든 코드를 변경한다.</p>
+<h1 id="null-vs-undefined" style="position:relative;"><a href="#null-vs-undefined" aria-label="null vs undefined permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>null vs undefined</h1>
+<p><a href="https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines#null-and-undefined">Microsoft 코딩 가이드라인</a>에는 <code>null</code>을 사용하지 말고, <code>undefined</code>를 사용하라고 나와있다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/javascript/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >

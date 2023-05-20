@@ -95,7 +95,7 @@ Normalization Form <strong>D</strong></p>
 <pre><code class="language-text">그린빌 100 단지 아파트
 </code></pre>
 <p>1, 2는 서로 다른 문자열이다. 같아 보인다면 프로그램이 그렇게 보이도록 출력한 것이다.</p>
-<p><a href="/cat-logic/0bddb9110ffcffa59369e208252f3807/javascript.md">Javascript</a> 기준으로 문자열 비교하면 실패한다:</p>
+<p><a href="/cat-logic/6e80d7d3057b086b97f966b89ea0fb94/javascript.md">Javascript</a> 기준으로 문자열 비교하면 실패한다:</p>
 <pre><code class="language-javascript">'그린빌 100 단지 아파트' == '그린빌 100 단지 아파트'  // false
 </code></pre>
 <p>1은 NFD로, 조합하여 완성된 글자처럼 보여주고 있다. 2는 NFC로, 완성된 한글을 그대로 보여주고 있다.</p>
@@ -117,7 +117,7 @@ Normalization Form <strong>D</strong></p>
 
 normalize('NFC', u'그린빌')
 </code></pre>
-<p><a href="/cat-logic/0bddb9110ffcffa59369e208252f3807/javascript.md">Javascript</a>:</p>
+<p><a href="/cat-logic/6e80d7d3057b086b97f966b89ea0fb94/javascript.md">Javascript</a>:</p>
 <pre><code class="language-javascript">'그린빌'.normalize('NFC')
 </code></pre>
 <p>NFC -> NFD도 가능하다:</p>
