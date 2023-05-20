@@ -1,4 +1,4 @@
-# Javascript
+# Javascript & Typescript
 
 # 자바스크립트와 이벤트 루프
 
@@ -7,7 +7,6 @@ http://meetup.toast.com/posts/89
 
 https://vimeo.com/96425312
 이벤트 루프에 대해서 설명하는 동영상.
-
 
 # Douglas Crockford's Javascript The Good Parts - 권장하지 않는 것.
 
@@ -223,3 +222,7 @@ something('regular');
 ```
 
 함수 호출 코드에서 값에 커서를 두고 Rename Symbol해도 JSDoc과 참조하는 모든 코드를 변경한다.
+
+# null vs undefined
+
+[Microsoft 코딩 가이드라인](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines#null-and-undefined)에는 `null`을 사용하지 말고, `undefined`를 사용하라고 나와있다.
