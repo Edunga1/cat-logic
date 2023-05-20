@@ -210,6 +210,25 @@ Stackoverflow Post: https://stackoverflow.com/questions/26543612/should-i-use-ja
 중첩 클래스에는 두 가지 종류가 있다. static이 아닌 중첩 클래스는 **inner class**, static으로 선언된 중첩 클래스는 **static nested class**.\
 따라서 static이면서 inner class는 없다.
 
+# JPA와 MyBatis
+
+[.net에서 java로 건너와 (i)mybatis만 쓰다가 JPA란걸 해보고 있는데 큰 장점이 와닿지가 않습니다. - 한국 스프링 사용자 모임](https://www.facebook.com/groups/springkorea/permalink/2803698513075093/)
+
+> .net에서 java로 건너와 (i)mybatis만 쓰다가 JPA란걸 해보고 있는데 큰 장점이 와닿지가 않습니다. 익숙치 않아서 그럴것이지만 특히 집계(group by)하는 것은 @Query에 직접 쿼리문을 작성해 줘야 하고 select결과에 따라 별도의 class를 생성해야하는불편함(?)이 있는 것 같아요(다른 방법이 있으면 헬프미) 실무에서 jpa를 많이 사용하나요? 삽질하면서 많이 배울거라 생각하지만 너무 많은 시행착오를 겪는 것 같아요. Jpa나 querydsl 쉽고 잘 쓰는 방법이 있을까요?
+
+덧글 중
+
+> 사실 처음 쓰시면 장점을 크게 못 느끼시는게 맞습니다.
+>
+> 더군다나 java 계열은 LINQ 도 없어서 ORM 주제에 쿼리 비슷한 JPQL 같은걸 써야 하는데, django 나 RoR 의 ORM 에 비하면 구려터진건 사실이죠.
+>
+> 제가 느끼는 JPA 의 장점은 데이터베이스 자체를 추상화한다는 점인것 같습니다. 그 덕분에 데이터를 다루는 로직의 이식성이 크게 높아져서 시스템 확장에 유리한것 같아요. MSA 가 화두인 시대에 잘 어울리는것 같기도 하고요. 물론 Object 를 2차원 테이블로 옮기고 또 반대로 바꾸는게 완벽하진 않기 때문에 복잡한 객체관계를 다룰땐 ORM 이란것이 plain SQL 보단 많이 별로인게 사실이죠.
+>
+> JPA 는 만능이 아닙니다. 제 경험상으론 데이터 조회와 주기적 업데이트가 많은 어플리케이션 (admin) 에는 MyBatis 가 좋았고, 짧은 트랜잭션 동안 여러 테이블(entity)를 업데이트 해야하는 일반 어플리케이션에는 ORM 이 더 좋았습니다.
+
+데이터베이스 추상화의 장점은 테스트에서 더욱 두드러진다.
+운영에서는 MySQL, 테스트에서는 H2 In-Memory DB를 사용해도 특별히 작업없이 사용할 수 있다.
+
 # Reference
 
 https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html
