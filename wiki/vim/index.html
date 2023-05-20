@@ -121,6 +121,12 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </ul>
 </li>
 <li>
+<p><a href="#%EC%9A%A9%EC%96%B4">용어</a></p>
+<ul>
+<li><a href="#---more---%EB%9D%BC%EA%B3%A0-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-pager"><code>-- More --</code>라고 출력되는 pager</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#tips">Tips</a></p>
 <ul>
 <li>
@@ -357,6 +363,37 @@ M docs/wiki/vim.md
 
 Staged (1)
 M docs/wiki/vim.md
+</code></pre>
+<h1 id="용어" style="position:relative;"><a href="#%EC%9A%A9%EC%96%B4" aria-label="용어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>용어</h1>
+<h2 id="---more---라고-출력되는-pager" style="position:relative;"><a href="#---more---%EB%9D%BC%EA%B3%A0-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-pager" aria-label="   more   라고 출력되는 pager permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>-- More --</code>라고 출력되는 pager</h2>
+<p><code>:h pager</code>로 pager에 대한 정보를 알 수 있다.</p>
+<p><code>:let</code>이나 <code>:highlight</code> 등 명령어를 입력하면 <code>-- More --</code> 메시지가 있는 pager로 진입한다.</p>
+<pre><code class="language-vim">Special        xxx ctermfg=224 guifg=Orange
+SpecialChar    xxx links to Special
+Delimiter      xxx links to Special
+SpecialComment xxx links to Special
+Debug          xxx links to Special
+DiagnosticError xxx ctermfg=1 guifg=Red
+DiagnosticWarn xxx ctermfg=3 guifg=Orange
+DiagnosticInfo xxx ctermfg=4 guifg=LightBlue
+DiagnosticHint xxx ctermfg=7 guifg=LightGrey
+-- More -- SPACE/d/j: screen/page/line down, b/u/k: up, q: quit
+</code></pre>
+<p>다른 화면과 달라서 처음 만나면 당혹스럽다. 어쨌든 <code>q</code>를 입력하면 빠져나오고
+<code>hjklud</code>키로 이동도 된다. 하지만 검색 기능도 없고, 뭐라고 검색해야 할 지 모르니 당혹스럽다.<br>
+일단, 검색 기능은 없다 :(</p>
+<p>하지만 <code>:redir</code>을 통한 출력 전환으로 레지스터로 저장할 수 있다.</p>
+<pre><code class="language-vim">:redir @a    " a 레지스터에 출력을 전환
+:highlight   " pager로 출력되는 명령어 실행
+G&#x3C;CR>        " 맨 아래로 이동하고 빠져나오자. 보여진 만큼만 저장된다.
+:redir end   " 출력 전환 종료
+"ap          " a 레지스터 내용 붙여넣기
+</code></pre>
+<p><a href="https://vi.stackexchange.com/q/5729">How can I perform a search when vim displays content using "more" pager?</a><br>
+이 질문에서 정보를 얻었다.</p>
+<p>덧글에 pipeline을 통한 짧은 버전도 있다:</p>
+<pre><code class="language-vim">redir @a | highlight | redir end   " @a 전환, 명령, 전환 종료
+"ap                                " a 레지스터 붙여넣기
 </code></pre>
 <h1 id="tips" style="position:relative;"><a href="#tips" aria-label="tips permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tips</h1>
 <h2 id="mapping-시-cr-vs-cmdcr" style="position:relative;"><a href="#mapping-%EC%8B%9C-cr-vs-cmdcr" aria-label="mapping 시 cr vs cmdcr permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mapping 시 <code>:...&#x3C;cr></code> vs <code>&#x3C;cmd>...&#x3C;cr></code></h2>
