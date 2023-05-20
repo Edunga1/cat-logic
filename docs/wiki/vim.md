@@ -237,9 +237,19 @@ G<CR>        " 맨 아래로 이동하고 빠져나오자. 보여진 만큼만 �
 덧글에 pipeline을 통한 짧은 버전도 있다:
 
 ```vim
-redir @a | highlight | redir end   " @a 전환, 명령, 전환 종료
-"ap                                " a 레지스터 붙여넣기
+redir @a | sil highlight | redir end   " @a 전환, 명령(silently), 전환 종료
+"ap                                    " a 레지스터 붙여넣기
 ```
+
+명령어로 만들어둬도 좋겠다:
+
+```vim
+command! -nargs=1 -complete=command Redir redir @a | sil <args> | redir end | echo "Saved to @a"
+```
+
+이렇게 사용할 수 있다:
+`:Redir highlight`
+`:Redir let`
 
 # Tips
 
