@@ -478,7 +478,12 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 <p><code>git commit -v</code>로 커밋 메시지 작성 후 <code>ww</code> 또는 <code>:wq</code>로 저장하여 나와도 커밋이 안된다.
 약 3번 중 1번 꼴로 발생한다.</p>
 <p><code>nvim</code> 사용중이고, <code>git config --global core.editor</code> 설정해도 계속 발생한다.
-Windows 10 WSL 2와 M2 맥북 모두에서 발생하고 있어서, 내 vim 설정 문제도 고려중인데.. 최근에는 플러그인 제거만 했다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/git/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+Windows 10 WSL 2와 M2 맥북 모두에서 발생하고 있어서, 내 vim 설정 문제도 고려중인데.. 최근에는 플러그인 제거만 했다.</p>
+<pre><code class="language-bash">❯ g commit -v
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'nvim'.
+Please supply the message using either -m or -F option.
+</code></pre>
+<p>vim으로 작업하는 경우에는 발생하지 않는다. 오직 커밋 메시지 작성 시에만 발생한다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/git/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
