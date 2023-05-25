@@ -361,3 +361,15 @@ Commit Ordering
 ![--date-order and --author-date-order comparison](res/git-log-graph-author-date-order-comparison.png)
 
 왼쪽이 `--date-order` 오른쪽이 `--author-date-order`이다.
+
+# Troubleshooting
+
+## Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
+
+아직 해결하지 못했다.
+
+`git commit -v`로 커밋 메시지 작성 후 `ww` 또는 `:wq`로 저장하여 나와도 커밋이 안된다.
+약 3번 중 1번 꼴로 발생한다.
+
+`nvim` 사용중이고, `git config --global core.editor` 설정해도 계속 발생한다.
+Windows 10 WSL 2와 M2 맥북 모두에서 발생하고 있어서, 내 vim 설정 문제도 고려중인데.. 최근에는 플러그인 제거만 했다.
