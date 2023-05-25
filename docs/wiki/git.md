@@ -373,3 +373,11 @@ Commit Ordering
 
 `nvim` 사용중이고, `git config --global core.editor` 설정해도 계속 발생한다.
 Windows 10 WSL 2와 M2 맥북 모두에서 발생하고 있어서, 내 vim 설정 문제도 고려중인데.. 최근에는 플러그인 제거만 했다.
+
+```bash
+❯ g commit -v
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'nvim'.
+Please supply the message using either -m or -F option.
+```
+
+vim으로 작업하는 경우에는 발생하지 않는다. 오직 커밋 메시지 작성 시에만 발생한다.
