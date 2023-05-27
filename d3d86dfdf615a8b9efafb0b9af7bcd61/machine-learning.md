@@ -348,3 +348,18 @@ where
 ```
 
 ref. https://news.hada.io/topic?id=9185
+
+# Hugging Face
+
+머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
+사용자가 머신러닝 모델과 데이터셋을 공유할 수 있는 플랫폼.
+
+[https://www.facebook.com/groups/TensorFlowKR/permalink/1236053373402385/](Tensorflow KR)에서 처음 알게 되었다.
+
+> 허깅페이스 transformers 3.0이 나와서 문서들을 좀 살펴보고 있는데 철학 부분이 눈에 확 들어 오네요. (대략 제 마음대로 의역한)
+>
+> - NLP 연구자와 교육자들에게 큰 규모의 트랜스포머를 사용하고, 공부하고, 확장하게 하고
+> - 핸즈온 실용주의자들에게는 이 모델을을 fine-tune해서 제품에 서빙하게 하고
+> - 개발자들은 pre-trained된 모델을 사용해서 본인들의 문제를 풀수 있게 해준다
+>
+> 는 정말 멋진 말이네요.
