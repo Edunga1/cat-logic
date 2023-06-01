@@ -145,6 +145,9 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li>
 <p><a href="#command-%EB%8C%80%EC%8B%A0-command%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%9E%90"><code>command</code> 대신 <code>command!</code>를 사용하자.</a></p>
 </li>
+<li>
+<p><a href="#%EC%98%B5%EC%85%98%EC%9D%B4-%EC%96%B4%EB%8A%90-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EB%B3%80%EA%B2%BD%EB%90%98%EC%97%88%EB%8A%94%EC%A7%80-%EC%95%8C%EB%A0%A4%EB%A9%B4-verbose">옵션이 어느 파일에서 변경되었는지 알려면 <code>:verbose</code></a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -476,6 +479,11 @@ E174: Command already exists: add ! to replace it
 <p>다음과 같이 변경해주면 된다.</p>
 <pre><code class="language-bash">command! TestCore call &#x3C;SID>run_test_core()
 </code></pre>
+<h2 id="옵션이-어느-파일에서-변경되었는지-알려면-verbose" style="position:relative;"><a href="#%EC%98%B5%EC%85%98%EC%9D%B4-%EC%96%B4%EB%8A%90-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EB%B3%80%EA%B2%BD%EB%90%98%EC%97%88%EB%8A%94%EC%A7%80-%EC%95%8C%EB%A0%A4%EB%A9%B4-verbose" aria-label="옵션이 어느 파일에서 변경되었는지 알려면 verbose permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>옵션이 어느 파일에서 변경되었는지 알려면 <code>:verbose</code></h2>
+<p><code>:verbose set filetype?</code></p>
+<p>파일 타입을 어느 파일에서 결정했는지 알려면 위처럼 사용하면 된다.</p>
+<p>뒤에 물음표는 꼭 붙이자. <code>filetype</code>처럼 값을 받는 옵션이 아닌 <code>hlsearch</code>처럼 on/off 하는 형태라면 <code>verbose</code>가 무시되고 옵션 변경을 한다.
+다시 <code>verbose</code>로 확인하더라도 방금 명령어로 변경했기 때문에 제대로된 출처를 알 수 없다.</p>
 <h1 id="make-and-makeprg" style="position:relative;"><a href="#make-and-makeprg" aria-label="make and makeprg permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>:make</code> and <code>makeprg</code></h1>
 <p><code>:make</code> 명령은 <code>makeprg</code>에 설정한 것을 실행한다.
 출력이 quickfix 양식이면 quckfix과 연동할 수 있다!</p>
