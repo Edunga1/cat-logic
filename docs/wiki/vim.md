@@ -366,6 +366,15 @@ command TestCore call <SID>run_test_core()
 command! TestCore call <SID>run_test_core()
 ```
 
+## 옵션이 어느 파일에서 변경되었는지 알려면 `:verbose`
+
+`:verbose set filetype?`
+
+파일 타입을 어느 파일에서 결정했는지 알려면 위처럼 사용하면 된다.
+
+뒤에 물음표는 꼭 붙이자. `filetype`처럼 값을 받는 옵션이 아닌 `hlsearch`처럼 on/off 하는 형태라면 `verbose`가 무시되고 옵션 변경을 한다.
+다시 `verbose`로 확인하더라도 방금 명령어로 변경했기 때문에 제대로된 출처를 알 수 없다.
+
 # `:make` and `makeprg`
 
 `:make` 명령은 `makeprg`에 설정한 것을 실행한다.
