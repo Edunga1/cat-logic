@@ -381,3 +381,6 @@ Please supply the message using either -m or -F option.
 ```
 
 vim으로 작업하는 경우에는 발생하지 않는다. 오직 커밋 메시지 작성 시에만 발생한다.
+
+플러그인의 문제일 확률이 높아 보인다.
+`.vimrc`를 임시로 제거해서, 거의 vanilla 상태로 테스트해보니 발생하지 않는다.
