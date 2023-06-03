@@ -484,8 +484,13 @@ hint: Waiting for your editor to close the file... error: There was a problem wi
 Please supply the message using either -m or -F option.
 </code></pre>
 <p>vim으로 작업하는 경우에는 발생하지 않는다. 오직 커밋 메시지 작성 시에만 발생한다.</p>
+<p><strong>플러그인 문제?</strong></p>
 <p>플러그인의 문제일 확률이 높아 보인다.
-<code>.vimrc</code>를 임시로 제거해서, 거의 vanilla 상태로 테스트해보니 발생하지 않는다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/git/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<code>.vimrc</code>를 임시로 제거해서, 거의 vanilla 상태로 테스트해보니 발생하지 않는다.</p>
+<p><strong>연속으로 발생하는 경향</strong></p>
+<p><code>echo "a" >> a &#x26;&#x26; git add -A &#x26;&#x26; git commit -v</code> 반복하여 테스트하는데,
+첫 라인을 띄워놓고 둘째 라인부터 메시지를 작성하면 발생할 확률이 높다.
+또한 바로 다음 커밋에서도 같은 방식을 사용하면 거의 무조건 발생한다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/git/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
