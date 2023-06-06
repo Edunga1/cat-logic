@@ -1,8 +1,52 @@
 # Docker
 
-# OSX 에서 Docker 환경 구성하기
+# Docker 환경 구성하기
 
-**docker desktop 또는 rancher desktop이 나와서 이 방법은 더 이상 사용하지 않는다.**
+여러가지 선택지가 있으나 MacOS, Linux라면 Colima를 가장 추천한다.
+WSL2는 Rancher Desktop 추천.
+
+## Docker Desktop
+
+https://www.docker.com/products/docker-desktop/
+
+가장 쉽게 Docker를 사용할 수 있는 방법이다.
+개인 사용자는 무료로 사용할 수 있다.
+라이센스 정책 변경으로 인해 [기업 사용자는 조건](https://www.docker.com/pricing/faq/)에 따라 유료로 사용해야 한다.
+
+## Rancher Desktop
+
+https://rancherdesktop.io/
+
+Docker Desktop과 흡사하다. 기본적으로 [k8s](./kubernetes.md) 제공한다.
+불필요 하다면 끄는 편이 리소스 절약에 좋다.
+container runtime을 containerd, dockerd 중 선택할 수 있는데, docker에 익숙하면 dockerd를 선택하는 것이 좋다.
+
+개인 사용자더라도 docker desktop의 라이센스 정책이 불편하니 그냥 rancher desktop을 사용하는 것이 좋을지도.
+
+WSL2을 잘 지원한다.
+
+## Colima
+
+https://github.com/abiosoft/colima/
+
+Linux, MacOS 제공한다. GUI를 제공하지 않는다.
+
+최소한의 설정으로 컨테이너를 제공한다고 한다:
+
+> Container runtimes on macOS (and Linux) with minimal setup
+
+[아직 WSL2를 지원하지 않으니](https://github.com/abiosoft/colima/issues/434) 주의.
+[Lima](https://github.com/lima-vm/)라는 가상머신 지원 도구를 사용하는데, 아직 윈도우를 지원하지 않아서 colima도 제공할 수 없다는 듯. 조만간 WSL도 제공할 수 있을 거 같다고 하니 기다려 보자.
+
+GUI를 제공하지 않지만 Docker Desktop이나 Rancher Desktop에서도 GUI를 잘 사용하지 않으니 딱히 문제는 안된다.
+
+`colima`라는 명령어를 제공하고, `colima start`로 도커를 시작한다.
+
+homebrew로 쉽게 설치할 수 있다: `brew install colima`
+
+## OSX 에서 수동으로 Docker 환경 구성하기
+
+**docker desktop 또는 rancher desktop이 나와서 이 방법은 비추천.**
 
 ```bash
 brew install --cask docker
