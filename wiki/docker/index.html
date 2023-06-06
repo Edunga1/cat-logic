@@ -65,8 +65,12 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><a href="#docker">Docker</a></p>
 </li>
 <li>
-<p><a href="#osx-%EC%97%90%EC%84%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0">OSX 에서 Docker 환경 구성하기</a></p>
+<p><a href="#docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0">Docker 환경 구성하기</a></p>
 <ul>
+<li><a href="#docker-desktop">Docker Desktop</a></li>
+<li><a href="#rancher-desktop">Rancher Desktop</a></li>
+<li><a href="#colima">Colima</a></li>
+<li><a href="#osx-%EC%97%90%EC%84%9C-%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0">OSX 에서 수동으로 Docker 환경 구성하기</a></li>
 <li><a href="#1-homebrew%EB%A1%9C-docker%EC%99%80-docker-machine-%EC%84%A4%EC%B9%98">1. Homebrew로 Docker와 Docker-machine 설치</a></li>
 <li><a href="#2-homebrew%EB%A1%9C-virtualbox-%EC%84%A4%EC%B9%98">2. Homebrew로 Virtualbox 설치</a></li>
 <li><a href="#3-docker-machine-%EC%84%A4%EC%A0%95">3. docker-machine 설정</a></li>
@@ -107,9 +111,36 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li>
 <p><a href="#references">References</a></p>
 </li>
-</ul></div></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="docker" style="position:relative;"><a href="#docker" aria-label="docker permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker</h1>
-<h1 id="osx-에서-docker-환경-구성하기" style="position:relative;"><a href="#osx-%EC%97%90%EC%84%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="osx 에서 docker 환경 구성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OSX 에서 Docker 환경 구성하기</h1>
-<p><strong>docker desktop 또는 rancher desktop이 나와서 이 방법은 더 이상 사용하지 않는다.</strong></p>
+</ul></div><a href="../kubernetes" style="font-size:0.5em;margin-right:0.5em">kubernetes</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="docker" style="position:relative;"><a href="#docker" aria-label="docker permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker</h1>
+<h1 id="docker-환경-구성하기" style="position:relative;"><a href="#docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="docker 환경 구성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker 환경 구성하기</h1>
+<p>여러가지 선택지가 있으나 MacOS, Linux라면 Colima를 가장 추천한다.
+WSL2는 Rancher Desktop 추천.</p>
+<h2 id="docker-desktop" style="position:relative;"><a href="#docker-desktop" aria-label="docker desktop permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Desktop</h2>
+<p><a href="https://www.docker.com/products/docker-desktop/">https://www.docker.com/products/docker-desktop/</a></p>
+<p>가장 쉽게 Docker를 사용할 수 있는 방법이다.
+개인 사용자는 무료로 사용할 수 있다.
+라이센스 정책 변경으로 인해 <a href="https://www.docker.com/pricing/faq/">기업 사용자는 조건</a>에 따라 유료로 사용해야 한다.</p>
+<h2 id="rancher-desktop" style="position:relative;"><a href="#rancher-desktop" aria-label="rancher desktop permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rancher Desktop</h2>
+<p><a href="https://rancherdesktop.io/">https://rancherdesktop.io/</a></p>
+<p>Docker Desktop과 흡사하다. 기본적으로 <a href="/cat-logic/598d6ce5471b08f193e147ed5688745c/kubernetes.md">k8s</a> 제공한다.
+불필요 하다면 끄는 편이 리소스 절약에 좋다.
+container runtime을 containerd, dockerd 중 선택할 수 있는데, docker에 익숙하면 dockerd를 선택하는 것이 좋다.</p>
+<p>개인 사용자더라도 docker desktop의 라이센스 정책이 불편하니 그냥 rancher desktop을 사용하는 것이 좋을지도.</p>
+<p>WSL2을 잘 지원한다.</p>
+<h2 id="colima" style="position:relative;"><a href="#colima" aria-label="colima permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Colima</h2>
+<p><a href="https://github.com/abiosoft/colima/">https://github.com/abiosoft/colima/</a></p>
+<p>Linux, MacOS 제공한다. GUI를 제공하지 않는다.</p>
+<p>최소한의 설정으로 컨테이너를 제공한다고 한다:</p>
+<blockquote>
+<p>Container runtimes on macOS (and Linux) with minimal setup</p>
+</blockquote>
+<p><a href="https://github.com/abiosoft/colima/issues/434">아직 WSL2를 지원하지 않으니</a> 주의.
+<a href="https://github.com/lima-vm/">Lima</a>라는 가상머신 지원 도구를 사용하는데, 아직 윈도우를 지원하지 않아서 colima도 제공할 수 없다는 듯. 조만간 WSL도 제공할 수 있을 거 같다고 하니 기다려 보자.</p>
+<p>GUI를 제공하지 않지만 Docker Desktop이나 Rancher Desktop에서도 GUI를 잘 사용하지 않으니 딱히 문제는 안된다.</p>
+<p><code>colima</code>라는 명령어를 제공하고, <code>colima start</code>로 도커를 시작한다.</p>
+<p>homebrew로 쉽게 설치할 수 있다: <code>brew install colima</code></p>
+<h2 id="osx-에서-수동으로-docker-환경-구성하기" style="position:relative;"><a href="#osx-%EC%97%90%EC%84%9C-%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="osx 에서 수동으로 docker 환경 구성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OSX 에서 수동으로 Docker 환경 구성하기</h2>
+<p><strong>docker desktop 또는 rancher desktop이 나와서 이 방법은 비추천.</strong></p>
 <pre><code class="language-bash">brew install --cask docker
 </code></pre>
 <p>docker desktop은 기업인 경우 규모에 따라 유료 버전을 사용해야 한다. 라이센스에 주의하자.</p>
