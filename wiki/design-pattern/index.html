@@ -81,14 +81,15 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </li>
 <li>
 <p><a href="#state-machine">state machine</a></p>
-<ul>
-<li>
-<p><a href="#%EA%B5%AC%ED%98%84%EC%B2%B4">구현체</a></p>
-<ul>
-<li><a href="#spring">Spring</a></li>
-<li><a href="#pytohn">Pytohn</a></li>
-</ul>
 </li>
+<li>
+<p><a href="#%EC%96%B4%EB%94%94%EC%84%9C-%EC%83%81%ED%83%9C%EB%A5%BC-%EC%A0%84%EC%9D%B4%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C">어디서 상태를 전이해야 할까?</a></p>
+</li>
+<li>
+<p><a href="#%EC%83%81%ED%83%9C-%ED%8C%A8%ED%84%B4-%EC%83%81%ED%83%9C-%EB%A8%B8%EC%8B%A0%EC%9D%84-%EA%B5%AC%ED%98%84%ED%95%9C-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC">상태 패턴, 상태 머신을 구현한 라이브러리</a></p>
+<ul>
+<li><a href="#spring-statemachine">Spring Statemachine</a></li>
+<li><a href="#pytohn-transitions">Pytohn transitions</a></li>
 </ul>
 </li>
 <li>
@@ -208,12 +209,42 @@ RDBMS도 MySQL, MsSQL, Oracle 다 쿼리 스펙이 다르다. 그래서 데이�
 <li>OOP로 구현하면 모든 상태를 관리하는 state machine로 일반화 했기 때문에 좀 더 간단하다.</li>
 <li>하지만 일반화 했기 때문에 이벤트마다 달라지는 부분을 구현하기에 까다롭다.</li>
 </ul>
-<h3 id="구현체" style="position:relative;"><a href="#%EA%B5%AC%ED%98%84%EC%B2%B4" aria-label="구현체 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>구현체</h3>
-<h4 id="spring" style="position:relative;"><a href="#spring" aria-label="spring permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spring</h4>
+<h2 id="어디서-상태를-전이해야-할까" style="position:relative;"><a href="#%EC%96%B4%EB%94%94%EC%84%9C-%EC%83%81%ED%83%9C%EB%A5%BC-%EC%A0%84%EC%9D%B4%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C" aria-label="어디서 상태를 전이해야 할까 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>어디서 상태를 전이해야 할까?</h2>
+<p><a href="https://stackoverflow.com/q/14434187/6587078">Who defines state transitions in the state pattern? - StackOverflow</a></p>
+<blockquote>
+<p>Who defines the state transitions? The State pattern does not specify which participant defines the criteria for state transitions.</p>
+</blockquote>
+<p><em>누가 상태전이를 정의하는가? 상태 패턴은 누가 상태 전이를 정의하는지 기준을 지정하지 않는다.</em></p>
+<blockquote>
+<p>If the criteria are fixed,then they can be implemented entirely in the Context. It is generally more flexible and appropriate, however, to let the State subclasses themselves specify their successor state and when to make the transition.</p>
+</blockquote>
+<p><em>기준이 고정되어 있다면, Context에서 할 수 있고,
+기준이 좀 더 유연하다면 상태의 Subclass에서 변경 할 상태와 언제 전이해야 하는지를 결정하는 것이 적합할 것이다.</em></p>
+<blockquote>
+<p>This requires adding an interface to the Context that lets State objects set the Context's current state explicitly.</p>
+</blockquote>
+<p>이것은 Context에 현재 상태를 명시적으로 변경할 수 있는 인터페이스를 추가해야 한다는 것을 의미한다.</p>
+<blockquote>
+<p>Decentralizing the transition logic in this way makes it easy to modify or extend the logic by defining new State subclasses. A disadvantage of decentralization is that one State subclass will have knowledge of at least one other, which introduces implementation dependencies between subclasses.</p>
+</blockquote>
+<p><em>후자(각 상태에서 결정하는 것)의 탈중앙화 방법은 새로운 상태를 통해 로직을 수정, 확장이 쉬운 이점을 가진다. 다만 단점은 하나의 상태가 다른 상태를 최소 하나는 알고 있어야 한다는 점.</em></p>
+<h2 id="상태-패턴-상태-머신을-구현한-라이브러리" style="position:relative;"><a href="#%EC%83%81%ED%83%9C-%ED%8C%A8%ED%84%B4-%EC%83%81%ED%83%9C-%EB%A8%B8%EC%8B%A0%EC%9D%84-%EA%B5%AC%ED%98%84%ED%95%9C-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC" aria-label="상태 패턴 상태 머신을 구현한 라이브러리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>상태 패턴, 상태 머신을 구현한 라이브러리</h2>
+<h3 id="spring-statemachine" style="position:relative;"><a href="#spring-statemachine" aria-label="spring statemachine permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spring Statemachine</h3>
 <p><a href="https://docs.spring.io/spring-statemachine/docs/1.1.1.RELEASE/reference/htmlsingle/">https://docs.spring.io/spring-statemachine/docs/1.1.1.RELEASE/reference/htmlsingle/</a></p>
-<p>빌더 패턴으로 상태와 이벤트와 다음 상태를 구성한다.</p>
-<p>상태와 하위 상태까지 구성 가능하다.</p>
-<h4 id="pytohn" style="position:relative;"><a href="#pytohn" aria-label="pytohn permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pytohn</h4>
+<p>스프링에서는 고정된 상태를 가진다. 스프링이 이런것을 구현했다는 점이 놀랍다.</p>
+<p>다양한 케이스를 대응하기 위해서 많은 인터페이스를 가지고 있는 것이 눈에 띈다.</p>
+<pre><code class="language-java">@Override
+public void configure(StateMachineTransitionConfigurer&#x3C;States, Events> transitions)
+        throws Exception {
+    transitions
+        .withExternal()
+            .source(States.SI).target(States.S1).event(Events.E1)
+            .and()
+        .withExternal()
+            .source(States.S1).target(States.S2).event(Events.E2);
+</code></pre>
+<p>SI 상태(source)가 E1 이벤트를 만나면 S2 상태(target)이 된다.</p>
+<h3 id="pytohn-transitions" style="position:relative;"><a href="#pytohn-transitions" aria-label="pytohn transitions permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pytohn transitions</h3>
 <p><a href="https://github.com/pytransitions/transitions">https://github.com/pytransitions/transitions</a></p>
 <h2 id="references" style="position:relative;"><a href="#references" aria-label="references permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>references</h2>
 <p><a href="https://stackoverflow.com/questions/19859531/what-is-the-difference-between-a-state-machine-and-the-implementation-of-the-sta">https://stackoverflow.com/questions/19859531/what-is-the-difference-between-a-state-machine-and-the-implementation-of-the-sta</a></p>

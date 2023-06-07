@@ -108,17 +108,52 @@ public class Blog
 * OOP로 구현하면 모든 상태를 관리하는 state machine로 일반화 했기 때문에 좀 더 간단하다.
 * 하지만 일반화 했기 때문에 이벤트마다 달라지는 부분을 구현하기에 까다롭다.
 
-### 구현체
+## 어디서 상태를 전이해야 할까?
 
-#### Spring
+[Who defines state transitions in the state pattern? - StackOverflow](https://stackoverflow.com/q/14434187/6587078)
+
+> Who defines the state transitions? The State pattern does not specify which participant defines the criteria for state transitions.
+
+*누가 상태전이를 정의하는가? 상태 패턴은 누가 상태 전이를 정의하는지 기준을 지정하지 않는다.*
+
+> If the criteria are fixed,then they can be implemented entirely in the Context. It is generally more flexible and appropriate, however, to let the State subclasses themselves specify their successor state and when to make the transition.
+
+*기준이 고정되어 있다면, Context에서 할 수 있고,
+기준이 좀 더 유연하다면 상태의 Subclass에서 변경 할 상태와 언제 전이해야 하는지를 결정하는 것이 적합할 것이다.*
+
+> This requires adding an interface to the Context that lets State objects set the Context's current state explicitly.
+
+이것은 Context에 현재 상태를 명시적으로 변경할 수 있는 인터페이스를 추가해야 한다는 것을 의미한다.
+
+> Decentralizing the transition logic in this way makes it easy to modify or extend the logic by defining new State subclasses. A disadvantage of decentralization is that one State subclass will have knowledge of at least one other, which introduces implementation dependencies between subclasses.
+
+*후자(각 상태에서 결정하는 것)의 탈중앙화 방법은 새로운 상태를 통해 로직을 수정, 확장이 쉬운 이점을 가진다. 다만 단점은 하나의 상태가 다른 상태를 최소 하나는 알고 있어야 한다는 점.*
+
+## 상태 패턴, 상태 머신을 구현한 라이브러리
+
+### Spring Statemachine
 
 https://docs.spring.io/spring-statemachine/docs/1.1.1.RELEASE/reference/htmlsingle/
 
-빌더 패턴으로 상태와 이벤트와 다음 상태를 구성한다.
+스프링에서는 고정된 상태를 가진다. 스프링이 이런것을 구현했다는 점이 놀랍다.
 
-상태와 하위 상태까지 구성 가능하다.
+다양한 케이스를 대응하기 위해서 많은 인터페이스를 가지고 있는 것이 눈에 띈다.
 
-#### Pytohn
+```java
+@Override
+public void configure(StateMachineTransitionConfigurer<States, Events> transitions)
+        throws Exception {
+    transitions
+        .withExternal()
+            .source(States.SI).target(States.S1).event(Events.E1)
+            .and()
+        .withExternal()
+            .source(States.S1).target(States.S2).event(Events.E2);
+```
+
+SI 상태(source)가 E1 이벤트를 만나면 S2 상태(target)이 된다.
+
+### Pytohn transitions
 
 https://github.com/pytransitions/transitions
 
