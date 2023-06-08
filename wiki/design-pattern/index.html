@@ -117,9 +117,15 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </ul>
 </li>
 <li>
+<p><a href="#decorator-pattern">Decorator Pattern</a></p>
+<ul>
+<li><a href="#kotlin-extensions">Kotlin Extensions</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#%EC%B0%B8%EC%A1%B0">참조</a></p>
 </li>
-</ul></div><a href="../programming-paradigm" style="font-size:0.5em;margin-right:0.5em">programming-paradigm</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="design-pattern" style="position:relative;"><a href="#design-pattern" aria-label="design pattern permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Design Pattern</h1>
+</ul></div><a href="../programming-paradigm" style="font-size:0.5em;margin-right:0.5em">programming-paradigm</a><a href="../kotlin" style="font-size:0.5em;margin-right:0.5em">kotlin</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="design-pattern" style="position:relative;"><a href="#design-pattern" aria-label="design pattern permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Design Pattern</h1>
 <h1 id="iterator-pattern" style="position:relative;"><a href="#iterator-pattern" aria-label="iterator pattern permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Iterator Pattern</h1>
 <p>다양한 Collection을 일관적인 방법으로 순회할 수 있도록 함</p>
 <p><img src="/cat-logic/caaa48e2ac9d0310b798026affe7ea20/dp-iterator.gif" alt="uml-iterator"></p>
@@ -284,6 +290,43 @@ public void configure(StateMachineTransitionConfigurer&#x3C;States, Events> tran
 <p>View 내에서 Component들 간의 관계</p>
 <p>일반적으로 사용자 인터페이스의 컴포넌트들은 컴포넌트 안에 컴포넌트로 표현한다.</p>
 <p>이 컴포넌트들을 iterator를 통해 일관성있게 접근하여 업데이트 시킨다.</p>
+<h1 id="decorator-pattern" style="position:relative;"><a href="#decorator-pattern" aria-label="decorator pattern permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decorator Pattern</h1>
+<p>클래스의 확장을 목적으로 사용하는 디자인 패턴이다.
+일부 프로그래밍 언어는 <code>final</code>와 같은 키워드로 상속을 금지한다.
+이렇게 상속할 수 없거나, 상속과 같이 정적으로 처리하는 대신 런타임 때 처리하고 싶다면 이 패턴을 사용한다.</p>
+<p>wrapper라고도 부르는데, 확장하고자 하는 대상을 감싸서 구현하기 때문이다.</p>
+<h2 id="kotlin-extensions" style="position:relative;"><a href="#kotlin-extensions" aria-label="kotlin extensions permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kotlin Extensions</h2>
+<p><a href="https://kotlinlang.org/docs/extensions.html">https://kotlinlang.org/docs/extensions.html</a></p>
+<p><a href="/cat-logic/094c614d7adb7abb0dffee58ec089c8c/kotlin.md">코틀린</a>의 확장 함수는 기존 클래스에 새로운 함수를 추가할 수도 있지만, overloading도 가능하다.
+<a href="https://kotlinlang.org/docs/extensions.html#extensions-are-resolved-statically">코틀린 확장 함수 문서</a> 중:</p>
+<pre><code class="language-kotlin">class Example {
+    fun printFunctionType() { println("Class method") }
+}
+
+fun Example.printFunctionType(i: Int) { println("Extension function #$i") }
+
+Example().printFunctionType(1)
+</code></pre>
+<p>이름 그대로 확장이 필요할 때 사용하는데, 때문에 확장 함수 문서에서 Decorator Pattern을 언급한다:</p>
+<blockquote>
+<p>Kotlin provides the ability to extend a class or an interface with new functionality without having to inherit from the class or use design patterns such as <strong>Decorator</strong>.</p>
+<p>데코레이터와 같은 디자인 패턴이나 상속 없이 클래스를 확장하거나 인터페이스에 새로운 기능을 추가할 수 있다.</p>
+</blockquote>
+<p>데코레이터의 완전한 대체는 아니라고 생각되는게,
+데코레이터는 확장 대상 클래스의 인터페이스를 구현하므로 시그니처가 같다.
+그러나 확장 함수는 overriding이 불가능하다:</p>
+<blockquote>
+<p>If a class has a member function, and an extension function is defined which has the same receiver type, the same name, and is applicable to given arguments, the member always wins.</p>
+<p>동일한 리시버 타입, 동일한 이름, 인자를 받을 수 있다면 멤버가 항상 우선한다.</p>
+</blockquote>
+<pre><code class="language-kotlin">class Example {
+    fun printFunctionType() { println("Class method") }
+}
+
+fun Example.printFunctionType() { println("Extension function") }
+
+Example().printFunctionType()  // "Class method"
+</code></pre>
 <h1 id="참조" style="position:relative;"><a href="#%EC%B0%B8%EC%A1%B0" aria-label="참조 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>참조</h1>
 <ul>
 <li><a href="https://refactoring.guru/ko/design-patterns/">refactoring.guru</a> - 무료 공개 ebook</li>
