@@ -221,6 +221,55 @@ View 내에서 Component들 간의 관계
 
 이 컴포넌트들을 iterator를 통해 일관성있게 접근하여 업데이트 시킨다.
 
+# Decorator Pattern
+
+클래스의 확장을 목적으로 사용하는 디자인 패턴이다.
+일부 프로그래밍 언어는 `final`와 같은 키워드로 상속을 금지한다.
+이렇게 상속할 수 없거나, 상속과 같이 정적으로 처리하는 대신 런타임 때 처리하고 싶다면 이 패턴을 사용한다.
+
+wrapper라고도 부르는데, 확장하고자 하는 대상을 감싸서 구현하기 때문이다.
+
+## Kotlin Extensions
+
+https://kotlinlang.org/docs/extensions.html
+
+[코틀린](./kotlin.md)의 확장 함수는 기존 클래스에 새로운 함수를 추가할 수도 있지만, overloading도 가능하다.
+[코틀린 확장 함수 문서](https://kotlinlang.org/docs/extensions.html#extensions-are-resolved-statically) 중:
+
+```kotlin
+class Example {
+    fun printFunctionType() { println("Class method") }
+}
+
+fun Example.printFunctionType(i: Int) { println("Extension function #$i") }
+
+Example().printFunctionType(1)
+```
+
+이름 그대로 확장이 필요할 때 사용하는데, 때문에 확장 함수 문서에서 Decorator Pattern을 언급한다:
+
+> Kotlin provides the ability to extend a class or an interface with new functionality without having to inherit from the class or use design patterns such as **Decorator**. 
+>
+> 데코레이터와 같은 디자인 패턴이나 상속 없이 클래스를 확장하거나 인터페이스에 새로운 기능을 추가할 수 있다.
+
+데코레이터의 완전한 대체는 아니라고 생각되는게,
+데코레이터는 확장 대상 클래스의 인터페이스를 구현하므로 시그니처가 같다.
+그러나 확장 함수는 overriding이 불가능하다:
+
+> If a class has a member function, and an extension function is defined which has the same receiver type, the same name, and is applicable to given arguments, the member always wins.
+>
+> 동일한 리시버 타입, 동일한 이름, 인자를 받을 수 있다면 멤버가 항상 우선한다.
+
+```kotlin
+class Example {
+    fun printFunctionType() { println("Class method") }
+}
+
+fun Example.printFunctionType() { println("Extension function") }
+
+Example().printFunctionType()  // "Class method"
+```
+
 # 참조
 
 * [refactoring.guru](https://refactoring.guru/ko/design-patterns/) - 무료 공개 ebook
