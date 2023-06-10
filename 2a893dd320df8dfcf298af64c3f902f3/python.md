@@ -476,3 +476,283 @@ Non-src (may imply unduly that “src” is preferred)
 Natural (may imply unduly that “src” is discouraged)
 
 Bad 레이아웃이 있다 ㅋㅋ
+
+# Rxpy
+
+Rxpy는 ReactiveX의 파이썬 구현체이다.
+
+## Rxpy example
+
+https://www.tutorialspoint.com/rxpy/rxpy_concurrency_using_scheduler.htm
+
+위 문서에서 제공하는 예제이다.
+
+다음 코드는 rxpy를 사용하지만 병럴처리를 하지 않는 코드이다.
+
+```python
+import random
+import time
+import rx
+from rx import operators as ops
+def adding_delay(value):
+   time.sleep(random.randint(5, 20) * 0.1)
+   return value
+# Task 1
+rx.of(1,2,3,4,5).pipe(
+   ops.map(lambda a: adding_delay(a))
+).subscribe(
+   lambda s: print("From Task 1: {0}".format(s)),
+   lambda e: print(e),
+   lambda: print("Task 1 complete")
+)
+# Task 2
+rx.range(1, 5).pipe(
+   ops.map(lambda a: adding_delay(a))
+).subscribe(
+   lambda s: print("From Task 2: {0}".format(s)),
+   lambda e: print(e),
+   lambda: print("Task 2 complete")
+)
+input("Press any key to exit\n")
+```
+
+rxpy를 사용하더라도 쓰레드를 사용하지 않으면 병렬처리 되지 않는다. 결과를 보면 다음과 같다:
+
+```bash
+From Task 1: 1
+From Task 1: 2
+From Task 1: 3
+From Task 1: 4
+From Task 1: 5
+Task 1 complete
+From Task 2: 1
+From Task 2: 2
+From Task 2: 3
+From Task 2: 4
+Task 2 complete
+```
+
+이 코드는 [CurrentThreadScheduler](https://rxpy.readthedocs.io/en/latest/reference_scheduler.html#rx.scheduler.CurrentThreadScheduler)를 사용하여 처리한다. 즉 하나의 스레드만 쓴다.
+
+**병렬처리 하기**
+
+```python
+import multiprocessing
+import random
+import time
+from threading import current_thread
+import rx
+from rx.scheduler import ThreadPoolScheduler
+from rx import operators as ops
+# calculate cpu count, using which will create a ThreadPoolScheduler
+thread_count = multiprocessing.cpu_count()
+thread_pool_scheduler = ThreadPoolScheduler(thread_count)
+print("Cpu count is : {0}".format(thread_count))
+def adding_delay(value):
+   time.sleep(random.randint(5, 20) * 0.1)
+   return value
+# Task 1
+rx.of(1,2,3,4,5).pipe(
+   ops.map(lambda a: adding_delay(a)),
+   ops.subscribe_on(thread_pool_scheduler)
+).subscribe(
+   lambda s: print("From Task 1: {0}".format(s)),
+   lambda e: print(e),
+   lambda: print("Task 1 complete")
+)
+# Task 2
+rx.range(1, 5).pipe(
+   ops.map(lambda a: adding_delay(a)),
+   ops.subscribe_on(thread_pool_scheduler)
+).subscribe(
+   lambda s: print("From Task 2: {0}".format(s)),
+   lambda e: print(e),
+   lambda: print("Task 2 complete")
+)
+input("Press any key to exit\n")
+```
+
+multiprocessing 모듈로 쓰레드를 코어 수 만큼가지는 풀을 생성하고 rxpy에 전달한다.
+
+실행 결과는 다음과 같다:
+
+```bash
+Cpu count is : 4
+Press any key to exit
+From Task 1: 1
+From Task 2: 1
+From Task 1: 2
+From Task 2: 2
+From Task 2: 3
+From Task 1: 3
+From Task 2: 4
+Task 2 complete
+From Task 1: 4
+From Task 1: 5
+Task 1 complete
+```
+
+**Task 하나 전체를 병렬처리하기**
+
+하지만 원하는건 Task1, Task2 이렇게 나눈 방법이 아니다. 이러면 1000개 아이템을 가진 리스트를 쪼개서 Task1, Task2,  ..., TaskN으로 나눠야 한다.
+
+아래 코드는 Task2 아이템을 모두 동시에 처리한다.
+
+```python
+import multiprocessing
+import random
+import time
+from threading import current_thread
+import rx
+from rx.scheduler import ThreadPoolScheduler
+from rx import operators as ops
+# calculate cpu count, using which will create a ThreadPoolScheduler
+thread_count = multiprocessing.cpu_count()
+thread_pool_scheduler = ThreadPoolScheduler(thread_count)
+print("Cpu count is : {0}".format(thread_count))
+
+def asyn(inp):
+    return rx.just(inp, thread_pool_scheduler).pipe(
+      ops.map(lambda a: adding_delay(a)),
+    )
+
+def adding_delay(value):
+   time.sleep(random.randint(5, 20) * 0.1)
+   return value
+
+# Task 1
+rx.of(1,2,3,4,5).pipe(
+   ops.map(lambda a: adding_delay(a)),
+   ops.subscribe_on(thread_pool_scheduler)
+).subscribe(
+   lambda s: print("From Task 1: {0}".format(s)),
+   lambda e: print(e),
+   lambda: print("Task 1 complete")
+)
+# Task 2
+rx.range(1, 100).pipe(
+   ops.flat_map(asyn),  # 병렬처리 부분
+   ops.subscribe_on(thread_pool_scheduler)
+).subscribe(
+   lambda s: print("From Task 2: {0}".format(s)),
+   lambda e: print(e),
+   lambda: print("Task 2 complete")
+)
+input("Press any key to exit\n")
+```
+
+결과를 보면 value의 순서가 없다.
+
+```bash
+Cpu count is : 16
+Press any key to exit
+From Task 2: 1
+From Task 2: 2
+From Task 2: 11
+From Task 2: 13
+From Task 2: 8
+From Task 2: 12
+From Task 2: 4
+From Task 2: 14
+From Task 2: 5
+From Task 2: 10
+From Task 1: 1
+From Task 2: 9
+From Task 2: 19
+From Task 2: 16
+From Task 2: 6
+From Task 2: 7
+From Task 2: 17
+From Task 2: 3
+From Task 2: 25
+From Task 2: 15
+From Task 2: 23
+From Task 2: 18
+From Task 2: 21
+From Task 2: 29
+From Task 2: 26
+From Task 2: 28
+From Task 2: 20
+From Task 1: 2
+From Task 2: 38
+From Task 2: 27
+From Task 2: 22
+From Task 2: 34
+From Task 2: 24
+From Task 2: 30
+From Task 2: 37
+From Task 2: 35
+From Task 2: 31
+From Task 2: 43
+From Task 2: 32
+From Task 2: 33
+From Task 2: 40
+From Task 2: 41
+From Task 2: 48
+From Task 2: 36
+From Task 2: 46
+From Task 2: 49
+From Task 1: 3
+From Task 2: 39
+From Task 2: 45
+From Task 2: 52
+From Task 2: 44
+From Task 2: 55
+From Task 2: 51
+From Task 2: 42
+From Task 2: 56
+From Task 2: 58
+From Task 2: 50
+From Task 2: 57
+From Task 2: 61
+From Task 2: 53
+From Task 2: 47
+From Task 2: 63
+From Task 2: 54
+From Task 2: 59
+From Task 2: 65
+From Task 2: 73
+From Task 2: 70
+From Task 2: 66
+From Task 2: 64
+From Task 2: 60
+From Task 1: 4
+From Task 2: 77
+From Task 2: 68
+From Task 2: 74
+From Task 2: 62
+From Task 2: 72
+From Task 2: 75
+From Task 2: 71
+From Task 2: 67
+From Task 2: 83
+From Task 2: 69
+From Task 2: 82
+From Task 2: 79
+From Task 2: 78
+From Task 2: 87
+From Task 2: 89
+From Task 2: 80
+From Task 2: 76
+From Task 1: 5
+Task 1 complete
+From Task 2: 94
+From Task 2: 81
+From Task 2: 84
+From Task 2: 90
+From Task 2: 85
+From Task 2: 88
+From Task 2: 86
+From Task 2: 96
+From Task 2: 91
+From Task 2: 95
+From Task 2: 93
+From Task 2: 92
+From Task 2: 99
+From Task 2: 98
+From Task 2: 97
+Task 2 complete
+```
+
+rxpy나 reactive programming에 익숙하지 않아서, 모든 처리를 완료 후에 프로그램을 제대로 끝낼 수 없었다.
+subscribe에서 on_complete에 메시지를 넣어도 출력되지 않았다.
