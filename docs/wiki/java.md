@@ -210,7 +210,9 @@ Stackoverflow Post: https://stackoverflow.com/questions/26543612/should-i-use-ja
 중첩 클래스에는 두 가지 종류가 있다. static이 아닌 중첩 클래스는 **inner class**, static으로 선언된 중첩 클래스는 **static nested class**.\
 따라서 static이면서 inner class는 없다.
 
-# JPA와 MyBatis
+# JPA
+
+## JPA와 MyBatis
 
 [.net에서 java로 건너와 (i)mybatis만 쓰다가 JPA란걸 해보고 있는데 큰 장점이 와닿지가 않습니다. - 한국 스프링 사용자 모임](https://www.facebook.com/groups/springkorea/permalink/2803698513075093/)
 
@@ -228,6 +230,16 @@ Stackoverflow Post: https://stackoverflow.com/questions/26543612/should-i-use-ja
 
 데이터베이스 추상화의 장점은 테스트에서 더욱 두드러진다.
 운영에서는 MySQL, 테스트에서는 H2 In-Memory DB를 사용해도 특별히 작업없이 사용할 수 있다.
+
+## Trouble Shooting
+
+### Warning: 'Model' domain type or valid projection interface expected here
+
+[Could any one tell me the real reason of spring-data projection in my case?](https://stackoverflow.com/questions/44131207/could-any-one-tell-me-the-real-reason-of-spring-data-projection-in-my-case/56991872#56991872)
+
+JPQL 사용했지만, 쿼리 메서드에서 사용하는 키워드가 포함된 경우 이런 경고 메시지가 출력된다.
+
+키워드는 `By` 였는데, `Using` 으로 대체해서 사용하여 해결했다.
 
 # Reference
 
