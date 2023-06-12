@@ -83,63 +83,6 @@ https://youtu.be/26S4VFUWlJM?t=1h6m57s
 * (하나만 할인 => 중복 할인 허용 시)
 * "우린 중복 할인 허용해" 라고 하지만 코드가 어떻게 돌아가는지 봐야만 알 수 있다.
 
-# 스크랩
-
-**OOP (객체 지향 프로그래밍) 프로그래밍 실습용 좋은 책 추천 부탁드립니다.**\
-https://kldp.org/node/123799
-
-헤드퍼스트 책, 자바 swing을 이용한 GUI 프로그래밍.
-Smalltalk를 직접 사용해 보는 것이 눈에 띈다.
-
-**책 - 객체지향적으로 생각하라**\
-http://book.daum.net/detail/book.do?bookid=KOR9788956744612
-
-**책 - 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴**\
-http://www.yes24.com/24/goods/9179120 - 책\
-http://epicdevs.com/14 - 후기
-
-**한국 스몰토크 사용자그룹**\
-http://smalltalk.kr/wiki/doku.php
-
-최초의 순수한 OOP 언어 스몰토크를 배울 수 있는 곳
-
-**초보 개발자에게 권장하는 객체지향 모델링 공부 방법**\
-http://okky.kr/article/358197
-
-덧글에 자세하게 예시를 들어주셨다.
-
-**Anti-OOP: if를 피하는 법**\
-http://meetup.toast.com/posts/94
-
-함수형 프로그래밍도 객체지향 프로그래밍도 분기문을 지양한다.
-추적하기가 힘들어지기 때문이다.
-
-디자인 패턴의 모범 사례를 보여준다.
-
-**캡슐화(encapsulation)를 위한 getter, setter는 정말 필요한 걸까요?**\
-http://qna.iamprogrammer.io/t/encapsulation-getter-setter/193
-
-validation, lazy loading, 접근 권한 등을 이유로 반드시 필요하다는 의견과
-getter, setter 남용에 대한 이야기 등.
-
-**객체 지향 프로그래밍 연습하기 좋은 방법은?**\
-https://slipp.net/questions/475
-
-여기서 객체지향 생활체조가 눈에 와 닿았다.
-
-**객체지향 생활 체조 총정리**\
-https://developerfarm.wordpress.com/2012/02/03/object_calisthenics_summary/
-
-9가지 규칙(체조)을 통해 객체지향을 실천하자는 내용이다.
-이론적인 내용이 아니라 실철하도록 상세히 작성되었다.
-어떻게 보면 극단적으로 제약하고 있어, 실제로 해보면 고통스럽기도..
-
-**스칼라 강좌 (11) - getter 와 setter**\
-http://okky.kr/article/342405
-
-이 글은 OOP에서의 getter, setter 위치에 대해서 설명하고
-스칼라에서 getter, setter는 어떻게 표현되는지 보여준다.
-
 # 우아한 객체지향 - 우아한 테크 세미나
 
 slide: https://www.slideshare.net/baejjae93/ss-151545329
@@ -196,3 +139,80 @@ ORM을 통한 객체 참조는 가장 강한 결합도를 가진다.
 각 객체를 조합해서 검증 로직을 담당하는 새로운 객체를 만든다.
 
 이런 절차지향 코드는 한 눈에 볼 수 있고, 검증 로직을 변경하기 위해서만 수정하기 때문에 응집도가 높다.
+
+# OOP와 관련된 글
+
+**OOP (객체 지향 프로그래밍) 프로그래밍 실습용 좋은 책 추천 부탁드립니다** \
+https://kldp.org/node/123799
+
+헤드퍼스트 책, 자바 swing을 이용한 GUI 프로그래밍.
+Smalltalk를 직접 사용해 보는 것이 눈에 띈다.
+
+**책 - 객체지향적으로 생각하라** \
+http://book.daum.net/detail/book.do?bookid=KOR9788956744612
+
+**책 - 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴** \
+http://www.yes24.com/24/goods/9179120 - 책\
+http://epicdevs.com/14 - 후기
+
+**한국 스몰토크 사용자그룹** \
+http://smalltalk.kr/wiki/doku.php
+
+최초의 순수한 OOP 언어 스몰토크를 배울 수 있는 곳
+
+**초보 개발자에게 권장하는 객체지향 모델링 공부 방법** \
+http://okky.kr/article/358197
+
+덧글에 자세하게 예시를 들어주셨다.
+
+**Anti-OOP: if를 피하는 법** \
+http://meetup.toast.com/posts/94
+
+함수형 프로그래밍도 객체지향 프로그래밍도 분기문을 지양한다.
+추적하기가 힘들어지기 때문이다.
+
+디자인 패턴의 모범 사례를 보여준다.
+
+**캡슐화(encapsulation)를 위한 getter, setter는 정말 필요한 걸까요?**\
+http://qna.iamprogrammer.io/t/encapsulation-getter-setter/193
+
+validation, lazy loading, 접근 권한 등을 이유로 반드시 필요하다는 의견과
+getter, setter 남용에 대한 이야기 등.
+
+**객체 지향 프로그래밍 연습하기 좋은 방법은?**\
+https://slipp.net/questions/475
+
+여기서 객체지향 생활체조가 눈에 와 닿았다.
+
+**객체지향 생활 체조 총정리**\
+https://developerfarm.wordpress.com/2012/02/03/object_calisthenics_summary/
+
+9가지 규칙(체조)을 통해 객체지향을 실천하자는 내용이다.
+이론적인 내용이 아니라 실철하도록 상세히 작성되었다.
+어떻게 보면 극단적으로 제약하고 있어, 실제로 해보면 고통스럽기도..
+
+**스칼라 강좌 (11) - getter 와 setter** \
+http://okky.kr/article/342405
+
+이 글은 OOP에서의 getter, setter 위치에 대해서 설명하고
+스칼라에서 getter, setter는 어떻게 표현되는지 보여준다.
+
+# 고민하는 내용
+
+적당히 구현하더라도 문제는 없지만, Best Practice를 지키고 싶다.
+
+## 언제 sub class를 만들어야 할까?
+
+https://www.youtube.com/watch?v=4F72VULWFvc
+
+- 언제 서브 클래스를 만들어야 할까?
+- 부모 클래스인 `Animal` 파생 클래스 `Cat` 가 있다. 파생 클래스를 만들지 말고 부모 클래스의 생성자에 `Cat`에 대한 정보를 넘겨서 같은 동작을 하도록 하면 어떨까?
+- 파생 클래스가 많다면 여러개의 서브 클래스로 어떻게 매핑 시켜야 할까? 일일이 if else 구문으로 처리해야 할까?
+
+[Inheritance with EF Code First: Part 1 - Table per Hierarchy (TPH)](https://weblogs.asp.net/manavi/inheritance-mapping-strategies-with-entity-framework-code-first-ctp5-part-1-table-per-hierarchy-tph)
+
+[Heuristics on when should one subclass and when not](https://softwareengineering.stackexchange.com/q/270869)
+
+## Enum vs Inheritance
+
+[Inheritance vs enum properties in the domain model](https://stackoverflow.com/questions/4254182/inheritance-vs-enum-properties-in-the-domain-model)
