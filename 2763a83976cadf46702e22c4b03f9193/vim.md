@@ -129,6 +129,36 @@ grep으로 검색하고, cdo로 적용, 예시:
 
 모든 buffer에 대해서 적용하므로 `:buffers`등 명령어로 적용 대상을 잘 확인하자.
 
+## User Function
+
+사용자 함수에 대한 메뉴얼은 `:help userfunc`에서 설명한다.
+
+```vim
+function! MyFunction() abort
+  echo "Hello World!"
+endfunction
+```
+
+위 함수는 `:call MyFunction()`으로 호출할 수 있다.
+
+`function!`의 `!`는 함수가 이미 존재하면 덮어쓴다는 의미다.
+`function`은 함수가 이미 존재하면 에러가 발생한다.
+`:help E122`에서 설명한다.
+
+`abort`는 에러가 발생하면 함수를 거기서 종료한다. `:help func-abort`에서 설명한다.
+
+---
+
+```vim
+function s:MyFunction()
+  echo "Hello World!"
+endfunction
+```
+
+`s:`를 붙이면 local function이 된다.
+함수는 정의된 스크립트에서만 호출할 수 있다. 즉, `call MyFunction()`로 호출할 수 없다.
+vim은 많은 플러그인을 통해 함수가 정의되어 이름 충돌할 수 있으므로 local function을 사용하는 것이 좋다.
+
 # Variables
 
 ## `path`
