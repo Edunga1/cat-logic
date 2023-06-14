@@ -40,16 +40,7 @@ every { obj.foo() } returns 'bar'
 justRun { obj.bar() }  // Unit 반환하는 경우
 ```
 
-## Kotest Specs
-
-https://kotest.io/docs/framework/testing-styles.html
-
-테스트 레이아웃을 다양한 스타일로 표현할 수 있다.
-내가 자주 사용하는 스타일은 `DescribeSpec`.
-
-Kotest의 Style은 모두 Kotlin DSL로 구성되어 있어 직관적인 구조를 가진다.
-
-### Better Specs
+## Better Specs
 
 https://www.betterspecs.org/
 
@@ -73,6 +64,40 @@ class BuyerSendingAddressServiceTest : DescribeSpec({
 })
 ```
 
+## Kotest
+
+https://kotest.io/docs/framework/testing-styles.html
+
+Kotest는 테스트 레이아웃을 다양한 스타일로 표현할 수 있다.
+내가 자주 사용하는 스타일은 `DescribeSpec`.
+
+Kotest의 Style은 모두 Kotlin DSL로 구성되어 있어 직관적인 구조를 가진다.
+
+IntelliJ 사용한다면 [플러그인](https://plugins.jetbrains.com/plugin/14080-kotest)은 반드시 설치하자.
+JUnit처럼 테스트 파일에서 테스트를 실행하거나, 테스트 레이아웃을 위한 별도 창을 제공한다.
+
+## IntelliJ + Kotest Integration
+
+플러그인은 모듈로부터 테스트 파일을 만들 수 있는 기능도 제공한다.
+
+![kotest creation 1](./res/kotest-test-creation1.png)
+
+테스트를 만들 대상에 커서를 두고 `shift + cmd + t` 또는 컨텍스트 메뉴를 열고 `Create test`를 선택한다.
+
+![kotest creation 2](./res/kotest-test-creation2.png)
+
+*Testing Library*에서 Kotest를 선택하고, *Superclass*에서 원하는 스타일을 설정하고 확인을 누르면 다음 코드를 자동으로 생성한다.
+
+```kotlin
+import io.kotest.core.spec.style.DescribeSpec
+import io.kotest.matchers.shouldBe
+
+class WebClientConfigTest : DescribeSpec({
+
+})
+```
+
+테스트를 자주 만드는데 매우 편리한 기능이다.
 
 # [Language Server](./language-server-protocol.md)
 

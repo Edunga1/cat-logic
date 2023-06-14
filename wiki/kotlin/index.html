@@ -73,12 +73,9 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li>
 <p><a href="#testing">Testing</a></p>
 <ul>
-<li>
-<p><a href="#kotest-specs">Kotest Specs</a></p>
-<ul>
 <li><a href="#better-specs">Better Specs</a></li>
-</ul>
-</li>
+<li><a href="#kotest">Kotest</a></li>
+<li><a href="#intellij--kotest-integration">IntelliJ + Kotest Integration</a></li>
 </ul>
 </li>
 <li>
@@ -118,12 +115,7 @@ kotlin의 타입 관련 문제가 없고, kotlin DSL와 infix 함수로 테스�
 <pre><code class="language-kotlin">every { obj.foo() } returns 'bar'
 justRun { obj.bar() }  // Unit 반환하는 경우
 </code></pre>
-<h2 id="kotest-specs" style="position:relative;"><a href="#kotest-specs" aria-label="kotest specs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kotest Specs</h2>
-<p><a href="https://kotest.io/docs/framework/testing-styles.html">https://kotest.io/docs/framework/testing-styles.html</a></p>
-<p>테스트 레이아웃을 다양한 스타일로 표현할 수 있다.
-내가 자주 사용하는 스타일은 <code>DescribeSpec</code>.</p>
-<p>Kotest의 Style은 모두 Kotlin DSL로 구성되어 있어 직관적인 구조를 가진다.</p>
-<h3 id="better-specs" style="position:relative;"><a href="#better-specs" aria-label="better specs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Better Specs</h3>
+<h2 id="better-specs" style="position:relative;"><a href="#better-specs" aria-label="better specs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Better Specs</h2>
 <p><a href="https://www.betterspecs.org/">https://www.betterspecs.org/</a></p>
 <p>정확한 역사는 잘 모르지만, Ruby 쪽 테스트 도구인 RSpec으로 작성된 테스트 코드 Best Practice 모음이다.
 Kotest의 <code>DescribeSpec</code> 스타일을 사용하면 RSpec와 유사하게 작성할 수 있다.
@@ -142,6 +134,86 @@ Kotest의 <code>DescribeSpec</code> 스타일을 사용하면 RSpec와 유사하
   }
 })
 </code></pre>
+<h2 id="kotest" style="position:relative;"><a href="#kotest" aria-label="kotest permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kotest</h2>
+<p><a href="https://kotest.io/docs/framework/testing-styles.html">https://kotest.io/docs/framework/testing-styles.html</a></p>
+<p>Kotest는 테스트 레이아웃을 다양한 스타일로 표현할 수 있다.
+내가 자주 사용하는 스타일은 <code>DescribeSpec</code>.</p>
+<p>Kotest의 Style은 모두 Kotlin DSL로 구성되어 있어 직관적인 구조를 가진다.</p>
+<p>IntelliJ 사용한다면 <a href="https://plugins.jetbrains.com/plugin/14080-kotest">플러그인</a>은 반드시 설치하자.
+JUnit처럼 테스트 파일에서 테스트를 실행하거나, 테스트 레이아웃을 위한 별도 창을 제공한다.</p>
+<h2 id="intellij--kotest-integration" style="position:relative;"><a href="#intellij--kotest-integration" aria-label="intellij  kotest integration permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IntelliJ + Kotest Integration</h2>
+<p>플러그인은 모듈로부터 테스트 파일을 만들 수 있는 기능도 제공한다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 554px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/cat-logic/static/1068247f2165b53f4722aa3029827409/04abd/kotest-test-creation1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32.43243243243243%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABWElEQVR42j2M24rTUABF8z+OybnkJCcn95iksWkyTEcsghZ80IIjeBvQEb/CD9Ba8DuXNMz4sFmbtWF7Rd1g85K2iVi1gmFMGDaWqk2IXEIYGYJAEAi50PcD/IVi4cMmhEQphVe3DdXYUjhLl2mmy47xqmM1tcy7me3zS/qupu9r1kPLvOmZxo5p7NmsW9ZDw9NVTd+WxHGEl1cNWV1hkxQTapz2sdrHBI/YvvrB/vYv+89HXn468uLDH65vTmxvTly/P3H17sh8+MV8+M2w/4nUDi8rG6zLiWxCrAVpbEiTmiptGMY3jM/uWG1vGXZf6XffcdM3oicH4uEjdvzC4/ItF+WBi+w1gTDnw5okLQhDg1KSyEQUriJPSmxoSMOQRCuskrhQUcaG3CgyIxmqgMwGNJXDxRIR+HhZcX9oIrQOUUojhFgipUIqvbgzpdSI+5z7g/u/Cck/RkzT0qTJf2IAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="kotest creation 1"
+        title=""
+        src="/cat-logic/static/1068247f2165b53f4722aa3029827409/04abd/kotest-test-creation1.png"
+        srcset="/cat-logic/static/1068247f2165b53f4722aa3029827409/12f09/kotest-test-creation1.png 148w,
+/cat-logic/static/1068247f2165b53f4722aa3029827409/e4a3f/kotest-test-creation1.png 295w,
+/cat-logic/static/1068247f2165b53f4722aa3029827409/04abd/kotest-test-creation1.png 554w"
+        sizes="(max-width: 554px) 100vw, 554px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>테스트를 만들 대상에 커서를 두고 <code>shift + cmd + t</code> 또는 컨텍스트 메뉴를 열고 <code>Create test</code>를 선택한다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/cat-logic/static/7790e9a6db1946c7889cc67aa8788a1e/3d4b6/kotest-test-creation2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 68.24324324324324%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC+ElEQVR42p2Sy2/bRhDGV7YL0UUQpgVyadGD9bAdPSzZCpAUkCiKEkVyuVxy+VhSlOQ0ybGHIDmkQVqjLlIU/TOrHnqrjZ6b5RRLOU2K9lQCPwxnSX4z83HQ4Sef7gxPu7c7p8d3WkdHarNRV5v1utpo1NTmcV097fXUbruldtottX5woDZqNbVRO3hPvXbnsNm4/cXnn+3cO2wiZD74csixtRm72q+jkbYZj8cluq5vRsPRxiVkky0WG8/zNpqmbca6/g+08fiXycT4bTAYPEyzDKGzwf2c0AD8KAYvCGFmOzCzHDAcG2zuAw0imDtuifkvcHluEwrt7kny4tVrhHqnZ7nrMwiT9K3rMzG1nJI5JiLMFiLkCxHEqfBYJEwbC9PZIp/PsSv5Uwq2Ol1+8eYnhHpng5xIQZ4WlusVxtyGqWWDTXzg68fA119BWvIY+OpRGZPlOXhhDCSMC8IiQcMIjltt/vK777cdUhZBnOVFECUFi/l2FMKAJ2vgq6fAn3wNXvYICF8DSc/LiJMl4HhZ4HgpPBaWgt9cXErBQe6WHibFHLvFzMYwtZzSIxYlkOYr4PkS5pjAtntni41hZuPixp73I/fPBjn2fPBYVJCAFbKatEC+FPKsFMxWa4h4BrKwFJttxf5b8ET+FBrAcn1ehDyTYwNLUqBhLIuAH8YgLSFBWOJ4PmAavKPANBDy7F67w7/94Q1C7X4/J4RCwpiwqS+SLBdxthBxuhBhkpY5i7kw5vbfGyDvJ6YlpnNbGObsrWnb0Oqe8Isff0aoP7i/cr0AMPHAcr1yF+UavYPc5HJE6auMDg3Krk3CwGQrsIIM2p1OdnF5iVC31/dNx/1dM2ZXI924GuqT66FufMA21ybTktHEuHY8/zqM42vdja80/uxKD5/+cXTYIK9fPUfyuvvR3t5UUaq+oih0f1+h+8oH3ORKtbpFUeje7i5FqEKrezu0WkF+tYIMhCp3EXqJ0Me3blUQQjsIod3/h7qLUFV+X5FCfwFt55MA041GBgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="kotest creation 2"
+        title=""
+        src="/cat-logic/static/7790e9a6db1946c7889cc67aa8788a1e/fcda8/kotest-test-creation2.png"
+        srcset="/cat-logic/static/7790e9a6db1946c7889cc67aa8788a1e/12f09/kotest-test-creation2.png 148w,
+/cat-logic/static/7790e9a6db1946c7889cc67aa8788a1e/e4a3f/kotest-test-creation2.png 295w,
+/cat-logic/static/7790e9a6db1946c7889cc67aa8788a1e/fcda8/kotest-test-creation2.png 590w,
+/cat-logic/static/7790e9a6db1946c7889cc67aa8788a1e/3d4b6/kotest-test-creation2.png 712w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p><em>Testing Library</em>에서 Kotest를 선택하고, <em>Superclass</em>에서 원하는 스타일을 설정하고 확인을 누르면 다음 코드를 자동으로 생성한다.</p>
+<pre><code class="language-kotlin">import io.kotest.core.spec.style.DescribeSpec
+import io.kotest.matchers.shouldBe
+
+class WebClientConfigTest : DescribeSpec({
+
+})
+</code></pre>
+<p>테스트를 자주 만드는데 매우 편리한 기능이다.</p>
 <h1 id="language-server" style="position:relative;"><a href="#language-server" aria-label="language server permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="/cat-logic/7056617538c1aded5f999a2ad07c36e5/language-server-protocol.md">Language Server</a></h1>
 <p><a href="https://github.com/fwcd/kotlin-language-server">https://github.com/fwcd/kotlin-language-server</a></p>
 <p>2022-11-29 아직 퍼포먼스가 안나온다. 자주 끊기고, 느리다.
