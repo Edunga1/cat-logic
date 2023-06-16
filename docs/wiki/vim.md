@@ -6,12 +6,31 @@ My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 
 # neovim
 
+https://github.com/neovim/neovim
+
+neovim은 vimscript와 더불어 lua를 자체 제공한다.
+
+vimscript는 학습하기 꽤 어려운 언어인데, [이 글](https://www.reddit.com/r/neovim/comments/l1mne8/learning_vimscript_vs_lua/)에서는 학습하는 것이 아니라 그냥 사용하는 것이라고 비유하기도 한다:
+
+> Vimscript is like regex, you don't learn it, just use it.
+
 ## Lua 가이드
 
 https://github.com/nanotee/nvim-lua-guide#modules
 
 * 내 custom lua 파일을 가져올 때 lua/ 내에서 찾는다.
   * runtimepath간 이름 충돌이 발생할 수 있다.
+
+`init.vim` 대신 `init.lua`에서 설정을 명세할 수 있다.
+
+vim 함수를 `:call Foo()`로 호출하는 것처럼, lua 함수도 `:lua Foo()`로 호출할 수 있다.
+예를들어 LSP에 설정된 코드 액션 매핑이 있는데: 
+
+```lua
+vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+```
+
+직접 호출하려면 `:lua vim.lsp.buf.code_action()`로 호출한다.
 
 ## 내장 Language Server Protocol 사용하기
 
