@@ -171,6 +171,12 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p>vim 보다 <a href="https://github.com/neovim/neovim">neovim</a>.</p>
 <p>My <a href="https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc">.vimrc</a></p>
 <h1 id="neovim" style="position:relative;"><a href="#neovim" aria-label="neovim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>neovim</h1>
+<p><a href="https://github.com/neovim/neovim">https://github.com/neovim/neovim</a></p>
+<p>neovim은 vimscript와 더불어 lua를 자체 제공한다.</p>
+<p>vimscript는 학습하기 꽤 어려운 언어인데, <a href="https://www.reddit.com/r/neovim/comments/l1mne8/learning_vimscript_vs_lua/">이 글</a>에서는 학습하는 것이 아니라 그냥 사용하는 것이라고 비유하기도 한다:</p>
+<blockquote>
+<p>Vimscript is like regex, you don't learn it, just use it.</p>
+</blockquote>
 <h2 id="lua-가이드" style="position:relative;"><a href="#lua-%EA%B0%80%EC%9D%B4%EB%93%9C" aria-label="lua 가이드 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lua 가이드</h2>
 <p><a href="https://github.com/nanotee/nvim-lua-guide#modules">https://github.com/nanotee/nvim-lua-guide#modules</a></p>
 <ul>
@@ -180,6 +186,12 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </ul>
 </li>
 </ul>
+<p><code>init.vim</code> 대신 <code>init.lua</code>에서 설정을 명세할 수 있다.</p>
+<p>vim 함수를 <code>:call Foo()</code>로 호출하는 것처럼, lua 함수도 <code>:lua Foo()</code>로 호출할 수 있다.
+예를들어 LSP에 설정된 코드 액션 매핑이 있는데:</p>
+<pre><code class="language-lua">vim.keymap.set('n', '&#x3C;space>ca', vim.lsp.buf.code_action, bufopts)
+</code></pre>
+<p>직접 호출하려면 <code>:lua vim.lsp.buf.code_action()</code>로 호출한다.</p>
 <h2 id="내장-language-server-protocol-사용하기" style="position:relative;"><a href="#%EB%82%B4%EC%9E%A5-language-server-protocol-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="내장 language server protocol 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>내장 Language Server Protocol 사용하기</h2>
 <p><a href="/cat-logic/7056617538c1aded5f999a2ad07c36e5/language-server-protocol.md">Language Server Protocol</a></p>
 <p>TL;DR</p>
