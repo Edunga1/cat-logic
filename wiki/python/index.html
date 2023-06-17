@@ -125,6 +125,14 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </ul>
 </li>
 <li>
+<p><a href="#object-converter-serialization--deserialization">Object Converter (Serialization &#x26; Deserialization)</a></p>
+<ul>
+<li><a href="#django-rest-framework-serializer">Django REST Framework Serializer</a></li>
+<li><a href="#wtforms">WTForms</a></li>
+<li><a href="#marshmallow">Marshmallow</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#rxpy">Rxpy</a></p>
 <ul>
 <li><a href="#rxpy-example">Rxpy example</a></li>
@@ -501,6 +509,107 @@ Should it be the default?</p>
 Non-src (may imply unduly that “src” is preferred)
 Natural (may imply unduly that “src” is discouraged)</p>
 <p>Bad 레이아웃이 있다 ㅋㅋ</p>
+<h1 id="object-converter-serialization--deserialization" style="position:relative;"><a href="#object-converter-serialization--deserialization" aria-label="object converter serialization  deserialization permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Object Converter (Serialization &#x26; Deserialization)</h1>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Nested Structure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Django Form</td>
+<td>nope</td>
+</tr>
+<tr>
+<td>Django REST Framework Serializer</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>WTForms</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Marshmallow</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p>객체를 변환하거나 검증하는 라이브러리 비교.</p>
+<h2 id="django-rest-framework-serializer" style="position:relative;"><a href="#django-rest-framework-serializer" aria-label="django rest framework serializer permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Django REST Framework Serializer</h2>
+<p><a href="https://www.django-rest-framework.org/api-guide/serializers/">https://www.django-rest-framework.org/api-guide/serializers/</a></p>
+<p>Django Form은 HTML Form을 위한 기능이라 REST API의 중첩 구조 등 JSON을 대응하기엔 부족하다.</p>
+<pre><code class="language-python">class UserSerializer(serializers.Serializer):
+  email = serializers.EmailField()
+  username = serializers.CharField(max_length=100)
+
+class CommentSerializer(serializers.Serializer):
+  user = UserSerializer()
+  content = serializers.CharField(max_length=200)
+  created = serializers.DateTimeField()
+
+serializer = CommentSerializer(data={'user': {'email': 'foobar', 'username': 'doe'}, 'content': 'baz'})
+serializer.is_valid()
+# False
+serializer.errors
+# {'user': {'email': ['Enter a valid e-mail address.']}, 'created': ['This field is required.']}
+</code></pre>
+<h2 id="wtforms" style="position:relative;"><a href="#wtforms" aria-label="wtforms permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WTForms</h2>
+<p><a href="https://github.com/wtforms/wtforms">https://github.com/wtforms/wtforms</a></p>
+<p>Django Integration인 <a href="https://github.com/wtforms/wtforms-django">WTForms-Django 프로젝트</a>가 있다.</p>
+<pre><code class="language-python">class LocationForm(Form):
+  id = HiddenField('id')
+  title = StringField(_l('Title'), [Required()])
+  location = CoordinatesField(_l('Coordinates'))
+
+class ProjectForm(Form):
+  title = StringField(_l('Title'))
+  manager = StringField(_l('Manager'))
+  description = StringField(_l('Description'))
+  locations = FieldList(FormField(LocationForm), min_entries=1)
+
+document = {
+  'title': unicode,
+  'description': unicode,
+  'manager': unicode,
+  'locations': [{
+    'id': uuid.UUID,
+    'title': unicode,
+    'location': {'coordinates':[float], 'text':unicode}
+    }],
+  }
+
+f = ProjectForm()
+f.process(data=document)
+f.locations.data
+</code></pre>
+<ul>
+<li>예제가 모두 HTML Form 기준으로 되어있다. HTML Form을 대응하는 용도인 거 같다.</li>
+<li>cleaned data를 얻을 수 없다. <code>StringField</code>에 숫자를 보내면? 숫자가 나옴. 문자열이 아님.</li>
+<li>Form의 인스턴스에 대해서 작업을 함. 코딩 실수 가능성 농후</li>
+</ul>
+<h2 id="marshmallow" style="position:relative;"><a href="#marshmallow" aria-label="marshmallow permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Marshmallow</h2>
+<p><a href="https://github.com/marshmallow-code/marshmallow">https://github.com/marshmallow-code/marshmallow</a></p>
+<p>Django가 아니라면 이 솔루션이 적절한 듯.</p>
+<pre><code class="language-python">class ArtistSchema(Schema):
+    name = fields.Str()
+
+class AlbumSchema(Schema):
+    title = fields.Str(required=True)
+    release_date = fields.Date()
+    artist = fields.Nested(ArtistSchema())
+
+bowie = dict(name="David Bowie")
+album = dict(artist=bowie, title="Hunky Dory", release_date=date(1971, 12, 17))
+
+schema = AlbumSchema()
+result = schema.dump(album)
+pprint(result, indent=2)
+# { 'artist': {'name': 'David Bowie'},
+#   'release_date': '1971-12-17',
+#   'title': 'Hunky Dory'}
+</code></pre>
 <h1 id="rxpy" style="position:relative;"><a href="#rxpy" aria-label="rxpy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rxpy</h1>
 <p>Rxpy는 ReactiveX의 파이썬 구현체이다.</p>
 <h2 id="rxpy-example" style="position:relative;"><a href="#rxpy-example" aria-label="rxpy example permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rxpy example</h2>
