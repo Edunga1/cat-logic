@@ -477,6 +477,104 @@ Natural (may imply unduly that “src” is discouraged)
 
 Bad 레이아웃이 있다 ㅋㅋ
 
+# Object Converter (Serialization & Deserialization)
+
+| Name                             | Nested Structure |
+| -------------------------------- | ---------------- |
+| Django Form                      | nope             |
+| Django REST Framework Serializer | yes              |
+| WTForms                          | yes              |
+| Marshmallow                      | yes              |
+
+객체를 변환하거나 검증하는 라이브러리 비교.
+
+## Django REST Framework Serializer
+
+https://www.django-rest-framework.org/api-guide/serializers/
+
+Django Form은 HTML Form을 위한 기능이라 REST API의 중첩 구조 등 JSON을 대응하기엔 부족하다.
+
+```python
+class UserSerializer(serializers.Serializer):
+  email = serializers.EmailField()
+  username = serializers.CharField(max_length=100)
+
+class CommentSerializer(serializers.Serializer):
+  user = UserSerializer()
+  content = serializers.CharField(max_length=200)
+  created = serializers.DateTimeField()
+
+serializer = CommentSerializer(data={'user': {'email': 'foobar', 'username': 'doe'}, 'content': 'baz'})
+serializer.is_valid()
+# False
+serializer.errors
+# {'user': {'email': ['Enter a valid e-mail address.']}, 'created': ['This field is required.']}
+```
+
+## WTForms
+
+https://github.com/wtforms/wtforms
+
+Django Integration인 [WTForms-Django 프로젝트](https://github.com/wtforms/wtforms-django)가 있다.
+
+```python
+class LocationForm(Form):
+  id = HiddenField('id')
+  title = StringField(_l('Title'), [Required()])
+  location = CoordinatesField(_l('Coordinates'))
+
+class ProjectForm(Form):
+  title = StringField(_l('Title'))
+  manager = StringField(_l('Manager'))
+  description = StringField(_l('Description'))
+  locations = FieldList(FormField(LocationForm), min_entries=1)
+
+document = {
+  'title': unicode,
+  'description': unicode,
+  'manager': unicode,
+  'locations': [{
+    'id': uuid.UUID,
+    'title': unicode,
+    'location': {'coordinates':[float], 'text':unicode}
+    }],
+  }
+
+f = ProjectForm()
+f.process(data=document)
+f.locations.data
+```
+
+- 예제가 모두 HTML Form 기준으로 되어있다. HTML Form을 대응하는 용도인 거 같다.
+- cleaned data를 얻을 수 없다. `StringField`에 숫자를 보내면? 숫자가 나옴. 문자열이 아님.
+- Form의 인스턴스에 대해서 작업을 함. 코딩 실수 가능성 농후
+
+## Marshmallow
+
+https://github.com/marshmallow-code/marshmallow
+
+Django가 아니라면 이 솔루션이 적절한 듯.
+
+```python
+class ArtistSchema(Schema):
+    name = fields.Str()
+
+class AlbumSchema(Schema):
+    title = fields.Str(required=True)
+    release_date = fields.Date()
+    artist = fields.Nested(ArtistSchema())
+
+bowie = dict(name="David Bowie")
+album = dict(artist=bowie, title="Hunky Dory", release_date=date(1971, 12, 17))
+
+schema = AlbumSchema()
+result = schema.dump(album)
+pprint(result, indent=2)
+# { 'artist': {'name': 'David Bowie'},
+#   'release_date': '1971-12-17',
+#   'title': 'Hunky Dory'}
+```
+
 # Rxpy
 
 Rxpy는 ReactiveX의 파이썬 구현체이다.
