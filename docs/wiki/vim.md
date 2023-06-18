@@ -178,6 +178,17 @@ endfunction
 함수는 정의된 스크립트에서만 호출할 수 있다. 즉, `call MyFunction()`로 호출할 수 없다.
 vim은 많은 플러그인을 통해 함수가 정의되어 이름 충돌할 수 있으므로 local function을 사용하는 것이 좋다.
 
+# Registers
+
+`:h registers`
+
+특수 레지스터는 알아두면 좋다.
+
+1. `+` 클립보드 레지스터. 정확히는 selection register. 클립보드가 활성되지 않으면 unnamed register와 같다.
+2. `"` unnamed register. d, c, s, x 등으로 삭제된 내용이 저장된다.
+3. `_` black hole register. 읽는 용도로 사용하지 않는다. 덮어쓸 때 삭제된 내용을 저장하지 않는 용도로 쓴다.
+    * e.g. `"_dd` 현재 라인을 삭제하지만 unnamed register에 저장하지 않는다.
+
 # Variables
 
 ## `path`
