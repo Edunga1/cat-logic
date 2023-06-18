@@ -241,6 +241,30 @@ JPQL 사용했지만, 쿼리 메서드에서 사용하는 키워드가 포함된
 
 키워드는 `By` 였는데, `Using` 으로 대체해서 사용하여 해결했다.
 
+## 토비의 봄 TV - 백기선님
+
+https://www.youtube.com/live/xEqGW7Adqt8
+
+[16:00](https://youtu.be/xEqGW7Adqt8?t=960)
+- 트랜잭션 작업(전) - 비동기 처리 - 트랜잭션 작업(후) 이렇게 되어 있을 때 전, 후 작업의 트랜잭션이 이어지지 않는다.
+- RDB를 비동기처리 지원하지 않는다.
+- ADBC라는 비동기 지원을 위한 기술이 드래프트되어 있다. 3년 이상.
+
+[20:35](https://youtu.be/xEqGW7Adqt8?t=1235)
+- NodeJS처럼 모든 것을 비동기로 처리하고 싶다. 쓰레드는 코어 수 만큼.
+
+[38:35](https://youtu.be/xEqGW7Adqt8?t=2315)
+- 어노테이션에 대한 내용
+- 어노테이션이 의도를 파악하기 어렵다.
+
+## 토비의 봄 TV - 김영한님
+
+https://www.youtube.com/watch?v=00qwDr_3MC4
+
+[1:35:04](https://youtu.be/00qwDr_3MC4?t=5704)
+- AOP 프록시를 사용했다. 프록시 패턴.
+- 여기에도 RDB와 Webflux 비동기 처리 이슈에 대해 다룬다.
+
 # Reference
 
 https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html
