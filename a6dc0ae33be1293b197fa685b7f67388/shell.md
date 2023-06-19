@@ -273,3 +273,61 @@ time is /usr/bin/time
 예약어를 사용하면 `time g fetch`와 같이 alias를 사용할 수 있고, 직접 실행파일을 사용하면 alias를 사용할 수 없다.
 
 ref. https://linuxize.com/post/linux-time-command/
+
+# FZF
+
+https://github.com/junegunn/fzf
+
+A command-line fuzzy-finder. 검색 도구로 사용한다. 매우 추천하는 도구.
+인터렉티브 UI를 잘 제공해서, 주 기능인 파일 검색외에도 리스트에 대한 UNIX 파이프라인 필터로 사용하기 유용하다.
+
+![fzf github preview](https://raw.githubusercontent.com/junegunn/i/master/fzf-preview.png)
+
+**preview window scrolling**
+
+`--preview` 옵션을 사용하면 미리보기 윈도우를 사용할 수 있는데(이미지의 오른쪽 코드 영역), 여기서 스크롤할 수 있다.
+`shift` + `up/down` 또는 마우스 휠로 할 수 있다.
+
+**현재 디렉토리 내에서 파일 검색**
+
+`CTRL-T`를 누르면 파일 인터렉티브로 파일을 검색한다. 선택하면 파일 경로가 붙여 넣는다.
+예를들어 `cat `까지 입력하고 `CTRL-T`로 파일을 찾아 선택하면 `cat /path/to/file` 경로가 완성된다.
+
+fzf가 없으면 보통, tab 두 번 눌러서 모든 파일을 확인할텐데, `CTRL-T`를 사용하는 편이 더 편리하다.
+
+## FZF + git
+
+### 브랜치 목록 및 작업 내용
+
+```bash
+lsb = !git branch \
+  | fzf --preview 'echo {} | cut -c3- | xargs git show --color=always' --height 90% \
+  | cut -c3-
+```
+
+`.gitconfig`에 `lsb`로 alias 등록하였다.
+
+```bash
+~/dotfiles main 7s                                                         15:43:03
+❯ g lsb
+                     ╭─────────────────────────────────────────────────────────────╮
+                     │ commit cb9064a2c2b8292df2b039366263e4261ed72161        1/20││
+                     │ Author: edunga1 <goonr21@gmail.com>                        ││
+                     │ Date:   Thu Jun 15 14:30:47 2023 +0900                     ││
+                     │                                                            ││
+                     │     Remove pylint from python toolchain                    ││
+                     │                                                            ││
+                     │     ruff is preferred                                      ││
+                     │                                                            ││
+                     │ diff --git a/vim/lua/lsp/python.lua b/vim/lua/lsp/python.lu││
+                     │ index eb8a1cc..1de0888 100644                              ││
+                     │ --- a/vim/lua/lsp/python.lua                               ││
+                     │ +++ b/vim/lua/lsp/python.lua                               ││
+                     │ @@ -9,7 +9,6 @@ return function(ns, lspconfig)              │
+    wip              │    ns.register(ns.builtins.formatting.autopep8)             │
+> * main             │    ns.register(ns.builtins.formatting.isort)                │
+  2/2 ────────────── │    ns.register(ns.builtins.formatting.ruff)                 │
+>                    ╰─────────────────────────────────────────────────────────────╯
+```
+
+브랜치 목록 `git branch`와 함께 가장 위 커밋의 diff `git diff`를 보여준다.
