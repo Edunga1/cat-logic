@@ -63,6 +63,55 @@ aws iam update-access-key --access-key-id <OLD_ACCESS_KEY_ID> --status Inactive
 aws iam list-access-keys
 ```
 
+# LocalStack
+
+https://github.com/localstack/localstack
+
+로컬 환경에서 AWS 클라우드 스택을 구축하는 도구이다.
+
+클라우드 기능을 사용하면 의존 때문에 개발 환경을 구축하기 쉽지 않다.
+서비스에 가입하거나 비용을 지불하기엔 개발하기 너무 가혹하다.
+
+LocalStack은 AWS 기능 대부분을 제공한다. https://docs.localstack.cloud/references/coverage/ 여기에서 어떤 기능을 커버하는지 확인할 수 있는데, 왠만한 서비스는 다 있는 것으로 보인다.
+
+도커로 실행하면 더 쉽다. 저장소의 [docker-compose.yml](https://github.com/localstack/localstack/blob/master/docker-compose.yml) 확인하고 그대로 사용해도 된다.
+
+Kinesis를 사용하기 위해서 다음과 같이 사용하고 있다:
+
+```yml
+version: "3.8"
+
+services:
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4510-4559:4510-4559"
+    environment:
+      - DEBUG=1
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./data:/var/lib/localstack"
+      - "./kinesis-my-stream.sh:/etc/localstack/init/ready.d/kinesis-my-stream.sh"
+```
+
+다른 점은 볼륨의 마지막 부분인데, hook을 통해서 스트림을 생성하도록 했다:
+
+```bash
+#!/bin/bash
+
+aws --endpoint-url=http://localhost:4566 kinesis create-stream --stream-name my-event-dev --shard-count 1 --region ap-northeast-2
+aws --endpoint-url=http://localhost:4566 kinesis list-streams --region ap-northeast-2
+```
+
+hook에 대해선 다음 문서에서 설명한다:\
+https://docs.localstack.cloud/references/init-hooks/
+
+위 예시에서 보듯이 `aws` 명령어가 LocalStack과 잘 호환된다.
+`--endpoint-url`을 통해서 LocalStack와 통신한다.
+`awslocal` 명령어도 제공하는데, endpoint를 명시하지 않아도 된다. credential 관련 오류가 있으면 `awslocal` 명령을 사용하면 괜찮다.
+
 # Storage Service
 
 2021-09-31 AWS CEP 내용 정리한 것.
@@ -78,7 +127,7 @@ Storage는 크게 Block, File, Object로 나뉜다.
 EC2는 OS 등 모든 파일은 네트워크로 연결되는 EBS를 사용한다.
 - EC2의 Instance Store(물리 호스트)도 제공되나, 별도 설정이 필요하고, 사라지는 영역이라서 특정 용도가 아니면 사용되지 않고, 추천하지 않는다.
 
-**내구성**\
+**내구성** \
 AWS에서는 99.999% 신뢰성 제공을 목적으로 설계 되며, 데이터를 잃어버리지 않는 것을 의미
 
 EBS GP2는 Burst 기능을 제공하는데, 유후 시간 후 처음 30분간 3,000 IOPS를 제공하는 기능이다.
@@ -131,7 +180,7 @@ IP 대역은 CIDR(Classes Inter-Domain Routing) 블록 /16 ~ /28 까지 사용 �
 
 DNS는 기본으로 제공되는 Private, Public DNS가 제공됨
 
-**IP 대역**\
+**IP 대역** \
 172.16.0.0/16 CIDR 내에서 네트워크 구성된다.
 
 **VPC Peering**
