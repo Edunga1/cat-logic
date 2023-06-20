@@ -72,6 +72,9 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </ul>
 </li>
 <li>
+<p><a href="#localstack">LocalStack</a></p>
+</li>
+<li>
 <p><a href="#storage-service">Storage Service</a></p>
 <ul>
 <li><a href="#ebs---elastic-block-storage">EBS - Elastic Block Storage</a></li>
@@ -137,6 +140,41 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p>기존 access-key를 확인하려면 <a href="https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html">list-access-keys</a>를 사용하면 된다:</p>
 <pre><code class="language-sh">aws iam list-access-keys
 </code></pre>
+<h1 id="localstack" style="position:relative;"><a href="#localstack" aria-label="localstack permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LocalStack</h1>
+<p><a href="https://github.com/localstack/localstack">https://github.com/localstack/localstack</a></p>
+<p>로컬 환경에서 AWS 클라우드 스택을 구축하는 도구이다.</p>
+<p>클라우드 기능을 사용하면 의존 때문에 개발 환경을 구축하기 쉽지 않다.
+서비스에 가입하거나 비용을 지불하기엔 개발하기 너무 가혹하다.</p>
+<p>LocalStack은 AWS 기능 대부분을 제공한다. <a href="https://docs.localstack.cloud/references/coverage/">https://docs.localstack.cloud/references/coverage/</a> 여기에서 어떤 기능을 커버하는지 확인할 수 있는데, 왠만한 서비스는 다 있는 것으로 보인다.</p>
+<p>도커로 실행하면 더 쉽다. 저장소의 <a href="https://github.com/localstack/localstack/blob/master/docker-compose.yml">docker-compose.yml</a> 확인하고 그대로 사용해도 된다.</p>
+<p>Kinesis를 사용하기 위해서 다음과 같이 사용하고 있다:</p>
+<pre><code class="language-yml">version: "3.8"
+
+services:
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4510-4559:4510-4559"
+    environment:
+      - DEBUG=1
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./data:/var/lib/localstack"
+      - "./kinesis-my-stream.sh:/etc/localstack/init/ready.d/kinesis-my-stream.sh"
+</code></pre>
+<p>다른 점은 볼륨의 마지막 부분인데, hook을 통해서 스트림을 생성하도록 했다:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+aws --endpoint-url=http://localhost:4566 kinesis create-stream --stream-name my-event-dev --shard-count 1 --region ap-northeast-2
+aws --endpoint-url=http://localhost:4566 kinesis list-streams --region ap-northeast-2
+</code></pre>
+<p>hook에 대해선 다음 문서에서 설명한다:<br>
+<a href="https://docs.localstack.cloud/references/init-hooks/">https://docs.localstack.cloud/references/init-hooks/</a></p>
+<p>위 예시에서 보듯이 <code>aws</code> 명령어가 LocalStack과 잘 호환된다.
+<code>--endpoint-url</code>을 통해서 LocalStack와 통신한다.
+<code>awslocal</code> 명령어도 제공하는데, endpoint를 명시하지 않아도 된다. credential 관련 오류가 있으면 <code>awslocal</code> 명령을 사용하면 괜찮다.</p>
 <h1 id="storage-service" style="position:relative;"><a href="#storage-service" aria-label="storage service permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Service</h1>
 <p>2021-09-31 AWS CEP 내용 정리한 것.</p>
 <p>Storage는 크게 Block, File, Object로 나뉜다.</p>
@@ -150,7 +188,7 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <ul>
 <li>EC2의 Instance Store(물리 호스트)도 제공되나, 별도 설정이 필요하고, 사라지는 영역이라서 특정 용도가 아니면 사용되지 않고, 추천하지 않는다.</li>
 </ul>
-<p><strong>내구성</strong><br>
+<p><strong>내구성</strong> <br>
 AWS에서는 99.999% 신뢰성 제공을 목적으로 설계 되며, 데이터를 잃어버리지 않는 것을 의미</p>
 <p>EBS GP2는 Burst 기능을 제공하는데, 유후 시간 후 처음 30분간 3,000 IOPS를 제공하는 기능이다.</p>
 <ul>
@@ -247,7 +285,7 @@ EC2는 Regional 서비스에 포함된다.</p>
 <p>IP 대역은 CIDR(Classes Inter-Domain Routing) 블록 /16 ~ /28 까지 사용 가능하다.</p>
 <p>공인 IP는 비싼 자원이므로 서버 Stop시 해제된다는 등 제약이 있다.</p>
 <p>DNS는 기본으로 제공되는 Private, Public DNS가 제공됨</p>
-<p><strong>IP 대역</strong><br>
+<p><strong>IP 대역</strong> <br>
 172.16.0.0/16 CIDR 내에서 네트워크 구성된다.</p>
 <p><strong>VPC Peering</strong></p>
 <ul>
