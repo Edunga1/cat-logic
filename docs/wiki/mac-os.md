@@ -167,3 +167,46 @@ arm64
 ```
 
 `-<ARCHITECTURE>` 옵션은 macos에서만 가능하다. linux에서는 옵션 없이 `arch`만 제공한다.
+
+# displayplacer - 멀티 모니터 설정 관리 도구
+
+https://github.com/jakehilborn/displayplacer
+
+`displayplacer` 명령어로 모니터 해상도와 배열을 변경한다.
+
+내 경우 아침마다 맥북을 열면 오른쪽과 왼쪽 모니터의 배열이 변경되어 다시 설정에서 정렬해야 문제가 있었다.
+
+`displayplacer list`를 입력하면 조합 가능한 목록을 보여주고, 현재 설정값을 보여준다:
+
+```bash
+$ displayplacer list
+Persistent screen id: 364EA7DB-CF15-4E52-95AC-E3162BC3D207
+Contextual screen id: 2
+Serial screen id: s828000585
+Type: 27 inch external screen
+Resolution: 1440x2560
+Hertz: 60
+Color Depth: 8
+Scaling: off
+Origin: (0,0) - main display
+Rotation: 270
+Enabled: true
+Resolutions for rotation 270:
+  mode 0: res:600x800 hz:75 color_depth:8
+  # ... 많아서 생략 ...
+  mode 65: res:600x960 hz:60 color_depth:8 scaling:on
+  mode 66: res:768x1024 hz:60 color_depth:8
+  mode 67: res:720x1280 hz:60 color_depth:8
+  mode 68: res:720x1280 hz:60 color_depth:8
+  mode 69: res:900x1600 hz:60 color_depth:8
+  mode 70: res:1200x1600 hz:60 color_depth:8
+  mode 71: res:1080x1920 hz:60 color_depth:8
+  mode 72: res:1080x1920 hz:60 color_depth:8
+  mode 73: res:1200x1920 hz:60 color_depth:8
+
+Execute the command below to set your screens to the current arrangement. If screen ids are switching, please run `displayplacer --help` for info on using contextual or serial ids instead of persistent ids.
+
+displayplacer "id:364EA7DB-CF15-4E52-95AC-E3162BC3D207 res:1440x2560 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:270" "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:1512x982 hz:120 color_depth:8 enabled:true scaling:on origin:(1440,758) degree:0" "id:5E23DF76-B6A9-4F07-A6A5-F748C75B6E0C res:1440x2560 hz:60 color_depth:8 enabled:true scaling:off origin:(-1440,0) degree:90"
+```
+
+마지막 줄이 현재 설정된 값을 적용할 수 있는 명령어인데, 복사해두고 아침마다 입력하여 배열을 복구하고 있다.
