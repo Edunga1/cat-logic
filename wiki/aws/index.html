@@ -75,6 +75,12 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><a href="#localstack">LocalStack</a></p>
 </li>
 <li>
+<p><a href="#kinesis">Kinesis</a></p>
+<ul>
+<li><a href="#%EC%9E%90%EB%B0%94-%EC%99%B8-%EC%96%B8%EC%96%B4%EB%A1%9C-kinesis-%EC%95%B1-%EA%B0%9C%EB%B0%9C">자바 외 언어로 Kinesis 앱 개발</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#storage-service">Storage Service</a></p>
 <ul>
 <li><a href="#ebs---elastic-block-storage">EBS - Elastic Block Storage</a></li>
@@ -175,6 +181,15 @@ aws --endpoint-url=http://localhost:4566 kinesis list-streams --region ap-northe
 <p>위 예시에서 보듯이 <code>aws</code> 명령어가 LocalStack과 잘 호환된다.
 <code>--endpoint-url</code>을 통해서 LocalStack와 통신한다.
 <code>awslocal</code> 명령어도 제공하는데, endpoint를 명시하지 않아도 된다. credential 관련 오류가 있으면 <code>awslocal</code> 명령을 사용하면 괜찮다.</p>
+<h1 id="kinesis" style="position:relative;"><a href="#kinesis" aria-label="kinesis permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kinesis</h1>
+<p>Consumer 라이브러리를 KCL(Kinesis Client Library)라고 부르고,
+Producer 라이브러리를 KPL(Kinesis Producer Library)라고 부른다.
+문서 설명이 모두 이 약자로 설명하고 있기 때문에 알아두는 편이 좋다.</p>
+<h2 id="자바-외-언어로-kinesis-앱-개발" style="position:relative;"><a href="#%EC%9E%90%EB%B0%94-%EC%99%B8-%EC%96%B8%EC%96%B4%EB%A1%9C-kinesis-%EC%95%B1-%EA%B0%9C%EB%B0%9C" aria-label="자바 외 언어로 kinesis 앱 개발 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>자바 외 언어로 Kinesis 앱 개발</h2>
+<p>Node.js consumer를 만든다면 <a href="https://github.com/awslabs/amazon-kinesis-client-nodejs/">KCL for Node.js</a>를 사용한다.</p>
+<p>주의할 점은 자바 외 언어로 제공하는 KCL은 모두 <a href="https://github.com/awslabs/amazon-kinesis-client">KCL for JAVA</a>을 사용하기 때문에
+자바 런타임이 필요하다. <a href="https://github.com/awslabs/amazon-kinesis-client-nodejs/blob/master/bin/kcl-bootstrap">데몬으로 KCL for Java와 통신하도록 구현</a>되어 있다.</p>
+<p>Node.js producer는 <a href="https://github.com/awslabs/amazon-kinesis-client-nodejs/">aws-sdk</a>를 사용한다.</p>
 <h1 id="storage-service" style="position:relative;"><a href="#storage-service" aria-label="storage service permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Service</h1>
 <p>2021-09-31 AWS CEP 내용 정리한 것.</p>
 <p>Storage는 크게 Block, File, Object로 나뉜다.</p>
