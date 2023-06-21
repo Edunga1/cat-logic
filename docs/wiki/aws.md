@@ -112,6 +112,21 @@ https://docs.localstack.cloud/references/init-hooks/
 `--endpoint-url`을 통해서 LocalStack와 통신한다.
 `awslocal` 명령어도 제공하는데, endpoint를 명시하지 않아도 된다. credential 관련 오류가 있으면 `awslocal` 명령을 사용하면 괜찮다.
 
+# Kinesis
+
+Consumer 라이브러리를 KCL(Kinesis Client Library)라고 부르고,
+Producer 라이브러리를 KPL(Kinesis Producer Library)라고 부른다.
+문서 설명이 모두 이 약자로 설명하고 있기 때문에 알아두는 편이 좋다.
+
+## 자바 외 언어로 Kinesis 앱 개발
+
+Node.js consumer를 만든다면 [KCL for Node.js](https://github.com/awslabs/amazon-kinesis-client-nodejs/)를 사용한다.
+
+주의할 점은 자바 외 언어로 제공하는 KCL은 모두 [KCL for JAVA](https://github.com/awslabs/amazon-kinesis-client)을 사용하기 때문에
+자바 런타임이 필요하다. [데몬으로 KCL for Java와 통신하도록 구현](https://github.com/awslabs/amazon-kinesis-client-nodejs/blob/master/bin/kcl-bootstrap)되어 있다.
+
+Node.js producer는 [aws-sdk](https://github.com/awslabs/amazon-kinesis-client-nodejs/)를 사용한다.
+
 # Storage Service
 
 2021-09-31 AWS CEP 내용 정리한 것.
