@@ -127,6 +127,18 @@ Node.js consumer를 만든다면 [KCL for Node.js](https://github.com/awslabs/am
 
 Node.js producer는 [aws-sdk](https://github.com/awslabs/amazon-kinesis-client-nodejs/)를 사용한다.
 
+LocalStack으로 Node.js consumer는 구현하기 어려워 보인다.
+먼저, LocalStack와 커뮤니케이션 하려면 endpoint 설정이 필요한데
+KCL 2.0으로 업데이트되면서 `kinesisEndpoint` `dynamodbEndpoint` [설정이 제거](https://docs.aws.amazon.com/streams/latest/dev/kcl-migration.html#client-configuration-removals)되었다.
+
+Client 생성 주체인 KCL for Node.js에서 진행해야 하지만, 여기엔 설정을 제공하지 않는다. 저장소가 거의 죽어있다.
+
+KCL for Java는 client builder를 통해서 endpoint를 설정할 수 있다. 저장소도 자주 업데이트 된다.
+
+```java
+KinesisAsyncClient.builder().endpointOverride(URI.create("https://<kinesis endpoint>")).build().
+```
+
 # Storage Service
 
 2021-09-31 AWS CEP 내용 정리한 것.
