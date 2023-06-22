@@ -190,6 +190,13 @@ Producer 라이브러리를 KPL(Kinesis Producer Library)라고 부른다.
 <p>주의할 점은 자바 외 언어로 제공하는 KCL은 모두 <a href="https://github.com/awslabs/amazon-kinesis-client">KCL for JAVA</a>을 사용하기 때문에
 자바 런타임이 필요하다. <a href="https://github.com/awslabs/amazon-kinesis-client-nodejs/blob/master/bin/kcl-bootstrap">데몬으로 KCL for Java와 통신하도록 구현</a>되어 있다.</p>
 <p>Node.js producer는 <a href="https://github.com/awslabs/amazon-kinesis-client-nodejs/">aws-sdk</a>를 사용한다.</p>
+<p>LocalStack으로 Node.js consumer는 구현하기 어려워 보인다.
+먼저, LocalStack와 커뮤니케이션 하려면 endpoint 설정이 필요한데
+KCL 2.0으로 업데이트되면서 <code>kinesisEndpoint</code> <code>dynamodbEndpoint</code> <a href="https://docs.aws.amazon.com/streams/latest/dev/kcl-migration.html#client-configuration-removals">설정이 제거</a>되었다.</p>
+<p>Client 생성 주체인 KCL for Node.js에서 진행해야 하지만, 여기엔 설정을 제공하지 않는다. 저장소가 거의 죽어있다.</p>
+<p>KCL for Java는 client builder를 통해서 endpoint를 설정할 수 있다. 저장소도 자주 업데이트 된다.</p>
+<pre><code class="language-java">KinesisAsyncClient.builder().endpointOverride(URI.create("https://&#x3C;kinesis endpoint>")).build().
+</code></pre>
 <h1 id="storage-service" style="position:relative;"><a href="#storage-service" aria-label="storage service permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Service</h1>
 <p>2021-09-31 AWS CEP 내용 정리한 것.</p>
 <p>Storage는 크게 Block, File, Object로 나뉜다.</p>
