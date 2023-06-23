@@ -59,7 +59,7 @@ $ brew install spring-boot
 도움말 확인하려면 `spring help <command>`\
 e.g. `spring help init`
 
-## 빠른 시작
+## 빠른 프로젝트 생성
 
 Kotlin + Spring Boot + Gradle 프로젝트를 빠르게 생성 해보자.
 
@@ -70,7 +70,23 @@ spring init --language kotlin --type gradle-project-kotlin --extract demo
 `demo` 디렉토리와 함께 프로젝트가 생성된다.\
 `--extract` 옵션을 생략하면 zip 파일로 생성된다.
 
-JDK 버전 등 설정되는 기본값을 확인하려면 `spring init --list`:
+Application 코드를 생성해 주지만 `ApplicationRunner`로 간단하게 hello world 출력해보자:
+
+```kotlin
+@SpringBootApplication
+class DemoApplication: ApplicationRunner {
+    override fun run(args: ApplicationArguments) {
+        println("Hello, world!")
+    }
+}
+
+fun main(args: Array<String>) {
+    runApplication<DemoApplication>(*args)
+}
+```
+
+JDK 버전 등 기본 설정값을 확인하려면 `spring init --list`:
+
 ```bash
 Parameters
 +-------------+------------------------------------------+------------------------------+
@@ -90,20 +106,30 @@ Parameters
 +-------------+------------------------------------------+------------------------------+
 ```
 
-기본 Application 코드를 생성해 주지만 `ApplicationRunner`로 간단하게 hello world 출력해보자:
+`spring init --list`는 설치 지원하는 의존성도 보여주는데, 설명이 간락하게 잘 되어있다:
 
-```kotlin
-@SpringBootApplication
-class DemoApplication: ApplicationRunner {
-    override fun run(args: ApplicationArguments) {
-        println("Hello, world!")
-    }
-}
-
-fun main(args: Array<String>) {
-    runApplication<DemoApplication>(*args)
-}
+```bash
+Supported dependencies
++--------------------------------------+--------------------------------------------------------------+-------------------------------+
+| Id                                   | Description                                                  | Required version              |
++--------------------------------------+--------------------------------------------------------------+-------------------------------+
+| activemq                             | Spring JMS support with Apache ActiveMQ 'Classic'.           |                               |
+|                                      |                                                              |                               |
+| actuator                             | Supports built in (or custom) endpoints that let you monitor |                               |
+|                                      | and manage your application - such as application health,    |                               |
+|                                      | metrics, sessions, etc.                                      |                               |
+|                                      |                                                              |                               |
+| webflux                              | Build reactive web applications with Spring WebFlux and      |                               |
+|                                      | Netty.                                                       |                               |
+|                                      |                                                              |                               |
+| websocket                            | Build Servlet-based WebSocket applications with SockJS and   |                               |
+|                                      | STOMP.                                                       |                               |
+|                                      |                                                              |                               |
+| zipkin                               | Enable and expose span and trace IDs to Zipkin.              |                               |
++--------------------------------------+--------------------------------------------------------------+-------------------------------+
 ```
+
+의존성을 추가하려면 `--dependencies=actuator,webflux`와 같이 옵션을 추가한다.
 
 # Reference
 
