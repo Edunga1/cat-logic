@@ -118,6 +118,11 @@ Consumer 라이브러리를 KCL(Kinesis Client Library)라고 부르고,
 Producer 라이브러리를 KPL(Kinesis Producer Library)라고 부른다.
 문서 설명이 모두 이 약자로 설명하고 있기 때문에 알아두는 편이 좋다.
 
+[KCL 개념 - AWS Document](https://docs.aws.amazon.com/streams/latest/dev/shared-throughput-kcl-consumers.html#shared-throughput-kcl-consumers-concepts)
+
+KCL은 Shard를 추적하기 위해 DynamoDB를 사용한다.
+따라서 Kinesis, DynamoDB 두 개의 AWS 서비스를 사용해야 한다.
+
 ## 자바 외 언어로 Kinesis 앱 개발
 
 Node.js consumer를 만든다면 [KCL for Node.js](https://github.com/awslabs/amazon-kinesis-client-nodejs/)를 사용한다.
