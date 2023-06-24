@@ -65,6 +65,13 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><a href="#mac-os">Mac OS</a></p>
 </li>
 <li>
+<p><a href="#homebrew---%EB%A7%A5%EC%9A%A9-%ED%8C%A8%ED%82%A4%EC%A7%80-%EA%B4%80%EB%A6%AC%EC%9E%90">Homebrew - 맥용 패키지 관리자</a></p>
+<ul>
+<li><a href="#%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC">동작 원리</a></li>
+<li><a href="#brewfile">Brewfile</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#ngrok%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EB%A7%A5%EC%97%90%EC%84%9C-remote-login-%ED%95%98%EA%B8%B0"><code>ngrok</code>을 이용하여 맥에서 Remote Login 하기</a></p>
 <ul>
 <li><a href="#1-%EB%A7%A5%EB%B6%81%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-ssh-%EB%A6%AC%EB%AA%A8%ED%8A%B8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%97%88%EC%9A%A9">1. 맥북(서버)에서 SSH 리모트 로그인 허용</a></li>
@@ -85,6 +92,46 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><a href="#displayplacer---%EB%A9%80%ED%8B%B0-%EB%AA%A8%EB%8B%88%ED%84%B0-%EC%84%A4%EC%A0%95-%EA%B4%80%EB%A6%AC-%EB%8F%84%EA%B5%AC">displayplacer - 멀티 모니터 설정 관리 도구</a></p>
 </li>
 </ul></div></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="mac-os" style="position:relative;"><a href="#mac-os" aria-label="mac os permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mac OS</h1>
+<h1 id="homebrew---맥용-패키지-관리자" style="position:relative;"><a href="#homebrew---%EB%A7%A5%EC%9A%A9-%ED%8C%A8%ED%82%A4%EC%A7%80-%EA%B4%80%EB%A6%AC%EC%9E%90" aria-label="homebrew   맥용 패키지 관리자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Homebrew - 맥용 패키지 관리자</h1>
+<p><a href="https://brew.sh/">https://brew.sh/</a></p>
+<p>Homebrew로 맥에서 어플리케이션(패키지)을 설치하는 도구이다.</p>
+<p>설치할 수 있는 앱은 크게 2가지로 나뉜다. MacOS 전용 앱과 터미널에서 사용할 수 있는 앱이다.
+전자는 <code>brew cask install</code>로 설치하고, 후자는 <code>brew install</code>로 설치한다.</p>
+<p><code>brew install wget</code>과 같이 사용하며, 이건 <code>wget</code>을 설치하는 명령어이다.
+<code>wget</code>를 Hoembrew에서는 <code>formula</code>라고 부른다:</p>
+<blockquote>
+<p>Homebrew formulae are simple Ruby scripts</p>
+</blockquote>
+<h2 id="동작-원리" style="position:relative;"><a href="#%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC" aria-label="동작 원리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>동작 원리</h2>
+<p>패키지는 공용 저장소인 <a href="https://github.com/Homebrew/homebrew-core">homebrew-core</a>에서 관리한다.
+Ruby 스크립트를 통해서 설치 정보를 선언한다.</p>
+<p><code>brew tap &#x3C;repo></code>로 다른 저장소를 추가하여 공용 저장소에 없는 패키지를 설치할 수 있다.</p>
+<p>재밌는 점은 공용 Homebrew에는 수많은 패키지가 Git으로 관리되고 있는데,
+패키지가 새롭게 추가 되거나 업데이트 되면 Git commit이 발생하는 것이다.
+그래서 공용 저장소의 커밋 수는 2023년 6월 기준 37만개가 넘는다.</p>
+<p><a href="https://github.com/Homebrew/homebrew-core/pulls">PR</a>을 올리면 Hoembrew 메인테이너 또는 멤버가 리뷰하고
+자동화 테스트를 통과하면 봇을 통해 자동 머지된다. 아마 가장 활발한 저장소 중 하나일 것이다.</p>
+<h2 id="brewfile" style="position:relative;"><a href="#brewfile" aria-label="brewfile permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Brewfile</h2>
+<p><code>Brewfile</code>은 패키지를 관리하는 파일이다.</p>
+<p><code>brew bundle dump</code>로 현재 설치된 패키지를 <code>Brewfile</code>에 저장할 수 있다.</p>
+<pre><code class="language-bash">$ brew bundle dump
+$ cat Brewfile
+tap "homebrew/bundle"
+tap "homebrew/core"
+tap "spring-io/tap"
+tap "universal-ctags/universal-ctags"
+brew "xz"
+brew "zstd"
+brew "bzip2"
+brew "krb5"
+brew "libtirpc"
+brew "libnsl"
+brew "pcre2"
+brew "sqlite"
+brew "util-linux"
+</code></pre>
+<p>단, 자동 생성하면 의존성의 의존성까지 모두 저장되어 불편하다.
+나같은 경우는 직접 파일을 생성하여 관리한다: <a href="https://github.com/Edunga1/dotfiles/blob/main/Brewfile">https://github.com/Edunga1/dotfiles/blob/main/Brewfile</a></p>
 <h1 id="ngrok을-이용하여-맥에서-remote-login-하기" style="position:relative;"><a href="#ngrok%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EB%A7%A5%EC%97%90%EC%84%9C-remote-login-%ED%95%98%EA%B8%B0" aria-label="ngrok을 이용하여 맥에서 remote login 하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>ngrok</code>을 이용하여 맥에서 Remote Login 하기</h1>
 <p>공인 IP없이 맥북에 ssh로 접속하기 위해선 중계자가 필수적이다.
 <code>ngrok</code>이 <code>hole punching</code>을 통해서 서버와 클라이언트를 연결하는지는 모르겠지만,

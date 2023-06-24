@@ -1,5 +1,60 @@
 # Mac OS
 
+# Homebrew - 맥용 패키지 관리자
+
+https://brew.sh/
+
+Homebrew로 맥에서 어플리케이션(패키지)을 설치하는 도구이다.
+
+설치할 수 있는 앱은 크게 2가지로 나뉜다. MacOS 전용 앱과 터미널에서 사용할 수 있는 앱이다.
+전자는 `brew cask install`로 설치하고, 후자는 `brew install`로 설치한다.
+
+`brew install wget`과 같이 사용하며, 이건 `wget`을 설치하는 명령어이다.
+`wget`를 Hoembrew에서는 `formula`라고 부른다:
+
+> Homebrew formulae are simple Ruby scripts
+
+## 동작 원리
+
+패키지는 공용 저장소인 [homebrew-core](https://github.com/Homebrew/homebrew-core)에서 관리한다.
+Ruby 스크립트를 통해서 설치 정보를 선언한다.
+
+`brew tap <repo>`로 다른 저장소를 추가하여 공용 저장소에 없는 패키지를 설치할 수 있다.
+
+재밌는 점은 공용 Homebrew에는 수많은 패키지가 Git으로 관리되고 있는데,
+패키지가 새롭게 추가 되거나 업데이트 되면 Git commit이 발생하는 것이다.
+그래서 공용 저장소의 커밋 수는 2023년 6월 기준 37만개가 넘는다.
+
+[PR](https://github.com/Homebrew/homebrew-core/pulls)을 올리면 Hoembrew 메인테이너 또는 멤버가 리뷰하고
+자동화 테스트를 통과하면 봇을 통해 자동 머지된다. 아마 가장 활발한 저장소 중 하나일 것이다.
+
+## Brewfile
+
+`Brewfile`은 패키지를 관리하는 파일이다.
+
+`brew bundle dump`로 현재 설치된 패키지를 `Brewfile`에 저장할 수 있다.
+
+```bash
+$ brew bundle dump
+$ cat Brewfile
+tap "homebrew/bundle"
+tap "homebrew/core"
+tap "spring-io/tap"
+tap "universal-ctags/universal-ctags"
+brew "xz"
+brew "zstd"
+brew "bzip2"
+brew "krb5"
+brew "libtirpc"
+brew "libnsl"
+brew "pcre2"
+brew "sqlite"
+brew "util-linux"
+```
+
+단, 자동 생성하면 의존성의 의존성까지 모두 저장되어 불편하다.
+나같은 경우는 직접 파일을 생성하여 관리한다: https://github.com/Edunga1/dotfiles/blob/main/Brewfile
+
 # `ngrok`을 이용하여 맥에서 Remote Login 하기
 
 공인 IP없이 맥북에 ssh로 접속하기 위해선 중계자가 필수적이다.
