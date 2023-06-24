@@ -123,6 +123,9 @@ Producer 라이브러리를 KPL(Kinesis Producer Library)라고 부른다.
 KCL은 Shard를 추적하기 위해 DynamoDB를 사용한다.
 따라서 Kinesis, DynamoDB 두 개의 AWS 서비스를 사용해야 한다.
 
+KCL for Java 공식 예제 코드는 [aws-sdk-java](https://github.com/aws/aws-sdk-java/tree/master/src/samples/AmazonKinesis)에서 제공하는데, 2023-06 기준 라이브러리 최신 버전을 따라가지 못한다.
+차라리 [amazon-kinesis-client 저장소의 테스트 코드](https://github.com/awslabs/amazon-kinesis-client/blob/master/amazon-kinesis-client/src/test/java/software/amazon/kinesis/utils/TestRecordProcessor.java)를 참고하는 편이 좋다.
+
 ## 자바 외 언어로 Kinesis 앱 개발
 
 Node.js consumer를 만든다면 [KCL for Node.js](https://github.com/awslabs/amazon-kinesis-client-nodejs/)를 사용한다.
