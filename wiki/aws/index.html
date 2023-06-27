@@ -180,7 +180,18 @@ aws --endpoint-url=http://localhost:4566 kinesis list-streams --region ap-northe
 <a href="https://docs.localstack.cloud/references/init-hooks/">https://docs.localstack.cloud/references/init-hooks/</a></p>
 <p>위 예시에서 보듯이 <code>aws</code> 명령어가 LocalStack과 잘 호환된다.
 <code>--endpoint-url</code>을 통해서 LocalStack와 통신한다.
-<code>awslocal</code> 명령어도 제공하는데, endpoint를 명시하지 않아도 된다. credential 관련 오류가 있으면 <code>awslocal</code> 명령을 사용하면 괜찮다.</p>
+<code>awslocal</code> 명령어도 제공하는데, endpoint를 명시하지 않아도 된다.</p>
+<p>credentials 관련 오류가 있으면 <code>awslocal</code> 명령을 사용하자. 그러면 credentials(<code>~/.aws/credentials</code>)을 확인하지 않는다.
+앱에서 접근해야 한다면 <code>awslocal</code>을 사용할 수 없으니, 임의로 넣어놓자:</p>
+<pre><code class="language-text">[default]
+aws_access_key_id = test
+aws_secret_access_key = test
+</code></pre>
+<p>환경 변수를 사용해도 된다:</p>
+<pre><code>AWS_ACCESS_KEY_ID = test
+AWS_SECRET_ACCESS_KEY = test
+</code></pre>
+<p>검증은 localstack이 넘길테니 임의로 넣어두면 클라이언트 단에서 credentials 존재 여부 정도만 확인하니 괜찮다.</p>
 <h1 id="kinesis" style="position:relative;"><a href="#kinesis" aria-label="kinesis permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kinesis</h1>
 <p>Consumer 라이브러리를 KCL(Kinesis Client Library)라고 부르고,
 Producer 라이브러리를 KPL(Kinesis Producer Library)라고 부른다.
