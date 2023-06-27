@@ -110,7 +110,25 @@ https://docs.localstack.cloud/references/init-hooks/
 
 위 예시에서 보듯이 `aws` 명령어가 LocalStack과 잘 호환된다.
 `--endpoint-url`을 통해서 LocalStack와 통신한다.
-`awslocal` 명령어도 제공하는데, endpoint를 명시하지 않아도 된다. credential 관련 오류가 있으면 `awslocal` 명령을 사용하면 괜찮다.
+`awslocal` 명령어도 제공하는데, endpoint를 명시하지 않아도 된다.
+
+credentials 관련 오류가 있으면 `awslocal` 명령을 사용하자. 그러면 credentials(`~/.aws/credentials`)을 확인하지 않는다.
+앱에서 접근해야 한다면 `awslocal`을 사용할 수 없으니, 임의로 넣어놓자:
+
+```text
+[default]
+aws_access_key_id = test
+aws_secret_access_key = test
+```
+
+환경 변수를 사용해도 된다:
+
+```
+AWS_ACCESS_KEY_ID = test
+AWS_SECRET_ACCESS_KEY = test
+```
+
+검증은 localstack이 넘길테니 임의로 넣어두면 클라이언트 단에서 credentials 존재 여부 정도만 확인하니 괜찮다.
 
 # Kinesis
 
