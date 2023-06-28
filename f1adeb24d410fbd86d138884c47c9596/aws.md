@@ -144,6 +144,9 @@ KCL은 Shard를 추적하기 위해 DynamoDB를 사용한다.
 AWS 공식 예제는 [KCL 2.0 for Java](https://docs.aws.amazon.com/streams/latest/dev/kcl2-standard-consumer-java-example.html)나
 [amazon-kinesis-client 저장소의 테스트 코드](https://github.com/awslabs/amazon-kinesis-client/blob/master/amazon-kinesis-client/src/test/java/software/amazon/kinesis/utils/TestRecordProcessor.java)가 있다.
 
+내 localstack + consumer 예제: https://github.com/Edunga1/practice-localstack-kinesis \
+docker-compose로 localstack + consumer를 실행하고, aws cli로 `put-record`를 통해 데이터를 생성하도록 했다.
+
 ## 자바 외 언어로 Kinesis 앱 개발
 
 Node.js consumer를 만든다면 [KCL for Node.js](https://github.com/awslabs/amazon-kinesis-client-nodejs/)를 사용한다.
