@@ -132,7 +132,7 @@ IntelliJ 버전에 따른 변경사항이 있는 상황에서, 라이센스 문�
 
 정확한 문제는 fallback license를 사용하기 위해서 로그인하고, 로그인한 계정을 동기화하면서 발생했다.
 
-플러그인을 동기화하면서 문제가 되었는데, 플러그인 중 **[Spring Initializr and Assistant](https://plugins.jetbrains.com/plugin/18622-spring-initializr-and-assistant)** 을 제거하니까 해당 증상이 사라졌다.
+플러그인을 동기화하면서 문제가 되었는데, 플러그인 중 [Spring Initializr and Assistant](https://plugins.jetbrains.com/plugin/18622-spring-initializr-and-assistant)을 제거하니까 해당 증상이 사라졌다.
 
 아무튼 IntelliJ에서는 어떤 이유로 종료된 것인지 메시지 없이 종료되기 때문에 찾기 어려웠다.
 특히 문제가된 플러그인은 직접 설치한 것은 아닌 것으로 기억한다.
@@ -145,3 +145,34 @@ scratches 폴더 추가하는 것처럼 쿼리를 모아놓은 폴더를 추가�
 아직 이유를 찾지 못했지만, 새로운 프로젝트를 추가하여 재현해보면 잘 됐다. 그래서 거기다 추가하고 connection 정보도 옮겨서 사용했다.
 
 이 문제도 메뉴를 선택해도 무반응이며, 에러 메시지도 없다.
+
+# Blink Shell
+
+iOS용 터미널 앱. [App Store](https://itunes.apple.com/app/id1156707581)에서 판매하는데, 가격은 매우 비싸다.
+
+코드가 공개되어 있어서, 직접 빌드해서 사용할 수 있다: https://github.com/blinksh/blink
+
+## Build
+
+저장소에 쉽게 설명되어 있다.
+
+```bash
+git clone --recursive https://github.com/blinksh/blink.git && \
+cd blink && ./get_frameworks.sh
+```
+
+1. 저장소 클론 받고, 쉘 스크립트를 실행하면, 관련 라이브러리를 알아서 받는다. 5분쯤 걸렸다.
+2. XCode로 클론받은 저장소를 연다.
+3. (필요시) Signing & Capabillity 에서 불필요한 권한을 제거한다.
+4. 빌드한다. 끝.
+
+3번에 대해서, XCode의 Signing & Capabillity에 가면 코드에 서명을 할 수 없다.
+Push notification, ICloud 권한이 없다는 것인데.
+개발자 등록을 하지 않았으니 사용할 수 없다. 권한을 제거하자.
+해당 탭에서 스크롤을 내리면 권한이 등록되어 있는 것을 볼 수 있는데, X를 눌러 제거하자.
+
+최종적으로 대략 이런 모양이다:
+
+![blink shell xcode signing](./res/blink-shell-xcode-signing.png)
+
+직접 빌드하면 **1주에 10회, 일주일이면 빌드한 앱은 만료**된다는 제약 사항이 붙는다.
