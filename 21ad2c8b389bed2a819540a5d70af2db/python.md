@@ -854,3 +854,27 @@ Task 2 complete
 
 rxpy나 reactive programming에 익숙하지 않아서, 모든 처리를 완료 후에 프로그램을 제대로 끝낼 수 없었다.
 subscribe에서 on_complete에 메시지를 넣어도 출력되지 않았다.
+
+# redis-py
+
+https://github.com/redis/redis-py
+
+## redis connection을 전역 생성 vs 요청마다 생성
+
+SO [Python Redis connection should be closed on every request? (flask)](https://stackoverflow.com/questions/18022767/python-redis-connection-should-be-closed-on-every-request-flask/18024593) 질문이다.
+
+redis connection을 전역으로 하나만 생성해서 필요한 곳에서 import 하여 사용할 지, 매 요청마다 생성하고 닫을 지에 대한 질문이다.
+
+전자처럼 Top level 객체는 [Node.js](./nodejs.md)나 [python](./python.md)에서는 일반적인 방법이다.
+[Spring Framework](./spring-framework.md)의 경우 주입에 대한 문제에서 자유로우니 Bean으로 생성하고 프레임워크를 통해 주입받는 것이 일반적이다.
+그래서 node나 python을 처음 접하는 경우 의존 문제에 대해 난해할 수 있다.
+DI 라이브러리 사용하지 않고 이상적인 코드를 작성하려고 하면 인스턴스 생성하다가 지치게 된다.
+
+어쨌든 질문에 대한 답은 `redis-py`가 connection pool을 관리하기 때문에 후자를 선택하더라도 우려하는 성능 문제는 없다고 한다.
+
+`redis-py`제작자의 추천은 Global Instance를 가지고 사용하는 것:
+
+> a. create a global redis client instance and have your code use that.
+> b. create a global connection pool and pass that to various redis instances throughout your code.
+
+[google groups에서 제작자의 원문](https://groups.google.com/g/redis-db/c/m9k2DN7GX-M/m/5i5HtXkbeBYJ?pli=1)을 볼 수 있다.
