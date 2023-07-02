@@ -212,6 +212,47 @@ Stackoverflow Post: https://stackoverflow.com/questions/26543612/should-i-use-ja
 
 # JPA
 
+## DB에 쿼리하는 방법
+
+[**Query Methods**](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods)
+    
+```java
+public interface UserRepository extends Repository<User, Long> {
+  List<User> findByEmailAddressAndLastname(String emailAddress, String lastname);
+}
+```
+
+간단한 쿼리를 작성하는데 적합하다. 메서드 이름으로 쿼리를 작성한다.
+
+> Although getting a query derived from the method name is quite convenient, one might face the situation in which either the method name parser does not support the keyword one wants to use or the method name would get unnecessarily ugly. So you can either use JPA named queries through a naming convention (see Using JPA Named Queries for more information) or rather annotate your query method with @Query
+
+길어지면 보기 어려울 수 있으므로 Named Query 또는 `@Query`를 사용을 권장한다.
+
+[`@Query`](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.at-query)
+
+```java
+@Query("SELECT u FROM User u WHERE u.status = 1")
+Collection<User> findAllActiveUsers();
+```
+
+[**Querydsl**](http://querydsl.com/static/querydsl/latest/reference/html/)
+    
+```java
+QCustomer customer = QCustomer.customer;
+Customer bob = queryFactory.selectFrom(customer)
+  .where(customer.firstName.eq("Bob"))
+  .fetchOne();
+```
+
+[Spring Data Querydsl Extension](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#core.extensions.querydsl)을 사용하면 `Predicate`를 이용할 수 있다:
+
+```java
+Predicate predicate = user.firstname.equalsIgnoreCase("dave")
+  and(user.lastname.startsWithIgnoreCase("mathews"));
+
+userRepository.findAll(predicate);
+```
+
 ## JPA와 MyBatis
 
 [.net에서 java로 건너와 (i)mybatis만 쓰다가 JPA란걸 해보고 있는데 큰 장점이 와닿지가 않습니다. - 한국 스프링 사용자 모임](https://www.facebook.com/groups/springkorea/permalink/2803698513075093/)
