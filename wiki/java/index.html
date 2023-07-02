@@ -125,6 +125,9 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><a href="#jpa">JPA</a></p>
 <ul>
 <li>
+<p><a href="#db%EC%97%90-%EC%BF%BC%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95">DB에 쿼리하는 방법</a></p>
+</li>
+<li>
 <p><a href="#jpa%EC%99%80-mybatis">JPA와 MyBatis</a></p>
 </li>
 <li>
@@ -285,6 +288,33 @@ querydsl-jpa가 entity로부터 생성한 q-class를 함께 사용할 수 없다
 <p>중첩 클래스에는 두 가지 종류가 있다. static이 아닌 중첩 클래스는 <strong>inner class</strong>, static으로 선언된 중첩 클래스는 <strong>static nested class</strong>.<br>
 따라서 static이면서 inner class는 없다.</p>
 <h1 id="jpa" style="position:relative;"><a href="#jpa" aria-label="jpa permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JPA</h1>
+<h2 id="db에-쿼리하는-방법" style="position:relative;"><a href="#db%EC%97%90-%EC%BF%BC%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="db에 쿼리하는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DB에 쿼리하는 방법</h2>
+<p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods"><strong>Query Methods</strong></a></p>
+<pre><code class="language-java">public interface UserRepository extends Repository&#x3C;User, Long> {
+  List&#x3C;User> findByEmailAddressAndLastname(String emailAddress, String lastname);
+}
+</code></pre>
+<p>간단한 쿼리를 작성하는데 적합하다. 메서드 이름으로 쿼리를 작성한다.</p>
+<blockquote>
+<p>Although getting a query derived from the method name is quite convenient, one might face the situation in which either the method name parser does not support the keyword one wants to use or the method name would get unnecessarily ugly. So you can either use JPA named queries through a naming convention (see Using JPA Named Queries for more information) or rather annotate your query method with @Query</p>
+</blockquote>
+<p>길어지면 보기 어려울 수 있으므로 Named Query 또는 <code>@Query</code>를 사용을 권장한다.</p>
+<p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.at-query"><code>@Query</code></a></p>
+<pre><code class="language-java">@Query("SELECT u FROM User u WHERE u.status = 1")
+Collection&#x3C;User> findAllActiveUsers();
+</code></pre>
+<p><a href="http://querydsl.com/static/querydsl/latest/reference/html/"><strong>Querydsl</strong></a></p>
+<pre><code class="language-java">QCustomer customer = QCustomer.customer;
+Customer bob = queryFactory.selectFrom(customer)
+  .where(customer.firstName.eq("Bob"))
+  .fetchOne();
+</code></pre>
+<p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#core.extensions.querydsl">Spring Data Querydsl Extension</a>을 사용하면 <code>Predicate</code>를 이용할 수 있다:</p>
+<pre><code class="language-java">Predicate predicate = user.firstname.equalsIgnoreCase("dave")
+  and(user.lastname.startsWithIgnoreCase("mathews"));
+
+userRepository.findAll(predicate);
+</code></pre>
 <h2 id="jpa와-mybatis" style="position:relative;"><a href="#jpa%EC%99%80-mybatis" aria-label="jpa와 mybatis permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JPA와 MyBatis</h2>
 <p><a href="https://www.facebook.com/groups/springkorea/permalink/2803698513075093/">.net에서 java로 건너와 (i)mybatis만 쓰다가 JPA란걸 해보고 있는데 큰 장점이 와닿지가 않습니다. - 한국 스프링 사용자 모임</a></p>
 <blockquote>
