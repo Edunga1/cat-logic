@@ -878,3 +878,18 @@ DI 라이브러리 사용하지 않고 이상적인 코드를 작성하려고 �
 > b. create a global connection pool and pass that to various redis instances throughout your code.
 
 [google groups에서 제작자의 원문](https://groups.google.com/g/redis-db/c/m9k2DN7GX-M/m/5i5HtXkbeBYJ?pli=1)을 볼 수 있다.
+
+# Django Web Framework
+
+## `OneToOneField` vs `ForeignKeyField`
+
+둘 다 related_name으로 역참조 할 수 있지만, `ForeignKey` 는 `QuerySet`을 반환하므로 `None` 체크를 하지 않아도 된다.
+반면에 `OneToOneField`는 `RelatedObjectDoesNotExist` 예외가 발생한다.
+
+따라서 좀 더 유연한 `ForeignKey` 를 사용하려고 했지만, `ForeignKey` + `unique` 또는 `primary_key` 속성을 사용하면 서버 시작 시 `Setting unique=True on a ForeignKey has the same effect as using a OneToOneField` warning을 출력한다.
+
+이 주의 문구에 대해서 이미 [djangoproject.com](http://djangoproject.com)에 보고되어 있다.
+
+[Misleading Warning "HINT: ForeignKey(unique=True) is usually better served by a OneToOneField."](https://code.djangoproject.com/ticket/26044)
+
+답변은 "설정을 통해 주의 문구를 감춰라" 라는 뉘앙스라 매우 불편한 부분.
