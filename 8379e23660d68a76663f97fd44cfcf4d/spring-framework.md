@@ -48,6 +48,84 @@ header 매핑.
 
 wildcard를 사용한 경우 `text/plain` `text/html` 모두 매핑한다.
 
+# Test
+
+# Transactional Test
+
+통합 테스트에서 teardown 시점에 트랜잭션을 롤백하는 방법은 편리해서 자주 사용하는 방법이다.
+
+SpringBootTest에서는 `@Transactional`을 사용하여 테스트 후에 롤백할 수 있다:
+
+```kotlin
+@Import(TestClientConfig::class)
+@ExtendWith(SpringExtension::class)
+@AutoConfigureWebTestClient
+@SpringBootTest
+@Transactional
+class UserAddressTest {
+  @Autowired
+  lateinit var userAddressRepository: UserAddressRepository
+
+  @BeforeEach
+  fun prepare() {
+    userAddressRepository.save(UserAddress(uid = 1234, address1 = "서울시"))
+  }
+
+  @Test
+  fun test1() {
+    assertThat(userAddressRepository.count()).isEqualTo(1)
+  }
+
+  @Test
+  fun test2() {
+    assertThat(userAddressRepository.count()).isEqualTo(1)
+  }
+}
+```
+
+하지만 `@Nested` 클래스에서는 롤백되지 않는다:
+
+```kotlin
+@Import(TestClientConfig::class)
+@ExtendWith(SpringExtension::class)
+@AutoConfigureWebTestClient
+@SpringBootTest
+@Transactional
+class DescribeShippingAddressDetailAAA {
+  @Autowired
+  lateinit var userAddressRepository: UserAddressRepository
+
+  @BeforeEach
+  fun prepare() {
+    userAddressRepository.save(UserAddress(uid = 1234, address1 = "서울시 구로구 구로동"))
+  }
+
+  @Nested
+  inner class Context {
+    @Test
+    fun test1() {
+      assertThat(userAddressRepository.count()).isEqualTo(1)
+    }
+
+    @Test
+    fun test2() {
+      assertThat(userAddressRepository.count()).isEqualTo(1)
+    }
+  }
+}
+```
+
+`@Nested`에서 롤백되지 않는 것은 [예상 가능한 범위](https://stackoverflow.com/questions/44203244/transaction-roll-back-is-not-working-in-test-case-in-nested-class-of-junit5)라고
+Spring TestContext Framework 개발자가 말한다:
+
+> This is to be expected: the Spring TestContext Framework has never supported "inheritance" for nested test classes.
+
+다만 이를 지원할 수 있도록 작업한 모양이다.
+[SPR-15366](https://jira.spring.io/browse/SPR-15366) 이슈에서 `@Nested`에 대한 처리를 진행했다.
+Spring 5.3의 마일스톤에 포함되어 있다.
+
+이 작업이 [@NestedTestConfiguration](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-junit-jupiter.html#integration-testing-annotations-nestedtestconfiguration)에 대한 내용으로 보인다.
+
 # Spring CLI
 
 Installation(Homebrew):
