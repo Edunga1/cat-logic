@@ -209,6 +209,21 @@ Supported dependencies
 
 의존성을 추가하려면 `--dependencies=actuator,webflux`와 같이 옵션을 추가한다.
 
+# Troubleshooting
+
+## IntelliJ에서 Properties의 선언부를 찾을 수 없는 경우
+
+`@ConfigurationProperties(prefix="foo.bar")`가 선언된 클래스가 있음에도 `application.yml`에서 선언부를 찾지 못하고,
+`Cannot resolve configuration property 'foo.bar'` 경고가 출력되는 문제. 서버 시작은 잘 된다.
+
+`org.springframework.boot:spring-boot-configuration-processor` 의존성을 추가하고, `gradle compileJava`를 실행하면 된다.
+
+gradle(kts) 예시:
+
+```gradle
+kapt("org.springframework.boot:spring-boot-configuration-processor")
+```
+
 # Reference
 
 Spring CLI:\
