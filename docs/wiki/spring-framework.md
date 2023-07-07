@@ -1,5 +1,7 @@
 # Spring framework
 
+[Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/index.html)
+
 # WebClient 첫 요청이 느린 문제
 
 상황: 서버 시작 직후 다른 서버의 API를 호출하는 내 API가 느려서 클라이언트에서 타임아웃이 자주 발생함.\
@@ -127,6 +129,41 @@ Spring TestContext Framework 개발자가 말한다:
 Spring 5.3의 마일스톤에 포함되어 있다.
 
 이 작업이 [@NestedTestConfiguration](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-junit-jupiter.html#integration-testing-annotations-nestedtestconfiguration)에 대한 내용으로 보인다.
+
+## Application Properties
+
+https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
+
+Spring Boot는 `application.properties`, `application.yaml`, 환경변수, command-line 인자로부터 설정값을 받을 수 있다.
+
+`@configurationProperties`가 설정된 클래스에 매핑해 주는데 [Relaxed Binding](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding)을 사용한다.
+
+매우 관대한 규칙으로 property에 binding 하는데, [Relaxed Binding 2.0 Github Wiki](https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0)에 그 규칙을 설명하고 있다.
+
+예를들어 다음 설정은 모두 같은 것을 의미한다:
+
+```
+spring.jpa.database-platform=mysql
+spring.jpa.databasePlatform=mysql
+spring.JPA.database_platform=mysql
+```
+
+공식적으로 추천하는 포맷은 kebab-case를 사용하는 것이다:
+
+> We recommend that properties are stored in lowercase kabab format. i.e. `my.property-name=foo`.
+
+`@ConfigurationProperties` 예시. 생성자를 통해서 주입받는다.
+
+```kotlin
+@ConstructorBinding
+@ConfigurationProperties(prefix = "foo.bar")
+class MyConfig(val baz: String)
+
+// ConstructorBinding 사용하려면 EnableConfigurationProperties가 필요
+@EnableConfigurationProperties(MyConfig::class)
+@SpringBootApplication
+class Application
+```
 
 # Spring CLI
 
