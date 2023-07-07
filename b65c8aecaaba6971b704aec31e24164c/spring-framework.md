@@ -18,7 +18,9 @@ https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initial
 3. 내장된 transport 라이브러리들
 4. 보안과 관련된 라이브러리들
 
-# `RequestMapping` Request mapping narrowing
+# Features
+
+## `RequestMapping` Request mapping narrowing
 
 [RequestMapping - Spring API](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html)
 
@@ -26,13 +28,13 @@ https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initial
 
 `@GetMapping` `@PostMapping` 사용하여 우선 method로 선택 범위를 좁힐 수 있다.
 
-## parameters
+### parameters
 
-### `value` (alias of `path`)
+#### `value` (alias of `path`)
 
 가장 기본적인 인자로, url path를 매핑한다. 기본 값은 빈 문자열이므로 `/` 와 같다.
 
-### `params`
+#### `params`
 
 query-string 매핑.
 
@@ -40,7 +42,7 @@ query-string 매핑.
 * `myParam!=myValue` 위의 반대. 특정 값이 아닌 경우만 매핑한다.
 * `!myParam` `myParam` 파라미터 자체가 제공된 경우만 매핑한다.
 
-### `headers`
+#### `headers`
 
 header 매핑.
 
@@ -48,9 +50,9 @@ header 매핑.
 
 wildcard를 사용한 경우 `text/plain` `text/html` 모두 매핑한다.
 
-# Test
+## Test
 
-# Transactional Test
+### Transactional Test
 
 통합 테스트에서 teardown 시점에 트랜잭션을 롤백하는 방법은 편리해서 자주 사용하는 방법이다.
 
