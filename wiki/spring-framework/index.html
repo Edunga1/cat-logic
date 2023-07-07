@@ -89,6 +89,9 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li><a href="#transactional-test">Transactional Test</a></li>
 </ul>
 </li>
+<li>
+<p><a href="#application-properties">Application Properties</a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -107,6 +110,7 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><a href="#reference">Reference</a></p>
 </li>
 </ul></div></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="spring-framework" style="position:relative;"><a href="#spring-framework" aria-label="spring framework permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spring framework</h1>
+<p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/index.html">Spring Boot Reference Documentation</a></p>
 <h1 id="webclient-첫-요청이-느린-문제" style="position:relative;"><a href="#webclient-%EC%B2%AB-%EC%9A%94%EC%B2%AD%EC%9D%B4-%EB%8A%90%EB%A6%B0-%EB%AC%B8%EC%A0%9C" aria-label="webclient 첫 요청이 느린 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WebClient 첫 요청이 느린 문제</h1>
 <p>상황: 서버 시작 직후 다른 서버의 API를 호출하는 내 API가 느려서 클라이언트에서 타임아웃이 자주 발생함.<br>
 해결: netty http client의 <code>warmup</code> + 사용자 진입 전 미리 타겟 서버 API 호출</p>
@@ -209,6 +213,30 @@ Spring TestContext Framework 개발자가 말한다:</p>
 <a href="https://jira.spring.io/browse/SPR-15366">SPR-15366</a> 이슈에서 <code>@Nested</code>에 대한 처리를 진행했다.
 Spring 5.3의 마일스톤에 포함되어 있다.</p>
 <p>이 작업이 <a href="https://docs.spring.io/spring-framework/reference/testing/annotations/integration-junit-jupiter.html#integration-testing-annotations-nestedtestconfiguration">@NestedTestConfiguration</a>에 대한 내용으로 보인다.</p>
+<h2 id="application-properties" style="position:relative;"><a href="#application-properties" aria-label="application properties permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Application Properties</h2>
+<p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html">https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html</a></p>
+<p>Spring Boot는 <code>application.properties</code>, <code>application.yaml</code>, 환경변수, command-line 인자로부터 설정값을 받을 수 있다.</p>
+<p><code>@configurationProperties</code>가 설정된 클래스에 매핑해 주는데 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding">Relaxed Binding</a>을 사용한다.</p>
+<p>매우 관대한 규칙으로 property에 binding 하는데, <a href="https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0">Relaxed Binding 2.0 Github Wiki</a>에 그 규칙을 설명하고 있다.</p>
+<p>예를들어 다음 설정은 모두 같은 것을 의미한다:</p>
+<pre><code>spring.jpa.database-platform=mysql
+spring.jpa.databasePlatform=mysql
+spring.JPA.database_platform=mysql
+</code></pre>
+<p>공식적으로 추천하는 포맷은 kebab-case를 사용하는 것이다:</p>
+<blockquote>
+<p>We recommend that properties are stored in lowercase kabab format. i.e. <code>my.property-name=foo</code>.</p>
+</blockquote>
+<p><code>@ConfigurationProperties</code> 예시. 생성자를 통해서 주입받는다.</p>
+<pre><code class="language-kotlin">@ConstructorBinding
+@ConfigurationProperties(prefix = "foo.bar")
+class MyConfig(val baz: String)
+
+// ConstructorBinding 사용하려면 EnableConfigurationProperties가 필요
+@EnableConfigurationProperties(MyConfig::class)
+@SpringBootApplication
+class Application
+</code></pre>
 <h1 id="spring-cli" style="position:relative;"><a href="#spring-cli" aria-label="spring cli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spring CLI</h1>
 <p>Installation(Homebrew):</p>
 <pre><code class="language-bash">$ brew tap spring-io/tap
