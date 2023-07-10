@@ -46,3 +46,31 @@ sourceSets.main.get().java.srcDirs(
 ```
 
 `build.gradle.kts`에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.
+
+# DataGrip
+
+## keymap
+
+| name                                     | shortcut | note                                                 |
+|------------------------------------------|----------|------------------------------------------------------|
+| Database Tools and SQL -> Attach Session | opt + o  | staging, prod, local 등 자주 전환하는 경우 유용하다. |
+| Database Tools and SQL -> Transpose      | opt + t  | 열과 행 반전. 컬럼이 많은 경우 보기 편리             |
+| Other -> Pin Active Tab                  | opt + p  | 탭 고정. 탭 여러개를 비교를 자주할 때 유용           |
+
+```xml
+<keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="Console.Jdbc.ChooseSession">
+    <keyboard-shortcut first-keystroke="alt o" />
+  </action>
+  <action id="Console.TableResult.Transpose">
+    <keyboard-shortcut first-keystroke="alt t" />
+  </action>
+  <action id="PinActiveEditorTab" />
+  <action id="PinActiveTabToggle">
+    <keyboard-shortcut first-keystroke="alt p" />
+  </action>
+  <action id="PinToolwindowTab" />
+</keymap>
+```
+
+위 설정을 `~/Library/Application Support/JetBrains/DataGrip{version}/keymaps`에 두면 keymap 목록에 등록된다.
