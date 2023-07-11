@@ -147,6 +147,18 @@ AWS 공식 예제는 [KCL 2.0 for Java](https://docs.aws.amazon.com/streams/late
 내 localstack + consumer 예제: https://github.com/Edunga1/practice-localstack-kinesis \
 docker-compose로 localstack + consumer를 실행하고, aws cli로 `put-record`를 통해 데이터를 생성하도록 했다.
 
+**push model and pull model**
+
+https://docs.aws.amazon.com/streams/latest/dev/developing-consumers-with-sdk.html#kinesis-using-sdk-java-get-data
+
+> The Kinesis Data Streams APIs include the getShardIterator and getRecords methods that you can invoke to retrieve records from a data stream. This is the pull model, where your code draws data records directly from the shards of the data stream.
+
+Kinesis Data Stream API의 `getShardIterator`와 `getRecords`를 사용하면 pull model로 데이터를 가져올 수 있다.
+
+> We recommend that you use the record processor support provided by KCL to retrieve records from your data streams. This is the push model, where you implement the code that processes the data.
+
+KCL의 record processor를 사용하면 push model로 데이터를 가져올 수 있다.
+
 ## 자바 외 언어로 Kinesis 앱 개발
 
 Node.js consumer를 만든다면 [KCL for Node.js](https://github.com/awslabs/amazon-kinesis-client-nodejs/)를 사용한다.

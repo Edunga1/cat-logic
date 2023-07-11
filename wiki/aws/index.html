@@ -203,6 +203,16 @@ Producer 라이브러리를 KPL(Kinesis Producer Library)라고 부른다.
 <a href="https://github.com/awslabs/amazon-kinesis-client/blob/master/amazon-kinesis-client/src/test/java/software/amazon/kinesis/utils/TestRecordProcessor.java">amazon-kinesis-client 저장소의 테스트 코드</a>가 있다.</p>
 <p>내 localstack + consumer 예제: <a href="https://github.com/Edunga1/practice-localstack-kinesis">https://github.com/Edunga1/practice-localstack-kinesis</a> <br>
 docker-compose로 localstack + consumer를 실행하고, aws cli로 <code>put-record</code>를 통해 데이터를 생성하도록 했다.</p>
+<p><strong>push model and pull model</strong></p>
+<p><a href="https://docs.aws.amazon.com/streams/latest/dev/developing-consumers-with-sdk.html#kinesis-using-sdk-java-get-data">https://docs.aws.amazon.com/streams/latest/dev/developing-consumers-with-sdk.html#kinesis-using-sdk-java-get-data</a></p>
+<blockquote>
+<p>The Kinesis Data Streams APIs include the getShardIterator and getRecords methods that you can invoke to retrieve records from a data stream. This is the pull model, where your code draws data records directly from the shards of the data stream.</p>
+</blockquote>
+<p>Kinesis Data Stream API의 <code>getShardIterator</code>와 <code>getRecords</code>를 사용하면 pull model로 데이터를 가져올 수 있다.</p>
+<blockquote>
+<p>We recommend that you use the record processor support provided by KCL to retrieve records from your data streams. This is the push model, where you implement the code that processes the data.</p>
+</blockquote>
+<p>KCL의 record processor를 사용하면 push model로 데이터를 가져올 수 있다.</p>
 <h2 id="자바-외-언어로-kinesis-앱-개발" style="position:relative;"><a href="#%EC%9E%90%EB%B0%94-%EC%99%B8-%EC%96%B8%EC%96%B4%EB%A1%9C-kinesis-%EC%95%B1-%EA%B0%9C%EB%B0%9C" aria-label="자바 외 언어로 kinesis 앱 개발 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>자바 외 언어로 Kinesis 앱 개발</h2>
 <p>Node.js consumer를 만든다면 <a href="https://github.com/awslabs/amazon-kinesis-client-nodejs/">KCL for Node.js</a>를 사용한다.</p>
 <p>주의할 점은 자바 외 언어로 제공하는 KCL은 모두 <a href="https://github.com/awslabs/amazon-kinesis-client">KCL for JAVA</a>을 사용하기 때문에
