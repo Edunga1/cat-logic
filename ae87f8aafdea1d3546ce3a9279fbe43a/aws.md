@@ -138,7 +138,7 @@ Producer 라이브러리를 KPL(Kinesis Producer Library)라고 부른다.
 
 [KCL 개념 - AWS Document](https://docs.aws.amazon.com/streams/latest/dev/shared-throughput-kcl-consumers.html#shared-throughput-kcl-consumers-concepts)
 
-KCL은 Shard를 추적하기 위해 DynamoDB를 사용한다.
+KCL은 Shard의 체크포인트를 표시하기 위해 DynamoDB를 사용한다.
 따라서 Kinesis, DynamoDB 두 개의 AWS 서비스를 사용해야 한다.
 
 AWS 공식 예제는 [KCL 2.0 for Java](https://docs.aws.amazon.com/streams/latest/dev/kcl2-standard-consumer-java-example.html)나
@@ -158,6 +158,27 @@ Kinesis Data Stream API의 `getShardIterator`와 `getRecords`를 사용하면 pu
 > We recommend that you use the record processor support provided by KCL to retrieve records from your data streams. This is the push model, where you implement the code that processes the data.
 
 KCL의 record processor를 사용하면 push model로 데이터를 가져올 수 있다.
+
+## 개념
+
+### fan-out
+
+**shared fan-out, enhanced fan-out**
+
+consumer의 종류에는 shared fan-out과 enhanced fan-out 두 가지가 있다.
+
+[Q: What is a consumer, and what are different consumer types offered by Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams FAQs](https://aws.amazon.com/kinesis/data-streams/faqs/#Reading_and_processing_data_from_Kinesis_data_streams)
+
+> The shared fan-out consumers all share a shard’s 2 MB/second of read throughput and five transactions per second limits and require the use of the GetRecords API
+
+shared fan-out은 컨슈머간 공유되며, 초당 2 MB, 초당 5개의 transaction으로 제한된다.
+transaction은 `GetRecrods` API 호출을 의미하는 거 같다.
+
+> An enhanced fan-out consumer gets its own 2 MB/second allotment of read throughput, allowing multiple consumers to read data from the same stream in parallel, without contending for read throughput with other consumers.
+
+enhanced fan-out은 consumer간 할당량 경쟁하지 않는다.
+
+enhanced fan-out는 seoul region 기준 [1GB 당 0.062 비용이 든다](https://aws.amazon.com/kinesis/data-streams/pricing/)고 한다.
 
 ## 자바 외 언어로 Kinesis 앱 개발
 
