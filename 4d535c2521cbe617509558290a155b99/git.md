@@ -1,5 +1,16 @@
 # Git
 
+Git은 2005년 4월 3일에 리누스 토발즈가 개발을 시작해서,
+17일 후인 4월 20일에 리눅스 2.6.12-rc3 커널을 [Git으로 공개](https://patrickcollison.com/fast)했다.
+
+[2.6.12-rc3의 릴리즈 메일](https://lkml.iu.edu/hypermail/linux/kernel/0504.2/0784.html)에 Git에 대해서 언급된다.
+
+> Ok,
+> you know what the subject line means by now, but this release is a bit
+> different from the usual ones, for obvious reasons. It's the first in a
+> _long_ time that I've done without using BK, and it's the first one ever
+> that has been built up completely with "git".
+
 # 명령어 자동완성하기
 
 서버 터미널에서 `git chec`까지만 타이핑하고 tab 키를 누르면 checkout이 자동 완성 되었다.
