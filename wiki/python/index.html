@@ -148,6 +148,7 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <p><a href="#django-web-framework">Django Web Framework</a></p>
 <ul>
 <li><a href="#onetoonefield-vs-foreignkeyfield"><code>OneToOneField</code> vs <code>ForeignKeyField</code></a></li>
+<li><a href="#%EB%B3%B5%ED%95%A9%ED%82%A4%EB%A5%BC-foreignkey%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%B0%BE%EA%B8%B0">복합키를 ForeignKey로 사용하는 방법 찾기</a></li>
 </ul>
 </li>
 </ul></div><a href="../language-server-protocol" style="font-size:0.5em;margin-right:0.5em">language-server-protocol</a><a href="../nodejs" style="font-size:0.5em;margin-right:0.5em">nodejs</a><a href="../python" style="font-size:0.5em;margin-right:0.5em">python</a><a href="../spring-framework" style="font-size:0.5em;margin-right:0.5em">spring-framework</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="python" style="position:relative;"><a href="#python" aria-label="python permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Python</h1>
@@ -879,7 +880,7 @@ subscribe에서 on_complete에 메시지를 넣어도 출력되지 않았다.</p
 <h2 id="redis-connection을-전역-생성-vs-요청마다-생성" style="position:relative;"><a href="#redis-connection%EC%9D%84-%EC%A0%84%EC%97%AD-%EC%83%9D%EC%84%B1-vs-%EC%9A%94%EC%B2%AD%EB%A7%88%EB%8B%A4-%EC%83%9D%EC%84%B1" aria-label="redis connection을 전역 생성 vs 요청마다 생성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>redis connection을 전역 생성 vs 요청마다 생성</h2>
 <p>SO <a href="https://stackoverflow.com/questions/18022767/python-redis-connection-should-be-closed-on-every-request-flask/18024593">Python Redis connection should be closed on every request? (flask)</a> 질문이다.</p>
 <p>redis connection을 전역으로 하나만 생성해서 필요한 곳에서 import 하여 사용할 지, 매 요청마다 생성하고 닫을 지에 대한 질문이다.</p>
-<p>전자처럼 Top level 객체는 <a href="/cat-logic/e8e9d5f4b5cfba124abe6cd542700d33/nodejs.md">Node.js</a>나 <a href="/cat-logic/216b297961ec1d60ae3411b3de0457a9/python.md">python</a>에서는 일반적인 방법이다.
+<p>전자처럼 Top level 객체는 <a href="/cat-logic/e8e9d5f4b5cfba124abe6cd542700d33/nodejs.md">Node.js</a>나 <a href="/cat-logic/e3d44c25a572d25bc70a0a1ab4a42c29/python.md">python</a>에서는 일반적인 방법이다.
 <a href="/cat-logic/4c032c3aa92485edb96e7db82f1e844c/spring-framework.md">Spring Framework</a>의 경우 주입에 대한 문제에서 자유로우니 Bean으로 생성하고 프레임워크를 통해 주입받는 것이 일반적이다.
 그래서 node나 python을 처음 접하는 경우 의존 문제에 대해 난해할 수 있다.
 DI 라이브러리 사용하지 않고 이상적인 코드를 작성하려고 하면 인스턴스 생성하다가 지치게 된다.</p>
@@ -897,7 +898,18 @@ b. create a global connection pool and pass that to various redis instances thro
 <p>따라서 좀 더 유연한 <code>ForeignKey</code> 를 사용하려고 했지만, <code>ForeignKey</code> + <code>unique</code> 또는 <code>primary_key</code> 속성을 사용하면 서버 시작 시 <code>Setting unique=True on a ForeignKey has the same effect as using a OneToOneField</code> warning을 출력한다.</p>
 <p>이 주의 문구에 대해서 이미 <a href="http://djangoproject.com">djangoproject.com</a>에 보고되어 있다.</p>
 <p><a href="https://code.djangoproject.com/ticket/26044">Misleading Warning "HINT: ForeignKey(unique=True) is usually better served by a OneToOneField."</a></p>
-<p>답변은 "설정을 통해 주의 문구를 감춰라" 라는 뉘앙스라 매우 불편한 부분.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>답변은 "설정을 통해 주의 문구를 감춰라" 라는 뉘앙스라 매우 불편한 부분.</p>
+<h2 id="복합키를-foreignkey로-사용하는-방법-찾기" style="position:relative;"><a href="#%EB%B3%B5%ED%95%A9%ED%82%A4%EB%A5%BC-foreignkey%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%B0%BE%EA%B8%B0" aria-label="복합키를 foreignkey로 사용하는 방법 찾기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>복합키를 ForeignKey로 사용하는 방법 찾기</h2>
+<p>아직 해결하지 못했다.</p>
+<p><code>source_type='order', source_id=1234</code>와 같이 복합키의 <code>source_type</code>에 따라 관계되는 테이블이 달라진다.
+<code>source_id</code>는 관계 대상의 ID다.</p>
+<p>방법을 찾지 못해서 직접 prefetch하는 함수를 만드는 등, 복잡하게 처리하고 있다.</p>
+<p><a href="https://pypi.org/project/django-composite-foreignkey/">django-composite-foreignkey</a></p>
+<p>2년동안 관리되지 않은 저장소. 이거 사용할 수 있을까?</p>
+<p><a href="https://stackoverflow.com/questions/12716970/get-contenttype-id-in-django-for-generic-relation">Get ContentType id in Django for generic relation</a></p>
+<p><code>GenericForeignKey</code>와 <code>ForeignKey(ContentType) + choices</code>를 사용하면 될까?</p>
+<p><code>source_type</code> 이 <code>trade | order</code>로 테이블 이름 조합으로만 저장된다.
+원하는 포맷으로 저장할 수 있어야 한다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
