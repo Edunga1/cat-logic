@@ -893,3 +893,23 @@ DI 라이브러리 사용하지 않고 이상적인 코드를 작성하려고 �
 [Misleading Warning "HINT: ForeignKey(unique=True) is usually better served by a OneToOneField."](https://code.djangoproject.com/ticket/26044)
 
 답변은 "설정을 통해 주의 문구를 감춰라" 라는 뉘앙스라 매우 불편한 부분.
+
+## 복합키를 ForeignKey로 사용하는 방법 찾기
+
+아직 해결하지 못했다.
+
+`source_type='order', source_id=1234`와 같이 복합키의 `source_type`에 따라 관계되는 테이블이 달라진다.
+`source_id`는 관계 대상의 ID다.
+
+방법을 찾지 못해서 직접 prefetch하는 함수를 만드는 등, 복잡하게 처리하고 있다.
+
+[django-composite-foreignkey](https://pypi.org/project/django-composite-foreignkey/)
+
+2년동안 관리되지 않은 저장소. 이거 사용할 수 있을까?
+
+[Get ContentType id in Django for generic relation](https://stackoverflow.com/questions/12716970/get-contenttype-id-in-django-for-generic-relation)
+
+`GenericForeignKey`와 `ForeignKey(ContentType) + choices`를 사용하면 될까?
+
+`source_type` 이 `trade | order`로 테이블 이름 조합으로만 저장된다.
+원하는 포맷으로 저장할 수 있어야 한다.
