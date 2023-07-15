@@ -403,3 +403,23 @@ vim으로 작업하는 경우에는 발생하지 않는다. 오직 커밋 메시
 `echo "a" >> a && git add -A && git commit -v` 반복하여 테스트하는데,
 첫 라인을 띄워놓고 둘째 라인부터 메시지를 작성하면 발생할 확률이 높다.
 또한 바로 다음 커밋에서도 같은 방식을 사용하면 거의 무조건 발생한다.
+
+**진짜 해치웠나?**
+
+Startify의 세션 저장 기능 때문에 발생하는 것으로 보인다.
+
+```vim
+function! GetUniqueSessionName()
+  let path = fnamemodify(getcwd(), ':~:t')
+  let path = empty(path) ? 'no-project' : path
+  return substitute(path, '/', '-', 'g')
+endfunction
+
+autocmd VimLeavePre * execute 'SSave! ' . GetUniqueSessionName()
+```
+
+vim을 종료할 때 세션을 저장하고, Startify의 시작 화면에 Session 목록을 노출하도록 설정했었다.
+이 설정을 제거하니까 몇 번의 테스트에도 커밋 실패가 발생하지 않았다.
+`SSave`의 문제인지, `GetUniqueSessionName`의 문제인지는 모르겠다.
+
+제거 커밋: https://github.com/Edunga1/dotfiles/commit/9998b7c454e321d48d326e20da56af2328055a46
