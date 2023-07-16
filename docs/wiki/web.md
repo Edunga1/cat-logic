@@ -66,3 +66,21 @@ https://help.canary.tools/hc/en-gb/articles/360021010477-How-do-I-create-a-Slow-
 
 사용자 세션에 따라 달라지는 값은 아니다.
 시크릿 탭에서 열어도 같은 값을 가진다. 따라서 사용자마다 생성하는 것은 아닌것으로 보인다.
+
+# Device Orientation API
+
+디바이스의 방향에 대한 정보를 제공하는 API
+
+Google Chrome의 경우 개발도구 설정 -> More tools -> Sensors에서 디바이스 방향을 조정할 수 있다.
+3D 기기 모델로 표현되어 있어서 직관적으로 이해할 수 있다.
+
+x, y, z 축에 대한 각도로 표현한다. 각각 alpha, beta, gamma 값으로 제공된다.
+
+```js
+window.addEventListener("deviceorientation", onDeviceOrientation)
+
+fucntion onDeviceOrientation(event) {
+  const { alpha, beta, gamma } = event
+  console.log(alpha, beta, gamma)
+}
+```
