@@ -78,6 +78,129 @@ end
 [Arrange, Act, Assert](http://wiki.c2.com/?ArrangeActAssert)패턴에 따라, 동일한 동작에 대한 여러 검증을 볼 수 있어서 좋다는 것.
 그러나 에러 문구가 상세하지 않다는 것은 인지하고 있어야 한다.
 
+# 테스트 코드 작성
+
+## 통합 테스트에서도 mocking하면 편리하다.
+
+spring framework 환경에서 이야기다. django는 pytest의 fixture를 사용하면 편했다.
+
+```kotlin
+@SpringBootTest
+@AutoConfigureMockMvc
+class TalkTradeRequestControllerSendingAddressTest(
+  private val mvc: MockMvc,
+  private val userRepository: UserRepository,
+  private val productClient: StaticProductClient,
+) : DescribeSpec({
+  describe("GET /users/:id/product") {
+    lateinit var user: User
+
+    beforeContainer {
+      user = userRepository.save(/*..*/)
+    }
+    
+    afterContainer {
+      userRepository.deleteAll()
+      productClient.clearTestData()
+    }
+    
+    fun requset(id: Long) = mvc.get("/users/$id/product") {
+        contentType = MediaType.APPLICATION_JSON
+      }
+    
+    context("상품이 있으면") {
+      val product = Product(/*..*/)
+      val subject by lazy { request(user.id) }
+      
+      productClient.putProduct(product)
+      
+      it("응답 코드는 200 OK.") {
+        subject.andExpect { status { isOk() } }
+      }
+    }
+  }
+})
+
+class StaticProductClient : ProductClient {
+    private val products: MutableMap<Long, Product>
+
+    fun putProduct(product: Product) { products[product.userId] = product }
+    fun clearTestData() { products.clear() }
+
+    override fun findProduct(userId: Long): Product? = products[userId]
+}
+
+@Configuration
+class TestProductClientConfig {
+    @Bean
+    fun testProductClient(): ProductClient = StaticProductClient()
+}
+```
+
+mocking 방식 사용하기 전에는 위와같이 테스트용 클라이언트를 만들어서 주입하고,
+통합 테스트 클래스에서 **테스트용 클라이언트**를 주입받아서 운영 코드에서 반환받을 데이터를 넣어주는 형태로 사용했다.
+
+이 방법은 불편한 부분이 있었는데, 필요한 메서드마다 데이터를 넣는 메서드`put~`의 구현이 필요하고,
+Repository의 `deleteAll`과 같이 데이터를 제거하는 메서드`clearTestData`를 만들 필요가 있었다는 점이다.
+
+유닛 테스트에서도 마찬가지로 mockito나 mockk를 사용하지 않는다면 이런 불편함이 있을 것이다.
+
+그래서 통합테스트에서도 mock 객체를 주입하였다.
+
+```kotlin
+@SpringBootTest
+@AutoConfigureMockMvc
+class TalkTradeRequestControllerSendingAddressTest(
+  private val mvc: MockMvc,
+  private val userRepository: UserRepository,
+  // private val productClient: StaticProductClient,
+  private val productClient: ProductClient,
+) : DescribeSpec({
+  describe("GET /users/:id/product") {
+    lateinit var user: User
+
+    beforeContainer {
+      user = userRepository.save(/*..*/)
+      clearAllMocks()
+    }
+    
+    afterContainer {
+      userRepository.deleteAll()
+      // productClient.clearTestData()
+    }
+    
+    fun requset(id: Long) = mvc.get("/users/$id/product") {
+        contentType = MediaType.APPLICATION_JSON
+      }
+    
+    context("상품이 있으면") {
+      val product = Product(/*..*/)
+      val subject by lazy { request(user.id) }
+      
+      // productClient.putProduct(product)
+      every { productClient.findProduct(any()) } returns product
+      
+      it("응답 코드는 200 OK.") {
+        subject.andExpect { status { isOk() } }
+      }
+    }
+  }
+})
+
+@Configuration
+class TestProductClientConfig {
+    @Bean
+    fun testProductClient(): ProductClient = mockk(relaxed=true)
+}
+```
+
+위 코드처럼 변경함으로써 편리한 부분이 있었다:
+
+- `relaxed=true`로 한 이유는 `null` 반환하는 메서드인 경우 굳이 mocking 하지 않아도 되서 편하기 때문이다. 더 제한하고 싶다면 사용하지 않아도 좋아 보인다.
+- 호출 검증(mockk `verify {}`)도 가능해져서, 불필요하게 마지막 호출 정보를 `StaticProductClient`에 저장한다거나 할 필요가 없다.
+- `clearTestData` 구현하는 대신 mock 라이브러리의 초기화 함수`clearAllMocks()`를 사용할 수 있다.
+- 테스트마다 초기화함수 호출하지 않고, global tear down hook에서 초기화 함수를 호출하면 편하다.
+
 # A/B Test
 
 다른 주제와 같은 분류가 아닌 거 같지만, 일단 여기에 둔다.
