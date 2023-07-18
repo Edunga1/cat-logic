@@ -167,22 +167,22 @@ class TalkTradeRequestControllerSendingAddressTest(
     beforeContainer {
       user = userRepository.save(/*..*/)
     }
-    
+
     afterContainer {
       userRepository.deleteAll()
       productClient.clearTestData()
     }
-    
+
     fun requset(id: Long) = mvc.get("/users/$id/product") {
-        contentType = MediaType.APPLICATION_JSON
-      }
-    
+       contentType = MediaType.APPLICATION_JSON
+    }
+
     context("상품이 있으면") {
       val product = Product(/*..*/)
       val subject by lazy { request(user.id) }
-      
+
       productClient.putProduct(product)
-      
+
       it("응답 코드는 200 OK.") {
         subject.andExpect { status { isOk() } }
       }
@@ -226,23 +226,23 @@ class TalkTradeRequestControllerSendingAddressTest(
       user = userRepository.save(/*..*/)
       clearAllMocks()
     }
-    
+
     afterContainer {
       userRepository.deleteAll()
       // productClient.clearTestData()
     }
-    
+
     fun requset(id: Long) = mvc.get("/users/$id/product") {
-        contentType = MediaType.APPLICATION_JSON
-      }
-    
+      contentType = MediaType.APPLICATION_JSON
+    }
+
     context("상품이 있으면") {
       val product = Product(/*..*/)
       val subject by lazy { request(user.id) }
-      
+
       // productClient.putProduct(product)
       every { productClient.findProduct(any()) } returns product
-      
+
       it("응답 코드는 200 OK.") {
         subject.andExpect { status { isOk() } }
       }
