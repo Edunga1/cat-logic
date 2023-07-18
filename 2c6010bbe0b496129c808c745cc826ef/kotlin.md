@@ -224,3 +224,11 @@ html {
     body { ... }
 }
 ```
+
+# Exposed
+
+Jetbrains에서 만든 ORM 라이브러리.
+
+2023-07-18 [Kakao tech meet 2회](https://tech.kakao.com/2023/07/04/kakao-tech-meet-2/)의 세션 2, *Spring Batch 애플리케이션 성능 향상을 위한 주요 팁*에서 처음 알게 되었다.
+
+DSL로 쿼리를 작성할 수 있고, [Union 쿼리](https://github.com/JetBrains/Exposed/wiki/DSL#union)도 지원한다.
