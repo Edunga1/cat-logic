@@ -78,7 +78,24 @@ end
 [Arrange, Act, Assert](http://wiki.c2.com/?ArrangeActAssert)패턴에 따라, 동일한 동작에 대한 여러 검증을 볼 수 있어서 좋다는 것.
 그러나 에러 문구가 상세하지 않다는 것은 인지하고 있어야 한다.
 
-# 왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?
+# A/B Test
+
+다른 주제와 같은 분류가 아닌 거 같지만, 일단 여기에 둔다.
+
+## VWO
+
+[VWO](https://vwo.com/)는 테스트 및 최적화 플랫폼이다.
+
+이 사이트에 A/B 테스트 기간 계산기라는 페이지가 있다: https://vwo.com/tools/ab-test-duration-calculator/
+
+현재 전환율, 목표로 하는 개선율, 조합 수, 일일 방문자 수, 테스트 대상 비율을 입력하면
+얼마동안 테스트를 진행하면 좋을지 계산해주는 페이지다.
+
+계산 식은 블로그에서 시트로 공개하고 있다: https://vwo.com/blog/ab-test-duration-calculator/
+
+# Scraps
+
+## 왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?
 
 [(Why) is it important that a unit test not test dependencies?](https://softwareengineering.stackexchange.com/questions/65477/why-is-it-important-that-a-unit-test-not-test-dependencies)
 
@@ -94,7 +111,7 @@ Stackexchange의 질문:
 
 될 수 있다면 mock 객체를 전달하는 편이 낫다. 그렇지 않으면 의존성이 반환하는 다양한 경우를 모두 테스트하는 욕구에 빠진다. 의존성의 테스트에서 중복되는 문제도 있다.
 
-# 유닛 테스트에서 상수를 사용하지 마세요.
+## 유닛 테스트에서 상수를 사용하지 마세요.
 
 [Don't use non-test constants in unit tests](https://dev.to/scottshipp/don-t-use-non-test-constants-in-unit-tests-3ej0)
 
@@ -119,7 +136,7 @@ Stackexchange의 질문:
 
 가독성 측면에서도 상수를 테스트에서 사용하지 않는 것이 좋다고 한다.
 
-# 유닛 테스트에서 "DAMP not DRY"는 무엇을 의미하나요?
+## 유닛 테스트에서 "DAMP not DRY"는 무엇을 의미하나요?
 
 SO 질문: https://stackoverflow.com/questions/6453235/what-does-damp-not-dry-mean-when-talking-about-unit-tests
 
@@ -150,18 +167,3 @@ DAMP는 코드를 읽고 이해하는데 필요한 시간을 줄여 유지보수
 테스트 코드를 DRY하면, 모호한 테스트를 만들게 되어 mystery guest가 발생하게 된다.
 
 mystery guest: 테스트를 읽는 사람이 Fixture와 Verification 로직이 테스트 메서드 외부에서 동작하여 이해할 수 없게 되는 것.
-
-# A/B Test
-
-다른 주제와 같은 분류가 아닌 거 같지만, 일단 여기에 둔다.
-
-## VWO
-
-[VWO](https://vwo.com/)는 테스트 및 최적화 플랫폼이다.
-
-이 사이트에 A/B 테스트 기간 계산기라는 페이지가 있다: https://vwo.com/tools/ab-test-duration-calculator/
-
-현재 전환율, 목표로 하는 개선율, 조합 수, 일일 방문자 수, 테스트 대상 비율을 입력하면
-얼마동안 테스트를 진행하면 좋을지 계산해주는 페이지다.
-
-계산 식은 블로그에서 시트로 공개하고 있다: https://vwo.com/blog/ab-test-duration-calculator/
