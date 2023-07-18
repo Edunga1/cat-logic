@@ -307,9 +307,21 @@ lambda 함수의 <a href="https://kotlinlang.org/docs/this-expressions.html">thi
 }
 </code></pre>
 <h1 id="exposed" style="position:relative;"><a href="#exposed" aria-label="exposed permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exposed</h1>
+<p><a href="https://github.com/JetBrains/Exposed">https://github.com/JetBrains/Exposed</a></p>
 <p>Jetbrains에서 만든 ORM 라이브러리.</p>
 <p>2023-07-18 <a href="https://tech.kakao.com/2023/07/04/kakao-tech-meet-2/">Kakao tech meet 2회</a>의 세션 2, <em>Spring Batch 애플리케이션 성능 향상을 위한 주요 팁</em>에서 처음 알게 되었다.</p>
-<p>DSL로 쿼리를 작성할 수 있고, <a href="https://github.com/JetBrains/Exposed/wiki/DSL#union">Union 쿼리</a>도 지원한다.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/kotlin/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>DSL로 쿼리를 작성할 수 있고, <a href="https://github.com/JetBrains/Exposed/wiki/DSL#union">Union 쿼리</a>도 지원한다.</p>
+<p>Exposed issue에 <a href="https://github.com/JetBrains/Exposed/issues/1504">Spring with exposed or jpa?</a>글이 있다.
+Exposed를 사용했는데 JPA 대신 사용한 근거를 찾고싶다는 내용이다.</p>
+<p>JPA와 QueryDSL을 많이 사용했다는 누군가 Kotlin + JPA를 사용하면서 불편한 4가지를 나열했다:</p>
+<ol>
+<li>plugin 없이 동작하지 않음</li>
+<li>Entity를 data class로 사용할 수 없음</li>
+<li>Entity를 불변으로 사용할 수 없음. <code>val</code> 대신 <code>var</code>를 사용해야 함</li>
+<li>도메인 지향인 clean architecture로 개발하면 JPA의 강력한 기능을 사용할 수 없음. <code>spring-data-jpa</code>나 다른 ORM을 사용하면 더 쉽게 사용 가능</li>
+</ol>
+<p>추가로 clean architecture로 개발하면 JPA의 영속 계층의 cache나 dirty-checking을 사용하기 어려웠다고 한다.</p>
+<p>그래서 <code>spring-data-jpa</code> + <code>jooq</code>를 사용하다가, Exposed를 사용중이라고.</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/kotlin/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
