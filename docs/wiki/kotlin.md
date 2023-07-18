@@ -227,8 +227,24 @@ html {
 
 # Exposed
 
+https://github.com/JetBrains/Exposed
+
 Jetbrains에서 만든 ORM 라이브러리.
 
 2023-07-18 [Kakao tech meet 2회](https://tech.kakao.com/2023/07/04/kakao-tech-meet-2/)의 세션 2, *Spring Batch 애플리케이션 성능 향상을 위한 주요 팁*에서 처음 알게 되었다.
 
 DSL로 쿼리를 작성할 수 있고, [Union 쿼리](https://github.com/JetBrains/Exposed/wiki/DSL#union)도 지원한다.
+
+Exposed issue에 [Spring with exposed or jpa?](https://github.com/JetBrains/Exposed/issues/1504)글이 있다.
+Exposed를 사용했는데 JPA 대신 사용한 근거를 찾고싶다는 내용이다.
+
+JPA와 QueryDSL을 많이 사용했다는 누군가 Kotlin + JPA를 사용하면서 불편한 4가지를 나열했다:
+
+1. plugin 없이 동작하지 않음
+2. Entity를 data class로 사용할 수 없음
+3. Entity를 불변으로 사용할 수 없음. `val` 대신 `var`를 사용해야 함
+4. 도메인 지향인 clean architecture로 개발하면 JPA의 강력한 기능을 사용할 수 없음. `spring-data-jpa`나 다른 ORM을 사용하면 더 쉽게 사용 가능
+
+추가로 clean architecture로 개발하면 JPA의 영속 계층의 cache나 dirty-checking을 사용하기 어려웠다고 한다.
+
+그래서 `spring-data-jpa` + `jooq`를 사용하다가, Exposed를 사용중이라고.
