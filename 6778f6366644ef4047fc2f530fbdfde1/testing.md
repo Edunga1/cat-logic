@@ -40,6 +40,28 @@ Spring에서 테스트에 `@Transactional` 사용하지 말 것을 설명하는 
 
 글에서 설명하는 false negative 예제: 운영 코드에는 `@Transactional` 빠졌지만, 테스트에는 있어서 성공하고, 직접 호출하면 실패한다.
 
+## 테스트에서의 @Transactional 사용에 대해 질문이 있습니다 - Toby vs ChatGPT (2)
+
+https://youtu.be/-961J2c1YsM
+
+- 영상의 [질문](https://www.inflearn.com/questions/792383/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C%EC%9D%98-transactional-%EC%82%AC%EC%9A%A9%EC%97%90-%EB%8C%80%ED%95%B4-%EC%A7%88%EB%AC%B8%EC%9D%B4-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
+- [09:50](https://youtu.be/-961J2c1YsM?t=590) Spring Annotation을 지원하지 않던 시절에도 AbstractTransactionalSpringContextTests 사용하면 @Transactional을 사용한 롤백 테스트와 같은 효과를 내는 방법이 있었다.
+- [12:48](https://youtu.be/-961J2c1YsM?t=768) 질문 내용: 운영 코드가 트랜잭션 경계 밖에서 변경하는 잘못된 코드였는데, 테스트에서는 성공하는 문제.
+- [17:00](https://youtu.be/-961J2c1YsM?t=1020) AfterEach에서 deleteAll해서 초기화하려니 일일이 작성해야 하는 점이 불편하다.
+- [32:05](https://youtu.be/-961J2c1YsM?t=1925) 롤백 테스트가 없던 시절에도 dbunit이라는 도구로 일일이 테스트 수행 전에 테이블을 돌리는 처리를 했었다.
+- [33:10](https://youtu.be/-961J2c1YsM?t=1990) @Transactional 테스트 지원은 혁신적이었고, 스프링 강의나 스프링 개발 팀에서도 사용을 추천하고 있다.
+- [33:39](https://youtu.be/-961J2c1YsM?t=2019) 하지만 **트랜잭션 경계를 테스트 메소드로 확장해도 문제 없는 경우에만 유효하다**. 질문처럼 트랜잭션 경계를 제대로 설정하지 않은 코드도 정상적인 것처럼 보이는 문제가 있다.
+- [35:23](https://youtu.be/-961J2c1YsM?t=2123) 초창기에는 DAO를 사용할 때 명시적인 트랜잭션 시작하지 않으면 에러가 발생했었다. spring-data-jpa repository는 알아서 트랜잭션을 만든다. 편리하지만 명시적이지 않아서 개인적으로 불편하다. 중첩 트랜잭션 구조인 경우 테스트의 트랜잭션이 이를 동작하게 만듦. 사전 점검하기 어려움.
+- [39:40](https://youtu.be/-961J2c1YsM?t=2380) 질문처럼 detached 오브젝트의 자동 감지되지 않는 코드가 @Transactional 테스트에서는 정상 동작하게 보이거나, @Transactional이 동일 클래스의 메서드 사이의 호출에서 적용되지 않는 스프링 기본 프록시 AOP의 문제도 정상 동작하게 만든다.
+- [40:50](https://youtu.be/-961J2c1YsM?t=2450) JPA save한 객체가 영속 컨텍스트에만 있다가, 롤백하면 사라지므로 테스트에서 반드시 flush 후에 검증해야 한다. 아니면 다시 쿼리로 조회하여 확인하는 검증이 필요하다.
+- [43:04](https://youtu.be/-961J2c1YsM?t=2584) 이러한 단점들이 있음에도 불구하고, **@Transactional 테스트는 적극적으로 권장한다**. 병렬 테스트가 가능하고, 테스트 코드 작성이 빨라지므로 테스트를 적극적으로 작성하게 만든다. 테스트마다 테이블 clean up 하는 것은 어떤 테이블을 수정하는지 항상 생각해야하고 clean up 코드가 테스트 코드보다 많아지며, clean up을 빼먹으면 다른 테스트를 성공하게 만들기도 함.
+- [44:38](https://youtu.be/-961J2c1YsM?t=2678) 대신 제대로 검증되지 않은 위의 문제들은 잘 인식해야 한다. **문제가 되는 테스트는 @Transactional 테스트 대신 직접 초기화하는 테스트를 작성**한다.
+- [45:42](https://youtu.be/-961J2c1YsM?t=2742) 테스트를 잘 작성해도 애플리케이션 코드를 완벽하게 검증할 수 없다는 사실을 인식한다. 통합 테스트 외에 인수 테스트, e2e, http api 테스트도 진행한다.
+- [47:15](https://youtu.be/-961J2c1YsM?t=2835) @Transactional 테스트의 문제점들은 코딩 가이드를 작성하고, 코드 리뷰에서도 인지한다. 정적 분석 도구를 사용하여 제한을 걸어두는 방법도 사용한다.
+- [48:18](https://youtu.be/-961J2c1YsM?t=2898) 여러개의 트랜잭션을 검증하는 것은 테스트 경계가 바르게 설정되었는지 검증하는 문제인데, 이것은 테스트에서 검증할 수 없다. 중간에 에러가 발생해서 롤백되는지는 수동으로라도 테스트해본다.
+- [50:23](https://youtu.be/-961J2c1YsM?t=3023) **DB를 직접 클리어하는 것은 추천하지 않는다**. 초기 데이터를 미리 입력해두고(유저 데이터를 30개정도 미리 넣어둔다던지) 테스트에서 사용하는 방법이 어려워진다.
+- [53:49](https://youtu.be/-961J2c1YsM?t=3229) [블로그 많이 쓰시는 분](https://jojoldu.tistory.com/)은 @Transactional 테스트를 반대하는 편. [JPA 강의 전문으로 하시는 분](https://www.youtube.com/@yhdev)은 찬성하는 편.
+- [1:00:00](https://youtu.be/-961J2c1YsM?t=3600) 책: 생산성과 품질을 위한 단위 테스트 원칙과 패턴에서 매 테스트 시작 전에 DB 원상태로 돌리는 법을 가장 권장한다.
 
 # Better Specs
 
