@@ -40,9 +40,27 @@ Linux, MacOS 제공한다. GUI를 제공하지 않는다.
 
 GUI를 제공하지 않지만 Docker Desktop이나 Rancher Desktop에서도 GUI를 잘 사용하지 않으니 딱히 문제는 안된다.
 
-`colima`라는 명령어를 제공하고, `colima start`로 도커를 시작한다.
-
 homebrew로 쉽게 설치할 수 있다: `brew install colima`
+
+`colima`라는 명령어를 제공하고, `colima start`로 도커를 시작한다.
+다만 기본으로 memory가 `2`GiB로 설정되는데, 메모리 문제로 [airflow 컨테이너](https://github.com/marclamberti/docker-airflow/blob/main/docker-compose.yml)가 시작하자마자 죽는 문제가 있었다.
+
+`colima start --memory 8 --cpu 4`와 같이 자원 할당을 늘려서 시작할 수 있다.
+
+현재 자원 할당 상태를 보려면 `colima status -e`.
+
+```bash
+❯ colima status -e
+INFO[0000] colima is running using QEMU
+INFO[0000] arch: aarch64
+INFO[0000] runtime: docker
+INFO[0000] mountType: sshfs
+INFO[0000] socket: unix:///Users/alleb/.colima/default/docker.sock
+INFO[0000] networkDriver: gvproxy
+INFO[0000] cpu: 2
+INFO[0000] mem: 8GiB
+INFO[0000] disk: 60GiB
+```
 
 ## OSX 에서 수동으로 Docker 환경 구성하기
 
