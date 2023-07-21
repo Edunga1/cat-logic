@@ -3,9 +3,9 @@ import { graphql, HeadFC, PageProps } from "gatsby"
 import WikiList from "../components/molecules/WikiList"
 import styled from "styled-components"
 import theme from "../theme"
+import device from "../constants/device"
 
 const StyledMain = styled.main`
-  padding: 9rem;
   background-color: ${theme.colors.background};
   color: ${theme.colors.foreground};
 
@@ -17,6 +17,10 @@ const StyledMain = styled.main`
 
   a {
     color: ${theme.colors.link};
+  }
+
+  @media (${device.larger}) {
+    padding: 9rem;
   }
 `
 

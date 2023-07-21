@@ -3,11 +3,15 @@ import styled from "styled-components"
 import Link from "../atoms/Link/Link"
 import ListItem from "../atoms/ListItem/ListItem"
 import theme from "../../theme"
+import device from "../../constants/device"
 
 const List = styled.ul`
   padding: 1rem;
-  border: 1px solid ${theme.colors.accent};
-  border-radius: .5rem;
+
+  @media (${device.larger}) {
+    border: 1px solid ${theme.colors.accent};
+    border-radius: .5rem;
+  }
 `
 
 export default function WikiList(
