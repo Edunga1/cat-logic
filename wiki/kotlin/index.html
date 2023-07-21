@@ -73,9 +73,16 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li>
 <p><a href="#testing">Testing</a></p>
 <ul>
-<li><a href="#better-specs">Better Specs</a></li>
-<li><a href="#kotest">Kotest</a></li>
+<li>
+<p><a href="#better-specs">Better Specs</a></p>
+</li>
+<li>
+<p><a href="#kotest">Kotest</a></p>
+<ul>
 <li><a href="#intellij--kotest-integration">IntelliJ + Kotest Integration</a></li>
+<li><a href="#rollback-test">Rollback Test</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -144,7 +151,7 @@ Kotest의 <code>DescribeSpec</code> 스타일을 사용하면 RSpec와 유사하
 <p>Kotest의 Style은 모두 Kotlin DSL로 구성되어 있어 직관적인 구조를 가진다.</p>
 <p>IntelliJ 사용한다면 <a href="https://plugins.jetbrains.com/plugin/14080-kotest">플러그인</a>은 반드시 설치하자.
 JUnit처럼 테스트 파일에서 테스트를 실행하거나, 테스트 레이아웃을 위한 별도 창을 제공한다.</p>
-<h2 id="intellij--kotest-integration" style="position:relative;"><a href="#intellij--kotest-integration" aria-label="intellij  kotest integration permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IntelliJ + Kotest Integration</h2>
+<h3 id="intellij--kotest-integration" style="position:relative;"><a href="#intellij--kotest-integration" aria-label="intellij  kotest integration permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IntelliJ + Kotest Integration</h3>
 <p>플러그인은 모듈로부터 테스트 파일을 만들 수 있는 기능도 제공한다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -217,6 +224,11 @@ class WebClientConfigTest : DescribeSpec({
 })
 </code></pre>
 <p>테스트를 자주 만드는데 매우 편리한 기능이다.</p>
+<h3 id="rollback-test" style="position:relative;"><a href="#rollback-test" aria-label="rollback test permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rollback Test</h3>
+<p><a href="https://kotest.io/docs/extensions/spring.html#test-method-callbacks">https://kotest.io/docs/extensions/spring.html#test-method-callbacks</a></p>
+<p><code>@Transactional</code>을 테스트 클래스에 적용해서, 테스트 후에 롤백해야 하는 경우, 위 extension 설정이 필요하다.
+문서에 따르면 Spring test callback이 kotest 기준으로 동작하지 않는데, 이를 가능하게 한다고.</p>
+<p><code>@DataJpaTest</code>는 <code>@Transactional</code>이 붙어있어도 이 설정 없이는 동작하지 않는다.</p>
 <h1 id="language-server" style="position:relative;"><a href="#language-server" aria-label="language server permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="/cat-logic/7056617538c1aded5f999a2ad07c36e5/language-server-protocol.md">Language Server</a></h1>
 <p><a href="https://github.com/fwcd/kotlin-language-server">https://github.com/fwcd/kotlin-language-server</a></p>
 <p>2022-11-29 아직 퍼포먼스가 안나온다. 자주 끊기고, 느리다.

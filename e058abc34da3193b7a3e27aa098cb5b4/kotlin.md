@@ -76,7 +76,7 @@ Kotest의 Style은 모두 Kotlin DSL로 구성되어 있어 직관적인 구조�
 IntelliJ 사용한다면 [플러그인](https://plugins.jetbrains.com/plugin/14080-kotest)은 반드시 설치하자.
 JUnit처럼 테스트 파일에서 테스트를 실행하거나, 테스트 레이아웃을 위한 별도 창을 제공한다.
 
-## IntelliJ + Kotest Integration
+### IntelliJ + Kotest Integration
 
 플러그인은 모듈로부터 테스트 파일을 만들 수 있는 기능도 제공한다.
 
@@ -98,6 +98,15 @@ class WebClientConfigTest : DescribeSpec({
 ```
 
 테스트를 자주 만드는데 매우 편리한 기능이다.
+
+### Rollback Test
+
+https://kotest.io/docs/extensions/spring.html#test-method-callbacks
+
+`@Transactional`을 테스트 클래스에 적용해서, 테스트 후에 롤백해야 하는 경우, 위 extension 설정이 필요하다.
+문서에 따르면 Spring test callback이 kotest 기준으로 동작하지 않는데, 이를 가능하게 한다고.
+
+`@DataJpaTest`는 `@Transactional`이 붙어있어도 이 설정 없이는 동작하지 않는다.
 
 # [Language Server](./language-server-protocol.md)
 
