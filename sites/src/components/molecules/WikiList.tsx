@@ -2,7 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 import Link from "../atoms/Link/Link"
 import ListItem from "../atoms/ListItem/ListItem"
-import theme from "../../theme"
+import theme from "../../constants/theme"
 import device from "../../constants/device"
 
 const List = styled.ul`

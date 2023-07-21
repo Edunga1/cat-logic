@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql, HeadFC, PageProps } from "gatsby"
 import WikiList from "../components/molecules/WikiList"
 import styled from "styled-components"
-import theme from "../theme"
+import theme from "../constants/theme"
 import device from "../constants/device"
 
 const StyledMain = styled.main`
