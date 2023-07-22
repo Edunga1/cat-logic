@@ -39,7 +39,7 @@ export default function IndexPage(
   )
 }
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Cat Logic - Home</title>
 
 export const pageQuery = graphql`
   query WikiList {
