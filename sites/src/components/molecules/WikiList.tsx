@@ -7,6 +7,8 @@ import device from "../../constants/device"
 
 const List = styled.ul`
   padding: 0 1rem;
+  width: 100%;
+  max-width: 600px;
 
   > * {
     padding: .3rem 0;

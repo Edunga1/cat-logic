@@ -10,26 +10,22 @@ const StyledMain = styled.main`
   background-color: ${theme.colors.background};
   color: ${theme.colors.foreground};
   overflow: hidden;
-
-  h1 {
-    margin-top: 0;
-    margin-bottom: 64;
-    max-width: 400;
-  }
+  display: grid;
+  place-items: center;
 
   a {
     color: ${theme.colors.link};
   }
 
   @media (${device.larger}) {
-    padding: 9rem;
+    padding: 9rem 1rem 3rem 1rem;
   }
 `
 
 export default function IndexPage(
   { data }: PageProps<Queries.WikiListQuery>,
 ) {
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { edges } = data.allMarkdownRemark
   const items = edges.map(({ node }, i) => ({
     id: i.toString(),
     path: `./wiki${node.fields?.slug}`,
@@ -58,7 +54,6 @@ export const pageQuery = graphql`
           }
         }
       }
-      totalCount
     }
   }
 `
