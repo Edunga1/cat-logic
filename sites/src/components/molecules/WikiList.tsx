@@ -6,7 +6,14 @@ import theme from "../../constants/theme"
 import device from "../../constants/device"
 
 const List = styled.ul`
-  padding: 1rem;
+  padding: 0 1rem;
+
+  > * {
+    padding: .3rem 0;
+    :not(:last-child) {
+      border-bottom: 1px solid ${theme.colors.accent}55;
+    }
+  }
 
   @media (${device.larger}) {
     border: 1px solid ${theme.colors.accent};

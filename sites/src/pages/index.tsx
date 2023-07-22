@@ -4,10 +4,12 @@ import WikiList from "../components/molecules/WikiList"
 import styled from "styled-components"
 import theme from "../constants/theme"
 import device from "../constants/device"
+import "./global.css"
 
 const StyledMain = styled.main`
   background-color: ${theme.colors.background};
   color: ${theme.colors.foreground};
+  overflow: hidden;
 
   h1 {
     margin-top: 0;
@@ -36,8 +38,6 @@ export default function IndexPage(
 
   return (
     <StyledMain>
-      <h1>WORK IN PROGRESS</h1>
-      <h2>{totalCount} Pages</h2>
       <WikiList items={items} />
     </StyledMain>
   )
