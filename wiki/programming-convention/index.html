@@ -63,7 +63,7 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </style></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="markdownRemarkfields__slug__Container-sc-cg714z-0 gVurN"><div><div class="Toc__Container-sc-1f76i2s-0 hbDcaS"><ul>
 <li>
 <p><a href="#programming-convention">Programming Convention</a></p>
-</li>
+<ul>
 <li>
 <p><a href="#semantic-versioning">Semantic Versioning</a></p>
 </li>
@@ -76,8 +76,10 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <li><a href="#python%EC%9D%98-datetimeisoformat%EC%9D%80-iso-8601%EC%9D%84-%EC%9C%84%EB%B0%98%ED%95%9C%EB%8B%A4">python의 datetime.isoformat()은 ISO 8601을 위반한다.</a></li>
 </ul>
 </li>
+</ul>
+</li>
 </ul></div><a href="../javascript" style="font-size:0.5em;margin-right:0.5em">javascript</a><a href="../python" style="font-size:0.5em;margin-right:0.5em">python</a><a href="../python" style="font-size:0.5em;margin-right:0.5em">python</a></div><div class="WikiContent__Container-sc-q3jb6a-0 iPgyli"><h1 id="programming-convention" style="position:relative;"><a href="#programming-convention" aria-label="programming convention permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Programming Convention</h1>
-<h1 id="semantic-versioning" style="position:relative;"><a href="#semantic-versioning" aria-label="semantic versioning permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Semantic Versioning</h1>
+<h2 id="semantic-versioning" style="position:relative;"><a href="#semantic-versioning" aria-label="semantic versioning permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Semantic Versioning</h2>
 <p><code>9.12.3</code>과 같이 3개의 넘버링으로 소프트웨어 버전을 표현하는 방식이다.</p>
 <p><code>X.Y.Z</code>를 각각 major, minor, patch 버전이라 부른다.</p>
 <p><a href="https://semver.org/">https://semver.org/</a> 이런 사이트가 있지만 막상 버전 갱신하려면 헷갈린다.</p>
@@ -87,7 +89,7 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 <upgrades may break API> . <downgrades may break API> . <fine either way></p>
 </blockquote>
 <p>쓰레드는 <a href="https://users.rust-lang.org/t/semver-for-refactoring-change/81370/5">리팩토링은 어떤 버전을 올려야 하나요?</a></p>
-<h1 id="x--prefix" style="position:relative;"><a href="#x--prefix" aria-label="x  prefix permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>X-</code> prefix?</h1>
+<h2 id="x--prefix" style="position:relative;"><a href="#x--prefix" aria-label="x  prefix permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>X-</code> prefix?</h2>
 <p><code>experimental</code> 혹은 <code>extension</code>의 약자라고 한다.
 보통 비공식적(unofficial) 사양을 나타내는데 주로 사용한다.</p>
 <p>HTTP에는 <code>x-forwareded-for</code>처럼 <code>x</code>를 prefix로 하는 헤더가 많다.</p>
@@ -110,7 +112,7 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 services:
   # ...
 </code></pre>
-<h1 id="iso-8601---날짜-시간-관련-커뮤니케이션-국제-표준" style="position:relative;"><a href="#iso-8601---%EB%82%A0%EC%A7%9C-%EC%8B%9C%EA%B0%84-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B5%AD%EC%A0%9C-%ED%91%9C%EC%A4%80" aria-label="iso 8601   날짜 시간 관련 커뮤니케이션 국제 표준 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ISO 8601 - 날짜, 시간 관련 커뮤니케이션 국제 표준</h1>
+<h2 id="iso-8601---날짜-시간-관련-커뮤니케이션-국제-표준" style="position:relative;"><a href="#iso-8601---%EB%82%A0%EC%A7%9C-%EC%8B%9C%EA%B0%84-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B5%AD%EC%A0%9C-%ED%91%9C%EC%A4%80" aria-label="iso 8601   날짜 시간 관련 커뮤니케이션 국제 표준 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ISO 8601 - 날짜, 시간 관련 커뮤니케이션 국제 표준</h2>
 <p>포맷 간단 요약: <a href="https://www.cryptosys.net/pki/manpki/pki_iso8601datetime.html">https://www.cryptosys.net/pki/manpki/pki_iso8601datetime.html</a></p>
 <p><strong>특징</strong></p>
 <ul>
@@ -131,11 +133,11 @@ services:
 </ul>
 <p>사용하려면:</p>
 <ul>
-<li><a href="/cat-logic/6e80d7d3057b086b97f966b89ea0fb94/javascript.md">javascript</a>의 경우 <code>new Date().toJSON()</code>: <code>"2020-07-10T02:42:55.338Z"</code></li>
-<li><a href="/cat-logic/e3d44c25a572d25bc70a0a1ab4a42c29/python.md">python</a>의 경우 <code>datetime.now().isoformat()</code>: <code>'2020-07-10T02:43:36.933276'</code></li>
+<li><a href="/cat-logic/de6b7171af4bbee8664eb3f81ccd67db/javascript.md">javascript</a>의 경우 <code>new Date().toJSON()</code>: <code>"2020-07-10T02:42:55.338Z"</code></li>
+<li><a href="/cat-logic/e64e0eafc47e9d5a71ec411baa5543dd/python.md">python</a>의 경우 <code>datetime.now().isoformat()</code>: <code>'2020-07-10T02:43:36.933276'</code></li>
 </ul>
-<p><a href="/cat-logic/e3d44c25a572d25bc70a0a1ab4a42c29/python.md">python</a>의 경우 시간대 지정자 <code>Z</code>가 생략되었다.</p>
-<h2 id="python의-datetimeisoformat은-iso-8601을-위반한다" style="position:relative;"><a href="#python%EC%9D%98-datetimeisoformat%EC%9D%80-iso-8601%EC%9D%84-%EC%9C%84%EB%B0%98%ED%95%9C%EB%8B%A4" aria-label="python의 datetimeisoformat은 iso 8601을 위반한다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python의 datetime.isoformat()은 ISO 8601을 위반한다.</h2>
+<p><a href="/cat-logic/e64e0eafc47e9d5a71ec411baa5543dd/python.md">python</a>의 경우 시간대 지정자 <code>Z</code>가 생략되었다.</p>
+<h3 id="python의-datetimeisoformat은-iso-8601을-위반한다" style="position:relative;"><a href="#python%EC%9D%98-datetimeisoformat%EC%9D%80-iso-8601%EC%9D%84-%EC%9C%84%EB%B0%98%ED%95%9C%EB%8B%A4" aria-label="python의 datetimeisoformat은 iso 8601을 위반한다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python의 datetime.isoformat()은 ISO 8601을 위반한다.</h3>
 <p><a href="https://stackoverflow.com/questions/19654578/python-utc-datetime-objects-iso-format-doesnt-include-z-zulu-or-zero-offset">https://stackoverflow.com/questions/19654578/python-utc-datetime-objects-iso-format-doesnt-include-z-zulu-or-zero-offset</a></p>
 <blockquote>
 <p>Python <code>datetime</code> objects don't have time zone info by default, and without it, Python actually violates the ISO 8601 specification (<a href="http://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators">if no time zone info is given, assumed to be local time</a>)</p>
@@ -149,6 +151,6 @@ services:
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-5645864fff451fecdfb3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-75813e24a00d9c44de9f.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-7aeee470d80513a9e1d1.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-5f531581e72418bf5c04.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-5645864fff451fecdfb3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-75813e24a00d9c44de9f.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-106293218c7ce8fdcf4b.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-5f531581e72418bf5c04.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="6dc15c2695dbc50ac468";</script><script src="/cat-logic/webpack-runtime-bb07f933cc77c29d6880.js" async></script><script src="/cat-logic/framework-3d24f1df4806fe1cdcfc.js" async></script><script src="/cat-logic/app-5645864fff451fecdfb3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="6ccf2a423ff9397041a9";</script><script src="/cat-logic/webpack-runtime-271a76280b0e15c50f28.js" async></script><script src="/cat-logic/framework-3d24f1df4806fe1cdcfc.js" async></script><script src="/cat-logic/app-5645864fff451fecdfb3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
