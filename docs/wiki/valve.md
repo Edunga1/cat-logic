@@ -4,9 +4,9 @@ https://www.google.com/search?q=valve+%EC%9E%85%EC%82%AC%EC%9E%90%EB%A5%BC+%EC%9
 
 한국어 번역판 pdf가 공유되어 있다.
 
-# 책갈피
+## 책갈피
 
-## P52. 밸브가 잘 못하는 건 뭔가?
+### P52. 밸브가 잘 못하는 건 뭔가?
 
 ![handbook p52](res/valve-handbook-p52.png)
 

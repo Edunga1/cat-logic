@@ -1,8 +1,8 @@
 # Java
 
-# 개념
+## 개념
 
-## Servlet Container (Web Container)
+### Servlet Container (Web Container)
 
 https://en.wikipedia.org/wiki/Web_container
 
@@ -27,7 +27,7 @@ public class Application {
 ref. [TomcatServletWebServerFactory](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/embedded/tomcat/TomcatServletWebServerFactory.html)
 ref. [WebServer](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/server/WebServer.html)
 
-# Jakarta EE (a.k.a. Java EE)
+## Jakarta EE (a.k.a. Java EE)
 
 https://www.samsungsds.com/kr/insights/java_jakarta.html
 
@@ -37,11 +37,11 @@ EE는 Enterprise Edition의 줄임말이다.
 
 기업(enterise)용 애플리케이션을 개발 및 실행하기 위한 기술과 환경을 제공한다.
 
-## 포함하는 기술
+### 포함하는 기술
 
 https://jakarta.ee/specifications/platform/8/platform-spec-8.html#a84
 
-### HTTP
+#### HTTP
 
 클라이언트 사이드 API를 `java.net`으로 제공한다. 서버 사이드는 Jakarta Servlet, Jakarta Server Pages,Jakarta Server Faces 등에서 제공한다.
 
@@ -66,7 +66,7 @@ client.sendAsync(request, BodyHandlers.ofString())
   .join();java
 ```
 
-### JNDI (Java Naming and Directory Interface)
+#### JNDI (Java Naming and Directory Interface)
 
 > JNDI는 디렉터리 서비스에서 제공하는 데이터 및 객체를 발견하고 참고하기 위한 자바 API다.
 
@@ -74,7 +74,7 @@ client.sendAsync(request, BodyHandlers.ofString())
 ds = new DriverManagerDataSource("jdbc:h2:mem:mydb");
 ```
 
-### JTA (Java Transaction API)
+#### JTA (Java Transaction API)
 
 `javax.transaction` 패키지로 제공한다.
 
@@ -83,15 +83,15 @@ ds = new DriverManagerDataSource("jdbc:h2:mem:mydb");
 
 Spring Framework 4.0부터 JTA 1.2를 지원해서 Spring에서 JTA Transactional을 사용할 수 있다고 한다.
 
-### Jakarta Persistence API (JPA, Java Persistence API)
+#### Jakarta Persistence API (JPA, Java Persistence API)
 
-#### JPA Repository
+##### JPA Repository
 
 JPA를 이용해서 어떤 방법으로 데이터를 가져오는지 알아본다.
 
 쿼리를 실행하는데 @Query, **Query Method**. 크게 두 가지 방법을 사용하는 거 같다.
 
-##### Query Methods
+###### Query Methods
 
 https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods
 
@@ -105,7 +105,7 @@ interface FooRepository: JpaRepository<Foo, Int> {
 메서드 이름이 쿼리를 대신한다. `type`이라는 컬럼으로 조건을 걸고 싶으면
 `fun findAllByType(type: String)` 형태가 된다.
 
-##### @Query
+###### @Query
 
 https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.at-query
 
@@ -124,7 +124,7 @@ Query Method 마찬가지지만, 컬럼 정보는 Entity를 참조한다.
 
 인자로 `nativeQuery = true`를 넘겨주면 JPQL 대신 SQL을 사용할 수 있다.
 
-##### Query By Example (QBE)
+###### Query By Example (QBE)
 
 https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#query-by-example
 
@@ -139,7 +139,7 @@ personRepository.findAll(Example.of(person));
 
 사용해보진 않았다. Entity 인스턴스가 쿼리 용도로 사용한다. 복잡한 쿼리의 경우 가독성이 떨어진다.
 
-##### QueryDSL
+###### QueryDSL
 
 http://www.querydsl.com/static/querydsl/4.1.3/reference/html_single/#d0e321
 
@@ -170,7 +170,7 @@ session.query(User).filter(User.name == 'Edwardo').all()
 sqlalchemy의 경우 python의 연산자 오버로딩을 힘입어 높은 가독성을 가진다.
 numpy와 같은 [python](./python.md) 라이브러리도 같은 이유에서 사용하기 편리한 인터페이스를 가졌다.
 
-###### querydsl-sql
+####### querydsl-sql
 
 http://querydsl.com/static/querydsl/latest/reference/html/ch02s03.html
 
@@ -183,13 +183,13 @@ https://youtu.be/zMAX7g6rO_Y?t=1169
 local db로부터 q-class를 생성해야 한다. 이 것 때문에 배포 전략을 다시 변경해야 할 수도 있다.
 querydsl-jpa가 entity로부터 생성한 q-class를 함께 사용할 수 없다.
 
-###### infobip-spring-data-querydsl
+####### infobip-spring-data-querydsl
 
 https://github.com/infobip/infobip-spring-data-querydsl
 
 또다른 native query의 대안. Union 쿼리 등 동작하는 것을 확인했다.
 
-#### JPA 기본 메서드는 다른 method의 위임 용으로만 사용해야 한다.
+##### JPA 기본 메서드는 다른 method의 위임 용으로만 사용해야 한다.
 
 https://github.com/infobip/infobip-spring-data-querydsl
 
@@ -203,16 +203,16 @@ Stackoverflow Post: https://stackoverflow.com/questions/26543612/should-i-use-ja
 
 *다른 메서드의 위임 용도로만 기본 메서드를 사용해야 합니다.*
 
-# 중첩 클래스(Nested Classes)
+## 중첩 클래스(Nested Classes)
 
 > Terminology: Nested classes are divided into two categories: non-static and static. Non-static nested classes are called inner classes. Nested classes that are declared static are called static nested classes.
 
 중첩 클래스에는 두 가지 종류가 있다. static이 아닌 중첩 클래스는 **inner class**, static으로 선언된 중첩 클래스는 **static nested class**.\
 따라서 static이면서 inner class는 없다.
 
-# JPA
+## JPA
 
-## DB에 쿼리하는 방법
+### DB에 쿼리하는 방법
 
 [**Query Methods**](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods)
     
@@ -253,7 +253,7 @@ Predicate predicate = user.firstname.equalsIgnoreCase("dave")
 userRepository.findAll(predicate);
 ```
 
-## JPA와 MyBatis
+### JPA와 MyBatis
 
 [.net에서 java로 건너와 (i)mybatis만 쓰다가 JPA란걸 해보고 있는데 큰 장점이 와닿지가 않습니다. - 한국 스프링 사용자 모임](https://www.facebook.com/groups/springkorea/permalink/2803698513075093/)
 
@@ -272,9 +272,9 @@ userRepository.findAll(predicate);
 데이터베이스 추상화의 장점은 테스트에서 더욱 두드러진다.
 운영에서는 MySQL, 테스트에서는 H2 In-Memory DB를 사용해도 특별히 작업없이 사용할 수 있다.
 
-## Trouble Shooting
+### Trouble Shooting
 
-### Warning: 'Model' domain type or valid projection interface expected here
+#### Warning: 'Model' domain type or valid projection interface expected here
 
 [Could any one tell me the real reason of spring-data projection in my case?](https://stackoverflow.com/questions/44131207/could-any-one-tell-me-the-real-reason-of-spring-data-projection-in-my-case/56991872#56991872)
 
@@ -282,7 +282,7 @@ JPQL 사용했지만, 쿼리 메서드에서 사용하는 키워드가 포함된
 
 키워드는 `By` 였는데, `Using` 으로 대체해서 사용하여 해결했다.
 
-## 토비의 봄 TV - 백기선님
+### 토비의 봄 TV - 백기선님
 
 https://www.youtube.com/live/xEqGW7Adqt8
 
@@ -298,7 +298,7 @@ https://www.youtube.com/live/xEqGW7Adqt8
 - 어노테이션에 대한 내용
 - 어노테이션이 의도를 파악하기 어렵다.
 
-## 토비의 봄 TV - 김영한님
+### 토비의 봄 TV - 김영한님
 
 https://www.youtube.com/watch?v=00qwDr_3MC4
 
@@ -306,6 +306,6 @@ https://www.youtube.com/watch?v=00qwDr_3MC4
 - AOP 프록시를 사용했다. 프록시 패턴.
 - 여기에도 RDB와 Webflux 비동기 처리 이슈에 대해 다룬다.
 
-# Reference
+## Reference
 
 https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html

@@ -6,7 +6,7 @@ https://github.com/gatsbyjs/gatsby
 
 React를 이용한 웹사이트 제작 프레임워크.
 
-# GraphQL 타입 자동 생성하기
+## GraphQL 타입 자동 생성하기
 
 https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/
 
@@ -56,7 +56,7 @@ export const pageQuery = graphql`
 
 타입 정보는 `gatsby-types.d.ts`에 자동으로, `Queries` 네임스페이스에 `~Query` 접미사를 붙여서 정의된다.
 
-# 파일명을 마크다운 문서의 URL로 사용하기
+## 파일명을 마크다운 문서의 URL로 사용하기
 
 https://www.gatsbyjs.com/plugins/gatsby-source-filesystem/?=files#helper-functions
 
@@ -113,9 +113,9 @@ export const pageQuery = graphql`
 
 `fields.slug`로 접근하면 된다.
 
-# Issues
+## Issues
 
-## 다른 `.md` 파일에 대한 링크를 생성할 수 없는 문제
+### 다른 `.md` 파일에 대한 링크를 생성할 수 없는 문제
 
 [Is it possible to create a link in a Gatsby .md file using the markdown path, not the eventual url?](https://stackoverflow.com/questions/62013570/is-it-possible-to-create-a-link-in-a-gatsby-md-file-using-the-markdown-path-no)
 
@@ -132,7 +132,7 @@ export const pageQuery = graphql`
 SO 질문도 이게 가능한지 묻는 것이고, 답변은 gatsby 빌드에 맞춰서 링크를 설정하라는 것이다.
 아쉬운 부분. 😢
 
-### 해결 방법
+#### 해결 방법
 
 처리한 방법:\
 https://github.com/Edunga1/cat-logic/commit/b2762545eb481fde2dfc8deb5ebbade31fab38a7
@@ -156,7 +156,7 @@ export default function replaceWikiLinks(text: string) {
 
 와중에 주석만 작성하고, 코드는 copilot이 작성해줬다. 😎 (<- 이 부분도 copilot이 작성해줬다. 괄호 안에 있는 것도!)
 
-## 사이트에 중간 경로가 있으면 이미지가 보여지지 않는 문제
+### 사이트에 중간 경로가 있으면 이미지가 보여지지 않는 문제
 
 [gatsby-remark-images](https://www.gatsbyjs.com/plugins/gatsby-remark-images/) 플러그인을 사용해서, markdown에서 이미지를 사용하는 경우 문제가 있다.
 이런 이미지를 inline image라고 부른다.

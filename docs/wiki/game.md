@@ -1,6 +1,6 @@
 # Game?
 
-# Ultima Online
+## Ultima Online
 
 https://en.wikipedia.org/wiki/Ultima_Online
 
@@ -13,7 +13,7 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 나같은 경우에도 학생때 매크로를 작성하면서 프로그래밍에 접근했었다.
 
-## Free Shard
+### Free Shard
 
 이 게임에서 사설 서버를 Free Shard라고 부른다.
 
@@ -32,14 +32,14 @@ ServUO는 심지어 원본 게임의 최신 버전을 어느정도 반영하고 
 
 클래스 관계가 방대해서 서버-클라이언트 모델을 가지는 게임을 개발하고 싶다면 학습하는데 좋은 예제가 될 것이다.
 
-## Macro
+### Macro
 
 게임 자체가 장황한 행동(낭만)을 요구하기 때문에 모두 수동으로 플레이하면 버거운 편이다.
 예를 들면 입을 거리를 만드려면 양에게서 양모를 얻고, 베틀과 물레로 실을 만들고, 실로부터 천을 만들고, 천으로 옷을 만들어야 한다.
 
 이런 행동을 자동화하기 위해서 많은 매크로 프로그램이 있다.
 
-### EasyUO
+#### EasyUO
 
 ![EasyUO](https://pangaea.myramidnight.com/wiki/images/thumb/b/bb/Easyuo.png/300px-Easyuo.png)
 
@@ -65,7 +65,7 @@ finditem %weapon C_ , #BACKPACKID
 `#FINDSTACK`와 같이 `#`으로 시작하는 것은 게임 시스템 변수를 의미한다.\
 `gosub`은 사용자가 정의한 서브루틴(함수)을 호출하는 명령어이다.
 
-### OpenEUO
+#### OpenEUO
 
 http://www.easyuo.com/openeuo/wiki/index.php/First_Steps
 
@@ -82,7 +82,7 @@ print("UO.CharName = " .. UO.CharName)
 `UO` 객체를 통해 게임에 접근한다.
 마찬가지로 GUI 개발도 가능하다.
 
-### UOSteam
+#### UOSteam
 
 https://www.uosteam.com/
 
@@ -100,7 +100,7 @@ waitforgump 'any' 15000
 replygump 0xdd8b146a 1
 ```
 
-### Classic Assist
+#### Classic Assist
 
 https://github.com/Reetus/ClassicAssist
 

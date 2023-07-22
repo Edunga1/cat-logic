@@ -5,7 +5,7 @@
 
 Lucene은 Java로 작성된 검색 엔진 라이브러리이다.
 
-# 기본 개념
+## 기본 개념
 
 Elasticsearch는 cluster, node, index, shard, segment, document로 구성된다.
 
@@ -22,7 +22,7 @@ Node
 
 검색 엔진은 inverted index 구조로 저장하고, Term으로 Document ID를 검색한다.
 
-## Text Analysis (텍스트 분석)
+### Text Analysis (텍스트 분석)
 
 > Text analysis enables Elasticsearch to perform full-text search, where the search returns all relevant results rather than just exact matches.
 
@@ -42,7 +42,7 @@ REST API로 analyzer API를 사용할 수 있다.
 
 keyword field 검색 시 대소문자까지 구분하여 검색할 수 있다.
 
-# 검색
+## 검색
 
 8.0 버전부터 vector search 기능 강화가 돋보인다.
 
@@ -56,7 +56,7 @@ keyword field 검색 시 대소문자까지 구분하여 검색할 수 있다.
 
 와 같이 검색하거나, 인트라넷 문서를 좀 더 찾기 쉽게 사용자 context를 제공하는 등.
 
-### Generative AI에서 Elasticsearch의 위치
+#### Generative AI에서 Elasticsearch의 위치
 
 서술형 검색이 가능한 기저에는 생성형 인공지능(Generative AI)의 발전에 있다.
 하지만 private 데이터를 사용하기 위해선 fine-tuning이 필요하고 이는 데이터가 증가함에 따라 기하급수적으로 비용이 증가한다.
@@ -69,15 +69,15 @@ Generative AI, Internal Data의 brdige 역할을 Elasticsearch가 담당하는 �
 로깅 및 ChatGPT와의 연동한 검색에도 Elasticsearch를 사용한다고 한다(Elasticsearch korea 세미나 중).
 이런 검색에는 사용자 정보에 대한 컨텍스트가 있어야 정확한 결과를 제공할 수 있다.
 
-# Tools
+## Tools
 
-## Rally
+### Rally
 
 https://github.com/elastic/rally
 
 ES 벤치마크 도구.
 
-## Elastic Agent
+### Elastic Agent
 
 https://github.com/elastic/elastic-agent
 

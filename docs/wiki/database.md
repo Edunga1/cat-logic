@@ -1,12 +1,12 @@
 # Database
 
-# 설계
+## 설계
 
-## 정규화 (Normalization)
+### 정규화 (Normalization)
 
 데이터 중복을 최소화하는 작업
 
-### 제 1 정규화 (First Normal Form)
+#### 제 1 정규화 (First Normal Form)
 
 inflexible 부분을 제거하는 것이 목적
 
@@ -25,7 +25,7 @@ inflexible 부분을 제거하는 것이 목적
 
 이 문제를 1:N or N:N 관계로 분리하여 해결하는 것이 제 1 정규화.
 
-### 제 2 정규화 (Second Normal Form)
+#### 제 2 정규화 (Second Normal Form)
 
 **Composite Key**를 사용할 때 일반 필드가 Composite Key 중 **일부분**에 의존할 때 문제가 발생한다.
 
@@ -47,13 +47,13 @@ CourseTitle은 Course에 **의존된다.**
 
 CourseTitle을 Course를 FK, PK로 한 테이블로 분리하여 해결하는 것이 제 2 정규화.
 
-### 제 3 정규화 (Third Normal Form)
+#### 제 3 정규화 (Third Normal Form)
 
 일반 필드가 일반 필드에 의존될 때 발생.
 
 2 정규화와 마찬가지로 테이블로 분리하지만 차이 점은 기존 테이블에서 분리한 테이블을 참조하는 것
 
-### 역 정규화 (Denormalization)
+#### 역 정규화 (Denormalization)
 
 특별한 경우 **편리를 위해서** 역정규화를 하기도 한다. 특히 제 3 정규화에서 역정규화를 하는데
 
@@ -61,9 +61,9 @@ CourseTitle을 Course를 FK, PK로 한 테이블로 분리하여 해결하는 �
 이를 저장 해 놓으면 서버에서 계산할 수 없는 부분이므로 저장 해 놓으면 단순히 Select 하는 것으로
 Zip code를 얻을 수 있기 때문.
 
-# 테이블 이름 컨벤션
+## 테이블 이름 컨벤션
 
-## 단수 vs. 복수
+### 단수 vs. 복수
 
 테이블 이름은 단수로 지어야 하나 복수로 지어야 하나?
 
@@ -106,14 +106,14 @@ https://stackoverflow.com/questions/338156/table-naming-dilemma-singular-vs-plur
 
 규칙이 깨지는 느낌을 받는다. *테이블 이름을 Orders로 지었으니 OrdersDetails 였던가?*
 
-# 데이터베이스는 큐가 아닙니다.
+## 데이터베이스는 큐가 아닙니다.
 
 [시스템 설계 자료 모음](https://news.hada.io/topic?id=6686)에서
 Message Queue Antipattern 단락의 [A Database Is Not a Queue](https://blog.codepath.com/2012/11/15/asynchronous-processing-in-web-applications-part-1-a-database-is-not-a-queue/) 글을 읽었다.
 
 데이터베이스를 큐로 사용하면 안된다는 내용이지만, 다른 관점으로는 메시지 큐 서비스가 제공하는 기능은 무엇인지 말하는 내용이기도 하다.
 
-## Why not a database?
+### Why not a database?
 
 웹 스택에 새로운 기술을 도입하는 것을 꺼리기 때문에 데이터베이스를 그냥 사용하고 싶은 유독을 받을 수도 있을거라고 한다.
 이미 RDMBS를 사용하고 있을 것이므로, 백그라운드처리 용도로 사용하면 빠르게 끝났다고 생각하겠지만 거기엔 많은 제약 사항과 고려할 점이 있다.
@@ -129,7 +129,7 @@ task 처리하면서 발생하는 업데이트 쿼리와 삭제 쿼리가 함께
 
 이런 문제들이 합쳐지면 scaling하기 어렵다.
 
-## Redis를 사용하는 것은 어떨까?
+### Redis를 사용하는 것은 어떨까?
 
 redis를 사용하는 것은 어떻게 생각하는지 물어보는 덧글이 있다.
 ruby 생태계에서는 [resque](https://github.com/resque/resque) 프로젝트가 있는데, 백그라운드 잡 관리용으로 redis를 사용하는 것이 흔하다고 한다.
@@ -137,7 +137,7 @@ ruby 생태계에서는 [resque](https://github.com/resque/resque) 프로젝트�
 
 > I am really glad you brought this up. This is something I will covering in greater detail in my next post. In the ruby ecosystem, Redis is used very frequently as a job queue to some success with resque [https://github.com/defunkt/resque](https://github.com/defunkt/resque) but that doesn’t mean redis is a true replacement for a MQ by any stretch. And I think by trying to replace the need for a true MQ with Redis, depending on requirements you may be missing out on more then initially realized in terms of long term scalability, job throughput, message delivery control, robust error handling, etc.
 
-# MySQL Docker Image
+## MySQL Docker Image
 
 Official mysql image: https://hub.docker.com/_/mysql
 
@@ -145,7 +145,7 @@ Official mysql image: https://hub.docker.com/_/mysql
 
 > it will execute files with extensions .sh, .sql and .sql.gz that are found in /docker-entrypoint-initdb.d
 
-## 이미지 내에 데이터 포함하기
+### 이미지 내에 데이터 포함하기
 
 파일, 내용이 많으면 `docker-entrypoint-initdb.d/`에 두는 것만으로는 시작이 오래 걸린다.
 이를 해결하기 위해서 데이터를 이미지 내에 포함할 수 있다. 대신 이미지 크기가 그만큼 늘어난다.
@@ -175,25 +175,25 @@ COPY --from=builder /initialized-db /var/lib/mysql
 * multi-stage build 이용하여 builder stage에서 설정 및 sql 파일을 복사하고 부트스트래핑 스크립트를 직접 실행한다.
 * main stage에서 builder의 DB 데이터를 COPY하고 실행한다.
 
-# H2 Database
+## H2 Database
 
-## `NumberFormatException: for input String: "..."` 에러
+### `NumberFormatException: for input String: "..."` 에러
 
 `UNION ALL` 쿼리로 3개의 테이블을 포함하고, 컬럼 하나가 integer 타입일 때 발생했다.
 
 `CAST(foo as char)` 명시적으로 타입 캐스팅을 통해 통일하여 해결했다.
 
-# SQLite의 알려지지 않은 이야기
+## SQLite의 알려지지 않은 이야기
 
 https://news.hada.io/topic?id=4558
 
 많은 개발 토픽이 담겨있다.
 
-## 용어 및 단어
+### 용어 및 단어
 
 본문에 나오는 모르는 용어들을 검색해본다.
 
-### MC/DC Coverage
+#### MC/DC Coverage
 
 본문 중:
 > 실제로 DO-178B의 프로세스를 따르기 시작했고, 그중 하나가 100% MCDC Test Coverage
@@ -210,7 +210,7 @@ https://news.hada.io/topic?id=4558
 
 MC/DC Coverage는 expression에서 모든 branch를 커버하기 위한 Test Case를 만들기 위한 방법으로 보인다.
 
-### DO-127B
+#### DO-127B
 
 본문 중:
 > 실제로 DO-178B의 프로세스를 따르기 시작했고, 그중 하나가 100% MCDC Test Coverage
@@ -219,7 +219,7 @@ MC/DC Coverage는 expression에서 모든 branch를 커버하기 위한 Test Cas
 
 > DO-178B (항공기 시스템과 장비 인증에 관한 소프트웨어 고려사항)는 RTCA 사에 의해 발표된 소프트웨어 개발 표준이다.
 
-### covering index
+#### covering index
 
 본문 중:
 > 예를 들어서, 나는 Covering Index에 대해서는 전혀 몰랐는데, 독일에서 열린 PHP 컨퍼런스에 참석했을 때, MySQL의 David Axmark도 참여해서 강연을 했음
@@ -236,7 +236,7 @@ MC/DC Coverage는 expression에서 모든 branch를 커버하기 위한 Test Cas
 > CREATE INDEX idx ON tbl(i, j);
 > SELECT j FROM tbl WHERE i > 0;
 
-### Fossil
+#### Fossil
 
 본문 중:
 > Fossil 구축
@@ -257,7 +257,7 @@ MC/DC Coverage는 expression에서 모든 branch를 커버하기 위한 Test Cas
 
 git 사용법과 흡사하다.
 
-## 인상깊은 부분
+### 인상깊은 부분
 
 > 90~95% 의 테스트 커버리지는 쉬운데 나머지 5%가 정말 어려움. 하지만 1년간 그렇게 해서 최종적으로 100%에 도달하자 Android 에서 버그리포트가 오지 않게 되었음
 

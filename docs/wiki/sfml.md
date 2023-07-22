@@ -43,7 +43,7 @@ int main()
 
 윈도우를 생성하고, 반복문에서 이벤트를 계속 처리하는 구조다.
 
-# SFML 프로젝트 빌드하기
+## SFML 프로젝트 빌드하기
 
 OSX 기준.
 
@@ -139,7 +139,7 @@ OSX 기준.
 1. `$ cmake .` 명령어로 빌드한다. `Makefile`, `config.h` 등이 생성된다.
 2. `make` 명령어로 컴파일한다. `myproject` 이름으로 실행파일이 생성된다. `$ ./myproject`로 실행해볼 수 있다.
 
-# Let's make 16 games in C++/SFML!
+## Let's make 16 games in C++/SFML!
 
 https://www.youtube.com/@FamTrinli
 

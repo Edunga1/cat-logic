@@ -2,9 +2,9 @@
 
 JetBrains사 제품에 대한 이야기.
 
-# IntelliJ
+## IntelliJ
 
-## WSL2에서 Freezing 현상
+### WSL2에서 Freezing 현상
 
 TL;DR: JetBrains Tool 경로를 Windows Defender의 검사 예외로 추가한다.
 
@@ -31,7 +31,7 @@ https://youtrack.jetbrains.com/issue/IDEA-293604/IntelliJ-is-slow-hanging-when-w
 
 ![windows defender exclusions](res/windows-defender-exclusions.png)
 
-## WSL2에서 annotation processor로 생성된 파일을 인식하지 못하는 현상
+### WSL2에서 annotation processor로 생성된 파일을 인식하지 못하는 현상
 
 https://youtrack.jetbrains.com/issue/IDEA-264036
 
@@ -47,9 +47,9 @@ sourceSets.main.get().java.srcDirs(
 
 `build.gradle.kts`에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.
 
-# DataGrip
+## DataGrip
 
-## keymap
+### keymap
 
 | name                                     | shortcut | note                                                 |
 |------------------------------------------|----------|------------------------------------------------------|

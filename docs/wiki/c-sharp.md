@@ -1,6 +1,6 @@
 # C#
 
-# Event
+## Event
 
 C#에서 옵저버 패턴과 유사한 기능을 하는 event가 있다.
 
@@ -27,7 +27,7 @@ onPositionChanged(new Vector3(0, 0, 0));
 
 이제 등록된 `SyncPosition`이 호출된다.
 
-# events or an observer interface? Pros/cons? 
+## events or an observer interface? Pros/cons? 
 
 https://stackoverflow.com/questions/550785
 

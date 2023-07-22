@@ -2,14 +2,14 @@
 
 REST 웹 서비스를 위한 문서화 도구
 
-# Swagger Core
+## Swagger Core
 
 https://github.com/swagger-api/swagger-core
 
 [springdoc-openapi](https://github.com/springdoc/springdoc-openapi)는 Swagger Core를 기반으로 만들어졌다.
 따라서 [Spring Framework](./spring-framework.md)를 사용하는 경우 문서화에서 발생하는 이슈는 대부분 swagger-core와 관련이 있다.
 
-## enum class에서 Jackson `@JsonFormat`이 적용되지 않는 문제
+### enum class에서 Jackson `@JsonFormat`이 적용되지 않는 문제
 
 Github Issue: https://github.com/swagger-api/swagger-core/issues/3691
 

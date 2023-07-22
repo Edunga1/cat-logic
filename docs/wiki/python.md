@@ -1,6 +1,6 @@
 # Python
 
-# 개발환경 구성
+## 개발환경 구성
 
 pyenv, pyenv-virtualenv로 파이썬 가상환경을 관리하자.
 
@@ -9,7 +9,7 @@ brew install pyenv
 brew install pyenv-virtualenv
 ```
 
-# 개발도구
+## 개발도구
 
 vim 기본 설정으로는 텍스트에디터 역할밖에 못한다.
 
@@ -33,7 +33,7 @@ sources = {
 },
 ```
 
-## pyright
+### pyright
 
 https://github.com/microsoft/pyright
 
@@ -58,17 +58,17 @@ django-types는 django-stubs의 fork project이다.
 
 > non-mypy type checkers like pyright will work better with Django.
 
-### pyright 설치
+#### pyright 설치
 
 * nvim-lspconfig은 `Mason`을 사용하자: `:MasonInstall pyright`
 * [coc-nvim](https://github.com/fannheyward/coc-pyright): `:CocInstall coc-pyright`
 
-## pylint
+### pylint
 
 https://github.com/PyCQA/pylint
 정적 분석 도구.
 
-## mypy
+### mypy
 
 https://github.com/python/mypy
 
@@ -85,7 +85,7 @@ https://github.com/python/mypy
 disallow_untyped_defs = False
 ```
 
-### Django Stubs
+#### Django Stubs
 
 https://github.com/typeddjango/django-stubs
 
@@ -93,7 +93,7 @@ django는 `objects` 등 마법을 사용해서 타입 제공을 제대로 받을
 
 djang-stubs는 django 매직과 관련된 타입 정보를 제공한다.
 
-## Ruff
+### Ruff
 
 https://github.com/charliermarsh/ruff
 
@@ -132,7 +132,7 @@ isort와 마찬가지로 사용되지 않는 import는 제거한단다. isort가
 
 Flake8, isort 등 도구를 대체할 수 있다고 한다.
 
-## python code formatter: autopep8 vs black vs yapf
+### python code formatter: autopep8 vs black vs yapf
 
 파이썬 코드 formatter 3종 비교.
 
@@ -188,7 +188,7 @@ Formatter autopep8 is not installed. Install?:
 
 개인적으로는 black, yapf의 스타일이 별로라서 autopep8을 사용하고 있다.
 
-## 레거시를 위한 설정
+### 레거시를 위한 설정
 
 pyright, mypy를 타입 명세하지 않는 등 레거시 프로젝트에서 사용하면 무수히 많은 에러 메시지가 출력된다.
 disable 하는 편이 차라리 낫다.
@@ -248,13 +248,13 @@ pyproject.toml은 최근에서야 대부분 도구가 지원하는 것 같다.
 도구 버전이 낮으면 toml 양식을 인식하지 못하는 경우가 있어서 최신 버전인지 확인해야 한다.
 도구마다 설정 파일을 각각 관리하기 어려워서 pyproject.toml 하나로 여러 프로젝트에서 사용하고 있다.
 
-# Python mock
+## Python mock
 
 https://docs.python.org/3/library/unittest.mock.html
 
 설치: `pip install mock`
 
-## Decorator를 사용한 mocking.
+### Decorator를 사용한 mocking.
 
 ```python
 from mock import patch
@@ -272,12 +272,12 @@ Mocking은 각 테스트(method)에 `@patch.object`나 `@patch` decorator를 주
 
 `requests` 모듈을 mocking 한다고 가정하자.
 
-## `@patch('requests.get')`
+### `@patch('requests.get')`
 
 어디서든 `requests.get()` 사용한다면, mock 객체를 반환한다.
 간단한 방법이지만, `mymodule`에서 `requests`를 사용함을 암시적으로 보여준다.
 
-## `@patch.object(mymodule, 'requests')`
+### `@patch.object(mymodule, 'requests')`
 
 `mymodule` 내에서만 `requests`를 사용한다는 점을 명시적으로 표현한다.
 개인적으로 이 방법을 더 많이 사용한다.
@@ -296,7 +296,7 @@ class Mytest(unittest.TestCase):
 
 테스트 내에서만 mocking 정보를 명시하기 때문에, 다른 테스트에서 재사용할 수 없다.
 
-## `@patch.object(mymodule, 'requests', new=MyRequests)`
+### `@patch.object(mymodule, 'requests', new=MyRequests)`
 
 `requests`가 `MyRequests`로 대체된다.
 
@@ -316,12 +316,12 @@ class MyRequests(object):
 
 mocking 정보를 다른 테스트에서도 재사용할 수 있어서 유용하다.
 
-## `@patch.object(mymodule, 'method', return_value=None)`
+### `@patch.object(mymodule, 'method', return_value=None)`
 
 `mymodule.method()` 반환값을 `None`으로 대체한다.
 
 
-# Package manager
+## Package manager
 
 파이썬의 패키지 매니저인 pip는 파이썬 설치 시 함께 제공된다.
 그러나 다른 언어의 패키지 매니저와 비교해 보면 안좋다.
@@ -336,7 +336,7 @@ Django만 설치했는데, Django가 사용하는 다른 패키지도 포함된�
 
 아무튼, 간단하지만 그만큼 이런저런 불편함이 있는 기본 도구다.
 
-## pipenv
+### pipenv
 
 https://github.com/pypa/pipenv
 
@@ -358,9 +358,9 @@ Dockerize 하는데 이슈가 있다. 빌드 할 때 pipenv를 결국 설치해�
 requirements.txt를 가지고 실행 스테이지에서 의존 모듈을 설치한다. 그러면 프로덕션 레벨에서 pipenv를 감출 수 있다.
 
 
-# Packaging
+## Packaging
 
-## `__all__`
+### `__all__`
 
 `my_module.py`라는 파일이 있다고 하자:
 
@@ -407,9 +407,9 @@ from my_module import foo, bar  # 가능
 from my_module import _baz  # 불가능
 ```
 
-# 프로젝트 구조
+## 프로젝트 구조
 
-## PyPA에서 프로젝트 구조를 `src/` 레이아웃으로 바꾸다.
+### PyPA에서 프로젝트 구조를 `src/` 레이아웃으로 바꾸다.
 
 PR: https://github.com/pypa/sampleproject/pull/104
 
@@ -477,7 +477,7 @@ Natural (may imply unduly that “src” is discouraged)
 
 Bad 레이아웃이 있다 ㅋㅋ
 
-# Object Converter (Serialization & Deserialization)
+## Object Converter (Serialization & Deserialization)
 
 | Name                             | Nested Structure |
 | -------------------------------- | ---------------- |
@@ -488,7 +488,7 @@ Bad 레이아웃이 있다 ㅋㅋ
 
 객체를 변환하거나 검증하는 라이브러리 비교.
 
-## Django REST Framework Serializer
+### Django REST Framework Serializer
 
 https://www.django-rest-framework.org/api-guide/serializers/
 
@@ -511,7 +511,7 @@ serializer.errors
 # {'user': {'email': ['Enter a valid e-mail address.']}, 'created': ['This field is required.']}
 ```
 
-## WTForms
+### WTForms
 
 https://github.com/wtforms/wtforms
 
@@ -549,7 +549,7 @@ f.locations.data
 - cleaned data를 얻을 수 없다. `StringField`에 숫자를 보내면? 숫자가 나옴. 문자열이 아님.
 - Form의 인스턴스에 대해서 작업을 함. 코딩 실수 가능성 농후
 
-## Marshmallow
+### Marshmallow
 
 https://github.com/marshmallow-code/marshmallow
 
@@ -575,11 +575,11 @@ pprint(result, indent=2)
 #   'title': 'Hunky Dory'}
 ```
 
-# Rxpy
+## Rxpy
 
 Rxpy는 ReactiveX의 파이썬 구현체이다.
 
-## Rxpy example
+### Rxpy example
 
 https://www.tutorialspoint.com/rxpy/rxpy_concurrency_using_scheduler.htm
 
@@ -855,11 +855,11 @@ Task 2 complete
 rxpy나 reactive programming에 익숙하지 않아서, 모든 처리를 완료 후에 프로그램을 제대로 끝낼 수 없었다.
 subscribe에서 on_complete에 메시지를 넣어도 출력되지 않았다.
 
-# redis-py
+## redis-py
 
 https://github.com/redis/redis-py
 
-## redis connection을 전역 생성 vs 요청마다 생성
+### redis connection을 전역 생성 vs 요청마다 생성
 
 SO [Python Redis connection should be closed on every request? (flask)](https://stackoverflow.com/questions/18022767/python-redis-connection-should-be-closed-on-every-request-flask/18024593) 질문이다.
 
@@ -879,9 +879,9 @@ DI 라이브러리 사용하지 않고 이상적인 코드를 작성하려고 �
 
 [google groups에서 제작자의 원문](https://groups.google.com/g/redis-db/c/m9k2DN7GX-M/m/5i5HtXkbeBYJ?pli=1)을 볼 수 있다.
 
-# Django Web Framework
+## Django Web Framework
 
-## `OneToOneField` vs `ForeignKeyField`
+### `OneToOneField` vs `ForeignKeyField`
 
 둘 다 related_name으로 역참조 할 수 있지만, `ForeignKey` 는 `QuerySet`을 반환하므로 `None` 체크를 하지 않아도 된다.
 반면에 `OneToOneField`는 `RelatedObjectDoesNotExist` 예외가 발생한다.
@@ -894,7 +894,7 @@ DI 라이브러리 사용하지 않고 이상적인 코드를 작성하려고 �
 
 답변은 "설정을 통해 주의 문구를 감춰라" 라는 뉘앙스라 매우 불편한 부분.
 
-## 복합키를 ForeignKey로 사용하는 방법 찾기
+### 복합키를 ForeignKey로 사용하는 방법 찾기
 
 아직 해결하지 못했다.
 

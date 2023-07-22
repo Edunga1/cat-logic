@@ -1,11 +1,11 @@
 # Docker
 
-# Docker 환경 구성하기
+## Docker 환경 구성하기
 
 여러가지 선택지가 있으나 MacOS, Linux라면 Colima를 가장 추천한다.
 WSL2는 Rancher Desktop 추천.
 
-## Docker Desktop
+### Docker Desktop
 
 https://www.docker.com/products/docker-desktop/
 
@@ -13,7 +13,7 @@ https://www.docker.com/products/docker-desktop/
 개인 사용자는 무료로 사용할 수 있다.
 라이센스 정책 변경으로 인해 [기업 사용자는 조건](https://www.docker.com/pricing/faq/)에 따라 유료로 사용해야 한다.
 
-## Rancher Desktop
+### Rancher Desktop
 
 https://rancherdesktop.io/
 
@@ -25,7 +25,7 @@ container runtime을 containerd, dockerd 중 선택할 수 있는데, docker에 
 
 WSL2을 잘 지원한다.
 
-## Colima
+### Colima
 
 https://github.com/abiosoft/colima/
 
@@ -62,7 +62,7 @@ INFO[0000] mem: 8GiB
 INFO[0000] disk: 60GiB
 ```
 
-## OSX 에서 수동으로 Docker 환경 구성하기
+### OSX 에서 수동으로 Docker 환경 구성하기
 
 **docker desktop 또는 rancher desktop이 나와서 이 방법은 비추천.**
 
@@ -78,7 +78,7 @@ brew install --cask rancher
 
 rancher desktop은 무료 사용 가능하다.
 
-## 1. Homebrew로 Docker와 Docker-machine 설치
+### 1. Homebrew로 Docker와 Docker-machine 설치
 
 ```bash
 $ brew install docker docker-machine
@@ -86,7 +86,7 @@ $ brew install docker docker-machine
 
 docker-machine: 맥을 마치 Host OS 처럼 사용 할 수 있도록 해주는 프로그램
 
-## 2. Homebrew로 Virtualbox 설치
+### 2. Homebrew로 Virtualbox 설치
 
 ```bash
 $ brew cask install virtualbox
@@ -94,7 +94,7 @@ $ brew cask install virtualbox
 
 Virtualbox: 가상화 프로그램. 맥에서 docker-machine(Host OS, Linux)을 운영하기 위해서 사용
 
-## 3. docker-machine 설정
+### 3. docker-machine 설정
 
 ```bash
 $ docker-machine create -d virtualbox default
@@ -104,7 +104,7 @@ virtualbox driver를 이용하여 `default` 이름의 Docker-machine을 생성
 
 virtualbox에 Docker-machine이 올라간다.
 
-## 4. 생성한 Docker-machine 활성화
+### 4. 생성한 Docker-machine 활성화
 
 Docker-machine을 생성했지만, 아직 `docker` 명령어를 이용할 수 없다.
 
@@ -120,8 +120,8 @@ export DOCKER_TLS_VERIFY="1"
 export DOCKER_HOST="tcp://192.168.99.100:2376"
 export DOCKER_CERT_PATH="/Users/parkdu/.docker/machine/machines/default"
 export DOCKER_MACHINE_NAME="default"
-# Run this command to configure your shell:
-# eval $(docker-machine env default)
+## Run this command to configure your shell:
+## eval $(docker-machine env default)
 ```
 
 위 명령어로 `default` Docker-machine의 환경 정보를 알 수 있다.
@@ -139,7 +139,7 @@ ACTIVE 속성이 `*`로 변경되었다.
 
 이제 맥에서 `docker` 명령어를 사용할 수 있다!
 
-# Dockerfile의 Volume 명령어
+## Dockerfile의 Volume 명령어
 
 다음과 같이 컨테이너를 띄우면 `docker run -ti --rm -v $(pwd):/myvol --name foo ubuntu`
 현재 디렉토리를 컨테이너와 공유하여 사용할 수 있다.
@@ -188,7 +188,7 @@ ACTIVE 속성이 `*`로 변경되었다.
 
 즉, 호스트 디렉토리 연결 없이 볼륨을 사용한다면 `--volumes-from` 옵션을 사용하는 컨테이너가 있음을 의미한다.
 
-# Dockerfile
+## Dockerfile
 
 도커 이미지를 빌드하기 위한 명령어들을 모아놓은 파일.
 
@@ -196,7 +196,7 @@ ACTIVE 속성이 `*`로 변경되었다.
 
 각 명령어 마다 이전 이미지로부터 새로운 이미지를 생성한다.(Layer)
 
-## 명령어
+### 명령어
 
 **CMD**
 
@@ -256,7 +256,7 @@ CONTAINER ID        IMAGE                          COMMAND                  CREA
 여기서 `5000-5002/tcp, 6379/tcp, 7001-7007/tcp`는 `EXPOSE`로 명세했지만 호스트와 바인딩되지 않았음을 의미한다.
 즉, `EXPOSE`는 포트 대기중을 의미한다.
 
-# 중지된 도커 컨테이너에서 파일 복사하기
+## 중지된 도커 컨테이너에서 파일 복사하기
 
 `docker ps -a`로 중지된 컨테이너가 있다면 그 컨테이너로부터 파일을 호스트로 복사해올 수 있다
 
@@ -277,7 +277,7 @@ ionic으로 빌드를 하고, jarsginer로 서명까지하여 릴리즈 apk를 �
 
 중지된 컨테이너가 다른 컨테이너에 볼륨을 공유하는 data-only 패턴과 비슷한 방식인듯?
 
-# Jupyter Notebook + NodeJS 도커라이징 기록
+## Jupyter Notebook + NodeJS 도커라이징 기록
 
 Jupyter Notebook이 너무 유용한 거 같아서 NodeJS도 쓰고 싶어졌다.
 
@@ -328,7 +328,7 @@ base로 하고 있어서, 참고하여 Dockerfile을 다시 작성하기로 했�
 
 1. 그래서 간단하게 `RUN ijsinstall` 해 줘서, 원본 `start-notebook.sh`는 수정하지 않아도 잘 실행되도록 했다.
 
-## Jupyter Docker Stacks
+### Jupyter Docker Stacks
 
 Jupyter Notebook의 도커 버전은 상당히 많은 시리즈로 되어 있다.
 도커 허브엔 설명이 적고 GitHub: https://github.com/jupyter/docker-stacks 에 메뉴얼이 잘 되어 있다.
@@ -341,14 +341,14 @@ http://interactive.blockdiag.com/?compression=deflate&src=eJyFzTEPgjAQhuHdX9Gws5
 https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-base-notebook
 여기에 데이터과학, 머신러닝 등 각 분야에 자주 사용하는 모듈을 미리 설치한 이미지들 정보가 나와있다.
 
-## End
+### End
 
 Jupyter Notebook NodeJS 도커라이징한 것은 여기에 올렸다:<br>
 https://github.com/Edunga1/jupyter-notebook-nodejs
 
 Dockerfile 작성하면서 `MAINTAINER`가 deprecated, `LABEL`을 사용해야 하는 것을 알았다: https://stackoverflow.com/questions/38899977/how-do-i-declare-multiple-maintainers-in-my-dockerfile
 
-# `host.docker.internal`로 호스트 서비스 접근하기
+## `host.docker.internal`로 호스트 서비스 접근하기
 
 `host.docker.internal`은 호스트의 ip를 가르키는 DNS name이다.
 [container에서 호스트의 서비스에 접근](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host)이 필요할 때 사용한다.
@@ -357,7 +357,7 @@ Dockerfile 작성하면서 `MAINTAINER`가 deprecated, `LABEL`을 사용해야 �
 
 주의할 점은 **docker-desktop** 에서 제공하는 것이다. rancher-desktop 등 다른 도구로 docker 구성했다면 사용할 수 없다.
 
-## 대체는?
+### 대체는?
 
 `docker` 명령어:
 ```bash
@@ -384,11 +384,11 @@ https://docs.docker.com/engine/reference/commandline/dockerd/
 > IP address that the special 'host-gateway' string in --add-host resolves to.
 > Defaults to the IP address of the default bridge
 
-# 맥북 m2 이슈
+## 맥북 m2 이슈
 
 Intel CPU(amd64) -> M2(arm)로 옮기면서 발생한 문제
 
-## mysql:5.6
+### mysql:5.6
 
 mysql 8 버전 이하는 arm64 용으로[제공하지 않는 것](https://hub.docker.com/r/arm64v8/mysql/)으로 보인다.
 그래서 `docker pull mysql:5.6` 하면 manifest를 찾을 수 없다며 실패한다:
@@ -405,7 +405,7 @@ no matching manifest for linux/arm64/v8 in the manifest list entries
 ❯ docker pull --platform linux/amd64 mysql:5.6
 ```
 
-# References
+## References
 
 NodeJS 어플리케이션의 Dockerizing\
 https://nodejs.org/en/docs/guides/nodejs-docker-webapp/

@@ -1,8 +1,8 @@
 # Mail
 
-# Gmail
+## Gmail
 
-## `+` 주소(variant address)를 사용하는 경우 필터적용 방법
+### `+` 주소(variant address)를 사용하는 경우 필터적용 방법
 
 **상황**
 

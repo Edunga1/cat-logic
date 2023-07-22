@@ -1,6 +1,6 @@
 # Kubernetes
 
-# Kubernetes 컨테이너간 볼륨 공유
+## Kubernetes 컨테이너간 볼륨 공유
 
 하나의 Pod 내에서 여러개의 Container를 운영할 때,
 Docker Compose의 `volumes_from`과 같은 기능을 하려면.
@@ -19,7 +19,7 @@ https://www.mirantis.com/blog/multi-container-pods-and-container-communication-i
 즉, 컨테이너 생성 후에 생성되는 파일만 공유된다.
 `emptyDir` 의미 그대로, 각 컨테이너에서 mount한 경로를 완전 새로운 공간으로 분리했기 때문에, **비어있다** 로 해석하면 좋을 듯?
 
-# Kubernetes service types
+## Kubernetes service types
 
 **ClusterIP (Default)**
 
@@ -54,7 +54,7 @@ https://www.mirantis.com/blog/multi-container-pods-and-container-communication-i
 각 서비스별 다이어그램으로 설명되어 있는 글:<br>
 https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0
 
-## NodePort를 사용하는데도 접근할 수 없는 이슈
+### NodePort를 사용하는데도 접근할 수 없는 이슈
 
 Docker for mac을 사용하는데 상태바에서 주황색 원과 함께 `Kubernetes is starting...`라고 뜨면서 호스트에서 접근 할 수 없었다.
 

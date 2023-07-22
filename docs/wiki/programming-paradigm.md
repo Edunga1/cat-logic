@@ -1,10 +1,10 @@
 # Programming Paradigm
 
-# Object Oriented Progamming
+## Object Oriented Progamming
 
 [Object Oriented Progamming](./object-oriented-programming.md)
 
-# "Database Abstraction Layers Must Die!"라는 글을 읽고
+## "Database Abstraction Layers Must Die!"라는 글을 읽고
 
 http://jeremy.zawodny.com/blog/archives/002194.html
 
@@ -29,21 +29,21 @@ http://jeremy.zawodny.com/blog/archives/002194.html
 데이터베이사의 힌트도 조정하거나 제거해야 한다.\
 mysql_foo()를 oracle_foo()로 변경하는 것은 문제점 중에서 가장 작은 부분이다.
 
-# Expression Problem - 표현 문제
+## Expression Problem - 표현 문제
 
-## https://m.facebook.com/story.php?story_fbid=2581087648844171&id=1676787645940847
+### https://m.facebook.com/story.php?story_fbid=2581087648844171&id=1676787645940847
 
 > FP와 OOP의 차이는 Expression Problem을
 어떻게 해결 하느냐에 있다고 말씀드린적이 있습니다.
 
-## https://edykim.com/ko/post/expression-problem/
+### https://edykim.com/ko/post/expression-problem/
 
 http://c2.com/cgi/wiki?ExpressionProblem 의 번역
 
 * OOP는 새로운 타입을 추가하는데 자유롭다.
 * FP는새로운 함수를 추가하는데 자유롭다.
 
-## 감상
+### 감상
 
 FP는 함수가 써드파티 라이브러리라면, 어떻게 새로운 타입을 추가할 수 있을까?
 
@@ -51,7 +51,7 @@ OOP는 써드파티 라이브러리의 인터페이스를 구현했다면, 새 �
 내가 구현한 클래스가 수정되어야 한다. 그래도 FP 쪽 보다는 형편이 나아보인다.
 FP에서 이런 문제를 해결하기 위한 납득 가능한 방법이 있을 거 같다.
 
-# coroutine, generator, async, monad
+## coroutine, generator, async, monad
 
 [Monad란 무엇인가? - NAVER engineering](https://tv.naver.com/v/5340169)
 
@@ -59,7 +59,7 @@ FP에서 이런 문제를 해결하기 위한 납득 가능한 방법이 있을 
 
 Unity의 `WaitForSeconds`는 일정 시간 동안 코루틴 실행을 중단(suspend)한다.
 
-# 작은 언어는 프로그래밍의 미래입니다.
+## 작은 언어는 프로그래밍의 미래입니다.
 
 https://news.hada.io/topic?id=8009
 

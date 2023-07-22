@@ -4,7 +4,7 @@ vim 보다 [neovim](https://github.com/neovim/neovim).
 
 My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
 
-# neovim
+## neovim
 
 https://github.com/neovim/neovim
 
@@ -14,7 +14,7 @@ vimscript는 학습하기 꽤 어려운 언어인데, [이 글](https://www.redd
 
 > Vimscript is like regex, you don't learn it, just use it.
 
-## Lua 가이드
+### Lua 가이드
 
 https://github.com/nanotee/nvim-lua-guide#modules
 
@@ -32,7 +32,7 @@ vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 
 직접 호출하려면 `:lua vim.lsp.buf.code_action()`로 호출한다.
 
-## 내장 Language Server Protocol 사용하기
+### 내장 Language Server Protocol 사용하기
 
 [Language Server Protocol](./language-server-protocol.md)
 
@@ -70,9 +70,9 @@ require("mason-lspconfig").setup()
 require'lspconfig'.kotlin_language_server.setup{}
 ```
 
-# Use cases
+## Use cases
 
-## 파일 검색
+### 파일 검색
 
 [fzf.vim](https://github.com/junegunn/fzf.vim)이 제공하는 기능 몇가지를 사용한다.
 
@@ -94,7 +94,7 @@ nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --excl
 
 두 도구 차이점은 모르겠다. 검색 결과는 조금 다르다.
 
-# quickfix & location list
+## quickfix & location list
 
 `:h quickfix` `:h location-list`
 
@@ -105,7 +105,7 @@ ref. https://freshman.tech/vim-quickfix-and-location-list/
 
 목록에 나타난 코드를 한꺼번에 수정할 수 있는데, 동시에 여러 파일을 수정하는 용도로 사용한다.
 
-## commands
+### commands
 
 * `cnext`: 다음 지점으로.
 * `cprevious`: 이전 지점으로.
@@ -113,7 +113,7 @@ ref. https://freshman.tech/vim-quickfix-and-location-list/
 
 location-list의 명령어는 prefix `c` -> `l` 바꾸면 대응한다.
 
-## grep
+### grep
 
 e.g. `:vimgrep /myfunc/ **/*.c`
 
@@ -121,7 +121,7 @@ e.g. `:vimgrep /myfunc/ **/*.c`
 
 패턴을 검색하고 결과를 quickfix 목록으로 만든다.
 
-## `cdo`, `ldo` 검색된 모든 entry에 명령어 적용
+### `cdo`, `ldo` 검색된 모든 entry에 명령어 적용
 
 `cdo s/foo/bar` `ldo s/foo/bar`
 
@@ -136,19 +136,19 @@ grep으로 검색하고, cdo로 적용, 예시:
 
 `| update`를 사용하면 수정과 함께 저장한다.
 
-## `cfdo`, `lfdo` 검색된 모든 파일에 명령어 적용
+### `cfdo`, `lfdo` 검색된 모든 파일에 명령어 적용
 
 `:cfdo %s/foo/bar` or `:ldo %s/foo/bar`
 
 `cdo`와 차이점은 파일 모든 내용에 대해서 적용한다는 점이 다르다. 검색 목록에서 보이지 않는 라인도 적용되니 주의.
 
-### `bufdo` 모든 buffer 파일에 명령어 적용
+#### `bufdo` 모든 buffer 파일에 명령어 적용
 
 `:bufdo %s/foo/bar`
 
 모든 buffer에 대해서 적용하므로 `:buffers`등 명령어로 적용 대상을 잘 확인하자.
 
-## User Function
+### User Function
 
 사용자 함수에 대한 메뉴얼은 `:help userfunc`에서 설명한다.
 
@@ -178,7 +178,7 @@ endfunction
 함수는 정의된 스크립트에서만 호출할 수 있다. 즉, `call MyFunction()`로 호출할 수 없다.
 vim은 많은 플러그인을 통해 함수가 정의되어 이름 충돌할 수 있으므로 local function을 사용하는 것이 좋다.
 
-# Registers
+## Registers
 
 `:h registers`
 
@@ -189,9 +189,9 @@ vim은 많은 플러그인을 통해 함수가 정의되어 이름 충돌할 수
 3. `_` black hole register. 읽는 용도로 사용하지 않는다. 덮어쓸 때 삭제된 내용을 저장하지 않는 용도로 쓴다.
     * e.g. `"_dd` 현재 라인을 삭제하지만 unnamed register에 저장하지 않는다.
 
-# Variables
+## Variables
 
-## `path`
+### `path`
 
 `:find` 검색 범위를 결정한다.
 `:find foo` 파일이나 디렉토리를 검색하고 연다,
@@ -204,11 +204,11 @@ netrw, find 사용법
 `**` 사용하기 전과 비교해보면 검색 수가 달라지는 것을 알 수 있다.
 `.gitignore`의 무시한 파일, `node_modules` 같이 무거운 폴더도 검색된다.
 
-# Plugins
+## Plugins
 
 사용중인 플러그인.
 
-## chrisbra/csv.vim
+### chrisbra/csv.vim
 
 ![csv.vim sample](res/csv-vim-sample.png)
 
@@ -216,15 +216,15 @@ csv 파일의 highlighting, 열과 행에 대한 처리 도구를 제공한다.
 
 newline이 포함되면 큰 따옴표로 묶어서 표현되기도 하는데, 인식 못하는 문제가 있다.
 
-### Features
+#### Features
 
 `:DeleteColumn 2-4` 2~4열 제거. `:DeleteColumn 2` 2열만 제거
 
-## tpope/vim-fugitive
+### tpope/vim-fugitive
 
 https://github.com/tpope/vim-fugitive
 
-### `:Git`
+#### `:Git`
 
 [Git Fugitive how to git add a visually selected chunk of code - stackexchange](https://vi.stackexchange.com/a/28251.md)
 
@@ -256,9 +256,9 @@ Staged (1)
 M docs/wiki/vim.md
 ```
 
-# 용어
+## 용어
 
-## `-- More --`라고 출력되는 pager
+### `-- More --`라고 출력되는 pager
 
 `:h pager`로 pager에 대한 정보를 알 수 있다.
 
@@ -311,9 +311,9 @@ command! -nargs=1 -complete=command Redir redir @a | sil <args> | redir end | ec
 `:Redir highlight`
 `:Redir let`
 
-# Tips
+## Tips
 
-## mapping 시 `:...<cr>` vs `<cmd>...<cr>`
+### mapping 시 `:...<cr>` vs `<cmd>...<cr>`
 
 * `nnoremap [w :lprevious<cr>`
 * `nnoremap [w <cmd>lprevious<cr>`
@@ -330,7 +330,7 @@ command! -nargs=1 -complete=command Redir redir @a | sil <args> | redir end | ec
 두 방식을 비교해보면, `:...<cr>`는 실행한 명령어가 입력창에 남아있다.
 반면에 `<cmd>...<cr>`는 남아있지 않다.
 
-## 프로파일링 하기
+### 프로파일링 하기
 
 이유없이 느려진다면 프로파일링 해보자.
 
@@ -346,7 +346,7 @@ function! StartProfiling()
 endfunction
 ```
 
-## text object 개선하기
+### text object 개선하기
 
 vim에서 기본적으로 `viw`로 단어를, `vip`로 문단을 선택할 수 있다.
 더 나아가서 각 언어에 맞게 함수, 클래스를 선택할 수 있는 방법이 있다.
@@ -359,7 +359,7 @@ vim에서 기본적으로 `viw`로 단어를, `vip`로 문단을 선택할 수 �
 파이썬에 맞는 text object를 제공하거나,
 Selection을 점진적으로 확장/축소하는 기능을 제공하는 플러그인이 있다.
 
-### vim-pythonsense
+#### vim-pythonsense
 
 [vim-pythonsense](https://github.com/jeetsukumaran/vim-pythonsense)
 
@@ -377,7 +377,7 @@ let g:is_pythonsense_suppress_keymaps = 0
 let g:is_pythonsense_alternate_motion_keymaps = 0
 ```
 
-### vim-expand-region
+#### vim-expand-region
 
 [terryma/vim-expand-region](https://github.com/terryma/vim-expand-region)
 
@@ -402,7 +402,7 @@ call expand_region#custom_text_objects('python', {
   \ })
 ```
 
-## `command` 대신 `command!`를 사용하자.
+### `command` 대신 `command!`를 사용하자.
 
 `.vimrc`를 리로드하면 이미 정의된 command라고 에러가 나는 경우가 있다:
 
@@ -426,7 +426,7 @@ command TestCore call <SID>run_test_core()
 command! TestCore call <SID>run_test_core()
 ```
 
-## 옵션이 어느 파일에서 변경되었는지 알려면 `:verbose`
+### 옵션이 어느 파일에서 변경되었는지 알려면 `:verbose`
 
 `:verbose set filetype?`
 
@@ -435,12 +435,12 @@ command! TestCore call <SID>run_test_core()
 뒤에 물음표는 꼭 붙이자. `filetype`처럼 값을 받는 옵션이 아닌 `hlsearch`처럼 on/off 하는 형태라면 `verbose`가 무시되고 옵션 변경을 한다.
 다시 `verbose`로 확인하더라도 방금 명령어로 변경했기 때문에 제대로된 출처를 알 수 없다.
 
-# `:make` and `makeprg`
+## `:make` and `makeprg`
 
 `:make` 명령은 `makeprg`에 설정한 것을 실행한다.
 출력이 quickfix 양식이면 quckfix과 연동할 수 있다!
 
-## build integration - How to Do 90% of What Plugins Do
+### build integration - How to Do 90% of What Plugins Do
 
 https://youtu.be/XA2WjJbmmoM?t=3062
 
@@ -461,9 +461,9 @@ vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickf
 
 ref. python traceback을 quickfix와 연동할 수 없냐는 질문: [Quickfix support for Python tracebacks](https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks)
 
-# Issues
+## Issues
 
-## Typescript filetype 문제
+### Typescript filetype 문제
 
 typescript language server에서 JSX 문법을 확인하지 못한다면 파일 타입을 확인해보자.
 `:set ft?`로 확인했을 때 `typescriptreact`가 아니라 `typescript`면 문제가 있다.
@@ -482,7 +482,7 @@ ref. https://github.com/peitalin/vim-jsx-typescript#vim-jsx-typescript
 ref. https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-589954199
 > This brings a new problem. Typescript language server excepts from a typescript file to not have JSX in it. Which means that <> is considered a type assertion, JSX is not recognized as JSX but as regular Typescript syntax and the list goes on.
 
-## `vim-colors-solarized` colorscheme 플러그인이 점점 느려지게 만드는 현상
+### `vim-colors-solarized` colorscheme 플러그인이 점점 느려지게 만드는 현상
 
 vimwiki로 문서 수정할 때, `<cr>` *엔터를 꾹 누르고 있으면 점점 느려지는* 문제.
 vimwiki가 키보드 엔터 시 함수 호출이 많다. 그래서 더욱 돋보이는 듯 하다.
@@ -510,7 +510,7 @@ colorscheme solarized
 
 colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. 하지만 곧바로 복구된다. colorscheme을 사용할 때는 한 번 느려지면 다시 vim 실행하기 전까지는 복구되지 않는다.
 
-## Ubuntu에 설치한 vim이 시작 시 `.vimrc`에서 많은 에러가 발생하는 현상
+### Ubuntu에 설치한 vim이 시작 시 `.vimrc`에서 많은 에러가 발생하는 현상
 
 askubuntu 질문: [vi, getting multiple "Sorry, the command is not available in this version..." after reinstall](https://askubuntu.com/questions/284957/vi-getting-multiple-sorry-the-command-is-not-available-in-this-version-af)
 

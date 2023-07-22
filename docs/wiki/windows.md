@@ -1,6 +1,6 @@
 # Windows
 
-# Microsoft PowerToys
+## Microsoft PowerToys
 
 https://learn.microsoft.com/en-us/windows/powertoys/
 

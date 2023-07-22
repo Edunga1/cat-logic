@@ -1,6 +1,6 @@
 # Hardware
 
-# RISC-V
+## RISC-V
 
 https://news.hada.io/topic?id=3447
 

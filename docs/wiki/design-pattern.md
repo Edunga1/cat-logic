@@ -1,6 +1,6 @@
 # Design Pattern
 
-# Iterator Pattern
+## Iterator Pattern
 
 다양한 Collection을 일관적인 방법으로 순회할 수 있도록 함
 
@@ -11,7 +11,7 @@ iterator() 메소드를 통해 iterator를 반환 해 준다.
 
 일반 배열을 사용한 경우 Iterator 인터페이스를 구현한 Concrete Iterator를 만들어서 사용하면 된다.
 
-# Repository Pattern
+## Repository Pattern
 
 도메인 로직에서 저장소에 접근하기 위해서 쿼리를 전송하는 것은 좋지 않다. 특정 데이터베이스에 종속된다.
 RDBMS도 MySQL, MsSQL, Oracle 다 쿼리 스펙이 다르다. 그래서 데이터 소스(DB)와 커뮤니케이션할 추상 레이어를 둔다.
@@ -33,7 +33,7 @@ Repository Pattern에는 두 종류가 있다. Generic Repository와 Specific Re
 
 코드 중복을 제거하고 일관성 유지를 강조하는 Generic Repository와 유연성을 강조하는 Specific Repository.
 
-## Generic Repository vs. Specific Repository
+### Generic Repository vs. Specific Repository
 
 https://stackoverflow.com/questions/1230571/advantage-of-creating-a-generic-repository-vs-specific-repository-for-each-obje
 
@@ -90,25 +90,25 @@ public class Blog
 
 각 메서드에서 쿼리를 만들 거고(쿼리 빌더를 쓰던간에), 어노테이션 없는 Entity 클래스도 만들 수 있다!
 
-# state pattern and state machine
+## state pattern and state machine
 
 공통점은 많은 상태들 사이에서 같은 이벤트가 발생했을 때 다음 상태로 전이하는 것이다.
 
 다른 점은 어디에 집중하느냐 인데, state pattern은 이벤트에 따른 행동에, state machine은 상태 관리라고 생각한다.
 
-## state pattern
+### state pattern
 
 * behavior의 구현에서 다음 상태를 결정하기 때문에, dynamic target 상태를 가진다.
 * OOP로 구현하면 각 상태에 해당하는 concrete class가 존재한다.
 * 따라서 많은 상태와 행동이 있으면 관리하기 어렵다.
 
-## state machine
+### state machine
 
 * 상태와 이벤트 조합으로 다음 상태(target)로 변화하는 transition을 한 곳에서 관리한다. 그래서 추적하기 쉽다.
 * OOP로 구현하면 모든 상태를 관리하는 state machine로 일반화 했기 때문에 좀 더 간단하다.
 * 하지만 일반화 했기 때문에 이벤트마다 달라지는 부분을 구현하기에 까다롭다.
 
-## 어디서 상태를 전이해야 할까?
+### 어디서 상태를 전이해야 할까?
 
 [Who defines state transitions in the state pattern? - StackOverflow](https://stackoverflow.com/q/14434187/6587078)
 
@@ -129,9 +129,9 @@ public class Blog
 
 *후자(각 상태에서 결정하는 것)의 탈중앙화 방법은 새로운 상태를 통해 로직을 수정, 확장이 쉬운 이점을 가진다. 다만 단점은 하나의 상태가 다른 상태를 최소 하나는 알고 있어야 한다는 점.*
 
-## 상태 패턴, 상태 머신을 구현한 라이브러리
+### 상태 패턴, 상태 머신을 구현한 라이브러리
 
-### Spring Statemachine
+#### Spring Statemachine
 
 https://docs.spring.io/spring-statemachine/docs/1.1.1.RELEASE/reference/htmlsingle/
 
@@ -153,17 +153,17 @@ public void configure(StateMachineTransitionConfigurer<States, Events> transitio
 
 SI 상태(source)가 E1 이벤트를 만나면 S2 상태(target)이 된다.
 
-### Pytohn transitions
+#### Pytohn transitions
 
 https://github.com/pytransitions/transitions
 
-## references
+### references
 
 https://stackoverflow.com/questions/19859531/what-is-the-difference-between-a-state-machine-and-the-implementation-of-the-sta
 
 답변자 말로는, state pattern은 분산된 구조이고, state machine은 모놀리틱 구조라 한다.
 
-# Strategy Pattern
+## Strategy Pattern
 
 [refactoring.guru](https://refactoring.guru/ko/design-patterns/strategy)중에서:
 
@@ -174,11 +174,11 @@ https://stackoverflow.com/questions/19859531/what-is-the-difference-between-a-st
 전략 객체는 context가 제공하는 메서드를 사용하여 context를 변경해야한다.
 전략 객체의 메서드에서 파라미터로 받거나, 생성자로 받거나 할 필요가 없다.
 
-# MVC Pattern
+## MVC Pattern
 
 Model - View - Controller Pattern.
 
-## MVC 패턴의 목적과 이점
+### MVC 패턴의 목적과 이점
 
 MVC 패턴는 사용자 인터페이스와 시스템 로직을 분리하는 것을 목적으로 둔다.
 
@@ -187,11 +187,11 @@ MVC 패턴는 사용자 인터페이스와 시스템 로직을 분리하는 것�
 예를들어 C# 윈도우 어플리케이션에 종속되는 유저 인터페이스 관련 코드들과 시스템이 돌아가는데
 필요한 코드(model)를 분리함으로써 다른 플랫폼으로 이식할 수 있다.
 
-## Compound Pattern
+### Compound Pattern
 
 MVC 패턴은 다른 디자인 패턴으로 이루어진 컴파운드 패턴이다.
 
-### 1. Observer Pattern
+#### 1. Observer Pattern
 
 Model - View의 관계
 
@@ -203,7 +203,7 @@ Model - View의 관계
 모델이 뷰에 통보할 때 상태 정보를 보내주는 push-model 보다
 통보 후 뷰가 필요한 정보를 알아서 가져가는 pull-model이 더 선호된다.
 
-### 2. Strategy Pattern
+#### 2. Strategy Pattern
 
 View - Controller의 관계
 
@@ -213,7 +213,7 @@ Controller는 View에 대한 Behavior가 된다.
 
 따라서 View에 Concrete Controller가 아닌 Interface Controller를 제공한다.
 
-### 3. Composite Pattern
+#### 3. Composite Pattern
 
 View 내에서 Component들 간의 관계
 
@@ -221,7 +221,7 @@ View 내에서 Component들 간의 관계
 
 이 컴포넌트들을 iterator를 통해 일관성있게 접근하여 업데이트 시킨다.
 
-# Decorator Pattern
+## Decorator Pattern
 
 클래스의 확장을 목적으로 사용하는 디자인 패턴이다.
 일부 프로그래밍 언어는 `final`와 같은 키워드로 상속을 금지한다.
@@ -229,7 +229,7 @@ View 내에서 Component들 간의 관계
 
 wrapper라고도 부르는데, 확장하고자 하는 대상을 감싸서 구현하기 때문이다.
 
-## Kotlin Extensions
+### Kotlin Extensions
 
 https://kotlinlang.org/docs/extensions.html
 
@@ -270,6 +270,6 @@ fun Example.printFunctionType() { println("Extension function") }
 Example().printFunctionType()  // "Class method"
 ```
 
-# 참조
+## 참조
 
 * [refactoring.guru](https://refactoring.guru/ko/design-patterns/) - 무료 공개 ebook

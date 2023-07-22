@@ -1,6 +1,6 @@
 # 아이디어 방법론
 
-# Untool. 문제 해결, 더 나은 사고를 도와주는 도구
+## Untool. 문제 해결, 더 나은 사고를 도와주는 도구
 
 https://untools.co/
 
@@ -10,7 +10,7 @@ https://untools.co/
 
 메인 화면에 상황에 따라서 사용할 수 있는 도구들이 나열되어 있다.
 
-## Decision Matrix
+### Decision Matrix
 
 https://untools.co/decision-matrix
 
@@ -28,7 +28,7 @@ https://untools.co/decision-matrix
 
 그리고 각 도구의 요소에 점수를 주고 가중치를 곱한다. 가중치를 곱한 점수를 모두 더해서 가장 높은 점수를 받은 도구를 선택한다.
 
-## Abstracting Laddering
+### Abstracting Laddering
 
 https://untools.co/abstraction-laddering
 

@@ -1,6 +1,6 @@
 # Object Oriented Programming
 
-# Robert C. Martin: Principles of Component Design.
+## Robert C. Martin: Principles of Component Design.
 
 https://amara.org/ko/videos/XJGyts0sfDVQ/info/robert-c-martin-principles-of-component-design/
 
@@ -35,7 +35,7 @@ OOP 장점이 현실 세계를 잘 비춘다고 적었었다. 그런데 Robert C
 예전에는 위험해서 잘 안 썼지요.
 다형성입니다. 아주 사용하기 쉬운 다형성이지요. ...
 
-# KSUG Seminar - Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향
+## KSUG Seminar - Growing Application - 2nd. 애플리케이션 아키텍처와 객체지향
 
 https://www.youtube.com/watch?v=26S4VFUWlJM
 
@@ -83,7 +83,7 @@ https://youtu.be/26S4VFUWlJM?t=1h6m57s
 * (하나만 할인 => 중복 할인 허용 시)
 * "우린 중복 할인 허용해" 라고 하지만 코드가 어떻게 돌아가는지 봐야만 알 수 있다.
 
-# 우아한 객체지향 - 우아한 테크 세미나
+## 우아한 객체지향 - 우아한 테크 세미나
 
 slide: https://www.slideshare.net/baejjae93/ss-151545329
 video: https://youtu.be/dJ5C4qRqAgA
@@ -91,7 +91,7 @@ video: https://youtu.be/dJ5C4qRqAgA
 어떻게 객체지향 코드를 작성할 수 있는지 설명하는 글.
 코드를 단계별로 개선해나가는 방식으로 설명해서 이해하기 쉽다.
 
-## 때로는 절차지향이 객체지향보다 좋다.
+### 때로는 절차지향이 객체지향보다 좋다.
 
 ![object vs procedural comparison 125p](res/woowahanoop-comparison-125p.png)
 
@@ -103,7 +103,7 @@ video: https://youtu.be/dJ5C4qRqAgA
 
 절차적 코드와 객체지향 코드의 trade-off를 잘 고려해서 사용한다.
 
-## 객체 참조 끊기
+### 객체 참조 끊기
 
 ![object reference 91p](res/woowahanoop-object-reference-91p.png)
 ![object reference uml 92p](res/woowahanoop-object-reference-uml-92p.png)
@@ -124,7 +124,7 @@ ORM을 통한 객체 참조는 가장 강한 결합도를 가진다.
 
 같은 도메인(패키지)는 객체 참조, 경계 밖에 있는 도메인은 ID로 연관 관계 가지는 것도 좋다.
 
-## 참조를 끊고, 로직 옮기기 (컴파일 에러!)
+### 참조를 끊고, 로직 옮기기 (컴파일 에러!)
 
 ![object reference compile error 114p](res/woowahanoop-object-reference-compile-error-114p.png)
 
@@ -140,7 +140,7 @@ ORM을 통한 객체 참조는 가장 강한 결합도를 가진다.
 
 이런 절차지향 코드는 한 눈에 볼 수 있고, 검증 로직을 변경하기 위해서만 수정하기 때문에 응집도가 높다.
 
-# OOP와 관련된 글
+## OOP와 관련된 글
 
 **OOP (객체 지향 프로그래밍) 프로그래밍 실습용 좋은 책 추천 부탁드립니다** \
 https://kldp.org/node/123799
@@ -197,11 +197,11 @@ http://okky.kr/article/342405
 이 글은 OOP에서의 getter, setter 위치에 대해서 설명하고
 스칼라에서 getter, setter는 어떻게 표현되는지 보여준다.
 
-# 고민하는 내용
+## 고민하는 내용
 
 적당히 구현하더라도 문제는 없지만, Best Practice를 지키고 싶다.
 
-## 언제 sub class를 만들어야 할까?
+### 언제 sub class를 만들어야 할까?
 
 https://www.youtube.com/watch?v=4F72VULWFvc
 
@@ -213,6 +213,6 @@ https://www.youtube.com/watch?v=4F72VULWFvc
 
 [Heuristics on when should one subclass and when not](https://softwareengineering.stackexchange.com/q/270869)
 
-## Enum vs Inheritance
+### Enum vs Inheritance
 
 [Inheritance vs enum properties in the domain model](https://stackoverflow.com/questions/4254182/inheritance-vs-enum-properties-in-the-domain-model)

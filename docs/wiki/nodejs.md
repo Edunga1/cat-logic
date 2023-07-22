@@ -2,12 +2,12 @@
 
 node.js로 개발을 하고있지 않아서.. 대부분 내용이 2016년 정도에 머물러 있다.
 
-# NodeJS Test Tools
+## NodeJS Test Tools
 
 지금은 [Jest](https://github.com/facebook/jest)를 사용하고 있다.
 이거 하나면 대부분 가능하더라.
 
-## Mocha - Framework
+### Mocha - Framework
 
 테스트 구조를 제공한다.
 
@@ -28,7 +28,7 @@ describe('어떤 테스트를 할 것인지 대략적인 설명', function () {
 });
 ```
 
-## Chai - Library
+### Chai - Library
 
 Assertion 라이브러리. 값 비교에 사용한다.
 
@@ -46,7 +46,7 @@ describe('어떤 테스트를 할 것인지 대략적인 설명', function () {
 });
 ```
 
-## Istanbul - Coverage Tool
+### Istanbul - Coverage Tool
 
 코드 커버리지. 내 **테스트 코드**가 **모듈의 어디까지 테스트하는지 측정** 하는데 사용한다.
 
@@ -58,11 +58,11 @@ Mocha와 함께 실행 : `istanbul cover _mocha` (`_mocha`인 이유는 Mocha의
 
 별도의 코드는 없다.
 
-# Proxyquire
+## Proxyquire
 
 https://github.com/thlorenz/proxyquire
 
-## proxyquire 모듈 로드 순서 문제
+### proxyquire 모듈 로드 순서 문제
 
 ```bash
 src/
@@ -107,7 +107,7 @@ proxyquire('../src/router/auth', {
 
 `proxyquire`가 `app.js` -> `auth.js`의 `require('../find-basic-member')`를 사용한다.
 
-### `require('proxyquire').noPreserveCache()` 사용하기
+#### `require('proxyquire').noPreserveCache()` 사용하기
 
 위의 예제처럼 사용한 경우 `proxyquire()` 이후에 로드하는 모듈은 모두 Mock Module을 사용한다.
 
@@ -128,7 +128,7 @@ const mockApp = proxyquire('../src/app', {
 
 의존의 의존을 모두 명시한다.
 
-# Proxyquire vs. rewire
+## Proxyquire vs. rewire
 
 테스트 할 때 Dependency Injection 하는데 사용하는 도구 2가지 비교.
 
@@ -140,9 +140,9 @@ proxyquire: https://github.com/thlorenz/proxyquire
 
 proxyquire는 의존 모듈을 덮어 쓴다고 설명하고 있다. *overriding dependencies*
 
-## 어떤 차이가 있을까?
+### 어떤 차이가 있을까?
 
-### rewire: 테스트 대상 내에 선언한 변수를 가로채어 바꾼다.
+#### rewire: 테스트 대상 내에 선언한 변수를 가로채어 바꾼다.
 
 ```javascript
 // app.js
@@ -160,7 +160,7 @@ app.__set__('foo', 2);
 app();  // 2
 ```
 
-### proxyquire: 테스트 대상이 `require`하는 모듈을 바꿔서 보내준다.
+#### proxyquire: 테스트 대상이 `require`하는 모듈을 바꿔서 보내준다.
 
 ```javascript
 // bar.js
@@ -184,16 +184,16 @@ const app = proxyquire('./app', {
 app();  // 2
 ```
 
-## rewire 제한사항
+### rewire 제한사항
 
 rewire는 `const`로 선언된 변수는 변경할 수 없었다. 따라서 의존 모듈을 `const`에 할당하면 stub 할 수 없다.
 이 문제 때문에 일단 proxyquire를 사용하고 있다.
 
-# Sinon.JS
+## Sinon.JS
 
 자바스크립트를 위한 테스트 spies, stubs, mocks.
 
-## `new Date()` 조작하기
+### `new Date()` 조작하기
 
 ```javascript
 var clock = sinon.useFakeTimers(new Date('1800-01-01 00:00:00'));
@@ -230,7 +230,7 @@ clock1.restore();
 console.log(new Date()); // now
 ```
 
-# NodeJS data validation
+## NodeJS data validation
 
 웹 서버를 작성할 때, 요청 데이터를 수동으로 검증하는 일은 너무 피곤하다.
 
@@ -259,7 +259,7 @@ hapijs에 종속되지 않아서 어느 곳에서나 사용할 수 있다:
 
 > The most powerful schema description language and data validator for JavaScript.
 
-# NodeJS 서버 로컬 요청만 허용하기
+## NodeJS 서버 로컬 요청만 허용하기
 
 https://stackoverflow.com/questions/14043926/node-js-connect-only-works-on-localhost<br>
 여기에서 힌트를 얻었음
@@ -273,7 +273,7 @@ https://nodejs.org/api/net.html#net_server_listen_port_host_backlog_callback<br>
 MSA 환경 구축하면 다른 머신의 연결도 있을테니까.
 virtual host 또는 방화벽으로 막는게 합리적으로 보인다.
 
-# pm2 deploy 시 주의할 점
+## pm2 deploy 시 주의할 점
 
 [pm2 deploy tutorial](http://pm2.keymetrics.io/docs/usage/deployment/#complete-tutorial)
 처럼 `post-deploy`를 다음과 같이 저장하는 경우 조심해야 한다.
@@ -316,11 +316,11 @@ pm2로 배포 프로세스를 관리하고 싶어서 설정 파일을 작성하�
 
 따라서 리모트에서도 항상 `config` 저장소를 clone 후 `pm2 startOrRestart` 하도록 해야겠다.
 
-# Jupyter notebook 사용하기
+## Jupyter notebook 사용하기
 
 [Jupyter Docker Stacks](docker#Jupyter Docker Stacks)
 
-# Taming architecture complexity in v8
+## Taming architecture complexity in v8
 
 https://theori.io/research/korean/taming-architecture-complexity-in-v8
 

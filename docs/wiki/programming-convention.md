@@ -1,6 +1,6 @@
 # Programming Convention
 
-# Semantic Versioning
+## Semantic Versioning
 
 `9.12.3`과 같이 3개의 넘버링으로 소프트웨어 버전을 표현하는 방식이다.
 
@@ -15,7 +15,7 @@ https://semver.org/ 이런 사이트가 있지만 막상 버전 갱신하려면 
 
 쓰레드는 [리팩토링은 어떤 버전을 올려야 하나요?](https://users.rust-lang.org/t/semver-for-refactoring-change/81370/5)
 
-# `X-` prefix?
+## `X-` prefix?
 
 `experimental` 혹은 `extension`의 약자라고 한다.
 보통 비공식적(unofficial) 사양을 나타내는데 주로 사용한다.
@@ -44,7 +44,7 @@ services:
   # ...
 ```
 
-# ISO 8601 - 날짜, 시간 관련 커뮤니케이션 국제 표준
+## ISO 8601 - 날짜, 시간 관련 커뮤니케이션 국제 표준
 
 포맷 간단 요약: https://www.cryptosys.net/pki/manpki/pki_iso8601datetime.html
 
@@ -65,7 +65,7 @@ services:
 
 [python](./python.md)의 경우 시간대 지정자 `Z`가 생략되었다.
 
-## python의 datetime.isoformat()은 ISO 8601을 위반한다.
+### python의 datetime.isoformat()은 ISO 8601을 위반한다.
 
 https://stackoverflow.com/questions/19654578/python-utc-datetime-objects-iso-format-doesnt-include-z-zulu-or-zero-offset
 

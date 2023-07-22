@@ -1,6 +1,6 @@
 # Shell 명령어
 
-# `man` - 명령어 매뉴얼
+## `man` - 명령어 매뉴얼
 
 어떤 명령이든 `man COMMAND`로 메뉴얼을 확인하자. 내장 명령어라면 대부분 제공한다.
 
@@ -9,7 +9,7 @@
 
 Bash에 대한 내용도 `man bash`로 알 수 있다. `if [ -e file ]`에서 `-e`를 모르겠다면 메뉴얼에서 확인할 수 있다.
 
-# `set -ex`
+## `set -ex`
 
 도커파일이나 스크립트를 보면 `set -ex` 구문이 많이 보인다.
 
@@ -18,7 +18,7 @@ Bash에 대한 내용도 `man bash`로 알 수 있다. `if [ -e file ]`에서 `-
 
 디버깅용으로 유용하다 함.
 
-# `sed` - 파일 특정 라인만 읽기
+## `sed` - 파일 특정 라인만 읽기
 
 https://unix.stackexchange.com/questions/288521/with-the-linux-cat-command-how-do-i-show-only-certain-lines-by-number
 
@@ -35,7 +35,7 @@ sed -n -e 1,5446p data.txt | grep false | awk '{print $1}'
 `-n`: 입력된 행을 표준 출력으로 보낸다.<br>
 `-e`: 여러개의 범위를 지정하려면 `-e`로 구분한다. `sed -n 1,3p data.txt` 이렇게 하나의 범위라면 `-e`는 생략해도 된다.
 
-# `nohup` - 멈추지 않고 명령어 실행하기
+## `nohup` - 멈추지 않고 명령어 실행하기
 
 `nohup`은 no hangup의 줄임말. 터미널을 종료해도 중지 시그널을 무시하고 진행한다.
 
@@ -63,12 +63,12 @@ $ nohup COMMAND
 $ FOO='foo' nohup COMMAND
 ```
 
-## stdout은 `nohup.out`에 저장된다.
+### stdout은 `nohup.out`에 저장된다.
 
 stdout은 `nohup.out`에 저장된다.
 명령어가 실행중이라면 `tail -F nohup.out`으로 실시간으로 확인할 수 있다.
 
-## Background Job으로 실행하자.
+### Background Job으로 실행하자.
 
 그냥 `&` 없이 실행하면 foregorund로 돈다. `nohup`만 사용한다고해서 background로 전환되지 않는다.
 이 상태에서 `ctrl + c`로 빠져나오면 **스크립트가 종료**된다.
@@ -77,9 +77,9 @@ stdout은 `nohup.out`에 저장된다.
 
 ref. https://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html
 
-## `nohup`으로 실행한 프로세스를 종료하는 방법
+### `nohup`으로 실행한 프로세스를 종료하는 방법
 
-### `ps aux`로 찾아보자
+#### `ps aux`로 찾아보자
 
 *X.* `ps aux | grep nohup` 결과는 없다.
 
@@ -93,7 +93,7 @@ bash alleb 33723 0.0 0.0 4283996 1252 ?? S 11:16AM 0:00.29 /bin/bash ./tick.sh
 
 PID를 알 수 있으므로 `kill -9 33723`으로 종료할 수 있다.
 
-### background로 띄운 경우 좀 더 알기 쉽다.
+#### background로 띄운 경우 좀 더 알기 쉽다.
 
 ```bash
 ~/workspace/nohup-test
@@ -108,7 +108,7 @@ appending output to nohup.out
 
 Background Job으로 실행하면 PID가 바로 출력되어 알 수 있다.
 
-### 좀 더 똑똑한 방법
+#### 좀 더 똑똑한 방법
 
 백그라운드로 전환 시 출력되는 PID를 파일로 저장하자.
 
@@ -127,7 +127,7 @@ kill -9 `cat save_pid.txt`
 
 ref. https://stackoverflow.com/questions/17385794/how-to-get-the-process-id-to-kill-a-nohup-process/17389526
 
-# .bash**rc** rc의 의미?
+## .bash**rc** rc의 의미?
 
 Run Commands.
 
@@ -136,7 +136,7 @@ https://en.wikipedia.org/wiki/RUNCOM
 
 `.bashrc`, `.npmrc` 등 자주 보여서 찾아봤다.
 
-# `ping` 명령어
+## `ping` 명령어
 
 ```bash
 ping 123.123.123.123
@@ -165,7 +165,7 @@ PING www.google.com (142.250.199.100): 56 data bytes
 64 bytes from 142.250.199.100: icmp_seq=3 ttl=112 time=67.562 ms
 ```
 
-# readlink
+## readlink
 
 ```bash
 $ readlink -f `which node`
@@ -174,9 +174,9 @@ $ readlink -f `which node`
 
 심볼릭 링크를 따라가서 실제 경로를 알 수 있다.
 
-# Tools
+## Tools
 
-## marker - the terminal command palette
+### marker - the terminal command palette
 
 ![marker sample](res/cli-marker-sample.png)
 
@@ -189,7 +189,7 @@ CTRL + SPACE 입력하면 저장한 명령어나 히스토리를 선택할 수 �
 * `marker mark` - 명령어를 북마크한다.
 * `marker remove` - 북마크를 삭제한다.
 
-## Tmuxinator
+### Tmuxinator
 
 https://github.com/tmuxinator/tmuxinator
 
@@ -197,7 +197,7 @@ https://github.com/tmuxinator/tmuxinator
 프로젝트별로 `./.tmuxinator.yml`에 저장하여 사용할 수 있다.
 개인 프로젝트는 코드베이스에 포함하는 것도 좋겠다.
 
-### 지역적으로 사용할 경우
+#### 지역적으로 사용할 경우
 
 ```yaml
 project_name: my-project
@@ -214,7 +214,7 @@ $ tmuxinator  # or tmuxinator start
 
 start 시 설정 이름을 생략하면 `./.tmuxinator.yml`을 찾는다.
 
-### 전역적으로 사용할 경우
+#### 전역적으로 사용할 경우
 
 ```yaml
 name: my-project
@@ -232,7 +232,7 @@ $ tmuxinator my-project  # or tmuxinator start my-project
 
 start 시 설정 이름을 지정하면 `~/.config/tmuxinator/`에서 `name`을 찾는다.
 
-# parameter fallback (default value)
+## parameter fallback (default value)
 
 ```
 echo ${VARIABLE:-word}
@@ -250,7 +250,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
 
-# `time` 명령어 실행시간 측정
+## `time` 명령어 실행시간 측정
 
 ```bash
 $ /usr/bin/time git fetch
@@ -274,7 +274,7 @@ time is /usr/bin/time
 
 ref. https://linuxize.com/post/linux-time-command/
 
-# FZF
+## FZF
 
 https://github.com/junegunn/fzf
 
@@ -295,9 +295,9 @@ A command-line fuzzy-finder. 검색 도구로 사용한다. 매우 추천하는 
 
 fzf가 없으면 보통, tab 두 번 눌러서 모든 파일을 확인할텐데, `CTRL-T`를 사용하는 편이 더 편리하다.
 
-## FZF + git
+### FZF + git
 
-### 브랜치 목록 및 작업 내용
+#### 브랜치 목록 및 작업 내용
 
 ```bash
 lsb = !git branch \

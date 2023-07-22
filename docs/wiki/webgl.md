@@ -1,6 +1,6 @@
 # WebGL
 
-# WebGL2
+## WebGL2
 
 > GPU에서 실행되는 코드를 제공해만 합니다. 그 코드는 두 개 함수 쌍 형태로 제공되어야 하고, 각각의 함수는 정점 셰이더(vertex shader)와 프래그먼트 셰이더(fragment shader)라고 불립니다. 각각은 매우 엄격한 타입(strictly-types)을 가지는 C/C++과 유사한 GLSL(GL Shader Language)로 작성되어야 합니다. 
 
@@ -14,7 +14,7 @@ const gl = canvas.getContext("webgl2")
 
 GLSL이라는 언어로 셰이더와 프라그먼트를 작성하는 코드로 이루어진다:
 ```glsl
-#version 300 es
+##version 300 es
 
 precision highp float;
 
@@ -46,7 +46,7 @@ void main() {
 `
 ```
 
-# 셰이더(Shader)
+## 셰이더(Shader)
 
 > WebGL은 단순한 래스터화(rasterization) 엔진일 뿐입니다. WebGL은 여러분이 작성한 코드로 점, 선 및 삼각형들을 그릴 뿐입니다.
 
@@ -65,7 +65,7 @@ void main() {
 여기서 2D API와의 성능 차이가 나오는 것이 아닐까?\
 [Why WebGL is faster than Canvas?](https://stackoverflow.com/questions/28867297/why-webgl-is-faster-than-canvas)
 
-# References
+## References
 
 WebGL2 기초:\
 https://webgl2fundamentals.org/webgl/lessons/ko/

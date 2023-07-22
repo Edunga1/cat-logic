@@ -82,7 +82,7 @@ Is Trigger 허용시 충돌하더라도 물리연산이 일어나지 않는다.
 오브젝트가 많아지는 경우 물리연산이 모두 발생하면 연산이 많아지므로 주로 충돌 여부만 체크할 수
 있도록 하기 위해서 사용한다.
 
-# Sprite Packer가 동작하지 않는 현상
+## Sprite Packer가 동작하지 않는 현상
 
 **Sprite Packer?**
 * Unity 4.6부터 UGUI제공한다.
@@ -99,7 +99,7 @@ ref.
 * http://gamedev.stackexchange.com/questions/75716/unity-4-5-sprite-packer-does-not-pack-images-inside-resources-folder
 * https://forum.unity3d.com/threads/unity-4-5-sprite-packer-does-not-pack-images-inside-resources-folder.248349/
 
-# OSX 커맨드라인으로 유니티 빌드하기
+## OSX 커맨드라인으로 유니티 빌드하기
 
 안드로이드 빌드를 기준으로 함
 

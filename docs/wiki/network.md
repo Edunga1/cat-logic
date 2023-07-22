@@ -1,6 +1,6 @@
 # Network
 
-# 혼잡 제어
+## 혼잡 제어
 
 congestion window.
 
@@ -12,7 +12,7 @@ congestion window.
 
 > 혼잡 제어 (congestion control) 기능도 기본적으로 제공했기 때문에 복잡한 사항을 신경 쓸 필요가 없었다.
 
-# 인터넷 제어 메시지 프로토콜 (ICMP, Internet Control Message Protocol)
+## 인터넷 제어 메시지 프로토콜 (ICMP, Internet Control Message Protocol)
 
 [ICMP는 네트워크 계층 프로토콜이다.](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol)
 

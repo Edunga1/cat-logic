@@ -2,18 +2,18 @@
 
 AngularJS에 대한 이야기. 2017-11에 작성됨.
 
-# Johnpapa's AngularJS Style Guide
+## Johnpapa's AngularJS Style Guide
 
 https://github.com/johnpapa/angular-styleguide
 
 프론트엔드 자바스크립트 프레임워크의 과도기?에서 만들어진 프레임워크라 생각한다.
 그래서 bad practice를 만들기 쉬웠는데, 그래서 이 스타일 가이드의 인기가 많았다.
 
-## Component
+### Component
 
-### 컨트롤러
+#### 컨트롤러
 
-#### `contollerAs`와 `vm` 사용하기
+##### `contollerAs`와 `vm` 사용하기
 
 https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032
 
@@ -36,9 +36,9 @@ function CustomerController() {
 }
 ```
 
-### 서비스 (service, factory, provider)
+#### 서비스 (service, factory, provider)
 
-#### 서비스 코드 작성은 Revealing Module Pattern
+##### 서비스 코드 작성은 Revealing Module Pattern
 
 https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y052
 
@@ -92,9 +92,9 @@ function dataService() {
 ```
 
 
-## Modularity
+### Modularity
 
-### 데이터 서비스를 분리하기
+#### 데이터 서비스를 분리하기
 
 https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#data-services
 
@@ -109,9 +109,9 @@ XHR calls, local storage, stashing in memory 등으로 부터 데이터를 얻�
   - 
 
   
-# 테스트
+## 테스트
 
-## 테스트 환경 모듈
+### 테스트 환경 모듈
 
 Karma + Mocha + Chai, Angular Mocks
 
@@ -130,7 +130,7 @@ karma의 경우 글로벌로 ```karma-cli```를 설치하라는 글들이 많이
 
 로컬에 ```karma```만 설치하여 ```./node_modules/karma/bin/karma```로 명령어를 실행할 수 있었다.
 
-## karma.conf.js
+### karma.conf.js
 
 ```karma init```을 통해 생성되는 카르마 설정파일을 수정한다.
 
@@ -170,12 +170,12 @@ module.exports = function(config) {
 
 ```
 
-## 실행
+### 실행
 
 ```karma start``` 또는 ``` ./node_modules/karma/bin/karma start```
 
 
-# type hinting
+## type hinting
 
 컨트롤러 내에서 `vm`(ViewModel)으로 뷰 모델을 관리 할 때 타입 힌팅을 제대로 얻을 수 없다.
 
@@ -217,9 +217,9 @@ function controller() {
 }
 ```
 
-# Migrating 1.5 to 1.6
+## Migrating 1.5 to 1.6
 
-## Component Lifecycle
+### Component Lifecycle
 
 Lifecycle이 생겼다.
 
@@ -230,7 +230,7 @@ https://docs.angularjs.org/guide/component
 
 Intercomponent Communication 단락 참조
 
-## $http
+### $http
 
 이제 success, error가 아니라 then, catch를 사용한다. 더 이상 $q.defer()로 wrapping 할 필요가 없다.
 

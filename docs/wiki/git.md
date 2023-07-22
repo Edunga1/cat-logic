@@ -11,7 +11,7 @@ Git은 2005년 4월 3일에 리누스 토발즈가 개발을 시작해서,
 > _long_ time that I've done without using BK, and it's the first one ever
 > that has been built up completely with "git".
 
-# 명령어 자동완성하기
+## 명령어 자동완성하기
 
 서버 터미널에서 `git chec`까지만 타이핑하고 tab 키를 누르면 checkout이 자동 완성 되었다.
 
@@ -23,11 +23,11 @@ Git은 2005년 4월 3일에 리누스 토발즈가 개발을 시작해서,
 
 [https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion](https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion)
 
-## Windows
+### Windows
 
 그냥 git bash for windows 기본 기능으로 지원한다.
 
-## OSX
+### OSX
 
 위 링크데로 Homebrew로 깔아도 안돼서 더 찾아보니..
 
@@ -37,7 +37,7 @@ git-scm에 다른 방법이 나와있다.
 
 요약하면 git-completion 라는 스크립트를 받아서 .bash_profile 에 등록하면 된다.
 
-# Git ssh
+## Git ssh
 
 맥에서 Git을 사용하다 보면 특별한 경우가 아닌 이상 한 번 로그인하면 다시 로그인하는 일은 없다.
 
@@ -61,7 +61,7 @@ git@github.com:<USERNAME>/<REPOSITORY>.git
 
 그렇지 않으면 fetch 등 remote url에 접근할 수 없다.
 
-# 깃 커밋 해시 충돌에 관하여
+## 깃 커밋 해시 충돌에 관하여
 
 갑자기 커밋 해시는 어떤 정보를 기반하여 만들어지는지 궁금했다.
 커밋 해시는 커밋 `git commit` 할 때 생성되고,
@@ -73,40 +73,40 @@ git@github.com:<USERNAME>/<REPOSITORY>.git
 [SHA-1 해시 값에 대한 단상](https://git-scm.com/book/ko/v1/Git-%EB%8F%84%EA%B5%AC-%EB%A6%AC%EB%B9%84%EC%A0%84-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0#SHA-1-%ED%95%B4%EC%8B%9C-%EA%B0%92%EC%97%90-%EB%8C%80%ED%95%9C-%EB%8B%A8%EC%83%81)에서
 걱정에 대한 현실적인 조언을 해 준다. 또 실제로 발생하면 어떤 일이 일어나는지 알려준다.
 
-### https://www.facebook.com/iamprogrammer.io/posts/1379005945454259
+#### https://www.facebook.com/iamprogrammer.io/posts/1379005945454259
 
 그래도 운이 정말 나빠서, 해시 충돌이 나는 것이 우려된다면 리누스 토발즈도 이 이슈에 대해 언급했다.
 아쉽게도 원글이 있던 google+가 종료되어 볼 수 없지만 예전에 올라온 나프다 게시글에 누군가 요약해 주었다.
 
 사람이 소스코드의 변경을 지켜보고 있기 때문에 괜찮고, 또 대안은 있다고..
 
-### https://stackoverflow.com/questions/9392365
+#### https://stackoverflow.com/questions/9392365
 
 사실 가장 먼저 본 글은 SO의 글이다.
 [답변](https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081)에서,
 기발하게도 해시 사이즈를 4-bit로 줄여서 실제로 재현했다. `push`, `clone` 할 때 에러가 난다.
 
-### https://stackoverflow.com/questions/34764195
+#### https://stackoverflow.com/questions/34764195
 
 커밋 해시가 무엇으로 결정되는지 알려주는 SO 글. 부모 커밋, 커미터, 메시지 등.
 
-### https://www.codentalks.com/t/topic/2973
+#### https://www.codentalks.com/t/topic/2973
 
 > 뻘글) git 불안해서 못쓰겟음니다 -.-;
 
 찾다가 나온 유머글 ㅎㅎ. [덧글에 있는 만화](https://www.codentalks.com/uploads/default/original/2X/9/98fa43031c7cfbf44c714ad5819ea504ef37e70c.jpg)처럼
 걱정, 우려만 해서는 안되겠다.
 
-### https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/
+#### https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/
 
 sha1 충돌 이슈에 설명. 해시에 대한 기초 설명, 구글이 sha-1 충돌 재현에 대한 주변 설명.
 
-### https://www.mathstat.dal.ca/~selinger/md5collision
+#### https://www.mathstat.dal.ca/~selinger/md5collision
 
 이 글엔 실제로 다른 파일인데 같은 MD5 sum을 가진 예제를 제공한다.
 근데 다운받아보면 실행도 안되고, 바이너리지만 열어보면 내용도 같아 보이는데.. 심지어 파일 크기도 같다 :(
 
-# `git rebase -i`
+## `git rebase -i`
 
 https://meetup.toast.com/posts/39
 
@@ -210,11 +210,11 @@ B를 가장 밑으로 빼고, A1과 A2는 squash로 바꾼다. 이러면 A와 B�
 
 A
 
-# This is the commit message #2:
+## This is the commit message #2:
 
 A1
 
-# This is the commit message #3:
+## This is the commit message #3:
 
 A2
 
@@ -272,7 +272,7 @@ $ glog
 
 만약 A와 B가 같은 파일을 작업하게 되면, 당연하게도 conflict 발생한다.
 
-# `git revert -m`
+## `git revert -m`
 
 `-m`, `--mainline` 옵션은 merge commit을 되돌리는데 사용한다. merge는 2개의 커밋을 병합하는 것이므로, 둘 중 어느 상태로 돌릴 것인지 결정해야 한다.
 
@@ -293,7 +293,7 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 
 `5c54ea` 되돌려서 parent commit 중 하나인 `b73ce1`로 돌아간다. 물론 새로운 커밋이기 떄문에 hash는 별개다.
 
-# `git log --graph`
+## `git log --graph`
 
 TL;DR
 
@@ -302,7 +302,7 @@ TL;DR
 - 옵션에 대한 정보: https://git-scm.com/docs/git-log#_commit_ordering
 - 기본 값은 `--topo-order`로 보인다.
 
-## `--date-order` 로 피라미드 그래프 방지하기
+### `--date-order` 로 피라미드 그래프 방지하기
 
 ```bash
 git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)<%an>%C(reset)%C(bold yellow)%d%C(reset)' --all
@@ -325,7 +325,7 @@ git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(b
 
 ![with --date-order](res/git-log-graph-date-order.png)
 
-### 옵션 설명
+#### 옵션 설명
 
 `git log --help` 에서 정렬과 관련된 내용을 확인하면 어떻게 정렬 방법에 대해서 설명하고 있다.
 
@@ -367,15 +367,15 @@ Commit Ordering
 - `--topo-order` 8 6 5 3 7 4 2 1 순서로 표기한다.
 - `--date-order` 8 7 6 5 4 3 2 1 순서로 표기한다.
 
-## `--date-order` 와 `--author-date-order` 비교
+### `--date-order` 와 `--author-date-order` 비교
 
 ![--date-order and --author-date-order comparison](res/git-log-graph-author-date-order-comparison.png)
 
 왼쪽이 `--date-order` 오른쪽이 `--author-date-order`이다.
 
-# Troubleshooting
+## Troubleshooting
 
-## Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
+### Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
 
 아직 해결하지 못했다.
 

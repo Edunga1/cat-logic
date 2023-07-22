@@ -1,8 +1,8 @@
 # Kotlin
 
-# Features
+## Features
 
-## Scope Functions
+### Scope Functions
 
 https://kotlinlang.org/docs/scope-functions.html
 
@@ -20,7 +20,7 @@ context object의 상태로 계산하여 반환하고 싶으면 `let`을 사용�
 어떤 함수를 사용할 지 시나리오를 공식 문서에서 설명한다:  https://kotlinlang.org/docs/scope-functions.html#function-selection
 
 
-# Testing
+## Testing
 
 test framework: [Kotest](https://github.com/kotest/kotest)
 mocking: [MockK](https://github.com/mockk/mockk)
@@ -40,7 +40,7 @@ every { obj.foo() } returns 'bar'
 justRun { obj.bar() }  // Unit 반환하는 경우
 ```
 
-## Better Specs
+### Better Specs
 
 https://www.betterspecs.org/
 
@@ -64,7 +64,7 @@ class BuyerSendingAddressServiceTest : DescribeSpec({
 })
 ```
 
-## Kotest
+### Kotest
 
 https://kotest.io/docs/framework/testing-styles.html
 
@@ -76,7 +76,7 @@ Kotest의 Style은 모두 Kotlin DSL로 구성되어 있어 직관적인 구조�
 IntelliJ 사용한다면 [플러그인](https://plugins.jetbrains.com/plugin/14080-kotest)은 반드시 설치하자.
 JUnit처럼 테스트 파일에서 테스트를 실행하거나, 테스트 레이아웃을 위한 별도 창을 제공한다.
 
-### IntelliJ + Kotest Integration
+#### IntelliJ + Kotest Integration
 
 플러그인은 모듈로부터 테스트 파일을 만들 수 있는 기능도 제공한다.
 
@@ -99,7 +99,7 @@ class WebClientConfigTest : DescribeSpec({
 
 테스트를 자주 만드는데 매우 편리한 기능이다.
 
-### Rollback Test
+#### Rollback Test
 
 https://kotest.io/docs/extensions/spring.html#test-method-callbacks
 
@@ -108,14 +108,14 @@ https://kotest.io/docs/extensions/spring.html#test-method-callbacks
 
 `@DataJpaTest`는 `@Transactional`이 붙어있어도 이 설정 없이는 동작하지 않는다.
 
-# [Language Server](./language-server-protocol.md)
+## [Language Server](./language-server-protocol.md)
 
 https://github.com/fwcd/kotlin-language-server
 
 2022-11-29 아직 퍼포먼스가 안나온다. 자주 끊기고, 느리다.
 ref. https://www.reddit.com/r/neovim/comments/yf0v86/kotlin_language_server_very_slow/
 
-# ranges
+## ranges
 
 https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/
 
@@ -146,7 +146,7 @@ for (i in 1.rangeTo(100) step 5) {
 
 Char, Int, Long 등 비교할 수 있는 타입이라면 내장된 `Range` 클래스를 제공한다.
 
-## Hierarchy
+### Hierarchy
 
 ```
 IntRange --|> IntProgression    --|> Iterable<Int>
@@ -162,7 +162,7 @@ https://www.netguru.com/blog/traversing-through-dates-with-kotlin-range-expressi
 예를들면, 날짜 범위를 나타내는 클래스를 구현하고 싶다면 `ClosedRange<LocalDate>`만 구현해도 충분하다.
 `Pair<LocalDate, LocalDate>` 보다는 좀 더 명확할 것이다.
 
-# Kotlin DSL
+## Kotlin DSL
 
 https://kotlinlang.org/docs/type-safe-builders.html
 
@@ -234,7 +234,7 @@ html {
 }
 ```
 
-# Exposed
+## Exposed
 
 https://github.com/JetBrains/Exposed
 

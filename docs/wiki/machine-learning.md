@@ -5,9 +5,9 @@
 
 만들지는 못하더라도 적극적으로 사용해 보자. 이 바람을 피할 수는 없다.
 
-# Interesting Things
+## Interesting Things
 
-## 인공지능 제품의 프롬프트 유출
+### 인공지능 제품의 프롬프트 유출
 
 대규모 언어 모델로 만들어진 제품이 사용자에게 도움을 주려는 목적을 가지고 동작하는 것처럼 보이는 이유가 뭘까?\
 재밌게도 그 원리는 프롬프트를 통해서 인공지능에 역할을 부여한 것으롭 보인다.
@@ -93,9 +93,9 @@ Bing Chat도 같은 방식으로 전체 프롬프트가 유축되었다.
 
 ref. https://news.hada.io/topic?id=9182
 
-# Products
+## Products
 
-## ChatGPT
+### ChatGPT
 
 https://openai.com/blog/chatgpt/
 
@@ -104,7 +104,7 @@ ChatGPT는 대화에 최적화된 언어 모델이다.
 https://chat.openai.com/
 여기서 시험해 볼 수 있다.
 
-### Try ChatGPT!
+#### Try ChatGPT!
 
 2022-12-05 현재 Preview 단계라 무료로 체험해 볼 수 있다.
 구글 로그인으로 간단하게 로그인하면 채팅창이 보인다.
@@ -120,7 +120,7 @@ https://chat.openai.com/
 
 ![ChatGPT chatting journal 4](res/chatgpt-04.png)
 
-### ChatGPT를 Virtual Machine으로 만들기
+#### ChatGPT를 Virtual Machine으로 만들기
 
 https://news.hada.io/topic?id=7953
 OP: https://www.engraved.blog/building-a-virtual-machine-inside/
@@ -137,7 +137,7 @@ OP: https://www.engraved.blog/building-a-virtual-machine-inside/
 
 추가로 ChatGPT로 IQ 테스트를 했다는 글: https://twitter.com/SergeyI49013776/status/1598430479878856737
 
-### 번역 및 문법확인 요청하기
+#### 번역 및 문법확인 요청하기
 
 Git 커밋 메시지를 주로 영어로 작성하는데, ChatGTP에 주로 확인을 맡긴다. (Grammarly는 너무 많은 것을 수집한다.)
 
@@ -148,34 +148,34 @@ ChatGPT: `위 문장의 문법은 전반적으로 정상적입니다. 그러나 
 
 번역과 함께 나은 표현을 알려주기도 하고, 추가적으로 왜 그런 표현을 사용하는 지에 대해서 물어보면 상황별로 적절한 단어를 알려준다.
 
-## Stable Diffusion
+### Stable Diffusion
 
 text-to-image 모델.
 
-### promptbook
+#### promptbook
 
 프롬프트를 설명하는 ebook:
 https://openart.ai/promptbook
 
 * SD는 [LAION-5B](https://laion.ai/blog/laion-5b/) 데이터 세트의 이미지로 트레이닝 했다.
 
-### 따라하기
+#### 따라하기
 
-#### Colab Notebook
+##### Colab Notebook
 
 Colab Notebook으로 공유되어 있어서 따라하기 쉽다:
 https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/stable_diffusion.ipynb
 
 Hugging Face에서 모델을 다운로드 받기 위해 로그인을 필요로 한다. 웹 연동이 되므로 쉽게 가능.
 
-#### stable-diffusion-webui
+##### stable-diffusion-webui
 
 Web UI로 제공하는 버전:
 https://github.com/AUTOMATIC1111/stable-diffusion-webui
 
 코드 작성할 필요 없이 웹페이지에서 모든 작업을 처리할 수 있다.
 
-##### Trouble Shooting
+###### Trouble Shooting
 
 WSL2 Ubuntu에서 환경 구축을 하는데 이슈가 좀 있었다.
 
@@ -196,7 +196,7 @@ CFLAGS="-I$(brew --prefix xz)/include" LDFLAGS="-L$(brew --prefix xz)/lib" pyenv
 
 파이썬 설치 후 경고 메시지가 출력되고 있었다: `WARNING: The Python lzma extension was not compiled. Missing the lzma lib?`
 
-## Open API
+### Open API
 
 텍스트 완성, 이미지 생성, 코드 완성 등 다양한 모델을 제공한다.
 그 중 quickstart의 텍스트에 대한 내용(아마도 GTP-3 인 듯)에 대한 개념을 조금 읽었다.
@@ -217,11 +217,11 @@ quickstart: https://beta.openai.com/docs/quickstart
 토큰은 단어, 단어 뭉치, 문자 하나가 될 수 있으며 추천 단위가 토큰이다.
 예를들어 `Horses are my favorite` 문장을 입력하면 `animal`, `animals`, `\n`, `!` 등을 다음에 올 토큰으로 추천하는 식이다.
 
-## Github Copilot
+### Github Copilot
 
 코드 작성을 도와주는 AI 도구.
 
-### Copilot CLI
+#### Copilot CLI
 
 https://githubnext.com/projects/copilot-cli/
 
@@ -262,7 +262,7 @@ copilot 만큼의 성능은 나오지 않는 거 같다. 프롬프트를 추가�
 다만 이건 메뉴얼을 좀 더 보기쉽게 커뮤니티 차원에서 치트시트를 만드는 것이다보니
 내 문맥에 따른 명령어를 추천해주는 것은 아니다.
 
-## AWS CodeWhisperer
+### AWS CodeWhisperer
 
 https://aws.amazon.com/ko/codewhisperer/
 
@@ -279,7 +279,7 @@ VSCode는 AWS Toolkit 플러그인으로 제공한다.
 
 개인 코드 공유 여부를 설정할 수 있으니, 공유하고 싶지 않으면 바꿔주자.
 
-## Segment Anything Model(SAM): Meta가 만든 어떤 이미지에서든 객체를 잘라낼 수 있는 모델
+### Segment Anything Model(SAM): Meta가 만든 어떤 이미지에서든 객체를 잘라낼 수 있는 모델
 
 https://segment-anything.com/
 
@@ -291,7 +291,7 @@ VR기기를 예시로 매우 빠르게 객체를 구분해 내는 것을 보여�
 
 SAM으로 만든 웹페이지의 이미지로부터 객체를 추출하는 [Magic Copy](https://github.com/kevmo314/magic-copy)라는 구글 확장이 있다. 역시나 잘 동작하고, 쓸만해 보인다.
 
-## LMQL
+### LMQL
 
 https://lmql.ai/
 
@@ -349,7 +349,7 @@ where
 
 ref. https://news.hada.io/topic?id=9185
 
-# Hugging Face
+## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
 사용자가 머신러닝 모델과 데이터셋을 공유할 수 있는 플랫폼.

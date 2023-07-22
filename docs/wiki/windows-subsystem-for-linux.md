@@ -2,9 +2,9 @@
 
 줄여서 WSL. 윈도우10부터 리눅스를 실행할 수 있다.
 
-# vim 설정
+## vim 설정
 
-## clipboard 공유
+### clipboard 공유
 
 ```vim
 let g:clipboard = {
@@ -42,7 +42,7 @@ endif
 
 ref. https://github.com/Edunga1/dotfiles/blob/master/vim/vim-include/_wsl.vim
 
-# http 관련 명령어가 동작하지 않는 문제
+## http 관련 명령어가 동작하지 않는 문제
 
 `curl` `wget` `docker pull`  `npm install` 등 명령어가 일체 먹히지 않는다.
 `git` 등 간접적으로 http를 사용하는 명렁어도 동작하지 않는다.
@@ -63,7 +63,7 @@ generateResolvConf = false
 nameserver 8.8.8.8
 ```
 
-# Ubuntu 버전 업그레이드
+## Ubuntu 버전 업그레이드
 
 18.04 -> 20.04로 업그레이드했다. 이슈가 하나 있었는데, WSL 보다는 ubuntu 이슈라 봐도 될 듯.
 

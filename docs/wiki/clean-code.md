@@ -1,6 +1,6 @@
 # Clean Code
 
-## 보일러 플레이트 줄이기 - Redux 가이드 중
+### 보일러 플레이트 줄이기 - Redux 가이드 중
 
 https://ko.redux.js.org/usage/reducing-boilerplate/#%EC%95%A1%EC%85%98
 

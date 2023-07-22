@@ -1,6 +1,6 @@
 # Javascript & Typescript
 
-# 자바스크립트와 이벤트 루프
+## 자바스크립트와 이벤트 루프
 
 http://meetup.toast.com/posts/89
 자바스크립트가 어떻게 싱글 스레드에서 UI, 비동기 처리를 하는지에 대해 설명하는 글.
@@ -8,9 +8,9 @@ http://meetup.toast.com/posts/89
 https://vimeo.com/96425312
 이벤트 루프에 대해서 설명하는 동영상.
 
-# Douglas Crockford's Javascript The Good Parts - 권장하지 않는 것.
+## Douglas Crockford's Javascript The Good Parts - 권장하지 않는 것.
 
-## Good Parts Reconsidered
+### Good Parts Reconsidered
 
 ![reconsidered slide 1](./res/js-good-parts-reconsidered-slide1.png)
 
@@ -20,7 +20,7 @@ https://vimeo.com/96425312
 - I have stopped using **null**
 - I have stopped using falsiness
 
-### No prototypal pattern에 대한 이야기
+#### No prototypal pattern에 대한 이야기
 
 더글라스 크락포드는 이전에 **new** 대신 **Object.create** 사용을 권장했었다.
 그런데 **Object.create**도 사용하지 않기를 권장한다. 그 이유는 **this** 키워드를 사용을 권장하지 않기 때문.
@@ -31,7 +31,7 @@ https://vimeo.com/96425312
 (*해석이 잘 안되는데, this는 글로벌 오브젝트를 가르키는데 글로벌 오브젝트를 찾기 위해서 느려진다는 거 같다.*)을 집었다.
 그리고 **this**를 배제함으로써 더 쉬워졌다. 그리고 prototypal pattern가 쓸모 없어지면서 functional pattern에 집중하게 되었다.
 
-### null, falsiness에 대한 이야기
+#### null, falsiness에 대한 이야기
 
 자바스크립트에는 두 가지 [Bottom Type](https://en.wikipedia.org/wiki/Bottom_type)(값이 없는 타입)이 있다. **null**과 **undefined**.
 **undefined** 하나만 사용하기로 했다. 더 많이 입력해야 하지만 문제없다. (ㅋ)
@@ -39,7 +39,7 @@ https://vimeo.com/96425312
 falsiness는 `false`를 나타내는 값들인데 대표적으로 빈 문자열 `''`, `0`, `NaN`, `undefined` 등이 있다.
 falsiness는 좋은 아이디어지만 크락포드는 논리식에서 falsiness에 의존하지 않기로 했다. 가능한 명시적으로 비교해야 한다.
 
-## Loops Reconsidered
+### Loops Reconsidered
 
 ![reconsidered slide 2](./res/js-good-parts-reconsidered-slide2.png)
 
@@ -47,7 +47,7 @@ falsiness는 좋은 아이디어지만 크락포드는 논리식에서 falsiness
 - I don't use `for in`
 - ES6 will have proper tail calls.
 
-## 요약
+### 요약
 
 **new**, **Object.create**, **this**, prototyping 모두 사용하지 않는 것을 권장한다.
 함수형 패러다임을 사용하는 것을 추천한다.
@@ -58,7 +58,7 @@ falsiness는 좋은 아이디어지만 크락포드는 논리식에서 falsiness
 오브젝트를 순회하고 싶다면 `Object.keys(obj)`로 키를 배열화하여 사용한다.
 
 
-# var foo = (bar = 1, bar + 1);
+## var foo = (bar = 1, bar + 1);
 
 ```javascript
 var foo = (bar = 1, bar + 1);
@@ -71,12 +71,12 @@ console.log(foo); // 2
 `Array.prototype.reduce` 같은 메서드에서 유용하다.
 
 
-# [AngularJS](./angularjs.md)
+## [AngularJS](./angularjs.md)
 
 Angular가 아닌 AngularJS에 대한 이야기.
 이제는 사용하지 않지만 [스타일가이드](https://github.com/johnpapa/angular-styleguide/)의 철학은 한 번 읽어볼만 하다.
 
-# Visual Studio Code에서 타입 힌팅 사용하기
+## Visual Studio Code에서 타입 힌팅 사용하기
 
 Javascript 개발을 하다보면 이런 문구를 많이 만나게 된다:
 
@@ -96,7 +96,7 @@ function foo(arg1) {
 Visual Studio Code(또는 [LSP](./language-server-protocol.md)를 사용하는 에디터라면)에서
 **JSDoc** 활용하면 에디터에서 타입 힌트를 제공받을 수 있다.
 
-## 기본 지원
+### 기본 지원
 
 VSCode는 기본적인 타입 추론 기능을 제공한다:
 
@@ -112,13 +112,13 @@ VSCode는 기본적인 타입 추론 기능을 제공한다:
 
 ![vscode intellisense](./res/vscode-intellisense-example3.png)
 
-## JSDoc을 이용하여 타입 추론
+### JSDoc을 이용하여 타입 추론
 
 JSDoc은 자바스크립트의 문서화하기 위한 주석 포맷이다.
 
 ref. http://usejsdoc.org/about-getting-started.html
 
-### 오브젝트와 매개변수 힌팅
+#### 오브젝트와 매개변수 힌팅
 
 타입이 `Object` 인 매개변수의 힌트를 얻어 본다.
 ```javascript
@@ -159,7 +159,7 @@ function func() {
 func(). // foo, bar 타입 힌트를 확인할 수 있다.
 ```
 
-### Generic Type
+#### Generic Type
 
 매개변수를 그대로 반환하는 간단한 함수가 있다고 하면:
 
@@ -181,7 +181,7 @@ function func(arg) {
 
 ![vscode intellisense](./res/vscode-intellisense-example5.png)
 
-#### Promise
+##### Promise
 
 Promise 또한 Generic을 사용함으로 다음과 같이 표현할 수 있다:
 
@@ -200,7 +200,7 @@ func().then(function (result) {
 });
 ```
 
-# JSDoc 파라미터 상수 정의하기 + VSCode Rename Symbol!
+## JSDoc 파라미터 상수 정의하기 + VSCode Rename Symbol!
 
 상수(또는 predefined parameter)를 인자로 받도록 JSDoc 정의하자.
 
@@ -223,6 +223,6 @@ something('regular');
 
 함수 호출 코드에서 값에 커서를 두고 Rename Symbol해도 JSDoc과 참조하는 모든 코드를 변경한다.
 
-# null vs undefined
+## null vs undefined
 
 [Microsoft 코딩 가이드라인](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines#null-and-undefined)에는 `null`을 사용하지 말고, `undefined`를 사용하라고 나와있다.

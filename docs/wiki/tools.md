@@ -2,7 +2,7 @@
 
 커맨드라인 도구는 [shell](./shell.md)에서 관리한다.
 
-# 북마크 매니저 shiori
+## 북마크 매니저 shiori
 
 [https://github.com/go-shiori/shior](https://github.com/go-shiori/shiori)
 
@@ -27,7 +27,7 @@ Go로 구현되고, 웹 서버 + 클라이언트 조합으로 구성된다.
 https://github.com/go-shiori/shior
 여기서 직접 확장프로그램을 로드해야 한다.
 
-## 간단하게 사용해보기
+### 간단하게 사용해보기
 
 [https://github.com/go-shiori/shiori/wiki/Usage](https://github.com/go-shiori/shiori/wiki/Usage)
 
@@ -45,9 +45,9 @@ zip 파일 받아서 압축 해제한다.
 Server: `http://localhost:8080`
 Username: `shiori` Password: `gopher`
 
-# MySQL
+## MySQL
 
-## MySQL Workbench
+### MySQL Workbench
 
 https://www.mysql.com/products/workbench/
 
@@ -55,7 +55,7 @@ https://www.mysql.com/products/workbench/
 
 가끔씩 발생하는 버그가 답답해서 요즘은 Datagrip을 많이 쓴다. 유로다.
 
-## mycli
+### mycli
 
 https://www.mycli.net
 
@@ -63,7 +63,7 @@ https://www.mycli.net
 
 `\dt`, `\G` 등 유용한 shortcuts.
 
-# API Client 비교 Postman, Insomnia, IntelliJ builtin `.http`
+## API Client 비교 Postman, Insomnia, IntelliJ builtin `.http`
 
 standalone 버전인 Postman, Insomnia 그리고 IntelliJ 내장형 `.http`. 사용해보고 비교한다.
 
@@ -76,7 +76,7 @@ standalone 버전인 Postman, Insomnia 그리고 IntelliJ 내장형 `.http`. 사
 
 추가로 pre-request script 기능이 있으면 좋겠다. 호출 전에 토큰 정보를 받아올 때 유용하다.
 
-## 비교
+### 비교
 
 |                    | Postman   | Insomnia                             | IntelliJ                             |
 | ---                | ---       | ---                                  | ---                                  |
@@ -101,7 +101,7 @@ IntelliJ 버전에 따른 변경사항이 있는 상황에서, 라이센스 문�
 구글 드라이브에 동기화 해놓고 사용하면 편리하긴 한데, 충돌이 잦다. 방금 수정한 데이터가 클라우드 버전과 맞지 않아 어느 것을 사용할 것인지 계속 물어본다.
 그리고 이쪽이 부가기능이라 기능이 좀 부실하다. 개발 도구가 IntelliJ라면 접근성은 가장 좋다. Endpoints, Spring Annotation으로부터 바로 생성할 수도 있다.
 
-# IntelliJ IDEA, DataGrip 버전을 fallback 버전으로 다운그레이드했다.
+## IntelliJ IDEA, DataGrip 버전을 fallback 버전으로 다운그레이드했다.
 
 회사 라이센스가 만료되어 `2022.3` 버전에서 `2021.1` 버전으로 돌아갔다.
 구매 요청하면 되지만, [perpetual 라이센스](https://sales.jetbrains.com/hc/en-gb/articles/207240845-What-is-a-perpetual-fallback-license)를 제공해서 사용하겠다 했다.
@@ -111,9 +111,9 @@ IntelliJ 버전에 따른 변경사항이 있는 상황에서, 라이센스 문�
 
 2023년 1월 기준 8개월 정도 사용했고, 커밋할 때 마다 매번 모두 검사하는 불편함은 있지만, 개발하는데 지장은 없다.
 
-## 문제점 기록
+### 문제점 기록
 
-### IntelliJ scratches 폴더 미인식
+#### IntelliJ scratches 폴더 미인식
 
 [scratches](https://www.jetbrains.com/help/idea/scratches.html) 폴더를 내가 별도 설정하여 쓰고 있다.
 
@@ -126,7 +126,7 @@ IntelliJ 버전에 따른 변경사항이 있는 상황에서, 라이센스 문�
 
 `2021.2` 이전 버전에서는 `idea.scratch.path` 이 프로퍼티에 `scratches` 디렉토리가 있는 폴더의 경로로 설정해야 한다.
 
-### 프로젝트 열면 즉시 멈추거나 꺼지는 문제
+#### 프로젝트 열면 즉시 멈추거나 꺼지는 문제
 
 처음에는 라이센스 문제인 줄 알았다. 현재 fallback license를 삭제하고 free tier로 하면 되었기 때문.
 
@@ -137,7 +137,7 @@ IntelliJ 버전에 따른 변경사항이 있는 상황에서, 라이센스 문�
 아무튼 IntelliJ에서는 어떤 이유로 종료된 것인지 메시지 없이 종료되기 때문에 찾기 어려웠다.
 특히 문제가된 플러그인은 직접 설치한 것은 아닌 것으로 기억한다.
 
-### DataGrip 디렉토리 추가 안 됨
+#### DataGrip 디렉토리 추가 안 됨
 
 scratches 폴더 추가하는 것처럼 쿼리를 모아놓은 폴더를 추가하여 사용 중이다.
 `Attach directory to project` 메뉴로 그냥 추가하면 된다. 문제는 해당 기능을 눌러도 아무 반응이 없다.
@@ -146,13 +146,13 @@ scratches 폴더 추가하는 것처럼 쿼리를 모아놓은 폴더를 추가�
 
 이 문제도 메뉴를 선택해도 무반응이며, 에러 메시지도 없다.
 
-# Blink Shell
+## Blink Shell
 
 iOS용 터미널 앱. [App Store](https://itunes.apple.com/app/id1156707581)에서 판매하는데, 가격은 매우 비싸다.
 
 코드가 공개되어 있어서, 직접 빌드해서 사용할 수 있다: https://github.com/blinksh/blink
 
-## Build
+### Build
 
 저장소에 쉽게 설명되어 있다.
 

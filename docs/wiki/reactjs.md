@@ -2,9 +2,9 @@
 
 React는 실무에서 사용해보 않았다. 개인 프로젝트에서만 사용해본 정도.
 
-# React 개발환경 구성하기
+## React 개발환경 구성하기
 
-## Create React App 이용하기
+### Create React App 이용하기
 
 필요한 의존 모듈을 일일이 설치할 수 있지만, Create React App을 이용하면 설치도 간편할뿐더러
 Create React App이 각종 의존 모듈의 버전을 관리해주고, 이슈들을 해결해주기 때문에 지속적으로 케어를 받을 수 있다.
@@ -13,7 +13,7 @@ Create React App은 명령어 도구라서 처음 프로젝트 생성에만 필�
 
 `npx create-react-app my-app`
 
-## ESlint 구성
+### ESlint 구성
 
 Create Rect App으로 설치하면 eslint가 이미 존재하기 때문에 별도로 설치할 필요가 없다.
 심지어 React 환경에 맞는 eslint 플러그인도 설치되어 있다.
@@ -73,7 +73,7 @@ JSX 문법을 사용하기 위해서 `.jsx` 확장자만 허용하도록 하는 
 
 한 라인에 여러 표현식을 금지하는 것인데, 마찬가지로 불편하다.
 
-## `prop-types` 사용하기
+### `prop-types` 사용하기
 
 여러 개의 컴포넌트를 작성하다가 props로 데이터를 넘기다 보면 eslint로 인해 결국 자연스럽게 설치하게 된다.
 
@@ -90,7 +90,7 @@ MyComponent.propTypes = {
 
 자세한 사용 방식은 [https://www.npmjs.com/package/prop-types](https://www.npmjs.com/package/prop-types) 에서 얻을 수 있다.
 
-# React 뒤로가기 시 비동기로 가져온 데이터 유지하기
+## React 뒤로가기 시 비동기로 가져온 데이터 유지하기
 
 예제: https://github.com/Edunga1/react-history-back-example
 

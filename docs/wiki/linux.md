@@ -1,6 +1,6 @@
 # Linux
 
-# systemd
+## systemd
 
 pid 1번으로 실행되는 프로세스. 0번이 있기 때문에 2번째로 실행되는 프로세스다.
 
@@ -46,9 +46,9 @@ pid 1번으로 실행되는 프로세스. 0번이 있기 때문에 2번째로 �
   * 이는 유닛테스트와 대비된다. side-effect가 발생하는 것으로 보인다.
 * 대부분은 `qemu` 보다 더 빠른 `systemd-nspawn`를 통해서 실행될 수 있어야 한다.
 
-# Debian
+## Debian
 
-## dpkg - Debian package manager
+### dpkg - Debian package manager
 
 `apt`로 패키지를 제공하지 않고 `.deb` 파일로 설치해야 한다면 `dpkg`를 사용한다.
 

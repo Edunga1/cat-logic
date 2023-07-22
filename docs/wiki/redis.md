@@ -1,6 +1,6 @@
 # Redis
 
-# SETNX, SET + NX 간단한 Locking System 구현
+## SETNX, SET + NX 간단한 Locking System 구현
 
 * https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode
 * https://redis.io/commands/set/

@@ -2,7 +2,7 @@
 
 2017년에 작성된 내용.
 
-# Caution to installing crosswalk-webview plugin
+## Caution to installing crosswalk-webview plugin
 
 crosswalk-webview 플러그인 설치 시 주의사항
 
@@ -27,7 +27,7 @@ github repository로부터 플러그인을 추가한다.
 cordova plugin add https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview
 ```
 
-# Error - Could not find gradle wrapper within Android SDK
+## Error - Could not find gradle wrapper within Android SDK
 
 |Env.|Version|
 |---|---|
@@ -62,7 +62,7 @@ Android SDK와 ionic의 android paltform 버전을 맞추어야 하는 거 같�
 
 https://forum.ionicframework.com/t/error-could-not-find-gradle-wrapper-within-android-sdk-might-need-to-update-yo-ur-android-sdk/22056/34
 
-# in-app-brwoser
+## in-app-brwoser
 
 링크나 redirect를 현재 앱이나 내장 브라우저로 열 수 있다.
 

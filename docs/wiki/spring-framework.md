@@ -2,7 +2,7 @@
 
 [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/index.html)
 
-# WebClient 첫 요청이 느린 문제
+## WebClient 첫 요청이 느린 문제
 
 상황: 서버 시작 직후 다른 서버의 API를 호출하는 내 API가 느려서 클라이언트에서 타임아웃이 자주 발생함.\
 해결: netty http client의 `warmup` + 사용자 진입 전 미리 타겟 서버 API 호출
@@ -20,9 +20,9 @@ https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initial
 3. 내장된 transport 라이브러리들
 4. 보안과 관련된 라이브러리들
 
-# Features
+## Features
 
-## `RequestMapping` Request mapping narrowing
+### `RequestMapping` Request mapping narrowing
 
 [RequestMapping - Spring API](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html)
 
@@ -30,13 +30,13 @@ https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initial
 
 `@GetMapping` `@PostMapping` 사용하여 우선 method로 선택 범위를 좁힐 수 있다.
 
-### parameters
+#### parameters
 
-#### `value` (alias of `path`)
+##### `value` (alias of `path`)
 
 가장 기본적인 인자로, url path를 매핑한다. 기본 값은 빈 문자열이므로 `/` 와 같다.
 
-#### `params`
+##### `params`
 
 query-string 매핑.
 
@@ -44,7 +44,7 @@ query-string 매핑.
 * `myParam!=myValue` 위의 반대. 특정 값이 아닌 경우만 매핑한다.
 * `!myParam` `myParam` 파라미터 자체가 제공된 경우만 매핑한다.
 
-#### `headers`
+##### `headers`
 
 header 매핑.
 
@@ -52,9 +52,9 @@ header 매핑.
 
 wildcard를 사용한 경우 `text/plain` `text/html` 모두 매핑한다.
 
-## Test
+### Test
 
-### Transactional Test
+#### Transactional Test
 
 통합 테스트에서 teardown 시점에 트랜잭션을 롤백하는 방법은 편리해서 자주 사용하는 방법이다.
 
@@ -130,7 +130,7 @@ Spring 5.3의 마일스톤에 포함되어 있다.
 
 이 작업이 [@NestedTestConfiguration](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-junit-jupiter.html#integration-testing-annotations-nestedtestconfiguration)에 대한 내용으로 보인다.
 
-## Application Properties
+### Application Properties
 
 https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
 
@@ -165,7 +165,7 @@ class MyConfig(val baz: String)
 class Application
 ```
 
-# Spring CLI
+## Spring CLI
 
 Installation(Homebrew):
 ```bash
@@ -176,7 +176,7 @@ $ brew install spring-boot
 도움말 확인하려면 `spring help <command>`\
 e.g. `spring help init`
 
-## 빠른 프로젝트 생성
+### 빠른 프로젝트 생성
 
 Kotlin + Spring Boot + Gradle 프로젝트를 빠르게 생성 해보자.
 
@@ -248,9 +248,9 @@ Supported dependencies
 
 의존성을 추가하려면 `--dependencies=actuator,webflux`와 같이 옵션을 추가한다.
 
-# Troubleshooting
+## Troubleshooting
 
-## IntelliJ에서 Properties의 선언부를 찾을 수 없는 경우
+### IntelliJ에서 Properties의 선언부를 찾을 수 없는 경우
 
 `@ConfigurationProperties(prefix="foo.bar")`가 선언된 클래스가 있음에도 `application.yml`에서 선언부를 찾지 못하고,
 `Cannot resolve configuration property 'foo.bar'` 경고가 출력되는 문제. 서버 시작은 잘 된다.
@@ -263,7 +263,7 @@ gradle(kts) 예시:
 kapt("org.springframework.boot:spring-boot-configuration-processor")
 ```
 
-# Reference
+## Reference
 
 Spring CLI:\
 https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html

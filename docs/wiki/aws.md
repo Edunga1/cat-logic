@@ -1,8 +1,8 @@
 # Amazon Web Service
 
-# `awscli`
+## `awscli`
 
-## ECR 로그인하기
+### ECR 로그인하기
 
 ```bash
 aws ecr get-login-password --region <REGION> | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com
@@ -28,7 +28,7 @@ ref:
 * https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html
 * https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html
 
-## IAM 관련
+### IAM 관련
 
 [비밀번호 변경](https://docs.aws.amazon.com/cli/latest/reference/iam/change-password.html)(응답 메시지 없음):\
 `aws iam change-password --old-password <OLD_PASSWORD> --new-password <NEW_PASSWORD>`
@@ -63,7 +63,7 @@ aws iam update-access-key --access-key-id <OLD_ACCESS_KEY_ID> --status Inactive
 aws iam list-access-keys
 ```
 
-# LocalStack
+## LocalStack
 
 https://github.com/localstack/localstack
 
@@ -99,7 +99,7 @@ services:
 다른 점은 볼륨의 마지막 부분인데, hook을 통해서 스트림을 생성하도록 했다:
 
 ```bash
-#!/bin/bash
+##!/bin/bash
 
 aws --endpoint-url=http://localhost:4566 kinesis create-stream --stream-name my-event-dev --shard-count 1 --region ap-northeast-2
 aws --endpoint-url=http://localhost:4566 kinesis list-streams --region ap-northeast-2
@@ -130,7 +130,7 @@ AWS_SECRET_ACCESS_KEY = test
 
 검증은 localstack이 넘길테니 임의로 넣어두면 클라이언트 단에서 credentials 존재 여부 정도만 확인하니 괜찮다.
 
-# Kinesis
+## Kinesis
 
 Consumer 라이브러리를 KCL(Kinesis Client Library)라고 부르고,
 Producer 라이브러리를 KPL(Kinesis Producer Library)라고 부른다.
@@ -159,9 +159,9 @@ Kinesis Data Stream API의 `getShardIterator`와 `getRecords`를 사용하면 pu
 
 KCL의 record processor를 사용하면 push model로 데이터를 가져올 수 있다.
 
-## 개념
+### 개념
 
-### fan-out
+#### fan-out
 
 **shared fan-out, enhanced fan-out**
 
@@ -180,7 +180,7 @@ enhanced fan-out은 consumer간 할당량 경쟁하지 않는다.
 
 enhanced fan-out는 seoul region 기준 [1GB 당 0.062 비용이 든다](https://aws.amazon.com/kinesis/data-streams/pricing/)고 한다.
 
-## 자바 외 언어로 Kinesis 앱 개발
+### 자바 외 언어로 Kinesis 앱 개발
 
 Node.js consumer를 만든다면 [KCL for Node.js](https://github.com/awslabs/amazon-kinesis-client-nodejs/)를 사용한다.
 
@@ -201,7 +201,7 @@ KCL for Java는 client builder를 통해서 endpoint를 설정할 수 있다. �
 KinesisAsyncClient.builder().endpointOverride(URI.create("https://<kinesis endpoint>")).build().
 ```
 
-# Storage Service
+## Storage Service
 
 2021-09-31 AWS CEP 내용 정리한 것.
 
@@ -211,7 +211,7 @@ Storage는 크게 Block, File, Object로 나뉜다.
 * File: NAS 등. AWS EFS, FSx.
 * Object: AWS S3, Glacier.
 
-## EBS - Elastic Block Storage
+### EBS - Elastic Block Storage
 
 EC2는 OS 등 모든 파일은 네트워크로 연결되는 EBS를 사용한다.
 - EC2의 Instance Store(물리 호스트)도 제공되나, 별도 설정이 필요하고, 사라지는 영역이라서 특정 용도가 아니면 사용되지 않고, 추천하지 않는다.
@@ -225,11 +225,11 @@ EBS GP2는 Burst 기능을 제공하는데, 유후 시간 후 처음 30분간 3,
 
 EBS의 스냅샷은 전체 Copy가 아니라 Incremental을 저장하므로, 스냅샷을 자주 사용하도록 설정하는 것이 좋다.
 
-## EFS - Elastic File System
+### EFS - Elastic File System
 
 처음부터 얼마나 사용할 지 고민할 필요는 없다. 사용한 만큼 비용 지불. 사용할 때 마다 용량 확장된다.(Scalable)
 
-## Object Storage
+### Object Storage
 
 ![object storage classes](res/aws-object-storage-classes.png)
 
@@ -237,7 +237,7 @@ S3 에서 사용하는 스토리지 타입
 
 HOT - COLD는 오브젝트에 접근했을 때 반응에 대한 내용. Observable과 같은 맥락 같다.
 
-# Networking
+## Networking
 
 2021-09-31 AWS CEP 내용 정리한 것.
 
@@ -247,7 +247,7 @@ Region에는 2개의 Transit이 존재한다. 다른 Region, 외부와의 연결
 
 AZ간 통신은 내부망을 통해서만 이루어진다.
 
-## 주요 네트워킹 서비스
+### 주요 네트워킹 서비스
 
 * VPC: AWS 클라우드상에 만드는 가상 네트워크
 * VPN: On-premise 데이터 센터와 VPC의 IPSec VPN 연결 
@@ -259,7 +259,7 @@ EC2는 Regional 서비스에 포함된다.
 
 AWS에서는 Static의 반대되는 용어로 `Elastic`을 사용한다.
 
-### VPC - Virtual Private Cloud
+#### VPC - Virtual Private Cloud
 
 독립된 가상 클라우드 네트워크. 나만의 네트워크라고 이해하면 된다.
 
@@ -276,10 +276,10 @@ DNS는 기본으로 제공되는 Private, Public DNS가 제공됨
 * 동일 Region 내 VPC간 네트워크 연결 옵션
 * VPC간 IP가 중복 불가하며, 하나의 Peering만 제공
 
-### Direct Connect
+#### Direct Connect
 
 Direct Connect는 물리적으로 전용선으로 연결한다.
 
-### Route 53
+#### Route 53
 
 Route53은 FQDN + 다양한 기능을 제공한다.

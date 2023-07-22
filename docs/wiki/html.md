@@ -1,10 +1,10 @@
 # HTML
 
-# <meta> 메타데이터 요소
+## <meta> 메타데이터 요소
 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 
-## Open Graph Protocol
+### Open Graph Protocol
 
 https://ogp.me/
 
@@ -28,9 +28,9 @@ head 태그 안에 meta 태그와 `og:` 접두사를 가진 속성이 이 프로
 
 트위터의 경우 Twitter Card라 부르는 독립적인 메타데이터를 사용하는데, 위의 `twitter:title`이 해당한다.
 
-# <h1>~<h6> 구역 제목 요소
+## <h1>~<h6> 구역 제목 요소
 
-## 여러개의 <h1> 사용을 피할 것
+### 여러개의 <h1> 사용을 피할 것
 
 [Avoid using multiple <h1> elements on one page - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#avoid_using_multiple_h1_elements_on_one_page)
 

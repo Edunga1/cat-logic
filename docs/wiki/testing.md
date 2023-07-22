@@ -1,10 +1,10 @@
 # Testing
 
-# Setup and Teardown
+## Setup and Teardown
 
 각 테스트를 실행하기 전/후 할 일을 각각 **Setup** **Teardown** 이라한다.
 
-## Transaction Start - Rollback
+### Transaction Start - Rollback
 
 데이터베이스를 Mocking 하지 않고 테스트용 데이터베이스를 띄운다고 가정한다.
 
@@ -40,7 +40,7 @@ Spring에서 테스트에 `@Transactional` 사용하지 말 것을 설명하는 
 
 글에서 설명하는 false negative 예제: 운영 코드에는 `@Transactional` 빠졌지만, 테스트에는 있어서 성공하고, 직접 호출하면 실패한다.
 
-## 테스트에서의 @Transactional 사용에 대해 질문이 있습니다 - Toby vs ChatGPT (2)
+### 테스트에서의 @Transactional 사용에 대해 질문이 있습니다 - Toby vs ChatGPT (2)
 
 https://youtu.be/-961J2c1YsM
 
@@ -63,7 +63,7 @@ https://youtu.be/-961J2c1YsM
 - [53:49](https://youtu.be/-961J2c1YsM?t=3229) [블로그 많이 쓰시는 분](https://jojoldu.tistory.com/)은 @Transactional 테스트를 반대하는 편. [JPA 강의 전문으로 하시는 분](https://www.youtube.com/@yhdev)은 찬성하는 편.
 - [1:00:00](https://youtu.be/-961J2c1YsM?t=3600) 책: 생산성과 품질을 위한 단위 테스트 원칙과 패턴에서 매 테스트 시작 전에 DB 원상태로 돌리는 법을 가장 권장한다.
 
-# Better Specs
+## Better Specs
 
 https://www.betterspecs.org/
 
@@ -73,7 +73,7 @@ Better Specs는 테스트 작성에 대한 모범 사례(best practice) 모음�
 
 사이트에서 소개하는 예시는 Rails의 RSpec을 사용하지만, 다른 언어/프레임워크에서도 적용하는 것을 목표로 한다.
 
-## Single Expectation(단일 검증)
+### Single Expectation(단일 검증)
 
 https://www.betterspecs.org/#single
 
@@ -100,9 +100,9 @@ end
 [Arrange, Act, Assert](http://wiki.c2.com/?ArrangeActAssert)패턴에 따라, 동일한 동작에 대한 여러 검증을 볼 수 있어서 좋다는 것.
 그러나 에러 문구가 상세하지 않다는 것은 인지하고 있어야 한다.
 
-# 테스트 코드 작성
+## 테스트 코드 작성
 
-## 통합 테스트에서도 mocking하면 편리하다.
+### 통합 테스트에서도 mocking하면 편리하다.
 
 spring framework 환경에서 이야기다. django는 pytest의 fixture를 사용하면 편했다.
 
@@ -223,11 +223,11 @@ class TestProductClientConfig {
 - `clearTestData` 구현하는 대신 mock 라이브러리의 초기화 함수`clearAllMocks()`를 사용할 수 있다.
 - 테스트마다 초기화함수 호출하지 않고, global tear down hook에서 초기화 함수를 호출하면 편하다.
 
-# A/B Test
+## A/B Test
 
 다른 주제와 같은 분류가 아닌 거 같지만, 일단 여기에 둔다.
 
-## VWO
+### VWO
 
 [VWO](https://vwo.com/)는 테스트 및 최적화 플랫폼이다.
 
@@ -238,9 +238,9 @@ class TestProductClientConfig {
 
 계산 식은 블로그에서 시트로 공개하고 있다: https://vwo.com/blog/ab-test-duration-calculator/
 
-# Scraps
+## Scraps
 
-## 왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?
+### 왜 유닛 테스트에서 의존성을 테스트하지 않는 것이 중요한가요?
 
 [(Why) is it important that a unit test not test dependencies?](https://softwareengineering.stackexchange.com/questions/65477/why-is-it-important-that-a-unit-test-not-test-dependencies)
 
@@ -256,7 +256,7 @@ Stackexchange의 질문:
 
 될 수 있다면 mock 객체를 전달하는 편이 낫다. 그렇지 않으면 의존성이 반환하는 다양한 경우를 모두 테스트하는 욕구에 빠진다. 의존성의 테스트에서 중복되는 문제도 있다.
 
-## 유닛 테스트에서 상수를 사용하지 마세요.
+### 유닛 테스트에서 상수를 사용하지 마세요.
 
 [Don't use non-test constants in unit tests](https://dev.to/scottshipp/don-t-use-non-test-constants-in-unit-tests-3ej0)
 
@@ -281,7 +281,7 @@ Stackexchange의 질문:
 
 가독성 측면에서도 상수를 테스트에서 사용하지 않는 것이 좋다고 한다.
 
-## 유닛 테스트에서 "DAMP not DRY"는 무엇을 의미하나요?
+### 유닛 테스트에서 "DAMP not DRY"는 무엇을 의미하나요?
 
 SO 질문: https://stackoverflow.com/questions/6453235/what-does-damp-not-dry-mean-when-talking-about-unit-tests
 

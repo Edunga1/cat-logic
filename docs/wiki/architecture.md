@@ -2,7 +2,7 @@
 
 소프트웨어 아키텍처와 디자인.
 
-# Robert C. Martin - Clean Architecture and Design
+## Robert C. Martin - Clean Architecture and Design
 
 [Clean Architecture and Design](https://amara.org/videos/0AtjY87egE3m/url/1216370/)
 
@@ -10,7 +10,7 @@
 왜 대부분 프로젝트의 구조가 같은지 의문에서 시작한다. 회사마다 관심있는 것은 다른데 왜 같은 구조를 가지는 것인가.
 그에 반해 설계 도면은 어떤 건물을 말하는지 알기 쉽다고 한다.
 
-# JUnit A Cook's Tour
+## JUnit A Cook's Tour
 
 https://curlunit.sourceforge.net/doc/cookstour/cookstour.htm
 
@@ -30,7 +30,7 @@ JUnit에 대해서 분석하고 테스트 프레임워크를 어떻게 구축하
 [Spring](./spring-framework.md) WebFlux의 `Mono`도 마찬가지다. `block()`을 사용할 수 없기 때문에 계속 전파된다.
 [Kotlin](./kotlin.md)의 경우 `runBlocking`으로 언제든지 끝맺을 수 있어서 좋았다.
 
-# Entity Component System (ECS)
+## Entity Component System (ECS)
 
 **실제 코드를 본 적이 없어서 정리하는 것에 그침**
 
@@ -46,7 +46,7 @@ ESC는 데이터의 구성요소로 이루어진 엔티티로 구성됩니다.
 
 엔티티의 동작은 이해, 유지보수, 확장하기 어렵게하는 객체지향 프로그래밍에서 주로 발견되는 깊고 광범위한 상속 계층의 모호성 문제를 없앱니다.
 
-## 참조
+### 참조
 
 [Unreal Rust 공개 ](https://news.hada.io/topic?id=7345)
 
@@ -58,7 +58,7 @@ https://velog.io/@cedongne/Unity-새로운-컴포넌트-시스템-ECS와-Entity
 
 Unity 3D가 ECS를 사용하고 있는 줄 알았는데 아니었다. 21년 기준으로 전환을 진행하고 있다고 한다.
 
-# wine은 어떻게 동작하는가?
+## wine은 어떻게 동작하는가?
 
 https://news.hada.io/topic?id=7661
 
@@ -68,7 +68,7 @@ https://news.hada.io/topic?id=7661
 * wine의 system dispatcher가 리눅스에서 윈도우 혹은 그 반대로 호출할 수 있도록 스택을 변환한다.
   * 리눅스 → 윈도우 변환은 왜 필요할까? posix에서 윈도우 프로그램을 실행하는 것인데 그 반대로 변환해야 하는 경우가 있는지?
 
-# 직교성(Orthogonality)
+## 직교성(Orthogonality)
 
 내가 만들고 싶은 소프트웨어 형태이다. 직교성이 높은 것은 기능간 시너지가 좋다는 것이다.
 게임에서도 개체간 시너지가 좋을 때 재미있다. 시너지가 없으면 눈에 뻔하고 금방 지루하다.
@@ -76,7 +76,7 @@ https://news.hada.io/topic?id=7661
 
 직교성은 팀 구조, 테스팅, 소프트웨어 설계 등 다양한 곳에서 불린다.
 
-## reaper라는 프로그램이 있다. - 김창준
+### reaper라는 프로그램이 있다. - 김창준
 
 [https://www.facebook.com/cjunekim/posts/4677312722297258](https://www.facebook.com/cjunekim/posts/4677312722297258)
 
@@ -87,7 +87,7 @@ https://news.hada.io/topic?id=7661
 
 reaper? https://www.reaper.fm/download.php
 
-## 지속 가능한 소프트웨어를 위한 코딩 방법 - NHN Meetup
+### 지속 가능한 소프트웨어를 위한 코딩 방법 - NHN Meetup
 
 [지속 가능한 소프트웨어를 위한 코딩 방법 - 첫 번째](https://meetup.nhncloud.com/posts/2h4)
 
@@ -101,13 +101,13 @@ Art of UNIX programming의 글:\
 직교성은 복잡한 설계를 compact하는데 도움이 되는 가장 중요한 속성 중 하나입니다. 순수한 직교 설계에는 side effects가 없습니다.
 각 작업(API 호출, 매크로 호출, 언어 작업 등)은 다른 작업에 영향을 주지 않고 오직 한가지만 변경합니다. 제어하는 시스템의 각 속성을 변경하는 방법은 오직 한가지만 있습니다.
 
-## 테스트에서 직교성
+### 테스트에서 직교성
 
 테스트를 예시하자. 함수가 여러개의 매개 변수를 받는다면, 각 조합으로 테스트를 작성할 때 변수 조합의 경우의 수 만큼 테스트 케이스가 발생한다.
 독립적인 영향을 주도록 함수를 설계한다면, 각 변수에 대한 테스트만 작성하면 되므로 테스트 케이스를 간단하게 유지할 수 있다.
 직교성이 없는 모듈은 같은 assertion을 여려번 하게된다.
 
-## 비슷한 단어: pairwise
+### 비슷한 단어: pairwise
 
 QA 툴 커뮤니티로 보이는데, 모든 경우의 수, 직교(Orthogonal), Pairwise 방식의 비교에 대한 내용이 있다.
 
@@ -133,9 +133,9 @@ QA 툴 커뮤니티로 보이는데, 모든 경우의 수, 직교(Orthogonal), P
 > 순차반복    Hold    Live
 > 순차반복    착신    Off
 
-# Domain Driven Design (DDD)
+## Domain Driven Design (DDD)
 
-## AWS DDD initiative program
+### AWS DDD initiative program
 
 2021/11 진행한 AWS 파트너사 세미나. DDD를 주제로 이야기했다.
 

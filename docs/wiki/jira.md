@@ -2,7 +2,7 @@
 
 Issue & Project Tracking Software
 
-# 작업중 필터
+## 작업중 필터
 
 회사에서 개발 지라 이슈 상태를 다음과 같이 사용하고 있다:
 1. Backlog

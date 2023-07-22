@@ -1,6 +1,6 @@
 # Computer Graphics
 
-# 화가 알고리즘(painter's algorithm)
+## 화가 알고리즘(painter's algorithm)
 
 https://en.wikipedia.org/wiki/Painter%27s_algorithm
 

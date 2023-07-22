@@ -1,12 +1,12 @@
 # 웹 개발
 
-# GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"
+## GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"
 
 [2016-08-27 GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"](./2016-08-27-gdg-webtech-workshop-nnn.md)
 
 웹 브라우저 특히 크롬의 렌더링 개선 방법과 오프라인 서비스에 대한 내용
 
-# React 렌더링 동작에 대한 완벽한 가이드
+## React 렌더링 동작에 대한 완벽한 가이드
 
 https://velog.io/@superlipbalm/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior
 
@@ -21,13 +21,13 @@ https://velog.io/@superlipbalm/blogged-answers-a-mostly-complete-guide-to-react-
 
 사용자가 만든 커스텀 컴포넌트와 구분한다. html 기본 제공하는 컴포넌트.
 
-# HTML Entity: `&amp;`, `&gt;`
+## HTML Entity: `&amp;`, `&gt;`
 
 https://developer.mozilla.org/en-US/docs/Glossary/Entity
 
 `&amp;` 는 `&` 를 나타내고, `&gt;` 는 `>` 을 나타낸다. Entity라고 부르며, 이 중 특수문자를 Reserved characters라고 한다.
 
-# 외부 사이트 이동 기능. Redirect Token.
+## 외부 사이트 이동 기능. Redirect Token.
 
 유튜브 댓글에 다른 사용자가 하이퍼 링크를 입력하면 텍스트는 링크한 사이트로 표기되지만, 실제 링크는 유튜브의 redirection 페이지로 변경되어 있다.
 변경된 페이지로 이동 시 실제 사이트 주소와 추가 정보를 URL 포함하여 전달하는데, 그 용도에 대해서 알아본다.
@@ -43,7 +43,7 @@ https://developer.mozilla.org/en-US/docs/Glossary/Entity
 
 나가기 버튼의 링크로 직접 이동하면 위와 같은 화면으로 이동한다.
 
-## redir_token?
+### redir_token?
 
 변경된 링크는 아래처럼 생겼다:
 
@@ -67,7 +67,7 @@ https://help.canary.tools/hc/en-gb/articles/360021010477-How-do-I-create-a-Slow-
 사용자 세션에 따라 달라지는 값은 아니다.
 시크릿 탭에서 열어도 같은 값을 가진다. 따라서 사용자마다 생성하는 것은 아닌것으로 보인다.
 
-# Device Orientation API
+## Device Orientation API
 
 디바이스의 방향에 대한 정보를 제공하는 API
 

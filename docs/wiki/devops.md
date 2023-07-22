@@ -1,11 +1,11 @@
 # DevOps
 
-# DevOps의 인적 확장
+## DevOps의 인적 확장
 
 * 원문: https://medium.com/@mattklein123/the-human-scalability-of-devops-e36c37d3db6a
 * 번역: https://tech.devsisters.com/posts/the-human-scalability-of-devops/
 
-## 인상적인 부분
+### 인상적인 부분
 
 **기술부채의 증가가 있더라도 아주 빠르게 무언가를 만들어내는 것에 익숙하고..**
 

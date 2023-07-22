@@ -1,12 +1,12 @@
 # 개발 용어
 
-# Business Rule, Business Logic, Logic
+## Business Rule, Business Logic, Logic
 
 아키텍처에 대한 이야기가 나오면 위 단어들이 빠지지 않는다.
 
 위 단어들이 무엇을 의미하고 왜 **분리하여** 알아야 하는지 알아본다.
 
-## Business Logic
+### Business Logic
 
 비즈니스 로직은 말 그대로 비즈니스와 관계되어 있다.
 
@@ -24,7 +24,7 @@ if (amount <= balance) {            // 잔고가 충분하면
 
 기능을 동작시키기 위한 모든 코드가 비지니스 로직이 된다.
 
-## Logic
+### Logic
 
 그럼 일반 로직은 무엇인가?
 
@@ -32,7 +32,7 @@ if (amount <= balance) {            // 잔고가 충분하면
 
 시스템이 동작하기 위한 코드들이다. 따라서 비즈니스와 별개로 반드시 필요한 코드다.
 
-## Business Rule
+### Business Rule
 
 비즈니스 로직이 구현에 가깝다면 비즈니스 룰은 말 그대로 원칙이다.
 
@@ -42,7 +42,7 @@ if (amount <= balance) {            // 잔고가 충분하면
 
 비즈니스 로직이 비즈니스 룰을 설명 할 수도 있다.
 
-## 비즈니스 규칙과 비즈니스 로직을 왜 분리하여 알아야 할까? (feat. Clean Architecture)
+### 비즈니스 규칙과 비즈니스 로직을 왜 분리하여 알아야 할까? (feat. Clean Architecture)
 
 아키텍처를 설계하면 유지보수의 문제에 직면하게 된다.
 좋은 아키텍처는 좋은 유지보수성을 나타낸다.
@@ -63,13 +63,13 @@ if (amount <= balance) {            // 잔고가 충분하면
 
 계층을 분리함으로써 의존성을 분리하여 테스트하기 쉽게 한다. 잘 분리된 코드는 분석하기도 쉽다.
 
-# 테스트와 관련된 용어들
+## 테스트와 관련된 용어들
 
-## Test Double
+### Test Double
 
 Stub, Mock, Fake 등 테스트 도구들을 통칭하는 말.
 
-## Test Stub
+### Test Stub
 
 결과가 정해진 기능(function).
 
@@ -77,7 +77,7 @@ Stub, Mock, Fake 등 테스트 도구들을 통칭하는 말.
 
 NodeJS에는 SinonJS가 그 역할을 한다.
 
-## Mock Object
+### Mock Object
 
 오브젝트를 흉내내는 것.
 

@@ -2,9 +2,9 @@
 
 inspiration. (그 영감 아님)
 
-# 스크랩
+## 스크랩
 
-## Bret Victor - Inventing on Principle
+### Bret Victor - Inventing on Principle
 
 https://youtu.be/PUv66718DII
 
@@ -24,12 +24,12 @@ larry의 원칙(principle)을 세웠는데, 누구도 mode에 얽매이지 않�
 
 원칙을 중요하게 생각한 게 https://nomodes.com/Larry_Tesler_Consulting/Home.html 이런 사이트도 만들었다. :0
 
-## Programmers! Learn when to stop! Don't over-engineer your code.
+### Programmers! Learn when to stop! Don't over-engineer your code.
 
 https://youtu.be/-AQfQFcXac8
 
 
-## [샤로잡다] 아내가 본 '수학자 허준이' 최초 공개! 필즈상 비결은.. | 허준이 교수 X 김나영 동문
+### [샤로잡다] 아내가 본 '수학자 허준이' 최초 공개! 필즈상 비결은.. | 허준이 교수 X 김나영 동문
 
 https://youtu.be/ENNnFu-rS9U
 
