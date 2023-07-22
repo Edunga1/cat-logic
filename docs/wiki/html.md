@@ -27,3 +27,16 @@ head 태그 안에 meta 태그와 `og:` 접두사를 가진 속성이 이 프로
 선택 메타데이터는 이미지 크기를 조정한다거나, 설명을 추가하는 등 다양한 종류가 있다.
 
 트위터의 경우 Twitter Card라 부르는 독립적인 메타데이터를 사용하는데, 위의 `twitter:title`이 해당한다.
+
+# <h1>~<h6> 구역 제목 요소
+
+## 여러개의 <h1> 사용을 피할 것
+
+[Avoid using multiple <h1> elements on one page - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#avoid_using_multiple_h1_elements_on_one_page)
+
+> While using multiple `<h1>` elements on one page is allowed by the HTML standard (as long as they are not nested), this is not considered a best practice. A page should generally have a single `<h1>` element that describes the content of the page (similar to the document's <title> element).
+
+`<h1>` 여러개를 사용하는 것이 허용되긴 하지만, 좋은 방법은 아니다.
+페이지에는 보통 페이지의 내용을 설명하는 하나의 `<h1>` 요소가 있어야 한다.
+
+SEO 관점에서도 하나만 있는 것이 좋다고 한다.
