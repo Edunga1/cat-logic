@@ -110,6 +110,12 @@ data-styled.g3[id="markdownRemarkfields__slug__Container-sc-cg714z-0"]{content:"
 </ul>
 </li>
 <li>
+<p><a href="#plugin-%EA%B5%AC%EC%A1%B0">Plugin 구조</a></p>
+<ul>
+<li><a href="#plug-sid"><code>&#x3C;Plug></code> <code>&#x3C;SID></code></a></li>
+</ul>
+</li>
+<li>
 <p><a href="#plugins">Plugins</a></p>
 <ul>
 <li>
@@ -349,6 +355,23 @@ netrw, find 사용법</p>
 <p><code>set path+=**</code> <code>**</code>를 추가하면 현재 폴더 내 모든 범위를 검색한다.
 <code>**</code> 사용하기 전과 비교해보면 검색 수가 달라지는 것을 알 수 있다.
 <code>.gitignore</code>의 무시한 파일, <code>node_modules</code> 같이 무거운 폴더도 검색된다.</p>
+<h2 id="plugin-구조" style="position:relative;"><a href="#plugin-%EA%B5%AC%EC%A1%B0" aria-label="plugin 구조 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin 구조</h2>
+<h3 id="plug-sid" style="position:relative;"><a href="#plug-sid" aria-label="plug sid permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&#x3C;Plug></code> <code>&#x3C;SID></code></h3>
+<p><code>:h using-&#x3C;Plug></code></p>
+<blockquote>
+<p>Both <SID> and <Plug> are used to avoid that mappings of typed keys interfere
+with mappings that are only to be used from other mappings.</p>
+</blockquote>
+<p>매핑할 때 사용하는 특수 키 이름이다. 매핑 충돌을 피하기 위한 대책이다.
+이 특수 키로 먼저 매핑하고, 실제 키에 매핑한다.</p>
+<p>예를들어 vimwiki에는 다음과 같은 코드가 있다:</p>
+<pre><code class="language-vim">nnoremap &#x3C;silent>&#x3C;script>&#x3C;buffer> &#x3C;Plug>VimwikiFollowLink :VimwikiFollowLink&#x3C;CR>
+
+" ... 중간 생략
+
+" map_key는 최종적으로 :map 같은 명령어를 실행한다.
+call vimwiki#u#map_key('n', '&#x3C;CR>', '&#x3C;Plug>VimwikiFollowLink')
+</code></pre>
 <h2 id="plugins" style="position:relative;"><a href="#plugins" aria-label="plugins permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugins</h2>
 <p>사용중인 플러그인.</p>
 <h3 id="chrisbracsvvim" style="position:relative;"><a href="#chrisbracsvvim" aria-label="chrisbracsvvim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chrisbra/csv.vim</h3>
