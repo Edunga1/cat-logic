@@ -204,6 +204,29 @@ netrw, find 사용법
 `**` 사용하기 전과 비교해보면 검색 수가 달라지는 것을 알 수 있다.
 `.gitignore`의 무시한 파일, `node_modules` 같이 무거운 폴더도 검색된다.
 
+## Plugin 구조
+
+### `<Plug>` `<SID>`
+
+`:h using-<Plug>`
+
+> Both <SID> and <Plug> are used to avoid that mappings of typed keys interfere
+> with mappings that are only to be used from other mappings.
+
+매핑할 때 사용하는 특수 키 이름이다. 매핑 충돌을 피하기 위한 대책이다.
+이 특수 키로 먼저 매핑하고, 실제 키에 매핑한다.
+
+예를들어 vimwiki에는 다음과 같은 코드가 있다:
+
+```vim
+nnoremap <silent><script><buffer> <Plug>VimwikiFollowLink :VimwikiFollowLink<CR>
+
+" ... 중간 생략
+
+" map_key는 최종적으로 :map 같은 명령어를 실행한다.
+call vimwiki#u#map_key('n', '<CR>', '<Plug>VimwikiFollowLink')
+```
+
 ## Plugins
 
 사용중인 플러그인.
