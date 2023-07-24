@@ -103,10 +103,35 @@ class WebClientConfigTest : DescribeSpec({
 
 https://kotest.io/docs/extensions/spring.html#test-method-callbacks
 
-`@Transactional`을 테스트 클래스에 적용해서, 테스트 후에 롤백해야 하는 경우, 위 extension 설정이 필요하다.
-문서에 따르면 Spring test callback이 kotest 기준으로 동작하지 않는데, 이를 가능하게 한다고.
+`@Transactional`을 테스트 클래스에 적용해서, 테스트 후에 롤백해야 하는 경우, `SpringExtension` 설정이 필요하다:
 
+```kotlin
+class KotestProjectConfig : AbstractProjectConfig() {
+    override fun extensions(): List<Extension> = listOf(SpringExtension)
+}
+```
+
+문서에 따르면 Spring test callback이 kotest 기준으로 동작하지 않는데, 이를 가능하게 한다고.
 `@DataJpaTest`는 `@Transactional`이 붙어있어도 이 설정 없이는 동작하지 않는다.
+
+`DescribeSpec` 기준 Test Case인 `it` 전후로 트랜잭션 시작 및 롤백한다.
+이 lifecycle 정책을 변경할 수 있다. `SpringTestExtension`을 사용하면 된다:
+
+```kotlin
+override fun extensions(): List<Extension> = listOf(SpringTestExtension(SpringTestLifecycleMode.Root))
+```
+
+`SpringExtension`이 `SpringTestLifecycleMode.Test`이 기본이고, `Root`로 하면 TestSpec 전후로 변경된다. 즉, 테스트 클래스당 하나의 트랜잭션.
+
+아쉬운 점은 `DescribeSpec` 기준으로 보통 `Context`까지 격리가 필요하고, `It`은 검증만 하는데 이를 위한 해결 방법은 없다.
+`SpringTestExtension`을 잘 구현하면 가능할지도.
+
+다만 이 이슈는 `It`을 격리 대상으로 보지 않겠다는 의미라, Kotest `IsolationMode`와도 의미가 충돌한다.
+`IsolationMode`의 어떤 모드든 `Context`까지만 격리하는 모드는 없다.
+
+https://github.com/kotest/kotest/issues/2629 \
+관련 문제로 Kotest 이슈에 문의한 내역이 있다. `BehaviorSpec`의 `Then`에서 검증만 하는데, 격리가 된다는 내용.
+답변은 이미 디자인되어 있는 상황이라 변경하기 어렵다고 한다.
 
 ## [Language Server](./language-server-protocol.md)
 
