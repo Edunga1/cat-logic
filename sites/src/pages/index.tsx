@@ -25,11 +25,11 @@ const StyledMain = styled.main`
 export default function IndexPage(
   { data }: PageProps<Queries.WikiListQuery>,
 ) {
-  const { edges } = data.allMarkdownRemark
-  const items = edges.map(({ node }, i) => ({
+  const { nodes } = data.allFile
+  const items = nodes.map(({ childMarkdownRemark }, i) => ({
     id: i.toString(),
-    path: `./wiki${node.fields?.slug}`,
-    title: node.headings?.at(0)?.value ?? "(Untitled)",
+    path: `./wiki${childMarkdownRemark?.fields?.slug}`,
+    title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
   }))
 
   return (
@@ -43,15 +43,22 @@ export const Head: HeadFC = () => <title>Cat Logic - Home</title>
 
 export const pageQuery = graphql`
   query WikiList {
-    allMarkdownRemark {
-      edges {
-        node {
+    allFile(
+      filter: {childMarkdownRemark: {id: {ne: null}}},
+      sort: {mtime: DESC}
+    ) {
+      nodes {
+        name
+        mtime
+        absolutePath
+        childMarkdownRemark {
           headings(depth: h1) {
             value
           }
           fields {
             slug
           }
+          html
         }
       }
     }
