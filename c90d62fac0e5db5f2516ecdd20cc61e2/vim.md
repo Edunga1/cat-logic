@@ -204,7 +204,23 @@ netrw, find 사용법
 `**` 사용하기 전과 비교해보면 검색 수가 달라지는 것을 알 수 있다.
 `.gitignore`의 무시한 파일, `node_modules` 같이 무거운 폴더도 검색된다.
 
-## Plugin 구조
+## Plugin 만들기
+
+`:h write-plugin` nvim의 사용자 메뉴얼 플러그인 작성 섹션.
+
+### `ftplugin`
+
+- `:h ftplugin`
+- `:h ftplugin-name`
+
+`ftplugin/` 디렉토리 아래에 `filetype.vim` 파일 타입을 이름으로 만들면, 파일 타입에 따라 자동 로드된다.
+디렉토리나 파일 이름의 prefix로 파일 타입을 지정해도 된다:
+
+> The generic names for the filetype plugins are:
+> 
+> 	ftplugin/<filetype>.vim
+> 	ftplugin/<filetype>_<name>.vim
+> 	ftplugin/<filetype>/<name>.vim
 
 ### `<Plug>` `<SID>`
 
