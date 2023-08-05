@@ -3,12 +3,13 @@ import styled from "styled-components"
 
 const Container = styled.div`
   box-sizing: border-box;
-  padding: 4rem 2rem 0 0;
   background-color: #f5f5f5;
+  padding: 1rem 1rem 1rem 0;
 
   ul {
     list-style: none;
     padding-left: 1rem;
+    margin: 0;
     font-size: .8rem;
     font-weight: bold;
 

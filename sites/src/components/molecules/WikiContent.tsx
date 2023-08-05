@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 const Container = styled.div`
   overflow: auto;
-  padding: 0 1rem;
 
   a {
     text-decoration: none;
