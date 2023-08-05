@@ -7,6 +7,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: minmax(300px, 1fr) minmax(400px, 1000px);
   width: fit-content;
+
   @media (max-width: 1000px) {
     grid-template-columns: 1fr;
     & > div:nth-child(1) {
