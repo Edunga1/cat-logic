@@ -34,17 +34,18 @@ const config: GatsbyConfig = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
     {
-      resolve: `gatsby-plugin-local-search`,
+      resolve: `gatsby-plugin-fusejs`,
       options: {
-        name: `pages`,
-        engine: `flexsearch`,
         query: `
           query LocalSearch {
-            allFile {
+            allFile(filter: {childMarkdownRemark: {id: {ne: null}}}) {
               edges {
                 node {
                   name
                   childMarkdownRemark {
+                    headings(depth: h1) {
+                      value
+                    }
                     rawMarkdownBody
                   }
                 }
@@ -52,10 +53,11 @@ const config: GatsbyConfig = {
             }
           }
         `,
-        ref: `name`,
+        keys: ["rawMarkdownBody", "name"],
         normalizer: ({ data }) =>
           data.allFile.edges.map(({ node }) => ({
             name: node.name,
+            title: node.childMarkdownRemark?.headings[0]?.value,
             rawMarkdownBody: node.childMarkdownRemark?.rawMarkdownBody,
           })),
       },

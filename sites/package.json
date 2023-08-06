@@ -20,7 +20,7 @@
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^5.10.0",
     "gatsby-plugin-catch-links": "^5.8.0",
-    "gatsby-plugin-local-search": "^2.0.1",
+    "gatsby-plugin-fusejs": "^2.0.2",
     "gatsby-plugin-sharp": "^5.8.1",
     "gatsby-plugin-styled-components": "^6.7.0",
     "gatsby-remark-autolink-headers": "^6.7.0",
@@ -31,6 +31,7 @@
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-use-fusejs": "^2.0.2",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
