@@ -33,6 +33,33 @@ const config: GatsbyConfig = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-local-search`,
+      options: {
+        name: `pages`,
+        engine: `flexsearch`,
+        query: `
+          query LocalSearch {
+            allFile {
+              edges {
+                node {
+                  name
+                  childMarkdownRemark {
+                    rawMarkdownBody
+                  }
+                }
+              }
+            }
+          }
+        `,
+        ref: `name`,
+        normalizer: ({ data }) =>
+          data.allFile.edges.map(({ node }) => ({
+            name: node.name,
+            rawMarkdownBody: node.childMarkdownRemark?.rawMarkdownBody,
+          })),
+      },
+    }
   ],
 }
 
