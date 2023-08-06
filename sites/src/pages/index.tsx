@@ -5,6 +5,7 @@ import styled from "styled-components"
 import theme from "../constants/theme"
 import device from "../constants/device"
 import "./global.css"
+import { createWikiLink } from "../utils/wiki"
 
 const StyledMain = styled.main`
   background-color: ${theme.colors.background};
@@ -28,7 +29,7 @@ export default function IndexPage(
   const { nodes } = data.allFile
   const items = nodes.map(({ childMarkdownRemark }, i) => ({
     id: i.toString(),
-    path: `./wiki${childMarkdownRemark?.fields?.slug}`,
+    path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),
     title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
   }))
 
