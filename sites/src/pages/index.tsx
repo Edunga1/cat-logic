@@ -6,6 +6,8 @@ import theme from "../constants/theme"
 import device from "../constants/device"
 import "./global.css"
 import { createWikiLink } from "../utils/wiki"
+import { useGatsbyPluginFusejs } from "react-use-fusejs"
+import SearchBox from "../components/molecules/SearchBox"
 
 const StyledMain = styled.main`
   background-color: ${theme.colors.background};
@@ -23,18 +25,50 @@ const StyledMain = styled.main`
   }
 `
 
+type WikiItem = {
+    id: string;
+    path: string;
+    title: string;
+}
+
+interface SearchResult {
+  item: { name: string; title: string }
+  refIndex: number
+}
+
+function mapSearchResultToWikiItem(result: SearchResult[]): WikiItem[] {
+  return result
+    .map((it, i) => ({
+      id: i.toString(),
+      path: createWikiLink(it.item.name),
+      title: it.item.title ?? "(Untitled)",
+    }))
+}
+
 export default function IndexPage(
-  { data }: PageProps<Queries.WikiListQuery>,
+  { data }: PageProps<Queries.IndexPageQuery>,
 ) {
   const { nodes } = data.allFile
-  const items = nodes.map(({ childMarkdownRemark }, i) => ({
+  const allItems = nodes.map(({ childMarkdownRemark }, i) => ({
     id: i.toString(),
     path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),
     title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
   }))
+  const [items, setItems] = React.useState(allItems)
+  const [query, setQuery] = React.useState("")
+  const result = useGatsbyPluginFusejs(query, data.fusejs)
+
+  React.useEffect(() => {
+    if (query) {
+      setItems(mapSearchResultToWikiItem(result))
+    } else {
+      setItems(allItems)
+    }
+  }, [query])
 
   return (
     <StyledMain>
+      <SearchBox onChange={setQuery} />
       <WikiList items={items} />
     </StyledMain>
   )
@@ -43,11 +77,12 @@ export default function IndexPage(
 export const Head: HeadFC = () => <title>Cat Logic - Home</title>
 
 export const pageQuery = graphql`
-  query WikiList {
+  query IndexPage {
     allFile(
       filter: {childMarkdownRemark: {id: {ne: null}}},
       sort: {mtime: DESC}
     ) {
+      # wiki list
       nodes {
         name
         mtime
@@ -62,6 +97,12 @@ export const pageQuery = graphql`
           html
         }
       }
+    }
+
+    # search data
+    fusejs {
+      index
+      data
     }
   }
 `
