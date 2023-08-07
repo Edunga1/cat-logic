@@ -1,0 +1,8 @@
+name: cat
+
+windows:
+  - editor: vi
+  - cli:
+  - server:
+    - cd sites
+    - npm run develop
