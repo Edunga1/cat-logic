@@ -100,6 +100,9 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li>
 <p><a href="#application-properties">Application Properties</a></p>
 </li>
+<li>
+<p><a href="#uri-links">URI Links</a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -150,6 +153,9 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </li>
 <li>
 <p><a href="#application-properties">Application Properties</a></p>
+</li>
+<li>
+<p><a href="#uri-links">URI Links</a></p>
 </li>
 </ul>
 </li>
@@ -298,6 +304,31 @@ class MyConfig(val baz: String)
 @SpringBootApplication
 class Application
 </code></pre>
+<h3 id="uri-links" style="position:relative;"><a href="#uri-links" aria-label="uri links permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URI Links</h3>
+<p><a href="https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-uri-building.html#uri-encoding">https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-uri-building.html#uri-encoding</a></p>
+<p><code>UriComponentsBuilder</code>로 query parameter에 URL을 전달하기 위해 다음과 같이 작성하면 인코딩 문제가 발생한다.</p>
+<pre><code class="language-kotlin">fun build(url: String) = UriComponentsBuilder
+  .fromUriString("https://example.com")
+  .queryParam("url", url)
+  .build()
+  .toString()
+
+build("https://www.google.com/search?q=%ED%91%B8%EB%B0%94&#x26;oq=%ED%91%B8%EB%B0%94&#x26;aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&#x26;sourceid=chrome&#x26;ie=UTF-8")
+// https://example.com?url=https://www.google.com/search?q=%ED%91%B8%EB%B0%94&#x26;oq=%ED%91%B8%EB%B0%94&#x26;aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&#x26;sourceid=chrome&#x26;ie=UTF-8
+</code></pre>
+<p><code>url=</code> 파라미터의 url에 포함된 slash가 인코딩 되지 않는다.</p>
+<p>다음과 같이 <code>build()</code>로 전달하면 올바르게 인코딩한다.</p>
+<pre><code class="language-kotlin">fun build(url: String) = UriComponentsBuilder
+    .fromUriString("https://example.com")
+    .queryParam("url", "{url}")
+    .build(url)
+    .toString()
+
+build("https://www.google.com/search?q=%ED%91%B8%EB%B0%94&#x26;oq=%ED%91%B8%EB%B0%94&#x26;aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&#x26;sourceid=chrome&#x26;ie=UTF-8")
+// https://example.com?url=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3D%25ED%2591%25B8%25EB%25B0%2594%26oq%3D%25ED%2591%25B8%25EB%25B0%2594%26aqs%3Dchrome..69i64j46i340i512j0i512l8.2053j0j1%26sourceid%3Dchrome%26ie%3DUTF-8
+</code></pre>
+<p><code>/</code>, <code>=</code>, <code>&#x26;</code> 등 URI 요소를 인코딩한 것을 볼 수 있다.</p>
+<p>placeholder<code>{url}</code>는 사용하지 않았고, build로 전달하는 순서대로 replace 한다.</p>
 <h2 id="spring-cli" style="position:relative;"><a href="#spring-cli" aria-label="spring cli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spring CLI</h2>
 <p>Installation(Homebrew):</p>
 <pre><code class="language-bash">$ brew tap spring-io/tap

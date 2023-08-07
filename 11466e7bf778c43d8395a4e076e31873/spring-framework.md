@@ -165,6 +165,42 @@ class MyConfig(val baz: String)
 class Application
 ```
 
+### URI Links
+
+https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-uri-building.html#uri-encoding
+
+`UriComponentsBuilder`로 query parameter에 URL을 전달하기 위해 다음과 같이 작성하면 인코딩 문제가 발생한다.
+
+```kotlin
+fun build(url: String) = UriComponentsBuilder
+  .fromUriString("https://example.com")
+  .queryParam("url", url)
+  .build()
+  .toString()
+
+build("https://www.google.com/search?q=%ED%91%B8%EB%B0%94&oq=%ED%91%B8%EB%B0%94&aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&sourceid=chrome&ie=UTF-8")
+// https://example.com?url=https://www.google.com/search?q=%ED%91%B8%EB%B0%94&oq=%ED%91%B8%EB%B0%94&aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&sourceid=chrome&ie=UTF-8
+```
+
+`url=` 파라미터의 url에 포함된 slash가 인코딩 되지 않는다.
+
+다음과 같이 `build()`로 전달하면 올바르게 인코딩한다.
+
+```kotlin
+fun build(url: String) = UriComponentsBuilder
+    .fromUriString("https://example.com")
+    .queryParam("url", "{url}")
+    .build(url)
+    .toString()
+
+build("https://www.google.com/search?q=%ED%91%B8%EB%B0%94&oq=%ED%91%B8%EB%B0%94&aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&sourceid=chrome&ie=UTF-8")
+// https://example.com?url=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3D%25ED%2591%25B8%25EB%25B0%2594%26oq%3D%25ED%2591%25B8%25EB%25B0%2594%26aqs%3Dchrome..69i64j46i340i512j0i512l8.2053j0j1%26sourceid%3Dchrome%26ie%3DUTF-8
+```
+
+`/`, `=`, `&` 등 URI 요소를 인코딩한 것을 볼 수 있다.
+
+placeholder`{url}`는 사용하지 않았고, build로 전달하는 순서대로 replace 한다.
+
 ## Spring CLI
 
 Installation(Homebrew):
