@@ -51,11 +51,12 @@ sourceSets.main.get().java.srcDirs(
 
 ### keymap
 
-| name                                     | shortcut | note                                                 |
-|------------------------------------------|----------|------------------------------------------------------|
-| Database Tools and SQL -> Attach Session | opt + o  | staging, prod, local 등 자주 전환하는 경우 유용하다. |
-| Database Tools and SQL -> Transpose      | opt + t  | 열과 행 반전. 컬럼이 많은 경우 보기 편리             |
-| Other -> Pin Active Tab                  | opt + p  | 탭 고정. 탭 여러개를 비교를 자주할 때 유용           |
+| name                                     | shortcut | note                                                                   |
+|------------------------------------------|----------|------------------------------------------------------------------------|
+| Database Tools and SQL -> Attach Session | opt + o  | staging, prod, local 등 자주 전환하는 경우 유용하다.                   |
+| Database Tools and SQL -> Transpose      | opt + t  | 열과 행 반전. 컬럼이 많은 경우 보기 편리                               |
+| Other -> Pin Active Tab                  | opt + p  | 탭 고정. 탭 여러개를 비교를 자주할 때 유용                             |
+| Main Menu -> Navigate -> File Structure  | opt + l  | (쿼리 결과에서) 컬럼 목록 및 이동. 컬럼이 많은 경우 검색으로 이동 가능 |
 
 ```xml
 <keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
@@ -65,6 +66,10 @@ sourceSets.main.get().java.srcDirs(
   <action id="Console.TableResult.Transpose">
     <keyboard-shortcut first-keystroke="alt t" />
   </action>
+  <action id="FileStructurePopup">
+    <keyboard-shortcut first-keystroke="meta f12" />
+    <keyboard-shortcut first-keystroke="alt l" />
+  </action>
   <action id="PinActiveEditorTab" />
   <action id="PinActiveTabToggle">
     <keyboard-shortcut first-keystroke="alt p" />
@@ -73,4 +78,4 @@ sourceSets.main.get().java.srcDirs(
 </keymap>
 ```
 
-위 설정을 `~/Library/Application Support/JetBrains/DataGrip{version}/keymaps`에 두면 keymap 목록에 등록된다.
+위 설정을 `~/Library/Application\ Support/JetBrains/DataGrip{version}/keymaps`에 두면 keymap 목록에 등록된다.
