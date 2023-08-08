@@ -69,7 +69,7 @@ export default function IndexPage(
   return (
     <StyledMain>
       <SearchBox onChange={setQuery} />
-      <WikiList items={items} />
+      <WikiList items={items} fallback="No results found :(" />
     </StyledMain>
   )
 }
