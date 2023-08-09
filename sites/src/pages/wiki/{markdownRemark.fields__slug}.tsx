@@ -1,6 +1,5 @@
 import * as React from "react"
 import { graphql, PageProps } from "gatsby"
-import replaceWikiLinks from "../../utils/wiki"
 import extractInternalLinks from "../../utils/internal-links"
 import Wiki from "../../components/templates/Wiki"
 import { removeFirstHeading } from "../../utils/html-string"
@@ -18,7 +17,6 @@ export default function BlogPostTemplate(
     tableOfContents,
     html
   } = data.markdownRemark ?? {}
-  const rhtml = html && replaceWikiLinks(html)
   const relatedLinks = html && extractInternalLinks(html) || []
   const relatedLinksToc = relatedLinks.map(link => (
     <a key={link} href={`../${link}`} style={relatedLinkStyle}>{link}</a>
@@ -29,7 +27,7 @@ export default function BlogPostTemplate(
       title={headings?.[0]?.value || undefined}
       tableOfContents={tableOfContents || ""}
       relatedLinksToc={relatedLinksToc}
-      wikiContents={removeFirstHeading(rhtml || "")}
+      wikiContents={removeFirstHeading(html || "")}
     />
   )
 }
