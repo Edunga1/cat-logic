@@ -10,6 +10,7 @@ import { useGatsbyPluginFusejs } from "react-use-fusejs"
 import SearchBox from "../components/molecules/SearchBox"
 
 const StyledMain = styled.main`
+  padding-top: 10%;
   background-color: ${theme.colors.background};
   color: ${theme.colors.foreground};
   overflow: hidden;
