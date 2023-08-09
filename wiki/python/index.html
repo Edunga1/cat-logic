@@ -161,7 +161,7 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </li>
 </ul>
 </li>
-</ul></div><span><a href="../language-server-protocol" style="font-size:0.5em;margin-right:0.5em">language-server-protocol</a><a href="../nodejs" style="font-size:0.5em;margin-right:0.5em">nodejs</a><a href="../python" style="font-size:0.5em;margin-right:0.5em">python</a><a href="../spring-framework" style="font-size:0.5em;margin-right:0.5em">spring-framework</a></span></div><div class="Wiki__Main-sc-16q9onf-2 eTgCJx"><h1>Python</h1><div class="Toc__Container-sc-1f76i2s-0 esYjaU"><ul>
+</ul></div><span></span></div><div class="Wiki__Main-sc-16q9onf-2 eTgCJx"><h1>Python</h1><div class="Toc__Container-sc-1f76i2s-0 esYjaU"><ul>
 <li>
 <p><a href="#python">Python</a></p>
 <ul>
@@ -279,7 +279,7 @@ sources = {
 </code></pre>
 <h3 id="pyright" style="position:relative;"><a href="#pyright" aria-label="pyright permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pyright</h3>
 <p><a href="https://github.com/microsoft/pyright">https://github.com/microsoft/pyright</a></p>
-<p><a href="/cat-logic/7056617538c1aded5f999a2ad07c36e5/language-server-protocol.md">language server</a> for python.</p>
+<p><a href="../language-server-protocol">language server</a> for python.</p>
 <p>django 프로젝트라면 <a href="https://github.com/sbdchd/django-types">django-types</a>를 설치하자.
 mypy와 django-stubs처럼 django model의 필드 타입을 제공한다.</p>
 <pre><code class="language-python">class User(models.Model):
@@ -983,8 +983,8 @@ subscribe에서 on_complete에 메시지를 넣어도 출력되지 않았다.</p
 <h3 id="redis-connection을-전역-생성-vs-요청마다-생성" style="position:relative;"><a href="#redis-connection%EC%9D%84-%EC%A0%84%EC%97%AD-%EC%83%9D%EC%84%B1-vs-%EC%9A%94%EC%B2%AD%EB%A7%88%EB%8B%A4-%EC%83%9D%EC%84%B1" aria-label="redis connection을 전역 생성 vs 요청마다 생성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>redis connection을 전역 생성 vs 요청마다 생성</h3>
 <p>SO <a href="https://stackoverflow.com/questions/18022767/python-redis-connection-should-be-closed-on-every-request-flask/18024593">Python Redis connection should be closed on every request? (flask)</a> 질문이다.</p>
 <p>redis connection을 전역으로 하나만 생성해서 필요한 곳에서 import 하여 사용할 지, 매 요청마다 생성하고 닫을 지에 대한 질문이다.</p>
-<p>전자처럼 Top level 객체는 <a href="/cat-logic/f3b6f13818ad0425c414ca5db9da29e1/nodejs.md">Node.js</a>나 <a href="/cat-logic/e64e0eafc47e9d5a71ec411baa5543dd/python.md">python</a>에서는 일반적인 방법이다.
-<a href="/cat-logic/11466e7bf778c43d8395a4e076e31873/spring-framework.md">Spring Framework</a>의 경우 주입에 대한 문제에서 자유로우니 Bean으로 생성하고 프레임워크를 통해 주입받는 것이 일반적이다.
+<p>전자처럼 Top level 객체는 <a href="../nodejs">Node.js</a>나 <a href="../python">python</a>에서는 일반적인 방법이다.
+<a href="../spring-framework">Spring Framework</a>의 경우 주입에 대한 문제에서 자유로우니 Bean으로 생성하고 프레임워크를 통해 주입받는 것이 일반적이다.
 그래서 node나 python을 처음 접하는 경우 의존 문제에 대해 난해할 수 있다.
 DI 라이브러리 사용하지 않고 이상적인 코드를 작성하려고 하면 인스턴스 생성하다가 지치게 된다.</p>
 <p>어쨌든 질문에 대한 답은 <code>redis-py</code>가 connection pool을 관리하기 때문에 후자를 선택하더라도 우려하는 성능 문제는 없다고 한다.</p>
@@ -1016,6 +1016,6 @@ b. create a global connection pool and pass that to various redis instances thro
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-dab12a2b781f99365d90.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-75813e24a00d9c44de9f.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-de300a0884b46faafdc6.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-27c8806a011ffb128cad.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-29ca3cdaaaa8c9a412a9.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-75813e24a00d9c44de9f.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-ac387960498903f3998f.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-79622bc6fba6349be910.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="ac42ace0615d421f8e17";</script><script src="/cat-logic/webpack-runtime-834299923f2f393db7af.js" async></script><script src="/cat-logic/framework-3d24f1df4806fe1cdcfc.js" async></script><script src="/cat-logic/app-dab12a2b781f99365d90.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="6de8671e6b6fe42b7a8d";</script><script src="/cat-logic/webpack-runtime-a9ec1cff1cbab4095434.js" async></script><script src="/cat-logic/framework-3d24f1df4806fe1cdcfc.js" async></script><script src="/cat-logic/app-29ca3cdaaaa8c9a412a9.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
