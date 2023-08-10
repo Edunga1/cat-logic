@@ -357,6 +357,46 @@ Dockerize 하는데 이슈가 있다. 빌드 할 때 pipenv를 결국 설치해�
 그래서 multi-stage build를 하는 것이 필요하다. 빌드 스테이지에서 pipenv를 설치하고, pipenv를 이용하여 requirements.txt를 생성하고,
 requirements.txt를 가지고 실행 스테이지에서 의존 모듈을 설치한다. 그러면 프로덕션 레벨에서 pipenv를 감출 수 있다.
 
+### poetry
+
+https://github.com/python-poetry/poetry
+
+pipenv 보다 star가 더 많다. `pyproject.toml`에 의존성이나, 환경 정보를 저장한다.
+최근에 조금씩 사용해보고 있다.
+
+`poetry init --python=3.10 -q`로 초기화하면 `pypoject.toml` 파일이 생성된다.
+`-q` 옵션이 없으면 너무 많은 정보를 물어봐서 번거롭다.
+
+```toml
+[tool.poetry]
+name = "myproject"
+version = "0.1.0"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+```
+
+위와같이 만들어 준다.
+
+`poetry shell`을 입력하면 virtualenv으로 진입한다. 없으면 생성한다.
+
+```bash
+❯ poetry shell
+Creating virtualenv myproject-jPR28GGN-py3.11 in /home/username/.cache/pypoetry/virtualenvs
+Spawning shell within /home/username/.cache/pypoetry/virtualenvs/myproject-jPR28GGN-py3.11
+```
+
+home에 가상환경 정보를 저장하므로, `pyenv versions`에 노출되지 않아서 괜찮아 보인다.
+프로젝트가 많으면 너무 많은 가상환경이 생성되기 때문이다.
+
+`poetry add rx`로 의존 모듈을 추가한다. 알아서 `pyproject.toml`에 추가하고, lock file`poetry.lock`을 업데이트한다.
 
 ## Packaging
 
