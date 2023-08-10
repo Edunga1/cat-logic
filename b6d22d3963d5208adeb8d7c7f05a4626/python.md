@@ -714,9 +714,7 @@ print('CPU count is {0}'.format(thread_count))
 
 
 def asyn(inp):
-    return rx.just(inp, thread_pool_scheduler).pipe(
-        ops.map(lambda a: adding_delay(a)),
-    )
+    return rx.from_callable(lambda: adding_delay(inp))
 
 
 def adding_delay(value):
@@ -724,14 +722,23 @@ def adding_delay(value):
     return value
 
 
-rx.range(1, 20).pipe(
-    ops.flat_map(asyn),
-    ops.do_action(
-        on_next=print,
-        on_completed=lambda: print('process done'),
-    ),
-    ops.subscribe_on(thread_pool_scheduler),
-).run()
+def generator():
+    yield -1
+    for i in range(10):
+        yield i
+
+
+# rx.range(1, 20)\
+rx.from_iterable(generator())\
+    .pipe(
+        ops.observe_on(thread_pool_scheduler),
+        ops.flat_map(asyn),
+        ops.do_action(
+            on_next=print,
+            on_completed=lambda: print('process done'),
+        ),
+    )\
+    .run()
 
 
 print('program done')
