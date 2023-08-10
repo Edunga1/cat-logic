@@ -118,6 +118,7 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p><a href="#package-manager">Package manager</a></p>
 <ul>
 <li><a href="#pipenv">pipenv</a></li>
+<li><a href="#poetry">poetry</a></li>
 </ul>
 </li>
 <li>
@@ -211,6 +212,7 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p><a href="#package-manager">Package manager</a></p>
 <ul>
 <li><a href="#pipenv">pipenv</a></li>
+<li><a href="#poetry">poetry</a></li>
 </ul>
 </li>
 <li>
@@ -526,6 +528,35 @@ Django만 설치했는데, Django가 사용하는 다른 패키지도 포함된�
 <p>Dockerize 하는데 이슈가 있다. 빌드 할 때 pipenv를 결국 설치해야 하는데, 로직을 돌리는데 불필요한 존재기 때문이다.
 그래서 multi-stage build를 하는 것이 필요하다. 빌드 스테이지에서 pipenv를 설치하고, pipenv를 이용하여 requirements.txt를 생성하고,
 requirements.txt를 가지고 실행 스테이지에서 의존 모듈을 설치한다. 그러면 프로덕션 레벨에서 pipenv를 감출 수 있다.</p>
+<h3 id="poetry" style="position:relative;"><a href="#poetry" aria-label="poetry permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>poetry</h3>
+<p><a href="https://github.com/python-poetry/poetry">https://github.com/python-poetry/poetry</a></p>
+<p>pipenv 보다 star가 더 많다. <code>pyproject.toml</code>에 의존성이나, 환경 정보를 저장한다.
+최근에 조금씩 사용해보고 있다.</p>
+<p><code>poetry init --python=3.10 -q</code>로 초기화하면 <code>pypoject.toml</code> 파일이 생성된다.
+<code>-q</code> 옵션이 없으면 너무 많은 정보를 물어봐서 번거롭다.</p>
+<pre><code class="language-toml">[tool.poetry]
+name = "myproject"
+version = "0.1.0"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+</code></pre>
+<p>위와같이 만들어 준다.</p>
+<p><code>poetry shell</code>을 입력하면 virtualenv으로 진입한다. 없으면 생성한다.</p>
+<pre><code class="language-bash">❯ poetry shell
+Creating virtualenv myproject-jPR28GGN-py3.11 in /home/username/.cache/pypoetry/virtualenvs
+Spawning shell within /home/username/.cache/pypoetry/virtualenvs/myproject-jPR28GGN-py3.11
+</code></pre>
+<p>home에 가상환경 정보를 저장하므로, <code>pyenv versions</code>에 노출되지 않아서 괜찮아 보인다.
+프로젝트가 많으면 너무 많은 가상환경이 생성되기 때문이다.</p>
+<p><code>poetry add rx</code>로 의존 모듈을 추가한다. 알아서 <code>pyproject.toml</code>에 추가하고, lock file<code>poetry.lock</code>을 업데이트한다.</p>
 <h2 id="packaging" style="position:relative;"><a href="#packaging" aria-label="packaging permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Packaging</h2>
 <h3 id="__all__" style="position:relative;"><a href="#__all__" aria-label="__all__ permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>__all__</code></h3>
 <p><code>my_module.py</code>라는 파일이 있다고 하자:</p>
