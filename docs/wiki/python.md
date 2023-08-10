@@ -638,70 +638,8 @@ Task 2 complete
 
 ```python
 import multiprocessing
-import random
 import time
 from threading import current_thread
-import rx
-from rx.scheduler import ThreadPoolScheduler
-from rx import operators as ops
-# calculate cpu count, using which will create a ThreadPoolScheduler
-thread_count = multiprocessing.cpu_count()
-thread_pool_scheduler = ThreadPoolScheduler(thread_count)
-print("Cpu count is : {0}".format(thread_count))
-def adding_delay(value):
-   time.sleep(random.randint(5, 20) * 0.1)
-   return value
-# Task 1
-rx.of(1,2,3,4,5).pipe(
-   ops.map(lambda a: adding_delay(a)),
-   ops.subscribe_on(thread_pool_scheduler)
-).subscribe(
-   lambda s: print("From Task 1: {0}".format(s)),
-   lambda e: print(e),
-   lambda: print("Task 1 complete")
-)
-# Task 2
-rx.range(1, 5).pipe(
-   ops.map(lambda a: adding_delay(a)),
-   ops.subscribe_on(thread_pool_scheduler)
-).subscribe(
-   lambda s: print("From Task 2: {0}".format(s)),
-   lambda e: print(e),
-   lambda: print("Task 2 complete")
-)
-input("Press any key to exit\n")
-```
-
-multiprocessing 모듈로 쓰레드를 코어 수 만큼가지는 풀을 생성하고 rxpy에 전달한다.
-
-실행 결과는 다음과 같다:
-
-```bash
-Cpu count is : 4
-Press any key to exit
-From Task 1: 1
-From Task 2: 1
-From Task 1: 2
-From Task 2: 2
-From Task 2: 3
-From Task 1: 3
-From Task 2: 4
-Task 2 complete
-From Task 1: 4
-From Task 1: 5
-Task 1 complete
-```
-
-**Task 하나 전체를 병렬처리하기**
-
-하지만 원하는건 Task1, Task2 이렇게 나눈 방법이 아니다. 이러면 1000개 아이템을 가진 리스트를 쪼개서 Task1, Task2,  ..., TaskN으로 나눠야 한다.
-
-아래 코드는 Task2 아이템을 모두 동시에 처리한다.
-
-```python
-import multiprocessing
-import random
-import time
 
 import rx
 from rx import operators as ops
@@ -714,64 +652,80 @@ print('CPU count is {0}'.format(thread_count))
 
 
 def asyn(inp):
-    return rx.from_callable(lambda: adding_delay(inp))
+    return rx.from_callable(
+        lambda: adding_delay(inp),
+        scheduler=thread_pool_scheduler,
+    )
 
 
 def adding_delay(value):
-    time.sleep(random.randint(5, 20) * 0.1)
+    time.sleep(3)
     return value
 
 
-def generator():
-    yield -1
-    for i in range(10):
+def generate_nums():
+    for i in range(25):
         yield i
 
 
-# rx.range(1, 20)\
-rx.from_iterable(generator())\
+def print_t(it):
+    print(f'{current_thread().name}: {it}')
+
+
+rx.from_iterable(generate_nums())\
     .pipe(
-        ops.observe_on(thread_pool_scheduler),
         ops.flat_map(asyn),
         ops.do_action(
-            on_next=print,
-            on_completed=lambda: print('process done'),
+            on_next=print_t,
+            on_completed=lambda: print_t('process done'),
         ),
     )\
     .run()
 
 
-print('program done')
-```
-
-결과를 보면 value의 순서가 없다.
-
-```bash
-CPU count is 12
-6
-3
-8
-1
-10
-5
-7
-4
-9
-15
-2
-12
-11
-19
-16
-13
-14
-17
-18
-process done
-program done
+print_t('program done')
 ```
 
 `run()`으로 프로세스 종료를 기다릴 수 있다. `subscribe()` 사용하면 스레드를 기다리지 않고 즉시 끝난다.
+
+위 코드는 cpu 수인 12개 쓰레드로 25개의 아이템을 처리하는 예제다.
+각 아이템마다 3초 대기하므로, 12개의 쓰레드가 병렬처리하여 총 9초가 소요되어야 한다.
+
+```bash
+❯ time python test.py
+CPU count is 12
+ThreadPoolExecutor-0_0: 0
+ThreadPoolExecutor-0_3: 3
+ThreadPoolExecutor-0_2: 2
+ThreadPoolExecutor-0_5: 5
+ThreadPoolExecutor-0_7: 7
+ThreadPoolExecutor-0_9: 9
+ThreadPoolExecutor-0_10: 10
+ThreadPoolExecutor-0_1: 1
+ThreadPoolExecutor-0_4: 4
+ThreadPoolExecutor-0_8: 8
+ThreadPoolExecutor-0_11: 11
+ThreadPoolExecutor-0_6: 6             # 여기서 3s
+ThreadPoolExecutor-0_2: 13
+ThreadPoolExecutor-0_5: 14
+ThreadPoolExecutor-0_7: 15
+ThreadPoolExecutor-0_3: 12
+ThreadPoolExecutor-0_9: 16
+ThreadPoolExecutor-0_10: 17
+ThreadPoolExecutor-0_4: 19
+ThreadPoolExecutor-0_0: 21
+ThreadPoolExecutor-0_8: 20
+ThreadPoolExecutor-0_1: 18
+ThreadPoolExecutor-0_11: 22
+ThreadPoolExecutor-0_6: 23            # 여기서 6s
+ThreadPoolExecutor-0_5: 24
+ThreadPoolExecutor-0_5: process done
+MainThread: program done
+python test.py  0.06s user 0.03s system 0% cpu 9.169 total
+```
+
+`ThreadPoolExecutor-0_N` 이름으로 0~11, 총 12개의 쓰레드가 보인다.
+주석으로 표기한 지점에서 3초, 6초 소요되었다. 마지막 24번까지 9초.
 
 ## redis-py
 
