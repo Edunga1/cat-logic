@@ -700,160 +700,69 @@ Task 1 complete
 import multiprocessing
 import random
 import time
-from threading import current_thread
+
 import rx
-from rx.scheduler import ThreadPoolScheduler
 from rx import operators as ops
+from rx.scheduler.threadpoolscheduler import ThreadPoolScheduler
+
 # calculate cpu count, using which will create a ThreadPoolScheduler
 thread_count = multiprocessing.cpu_count()
 thread_pool_scheduler = ThreadPoolScheduler(thread_count)
-print("Cpu count is : {0}".format(thread_count))
+print('CPU count is {0}'.format(thread_count))
+
 
 def asyn(inp):
     return rx.just(inp, thread_pool_scheduler).pipe(
-      ops.map(lambda a: adding_delay(a)),
+        ops.map(lambda a: adding_delay(a)),
     )
 
-def adding_delay(value):
-   time.sleep(random.randint(5, 20) * 0.1)
-   return value
 
-# Task 1
-rx.of(1,2,3,4,5).pipe(
-   ops.map(lambda a: adding_delay(a)),
-   ops.subscribe_on(thread_pool_scheduler)
-).subscribe(
-   lambda s: print("From Task 1: {0}".format(s)),
-   lambda e: print(e),
-   lambda: print("Task 1 complete")
-)
-# Task 2
-rx.range(1, 100).pipe(
-   ops.flat_map(asyn),  # 병렬처리 부분
-   ops.subscribe_on(thread_pool_scheduler)
-).subscribe(
-   lambda s: print("From Task 2: {0}".format(s)),
-   lambda e: print(e),
-   lambda: print("Task 2 complete")
-)
-input("Press any key to exit\n")
+def adding_delay(value):
+    time.sleep(random.randint(5, 20) * 0.1)
+    return value
+
+
+rx.range(1, 20).pipe(
+    ops.flat_map(asyn),
+    ops.do_action(
+        on_next=print,
+        on_completed=lambda: print('process done'),
+    ),
+    ops.subscribe_on(thread_pool_scheduler),
+).run()
+
+
+print('program done')
 ```
 
 결과를 보면 value의 순서가 없다.
 
 ```bash
-Cpu count is : 16
-Press any key to exit
-From Task 2: 1
-From Task 2: 2
-From Task 2: 11
-From Task 2: 13
-From Task 2: 8
-From Task 2: 12
-From Task 2: 4
-From Task 2: 14
-From Task 2: 5
-From Task 2: 10
-From Task 1: 1
-From Task 2: 9
-From Task 2: 19
-From Task 2: 16
-From Task 2: 6
-From Task 2: 7
-From Task 2: 17
-From Task 2: 3
-From Task 2: 25
-From Task 2: 15
-From Task 2: 23
-From Task 2: 18
-From Task 2: 21
-From Task 2: 29
-From Task 2: 26
-From Task 2: 28
-From Task 2: 20
-From Task 1: 2
-From Task 2: 38
-From Task 2: 27
-From Task 2: 22
-From Task 2: 34
-From Task 2: 24
-From Task 2: 30
-From Task 2: 37
-From Task 2: 35
-From Task 2: 31
-From Task 2: 43
-From Task 2: 32
-From Task 2: 33
-From Task 2: 40
-From Task 2: 41
-From Task 2: 48
-From Task 2: 36
-From Task 2: 46
-From Task 2: 49
-From Task 1: 3
-From Task 2: 39
-From Task 2: 45
-From Task 2: 52
-From Task 2: 44
-From Task 2: 55
-From Task 2: 51
-From Task 2: 42
-From Task 2: 56
-From Task 2: 58
-From Task 2: 50
-From Task 2: 57
-From Task 2: 61
-From Task 2: 53
-From Task 2: 47
-From Task 2: 63
-From Task 2: 54
-From Task 2: 59
-From Task 2: 65
-From Task 2: 73
-From Task 2: 70
-From Task 2: 66
-From Task 2: 64
-From Task 2: 60
-From Task 1: 4
-From Task 2: 77
-From Task 2: 68
-From Task 2: 74
-From Task 2: 62
-From Task 2: 72
-From Task 2: 75
-From Task 2: 71
-From Task 2: 67
-From Task 2: 83
-From Task 2: 69
-From Task 2: 82
-From Task 2: 79
-From Task 2: 78
-From Task 2: 87
-From Task 2: 89
-From Task 2: 80
-From Task 2: 76
-From Task 1: 5
-Task 1 complete
-From Task 2: 94
-From Task 2: 81
-From Task 2: 84
-From Task 2: 90
-From Task 2: 85
-From Task 2: 88
-From Task 2: 86
-From Task 2: 96
-From Task 2: 91
-From Task 2: 95
-From Task 2: 93
-From Task 2: 92
-From Task 2: 99
-From Task 2: 98
-From Task 2: 97
-Task 2 complete
+CPU count is 12
+6
+3
+8
+1
+10
+5
+7
+4
+9
+15
+2
+12
+11
+19
+16
+13
+14
+17
+18
+process done
+program done
 ```
 
-rxpy나 reactive programming에 익숙하지 않아서, 모든 처리를 완료 후에 프로그램을 제대로 끝낼 수 없었다.
-subscribe에서 on_complete에 메시지를 넣어도 출력되지 않았다.
+`run()`으로 프로세스 종료를 기다릴 수 있다. `subscribe()` 사용하면 스레드를 기다리지 않고 즉시 끝난다.
 
 ## redis-py
 
