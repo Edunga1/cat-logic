@@ -579,6 +579,8 @@ pprint(result, indent=2)
 
 Rxpy는 ReactiveX의 파이썬 구현체이다.
 
+`pip install rx`로 설치. `rxpy`가 아니다.
+
 ### Rxpy example
 
 https://www.tutorialspoint.com/rxpy/rxpy_concurrency_using_scheduler.htm
