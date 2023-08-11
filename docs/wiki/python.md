@@ -767,6 +767,10 @@ python test.py  0.06s user 0.03s system 0% cpu 9.169 total
 `ThreadPoolExecutor-0_N` 이름으로 0~11, 총 12개의 쓰레드가 보인다.
 주석으로 표기한 지점에서 3초, 6초 소요되었다. 마지막 24번까지 9초.
 
+
+RXPY 예제 프로젝트를 만들었다: https://github.com/edunga1/practice-rxpy \
+docker로 실행해볼 수 있다.
+
 ## redis-py
 
 https://github.com/redis/redis-py
