@@ -120,6 +120,8 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li>
 <p><a href="#plugin-%EB%A7%8C%EB%93%A4%EA%B8%B0">Plugin 만들기</a></p>
 <ul>
+<li><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0">프로젝트 구조</a></li>
+<li><a href="#autoload"><code>autoload</code></a></li>
 <li><a href="#ftplugin"><code>ftplugin</code></a></li>
 <li><a href="#plug-sid"><code>&#x3C;Plug></code> <code>&#x3C;SID></code></a></li>
 </ul>
@@ -239,6 +241,8 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li>
 <p><a href="#plugin-%EB%A7%8C%EB%93%A4%EA%B8%B0">Plugin 만들기</a></p>
 <ul>
+<li><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0">프로젝트 구조</a></li>
+<li><a href="#autoload"><code>autoload</code></a></li>
 <li><a href="#ftplugin"><code>ftplugin</code></a></li>
 <li><a href="#plug-sid"><code>&#x3C;Plug></code> <code>&#x3C;SID></code></a></li>
 </ul>
@@ -485,6 +489,29 @@ netrw, find 사용법</p>
 <code>.gitignore</code>의 무시한 파일, <code>node_modules</code> 같이 무거운 폴더도 검색된다.</p>
 <h2 id="plugin-만들기" style="position:relative;"><a href="#plugin-%EB%A7%8C%EB%93%A4%EA%B8%B0" aria-label="plugin 만들기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin 만들기</h2>
 <p><code>:h write-plugin</code> nvim의 사용자 메뉴얼 플러그인 작성 섹션.</p>
+<h3 id="프로젝트-구조" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0" aria-label="프로젝트 구조 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 구조</h3>
+<pre><code class="language-bash">.
+│   # 폴더 내의 모든 파일을 자동으로 로드한다.
+├── autoload
+│   └── vimwiki_link
+│       └── base.vim
+│   # 파일 타입에 따라 자동으로 로드한다.
+└── ftplugin
+    │   # `vimwiki/script.vim`과 `vimwiki.vim` 파일 모두
+    │   # vimwiki 파일 타입인 버퍼를 열면 자동으로 로드한다.
+    ├── vimwiki
+    │   └── script.vim
+    └── vimwiki.vim
+</code></pre>
+<h3 id="autoload" style="position:relative;"><a href="#autoload" aria-label="autoload permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>autoload</code></h3>
+<p><code>:h autoload</code></p>
+<p><code>autoload/vimwiki_link/base.vim</code> 파일이 있으면 <code>vimwiki_link#base#Function()</code> 함수 이름으로 정의한다.</p>
+<pre><code class="language-vim"># autoload/vimwiki_link/base.vim
+function! vimwiki_link#base#follow_link() abort
+  # ...
+endfunction
+</code></pre>
+<p>폴더 및 파일 이름이 네임스페이스가 된다. 만약 다른 네임스페이스로 선언하면 에러가 발생한다.</p>
 <h3 id="ftplugin" style="position:relative;"><a href="#ftplugin" aria-label="ftplugin permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>ftplugin</code></h3>
 <ul>
 <li><code>:h ftplugin</code></li>
@@ -498,6 +525,13 @@ netrw, find 사용법</p>
 ftplugin/<filetype>_<name>.vim
 ftplugin/<filetype>/<name>.vim</p>
 </blockquote>
+<pre><code class="language-vim">command! -buffer VimwikiSmartLink call vimwiki_link#base#follow_link()
+
+nnoremap &#x3C;silent>&#x3C;script>&#x3C;buffer> &#x3C;Plug>VimwikiSmartLink :VimwikiSmartLink&#x3C;CR>
+nnoremap &#x3C;CR>&#x3C;CR> &#x3C;Plug>VimwikiSmartLink
+</code></pre>
+<p>보통 파일 타입에 맞는 명령어를 정의하거나 매핑을 생성하고
+<code>autoload</code>의 함수를 호출하는 구조로 많이 사용하는 거 같다.</p>
 <h3 id="plug-sid" style="position:relative;"><a href="#plug-sid" aria-label="plug sid permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&#x3C;Plug></code> <code>&#x3C;SID></code></h3>
 <p><code>:h using-&#x3C;Plug></code></p>
 <blockquote>

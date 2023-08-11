@@ -208,6 +208,38 @@ netrw, find 사용법
 
 `:h write-plugin` nvim의 사용자 메뉴얼 플러그인 작성 섹션.
 
+### 프로젝트 구조
+
+```bash
+.
+│   # 폴더 내의 모든 파일을 자동으로 로드한다.
+├── autoload
+│   └── vimwiki_link
+│       └── base.vim
+│   # 파일 타입에 따라 자동으로 로드한다.
+└── ftplugin
+    │   # `vimwiki/script.vim`과 `vimwiki.vim` 파일 모두
+    │   # vimwiki 파일 타입인 버퍼를 열면 자동으로 로드한다.
+    ├── vimwiki
+    │   └── script.vim
+    └── vimwiki.vim
+```
+
+### `autoload`
+
+`:h autoload`
+
+`autoload/vimwiki_link/base.vim` 파일이 있으면 `vimwiki_link#base#Function()` 함수 이름으로 정의한다.
+
+```vim
+# autoload/vimwiki_link/base.vim
+function! vimwiki_link#base#follow_link() abort
+  # ...
+endfunction
+```
+
+폴더 및 파일 이름이 네임스페이스가 된다. 만약 다른 네임스페이스로 선언하면 에러가 발생한다.
+
 ### `ftplugin`
 
 - `:h ftplugin`
@@ -221,6 +253,16 @@ netrw, find 사용법
 > 	ftplugin/<filetype>.vim
 > 	ftplugin/<filetype>_<name>.vim
 > 	ftplugin/<filetype>/<name>.vim
+
+```vim
+command! -buffer VimwikiSmartLink call vimwiki_link#base#follow_link()
+
+nnoremap <silent><script><buffer> <Plug>VimwikiSmartLink :VimwikiSmartLink<CR>
+nnoremap <CR><CR> <Plug>VimwikiSmartLink
+```
+
+보통 파일 타입에 맞는 명령어를 정의하거나 매핑을 생성하고
+`autoload`의 함수를 호출하는 구조로 많이 사용하는 거 같다.
 
 ### `<Plug>` `<SID>`
 
