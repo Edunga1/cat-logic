@@ -1,4 +1,11 @@
 import * as React from "react"
+import styled from "styled-components"
+import theme from "../../constants/theme"
+
+const StyledInput = styled.input`
+  border: 1px solid ${theme.colors.accent};
+  border-radius: .3rem;
+`
 
 export default function SearchBox(
   {
@@ -9,12 +16,10 @@ export default function SearchBox(
 ) {
 
   return (
-    <div>
-      <input
-        type="text"
-        onChange={(e) => onChange(e.target.value)}
-      />
-    </div>
+    <StyledInput
+      type="text"
+      onChange={(e) => onChange(e.target.value)}
+    />
   )
 }
 
