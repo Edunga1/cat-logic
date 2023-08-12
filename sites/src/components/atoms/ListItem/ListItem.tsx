@@ -8,6 +8,6 @@ export default function ListItem(
   props: { children: React.ReactNode },
 ) {
   return (
-    <li style={Styles} >{props.children}</li>
+    <li style={Styles}>{props.children}</li>
   )
 }

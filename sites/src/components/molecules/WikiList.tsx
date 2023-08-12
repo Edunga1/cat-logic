@@ -5,6 +5,12 @@ import ListItem from "../atoms/ListItem/ListItem"
 import theme from "../../constants/theme"
 import device from "../../constants/device"
 
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
 const List = styled.ul`
   padding: 0 1rem;
   width: 100%;
@@ -54,20 +60,20 @@ export default function WikiList(
 ) {
   const hasItems = items.length > 0
   return (
-    <div>
+    <Container>
       {hasItems
         ? <List>
-            {items.map((item) => (
-              <ListItem key={item.id}>
-                <Link href={item.path}>
-                  {item.title}
-                </Link>
-              </ListItem>
-            ))}
-          </List>
+          {items.map((item) => (
+            <ListItem key={item.id}>
+              <Link href={item.path}>
+                {item.title}
+              </Link>
+            </ListItem>
+          ))}
+        </List>
         : <Fallback>{fallback}</Fallback>
       }
-    </div>
+    </Container>
   )
 }
 
