@@ -11,12 +11,6 @@ const Container = styled.div`
     padding-left: 1rem;
     margin: 0;
     font-size: .8rem;
-    font-weight: bold;
-
-    ul {
-      font-size: .6rem;
-      font-weight: normal;
-    }
 
     p {
       margin: 0;
