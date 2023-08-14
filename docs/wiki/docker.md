@@ -29,25 +29,25 @@ WSL2을 잘 지원한다.
 
 https://github.com/abiosoft/colima/
 
-Linux, MacOS 제공한다. GUI를 제공하지 않는다.
-
-최소한의 설정으로 컨테이너를 제공한다고 한다:
+Linux, MacOS 모두 지원한다.
+최소한의 설정으로 컨테이너를 제공한다고 설명한다:
 
 > Container runtimes on macOS (and Linux) with minimal setup
+
+MacOs는 homebrew로 쉽게 설치할 수 있다: `brew install colima`
 
 [아직 WSL2를 지원하지 않으니](https://github.com/abiosoft/colima/issues/434) 주의.
 [Lima](https://github.com/lima-vm/)라는 가상머신 지원 도구를 사용하는데, 아직 윈도우를 지원하지 않아서 colima도 제공할 수 없다는 듯. 조만간 WSL도 제공할 수 있을 거 같다고 하니 기다려 보자.
 
+Command line으로만 도커를 시작할 수 있다.
 GUI를 제공하지 않지만 Docker Desktop이나 Rancher Desktop에서도 GUI를 잘 사용하지 않으니 딱히 문제는 안된다.
 
-homebrew로 쉽게 설치할 수 있다: `brew install colima`
-
-`colima`라는 명령어를 제공하고, `colima start`로 도커를 시작한다.
+`colima` 명령어를 제공하고, `colima start`로 도커를 시작한다.
 다만 기본으로 memory가 `2`GiB로 설정되는데, 메모리 문제로 [airflow 컨테이너](https://github.com/marclamberti/docker-airflow/blob/main/docker-compose.yml)가 시작하자마자 죽는 문제가 있었다.
 
 `colima start --memory 8 --cpu 4`와 같이 자원 할당을 늘려서 시작할 수 있다.
 
-현재 자원 할당 상태를 보려면 `colima status -e`.
+현재 자원 할당 상태를 보려면 `colima status -e`:
 
 ```bash
 ❯ colima status -e
