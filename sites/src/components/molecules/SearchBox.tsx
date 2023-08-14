@@ -1,6 +1,5 @@
 import * as React from "react"
 import styled from "styled-components"
-import theme from "../../constants/theme"
 
 const InputBorder = styled.div`
   font-size: 0;
