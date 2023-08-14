@@ -9,6 +9,10 @@ WSL2는 Rancher Desktop 추천.
 
 https://www.docker.com/products/docker-desktop/
 
+```bash
+brew install --cask docker
+```
+
 가장 쉽게 Docker를 사용할 수 있는 방법이다.
 개인 사용자는 무료로 사용할 수 있다.
 라이센스 정책 변경으로 인해 [기업 사용자는 조건](https://www.docker.com/pricing/faq/)에 따라 유료로 사용해야 한다.
@@ -16,6 +20,10 @@ https://www.docker.com/products/docker-desktop/
 ### Rancher Desktop
 
 https://rancherdesktop.io/
+
+```bash
+brew install --cask rancher
+```
 
 Docker Desktop과 흡사하다. 기본적으로 [k8s](./kubernetes.md) 제공한다.
 불필요 하다면 끄는 편이 리소스 절약에 좋다.
@@ -66,19 +74,7 @@ INFO[0000] disk: 60GiB
 
 **docker desktop 또는 rancher desktop이 나와서 이 방법은 비추천.**
 
-```bash
-brew install --cask docker
-```
-
-docker desktop은 기업인 경우 규모에 따라 유료 버전을 사용해야 한다. 라이센스에 주의하자.
-
-```bash
-brew install --cask rancher
-```
-
-rancher desktop은 무료 사용 가능하다.
-
-### 1. Homebrew로 Docker와 Docker-machine 설치
+**1. Homebrew로 Docker와 Docker-machine 설치**
 
 ```bash
 $ brew install docker docker-machine
@@ -86,7 +82,7 @@ $ brew install docker docker-machine
 
 docker-machine: 맥을 마치 Host OS 처럼 사용 할 수 있도록 해주는 프로그램
 
-### 2. Homebrew로 Virtualbox 설치
+**2. Homebrew로 Virtualbox 설치**
 
 ```bash
 $ brew cask install virtualbox
@@ -94,7 +90,7 @@ $ brew cask install virtualbox
 
 Virtualbox: 가상화 프로그램. 맥에서 docker-machine(Host OS, Linux)을 운영하기 위해서 사용
 
-### 3. docker-machine 설정
+**3. docker-machine 설정**
 
 ```bash
 $ docker-machine create -d virtualbox default
@@ -104,7 +100,7 @@ virtualbox driver를 이용하여 `default` 이름의 Docker-machine을 생성
 
 virtualbox에 Docker-machine이 올라간다.
 
-### 4. 생성한 Docker-machine 활성화
+**4. 생성한 Docker-machine 활성화**
 
 Docker-machine을 생성했지만, 아직 `docker` 명령어를 이용할 수 없다.
 
