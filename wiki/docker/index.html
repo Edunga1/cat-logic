@@ -191,19 +191,20 @@ container runtime을 containerd, dockerd 중 선택할 수 있는데, docker에 
 <p>WSL2을 잘 지원한다.</p>
 <h3 id="colima" style="position:relative;"><a href="#colima" aria-label="colima permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Colima</h3>
 <p><a href="https://github.com/abiosoft/colima/">https://github.com/abiosoft/colima/</a></p>
-<p>Linux, MacOS 제공한다. GUI를 제공하지 않는다.</p>
-<p>최소한의 설정으로 컨테이너를 제공한다고 한다:</p>
+<p>Linux, MacOS 모두 지원한다.
+최소한의 설정으로 컨테이너를 제공한다고 설명한다:</p>
 <blockquote>
 <p>Container runtimes on macOS (and Linux) with minimal setup</p>
 </blockquote>
+<p>MacOs는 homebrew로 쉽게 설치할 수 있다: <code>brew install colima</code></p>
 <p><a href="https://github.com/abiosoft/colima/issues/434">아직 WSL2를 지원하지 않으니</a> 주의.
 <a href="https://github.com/lima-vm/">Lima</a>라는 가상머신 지원 도구를 사용하는데, 아직 윈도우를 지원하지 않아서 colima도 제공할 수 없다는 듯. 조만간 WSL도 제공할 수 있을 거 같다고 하니 기다려 보자.</p>
-<p>GUI를 제공하지 않지만 Docker Desktop이나 Rancher Desktop에서도 GUI를 잘 사용하지 않으니 딱히 문제는 안된다.</p>
-<p>homebrew로 쉽게 설치할 수 있다: <code>brew install colima</code></p>
-<p><code>colima</code>라는 명령어를 제공하고, <code>colima start</code>로 도커를 시작한다.
+<p>Command line으로만 도커를 시작할 수 있다.
+GUI를 제공하지 않지만 Docker Desktop이나 Rancher Desktop에서도 GUI를 잘 사용하지 않으니 딱히 문제는 안된다.</p>
+<p><code>colima</code> 명령어를 제공하고, <code>colima start</code>로 도커를 시작한다.
 다만 기본으로 memory가 <code>2</code>GiB로 설정되는데, 메모리 문제로 <a href="https://github.com/marclamberti/docker-airflow/blob/main/docker-compose.yml">airflow 컨테이너</a>가 시작하자마자 죽는 문제가 있었다.</p>
 <p><code>colima start --memory 8 --cpu 4</code>와 같이 자원 할당을 늘려서 시작할 수 있다.</p>
-<p>현재 자원 할당 상태를 보려면 <code>colima status -e</code>.</p>
+<p>현재 자원 할당 상태를 보려면 <code>colima status -e</code>:</p>
 <pre><code class="language-bash">❯ colima status -e
 INFO[0000] colima is running using QEMU
 INFO[0000] arch: aarch64
@@ -487,4 +488,4 @@ no matching manifest for linux/arm64/v8 in the manifest list entries
           >
             window.___chunkMapping="{\"app\":[\"/app-29ca3cdaaaa8c9a412a9.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-75813e24a00d9c44de9f.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-74e84662d932992c7219.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-2e431d905b91cc1690a7.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="cd5b9ad64f393ca4e607";</script><script src="/cat-logic/webpack-runtime-d3493e0e826a8a277ab7.js" async></script><script src="/cat-logic/framework-3d24f1df4806fe1cdcfc.js" async></script><script src="/cat-logic/app-29ca3cdaaaa8c9a412a9.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8b2ac8908483580af01a";</script><script src="/cat-logic/webpack-runtime-d3493e0e826a8a277ab7.js" async></script><script src="/cat-logic/framework-3d24f1df4806fe1cdcfc.js" async></script><script src="/cat-logic/app-29ca3cdaaaa8c9a412a9.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
