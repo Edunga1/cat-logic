@@ -78,10 +78,6 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li><a href="#rancher-desktop">Rancher Desktop</a></li>
 <li><a href="#colima">Colima</a></li>
 <li><a href="#osx-%EC%97%90%EC%84%9C-%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0">OSX 에서 수동으로 Docker 환경 구성하기</a></li>
-<li><a href="#1-homebrew%EB%A1%9C-docker%EC%99%80-docker-machine-%EC%84%A4%EC%B9%98">1. Homebrew로 Docker와 Docker-machine 설치</a></li>
-<li><a href="#2-homebrew%EB%A1%9C-virtualbox-%EC%84%A4%EC%B9%98">2. Homebrew로 Virtualbox 설치</a></li>
-<li><a href="#3-docker-machine-%EC%84%A4%EC%A0%95">3. docker-machine 설정</a></li>
-<li><a href="#4-%EC%83%9D%EC%84%B1%ED%95%9C-docker-machine-%ED%99%9C%EC%84%B1%ED%99%94">4. 생성한 Docker-machine 활성화</a></li>
 </ul>
 </li>
 <li>
@@ -131,10 +127,6 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li><a href="#rancher-desktop">Rancher Desktop</a></li>
 <li><a href="#colima">Colima</a></li>
 <li><a href="#osx-%EC%97%90%EC%84%9C-%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0">OSX 에서 수동으로 Docker 환경 구성하기</a></li>
-<li><a href="#1-homebrew%EB%A1%9C-docker%EC%99%80-docker-machine-%EC%84%A4%EC%B9%98">1. Homebrew로 Docker와 Docker-machine 설치</a></li>
-<li><a href="#2-homebrew%EB%A1%9C-virtualbox-%EC%84%A4%EC%B9%98">2. Homebrew로 Virtualbox 설치</a></li>
-<li><a href="#3-docker-machine-%EC%84%A4%EC%A0%95">3. docker-machine 설정</a></li>
-<li><a href="#4-%EC%83%9D%EC%84%B1%ED%95%9C-docker-machine-%ED%99%9C%EC%84%B1%ED%99%94">4. 생성한 Docker-machine 활성화</a></li>
 </ul>
 </li>
 <li>
@@ -179,11 +171,15 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 WSL2는 Rancher Desktop 추천.</p>
 <h3 id="docker-desktop" style="position:relative;"><a href="#docker-desktop" aria-label="docker desktop permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Desktop</h3>
 <p><a href="https://www.docker.com/products/docker-desktop/">https://www.docker.com/products/docker-desktop/</a></p>
+<pre><code class="language-bash">brew install --cask docker
+</code></pre>
 <p>가장 쉽게 Docker를 사용할 수 있는 방법이다.
 개인 사용자는 무료로 사용할 수 있다.
 라이센스 정책 변경으로 인해 <a href="https://www.docker.com/pricing/faq/">기업 사용자는 조건</a>에 따라 유료로 사용해야 한다.</p>
 <h3 id="rancher-desktop" style="position:relative;"><a href="#rancher-desktop" aria-label="rancher desktop permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rancher Desktop</h3>
 <p><a href="https://rancherdesktop.io/">https://rancherdesktop.io/</a></p>
+<pre><code class="language-bash">brew install --cask rancher
+</code></pre>
 <p>Docker Desktop과 흡사하다. 기본적으로 <a href="../kubernetes">k8s</a> 제공한다.
 불필요 하다면 끄는 편이 리소스 절약에 좋다.
 container runtime을 containerd, dockerd 중 선택할 수 있는데, docker에 익숙하면 dockerd를 선택하는 것이 좋다.</p>
@@ -218,26 +214,20 @@ INFO[0000] disk: 60GiB
 </code></pre>
 <h3 id="osx-에서-수동으로-docker-환경-구성하기" style="position:relative;"><a href="#osx-%EC%97%90%EC%84%9C-%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="osx 에서 수동으로 docker 환경 구성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OSX 에서 수동으로 Docker 환경 구성하기</h3>
 <p><strong>docker desktop 또는 rancher desktop이 나와서 이 방법은 비추천.</strong></p>
-<pre><code class="language-bash">brew install --cask docker
-</code></pre>
-<p>docker desktop은 기업인 경우 규모에 따라 유료 버전을 사용해야 한다. 라이센스에 주의하자.</p>
-<pre><code class="language-bash">brew install --cask rancher
-</code></pre>
-<p>rancher desktop은 무료 사용 가능하다.</p>
-<h3 id="1-homebrew로-docker와-docker-machine-설치" style="position:relative;"><a href="#1-homebrew%EB%A1%9C-docker%EC%99%80-docker-machine-%EC%84%A4%EC%B9%98" aria-label="1 homebrew로 docker와 docker machine 설치 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Homebrew로 Docker와 Docker-machine 설치</h3>
+<p><strong>1. Homebrew로 Docker와 Docker-machine 설치</strong></p>
 <pre><code class="language-bash">$ brew install docker docker-machine
 </code></pre>
 <p>docker-machine: 맥을 마치 Host OS 처럼 사용 할 수 있도록 해주는 프로그램</p>
-<h3 id="2-homebrew로-virtualbox-설치" style="position:relative;"><a href="#2-homebrew%EB%A1%9C-virtualbox-%EC%84%A4%EC%B9%98" aria-label="2 homebrew로 virtualbox 설치 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Homebrew로 Virtualbox 설치</h3>
+<p><strong>2. Homebrew로 Virtualbox 설치</strong></p>
 <pre><code class="language-bash">$ brew cask install virtualbox
 </code></pre>
 <p>Virtualbox: 가상화 프로그램. 맥에서 docker-machine(Host OS, Linux)을 운영하기 위해서 사용</p>
-<h3 id="3-docker-machine-설정" style="position:relative;"><a href="#3-docker-machine-%EC%84%A4%EC%A0%95" aria-label="3 docker machine 설정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. docker-machine 설정</h3>
+<p><strong>3. docker-machine 설정</strong></p>
 <pre><code class="language-bash">$ docker-machine create -d virtualbox default
 </code></pre>
 <p>virtualbox driver를 이용하여 <code>default</code> 이름의 Docker-machine을 생성</p>
 <p>virtualbox에 Docker-machine이 올라간다.</p>
-<h3 id="4-생성한-docker-machine-활성화" style="position:relative;"><a href="#4-%EC%83%9D%EC%84%B1%ED%95%9C-docker-machine-%ED%99%9C%EC%84%B1%ED%99%94" aria-label="4 생성한 docker machine 활성화 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. 생성한 Docker-machine 활성화</h3>
+<p><strong>4. 생성한 Docker-machine 활성화</strong></p>
 <p>Docker-machine을 생성했지만, 아직 <code>docker</code> 명령어를 이용할 수 없다.</p>
 <p>Docker-machine을 여러개 관리할 수 있다. 따라서 사용하고자 하는 Docker-machine을 활성화해야 한다.</p>
 <pre><code class="language-bash">$ docker-machine ls
