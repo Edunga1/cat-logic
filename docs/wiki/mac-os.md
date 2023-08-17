@@ -187,7 +187,7 @@ Host github.com-edunga
   PreferredAuthentications publickey
 ```
 
-## `arch` 명령어
+## `arch` - 아키텍처 출력 또는 특정 아키텍처로 실행하는 명령어
 
 다른 명령어를 특정 아키텍처 모드로 실행한다.
 
