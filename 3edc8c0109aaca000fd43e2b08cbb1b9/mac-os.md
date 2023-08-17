@@ -187,7 +187,7 @@ Host github.com-edunga
   PreferredAuthentications publickey
 ```
 
-## `arch` 명령어
+## `arch` - 아키텍처 출력 또는 특정 아키텍처로 실행하는 명령어
 
 다른 명령어를 특정 아키텍처 모드로 실행한다.
 
@@ -222,6 +222,40 @@ arm64
 ```
 
 `-<ARCHITECTURE>` 옵션은 macos에서만 가능하다. linux에서는 옵션 없이 `arch`만 제공한다.
+
+## `open` - 파일 및 디렉토리를 여는 명령어
+
+`open .`로 현재 폴더를 열거나, `open README.md`로 특정 파일을 연다.
+
+`-a "Application Name"` 옵션으로 어플리케이션을 열 수 있다.
+
+다음은 구글 크롬을 다른 프로파일로 여는 예시:
+
+```bash
+open -n -a "Google Chrome" --args --profile-directory="Profile 2"
+```
+
+- `-n`: 새로운 인스턴스를 생성한다. 이게 없으면 기존에 열려있는 크롬으로 스위칭만 한다.
+- `-a "Google Chrome"`: 어플리케이션 이름으로 실행하는 옵션.
+- `--args`: 이 옵션의 인자는 실행하는 어플리케이션으로 전달된다.
+- `--profile-directory`: 따라서 이 옵션은 구글 크롬에서 지원하는 옵션.
+  - 프로파일 위치는 `~/Library/Application\ Support/Google/Chrome` 여기서 확인할 수 있다.
+
+회사 어플리케이션을 테스트하기 위해서 프로파일 2개 이상 만들어두고 사용하는데,
+매번 여는 것이 불편해서 다음과 같이 명령어로 만들어 두고 사용하고 있다:
+
+```
+#!/bin/bash
+
+open -n -a "Google Chrome" --args --profile-directory="Profile 1"
+open -n -a "Google Chrome" --args --profile-directory="Profile 2"
+```
+
+명령어는 `~/bin` 폴더에 저장했다.
+
+`-a` 옵션은 문자열을 받는데, `-b`는 번들 식별자를 사용한다: `open -b com.google.Chrome`
+
+번들 ID를 알려면: `osascript -e 'id of app "Google Chrome"'`
 
 ## displayplacer - 멀티 모니터 설정 관리 도구
 
