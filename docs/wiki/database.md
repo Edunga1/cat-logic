@@ -175,6 +175,71 @@ COPY --from=builder /initialized-db /var/lib/mysql
 * multi-stage build 이용하여 builder stage에서 설정 및 sql 파일을 복사하고 부트스트래핑 스크립트를 직접 실행한다.
 * main stage에서 builder의 DB 데이터를 COPY하고 실행한다.
 
+### Functional Key Parts
+
+https://dev.mysql.com/doc/refman/8.0/en/create-index.html#create-index-functional-key-parts
+
+> MySQL 8.0.13 and higher supports functional key parts that index expression values rather than column or column prefix values.
+
+MySQL 8.0.13에서부터 인덱스 생성 시 함수를 사용할 수 있다.
+
+예를들어 컬럼에만 인덱스를 걸면:
+
+```sql
+CREATE TABLE stats
+(
+    id         int auto_increment primary key,
+    created_at datetime not null
+);
+CREATE INDEX idx_created_at ON stats (created_at);
+
+EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
+```
+
+| | |
+| :- | :- |
+| **id** | 1 |
+| **select\_type** | SIMPLE |
+| **table** | stats |
+| **partitions** | NULL |
+| **type** | index |
+| **possible\_keys** | NULL |
+| **key** | idx\_created\_at |
+| **key\_len** | 5 |
+| **ref** | NULL |
+| **rows** | 1 |
+| **filtered** | 100 |
+| **Extra** | Using where; Using index |
+
+하지만 functional key parts를 사용하면:
+
+```sql
+CREATE TABLE stats
+(
+    id         int auto_increment primary key,
+    created_at datetime not null
+);
+CREATE INDEX idx_created_at_month ON stats ((MONTH(created_at)));
+--                                          ~~~~~~
+
+EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
+```
+
+| | |
+| :- | :- |
+| **id** | 1 |
+| **select\_type** | SIMPLE |
+| **table** | stats |
+| **partitions** | NULL |
+| **type** | ref |
+| **possible\_keys** | idx\_created\_at\_month |
+| **key** | idx\_created\_at\_month |
+| **key\_len** | 5 |
+| **ref** | const |
+| **rows** | 1 |
+| **filtered** | 100 |
+| **Extra** | NULL |
+
 ## H2 Database
 
 ### `NumberFormatException: for input String: "..."` 에러
