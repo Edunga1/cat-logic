@@ -99,10 +99,12 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#mysql-docker-image">MySQL Docker Image</a></p>
+<p><a href="#mysql">MySQL</a></p>
 <ul>
+<li><a href="#mysql-docker-image">MySQL Docker Image</a></li>
 <li><a href="#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%82%B4%EC%97%90-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%8F%AC%ED%95%A8%ED%95%98%EA%B8%B0">이미지 내에 데이터 포함하기</a></li>
 <li><a href="#functional-key-parts">Functional Key Parts</a></li>
+<li><a href="#secondary-indexes-and-generated-columns">Secondary Indexes and Generated Columns</a></li>
 </ul>
 </li>
 <li>
@@ -162,10 +164,12 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#mysql-docker-image">MySQL Docker Image</a></p>
+<p><a href="#mysql">MySQL</a></p>
 <ul>
+<li><a href="#mysql-docker-image">MySQL Docker Image</a></li>
 <li><a href="#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%82%B4%EC%97%90-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%8F%AC%ED%95%A8%ED%95%98%EA%B8%B0">이미지 내에 데이터 포함하기</a></li>
 <li><a href="#functional-key-parts">Functional Key Parts</a></li>
+<li><a href="#secondary-indexes-and-generated-columns">Secondary Indexes and Generated Columns</a></li>
 </ul>
 </li>
 <li>
@@ -289,7 +293,8 @@ ruby 생태계에서는 <a href="https://github.com/resque/resque">resque</a> �
 <blockquote>
 <p>I am really glad you brought this up. This is something I will covering in greater detail in my next post. In the ruby ecosystem, Redis is used very frequently as a job queue to some success with resque <a href="https://github.com/defunkt/resque">https://github.com/defunkt/resque</a> but that doesn’t mean redis is a true replacement for a MQ by any stretch. And I think by trying to replace the need for a true MQ with Redis, depending on requirements you may be missing out on more then initially realized in terms of long term scalability, job throughput, message delivery control, robust error handling, etc.</p>
 </blockquote>
-<h2 id="mysql-docker-image" style="position:relative;"><a href="#mysql-docker-image" aria-label="mysql docker image permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MySQL Docker Image</h2>
+<h2 id="mysql" style="position:relative;"><a href="#mysql" aria-label="mysql permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MySQL</h2>
+<h3 id="mysql-docker-image" style="position:relative;"><a href="#mysql-docker-image" aria-label="mysql docker image permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MySQL Docker Image</h3>
 <p>Official mysql image: <a href="https://hub.docker.com/_/mysql">https://hub.docker.com/_/mysql</a></p>
 <p>공식 이미지는 시작 시 <code>docker-entrypoint-initdb.d/</code> 폴더에 sql, sh, gz 파일을 두면 자동으로 실행하는 구조로 되어있다.:</p>
 <blockquote>
@@ -299,7 +304,7 @@ ruby 생태계에서는 <a href="https://github.com/resque/resque">resque</a> �
 <p>파일, 내용이 많으면 <code>docker-entrypoint-initdb.d/</code>에 두는 것만으로는 시작이 오래 걸린다.
 이를 해결하기 위해서 데이터를 이미지 내에 포함할 수 있다. 대신 이미지 크기가 그만큼 늘어난다.
 개인적으로는 이 방법으로 테이블만 생성하고, integration 테스트하는데 사용하고 있다.</p>
-<pre><code>FROM mysql:5.6 AS builder
+<pre><code class="language-dockerfile">FROM mysql:5.6 AS builder
 
 RUN ["sed", "-i", "s/exec \"$@\"/echo \"not running $@\"/", "/usr/local/bin/docker-entrypoint.sh"]
 
@@ -403,7 +408,6 @@ EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
     created_at datetime not null
 );
 CREATE INDEX idx_created_at_month ON stats ((MONTH(created_at)));
---                                          ~~~~~~
 
 EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
 </code></pre>
@@ -465,6 +469,27 @@ EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>Functional indexes are implemented as hidden virtual generated columns, which has these implications:</p>
+</blockquote>
+<p>이 인덱스는 숨겨진 가상 컬럼으로 구현된다. 따라서 컬럼의 제약을 따른다:</p>
+<ul>
+<li>테이블의 총 컬럼 수 제한에 포함된다. <a href="https://dev.mysql.com/doc/refman/8.0/en/column-count-limit.html">Innodb의 경우 1017개</a>.</li>
+<li>해당 컬럼에서 사용 가능한 함수만 함수 인덱스에 사용 가능</li>
+<li>virtual column은 저장 공간을 차지하지 않지만, 인덱스는 차지한다.</li>
+</ul>
+<h3 id="secondary-indexes-and-generated-columns" style="position:relative;"><a href="#secondary-indexes-and-generated-columns" aria-label="secondary indexes and generated columns permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Secondary Indexes and Generated Columns</h3>
+<p><a href="https://dev.mysql.com/doc/refman/8.0/en/create-table-secondary-indexes.html">https://dev.mysql.com/doc/refman/8.0/en/create-table-secondary-indexes.html</a></p>
+<p>Virtual Column은 MySQL 5.7에서 추가되었다.
+Funcitonal Key Parts를 사용할 수 없었던 5.7에서는 Virtual Column을 이용하여 대체 사용할 수 있다.</p>
+<pre><code class="language-sql">CREATE TABLE jemp (
+  c JSON,
+  g INT GENERATED ALWAYS AS (c->"$.id"),
+  INDEX i (g)
+);
+</code></pre>
+<p><code>GENERATED ALWAYS AS</code>를 사용하여 Virtual Column을 생성한다.
+이 컬럼에 대해 정의한 인덱스를 "Virtual Column"라 한다.</p>
 <h2 id="h2-database" style="position:relative;"><a href="#h2-database" aria-label="h2 database permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>H2 Database</h2>
 <h3 id="numberformatexception-for-input-string--에러" style="position:relative;"><a href="#numberformatexception-for-input-string--%EC%97%90%EB%9F%AC" aria-label="numberformatexception for input string  에러 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>NumberFormatException: for input String: "..."</code> 에러</h3>
 <p><code>UNION ALL</code> 쿼리로 3개의 테이블을 포함하고, 컬럼 하나가 integer 타입일 때 발생했다.</p>

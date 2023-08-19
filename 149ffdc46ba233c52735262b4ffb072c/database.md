@@ -137,8 +137,9 @@ ruby 생태계에서는 [resque](https://github.com/resque/resque) 프로젝트�
 
 > I am really glad you brought this up. This is something I will covering in greater detail in my next post. In the ruby ecosystem, Redis is used very frequently as a job queue to some success with resque [https://github.com/defunkt/resque](https://github.com/defunkt/resque) but that doesn’t mean redis is a true replacement for a MQ by any stretch. And I think by trying to replace the need for a true MQ with Redis, depending on requirements you may be missing out on more then initially realized in terms of long term scalability, job throughput, message delivery control, robust error handling, etc.
 
-## MySQL Docker Image
+## MySQL
 
+### MySQL Docker Image
 Official mysql image: https://hub.docker.com/_/mysql
 
 공식 이미지는 시작 시 `docker-entrypoint-initdb.d/` 폴더에 sql, sh, gz 파일을 두면 자동으로 실행하는 구조로 되어있다.:
@@ -151,7 +152,7 @@ Official mysql image: https://hub.docker.com/_/mysql
 이를 해결하기 위해서 데이터를 이미지 내에 포함할 수 있다. 대신 이미지 크기가 그만큼 늘어난다.
 개인적으로는 이 방법으로 테이블만 생성하고, integration 테스트하는데 사용하고 있다.
 
-```
+```dockerfile
 FROM mysql:5.6 AS builder
 
 RUN ["sed", "-i", "s/exec \"$@\"/echo \"not running $@\"/", "/usr/local/bin/docker-entrypoint.sh"]
@@ -220,7 +221,6 @@ CREATE TABLE stats
     created_at datetime not null
 );
 CREATE INDEX idx_created_at_month ON stats ((MONTH(created_at)));
---                                          ~~~~~~
 
 EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
 ```
@@ -239,6 +239,31 @@ EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
 | **rows** | 1 |
 | **filtered** | 100 |
 | **Extra** | NULL |
+
+> Functional indexes are implemented as hidden virtual generated columns, which has these implications:
+
+이 인덱스는 숨겨진 가상 컬럼으로 구현된다. 따라서 컬럼의 제약을 따른다:
+- 테이블의 총 컬럼 수 제한에 포함된다. [Innodb의 경우 1017개](https://dev.mysql.com/doc/refman/8.0/en/column-count-limit.html).
+- 해당 컬럼에서 사용 가능한 함수만 함수 인덱스에 사용 가능
+- virtual column은 저장 공간을 차지하지 않지만, 인덱스는 차지한다.
+
+### Secondary Indexes and Generated Columns
+
+https://dev.mysql.com/doc/refman/8.0/en/create-table-secondary-indexes.html
+
+Virtual Column은 MySQL 5.7에서 추가되었다.
+Funcitonal Key Parts를 사용할 수 없었던 5.7에서는 Virtual Column을 이용하여 대체 사용할 수 있다.
+
+```sql
+CREATE TABLE jemp (
+  c JSON,
+  g INT GENERATED ALWAYS AS (c->"$.id"),
+  INDEX i (g)
+);
+```
+
+`GENERATED ALWAYS AS`를 사용하여 Virtual Column을 생성한다.
+이 컬럼에 대해 정의한 인덱스를 "Virtual Column"라 한다.
 
 ## H2 Database
 
