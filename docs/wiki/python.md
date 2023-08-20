@@ -829,3 +829,59 @@ DI 라이브러리 사용하지 않고 이상적인 코드를 작성하려고 �
 
 `source_type` 이 `trade | order`로 테이블 이름 조합으로만 저장된다.
 원하는 포맷으로 저장할 수 있어야 한다.
+
+## 디버깅
+
+```python
+import pdb; pdb.set_trace()
+```
+
+위 코드로 breakpoint를 설정할 수 있다.
+
+```bash
+(Pdb) ?
+
+Documented commands (type help <topic>):
+========================================
+EOF    bt         cont      enable  jump  pp       run      unt
+a      c          continue  exit    l     q        s        until
+alias  cl         d         h       list  quit     step     up
+args   clear      debug     help    n     r        tbreak   w
+b      commands   disable   ignore  next  restart  u        whatis
+break  condition  down      j       p     return   unalias  where
+
+Miscellaneous help topics:
+==========================
+exec  pdb
+
+Undocumented commands:
+======================
+retval  rv
+```
+
+자주 사용하는 명령어:
+
+- `?` 도움말
+- `l` 코드를 출력한다. 라인 번호를 인자로 받으며, 인자가 없으면 현재 라인을 출력한다.
+    - python 2에서는 `l` 연속 호출 시 다음 페이지를 출력해서, `l .` 처렴 명시적으로 현재 라인을 출력했던 거 같다.
+- `c` 계속 진행한다.
+- `q` 종료한다.
+- `n` 다음 라인까지 진행한다.
+
+디버깅 명령어는 코드의 요소 이름과 충돌할 수 있는데, 이럴 때는 `!`를 붙여서 사용한다: `!l .`
+
+디버깅할 때 `dir()`, `type()`는 특히 자주 사용한다.
+
+`dir()` 객체의 속성을 출력한다.
+
+```python
+(Pdb) dir(datetime)
+['__add__', '__class__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__ne__', '__new__', '__radd__', '__reduce__', '__reduce_ex__', '__repr__', '__rsub__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', 'astimezone', 'combine', 'ctime', 'date', 'day', 'dst', 'fromordinal', 'fromtimestamp', 'hour', 'isocalendar', 'isoformat', 'isoweekday', 'max', 'microsecond', 'min', 'minute', 'month', 'now', 'replace', 'resolution', 'second', 'strftime', 'strptime', 'time', 'timetuple', 'timetz', 'today', 'toordinal', 'tzinfo', 'tzname', 'utcfromtimestamp', 'utcnow', 'utcoffset', 'utctimetuple', 'weekday', 'year']
+```
+
+`type()` 객체의 타입을 출력한다.
+
+```python
+(Pdb) type(datetime.now())
+<type 'datetime.datetime'>
+```
