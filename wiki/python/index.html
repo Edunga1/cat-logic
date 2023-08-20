@@ -159,6 +159,9 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li><a href="#%EB%B3%B5%ED%95%A9%ED%82%A4%EB%A5%BC-foreignkey%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%B0%BE%EA%B8%B0">복합키를 ForeignKey로 사용하는 방법 찾기</a></li>
 </ul>
 </li>
+<li>
+<p><a href="#%EB%94%94%EB%B2%84%EA%B9%85">디버깅</a></p>
+</li>
 </ul>
 </li>
 </ul></div><span></span></div><div class="Wiki__Main-sc-16q9onf-2 eTgCJx"><h1>Python</h1><div class="Toc__Container-sc-1f76i2s-0 eXfjpt"><ul>
@@ -252,6 +255,9 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li><a href="#onetoonefield-vs-foreignkeyfield"><code>OneToOneField</code> vs <code>ForeignKeyField</code></a></li>
 <li><a href="#%EB%B3%B5%ED%95%A9%ED%82%A4%EB%A5%BC-foreignkey%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%B0%BE%EA%B8%B0">복합키를 ForeignKey로 사용하는 방법 찾기</a></li>
 </ul>
+</li>
+<li>
+<p><a href="#%EB%94%94%EB%B2%84%EA%B9%85">디버깅</a></p>
 </li>
 </ul>
 </li>
@@ -923,7 +929,52 @@ b. create a global connection pool and pass that to various redis instances thro
 <p><a href="https://stackoverflow.com/questions/12716970/get-contenttype-id-in-django-for-generic-relation">Get ContentType id in Django for generic relation</a></p>
 <p><code>GenericForeignKey</code>와 <code>ForeignKey(ContentType) + choices</code>를 사용하면 될까?</p>
 <p><code>source_type</code> 이 <code>trade | order</code>로 테이블 이름 조합으로만 저장된다.
-원하는 포맷으로 저장할 수 있어야 한다.</p></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+원하는 포맷으로 저장할 수 있어야 한다.</p>
+<h2 id="디버깅" style="position:relative;"><a href="#%EB%94%94%EB%B2%84%EA%B9%85" aria-label="디버깅 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>디버깅</h2>
+<pre><code class="language-python">import pdb; pdb.set_trace()
+</code></pre>
+<p>위 코드로 breakpoint를 설정할 수 있다.</p>
+<pre><code class="language-bash">(Pdb) ?
+
+Documented commands (type help &#x3C;topic>):
+========================================
+EOF    bt         cont      enable  jump  pp       run      unt
+a      c          continue  exit    l     q        s        until
+alias  cl         d         h       list  quit     step     up
+args   clear      debug     help    n     r        tbreak   w
+b      commands   disable   ignore  next  restart  u        whatis
+break  condition  down      j       p     return   unalias  where
+
+Miscellaneous help topics:
+==========================
+exec  pdb
+
+Undocumented commands:
+======================
+retval  rv
+</code></pre>
+<p>자주 사용하는 명령어:</p>
+<ul>
+<li><code>?</code> 도움말</li>
+<li><code>l</code> 코드를 출력한다. 라인 번호를 인자로 받으며, 인자가 없으면 현재 라인을 출력한다.
+<ul>
+<li>python 2에서는 <code>l</code> 연속 호출 시 다음 페이지를 출력해서, <code>l .</code> 처렴 명시적으로 현재 라인을 출력했던 거 같다.</li>
+</ul>
+</li>
+<li><code>c</code> 계속 진행한다.</li>
+<li><code>q</code> 종료한다.</li>
+<li><code>n</code> 다음 라인까지 진행한다.</li>
+</ul>
+<p>디버깅 명령어는 코드의 요소 이름과 충돌할 수 있는데, 이럴 때는 <code>!</code>를 붙여서 사용한다: <code>!l .</code></p>
+<p>디버깅할 때 <code>dir()</code>, <code>type()</code>는 특히 자주 사용한다.</p>
+<p><code>dir()</code> 객체의 속성을 출력한다.</p>
+<pre><code class="language-python">(Pdb) dir(datetime)
+['__add__', '__class__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__ne__', '__new__', '__radd__', '__reduce__', '__reduce_ex__', '__repr__', '__rsub__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', 'astimezone', 'combine', 'ctime', 'date', 'day', 'dst', 'fromordinal', 'fromtimestamp', 'hour', 'isocalendar', 'isoformat', 'isoweekday', 'max', 'microsecond', 'min', 'minute', 'month', 'now', 'replace', 'resolution', 'second', 'strftime', 'strptime', 'time', 'timetuple', 'timetz', 'today', 'toordinal', 'tzinfo', 'tzname', 'utcfromtimestamp', 'utcnow', 'utcoffset', 'utctimetuple', 'weekday', 'year']
+</code></pre>
+<p><code>type()</code> 객체의 타입을 출력한다.</p>
+<pre><code class="language-python">(Pdb) type(datetime.now())
+&#x3C;type 'datetime.datetime'>
+</code></pre></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
