@@ -88,3 +88,52 @@ NodeJS에는 SinonJS가 그 역할을 한다.
 * 모듈이 데이터베이스를 업데이트하면 안되므로 모듈의 로직을 흉내내어 메모리에만 올려둔다.
 * 네트워크 요청이 필요한 경우 실제로 발생시키지 않고 해당 인자를 기반하여 결과를 반환한다.
 * 의존하는 모듈이 아직 구현 되지 않아서 임시로 흉내내어 사용한다.
+
+## Debounce
+
+비슷한 단어: Throttle
+
+debounce는 클라이언트에서는 사용자 입력의 노이즈를 제거하는 용어로 주로 사용된다.
+보통 서버 요청할 때 버튼이 두 번 눌러져서 요청이 두 번 발생하는 동시 요청 문제가 흔하다.
+서버에서 동시 호출에 대한 방어 로직을 구현하는 것과 별개로, 클라이언트에서도 debounce를 이용한 UI 문제를 해결해 볼 수 있다.
+
+kotlin은 Flow의 operator로 `debounce()`를 [제공](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/debounce.html)한다.
+
+```kotlin
+flow {
+    emit(1)
+    delay(90)
+    emit(2)
+    delay(90)
+    emit(3)
+    delay(1010)
+    emit(4)
+    delay(1010)
+    emit(5)
+}.debounce(1000)
+
+// 3, 4, 5
+```
+
+첫 번째 값을 가져오고, 새 값이 설정한 시간 이내로 발생한 거라면 제거한다.
+
+ReactiveX에서도 debounce operator를 [제공](https://reactivex.io/documentation/operators/debounce.html)한다.
+
+> only emit an item from an Observable if a particular timespan has passed without it emitting another item
+
+RX 구현체에선 `debounce`, `throttle` 함께 많이 사용하는 것으로 보인다.
+
+> Language-Specific Information:
+> - RxClojure
+> - RxCpp
+> - RxGroovy debounce throttleWithTimeout
+> - RxJava 1․x debounce throttleWithTimeout
+> - RxJava 2․x debounce throttleWithTimeout
+> - RxJS debounce debounceWithSelector throttleWithTimeout
+> - RxKotlin debounce throttleWithTimeout
+> - RxNET Throttle
+> - RxPHP throttle
+> - RxPY debounce throttle_with_selector throttle_with_timeout
+> - Rxrb
+> - RxScala debounce throttleWithTimeout
+> - RxSwift debounce throttle
