@@ -88,6 +88,9 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li><a href="#mock-object">Mock Object</a></li>
 </ul>
 </li>
+<li>
+<p><a href="#debounce">Debounce</a></p>
+</li>
 </ul>
 </li>
 </ul></div><span></span></div><div class="Wiki__Main-sc-16q9onf-2 eTgCJx"><h1>개발 용어</h1><div class="Toc__Container-sc-1f76i2s-0 eXfjpt"><ul>
@@ -110,6 +113,9 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li><a href="#test-stub">Test Stub</a></li>
 <li><a href="#mock-object">Mock Object</a></li>
 </ul>
+</li>
+<li>
+<p><a href="#debounce">Debounce</a></p>
 </li>
 </ul>
 </li>
@@ -166,7 +172,51 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li>모듈이 데이터베이스를 업데이트하면 안되므로 모듈의 로직을 흉내내어 메모리에만 올려둔다.</li>
 <li>네트워크 요청이 필요한 경우 실제로 발생시키지 않고 해당 인자를 기반하여 결과를 반환한다.</li>
 <li>의존하는 모듈이 아직 구현 되지 않아서 임시로 흉내내어 사용한다.</li>
-</ul></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/jargon/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</ul>
+<h2 id="debounce" style="position:relative;"><a href="#debounce" aria-label="debounce permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debounce</h2>
+<p>비슷한 단어: Throttle</p>
+<p>debounce는 클라이언트에서는 사용자 입력의 노이즈를 제거하는 용어로 주로 사용된다.
+보통 서버 요청할 때 버튼이 두 번 눌러져서 요청이 두 번 발생하는 동시 요청 문제가 흔하다.
+서버에서 동시 호출에 대한 방어 로직을 구현하는 것과 별개로, 클라이언트에서도 debounce를 이용한 UI 문제를 해결해 볼 수 있다.</p>
+<p>kotlin은 Flow의 operator로 <code>debounce()</code>를 <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/debounce.html">제공</a>한다.</p>
+<pre><code class="language-kotlin">flow {
+    emit(1)
+    delay(90)
+    emit(2)
+    delay(90)
+    emit(3)
+    delay(1010)
+    emit(4)
+    delay(1010)
+    emit(5)
+}.debounce(1000)
+
+// 3, 4, 5
+</code></pre>
+<p>첫 번째 값을 가져오고, 새 값이 설정한 시간 이내로 발생한 거라면 제거한다.</p>
+<p>ReactiveX에서도 debounce operator를 <a href="https://reactivex.io/documentation/operators/debounce.html">제공</a>한다.</p>
+<blockquote>
+<p>only emit an item from an Observable if a particular timespan has passed without it emitting another item</p>
+</blockquote>
+<p>RX 구현체에선 <code>debounce</code>, <code>throttle</code> 함께 많이 사용하는 것으로 보인다.</p>
+<blockquote>
+<p>Language-Specific Information:</p>
+<ul>
+<li>RxClojure</li>
+<li>RxCpp</li>
+<li>RxGroovy debounce throttleWithTimeout</li>
+<li>RxJava 1․x debounce throttleWithTimeout</li>
+<li>RxJava 2․x debounce throttleWithTimeout</li>
+<li>RxJS debounce debounceWithSelector throttleWithTimeout</li>
+<li>RxKotlin debounce throttleWithTimeout</li>
+<li>RxNET Throttle</li>
+<li>RxPHP throttle</li>
+<li>RxPY debounce throttle_with_selector throttle_with_timeout</li>
+<li>Rxrb</li>
+<li>RxScala debounce throttleWithTimeout</li>
+<li>RxSwift debounce throttle</li>
+</ul>
+</blockquote></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/jargon/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
