@@ -233,4 +233,3 @@ Intercomponent Communication 단락 참조
 ### $http
 
 이제 success, error가 아니라 then, catch를 사용한다. 더 이상 $q.defer()로 wrapping 할 필요가 없다.
-
