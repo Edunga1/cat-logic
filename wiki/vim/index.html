@@ -126,6 +126,12 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 <li>
+<p><a href="#built-in-functions">Built-in functions</a></p>
+<ul>
+<li><a href="#matchfuzzy"><code>matchfuzzy()</code></a></li>
+</ul>
+</li>
+<li>
 <p><a href="#plugins">Plugins</a></p>
 <ul>
 <li>
@@ -244,6 +250,12 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li><a href="#autoload"><code>autoload</code></a></li>
 <li><a href="#ftplugin"><code>ftplugin</code></a></li>
 <li><a href="#plug-sid"><code>&#x3C;Plug></code> <code>&#x3C;SID></code></a></li>
+</ul>
+</li>
+<li>
+<p><a href="#built-in-functions">Built-in functions</a></p>
+<ul>
+<li><a href="#matchfuzzy"><code>matchfuzzy()</code></a></li>
 </ul>
 </li>
 <li>
@@ -547,6 +559,23 @@ with mappings that are only to be used from other mappings.</p>
 " map_key는 최종적으로 :map 같은 명령어를 실행한다.
 call vimwiki#u#map_key('n', '&#x3C;CR>', '&#x3C;Plug>VimwikiFollowLink')
 </code></pre>
+<h2 id="built-in-functions" style="position:relative;"><a href="#built-in-functions" aria-label="built in functions permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Built-in functions</h2>
+<h3 id="matchfuzzy" style="position:relative;"><a href="#matchfuzzy" aria-label="matchfuzzy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>matchfuzzy()</code></h3>
+<p><code>:h matchfuzzy()</code></p>
+<pre><code class="language-vim">:echo matchfuzzy(['red apple', 'yello banana'], 'ra')  " ['red apple']
+</code></pre>
+<p>dictionary를 검색할 수도 있다:</p>
+<pre><code class="language-vim">let s:lst = [
+  \ {'name': 'john', 'age': 20},
+  \ {'name': 'jane', 'age': 30},
+  \ {'name': 'joe', 'age': 40},
+  \ {'name': 'jill', 'age': 50},
+  \]
+
+echo s:lst->matchfuzzy('je', {'key': 'name'})
+" [{'age': 40, 'name': 'joe'}, {'age': 30, 'name': 'jane'}]
+</code></pre>
+<p>fuzzy search하는 함수.</p>
 <h2 id="plugins" style="position:relative;"><a href="#plugins" aria-label="plugins permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugins</h2>
 <p>사용중인 플러그인.</p>
 <h3 id="chrisbracsvvim" style="position:relative;"><a href="#chrisbracsvvim" aria-label="chrisbracsvvim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chrisbra/csv.vim</h3>
@@ -618,7 +647,7 @@ M docs/wiki/vim.md
 </code></pre>
 <h2 id="용어" style="position:relative;"><a href="#%EC%9A%A9%EC%96%B4" aria-label="용어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>용어</h2>
 <h3 id="---more---라고-출력되는-pager" style="position:relative;"><a href="#---more---%EB%9D%BC%EA%B3%A0-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-pager" aria-label="   more   라고 출력되는 pager permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>-- More --</code>라고 출력되는 pager</h3>
-<p><code>:h pager</code>로 pager에 대한 정보를 알 수 있다.</p>
+<p><code>-- More --</code>로 프롬프트가 출력되면 pager를 사용하고 있다는 뜻이다.</p>
 <p><code>:let</code>이나 <code>:highlight</code> 등 명령어를 입력하면 <code>-- More --</code> 메시지가 있는 pager로 진입한다.</p>
 <pre><code class="language-vim">Special        xxx ctermfg=224 guifg=Orange
 SpecialChar    xxx links to Special
@@ -631,10 +660,11 @@ DiagnosticInfo xxx ctermfg=4 guifg=LightBlue
 DiagnosticHint xxx ctermfg=7 guifg=LightGrey
 -- More -- SPACE/d/j: screen/page/line down, b/u/k: up, q: quit
 </code></pre>
-<p>다른 화면과 달라서 처음 만나면 당혹스럽다. 어쨌든 <code>q</code>를 입력하면 빠져나오고
-<code>hjklud</code>키로 이동도 된다. 하지만 검색 기능도 없고, 뭐라고 검색해야 할 지 모르니 당혹스럽다.<br>
-일단, 검색 기능은 없다 :(</p>
-<p>하지만 <code>:redir</code>을 통한 출력 전환으로 레지스터로 저장할 수 있다.</p>
+<p><code>:h pager</code>로 pager에 대한 정보를 알 수 있다.</p>
+<p>메뉴얼 화면 같은 경우 버퍼로 열리는데, 반면에 pager는 다른 화면과 달라서 처음 만나면 당혹스럽다.
+어쨌든 <code>q</code>를 입력하면 빠져나오고 <code>hjklud</code>키로 이동도 된다.
+그러나 검색 기능은 없다 :(</p>
+<p>하지만 <code>:redir</code>을 통한 출력 전환으로 레지스터로 저장하면 하여 버퍼에 가져오면 된다.</p>
 <pre><code class="language-vim">:redir @a    " a 레지스터에 출력을 전환
 :highlight   " pager로 출력되는 명령어 실행
 G&#x3C;CR>        " 맨 아래로 이동하고 빠져나오자. 보여진 만큼만 저장된다.

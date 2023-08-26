@@ -285,6 +285,32 @@ nnoremap <silent><script><buffer> <Plug>VimwikiFollowLink :VimwikiFollowLink<CR>
 call vimwiki#u#map_key('n', '<CR>', '<Plug>VimwikiFollowLink')
 ```
 
+## Built-in functions
+
+### `matchfuzzy()`
+
+`:h matchfuzzy()`
+
+```vim
+:echo matchfuzzy(['red apple', 'yello banana'], 'ra')  " ['red apple']
+```
+
+dictionary를 검색할 수도 있다:
+
+```vim
+let s:lst = [
+  \ {'name': 'john', 'age': 20},
+  \ {'name': 'jane', 'age': 30},
+  \ {'name': 'joe', 'age': 40},
+  \ {'name': 'jill', 'age': 50},
+  \]
+
+echo s:lst->matchfuzzy('je', {'key': 'name'})
+" [{'age': 40, 'name': 'joe'}, {'age': 30, 'name': 'jane'}]
+```
+
+fuzzy search하는 함수.
+
 ## Plugins
 
 사용중인 플러그인.
@@ -341,7 +367,7 @@ M docs/wiki/vim.md
 
 ### `-- More --`라고 출력되는 pager
 
-`:h pager`로 pager에 대한 정보를 알 수 있다.
+`-- More --`로 프롬프트가 출력되면 pager를 사용하고 있다는 뜻이다.
 
 `:let`이나 `:highlight` 등 명령어를 입력하면 `-- More --` 메시지가 있는 pager로 진입한다.
 
@@ -358,11 +384,13 @@ DiagnosticHint xxx ctermfg=7 guifg=LightGrey
 -- More -- SPACE/d/j: screen/page/line down, b/u/k: up, q: quit
 ```
 
-다른 화면과 달라서 처음 만나면 당혹스럽다. 어쨌든 `q`를 입력하면 빠져나오고
-`hjklud`키로 이동도 된다. 하지만 검색 기능도 없고, 뭐라고 검색해야 할 지 모르니 당혹스럽다.\
-일단, 검색 기능은 없다 :(
+`:h pager`로 pager에 대한 정보를 알 수 있다.
 
-하지만 `:redir`을 통한 출력 전환으로 레지스터로 저장할 수 있다.
+메뉴얼 화면 같은 경우 버퍼로 열리는데, 반면에 pager는 다른 화면과 달라서 처음 만나면 당혹스럽다.
+어쨌든 `q`를 입력하면 빠져나오고 `hjklud`키로 이동도 된다.
+그러나 검색 기능은 없다 :(
+
+하지만 `:redir`을 통한 출력 전환으로 레지스터로 저장하면 하여 버퍼에 가져오면 된다.
 
 ```vim
 :redir @a    " a 레지스터에 출력을 전환
