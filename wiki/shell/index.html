@@ -115,6 +115,9 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p><a href="#marker---the-terminal-command-palette">marker - the terminal command palette</a></p>
 </li>
 <li>
+<p><a href="#tmux">Tmux</a></p>
+</li>
+<li>
 <p><a href="#tmuxinator">Tmuxinator</a></p>
 <ul>
 <li><a href="#%EC%A7%80%EC%97%AD%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%A0-%EA%B2%BD%EC%9A%B0">지역적으로 사용할 경우</a></li>
@@ -188,6 +191,9 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <ul>
 <li>
 <p><a href="#marker---the-terminal-command-palette">marker - the terminal command palette</a></p>
+</li>
+<li>
+<p><a href="#tmux">Tmux</a></p>
 </li>
 <li>
 <p><a href="#tmuxinator">Tmuxinator</a></p>
@@ -368,8 +374,42 @@ PING www.google.com (142.250.199.100): 56 data bytes
 <li><code>marker mark</code> - 명령어를 북마크한다.</li>
 <li><code>marker remove</code> - 북마크를 삭제한다.</li>
 </ul>
+<h3 id="tmux" style="position:relative;"><a href="#tmux" aria-label="tmux permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tmux</h3>
+<p><a href="https://github.com/tmux/tmux">https://github.com/tmux/tmux</a></p>
+<p>Terminal Multiplexer.</p>
+<p><strong>Preview:</strong></p>
+<pre><code class="language-bash">~/workspace/cat-logic main*                                                                          19:13:40
+❯ ls
+README.md docs      sites
+
+~/workspace/cat-logic main*                                                                          19:13:41
+❯
+
+
+
+
+
+
+ ❐ cat  ↑ 11d 1h 22m  1 editor  2 cli  3 serv>  ↑ ◼◼◼◼◼◼◼◼◼◼ 100% | 19:13 | 28 Aug  allebpark  ip-192-168-0-9
+</code></pre>
+<p>하나의 화면에서 여러개의 터미널을 제어할 수 있다.
+터미널 앱을 종료하더라도 백그라운드로 실행된다.
+언제든지 <code>tmux</code> 명령어로 tmux session에 연결할 수 있다.
+이것은 사실상 tmux 세션 내에서 실행되는 모든 명령어가 백그라운드로 실행되는 것을 의미하기 때문에
+오래 걸리는 프로세스를 실행하고, 앱이 종료되어도 프로세스는 유지되니 마음이 좀 놓인다.</p>
+<ul>
+<li><code>tmux</code>: 새 세션을 생성하거나 생성된 세션에 attach 한다.</li>
+<li><code>tmux new -s [NAME]</code>: 새 세션을 생성한다.</li>
+</ul>
+<p>기본적으로 <code>C-b</code>키가 tmux shortcut의 시동키다.
+나는 controll과 b 사이가 멀어서 <code>C-a</code>로 사용한다:</p>
+<pre><code># ~/.tmux.conf.local
+set -g prefix C-a
+</code></pre>
 <h3 id="tmuxinator" style="position:relative;"><a href="#tmuxinator" aria-label="tmuxinator permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tmuxinator</h3>
 <p><a href="https://github.com/tmuxinator/tmuxinator">https://github.com/tmuxinator/tmuxinator</a></p>
+<p>tmux session을 관리하는데 도움을 주는 도구.
+파일로 tmux 설정을 저장하거나, 저장된 파일로 tmux 세션을 생성한다.</p>
 <p>설정 파일을 <code>~/.config/tmuxinator/</code>에 저장하여 전역으로 사용하거나
 프로젝트별로 <code>./.tmuxinator.yml</code>에 저장하여 사용할 수 있다.
 개인 프로젝트는 코드베이스에 포함하는 것도 좋겠다.</p>
