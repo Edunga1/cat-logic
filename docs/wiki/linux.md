@@ -14,6 +14,22 @@ pid 1번으로 실행되는 프로세스. 0번이 있기 때문에 2번째로 �
 
 **전체 레이아웃**
 
+```bash
+.
+├── src
+│   ├── basic
+│   ├── fundamental
+│   ├── libsystemd
+│   ├── shared
+│   ... 4 shared folders
+│   ├── ask-password
+│   ├── backlight
+│   ├── battery-check
+│   ├── binfmt
+│   ├── boot
+│   ... many components
+```
+
 * `src/` 폴더 내에 모든 소스코드가 위치한다.
 * 많은 폴더가 있지만 크게 2분류인데, 각 컴포넌트에서 공유되는 4개의 폴더와 그 외 폴더로 나눌 수 있다. 4개 폴더는 공유 코드라고 부른다:
   * `src/basic/`와 `src/fundamental/`의 코드는 다른 모든 코드로부터 사용되는 초석인 코드이다.
