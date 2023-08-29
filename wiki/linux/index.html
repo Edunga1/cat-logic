@@ -106,6 +106,20 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p>저장소에서 인상적인 점은 <a href="https://github.com/systemd/systemd/blob/main/docs/ARCHITECTURE.md">ARCHITECTURE.md</a> 파일이다.
 이 파일은 폴더 구조와 테스트 방법 등 처음 프로젝트를 접하는 사람을 위한 내용을 담고 있다. linux의 핵심적인 프로세스의 저장소이고, 설명을 잘하고 있어서 본보기로 삼아서 볼만하다고 생각한다.</p>
 <p><strong>전체 레이아웃</strong></p>
+<pre><code class="language-bash">.
+├── src
+│   ├── basic
+│   ├── fundamental
+│   ├── libsystemd
+│   ├── shared
+│   ... 4 shared folders
+│   ├── ask-password
+│   ├── backlight
+│   ├── battery-check
+│   ├── binfmt
+│   ├── boot
+│   ... many components
+</code></pre>
 <ul>
 <li><code>src/</code> 폴더 내에 모든 소스코드가 위치한다.</li>
 <li>많은 폴더가 있지만 크게 2분류인데, 각 컴포넌트에서 공유되는 4개의 폴더와 그 외 폴더로 나눌 수 있다. 4개 폴더는 공유 코드라고 부른다:
