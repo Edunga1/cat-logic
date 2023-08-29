@@ -103,19 +103,19 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p>유닉스 기반 시스템에는 <a href="https://ko.m.wikipedia.org/wiki/Init">init</a> 이라는 모든 프로세스의 부모이자 시작을 관리하는 프로세스가 있는데, 이를 대체한다고 한다.
 <a href="https://ko.m.wikipedia.org/wiki/Init">위키</a>에는 systemd가 init의 대안이라고 나와있다.</p>
 <p>소스코드는 깃허브에 공개되어 있다: <a href="https://github.com/systemd/systemd">https://github.com/systemd/systemd</a></p>
-<p>저장소에서 인상적인 점은 <a href="https://github.com/systemd/systemd/blob/main/docs/ARCHITECTURE.md">ARCHITECTURE.md</a>가 작성되어있는 것이다.
-폴더 구조, 그러니까 패키지를 어떻게 나누었는지도 나와있다!</p>
+<p>저장소에서 인상적인 점은 <a href="https://github.com/systemd/systemd/blob/main/docs/ARCHITECTURE.md">ARCHITECTURE.md</a> 파일이다.
+이 파일은 폴더 구조와 테스트 방법 등 처음 프로젝트를 접하는 사람을 위한 내용을 담고 있다. linux의 핵심적인 프로세스의 저장소이고, 설명을 잘하고 있어서 본보기로 삼아서 볼만하다고 생각한다.</p>
 <p><strong>전체 레이아웃</strong></p>
 <ul>
 <li><code>src/</code> 폴더 내에 모든 소스코드가 위치한다.</li>
-<li>컴포넌트 단위인 각 폴더와 각 컴포넌트에서 공유되는 4개의 폴더가 있다.
+<li>많은 폴더가 있지만 크게 2분류인데, 각 컴포넌트에서 공유되는 4개의 폴더와 그 외 폴더로 나눌 수 있다. 4개 폴더는 공유 코드라고 부른다:
 <ul>
-<li><code>src/basic/</code>와 <code>src/fundamental</code>의 코드는 다른 모든 코드로부터 사용되는 초석인 코드이다.</li>
+<li><code>src/basic/</code>와 <code>src/fundamental/</code>의 코드는 다른 모든 코드로부터 사용되는 초석인 코드이다.</li>
 <li><code>src/libsystemd/</code>는 <code>libsystemd.so</code> 공유 라이브러리를 구현하는 코드인데, 위 코드를 사용한다.</li>
 <li><code>src/shared/</code>는 공유 라이브러리로 expose되는 컴포넌트들에서 사용되는 유틸리티와 코드를 제공한다.</li>
 </ul>
 </li>
-<li>위 공유 코드들은 초석이 되므로 외부의 코드를 사용할 수 없는데, 공유 코드간에도 의존 방향이 존재한다.
+<li>위 공유 코드들은 다른 코드들의 초석이 되므로 외부의 코드를 사용할 수 없는데, 공유 코드간에도 의존 방향이 존재한다.
 <ul>
 <li><code>fundermental</code> &#x3C; <code>basic</code> &#x3C; <code>libsystemd</code> &#x3C; <code>shared</code></li>
 <li>즉 <code>fundermental</code>은 자체 내부 코드만 사용할 수 있고, 다른 모든 공유 코드도 사용할 수 없다.</li>
