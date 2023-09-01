@@ -42,7 +42,7 @@ REST API로 analyzer API를 사용할 수 있다.
 
 keyword field 검색 시 대소문자까지 구분하여 검색할 수 있다.
 
-## 검색
+### 검색
 
 8.0 버전부터 vector search 기능 강화가 돋보인다.
 
@@ -56,6 +56,21 @@ keyword field 검색 시 대소문자까지 구분하여 검색할 수 있다.
 
 와 같이 검색하거나, 인트라넷 문서를 좀 더 찾기 쉽게 사용자 context를 제공하는 등.
 
+전통적인 검색으로 충분하지 않아서, vector search가 추가되었다.
+
+객체의 유사도로 그룹화하여 검색에서 사용한다.
+이미지, 오디오, document 모두 vector화 저장할 수 있다.
+조회 시 벡터로 가져와서 처리하고, document를 반환한다.
+ML 모델로 벡터화하는데, 대표적인 모델로 BERT를 사용한다.
+
+ES 8.0부터 벡터 저장을 제공한다.
+
+검색을 위해서 벡터는 그래프로 저장된다.
+전통적인 검색과 벡터 검색을 함께 사용할 수 있다. 이를 hybrid scoring이라고 한다.
+bm25는 전통적인 검색에, [knn](https://ko.wikipedia.org/wiki/K-%EC%B5%9C%EA%B7%BC%EC%A0%91_%EC%9D%B4%EC%9B%83_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)은 벡터 검색을 위해 사용한다.
+
+third-party 모델을 사용하는 방법도 제공한다.
+
 #### Generative AI에서 Elasticsearch의 위치
 
 서술형 검색이 가능한 기저에는 생성형 인공지능(Generative AI)의 발전에 있다.
@@ -68,6 +83,53 @@ Generative AI, Internal Data의 brdige 역할을 Elasticsearch가 담당하는 �
 [Zalando](https://zalando.com/)라는 유럽에서 유명한 e-commerce 서비스는
 로깅 및 ChatGPT와의 연동한 검색에도 Elasticsearch를 사용한다고 한다(Elasticsearch korea 세미나 중).
 이런 검색에는 사용자 정보에 대한 컨텍스트가 있어야 정확한 결과를 제공할 수 있다.
+
+### Aggregation
+
+[Search Aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html)
+
+집계(Aggregation)는 3가지 종류로 나뉜다:
+
+- Bucket: docuemnt를 그룹화한다. 필드 값, 범위 등을 기준으로 그룹화한다.
+- Metric: document를 측정한다. 필드 값의 합계나 평균 등을 계산한다.
+- Pipeline: 문서나 필드 대신 다른 집계의 결과를 사용한다. 다른 결과에 대한 추가 처리를 한다.
+
+### Indexing
+
+Round Robin 방식으로 document를 shard에 분배한다.
+따라서 Document ID를 안다면 검색 없이 조회할 수 있다.
+
+Query Phase
+- 쿼리는 가장 먼저 모든 샤드에 전달된다.
+- 각 샤드는 요청만큼 처리하고 결과를 반환한다.
+
+Fetch Phase
+- 노드는 각 샤드의 결과를 모은다.
+- 결과를 랭킹 점수를 기반으로 정렬한다.
+- 결과를 요청만큼 반환한다.
+
+(확인 필요) 예로, 요청 수가 10개라면 각 샤드에 10개를 요청하고,
+노드는 각 샤드의 결과를 정렬하고 다시 10개를 반환한다.
+
+랭킹 알고리즘은 [TF/IDF, ES5부터 BM25](https://news.hada.io/topic?id=9034)를 사용한다.
+
+랭킹 기준 정렬이 필요해서 1~1000 검색이나 990~1000 검색이나 쿼리 처리 규모가 비슷하다.
+
+### Lucene Segment
+
+inverted index, document value, 워본 문서 등을 저장한다.
+document의 insert, delete만 가능하고 update는 delete 후 insert로 처리한다.
+
+세그먼트 병합을 통해 새로운 세그먼트를 생성한다. 비용이 큰 작업이다.
+오래된 세그먼트는 비교적 크고, 최근 것은 작다.
+
+한 번 생성된 세그먼트는 변경되지 않는다(immutable).
+병합을 통해 2개 세그먼트를 합치는데, 메모리에서 처리 후 flush를 통해 영구 저장한다.
+세그먼트의 병합은 자동, 수동으로 할 수 있다.
+
+### Security
+
+[Role 기반](https://www.elastic.co/guide/en/elasticsearch/reference/current/authorization.html)으로 민감 데이터를 보호할 수 있다. ES 8.8부터 추가되었다고 한다.
 
 ## Tools
 
