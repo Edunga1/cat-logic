@@ -33,7 +33,7 @@ enum class Status(val code: Int, val message: String) {
 ```json
 {
   "code": 0,
-  "message": "success"
+  "message": "success",
   "data": null
 }
 ```
