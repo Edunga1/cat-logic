@@ -63,6 +63,22 @@ https://www.mycli.net
 
 `\dt`, `\G` 등 유용한 shortcuts.
 
+
+## RedisInsight - GUI Redis Client
+
+- https://redis.com/redis-enterprise/redis-insight
+- https://github.com/RedisInsight/RedisInsight
+
+osx는 `brew install --cask redisinsight`로 설치한다.
+
+GitHub 릴리즈 날짜 기준 21년 11월에 최초 배포된 것으로 나온다.
+지금 23년 기준으로 정말 얼마 안되었다.
+
+redis 공식 도구이며, redis 문서는 방문할 때 마다 친절해서 놀라운데, 그 철학이 도구에도 담겼나보다.
+실행하자마자 포트 번호로 찾는지, 로컬에 띄운 레디스 서버를 목록에 보여준다.
+Browser 모드와 Workbench 모드가 있는데, Workbench 모드가 익숙한 에디터 형태로 쿼리한다.
+이 에디터에서 공식 문서 수준의 자동 완성 기능을 제공하는데 매우 편리하다.
+
 ## API Client 비교 Postman, Insomnia, IntelliJ builtin `.http`
 
 standalone 버전인 Postman, Insomnia 그리고 IntelliJ 내장형 `.http`. 사용해보고 비교한다.
