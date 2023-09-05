@@ -1,5 +1,6 @@
 # Introduction
 
-Static site module for cat-logic.
+A static site module for cat-logic.
 
-`npm run develop` to start the development server.
+`npm install` to install dependencies.
+then `npm run develop` to run the site locally.
