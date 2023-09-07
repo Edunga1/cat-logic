@@ -47,6 +47,47 @@ sourceSets.main.get().java.srcDirs(
 
 `build.gradle.kts`에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.
 
+### .http 파일 사용하기
+
+https://www.jetbrains.com/help/idea/exploring-http-syntax.html
+
+`.http` 확장자 파일을 열면 에디터 내에서 http 요청을 보낼 수 있다.
+또한 헤더 정보나 curl 파싱 등 편리한 기능이나 응답 결과를 전역 변수로 저장하고,
+전역 변수를 다른 요청의 파라미터로 전달도 가능하다(api chaining)
+
+버전마다 기능 제공이 조금씩 달라지는 듯 하다. 여기 내용은 2021.1.3 버전에 대한 내용임.
+
+#### 전역 변수로 API간 Chaining 하기
+
+다음은 토큰 생성 API로 토큰을 저장하고, 다른 API에 사용하는 예시다.
+
+응답 구조는 다음과 같다고 가정한다:
+```json
+{
+  "token": "AA86811JjjaCD43"
+}
+```
+
+`.http` file:
+
+```
+### 토큰 생성 API
+POST http://localhost:5000/generate-token
+
+> {%
+client.global.set("mtoken", response.body.token)
+%}
+
+### 상품 조회 API
+GET http://localhost:5000/my-products
+X-APP-TOKEN: {{mtoken}}
+```
+
+`{% ... %}` 구문으로 호출 후에 대한 javascript 코드를 작성하고,
+`{{VARIABLE}}` 구문으로 전역 변수에 접근한다.
+
+스크립트 구문을 http 요청 전에 두면 호출 전에 대한 처리도 가능하다.
+
 ## DataGrip
 
 ### keymap
