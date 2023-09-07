@@ -74,8 +74,18 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li>
 <p><a href="#intellij">IntelliJ</a></p>
 <ul>
-<li><a href="#wsl2%EC%97%90%EC%84%9C-freezing-%ED%98%84%EC%83%81">WSL2에서 Freezing 현상</a></li>
-<li><a href="#wsl2%EC%97%90%EC%84%9C-annotation-processor%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%B8%EC%8B%9D%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81">WSL2에서 annotation processor로 생성된 파일을 인식하지 못하는 현상</a></li>
+<li>
+<p><a href="#wsl2%EC%97%90%EC%84%9C-freezing-%ED%98%84%EC%83%81">WSL2에서 Freezing 현상</a></p>
+</li>
+<li>
+<p><a href="#wsl2%EC%97%90%EC%84%9C-annotation-processor%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%B8%EC%8B%9D%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81">WSL2에서 annotation processor로 생성된 파일을 인식하지 못하는 현상</a></p>
+</li>
+<li>
+<p><a href="#http-%ED%8C%8C%EC%9D%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">.http 파일 사용하기</a></p>
+<ul>
+<li><a href="#%EC%A0%84%EC%97%AD-%EB%B3%80%EC%88%98%EB%A1%9C-api%EA%B0%84-chaining-%ED%95%98%EA%B8%B0">전역 변수로 API간 Chaining 하기</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -93,8 +103,18 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li>
 <p><a href="#intellij">IntelliJ</a></p>
 <ul>
-<li><a href="#wsl2%EC%97%90%EC%84%9C-freezing-%ED%98%84%EC%83%81">WSL2에서 Freezing 현상</a></li>
-<li><a href="#wsl2%EC%97%90%EC%84%9C-annotation-processor%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%B8%EC%8B%9D%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81">WSL2에서 annotation processor로 생성된 파일을 인식하지 못하는 현상</a></li>
+<li>
+<p><a href="#wsl2%EC%97%90%EC%84%9C-freezing-%ED%98%84%EC%83%81">WSL2에서 Freezing 현상</a></p>
+</li>
+<li>
+<p><a href="#wsl2%EC%97%90%EC%84%9C-annotation-processor%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%9C-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%9D%B8%EC%8B%9D%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81">WSL2에서 annotation processor로 생성된 파일을 인식하지 못하는 현상</a></p>
+</li>
+<li>
+<p><a href="#http-%ED%8C%8C%EC%9D%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">.http 파일 사용하기</a></p>
+<ul>
+<li><a href="#%EC%A0%84%EC%97%AD-%EB%B3%80%EC%88%98%EB%A1%9C-api%EA%B0%84-chaining-%ED%95%98%EA%B8%B0">전역 변수로 API간 Chaining 하기</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -166,6 +186,34 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 )
 </code></pre>
 <p><code>build.gradle.kts</code>에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.</p>
+<h3 id="http-파일-사용하기" style="position:relative;"><a href="#http-%ED%8C%8C%EC%9D%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="http 파일 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.http 파일 사용하기</h3>
+<p><a href="https://www.jetbrains.com/help/idea/exploring-http-syntax.html">https://www.jetbrains.com/help/idea/exploring-http-syntax.html</a></p>
+<p><code>.http</code> 확장자 파일을 열면 에디터 내에서 http 요청을 보낼 수 있다.
+또한 헤더 정보나 curl 파싱 등 편리한 기능이나 응답 결과를 전역 변수로 저장하고,
+전역 변수를 다른 요청의 파라미터로 전달도 가능하다(api chaining)</p>
+<p>버전마다 기능 제공이 조금씩 달라지는 듯 하다. 여기 내용은 2021.1.3 버전에 대한 내용임.</p>
+<h4 id="전역-변수로-api간-chaining-하기" style="position:relative;"><a href="#%EC%A0%84%EC%97%AD-%EB%B3%80%EC%88%98%EB%A1%9C-api%EA%B0%84-chaining-%ED%95%98%EA%B8%B0" aria-label="전역 변수로 api간 chaining 하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>전역 변수로 API간 Chaining 하기</h4>
+<p>다음은 토큰 생성 API로 토큰을 저장하고, 다른 API에 사용하는 예시다.</p>
+<p>응답 구조는 다음과 같다고 가정한다:</p>
+<pre><code class="language-json">{
+  "token": "AA86811JjjaCD43"
+}
+</code></pre>
+<p><code>.http</code> file:</p>
+<pre><code>### 토큰 생성 API
+POST http://localhost:5000/generate-token
+
+> {%
+client.global.set("mtoken", response.body.token)
+%}
+
+### 상품 조회 API
+GET http://localhost:5000/my-products
+X-APP-TOKEN: {{mtoken}}
+</code></pre>
+<p><code>{% ... %}</code> 구문으로 호출 후에 대한 javascript 코드를 작성하고,
+<code>{{VARIABLE}}</code> 구문으로 전역 변수에 접근한다.</p>
+<p>스크립트 구문을 http 요청 전에 두면 호출 전에 대한 처리도 가능하다.</p>
 <h2 id="datagrip" style="position:relative;"><a href="#datagrip" aria-label="datagrip permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataGrip</h2>
 <h3 id="keymap" style="position:relative;"><a href="#keymap" aria-label="keymap permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>keymap</h3>
 <table>
