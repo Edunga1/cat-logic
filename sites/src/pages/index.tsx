@@ -15,6 +15,7 @@ const StyledMain = styled.main`
   color: ${theme.colors.foreground};
   overflow: hidden;
   display: grid;
+  grid-template-columns: auto 1fr auto;
   place-items: center;
 
   a {
@@ -24,6 +25,11 @@ const StyledMain = styled.main`
   @media (${device.larger}) {
     padding: 9rem 1rem 3rem 1rem;
   }
+`
+
+const MainContainer = styled.div`
+  display: grid;
+  place-items: center;
 `
 
 type WikiItem = {
@@ -69,8 +75,13 @@ export default function IndexPage(
 
   return (
     <StyledMain>
-      <SearchBox onChange={setQuery} holder="I guess..." />
-      <WikiList items={items} fallback="No results found :(" />
+      <div />
+      <MainContainer>
+        <SearchBox onChange={setQuery} holder="I guess..." />
+        <div>{items.length} docs</div>
+        <WikiList items={items} fallback="No results found :(" />
+      </MainContainer>
+      <div />
     </StyledMain>
   )
 }

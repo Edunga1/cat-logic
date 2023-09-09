@@ -2,8 +2,11 @@ import * as React from "react"
 import styled from "styled-components"
 
 const InputBorder = styled.div`
+  max-width: fit-content;
   font-size: 0;
   padding: 2px;
+
+  // gardient border
   --bg-size: 400%;
   --color-one: hsl(15 90% 55%);
   --color-two: hsl(40 95% 55%);
@@ -14,7 +17,6 @@ const InputBorder = styled.div`
       var(--color-one)
     )
     0 0 / var(--bg-size) 100%;
-
   @media (prefers-reduced-motion: no-preference) {
     animation: move-bg 8s linear infinite;
     @keyframes move-bg {
