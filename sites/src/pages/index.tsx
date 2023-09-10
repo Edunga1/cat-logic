@@ -29,7 +29,12 @@ const StyledMain = styled.main`
 
 const MainContainer = styled.div`
   display: grid;
-  place-items: center;
+  place-items: flex-end;
+`
+
+const AltContainer = styled.span`
+  font-size: 0.8rem;
+  color: ${theme.fonts.body};
 `
 
 type WikiItem = {
@@ -78,7 +83,7 @@ export default function IndexPage(
       <div />
       <MainContainer>
         <SearchBox onChange={setQuery} holder="I guess..." />
-        <div>{items.length} docs</div>
+        <AltContainer>{items.length} docs</AltContainer>
         <WikiList items={items} fallback="No results found :(" />
       </MainContainer>
       <div />
