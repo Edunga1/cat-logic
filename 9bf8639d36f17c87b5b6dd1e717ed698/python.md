@@ -323,39 +323,11 @@ mocking 정보를 다른 테스트에서도 재사용할 수 있어서 유용하
 
 ## Package manager
 
-파이썬의 패키지 매니저인 pip는 파이썬 설치 시 함께 제공된다.
-그러나 다른 언어의 패키지 매니저와 비교해 보면 안좋다.
+pipenv를 시범적으로 회사에서 사용하고 있다가, 최근에 개인 프로젝트에 poetry를 사용하고 있다.
+결론은 poetry가 조금 더 만족스럽다. `pyproject.toml`과 통합하는 부분에서 마음이 들었다.
 
-`pip install PACKAGE_NAME`로 설치하고 `pip freeze > requirements.txt`로
-의존 모듈 목록을 저장하는데, 의존성의 의존성까지 저장하게 된다.
-Django만 설치했는데, Django가 사용하는 다른 패키지도 포함된다.
-
-개발과 프로덕션 환경 관리도 애매하다. `pip freeze > requirements-dev.txt` 처럼
-수동으로 관리해야 하는데, 프로덕션만 업데이트 하려고 해도 이미 개발 환경의 모듈이
-포함되어 있다.
-
-아무튼, 간단하지만 그만큼 이런저런 불편함이 있는 기본 도구다.
-
-### pipenv
-
-https://github.com/pypa/pipenv
-
-이런 불편함을 알았는지 환경 분리도 가능하고, lock 파일도 별도로 관리할 수 있는
-[pipenv](https://github.com/pypa/pipenv)가 있다. `pyenv`와 좀 헷갈린다.
-
-[python.org](https://www.python.org/)에서도 가상 `pipenv`를 이용하여 가상환경 사용을 추천하고 있다:
->For software that is not distributed with (or developed for) your system, we recommend using a virtual environment, possibly with an environment manager like conda or pipenv, to help avoid disrupting your system Python installation.
-
-link: https://packaging.python.org/guides/tool-recommendations/
-
-설치가 좀 애매한데, OSX는 Homebrew로 쉽게 설치가능해 보인다.
-
-ubuntu 14.04에서는 다른 선택지가 없어서 `pip install`로 설치해봤는데 `2018.11.26` 버전이 설치됐다.
-구버전 같아 보이는데 아직 제대로 사용해보지 않아서, 최적화된 버전 일지도 모르겠다.
-
-Dockerize 하는데 이슈가 있다. 빌드 할 때 pipenv를 결국 설치해야 하는데, 로직을 돌리는데 불필요한 존재기 때문이다.
-그래서 multi-stage build를 하는 것이 필요하다. 빌드 스테이지에서 pipenv를 설치하고, pipenv를 이용하여 requirements.txt를 생성하고,
-requirements.txt를 가지고 실행 스테이지에서 의존 모듈을 설치한다. 그러면 프로덕션 레벨에서 pipenv를 감출 수 있다.
+`pipenv`나 `poetry` 모두 운영 환경을 위한 dockerizing 시 cli 도구나 가상환경은 필요하지 않기 때문에,
+multi-stage build와 virtualenv를 사용하지 않는 프로세스를 구축해야 한다.
 
 ### poetry
 
@@ -397,6 +369,31 @@ home에 가상환경 정보를 저장하므로, `pyenv versions`에 노출되지
 프로젝트가 많으면 너무 많은 가상환경이 생성되기 때문이다.
 
 `poetry add rx`로 의존 모듈을 추가한다. 알아서 `pyproject.toml`에 추가하고, lock file`poetry.lock`을 업데이트한다.
+
+파이썬의 패키지 매니저인 pip는 파이썬 설치 시 함께 제공된다.
+그러나 다른 언어의 패키지 매니저와 비교해 보면 안좋다.
+
+`pip install PACKAGE_NAME`로 설치하고 `pip freeze > requirements.txt`로
+의존 모듈 목록을 저장하는데, 의존성의 의존성까지 저장하게 된다.
+Django만 설치했는데, Django가 사용하는 다른 패키지도 포함된다.
+
+개발과 프로덕션 환경 관리도 애매하다. `pip freeze > requirements-dev.txt` 처럼
+수동으로 관리해야 하는데, 프로덕션만 업데이트 하려고 해도 이미 개발 환경의 모듈이
+포함되어 있다.
+
+아무튼, 간단하지만 그만큼 이런저런 불편함이 있는 기본 도구다.
+
+### pipenv
+
+https://github.com/pypa/pipenv
+
+이런 불편함을 알았는지 환경 분리도 가능하고, lock 파일도 별도로 관리할 수 있는
+[pipenv](https://github.com/pypa/pipenv)가 있다. `pyenv`와 좀 헷갈린다.
+
+[python.org](https://www.python.org/)에서도 가상 `pipenv`를 이용하여 가상환경 사용을 추천하고 있다:
+>For software that is not distributed with (or developed for) your system, we recommend using a virtual environment, possibly with an environment manager like conda or pipenv, to help avoid disrupting your system Python installation.
+
+link: https://packaging.python.org/guides/tool-recommendations/
 
 ## Packaging
 
