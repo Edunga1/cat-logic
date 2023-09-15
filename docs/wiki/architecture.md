@@ -228,8 +228,13 @@ REST API의 versioning은 22년 말부터 `2022-11-28`과 같은 날짜를 [기�
 벌크 처리와 관련된 API는 [Social Account 계정 삭제 API](https://docs.github.com/en/rest/users/social-accounts#delete-social-accounts-for-the-authenticated-user)를 참고하자.
 `DELETE`와 함께 body로 삭제 대상 account url을 입력받는다.
 
-저장소에 [__별 주기__ API](https://docs.github.com/en/rest/activity/starring)는 활성화/비활성화 처리하는 인터페이스를 설계할 때 참고 할만하다.
-
+저장소에 [별 주기 API](https://docs.github.com/en/rest/activity/starring)는 활성화/비활성화 처리하는 인터페이스를 설계할 때 참고 할만하다.
 - PUT /starred/{owner}/{repo}: 별 주기
 - DELETE /starred/{owner}/{repo}: 별 회수하기
 - GET /starred/{owner}/{repo}: 별 줬는지 여부
+
+모든 API가 명사형으로, 리소스로 관리되는 것은 아니다.
+[템플릿으로 저장소 생성 API](https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#create-a-repository-using-a-template)는
+POST `/generate` 이며, 응답 코드는 저장소 리소스 생성에 맞춰 201 Created.
+[저장소 이전 API](https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#transfer-a-repository)는
+POST `/transfer` 이며, 응답 코드는 202 Accepted를 사용한다.
