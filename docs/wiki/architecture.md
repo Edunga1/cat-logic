@@ -205,3 +205,34 @@ DDD의 boundary context가 MSA를 구분짓는 토대가 된다.
       * json, yaml, grpc 등으로 커뮤니이션한다 → Published Language
       * graphql, restapi로 통신한다 → Open Host Service
       * Upstream, Downstream 관계를 나타내고, 정책이 변경되면 따라간다 → Conformist
+
+## REST API
+
+### GitHub REST API
+
+https://docs.github.com/en/rest
+
+- [HTTP verb](https://docs.github.com/en/enterprise-server@3.9/rest/overview/resources-in-the-rest-api#http-verbs)
+- [API Versioning](https://docs.github.com/en/enterprise-server@3.9/rest/overview/api-versions)
+
+GitHub의 API 설계는 친절하게 설명되어 있고, 짜임새 있게 설계되어 있어서 참고할 부분이 많다.
+그래서 종종 REST API 설계를 어떻게 해야할 지 고민되면 GitHub 개발 문서를 많이 참고한다.
+
+GitHub는 REST API와 GraphQL 모두 지원한다.
+
+REST API의 리소스 차원에서 접근하는 규칙을 잘 따르고 있다.
+`/cancel-something`과 같은 RPC 스타일은 없다.
+
+로그인한 사용자를 기준으로 하는 API는 `by the authenticated user` 문구를 덧붙인다.
+세션 사용자의 정보로 처리하는지 여부가 문서를 보는 입장에서 중요한 정보다.
+
+REST API의 versioning은 22년 말부터 `2022-11-28`과 같은 날짜를 [기반](https://github.blog/2022-11-28-to-infinity-and-beyond-enabling-the-future-of-githubs-rest-api-with-api-versioning)으로 한다.
+
+벌크 처리와 관련된 API는 [Social Account 계정 삭제 API](https://docs.github.com/en/rest/users/social-accounts#delete-social-accounts-for-the-authenticated-user)를 참고하자.
+`DELETE`와 함께 body로 삭제 대상 account url을 입력받는다.
+
+저장소에 [__별 주기__ API](https://docs.github.com/en/rest/activity/starring)는 활성화/비활성화 처리하는 인터페이스를 설계할 때 참고 할만하다.
+
+- PUT /starred/{owner}/{repo}: 별 주기
+- DELETE /starred/{owner}/{repo}: 별 회수하기
+- GET /starred/{owner}/{repo}: 별 줬는지 여부
