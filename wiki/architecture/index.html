@@ -402,12 +402,17 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p>REST API의 versioning은 22년 말부터 <code>2022-11-28</code>과 같은 날짜를 <a href="https://github.blog/2022-11-28-to-infinity-and-beyond-enabling-the-future-of-githubs-rest-api-with-api-versioning">기반</a>으로 한다.</p>
 <p>벌크 처리와 관련된 API는 <a href="https://docs.github.com/en/rest/users/social-accounts#delete-social-accounts-for-the-authenticated-user">Social Account 계정 삭제 API</a>를 참고하자.
 <code>DELETE</code>와 함께 body로 삭제 대상 account url을 입력받는다.</p>
-<p>저장소에 <a href="https://docs.github.com/en/rest/activity/starring"><strong>별 주기</strong> API</a>는 활성화/비활성화 처리하는 인터페이스를 설계할 때 참고 할만하다.</p>
+<p>저장소에 <a href="https://docs.github.com/en/rest/activity/starring">별 주기 API</a>는 활성화/비활성화 처리하는 인터페이스를 설계할 때 참고 할만하다.</p>
 <ul>
 <li>PUT /starred/{owner}/{repo}: 별 주기</li>
 <li>DELETE /starred/{owner}/{repo}: 별 회수하기</li>
 <li>GET /starred/{owner}/{repo}: 별 줬는지 여부</li>
-</ul></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/architecture/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</ul>
+<p>모든 API가 명사형으로, 리소스로 관리되는 것은 아니다.
+<a href="https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#create-a-repository-using-a-template">템플릿으로 저장소 생성 API</a>는
+POST <code>/generate</code> 이며, 응답 코드는 저장소 리소스 생성에 맞춰 201 Created.
+<a href="https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#transfer-a-repository">저장소 이전 API</a>는
+POST <code>/transfer</code> 이며, 응답 코드는 202 Accepted를 사용한다.</p></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/architecture/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
