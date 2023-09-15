@@ -220,9 +220,6 @@ GitHub의 API 설계는 친절하게 설명되어 있고, 짜임새 있게 설�
 
 GitHub는 REST API와 GraphQL 모두 지원한다.
 
-REST API의 리소스 차원에서 접근하는 규칙을 잘 따르고 있다.
-`/cancel-something`과 같은 RPC 스타일은 없다.
-
 로그인한 사용자를 기준으로 하는 API는 `by the authenticated user` 문구를 덧붙인다.
 세션 사용자의 정보로 처리하는지 여부가 문서를 보는 입장에서 중요한 정보다.
 
