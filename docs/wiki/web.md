@@ -84,3 +84,10 @@ fucntion onDeviceOrientation(event) {
   console.log(alpha, beta, gamma)
 }
 ```
+
+## HTTP
+
+### Headers
+
+직접 수정할 수 없는 헤더가 있다. `Content-Length`나 `Referer` 등이 그러한데, 이런 헤더를 [Forbidden Header Name](https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name)이라 한다.
+
