@@ -143,6 +143,9 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </li>
 </ul>
 </li>
+<li>
+<p><a href="#curl"><code>curl</code></a></p>
+</li>
 </ul>
 </li>
 </ul></div><span></span></div><div class="Wiki__Main-sc-16q9onf-2 eTgCJx"><h1>Shell 명령어</h1><div class="Toc__Container-sc-1f76i2s-0 eXfjpt"><ul>
@@ -220,6 +223,9 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 </ul>
+</li>
+<li>
+<p><a href="#curl"><code>curl</code></a></p>
 </li>
 </ul>
 </li>
@@ -502,7 +508,18 @@ time is /usr/bin/time
   2/2 ────────────── │    ns.register(ns.builtins.formatting.ruff)                 │
 >                    ╰─────────────────────────────────────────────────────────────╯
 </code></pre>
-<p>브랜치 목록 <code>git branch</code>와 함께 가장 위 커밋의 diff <code>git diff</code>를 보여준다.</p></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/shell/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>브랜치 목록 <code>git branch</code>와 함께 가장 위 커밋의 diff <code>git diff</code>를 보여준다.</p>
+<h2 id="curl" style="position:relative;"><a href="#curl" aria-label="curl permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>curl</code></h2>
+<p><code>--retry</code>는 특정 상태 코드에서만 재시도한다.
+메뉴얼에 따르면 <code>408</code>, <code>429</code>, <code>500</code>, <code>502</code>, <code>503</code>, <code>504</code>가 모두이다:</p>
+<pre><code class="language-bash">--retry &#x3C;num>
+      If a transient error is returned when curl tries to perform a transfer, it will retry this number of times before giving up. Setting the number to 0 makes curl do no retries (which is the
+      default). Transient error means either: a timeout, an FTP 4xx response code or an HTTP 408, 429, 500, 502, 503 or 504 response code.
+</code></pre>
+<p>일시적인 오류(transient error)가 반환되면 재시도 한다고 한다.
+따라서 특정 상태 코드만 재시도 하는 거 같은데, 다른 상태코드는 서버에서 명시적으로 내려주었을 가능성이 있으니 재시도하지 않는 것이 옳아 보인다.
+다만, python의 requests나 Spring WebFux의 WebClient의 retry 상태 코드는 공식 문서에서 확인하지 못했다.
+만약 모든 상태에 대해서 재시도 한다면 옵션 사용에 고민이 필요해 보인다.</p></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/shell/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
