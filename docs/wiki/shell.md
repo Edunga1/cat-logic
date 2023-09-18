@@ -342,7 +342,6 @@ fzf가 없으면 보통, tab 두 번 눌러서 모든 파일을 확인할텐데,
 ### FZF + git
 
 #### 브랜치 목록 및 작업 내용
-
 ```bash
 lsb = !git branch \
   | fzf --preview 'echo {} | cut -c3- | xargs git show --color=always' --height 90% \
@@ -375,3 +374,19 @@ lsb = !git branch \
 ```
 
 브랜치 목록 `git branch`와 함께 가장 위 커밋의 diff `git diff`를 보여준다.
+
+## `curl`
+
+`--retry`는 특정 상태 코드에서만 재시도한다.
+메뉴얼에 따르면 `408`, `429`, `500`, `502`, `503`, `504`가 모두이다:
+
+```bash
+--retry <num>
+      If a transient error is returned when curl tries to perform a transfer, it will retry this number of times before giving up. Setting the number to 0 makes curl do no retries (which is the
+      default). Transient error means either: a timeout, an FTP 4xx response code or an HTTP 408, 429, 500, 502, 503 or 504 response code.
+```
+
+일시적인 오류(transient error)가 반환되면 재시도 한다고 한다.
+따라서 특정 상태 코드만 재시도 하는 거 같은데, 다른 상태코드는 서버에서 명시적으로 내려주었을 가능성이 있으니 재시도하지 않는 것이 옳아 보인다.
+다만, python의 requests나 Spring WebFux의 WebClient의 retry 상태 코드는 공식 문서에서 확인하지 못했다.
+만약 모든 상태에 대해서 재시도 한다면 옵션 사용에 고민이 필요해 보인다.
