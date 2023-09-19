@@ -9,6 +9,42 @@
 
 Bash에 대한 내용도 `man bash`로 알 수 있다. `if [ -e file ]`에서 `-e`를 모르겠다면 메뉴얼에서 확인할 수 있다.
 
+### `COMMAND(1)`에서 숫자의 의미?
+
+`man ls`의 경우에는 다음과 같이 명령어와 괄호안에 숫자가 함께 표기된다:
+
+```bash
+$ man ls
+LS(1)           General Commands Manual           LS(1)
+
+NAME
+     ls – list directory contents
+```
+
+이는 section을 의미한다. 이에 대한 정보는 `man` 명령어의 메뉴얼에서 확인할 수 있다!
+
+```bash
+$ man man
+
+The man utility finds and displays online manual documentation pages.  If mansect is provided, man restricts the search to the specific section of the manual.
+
+The sections of the manual are:
+     1.   General Commands Manual
+     2.   System Calls Manual
+     3.   Library Functions Manual
+     4.   Kernel Interfaces Manual
+     5.   File Formats Manual
+     6.   Games Manual
+     7.   Miscellaneous Information Manual
+     8.   System Manager's Manual
+     9.   Kernel Developer's Manual
+```
+
+즉, `LS(1)`는 일반 명령어 메뉴얼을 의미한다.
+
+`intro`는 각종 명령어와 도구, shell 등에 대한 소개(introduction)를 담당하고 여러 섹션의 메뉴얼이 있는데,
+`man 1 intro`, `man 3 intro`, `man 9 intro` 등으로 각 section을 확인할 수 있다.
+
 ## `set -ex`
 
 도커파일이나 스크립트를 보면 `set -ex` 구문이 많이 보인다.
