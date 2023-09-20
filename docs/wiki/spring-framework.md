@@ -268,6 +268,68 @@ Supported dependencies
 
 의존성을 추가하려면 `--dependencies=actuator,webflux`와 같이 옵션을 추가한다.
 
+## Caching
+
+https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-caching.html
+
+> Use the spring-boot-starter-cache “Starter” to quickly add basic caching dependencies. The starter brings in spring-context-support.
+
+`spring-boot-starter-cache`를 사용하면 간단한 설정으로 캐싱 모듈을 사용할 수 있는 거 같다.
+일단 내 경우에는 간단한 형태는 아니고, 함수마다 각기 다른 캐시 만료 정책을 적용하기 위해서 `CacheManager`를 직접 구성해야 했고,
+직접 구성하니 `spring-boot-starter-cache`는 필요하지 않았다.
+
+### Caffeine
+
+로컬 캐시 용도로 Caffeine만 써봤다.
+[Caffeine에서 제공하는 벤치마크](https://github.com/ben-manes/caffeine/wiki/Benchmarks)로는 가장 우수하다.
+
+[spring managed dependency](https://docs.spring.io/spring-boot/docs/current/reference/html/dependency-versions.html#:~:text=2.15.2-,com.github.ben%2Dmanes.caffeine,-caffeine)이므로 버전을 직접 지정할 필요는 없다.
+
+> If Caffeine is present, a CaffeineCacheManager (provided by the spring-boot-starter-cache “Starter”)
+
+`spring-boot-starter-cache`를 사용하면 `CaffeineCacheManager`를 알아서 만들어 준다고 한다.
+내 경우에는 직접 `CacheManager` 구성해서 `spring-boot-starter-cache`가 필요하지 않았다.
+
+```kotlin
+@EnableCaching
+@Configuration
+class CacheConfig {
+    @Bean
+    fun cacheManager(): CacheManager {
+        val caches = CacheType.values().map {
+            CaffeineCache(
+                it.cacheName,
+                Caffeine.newBuilder()
+                    .expireAfterWrite(it.duration)
+                    .build()
+            )
+        }
+        return SimpleCacheManager().also {
+            it.setCaches(caches)
+        }
+    }
+}
+
+enum class CacheType(
+    val cacheName: String,
+    val duration: Duration,
+) {
+    CACHE_POLICY1("policy1", Duration.ofMinutes(10)),
+    CACHE_POLICY2("policy2", Duration.ofMinutes(50)),
+    ;
+}
+```
+
+enum으로 만료 시간에 다른 캐시 정책을 여러개 만들었다.
+
+```kotlin
+@Cacheable(cacheNames = ["policy1"])
+fun getItems(): Set<Items> = repository.find()
+```
+
+사용을 위해선 캐시 이름을 맞춰서 사용한다.
+캐시 이름이 변경되면 캐시 선언 부분과 사용 부분 모두 수정하는데, 이는 캐시 이름을 `const val`로 만들어서 처리할 수 있다.
+
 ## Troubleshooting
 
 ### IntelliJ에서 Properties의 선언부를 찾을 수 없는 경우
