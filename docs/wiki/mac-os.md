@@ -14,19 +14,45 @@ Homebrew로 맥에서 어플리케이션(패키지)을 설치하는 도구이다
 
 > Homebrew formulae are simple Ruby scripts
 
+`brew info formula`로 패키지를 확인할 수 있다.
+
+```bash
+$ brew info mysql
+==> mysql: stable 8.1.0 (bottled)
+Open source relational database management system
+https://dev.mysql.com/doc/refman/8.0/en/
+Conflicts with:
+  mariadb (because mysql, mariadb, and percona install the same binaries)
+  percona-server (because mysql, mariadb, and percona install the same binaries)
+/opt/homebrew/Cellar/mysql/8.1.0 (325 files, 308.4MB) *
+  Poured from bottle using the formulae.brew.sh API on 2023-09-20 at 16:33:49
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/m/mysql.rb
+License: GPL-2.0-only with Universal-FOSS-exception-1.0
+==> Dependencies
+Build: bison ✘, cmake ✘, pkg-config ✔
+Required: icu4c ✔, libevent ✔, libfido2 ✔, lz4 ✔, openssl@3 ✔, protobuf@21 ✔, zlib ✔, zstd ✔
+==> Caveats
+We've installed your MySQL database without a root password. To secure it run:
+    mysql_secure_installation
+
+MySQL is configured to only allow connections from localhost by default
+```
+
+패키지 출처 사이트, 패키지 버전, 의존성, 설치 시 주의사항 등이 포함되어 있다.
+
 ### 동작 원리
 
 패키지는 공용 저장소인 [homebrew-core](https://github.com/Homebrew/homebrew-core)에서 관리한다.
-Ruby 스크립트를 통해서 설치 정보를 선언한다.
+Ruby 스크립트로 설치 정보를 명세한다.
 
 `brew tap <repo>`로 다른 저장소를 추가하여 공용 저장소에 없는 패키지를 설치할 수 있다.
 
 재밌는 점은 공용 Homebrew에는 수많은 패키지가 Git으로 관리되고 있는데,
 패키지가 새롭게 추가 되거나 업데이트 되면 Git commit이 발생하는 것이다.
 그래서 공용 저장소의 커밋 수는 2023년 6월 기준 37만개가 넘는다.
+가장 활발한 저장소 중 하나일 것이다.
 
-[PR](https://github.com/Homebrew/homebrew-core/pulls)을 올리면 Hoembrew 메인테이너 또는 멤버가 리뷰하고
-자동화 테스트를 통과하면 봇을 통해 자동 머지된다. 아마 가장 활발한 저장소 중 하나일 것이다.
+[PR](https://github.com/Homebrew/homebrew-core/pulls)을 올리면 Hoembrew 메인테이너 또는 멤버가 리뷰하고 자동화 테스트를 통과하면 봇이 자동으로 머지한다.
 
 ### Brewfile
 
