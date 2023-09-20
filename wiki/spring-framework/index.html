@@ -72,9 +72,6 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p><a href="#spring-framework">Spring framework</a></p>
 <ul>
 <li>
-<p><a href="#webclient-%EC%B2%AB-%EC%9A%94%EC%B2%AD%EC%9D%B4-%EB%8A%90%EB%A6%B0-%EB%AC%B8%EC%A0%9C">WebClient 첫 요청이 느린 문제</a></p>
-</li>
-<li>
 <p><a href="#features">Features</a></p>
 <ul>
 <li>
@@ -111,13 +108,17 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#troubleshooting">Troubleshooting</a></p>
+<p><a href="#caching">Caching</a></p>
 <ul>
-<li><a href="#intellij%EC%97%90%EC%84%9C-properties%EC%9D%98-%EC%84%A0%EC%96%B8%EB%B6%80%EB%A5%BC-%EC%B0%BE%EC%9D%84-%EC%88%98-%EC%97%86%EB%8A%94-%EA%B2%BD%EC%9A%B0">IntelliJ에서 Properties의 선언부를 찾을 수 없는 경우</a></li>
+<li><a href="#caffeine">Caffeine</a></li>
 </ul>
 </li>
 <li>
-<p><a href="#reference">Reference</a></p>
+<p><a href="#troubleshooting">Troubleshooting</a></p>
+<ul>
+<li><a href="#intellij%EC%97%90%EC%84%9C-properties%EC%9D%98-%EC%84%A0%EC%96%B8%EB%B6%80%EB%A5%BC-%EC%B0%BE%EC%9D%84-%EC%88%98-%EC%97%86%EB%8A%94-%EA%B2%BD%EC%9A%B0">IntelliJ에서 Properties의 선언부를 찾을 수 없는 경우</a></li>
+<li><a href="#webclient-%EC%B2%AB-%EC%9A%94%EC%B2%AD%EC%9D%B4-%EB%8A%90%EB%A6%B0-%EB%AC%B8%EC%A0%9C">WebClient 첫 요청이 느린 문제</a></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -126,9 +127,6 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p><a href="#spring-framework">Spring framework</a></p>
 <ul>
 <li>
-<p><a href="#webclient-%EC%B2%AB-%EC%9A%94%EC%B2%AD%EC%9D%B4-%EB%8A%90%EB%A6%B0-%EB%AC%B8%EC%A0%9C">WebClient 첫 요청이 느린 문제</a></p>
-</li>
-<li>
 <p><a href="#features">Features</a></p>
 <ul>
 <li>
@@ -165,34 +163,22 @@ data-styled.g5[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#troubleshooting">Troubleshooting</a></p>
+<p><a href="#caching">Caching</a></p>
 <ul>
-<li><a href="#intellij%EC%97%90%EC%84%9C-properties%EC%9D%98-%EC%84%A0%EC%96%B8%EB%B6%80%EB%A5%BC-%EC%B0%BE%EC%9D%84-%EC%88%98-%EC%97%86%EB%8A%94-%EA%B2%BD%EC%9A%B0">IntelliJ에서 Properties의 선언부를 찾을 수 없는 경우</a></li>
+<li><a href="#caffeine">Caffeine</a></li>
 </ul>
 </li>
 <li>
-<p><a href="#reference">Reference</a></p>
+<p><a href="#troubleshooting">Troubleshooting</a></p>
+<ul>
+<li><a href="#intellij%EC%97%90%EC%84%9C-properties%EC%9D%98-%EC%84%A0%EC%96%B8%EB%B6%80%EB%A5%BC-%EC%B0%BE%EC%9D%84-%EC%88%98-%EC%97%86%EB%8A%94-%EA%B2%BD%EC%9A%B0">IntelliJ에서 Properties의 선언부를 찾을 수 없는 경우</a></li>
+<li><a href="#webclient-%EC%B2%AB-%EC%9A%94%EC%B2%AD%EC%9D%B4-%EB%8A%90%EB%A6%B0-%EB%AC%B8%EC%A0%9C">WebClient 첫 요청이 느린 문제</a></li>
+</ul>
 </li>
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 jjont">
 <p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/index.html">Spring Boot Reference Documentation</a></p>
-<h2 id="webclient-첫-요청이-느린-문제" style="position:relative;"><a href="#webclient-%EC%B2%AB-%EC%9A%94%EC%B2%AD%EC%9D%B4-%EB%8A%90%EB%A6%B0-%EB%AC%B8%EC%A0%9C" aria-label="webclient 첫 요청이 느린 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WebClient 첫 요청이 느린 문제</h2>
-<p>상황: 서버 시작 직후 다른 서버의 API를 호출하는 내 API가 느려서 클라이언트에서 타임아웃이 자주 발생함.<br>
-해결: netty http client의 <code>warmup</code> + 사용자 진입 전 미리 타겟 서버 API 호출</p>
-<p><a href="https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initialization_4">https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initialization_4</a></p>
-<ol>
-<li>warmup으로 event loop pool을 준비시키고</li>
-<li>서버 시작 시 임의로 호출하여 모든 사용자 요청은 첫 요청 이후가 되도록 한다.</li>
-</ol>
-<p>2의 임의 호출은 해당 서버의 health check가 되는 API로 했다.</p>
-<p>문서에서 설명하는 첫 요청에서 시간을 소요하는 요소는 다음과 같다:</p>
-<ol>
-<li>event loop group</li>
-<li>host name resolver</li>
-<li>내장된 transport 라이브러리들</li>
-<li>보안과 관련된 라이브러리들</li>
-</ol>
 <h2 id="features" style="position:relative;"><a href="#features" aria-label="features permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h2>
 <h3 id="requestmapping-request-mapping-narrowing" style="position:relative;"><a href="#requestmapping-request-mapping-narrowing" aria-label="requestmapping request mapping narrowing permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>RequestMapping</code> Request mapping narrowing</h3>
 <p><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html">RequestMapping - Spring API</a></p>
@@ -329,6 +315,7 @@ build("https://www.google.com/search?q=%ED%91%B8%EB%B0%94&#x26;oq=%ED%91%B8%EB%B
 <p><code>/</code>, <code>=</code>, <code>&#x26;</code> 등 URI 요소를 인코딩한 것을 볼 수 있다.</p>
 <p>placeholder<code>{url}</code>는 사용하지 않았고, build로 전달하는 순서대로 replace 한다.</p>
 <h2 id="spring-cli" style="position:relative;"><a href="#spring-cli" aria-label="spring cli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spring CLI</h2>
+<p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html">https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html</a></p>
 <p>Installation(Homebrew):</p>
 <pre><code class="language-bash">$ brew tap spring-io/tap
 $ brew install spring-boot
@@ -392,6 +379,57 @@ fun main(args: Array&#x3C;String>) {
 +--------------------------------------+--------------------------------------------------------------+-------------------------------+
 </code></pre>
 <p>의존성을 추가하려면 <code>--dependencies=actuator,webflux</code>와 같이 옵션을 추가한다.</p>
+<h2 id="caching" style="position:relative;"><a href="#caching" aria-label="caching permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caching</h2>
+<p><a href="https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-caching.html">https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-caching.html</a></p>
+<blockquote>
+<p>Use the spring-boot-starter-cache “Starter” to quickly add basic caching dependencies. The starter brings in spring-context-support.</p>
+</blockquote>
+<p><code>spring-boot-starter-cache</code>를 사용하면 간단한 설정으로 캐싱 모듈을 사용할 수 있는 거 같다.
+일단 내 경우에는 간단한 형태는 아니고, 함수마다 각기 다른 캐시 만료 정책을 적용하기 위해서 <code>CacheManager</code>를 직접 구성해야 했고,
+직접 구성하니 <code>spring-boot-starter-cache</code>는 필요하지 않았다.</p>
+<h3 id="caffeine" style="position:relative;"><a href="#caffeine" aria-label="caffeine permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caffeine</h3>
+<p>로컬 캐시 용도로 Caffeine만 써봤다.
+<a href="https://github.com/ben-manes/caffeine/wiki/Benchmarks">Caffeine에서 제공하는 벤치마크</a>로는 가장 우수하다.</p>
+<p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/dependency-versions.html#:~:text=2.15.2-,com.github.ben%2Dmanes.caffeine,-caffeine">spring managed dependency</a>이므로 버전을 직접 지정할 필요는 없다.</p>
+<blockquote>
+<p>If Caffeine is present, a CaffeineCacheManager (provided by the spring-boot-starter-cache “Starter”)</p>
+</blockquote>
+<p><code>spring-boot-starter-cache</code>를 사용하면 <code>CaffeineCacheManager</code>를 알아서 만들어 준다고 한다.
+내 경우에는 직접 <code>CacheManager</code> 구성해서 <code>spring-boot-starter-cache</code>가 필요하지 않았다.</p>
+<pre><code class="language-kotlin">@EnableCaching
+@Configuration
+class CacheConfig {
+    @Bean
+    fun cacheManager(): CacheManager {
+        val caches = CacheType.values().map {
+            CaffeineCache(
+                it.cacheName,
+                Caffeine.newBuilder()
+                    .expireAfterWrite(it.duration)
+                    .build()
+            )
+        }
+        return SimpleCacheManager().also {
+            it.setCaches(caches)
+        }
+    }
+}
+
+enum class CacheType(
+    val cacheName: String,
+    val duration: Duration,
+) {
+    CACHE_POLICY1("policy1", Duration.ofMinutes(10)),
+    CACHE_POLICY2("policy2", Duration.ofMinutes(50)),
+    ;
+}
+</code></pre>
+<p>enum으로 만료 시간에 다른 캐시 정책을 여러개 만들었다.</p>
+<pre><code class="language-kotlin">@Cacheable(cacheNames = ["policy1"])
+fun getItems(): Set&#x3C;Items> = repository.find()
+</code></pre>
+<p>사용을 위해선 캐시 이름을 맞춰서 사용한다.
+캐시 이름이 변경되면 캐시 선언 부분과 사용 부분 모두 수정하는데, 이는 캐시 이름을 <code>const val</code>로 만들어서 처리할 수 있다.</p>
 <h2 id="troubleshooting" style="position:relative;"><a href="#troubleshooting" aria-label="troubleshooting permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
 <h3 id="intellij에서-properties의-선언부를-찾을-수-없는-경우" style="position:relative;"><a href="#intellij%EC%97%90%EC%84%9C-properties%EC%9D%98-%EC%84%A0%EC%96%B8%EB%B6%80%EB%A5%BC-%EC%B0%BE%EC%9D%84-%EC%88%98-%EC%97%86%EB%8A%94-%EA%B2%BD%EC%9A%B0" aria-label="intellij에서 properties의 선언부를 찾을 수 없는 경우 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IntelliJ에서 Properties의 선언부를 찾을 수 없는 경우</h3>
 <p><code>@ConfigurationProperties(prefix="foo.bar")</code>가 선언된 클래스가 있음에도 <code>application.yml</code>에서 선언부를 찾지 못하고,
@@ -400,9 +438,22 @@ fun main(args: Array&#x3C;String>) {
 <p>gradle(kts) 예시:</p>
 <pre><code class="language-gradle">kapt("org.springframework.boot:spring-boot-configuration-processor")
 </code></pre>
-<h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
-<p>Spring CLI:<br>
-<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html">https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html</a></p></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/spring-framework/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<h3 id="webclient-첫-요청이-느린-문제" style="position:relative;"><a href="#webclient-%EC%B2%AB-%EC%9A%94%EC%B2%AD%EC%9D%B4-%EB%8A%90%EB%A6%B0-%EB%AC%B8%EC%A0%9C" aria-label="webclient 첫 요청이 느린 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WebClient 첫 요청이 느린 문제</h3>
+<p>상황: 서버 시작 직후 다른 서버의 API를 호출하는 내 API가 느려서 클라이언트에서 타임아웃이 자주 발생함.<br>
+해결: netty http client의 <code>warmup</code> + 사용자 진입 전 미리 타겟 서버 API 호출</p>
+<p><a href="https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initialization_4">https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initialization_4</a></p>
+<ol>
+<li>warmup으로 event loop pool을 준비시키고</li>
+<li>서버 시작 시 임의로 호출하여 모든 사용자 요청은 첫 요청 이후가 되도록 한다.</li>
+</ol>
+<p>2의 임의 호출은 해당 서버의 health check가 되는 API로 했다.</p>
+<p>문서에서 설명하는 첫 요청에서 시간을 소요하는 요소는 다음과 같다:</p>
+<ol>
+<li>event loop group</li>
+<li>host name resolver</li>
+<li>내장된 transport 라이브러리들</li>
+<li>보안과 관련된 라이브러리들</li>
+</ol></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/spring-framework/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
