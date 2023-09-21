@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Toc from "../../components/molecules/Toc"
 import WikiContent from "../../components/molecules/WikiContent"
 import device from "../../constants/device"
+import Comments from "../molecules/Comments"
 
 const Container = styled.div`
   display: grid;
@@ -60,6 +61,7 @@ export default function Wiki(
         <h1>{title}</h1>
         <Toc contents={tableOfContents} />
         {<WikiContent contents={wikiContents} />}
+        <Comments />
       </Main>
     </Container>
   )
