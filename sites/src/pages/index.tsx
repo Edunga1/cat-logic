@@ -96,14 +96,11 @@ export const Head: HeadFC = () => <title>Cat Logic - Home</title>
 export const pageQuery = graphql`
   query IndexPage {
     allFile(
-      filter: {childMarkdownRemark: {id: {ne: null}}, name: {ne: "index"}},
-      sort: {mtime: DESC}
+      filter: {childMarkdownRemark: {id: {ne: null}}, name: {ne: "index"}}
     ) {
       # wiki list
       nodes {
         name
-        mtime
-        absolutePath
         childMarkdownRemark {
           headings(depth: h1) {
             value
