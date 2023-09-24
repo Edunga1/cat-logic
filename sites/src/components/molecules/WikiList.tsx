@@ -9,9 +9,11 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  background: white;
 `
 
 const List = styled.ul`
+  margin: 0;
   padding: 0 1rem;
   width: 100%;
   max-width: 600px;
