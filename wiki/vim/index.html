@@ -81,6 +81,12 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 <li>
+<p><a href="#help-h">HELP <code>:h</code></a></p>
+<ul>
+<li><a href="#usr_12txt-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A1%B0%ED%95%A9%EC%97%90-%EA%B4%80%ED%95%9C-%ED%8C%81"><code>usr_12.txt</code> 명령어 조합에 관한 팁</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#use-cases">Use cases</a></p>
 <ul>
 <li><a href="#%ED%8C%8C%EC%9D%BC-%EA%B2%80%EC%83%89">파일 검색</a></li>
@@ -205,6 +211,12 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <ul>
 <li><a href="#lua-%EA%B0%80%EC%9D%B4%EB%93%9C">Lua 가이드</a></li>
 <li><a href="#%EB%82%B4%EC%9E%A5-language-server-protocol-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">내장 Language Server Protocol 사용하기</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#help-h">HELP <code>:h</code></a></p>
+<ul>
+<li><a href="#usr_12txt-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A1%B0%ED%95%A9%EC%97%90-%EA%B4%80%ED%95%9C-%ED%8C%81"><code>usr_12.txt</code> 명령어 조합에 관한 팁</a></li>
 </ul>
 </li>
 <li>
@@ -408,6 +420,18 @@ require("mason-lspconfig").setup()
 -- LSPs
 require'lspconfig'.kotlin_language_server.setup{}
 </code></pre>
+<h2 id="help-h" style="position:relative;"><a href="#help-h" aria-label="help h permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HELP <code>:h</code></h2>
+<p><code>:h help</code></p>
+<p>vim 도움말. vim 내장부터 플러그인까지, 명령어, 함수, 변수 등 관계없이 키워드로 도움말을 제공한다.
+평소에도 자주 사용하는 기능이다.</p>
+<p><code>:h keyword</code>로 사용하며, 키워드 전체를 검색하지 않아도 된다. 키워드 일부만 입략해도 가장 근접한 키워드를 찾는다.
+예를들어 <code>:h usr_12.txt</code> 대신 <code>:h 12.txt</code>.</p>
+<p>색상으로 강조된 단어를 만나면 연결된 도움말이 있다는 뜻이므로 <code>CTRL-]</code>로 이동하자 <code>:h CTRL-]</code>.</p>
+<h3 id="usr_12txt-명령어-조합에-관한-팁" style="position:relative;"><a href="#usr_12txt-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A1%B0%ED%95%A9%EC%97%90-%EA%B4%80%ED%95%9C-%ED%8C%81" aria-label="usr_12txt 명령어 조합에 관한 팁 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>usr_12.txt</code> 명령어 조합에 관한 팁</h3>
+<p><code>:h usr_12.txt</code></p>
+<p>유용한 명령어 조합에 대한 팁이 담긴 메뉴얼이다.</p>
+<p><code>:h 12.4</code>는 모든 줄을 역정렬하는 방법을 설명한다.</p>
+<p><code>:global/^/move 0</code>로 전체 줄을 역정렬할 수 있다. <code>move 0</code>가 이동할 줄 번호를 의미하므로, <code>move 10</code>이면 10번째 아래의 모든 줄만 역정렬한다.</p>
 <h2 id="use-cases" style="position:relative;"><a href="#use-cases" aria-label="use cases permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use cases</h2>
 <h3 id="파일-검색" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%BC-%EA%B2%80%EC%83%89" aria-label="파일 검색 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파일 검색</h3>
 <p><a href="https://github.com/junegunn/fzf.vim">fzf.vim</a>이 제공하는 기능 몇가지를 사용한다.</p>
