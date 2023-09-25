@@ -88,6 +88,20 @@ X-APP-TOKEN: {{mtoken}}
 
 스크립트 구문을 http 요청 전에 두면 호출 전에 대한 처리도 가능하다.
 
+### Scratches
+
+프로젝트 생성 없이 간단하게 코드를 실행할 수 있는 파일을 scratch라 한다.
+위 단락의 `.http` 파일도 scratch로 생성해서 관리하면 어느 프로젝트에서나 실행할 수 있어서 접근에 용이하다.
+간단한 예제 코드 조각을 테스트하고 필요할 때마다 찾아보기 좋다.
+
+구글 드라이브나 드랍박스 등 클라우드에 연동해서, 집에서나 회사에서나 접근 가능한 나만의 코드 snippet 저장소로 가꾸는 방법도 좋다.
+
+`command + shift + n`으로 생성할 수 있고, Project View의 가장 하단에 `Show Scratch Files` -> `Scratches`에서 생성한 파일을 확인할 수 있다.
+Package View에서는 `Scratches`가 보이지 않는다.
+
+`Show Scratch Files` 기능으로 새 창에서 파일 목록을 볼 수 있고, 파일 내용 검색도 가능하다.
+나는 Scratch 파일을 자주 사용하고 많이 관리하고 있어서, `option + s`로 단축키를 지정해서 사용하고 있다.
+
 ## DataGrip
 
 ### keymap
