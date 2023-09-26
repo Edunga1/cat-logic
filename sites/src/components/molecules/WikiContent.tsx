@@ -8,12 +8,25 @@ const Container = styled.div`
     text-decoration: none;
   }
 
-  pre {
+  // inline code block style
+  code:not(pre code) {
+    background-color: #f5f5f5;
+    border-radius: .5rem;
+    padding: .2rem .4rem;
+  }
+
+  // code block style
+  pre:has(code) {
     font-size: 85%;
     background-color: #f5f5f5;
     border-radius: .5rem;
     padding: 1rem;
     overflow: auto;
+  }
+
+  // limits image size to prevent image overs container
+  img {
+    max-width: 100%;
   }
 `
 
