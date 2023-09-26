@@ -36,6 +36,10 @@ const Main = styled.div`
       display: none;
     }
   }
+
+  img {
+    max-width: 100%;
+  }
 `
 
 export default function Wiki(
