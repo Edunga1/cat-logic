@@ -413,6 +413,12 @@ lsb = !git branch \
 
 ## `curl`
 
+https://antonz.org/mastering-curl/
+
+curl mastering 가이드. 옵션 설명과 함께 다양한 예제로 안내한다.
+
+### 재시도 `--retry`
+
 `--retry`는 특정 상태 코드에서만 재시도한다.
 메뉴얼에 따르면 `408`, `429`, `500`, `502`, `503`, `504`가 모두이다:
 
@@ -426,3 +432,43 @@ lsb = !git branch \
 따라서 특정 상태 코드만 재시도 하는 거 같은데, 다른 상태코드는 서버에서 명시적으로 내려주었을 가능성이 있으니 재시도하지 않는 것이 옳아 보인다.
 다만, python의 requests나 Spring WebFux의 WebClient의 retry 상태 코드는 공식 문서에서 확인하지 못했다.
 만약 모든 상태에 대해서 재시도 한다면 옵션 사용에 고민이 필요해 보인다.
+
+### URL
+
+URL에 `[]` 사용하면 순차적으로 요청을 보낼 수 있다:
+
+```bash
+$ curl http://httpbin.org/anything/\[8-11\].txt
+{
+  "url": "http://httpbin.org/anything/8.txt"
+}
+{
+  "url": "http://httpbin.org/anything/9.txt"
+}
+{
+  "url": "http://httpbin.org/anything/10.txt"
+}
+{
+  "url": "http://httpbin.org/anything/11.txt"
+}
+```
+
+`[]`는 alphanumeric series를 받으며, leading zero도 사용할 수 있다.
+
+```bash
+$ curl http://httpbin.org/anything/\[008-011\].txt
+{
+  "url": "http://httpbin.org/anything/008.txt"
+}
+{
+  "url": "http://httpbin.org/anything/009.txt"
+}
+{
+  "url": "http://httpbin.org/anything/010.txt"
+}
+{
+  "url": "http://httpbin.org/anything/011.txt"
+}
+```
+
+`httpbin.org`는 HTTP 테스트하기 위한 사이트이므로 위 예제 코드를 바로 돌려볼 수 있다.
