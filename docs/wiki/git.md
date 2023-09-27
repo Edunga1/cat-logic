@@ -243,7 +243,7 @@ This reverts commit 5c54ea679164eaca0bab639667bfcebb88769e63, reversing
 changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 ```
 
-`5c54ea` 되돌려서 parent commit 중 하나인 `b73ce1`로 돌아간다. 물론 새로운 커밋이기 떄문에 hash는 별개다.
+`5c54ea` 되돌려서 parent commit 중 하나인 `b73ce1`로 돌아간다. 물론 새로운 커밋이기 때문에 hash는 별개다.
 
 ## `git log --graph`
 
