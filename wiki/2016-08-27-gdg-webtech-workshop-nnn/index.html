@@ -735,7 +735,7 @@ BUS를 통해 CPU -> GPU 전달한다. 문제는 이 BUS를 통한 커뮤니케�
 <p>오프라인 캐쉬는 이용자가 네트워크 요청시 <strong>서버로 바로 가는 것이 아니라</strong>
 개발자가 어떻게 동작할 것인지 제어할 수 있는 기능이다.</p>
 <h4 id="기능-백그라운드-동기화" style="position:relative;"><a href="#%EA%B8%B0%EB%8A%A5-%EB%B0%B1%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-%EB%8F%99%EA%B8%B0%ED%99%94" aria-label="기능 백그라운드 동기화 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>기능: 백그라운드 동기화</h4>
-<p>위에서 <strong>페이지가 로딩되지 않았을 떄도 동작</strong>한다고 하였다.</p>
+<p>위에서 <strong>페이지가 로딩되지 않았을 때도 동작</strong>한다고 하였다.</p>
 <p>이를 이용하여 사용자가 데이터 입력 중 인터넷이 끊어지더라도 데이터를 저장해 두었다가
 나중에 네트워크 연결이 되면 <strong>앱을 다시 실행하지 않더라도</strong> 데이터를 서버에 보낼 수
 기능을 구현할 수 있다.</p>
@@ -743,8 +743,8 @@ BUS를 통해 CPU -> GPU 전달한다. 문제는 이 BUS를 통한 커뮤니케�
 <blockquote>
 <p>Using service worker you can hijack connections, fabricate, and filter responses. Powerful stuff. While you would use these powers for good, a man-in-the-middle might not. To avoid this, you can only register for service workers on pages served over HTTPS, so we know the service worker the browser receives hasn't been tampered with during its journey through the network.</p>
 </blockquote>
-<p>Https를 필수적으로 사용해야 한다.</p>
-<p>데이터의 신뢰성이 보장되지 않으면 사용자의 의도와는 다른 데이터를 서버에 전송할 수 있기 때문이다.</p>
+<p>HTTPS를 통해 제공되어야만 한다.
+데이터의 신뢰성이 보장되지 않으면 사용자의 의도와는 다른 데이터를 서버에 전송할 수 있기 때문이다.</p>
 <p>Polyfill이 없어서 시스템에서 지원하지 않으면 그냥 동작하지 않는다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 efeuka"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/2016-08-27-gdg-webtech-workshop-nnn/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"

@@ -139,7 +139,7 @@ Normalization Form <strong>D</strong></p>
 </code></pre>
 <p><strong>주의점</strong></p>
 <ul>
-<li>사용자 입력을 데이터베이스에 저장할 때 주의해야 한다. 위 비교 예시처럼 비교 불가하기 떄문에 NFD 그대로 저장하면 SQL 조건절에서 제대로 검색할 수 없다.</li>
+<li>사용자 입력을 데이터베이스에 저장할 때 주의해야 한다. 위 비교 예시처럼 비교 불가하기 때문에 NFD 그대로 저장하면 SQL 조건절에서 제대로 검색할 수 없다.</li>
 <li>정규식에도 제대로 걸리지 않는다. 알려져있는 <code>/ㄱ-힣/</code>의 경우, NFD는 걸리지 않는다. white list로 정규식에 해당하는 문자열만 허용하면 의도치 않은 동작이 될 수도 있다.</li>
 </ul>
 <h4 id="nfd---nfc-변환" style="position:relative;"><a href="#nfd---nfc-%EB%B3%80%ED%99%98" aria-label="nfd   nfc 변환 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NFD -> NFC 변환</h4>

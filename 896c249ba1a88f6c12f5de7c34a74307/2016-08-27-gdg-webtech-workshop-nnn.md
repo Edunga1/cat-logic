@@ -332,7 +332,7 @@ HTTP/2를 사용하려면 https를 사용해야 한다.
 
 #### 기능: 백그라운드 동기화
 
-위에서 **페이지가 로딩되지 않았을 떄도 동작**한다고 하였다.
+위에서 **페이지가 로딩되지 않았을 때도 동작**한다고 하였다.
 
 이를 이용하여 사용자가 데이터 입력 중 인터넷이 끊어지더라도 데이터를 저장해 두었다가
 나중에 네트워크 연결이 되면 **앱을 다시 실행하지 않더라도** 데이터를 서버에 보낼 수
@@ -342,8 +342,7 @@ HTTP/2를 사용하려면 https를 사용해야 한다.
 
 > Using service worker you can hijack connections, fabricate, and filter responses. Powerful stuff. While you would use these powers for good, a man-in-the-middle might not. To avoid this, you can only register for service workers on pages served over HTTPS, so we know the service worker the browser receives hasn't been tampered with during its journey through the network.
 
-Https를 필수적으로 사용해야 한다.
-
+HTTPS를 통해 제공되어야만 한다.
 데이터의 신뢰성이 보장되지 않으면 사용자의 의도와는 다른 데이터를 서버에 전송할 수 있기 때문이다.
 
 Polyfill이 없어서 시스템에서 지원하지 않으면 그냥 동작하지 않는다.
