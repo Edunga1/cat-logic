@@ -472,3 +472,26 @@ $ curl http://httpbin.org/anything/\[008-011\].txt
 ```
 
 `httpbin.org`는 HTTP 테스트하기 위한 사이트이므로 위 예제 코드를 바로 돌려볼 수 있다.
+
+## Tips
+
+### `python -m json.tool`으로 JSON beautify
+
+```bash
+$ echo '{"foo":"bar"}' | python -m json.tool
+{
+    "foo": "bar"
+}
+```
+
+API 마이그레이션 중 응답 diff를 보기 위해서 formatting 일관성을 맞춘다거나,
+위 예제처럼 whitespace를 제거해서 보기 어려운 형태를 바꾸는 등 용도로 유용하다.
+
+### `python -m http.server`로 간단한 웹서버 실행
+
+```bash
+$ python -m http.server
+$ python -m http.server 8080
+```
+
+현재 디렉토리를 호스팅한다. python 2에서는 `python -m SimpleHTTPServer`.
