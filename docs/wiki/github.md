@@ -1,4 +1,6 @@
-# Github API로 Release 된 파일 다운받기
+# GitHub
+
+## Github API로 Release 된 파일 다운받기
 
 [Github API를 사용하기 위한 토큰 발급, 권한 설정 및 인증 방법은 생략](https://developer.github.com/v3/)
 
