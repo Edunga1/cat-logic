@@ -2,14 +2,12 @@ import * as React from "react"
 import styled from "styled-components"
 import Link from "../atoms/Link/Link"
 import ListItem from "../atoms/ListItem/ListItem"
-import theme from "../../constants/theme"
 import device from "../../constants/device"
 
 const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  background: white;
 `
 
 const List = styled.ul`
@@ -17,17 +15,13 @@ const List = styled.ul`
   padding: 0 1rem;
   width: 100%;
   max-width: 600px;
+  font-style: italic;
 
   > * {
     padding: .3rem 0;
-    :not(:last-child) {
-      border-bottom: 1px solid ${theme.colors.accent}55;
-    }
   }
 
   @media (${device.larger}) {
-    border: 1px solid ${theme.colors.accent};
-    border-radius: .5rem;
   }
 `
 
