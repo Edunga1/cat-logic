@@ -473,7 +473,9 @@ $ curl http://httpbin.org/anything/\[008-011\].txt
 
 `httpbin.org`는 HTTP 테스트하기 위한 사이트이므로 위 예제 코드를 바로 돌려볼 수 있다.
 
-## Tips
+## python shell tools
+
+몇몇 파이썬 모듈은 CLI로 제공한다.
 
 ### `python -m json.tool`으로 JSON beautify
 
@@ -486,6 +488,25 @@ $ echo '{"foo":"bar"}' | python -m json.tool
 
 API 마이그레이션 중 응답 diff를 보기 위해서 formatting 일관성을 맞춘다거나,
 위 예제처럼 whitespace를 제거해서 보기 어려운 형태를 바꾸는 등 용도로 유용하다.
+
+---
+
+어떻게 stdout으로 출력하는 지 코드를 좀 살펴봤다.
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser()
+options = parser.parse_args()
+outfile = options.outfile
+
+with outfile:
+  json.dump(obj, outfile, sort_keys=sort_keys, indent=4)
+  outfile.write('\n')
+```
+
+`json.dump` 또는 `json.load`가 받는 인자는 [File object](https://docs.python.org/3/glossary.html#term-file-like-object)로 추상화되어 있다.
+stdout 또한 File object로 쓰기 `write()` 할 수 있어서 함께 처리가능한 것 같다.
 
 ### `python -m http.server`로 간단한 웹서버 실행
 
