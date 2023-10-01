@@ -1,47 +1,9 @@
 import * as React from "react"
 import { graphql, HeadFC, PageProps } from "gatsby"
-import WikiList from "../components/molecules/WikiList"
-import styled from "styled-components"
-import theme from "../constants/theme"
-import device from "../constants/device"
 import "./global.css"
 import { createWikiLink } from "../utils/wiki"
 import { useGatsbyPluginFusejs } from "react-use-fusejs"
-import SearchBox from "../components/molecules/SearchBox"
-
-const StyledMain = styled.main`
-  padding-top: 10%;
-  background-color: ${theme.colors.background};
-  color: ${theme.colors.foreground};
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  place-items: center;
-
-  a {
-    color: ${theme.colors.link};
-  }
-
-  @media (${device.larger}) {
-    padding: 9rem 1rem 3rem 1rem;
-  }
-`
-
-const MainContainer = styled.div`
-  display: grid;
-  place-items: flex-end;
-`
-
-const AltContainer = styled.span`
-  font-size: 0.8rem;
-  color: ${theme.fonts.body};
-`
-
-type WikiItem = {
-    id: string;
-    path: string;
-    title: string;
-}
+import Home, { WikiItem } from "../components/templates/Home"
 
 interface SearchResult {
   item: { name: string; title: string }
@@ -79,15 +41,10 @@ export default function IndexPage(
   }, [query])
 
   return (
-    <StyledMain>
-      <div />
-      <MainContainer>
-        <SearchBox onChange={setQuery} holder="I guess..." />
-        <AltContainer>{items.length} docs</AltContainer>
-        <WikiList items={items} fallback="No results found :(" />
-      </MainContainer>
-      <div />
-    </StyledMain>
+    <Home
+      items={items}
+      setQuery={setQuery}
+    />
   )
 }
 
