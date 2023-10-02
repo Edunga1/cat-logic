@@ -1,3 +1,6 @@
+---
+created: 2016-08-27
+---
 # 2016-08-27 GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"
 
 ## Slides
