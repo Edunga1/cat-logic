@@ -1,5 +1,10 @@
 # Vimwiki
 
+vimwiki 이전에는 [GitBook](https://github.com/GitbookIO/gitbook)을 사용했다.
+오픈소스이며 pdf, epub 등 전자책 변환을 제공하고, 정적 사이트 생성을 제공하고 SEO, Analytics 등 다양한 플러그인이 있는 생태계도 구비되어 있었다.
+하지만 2018년, 기존 버전을 중단하고 저장소도 멈췄다. 새로운 버전은 일부 유료로 제공되고, 클로즈드 소스로 전환되었다.
+더 이상 사용할 이유가 없어진 것이다.
+
 ## 자주 사용하는 기능
 
 * `<leader>ww` wiki index 열기
