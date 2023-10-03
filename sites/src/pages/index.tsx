@@ -5,26 +5,11 @@ import { createWikiLink } from "../utils/wiki"
 import { useGatsbyPluginFusejs } from "react-use-fusejs"
 import Home, { WikiItem } from "../components/templates/Home"
 
-interface SearchResult {
-  item: { name: string; title: string }
-  refIndex: number
-}
-
-function mapSearchResultToWikiItem(result: SearchResult[]): WikiItem[] {
-  return result
-    .map((it, i) => ({
-      id: i.toString(),
-      path: createWikiLink(it.item.name),
-      title: it.item.title ?? "(Untitled)",
-    }))
-}
-
 export default function IndexPage(
   { data }: PageProps<Queries.IndexPageQuery>,
 ) {
   const { nodes } = data.allFile
-  const allItems = nodes.map(({ childMarkdownRemark }, i) => ({
-    id: i.toString(),
+  const allItems = nodes.map(({ childMarkdownRemark }) => ({
     path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),
     title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
   }))
@@ -65,7 +50,6 @@ export const pageQuery = graphql`
           fields {
             slug
           }
-          html
         }
       }
     }
@@ -77,3 +61,16 @@ export const pageQuery = graphql`
     }
   }
 `
+interface SearchResult {
+  item: { name: string; title: string }
+  refIndex: number
+}
+
+function mapSearchResultToWikiItem(result: SearchResult[]): WikiItem[] {
+  return result
+    .map((it, i) => ({
+      id: i.toString(),
+      path: createWikiLink(it.item.name),
+      title: it.item.title ?? "(Untitled)",
+    }))
+}

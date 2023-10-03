@@ -19,7 +19,7 @@ const Container = styled.div`
   }
 
   @media (${device.larger}) {
-    padding: 9rem 1rem 3rem 1rem;
+    padding: 30% 1rem 3rem 1rem;
   }
 `
 
@@ -50,7 +50,6 @@ export default function Home(
 }
 
 export type WikiItem = {
-  id: string;
   path: string;
   title: string;
 }

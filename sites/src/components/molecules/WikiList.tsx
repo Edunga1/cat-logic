@@ -59,8 +59,8 @@ export default function WikiList(
     <Container>
       {hasItems
         ? <List>
-          {items.map((item) => (
-            <ListItem key={item.id}>
+          {items.map((item, i) => (
+            <ListItem key={i}>
               <Link href={item.path}>
                 {item.title}
               </Link>
@@ -74,6 +74,6 @@ export default function WikiList(
 }
 
 interface WikiListProps {
-  items: { id: string; title: string; path: string }[]
+  items: { title: string; path: string }[]
   fallback?: string
 }
