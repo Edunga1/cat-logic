@@ -10,9 +10,6 @@ const Container = styled.div`
   background-color: ${theme.colors.background};
   color: ${theme.colors.foreground};
   overflow: hidden;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  place-items: center;
 
   a {
     color: ${theme.colors.link};
@@ -24,6 +21,8 @@ const Container = styled.div`
 `
 
 const MainContainer = styled.div`
+  width: fit-content;
+  margin: 0 auto;
   display: grid;
   place-items: flex-end;
 `
@@ -38,13 +37,11 @@ export default function Home(
 ) {
   return (
     <Container>
-      <div />
       <MainContainer>
         <SearchBox onChange={setQuery} holder="I guess..." />
         <AltContainer>{items.length} docs</AltContainer>
         <WikiList items={items} fallback="No results found :(" />
       </MainContainer>
-      <div />
     </Container>
   )
 }
