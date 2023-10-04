@@ -2,6 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 import device from "../../constants/device"
 import theme from "../../constants/theme"
+import HomeLogo from "../atoms/HomeLogo/HomeLogo"
 import SearchBox from "../molecules/SearchBox"
 import WikiList from "../molecules/WikiList"
 
@@ -10,13 +11,14 @@ const Container = styled.div`
   background-color: ${theme.colors.background};
   color: ${theme.colors.foreground};
   overflow: hidden;
+  display: grid;
 
   a {
     color: ${theme.colors.link};
   }
 
   @media (${device.larger}) {
-    padding: 30% 1rem 3rem 1rem;
+    padding: 1rem 1rem 3rem 1rem;
   }
 `
 
@@ -37,6 +39,7 @@ export default function Home(
 ) {
   return (
     <Container>
+      <HomeLogo />
       <MainContainer>
         <SearchBox onChange={setQuery} holder="I guess..." />
         <AltContainer>{items.length} docs</AltContainer>
