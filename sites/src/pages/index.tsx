@@ -12,6 +12,7 @@ export default function IndexPage(
   const allItems = nodes.map(({ childMarkdownRemark }) => ({
     path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),
     title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
+    head: childMarkdownRemark?.fields?.head ?? ""
   }))
   const [items, setItems] = React.useState(allItems)
   const [query, setQuery] = React.useState("")
@@ -49,6 +50,7 @@ export const pageQuery = graphql`
           }
           fields {
             slug
+            head
           }
         }
       }
@@ -68,9 +70,9 @@ interface SearchResult {
 
 function mapSearchResultToWikiItem(result: SearchResult[]): WikiItem[] {
   return result
-    .map((it, i) => ({
-      id: i.toString(),
+    .map(it => ({
       path: createWikiLink(it.item.name),
       title: it.item.title ?? "(Untitled)",
+      head: "",
     }))
 }

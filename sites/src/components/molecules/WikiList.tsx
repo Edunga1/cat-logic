@@ -3,11 +3,20 @@ import styled from "styled-components"
 import Link from "../atoms/Link/Link"
 import ListItem from "../atoms/ListItem/ListItem"
 import device from "../../constants/device"
+import theme from "../../constants/theme"
 
 const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+
+  small {
+    margin-left: .5rem;
+    color: ${theme.colors.foreground}
+  }
+  small::before {
+    content: "| "
+  }
 `
 
 const List = styled.ul`
@@ -62,7 +71,7 @@ export default function WikiList(
           {items.map((item, i) => (
             <ListItem key={i}>
               <Link href={item.path}>
-                {item.title}
+                {item.title}<small>{item.head}</small>
               </Link>
             </ListItem>
           ))}
@@ -74,6 +83,6 @@ export default function WikiList(
 }
 
 interface WikiListProps {
-  items: { title: string; path: string }[]
+  items: { title: string; path: string; head?: string }[]
   fallback?: string
 }

@@ -52,5 +52,6 @@ export default function Home(
 export type WikiItem = {
   path: string;
   title: string;
+  head: string;
 }
 
