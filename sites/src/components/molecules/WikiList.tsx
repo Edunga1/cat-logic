@@ -4,6 +4,7 @@ import Link from "../atoms/Link/Link"
 import ListItem from "../atoms/ListItem/ListItem"
 import device from "../../constants/device"
 import theme from "../../constants/theme"
+import ColorfulParagraph from "../atoms/ColorfulParagraph/ColorfulParagraph"
 
 const Container = styled.div`
   width: 100%;
@@ -13,9 +14,6 @@ const Container = styled.div`
   small {
     margin-left: .5rem;
     color: ${theme.colors.foreground}
-  }
-  small::before {
-    content: "| "
   }
 `
 
@@ -34,32 +32,6 @@ const List = styled.ul`
   }
 `
 
-const Fallback = styled.p`
-  font-weight: bold;
-  --bg-size: 400%;
-  --color-one: hsl(15 90% 55%);
-  --color-two: hsl(40 95% 55%);
-  background: linear-gradient(
-      90deg,
-      var(--color-one),
-      var(--color-two),
-      var(--color-one)
-    )
-    0 0 / var(--bg-size) 100%;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  @media (prefers-reduced-motion: no-preference) {
-    animation: move-bg 8s linear infinite;
-    @keyframes move-bg {
-      to {
-        background-position: var(--bg-size) 0;
-      }
-    }
-  }
-`
-
 export default function WikiList(
   { items, fallback }: WikiListProps,
 ) {
@@ -70,13 +42,11 @@ export default function WikiList(
         ? <List>
           {items.map((item, i) => (
             <ListItem key={i}>
-              <Link href={item.path}>
-                {item.title}<small>{item.head}</small>
-              </Link>
+              <Link href={item.path}>{item.title}</Link>{item.head && <small>{item.head}</small>}
             </ListItem>
           ))}
         </List>
-        : <Fallback>{fallback}</Fallback>
+        : <ColorfulParagraph>{fallback}</ColorfulParagraph>
       }
     </Container>
   )
