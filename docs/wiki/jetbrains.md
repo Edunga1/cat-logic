@@ -88,6 +88,18 @@ X-APP-TOKEN: {{mtoken}}
 
 스크립트 구문을 http 요청 전에 두면 호출 전에 대한 처리도 가능하다.
 
+#### Swagger와 OpenAPI 스키마를 이용한 자동 완성
+
+[2023 버전부터](https://www.jetbrains.com/idea/whatsnew/2023-2/) request body의 자동 완성도 제공한다.
+
+![jetbrain schema completion](https://www.jetbrains.com/idea/whatsnew/2023-2/img/2_Swagger_and_OpenAPI_schemas_in_the_HTTP_Client.png)
+
+enum의 경우 특정 값만 받는 필드도 자동완성 된다.
+다만 enum class는 enum 이름을 자동 완성하기 때문에 `@JsonValue`으로 역직렬화할 변수를 변경해도 enum 이름을 자동 완성했다.
+
+이 기능이 도입되면서 insomnia, postman과 비교했을 때 접근성 말고는 뚜렷한 장점이 없었는데,
+이제 intellij 만의 특별한 장점이 생겼다.
+
 ### Scratches
 
 프로젝트 생성 없이 간단하게 코드를 실행할 수 있는 파일을 scratch라 한다.
