@@ -1,6 +1,5 @@
 export default {
   colors: {
-    background: "#F9F9F9",
     foreground: "#333333",
     highlight: "#512DA8",
     link: "#0D47A1",

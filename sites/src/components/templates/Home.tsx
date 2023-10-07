@@ -8,7 +8,6 @@ import WikiList from "../molecules/WikiList"
 
 const Container = styled.div`
   padding-top: 10%;
-  background-color: ${theme.colors.background};
   color: ${theme.colors.foreground};
   overflow: hidden;
   display: grid;
