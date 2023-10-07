@@ -3,6 +3,8 @@ created: 2016-08-27
 ---
 # 2016-08-27 GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"
 
+GDG WebTech 워크샵에 참여해서 들었던 크롬 브라우저를 이용한 성능 측정 방법을 정리한 것
+
 ## Slides
 
 * http://www.slideshare.net/cwdoh/gdg-webtech-1
