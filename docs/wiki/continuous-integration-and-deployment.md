@@ -1,5 +1,7 @@
 # CI/CD
 
+Continuous Integration / Continuous Delivery
+
 **혹시 php project 중에 CI (빌드자동화)를 사용하시는 분들이 있으신가요? 사용하신 경험 있으시면 알려주세요**.\
 https://www.facebook.com/groups/655071604594451/permalink/854257411342535/
 
