@@ -138,8 +138,18 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 hbqlrx">
-<p>JetBrains사 제품에 대한 이야기.</p>
+<p>IntelliJ, DataGrip 등 JetBrains사 제품에 대한 이야기.</p>
+<p>JetBrains의 제품은 연간 구독을 구매하면, 해당 시점의 버전은 영구 라이센스로 지급된다.
+이를 <a href="https://sales.jetbrains.com/hc/ko/articles/207240845">perpetual fallback license, 영구 폴백 라이센스</a>라고 한다.
+<a href="https://www.jetbrains.com/all/">All Products Pack</a>을 구매하면 모든 제품의 영구 라이센스를 받을 수 있다.</p>
+<p>IntelliJ 등 몇몇 도구는 Community Edition이라는 무료 버전이 있다.
+개발하는데 문제는 없으나, 몇 가지 플러그인이 제한된다.</p>
 <h2 id="intellij" style="position:relative;"><a href="#intellij" aria-label="intellij permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IntelliJ</h2>
+<p>무료 버전과의 가장 큰 차이점은 <a href="https://plugins.jetbrains.com/plugin/20221-spring">Spring Plugin</a> 등 플러그인의 제한이다.</p>
+<p>이 플러그인이 없으면 불편하다.
+<a href="https://docs.spring.io/spring-framework/docs/3.0.x/reference/expressions.html">Spel</a> 파싱하지 않아서 하이라이팅, 자동 완성이 되지 않는다.
+pring Bean은 프레임워크에 의해 생성 및 주입되기 때문에, IDE가 unused라고 표시한다.
+이 외에도 Bean이나 Spring 기능에 대한 다양한 편리 기능을 사용할 수 없다. 그러나 개발하지 못하는 것은 아니다.</p>
 <h3 id="wsl2에서-freezing-현상" style="position:relative;"><a href="#wsl2%EC%97%90%EC%84%9C-freezing-%ED%98%84%EC%83%81" aria-label="wsl2에서 freezing 현상 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WSL2에서 Freezing 현상</h3>
 <p>TL;DR: JetBrains Tool 경로를 Windows Defender의 검사 예외로 추가한다.</p>
 <ul>
@@ -243,6 +253,7 @@ Package View에서는 <code>Scratches</code>가 보이지 않는다.</p>
 <p><code>Show Scratch Files</code> 기능으로 새 창에서 파일 목록을 볼 수 있고, 파일 내용 검색도 가능하다.
 나는 Scratch 파일을 자주 사용하고 많이 관리하고 있어서, <code>option + s</code>로 단축키를 지정해서 사용하고 있다.</p>
 <h2 id="datagrip" style="position:relative;"><a href="#datagrip" aria-label="datagrip permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataGrip</h2>
+<p>MySQL Workbench, Sequel Pro 등 몇 가지 무료 데이터베이스 클라이언트를 사용해 보았지만, 유료인 DataGrip이 가장 편리했다.</p>
 <h3 id="keymap" style="position:relative;"><a href="#keymap" aria-label="keymap permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>keymap</h3>
 <table>
 <thead>
@@ -297,6 +308,6 @@ Package View에서는 <code>Scratches</code>가 보이지 않는다.</p>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-9a2e78f4f9db4f617ee4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-75813e24a00d9c44de9f.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-faa6f92374eff2568c08.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-186225f1eb1bc0cc56ca.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-9a2e78f4f9db4f617ee4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-75813e24a00d9c44de9f.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-904e5bbca8441f75dd2b.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-186225f1eb1bc0cc56ca.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="d14b5e5d6658ca7bf803";</script><script src="/cat-logic/webpack-runtime-f200edd2089f238ac672.js" async></script><script src="/cat-logic/framework-3d24f1df4806fe1cdcfc.js" async></script><script src="/cat-logic/app-9a2e78f4f9db4f617ee4.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="fc7b23d368ce75f9c42f";</script><script src="/cat-logic/webpack-runtime-4ced63bf1026c63846b6.js" async></script><script src="/cat-logic/framework-3d24f1df4806fe1cdcfc.js" async></script><script src="/cat-logic/app-9a2e78f4f9db4f617ee4.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
