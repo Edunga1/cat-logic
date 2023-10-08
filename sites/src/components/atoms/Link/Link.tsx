@@ -1,14 +1,19 @@
 import * as React from "react"
+import styled from "styled-components"
 
-const Styles = {
-  textDecoration: "none",
-}
+const A = styled.a`
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
 
 export default function Link(
   { children, href }: { children: React.ReactNode; href: string },
 ) {
   return (
-    <a href={href} style={Styles}>{children}</a>
+    <A href={href}>{children}</A>
   )
 }
 
