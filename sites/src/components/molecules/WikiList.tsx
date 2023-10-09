@@ -2,7 +2,6 @@ import * as React from "react"
 import styled from "styled-components"
 import Link from "../atoms/Link/Link"
 import ListItem from "../atoms/ListItem/ListItem"
-import device from "../../constants/device"
 import ColorfulParagraph from "../atoms/ColorfulParagraph/ColorfulParagraph"
 import Small from "../atoms/Small/Small"
 
@@ -17,13 +16,9 @@ const List = styled.ul`
   padding: 0 1rem;
   width: 100%;
   max-width: 600px;
-  font-style: italic;
 
   > * {
     padding: .3rem 0;
-  }
-
-  @media (${device.larger}) {
   }
 `
 
@@ -37,7 +32,7 @@ export default function WikiList(
         ? <List>
           {items.map((item, i) => (
             <ListItem key={i}>
-              <Link href={item.path}>{item.title}</Link>{item.head && <Small>{item.head}</Small>}
+              <Link href={item.path}>{item.title}</Link>{item.head && <i><Small>{item.head}</Small></i>}
             </ListItem>
           ))}
         </List>
