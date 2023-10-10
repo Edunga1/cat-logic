@@ -28,6 +28,14 @@ const Container = styled.div`
   img {
     max-width: 100%;
   }
+
+  // quote style
+  blockquote {
+    border-left: 4px solid #ddd;
+    padding-left: 1rem;
+    margin-left: 0;
+    font-style: italic;
+  }
 `
 
 export default function WikiContent(
