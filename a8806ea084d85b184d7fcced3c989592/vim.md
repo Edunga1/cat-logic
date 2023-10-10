@@ -1,8 +1,13 @@
 # Vim
 
-vim 보다 [neovim](https://github.com/neovim/neovim).
+터미널 기반 텍스트 편집기.
+
+vim 보다 [neovim](https://github.com/neovim/neovim)을 사용중이다.
 
 My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
+
+창시자인 Bram Moolenaar는 플러그인을 많이 사용하지 않는다고 한다:
+> 사실 저는 배포판에 포함된 플러그인(matchit, termdebug 등)을 제외하고는 플러그인 자체를 많이 사용하지 않습니다. 필요한 기능이 있으면 간단한 것은 바로 만들거나 Vim 베이스에 추가하는 편입니다.
 
 ## neovim
 
@@ -659,3 +664,8 @@ $ readlink -f `which vim`
 
 ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. `/usr/bin/vim.basic`을 가르켜야 한다.
 최근에는 neovim을 사용하고 있어서 이 편이 더 좋을지도.
+
+## 관련 기사
+
+"Vim은 제 인생에서 매우 중요한 부분입니다” Vim 창시자 인터뷰\
+https://yozm.wishket.com/magazine/detail/2183/
