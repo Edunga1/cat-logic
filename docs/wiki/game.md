@@ -1,5 +1,7 @@
 # Game
 
+게임과 관련된 프로그래밍 이야기들.
+
 ## Ultima Online
 
 https://en.wikipedia.org/wiki/Ultima_Online

@@ -1,5 +1,7 @@
 # Testing
 
+테스트 작성 방법. 비-프로그래밍 테스트 관련된 내용도 포함한다.
+
 ## Setup and Teardown
 
 각 테스트를 실행하기 전/후 할 일을 각각 **Setup** **Teardown** 이라한다.

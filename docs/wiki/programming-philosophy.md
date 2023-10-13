@@ -1,5 +1,7 @@
 # 개발 철학
 
+내 개인적인 개발 철학. 언어, 코딩 그리고 Guru.
+
 ## TED - Linus Torvalds: 리눅스의 기본 철학
 
 [TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=ko)
