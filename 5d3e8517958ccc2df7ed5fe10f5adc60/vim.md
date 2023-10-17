@@ -396,6 +396,37 @@ Staged (1)
 M docs/wiki/vim.md
 ```
 
+### rmagatti/auto-session
+
+https://github.com/rmagatti/auto-session
+
+자동으로 세션을 저장하고 복구해주는 neovim 플러그인.
+`vi` 명령어로 인자 없이 열면 최근에 종료한 세션에서 다시 시작한다.
+lua 스크립트에서 `require().setup` 해야해서, neovim만 가능할 듯 싶다.
+
+세션 정보는 `stdpath('data')/sessions`에 저장된다.
+
+Startify에서 시작 화면에서 auto-session이 저장한 세션을 보여주도록 연동해서 사용하고 있다.
+
+```vim
+function s:sessions()
+  let path = stdpath('data').."/sessions/"
+  let sessions = systemlist('ls '.path)
+  return map(sessions, '{
+        \ "line": v:val,
+        \ "cmd": "SessionRestoreFromFile ".path.v:val
+        \ }')
+endfunction
+
+let g:startify_lists = [
+  \ { 'type': function('s:sessions'), 'header': ['   Sessions'] },
+  \ { 'type': 'files',     'header': ['   MRU']            },
+  \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+  \ { 'type': 'commands',  'header': ['   Commands']       },
+  \ ]
+```
+
 ## 용어
 
 ### `-- More --`라고 출력되는 pager
