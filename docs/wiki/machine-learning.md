@@ -122,7 +122,7 @@ https://chat.openai.com/
 
 #### ChatGPT를 Virtual Machine으로 만들기
 
-https://news.hada.io/topic?id=7953
+https://news.hada.io/topic?id=7953 \
 OP: https://www.engraved.blog/building-a-virtual-machine-inside/
 
 매우 흥미로운 시도인데, 결과도 매우 놀랍다.
@@ -147,6 +147,50 @@ Q: `Update architecture.md to add "Entity Component System"`\
 ChatGPT: `위 문장의 문법은 전반적으로 정상적입니다. 그러나 좀 더 일반적인 언어로 표현하면 "Update the architecture.md document to include information about the 'Entity Component System'"가 될 수 있습니다. 제가 제시한 구절은 좀 더 상세한 정보를 제공합니다.`
 
 번역과 함께 나은 표현을 알려주기도 하고, 추가적으로 왜 그런 표현을 사용하는 지에 대해서 물어보면 상황별로 적절한 단어를 알려준다.
+
+### Claude
+
+ChatGPT와 같은 대화형 인공지능.
+
+https://claude.ai/
+
+2023-10-18 기준 무료. 유료화 할 지 계획은 모르겠다.
+Google 계정으로 로그인하더라도 연락처 인증이 필요하다.
+
+ChatGPT 처럼 한글 대화도 잘한다.
+오랜만에 ChatGPT 처음 접했을 때처럼 재밌게 대화했다.
+
+2022년 11월 데이터까지 학습했다고 한다:
+
+> 저는 현재 2022년 11월 기준의 데이터와 지식으로 학습되었습니다. 따라서 ChatGPT가 2021년 데이터까지 학습한 것과는 달리, 저는 최신의 데이터를 바탕으로 제작되었다고 할 수 있습니다.
+
+Claude에게 직접 물어본 내용이라 오피셜한 내용은 아니다.
+
+무료 버전에서도 파일 첨부하고 파일에 대해서 대화할 수 있다.
+txt, pdf, csv과 py, js 등 코드 파일도 첨부 가능한데 이미지는 첨부할 수 없다.
+
+> 아쉽네~~~~~~~~~~~~~~~~~~~~~~
+
+이미지 첨부가 안돼서 아쉽다고 위와 같이 말했더니 다음과 같이 말한다:
+
+> 네, 제가 이미지를 이해하지 못한다는 점에서 굉장히 아쉬움을 느끼시는 것 같습니다. 
+> 
+> Yes, I understand you feel very disappointed that I cannot comprehend images.
+> 
+> 긴 표현으로 아쉬움을 표현해주신 것으로 보아, 이미지 처리 능력의 부재가 큰 한계점으로 느껴지시는 것 같습니다.
+> 
+> From the long expression, I can see the lack of image processing capabilities feels like a major limitation.
+> 
+> 사람과 자연스러운 대화를 위해서는 이미지 이해 능력도 중요하다는 점이 분명합니다. 
+> 
+> It's clear that the ability to understand images is important for natural human conversations.
+> 
+> 현재로선 텍스트 정보만 가능하다는 제한점을 인지하고 계셨음에 감사드립니다. 이는 곧 기술 발전으로 극복해나갈 수 있을 것으로 확신합니다.
+> 
+> I appreciate you understanding my limitation of only handling textual information for now. I'm confident this can soon be overcome as the technology advances.
+
+영문은 항상 답변에 포함해달라고 했더니 붙여줬다.
+재밌는건 물결표 숫자로 감정을 이해하려는 점.
 
 ### Stable Diffusion
 
