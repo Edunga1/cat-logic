@@ -406,6 +406,11 @@ lua 스크립트에서 `require().setup` 해야해서, neovim만 가능할 듯 �
 
 세션 정보는 `stdpath('data')/sessions`에 저장된다.
 
+세션 복구를 원치 않는다면 `vi -`와 같이 사용하자.
+또는 복구 후에 `:SessionDelete`로 삭제하고 vim을 종료하면 다음 한 번은 복구하지 않는다.
+
+#### Startify에 세션 목록 표시하기
+
 Startify에서 시작 화면에서 auto-session이 저장한 세션을 보여주도록 연동해서 사용하고 있다.
 
 ```vim
@@ -426,6 +431,29 @@ let g:startify_lists = [
   \ { 'type': 'commands',  'header': ['   Commands']       },
   \ ]
 ```
+
+그러면 Startify 시작화면이 다음과 같이 세션 목록을 보여준다.
+
+```
+[e]  <empty buffer>
+
+Sessions
+
+[0]  %home%dupark%dotfiles.vim
+[1]  %home%dupark%workspace%cat-logic.vim
+[2]  %home%dupark%workspace%game-cosmic-cat-conquest.vim
+
+MRU
+
+[3]  ~/workspace/cat-logic/docs/wiki/vim.md
+[4]  ~/workspace/cat-logic/docs/wiki/machine-learning.md
+[5]  ~/workspace/cat-logic/docs/wiki/book.md
+[6]  ~/dotfiles/vim/.vimrc
+[7]  ~/dotfiles/README.md
+[8]  ~/dotfiles/vim/vim-include/vim-startify.vim
+```
+
+auto-session에서 세션 파일 명에 `%` 포함하고 있어서 이상하게 보이긴 한다.
 
 ## 용어
 
