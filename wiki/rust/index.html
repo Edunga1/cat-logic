@@ -133,9 +133,93 @@ $ tree -a .
 <p><code>Cargo.toml</code> 파일과 함께 git 저장소가 생성된다.
 hello world를 출력하는 기본적인 코드가 <code>src/main.rs</code>에 작성되어 있다.</p>
 <p>현재 디렉토리를 프로젝트로 만들고 싶다면 <code>cargo init</code> 명령어를 사용한다.</p>
+<p>Rust 코드를 실행해보자. <code>rustc</code>로 컴파일하면 실행 파일이 생성된다:</p>
+<pre><code class="language-bash">$ rustc src/main.rs
+$ ./main
+Hello, world!
+</code></pre>
 <h2 id="sfml-for-rust" style="position:relative;"><a href="#sfml-for-rust" aria-label="sfml for rust permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SFML for Rust</h2>
 <p><a href="https://github.com/jeremyletang/rust-sfml">https://github.com/jeremyletang/rust-sfml</a></p>
-<p><code>cargo add sfml</code></p></div><div class="Comments__Container-sc-1ajj4d9-0 efeuka"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<ol>
+<li>SFML 설치가 필요하다: <code>brew install sfml</code> \</li>
+</ol>
+<p>Homebrew로 설치하면 저장되는 위치를 알고 있어야 한다. osx 기준으로 <code>/opt/homebrew/Cellar/sfml/&#x3C;version></code>에 설치되었다.</p>
+<p>brew 문서에 이에 대한 내용이 전무해서, 일반적으로 설치 후 안내 문구가 뜨는 다른 패키지와 달리 사용 방법을 따로 찾아봐야 했다.</p>
+<ol start="2">
+<li>
+<p><code>cargo add sfml</code>로 sfml crate 추가한다.</p>
+</li>
+<li>
+<p><code>main.rs</code>를 작성하는데, rust-sfml에 있는 예제 코드를 가져왔다:</p>
+</li>
+</ol>
+<pre><code class="language-rust">extern crate sfml;
+
+use sfml::{
+    graphics::{Color, CustomShape, CustomShapePoints, RenderTarget, RenderWindow, Shape},
+    system::Vector2f,
+    window::{Event, Key, Style},
+};
+
+#[derive(Clone, Copy)]
+pub struct TriangleShape;
+
+impl CustomShapePoints for TriangleShape {
+    fn point_count(&#x26;self) -> usize {
+        3
+    }
+
+    fn point(&#x26;self, point: usize) -> Vector2f {
+        match point {
+            0 => Vector2f { x: 20., y: 580. },
+            1 => Vector2f { x: 400., y: 20. },
+            2 => Vector2f { x: 780., y: 580. },
+            p => panic!("Non-existent point: {p}"),
+        }
+    }
+}
+
+fn main() {
+    let mut window = RenderWindow::new(
+        (800, 600),
+        "Custom shape",
+        Style::CLOSE,
+        &#x26;Default::default(),
+    );
+    window.set_vertical_sync_enabled(true);
+
+    let mut shape = CustomShape::new(Box::new(TriangleShape));
+    shape.set_fill_color(Color::RED);
+    shape.set_outline_color(Color::GREEN);
+    shape.set_outline_thickness(3.);
+
+    loop {
+        while let Some(event) = window.poll_event() {
+            match event {
+                Event::Closed
+                | Event::KeyPressed {
+                    code: Key::Escape, ..
+                } => return,
+                _ => {}
+            }
+        }
+
+        window.clear(Color::BLACK);
+        window.draw(&#x26;shape);
+        window.display();
+    }
+}
+</code></pre>
+<ol start="4">
+<li>빌드 시 SFML 환경 변수<code>SFML_INCLUDE_DIR</code>, <code>SFML_LIBS_DIR</code> 2개를 전달해야 한다. \</li>
+</ol>
+<p>Homebrew로 설치했기 때문에 해당 경로를 전달했다.</p>
+<pre><code class="language-bash">$ SFML_INCLUDE_DIR=/opt/homebrew/Cellar/sfml/2.6.0/include SFML_LIBS_DIR=/opt/homebrew/Cellar/sfml/2.6.0/lib/ cargo build
+</code></pre>
+<ol start="5">
+<li>실행 파일을 실행해 본다: <code>./target/debug/&#x3C;project-name></code></li>
+</ol>
+<p>cargo build 대신 삐르게 실핼하는 방법을 좀 찾아봐야겠다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 efeuka"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
