@@ -145,3 +145,88 @@ https://www.youtube.com/@FamTrinli
 
 SFML을 이용해 테트리스, 레이싱 게임, 애니팡 like 게임을 만드는 시리즈.
 배속이지만, 5분이내로 짧게 요약하고 있다. 상세설명 란에 코드도 공개하고 있다.
+
+## SFML for Rust
+
+SFML의 [Rust](./rust.md) binding.
+
+https://github.com/jeremyletang/rust-sfml
+
+1. SFML 설치가 필요하다: `brew install sfml` \
+Homebrew로 설치하면 저장되는 위치를 알고 있어야 한다. osx 기준으로 `/opt/homebrew/Cellar/sfml/<version>`에 설치되었다.
+
+brew 문서에 이에 대한 내용이 전무해서, 일반적으로 설치 후 안내 문구가 뜨는 다른 패키지와 달리 사용 방법을 따로 찾아봐야 했다.
+
+2. `cargo add sfml`로 sfml crate 추가한다.
+
+3. `main.rs`를 작성하는데, rust-sfml에 있는 예제 코드를 가져왔다:
+
+```rust
+extern crate sfml;
+
+use sfml::{
+    graphics::{Color, CustomShape, CustomShapePoints, RenderTarget, RenderWindow, Shape},
+    system::Vector2f,
+    window::{Event, Key, Style},
+};
+
+#[derive(Clone, Copy)]
+pub struct TriangleShape;
+
+impl CustomShapePoints for TriangleShape {
+    fn point_count(&self) -> usize {
+        3
+    }
+
+    fn point(&self, point: usize) -> Vector2f {
+        match point {
+            0 => Vector2f { x: 20., y: 580. },
+            1 => Vector2f { x: 400., y: 20. },
+            2 => Vector2f { x: 780., y: 580. },
+            p => panic!("Non-existent point: {p}"),
+        }
+    }
+}
+
+fn main() {
+    let mut window = RenderWindow::new(
+        (800, 600),
+        "Custom shape",
+        Style::CLOSE,
+        &Default::default(),
+    );
+    window.set_vertical_sync_enabled(true);
+
+    let mut shape = CustomShape::new(Box::new(TriangleShape));
+    shape.set_fill_color(Color::RED);
+    shape.set_outline_color(Color::GREEN);
+    shape.set_outline_thickness(3.);
+
+    loop {
+        while let Some(event) = window.poll_event() {
+            match event {
+                Event::Closed
+                | Event::KeyPressed {
+                    code: Key::Escape, ..
+                } => return,
+                _ => {}
+            }
+        }
+
+        window.clear(Color::BLACK);
+        window.draw(&shape);
+        window.display();
+    }
+}
+```
+
+4. 빌드 시 SFML 환경 변수`SFML_INCLUDE_DIR`, `SFML_LIBS_DIR` 2개를 전달해야 한다. \
+Homebrew로 설치했기 때문에 해당 경로를 전달했다.
+
+```bash
+$ SFML_INCLUDE_DIR=/opt/homebrew/Cellar/sfml/2.6.0/include SFML_LIBS_DIR=/opt/homebrew/Cellar/sfml/2.6.0/lib/ cargo build
+```
+
+5. 실행 파일을 실행해 본다: `./target/debug/<project-name>`
+
+cargo build 대신 삐르게 실핼하는 방법을 좀 찾아봐야겠다.
