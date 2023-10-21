@@ -1,9 +1,12 @@
 # SFML
 
 Simple and Fast Multimedia Library. 줄여서 SFML이라 한다.
-C++ 기반 멀티미디어를 가져오거나 그리고, Window를 만드는 API를 제공한다.
+멀티미디어를 가져오거나 그리고, Window를 만드는 API를 제공한다.
 
-SDL코드라는 그래픽 라이브러리가 유명한데, SFML은 나오지 얼마되지 않았지만, 좋다고 한다. 오픈헥사곤도 이것으로 만들어 졌다.
+SDL코드라는 그래픽 라이브러리가 유명한데, SFML은 나오지 얼마되지 않았지만, 좋다고 한다. 오픈헥사곤도 SFML로 만들어 졌다.
+
+C++ 라이브러리로 사용하거나 다른 언어의 바인딩을 통해 사용할 수 있다.
+[rust](https://github.com/jeremyletang/rust-sfml), [python](https://github.com/intjelic/python-sfml), [Node.js](https://github.com/XadillaX/sfml.js) 등.
 
 [공식문서](https://www.sfml-dev.org/tutorials/2.5/graphics-draw.php)에 나와있는 튜토리얼 중 하나:
 
