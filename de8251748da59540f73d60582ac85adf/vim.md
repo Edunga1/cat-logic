@@ -288,6 +288,7 @@ endfunction
 > 	ftplugin/<filetype>/<name>.vim
 
 ```vim
+" ftplugin/vimwiki.vim
 command! -buffer VimwikiSmartLink call vimwiki_link#base#follow_link()
 
 nnoremap <silent><script><buffer> <Plug>VimwikiSmartLink :VimwikiSmartLink<CR>
@@ -296,6 +297,8 @@ nnoremap <CR><CR> <Plug>VimwikiSmartLink
 
 보통 파일 타입에 맞는 명령어를 정의하거나 매핑을 생성하고
 `autoload`의 함수를 호출하는 구조로 많이 사용하는 거 같다.
+
+nvim이라면 `~/.config/nvim/ftplugin` 디렉토리에 파일을 만들면 된다.
 
 ### `<Plug>` `<SID>`
 

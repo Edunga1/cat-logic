@@ -592,13 +592,15 @@ endfunction
 ftplugin/<filetype>_<name>.vim
 ftplugin/<filetype>/<name>.vim</p>
 </blockquote>
-<pre><code class="language-vim">command! -buffer VimwikiSmartLink call vimwiki_link#base#follow_link()
+<pre><code class="language-vim">" ftplugin/vimwiki.vim
+command! -buffer VimwikiSmartLink call vimwiki_link#base#follow_link()
 
 nnoremap &#x3C;silent>&#x3C;script>&#x3C;buffer> &#x3C;Plug>VimwikiSmartLink :VimwikiSmartLink&#x3C;CR>
 nnoremap &#x3C;CR>&#x3C;CR> &#x3C;Plug>VimwikiSmartLink
 </code></pre>
 <p>보통 파일 타입에 맞는 명령어를 정의하거나 매핑을 생성하고
 <code>autoload</code>의 함수를 호출하는 구조로 많이 사용하는 거 같다.</p>
+<p>nvim이라면 <code>~/.config/nvim/ftplugin</code> 디렉토리에 파일을 만들면 된다.</p>
 <h3 id="plug-sid" style="position:relative;"><a href="#plug-sid" aria-label="plug sid permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&#x3C;Plug></code> <code>&#x3C;SID></code></h3>
 <p><code>:h using-&#x3C;Plug></code></p>
 <blockquote>
