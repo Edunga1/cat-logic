@@ -1,3 +1,6 @@
+---
+created: 2023-02-26
+---
 # Computer Graphics
 
 ## 화가 알고리즘(painter's algorithm)

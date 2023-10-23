@@ -1,3 +1,6 @@
+---
+created: 2023-01-07
+---
 # Data analysis
 
 ## 이중차분법

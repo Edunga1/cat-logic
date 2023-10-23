@@ -1,3 +1,6 @@
+---
+created: 2023-10-08
+---
 # Elasticsearch
 
 [Apache Lucene](https://lucene.apache.org/core/) 라이브러리 기반 검색엔진이다.

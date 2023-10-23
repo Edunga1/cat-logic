@@ -1,3 +1,6 @@
+---
+created: 2023-02-04
+---
 # JetBrains
 
 IntelliJ, DataGrip 등 JetBrains사 제품에 대한 이야기.

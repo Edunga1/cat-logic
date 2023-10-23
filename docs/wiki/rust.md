@@ -1,3 +1,6 @@
+---
+created: 2023-10-19
+---
 # Rust Programming Language
 
 https://www.rust-lang.org/
