@@ -109,7 +109,7 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p>When searching for DAGs inside the DAG_FOLDER, Airflow only considers Python files that contain the strings airflow and dag (case-insensitively) as an optimization.</p>
 </blockquote>
 <p><code>airflow</code>와 <code>dag</code> 문자열을 포함하는 파이썬 파일만 DAG 파일로 인식한다.</p>
-<p>DAG 스크립트를 모듈화한다고 DAG 생성하는 부분을 중앙집중화한다면 DAG 파일을 인식하지 못할 수 있으니 주의해야 한다.</p>
+<p>DAG 스크립트를 모듈화한다고 DAG 생성하는 부분을 분리한다면 DAG 파일을 인식하지 못할 수 있으니 주의해야 한다.</p>
 <blockquote>
 <p>To consider all Python files instead, disable the DAG_DISCOVERY_SAFE_MODE configuration flag.</p>
 </blockquote>
