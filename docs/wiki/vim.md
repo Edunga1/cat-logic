@@ -691,7 +691,6 @@ ref. https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-58995
 vimwiki로 문서 수정할 때, `<cr>` *엔터를 꾹 누르고 있으면 점점 느려지는* 문제.
 vimwiki가 키보드 엔터 시 함수 호출이 많다. 그래서 더욱 돋보이는 듯 하다.
 
-프로파일링 결과:
 ```
 FUNCTIONS SORTED ON TOTAL TIME
 count  total (s)   self (s)  function
@@ -704,11 +703,17 @@ count  total (s)   self (s)  function
    16   0.087560   0.002484  airline#check_mode()
 ```
 
-colorscheme 옵션을 제거하면 괜찮다.
+프로파일링 해보니, 엔터가 입력될 떄 마다 거의 초단위로 시간이 소요되었다.
+
+결론은 colorscheme 옵션을 제거하면 괜찮다. 프로파일링으로는 딱히 힌트를 얻지 못했다.
 `soliarized`로 사용하고 있었다:
+
 ```vim
 colorscheme solarized
 ```
+
+플러그인을 하나씩 제외하면서 테스트하는 것으로 원인을 찾을 수 있었다.
+기본 테마도 나름 볼만하다 :|
 
 `:echo g:colors_name`로 현재 colorscheme을 알 수 있다. 변수를 찾을 수 없으면 사용하지 않는 것.
 
