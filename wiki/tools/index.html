@@ -235,6 +235,15 @@ Username: <code>shiori</code> Password: <code>gopher</code></p>
 Browser 모드와 Workbench 모드가 있는데, Workbench 모드가 익숙한 에디터 형태로 쿼리한다.
 이 에디터에서 공식 문서 수준의 자동 완성 기능을 제공하는데 매우 편리하다.</p>
 <h2 id="api-client-비교-postman-insomnia-intellij-builtin-http" style="position:relative;"><a href="#api-client-%EB%B9%84%EA%B5%90-postman-insomnia-intellij-builtin-http" aria-label="api client 비교 postman insomnia intellij builtin http permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API Client 비교 Postman, Insomnia, IntelliJ builtin <code>.http</code></h2>
+<p>⚠️  2023년 9월. Insomnia가 버전 8.0.0으로 넘어오면서 로그인을 하도록 정책을 변경했다.
+그러면서 기존의 로컬 데이터는 모두 사라지는 현상이 발생한다.
+로그인하지 않아도 로컬 작업을 시작할 순 있지만 업데이트 이전에 사용하던 데이터를 불러오지는 않는다.
+데이터 자체는 로컬 어딘가에 저장이 되어 있나보다. 나는 GitHub Private Repository에 연동해 두었기 때문에 push 했던 내용은 저장되어 있다.
+확실치 않은데, Git 로그인 연동은 있지만 개인 저장소 동기화 방식은 사라진 듯하다. 이 기능 때문에 사용했던터라 사용 목적을 잃었다.</p>
+<p>이번 정책은 매우 불합리하고 공격적이므로, Insomnia를 더 이상 사용하지 않는 편이 낫겠다.</p>
+<p>Insomnia의 8.0 이전 Fork인 <a href="https://github.com/ArchGPT/insomnium">Insomnium</a>이 있다.
+다만 Homebrew 설치를 아직 제공하지 않는다. 이걸 사용하거나 다른 대체제를 찾아야겠다.</p>
+<hr>
 <p>standalone 버전인 Postman, Insomnia 그리고 IntelliJ 내장형 <code>.http</code>. 사용해보고 비교한다.</p>
 <p>꼭 필요로 하는 기능은 다음과 같다:</p>
 <ul>
