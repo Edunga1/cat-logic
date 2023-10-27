@@ -92,6 +92,11 @@ Browser 모드와 Workbench 모드가 있는데, Workbench 모드가 익숙한 �
 
 이번 정책은 매우 불합리하고 공격적이므로, Insomnia를 더 이상 사용하지 않는 편이 낫겠다.
 
+Insomnia의 8.0 정책에 대한 불만들:
+- [List all my stuff after the upgrade to 8.0.0](https://github.com/Kong/insomnia/issues/6606)
+- [Upgrading to Insomnia 8 has deleted or hidden all of my queries and configuration](https://github.com/Kong/insomnia/issues/6585)
+- [enshittification / needing an account](https://github.com/Kong/insomnia/issues/6577)
+
 Insomnia의 8.0 이전 Fork인 [Insomnium](https://github.com/ArchGPT/insomnium)이 있다.
 다만 Homebrew 설치를 아직 제공하지 않는다. 이걸 사용하거나 다른 대체제를 찾아야겠다.
 
