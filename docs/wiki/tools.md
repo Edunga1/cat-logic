@@ -1,3 +1,6 @@
+---
+created: 2019-09-28
+---
 # 개발/비개발 도구
 
 커맨드라인 도구는 [shell](./shell.md)에서 관리한다.
@@ -81,6 +84,19 @@ Browser 모드와 Workbench 모드가 있는데, Workbench 모드가 익숙한 �
 
 ## API Client 비교 Postman, Insomnia, IntelliJ builtin `.http`
 
+⚠️  2023년 9월. Insomnia가 버전 8.0.0으로 넘어오면서 로그인을 하도록 정책을 변경했다.
+그러면서 기존의 로컬 데이터는 모두 사라지는 현상이 발생한다.
+로그인하지 않아도 로컬 작업을 시작할 순 있지만 업데이트 이전에 사용하던 데이터를 불러오지는 않는다.
+데이터 자체는 로컬 어딘가에 저장이 되어 있나보다. 나는 GitHub Private Repository에 연동해 두었기 때문에 push 했던 내용은 저장되어 있다.
+확실치 않은데, Git 로그인 연동은 있지만 개인 저장소 동기화 방식은 사라진 듯하다. 이 기능 때문에 사용했던터라 사용 목적을 잃었다.
+
+이번 정책은 매우 불합리하고 공격적이므로, Insomnia를 더 이상 사용하지 않는 편이 낫겠다.
+
+Insomnia의 8.0 이전 Fork인 [Insomnium](https://github.com/ArchGPT/insomnium)이 있다.
+다만 Homebrew 설치를 아직 제공하지 않는다. 이걸 사용하거나 다른 대체제를 찾아야겠다.
+
+---
+
 standalone 버전인 Postman, Insomnia 그리고 IntelliJ 내장형 `.http`. 사용해보고 비교한다.
 
 꼭 필요로 하는 기능은 다음과 같다:
@@ -118,7 +134,7 @@ IntelliJ 버전에 따른 변경사항이 있는 상황에서, 라이센스 문�
 그리고 이쪽이 부가기능이라 기능이 좀 부실하다. 개발 도구가 IntelliJ라면 접근성은 가장 좋다. Endpoints, Spring Annotation으로부터 바로 생성할 수도 있다.
 
 IntelliJ가 업데이트될 때 마다 이 기능을 많이 개선되고 있다.
-[2023 버전부터는 body에 대한 필드와 값도 자동완성](jetbrains.md)을 지원한다.
+[2023 버전부터는 body에 대한 필드와 값도 자동완성](./jetbrains.md)을 지원한다.
 
 ## IntelliJ IDEA, DataGrip 버전을 fallback 버전으로 다운그레이드했다.
 
