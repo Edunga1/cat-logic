@@ -3,11 +3,11 @@ created: 2023-02-25
 ---
 # Gatsby
 
-https://github.com/gatsbyjs/gatsby
+React 기반 웹사이트 프레임워크.
 
 > the fastest frontend for the headless web. Build modern websites with React.
 
-React를 이용한 웹사이트 제작 프레임워크.
+https://github.com/gatsbyjs/gatsby
 
 ## GraphQL 타입 자동 생성하기
 
