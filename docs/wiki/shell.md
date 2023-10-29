@@ -81,6 +81,30 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
 
+## Redirections
+
+https://www.gnu.org/software/bash/manual/html_node/Redirections.html
+
+링크에 나오는 내용. 다음 2개는 결과가 다르다.
+순서에 따라 다른 동작을 하므로 주의할 필요가 있다.
+
+```bash
+# 1
+ls > dirlist 2>&1
+```
+
+```bash
+# 2
+ls 2>&1 > dirlist
+```
+
+\#1은 stdout을 _dirlist_로 리다이렉트하고, stderr를 stdout으로 리다이렉트하는데,
+stdout은 이미 _dirlist_로 리다이렉트되었으므로 stderr도 _dirlist_로 리다이렉트된다.
+결론은 stdout과 stderr 모두 _dirlist_로 리다이렉트된다.
+
+반면에 \#2는 stderr을 stdout으로 리다이렉트하고, stdout을 _dirlist_로 리다이렉트한다.
+결론은 각각 _dirlist_와 stdout으로 리다이렉트된다.
+
 ## Built-in Commands
 
 ### time - 명령어 실행시간 측정
