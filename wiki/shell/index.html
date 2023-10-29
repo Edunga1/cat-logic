@@ -77,7 +77,7 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p><a href="#shell-%EB%AA%85%EB%A0%B9%EC%96%B4">Shell 명령어</a></p>
 <ul>
 <li>
-<p><a href="#man---%EB%AA%85%EB%A0%B9%EC%96%B4-%EB%A7%A4%EB%89%B4%EC%96%BC"><code>man</code> - 명령어 매뉴얼</a></p>
+<p><a href="#man---%EB%A7%A4%EB%89%B4%EC%96%BC">man - 매뉴얼</a></p>
 <ul>
 <li><a href="#command1%EC%97%90%EC%84%9C-%EC%88%AB%EC%9E%90%EC%9D%98-%EC%9D%98%EB%AF%B8"><code>COMMAND(1)</code>에서 숫자의 의미?</a></li>
 </ul>
@@ -86,10 +86,28 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p><a href="#set--ex"><code>set -ex</code></a></p>
 </li>
 <li>
-<p><a href="#sed---%ED%8C%8C%EC%9D%BC-%ED%8A%B9%EC%A0%95-%EB%9D%BC%EC%9D%B8%EB%A7%8C-%EC%9D%BD%EA%B8%B0"><code>sed</code> - 파일 특정 라인만 읽기</a></p>
+<p><a href="#bashrc-rc%EC%9D%98-%EC%9D%98%EB%AF%B8">.bash<strong>rc</strong> rc의 의미?</a></p>
 </li>
 <li>
-<p><a href="#nohup---%EB%A9%88%EC%B6%94%EC%A7%80-%EC%95%8A%EA%B3%A0-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0"><code>nohup</code> - 멈추지 않고 명령어 실행하기</a></p>
+<p><a href="#parameter-fallback-default-value">parameter fallback (default value)</a></p>
+</li>
+<li>
+<p><a href="#redirections">Redirections</a></p>
+</li>
+<li>
+<p><a href="#built-in-commands">Built-in Commands</a></p>
+<ul>
+<li>
+<p><a href="#time---%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%EC%8B%9C%EA%B0%84-%EC%B8%A1%EC%A0%95">time - 명령어 실행시간 측정</a></p>
+</li>
+<li>
+<p><a href="#readlink---%EC%8B%AC%EB%B3%BC%EB%A6%AD-%EB%A7%81%ED%81%AC-%EA%B2%BD%EB%A1%9C-%ED%99%95%EC%9D%B8">readlink - 심볼릭 링크 경로 확인</a></p>
+</li>
+<li>
+<p><a href="#sed---%ED%8C%8C%EC%9D%BC-%ED%8A%B9%EC%A0%95-%EB%9D%BC%EC%9D%B8%EB%A7%8C-%EC%9D%BD%EA%B8%B0">sed - 파일 특정 라인만 읽기</a></p>
+</li>
+<li>
+<p><a href="#nohup---%EB%A9%88%EC%B6%94%EC%A7%80-%EC%95%8A%EA%B3%A0-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0">nohup - 멈추지 않고 명령어 실행하기</a></p>
 <ul>
 <li>
 <p><a href="#stdout%EC%9D%80-nohupout%EC%97%90-%EC%A0%80%EC%9E%A5%EB%90%9C%EB%8B%A4">stdout은 <code>nohup.out</code>에 저장된다.</a></p>
@@ -107,14 +125,7 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </li>
 </ul>
 </li>
-<li>
-<p><a href="#bashrc-rc%EC%9D%98-%EC%9D%98%EB%AF%B8">.bash<strong>rc</strong> rc의 의미?</a></p>
-</li>
-<li>
-<p><a href="#ping-%EB%AA%85%EB%A0%B9%EC%96%B4"><code>ping</code> 명령어</a></p>
-</li>
-<li>
-<p><a href="#readlink">readlink</a></p>
+</ul>
 </li>
 <li>
 <p><a href="#tools">Tools</a></p>
@@ -132,14 +143,6 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li><a href="#%EC%A0%84%EC%97%AD%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%A0-%EA%B2%BD%EC%9A%B0">전역적으로 사용할 경우</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li>
-<p><a href="#parameter-fallback-default-value">parameter fallback (default value)</a></p>
-</li>
-<li>
-<p><a href="#time-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%EC%8B%9C%EA%B0%84-%EC%B8%A1%EC%A0%95"><code>time</code> 명령어 실행시간 측정</a></p>
-</li>
 <li>
 <p><a href="#fzf">FZF</a></p>
 <ul>
@@ -152,10 +155,15 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#curl"><code>curl</code></a></p>
+<p><a href="#curl">curl</a></p>
 <ul>
 <li><a href="#%EC%9E%AC%EC%8B%9C%EB%8F%84---retry">재시도 <code>--retry</code></a></li>
 <li><a href="#url">URL</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#ping">ping</a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -172,7 +180,7 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p><a href="#shell-%EB%AA%85%EB%A0%B9%EC%96%B4">Shell 명령어</a></p>
 <ul>
 <li>
-<p><a href="#man---%EB%AA%85%EB%A0%B9%EC%96%B4-%EB%A7%A4%EB%89%B4%EC%96%BC"><code>man</code> - 명령어 매뉴얼</a></p>
+<p><a href="#man---%EB%A7%A4%EB%89%B4%EC%96%BC">man - 매뉴얼</a></p>
 <ul>
 <li><a href="#command1%EC%97%90%EC%84%9C-%EC%88%AB%EC%9E%90%EC%9D%98-%EC%9D%98%EB%AF%B8"><code>COMMAND(1)</code>에서 숫자의 의미?</a></li>
 </ul>
@@ -181,10 +189,28 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <p><a href="#set--ex"><code>set -ex</code></a></p>
 </li>
 <li>
-<p><a href="#sed---%ED%8C%8C%EC%9D%BC-%ED%8A%B9%EC%A0%95-%EB%9D%BC%EC%9D%B8%EB%A7%8C-%EC%9D%BD%EA%B8%B0"><code>sed</code> - 파일 특정 라인만 읽기</a></p>
+<p><a href="#bashrc-rc%EC%9D%98-%EC%9D%98%EB%AF%B8">.bash<strong>rc</strong> rc의 의미?</a></p>
 </li>
 <li>
-<p><a href="#nohup---%EB%A9%88%EC%B6%94%EC%A7%80-%EC%95%8A%EA%B3%A0-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0"><code>nohup</code> - 멈추지 않고 명령어 실행하기</a></p>
+<p><a href="#parameter-fallback-default-value">parameter fallback (default value)</a></p>
+</li>
+<li>
+<p><a href="#redirections">Redirections</a></p>
+</li>
+<li>
+<p><a href="#built-in-commands">Built-in Commands</a></p>
+<ul>
+<li>
+<p><a href="#time---%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%EC%8B%9C%EA%B0%84-%EC%B8%A1%EC%A0%95">time - 명령어 실행시간 측정</a></p>
+</li>
+<li>
+<p><a href="#readlink---%EC%8B%AC%EB%B3%BC%EB%A6%AD-%EB%A7%81%ED%81%AC-%EA%B2%BD%EB%A1%9C-%ED%99%95%EC%9D%B8">readlink - 심볼릭 링크 경로 확인</a></p>
+</li>
+<li>
+<p><a href="#sed---%ED%8C%8C%EC%9D%BC-%ED%8A%B9%EC%A0%95-%EB%9D%BC%EC%9D%B8%EB%A7%8C-%EC%9D%BD%EA%B8%B0">sed - 파일 특정 라인만 읽기</a></p>
+</li>
+<li>
+<p><a href="#nohup---%EB%A9%88%EC%B6%94%EC%A7%80-%EC%95%8A%EA%B3%A0-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0">nohup - 멈추지 않고 명령어 실행하기</a></p>
 <ul>
 <li>
 <p><a href="#stdout%EC%9D%80-nohupout%EC%97%90-%EC%A0%80%EC%9E%A5%EB%90%9C%EB%8B%A4">stdout은 <code>nohup.out</code>에 저장된다.</a></p>
@@ -202,14 +228,7 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </li>
 </ul>
 </li>
-<li>
-<p><a href="#bashrc-rc%EC%9D%98-%EC%9D%98%EB%AF%B8">.bash<strong>rc</strong> rc의 의미?</a></p>
-</li>
-<li>
-<p><a href="#ping-%EB%AA%85%EB%A0%B9%EC%96%B4"><code>ping</code> 명령어</a></p>
-</li>
-<li>
-<p><a href="#readlink">readlink</a></p>
+</ul>
 </li>
 <li>
 <p><a href="#tools">Tools</a></p>
@@ -227,14 +246,6 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li><a href="#%EC%A0%84%EC%97%AD%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%A0-%EA%B2%BD%EC%9A%B0">전역적으로 사용할 경우</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li>
-<p><a href="#parameter-fallback-default-value">parameter fallback (default value)</a></p>
-</li>
-<li>
-<p><a href="#time-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%EC%8B%9C%EA%B0%84-%EC%B8%A1%EC%A0%95"><code>time</code> 명령어 실행시간 측정</a></p>
-</li>
 <li>
 <p><a href="#fzf">FZF</a></p>
 <ul>
@@ -247,10 +258,15 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#curl"><code>curl</code></a></p>
+<p><a href="#curl">curl</a></p>
 <ul>
 <li><a href="#%EC%9E%AC%EC%8B%9C%EB%8F%84---retry">재시도 <code>--retry</code></a></li>
 <li><a href="#url">URL</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#ping">ping</a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -263,7 +279,7 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 bggmYT">
-<h2 id="man---명령어-매뉴얼" style="position:relative;"><a href="#man---%EB%AA%85%EB%A0%B9%EC%96%B4-%EB%A7%A4%EB%89%B4%EC%96%BC" aria-label="man   명령어 매뉴얼 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>man</code> - 명령어 매뉴얼</h2>
+<h2 id="man---매뉴얼" style="position:relative;"><a href="#man---%EB%A7%A4%EB%89%B4%EC%96%BC" aria-label="man   매뉴얼 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>man - 매뉴얼</h2>
 <p>어떤 명령이든 <code>man COMMAND</code>로 메뉴얼을 확인하자. 내장 명령어라면 대부분 제공한다.</p>
 <p><a href="https://github.com/tldr-pages/tldr">tldr</a> 도구도 좋다.
 브라우저로 검색할 필요 없이 <code>tldr COMMAND</code>로 간단한 사용 예제도 볼 수 있다.</p>
@@ -302,7 +318,59 @@ The sections of the manual are:
 <li><code>-x</code>: 실행하는 명령어를 출력한다.</li>
 </ul>
 <p>디버깅용으로 유용하다 함.</p>
-<h2 id="sed---파일-특정-라인만-읽기" style="position:relative;"><a href="#sed---%ED%8C%8C%EC%9D%BC-%ED%8A%B9%EC%A0%95-%EB%9D%BC%EC%9D%B8%EB%A7%8C-%EC%9D%BD%EA%B8%B0" aria-label="sed   파일 특정 라인만 읽기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>sed</code> - 파일 특정 라인만 읽기</h2>
+<h2 id="bashrc-rc의-의미" style="position:relative;"><a href="#bashrc-rc%EC%9D%98-%EC%9D%98%EB%AF%B8" aria-label="bashrc rc의 의미 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.bash<strong>rc</strong> rc의 의미?</h2>
+<p>Run Commands.</p>
+<p><a href="https://superuser.com/questions/173165/what-does-the-rc-in-bashrc-etc-mean">https://superuser.com/questions/173165/what-does-the-rc-in-bashrc-etc-mean</a><br>
+<a href="https://en.wikipedia.org/wiki/RUNCOM">https://en.wikipedia.org/wiki/RUNCOM</a></p>
+<p><code>.bashrc</code>, <code>.npmrc</code> 등 자주 보여서 찾아봤다.</p>
+<h2 id="parameter-fallback-default-value" style="position:relative;"><a href="#parameter-fallback-default-value" aria-label="parameter fallback default value permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>parameter fallback (default value)</h2>
+<pre><code>echo ${VARIABLE:-word}
+</code></pre>
+<p><code>$VARIABLE</code>이 null 또는 unset 상태면 <code>word</code>를 반환한다.</p>
+<p>oh-my-zsh의 사용 예시:</p>
+<pre><code class="language-bash">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+</code></pre>
+<p><code>$ZSH_CUSTOM</code>이 없으면 <code>~/.oh-my-zsh/custom</code>을 사용한다는 의미.</p>
+<p>ref. <a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html">https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html</a></p>
+<h2 id="redirections" style="position:relative;"><a href="#redirections" aria-label="redirections permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Redirections</h2>
+<p><a href="https://www.gnu.org/software/bash/manual/html_node/Redirections.html">https://www.gnu.org/software/bash/manual/html_node/Redirections.html</a></p>
+<p>링크에 나오는 내용. 다음 2개는 결과가 다르다.
+순서에 따라 다른 동작을 하므로 주의할 필요가 있다.</p>
+<pre><code class="language-bash"># 1
+ls > dirlist 2>&#x26;1
+</code></pre>
+<pre><code class="language-bash"># 2
+ls 2>&#x26;1 > dirlist
+</code></pre>
+<p>#1은 stdout을 _dirlist_로 리다이렉트하고, stderr를 stdout으로 리다이렉트하는데,
+stdout은 이미 _dirlist_로 리다이렉트되었으므로 stderr도 _dirlist_로 리다이렉트된다.
+결론은 stdout과 stderr 모두 _dirlist_로 리다이렉트된다.</p>
+<p>반면에 #2는 stderr을 stdout으로 리다이렉트하고, stdout을 _dirlist_로 리다이렉트한다.
+결론은 각각 _dirlist_와 stdout으로 리다이렉트된다.</p>
+<h2 id="built-in-commands" style="position:relative;"><a href="#built-in-commands" aria-label="built in commands permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Built-in Commands</h2>
+<h3 id="time---명령어-실행시간-측정" style="position:relative;"><a href="#time---%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%EC%8B%9C%EA%B0%84-%EC%B8%A1%EC%A0%95" aria-label="time   명령어 실행시간 측정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>time - 명령어 실행시간 측정</h3>
+<pre><code class="language-bash">$ /usr/bin/time git fetch
+        2.28 real         0.03 user         0.02 sys
+</code></pre>
+<ul>
+<li>real: 총 소요시간</li>
+<li>user: user mode에서 소요된 CPU time</li>
+<li>sys: kernal mode에서 소요된 CPU time</li>
+</ul>
+<p><code>-h</code> 옵션으로 익숙한 시간 단위로 표기할 수 있다.</p>
+<pre><code class="language-bash">$ type -a time
+time is a reserved word
+time is /usr/bin/time
+</code></pre>
+<p><code>time</code>은 셸 예약어로 되어있는데, 실행파일은 <code>/usr/bin/time</code>에 있다.
+예약어를 사용하면 <code>time g fetch</code>와 같이 alias를 사용할 수 있고, 직접 실행파일을 사용하면 alias를 사용할 수 없다.</p>
+<p>ref. <a href="https://linuxize.com/post/linux-time-command/">https://linuxize.com/post/linux-time-command/</a></p>
+<h3 id="readlink---심볼릭-링크-경로-확인" style="position:relative;"><a href="#readlink---%EC%8B%AC%EB%B3%BC%EB%A6%AD-%EB%A7%81%ED%81%AC-%EA%B2%BD%EB%A1%9C-%ED%99%95%EC%9D%B8" aria-label="readlink   심볼릭 링크 경로 확인 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>readlink - 심볼릭 링크 경로 확인</h3>
+<pre><code class="language-bash">$ readlink -f `which node`
+/home/linuxbrew/.linuxbrew/Cellar/node/19.9.0/bin/node
+</code></pre>
+<p>심볼릭 링크를 따라가서 실제 경로를 알 수 있다.</p>
+<h3 id="sed---파일-특정-라인만-읽기" style="position:relative;"><a href="#sed---%ED%8C%8C%EC%9D%BC-%ED%8A%B9%EC%A0%95-%EB%9D%BC%EC%9D%B8%EB%A7%8C-%EC%9D%BD%EA%B8%B0" aria-label="sed   파일 특정 라인만 읽기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sed - 파일 특정 라인만 읽기</h3>
 <p><a href="https://unix.stackexchange.com/questions/288521/with-the-linux-cat-command-how-do-i-show-only-certain-lines-by-number">https://unix.stackexchange.com/questions/288521/with-the-linux-cat-command-how-do-i-show-only-certain-lines-by-number</a></p>
 <p><code>cat</code>은 전체라인만 읽지만 <code>sed -n -e 1,3p -e 10p</code>은 1~3, 10 라인 읽을 수 있다.</p>
 <p>sed, grep, awk 를 이용한 특정 라인 범위 내에서 특정 단어를 포함한 라인으로 좁히고 특정 형태로 출력하도록 조합할 수 있다:</p>
@@ -311,7 +379,7 @@ The sections of the manual are:
 <p>보통 <code>sed</code>는 파일 내용을 수정하고 백업을 만드는데 사용했는데..</p>
 <p><code>-n</code>: 입력된 행을 표준 출력으로 보낸다.<br>
 <code>-e</code>: 여러개의 범위를 지정하려면 <code>-e</code>로 구분한다. <code>sed -n 1,3p data.txt</code> 이렇게 하나의 범위라면 <code>-e</code>는 생략해도 된다.</p>
-<h2 id="nohup---멈추지-않고-명령어-실행하기" style="position:relative;"><a href="#nohup---%EB%A9%88%EC%B6%94%EC%A7%80-%EC%95%8A%EA%B3%A0-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0" aria-label="nohup   멈추지 않고 명령어 실행하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>nohup</code> - 멈추지 않고 명령어 실행하기</h2>
+<h3 id="nohup---멈추지-않고-명령어-실행하기" style="position:relative;"><a href="#nohup---%EB%A9%88%EC%B6%94%EC%A7%80-%EC%95%8A%EA%B3%A0-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0" aria-label="nohup   멈추지 않고 명령어 실행하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>nohup - 멈추지 않고 명령어 실행하기</h3>
 <p><code>nohup</code>은 no hangup의 줄임말. 터미널을 종료해도 중지 시그널을 무시하고 진행한다.</p>
 <hr>
 <p><code>nohup</code> 명령어로 스크립트를 실행하면,
@@ -329,23 +397,23 @@ The sections of the manual are:
 <p><em>COMMAND</em> 에 환경변수를 전달하려면:</p>
 <pre><code class="language-bash">$ FOO='foo' nohup COMMAND
 </code></pre>
-<h3 id="stdout은-nohupout에-저장된다" style="position:relative;"><a href="#stdout%EC%9D%80-nohupout%EC%97%90-%EC%A0%80%EC%9E%A5%EB%90%9C%EB%8B%A4" aria-label="stdout은 nohupout에 저장된다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>stdout은 <code>nohup.out</code>에 저장된다.</h3>
+<h4 id="stdout은-nohupout에-저장된다" style="position:relative;"><a href="#stdout%EC%9D%80-nohupout%EC%97%90-%EC%A0%80%EC%9E%A5%EB%90%9C%EB%8B%A4" aria-label="stdout은 nohupout에 저장된다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>stdout은 <code>nohup.out</code>에 저장된다.</h4>
 <p>stdout은 <code>nohup.out</code>에 저장된다.
 명령어가 실행중이라면 <code>tail -F nohup.out</code>으로 실시간으로 확인할 수 있다.</p>
-<h3 id="background-job으로-실행하자" style="position:relative;"><a href="#background-job%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%98%EC%9E%90" aria-label="background job으로 실행하자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background Job으로 실행하자.</h3>
+<h4 id="background-job으로-실행하자" style="position:relative;"><a href="#background-job%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%98%EC%9E%90" aria-label="background job으로 실행하자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background Job으로 실행하자.</h4>
 <p>그냥 <code>&#x26;</code> 없이 실행하면 foregorund로 돈다. <code>nohup</code>만 사용한다고해서 background로 전환되지 않는다.
 이 상태에서 <code>ctrl + c</code>로 빠져나오면 <strong>스크립트가 종료</strong>된다.</p>
 <p><code>nohup COMMAND &#x26;</code>로 백그라운드 잡으로 실행하자.</p>
 <p>ref. <a href="https://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html">https://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html</a></p>
-<h3 id="nohup으로-실행한-프로세스를-종료하는-방법" style="position:relative;"><a href="#nohup%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EB%A5%BC-%EC%A2%85%EB%A3%8C%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="nohup으로 실행한 프로세스를 종료하는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>nohup</code>으로 실행한 프로세스를 종료하는 방법</h3>
-<h4 id="ps-aux로-찾아보자" style="position:relative;"><a href="#ps-aux%EB%A1%9C-%EC%B0%BE%EC%95%84%EB%B3%B4%EC%9E%90" aria-label="ps aux로 찾아보자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>ps aux</code>로 찾아보자</h4>
+<h4 id="nohup으로-실행한-프로세스를-종료하는-방법" style="position:relative;"><a href="#nohup%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EB%A5%BC-%EC%A2%85%EB%A3%8C%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="nohup으로 실행한 프로세스를 종료하는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>nohup</code>으로 실행한 프로세스를 종료하는 방법</h4>
+<h5 id="ps-aux로-찾아보자" style="position:relative;"><a href="#ps-aux%EB%A1%9C-%EC%B0%BE%EC%95%84%EB%B3%B4%EC%9E%90" aria-label="ps aux로 찾아보자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>ps aux</code>로 찾아보자</h5>
 <p><em>X.</em> <code>ps aux | grep nohup</code> 결과는 없다.</p>
 <p><em>O.</em> <code>ps aux | grep COMMAND</code> 결과는 있다!</p>
 <p>예를 들어 <code>nohup ./tick.sh</code>로 실행한 경우 <code>ps aux | grep tick</code> 검색하면:</p>
 <pre><code class="language-bash">bash alleb 33723 0.0 0.0 4283996 1252 ?? S 11:16AM 0:00.29 /bin/bash ./tick.sh
 </code></pre>
 <p>PID를 알 수 있으므로 <code>kill -9 33723</code>으로 종료할 수 있다.</p>
-<h4 id="background로-띄운-경우-좀-더-알기-쉽다" style="position:relative;"><a href="#background%EB%A1%9C-%EB%9D%84%EC%9A%B4-%EA%B2%BD%EC%9A%B0-%EC%A2%80-%EB%8D%94-%EC%95%8C%EA%B8%B0-%EC%89%BD%EB%8B%A4" aria-label="background로 띄운 경우 좀 더 알기 쉽다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>background로 띄운 경우 좀 더 알기 쉽다.</h4>
+<h5 id="background로-띄운-경우-좀-더-알기-쉽다" style="position:relative;"><a href="#background%EB%A1%9C-%EB%9D%84%EC%9A%B4-%EA%B2%BD%EC%9A%B0-%EC%A2%80-%EB%8D%94-%EC%95%8C%EA%B8%B0-%EC%89%BD%EB%8B%A4" aria-label="background로 띄운 경우 좀 더 알기 쉽다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>background로 띄운 경우 좀 더 알기 쉽다.</h5>
 <pre><code class="language-bash">~/workspace/nohup-test
 ❯ nohup ./tick.sh &#x26;
 [1] 10809
@@ -356,7 +424,7 @@ appending output to nohup.out
 [1]  + 10809 killed     nohup ./tick.sh
 </code></pre>
 <p>Background Job으로 실행하면 PID가 바로 출력되어 알 수 있다.</p>
-<h4 id="좀-더-똑똑한-방법" style="position:relative;"><a href="#%EC%A2%80-%EB%8D%94-%EB%98%91%EB%98%91%ED%95%9C-%EB%B0%A9%EB%B2%95" aria-label="좀 더 똑똑한 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>좀 더 똑똑한 방법</h4>
+<h5 id="좀-더-똑똑한-방법" style="position:relative;"><a href="#%EC%A2%80-%EB%8D%94-%EB%98%91%EB%98%91%ED%95%9C-%EB%B0%A9%EB%B2%95" aria-label="좀 더 똑똑한 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>좀 더 똑똑한 방법</h5>
 <p>백그라운드로 전환 시 출력되는 PID를 파일로 저장하자.</p>
 <pre><code class="language-bash">nohup my_command > my.log 2>&#x26;1 &#x26;
 echo $! > save_pid.txt
@@ -367,37 +435,6 @@ echo $! > save_pid.txt
 <pre><code class="language-bash">kill -9 `cat save_pid.txt`
 </code></pre>
 <p>ref. <a href="https://stackoverflow.com/questions/17385794/how-to-get-the-process-id-to-kill-a-nohup-process/17389526">https://stackoverflow.com/questions/17385794/how-to-get-the-process-id-to-kill-a-nohup-process/17389526</a></p>
-<h2 id="bashrc-rc의-의미" style="position:relative;"><a href="#bashrc-rc%EC%9D%98-%EC%9D%98%EB%AF%B8" aria-label="bashrc rc의 의미 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.bash<strong>rc</strong> rc의 의미?</h2>
-<p>Run Commands.</p>
-<p><a href="https://superuser.com/questions/173165/what-does-the-rc-in-bashrc-etc-mean">https://superuser.com/questions/173165/what-does-the-rc-in-bashrc-etc-mean</a><br>
-<a href="https://en.wikipedia.org/wiki/RUNCOM">https://en.wikipedia.org/wiki/RUNCOM</a></p>
-<p><code>.bashrc</code>, <code>.npmrc</code> 등 자주 보여서 찾아봤다.</p>
-<h2 id="ping-명령어" style="position:relative;"><a href="#ping-%EB%AA%85%EB%A0%B9%EC%96%B4" aria-label="ping 명령어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>ping</code> 명령어</h2>
-<pre><code class="language-bash">ping 123.123.123.123
-ping www.google.com
-</code></pre>
-<p>네트워크 진단 도구. <a href="../network">포트 번호를 받지 않는다. ICMP 메시지를 이용한다.</a></p>
-<p>호스트 전송 실패 예시:</p>
-<pre><code class="language-bash">❯ ping 123.123.123.123
-PING 123.123.123.123 (123.123.123.123): 56 data bytes
-Request timeout for icmp_seq 0
-Request timeout for icmp_seq 1
-Request timeout for icmp_seq 2
-Request timeout for icmp_seq 3
-</code></pre>
-<p>호스트 응답 성공 예시:</p>
-<pre><code class="language-bash">❯ ping www.google.com
-PING www.google.com (142.250.199.100): 56 data bytes
-64 bytes from 142.250.199.100: icmp_seq=0 ttl=112 time=61.641 ms
-64 bytes from 142.250.199.100: icmp_seq=1 ttl=112 time=68.523 ms
-64 bytes from 142.250.199.100: icmp_seq=2 ttl=112 time=70.667 ms
-64 bytes from 142.250.199.100: icmp_seq=3 ttl=112 time=67.562 ms
-</code></pre>
-<h2 id="readlink" style="position:relative;"><a href="#readlink" aria-label="readlink permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>readlink</h2>
-<pre><code class="language-bash">$ readlink -f `which node`
-/home/linuxbrew/.linuxbrew/Cellar/node/19.9.0/bin/node
-</code></pre>
-<p>심볼릭 링크를 따라가서 실제 경로를 알 수 있다.</p>
 <h2 id="tools" style="position:relative;"><a href="#tools" aria-label="tools permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tools</h2>
 <h3 id="marker---the-terminal-command-palette" style="position:relative;"><a href="#marker---the-terminal-command-palette" aria-label="marker   the terminal command palette permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>marker - the terminal command palette</h3>
 <p><span
@@ -502,33 +539,7 @@ windows:
 <pre><code class="language-bash">$ tmuxinator my-project  # or tmuxinator start my-project
 </code></pre>
 <p>start 시 설정 이름을 지정하면 <code>~/.config/tmuxinator/</code>에서 <code>name</code>을 찾는다.</p>
-<h2 id="parameter-fallback-default-value" style="position:relative;"><a href="#parameter-fallback-default-value" aria-label="parameter fallback default value permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>parameter fallback (default value)</h2>
-<pre><code>echo ${VARIABLE:-word}
-</code></pre>
-<p><code>$VARIABLE</code>이 null 또는 unset 상태면 <code>word</code>를 반환한다.</p>
-<p>oh-my-zsh의 사용 예시:</p>
-<pre><code class="language-bash">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-</code></pre>
-<p><code>$ZSH_CUSTOM</code>이 없으면 <code>~/.oh-my-zsh/custom</code>을 사용한다는 의미.</p>
-<p>ref. <a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html">https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html</a></p>
-<h2 id="time-명령어-실행시간-측정" style="position:relative;"><a href="#time-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%EC%8B%9C%EA%B0%84-%EC%B8%A1%EC%A0%95" aria-label="time 명령어 실행시간 측정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>time</code> 명령어 실행시간 측정</h2>
-<pre><code class="language-bash">$ /usr/bin/time git fetch
-        2.28 real         0.03 user         0.02 sys
-</code></pre>
-<ul>
-<li>real: 총 소요시간</li>
-<li>user: user mode에서 소요된 CPU time</li>
-<li>sys: kernal mode에서 소요된 CPU time</li>
-</ul>
-<p><code>-h</code> 옵션으로 익숙한 시간 단위로 표기할 수 있다.</p>
-<pre><code class="language-bash">$ type -a time
-time is a reserved word
-time is /usr/bin/time
-</code></pre>
-<p><code>time</code>은 셸 예약어로 되어있는데, 실행파일은 <code>/usr/bin/time</code>에 있다.
-예약어를 사용하면 <code>time g fetch</code>와 같이 alias를 사용할 수 있고, 직접 실행파일을 사용하면 alias를 사용할 수 없다.</p>
-<p>ref. <a href="https://linuxize.com/post/linux-time-command/">https://linuxize.com/post/linux-time-command/</a></p>
-<h2 id="fzf" style="position:relative;"><a href="#fzf" aria-label="fzf permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FZF</h2>
+<h3 id="fzf" style="position:relative;"><a href="#fzf" aria-label="fzf permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FZF</h3>
 <p><a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a></p>
 <p>A command-line fuzzy-finder. 검색 도구로 사용한다. 매우 추천하는 도구.
 인터렉티브 UI를 잘 제공해서, 주 기능인 파일 검색외에도 리스트에 대한 UNIX 파이프라인 필터로 사용하기 유용하다.</p>
@@ -540,8 +551,8 @@ time is /usr/bin/time
 <p><code>CTRL-T</code>를 누르면 파일 인터렉티브로 파일을 검색한다. 선택하면 파일 경로가 붙여 넣는다.
 예를들어 <code>cat </code>까지 입력하고 <code>CTRL-T</code>로 파일을 찾아 선택하면 <code>cat /path/to/file</code> 경로가 완성된다.</p>
 <p>fzf가 없으면 보통, tab 두 번 눌러서 모든 파일을 확인할텐데, <code>CTRL-T</code>를 사용하는 편이 더 편리하다.</p>
-<h3 id="fzf--git" style="position:relative;"><a href="#fzf--git" aria-label="fzf  git permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FZF + git</h3>
-<h4 id="브랜치-목록-및-작업-내용" style="position:relative;"><a href="#%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%AA%A9%EB%A1%9D-%EB%B0%8F-%EC%9E%91%EC%97%85-%EB%82%B4%EC%9A%A9" aria-label="브랜치 목록 및 작업 내용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>브랜치 목록 및 작업 내용</h4>
+<h4 id="fzf--git" style="position:relative;"><a href="#fzf--git" aria-label="fzf  git permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FZF + git</h4>
+<h5 id="브랜치-목록-및-작업-내용" style="position:relative;"><a href="#%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%AA%A9%EB%A1%9D-%EB%B0%8F-%EC%9E%91%EC%97%85-%EB%82%B4%EC%9A%A9" aria-label="브랜치 목록 및 작업 내용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>브랜치 목록 및 작업 내용</h5>
 <pre><code class="language-bash">lsb = !git branch \
   | fzf --preview 'echo {} | cut -c3- | xargs git show --color=always' --height 90% \
   | cut -c3-
@@ -569,10 +580,10 @@ time is /usr/bin/time
 >                    ╰─────────────────────────────────────────────────────────────╯
 </code></pre>
 <p>브랜치 목록 <code>git branch</code>와 함께 가장 위 커밋의 diff <code>git diff</code>를 보여준다.</p>
-<h2 id="curl" style="position:relative;"><a href="#curl" aria-label="curl permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>curl</code></h2>
+<h3 id="curl" style="position:relative;"><a href="#curl" aria-label="curl permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>curl</h3>
 <p><a href="https://antonz.org/mastering-curl/">https://antonz.org/mastering-curl/</a></p>
 <p>curl mastering 가이드. 옵션 설명과 함께 다양한 예제로 안내한다.</p>
-<h3 id="재시도---retry" style="position:relative;"><a href="#%EC%9E%AC%EC%8B%9C%EB%8F%84---retry" aria-label="재시도   retry permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>재시도 <code>--retry</code></h3>
+<h4 id="재시도---retry" style="position:relative;"><a href="#%EC%9E%AC%EC%8B%9C%EB%8F%84---retry" aria-label="재시도   retry permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>재시도 <code>--retry</code></h4>
 <p><code>--retry</code>는 특정 상태 코드에서만 재시도한다.
 메뉴얼에 따르면 <code>408</code>, <code>429</code>, <code>500</code>, <code>502</code>, <code>503</code>, <code>504</code>가 모두이다:</p>
 <pre><code class="language-bash">--retry &#x3C;num>
@@ -583,7 +594,7 @@ time is /usr/bin/time
 따라서 특정 상태 코드만 재시도 하는 거 같은데, 다른 상태코드는 서버에서 명시적으로 내려주었을 가능성이 있으니 재시도하지 않는 것이 옳아 보인다.
 다만, python의 requests나 Spring WebFux의 WebClient의 retry 상태 코드는 공식 문서에서 확인하지 못했다.
 만약 모든 상태에 대해서 재시도 한다면 옵션 사용에 고민이 필요해 보인다.</p>
-<h3 id="url" style="position:relative;"><a href="#url" aria-label="url permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URL</h3>
+<h4 id="url" style="position:relative;"><a href="#url" aria-label="url permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URL</h4>
 <p>URL에 <code>[]</code> 사용하면 순차적으로 요청을 보낼 수 있다:</p>
 <pre><code class="language-bash">$ curl http://httpbin.org/anything/\[8-11\].txt
 {
@@ -615,6 +626,27 @@ time is /usr/bin/time
 }
 </code></pre>
 <p><code>httpbin.org</code>는 HTTP 테스트하기 위한 사이트이므로 위 예제 코드를 바로 돌려볼 수 있다.</p>
+<h3 id="ping" style="position:relative;"><a href="#ping" aria-label="ping permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ping</h3>
+<pre><code class="language-bash">ping 123.123.123.123
+ping www.google.com
+</code></pre>
+<p>네트워크 진단 도구. <a href="../network">포트 번호를 받지 않는다. ICMP 메시지를 이용한다.</a></p>
+<p>호스트 전송 실패 예시:</p>
+<pre><code class="language-bash">❯ ping 123.123.123.123
+PING 123.123.123.123 (123.123.123.123): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+Request timeout for icmp_seq 2
+Request timeout for icmp_seq 3
+</code></pre>
+<p>호스트 응답 성공 예시:</p>
+<pre><code class="language-bash">❯ ping www.google.com
+PING www.google.com (142.250.199.100): 56 data bytes
+64 bytes from 142.250.199.100: icmp_seq=0 ttl=112 time=61.641 ms
+64 bytes from 142.250.199.100: icmp_seq=1 ttl=112 time=68.523 ms
+64 bytes from 142.250.199.100: icmp_seq=2 ttl=112 time=70.667 ms
+64 bytes from 142.250.199.100: icmp_seq=3 ttl=112 time=67.562 ms
+</code></pre>
 <h2 id="python-shell-tools" style="position:relative;"><a href="#python-shell-tools" aria-label="python shell tools permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python shell tools</h2>
 <p>몇몇 파이썬 모듈은 CLI로 제공한다.</p>
 <h3 id="python--m-jsontool으로-json-beautify" style="position:relative;"><a href="#python--m-jsontool%EC%9C%BC%EB%A1%9C-json-beautify" aria-label="python  m jsontool으로 json beautify permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>python -m json.tool</code>으로 JSON beautify</h3>

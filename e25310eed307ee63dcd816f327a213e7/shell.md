@@ -1,6 +1,6 @@
 # Shell 명령어
 
-## `man` - 명령어 매뉴얼
+## man - 매뉴얼
 
 어떤 명령이든 `man COMMAND`로 메뉴얼을 확인하자. 내장 명령어라면 대부분 제공한다.
 
@@ -54,7 +54,93 @@ The sections of the manual are:
 
 디버깅용으로 유용하다 함.
 
-## `sed` - 파일 특정 라인만 읽기
+## .bash**rc** rc의 의미?
+
+Run Commands.
+
+https://superuser.com/questions/173165/what-does-the-rc-in-bashrc-etc-mean<br>
+https://en.wikipedia.org/wiki/RUNCOM
+
+`.bashrc`, `.npmrc` 등 자주 보여서 찾아봤다.
+
+## parameter fallback (default value)
+
+```
+echo ${VARIABLE:-word}
+```
+
+`$VARIABLE`이 null 또는 unset 상태면 `word`를 반환한다.
+
+oh-my-zsh의 사용 예시:
+
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+`$ZSH_CUSTOM`이 없으면 `~/.oh-my-zsh/custom`을 사용한다는 의미.
+
+ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+
+## Redirections
+
+https://www.gnu.org/software/bash/manual/html_node/Redirections.html
+
+링크에 나오는 내용. 다음 2개는 결과가 다르다.
+순서에 따라 다른 동작을 하므로 주의할 필요가 있다.
+
+```bash
+# 1
+ls > dirlist 2>&1
+```
+
+```bash
+# 2
+ls 2>&1 > dirlist
+```
+
+\#1은 stdout을 _dirlist_로 리다이렉트하고, stderr를 stdout으로 리다이렉트하는데,
+stdout은 이미 _dirlist_로 리다이렉트되었으므로 stderr도 _dirlist_로 리다이렉트된다.
+결론은 stdout과 stderr 모두 _dirlist_로 리다이렉트된다.
+
+반면에 \#2는 stderr을 stdout으로 리다이렉트하고, stdout을 _dirlist_로 리다이렉트한다.
+결론은 각각 _dirlist_와 stdout으로 리다이렉트된다.
+
+## Built-in Commands
+
+### time - 명령어 실행시간 측정
+
+```bash
+$ /usr/bin/time git fetch
+        2.28 real         0.03 user         0.02 sys
+```
+
+* real: 총 소요시간
+* user: user mode에서 소요된 CPU time
+* sys: kernal mode에서 소요된 CPU time
+
+`-h` 옵션으로 익숙한 시간 단위로 표기할 수 있다.
+
+```bash
+$ type -a time
+time is a reserved word
+time is /usr/bin/time
+```
+
+`time`은 셸 예약어로 되어있는데, 실행파일은 `/usr/bin/time`에 있다.
+예약어를 사용하면 `time g fetch`와 같이 alias를 사용할 수 있고, 직접 실행파일을 사용하면 alias를 사용할 수 없다.
+
+ref. https://linuxize.com/post/linux-time-command/
+
+### readlink - 심볼릭 링크 경로 확인
+
+```bash
+$ readlink -f `which node`
+/home/linuxbrew/.linuxbrew/Cellar/node/19.9.0/bin/node
+```
+
+심볼릭 링크를 따라가서 실제 경로를 알 수 있다.
+
+### sed - 파일 특정 라인만 읽기
 
 https://unix.stackexchange.com/questions/288521/with-the-linux-cat-command-how-do-i-show-only-certain-lines-by-number
 
@@ -71,7 +157,7 @@ sed -n -e 1,5446p data.txt | grep false | awk '{print $1}'
 `-n`: 입력된 행을 표준 출력으로 보낸다.<br>
 `-e`: 여러개의 범위를 지정하려면 `-e`로 구분한다. `sed -n 1,3p data.txt` 이렇게 하나의 범위라면 `-e`는 생략해도 된다.
 
-## `nohup` - 멈추지 않고 명령어 실행하기
+### nohup - 멈추지 않고 명령어 실행하기
 
 `nohup`은 no hangup의 줄임말. 터미널을 종료해도 중지 시그널을 무시하고 진행한다.
 
@@ -99,12 +185,12 @@ $ nohup COMMAND
 $ FOO='foo' nohup COMMAND
 ```
 
-### stdout은 `nohup.out`에 저장된다.
+#### stdout은 `nohup.out`에 저장된다.
 
 stdout은 `nohup.out`에 저장된다.
 명령어가 실행중이라면 `tail -F nohup.out`으로 실시간으로 확인할 수 있다.
 
-### Background Job으로 실행하자.
+#### Background Job으로 실행하자.
 
 그냥 `&` 없이 실행하면 foregorund로 돈다. `nohup`만 사용한다고해서 background로 전환되지 않는다.
 이 상태에서 `ctrl + c`로 빠져나오면 **스크립트가 종료**된다.
@@ -113,9 +199,9 @@ stdout은 `nohup.out`에 저장된다.
 
 ref. https://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a-shell-prompt.html
 
-### `nohup`으로 실행한 프로세스를 종료하는 방법
+#### `nohup`으로 실행한 프로세스를 종료하는 방법
 
-#### `ps aux`로 찾아보자
+##### `ps aux`로 찾아보자
 
 *X.* `ps aux | grep nohup` 결과는 없다.
 
@@ -129,7 +215,7 @@ bash alleb 33723 0.0 0.0 4283996 1252 ?? S 11:16AM 0:00.29 /bin/bash ./tick.sh
 
 PID를 알 수 있으므로 `kill -9 33723`으로 종료할 수 있다.
 
-#### background로 띄운 경우 좀 더 알기 쉽다.
+##### background로 띄운 경우 좀 더 알기 쉽다.
 
 ```bash
 ~/workspace/nohup-test
@@ -144,7 +230,7 @@ appending output to nohup.out
 
 Background Job으로 실행하면 PID가 바로 출력되어 알 수 있다.
 
-#### 좀 더 똑똑한 방법
+##### 좀 더 똑똑한 방법
 
 백그라운드로 전환 시 출력되는 PID를 파일로 저장하자.
 
@@ -162,53 +248,6 @@ kill -9 `cat save_pid.txt`
 ```
 
 ref. https://stackoverflow.com/questions/17385794/how-to-get-the-process-id-to-kill-a-nohup-process/17389526
-
-## .bash**rc** rc의 의미?
-
-Run Commands.
-
-https://superuser.com/questions/173165/what-does-the-rc-in-bashrc-etc-mean<br>
-https://en.wikipedia.org/wiki/RUNCOM
-
-`.bashrc`, `.npmrc` 등 자주 보여서 찾아봤다.
-
-## `ping` 명령어
-
-```bash
-ping 123.123.123.123
-ping www.google.com
-```
-
-네트워크 진단 도구. [포트 번호를 받지 않는다. ICMP 메시지를 이용한다.](./network.md)
-
-호스트 전송 실패 예시:
-```bash
-❯ ping 123.123.123.123
-PING 123.123.123.123 (123.123.123.123): 56 data bytes
-Request timeout for icmp_seq 0
-Request timeout for icmp_seq 1
-Request timeout for icmp_seq 2
-Request timeout for icmp_seq 3
-```
-
-호스트 응답 성공 예시:
-```bash
-❯ ping www.google.com
-PING www.google.com (142.250.199.100): 56 data bytes
-64 bytes from 142.250.199.100: icmp_seq=0 ttl=112 time=61.641 ms
-64 bytes from 142.250.199.100: icmp_seq=1 ttl=112 time=68.523 ms
-64 bytes from 142.250.199.100: icmp_seq=2 ttl=112 time=70.667 ms
-64 bytes from 142.250.199.100: icmp_seq=3 ttl=112 time=67.562 ms
-```
-
-## readlink
-
-```bash
-$ readlink -f `which node`
-/home/linuxbrew/.linuxbrew/Cellar/node/19.9.0/bin/node
-```
-
-심볼릭 링크를 따라가서 실제 경로를 알 수 있다.
 
 ## Tools
 
@@ -312,49 +351,7 @@ $ tmuxinator my-project  # or tmuxinator start my-project
 
 start 시 설정 이름을 지정하면 `~/.config/tmuxinator/`에서 `name`을 찾는다.
 
-## parameter fallback (default value)
-
-```
-echo ${VARIABLE:-word}
-```
-
-`$VARIABLE`이 null 또는 unset 상태면 `word`를 반환한다.
-
-oh-my-zsh의 사용 예시:
-
-```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
-
-`$ZSH_CUSTOM`이 없으면 `~/.oh-my-zsh/custom`을 사용한다는 의미.
-
-ref. https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
-
-## `time` 명령어 실행시간 측정
-
-```bash
-$ /usr/bin/time git fetch
-        2.28 real         0.03 user         0.02 sys
-```
-
-* real: 총 소요시간
-* user: user mode에서 소요된 CPU time
-* sys: kernal mode에서 소요된 CPU time
-
-`-h` 옵션으로 익숙한 시간 단위로 표기할 수 있다.
-
-```bash
-$ type -a time
-time is a reserved word
-time is /usr/bin/time
-```
-
-`time`은 셸 예약어로 되어있는데, 실행파일은 `/usr/bin/time`에 있다.
-예약어를 사용하면 `time g fetch`와 같이 alias를 사용할 수 있고, 직접 실행파일을 사용하면 alias를 사용할 수 없다.
-
-ref. https://linuxize.com/post/linux-time-command/
-
-## FZF
+### FZF
 
 https://github.com/junegunn/fzf
 
@@ -375,9 +372,9 @@ A command-line fuzzy-finder. 검색 도구로 사용한다. 매우 추천하는 
 
 fzf가 없으면 보통, tab 두 번 눌러서 모든 파일을 확인할텐데, `CTRL-T`를 사용하는 편이 더 편리하다.
 
-### FZF + git
+#### FZF + git
 
-#### 브랜치 목록 및 작업 내용
+##### 브랜치 목록 및 작업 내용
 ```bash
 lsb = !git branch \
   | fzf --preview 'echo {} | cut -c3- | xargs git show --color=always' --height 90% \
@@ -411,13 +408,13 @@ lsb = !git branch \
 
 브랜치 목록 `git branch`와 함께 가장 위 커밋의 diff `git diff`를 보여준다.
 
-## `curl`
+### curl
 
 https://antonz.org/mastering-curl/
 
 curl mastering 가이드. 옵션 설명과 함께 다양한 예제로 안내한다.
 
-### 재시도 `--retry`
+#### 재시도 `--retry`
 
 `--retry`는 특정 상태 코드에서만 재시도한다.
 메뉴얼에 따르면 `408`, `429`, `500`, `502`, `503`, `504`가 모두이다:
@@ -433,7 +430,7 @@ curl mastering 가이드. 옵션 설명과 함께 다양한 예제로 안내한�
 다만, python의 requests나 Spring WebFux의 WebClient의 retry 상태 코드는 공식 문서에서 확인하지 못했다.
 만약 모든 상태에 대해서 재시도 한다면 옵션 사용에 고민이 필요해 보인다.
 
-### URL
+#### URL
 
 URL에 `[]` 사용하면 순차적으로 요청을 보낼 수 있다:
 
@@ -472,6 +469,35 @@ $ curl http://httpbin.org/anything/\[008-011\].txt
 ```
 
 `httpbin.org`는 HTTP 테스트하기 위한 사이트이므로 위 예제 코드를 바로 돌려볼 수 있다.
+
+### ping
+
+```bash
+ping 123.123.123.123
+ping www.google.com
+```
+
+네트워크 진단 도구. [포트 번호를 받지 않는다. ICMP 메시지를 이용한다.](./network.md)
+
+호스트 전송 실패 예시:
+```bash
+❯ ping 123.123.123.123
+PING 123.123.123.123 (123.123.123.123): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+Request timeout for icmp_seq 2
+Request timeout for icmp_seq 3
+```
+
+호스트 응답 성공 예시:
+```bash
+❯ ping www.google.com
+PING www.google.com (142.250.199.100): 56 data bytes
+64 bytes from 142.250.199.100: icmp_seq=0 ttl=112 time=61.641 ms
+64 bytes from 142.250.199.100: icmp_seq=1 ttl=112 time=68.523 ms
+64 bytes from 142.250.199.100: icmp_seq=2 ttl=112 time=70.667 ms
+64 bytes from 142.250.199.100: icmp_seq=3 ttl=112 time=67.562 ms
+```
 
 ## python shell tools
 
