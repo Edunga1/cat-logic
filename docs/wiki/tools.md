@@ -127,6 +127,61 @@ Star가 1,500여개 이지만, 아직 8개의 배포만 있고 성숙한 저장�
 0.2.2까지 Git Sync 메뉴가 사라지는 문제가 있었고,
 [0.2.3-a](https://github.com/ArchGPT/insomnium/releases/tag/core%400.2.3-a) 버전부터 복구되었다.
 
+### Bruno
+
+Insomnia 사태로 인해 Insomnium과 선택을 고민중인 API Client.
+
+https://github.com/usebruno/bruno
+
+Git Sync 기능을 제공한다.
+Git 저장소 동기화를 매우 중요하게 생각한다고 느낌을 받았는데, 저장되는 파일 형식이 읽기 쉬운 형태로 되어있는 점이다.
+
+![Bruno collaborate via Git](https://github.com/usebruno/bruno/raw/main/assets/images/version-control.png)
+
+`.bru`라는 별도 파일 확장자를 사용하지만 내용은 읽기 쉽다.
+
+반면에 Insomnia는 yaml을 사용하지만 메타데이터가 많아서 읽기 어렵다.
+폴더나 다른 연관 정보를 파일 내에 포함시켰기 때문인 것으로 보인다.
+
+다음은 Insomnia의 Request 저장 내용:
+
+```yaml
+_id: req_7b1a2
+type: Request
+parentId: fld_8fe1d
+modified: 1692343700512
+created: 1675838070192
+url: "{{ _.url.myApi }}/foo/bar/search"
+name: 검색 /search
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: q
+    value: 키워드
+    disabled: false
+    id: pair_664f8
+  - name: page
+    value: "1"
+    disabled: false
+    id: pair_5501a
+headers:
+  - name: accept
+    value: application/json;charset=UTF-8
+authentication: {}
+metaSortKey: 0
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
+```
+
+아직 좀 더 살펴봐야 한다.
+API Chaining은 어떻게 처리하는지, 자동완성 등 주요하게 봐야 할 점이 많다.
+
 ### Postman vs Insomnia vs IntelliJ builtin `.http`. 비교
 
 |                    | Postman   | Insomnia                             | IntelliJ                             |
