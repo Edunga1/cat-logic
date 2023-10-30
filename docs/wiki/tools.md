@@ -82,7 +82,7 @@ redis 공식 도구이며, redis 문서는 방문할 때 마다 친절해서 놀
 Browser 모드와 Workbench 모드가 있는데, Workbench 모드가 익숙한 에디터 형태로 쿼리한다.
 이 에디터에서 공식 문서 수준의 자동 완성 기능을 제공하는데 매우 편리하다.
 
-## API Client 비교 Postman, Insomnia, IntelliJ builtin `.http`
+## API Clients
 
 ⚠️  2023년 9월. Insomnia가 버전 8.0.0으로 넘어오면서 로그인을 하도록 정책을 변경했다.
 그러면서 기존의 로컬 데이터는 모두 사라지는 현상이 발생한다.
@@ -113,7 +113,21 @@ standalone 버전인 Postman, Insomnia 그리고 IntelliJ 내장형 `.http`. 사
 
 추가로 pre-request script 기능이 있으면 좋겠다. 호출 전에 토큰 정보를 받아올 때 유용하다.
 
-### 비교
+### Insomnium
+
+Insomnium은 Insomnia 8.0 이전 Fork이다.
+Insomnia의 강제 로그인 정책이 제거되고 Git Sync 기능이 다시 복구된 버전이다.
+
+https://github.com/ArchGPT/insomnium
+
+2023년 10월 30일 기준, 아직 Homebrew에 등록되어 있지 않아서 GitHub Release에서 직접 다운받아 설치해야 한다.
+Star가 1,500여개 이지만, 아직 8개의 배포만 있고 성숙한 저장소는 아니라서 조금 망설여진다.
+하지만 Insomnia의 특정 버전과 같다면 사용하는데 문제는 없을 거 같다.
+
+0.2.2까지 Git Sync 메뉴가 사라지는 문제가 있었고,
+[0.2.3-a](https://github.com/ArchGPT/insomnium/releases/tag/core%400.2.3-a) 버전부터 복구되었다.
+
+### Postman vs Insomnia vs IntelliJ builtin `.http`. 비교
 
 |                    | Postman   | Insomnia                             | IntelliJ                             |
 | ---                | ---       | ---                                  | ---                                  |
