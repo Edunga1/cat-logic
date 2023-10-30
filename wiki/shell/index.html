@@ -342,11 +342,11 @@ ls > dirlist 2>&#x26;1
 <pre><code class="language-bash"># 2
 ls 2>&#x26;1 > dirlist
 </code></pre>
-<p>#1은 stdout을 _dirlist_로 리다이렉트하고, stderr를 stdout으로 리다이렉트하는데,
-stdout은 이미 _dirlist_로 리다이렉트되었으므로 stderr도 _dirlist_로 리다이렉트된다.
-결론은 stdout과 stderr 모두 _dirlist_로 리다이렉트된다.</p>
-<p>반면에 #2는 stderr을 stdout으로 리다이렉트하고, stdout을 _dirlist_로 리다이렉트한다.
-결론은 각각 _dirlist_와 stdout으로 리다이렉트된다.</p>
+<p>#1은 stdout을 __dirlist__로 리다이렉트하고, stderr를 stdout으로 리다이렉트하는데,
+stdout은 이미 __dirlist__로 리다이렉트되었으므로 stderr도 __dirlist__로 리다이렉트된다.
+결론은 stdout과 stderr 모두 __dirlist__로 리다이렉트된다.</p>
+<p>반면에 #2는 stderr을 stdout으로 리다이렉트하고, stdout을 __dirlist__로 리다이렉트한다.
+결론은 각각 __dirlist__와 stdout으로 리다이렉트된다.</p>
 <h2 id="built-in-commands" style="position:relative;"><a href="#built-in-commands" aria-label="built in commands permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Built-in Commands</h2>
 <h3 id="time---명령어-실행시간-측정" style="position:relative;"><a href="#time---%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%EC%8B%9C%EA%B0%84-%EC%B8%A1%EC%A0%95" aria-label="time   명령어 실행시간 측정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>time - 명령어 실행시간 측정</h3>
 <pre><code class="language-bash">$ /usr/bin/time git fetch

@@ -98,12 +98,12 @@ ls > dirlist 2>&1
 ls 2>&1 > dirlist
 ```
 
-\#1은 stdout을 _dirlist_로 리다이렉트하고, stderr를 stdout으로 리다이렉트하는데,
-stdout은 이미 _dirlist_로 리다이렉트되었으므로 stderr도 _dirlist_로 리다이렉트된다.
-결론은 stdout과 stderr 모두 _dirlist_로 리다이렉트된다.
+\#1은 stdout을 __dirlist__로 리다이렉트하고, stderr를 stdout으로 리다이렉트하는데,
+stdout은 이미 __dirlist__로 리다이렉트되었으므로 stderr도 __dirlist__로 리다이렉트된다.
+결론은 stdout과 stderr 모두 __dirlist__로 리다이렉트된다.
 
-반면에 \#2는 stderr을 stdout으로 리다이렉트하고, stdout을 _dirlist_로 리다이렉트한다.
-결론은 각각 _dirlist_와 stdout으로 리다이렉트된다.
+반면에 \#2는 stderr을 stdout으로 리다이렉트하고, stdout을 __dirlist__로 리다이렉트한다.
+결론은 각각 __dirlist__와 stdout으로 리다이렉트된다.
 
 ## Built-in Commands
 
