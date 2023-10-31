@@ -411,3 +411,24 @@ ref. https://news.hada.io/topic?id=9185
 > - 개발자들은 pre-trained된 모델을 사용해서 본인들의 문제를 풀수 있게 해준다
 >
 > 는 정말 멋진 말이네요.
+
+## 임베딩(Embeddings)
+
+[임베딩(Embeddings)은 무엇이고 왜 중요한가](https://news.hada.io/topic?id=11593) 글을 읽고 내 TIL 블로그도 똑같이 적용해보고 싶어졌다.
+
+필자는 Open AI의 임베딩 API를 사용해서 "관련 글"을 구현했다고 한다.
+블로그 글을 임베딩하여 결과를 SQLite에 저장하고 코사인 유사성을 계산했는데 그 비용이 매우 저렴해서 0.04 달러 밖에 들지 않았다고.
+필요할 때마다 변경된 글만 임베딩하면 되므로 유지 비용도 크게 들지 않을 것으로 보인다.
+다만, Open AI의 독점 모델을 사용했는데 모델이 종료되면서 변경해야 했단다.
+
+---
+
+임베딩은 콘텐츠를 다차원 벡터로 변경하는 것.
+word2vec은 단어를 벡터로 변환한다.
+위에서 언급한 글에서는 Open AI의 [text-embedding-ada-002](https://platform.openai.com/docs/api-reference/embeddings) 모델을 사용했는데, 텍스트를 변환하는 모델이다.
+
+> The input must not exceed the max input tokens for the model (8192 tokens for text-embedding-ada-002) and cannot be an empty string. 
+
+`text-embedding-ada-002`는 총 8192 tokens을 받을 수 있다. 단어나 구둣점 등이 토큰으로 취급되니 긴 글은 초과할 수도 있겠다.
+
+검색을 좀 해보니, 한글 성능도 괜찮다고 한다. 오히려 무료 
