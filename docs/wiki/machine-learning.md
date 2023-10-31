@@ -402,7 +402,7 @@ ref. https://news.hada.io/topic?id=9185
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
 사용자가 머신러닝 모델과 데이터셋을 공유할 수 있는 플랫폼.
 
-[https://www.facebook.com/groups/TensorFlowKR/permalink/1236053373402385/](Tensorflow KR)에서 처음 알게 되었다.
+[Tensorflow KR](https://www.facebook.com/groups/TensorFlowKR/permalink/1236053373402385)에서 처음 알게 되었다.
 
 > 허깅페이스 transformers 3.0이 나와서 문서들을 좀 살펴보고 있는데 철학 부분이 눈에 확 들어 오네요. (대략 제 마음대로 의역한)
 >
