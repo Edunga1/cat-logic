@@ -141,6 +141,9 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 <li>
 <p><a href="#hugging-face">Hugging Face</a></p>
 </li>
+<li>
+<p><a href="#%EC%9E%84%EB%B2%A0%EB%94%A9embeddings">임베딩(Embeddings)</a></p>
+</li>
 </ul>
 </li>
 </ul></div><span></span></div><div class="Wiki__Main-sc-16q9onf-2 eTgCJx"><h1>Machine Learning</h1><div class="Toc__Container-sc-1f76i2s-0 eXfjpt"><ul>
@@ -211,6 +214,9 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"eTgCJx,"}/*!sc*/
 </li>
 <li>
 <p><a href="#hugging-face">Hugging Face</a></p>
+</li>
+<li>
+<p><a href="#%EC%9E%84%EB%B2%A0%EB%94%A9embeddings">임베딩(Embeddings)</a></p>
 </li>
 </ul>
 </li>
@@ -606,7 +612,22 @@ where
 <li>개발자들은 pre-trained된 모델을 사용해서 본인들의 문제를 풀수 있게 해준다</li>
 </ul>
 <p>는 정말 멋진 말이네요.</p>
-</blockquote></div><div class="Comments__Container-sc-1ajj4d9-0 efeuka"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/machine-learning/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</blockquote>
+<h2 id="임베딩embeddings" style="position:relative;"><a href="#%EC%9E%84%EB%B2%A0%EB%94%A9embeddings" aria-label="임베딩embeddings permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>임베딩(Embeddings)</h2>
+<p><a href="https://news.hada.io/topic?id=11593">임베딩(Embeddings)은 무엇이고 왜 중요한가</a> 글을 읽고 내 TIL 블로그도 똑같이 적용해보고 싶어졌다.</p>
+<p>필자는 Open AI의 임베딩 API를 사용해서 "관련 글"을 구현했다고 한다.
+블로그 글을 임베딩하여 결과를 SQLite에 저장하고 코사인 유사성을 계산했는데 그 비용이 매우 저렴해서 0.04 달러 밖에 들지 않았다고.
+필요할 때마다 변경된 글만 임베딩하면 되므로 유지 비용도 크게 들지 않을 것으로 보인다.
+다만, Open AI의 독점 모델을 사용했는데 모델이 종료되면서 변경해야 했단다.</p>
+<hr>
+<p>임베딩은 콘텐츠를 다차원 벡터로 변경하는 것.
+word2vec은 단어를 벡터로 변환한다.
+위에서 언급한 글에서는 Open AI의 <a href="https://platform.openai.com/docs/api-reference/embeddings">text-embedding-ada-002</a> 모델을 사용했는데, 텍스트를 변환하는 모델이다.</p>
+<blockquote>
+<p>The input must not exceed the max input tokens for the model (8192 tokens for text-embedding-ada-002) and cannot be an empty string.</p>
+</blockquote>
+<p><code>text-embedding-ada-002</code>는 총 8192 tokens을 받을 수 있다. 단어나 구둣점 등이 토큰으로 취급되니 긴 글은 초과할 수도 있겠다.</p>
+<p>검색을 좀 해보니, 한글 성능도 괜찮다고 한다. 오히려 무료</p></div><div class="Comments__Container-sc-1ajj4d9-0 efeuka"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/machine-learning/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
