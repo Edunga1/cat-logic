@@ -165,3 +165,28 @@ MySQL Workbench, Sequel Pro 등 몇 가지 무료 데이터베이스 클라이�
 ```
 
 위 설정을 `~/Library/Application\ Support/JetBrains/DataGrip{version}/keymaps`에 두면 keymap 목록에 등록된다.
+
+### Live Templates
+
+Live Template은 Snippet의 일종이다.
+기본으로 제공되는 `sel`, `lim`을 특히 자주 사용한다.
+
+에디터에 `sel`만 입력하면 `select * from |;` 코드를 자동 완성하고, `|`에 커서가 가면서 테이블 이름 목록을 보여준다.
+설정 -> Editor -> Live Templates 메뉴에서 확인하고, 관리할 수 있다.
+
+`sel`의 경우 다음과 같이 작성되어 있다:
+
+```
+select * from $table$$END$;
+```
+
+`$text$`가 예약어인데, `$table$`은 테이블 목록을 보여주기 위함이고,
+`$END$`는 입력란을 모두 채웠을 때 이동 할 커서 위치이다.
+
+응용하면 여러가지 편리한 템플릿을 만들 수 있다.
+
+- `last`: `select * from $table$ order by 1 desc$END$;`
+- `where`: `select * from $table$ where $END$;`
+- `source`: `select * from $table$ where source_type = '$value1$' and source_id = $value2$$END$;`
+
+`source`는 source id, type 구조로 복합키를 많이 사용해서 만들었다.
