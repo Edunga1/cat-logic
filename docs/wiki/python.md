@@ -402,6 +402,10 @@ poetry install
 
 설치한 가상 환경은 `poetry env list`로 확인할 수 있다.
 여러개의 가상 환경을 사용할 수 있는 구조라서 목록으로 보여준다.
+
+위 예제에서 `pyenv local`을 사용했는데, `pyenv global`은 전역 설정인 반면에 `pyenv local`은 현재 디렉토리에만 적용된다.
+`.python-version` 파일을 생성하는데, pyenv는 이 파일을 읽어서 파이썬 버전을 결정하기 때문이다. 자세한 내용은 `pyenv local --help`를 참고하자.
+
 가상 환경을 삭제하려면 몇 가지 방법이 있다:
 
 - ``rm -rf `poetry env info -p` `` (가상 환경 경로를 찾아서 삭제한다.)
