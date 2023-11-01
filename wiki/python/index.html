@@ -585,8 +585,10 @@ poetry install
 <p>poetry 문서 중: <a href="https://python-poetry.org/docs/managing-environments/#switching-between-environments">https://python-poetry.org/docs/managing-environments/#switching-between-environments</a></p>
 </blockquote>
 <p>설치한 가상 환경은 <code>poetry env list</code>로 확인할 수 있다.
-여러개의 가상 환경을 사용할 수 있는 구조라서 목록으로 보여준다.
-가상 환경을 삭제하려면 몇 가지 방법이 있다:</p>
+여러개의 가상 환경을 사용할 수 있는 구조라서 목록으로 보여준다.</p>
+<p>위 예제에서 <code>pyenv local</code>을 사용했는데, <code>pyenv global</code>은 전역 설정인 반면에 <code>pyenv local</code>은 현재 디렉토리에만 적용된다.
+<code>.python-version</code> 파일을 생성하는데, pyenv는 이 파일을 읽어서 파이썬 버전을 결정하기 때문이다. 자세한 내용은 <code>pyenv local --help</code>를 참고하자.</p>
+<p>가상 환경을 삭제하려면 몇 가지 방법이 있다:</p>
 <ul>
 <li><code>rm -rf `poetry env info -p` </code> (가상 환경 경로를 찾아서 삭제한다.)</li>
 <li><code>poetry env remove 3.7</code></li>
