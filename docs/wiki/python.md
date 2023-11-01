@@ -383,6 +383,31 @@ Django만 설치했는데, Django가 사용하는 다른 패키지도 포함된�
 
 아무튼, 간단하지만 그만큼 이런저런 불편함이 있는 기본 도구다.
 
+#### 가상 환경 관리하기
+
+`poetry shell`로 가상 환경을 생성할 때, 현재 시스템의 파이썬 버전을 사용하려고 한다.
+다만 `pyproject.toml`에 명시한 [semver](https://github.com/npm/node-semver#versions) 범위에 맞지 않으면 실패한다.
+
+pyenv를 사용한다면 맞는 버전을 직접 찾아서 변경해야 하는 것으로 보인다.
+
+> For instance, if your project requires a newer Python than is available with your system, a standard workflow would be:
+
+```bash
+pyenv install 3.9.8
+pyenv local 3.9.8  # Activate Python 3.9 for the current project
+poetry install
+```
+
+> poetry 문서 중: https://python-poetry.org/docs/managing-environments/#switching-between-environments
+
+설치한 가상 환경은 `poetry env list`로 확인할 수 있다.
+여러개의 가상 환경을 사용할 수 있는 구조라서 목록으로 보여준다.
+가상 환경을 삭제하려면 몇 가지 방법이 있다:
+
+- ``rm -rf `poetry env info -p` `` (가상 환경 경로를 찾아서 삭제한다.)
+- `poetry env remove 3.7`
+- `poetry env remove test-O3eWbxRl-py3.7` (가상 환경 전체 이름이다.)
+
 ### pipenv
 
 https://github.com/pypa/pipenv
