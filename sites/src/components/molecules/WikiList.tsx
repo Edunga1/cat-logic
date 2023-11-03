@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const List = styled.ul`
   margin: 0;
-  padding: 0 1rem;
+  padding: 0;
   width: 100%;
   max-width: 600px;
 

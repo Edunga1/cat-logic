@@ -25,10 +25,9 @@ const MainContainer = styled.div`
   width: fit-content;
   margin: 0 auto;
   display: grid;
-  place-items: flex-end;
 `
 
-const AltContainer = styled.span`
+const Counter = styled.div`
   font-size: 0.8rem;
   color: ${theme.fonts.body};
 `
@@ -41,7 +40,7 @@ export default function Home(
       <HomeLogo />
       <MainContainer>
         <SearchBox onChange={setQuery} holder="I guess..." />
-        <AltContainer>{items.length} docs</AltContainer>
+        <Counter>{items.length} docs</Counter>
         <WikiList items={items} fallback="No results found :(" />
       </MainContainer>
     </Container>
