@@ -63,6 +63,7 @@ const config: GatsbyConfig = {
       },
     },
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
   ],
 }
 
