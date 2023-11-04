@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://edunga1.github.io/cat-logic/sitemap-index.xml
+Host: https://edunga1.github.io
