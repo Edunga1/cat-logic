@@ -2,22 +2,55 @@
 
 터미널 기반 텍스트 편집기.
 
-vim 보다 [neovim](https://github.com/neovim/neovim)을 사용중이다.
+My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)를 dotfiles에 올려두었다.
 
-My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)
+vim 보다 [neovim](https://github.com/neovim/neovim)을 사용중이다.
+neovim은 vim의 fork로써 호환성으로 바로 넘어가더라도 큰 문제가 없다.
+다만 설정을 조금 수정해야 하는데, neovim 메뉴얼 `:h nvim-from-vim`에 잘 설명되어 있다.
+vim에서 제공하는 기능은 대부분 neovim에서도 사용할 수 있다. 다만 9.0은 아직인 듯(2023-11 기준).
+
+[Wikipedia](https://en.wikipedia.org/wiki/Vim_(text_editor)) 배포 내역을 보면,
+8.0 이전까지는 배포가 느렸지만, 8.0부터는 모던 에디터들의 추세에 맞춰 팝업 Window와 비동기 I/O 등이 추가되었다.
+이전에는 Bram이 대부분 혼자서 개발하느라 느렸던 것으로 알고있다.
+[GitHub vim 저장소](https://github.com/vim/vim#sponsoring)를 보면 Bram은 직장에 복귀했다고 한다.
+그래서 8.0 이후로는 다양한 사람들이 기여하고 있다.
+
+vimscript라는 자체 스크립트를 제공하는데, 학습하기 꽤 어려운 언어이다.
+[어떤 글](https://www.reddit.com/r/neovim/comments/l1mne8/learning_vimscript_vs_lua/)에서는 정규식에 빗대어, 학습하는 것이 아니라 그냥 사용하는 것이라고 말한다:
+
+> Vimscript is like regex, you don't learn it, just use it.
 
 창시자인 Bram Moolenaar는 플러그인을 많이 사용하지 않는다고 한다:
-> 사실 저는 배포판에 포함된 플러그인(matchit, termdebug 등)을 제외하고는 플러그인 자체를 많이 사용하지 않습니다. 필요한 기능이 있으면 간단한 것은 바로 만들거나 Vim 베이스에 추가하는 편입니다.
 
-## neovim
+> 사실 저는 배포판에 포함된 플러그인(matchit, termdebug 등)을 제외하고는 플러그인 자체를 많이 사용하지 않습니다. 필요한 기능이 있으면 간단한 것은 바로 만들거나 Vim 베이스에 추가하는 편입니다.
+>
+> \- https://yozm.wishket.com/magazine/detail/2183/
+
+## Neovim
+
+Neovim은 vim을 fork하고, vimscript와 더불어 lua도 지원하며, 더 확장된 기능을 제공한다.
 
 https://github.com/neovim/neovim
 
-neovim은 vimscript와 더불어 lua를 자체 제공한다.
+검색해보면 neovim 커뮤니티에서는 vim에 대한 불만이 많이 보인다. :0
+아무래도 원작자인 Bram의 방향성과 상충되어서가 아닐까. 잘 모르겠다.
 
-vimscript는 학습하기 꽤 어려운 언어인데, [이 글](https://www.reddit.com/r/neovim/comments/l1mne8/learning_vimscript_vs_lua/)에서는 학습하는 것이 아니라 그냥 사용하는 것이라고 비유하기도 한다:
+neovim으로 이전한 이유는 [LSP](/docs/wiki/language-server-protocol.md)를 사용하기 위함이었다.
+neovim은 LSP를 자체적으로 제공한다. 바닐라 vim은 [coc.nvim](https://github.com/neoclide/coc.nvim)을 사용해야 한다.
+coc.nvim은 자체 플러그인 기능으로 편리하게 다양한 언어 서버를 설치할 수 있어서 편리하지만, neovim 자체 기능 보다는 느리다.
+솔직하게 말하면 답답할 정도.
 
-> Vimscript is like regex, you don't learn it, just use it.
+개인적으로는 Lua를 [Ultima Online](./game.md#ultima-online)의 스크립트 언어로 사용한 경험을 비추어 보았을 때,
+딱히 생산성이나 편의성이 높지는 않았다. 다만 vimscript 보다는 학습 곡선이 낮다.
+
+vim에서 사용하는 변수, 옵션, 함수를 lua 스크립트에서도 사용할 수 있다.
+그래서 `.vimrc` 내용을 lua로 이전할 수 있는데, 나는 그냥 vimscript로 사용중이다.
+
+lua 스크립트로만 초기화할 수 있는 부분이 있다. neovim 전용 플러그인들이다.
+neovim에 맞춰진 플러그인은 ~.nvim 이라는 접미사를 붙이는 것이 관례인데,
+이런 플러그인들은 lua 스크립트로 include해서 직접 초기화하는 방식을 사용하기도 한다.
+[nvim-lsp](https://github.com/neovim/nvim-lspconfig)를 보면 `require'lspconfig'.pyright.setup{}` 처럼 사용한다.
+어쨌든 대부분 설정들은 lua나 vimscript 모두 제공하므로 취향껏 사용하면 된다.
 
 ### Lua 가이드
 
