@@ -4,7 +4,6 @@ const config: GatsbyConfig = {
   pathPrefix: process.env.GATSBY_PATH_PREFIX || `/`,
   siteMetadata: {
     title: `cat logic`,
-    siteUrl: `https://www.yourdomain.tld`,
   },
   graphqlTypegen: true,
   plugins: [
@@ -62,8 +61,13 @@ const config: GatsbyConfig = {
             rawMarkdownBody: node.childMarkdownRemark?.rawMarkdownBody,
           })),
       },
-    }
+    },
+    `gatsby-plugin-sitemap`,
   ],
+}
+
+if (config.siteMetadata && process.env.GATSBY_SITE_URL) {
+  config.siteMetadata.siteUrl = process.env.GATSBY_SITE_URL
 }
 
 export default config
