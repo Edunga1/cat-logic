@@ -50,7 +50,7 @@ export const Head: HeadFC = () => <title>Cat Logic - Home</title>
 export const pageQuery = graphql`
   query IndexPage {
     allFile(
-      filter: {childMarkdownRemark: {id: {ne: null}}, name: {ne: "index"}}
+      filter: {childMarkdownRemark: {id: {ne: null}}}
     ) {
       # wiki list
       nodes {
