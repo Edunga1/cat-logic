@@ -559,7 +559,6 @@ https://github.com/Edunga1/cat-logic/tree/main/embeddings
 78  ../docs/wiki/javascript.md                               ../docs/wiki/mail.md    0.767006
 77  ../docs/wiki/javascript.md                              ../docs/wiki/redis.md    0.758210
 33  ../docs/wiki/javascript.md                            ../docs/wiki/airflow.md    0.753884
-1
 ```
 
 자기 자신과의 유사도는 1이다. 1에 가까울수록 유사도가 높다.\
