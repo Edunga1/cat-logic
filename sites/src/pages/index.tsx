@@ -8,23 +8,7 @@ import Home, { WikiItem } from "../components/templates/Home"
 export default function IndexPage(
   { data }: PageProps<Queries.IndexPageQuery>,
 ) {
-  const { nodes } = data.allFile
-  const allItems = nodes
-    .concat()
-    .sort((a, b) => {
-      const aCreated = a.childMarkdownRemark?.frontmatter?.created
-        ? new Date(a.childMarkdownRemark.frontmatter.created).getTime()
-        : 0
-      const bCreated = b.childMarkdownRemark?.frontmatter?.created
-        ? new Date(b.childMarkdownRemark.frontmatter.created).getTime()
-        : 0
-      return bCreated - aCreated
-    })
-    .map(({ childMarkdownRemark }) => ({
-      path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),
-      title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
-      head: childMarkdownRemark?.fields?.head ?? "",
-    }))
+  const allItems = parseWikiItems(data.allFile.nodes)
   const [items, setItems] = React.useState(allItems)
   const [query, setQuery] = React.useState("")
   const result = useGatsbyPluginFusejs(query, data.fusejs)
@@ -88,5 +72,24 @@ function mapSearchResultToWikiItem(result: SearchResult[]): WikiItem[] {
       path: createWikiLink(it.item.name),
       title: it.item.title ?? "(Untitled)",
       head: "",
+    }))
+}
+
+function parseWikiItems(nodes: Queries.IndexPageQuery["allFile"]["nodes"]): WikiItem[] {
+  return nodes
+    .concat()
+    .sort((a, b) => {
+      const aCreated = a.childMarkdownRemark?.frontmatter?.created
+        ? new Date(a.childMarkdownRemark.frontmatter.created).getTime()
+        : 0
+      const bCreated = b.childMarkdownRemark?.frontmatter?.created
+        ? new Date(b.childMarkdownRemark.frontmatter.created).getTime()
+        : 0
+      return bCreated - aCreated
+    })
+    .map(({ childMarkdownRemark }) => ({
+      path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),
+      title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
+      head: childMarkdownRemark?.fields?.head ?? "",
     }))
 }
