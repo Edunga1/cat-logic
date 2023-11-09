@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, HeadFC, PageProps } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 import extractInternalLinks from "../../utils/internal-links"
 import Wiki from "../../components/templates/Wiki"
 import { removeFirstHeading } from "../../utils/html-string"
