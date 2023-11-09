@@ -9,21 +9,19 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   const { createNodeField } = actions
 
   if (node.internal.type === "MarkdownRemark") {
-    const slug = createFilePath({ node, getNode })
     createNodeField({
       name: "slug",
       node,
-      value: slug,
+      value: createFilePath({ node, getNode }),
     })
-    const head = getHead(node)
+
     createNodeField({
       name: "head",
       node,
-      value: head,
+      value: getHead(node),
     })
   }
 }
-
 
 // TODO: heading 제외하도록 개선 필요
 function getHead(node: Node) {
