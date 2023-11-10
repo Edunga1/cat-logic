@@ -1,6 +1,5 @@
 import * as React from "react"
 import { graphql, PageProps } from "gatsby"
-import extractInternalLinks from "../../utils/internal-links"
 import Wiki from "../../components/templates/Wiki"
 import { removeFirstHeading } from "../../utils/html-string"
 
@@ -14,13 +13,14 @@ export default function BlogPostTemplate(
 ) {
   const {
     tableOfContents,
-    html
+    html,
   } = data.markdownRemark ?? {}
   const docTitle = extractDocTitle(data)
-  const relatedLinks = html && extractInternalLinks(html) || []
-  const relatedLinksToc = relatedLinks.map(link => (
-    <a key={link} href={`../${link}`} style={relatedLinkStyle}>{link}</a>
-  ))
+  const relatedDocs = extractRelatedDocs(data)
+  const relatedLinksToc = relatedDocs.map(doc => {
+    const link = doc.slug
+    return <a key={link} href={`../${link}`} style={relatedLinkStyle}>{link}</a>
+  })
 
   return (
     <Wiki
@@ -38,6 +38,12 @@ export const pageQuery = graphql`
       headings(depth: h1) {
         value
       }
+      fields {
+        relatedDocs {
+          slug
+          similarity
+        }
+      }
       tableOfContents
       html
     }
@@ -49,7 +55,7 @@ export function Head(
 ) {
   const docTitle = extractDocTitle(data)
   return (
-    <title>Cat Logic{ docTitle && ` - ${docTitle}` }</title>
+    <title>Cat Logic{docTitle && ` - ${docTitle}`}</title>
   )
 }
 
@@ -58,3 +64,10 @@ function extractDocTitle(data: Queries.WikiDetailQuery) {
   return headings?.[0]?.value || undefined
 }
 
+function extractRelatedDocs(data: Queries.WikiDetailQuery) {
+  const { fields: { relatedDocs } } = data.markdownRemark
+  return relatedDocs
+    .filter(x => x.similarity < 1)
+    .sort((a, b) => b.similarity - a.similarity)
+    .slice(0, 5)
+} 

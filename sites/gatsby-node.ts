@@ -1,5 +1,6 @@
 import { GatsbyNode, Node } from "gatsby"
 import { createFilePath } from "gatsby-source-filesystem"
+import getRelatedDocs from "./src/related-docs/RelatedDocs"
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
@@ -15,12 +16,36 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
       value: createFilePath({ node, getNode }),
     })
 
+    const head = getHead(node)
     createNodeField({
       name: "head",
       node,
       value: getHead(node),
     })
+
+    const relatedDocs = parseRelatedDocs(node)
+    createNodeField({
+      name: "relatedDocs",
+      node,
+      value: relatedDocs,
+    })
   }
+}
+
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions: { createTypes } }) => {
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      fields: Fields
+    }
+    type Doc {
+      slug: String!
+      similarity: Float!
+    }
+    type Fields {
+      relatedDocs: [Doc!]!
+    }
+  `
+  createTypes(typeDefs)
 }
 
 // TODO: heading 제외하도록 개선 필요
@@ -31,3 +56,10 @@ function getHead(node: Node) {
   return matched.replace(/^[#\s]*/, "").trim()
 }
 
+function parseRelatedDocs(node: Node) {
+  return getRelatedDocs(node.fileAbsolutePath)
+    .map(x => ({
+      slug: x.path.replace(/.md$/, ""),
+      similarity: x.similarity,
+    }))
+}
