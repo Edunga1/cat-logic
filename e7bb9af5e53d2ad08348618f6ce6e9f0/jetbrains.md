@@ -135,14 +135,14 @@ Package View에서는 `Scratches`가 보이지 않는다.
 
 MySQL Workbench, Sequel Pro 등 몇 가지 무료 데이터베이스 클라이언트를 사용해 보았지만, 유료인 DataGrip이 가장 편리했다.
 
-### keymap
+### keymaps
 
-| name                                     | shortcut | note                                                                   |
-|------------------------------------------|----------|------------------------------------------------------------------------|
-| Database Tools and SQL -> Attach Session | opt + o  | staging, prod, local 등 자주 전환하는 경우 유용하다.                   |
-| Database Tools and SQL -> Transpose      | opt + t  | 열과 행 반전. 컬럼이 많은 경우 보기 편리                               |
-| Other -> Pin Active Tab                  | opt + p  | 탭 고정. 탭 여러개를 비교를 자주할 때 유용                             |
-| Main Menu -> Navigate -> File Structure  | opt + l  | (쿼리 결과에서) 컬럼 목록 및 이동. 컬럼이 많은 경우 검색으로 이동 가능 |
+| name                                     | shortcut  | note                                                                   |
+| :--------------------------------------- | :-------- | :--------------------------------------------------------------------- |
+| Database Tools and SQL -> Attach Session | `opt` `o` | staging, prod, local 등 자주 전환하는 경우 유용하다.                   |
+| Database Tools and SQL -> Transpose      | `opt` `t` | 열과 행 반전. 컬럼이 많은 경우 보기 편리                               |
+| Other -> Pin Active Tab                  | `opt` `p` | 탭 고정. 탭 여러개를 비교를 자주할 때 유용                             |
+| Main Menu -> Navigate -> File Structure  | `opt` `l` | (쿼리 결과에서) 컬럼 목록 및 이동. 컬럼이 많은 경우 검색으로 이동 가능 |
 
 ```xml
 <keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
