@@ -65,7 +65,7 @@ function extractDocTitle(data: Queries.WikiDetailQuery) {
 }
 
 function extractRelatedDocs(data: Queries.WikiDetailQuery) {
-  const { fields: { relatedDocs } } = data.markdownRemark
+  const relatedDocs = data.markdownRemark?.fields?.relatedDocs || []
   return relatedDocs
     .filter(x => x.similarity < 1)
     .sort((a, b) => b.similarity - a.similarity)

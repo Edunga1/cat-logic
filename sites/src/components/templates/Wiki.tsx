@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Toc from "../../components/molecules/Toc"
 import WikiContent from "../../components/molecules/WikiContent"
 import device from "../../constants/device"
+import Link from "../atoms/Link/Link"
 import Comments from "../molecules/Comments"
 
 const Container = styled.div`
@@ -60,6 +61,7 @@ export default function Wiki(
       <Main>
         <h1>{title}</h1>
         <Toc contents={tableOfContents} />
+        <Link href="/">🐾</Link>
         {<WikiContent contents={wikiContents} />}
         <Comments />
       </Main>
