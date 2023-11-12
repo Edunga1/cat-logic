@@ -60,27 +60,28 @@ data-styled.g1[id="Toc__Container-sc-1f76i2s-0"]{content:"jKwTdT,"}/*!sc*/
 .jzROSZ img{max-width:100%;}/*!sc*/
 .jzROSZ blockquote{border-left:4px solid #ddd;padding-left:1rem;margin-left:0;font-style:italic;}/*!sc*/
 data-styled.g2[id="WikiContent__Container-sc-q3jb6a-0"]{content:"jzROSZ,"}/*!sc*/
-.eaihEh{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
-.eaihEh:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
-data-styled.g3[id="Link__A-sc-e7w5ww-0"]{content:"eaihEh,"}/*!sc*/
 .gcJKrk{padding-top:20rem;}/*!sc*/
-data-styled.g4[id="Comments__Container-sc-1ajj4d9-0"]{content:"gcJKrk,"}/*!sc*/
+data-styled.g3[id="Comments__Container-sc-1ajj4d9-0"]{content:"gcJKrk,"}/*!sc*/
 .gqosYh{display:grid;grid-template-columns:1fr;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
 @media (min-width:700px){.gqosYh{grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);}}/*!sc*/
-data-styled.g5[id="Wiki__Container-sc-16q9onf-0"]{content:"gqosYh,"}/*!sc*/
+data-styled.g4[id="Wiki__Container-sc-16q9onf-0"]{content:"gqosYh,"}/*!sc*/
 .dOTUaa{display:none;}/*!sc*/
 .dOTUaa > div:nth-child(2){padding-top:1rem;}/*!sc*/
 @media (min-width:700px){.dOTUaa{display:block;}}/*!sc*/
-data-styled.g6[id="Wiki__Side-sc-16q9onf-1"]{content:"dOTUaa,"}/*!sc*/
+data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"dOTUaa,"}/*!sc*/
 .kswmXr{padding:0 1rem;overflow:auto;}/*!sc*/
 @media (min-width:700px){.kswmXr > div:nth-child(2){display:none;}}/*!sc*/
-data-styled.g7[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
+data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 </style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Node JS</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 dOTUaa"><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
 <li>
 <p><a href="#node-js">Node JS</a></p>
 <ul>
 <li>
 <p><a href="#package-manager">Package Manager</a></p>
+<ul>
+<li><a href="#yarn">yarn</a></li>
+<li><a href="#pnpm">pnpm</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#nodejs-test-tools">NodeJS Test Tools</a></p>
@@ -145,6 +146,10 @@ data-styled.g7[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <ul>
 <li>
 <p><a href="#package-manager">Package Manager</a></p>
+<ul>
+<li><a href="#yarn">yarn</a></li>
+<li><a href="#pnpm">pnpm</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#nodejs-test-tools">NodeJS Test Tools</a></p>
@@ -203,11 +208,46 @@ data-styled.g7[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 </li>
 </ul>
 </li>
-</ul></div><a href="/" class="Link__A-sc-e7w5ww-0 eaihEh">🐾</a><div class="WikiContent__Container-sc-q3jb6a-0 jzROSZ">
+</ul></div><div class="WikiContent__Container-sc-q3jb6a-0 jzROSZ">
 <p>node.js로 개발을 하고있지 않아서.. 대부분 내용이 2016년 정도에 머물러 있다.</p>
 <h2 id="package-manager" style="position:relative;"><a href="#package-manager" aria-label="package manager permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Package Manager</h2>
 <p>npm은 node.js의 패키지 관리자이다.
 node.js 설치하면 npm을 함께 포함한다.</p>
+<p>이 생태계에서 주로 사용하는 패키지매니저는 npm, yarn, pnpm이 있다.
+3개 모두 <code>package.json</code>을 사용한다. 추가로 패키지매니저 별로 lock와 별도 설정 파일을 사용한다.</p>
+<p>어떤 node.js 프로젝트를 확인할 때 패키지매니저 전용 파일을 확인하거나,
+<code>package.json</code>의 <code>packageManager</code> 필드를 확인하면 된다.
+e.g. <a href="https://github.com/jestjs/jest/blob/main/package.json">jest</a>는 <code>"packageManager": "yarn@3.6.4"</code></p>
+<p><strong>의존성 설치 속도 비교</strong></p>
+<p><a href="../cat-logic">cat logic</a> sites 프로젝트의 의존성 설치 속도를 비교했다.</p>
+<table>
+<thead>
+<tr>
+<th>Package Manager</th>
+<th>Install Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>npm</td>
+<td>20s</td>
+</tr>
+<tr>
+<td>pnpm</td>
+<td>2.9s</td>
+</tr>
+<tr>
+<td>yarn v1</td>
+<td>16.1s</td>
+</tr>
+</tbody>
+</table>
+<p>pnpm이 가장 빨랐다. 다만 모두 캐시된 상황이라 정확한 비교는 아니다.
+github actions 환경에서 npm 40s, pnpm 19.3s 소요되었다.</p>
+<h3 id="yarn" style="position:relative;"><a href="#yarn" aria-label="yarn permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>yarn</h3>
+<p><a href="https://github.com/yarnpkg/yarn">yarn</a>은 v1과 그 이후 버전으로 프로젝트가 나뉜다.</p>
+<p>yarn은 <code>yarn.lock</code>을 lock 파일로 사용한다.</p>
+<hr>
 <p>2023-11 최근 yarn을 시도해 보았는데, 좋은 선택은 아닌 거 같다.
 일단 <a href="https://github.com/yarnpkg/yarn">yarn</a> v1은 22년 이후로 1.22.19로 종료되었다.</p>
 <p>이후로 yarn v2, v3, v4가 나왔는데, v1과 다른 프로젝다.
@@ -218,8 +258,46 @@ cli는 yarn 이름을 같이 사용하지만 프로젝트가 달라서 Homebrew�
 <p>반면에 npm은 지금까지도 한 프로젝트에서 관리되고 있다.
 그래서 혼란이 없다. node.js에 내장되어 있으므로 따로 설치할 필요도 없다.
 다만 <code>npm audit</code>은 짜증만 난다. 이걸로 제대로 고쳐지는 경우가 많이 없는 거 같다.</p>
-<p><a href="https://github.com/pnpm/pnpm">pnpm</a>라는 패키지 매니저도 있다.
-GitHub Star가 가장 많다. 최근들어 흔하게 사용하는 거 같다.</p>
+<h3 id="pnpm" style="position:relative;"><a href="#pnpm" aria-label="pnpm permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pnpm</h3>
+<p><a href="https://github.com/pnpm/pnpm">pnpm</a> GitHub Star가 가장 많다.
+최근들어 흔하게 사용하는 거 같다.</p>
+<p>설치는 <code>npm install -g pnpm</code> 또는 <code>brew install pnpm</code>.</p>
+<ul>
+<li><code>pnpm-lock.yaml</code> lock 파일을 사용한다.</li>
+<li><code>pnpm-workspace.yaml</code> Monorepositories 위한 <a href="https://pnpm.io/workspaces">workspace</a> 설정 파일을 사용한다.</li>
+</ul>
+<p>Monorepo가 아니라면 <code>pnpm-workspace.yaml</code>은 필요 없는 것으로 보인다.
+괜히 빈 내용으로 추가하면 패키지 설치 시 매번 root project 경고가 발생한다.</p>
+<p><code>pnpm install</code> 시 warning이 줄어든 것을 확인할 수 있었다.
+단순히 숨긴건지는 모르겠지만 <code>npm install</code> 경우에는 수 많은 peer depdency warning으로 신경이 쓰이는 반면에 pnpm은 warning이 없었다.</p>
+<hr>
+<p>다른 패키지매니저와 <code>node_modules</code> 구조가 다른지, migration 아티클들을 보면 <code>node_modules</code>를 삭제하고 시작한다.</p>
+<p><code>node_modules</code> 구조는 <a href="https://pnpm.io/ko/blog/2020/05/27/flat-node-modules-is-not-the-only-way">평탄한 node_modules가 유일한 방법은 아닙니다.</a> 공식 블로그에서 설명한다.</p>
+<p>expressjs를 설치했을 때 <code>node_modules</code> 구조를 비교해보면 다음과 같다:</p>
+<p>npm은</p>
+<pre><code class="language-bash">.bin
+accepts
+array-flatten
+body-parser
+bytes
+content-disposition
+cookie-signature
+cookie
+debug
+depd
+destroy
+ee-first
+encodeurl
+escape-html
+etag
+express
+</code></pre>
+<p>pnpm은</p>
+<pre><code class="language-bash">.pnpm
+.modules.yaml
+express
+</code></pre>
+<p><code>node_modules</code>를 평탄하게 유지하지 않는다. 또한 <code>express</code> 폴더는 <strong>심볼릭 링크</strong>이다.</p>
 <h2 id="nodejs-test-tools" style="position:relative;"><a href="#nodejs-test-tools" aria-label="nodejs test tools permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NodeJS Test Tools</h2>
 <p>지금은 <a href="https://github.com/facebook/jest">Jest</a>를 사용하고 있다.
 이거 하나면 대부분 가능하더라.</p>
@@ -470,6 +548,6 @@ virtual host 또는 방화벽으로 막는게 합리적으로 보인다.</p>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-2cc345a011ebd91d21a1.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9f0966a06fdbdaabfa57.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-ba516d15d5096b223262.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-628a72e701450a961d8d.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"],\"component---src-pages-wiki-markdown-remark-fields-slug-tsx\":[\"/component---src-pages-wiki-markdown-remark-fields-slug-tsx-099fad913feee200ec1e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="7e3c9cb4399d8100db6b";</script><script src="/cat-logic/webpack-runtime-30d3e3e1964ea6662ceb.js" async></script><script src="/cat-logic/app-2cc345a011ebd91d21a1.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ae4027d52e03b1094c8e";</script><script src="/cat-logic/webpack-runtime-fc468c10cc9142ee6876.js" async></script><script src="/cat-logic/app-628a72e701450a961d8d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
