@@ -182,17 +182,3 @@ gatsby config는 [pathPrefix](https://www.gatsbyjs.com/docs/how-to/previews-depl
 
 문제는 이 플러그인들은 더 이상 관리되지 않는다. 지금 설치하면 오래된 dependency로 취약점 경고가 많이 뜬다.
 `pathPrefix`를 사용하는 것은 너무 번거로워 보여서, 다른 방법을 찾아봐야 겠다.
-
-### pnpm 사용 시 빌드가 실패하는 문제
-
-pnpm에 등록된 이슈로 확인하자: https://github.com/pnpm/pnpm/issues/991
-
-`gatsby build` `gatsby develop` 모두 실패한다.
-
-```bash
-Module not found: Error: Can't resolve 'prop-types' in '.../.cache'
-```
-
-이 문제를 해결하기 위한 별도 플러그인이 있다: https://github.com/Js-Brecht/gatsby-plugin-pnpm
-
-플러그인을 추가할 정도로 pnpm의 가치가 있어야 할텐데.

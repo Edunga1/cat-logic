@@ -7,34 +7,6 @@ node.js로 개발을 하고있지 않아서.. 대부분 내용이 2016년 정도
 npm은 node.js의 패키지 관리자이다.
 node.js 설치하면 npm을 함께 포함한다.
 
-이 생태계에서 주로 사용하는 패키지매니저는 npm, yarn, pnpm이 있다.
-3개 모두 `package.json`을 사용한다. 추가로 패키지매니저 별로 lock와 별도 설정 파일을 사용한다.
-
-어떤 node.js 프로젝트를 확인할 때 패키지매니저 전용 파일을 확인하거나,
-`package.json`의 `packageManager` 필드를 확인하면 된다.
-e.g. [jest](https://github.com/jestjs/jest/blob/main/package.json)는 `"packageManager": "yarn@3.6.4"`
-
-**의존성 설치 속도 비교**
-
-[cat logic](./cat-logic.md) sites 프로젝트의 의존성 설치 속도를 비교했다.
-
-| Package Manager | Install Time |
-|-----------------|--------------|
-| npm             | 20s          |
-| pnpm            | 2.9s         |
-| yarn v1         | 16.1s        |
-
-pnpm이 가장 빨랐다. 다만 모두 캐시된 상황이라 정확한 비교는 아니다.
-github actions 환경에서 npm 40s, pnpm 19.3s 소요되었다.
-
-### yarn
-
-[yarn](https://github.com/yarnpkg/yarn)은 v1과 그 이후 버전으로 프로젝트가 나뉜다.
-
-yarn은 `yarn.lock`을 lock 파일로 사용한다.
-
----
-
 2023-11 최근 yarn을 시도해 보았는데, 좋은 선택은 아닌 거 같다.
 일단 [yarn](https://github.com/yarnpkg/yarn) v1은 22년 이후로 1.22.19로 종료되었다.
 
@@ -48,60 +20,8 @@ cli는 yarn 이름을 같이 사용하지만 프로젝트가 달라서 Homebrew�
 그래서 혼란이 없다. node.js에 내장되어 있으므로 따로 설치할 필요도 없다.
 다만 `npm audit`은 짜증만 난다. 이걸로 제대로 고쳐지는 경우가 많이 없는 거 같다.
 
-### pnpm
-
-[pnpm](https://github.com/pnpm/pnpm) GitHub Star가 가장 많다.
-최근들어 흔하게 사용하는 거 같다.
-
-설치는 `npm install -g pnpm` 또는 `brew install pnpm`.
-
-- `pnpm-lock.yaml` lock 파일을 사용한다.
-- `pnpm-workspace.yaml` Monorepositories 위한 [workspace](https://pnpm.io/workspaces) 설정 파일을 사용한다.
-
-Monorepo가 아니라면 `pnpm-workspace.yaml`은 필요 없는 것으로 보인다.
-괜히 빈 내용으로 추가하면 패키지 설치 시 매번 root project 경고가 발생한다.
-
-`pnpm install` 시 warning이 줄어든 것을 확인할 수 있었다.
-단순히 숨긴건지는 모르겠지만 `npm install` 경우에는 수 많은 peer depdency warning으로 신경이 쓰이는 반면에 pnpm은 warning이 없었다.
-
----
-
-다른 패키지매니저와 `node_modules` 구조가 다른지, migration 아티클들을 보면 `node_modules`를 삭제하고 시작한다.
-
-`node_modules` 구조는 [평탄한 node_modules가 유일한 방법은 아닙니다.](https://pnpm.io/ko/blog/2020/05/27/flat-node-modules-is-not-the-only-way) 공식 블로그에서 설명한다.
-
-expressjs를 설치했을 때 `node_modules` 구조를 비교해보면 다음과 같다:
-
-npm은
-
-```bash
-.bin
-accepts
-array-flatten
-body-parser
-bytes
-content-disposition
-cookie-signature
-cookie
-debug
-depd
-destroy
-ee-first
-encodeurl
-escape-html
-etag
-express
-```
-
-pnpm은
-
-```bash
-.pnpm
-.modules.yaml
-express
-```
-
-`node_modules`를 평탄하게 유지하지 않는다. 또한 `express` 폴더는 **심볼릭 링크**이다.
+[pnpm](https://github.com/pnpm/pnpm)라는 패키지 매니저도 있다.
+GitHub Star가 가장 많다. 최근들어 흔하게 사용하는 거 같다.
 
 ## NodeJS Test Tools
 
