@@ -2,6 +2,27 @@
 
 node.js로 개발을 하고있지 않아서.. 대부분 내용이 2016년 정도에 머물러 있다.
 
+## Package Manager
+
+npm은 node.js의 패키지 관리자이다.
+node.js 설치하면 npm을 함께 포함한다.
+
+2023-11 최근 yarn을 시도해 보았는데, 좋은 선택은 아닌 거 같다.
+일단 [yarn](https://github.com/yarnpkg/yarn) v1은 22년 이후로 1.22.19로 종료되었다.
+
+이후로 yarn v2, v3, v4가 나왔는데, v1과 다른 프로젝다.
+[berry](https://github.com/yarnpkg/berry)라는 이름으로 yarn의 새 버전을 이끈다.
+cli는 yarn 이름을 같이 사용하지만 프로젝트가 달라서 Homebrew로 설치도 할 수 없다.
+예전에는 yarn이 npm보다 더 개선된 패키지 관리자라는 것이었는데,
+이렇게 관리하는 것은 생태계에 혼란만 가져온다.
+
+반면에 npm은 지금까지도 한 프로젝트에서 관리되고 있다.
+그래서 혼란이 없다. node.js에 내장되어 있으므로 따로 설치할 필요도 없다.
+다만 `npm audit`은 짜증만 난다. 이걸로 제대로 고쳐지는 경우가 많이 없는 거 같다.
+
+[pnpm](https://github.com/pnpm/pnpm)라는 패키지 매니저도 있다.
+GitHub Star가 가장 많다. 최근들어 흔하게 사용하는 거 같다.
+
 ## NodeJS Test Tools
 
 지금은 [Jest](https://github.com/facebook/jest)를 사용하고 있다.
