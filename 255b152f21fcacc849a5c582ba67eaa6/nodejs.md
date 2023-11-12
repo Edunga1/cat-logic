@@ -423,7 +423,7 @@ pm2로 배포 프로세스를 관리하고 싶어서 설정 파일을 작성하�
 
 ## Taming architecture complexity in v8
 
-https://theori.io/research/korean/taming-architecture-complexity-in-v8
+https://blog.theori.io/taming-architecture-complexity-in-v8-translation-47564093473b
 
 [원문](https://v8.dev/blog/csa)을 번역한 글.
 
@@ -461,5 +461,5 @@ TF_BUILTIN(GetStringLength, CodeStubAssembler) {
 }
 ```
 
-[견고한 코드를 작성하는 방법](https://medium.com/swlh/1-powerful-way-to-write-robust-code-7c650071fe6b)
+[견고한 코드를 작성하는 방법](https://blog.hassler.ec/wp/2019/04/07/1-powerful-way-to-write-robust-code/)
 글이 생각났다. 진입점은 깔끔하게 유지하기.
