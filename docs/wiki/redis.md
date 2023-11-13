@@ -5,7 +5,7 @@
 * https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode
 * https://redis.io/commands/set/
 
-`2.6.12`부터 `SETNX` Deprecated 되고, `set`에 `NX` 옵션을 주는 것으로 변경되었다.
+`2.6.12`부터 `SETNX` Deprecated 되고, `set`에 `NX` 옵션이 추가되었다.
 
 > SETNX is short for "SET if Not eXists".
 
@@ -20,15 +20,15 @@
 
 이 방식으로 간단한 분산 Locking System을 구현할 수 있다.
 
-클라이언트A, 클라이언트B에서 각자 포인트를 적립, 차감하는 로직이 있다고 가정하자.
+클라이언트에서 각자 포인트를 적립, 차감하는 로직이 있다고 가정하자.
 
 Process:
-- 각 클라이언트은 위 명령어로 포인트를 처리하기 전에 Locking 한다: `SET point-user123 foo NX EX 60`
+- 각 클라이언는 위 명령어로 포인트를 처리하기 전에 Locking 한다: `SET point-user123 foo NX EX 60`
 - 만약 Locking에 실패하면(`nil`을 반환하면) "다른 클라이언트에서 처리 중입니다."와 같은 메시지를 반환한다.
 - Locking에 성공하면(`"OK"`를 반환하면) 포인트를 처리한다.
 - 처리가 끝나면 `DEL point-user123`로 Locking을 해제한다.
 
-설령 클라이언트A가 처리 중에 종료되더라도 60초 후에는 Locking이 해제되기 때문에 무한정 Locking이 되지 않는다.
+설령 클라이언트가 처리 중에 비정상 종료되더라도 60초 후에는 Locking이 해제되기 때문에 무한정 Locking은 피할 수 있다.
 
 좀 더 견고하게 Unlocking 프로세스를 만들고 싶다면 `DEL` 명령어를 직접 사용하지 않고, 일련의 해제 프로세스를 호출하는 것이 좋다:
 - `foo`와 같은 고정 문자열 대신, 랜덤한 문자열을 사용한다.
