@@ -92,7 +92,7 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <li><a href="https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode">https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode</a></li>
 <li><a href="https://redis.io/commands/set/">https://redis.io/commands/set/</a></li>
 </ul>
-<p><code>2.6.12</code>부터 <code>SETNX</code> Deprecated 되고, <code>set</code>에 <code>NX</code> 옵션을 주는 것으로 변경되었다.</p>
+<p><code>2.6.12</code>부터 <code>SETNX</code> Deprecated 되고, <code>set</code>에 <code>NX</code> 옵션이 추가되었다.</p>
 <blockquote>
 <p>SETNX is short for "SET if Not eXists".</p>
 </blockquote>
@@ -104,15 +104,15 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <p><code>EX max-lock-time</code>으로 인해 초 단위로 만료 시간을 지정할 수 있다.
 잘 설정되었다면 <code>"OK"</code>를 반환하고, 만료 시간이 지나기 전에 다시 호출하면 <code>nil</code>을 반환한다.</p>
 <p>이 방식으로 간단한 분산 Locking System을 구현할 수 있다.</p>
-<p>클라이언트A, 클라이언트B에서 각자 포인트를 적립, 차감하는 로직이 있다고 가정하자.</p>
+<p>클라이언트에서 각자 포인트를 적립, 차감하는 로직이 있다고 가정하자.</p>
 <p>Process:</p>
 <ul>
-<li>각 클라이언트은 위 명령어로 포인트를 처리하기 전에 Locking 한다: <code>SET point-user123 foo NX EX 60</code></li>
+<li>각 클라이언는 위 명령어로 포인트를 처리하기 전에 Locking 한다: <code>SET point-user123 foo NX EX 60</code></li>
 <li>만약 Locking에 실패하면(<code>nil</code>을 반환하면) "다른 클라이언트에서 처리 중입니다."와 같은 메시지를 반환한다.</li>
 <li>Locking에 성공하면(<code>"OK"</code>를 반환하면) 포인트를 처리한다.</li>
 <li>처리가 끝나면 <code>DEL point-user123</code>로 Locking을 해제한다.</li>
 </ul>
-<p>설령 클라이언트A가 처리 중에 종료되더라도 60초 후에는 Locking이 해제되기 때문에 무한정 Locking이 되지 않는다.</p>
+<p>설령 클라이언트가 처리 중에 비정상 종료되더라도 60초 후에는 Locking이 해제되기 때문에 무한정 Locking은 피할 수 있다.</p>
 <p>좀 더 견고하게 Unlocking 프로세스를 만들고 싶다면 <code>DEL</code> 명령어를 직접 사용하지 않고, 일련의 해제 프로세스를 호출하는 것이 좋다:</p>
 <ul>
 <li><code>foo</code>와 같은 고정 문자열 대신, 랜덤한 문자열을 사용한다.</li>
