@@ -136,6 +136,25 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <p>the fastest frontend for the headless web. Build modern websites with React.</p>
 </blockquote>
 <p><a href="https://github.com/gatsbyjs/gatsby">https://github.com/gatsbyjs/gatsby</a></p>
+<p>기본 튜토리얼을 따라 홈페이지를 만든다면 File System Route API를 사용하게 되는데,
+<a href="https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/#routing-and-linking">라우팅 시 자동으로 slugify</a>한다.</p>
+<p>이는 의도한대로 path를 만들지 않을 수 있다는 의미다.
+<a href="https://github.com/sindresorhus/slugify">slugify</a>라는 라이브러리를 사용하는데, slug로 사용할 수 없는 문자도 있다.</p>
+<p>slugify는 cli 도구로 제공해서 테스트해볼 수 있다:</p>
+<pre><code class="language-bash">$ npx slugify-cli 'wh안at'
+wh-at
+
+# "/인공지능"의 URI encoding
+$ npx slugify-cli '/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5'
+ec-9-d-b8-ea-b3-b5-ec-a7-80-eb-8-a-a5
+</code></pre>
+<p>한글이나 특수문자를 변환하는 모습이다.</p>
+<blockquote>
+<p>If you have a route called <code>src/pages/wholesome/{Animal.slogan}.js</code> where <code>slogan</code> is <code>I ♥ Dogs</code> the final URL will be <code>/wholesome/i-love-dogs</code>.
+Gatsby will convert the field into a human-readable URL format while stripping it of invalid characters.</p>
+</blockquote>
+<p>사람이 읽을 수 있는 URL로 변환한다지만, 영어가 아닌 언어는 제대로 변환되지 않는다.
+slugify를 끌 수 있는 방법은 찾지 못했다.</p>
 <h2 id="graphql-타입-자동-생성하기" style="position:relative;"><a href="#graphql-%ED%83%80%EC%9E%85-%EC%9E%90%EB%8F%99-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="graphql 타입 자동 생성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GraphQL 타입 자동 생성하기</h2>
 <p><a href="https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/">https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/</a></p>
 <p>GraphQL에 대한 타입을 직접 명세할 필요 없다. gatsby 설정을 통해 자동으로 타입을 생성한다.</p>
