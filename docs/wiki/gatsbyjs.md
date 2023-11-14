@@ -9,6 +9,31 @@ React 기반 웹사이트 프레임워크.
 
 https://github.com/gatsbyjs/gatsby
 
+기본 튜토리얼을 따라 홈페이지를 만든다면 File System Route API를 사용하게 되는데,
+[라우팅 시 자동으로 slugify](https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/#routing-and-linking)한다.
+
+이는 의도한대로 path를 만들지 않을 수 있다는 의미다.
+[slugify](https://github.com/sindresorhus/slugify)라는 라이브러리를 사용하는데, slug로 사용할 수 없는 문자도 있다.
+
+slugify는 cli 도구로 제공해서 테스트해볼 수 있다:
+
+```bash
+$ npx slugify-cli 'wh안at'
+wh-at
+
+# "/인공지능"의 URI encoding
+$ npx slugify-cli '/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5'
+ec-9-d-b8-ea-b3-b5-ec-a7-80-eb-8-a-a5
+```
+
+한글이나 특수문자를 변환하는 모습이다.
+
+> If you have a route called `src/pages/wholesome/{Animal.slogan}.js` where `slogan` is `I ♥ Dogs` the final URL will be `/wholesome/i-love-dogs`.
+> Gatsby will convert the field into a human-readable URL format while stripping it of invalid characters.
+
+사람이 읽을 수 있는 URL로 변환한다지만, 영어가 아닌 언어는 제대로 변환되지 않는다.
+slugify를 끌 수 있는 방법은 찾지 못했다.
+
 ## GraphQL 타입 자동 생성하기
 
 https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/
