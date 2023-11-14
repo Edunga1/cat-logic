@@ -1,5 +1,6 @@
 import { GatsbyNode, Node } from "gatsby"
 import { createFilePath } from "gatsby-source-filesystem"
+import path from "path"
 import getRelatedDocs from "./src/related-docs/RelatedDocs"
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
@@ -45,6 +46,43 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
   `
   createTypes(typeDefs)
 }
+
+export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const wikiTemplate = path.resolve("src/components/gatsby-templates/Wiki.tsx")
+  return graphql(`
+    query LoadPagesQuery ($limit: Int!) {
+      allMarkdownRemark(limit: $limit) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `, { limit: 1000 }).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+
+    result.data.allMarkdownRemark.edges.forEach(edge => {
+      console.log(path.join("wiki", edge.node.fields.slug))
+      createPage({
+        // Path for this page — required
+        path: path.join("wiki", edge.node.fields.slug),
+        component: wikiTemplate,
+        context: {
+          id: edge.node.id,
+        },
+      })
+    })
+  })
+}
+
+//- Helpers
 
 // TODO: heading 제외하도록 개선 필요
 function getHead(node: Node) {
