@@ -16,18 +16,16 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
       value: createFilePath({ node, getNode }),
     })
 
-    const head = getHead(node)
     createNodeField({
       name: "head",
       node,
       value: getHead(node),
     })
 
-    const relatedDocs = parseRelatedDocs(node)
     createNodeField({
       name: "relatedDocs",
       node,
-      value: relatedDocs,
+      value: parseRelatedDocs(node),
     })
   }
 }
