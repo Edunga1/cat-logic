@@ -49,3 +49,10 @@ Cat Logic은 실험적인 프로젝트이기도 하다.
 이것도 관련 문서라고 볼 수 있겠지만, 임베딩 쪽이 더 많은 것을 추천할 듯.
 
 작업 커밋: https://github.com/Edunga1/cat-logic/commit/0e1b06f160df3d1425dd64962f8ac8b34a62bd21
+
+### 2023-11-15
+
+한국어 path를 지원하도록 했다.
+나무위키처럼 한글과 depth path로 구조적인 문서로 좀 더 보기 좋게 만들고 싶다.
+
+작업 커밋: https://github.com/Edunga1/cat-logic/commit/b8b32647aaf301e38acb61cfaabba9cc906f8bbe
