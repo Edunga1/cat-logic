@@ -69,7 +69,6 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
     }
 
     result.data.allMarkdownRemark.edges.forEach(edge => {
-      console.log(path.join("wiki", edge.node.fields.slug))
       createPage({
         // Path for this page — required
         path: path.join("wiki", edge.node.fields.slug),
