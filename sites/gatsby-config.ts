@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from "gatsby"
+import { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
   pathPrefix: process.env.GATSBY_PATH_PREFIX || `/`,
@@ -54,10 +54,10 @@ const config: GatsbyConfig = {
           }
         `,
         keys: ["rawMarkdownBody", "name"],
-        normalizer: ({ data }) =>
+        normalizer: ({ data }: { data: Queries.Query }) =>
           data.allFile.edges.map(({ node }) => ({
             name: node.name,
-            title: node.childMarkdownRemark?.headings[0]?.value,
+            title: node.childMarkdownRemark?.headings?.[0]?.value,
             rawMarkdownBody: node.childMarkdownRemark?.rawMarkdownBody,
           })),
       },

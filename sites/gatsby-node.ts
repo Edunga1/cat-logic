@@ -50,8 +50,8 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
   const { createPage } = actions
   const wikiTemplate = path.resolve("src/components/gatsby-templates/Wiki.tsx")
-  return graphql(`
-    query LoadPagesQuery ($limit: Int!) {
+  return graphql<Queries.LoadPagesQuery>(`
+    query LoadPages ($limit: Int!) {
       allMarkdownRemark(limit: $limit) {
         edges {
           node {
@@ -68,10 +68,9 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
       throw result.errors
     }
 
-    result.data.allMarkdownRemark.edges.forEach(edge => {
+    result.data?.allMarkdownRemark.edges.forEach(edge => {
       createPage({
-        // Path for this page — required
-        path: path.join("wiki", edge.node.fields.slug),
+        path: path.join("wiki", edge.node.fields?.slug ?? ""),
         component: wikiTemplate,
         context: {
           id: edge.node.id,
