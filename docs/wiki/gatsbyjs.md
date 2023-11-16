@@ -221,3 +221,7 @@ Module not found: Error: Can't resolve 'prop-types' in '.../.cache'
 이 문제를 해결하기 위한 별도 플러그인이 있다: https://github.com/Js-Brecht/gatsby-plugin-pnpm
 
 플러그인을 추가할 정도로 pnpm의 가치가 있어야 할텐데.
+
+### 링크 경로에 space 포함 시 링크가 동작하지 않는 문제
+
+마크다운 파일 기준이며, html로 변환되면서 링크가 올바르게 동작하지 않아서 확인 중.
