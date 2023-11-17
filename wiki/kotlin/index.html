@@ -164,11 +164,30 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <p>e.g. <code>run</code></p>
 <pre><code class="language-kotlin">val totalPrice = item.run { price * amount }
 </code></pre>
-<p>scope functions 모두 같은 일을 한다.
-context object를 어떻게 접근하는 지, 반환 값은 무엇인지에 따라 적절하게 골라서 사용하면 좋다.
+<p>scope functions는 모두 같은 일을 한다.
+context object를 어떻게 접근하는 지, 반환 값은 무엇인지에 따라 의미론적으로 맞게 골라서 사용하면 좋다.
 예를들어, context object로 추가 로직을 처리하고, 특별히 반환할 것이 없으면 <code>also</code>.
 context object의 상태로 계산하여 반환하고 싶으면 <code>let</code>을 사용하면 의미가 맞다.</p>
 <p>어떤 함수를 사용할 지 시나리오를 공식 문서에서 설명한다:  <a href="https://kotlinlang.org/docs/scope-functions.html#function-selection">https://kotlinlang.org/docs/scope-functions.html#function-selection</a></p>
+<p>처음 kotlin을 접하는 개발자와 함께 일하면 이 부분에서 유독 많이 이야기하게 된다.
+같은 일을 하는 함수가 많이 있으니 말이다. 언제, 어떤 scope function을 사용할 지 계속 이야기한다.
+너무 목매지 않는 편이 현명하다.</p>
+<hr>
+<p>다른 언어로 개발할 때면 scope function이 매우 그리워진다.
+특히 웹 개발과 같이 null check가 잦으면 더욱 그렇다.</p>
+<pre><code class="language-typescript">if (foo?.bar?.baz != null) {
+  foo.bar.baz.something1()
+  foo.bar.baz.something2()
+}
+</code></pre>
+<p>위 코드처럼 이미 체크된 변수를 다시 사용해야 할 때 scope function가 빛을 발한다.</p>
+<pre><code class="language-kotlin">foo?.bar?.baz?.run {
+  something1()
+  something2()
+}
+</code></pre>
+<p>변수이름이 길어질수록 줄바꿈도 생기고 코드도 길어져서 읽기 어려워지는데, scope function은 획기적으로 줄여준다.
+계산 결과를 담아야 하는 경우가 생기면 담을 변수를 미리 선언하여 초기화 할 필요가 있으니 더욱 답답해진다.</p>
 <h2 id="testing" style="position:relative;"><a href="#testing" aria-label="testing permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing</h2>
 <p>test framework: <a href="https://github.com/kotest/kotest">Kotest</a>
 mocking: <a href="https://github.com/mockk/mockk">MockK</a></p>

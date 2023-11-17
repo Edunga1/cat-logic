@@ -14,13 +14,40 @@ e.g. `run`
 val totalPrice = item.run { price * amount }
 ```
 
-scope functions 모두 같은 일을 한다.
-context object를 어떻게 접근하는 지, 반환 값은 무엇인지에 따라 적절하게 골라서 사용하면 좋다.
+scope functions는 모두 같은 일을 한다.
+context object를 어떻게 접근하는 지, 반환 값은 무엇인지에 따라 의미론적으로 맞게 골라서 사용하면 좋다.
 예를들어, context object로 추가 로직을 처리하고, 특별히 반환할 것이 없으면 `also`.
 context object의 상태로 계산하여 반환하고 싶으면 `let`을 사용하면 의미가 맞다.
 
 어떤 함수를 사용할 지 시나리오를 공식 문서에서 설명한다:  https://kotlinlang.org/docs/scope-functions.html#function-selection
 
+처음 kotlin을 접하는 개발자와 함께 일하면 이 부분에서 유독 많이 이야기하게 된다.
+같은 일을 하는 함수가 많이 있으니 말이다. 언제, 어떤 scope function을 사용할 지 계속 이야기한다.
+너무 목매지 않는 편이 현명하다.
+
+---
+
+다른 언어로 개발할 때면 scope function이 매우 그리워진다.
+특히 웹 개발과 같이 null check가 잦으면 더욱 그렇다.
+
+```typescript
+if (foo?.bar?.baz != null) {
+  foo.bar.baz.something1()
+  foo.bar.baz.something2()
+}
+```
+
+위 코드처럼 이미 체크된 변수를 다시 사용해야 할 때 scope function가 빛을 발한다.
+
+```kotlin
+foo?.bar?.baz?.run {
+  something1()
+  something2()
+}
+```
+
+변수이름이 길어질수록 줄바꿈도 생기고 코드도 길어져서 읽기 어려워지는데, scope function은 획기적으로 줄여준다.
+계산 결과를 담아야 하는 경우가 생기면 담을 변수를 미리 선언하여 초기화 할 필요가 있으니 더욱 답답해진다.
 
 ## Testing
 
