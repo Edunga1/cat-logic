@@ -454,7 +454,7 @@ function s:sessions()
   let path = stdpath('data').."/sessions/"
   let sessions = systemlist('ls '.path)
   return map(sessions, '{
-        \ "line": v:val,
+        \ "line": substitute(v:val, "%", "/", "g"),
         \ "cmd": "SessionRestoreFromFile ".path.v:val
         \ }')
 endfunction
@@ -475,9 +475,9 @@ let g:startify_lists = [
 
 Sessions
 
-[0]  %home%dupark%dotfiles.vim
-[1]  %home%dupark%workspace%cat-logic.vim
-[2]  %home%dupark%workspace%game-cosmic-cat-conquest.vim
+[0]  /home/dupark/dotfiles.vim
+[1]  /home/dupark/workspace/cat-logic.vim
+[2]  /home/dupark/workspace/game-cosmic-cat-conquest.vim
 
 MRU
 
