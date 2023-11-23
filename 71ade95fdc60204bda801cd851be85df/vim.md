@@ -5,9 +5,9 @@
 My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)를 dotfiles에 올려두었다.
 
 vim 보다 [neovim](https://github.com/neovim/neovim)을 사용중이다.
-neovim은 vim의 fork로써 호환성으로 바로 넘어가더라도 큰 문제가 없다.
+neovim은 vim의 fork라 호환성이 유지돼서 바로 넘어가더라도 큰 문제가 없다.
 다만 설정을 조금 수정해야 하는데, neovim 메뉴얼 `:h nvim-from-vim`에 잘 설명되어 있다.
-vim에서 제공하는 기능은 대부분 neovim에서도 사용할 수 있다. 다만 9.0은 아직인 듯(2023-11 기준).
+vim에서 제공하는 기능은 대부분 neovim에서도 사용할 수 있다. 다만 2023년 11월 기준으로 vim 9.0은 아직인 듯.
 
 [Wikipedia](https://en.wikipedia.org/wiki/Vim_(text_editor)) 배포 내역을 보면,
 8.0 이전까지는 배포가 느렸지만, 8.0부터는 모던 에디터들의 추세에 맞춰 팝업 Window와 비동기 I/O 등이 추가되었다.
@@ -32,7 +32,7 @@ Neovim은 vim을 fork하고, vimscript와 더불어 lua도 지원하며, 더 확
 
 https://github.com/neovim/neovim
 
-검색해보면 neovim 커뮤니티에서는 vim에 대한 불만이 많이 보인다. :0
+검색해보면 neovim 커뮤니티에서는 vim에 대한 불만이 많이 보인다. :0\
 아무래도 원작자인 Bram의 방향성과 상충되어서가 아닐까. 잘 모르겠다.
 
 neovim으로 이전한 이유는 [LSP](/docs/wiki/language-server-protocol.md)를 사용하기 위함이었다.
@@ -51,6 +51,8 @@ neovim에 맞춰진 플러그인은 ~.nvim 이라는 접미사를 붙이는 것�
 이런 플러그인들은 lua 스크립트로 include해서 직접 초기화하는 방식을 사용하기도 한다.
 [nvim-lsp](https://github.com/neovim/nvim-lspconfig)를 보면 `require'lspconfig'.pyright.setup{}` 처럼 사용한다.
 어쨌든 대부분 설정들은 lua나 vimscript 모두 제공하므로 취향껏 사용하면 된다.
+
+vim과 다른점은 `:h vim-differences`에서 확인하자.
 
 ### Lua 가이드
 
@@ -238,11 +240,22 @@ endfunction
 함수는 정의된 스크립트에서만 호출할 수 있다. 즉, `call MyFunction()`로 호출할 수 없다.
 vim은 많은 플러그인을 통해 함수가 정의되어 이름 충돌할 수 있으므로 local function을 사용하는 것이 좋다.
 
+## 구문 강조
+
+`:h syntax`
+
+`syntax on`으로 구문 강조를 활성화한다. vim은 기본적으로 언어별 문법 강조를 제공한다.\
+그 목록은 메뉴얼에서 확인할 수 있다. `ft-<LANGUAGE>-syntax` 이름으로 언어별 메뉴얼이 제공된다.\
+예를들어 `:h ft-python-syntax`로 파이썬 문법 강조에 대한 메뉴얼을 확인할 수 있다.
+
+neovim은 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 플러그인으로도 구문 강조를 사용할 수 있다.\
+다만 python, html 등 몇몇 언어를 비교해보니 vim 내장 구문 강조가 더 좋았다. treesitter 것은 구문 강조가 풍부하지 않았다.
+
 ## Registers
 
 `:h registers`
 
-특수 레지스터는 알아두면 좋다.
+자주 사용하는 특수 레지스터는 알아두면 좋다.
 
 1. `+` 클립보드 레지스터. 정확히는 selection register. 클립보드가 활성되지 않으면 unnamed register와 같다.
 2. `"` unnamed register. d, c, s, x 등으로 삭제된 내용이 저장된다.
@@ -590,7 +603,7 @@ vim에서 기본적으로 `viw`로 단어를, `vip`로 문단을 선택할 수 �
 
 선택 단위를 text object라 한다. `:h text-objects` 참고하자.
 
-[Python](python.md)은 들여쓰기로, [Javscript](javascript.md)는 중괄호로 함수를 표현한다.
+[Python](./python.md)은 들여쓰기로, [Javscript](./javascript.md)는 중괄호로 함수를 표현한다.
 이렇게 언어마다 달라지는 부분을 표현하기 위해서 저마다 설정이 필요하다.
 
 파이썬에 맞는 text object를 제공하거나,
