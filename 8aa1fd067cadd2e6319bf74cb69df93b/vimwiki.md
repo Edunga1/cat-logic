@@ -7,10 +7,13 @@ vim 기반 개인 위키 플러그인.
 
 https://github.com/vimwiki/vimwiki
 
-vimwiki 이전에는 [GitBook](https://github.com/GitbookIO/gitbook)을 사용했다.
-오픈소스이며 pdf, epub 등 전자책 변환을 제공하고, 정적 사이트 생성을 제공하고 SEO, Analytics 등 다양한 플러그인이 있는 생태계도 구비되어 있었다.
-하지만 2018년, 기존 버전을 중단하고 저장소도 멈췄다. 새로운 버전은 일부 유료로 제공되고, 클로즈드 소스로 전환되었다.
-더 이상 사용할 이유가 없어진 것이다.
+vimwiki는 문서를 작성하는 플랫폼으로써 사용한다.\
+vimwiki와 관계없이 문서를 마크다운으로 작성하면,
+vimwiki로 문서의 링크를 걸거나(markdown [LSP](./language-server-protocol.md)를 사용하기도 한다.) 이동한다.\
+작업 중에는 기억나지 않는 것들을 `VWS`로 검색한다.
+
+그래서 [cat-logic](./cat-logic.md)은 vimwiki, [gatsbyjs](./gatsbyjs.md), [markdown](./markdown.md)등 여러 플랫폼이 엮여있다.
+[aaa](/docs/wiki/css.md)
 
 ## 자주 사용하는 기능
 
@@ -18,6 +21,9 @@ vimwiki 이전에는 [GitBook](https://github.com/GitbookIO/gitbook)을 사용�
 * `<enter>` 문서 열기
 * `<backspace>` 이전 문서로 돌아가기
 * `:VWB` 현재 문서를 참조하는 모든 문서 검색 (location-list)
+* `:VWS` 모든 문서 패턴 검색 (location-list). `VimwikiSearch`의 약자
+    * 보통 다른 작업 영역에서 `<leader>ww`로 wiki index를 열고, `:VWS`로 검색하는 방식으로 사용한다.\
+      다른 작업 영역에서는 `:VWS`가 동작하지 않기 때문에 index로 먼저 이동한다.
 
 ## FileType
 

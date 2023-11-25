@@ -1,7 +1,7 @@
 ---
 created: 2023-02-25
 ---
-# Gatsby
+# GatsbyJS
 
 React 기반 웹사이트 프레임워크.
 
@@ -33,6 +33,14 @@ ec-9-d-b8-ea-b3-b5-ec-a7-80-eb-8-a-a5
 
 사람이 읽을 수 있는 URL로 변환한다지만, 영어가 아닌 언어는 제대로 변환되지 않는다.
 slugify를 끌 수 있는 방법은 찾지 못했다.
+
+## Gitbook에서 GatsbyJS로 이전했다.
+
+GatsbyJS 이전에는 [GitBook](https://github.com/GitbookIO/gitbook)을 사용했다.
+
+Gitbook은 오픈소스이며 pdf, epub 등 전자책 변환을 제공하고, 정적 사이트 생성을 제공하고 SEO, Analytics 등 다양한 플러그인을 제공했다. 하지만 2018년에 개발이 중단되었다.\
+새로운 버전은 일부 유료로 제공되고, 클로즈드 소스로 전환되었다.\
+이제 더 이상 사용할 이유가 없어졌다.
 
 ## GraphQL 타입 자동 생성하기
 
