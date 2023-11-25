@@ -24,5 +24,13 @@ https://www.jetbrains.com/writerside/
 
 에디터에서 작성하면 미리보기를 제공하는데, 로컬 호스팅을 통해서 보여준다.
 
-[The GIt Tool Window](https://www.jetbrains.com/idea/guide/tutorials/creating-a-project-from-github/the-git-tool-window/)\
+[The Git Tool Window](https://www.jetbrains.com/idea/guide/tutorials/creating-a-project-from-github/the-git-tool-window/)\
 파일이 로컬에 저장은 되지만, Git 저장소와 연동하는 것을 권장하고 있다.
+
+## Marksman - Language Server for Markdown
+
+Marksman은 markdown 파일을 위한 [Language Server](./language-server-protocol.md)이다.\
+nvim-lsp를 통해서 간접적으로 설치되어 사용한다.
+
+[상대 경로를 자동 완성하지 못하는 문제](https://github.com/artempyanykh/marksman/issues/182)가 있다.
+항상 프로젝트 루트 기준으로 링크 완성을 해준다.
