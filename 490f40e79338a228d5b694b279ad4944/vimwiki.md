@@ -13,7 +13,6 @@ vimwiki로 문서의 링크를 걸거나(markdown [LSP](./language-server-protoc
 작업 중에는 기억나지 않는 것들을 `VWS`로 검색한다.
 
 그래서 [cat-logic](./cat-logic.md)은 vimwiki, [gatsbyjs](./gatsbyjs.md), [markdown](./markdown.md)등 여러 플랫폼이 엮여있다.
-[aaa](/docs/wiki/css.md)
 
 ## 자주 사용하는 기능
 
