@@ -295,6 +295,20 @@ vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickf
 
 ref. python traceback을 quickfix와 연동할 수 없냐는 질문: [Quickfix support for Python tracebacks](https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks)
 
+### matchit
+
+`:h matchit`
+
+`%`로 짝에 맞는 문자열로 커서를 이동한다.
+
+괄호의 경우 `{`에서 사용하면 반대편 `}`으로 이동한다.
+HTML 태그의 경우 `<div>`에서 사용하면 `</div>`로 이동한다.
+그 외 xml, latex 등 다양한 언어를 지원한다고 한다.
+
+이전에는 없었던 기능인가 보다.
+[matchit.zip](https://github.com/vim-scripts/matchit.zip/)이라는 플러그인으로 제공되기도 했다.
+내 경우 다른 사람이 사용하던 `.vimrc`로 시작했는데, matchit.zip이 포함되어 있었다.
+
 ## 구문 강조
 
 `:h syntax`
