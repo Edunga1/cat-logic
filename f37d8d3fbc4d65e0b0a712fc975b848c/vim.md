@@ -110,17 +110,20 @@ require("mason-lspconfig").setup()
 require'lspconfig'.kotlin_language_server.setup{}
 ```
 
-## HELP `:h`
+## 도움말 `:help`
 
 `:h help`
 
-vim 도움말. vim 내장부터 플러그인까지, 명령어, 함수, 변수 등 관계없이 키워드로 도움말을 제공한다.
-평소에도 자주 사용하는 기능이다.
+vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한다.\
+평소에도 자주 사용하고, vim의 많은 기능을 사용하기 위해선 필수적이다.
 
-`:h keyword`로 사용하며, 키워드 전체를 검색하지 않아도 된다. 키워드 일부만 입략해도 가장 근접한 키워드를 찾는다.
+`:h KEYWORD`로 사용한다.
+키워드 전체를 입력하지 않아도 된다.
+키워드 일부만 입력해도 가장 근접한 키워드를 찾는다.
 예를들어 `:h usr_12.txt` 대신 `:h 12.txt`.
 
-색상으로 강조된 단어를 만나면 연결된 도움말이 있다는 뜻이므로 `CTRL-]`로 이동하자 `:h CTRL-]`.
+메뉴얼 내용 중 색상으로 강조된 단어를 만나면 도움말이 있는 키워드다.
+`CTRL-]`로 이동하자 `:h CTRL-]`.
 
 ### `usr_12.txt` 명령어 조합에 관한 팁
 
@@ -156,7 +159,9 @@ nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --excl
 
 두 도구 차이점은 모르겠다. 검색 결과는 조금 다르다.
 
-## quickfix & location list
+## 내장 기능
+
+### quickfix & location list
 
 `:h quickfix` `:h location-list`
 
@@ -167,7 +172,7 @@ ref. https://freshman.tech/vim-quickfix-and-location-list/
 
 목록에 나타난 코드를 한꺼번에 수정할 수 있는데, 동시에 여러 파일을 수정하는 용도로 사용한다.
 
-### commands
+#### commands
 
 * `cnext`: 다음 지점으로.
 * `cprevious`: 이전 지점으로.
@@ -175,7 +180,7 @@ ref. https://freshman.tech/vim-quickfix-and-location-list/
 
 location-list의 명령어는 prefix `c` -> `l` 바꾸면 대응한다.
 
-### grep
+#### grep
 
 e.g. `:vimgrep /myfunc/ **/*.c`
 
@@ -183,7 +188,7 @@ e.g. `:vimgrep /myfunc/ **/*.c`
 
 패턴을 검색하고 결과를 quickfix 목록으로 만든다.
 
-### `cdo`, `ldo` 검색된 모든 entry에 명령어 적용
+#### `cdo`, `ldo` 검색된 모든 entry에 명령어 적용
 
 `cdo s/foo/bar` `ldo s/foo/bar`
 
@@ -198,7 +203,7 @@ grep으로 검색하고, cdo로 적용, 예시:
 
 `| update`를 사용하면 수정과 함께 저장한다.
 
-### `cfdo`, `lfdo` 검색된 모든 파일에 명령어 적용
+#### `cfdo`, `lfdo` 검색된 모든 파일에 명령어 적용
 
 `:cfdo %s/foo/bar` or `:ldo %s/foo/bar`
 
@@ -210,7 +215,7 @@ grep으로 검색하고, cdo로 적용, 예시:
 
 모든 buffer에 대해서 적용하므로 `:buffers`등 명령어로 적용 대상을 잘 확인하자.
 
-### User Function
+#### User Function
 
 사용자 함수에 대한 메뉴얼은 `:help userfunc`에서 설명한다.
 
@@ -239,6 +244,70 @@ endfunction
 `s:`를 붙이면 local function이 된다.
 함수는 정의된 스크립트에서만 호출할 수 있다. 즉, `call MyFunction()`로 호출할 수 없다.
 vim은 많은 플러그인을 통해 함수가 정의되어 이름 충돌할 수 있으므로 local function을 사용하는 것이 좋다.
+
+### Fuzzy 매칭: `matchfuzzy()`
+
+`:h matchfuzzy()`
+
+```vim
+:echo matchfuzzy(['red apple', 'yello banana'], 'ra')  " ['red apple']
+```
+
+dictionary를 검색할 수도 있다:
+
+```vim
+let s:lst = [
+  \ {'name': 'john', 'age': 20},
+  \ {'name': 'jane', 'age': 30},
+  \ {'name': 'joe', 'age': 40},
+  \ {'name': 'jill', 'age': 50},
+  \]
+
+echo s:lst->matchfuzzy('je', {'key': 'name'})
+" [{'age': 40, 'name': 'joe'}, {'age': 30, 'name': 'jane'}]
+```
+
+fuzzy search하는 함수.
+
+### `:make` and `makeprg`
+
+`:make` 명령은 `makeprg`에 설정한 것을 실행한다.
+출력이 quickfix 양식이면 quckfix과 연동할 수 있다!
+
+#### build integration - How to Do 90% of What Plugins Do
+
+https://youtu.be/XA2WjJbmmoM?t=3062
+
+영상 52분의 build integration 주제에서 설명한다.
+vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickfix를 통해 실패 지점으로 네비게이션할 수 있다.
+
+영상 일련 과정:
+
+1. `makeprg` 설정한다.: `set makeprg=bundle\ exec\ rspec\ -f\ QuckfixFormatter`
+2. `:make` 명령으로 `rspec` 테스트 실행한다.
+3. 테스트 실패한 지점을 quickfix로 보여준다.
+
+`rspec`명령에 `--format QuckfixFormatter` 옵션으로 quickfix에서 사용할 수 있는 양식으로 출력된다.
+
+![rspec formatter](res/rspec-formatter.png)
+
+다만 기본 제공되는 것은 아니고, 플러그인 같아 보인다. 문서에는 `QuickfixFormatter`에 대한 내용이 없다.
+
+ref. python traceback을 quickfix와 연동할 수 없냐는 질문: [Quickfix support for Python tracebacks](https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks)
+
+### matchit
+
+`:h matchit`
+
+`%`로 짝에 맞는 문자열로 커서를 이동한다.
+
+괄호의 경우 `{`에서 사용하면 반대편 `}`으로 이동한다.
+HTML 태그의 경우 `<div>`에서 사용하면 `</div>`로 이동한다.
+그 외 xml, latex 등 다양한 언어를 지원한다고 한다.
+
+이전에는 없었던 기능인가 보다.
+[matchit.zip](https://github.com/vim-scripts/matchit.zip/)이라는 플러그인으로 제공되기도 했다.
+내 경우 다른 사람이 사용하던 `.vimrc`로 시작했는데, matchit.zip이 포함되어 있었다.
 
 ## 구문 강조
 
@@ -366,32 +435,6 @@ nnoremap <silent><script><buffer> <Plug>VimwikiFollowLink :VimwikiFollowLink<CR>
 " map_key는 최종적으로 :map 같은 명령어를 실행한다.
 call vimwiki#u#map_key('n', '<CR>', '<Plug>VimwikiFollowLink')
 ```
-
-## Built-in functions
-
-### `matchfuzzy()`
-
-`:h matchfuzzy()`
-
-```vim
-:echo matchfuzzy(['red apple', 'yello banana'], 'ra')  " ['red apple']
-```
-
-dictionary를 검색할 수도 있다:
-
-```vim
-let s:lst = [
-  \ {'name': 'john', 'age': 20},
-  \ {'name': 'jane', 'age': 30},
-  \ {'name': 'joe', 'age': 40},
-  \ {'name': 'jill', 'age': 50},
-  \]
-
-echo s:lst->matchfuzzy('je', {'key': 'name'})
-" [{'age': 40, 'name': 'joe'}, {'age': 30, 'name': 'jane'}]
-```
-
-fuzzy search하는 함수.
 
 ## Plugins
 
@@ -684,32 +727,6 @@ command! TestCore call <SID>run_test_core()
 
 뒤에 물음표는 꼭 붙이자. `filetype`처럼 값을 받는 옵션이 아닌 `hlsearch`처럼 on/off 하는 형태라면 `verbose`가 무시되고 옵션 변경을 한다.
 다시 `verbose`로 확인하더라도 방금 명령어로 변경했기 때문에 제대로된 출처를 알 수 없다.
-
-## `:make` and `makeprg`
-
-`:make` 명령은 `makeprg`에 설정한 것을 실행한다.
-출력이 quickfix 양식이면 quckfix과 연동할 수 있다!
-
-### build integration - How to Do 90% of What Plugins Do
-
-https://youtu.be/XA2WjJbmmoM?t=3062
-
-영상 52분의 build integration 주제에서 설명한다.
-vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickfix를 통해 실패 지점으로 네비게이션할 수 있다.
-
-영상 일련 과정:
-
-1. `makeprg` 설정한다.: `set makeprg=bundle\ exec\ rspec\ -f\ QuckfixFormatter`
-2. `:make` 명령으로 `rspec` 테스트 실행한다.
-3. 테스트 실패한 지점을 quickfix로 보여준다.
-
-`rspec`명령에 `--format QuckfixFormatter` 옵션으로 quickfix에서 사용할 수 있는 양식으로 출력된다.
-
-![rspec formatter](res/rspec-formatter.png)
-
-다만 기본 제공되는 것은 아니고, 플러그인 같아 보인다. 문서에는 `QuickfixFormatter`에 대한 내용이 없다.
-
-ref. python traceback을 quickfix와 연동할 수 없냐는 질문: [Quickfix support for Python tracebacks](https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks)
 
 ## Issues
 

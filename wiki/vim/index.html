@@ -84,7 +84,7 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#help-h">HELP <code>:h</code></a></p>
+<p><a href="#%EB%8F%84%EC%9B%80%EB%A7%90-help">도움말 <code>:help</code></a></p>
 <ul>
 <li><a href="#usr_12txt-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A1%B0%ED%95%A9%EC%97%90-%EA%B4%80%ED%95%9C-%ED%8C%81"><code>usr_12.txt</code> 명령어 조합에 관한 팁</a></li>
 </ul>
@@ -96,25 +96,30 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 </ul>
 </li>
 <li>
+<p><a href="#%EB%82%B4%EC%9E%A5-%EA%B8%B0%EB%8A%A5">내장 기능</a></p>
+<ul>
+<li>
 <p><a href="#quickfix--location-list">quickfix &#x26; location list</a></p>
 <ul>
-<li>
-<p><a href="#commands">commands</a></p>
-</li>
-<li>
-<p><a href="#grep">grep</a></p>
-</li>
-<li>
-<p><a href="#cdo-ldo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-entry%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>cdo</code>, <code>ldo</code> 검색된 모든 entry에 명령어 적용</a></p>
-</li>
-<li>
-<p><a href="#cfdo-lfdo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>cfdo</code>, <code>lfdo</code> 검색된 모든 파일에 명령어 적용</a></p>
-<ul>
+<li><a href="#commands">commands</a></li>
+<li><a href="#grep">grep</a></li>
+<li><a href="#cdo-ldo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-entry%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>cdo</code>, <code>ldo</code> 검색된 모든 entry에 명령어 적용</a></li>
+<li><a href="#cfdo-lfdo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>cfdo</code>, <code>lfdo</code> 검색된 모든 파일에 명령어 적용</a></li>
 <li><a href="#bufdo-%EB%AA%A8%EB%93%A0-buffer-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>bufdo</code> 모든 buffer 파일에 명령어 적용</a></li>
+<li><a href="#user-function">User Function</a></li>
 </ul>
 </li>
 <li>
-<p><a href="#user-function">User Function</a></p>
+<p><a href="#fuzzy-%EB%A7%A4%EC%B9%AD-matchfuzzy">Fuzzy 매칭: <code>matchfuzzy()</code></a></p>
+</li>
+<li>
+<p><a href="#make-and-makeprg"><code>:make</code> and <code>makeprg</code></a></p>
+<ul>
+<li><a href="#build-integration---how-to-do-90-of-what-plugins-do">build integration - How to Do 90% of What Plugins Do</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#matchit">matchit</a></p>
 </li>
 </ul>
 </li>
@@ -137,12 +142,6 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <li><a href="#autoload"><code>autoload</code></a></li>
 <li><a href="#ftplugin"><code>ftplugin</code></a></li>
 <li><a href="#plug-sid"><code>&#x3C;Plug></code> <code>&#x3C;SID></code></a></li>
-</ul>
-</li>
-<li>
-<p><a href="#built-in-functions">Built-in functions</a></p>
-<ul>
-<li><a href="#matchfuzzy"><code>matchfuzzy()</code></a></li>
 </ul>
 </li>
 <li>
@@ -196,12 +195,6 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <li>
 <p><a href="#%EC%98%B5%EC%85%98%EC%9D%B4-%EC%96%B4%EB%8A%90-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EB%B3%80%EA%B2%BD%EB%90%98%EC%97%88%EB%8A%94%EC%A7%80-%EC%95%8C%EB%A0%A4%EB%A9%B4-verbose">옵션이 어느 파일에서 변경되었는지 알려면 <code>:verbose</code></a></p>
 </li>
-</ul>
-</li>
-<li>
-<p><a href="#make-and-makeprg"><code>:make</code> and <code>makeprg</code></a></p>
-<ul>
-<li><a href="#build-integration---how-to-do-90-of-what-plugins-do">build integration - How to Do 90% of What Plugins Do</a></li>
 </ul>
 </li>
 <li>
@@ -229,7 +222,7 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#help-h">HELP <code>:h</code></a></p>
+<p><a href="#%EB%8F%84%EC%9B%80%EB%A7%90-help">도움말 <code>:help</code></a></p>
 <ul>
 <li><a href="#usr_12txt-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A1%B0%ED%95%A9%EC%97%90-%EA%B4%80%ED%95%9C-%ED%8C%81"><code>usr_12.txt</code> 명령어 조합에 관한 팁</a></li>
 </ul>
@@ -241,25 +234,30 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 </ul>
 </li>
 <li>
+<p><a href="#%EB%82%B4%EC%9E%A5-%EA%B8%B0%EB%8A%A5">내장 기능</a></p>
+<ul>
+<li>
 <p><a href="#quickfix--location-list">quickfix &#x26; location list</a></p>
 <ul>
-<li>
-<p><a href="#commands">commands</a></p>
-</li>
-<li>
-<p><a href="#grep">grep</a></p>
-</li>
-<li>
-<p><a href="#cdo-ldo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-entry%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>cdo</code>, <code>ldo</code> 검색된 모든 entry에 명령어 적용</a></p>
-</li>
-<li>
-<p><a href="#cfdo-lfdo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>cfdo</code>, <code>lfdo</code> 검색된 모든 파일에 명령어 적용</a></p>
-<ul>
+<li><a href="#commands">commands</a></li>
+<li><a href="#grep">grep</a></li>
+<li><a href="#cdo-ldo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-entry%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>cdo</code>, <code>ldo</code> 검색된 모든 entry에 명령어 적용</a></li>
+<li><a href="#cfdo-lfdo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>cfdo</code>, <code>lfdo</code> 검색된 모든 파일에 명령어 적용</a></li>
 <li><a href="#bufdo-%EB%AA%A8%EB%93%A0-buffer-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>bufdo</code> 모든 buffer 파일에 명령어 적용</a></li>
+<li><a href="#user-function">User Function</a></li>
 </ul>
 </li>
 <li>
-<p><a href="#user-function">User Function</a></p>
+<p><a href="#fuzzy-%EB%A7%A4%EC%B9%AD-matchfuzzy">Fuzzy 매칭: <code>matchfuzzy()</code></a></p>
+</li>
+<li>
+<p><a href="#make-and-makeprg"><code>:make</code> and <code>makeprg</code></a></p>
+<ul>
+<li><a href="#build-integration---how-to-do-90-of-what-plugins-do">build integration - How to Do 90% of What Plugins Do</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#matchit">matchit</a></p>
 </li>
 </ul>
 </li>
@@ -282,12 +280,6 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <li><a href="#autoload"><code>autoload</code></a></li>
 <li><a href="#ftplugin"><code>ftplugin</code></a></li>
 <li><a href="#plug-sid"><code>&#x3C;Plug></code> <code>&#x3C;SID></code></a></li>
-</ul>
-</li>
-<li>
-<p><a href="#built-in-functions">Built-in functions</a></p>
-<ul>
-<li><a href="#matchfuzzy"><code>matchfuzzy()</code></a></li>
 </ul>
 </li>
 <li>
@@ -341,12 +333,6 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <li>
 <p><a href="#%EC%98%B5%EC%85%98%EC%9D%B4-%EC%96%B4%EB%8A%90-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EB%B3%80%EA%B2%BD%EB%90%98%EC%97%88%EB%8A%94%EC%A7%80-%EC%95%8C%EB%A0%A4%EB%A9%B4-verbose">옵션이 어느 파일에서 변경되었는지 알려면 <code>:verbose</code></a></p>
 </li>
-</ul>
-</li>
-<li>
-<p><a href="#make-and-makeprg"><code>:make</code> and <code>makeprg</code></a></p>
-<ul>
-<li><a href="#build-integration---how-to-do-90-of-what-plugins-do">build integration - How to Do 90% of What Plugins Do</a></li>
 </ul>
 </li>
 <li>
@@ -478,13 +464,16 @@ require("mason-lspconfig").setup()
 -- LSPs
 require'lspconfig'.kotlin_language_server.setup{}
 </code></pre>
-<h2 id="help-h" style="position:relative;"><a href="#help-h" aria-label="help h permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HELP <code>:h</code></h2>
+<h2 id="도움말-help" style="position:relative;"><a href="#%EB%8F%84%EC%9B%80%EB%A7%90-help" aria-label="도움말 help permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>도움말 <code>:help</code></h2>
 <p><code>:h help</code></p>
-<p>vim 도움말. vim 내장부터 플러그인까지, 명령어, 함수, 변수 등 관계없이 키워드로 도움말을 제공한다.
-평소에도 자주 사용하는 기능이다.</p>
-<p><code>:h keyword</code>로 사용하며, 키워드 전체를 검색하지 않아도 된다. 키워드 일부만 입략해도 가장 근접한 키워드를 찾는다.
+<p>vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한다.<br>
+평소에도 자주 사용하고, vim의 많은 기능을 사용하기 위해선 필수적이다.</p>
+<p><code>:h KEYWORD</code>로 사용한다.
+키워드 전체를 입력하지 않아도 된다.
+키워드 일부만 입력해도 가장 근접한 키워드를 찾는다.
 예를들어 <code>:h usr_12.txt</code> 대신 <code>:h 12.txt</code>.</p>
-<p>색상으로 강조된 단어를 만나면 연결된 도움말이 있다는 뜻이므로 <code>CTRL-]</code>로 이동하자 <code>:h CTRL-]</code>.</p>
+<p>메뉴얼 내용 중 색상으로 강조된 단어를 만나면 도움말이 있는 키워드다.
+<code>CTRL-]</code>로 이동하자 <code>:h CTRL-]</code>.</p>
 <h3 id="usr_12txt-명령어-조합에-관한-팁" style="position:relative;"><a href="#usr_12txt-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A1%B0%ED%95%A9%EC%97%90-%EA%B4%80%ED%95%9C-%ED%8C%81" aria-label="usr_12txt 명령어 조합에 관한 팁 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>usr_12.txt</code> 명령어 조합에 관한 팁</h3>
 <p><code>:h usr_12.txt</code></p>
 <p>유용한 명령어 조합에 대한 팁이 담긴 메뉴얼이다.</p>
@@ -507,24 +496,25 @@ require'lspconfig'.kotlin_language_server.setup{}
 <p>보통 <code>:Rg wiki</code>와 같은 방법으로 명령어를 통해서 1차 검색하고 검색창에서 추가 필터링한다.
 이 방법은 파일 내용도 함께 검색한다.</p>
 <p>두 도구 차이점은 모르겠다. 검색 결과는 조금 다르다.</p>
-<h2 id="quickfix--location-list" style="position:relative;"><a href="#quickfix--location-list" aria-label="quickfix  location list permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>quickfix &#x26; location list</h2>
+<h2 id="내장-기능" style="position:relative;"><a href="#%EB%82%B4%EC%9E%A5-%EA%B8%B0%EB%8A%A5" aria-label="내장 기능 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>내장 기능</h2>
+<h3 id="quickfix--location-list" style="position:relative;"><a href="#quickfix--location-list" aria-label="quickfix  location list permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>quickfix &#x26; location list</h3>
 <p><code>:h quickfix</code> <code>:h location-list</code></p>
 <p>파일 위치를 목록으로 관리한다.
 quickfix는 모든 창에서, location-list는 현재 창에서만 유지한다는 점이 다르다.</p>
 <p>ref. <a href="https://freshman.tech/vim-quickfix-and-location-list/">https://freshman.tech/vim-quickfix-and-location-list/</a></p>
 <p>목록에 나타난 코드를 한꺼번에 수정할 수 있는데, 동시에 여러 파일을 수정하는 용도로 사용한다.</p>
-<h3 id="commands" style="position:relative;"><a href="#commands" aria-label="commands permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>commands</h3>
+<h4 id="commands" style="position:relative;"><a href="#commands" aria-label="commands permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>commands</h4>
 <ul>
 <li><code>cnext</code>: 다음 지점으로.</li>
 <li><code>cprevious</code>: 이전 지점으로.</li>
 <li><code>copen</code>: 목록을 연다.</li>
 </ul>
 <p>location-list의 명령어는 prefix <code>c</code> -> <code>l</code> 바꾸면 대응한다.</p>
-<h3 id="grep" style="position:relative;"><a href="#grep" aria-label="grep permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>grep</h3>
+<h4 id="grep" style="position:relative;"><a href="#grep" aria-label="grep permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>grep</h4>
 <p>e.g. <code>:vimgrep /myfunc/ **/*.c</code></p>
 <p><code>:h vimgrep</code> <code>:grep</code> <code>:lgrep</code>(location-list)</p>
 <p>패턴을 검색하고 결과를 quickfix 목록으로 만든다.</p>
-<h3 id="cdo-ldo-검색된-모든-entry에-명령어-적용" style="position:relative;"><a href="#cdo-ldo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-entry%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9" aria-label="cdo ldo 검색된 모든 entry에 명령어 적용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>cdo</code>, <code>ldo</code> 검색된 모든 entry에 명령어 적용</h3>
+<h4 id="cdo-ldo-검색된-모든-entry에-명령어-적용" style="position:relative;"><a href="#cdo-ldo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-entry%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9" aria-label="cdo ldo 검색된 모든 entry에 명령어 적용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>cdo</code>, <code>ldo</code> 검색된 모든 entry에 명령어 적용</h4>
 <p><code>cdo s/foo/bar</code> <code>ldo s/foo/bar</code></p>
 <p>quickfix, location-list 검색 결과에 명령어를 적용한다.</p>
 <p>grep으로 검색하고, cdo로 적용, 예시:</p>
@@ -535,13 +525,13 @@ quickfix는 모든 창에서, location-list는 현재 창에서만 유지한다�
 </ol>
 <p><code>:cdo s/foo/bar | update</code></p>
 <p><code>| update</code>를 사용하면 수정과 함께 저장한다.</p>
-<h3 id="cfdo-lfdo-검색된-모든-파일에-명령어-적용" style="position:relative;"><a href="#cfdo-lfdo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9" aria-label="cfdo lfdo 검색된 모든 파일에 명령어 적용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>cfdo</code>, <code>lfdo</code> 검색된 모든 파일에 명령어 적용</h3>
+<h4 id="cfdo-lfdo-검색된-모든-파일에-명령어-적용" style="position:relative;"><a href="#cfdo-lfdo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9" aria-label="cfdo lfdo 검색된 모든 파일에 명령어 적용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>cfdo</code>, <code>lfdo</code> 검색된 모든 파일에 명령어 적용</h4>
 <p><code>:cfdo %s/foo/bar</code> or <code>:ldo %s/foo/bar</code></p>
 <p><code>cdo</code>와 차이점은 파일 모든 내용에 대해서 적용한다는 점이 다르다. 검색 목록에서 보이지 않는 라인도 적용되니 주의.</p>
 <h4 id="bufdo-모든-buffer-파일에-명령어-적용" style="position:relative;"><a href="#bufdo-%EB%AA%A8%EB%93%A0-buffer-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9" aria-label="bufdo 모든 buffer 파일에 명령어 적용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>bufdo</code> 모든 buffer 파일에 명령어 적용</h4>
 <p><code>:bufdo %s/foo/bar</code></p>
 <p>모든 buffer에 대해서 적용하므로 <code>:buffers</code>등 명령어로 적용 대상을 잘 확인하자.</p>
-<h3 id="user-function" style="position:relative;"><a href="#user-function" aria-label="user function permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>User Function</h3>
+<h4 id="user-function" style="position:relative;"><a href="#user-function" aria-label="user function permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>User Function</h4>
 <p>사용자 함수에 대한 메뉴얼은 <code>:help userfunc</code>에서 설명한다.</p>
 <pre><code class="language-vim">function! MyFunction() abort
   echo "Hello World!"
@@ -560,6 +550,78 @@ endfunction
 <p><code>s:</code>를 붙이면 local function이 된다.
 함수는 정의된 스크립트에서만 호출할 수 있다. 즉, <code>call MyFunction()</code>로 호출할 수 없다.
 vim은 많은 플러그인을 통해 함수가 정의되어 이름 충돌할 수 있으므로 local function을 사용하는 것이 좋다.</p>
+<h3 id="fuzzy-매칭-matchfuzzy" style="position:relative;"><a href="#fuzzy-%EB%A7%A4%EC%B9%AD-matchfuzzy" aria-label="fuzzy 매칭 matchfuzzy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fuzzy 매칭: <code>matchfuzzy()</code></h3>
+<p><code>:h matchfuzzy()</code></p>
+<pre><code class="language-vim">:echo matchfuzzy(['red apple', 'yello banana'], 'ra')  " ['red apple']
+</code></pre>
+<p>dictionary를 검색할 수도 있다:</p>
+<pre><code class="language-vim">let s:lst = [
+  \ {'name': 'john', 'age': 20},
+  \ {'name': 'jane', 'age': 30},
+  \ {'name': 'joe', 'age': 40},
+  \ {'name': 'jill', 'age': 50},
+  \]
+
+echo s:lst->matchfuzzy('je', {'key': 'name'})
+" [{'age': 40, 'name': 'joe'}, {'age': 30, 'name': 'jane'}]
+</code></pre>
+<p>fuzzy search하는 함수.</p>
+<h3 id="make-and-makeprg" style="position:relative;"><a href="#make-and-makeprg" aria-label="make and makeprg permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>:make</code> and <code>makeprg</code></h3>
+<p><code>:make</code> 명령은 <code>makeprg</code>에 설정한 것을 실행한다.
+출력이 quickfix 양식이면 quckfix과 연동할 수 있다!</p>
+<h4 id="build-integration---how-to-do-90-of-what-plugins-do" style="position:relative;"><a href="#build-integration---how-to-do-90-of-what-plugins-do" aria-label="build integration   how to do 90 of what plugins do permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>build integration - How to Do 90% of What Plugins Do</h4>
+<p><a href="https://youtu.be/XA2WjJbmmoM?t=3062">https://youtu.be/XA2WjJbmmoM?t=3062</a></p>
+<p>영상 52분의 build integration 주제에서 설명한다.
+vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickfix를 통해 실패 지점으로 네비게이션할 수 있다.</p>
+<p>영상 일련 과정:</p>
+<ol>
+<li><code>makeprg</code> 설정한다.: <code>set makeprg=bundle\ exec\ rspec\ -f\ QuckfixFormatter</code></li>
+<li><code>:make</code> 명령으로 <code>rspec</code> 테스트 실행한다.</li>
+<li>테스트 실패한 지점을 quickfix로 보여준다.</li>
+</ol>
+<p><code>rspec</code>명령에 <code>--format QuckfixFormatter</code> 옵션으로 quickfix에서 사용할 수 있는 양식으로 출력된다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/c1328/rspec-formatter.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 16.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsElEQVR42i2O0YqDMBREgwjSLe0SjCYqMUZNLdW42/7/v51m3T4MlzkMc0cs24YLATtNDLcbpne4dWV8PplfL4afnTF5v3hO8kwhT3xdz3xfLhRFQZZl5HmOEOJfIRWtjwdLKttj5M/P3mO7jt894vuecRjYUqlLz8I0E9KA+3JnS2NiTIOco65rqqpCWGvRWtM0zQHN5x5KXEp5BMuyPJiqFEopjDG0Kdu27UcdRmveuKFPOhq4gR4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="rspec formatter"
+        title=""
+        src="/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/fcda8/rspec-formatter.png"
+        srcset="/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/12f09/rspec-formatter.png 148w,
+/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/e4a3f/rspec-formatter.png 295w,
+/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/fcda8/rspec-formatter.png 590w,
+/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/c1328/rspec-formatter.png 866w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>다만 기본 제공되는 것은 아니고, 플러그인 같아 보인다. 문서에는 <code>QuickfixFormatter</code>에 대한 내용이 없다.</p>
+<p>ref. python traceback을 quickfix와 연동할 수 없냐는 질문: <a href="https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks">Quickfix support for Python tracebacks</a></p>
+<h3 id="matchit" style="position:relative;"><a href="#matchit" aria-label="matchit permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>matchit</h3>
+<p><code>:h matchit</code></p>
+<p><code>%</code>로 짝에 맞는 문자열로 커서를 이동한다.</p>
+<p>괄호의 경우 <code>{</code>에서 사용하면 반대편 <code>}</code>으로 이동한다.
+HTML 태그의 경우 <code>&#x3C;div></code>에서 사용하면 <code>&#x3C;/div></code>로 이동한다.
+그 외 xml, latex 등 다양한 언어를 지원한다고 한다.</p>
+<p>이전에는 없었던 기능인가 보다.
+<a href="https://github.com/vim-scripts/matchit.zip/">matchit.zip</a>이라는 플러그인으로 제공되기도 했다.
+내 경우 다른 사람이 사용하던 <code>.vimrc</code>로 시작했는데, matchit.zip이 포함되어 있었다.</p>
 <h2 id="구문-강조" style="position:relative;"><a href="#%EA%B5%AC%EB%AC%B8-%EA%B0%95%EC%A1%B0" aria-label="구문 강조 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>구문 강조</h2>
 <p><code>:h syntax</code></p>
 <p><code>syntax on</code>으로 구문 강조를 활성화한다. vim은 기본적으로 언어별 문법 강조를 제공한다.<br>
@@ -656,23 +718,6 @@ with mappings that are only to be used from other mappings.</p>
 " map_key는 최종적으로 :map 같은 명령어를 실행한다.
 call vimwiki#u#map_key('n', '&#x3C;CR>', '&#x3C;Plug>VimwikiFollowLink')
 </code></pre>
-<h2 id="built-in-functions" style="position:relative;"><a href="#built-in-functions" aria-label="built in functions permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Built-in functions</h2>
-<h3 id="matchfuzzy" style="position:relative;"><a href="#matchfuzzy" aria-label="matchfuzzy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>matchfuzzy()</code></h3>
-<p><code>:h matchfuzzy()</code></p>
-<pre><code class="language-vim">:echo matchfuzzy(['red apple', 'yello banana'], 'ra')  " ['red apple']
-</code></pre>
-<p>dictionary를 검색할 수도 있다:</p>
-<pre><code class="language-vim">let s:lst = [
-  \ {'name': 'john', 'age': 20},
-  \ {'name': 'jane', 'age': 30},
-  \ {'name': 'joe', 'age': 40},
-  \ {'name': 'jill', 'age': 50},
-  \]
-
-echo s:lst->matchfuzzy('je', {'key': 'name'})
-" [{'age': 40, 'name': 'joe'}, {'age': 30, 'name': 'jane'}]
-</code></pre>
-<p>fuzzy search하는 함수.</p>
 <h2 id="plugins" style="position:relative;"><a href="#plugins" aria-label="plugins permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugins</h2>
 <p>사용중인 플러그인.</p>
 <h3 id="chrisbracsvvim" style="position:relative;"><a href="#chrisbracsvvim" aria-label="chrisbracsvvim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chrisbra/csv.vim</h3>
@@ -906,53 +951,6 @@ E174: Command already exists: add ! to replace it
 <p>파일 타입을 어느 파일에서 결정했는지 알려면 위처럼 사용하면 된다.</p>
 <p>뒤에 물음표는 꼭 붙이자. <code>filetype</code>처럼 값을 받는 옵션이 아닌 <code>hlsearch</code>처럼 on/off 하는 형태라면 <code>verbose</code>가 무시되고 옵션 변경을 한다.
 다시 <code>verbose</code>로 확인하더라도 방금 명령어로 변경했기 때문에 제대로된 출처를 알 수 없다.</p>
-<h2 id="make-and-makeprg" style="position:relative;"><a href="#make-and-makeprg" aria-label="make and makeprg permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>:make</code> and <code>makeprg</code></h2>
-<p><code>:make</code> 명령은 <code>makeprg</code>에 설정한 것을 실행한다.
-출력이 quickfix 양식이면 quckfix과 연동할 수 있다!</p>
-<h3 id="build-integration---how-to-do-90-of-what-plugins-do" style="position:relative;"><a href="#build-integration---how-to-do-90-of-what-plugins-do" aria-label="build integration   how to do 90 of what plugins do permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>build integration - How to Do 90% of What Plugins Do</h3>
-<p><a href="https://youtu.be/XA2WjJbmmoM?t=3062">https://youtu.be/XA2WjJbmmoM?t=3062</a></p>
-<p>영상 52분의 build integration 주제에서 설명한다.
-vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickfix를 통해 실패 지점으로 네비게이션할 수 있다.</p>
-<p>영상 일련 과정:</p>
-<ol>
-<li><code>makeprg</code> 설정한다.: <code>set makeprg=bundle\ exec\ rspec\ -f\ QuckfixFormatter</code></li>
-<li><code>:make</code> 명령으로 <code>rspec</code> 테스트 실행한다.</li>
-<li>테스트 실패한 지점을 quickfix로 보여준다.</li>
-</ol>
-<p><code>rspec</code>명령에 <code>--format QuckfixFormatter</code> 옵션으로 quickfix에서 사용할 수 있는 양식으로 출력된다.</p>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/c1328/rspec-formatter.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 16.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsElEQVR42i2O0YqDMBREgwjSLe0SjCYqMUZNLdW42/7/v51m3T4MlzkMc0cs24YLATtNDLcbpne4dWV8PplfL4afnTF5v3hO8kwhT3xdz3xfLhRFQZZl5HmOEOJfIRWtjwdLKttj5M/P3mO7jt894vuecRjYUqlLz8I0E9KA+3JnS2NiTIOco65rqqpCWGvRWtM0zQHN5x5KXEp5BMuyPJiqFEopjDG0Kdu27UcdRmveuKFPOhq4gR4AAAAASUVORK5CYII='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="rspec formatter"
-        title=""
-        src="/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/fcda8/rspec-formatter.png"
-        srcset="/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/12f09/rspec-formatter.png 148w,
-/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/e4a3f/rspec-formatter.png 295w,
-/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/fcda8/rspec-formatter.png 590w,
-/cat-logic/static/0e51a27dd2009420be4c85af56503f9e/c1328/rspec-formatter.png 866w"
-        sizes="(max-width: 590px) 100vw, 590px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-  </a>
-    </span></p>
-<p>다만 기본 제공되는 것은 아니고, 플러그인 같아 보인다. 문서에는 <code>QuickfixFormatter</code>에 대한 내용이 없다.</p>
-<p>ref. python traceback을 quickfix와 연동할 수 없냐는 질문: <a href="https://vi.stackexchange.com/questions/5110/quickfix-support-for-python-tracebacks">Quickfix support for Python tracebacks</a></p>
 <h2 id="issues" style="position:relative;"><a href="#issues" aria-label="issues permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Issues</h2>
 <h3 id="typescript-filetype-문제" style="position:relative;"><a href="#typescript-filetype-%EB%AC%B8%EC%A0%9C" aria-label="typescript filetype 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Typescript filetype 문제</h3>
 <p>typescript language server에서 JSX 문법을 확인하지 못한다면 파일 타입을 확인해보자.
