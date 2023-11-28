@@ -345,7 +345,8 @@ fun main(args: Array&#x3C;String>) {
     runApplication&#x3C;DemoApplication>(*args)
 }
 </code></pre>
-<p>JDK 버전 등 기본 설정값을 확인하려면 <code>spring init --list</code>:</p>
+<hr>
+<p><code>spring init --list</code>로 설정 기본값을 확인할 수 있다:</p>
 <pre><code class="language-bash">Parameters
 +-------------+------------------------------------------+------------------------------+
 | Id          | Description                              | Default value                |
@@ -363,7 +364,25 @@ fun main(args: Array&#x3C;String>) {
 | version     | project version                          | 0.0.1-SNAPSHOT               |
 +-------------+------------------------------------------+------------------------------+
 </code></pre>
-<p><code>spring init --list</code>는 설치 지원하는 의존성도 보여주는데, 설명이 간락하게 잘 되어있다:</p>
+<p><code>--type</code> 옵션에 사용 할 프로젝트 유형 목록도 표시된다:</p>
+<pre><code class="language-bash">Project types (* denotes the default)
++-----------------------+--------------------------------------------------------------+--------------------------------------------+
+| Id                    | Description                                                  | Tags                                       |
++-----------------------+--------------------------------------------------------------+--------------------------------------------+
+| gradle-build          | Generate a Gradle build file.                                | build:gradle,format:build                  |
+|                       |                                                              |                                            |
+| gradle-project *      | Generate a Gradle based project archive using the Groovy     | build:gradle,dialect:groovy,format:project |
+|                       | DSL.                                                         |                                            |
+|                       |                                                              |                                            |
+| gradle-project-kotlin | Generate a Gradle based project archive using the Kotlin     | build:gradle,dialect:kotlin,format:project |
+|                       | DSL.                                                         |                                            |
+|                       |                                                              |                                            |
+| maven-build           | Generate a Maven pom.xml.                                    | build:maven,format:build                   |
+|                       |                                                              |                                            |
+| maven-project         | Generate a Maven based project archive.                      | build:maven,format:project                 |
++-----------------------+--------------------------------------------------------------+--------------------------------------------+
+</code></pre>
+<p>포함할 의존성도 선택할 수 있는데, 간단한 설명이 포함되어 있어서 유용하다:</p>
 <pre><code class="language-bash">Supported dependencies
 +--------------------------------------+--------------------------------------------------------------+-------------------------------+
 | Id                                   | Description                                                  | Required version              |
@@ -383,7 +402,7 @@ fun main(args: Array&#x3C;String>) {
 | zipkin                               | Enable and expose span and trace IDs to Zipkin.              |                               |
 +--------------------------------------+--------------------------------------------------------------+-------------------------------+
 </code></pre>
-<p>의존성을 추가하려면 <code>--dependencies=actuator,webflux</code>와 같이 옵션을 추가한다.</p>
+<p>의존성을 추가하려면 <code>--dependencies=actuator,webflux</code>와 같이 사용한다.</p>
 <h2 id="caching" style="position:relative;"><a href="#caching" aria-label="caching permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caching</h2>
 <p><a href="https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-caching.html">https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-caching.html</a></p>
 <blockquote>

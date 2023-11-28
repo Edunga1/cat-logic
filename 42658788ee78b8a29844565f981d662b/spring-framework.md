@@ -225,7 +225,9 @@ fun main(args: Array<String>) {
 }
 ```
 
-JDK 버전 등 기본 설정값을 확인하려면 `spring init --list`:
+---
+
+`spring init --list`로 설정 기본값을 확인할 수 있다:
 
 ```bash
 Parameters
@@ -246,7 +248,28 @@ Parameters
 +-------------+------------------------------------------+------------------------------+
 ```
 
-`spring init --list`는 설치 지원하는 의존성도 보여주는데, 설명이 간락하게 잘 되어있다:
+`--type` 옵션에 사용 할 프로젝트 유형 목록도 표시된다:
+
+```bash
+Project types (* denotes the default)
++-----------------------+--------------------------------------------------------------+--------------------------------------------+
+| Id                    | Description                                                  | Tags                                       |
++-----------------------+--------------------------------------------------------------+--------------------------------------------+
+| gradle-build          | Generate a Gradle build file.                                | build:gradle,format:build                  |
+|                       |                                                              |                                            |
+| gradle-project *      | Generate a Gradle based project archive using the Groovy     | build:gradle,dialect:groovy,format:project |
+|                       | DSL.                                                         |                                            |
+|                       |                                                              |                                            |
+| gradle-project-kotlin | Generate a Gradle based project archive using the Kotlin     | build:gradle,dialect:kotlin,format:project |
+|                       | DSL.                                                         |                                            |
+|                       |                                                              |                                            |
+| maven-build           | Generate a Maven pom.xml.                                    | build:maven,format:build                   |
+|                       |                                                              |                                            |
+| maven-project         | Generate a Maven based project archive.                      | build:maven,format:project                 |
++-----------------------+--------------------------------------------------------------+--------------------------------------------+
+```
+
+포함할 의존성도 선택할 수 있는데, 간단한 설명이 포함되어 있어서 유용하다:
 
 ```bash
 Supported dependencies
@@ -269,7 +292,7 @@ Supported dependencies
 +--------------------------------------+--------------------------------------------------------------+-------------------------------+
 ```
 
-의존성을 추가하려면 `--dependencies=actuator,webflux`와 같이 옵션을 추가한다.
+의존성을 추가하려면 `--dependencies=actuator,webflux`와 같이 사용한다.
 
 ## Caching
 

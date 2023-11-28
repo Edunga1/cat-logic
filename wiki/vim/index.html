@@ -121,6 +121,9 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <li>
 <p><a href="#matchit">matchit</a></p>
 </li>
+<li>
+<p><a href="#%ED%84%B0%EB%AF%B8%EB%84%90-%EC%97%90%EB%AE%AC%EB%A0%88%EC%9D%B4%ED%84%B0-terminal">터미널 에뮬레이터: <code>:terminal</code></a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -258,6 +261,9 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 </li>
 <li>
 <p><a href="#matchit">matchit</a></p>
+</li>
+<li>
+<p><a href="#%ED%84%B0%EB%AF%B8%EB%84%90-%EC%97%90%EB%AE%AC%EB%A0%88%EC%9D%B4%ED%84%B0-terminal">터미널 에뮬레이터: <code>:terminal</code></a></p>
 </li>
 </ul>
 </li>
@@ -622,6 +628,16 @@ HTML 태그의 경우 <code>&#x3C;div></code>에서 사용하면 <code>&#x3C;/di
 <p>이전에는 없었던 기능인가 보다.
 <a href="https://github.com/vim-scripts/matchit.zip/">matchit.zip</a>이라는 플러그인으로 제공되기도 했다.
 내 경우 다른 사람이 사용하던 <code>.vimrc</code>로 시작했는데, matchit.zip이 포함되어 있었다.</p>
+<h3 id="터미널-에뮬레이터-terminal" style="position:relative;"><a href="#%ED%84%B0%EB%AF%B8%EB%84%90-%EC%97%90%EB%AE%AC%EB%A0%88%EC%9D%B4%ED%84%B0-terminal" aria-label="터미널 에뮬레이터 terminal permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>터미널 에뮬레이터: <code>:terminal</code></h3>
+<p><code>:h terminal</code></p>
+<p>vim에서 터미널을 실행한다. vim 터미널은 터미널 모드로 전환한다.
+<code>tmap</code>으로 매핑 설정한다. <code>:h mapmode-t</code>.</p>
+<p>다른 모드와 달리 커서가 동작하지 않고, 키 입력이 터미널로 전달되는데, <code>CTRL-\ CTRL-N</code>으로 normal 모드로 전환할 수 있다.
+아무 모드에서나 normal 모드로 전환하는 단축키다. <code>:h t_CTRL-\_CTRL-N</code>.</p>
+<hr>
+<p><code>:terminal ls</code>와 같이 시작 명령어를 지정할 수 있다.<br>
+나는 markdown 파일 작업 중 <code>:terminal mdcat %</code>으로 현재 파일의 preview 보는 용도로 사용한다.<br>
+<a href="https://github.com/swsnr/mdcat">mdcat</a>은 markdown용 cat이다.</p>
 <h2 id="구문-강조" style="position:relative;"><a href="#%EA%B5%AC%EB%AC%B8-%EA%B0%95%EC%A1%B0" aria-label="구문 강조 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>구문 강조</h2>
 <p><code>:h syntax</code></p>
 <p><code>syntax on</code>으로 구문 강조를 활성화한다. vim은 기본적으로 언어별 문법 강조를 제공한다.<br>
