@@ -309,6 +309,22 @@ HTML 태그의 경우 `<div>`에서 사용하면 `</div>`로 이동한다.
 [matchit.zip](https://github.com/vim-scripts/matchit.zip/)이라는 플러그인으로 제공되기도 했다.
 내 경우 다른 사람이 사용하던 `.vimrc`로 시작했는데, matchit.zip이 포함되어 있었다.
 
+### 터미널 에뮬레이터: `:terminal`
+
+`:h terminal`
+
+vim에서 터미널을 실행한다. vim 터미널은 터미널 모드로 전환한다.
+`tmap`으로 매핑 설정한다. `:h mapmode-t`.
+
+다른 모드와 달리 커서가 동작하지 않고, 키 입력이 터미널로 전달되는데, `CTRL-\ CTRL-N`으로 normal 모드로 전환할 수 있다.
+아무 모드에서나 normal 모드로 전환하는 단축키다. `:h t_CTRL-\_CTRL-N`.
+
+---
+
+`:terminal ls`와 같이 시작 명령어를 지정할 수 있다.\
+나는 markdown 파일 작업 중 `:terminal mdcat %`으로 현재 파일의 preview 보는 용도로 사용한다.\
+[mdcat](https://github.com/swsnr/mdcat)은 markdown용 cat이다.
+
 ## 구문 강조
 
 `:h syntax`
