@@ -4,6 +4,8 @@
 
 My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)를 dotfiles에 올려두었다.
 
+---
+
 vim 보다 [neovim](https://github.com/neovim/neovim)을 사용중이다.
 neovim은 vim의 fork라 호환성이 유지돼서 바로 넘어가더라도 큰 문제가 없다.
 다만 설정을 조금 수정해야 하는데, neovim 메뉴얼 `:h nvim-from-vim`에 잘 설명되어 있다.
@@ -15,16 +17,21 @@ vim에서 제공하는 기능은 대부분 neovim에서도 사용할 수 있다.
 [GitHub vim 저장소](https://github.com/vim/vim#sponsoring)를 보면 Bram은 직장에 복귀했다고 한다.
 그래서 8.0 이후로는 다양한 사람들이 기여하고 있다.
 
+---
+
 vimscript라는 자체 스크립트를 제공하는데, 학습하기 꽤 어려운 언어이다.
-[어떤 글](https://www.reddit.com/r/neovim/comments/l1mne8/learning_vimscript_vs_lua/)에서는 정규식에 빗대어, 학습하는 것이 아니라 그냥 사용하는 것이라고 말한다:
+[어떤 글](https://www.reddit.com/r/neovim/comments/l1mne8/learning_vimscript_vs_lua/)에서는 정규식에 빗대어, 학습하는 것이 아니라 그냥 사용하는 것이라고 한다:
 
 > Vimscript is like regex, you don't learn it, just use it.
 
-창시자인 Bram Moolenaar는 플러그인을 많이 사용하지 않는다고 한다:
+창시자인 Bram Moolenaar의 [23년 인터뷰 중](https://yozm.wishket.com/magazine/detail/2183/)에서 플러그인을 많이 사용하지 않는다고 한다:
 
 > 사실 저는 배포판에 포함된 플러그인(matchit, termdebug 등)을 제외하고는 플러그인 자체를 많이 사용하지 않습니다. 필요한 기능이 있으면 간단한 것은 바로 만들거나 Vim 베이스에 추가하는 편입니다.
->
-> \- https://yozm.wishket.com/magazine/detail/2183/
+
+---
+
+Vim 자체는 텍스트 편집기일 뿐이기 때문에, IDE처럼 사용하기 위해서는 플러그인이 필요하다.
+자세한 사항은 아래의 [내장 Language Server Protocol 사용하기](#내장-language-server-protocol-사용하기)를 참고하자.
 
 ## Neovim
 
@@ -74,41 +81,46 @@ vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 
 ### 내장 Language Server Protocol 사용하기
 
-[Language Server Protocol](./language-server-protocol.md)
+Noevim은 자체적으로 [Language Server Protocol](./language-server-protocol.md)을 제공한다.
 
-TL;DR
-* [nvim-lspconfig/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) 제공하는 language server 목록
-* `:Mason` 설치 가능한 language server 목록
-* [null-js/BUILTIN_CONFIG](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md) 제공하는 lsp 도구 목록
+Vim을 IDE처럼 사용하기 위해서는 몇 가지 플러그인이 필요하다.
 
-vim을 IDE처럼 사용하기 위한 설정. 이제 LSP로 통일되고 있다.
-
-[.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33)
+[.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33)에 다음 플러그인을 추가한다.
 
 ```
-Plug 'neovim/nvim-lspconfig'              " Quickstart configs for Nvim LSP
-Plug 'williamboman/mason.nvim'            " Portable package manager for Neovim
-Plug 'williamboman/mason-lspconfig.nvim'  " Extension to mason.nvim
-Plug 'jose-elias-alvarez/null-ls.nvim'    " Inject LSP diagnostics, code actions, and more via Lua
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 ```
 
-[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) LSP 설정할 수 있다. 이것만 필수사항.
-[mason](https://github.com/williamboman/mason.nvim) language server, 추가 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.
-[null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) diagnostic, linter, code action을 연동해 준다.
+각 플러그인의 역할은 다음과 같다:
 
-Language Server 설치 예시: `:MasonInstall kotlin-language-server`
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): LSP 설정할 수 있다. 이것만 필수사항.
+- [mason & mason-lspconfig](https://github.com/williamboman/mason.nvim): language server와 개발 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.
+- [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim): diagnostic, linter, code action을 사용할 수 있게한다. 아쉽게도 23년에 개발 중단되었다. 그러나 여전히 사용할만하다.
+
+lua init 파일에서 다음과 같이 설정한다:
+
+```lua
+-- null-ls 설정은 생략
+require("mason").setup()
+require("mason-lspconfig").setup()
+require'lspconfig'.tsserver.setup{}
+```
+
+Language Server를 설치한다: `:MasonInstall typescript-language-server`\
+`:Mason` 명령으로 대화형 UI를 통해 목록을 확인하고 설치할 수 있다.
 
 ![mason example](res/nvim-mason-example.png)
 
-init.lua에서 설정 필요:
-```lua
--- LSP manager
-require("mason").setup()
-require("mason-lspconfig").setup()
+이제 설치한 language server가 지원하는 파일을 열면 자동으로 LSP가 활성화된다.\
+`:LspInfo`로 현재 활성화된 LSP 목록을 확인할 수 있다.
 
--- LSPs
-require'lspconfig'.kotlin_language_server.setup{}
-```
+---
+
+* [nvim-lspconfig/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)에서 설정 가능한 language server 목록을 확인할 수 있다.
+* [null-js/BUILTIN_CONFIG](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md) 제공하는 lsp 도구 목록
 
 ## 도움말 `:help`
 
