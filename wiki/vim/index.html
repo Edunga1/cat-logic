@@ -357,6 +357,7 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 jzROSZ">
 <p>터미널 기반 텍스트 편집기.</p>
 <p>My <a href="https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc">.vimrc</a>를 dotfiles에 올려두었다.</p>
+<hr>
 <p>vim 보다 <a href="https://github.com/neovim/neovim">neovim</a>을 사용중이다.
 neovim은 vim의 fork라 호환성이 유지돼서 바로 넘어가더라도 큰 문제가 없다.
 다만 설정을 조금 수정해야 하는데, neovim 메뉴얼 <code>:h nvim-from-vim</code>에 잘 설명되어 있다.
@@ -366,16 +367,19 @@ vim에서 제공하는 기능은 대부분 neovim에서도 사용할 수 있다.
 이전에는 Bram이 대부분 혼자서 개발하느라 느렸던 것으로 알고있다.
 <a href="https://github.com/vim/vim#sponsoring">GitHub vim 저장소</a>를 보면 Bram은 직장에 복귀했다고 한다.
 그래서 8.0 이후로는 다양한 사람들이 기여하고 있다.</p>
+<hr>
 <p>vimscript라는 자체 스크립트를 제공하는데, 학습하기 꽤 어려운 언어이다.
-<a href="https://www.reddit.com/r/neovim/comments/l1mne8/learning_vimscript_vs_lua/">어떤 글</a>에서는 정규식에 빗대어, 학습하는 것이 아니라 그냥 사용하는 것이라고 말한다:</p>
+<a href="https://www.reddit.com/r/neovim/comments/l1mne8/learning_vimscript_vs_lua/">어떤 글</a>에서는 정규식에 빗대어, 학습하는 것이 아니라 그냥 사용하는 것이라고 한다:</p>
 <blockquote>
 <p>Vimscript is like regex, you don't learn it, just use it.</p>
 </blockquote>
-<p>창시자인 Bram Moolenaar는 플러그인을 많이 사용하지 않는다고 한다:</p>
+<p>창시자인 Bram Moolenaar의 <a href="https://yozm.wishket.com/magazine/detail/2183/">23년 인터뷰 중</a>에서 플러그인을 많이 사용하지 않는다고 한다:</p>
 <blockquote>
 <p>사실 저는 배포판에 포함된 플러그인(matchit, termdebug 등)을 제외하고는 플러그인 자체를 많이 사용하지 않습니다. 필요한 기능이 있으면 간단한 것은 바로 만들거나 Vim 베이스에 추가하는 편입니다.</p>
-<p>- <a href="https://yozm.wishket.com/magazine/detail/2183/">https://yozm.wishket.com/magazine/detail/2183/</a></p>
 </blockquote>
+<hr>
+<p>Vim 자체는 텍스트 편집기일 뿐이기 때문에, IDE처럼 사용하기 위해서는 플러그인이 필요하다.
+자세한 사항은 아래의 <a href="#%EB%82%B4%EC%9E%A5-language-server-protocol-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">내장 Language Server Protocol 사용하기</a>를 참고하자.</p>
 <h2 id="neovim" style="position:relative;"><a href="#neovim" aria-label="neovim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Neovim</h2>
 <p>Neovim은 vim을 fork하고, vimscript와 더불어 lua도 지원하며, 더 확장된 기능을 제공한다.</p>
 <p><a href="https://github.com/neovim/neovim">https://github.com/neovim/neovim</a></p>
@@ -411,24 +415,28 @@ neovim에 맞춰진 플러그인은 ~.nvim 이라는 접미사를 붙이는 것�
 </code></pre>
 <p>직접 호출하려면 <code>:lua vim.lsp.buf.code_action()</code>로 호출한다.</p>
 <h3 id="내장-language-server-protocol-사용하기" style="position:relative;"><a href="#%EB%82%B4%EC%9E%A5-language-server-protocol-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="내장 language server protocol 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>내장 Language Server Protocol 사용하기</h3>
-<p><a href="../language-server-protocol">Language Server Protocol</a></p>
-<p>TL;DR</p>
-<ul>
-<li><a href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md">nvim-lspconfig/server_configurations.md</a> 제공하는 language server 목록</li>
-<li><code>:Mason</code> 설치 가능한 language server 목록</li>
-<li><a href="https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md">null-js/BUILTIN_CONFIG</a> 제공하는 lsp 도구 목록</li>
-</ul>
-<p>vim을 IDE처럼 사용하기 위한 설정. 이제 LSP로 통일되고 있다.</p>
-<p><a href="https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33">.vimrc</a></p>
-<pre><code>Plug 'neovim/nvim-lspconfig'              " Quickstart configs for Nvim LSP
-Plug 'williamboman/mason.nvim'            " Portable package manager for Neovim
-Plug 'williamboman/mason-lspconfig.nvim'  " Extension to mason.nvim
-Plug 'jose-elias-alvarez/null-ls.nvim'    " Inject LSP diagnostics, code actions, and more via Lua
+<p>Noevim은 자체적으로 <a href="../language-server-protocol">Language Server Protocol</a>을 제공한다.</p>
+<p>Vim을 IDE처럼 사용하기 위해서는 몇 가지 플러그인이 필요하다.</p>
+<p><a href="https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33">.vimrc</a>에 다음 플러그인을 추가한다.</p>
+<pre><code>Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 </code></pre>
-<p><a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a> LSP 설정할 수 있다. 이것만 필수사항.
-<a href="https://github.com/williamboman/mason.nvim">mason</a> language server, 추가 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.
-<a href="https://github.com/jose-elias-alvarez/null-ls.nvim">null-ls</a> diagnostic, linter, code action을 연동해 준다.</p>
-<p>Language Server 설치 예시: <code>:MasonInstall kotlin-language-server</code></p>
+<p>각 플러그인의 역할은 다음과 같다:</p>
+<ul>
+<li><a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a>: LSP 설정할 수 있다. 이것만 필수사항.</li>
+<li><a href="https://github.com/williamboman/mason.nvim">mason &#x26; mason-lspconfig</a>: language server와 개발 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.</li>
+<li><a href="https://github.com/jose-elias-alvarez/null-ls.nvim">null-ls</a>: diagnostic, linter, code action을 사용할 수 있게한다. 아쉽게도 23년에 개발 중단되었다. 그러나 여전히 사용할만하다.</li>
+</ul>
+<p>lua init 파일에서 다음과 같이 설정한다:</p>
+<pre><code class="language-lua">-- null-ls 설정은 생략
+require("mason").setup()
+require("mason-lspconfig").setup()
+require'lspconfig'.tsserver.setup{}
+</code></pre>
+<p>Language Server를 설치한다: <code>:MasonInstall typescript-language-server</code><br>
+<code>:Mason</code> 명령으로 대화형 UI를 통해 목록을 확인하고 설치할 수 있다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
@@ -462,14 +470,13 @@ Plug 'jose-elias-alvarez/null-ls.nvim'    " Inject LSP diagnostics, code actions
       />
   </a>
     </span></p>
-<p>init.lua에서 설정 필요:</p>
-<pre><code class="language-lua">-- LSP manager
-require("mason").setup()
-require("mason-lspconfig").setup()
-
--- LSPs
-require'lspconfig'.kotlin_language_server.setup{}
-</code></pre>
+<p>이제 설치한 language server가 지원하는 파일을 열면 자동으로 LSP가 활성화된다.<br>
+<code>:LspInfo</code>로 현재 활성화된 LSP 목록을 확인할 수 있다.</p>
+<hr>
+<ul>
+<li><a href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md">nvim-lspconfig/server_configurations.md</a>에서 설정 가능한 language server 목록을 확인할 수 있다.</li>
+<li><a href="https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md">null-js/BUILTIN_CONFIG</a> 제공하는 lsp 도구 목록</li>
+</ul>
 <h2 id="도움말-help" style="position:relative;"><a href="#%EB%8F%84%EC%9B%80%EB%A7%90-help" aria-label="도움말 help permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>도움말 <code>:help</code></h2>
 <p><code>:h help</code></p>
 <p>vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한다.<br>
