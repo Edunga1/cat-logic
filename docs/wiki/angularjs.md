@@ -1,6 +1,9 @@
+---
+created: 2017-09-17
+---
 # Angular JS
 
-AngularJS에 대한 이야기. 2017-11에 작성됨.
+AngularJS(v1)에 대한 이야기.
 
 ## Johnpapa's AngularJS Style Guide
 
