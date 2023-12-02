@@ -310,6 +310,16 @@ copilot 만큼의 성능은 나오지 않는 거 같다. 프롬프트를 추가�
 다만 이건 메뉴얼을 좀 더 보기쉽게 커뮤니티 차원에서 치트시트를 만드는 것이다보니
 내 문맥에 따른 명령어를 추천해주는 것은 아니다.
 
+#### 커밋 메시지 작성 도움받기
+
+나는 보통 `git commit -v`로 커밋 메시지를 작성한다.
+`-v`는 verbose 옵션으로 변경된 파일의 diff를 보여준다.
+
+커밋 에디터는 [vim](./vim.md)이기 때문에 [copilot.vim](https://github.com/github/copilot.vim) 플러그인이 로드된다.\n
+copilot은 파일 변경점을 보고 커멧 메시지를 추천해준다.
+
+물론 적중률이 높은 편은 아니다.
+
 ### AWS CodeWhisperer
 
 https://aws.amazon.com/ko/codewhisperer/
