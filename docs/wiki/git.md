@@ -245,7 +245,9 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 
 `5c54ea` 되돌려서 parent commit 중 하나인 `b73ce1`로 돌아간다. 물론 새로운 커밋이기 때문에 hash는 별개다.
 
-## `git log --graph`
+## `git log`
+
+### `git log --graph`
 
 TL;DR
 
@@ -254,7 +256,7 @@ TL;DR
 - 옵션에 대한 정보: https://git-scm.com/docs/git-log#_commit_ordering
 - 기본 값은 `--topo-order`로 보인다.
 
-### `--date-order` 로 피라미드 그래프 방지하기
+#### `--date-order` 로 피라미드 그래프 방지하기
 
 ```bash
 git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)<%an>%C(reset)%C(bold yellow)%d%C(reset)' --all
@@ -324,6 +326,57 @@ Commit Ordering
 ![--date-order and --author-date-order comparison](res/git-log-graph-author-date-order-comparison.png)
 
 왼쪽이 `--date-order` 오른쪽이 `--author-date-order`이다.
+
+### `--follow`
+
+기본적으로 `git log FILENAME`은 현재 파일 이름에 대해서만 로그를 보여준다.
+
+`git log --follow FILENAME`으로 파일이 이동하더라도 추적한다.
+
+다음은 예시.
+
+```bash
+$ git log --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
+2023-12-02 8520c0d1f Add frontmatters
+2023-11-11 f5b670292 Revise book.md and jetbrains.md
+2023-10-26 e5832cc77 Revise tennise inner game
+2023-10-15 146a5d7b2 Revise book.md
+2023-10-13 9ac5d1ea3 Add heads
+2023-10-11 3c2f6a0c3 Update tennis inner game book
+2023-10-09 3af35024d Update tennis inner game book
+2023-09-14 740f1e230 Add tennis inner game
+2023-07-22 ee34ec929 Update document headings
+2023-01-08 a0fc19715 Update book.md to include "만들면서 배우는 클린 아키텍처"
+2023-01-05 e89f4febd Update book
+2023-01-01 e8b5e5e97 Update all documents to include their own titles
+2023-01-01 de99d7338 Migrate book
+```
+
+`Migrate book` 커밋에서 파일 이동이 있었다.
+
+`--follow`를 추가하면 `Migrate book` 커밋 이전 내용도 확인할 수 있다.
+
+```bash
+$ git log --follow --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
+2023-12-02 8520c0d1f Add frontmatters
+2023-11-11 f5b670292 Revise book.md and jetbrains.md
+2023-10-26 e5832cc77 Revise tennise inner game
+2023-10-15 146a5d7b2 Revise book.md
+2023-10-13 9ac5d1ea3 Add heads
+2023-10-11 3c2f6a0c3 Update tennis inner game book
+2023-10-09 3af35024d Update tennis inner game book
+2023-09-14 740f1e230 Add tennis inner game
+2023-07-22 ee34ec929 Update document headings
+2023-01-08 a0fc19715 Update book.md to include "만들면서 배우는 클린 아키텍처"
+2023-01-05 e89f4febd Update book
+2023-01-01 e8b5e5e97 Update all documents to include their own titles
+2023-01-01 de99d7338 Migrate book
+2020-06-12 0bd294112 Update tags
+2018-07-23 1ef0e7f22 Update front matters
+2018-07-06 1605cfcf4 폴더 구조 변경 및 개발 환경 개선
+2018-01-11 1c18d58bd Update "Chocolate Problem"
+2018-01-11 ebd76bb05 Add "Chocolate Problem"
+```
 
 ## Troubleshooting
 
