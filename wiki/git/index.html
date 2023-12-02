@@ -98,16 +98,20 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <p><a href="#git-revert--m"><code>git revert -m</code></a></p>
 </li>
 <li>
-<p><a href="#git-log---graph"><code>git log --graph</code></a></p>
+<p><a href="#git-log"><code>git log</code></a></p>
 <ul>
 <li>
-<p><a href="#--date-order-%EB%A1%9C-%ED%94%BC%EB%9D%BC%EB%AF%B8%EB%93%9C-%EA%B7%B8%EB%9E%98%ED%94%84-%EB%B0%A9%EC%A7%80%ED%95%98%EA%B8%B0"><code>--date-order</code> 로 피라미드 그래프 방지하기</a></p>
+<p><a href="#git-log---graph"><code>git log --graph</code></a></p>
 <ul>
+<li><a href="#--date-order-%EB%A1%9C-%ED%94%BC%EB%9D%BC%EB%AF%B8%EB%93%9C-%EA%B7%B8%EB%9E%98%ED%94%84-%EB%B0%A9%EC%A7%80%ED%95%98%EA%B8%B0"><code>--date-order</code> 로 피라미드 그래프 방지하기</a></li>
 <li><a href="#%EC%98%B5%EC%85%98-%EC%84%A4%EB%AA%85">옵션 설명</a></li>
 </ul>
 </li>
 <li>
 <p><a href="#--date-order-%EC%99%80---author-date-order-%EB%B9%84%EA%B5%90"><code>--date-order</code> 와 <code>--author-date-order</code> 비교</a></p>
+</li>
+<li>
+<p><a href="#--follow"><code>--follow</code></a></p>
 </li>
 </ul>
 </li>
@@ -145,16 +149,20 @@ data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
 <p><a href="#git-revert--m"><code>git revert -m</code></a></p>
 </li>
 <li>
-<p><a href="#git-log---graph"><code>git log --graph</code></a></p>
+<p><a href="#git-log"><code>git log</code></a></p>
 <ul>
 <li>
-<p><a href="#--date-order-%EB%A1%9C-%ED%94%BC%EB%9D%BC%EB%AF%B8%EB%93%9C-%EA%B7%B8%EB%9E%98%ED%94%84-%EB%B0%A9%EC%A7%80%ED%95%98%EA%B8%B0"><code>--date-order</code> 로 피라미드 그래프 방지하기</a></p>
+<p><a href="#git-log---graph"><code>git log --graph</code></a></p>
 <ul>
+<li><a href="#--date-order-%EB%A1%9C-%ED%94%BC%EB%9D%BC%EB%AF%B8%EB%93%9C-%EA%B7%B8%EB%9E%98%ED%94%84-%EB%B0%A9%EC%A7%80%ED%95%98%EA%B8%B0"><code>--date-order</code> 로 피라미드 그래프 방지하기</a></li>
 <li><a href="#%EC%98%B5%EC%85%98-%EC%84%A4%EB%AA%85">옵션 설명</a></li>
 </ul>
 </li>
 <li>
 <p><a href="#--date-order-%EC%99%80---author-date-order-%EB%B9%84%EA%B5%90"><code>--date-order</code> 와 <code>--author-date-order</code> 비교</a></p>
+</li>
+<li>
+<p><a href="#--follow"><code>--follow</code></a></p>
 </li>
 </ul>
 </li>
@@ -357,7 +365,8 @@ This reverts commit 5c54ea679164eaca0bab639667bfcebb88769e63, reversing
 changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 </code></pre>
 <p><code>5c54ea</code> 되돌려서 parent commit 중 하나인 <code>b73ce1</code>로 돌아간다. 물론 새로운 커밋이기 때문에 hash는 별개다.</p>
-<h2 id="git-log---graph" style="position:relative;"><a href="#git-log---graph" aria-label="git log   graph permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>git log --graph</code></h2>
+<h2 id="git-log" style="position:relative;"><a href="#git-log" aria-label="git log permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>git log</code></h2>
+<h3 id="git-log---graph" style="position:relative;"><a href="#git-log---graph" aria-label="git log   graph permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>git log --graph</code></h3>
 <p>TL;DR</p>
 <ul>
 <li><code>--date-order</code> 로 그래프를 정렬하는데 힌트를 줄 수 있다.</li>
@@ -365,7 +374,7 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 <li>옵션에 대한 정보: <a href="https://git-scm.com/docs/git-log#_commit_ordering">https://git-scm.com/docs/git-log#_commit_ordering</a></li>
 <li>기본 값은 <code>--topo-order</code>로 보인다.</li>
 </ul>
-<h3 id="--date-order-로-피라미드-그래프-방지하기" style="position:relative;"><a href="#--date-order-%EB%A1%9C-%ED%94%BC%EB%9D%BC%EB%AF%B8%EB%93%9C-%EA%B7%B8%EB%9E%98%ED%94%84-%EB%B0%A9%EC%A7%80%ED%95%98%EA%B8%B0" aria-label="  date order 로 피라미드 그래프 방지하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--date-order</code> 로 피라미드 그래프 방지하기</h3>
+<h4 id="--date-order-로-피라미드-그래프-방지하기" style="position:relative;"><a href="#--date-order-%EB%A1%9C-%ED%94%BC%EB%9D%BC%EB%AF%B8%EB%93%9C-%EA%B7%B8%EB%9E%98%ED%94%84-%EB%B0%A9%EC%A7%80%ED%95%98%EA%B8%B0" aria-label="  date order 로 피라미드 그래프 방지하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--date-order</code> 로 피라미드 그래프 방지하기</h4>
 <pre><code class="language-bash">git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)&#x3C;%an>%C(reset)%C(bold yellow)%d%C(reset)' --all
 </code></pre>
 <p>git log를 그래프로 보기위해 이렇게 사용 중이다.</p>
@@ -509,6 +518,47 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
   </a>
     </span></p>
 <p>왼쪽이 <code>--date-order</code> 오른쪽이 <code>--author-date-order</code>이다.</p>
+<h3 id="--follow" style="position:relative;"><a href="#--follow" aria-label="  follow permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>--follow</code></h3>
+<p>기본적으로 <code>git log FILENAME</code>은 현재 파일 이름에 대해서만 로그를 보여준다.</p>
+<p><code>git log --follow FILENAME</code>으로 파일이 이동하더라도 추적한다.</p>
+<p>다음은 예시.</p>
+<pre><code class="language-bash">$ git log --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
+2023-12-02 8520c0d1f Add frontmatters
+2023-11-11 f5b670292 Revise book.md and jetbrains.md
+2023-10-26 e5832cc77 Revise tennise inner game
+2023-10-15 146a5d7b2 Revise book.md
+2023-10-13 9ac5d1ea3 Add heads
+2023-10-11 3c2f6a0c3 Update tennis inner game book
+2023-10-09 3af35024d Update tennis inner game book
+2023-09-14 740f1e230 Add tennis inner game
+2023-07-22 ee34ec929 Update document headings
+2023-01-08 a0fc19715 Update book.md to include "만들면서 배우는 클린 아키텍처"
+2023-01-05 e89f4febd Update book
+2023-01-01 e8b5e5e97 Update all documents to include their own titles
+2023-01-01 de99d7338 Migrate book
+</code></pre>
+<p><code>Migrate book</code> 커밋에서 파일 이동이 있었다.</p>
+<p><code>--follow</code>를 추가하면 <code>Migrate book</code> 커밋 이전 내용도 확인할 수 있다.</p>
+<pre><code class="language-bash">$ git log --follow --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
+2023-12-02 8520c0d1f Add frontmatters
+2023-11-11 f5b670292 Revise book.md and jetbrains.md
+2023-10-26 e5832cc77 Revise tennise inner game
+2023-10-15 146a5d7b2 Revise book.md
+2023-10-13 9ac5d1ea3 Add heads
+2023-10-11 3c2f6a0c3 Update tennis inner game book
+2023-10-09 3af35024d Update tennis inner game book
+2023-09-14 740f1e230 Add tennis inner game
+2023-07-22 ee34ec929 Update document headings
+2023-01-08 a0fc19715 Update book.md to include "만들면서 배우는 클린 아키텍처"
+2023-01-05 e89f4febd Update book
+2023-01-01 e8b5e5e97 Update all documents to include their own titles
+2023-01-01 de99d7338 Migrate book
+2020-06-12 0bd294112 Update tags
+2018-07-23 1ef0e7f22 Update front matters
+2018-07-06 1605cfcf4 폴더 구조 변경 및 개발 환경 개선
+2018-01-11 1c18d58bd Update "Chocolate Problem"
+2018-01-11 ebd76bb05 Add "Chocolate Problem"
+</code></pre>
 <h2 id="troubleshooting" style="position:relative;"><a href="#troubleshooting" aria-label="troubleshooting permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
 <h3 id="git-commit-시-waiting-for-your-editor-to-close-the-file-메시지와-함께-커밋이-안되는-문제" style="position:relative;"><a href="#git-commit-%EC%8B%9C-waiting-for-your-editor-to-close-the-file-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-%EC%BB%A4%EB%B0%8B%EC%9D%B4-%EC%95%88%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="git commit 시 waiting for your editor to close the file 메시지와 함께 커밋이 안되는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제</h3>
 <p><code>git commit -v</code>로 커밋 메시지 작성 후 <code>ww</code> 또는 <code>:wq</code>로 저장하여 나와도 커밋이 안된다.
