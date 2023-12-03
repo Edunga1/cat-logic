@@ -38,6 +38,24 @@ const Main = styled.div`
   }
 `
 
+const RelatedLinksHeader = styled.h3`
+  margin: 0;
+  padding: 1rem 0 0 1rem;
+  font-size: 1rem;
+`
+
+const RelatedLinks = styled.ul`
+  // TODO: no list style
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+
+  > li {
+    padding: 0;
+    line-height: 1;
+  }
+`
+
 export default function Wiki(
   {
     title,
@@ -51,11 +69,15 @@ export default function Wiki(
     wikiContents: string
   },
 ) {
+  const relatedItems = relatedLinksToc.map((item, index) => (
+    <li key={index}>{item}</li>
+  ))
   return (
     <Container>
       <Side>
         <Toc contents={tableOfContents} />
-        <span>{relatedLinksToc}</span>
+        {relatedLinksToc.length > 0 && <RelatedLinksHeader>Related Links</RelatedLinksHeader>}
+        <RelatedLinks>{relatedItems}</RelatedLinks>
       </Side>
       <Main>
         <h1>{title}</h1>
