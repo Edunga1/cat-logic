@@ -65,84 +65,17 @@ data-styled.g3[id="Comments__Container-sc-1ajj4d9-0"]{content:"gcJKrk,"}/*!sc*/
 .gqosYh{display:grid;grid-template-columns:1fr;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
 @media (min-width:700px){.gqosYh{grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);}}/*!sc*/
 data-styled.g4[id="Wiki__Container-sc-16q9onf-0"]{content:"gqosYh,"}/*!sc*/
-.dOTUaa{display:none;}/*!sc*/
-.dOTUaa > div:nth-child(2){padding-top:1rem;}/*!sc*/
-@media (min-width:700px){.dOTUaa{display:block;}}/*!sc*/
-data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"dOTUaa,"}/*!sc*/
-.kswmXr{padding:0 1rem;overflow:auto;}/*!sc*/
-@media (min-width:700px){.kswmXr > div:nth-child(2){display:none;}}/*!sc*/
-data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
+.hKa-dnq{display:none;}/*!sc*/
+@media (min-width:700px){.hKa-dnq{display:block;}}/*!sc*/
+data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"hKa-dnq,"}/*!sc*/
+.kXmPAY{padding:0 1rem;overflow:auto;}/*!sc*/
+data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kXmPAY,"}/*!sc*/
 .dSeHES{margin:0;padding:1rem 0 0 1rem;font-size:1rem;}/*!sc*/
 data-styled.g7[id="Wiki__RelatedLinksHeader-sc-16q9onf-3"]{content:"dSeHES,"}/*!sc*/
 .ikXvAQ{list-style:none;padding-left:1rem;margin:0;}/*!sc*/
 .ikXvAQ > li{padding:0;line-height:1;}/*!sc*/
 data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
-</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Database</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 dOTUaa"><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
-<li>
-<p><a href="#database">Database</a></p>
-<ul>
-<li>
-<p><a href="#%EC%84%A4%EA%B3%84">설계</a></p>
-<ul>
-<li>
-<p><a href="#%EC%A0%95%EA%B7%9C%ED%99%94-normalization">정규화 (Normalization)</a></p>
-<ul>
-<li><a href="#%EC%A0%9C-1-%EC%A0%95%EA%B7%9C%ED%99%94-first-normal-form">제 1 정규화 (First Normal Form)</a></li>
-<li><a href="#%EC%A0%9C-2-%EC%A0%95%EA%B7%9C%ED%99%94-second-normal-form">제 2 정규화 (Second Normal Form)</a></li>
-<li><a href="#%EC%A0%9C-3-%EC%A0%95%EA%B7%9C%ED%99%94-third-normal-form">제 3 정규화 (Third Normal Form)</a></li>
-<li><a href="#%EC%97%AD-%EC%A0%95%EA%B7%9C%ED%99%94-denormalization">역 정규화 (Denormalization)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9D%B4%EB%A6%84-%EC%BB%A8%EB%B2%A4%EC%85%98">테이블 이름 컨벤션</a></p>
-<ul>
-<li><a href="#%EB%8B%A8%EC%88%98-vs-%EB%B3%B5%EC%88%98">단수 vs. 복수</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%8A%94-%ED%81%90%EA%B0%80-%EC%95%84%EB%8B%99%EB%8B%88%EB%8B%A4">데이터베이스는 큐가 아닙니다.</a></p>
-<ul>
-<li><a href="#why-not-a-database">Why not a database?</a></li>
-<li><a href="#redis%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B2%83%EC%9D%80-%EC%96%B4%EB%96%A8%EA%B9%8C">Redis를 사용하는 것은 어떨까?</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#mysql">MySQL</a></p>
-<ul>
-<li><a href="#mysql-docker-image">MySQL Docker Image</a></li>
-<li><a href="#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%82%B4%EC%97%90-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%8F%AC%ED%95%A8%ED%95%98%EA%B8%B0">이미지 내에 데이터 포함하기</a></li>
-<li><a href="#functional-key-parts">Functional Key Parts</a></li>
-<li><a href="#secondary-indexes-and-generated-columns">Secondary Indexes and Generated Columns</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#h2-database">H2 Database</a></p>
-<ul>
-<li><a href="#numberformatexception-for-input-string--%EC%97%90%EB%9F%AC"><code>NumberFormatException: for input String: "..."</code> 에러</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#sqlite%EC%9D%98-%EC%95%8C%EB%A0%A4%EC%A7%80%EC%A7%80-%EC%95%8A%EC%9D%80-%EC%9D%B4%EC%95%BC%EA%B8%B0">SQLite의 알려지지 않은 이야기</a></p>
-<ul>
-<li>
-<p><a href="#%EC%9A%A9%EC%96%B4-%EB%B0%8F-%EB%8B%A8%EC%96%B4">용어 및 단어</a></p>
-<ul>
-<li><a href="#mcdc-coverage">MC/DC Coverage</a></li>
-<li><a href="#do-127b">DO-127B</a></li>
-<li><a href="#covering-index">covering index</a></li>
-<li><a href="#fossil">Fossil</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#%EC%9D%B8%EC%83%81%EA%B9%8A%EC%9D%80-%EB%B6%80%EB%B6%84">인상깊은 부분</a></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul></div><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../testing" style="font-size:0.5em;margin-right:0.5em">testing</a></li><li><a href="../architecture" style="font-size:0.5em;margin-right:0.5em">architecture</a></li><li><a href="../software-development" style="font-size:0.5em;margin-right:0.5em">software-development</a></li><li><a href="../programming-paradigm" style="font-size:0.5em;margin-right:0.5em">programming-paradigm</a></li><li><a href="../2016-11-16-google-campus-two-things-you-must-keep-in-google-play" style="font-size:0.5em;margin-right:0.5em">2016-11-16-google-campus-two-things-you-must-keep-in-google-play</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kswmXr"><h1>Database</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
+</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Database</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 hKa-dnq"><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../testing" style="font-size:0.5em;margin-right:0.5em">testing</a></li><li><a href="../architecture" style="font-size:0.5em;margin-right:0.5em">architecture</a></li><li><a href="../software-development" style="font-size:0.5em;margin-right:0.5em">software-development</a></li><li><a href="../programming-paradigm" style="font-size:0.5em;margin-right:0.5em">programming-paradigm</a></li><li><a href="../2016-11-16-google-campus-two-things-you-must-keep-in-google-play" style="font-size:0.5em;margin-right:0.5em">2016-11-16-google-campus-two-things-you-must-keep-in-google-play</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kXmPAY"><h1>Database</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
 <li>
 <p><a href="#database">Database</a></p>
 <ul>
@@ -587,6 +520,6 @@ SELECT j FROM tbl WHERE i > 0;</p>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-90d68f172d7b3b7273dc.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="b5eeb6b33b615738c676";</script><script src="/cat-logic/webpack-runtime-c6d78f35f4a47c4b5f0f.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -65,160 +65,17 @@ data-styled.g3[id="Comments__Container-sc-1ajj4d9-0"]{content:"gcJKrk,"}/*!sc*/
 .gqosYh{display:grid;grid-template-columns:1fr;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
 @media (min-width:700px){.gqosYh{grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);}}/*!sc*/
 data-styled.g4[id="Wiki__Container-sc-16q9onf-0"]{content:"gqosYh,"}/*!sc*/
-.dOTUaa{display:none;}/*!sc*/
-.dOTUaa > div:nth-child(2){padding-top:1rem;}/*!sc*/
-@media (min-width:700px){.dOTUaa{display:block;}}/*!sc*/
-data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"dOTUaa,"}/*!sc*/
-.kswmXr{padding:0 1rem;overflow:auto;}/*!sc*/
-@media (min-width:700px){.kswmXr > div:nth-child(2){display:none;}}/*!sc*/
-data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
+.hKa-dnq{display:none;}/*!sc*/
+@media (min-width:700px){.hKa-dnq{display:block;}}/*!sc*/
+data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"hKa-dnq,"}/*!sc*/
+.kXmPAY{padding:0 1rem;overflow:auto;}/*!sc*/
+data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kXmPAY,"}/*!sc*/
 .dSeHES{margin:0;padding:1rem 0 0 1rem;font-size:1rem;}/*!sc*/
 data-styled.g7[id="Wiki__RelatedLinksHeader-sc-16q9onf-3"]{content:"dSeHES,"}/*!sc*/
 .ikXvAQ{list-style:none;padding-left:1rem;margin:0;}/*!sc*/
 .ikXvAQ > li{padding:0;line-height:1;}/*!sc*/
 data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
-</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Vim</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 dOTUaa"><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
-<li>
-<p><a href="#vim">Vim</a></p>
-<ul>
-<li>
-<p><a href="#neovim">Neovim</a></p>
-<ul>
-<li><a href="#lua-%EA%B0%80%EC%9D%B4%EB%93%9C">Lua 가이드</a></li>
-<li><a href="#%EB%82%B4%EC%9E%A5-language-server-protocol-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">내장 Language Server Protocol 사용하기</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#%EB%8F%84%EC%9B%80%EB%A7%90-help">도움말 <code>:help</code></a></p>
-<ul>
-<li><a href="#usr_12txt-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A1%B0%ED%95%A9%EC%97%90-%EA%B4%80%ED%95%9C-%ED%8C%81"><code>usr_12.txt</code> 명령어 조합에 관한 팁</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#use-cases">Use cases</a></p>
-<ul>
-<li><a href="#%ED%8C%8C%EC%9D%BC-%EA%B2%80%EC%83%89">파일 검색</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#%EB%82%B4%EC%9E%A5-%EA%B8%B0%EB%8A%A5">내장 기능</a></p>
-<ul>
-<li>
-<p><a href="#quickfix--location-list">quickfix &#x26; location list</a></p>
-<ul>
-<li><a href="#commands">commands</a></li>
-<li><a href="#grep">grep</a></li>
-<li><a href="#cdo-ldo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-entry%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>cdo</code>, <code>ldo</code> 검색된 모든 entry에 명령어 적용</a></li>
-<li><a href="#cfdo-lfdo-%EA%B2%80%EC%83%89%EB%90%9C-%EB%AA%A8%EB%93%A0-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>cfdo</code>, <code>lfdo</code> 검색된 모든 파일에 명령어 적용</a></li>
-<li><a href="#bufdo-%EB%AA%A8%EB%93%A0-buffer-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%81%EC%9A%A9"><code>bufdo</code> 모든 buffer 파일에 명령어 적용</a></li>
-<li><a href="#user-function">User Function</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#fuzzy-%EB%A7%A4%EC%B9%AD-matchfuzzy">Fuzzy 매칭: <code>matchfuzzy()</code></a></p>
-</li>
-<li>
-<p><a href="#make-and-makeprg"><code>:make</code> and <code>makeprg</code></a></p>
-<ul>
-<li><a href="#build-integration---how-to-do-90-of-what-plugins-do">build integration - How to Do 90% of What Plugins Do</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#matchit">matchit</a></p>
-</li>
-<li>
-<p><a href="#%ED%84%B0%EB%AF%B8%EB%84%90-%EC%97%90%EB%AE%AC%EB%A0%88%EC%9D%B4%ED%84%B0-terminal">터미널 에뮬레이터: <code>:terminal</code></a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#%EA%B5%AC%EB%AC%B8-%EA%B0%95%EC%A1%B0">구문 강조</a></p>
-</li>
-<li>
-<p><a href="#registers">Registers</a></p>
-</li>
-<li>
-<p><a href="#variables">Variables</a></p>
-<ul>
-<li><a href="#path"><code>path</code></a></li>
-</ul>
-</li>
-<li>
-<p><a href="#plugin-%EB%A7%8C%EB%93%A4%EA%B8%B0">Plugin 만들기</a></p>
-<ul>
-<li><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0">프로젝트 구조</a></li>
-<li><a href="#autoload"><code>autoload</code></a></li>
-<li><a href="#ftplugin"><code>ftplugin</code></a></li>
-<li><a href="#plug-sid"><code>&#x3C;Plug></code> <code>&#x3C;SID></code></a></li>
-</ul>
-</li>
-<li>
-<p><a href="#plugins">Plugins</a></p>
-<ul>
-<li>
-<p><a href="#chrisbracsvvim">chrisbra/csv.vim</a></p>
-<ul>
-<li><a href="#features">Features</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#tpopevim-fugitive">tpope/vim-fugitive</a></p>
-<ul>
-<li><a href="#git"><code>:Git</code></a></li>
-</ul>
-</li>
-<li>
-<p><a href="#rmagattiauto-session">rmagatti/auto-session</a></p>
-<ul>
-<li><a href="#startify%EC%97%90-%EC%84%B8%EC%85%98-%EB%AA%A9%EB%A1%9D-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0">Startify에 세션 목록 표시하기</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#%EC%9A%A9%EC%96%B4">용어</a></p>
-<ul>
-<li><a href="#---more---%EB%9D%BC%EA%B3%A0-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-pager"><code>-- More --</code>라고 출력되는 pager</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#tips">Tips</a></p>
-<ul>
-<li>
-<p><a href="#mapping-%EC%8B%9C-cr-vs-cmdcr">mapping 시 <code>:...&#x3C;cr></code> vs <code>&#x3C;cmd>...&#x3C;cr></code></a></p>
-</li>
-<li>
-<p><a href="#%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC%EB%A7%81-%ED%95%98%EA%B8%B0">프로파일링 하기</a></p>
-</li>
-<li>
-<p><a href="#text-object-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0">text object 개선하기</a></p>
-<ul>
-<li><a href="#vim-pythonsense">vim-pythonsense</a></li>
-<li><a href="#vim-expand-region">vim-expand-region</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#command-%EB%8C%80%EC%8B%A0-command%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%9E%90"><code>command</code> 대신 <code>command!</code>를 사용하자.</a></p>
-</li>
-<li>
-<p><a href="#%EC%98%B5%EC%85%98%EC%9D%B4-%EC%96%B4%EB%8A%90-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EB%B3%80%EA%B2%BD%EB%90%98%EC%97%88%EB%8A%94%EC%A7%80-%EC%95%8C%EB%A0%A4%EB%A9%B4-verbose">옵션이 어느 파일에서 변경되었는지 알려면 <code>:verbose</code></a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#issues">Issues</a></p>
-<ul>
-<li><a href="#typescript-filetype-%EB%AC%B8%EC%A0%9C">Typescript filetype 문제</a></li>
-<li><a href="#vim-colors-solarized-colorscheme-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8%EC%9D%B4-%EC%A0%90%EC%A0%90-%EB%8A%90%EB%A0%A4%EC%A7%80%EA%B2%8C-%EB%A7%8C%EB%93%9C%EB%8A%94-%ED%98%84%EC%83%81"><code>vim-colors-solarized</code> colorscheme 플러그인이 점점 느려지게 만드는 현상</a></li>
-<li><a href="#ubuntu%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%9C-vim%EC%9D%B4-%EC%8B%9C%EC%9E%91-%EC%8B%9C-vimrc%EC%97%90%EC%84%9C-%EB%A7%8E%EC%9D%80-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81">Ubuntu에 설치한 vim이 시작 시 <code>.vimrc</code>에서 많은 에러가 발생하는 현상</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#%EA%B4%80%EB%A0%A8-%EA%B8%B0%EC%82%AC">관련 기사</a></p>
-</li>
-</ul>
-</li>
-</ul></div><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../vimwiki" style="font-size:0.5em;margin-right:0.5em">vimwiki</a></li><li><a href="../mac-os" style="font-size:0.5em;margin-right:0.5em">mac-os</a></li><li><a href="../shell" style="font-size:0.5em;margin-right:0.5em">shell</a></li><li><a href="../python" style="font-size:0.5em;margin-right:0.5em">python</a></li><li><a href="../tools" style="font-size:0.5em;margin-right:0.5em">tools</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kswmXr"><h1>Vim</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
+</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Vim</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 hKa-dnq"><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../vimwiki" style="font-size:0.5em;margin-right:0.5em">vimwiki</a></li><li><a href="../mac-os" style="font-size:0.5em;margin-right:0.5em">mac-os</a></li><li><a href="../shell" style="font-size:0.5em;margin-right:0.5em">shell</a></li><li><a href="../python" style="font-size:0.5em;margin-right:0.5em">python</a></li><li><a href="../tools" style="font-size:0.5em;margin-right:0.5em">tools</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kXmPAY"><h1>Vim</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
 <li>
 <p><a href="#vim">Vim</a></p>
 <ul>
@@ -1032,6 +889,6 @@ count  total (s)   self (s)  function
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-90d68f172d7b3b7273dc.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="b5eeb6b33b615738c676";</script><script src="/cat-logic/webpack-runtime-c6d78f35f4a47c4b5f0f.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

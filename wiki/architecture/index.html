@@ -65,61 +65,17 @@ data-styled.g3[id="Comments__Container-sc-1ajj4d9-0"]{content:"gcJKrk,"}/*!sc*/
 .gqosYh{display:grid;grid-template-columns:1fr;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
 @media (min-width:700px){.gqosYh{grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);}}/*!sc*/
 data-styled.g4[id="Wiki__Container-sc-16q9onf-0"]{content:"gqosYh,"}/*!sc*/
-.dOTUaa{display:none;}/*!sc*/
-.dOTUaa > div:nth-child(2){padding-top:1rem;}/*!sc*/
-@media (min-width:700px){.dOTUaa{display:block;}}/*!sc*/
-data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"dOTUaa,"}/*!sc*/
-.kswmXr{padding:0 1rem;overflow:auto;}/*!sc*/
-@media (min-width:700px){.kswmXr > div:nth-child(2){display:none;}}/*!sc*/
-data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
+.hKa-dnq{display:none;}/*!sc*/
+@media (min-width:700px){.hKa-dnq{display:block;}}/*!sc*/
+data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"hKa-dnq,"}/*!sc*/
+.kXmPAY{padding:0 1rem;overflow:auto;}/*!sc*/
+data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kXmPAY,"}/*!sc*/
 .dSeHES{margin:0;padding:1rem 0 0 1rem;font-size:1rem;}/*!sc*/
 data-styled.g7[id="Wiki__RelatedLinksHeader-sc-16q9onf-3"]{content:"dSeHES,"}/*!sc*/
 .ikXvAQ{list-style:none;padding-left:1rem;margin:0;}/*!sc*/
 .ikXvAQ > li{padding:0;line-height:1;}/*!sc*/
 data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
-</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Architecture</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 dOTUaa"><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
-<li>
-<p><a href="#architecture">Architecture</a></p>
-<ul>
-<li>
-<p><a href="#robert-c-martin---clean-architecture-and-design">Robert C. Martin - Clean Architecture and Design</a></p>
-</li>
-<li>
-<p><a href="#junit-a-cooks-tour">JUnit A Cook's Tour</a></p>
-</li>
-<li>
-<p><a href="#entity-component-system-ecs">Entity Component System (ECS)</a></p>
-<ul>
-<li><a href="#%EC%B0%B8%EC%A1%B0">참조</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#wine%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8F%99%EC%9E%91%ED%95%98%EB%8A%94%EA%B0%80">wine은 어떻게 동작하는가?</a></p>
-</li>
-<li>
-<p><a href="#%EC%A7%81%EA%B5%90%EC%84%B1orthogonality">직교성(Orthogonality)</a></p>
-<ul>
-<li><a href="#reaper%EB%9D%BC%EB%8A%94-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%9D%B4-%EC%9E%88%EB%8B%A4---%EA%B9%80%EC%B0%BD%EC%A4%80">reaper라는 프로그램이 있다. - 김창준</a></li>
-<li><a href="#%EC%A7%80%EC%86%8D-%EA%B0%80%EB%8A%A5%ED%95%9C-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%BD%94%EB%94%A9-%EB%B0%A9%EB%B2%95---nhn-meetup">지속 가능한 소프트웨어를 위한 코딩 방법 - NHN Meetup</a></li>
-<li><a href="#%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C-%EC%A7%81%EA%B5%90%EC%84%B1">테스트에서 직교성</a></li>
-<li><a href="#%EB%B9%84%EC%8A%B7%ED%95%9C-%EB%8B%A8%EC%96%B4-pairwise">비슷한 단어: pairwise</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#domain-driven-design-ddd">Domain Driven Design (DDD)</a></p>
-<ul>
-<li><a href="#aws-ddd-initiative-program">AWS DDD initiative program</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#rest-api">REST API</a></p>
-<ul>
-<li><a href="#github-rest-api">GitHub REST API</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul></div><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../object-oriented-programming" style="font-size:0.5em;margin-right:0.5em">object-oriented-programming</a></li><li><a href="../software-development" style="font-size:0.5em;margin-right:0.5em">software-development</a></li><li><a href="../spring-framework" style="font-size:0.5em;margin-right:0.5em">spring-framework</a></li><li><a href="../design-pattern" style="font-size:0.5em;margin-right:0.5em">design-pattern</a></li><li><a href="../database" style="font-size:0.5em;margin-right:0.5em">database</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kswmXr"><h1>Architecture</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
+</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Architecture</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 hKa-dnq"><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../object-oriented-programming" style="font-size:0.5em;margin-right:0.5em">object-oriented-programming</a></li><li><a href="../software-development" style="font-size:0.5em;margin-right:0.5em">software-development</a></li><li><a href="../spring-framework" style="font-size:0.5em;margin-right:0.5em">spring-framework</a></li><li><a href="../design-pattern" style="font-size:0.5em;margin-right:0.5em">design-pattern</a></li><li><a href="../database" style="font-size:0.5em;margin-right:0.5em">database</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kXmPAY"><h1>Architecture</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
 <li>
 <p><a href="#architecture">Architecture</a></p>
 <ul>
@@ -426,6 +382,6 @@ POST <code>/transfer</code> 이며, 응답 코드는 202 Accepted를 사용한�
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-90d68f172d7b3b7273dc.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="b5eeb6b33b615738c676";</script><script src="/cat-logic/webpack-runtime-c6d78f35f4a47c4b5f0f.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

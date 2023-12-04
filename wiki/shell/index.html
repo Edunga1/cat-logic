@@ -65,122 +65,17 @@ data-styled.g3[id="Comments__Container-sc-1ajj4d9-0"]{content:"gcJKrk,"}/*!sc*/
 .gqosYh{display:grid;grid-template-columns:1fr;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
 @media (min-width:700px){.gqosYh{grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);}}/*!sc*/
 data-styled.g4[id="Wiki__Container-sc-16q9onf-0"]{content:"gqosYh,"}/*!sc*/
-.dOTUaa{display:none;}/*!sc*/
-.dOTUaa > div:nth-child(2){padding-top:1rem;}/*!sc*/
-@media (min-width:700px){.dOTUaa{display:block;}}/*!sc*/
-data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"dOTUaa,"}/*!sc*/
-.kswmXr{padding:0 1rem;overflow:auto;}/*!sc*/
-@media (min-width:700px){.kswmXr > div:nth-child(2){display:none;}}/*!sc*/
-data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
+.hKa-dnq{display:none;}/*!sc*/
+@media (min-width:700px){.hKa-dnq{display:block;}}/*!sc*/
+data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"hKa-dnq,"}/*!sc*/
+.kXmPAY{padding:0 1rem;overflow:auto;}/*!sc*/
+data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kXmPAY,"}/*!sc*/
 .dSeHES{margin:0;padding:1rem 0 0 1rem;font-size:1rem;}/*!sc*/
 data-styled.g7[id="Wiki__RelatedLinksHeader-sc-16q9onf-3"]{content:"dSeHES,"}/*!sc*/
 .ikXvAQ{list-style:none;padding-left:1rem;margin:0;}/*!sc*/
 .ikXvAQ > li{padding:0;line-height:1;}/*!sc*/
 data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
-</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Shell 명령어</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 dOTUaa"><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
-<li>
-<p><a href="#shell-%EB%AA%85%EB%A0%B9%EC%96%B4">Shell 명령어</a></p>
-<ul>
-<li>
-<p><a href="#man---%EB%A7%A4%EB%89%B4%EC%96%BC">man - 매뉴얼</a></p>
-<ul>
-<li><a href="#command1%EC%97%90%EC%84%9C-%EC%88%AB%EC%9E%90%EC%9D%98-%EC%9D%98%EB%AF%B8"><code>COMMAND(1)</code>에서 숫자의 의미?</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#set--ex"><code>set -ex</code></a></p>
-</li>
-<li>
-<p><a href="#bashrc-rc%EC%9D%98-%EC%9D%98%EB%AF%B8">.bash<strong>rc</strong> rc의 의미?</a></p>
-</li>
-<li>
-<p><a href="#parameter-fallback-default-value">parameter fallback (default value)</a></p>
-</li>
-<li>
-<p><a href="#redirections">Redirections</a></p>
-</li>
-<li>
-<p><a href="#built-in-commands">Built-in Commands</a></p>
-<ul>
-<li>
-<p><a href="#time---%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%EC%8B%9C%EA%B0%84-%EC%B8%A1%EC%A0%95">time - 명령어 실행시간 측정</a></p>
-</li>
-<li>
-<p><a href="#readlink---%EC%8B%AC%EB%B3%BC%EB%A6%AD-%EB%A7%81%ED%81%AC-%EA%B2%BD%EB%A1%9C-%ED%99%95%EC%9D%B8">readlink - 심볼릭 링크 경로 확인</a></p>
-</li>
-<li>
-<p><a href="#sed---%ED%8C%8C%EC%9D%BC-%ED%8A%B9%EC%A0%95-%EB%9D%BC%EC%9D%B8%EB%A7%8C-%EC%9D%BD%EA%B8%B0">sed - 파일 특정 라인만 읽기</a></p>
-</li>
-<li>
-<p><a href="#nohup---%EB%A9%88%EC%B6%94%EC%A7%80-%EC%95%8A%EA%B3%A0-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0">nohup - 멈추지 않고 명령어 실행하기</a></p>
-<ul>
-<li>
-<p><a href="#stdout%EC%9D%80-nohupout%EC%97%90-%EC%A0%80%EC%9E%A5%EB%90%9C%EB%8B%A4">stdout은 <code>nohup.out</code>에 저장된다.</a></p>
-</li>
-<li>
-<p><a href="#background-job%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%98%EC%9E%90">Background Job으로 실행하자.</a></p>
-</li>
-<li>
-<p><a href="#nohup%EC%9C%BC%EB%A1%9C-%EC%8B%A4%ED%96%89%ED%95%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EB%A5%BC-%EC%A2%85%EB%A3%8C%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95"><code>nohup</code>으로 실행한 프로세스를 종료하는 방법</a></p>
-<ul>
-<li><a href="#ps-aux%EB%A1%9C-%EC%B0%BE%EC%95%84%EB%B3%B4%EC%9E%90"><code>ps aux</code>로 찾아보자</a></li>
-<li><a href="#background%EB%A1%9C-%EB%9D%84%EC%9A%B4-%EA%B2%BD%EC%9A%B0-%EC%A2%80-%EB%8D%94-%EC%95%8C%EA%B8%B0-%EC%89%BD%EB%8B%A4">background로 띄운 경우 좀 더 알기 쉽다.</a></li>
-<li><a href="#%EC%A2%80-%EB%8D%94-%EB%98%91%EB%98%91%ED%95%9C-%EB%B0%A9%EB%B2%95">좀 더 똑똑한 방법</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#tools">Tools</a></p>
-<ul>
-<li>
-<p><a href="#marker---the-terminal-command-palette">marker - the terminal command palette</a></p>
-</li>
-<li>
-<p><a href="#tmux">Tmux</a></p>
-</li>
-<li>
-<p><a href="#tmuxinator">Tmuxinator</a></p>
-<ul>
-<li><a href="#%EC%A7%80%EC%97%AD%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%A0-%EA%B2%BD%EC%9A%B0">지역적으로 사용할 경우</a></li>
-<li><a href="#%EC%A0%84%EC%97%AD%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%A0-%EA%B2%BD%EC%9A%B0">전역적으로 사용할 경우</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#fzf">FZF</a></p>
-<ul>
-<li>
-<p><a href="#fzf--git">FZF + git</a></p>
-<ul>
-<li><a href="#%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%AA%A9%EB%A1%9D-%EB%B0%8F-%EC%9E%91%EC%97%85-%EB%82%B4%EC%9A%A9">브랜치 목록 및 작업 내용</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#curl">curl</a></p>
-<ul>
-<li><a href="#%EC%9E%AC%EC%8B%9C%EB%8F%84---retry">재시도 <code>--retry</code></a></li>
-<li><a href="#url">URL</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#ping">ping</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#python-shell-tools">python shell tools</a></p>
-<ul>
-<li><a href="#python--m-jsontool%EC%9C%BC%EB%A1%9C-json-beautify"><code>python -m json.tool</code>으로 JSON beautify</a></li>
-<li><a href="#python--m-httpserver%EB%A1%9C-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%9B%B9%EC%84%9C%EB%B2%84-%EC%8B%A4%ED%96%89"><code>python -m http.server</code>로 간단한 웹서버 실행</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul></div><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../mac-os" style="font-size:0.5em;margin-right:0.5em">mac-os</a></li><li><a href="../vim" style="font-size:0.5em;margin-right:0.5em">vim</a></li><li><a href="../crontab" style="font-size:0.5em;margin-right:0.5em">crontab</a></li><li><a href="../tools" style="font-size:0.5em;margin-right:0.5em">tools</a></li><li><a href="../linux" style="font-size:0.5em;margin-right:0.5em">linux</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kswmXr"><h1>Shell 명령어</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
+</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Shell 명령어</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 hKa-dnq"><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../mac-os" style="font-size:0.5em;margin-right:0.5em">mac-os</a></li><li><a href="../vim" style="font-size:0.5em;margin-right:0.5em">vim</a></li><li><a href="../crontab" style="font-size:0.5em;margin-right:0.5em">crontab</a></li><li><a href="../tools" style="font-size:0.5em;margin-right:0.5em">tools</a></li><li><a href="../linux" style="font-size:0.5em;margin-right:0.5em">linux</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kXmPAY"><h1>Shell 명령어</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
 <li>
 <p><a href="#shell-%EB%AA%85%EB%A0%B9%EC%96%B4">Shell 명령어</a></p>
 <ul>
@@ -684,6 +579,6 @@ $ python -m http.server 8080
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-90d68f172d7b3b7273dc.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="b5eeb6b33b615738c676";</script><script src="/cat-logic/webpack-runtime-c6d78f35f4a47c4b5f0f.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

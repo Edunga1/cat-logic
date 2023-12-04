@@ -65,27 +65,17 @@ data-styled.g3[id="Comments__Container-sc-1ajj4d9-0"]{content:"gcJKrk,"}/*!sc*/
 .gqosYh{display:grid;grid-template-columns:1fr;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
 @media (min-width:700px){.gqosYh{grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);}}/*!sc*/
 data-styled.g4[id="Wiki__Container-sc-16q9onf-0"]{content:"gqosYh,"}/*!sc*/
-.dOTUaa{display:none;}/*!sc*/
-.dOTUaa > div:nth-child(2){padding-top:1rem;}/*!sc*/
-@media (min-width:700px){.dOTUaa{display:block;}}/*!sc*/
-data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"dOTUaa,"}/*!sc*/
-.kswmXr{padding:0 1rem;overflow:auto;}/*!sc*/
-@media (min-width:700px){.kswmXr > div:nth-child(2){display:none;}}/*!sc*/
-data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
+.hKa-dnq{display:none;}/*!sc*/
+@media (min-width:700px){.hKa-dnq{display:block;}}/*!sc*/
+data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"hKa-dnq,"}/*!sc*/
+.kXmPAY{padding:0 1rem;overflow:auto;}/*!sc*/
+data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kXmPAY,"}/*!sc*/
 .dSeHES{margin:0;padding:1rem 0 0 1rem;font-size:1rem;}/*!sc*/
 data-styled.g7[id="Wiki__RelatedLinksHeader-sc-16q9onf-3"]{content:"dSeHES,"}/*!sc*/
 .ikXvAQ{list-style:none;padding-left:1rem;margin:0;}/*!sc*/
 .ikXvAQ > li{padding:0;line-height:1;}/*!sc*/
 data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
-</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Sentry (APM, Error Tracking)</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 dOTUaa"><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
-<li>
-<p><a href="#sentry-apm-error-tracking">Sentry (APM, Error Tracking)</a></p>
-<ul>
-<li><a href="#timezone%EC%9D%84-kst%EB%A1%9C-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0">Timezone을 KST로 변경하기.</a></li>
-<li><a href="#%EC%9D%B4%EC%8A%88-%EA%B2%80%EC%83%89%EC%97%90-%ED%83%9C%EA%B7%B8-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0">이슈 검색에 태그 이용하기</a></li>
-</ul>
-</li>
-</ul></div><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../mail" style="font-size:0.5em;margin-right:0.5em">mail</a></li><li><a href="../programming-convention" style="font-size:0.5em;margin-right:0.5em">programming-convention</a></li><li><a href="../jetbrains" style="font-size:0.5em;margin-right:0.5em">jetbrains</a></li><li><a href="../logging" style="font-size:0.5em;margin-right:0.5em">logging</a></li><li><a href="../machine-learning" style="font-size:0.5em;margin-right:0.5em">machine-learning</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kswmXr"><h1>Sentry (APM, Error Tracking)</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
+</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Sentry (APM, Error Tracking)</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 hKa-dnq"><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../mail" style="font-size:0.5em;margin-right:0.5em">mail</a></li><li><a href="../programming-convention" style="font-size:0.5em;margin-right:0.5em">programming-convention</a></li><li><a href="../jetbrains" style="font-size:0.5em;margin-right:0.5em">jetbrains</a></li><li><a href="../logging" style="font-size:0.5em;margin-right:0.5em">logging</a></li><li><a href="../machine-learning" style="font-size:0.5em;margin-right:0.5em">machine-learning</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kXmPAY"><h1>Sentry (APM, Error Tracking)</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
 <li>
 <p><a href="#sentry-apm-error-tracking">Sentry (APM, Error Tracking)</a></p>
 <ul>
@@ -112,6 +102,6 @@ Sentry 이슈 화면에 있는 모든 내용이 검색창에서 검색되지 않
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-90d68f172d7b3b7273dc.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="b5eeb6b33b615738c676";</script><script src="/cat-logic/webpack-runtime-c6d78f35f4a47c4b5f0f.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -65,159 +65,17 @@ data-styled.g3[id="Comments__Container-sc-1ajj4d9-0"]{content:"gcJKrk,"}/*!sc*/
 .gqosYh{display:grid;grid-template-columns:1fr;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
 @media (min-width:700px){.gqosYh{grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);}}/*!sc*/
 data-styled.g4[id="Wiki__Container-sc-16q9onf-0"]{content:"gqosYh,"}/*!sc*/
-.dOTUaa{display:none;}/*!sc*/
-.dOTUaa > div:nth-child(2){padding-top:1rem;}/*!sc*/
-@media (min-width:700px){.dOTUaa{display:block;}}/*!sc*/
-data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"dOTUaa,"}/*!sc*/
-.kswmXr{padding:0 1rem;overflow:auto;}/*!sc*/
-@media (min-width:700px){.kswmXr > div:nth-child(2){display:none;}}/*!sc*/
-data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
+.hKa-dnq{display:none;}/*!sc*/
+@media (min-width:700px){.hKa-dnq{display:block;}}/*!sc*/
+data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"hKa-dnq,"}/*!sc*/
+.kXmPAY{padding:0 1rem;overflow:auto;}/*!sc*/
+data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kXmPAY,"}/*!sc*/
 .dSeHES{margin:0;padding:1rem 0 0 1rem;font-size:1rem;}/*!sc*/
 data-styled.g7[id="Wiki__RelatedLinksHeader-sc-16q9onf-3"]{content:"dSeHES,"}/*!sc*/
 .ikXvAQ{list-style:none;padding-left:1rem;margin:0;}/*!sc*/
 .ikXvAQ > li{padding:0;line-height:1;}/*!sc*/
 data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
-</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - 2016-08-27 GDG WebTech Workshop &quot;측정하는 놈, 로딩하는 놈, 그리는 놈&quot;</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 dOTUaa"><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
-<li>
-<p><a href="#2016-08-27-gdg-webtech-workshop-%EC%B8%A1%EC%A0%95%ED%95%98%EB%8A%94-%EB%86%88-%EB%A1%9C%EB%94%A9%ED%95%98%EB%8A%94-%EB%86%88-%EA%B7%B8%EB%A6%AC%EB%8A%94-%EB%86%88">2016-08-27 GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"</a></p>
-<ul>
-<li>
-<p><a href="#slides">Slides</a></p>
-</li>
-<li>
-<p><a href="#%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%ED%81%AC%EB%A1%AC-%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%84%B1%EB%8A%A5-%EC%9D%B8%EC%9E%90-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0">프론트엔드 개발자를 위한 크롬 렌더링 성능 인자 이해하기</a></p>
-<ul>
-<li>
-<p><a href="#%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4-%EA%B0%80%EC%86%8D">하드웨어 가속</a></p>
-</li>
-<li>
-<p><a href="#cpu%EC%99%80-gpu-%EC%82%AC%EC%9D%B4%EC%97%90-%EC%A1%B4%EC%9E%AC%ED%95%98%EB%8A%94-%EC%9D%B4%EC%8A%88">CPU와 GPU 사이에 존재하는 이슈</a></p>
-<ul>
-<li><a href="#1-%EC%84%9C%EB%A1%9C-%EB%8B%A4%EB%A5%B8-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EA%B3%B5%EA%B0%84">1. 서로 다른 메모리 공간</a></li>
-<li><a href="#2-%EB%A9%94%EB%AA%A8%EB%A6%AC-%ED%95%9C%EA%B3%84">2. 메모리 한계</a></li>
-<li><a href="#3-%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B0%80-%EC%9E%90%EC%A3%BC-%EB%B3%80%EA%B2%BD%EB%90%9C%EB%8B%A4">3. 데이터가 자주 변경된다.</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#gpu">GPU</a></p>
-<ul>
-<li>
-<p><a href="#gpu%EA%B0%80-%EC%9E%98%ED%95%98%EB%8A%94-%EA%B2%83">GPU가 잘하는 것</a></p>
-</li>
-<li>
-<p><a href="#gpu%EC%9D%98-%EC%95%BD%EC%A0%90">GPU의 약점</a></p>
-<ul>
-<li><a href="#%ED%95%98%EC%A7%80%EB%A7%8C-%EB%8D%94-%ED%81%B0-%EC%9D%B4%EC%8A%88%EB%8A%94-cpu%EC%9D%98-%EC%B2%98%EB%A6%AC-%EC%8B%9C%EA%B0%84">하지만 더 큰 이슈는 <strong>CPU의 처리 시간</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%84%B1%EB%8A%A5%EC%9D%98-%EC%A3%BC%EC%9A%94-%EC%9D%B8%EC%9E%90">렌더링 성능의 주요 인자</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#%ED%81%AC%EB%A1%AC%EC%9D%98-%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4-%EA%B0%80%EC%86%8D-%EB%A0%8C%EB%8D%94%EB%A7%81-%EB%A9%94%EC%BB%A4%EB%8B%88%EC%A6%98">크롬의 하드웨어 가속 렌더링 메커니즘</a></p>
-<ul>
-<li>
-<p><a href="#%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80%EC%9D%98-%EB%A0%8C%EB%8D%94%EB%A7%81">웹페이지의 렌더링</a></p>
-</li>
-<li>
-<p><a href="#%EB%A0%88%EC%9D%B4%EC%96%B4-%EB%AA%A8%EB%8D%B8">레이어 모델</a></p>
-</li>
-<li>
-<p><a href="#%EC%BB%B4%ED%8F%AC%EC%A7%80%ED%8A%B8-composite">컴포지트 (Composite)</a></p>
-</li>
-<li>
-<p><a href="#%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%9D%B4%EC%8A%88">렌더링 이슈</a></p>
-<ul>
-<li><a href="#reflow">Reflow</a></li>
-<li><a href="#repaint">Repaint</a></li>
-<li><a href="#reflow--repaint-%EB%B0%9C%EC%83%9D-%EC%9A%94%EC%9D%B8">Reflow / Repaint 발생 요인</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#%ED%81%AC%EB%A1%AC-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%8F%84%EA%B5%AC">크롬 개발자도구</a></p>
-<ul>
-<li>
-<p><a href="#timeline">Timeline</a></p>
-</li>
-<li>
-<p><a href="#elements--rendering">Elements > Rendering</a></p>
-<ul>
-<li><a href="#paint-flashing">Paint Flashing</a></li>
-<li><a href="#layer-borders">Layer Borders</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#user-timing">User Timing</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#%ED%81%AC%EB%A1%AC%EC%97%90%EC%84%9C%EC%9D%98-%EC%A0%84%EB%B0%98%EC%A0%81%EC%9D%B8-%EB%A0%8C%EB%8D%94%EB%A7%81-%ED%9D%90%EB%A6%84">크롬에서의 전반적인 렌더링 흐름</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%B5%9C%EC%A0%81%ED%99%94-%EB%B0%A9%EB%B2%95">렌더링 최적화 방법</a></p>
-<ul>
-<li>
-<p><a href="#%EA%B0%80%EC%9E%A5-%EA%B0%84%EB%8B%A8%ED%95%9C-%EB%B0%A9%EB%B2%95--%EC%B5%9C%EC%86%8C%ED%95%9C%EC%9C%BC%EB%A1%9C-%EB%A0%88%EC%9D%B4%EC%96%B4-%EB%B6%84%EB%A6%AC">가장 간단한 방법 : 최소한으로 레이어 분리</a></p>
-<ul>
-<li><a href="#translatez0">translateZ(0)</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#%EA%B0%95%EC%A0%9C%EC%A0%81%EC%9D%B8-%EB%A0%88%EC%9D%B4%EC%96%B4-%EB%B6%84%EB%A6%AC%EA%B0%80-%EB%A7%8C%EB%8A%A5%EC%9D%B4-%EC%95%84%EB%8B%8C-%EC%9D%B4%EC%9C%A0">강제적인 레이어 분리가 만능이 아닌 이유</a></p>
-<ul>
-<li><a href="#%EB%A0%88%EC%9D%B4%EC%96%B4-%EB%B6%84%EB%A6%AC%EB%8A%94-%ED%85%8D%EC%8A%A4%EC%B3%90-%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%9D%98-%EB%B6%84%EB%A6%AC%EB%A5%BC-%EC%9D%98%EB%AF%B8%ED%95%9C%EB%8B%A4">레이어 분리는 텍스쳐 이미지의 분리를 의미한다.</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#css-will-change">CSS: will-change</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#instant-and-offline-apps">Instant and offline apps</a></p>
-<ul>
-<li>
-<p><a href="#instant-loading">Instant Loading</a></p>
-<ul>
-<li><a href="#%EC%95%95%EC%B6%95">압축</a></li>
-<li><a href="#%EC%9E%91%EC%9D%80-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%82%AC%EC%9A%A9">작은 이미지 사용</a></li>
-<li><a href="#round-trips-%EC%A4%84%EC%9D%B4%EA%B8%B0">Round Trips 줄이기</a></li>
-<li><a href="#be-interactive">Be interactive</a></li>
-<li><a href="#iframe">iFrame</a></li>
-<li><a href="#http2">HTTP/2</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#service-worker">Service Worker</a></p>
-<ul>
-<li>
-<p><a href="#%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8-%EB%A1%9C%EB%94%A9">오프라인 로딩</a></p>
-</li>
-<li>
-<p><a href="#web-worker">Web worker</a></p>
-</li>
-<li>
-<p><a href="#service-worker-1">Service Worker</a></p>
-<ul>
-<li><a href="#%EA%B8%B0%EB%8A%A5-%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8-%EC%BA%90%EC%89%AC">기능: 오프라인 캐쉬</a></li>
-<li><a href="#%EA%B8%B0%EB%8A%A5-%EB%B0%B1%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-%EB%8F%99%EA%B8%B0%ED%99%94">기능: 백그라운드 동기화</a></li>
-<li><a href="#%EA%B7%9C%EC%B9%99-%EC%9E%A5%EC%A0%90">규칙, 장점</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul></div><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../web" style="font-size:0.5em;margin-right:0.5em">web</a></li><li><a href="../webgl" style="font-size:0.5em;margin-right:0.5em">webgl</a></li><li><a href="../nodejs" style="font-size:0.5em;margin-right:0.5em">nodejs</a></li><li><a href="../experience-review" style="font-size:0.5em;margin-right:0.5em">experience-review</a></li><li><a href="../javascript" style="font-size:0.5em;margin-right:0.5em">javascript</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kswmXr"><h1>2016-08-27 GDG WebTech Workshop &quot;측정하는 놈, 로딩하는 놈, 그리는 놈&quot;</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
+</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - 2016-08-27 GDG WebTech Workshop &quot;측정하는 놈, 로딩하는 놈, 그리는 놈&quot;</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 hKa-dnq"><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../web" style="font-size:0.5em;margin-right:0.5em">web</a></li><li><a href="../webgl" style="font-size:0.5em;margin-right:0.5em">webgl</a></li><li><a href="../nodejs" style="font-size:0.5em;margin-right:0.5em">nodejs</a></li><li><a href="../experience-review" style="font-size:0.5em;margin-right:0.5em">experience-review</a></li><li><a href="../javascript" style="font-size:0.5em;margin-right:0.5em">javascript</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kXmPAY"><h1>2016-08-27 GDG WebTech Workshop &quot;측정하는 놈, 로딩하는 놈, 그리는 놈&quot;</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
 <li>
 <p><a href="#2016-08-27-gdg-webtech-workshop-%EC%B8%A1%EC%A0%95%ED%95%98%EB%8A%94-%EB%86%88-%EB%A1%9C%EB%94%A9%ED%95%98%EB%8A%94-%EB%86%88-%EA%B7%B8%EB%A6%AC%EB%8A%94-%EB%86%88">2016-08-27 GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"</a></p>
 <ul>
@@ -756,6 +614,6 @@ BUS를 통해 CPU -> GPU 전달한다. 문제는 이 BUS를 통한 커뮤니케�
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-90d68f172d7b3b7273dc.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="b5eeb6b33b615738c676";</script><script src="/cat-logic/webpack-runtime-c6d78f35f4a47c4b5f0f.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

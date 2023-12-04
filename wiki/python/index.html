@@ -65,123 +65,17 @@ data-styled.g3[id="Comments__Container-sc-1ajj4d9-0"]{content:"gcJKrk,"}/*!sc*/
 .gqosYh{display:grid;grid-template-columns:1fr;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;}/*!sc*/
 @media (min-width:700px){.gqosYh{grid-template-columns:minmax(300px,1fr) minmax(400px,1000px);}}/*!sc*/
 data-styled.g4[id="Wiki__Container-sc-16q9onf-0"]{content:"gqosYh,"}/*!sc*/
-.dOTUaa{display:none;}/*!sc*/
-.dOTUaa > div:nth-child(2){padding-top:1rem;}/*!sc*/
-@media (min-width:700px){.dOTUaa{display:block;}}/*!sc*/
-data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"dOTUaa,"}/*!sc*/
-.kswmXr{padding:0 1rem;overflow:auto;}/*!sc*/
-@media (min-width:700px){.kswmXr > div:nth-child(2){display:none;}}/*!sc*/
-data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kswmXr,"}/*!sc*/
+.hKa-dnq{display:none;}/*!sc*/
+@media (min-width:700px){.hKa-dnq{display:block;}}/*!sc*/
+data-styled.g5[id="Wiki__Side-sc-16q9onf-1"]{content:"hKa-dnq,"}/*!sc*/
+.kXmPAY{padding:0 1rem;overflow:auto;}/*!sc*/
+data-styled.g6[id="Wiki__Main-sc-16q9onf-2"]{content:"kXmPAY,"}/*!sc*/
 .dSeHES{margin:0;padding:1rem 0 0 1rem;font-size:1rem;}/*!sc*/
 data-styled.g7[id="Wiki__RelatedLinksHeader-sc-16q9onf-3"]{content:"dSeHES,"}/*!sc*/
 .ikXvAQ{list-style:none;padding-left:1rem;margin:0;}/*!sc*/
 .ikXvAQ > li{padding:0;line-height:1;}/*!sc*/
 data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
-</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Python</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 dOTUaa"><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
-<li>
-<p><a href="#python">Python</a></p>
-<ul>
-<li>
-<p><a href="#%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1">개발환경 구성</a></p>
-</li>
-<li>
-<p><a href="#%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC">개발도구</a></p>
-<ul>
-<li>
-<p><a href="#pyright">pyright</a></p>
-<ul>
-<li><a href="#pyright-%EC%84%A4%EC%B9%98">pyright 설치</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#pylint">pylint</a></p>
-</li>
-<li>
-<p><a href="#mypy">mypy</a></p>
-<ul>
-<li><a href="#django-stubs">Django Stubs</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#ruff">Ruff</a></p>
-</li>
-<li>
-<p><a href="#python-code-formatter-autopep8-vs-black-vs-yapf">python code formatter: autopep8 vs black vs yapf</a></p>
-</li>
-<li>
-<p><a href="#%EB%A0%88%EA%B1%B0%EC%8B%9C%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%84%A4%EC%A0%95">레거시를 위한 설정</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#python-mock">Python mock</a></p>
-<ul>
-<li><a href="#decorator%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-mocking">Decorator를 사용한 mocking.</a></li>
-<li><a href="#patchrequestsget"><code>@patch('requests.get')</code></a></li>
-<li><a href="#patchobjectmymodule-requests"><code>@patch.object(mymodule, 'requests')</code></a></li>
-<li><a href="#patchobjectmymodule-requests-newmyrequests"><code>@patch.object(mymodule, 'requests', new=MyRequests)</code></a></li>
-<li><a href="#patchobjectmymodule-method-return_valuenone"><code>@patch.object(mymodule, 'method', return_value=None)</code></a></li>
-</ul>
-</li>
-<li>
-<p><a href="#package-manager">Package manager</a></p>
-<ul>
-<li>
-<p><a href="#poetry">poetry</a></p>
-<ul>
-<li><a href="#%EA%B0%80%EC%83%81-%ED%99%98%EA%B2%BD-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0">가상 환경 관리하기</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#pipenv">pipenv</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#packaging">Packaging</a></p>
-<ul>
-<li><a href="#__all__"><code>__all__</code></a></li>
-</ul>
-</li>
-<li>
-<p><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0">프로젝트 구조</a></p>
-<ul>
-<li><a href="#pypa%EC%97%90%EC%84%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0%EB%A5%BC-src-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%EC%9C%BC%EB%A1%9C-%EB%B0%94%EA%BE%B8%EB%8B%A4">PyPA에서 프로젝트 구조를 <code>src/</code> 레이아웃으로 바꾸다.</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#object-converter-serialization--deserialization">Object Converter (Serialization &#x26; Deserialization)</a></p>
-<ul>
-<li><a href="#django-rest-framework-serializer">Django REST Framework Serializer</a></li>
-<li><a href="#wtforms">WTForms</a></li>
-<li><a href="#marshmallow">Marshmallow</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#rxpy">Rxpy</a></p>
-<ul>
-<li><a href="#rxpy-example">Rxpy example</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#redis-py">redis-py</a></p>
-<ul>
-<li><a href="#redis-connection%EC%9D%84-%EC%A0%84%EC%97%AD-%EC%83%9D%EC%84%B1-vs-%EC%9A%94%EC%B2%AD%EB%A7%88%EB%8B%A4-%EC%83%9D%EC%84%B1">redis connection을 전역 생성 vs 요청마다 생성</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#django-web-framework">Django Web Framework</a></p>
-<ul>
-<li><a href="#onetoonefield-vs-foreignkeyfield"><code>OneToOneField</code> vs <code>ForeignKeyField</code></a></li>
-<li><a href="#%EB%B3%B5%ED%95%A9%ED%82%A4%EB%A5%BC-foreignkey%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%B0%BE%EA%B8%B0">복합키를 ForeignKey로 사용하는 방법 찾기</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#%EB%94%94%EB%B2%84%EA%B9%85">디버깅</a></p>
-</li>
-</ul>
-</li>
-</ul></div><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../mac-os" style="font-size:0.5em;margin-right:0.5em">mac-os</a></li><li><a href="../vim" style="font-size:0.5em;margin-right:0.5em">vim</a></li><li><a href="../windows-subsystem-for-linux" style="font-size:0.5em;margin-right:0.5em">windows-subsystem-for-linux</a></li><li><a href="../reactjs" style="font-size:0.5em;margin-right:0.5em">reactjs</a></li><li><a href="../machine-learning" style="font-size:0.5em;margin-right:0.5em">machine-learning</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kswmXr"><h1>Python</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
+</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><title data-gatsby-head="true">Cat Logic - Python</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Wiki__Container-sc-16q9onf-0 gqosYh"><div class="Wiki__Side-sc-16q9onf-1 hKa-dnq"><h3 class="Wiki__RelatedLinksHeader-sc-16q9onf-3 dSeHES">Related Links</h3><ul class="Wiki__RelatedLinks-sc-16q9onf-4 ikXvAQ"><li><a href="../mac-os" style="font-size:0.5em;margin-right:0.5em">mac-os</a></li><li><a href="../vim" style="font-size:0.5em;margin-right:0.5em">vim</a></li><li><a href="../windows-subsystem-for-linux" style="font-size:0.5em;margin-right:0.5em">windows-subsystem-for-linux</a></li><li><a href="../reactjs" style="font-size:0.5em;margin-right:0.5em">reactjs</a></li><li><a href="../machine-learning" style="font-size:0.5em;margin-right:0.5em">machine-learning</a></li></ul></div><div class="Wiki__Main-sc-16q9onf-2 kXmPAY"><h1>Python</h1><div class="Toc__Container-sc-1f76i2s-0 jKwTdT"><ul>
 <li>
 <p><a href="#python">Python</a></p>
 <ul>
@@ -1024,6 +918,6 @@ retval  rv
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-90d68f172d7b3b7273dc.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="b5eeb6b33b615738c676";</script><script src="/cat-logic/webpack-runtime-c6d78f35f4a47c4b5f0f.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
