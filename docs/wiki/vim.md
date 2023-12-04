@@ -345,8 +345,9 @@ vim에서 터미널을 실행한다. vim 터미널은 터미널 모드로 전환
 그 목록은 메뉴얼에서 확인할 수 있다. `ft-<LANGUAGE>-syntax` 이름으로 언어별 메뉴얼이 제공된다.\
 예를들어 `:h ft-python-syntax`로 파이썬 문법 강조에 대한 메뉴얼을 확인할 수 있다.
 
-neovim은 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 플러그인으로도 구문 강조를 사용할 수 있다.\
-다만 python, html 등 몇몇 언어를 비교해보니 vim 내장 구문 강조가 더 좋았다. treesitter 것은 구문 강조가 풍부하지 않았다.
+neovim은 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 플러그인으로 언어별 요소를 분석하여 더 정교하게 구문을 분석한다.
+**하지만 기본 `colorscheme`으로는 정교한 구문 강조를 지원하지 않는다**.\
+[tresitter wiki의 gallery](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Gallery)에서 treesitter를 지원하는 `colorscheme`을 설치하자.
 
 ## Registers
 
