@@ -756,6 +756,31 @@ command! TestCore call <SID>run_test_core()
 뒤에 물음표는 꼭 붙이자. `filetype`처럼 값을 받는 옵션이 아닌 `hlsearch`처럼 on/off 하는 형태라면 `verbose`가 무시되고 옵션 변경을 한다.
 다시 `verbose`로 확인하더라도 방금 명령어로 변경했기 때문에 제대로된 출처를 알 수 없다.
 
+### 플러그인 설치되어 있는지 확인하기
+
+특정 플러그인을 설정하기 위해서, 설치되어 있는지 확인해야 할 때가 있다.\
+설치 여부를 판단하지 않으면 vim 실행 시 에러 문구가 출력되어 번거롭다.
+
+vim 기능으로는 제공하지 않는다.
+
+Package Manager로 [vim-plug](https://github.com/junegunn/vim-plug)를 사용한다면 `plugs` 변수를 확인하는 방법이 유효하다.
+
+```vim
+if !has_key(plugs, 'sonokai')
+  " 'sonokai' not installed
+  finish
+endif
+
+" do something with 'sonokai'
+```
+
+`plugs`는 dictionary로 플러그인 이름을 key로 가지고 있다:
+
+```vim
+" echo plugs로 구조를 확인할 수 있다.
+{'sonokai': {'uri': 'https://git::@github.com/sainnhe/sonokai.git', 'dir': '/home/dupark/.local/share/nvim/plugged/sonokai/', 'frozen': 0, 'branch': ''}}
+```
+
 ## Issues
 
 ### Typescript filetype 문제
