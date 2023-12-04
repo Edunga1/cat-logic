@@ -233,3 +233,10 @@ Module not found: Error: Can't resolve 'prop-types' in '.../.cache'
 ### 링크 경로에 space 포함 시 링크가 동작하지 않는 문제
 
 마크다운 파일 기준이며, html로 변환되면서 링크가 올바르게 동작하지 않아서 확인 중.
+
+### 개발 모드에서 이미지가 제대로 나오지 않는 문제
+
+`gatsby-transformer-remark`의 서브 플러그인 `gatsby-remark-images` 사용 시 이미지가 제대로 나오지 않는 문제.
+
+이미지가 blur로 나온다면 로컬 캐시를 지워보면 해결된다. `gatsby clean`으로 캐시를 지울 수 있다.
+빌드 되면서 파일 경로가 매번 변경되는 것과 관련된 것이 아닌가 추정. 크리티컬한 문제는 아니다.
