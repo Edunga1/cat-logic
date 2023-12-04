@@ -18,10 +18,6 @@ const Container = styled.div`
 const Side = styled.div`
   display: none;
 
-  & > div:nth-child(2) {
-    padding-top: 1rem;
-  }
-
   @media (${device.larger}) {
     display: block;
   }
@@ -30,12 +26,6 @@ const Side = styled.div`
 const Main = styled.div`
   padding: 0 1rem;
   overflow: auto;
-
-  @media (${device.larger}) {
-    & > div:nth-child(2) {
-      display: none;
-    }
-  }
 `
 
 const RelatedLinksHeader = styled.h3`
@@ -45,7 +35,6 @@ const RelatedLinksHeader = styled.h3`
 `
 
 const RelatedLinks = styled.ul`
-  // TODO: no list style
   list-style: none;
   padding-left: 1rem;
   margin: 0;
@@ -75,7 +64,6 @@ export default function Wiki(
   return (
     <Container>
       <Side>
-        <Toc contents={tableOfContents} />
         {relatedLinksToc.length > 0 && <RelatedLinksHeader>Related Links</RelatedLinksHeader>}
         <RelatedLinks>{relatedItems}</RelatedLinks>
       </Side>
