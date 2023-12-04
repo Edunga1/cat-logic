@@ -515,8 +515,9 @@ HTML 태그의 경우 <code>&#x3C;div></code>에서 사용하면 <code>&#x3C;/di
 <p><code>syntax on</code>으로 구문 강조를 활성화한다. vim은 기본적으로 언어별 문법 강조를 제공한다.<br>
 그 목록은 메뉴얼에서 확인할 수 있다. <code>ft-&#x3C;LANGUAGE>-syntax</code> 이름으로 언어별 메뉴얼이 제공된다.<br>
 예를들어 <code>:h ft-python-syntax</code>로 파이썬 문법 강조에 대한 메뉴얼을 확인할 수 있다.</p>
-<p>neovim은 <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a> 플러그인으로도 구문 강조를 사용할 수 있다.<br>
-다만 python, html 등 몇몇 언어를 비교해보니 vim 내장 구문 강조가 더 좋았다. treesitter 것은 구문 강조가 풍부하지 않았다.</p>
+<p>neovim은 <a href="https://github.com/nvim-treesitter/nvim-treesitter">nvim-treesitter</a> 플러그인으로 언어별 요소를 분석하여 더 정교하게 구문을 분석한다.
+<strong>하지만 기본 <code>colorscheme</code>으로는 정교한 구문 강조를 지원하지 않는다</strong>.<br>
+<a href="https://github.com/nvim-treesitter/nvim-treesitter/wiki/Gallery">tresitter wiki의 gallery</a>에서 treesitter를 지원하는 <code>colorscheme</code>을 설치하자.</p>
 <h2 id="registers" style="position:relative;"><a href="#registers" aria-label="registers permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Registers</h2>
 <p><code>:h registers</code></p>
 <p>자주 사용하는 특수 레지스터는 알아두면 좋다.</p>
