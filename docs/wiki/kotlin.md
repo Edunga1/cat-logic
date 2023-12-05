@@ -128,11 +128,15 @@ class WebClientConfigTest : DescribeSpec({
 
 테스트를 자주 만드는데 매우 편리한 기능이다.
 
-#### Rollback Test
+#### Rollback Test (test method callbacks)
 
 https://kotest.io/docs/extensions/spring.html#test-method-callbacks
 
-`@Transactional`을 테스트 클래스에 적용해서, 테스트 후에 롤백해야 하는 경우, `SpringExtension` 설정이 필요하다:
+Kotest는 `@Transactional`을 테스트 클래스에 붙여도 트랜잭션을 시작하지 않는다.
+before test method와 같은 콜백을 발생시키지 않기 때문이다.
+그래서 `@DataJpaTest`는 `@Transactional`이 붙어있지만 이 설정 없이는 롤백하지 않는다.
+
+Kotest는 콜백을 발생시키지 위한 설정을 `extensions`으로 제공한다:
 
 ```kotlin
 class KotestProjectConfig : AbstractProjectConfig() {
@@ -140,27 +144,51 @@ class KotestProjectConfig : AbstractProjectConfig() {
 }
 ```
 
-문서에 따르면 Spring test callback이 kotest 기준으로 동작하지 않는데, 이를 가능하게 한다고.
-`@DataJpaTest`는 `@Transactional`이 붙어있어도 이 설정 없이는 동작하지 않는다.
-
-`DescribeSpec` 기준 Test Case인 `it` 전후로 트랜잭션 시작 및 롤백한다.
-이 lifecycle 정책을 변경할 수 있다. `SpringTestExtension`을 사용하면 된다:
+`DescribeSpec` 기준 Test Case인 `it` 전후로 콜백이 발생한다.
+`mode`를 `Root`로 설정하면 기준을 변경할 수 있다.
 
 ```kotlin
 override fun extensions(): List<Extension> = listOf(SpringTestExtension(SpringTestLifecycleMode.Root))
 ```
 
-`SpringExtension`이 `SpringTestLifecycleMode.Test`이 기본이고, `Root`로 하면 TestSpec 전후로 변경된다. 즉, 테스트 클래스당 하나의 트랜잭션.
+`Root` 모드는 최상위의 노드를 기준으로 콜백을 실행한다.
 
-아쉬운 점은 `DescribeSpec` 기준으로 보통 `Context`까지 격리가 필요하고, `It`은 검증만 하는데 이를 위한 해결 방법은 없다.
-`SpringTestExtension`을 잘 구현하면 가능할지도.
+```kotlin
+@Transactional
+class MyTest : DescribeSpec({
+  describe("test1") { ... }
+  describe("test2") { ... }
+  describe("test3") { ... }
+})
+```
 
-다만 이 이슈는 `It`을 격리 대상으로 보지 않겠다는 의미라, Kotest `IsolationMode`와도 의미가 충돌한다.
-`IsolationMode`의 어떤 모드든 `Context`까지만 격리하는 모드는 없다.
+위 코드에서 `test1` `test2` `test3`에 대해서만 트랜잭션을 시작한다.
+
+아쉬운 점은 2가지 모드로는 중첩된 구조를 지원하지 않는다는 것이다.
+
+```kotlin
+describe("foo method") {
+  context("when something") {
+    it("result should be 1") { ... }
+    it("result should be 2") { ... }
+  }
+  context("when something else") {
+    it("result should be 3") { ... }
+    it("result should be 4") { ... }
+  }
+}
+```
+
+위 코드에서 `Root` 모드라면 `describe` 트랜잭션 하나만,\
+`Test` 모드라면 `it` 4개에 대해서만 트랜잭션을 시작한다.
+
+원하는 것은 `context` 기준으로 트랜잭션을 시작하는 것이다.
 
 https://github.com/kotest/kotest/issues/2629 \
-관련 문제로 Kotest 이슈에 문의한 내역이 있다. `BehaviorSpec`의 `Then`에서 검증만 하는데, 격리가 된다는 내용.
+관련 문제로 Kotest 이슈에 문의한 내역이 있다. `BehaviorSpec`의 `Then`에서는 검증만 하는데, 격리가 된다는 내용.
 답변은 이미 디자인되어 있는 상황이라 변경하기 어렵다고 한다.
+
+`SpringTestExtension`을 잘 구현하면 가능할지도.
 
 ## [Language Server](./language-server-protocol.md)
 
