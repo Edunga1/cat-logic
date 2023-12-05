@@ -174,11 +174,12 @@ pring Bean은 프레임워크에 의해 생성 및 주입되기 때문에, IDE�
 <p><a href="https://youtrack.jetbrains.com/issue/IDEA-264036">https://youtrack.jetbrains.com/issue/IDEA-264036</a></p>
 <p>querydsl q-class를 생성하는데, 생성된 파일을 인식하지 못하는 현상.
 테스트나 실행도 잘 되지만, 에디터에서는 에러로 표시되어 불편하다.</p>
-<pre><code class="language-kotlin">sourceSets.main.get().java.srcDirs(
-    "build/generated",
-    "build/generated/sources/annotationProcessor",
-)
-</code></pre>
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">sourceSets.main.get().java.srcDirs(
+    &quot;build/generated&quot;,
+    &quot;build/generated/sources/annotationProcessor&quot;,
+)</code>
+        </deckgo-highlight-code>
 <p><code>build.gradle.kts</code>에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.</p>
 <h3 id="http-파일-사용하기" style="position:relative;"><a href="#http-%ED%8C%8C%EC%9D%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="http 파일 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.http 파일 사용하기</h3>
 <p><a href="https://www.jetbrains.com/help/idea/exploring-http-syntax.html">https://www.jetbrains.com/help/idea/exploring-http-syntax.html</a></p>
@@ -189,22 +190,24 @@ pring Bean은 프레임워크에 의해 생성 및 주입되기 때문에, IDE�
 <h4 id="전역-변수로-api간-chaining-하기" style="position:relative;"><a href="#%EC%A0%84%EC%97%AD-%EB%B3%80%EC%88%98%EB%A1%9C-api%EA%B0%84-chaining-%ED%95%98%EA%B8%B0" aria-label="전역 변수로 api간 chaining 하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>전역 변수로 API간 Chaining 하기</h4>
 <p>다음은 토큰 생성 API로 토큰을 저장하고, 다른 API에 사용하는 예시다.</p>
 <p>응답 구조는 다음과 같다고 가정한다:</p>
-<pre><code class="language-json">{
-  "token": "AA86811JjjaCD43"
-}
-</code></pre>
+<deckgo-highlight-code language="json"  >
+          <code slot="code">{
+  &quot;token&quot;: &quot;AA86811JjjaCD43&quot;
+}</code>
+        </deckgo-highlight-code>
 <p><code>.http</code> file:</p>
-<pre><code>### 토큰 생성 API
+<deckgo-highlight-code   >
+          <code slot="code">### 토큰 생성 API
 POST http://localhost:5000/generate-token
 
-> {%
-client.global.set("mtoken", response.body.token)
+&gt; {%
+client.global.set(&quot;mtoken&quot;, response.body.token)
 %}
 
 ### 상품 조회 API
 GET http://localhost:5000/my-products
-X-APP-TOKEN: {{mtoken}}
-</code></pre>
+X-APP-TOKEN: {{mtoken}}</code>
+        </deckgo-highlight-code>
 <p><code>{% ... %}</code> 구문으로 호출 후에 대한 javascript 코드를 작성하고,
 <code>{{VARIABLE}}</code> 구문으로 전역 변수에 접근한다.</p>
 <p>스크립트 구문을 http 요청 전에 두면 호출 전에 대한 처리도 가능하다.</p>
@@ -258,24 +261,25 @@ Package View에서는 <code>Scratches</code>가 보이지 않는다.</p>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-xml">&#x3C;keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
-  &#x3C;action id="Console.Jdbc.ChooseSession">
-    &#x3C;keyboard-shortcut first-keystroke="alt o" />
-  &#x3C;/action>
-  &#x3C;action id="Console.TableResult.Transpose">
-    &#x3C;keyboard-shortcut first-keystroke="alt t" />
-  &#x3C;/action>
-  &#x3C;action id="FileStructurePopup">
-    &#x3C;keyboard-shortcut first-keystroke="meta f12" />
-    &#x3C;keyboard-shortcut first-keystroke="alt l" />
-  &#x3C;/action>
-  &#x3C;action id="PinActiveEditorTab" />
-  &#x3C;action id="PinActiveTabToggle">
-    &#x3C;keyboard-shortcut first-keystroke="alt p" />
-  &#x3C;/action>
-  &#x3C;action id="PinToolwindowTab" />
-&#x3C;/keymap>
-</code></pre>
+<deckgo-highlight-code language="xml"  >
+          <code slot="code">&lt;keymap version=&quot;1&quot; name=&quot;macOS copy&quot; parent=&quot;Mac OS X 10.5+&quot;&gt;
+  &lt;action id=&quot;Console.Jdbc.ChooseSession&quot;&gt;
+    &lt;keyboard-shortcut first-keystroke=&quot;alt o&quot; /&gt;
+  &lt;/action&gt;
+  &lt;action id=&quot;Console.TableResult.Transpose&quot;&gt;
+    &lt;keyboard-shortcut first-keystroke=&quot;alt t&quot; /&gt;
+  &lt;/action&gt;
+  &lt;action id=&quot;FileStructurePopup&quot;&gt;
+    &lt;keyboard-shortcut first-keystroke=&quot;meta f12&quot; /&gt;
+    &lt;keyboard-shortcut first-keystroke=&quot;alt l&quot; /&gt;
+  &lt;/action&gt;
+  &lt;action id=&quot;PinActiveEditorTab&quot; /&gt;
+  &lt;action id=&quot;PinActiveTabToggle&quot;&gt;
+    &lt;keyboard-shortcut first-keystroke=&quot;alt p&quot; /&gt;
+  &lt;/action&gt;
+  &lt;action id=&quot;PinToolwindowTab&quot; /&gt;
+&lt;/keymap&gt;</code>
+        </deckgo-highlight-code>
 <p>위 설정을 <code>~/Library/Application\ Support/JetBrains/DataGrip{version}/keymaps</code>에 두면 keymap 목록에 등록된다.</p>
 <h3 id="live-templates" style="position:relative;"><a href="#live-templates" aria-label="live templates permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Live Templates</h3>
 <p>Live Template은 Snippet의 일종이다.
@@ -283,8 +287,9 @@ Package View에서는 <code>Scratches</code>가 보이지 않는다.</p>
 <p>에디터에 <code>sel</code>만 입력하면 <code>select * from |;</code> 코드를 자동 완성하고, <code>|</code>에 커서가 가면서 테이블 이름 목록을 보여준다.
 설정 -> Editor -> Live Templates 메뉴에서 확인하고, 관리할 수 있다.</p>
 <p><code>sel</code>의 경우 다음과 같이 작성되어 있다:</p>
-<pre><code>select * from $table$$END$;
-</code></pre>
+<deckgo-highlight-code   >
+          <code slot="code">select * from $table$$END$;</code>
+        </deckgo-highlight-code>
 <p><code>$text$</code>가 예약어인데, <code>$table$</code>은 테이블 목록을 보여주기 위함이고,
 <code>$END$</code>는 입력란을 모두 채웠을 때 이동 할 커서 위치이다.</p>
 <p>응용하면 여러가지 편리한 템플릿을 만들 수 있다.</p>
@@ -297,6 +302,6 @@ Package View에서는 <code>Scratches</code>가 보이지 않는다.</p>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -162,14 +162,15 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>웹 컨테이너는 웹 서버의 컴포넌트로, Servlet을 실행하는 역할을 한다. 서블릿 컨테이너라고도 한다.</p>
 <p>톰캣 서버도 Servlet Container이다.</p>
 <p>Spring Boot에서 제공하는 <code>TomcatServletWebServerFactory</code>를 사용하면 쉽게 컨테이너를 만들고, 시작할 수 있다.</p>
-<pre><code class="language-java">public class Application {
+<deckgo-highlight-code language="java"  >
+          <code slot="code">public class Application {
   public static void main(String[] args} {
     ServletWebServerFactory factory = new TomcatServletWebServerFactory();
     WebServer server = factory.getWebServer();
     server.start();
   }
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p>ref. <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/embedded/tomcat/TomcatServletWebServerFactory.html">TomcatServletWebServerFactory</a>
 ref. <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/web/server/WebServer.html">WebServer</a></p>
 <h2 id="jakarta-ee-aka-java-ee" style="position:relative;"><a href="#jakarta-ee-aka-java-ee" aria-label="jakarta ee aka java ee permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jakarta EE (a.k.a. Java EE)</h2>
@@ -182,7 +183,8 @@ ref. <a href="https://docs.spring.io/spring-boot/docs/current/api/org/springfram
 <h4 id="http" style="position:relative;"><a href="#http" aria-label="http permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP</h4>
 <p>클라이언트 사이드 API를 <code>java.net</code>으로 제공한다. 서버 사이드는 Jakarta Servlet, Jakarta Server Pages,Jakarta Server Faces 등에서 제공한다.</p>
 <p>ref. <a href="https://reflectoring.io/comparison-of-java-http-clients/">https://reflectoring.io/comparison-of-java-http-clients/</a></p>
-<pre><code>HttpClient client = HttpClient.newBuilder()
+<deckgo-highlight-code   >
+          <code slot="code">HttpClient client = HttpClient.newBuilder()
   .version(Version.HTTP_2)
   .followRedirects(Redirect.NORMAL)
   .build();
@@ -198,14 +200,15 @@ HttpRequest request = HttpRequest.newBuilder()
 client.sendAsync(request, BodyHandlers.ofString())
   .thenApply(HttpResponse::body)
   .thenAccept(System.out::println)
-  .join();java
-</code></pre>
+  .join();java</code>
+        </deckgo-highlight-code>
 <h4 id="jndi-java-naming-and-directory-interface" style="position:relative;"><a href="#jndi-java-naming-and-directory-interface" aria-label="jndi java naming and directory interface permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JNDI (Java Naming and Directory Interface)</h4>
 <blockquote>
 <p>JNDI는 디렉터리 서비스에서 제공하는 데이터 및 객체를 발견하고 참고하기 위한 자바 API다.</p>
 </blockquote>
-<pre><code class="language-java">ds = new DriverManagerDataSource("jdbc:h2:mem:mydb");
-</code></pre>
+<deckgo-highlight-code language="java"  >
+          <code slot="code">ds = new DriverManagerDataSource(&quot;jdbc:h2:mem:mydb&quot;);</code>
+        </deckgo-highlight-code>
 <h4 id="jta-java-transaction-api" style="position:relative;"><a href="#jta-java-transaction-api" aria-label="jta java transaction api permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JTA (Java Transaction API)</h4>
 <p><code>javax.transaction</code> 패키지로 제공한다.</p>
 <p><a href="https://www.baeldung.com/spring-vs-jta-transactional">Transactional Annotations: Spring vs. JTA</a>
@@ -217,51 +220,57 @@ client.sendAsync(request, BodyHandlers.ofString())
 <p>쿼리를 실행하는데 @Query, <strong>Query Method</strong>. 크게 두 가지 방법을 사용하는 거 같다.</p>
 <h6 id="query-methods" style="position:relative;"><a href="#query-methods" aria-label="query methods permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Methods</h6>
 <p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods">https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods</a></p>
-<pre><code class="language-kotlin">@Repository
-interface FooRepository: JpaRepository&#x3C;Foo, Int> {
-  fun findAll(): List&#x3C;Foo>
-}
-</code></pre>
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">@Repository
+interface FooRepository: JpaRepository&lt;Foo, Int&gt; {
+  fun findAll(): List&lt;Foo&gt;
+}</code>
+        </deckgo-highlight-code>
 <p>메서드 이름이 쿼리를 대신한다. <code>type</code>이라는 컬럼으로 조건을 걸고 싶으면
 <code>fun findAllByType(type: String)</code> 형태가 된다.</p>
 <h6 id="query" style="position:relative;"><a href="#query" aria-label="query permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@Query</h6>
 <p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.at-query">https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.at-query</a></p>
-<pre><code class="language-sql">SELECT
+<deckgo-highlight-code language="sql"  >
+          <code slot="code">SELECT
   f
 FROM Foo f
 WHERE
-  type = :type
-</code></pre>
+  type = :type</code>
+        </deckgo-highlight-code>
 <p>SQL과 비슷해 보이지만, JPQL라는 이름을 사용한다. 메서드 이름은 직접 정해줄 수 있다.
 <code>:type</code>이 인자를 의미한다.  항상 alias를 사용해야 하고, <code>SELECT *</code> 를 Alias 이름으로 대체한다.</p>
 <p>Query Method 마찬가지지만, 컬럼 정보는 Entity를 참조한다.</p>
 <p>인자로 <code>nativeQuery = true</code>를 넘겨주면 JPQL 대신 SQL을 사용할 수 있다.</p>
 <h6 id="query-by-example-qbe" style="position:relative;"><a href="#query-by-example-qbe" aria-label="query by example qbe permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query By Example (QBE)</h6>
 <p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#query-by-example">https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#query-by-example</a></p>
-<pre><code class="language-java">// 검색 할 데이터 준비
+<deckgo-highlight-code language="java"  >
+          <code slot="code">// 검색 할 데이터 준비
 Person person = new Person();                         
-person.setFirstname("Dave");                          
+person.setFirstname(&quot;Dave&quot;);                          
 
 // 쿼리
-personRepository.findAll(Example.of(person));
-</code></pre>
+personRepository.findAll(Example.of(person));</code>
+        </deckgo-highlight-code>
 <p>사용해보진 않았다. Entity 인스턴스가 쿼리 용도로 사용한다. 복잡한 쿼리의 경우 가독성이 떨어진다.</p>
 <h6 id="querydsl" style="position:relative;"><a href="#querydsl" aria-label="querydsl permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>QueryDSL</h6>
 <p><a href="http://www.querydsl.com/static/querydsl/4.1.3/reference/html_single/#d0e321">http://www.querydsl.com/static/querydsl/4.1.3/reference/html_single/#d0e321</a></p>
-<pre><code class="language-java">QCustomer customer = QCustomer.customer;
+<deckgo-highlight-code language="java"  >
+          <code slot="code">QCustomer customer = QCustomer.customer;
 Customer bob = queryFactory.selectFrom(customer)
-  .where(customer.firstName.eq("Bob"))
-  .fetchOne();
-</code></pre>
+  .where(customer.firstName.eq(&quot;Bob&quot;))
+  .fetchOne();</code>
+        </deckgo-highlight-code>
 <p>Query Methods, JPQL, QBE는 JPA 내장되어 있지만 QueryDSL은 그렇지 않다.</p>
 <p>사용 방법은 python의 <a href="https://www.sqlalchemy.org/">sqlalchemy</a>나 node의 <a href="http://knexjs.org/">knexjs</a>와 비슷하다.
 다른 ORM이나 Query Builder도 사용 방법은 비슷하지 않을까.</p>
 <p>knexjs:</p>
-<pre><code class="language-javascript">knex('users').where({ first_name: 'Test', last_name:  'User' }).select('id')
-</code></pre>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">knex(&#39;users&#39;).where({ first_name: &#39;Test&#39;, last_name:  &#39;User&#39; }).select(&#39;id&#39;)</code>
+        </deckgo-highlight-code>
 <p>sqlalcehmy:</p>
-<pre><code class="language-python">session.query(User).filter(User.name == 'Edwardo').all()
-</code></pre>
+<deckgo-highlight-code language="python"  >
+          <code slot="code">session.query(User).filter(User.name == &#39;Edwardo&#39;).all()</code>
+        </deckgo-highlight-code>
 <p>sqlalchemy의 경우 python의 연산자 오버로딩을 힘입어 높은 가독성을 가진다.
 numpy와 같은 <a href="../python">python</a> 라이브러리도 같은 이유에서 사용하기 편리한 인터페이스를 가졌다.</p>
 <p>####### querydsl-sql</p>
@@ -295,31 +304,35 @@ querydsl-jpa가 entity로부터 생성한 q-class를 함께 사용할 수 없다
 <h2 id="jpa" style="position:relative;"><a href="#jpa" aria-label="jpa permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JPA</h2>
 <h3 id="db에-쿼리하는-방법" style="position:relative;"><a href="#db%EC%97%90-%EC%BF%BC%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="db에 쿼리하는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DB에 쿼리하는 방법</h3>
 <p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods"><strong>Query Methods</strong></a></p>
-<pre><code class="language-java">public interface UserRepository extends Repository&#x3C;User, Long> {
-  List&#x3C;User> findByEmailAddressAndLastname(String emailAddress, String lastname);
-}
-</code></pre>
+<deckgo-highlight-code language="java"  >
+          <code slot="code">public interface UserRepository extends Repository&lt;User, Long&gt; {
+  List&lt;User&gt; findByEmailAddressAndLastname(String emailAddress, String lastname);
+}</code>
+        </deckgo-highlight-code>
 <p>간단한 쿼리를 작성하는데 적합하다. 메서드 이름으로 쿼리를 작성한다.</p>
 <blockquote>
 <p>Although getting a query derived from the method name is quite convenient, one might face the situation in which either the method name parser does not support the keyword one wants to use or the method name would get unnecessarily ugly. So you can either use JPA named queries through a naming convention (see Using JPA Named Queries for more information) or rather annotate your query method with @Query</p>
 </blockquote>
 <p>길어지면 보기 어려울 수 있으므로 Named Query 또는 <code>@Query</code>를 사용을 권장한다.</p>
 <p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.at-query"><code>@Query</code></a></p>
-<pre><code class="language-java">@Query("SELECT u FROM User u WHERE u.status = 1")
-Collection&#x3C;User> findAllActiveUsers();
-</code></pre>
+<deckgo-highlight-code language="java"  >
+          <code slot="code">@Query(&quot;SELECT u FROM User u WHERE u.status = 1&quot;)
+Collection&lt;User&gt; findAllActiveUsers();</code>
+        </deckgo-highlight-code>
 <p><a href="http://querydsl.com/static/querydsl/latest/reference/html/"><strong>Querydsl</strong></a></p>
-<pre><code class="language-java">QCustomer customer = QCustomer.customer;
+<deckgo-highlight-code language="java"  >
+          <code slot="code">QCustomer customer = QCustomer.customer;
 Customer bob = queryFactory.selectFrom(customer)
-  .where(customer.firstName.eq("Bob"))
-  .fetchOne();
-</code></pre>
+  .where(customer.firstName.eq(&quot;Bob&quot;))
+  .fetchOne();</code>
+        </deckgo-highlight-code>
 <p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#core.extensions.querydsl">Spring Data Querydsl Extension</a>을 사용하면 <code>Predicate</code>를 이용할 수 있다:</p>
-<pre><code class="language-java">Predicate predicate = user.firstname.equalsIgnoreCase("dave")
-  and(user.lastname.startsWithIgnoreCase("mathews"));
+<deckgo-highlight-code language="java"  >
+          <code slot="code">Predicate predicate = user.firstname.equalsIgnoreCase(&quot;dave&quot;)
+  and(user.lastname.startsWithIgnoreCase(&quot;mathews&quot;));
 
-userRepository.findAll(predicate);
-</code></pre>
+userRepository.findAll(predicate);</code>
+        </deckgo-highlight-code>
 <h3 id="jpa와-mybatis" style="position:relative;"><a href="#jpa%EC%99%80-mybatis" aria-label="jpa와 mybatis permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JPA와 MyBatis</h3>
 <p><a href="https://www.facebook.com/groups/springkorea/permalink/2803698513075093/">.net에서 java로 건너와 (i)mybatis만 쓰다가 JPA란걸 해보고 있는데 큰 장점이 와닿지가 않습니다. - 한국 스프링 사용자 모임</a></p>
 <blockquote>
@@ -368,6 +381,6 @@ userRepository.findAll(predicate);
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

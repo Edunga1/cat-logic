@@ -123,8 +123,9 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <h3 id="scope-functions" style="position:relative;"><a href="#scope-functions" aria-label="scope functions permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scope Functions</h3>
 <p><a href="https://kotlinlang.org/docs/scope-functions.html">https://kotlinlang.org/docs/scope-functions.html</a></p>
 <p>e.g. <code>run</code></p>
-<pre><code class="language-kotlin">val totalPrice = item.run { price * amount }
-</code></pre>
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">val totalPrice = item.run { price * amount }</code>
+        </deckgo-highlight-code>
 <p>scope functions는 모두 같은 일을 한다.
 context object를 어떻게 접근하는 지, 반환 값은 무엇인지에 따라 의미론적으로 맞게 골라서 사용하면 좋다.
 예를들어, context object로 추가 로직을 처리하고, 특별히 반환할 것이 없으면 <code>also</code>.
@@ -136,17 +137,19 @@ context object의 상태로 계산하여 반환하고 싶으면 <code>let</code>
 <hr>
 <p>다른 언어로 개발할 때면 scope function이 매우 그리워진다.
 특히 웹 개발과 같이 null check가 잦으면 더욱 그렇다.</p>
-<pre><code class="language-typescript">if (foo?.bar?.baz != null) {
+<deckgo-highlight-code language="typescript"  >
+          <code slot="code">if (foo?.bar?.baz != null) {
   foo.bar.baz.something1()
   foo.bar.baz.something2()
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p>위 코드처럼 이미 체크된 변수를 다시 사용해야 할 때 scope function가 빛을 발한다.</p>
-<pre><code class="language-kotlin">foo?.bar?.baz?.run {
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">foo?.bar?.baz?.run {
   something1()
   something2()
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p>변수이름이 길어질수록 줄바꿈도 생기고 코드도 길어져서 읽기 어려워지는데, scope function은 획기적으로 줄여준다.
 계산 결과를 담아야 하는 경우가 생기면 담을 변수를 미리 선언하여 초기화 할 필요가 있으니 더욱 답답해진다.</p>
 <h2 id="testing" style="position:relative;"><a href="#testing" aria-label="testing permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing</h2>
@@ -155,32 +158,35 @@ mocking: <a href="https://github.com/mockk/mockk">MockK</a></p>
 <p>junit + mockito 대신 Kotest + MockK를 사용하자.
 kotlin의 타입 관련 문제가 없고, kotlin DSL와 infix 함수로 테스트 코드의 가독성이 좋다.</p>
 <p>e.g. assertion</p>
-<pre><code class="language-kotlin">name shouldBe "john doe"
-3 + 5 shouldBe 8
-</code></pre>
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">name shouldBe &quot;john doe&quot;
+3 + 5 shouldBe 8</code>
+        </deckgo-highlight-code>
 <p>e.g. mocking</p>
-<pre><code class="language-kotlin">every { obj.foo() } returns 'bar'
-justRun { obj.bar() }  // Unit 반환하는 경우
-</code></pre>
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">every { obj.foo() } returns &#39;bar&#39;
+justRun { obj.bar() }  // Unit 반환하는 경우</code>
+        </deckgo-highlight-code>
 <h3 id="better-specs" style="position:relative;"><a href="#better-specs" aria-label="better specs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Better Specs</h3>
 <p><a href="https://www.betterspecs.org/">https://www.betterspecs.org/</a></p>
 <p>정확한 역사는 잘 모르지만, Ruby 쪽 테스트 도구인 RSpec으로 작성된 테스트 코드 Best Practice 모음이다.
 Kotest의 <code>DescribeSpec</code> 스타일을 사용하면 RSpec와 유사하게 작성할 수 있다.
 테스트 코드 구조도 참고하면 도움이 많이 된다. 큰 구조는 <code>describe</code> <code>context</code> <code>it</code> 3개의 범위로 이루어진다.</p>
 <p>e.g. 테스트 코드 예시</p>
-<pre><code class="language-kotlin">class BuyerSendingAddressServiceTest : DescribeSpec({
-  describe("add 함수는") {
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">class BuyerSendingAddressServiceTest : DescribeSpec({
+  describe(&quot;add 함수는&quot;) {
     beforeEach { /** 각 컨테이너 이전에 실행 할 코드. */ }
     /** 여기는 context 이전에 실행된다. */
 
-    context("3과 5를 입력하면") {
-      it("8을 반환한다.") {
+    context(&quot;3과 5를 입력하면&quot;) {
+      it(&quot;8을 반환한다.&quot;) {
         add(3, 5) shouldBe 8
       }
     }
   }
-})
-</code></pre>
+})</code>
+        </deckgo-highlight-code>
 <h3 id="kotest" style="position:relative;"><a href="#kotest" aria-label="kotest permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kotest</h3>
 <p><a href="https://kotest.io/docs/framework/testing-styles.html">https://kotest.io/docs/framework/testing-styles.html</a></p>
 <p>Kotest는 테스트 레이아웃을 다양한 스타일로 표현할 수 있다.
@@ -253,13 +259,14 @@ JUnit처럼 테스트 파일에서 테스트를 실행하거나, 테스트 레�
   </a>
     </span></p>
 <p><em>Testing Library</em>에서 Kotest를 선택하고, <em>Superclass</em>에서 원하는 스타일을 설정하고 확인을 누르면 다음 코드를 자동으로 생성한다.</p>
-<pre><code class="language-kotlin">import io.kotest.core.spec.style.DescribeSpec
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
 
 class WebClientConfigTest : DescribeSpec({
 
-})
-</code></pre>
+})</code>
+        </deckgo-highlight-code>
 <p>테스트를 자주 만드는데 매우 편리한 기능이다.</p>
 <h4 id="rollback-test-test-method-callbacks" style="position:relative;"><a href="#rollback-test-test-method-callbacks" aria-label="rollback test test method callbacks permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rollback Test (test method callbacks)</h4>
 <p><a href="https://kotest.io/docs/extensions/spring.html#test-method-callbacks">https://kotest.io/docs/extensions/spring.html#test-method-callbacks</a></p>
@@ -267,35 +274,39 @@ class WebClientConfigTest : DescribeSpec({
 before test method와 같은 콜백을 발생시키지 않기 때문이다.
 그래서 <code>@DataJpaTest</code>는 <code>@Transactional</code>이 붙어있지만 이 설정 없이는 롤백하지 않는다.</p>
 <p>Kotest는 콜백을 발생시키지 위한 설정을 <code>extensions</code>으로 제공한다:</p>
-<pre><code class="language-kotlin">class KotestProjectConfig : AbstractProjectConfig() {
-    override fun extensions(): List&#x3C;Extension> = listOf(SpringExtension)
-}
-</code></pre>
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">class KotestProjectConfig : AbstractProjectConfig() {
+    override fun extensions(): List&lt;Extension&gt; = listOf(SpringExtension)
+}</code>
+        </deckgo-highlight-code>
 <p><code>DescribeSpec</code> 기준 Test Case인 <code>it</code> 전후로 콜백이 발생한다.
 <code>mode</code>를 <code>Root</code>로 설정하면 기준을 변경할 수 있다.</p>
-<pre><code class="language-kotlin">override fun extensions(): List&#x3C;Extension> = listOf(SpringTestExtension(SpringTestLifecycleMode.Root))
-</code></pre>
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">override fun extensions(): List&lt;Extension&gt; = listOf(SpringTestExtension(SpringTestLifecycleMode.Root))</code>
+        </deckgo-highlight-code>
 <p><code>Root</code> 모드는 최상위의 노드를 기준으로 콜백을 실행한다.</p>
-<pre><code class="language-kotlin">@Transactional
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">@Transactional
 class MyTest : DescribeSpec({
-  describe("test1") { ... }
-  describe("test2") { ... }
-  describe("test3") { ... }
-})
-</code></pre>
+  describe(&quot;test1&quot;) { ... }
+  describe(&quot;test2&quot;) { ... }
+  describe(&quot;test3&quot;) { ... }
+})</code>
+        </deckgo-highlight-code>
 <p>위 코드에서 <code>test1</code> <code>test2</code> <code>test3</code>에 대해서만 트랜잭션을 시작한다.</p>
 <p>아쉬운 점은 2가지 모드로는 중첩된 구조를 지원하지 않는다는 것이다.</p>
-<pre><code class="language-kotlin">describe("foo method") {
-  context("when something") {
-    it("result should be 1") { ... }
-    it("result should be 2") { ... }
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">describe(&quot;foo method&quot;) {
+  context(&quot;when something&quot;) {
+    it(&quot;result should be 1&quot;) { ... }
+    it(&quot;result should be 2&quot;) { ... }
   }
-  context("when something else") {
-    it("result should be 3") { ... }
-    it("result should be 4") { ... }
+  context(&quot;when something else&quot;) {
+    it(&quot;result should be 3&quot;) { ... }
+    it(&quot;result should be 4&quot;) { ... }
   }
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p>위 코드에서 <code>Root</code> 모드라면 <code>describe</code> 트랜잭션 하나만,<br>
 <code>Test</code> 모드라면 <code>it</code> 4개에 대해서만 트랜잭션을 시작한다.</p>
 <p>원하는 것은 <code>context</code> 기준으로 트랜잭션을 시작하는 것이다.</p>
@@ -311,26 +322,30 @@ ref. <a href="https://www.reddit.com/r/neovim/comments/yf0v86/kotlin_language_se
 <p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/">https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/</a></p>
 <p><code>IntRange</code>를 사용하면 다음과 같은 일을 할 수 있다.</p>
 <p>범위 비교:</p>
-<pre><code class="language-kotlin">if (30 in 1..100) {
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">if (30 in 1..100) {
   // true
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p>순회:</p>
-<pre><code class="language-kotlin">for (i in 1.rangeTo(100)) {
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">for (i in 1.rangeTo(100)) {
   // 1, 2, 3, 4, 5...100
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p>Step 순회:</p>
-<pre><code class="language-kotlin">for (i in 1.rangeTo(100) step 5) {
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">for (i in 1.rangeTo(100) step 5) {
   // 1, 6, 11...96
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p>항상 end 값은 포함(inclusive)한다.</p>
 <p>Char, Int, Long 등 비교할 수 있는 타입이라면 내장된 <code>Range</code> 클래스를 제공한다.</p>
 <h3 id="hierarchy" style="position:relative;"><a href="#hierarchy" aria-label="hierarchy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hierarchy</h3>
-<pre><code>IntRange --|> IntProgression    --|> Iterable&#x3C;Int>
-         --|> ClosedRange&#x3C;Int>  --|> Comparable&#x3C;Int>
-</code></pre>
+<deckgo-highlight-code   >
+          <code slot="code">IntRange --|&gt; IntProgression    --|&gt; Iterable&lt;Int&gt;
+         --|&gt; ClosedRange&lt;Int&gt;  --|&gt; Comparable&lt;Int&gt;</code>
+        </deckgo-highlight-code>
 <p>Iterable을 구현함으로써 순회할 수 있고, Comparable을 구현함으로써 범위를 비교할 수 있다.</p>
 <p>응용하면 <code>LocalDate</code> 같은 것도 만들 수 있다:
 <a href="https://www.netguru.com/blog/traversing-through-dates-with-kotlin-range-expressions">https://www.netguru.com/blog/traversing-through-dates-with-kotlin-range-expressions</a></p>
@@ -344,54 +359,59 @@ ref. <a href="https://www.reddit.com/r/neovim/comments/yf0v86/kotlin_language_se
 </blockquote>
 <p>Type-safe 빌더는 비 선언적인 방법으로, 복잡한 계층의 데이터 구조를 만드는데 적합한 Kotlin DSL을 만들 수 있습니다.</p>
 <p>대표적인 예시인 <a href="https://ktor.io/docs/routing-in-ktor.html#define_route">Kotr</a>의 route handler:</p>
-<pre><code class="language-kotlin">import io.ktor.server.routing.*
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">import io.ktor.server.routing.*
 import io.ktor.http.*
 import io.ktor.server.response.*
 
 routing {
-    route("/hello", HttpMethod.Get) {
+    route(&quot;/hello&quot;, HttpMethod.Get) {
         handle {
-            call.respondText("Hello")
+            call.respondText(&quot;Hello&quot;)
         }
     }
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p>builder 유형의 모듈을 만드는데 유용한 방법이다.</p>
 <p>위 코드에서 <code>routing</code> <code>route</code> <code>handle</code>는 각각 lambda 표현식을 받는 함수이다.
 lambda 함수의 <a href="https://kotlinlang.org/docs/this-expressions.html">this</a>를 정의함으로써 DSL을 만들 수 있다.</p>
-<pre><code class="language-kotlin">html {
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">html {
  // ...
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p>이런 표현을 가능케 하려면 다음과 같이 <code>html</code> 함수를 만든다:</p>
-<pre><code class="language-kotlin">fun html(init: HTML.() -> Unit): HTML {
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">fun html(init: HTML.() -&gt; Unit): HTML {
     val html = HTML()
     html.init()
     return html
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p><code>html {}</code>의 lambda 표현식의 this는 이제 <code>HTML</code> 객체가 된다.
 <code>HTML</code> 클래스에 다시 lambda expression을 받도록 함수를 제공하면 중첩된 표현이 가능해진다:</p>
-<pre><code class="language-kotlin">class HTML {
-    fun head(init: Head.() -> Unit): Head {
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">class HTML {
+    fun head(init: Head.() -&gt; Unit): Head {
         val head = Head()
         head.init()
         children.add(head)
         return head
     }
-    fun body(init: Body.() -> Unit): Body {
+    fun body(init: Body.() -&gt; Unit): Body {
         val body = Body()
         body.init()
         children.add(body)
         return body
     }
-}
-</code></pre>
-<pre><code class="language-kotlin">html {
+}</code>
+        </deckgo-highlight-code>
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">html {
     head { ... }
     body { ... }
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <h2 id="exposed" style="position:relative;"><a href="#exposed" aria-label="exposed permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exposed</h2>
 <p><a href="https://github.com/JetBrains/Exposed">https://github.com/JetBrains/Exposed</a></p>
 <p>Jetbrains에서 만든 ORM 라이브러리.</p>
@@ -411,6 +431,6 @@ Exposed를 사용했는데 JPA 대신 사용한 근거를 찾고싶다는 내용
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

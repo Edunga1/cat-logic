@@ -294,10 +294,11 @@ BUS를 통해 CPU -> GPU 전달한다. 문제는 이 BUS를 통한 커뮤니케�
 </ol>
 <h2 id="크롬의-하드웨어-가속-렌더링-메커니즘" style="position:relative;"><a href="#%ED%81%AC%EB%A1%AC%EC%9D%98-%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4-%EA%B0%80%EC%86%8D-%EB%A0%8C%EB%8D%94%EB%A7%81-%EB%A9%94%EC%BB%A4%EB%8B%88%EC%A6%98" aria-label="크롬의 하드웨어 가속 렌더링 메커니즘 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>크롬의 하드웨어 가속 렌더링 메커니즘</h2>
 <h3 id="웹페이지의-렌더링" style="position:relative;"><a href="#%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80%EC%9D%98-%EB%A0%8C%EB%8D%94%EB%A7%81" aria-label="웹페이지의 렌더링 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>웹페이지의 렌더링</h3>
-<pre><code>[DOM Tree] --------
+<deckgo-highlight-code   >
+          <code slot="code">[DOM Tree] --------
                   | --- [Render tree] --- [Paint!]
-[Styles struct] ---
-</code></pre>
+[Styles struct] ---</code>
+        </deckgo-highlight-code>
 <p>위에 서술한 부분들은 모두 Render tree 부분이다.</p>
 <h3 id="레이어-모델" style="position:relative;"><a href="#%EB%A0%88%EC%9D%B4%EC%96%B4-%EB%AA%A8%EB%8D%B8" aria-label="레이어 모델 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>레이어 모델</h3>
 <p>레이어(Layer)는 웹페이지를 렌더링하기 위해 필요한 이미지 단위 요소.</p>
@@ -527,15 +528,16 @@ BUS를 통해 CPU -> GPU 전달한다. 문제는 이 BUS를 통한 커뮤니케�
 <p>iFrame은 사용하지 않음에도 메인이 로드될 때 함께 로드된다. 메인 시스템이 로드 되는 것을 방해하는 것이다.</p>
 <p>스크립트를 통해 메인 시스템 로드 후 로드될 수 있도록 한다.</p>
 <p><strong>스크립트 예</strong></p>
-<pre><code class="language-html">&#x3C;iframe data-src="https://example.com">&#x3C;/firame>
-&#x3C;iframe data-src="https://another.example.com">&#x3C;/firame>
-&#x3C;script>
-    document.addEventListener('load', () => {
-        Array.from(document.querySelectorAll('iframe'))
-            .forEach(iframe => iframe.src = iframe.dataset.src);
+<deckgo-highlight-code language="html"  >
+          <code slot="code">&lt;iframe data-src=&quot;https://example.com&quot;&gt;&lt;/firame&gt;
+&lt;iframe data-src=&quot;https://another.example.com&quot;&gt;&lt;/firame&gt;
+&lt;script&gt;
+    document.addEventListener(&#39;load&#39;, () =&gt; {
+        Array.from(document.querySelectorAll(&#39;iframe&#39;))
+            .forEach(iframe =&gt; iframe.src = iframe.dataset.src);
     });
-&#x3C;/script>
-</code></pre>
+&lt;/script&gt;</code>
+        </deckgo-highlight-code>
 <h4 id="http2" style="position:relative;"><a href="#http2" aria-label="http2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP/2</h4>
 <p>기존의 HTTP 1.1은 분할된 이미지가 있으면 요청을 분할하여 여러번 나눠서 요청한다.</p>
 <p>이미지를 255조각 내었다면 요청을 255번 하는 것이다.</p>
@@ -614,6 +616,6 @@ BUS를 통해 CPU -> GPU 전달한다. 문제는 이 BUS를 통한 커뮤니케�
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

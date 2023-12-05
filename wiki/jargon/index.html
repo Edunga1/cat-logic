@@ -108,14 +108,15 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <h3 id="business-logic" style="position:relative;"><a href="#business-logic" aria-label="business logic permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Business Logic</h3>
 <p>비즈니스 로직은 말 그대로 비즈니스와 관계되어 있다.</p>
 <p>'출금' 기능을 구현한다고 하면 다음 처럼 구현할 수 있을 것이다:</p>
-<pre><code class="language-javascript">if (amount &#x3C;= balance) {            // 잔고가 충분하면
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">if (amount &lt;= balance) {            // 잔고가 충분하면
     balance -= amount;              // 잔고 감소
-    let sql = 'update...';          // 데이터베이스 잔고 업데이트 쿼리
+    let sql = &#39;update...&#39;;          // 데이터베이스 잔고 업데이트 쿼리
     query(sql, balance);            // 쿼리 전송
 } else {
-    alert('not enough balance.');   // 충분하지 않으면 사용자에게 알림
-}
-</code></pre>
+    alert(&#39;not enough balance.&#39;);   // 충분하지 않으면 사용자에게 알림
+}</code>
+        </deckgo-highlight-code>
 <p>기능을 동작시키기 위한 모든 코드가 비지니스 로직이 된다.</p>
 <h3 id="logic" style="position:relative;"><a href="#logic" aria-label="logic permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logic</h3>
 <p>그럼 일반 로직은 무엇인가?</p>
@@ -161,7 +162,8 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 보통 서버 요청할 때 버튼이 두 번 눌러져서 요청이 두 번 발생하는 동시 요청 문제가 흔하다.
 서버에서 동시 호출에 대한 방어 로직을 구현하는 것과 별개로, 클라이언트에서도 debounce를 이용한 UI 문제를 해결해 볼 수 있다.</p>
 <p>kotlin은 Flow의 operator로 <code>debounce()</code>를 <a href="https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/debounce.html">제공</a>한다.</p>
-<pre><code class="language-kotlin">flow {
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">flow {
     emit(1)
     delay(90)
     emit(2)
@@ -173,8 +175,8 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
     emit(5)
 }.debounce(1000)
 
-// 3, 4, 5
-</code></pre>
+// 3, 4, 5</code>
+        </deckgo-highlight-code>
 <p>첫 번째 값을 가져오고, 새 값이 설정한 시간 이내로 발생한 거라면 제거한다.</p>
 <p>ReactiveX에서도 debounce operator를 <a href="https://reactivex.io/documentation/operators/debounce.html">제공</a>한다.</p>
 <blockquote>
@@ -202,6 +204,6 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -104,22 +104,26 @@ Normalization Form <strong>D</strong></p>
 <ol>
 <li></li>
 </ol>
-<pre><code class="language-text">그린빌 100 단지 아파트
-</code></pre>
+<deckgo-highlight-code language="text"  >
+          <code slot="code">그린빌 100 단지 아파트</code>
+        </deckgo-highlight-code>
 <ol start="2">
 <li></li>
 </ol>
-<pre><code class="language-text">그린빌 100 단지 아파트
-</code></pre>
+<deckgo-highlight-code language="text"  >
+          <code slot="code">그린빌 100 단지 아파트</code>
+        </deckgo-highlight-code>
 <p>1, 2는 서로 다른 문자열이다. 같아 보인다면 프로그램이 그렇게 보이도록 출력한 것이다.</p>
 <p><a href="../javascript">Javascript</a> 기준으로 문자열 비교하면 실패한다:</p>
-<pre><code class="language-javascript">'그린빌 100 단지 아파트' == '그린빌 100 단지 아파트'  // false
-</code></pre>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">&#39;그린빌 100 단지 아파트&#39; == &#39;그린빌 100 단지 아파트&#39;  // false</code>
+        </deckgo-highlight-code>
 <p>1은 NFD로, 조합하여 완성된 글자처럼 보여주고 있다. 2는 NFC로, 완성된 한글을 그대로 보여주고 있다.</p>
 <p>Destructuring하면 자모 분리되어 표현된다:</p>
-<pre><code class="language-javascript">// (25) ['ᄀ', 'ᅳ', 'ᄅ', 'ᅵ', 'ᆫ', 'ᄇ', 'ᅵ', 'ᆯ', ' ', '1', '0', '0', ' ', 'ᄃ', 'ᅡ', 'ᆫ', 'ᄌ', 'ᅵ', ' ', 'ᄋ', 'ᅡ', 'ᄑ', 'ᅡ', 'ᄐ', 'ᅳ']
-[...'그린빌 100 단지 아파트']
-</code></pre>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">// (25) [&#39;ᄀ&#39;, &#39;ᅳ&#39;, &#39;ᄅ&#39;, &#39;ᅵ&#39;, &#39;ᆫ&#39;, &#39;ᄇ&#39;, &#39;ᅵ&#39;, &#39;ᆯ&#39;, &#39; &#39;, &#39;1&#39;, &#39;0&#39;, &#39;0&#39;, &#39; &#39;, &#39;ᄃ&#39;, &#39;ᅡ&#39;, &#39;ᆫ&#39;, &#39;ᄌ&#39;, &#39;ᅵ&#39;, &#39; &#39;, &#39;ᄋ&#39;, &#39;ᅡ&#39;, &#39;ᄑ&#39;, &#39;ᅡ&#39;, &#39;ᄐ&#39;, &#39;ᅳ&#39;]
+[...&#39;그린빌 100 단지 아파트&#39;]</code>
+        </deckgo-highlight-code>
 <p><strong>주의점</strong></p>
 <ul>
 <li>사용자 입력을 데이터베이스에 저장할 때 주의해야 한다. 위 비교 예시처럼 비교 불가하기 때문에 NFD 그대로 저장하면 SQL 조건절에서 제대로 검색할 수 없다.</li>
@@ -130,16 +134,19 @@ Normalization Form <strong>D</strong></p>
 예를들어, 주소를 사용자에게 입력받아 택배사에 예약하는 시스템을 만든다면, 제대로 출력할 수 없을지도 모른다.</p>
 <p>언어마다 내장된 라이브러리를 제공한다.</p>
 <p><a href="../python">Python</a>:</p>
-<pre><code class="language-python">from unicodedata import normalize
+<deckgo-highlight-code language="python"  >
+          <code slot="code">from unicodedata import normalize
 
-normalize('NFC', u'그린빌')
-</code></pre>
+normalize(&#39;NFC&#39;, u&#39;그린빌&#39;)</code>
+        </deckgo-highlight-code>
 <p><a href="../javascript">Javascript</a>:</p>
-<pre><code class="language-javascript">'그린빌'.normalize('NFC')
-</code></pre>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">&#39;그린빌&#39;.normalize(&#39;NFC&#39;)</code>
+        </deckgo-highlight-code>
 <p>NFC -> NFD도 가능하다:</p>
-<pre><code class="language-javascript">'그린빌'.normalize('NFD')
-</code></pre>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">&#39;그린빌&#39;.normalize(&#39;NFD&#39;)</code>
+        </deckgo-highlight-code>
 <h4 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h4>
 <ul>
 <li><a href="https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_%EB%93%B1%EA%B0%80%EC%84%B1">https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_%EB%93%B1%EA%B0%80%EC%84%B1</a></li>
@@ -150,6 +157,6 @@ normalize('NFC', u'그린빌')
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

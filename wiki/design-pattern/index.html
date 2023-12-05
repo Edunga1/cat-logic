@@ -193,15 +193,16 @@ RDBMS도 MySQL, MsSQL, Oracle 다 쿼리 스펙이 다르다. 그래서 데이�
 </ul>
 <p><strong>생각해 본 것들:</strong></p>
 <p><strong>대표적으로 C#의 Entity Framework. 대부분 DB 프레임워크는 어노테이션을 이용한다.</strong></p>
-<pre><code class="language-csharp">public class Blog
+<deckgo-highlight-code language="csharp"  >
+          <code slot="code">public class Blog
 {
     [Key]
     public int PrimaryTrackingKey { get; set; }
     public string Title { get; set; }
     public string BloggerName { get; set;}
-    public virtual ICollection&#x3C;Post> Posts { get; set; }
-}
-</code></pre>
+    public virtual ICollection&lt;Post&gt; Posts { get; set; }
+}</code>
+        </deckgo-highlight-code>
 <p>내가 위 코드를 동작케 한다면 다음과 같은 규칙을 가질 것이다:</p>
 <ol>
 <li>프로퍼티 이름 = 테이블 컬럼 이름</li>
@@ -256,16 +257,17 @@ RDBMS도 MySQL, MsSQL, Oracle 다 쿼리 스펙이 다르다. 그래서 데이�
 <p><a href="https://docs.spring.io/spring-statemachine/docs/1.1.1.RELEASE/reference/htmlsingle/">https://docs.spring.io/spring-statemachine/docs/1.1.1.RELEASE/reference/htmlsingle/</a></p>
 <p>스프링에서는 고정된 상태를 가진다. 스프링이 이런것을 구현했다는 점이 놀랍다.</p>
 <p>다양한 케이스를 대응하기 위해서 많은 인터페이스를 가지고 있는 것이 눈에 띈다.</p>
-<pre><code class="language-java">@Override
-public void configure(StateMachineTransitionConfigurer&#x3C;States, Events> transitions)
+<deckgo-highlight-code language="java"  >
+          <code slot="code">@Override
+public void configure(StateMachineTransitionConfigurer&lt;States, Events&gt; transitions)
         throws Exception {
     transitions
         .withExternal()
             .source(States.SI).target(States.S1).event(Events.E1)
             .and()
         .withExternal()
-            .source(States.S1).target(States.S2).event(Events.E2);
-</code></pre>
+            .source(States.S1).target(States.S2).event(Events.E2);</code>
+        </deckgo-highlight-code>
 <p>SI 상태(source)가 E1 이벤트를 만나면 S2 상태(target)이 된다.</p>
 <h4 id="pytohn-transitions" style="position:relative;"><a href="#pytohn-transitions" aria-label="pytohn transitions permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pytohn transitions</h4>
 <p><a href="https://github.com/pytransitions/transitions">https://github.com/pytransitions/transitions</a></p>
@@ -316,14 +318,15 @@ public void configure(StateMachineTransitionConfigurer&#x3C;States, Events> tran
 <p><a href="https://kotlinlang.org/docs/extensions.html">https://kotlinlang.org/docs/extensions.html</a></p>
 <p><a href="../kotlin">코틀린</a>의 확장 함수는 기존 클래스에 새로운 함수를 추가할 수도 있지만, overloading도 가능하다.
 <a href="https://kotlinlang.org/docs/extensions.html#extensions-are-resolved-statically">코틀린 확장 함수 문서</a> 중:</p>
-<pre><code class="language-kotlin">class Example {
-    fun printFunctionType() { println("Class method") }
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">class Example {
+    fun printFunctionType() { println(&quot;Class method&quot;) }
 }
 
-fun Example.printFunctionType(i: Int) { println("Extension function #$i") }
+fun Example.printFunctionType(i: Int) { println(&quot;Extension function #$i&quot;) }
 
-Example().printFunctionType(1)
-</code></pre>
+Example().printFunctionType(1)</code>
+        </deckgo-highlight-code>
 <p>이름 그대로 확장이 필요할 때 사용하는데, 때문에 확장 함수 문서에서 Decorator Pattern을 언급한다:</p>
 <blockquote>
 <p>Kotlin provides the ability to extend a class or an interface with new functionality without having to inherit from the class or use design patterns such as <strong>Decorator</strong>.</p>
@@ -336,14 +339,15 @@ Example().printFunctionType(1)
 <p>If a class has a member function, and an extension function is defined which has the same receiver type, the same name, and is applicable to given arguments, the member always wins.</p>
 <p>동일한 리시버 타입, 동일한 이름, 인자를 받을 수 있다면 멤버가 항상 우선한다.</p>
 </blockquote>
-<pre><code class="language-kotlin">class Example {
-    fun printFunctionType() { println("Class method") }
+<deckgo-highlight-code language="kotlin"  >
+          <code slot="code">class Example {
+    fun printFunctionType() { println(&quot;Class method&quot;) }
 }
 
-fun Example.printFunctionType() { println("Extension function") }
+fun Example.printFunctionType() { println(&quot;Extension function&quot;) }
 
-Example().printFunctionType()  // "Class method"
-</code></pre>
+Example().printFunctionType()  // &quot;Class method&quot;</code>
+        </deckgo-highlight-code>
 <h2 id="참조" style="position:relative;"><a href="#%EC%B0%B8%EC%A1%B0" aria-label="참조 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>참조</h2>
 <ul>
 <li><a href="https://refactoring.guru/ko/design-patterns/">refactoring.guru</a> - 무료 공개 ebook</li>
@@ -351,6 +355,6 @@ Example().printFunctionType()  // "Class method"
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

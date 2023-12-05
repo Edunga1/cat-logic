@@ -91,11 +91,13 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </blockquote>
 <p>WebGL2는 두 가지 언어로 개발한다.</p>
 <p>canvas와 context를 통해 WebGL2 API와 커뮤니케이션하는 Javascript 코드와:</p>
-<pre><code class="language-javascript">const canvas = document.querySelector("canvas")
-const gl = canvas.getContext("webgl2")
-</code></pre>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">const canvas = document.querySelector(&quot;canvas&quot;)
+const gl = canvas.getContext(&quot;webgl2&quot;)</code>
+        </deckgo-highlight-code>
 <p>GLSL이라는 언어로 셰이더와 프라그먼트를 작성하는 코드로 이루어진다:</p>
-<pre><code class="language-glsl">##version 300 es
+<deckgo-highlight-code language="glsl"  >
+          <code slot="code">##version 300 es
 
 precision highp float;
 
@@ -105,10 +107,11 @@ out vec4 outColor;
 
 void main() {
   outColor = u_color;
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p>GLSL 코드는 JS 코드에서 template string을 통해 작성하거나 <script> 태그를 통해 작성할 수 있다:</p>
-<pre><code class="language-javascript">const vertexShaderSource = `#version 300 es
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">const vertexShaderSource = `#version 300 es
 
 in vec2 a_position;
 
@@ -121,8 +124,8 @@ void main() {
 
   gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
 }
-`
-</code></pre>
+`</code>
+        </deckgo-highlight-code>
 <h2 id="셰이더shader" style="position:relative;"><a href="#%EC%85%B0%EC%9D%B4%EB%8D%94shader" aria-label="셰이더shader permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>셰이더(Shader)</h2>
 <blockquote>
 <p>WebGL은 단순한 래스터화(rasterization) 엔진일 뿐입니다. WebGL은 여러분이 작성한 코드로 점, 선 및 삼각형들을 그릴 뿐입니다.</p>
@@ -147,6 +150,6 @@ void main() {
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

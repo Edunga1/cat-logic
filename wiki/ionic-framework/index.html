@@ -88,17 +88,20 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>2017년에 작성된 내용.</p>
 <h2 id="caution-to-installing-crosswalk-webview-plugin" style="position:relative;"><a href="#caution-to-installing-crosswalk-webview-plugin" aria-label="caution to installing crosswalk webview plugin permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caution to installing crosswalk-webview plugin</h2>
 <p>crosswalk-webview 플러그인 설치 시 주의사항</p>
-<pre><code class="language-bash">cordova plugin add crosswalk-webview
-</code></pre>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">cordova plugin add crosswalk-webview</code>
+        </deckgo-highlight-code>
 <p>cordova 명령어로 설치 시 제대로 동작하지 않는 문제 발생.</p>
 <p>deviceready 이벤트가 호출되지 않고, 자바스크립트 콘솔 창에 다음 메시지 출력 됨:</p>
-<pre><code class="language-javascript">deviceready has not fired after 5 seconds
-...
-</code></pre>
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">deviceready has not fired after 5 seconds
+...</code>
+        </deckgo-highlight-code>
 <p><strong>해결 방법</strong></p>
 <p>github repository로부터 플러그인을 추가한다.</p>
-<pre><code class="language-bash">cordova plugin add https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview
-</code></pre>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">cordova plugin add https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview</code>
+        </deckgo-highlight-code>
 <h2 id="error---could-not-find-gradle-wrapper-within-android-sdk" style="position:relative;"><a href="#error---could-not-find-gradle-wrapper-within-android-sdk" aria-label="error   could not find gradle wrapper within android sdk permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Error - Could not find gradle wrapper within Android SDK</h2>
 <table>
 <thead>
@@ -127,18 +130,20 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </tbody>
 </table>
 <p>안드로이드로 빌드 시 다음과 같은 에러가 나오는 경우:</p>
-<pre><code class="language-bash">add to body class: platform-android
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">add to body class: platform-android
 
 ANDROID_HOME=/Users/name/Library/Android/sdk
 
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home
 
 Error: Could not find gradle wrapper within Android SDK. Might need to update your Android SDK.
-Looked here: /Users/name/Library/Android/sdk/tools/templates/gradle/wrapper
-</code></pre>
+Looked here: /Users/name/Library/Android/sdk/tools/templates/gradle/wrapper</code>
+        </deckgo-highlight-code>
 <p>ionic platform android의 버전을 최신으로 맞춘다:</p>
-<pre><code class="language-bash">cordova platform add android@6.2.1
-</code></pre>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">cordova platform add android@6.2.1</code>
+        </deckgo-highlight-code>
 <p>아마도 Android SDK 버전을 업데이트 하면서 발생한 듯.
 Android SDK와 ionic의 android paltform 버전을 맞추어야 하는 거 같다.</p>
 <p>이상하게도 <code>cordova platform list</code> 결과에 최신 버전이 <code>6.1.2</code>로 낮은 버전이 출력 되었다. 그래서 최신 버전을 명시하여 추가했다.</p>
@@ -147,14 +152,16 @@ Android SDK와 ionic의 android paltform 버전을 맞추어야 하는 거 같�
 <p>링크나 redirect를 현재 앱이나 내장 브라우저로 열 수 있다.</p>
 <p>이동하려는 URL이 whitelist(<code>config.xml</code>)에 등록되어 있으면 현재 앱 내에서 연다.</p>
 <p>모든 URL 허용 <code>config.xml</code> 예:</p>
-<pre><code class="language-xml">&#x3C;allow-navigation href="*" />
-</code></pre>
+<deckgo-highlight-code language="xml"  >
+          <code slot="code">&lt;allow-navigation href=&quot;*&quot; /&gt;</code>
+        </deckgo-highlight-code>
 <p>whitelist 플러그인이 필요하다:</p>
-<pre><code class="language-xml">&#x3C;plugin name="cordova-plugin-whitelist" spec="1.3.3" />
-</code></pre></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/ionic-framework/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<deckgo-highlight-code language="xml"  >
+          <code slot="code">&lt;plugin name=&quot;cordova-plugin-whitelist&quot; spec=&quot;1.3.3&quot; /&gt;</code>
+        </deckgo-highlight-code></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/ionic-framework/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

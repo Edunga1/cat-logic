@@ -107,26 +107,28 @@ Create React App이 각종 의존 모듈의 버전을 관리해주고, 이슈들
 다른 Rule을 따를 필요가 있다. 가장 유명한 것으로 <a href="https://www.npmjs.com/package/eslint-config-airbnb">eslint-config-airbnb</a>가 있다.</p>
 <p><code>npm install -D eslint-config-airbnb</code></p>
 <p>설치 후 <code>package.json</code>의 <code>eslintConfig</code>를 제거하고,</p>
-<pre><code class="language-json">// package.json
-  "eslintConfig": {
-    "extends": "airbnb"
-  },
-</code></pre>
+<deckgo-highlight-code language="json"  >
+          <code slot="code">// package.json
+  &quot;eslintConfig&quot;: {
+    &quot;extends&quot;: &quot;airbnb&quot;
+  },</code>
+        </deckgo-highlight-code>
 <p>프로젝트 루트에 <code>.eslintrc</code>을 생성한다:</p>
-<pre><code class="language-json">// .eslintrc
+<deckgo-highlight-code language="json"  >
+          <code slot="code">// .eslintrc
 {
-  "extends": "airbnb",
-  "rules": {
-      "react/prefer-stateless-function": 0,
-      "react/jsx-filename-extension": 0,
-      "react/jsx-one-expression-per-line": 0
+  &quot;extends&quot;: &quot;airbnb&quot;,
+  &quot;rules&quot;: {
+      &quot;react/prefer-stateless-function&quot;: 0,
+      &quot;react/jsx-filename-extension&quot;: 0,
+      &quot;react/jsx-one-expression-per-line&quot;: 0
   },
-  "env": {
-      "browser": true
+  &quot;env&quot;: {
+      &quot;browser&quot;: true
   },
-  "parser": "babel-eslint"
-}
-</code></pre>
+  &quot;parser&quot;: &quot;babel-eslint&quot;
+}</code>
+        </deckgo-highlight-code>
 <p>여기까지 적용하고, 아무 소스코드나 열어서 (예를 들면 <code>App.js</code>) 빈 라인을 몇 줄 추가해서 linter가 제대로 잡으면 된다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -263,10 +265,11 @@ Create React App이 각종 의존 모듈의 버전을 관리해주고, 이슈들
 <h3 id="prop-types-사용하기" style="position:relative;"><a href="#prop-types-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="prop types 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>prop-types</code> 사용하기</h3>
 <p>여러 개의 컴포넌트를 작성하다가 props로 데이터를 넘기다 보면 eslint로 인해 결국 자연스럽게 설치하게 된다.</p>
 <p>컴포넌트에서 props의 속성에 접근하려고 하면 미리 정의되지 않았다고 linter가 잡아낸다.</p>
-<pre><code class="language-javascript">MyComponent.propTypes = {
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">MyComponent.propTypes = {
   myProp: PropTypes.bool
-};
-</code></pre>
+};</code>
+        </deckgo-highlight-code>
 <p>이런 식으로 props로 받는 데이터는 미리 타입을 정의해야 한다. 그러면 코딩 단계에서 여러 가지 도움을 얻을 수 있고,
 잘못된 타입을 건네주면 런타임 때 잡아 내준다.</p>
 <p>자세한 사용 방식은 <a href="https://www.npmjs.com/package/prop-types">https://www.npmjs.com/package/prop-types</a> 에서 얻을 수 있다.</p>
@@ -274,9 +277,10 @@ Create React App이 각종 의존 모듈의 버전을 관리해주고, 이슈들
 <p>예제: <a href="https://github.com/Edunga1/react-history-back-example">https://github.com/Edunga1/react-history-back-example</a></p>
 <p>핵심은 비동기로 <strong>데이터를 가져오고 상태를 업데이트 할 때마다 적당한 곳에도 데이터를 저장</strong>하는 것이다.
 그리고 <code>componentDidMount()</code>에서 적당한 곳에 <strong>저장한 데이터가 있는지 보고, 있으면 가져온다</strong>.</p>
-<pre><code class="language-javascript">import React, { Component } from 'react';
-import ReactRouterPropTypes from 'react-router-prop-types';
-import storage from './storage/storage';
+<deckgo-highlight-code language="javascript"  >
+          <code slot="code">import React, { Component } from &#39;react&#39;;
+import ReactRouterPropTypes from &#39;react-router-prop-types&#39;;
+import storage from &#39;./storage/storage&#39;;
 
 export default class List extends Component {
   state = {
@@ -299,11 +303,11 @@ export default class List extends Component {
     const { index, items } = this.state;
     const { history } = this.props;
 
-    storage(index).then((res) => {
+    storage(index).then((res) =&gt; {
       this.setState({
         index: res.next,
         items: items.concat(res.pokemons),
-      }, () => {
+      }, () =&gt; {
         history.replace(undefined, { ...this.state });
       });
     });
@@ -312,23 +316,23 @@ export default class List extends Component {
   render() {
     const { items } = this.state;
     return (
-      &#x3C;div>
-        &#x3C;input
-          type="button"
-          style={{ position: 'fixed', right: '10%', top: '25%' }}
-          onClick={() => this.update()}
-          value="Fetch!!!!!!!!"
-        />
+      &lt;div&gt;
+        &lt;input
+          type=&quot;button&quot;
+          style={{ position: &#39;fixed&#39;, right: &#39;10%&#39;, top: &#39;25%&#39; }}
+          onClick={() =&gt; this.update()}
+          value=&quot;Fetch!!!!!!!!&quot;
+        /&gt;
         {
-          items.map(x => (
-            &#x3C;a key={x} href={`./what?q=${x}`}>
-              &#x3C;div>
+          items.map(x =&gt; (
+            &lt;a key={x} href={`./what?q=${x}`}&gt;
+              &lt;div&gt;
                 {x}
-              &#x3C;/div>
-            &#x3C;/a>
+              &lt;/div&gt;
+            &lt;/a&gt;
           ))
         }
-      &#x3C;/div>
+      &lt;/div&gt;
     );
   }
 }
@@ -336,8 +340,8 @@ export default class List extends Component {
 List.propTypes = {
   history: ReactRouterPropTypes.history.isRequired,
   location: ReactRouterPropTypes.location.isRequired,
-};
-</code></pre>
+};</code>
+        </deckgo-highlight-code>
 <p>적당한 곳이라면 History, Storage(Local, Session), Redux가 있다.
 Storage는 Local이라면 다른 탭과 공유되기도 하고, Session이라도 데이터를 serialize 하여 저장하기 때문에 번거롭고, Redux라면 다른 도메인으로 이동한 뒤 돌아오면 유지되지 않을거라 예상된다.
 그래서 History를 이용. 더 정석적인 방법이라 생각된다.</p>
@@ -350,6 +354,6 @@ Storage는 Local이라면 다른 탭과 공유되기도 하고, Session이라도
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

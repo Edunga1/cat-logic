@@ -110,23 +110,24 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>HTTP에는 <code>x-forwareded-for</code>처럼 <code>x</code>를 prefix로 하는 헤더가 많다.</p>
 <p>docker-compose.yml 명세할 때 사용자 정의 영역으로 구분하기 위해서도 쓴다.</p>
 <p>다음은 <a href="https://github.com/apache/airflow/blob/main/docs/apache-airflow/howto/docker-compose/docker-compose.yaml#L44">airflow Github</a>에서 제공하는 docker-compose.yml 예시:</p>
-<pre><code class="language-yaml">x-airflow-common:
-  &#x26;airflow-common
+<deckgo-highlight-code language="yaml"  >
+          <code slot="code">x-airflow-common:
+  &amp;airflow-common
   image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.0.2}
   environment:
-    &#x26;airflow-common-env
+    &amp;airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
-    AIRFLOW__CORE__FERNET_KEY: ''
-    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
-    AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
+    AIRFLOW__CORE__FERNET_KEY: &#39;&#39;
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: &#39;true&#39;
+    AIRFLOW__CORE__LOAD_EXAMPLES: &#39;true&#39;
+    AIRFLOW__API__AUTH_BACKEND: &#39;airflow.api.auth.backend.basic_auth&#39;
 
 services:
-  # ...
-</code></pre>
+  # ...</code>
+        </deckgo-highlight-code>
 <h2 id="iso-8601---날짜-시간-관련-커뮤니케이션-국제-표준" style="position:relative;"><a href="#iso-8601---%EB%82%A0%EC%A7%9C-%EC%8B%9C%EA%B0%84-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B5%AD%EC%A0%9C-%ED%91%9C%EC%A4%80" aria-label="iso 8601   날짜 시간 관련 커뮤니케이션 국제 표준 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ISO 8601 - 날짜, 시간 관련 커뮤니케이션 국제 표준</h2>
 <p>포맷 간단 요약: <a href="https://www.cryptosys.net/pki/manpki/pki_iso8601datetime.html">https://www.cryptosys.net/pki/manpki/pki_iso8601datetime.html</a></p>
 <p><strong>특징</strong></p>
@@ -166,6 +167,6 @@ services:
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

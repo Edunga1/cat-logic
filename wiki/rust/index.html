@@ -88,16 +88,18 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>SFML을 Rust에서 사용하는 것으로 처음 접해본다.</p>
 <h2 id="installation" style="position:relative;"><a href="#installation" aria-label="installation permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
 <p>Ubuntu on WSL, OSX 사용중이라 편의상 Homebrew로 설치했다.</p>
-<pre><code class="language-bash">$ brew install rust
-</code></pre>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">$ brew install rust</code>
+        </deckgo-highlight-code>
 <p><code>rustc</code>, <code>cargo</code>가 설치되었는지 확인한다.</p>
-<pre><code class="language-bash">❯ rustc --version
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">❯ rustc --version
 rustc 1.72.1 (d5c2e9c34 2023-09-13) (Homebrew)
 
 
 ❯ cargo --version
-cargo 1.72.1
-</code></pre>
+cargo 1.72.1</code>
+        </deckgo-highlight-code>
 <p>cargo는 패키지 매니저이다.</p>
 <p>패키지는 몇 개 사이트에서 찾을 수 있는 것으로 보인다.
 SFML을 기준으로는 다음 2개 사이트에서 찾을 수 있었다.</p>
@@ -110,7 +112,8 @@ crates.io처럼 <code>cargo add sfml</code>와 같은 설치 명령어 안내 �
 <h2 id="프로젝트-시작하기" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0" aria-label="프로젝트 시작하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 시작하기</h2>
 <p><code>cargo</code> 명령어로 프로젝트를 생성하거나 패키지를 설치할 수 있다.</p>
 <p>다음은 <code>hell_world</code> 프로젝트를 생성하는 명령어이다.</p>
-<pre><code class="language-bash">$ cargo new sfml-rust-start
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">$ cargo new sfml-rust-start
      Created binary (application) `sfml-rust-start` package
 
 $ cd sfml-rust-start
@@ -121,19 +124,20 @@ $ tree -a .
 ├── .git
 ├── .gitignore
 └── src
-    └── main.rs
-</code></pre>
+    └── main.rs</code>
+        </deckgo-highlight-code>
 <p><code>Cargo.toml</code> 파일과 함께 git 저장소가 생성된다.
 hello world를 출력하는 기본적인 코드가 <code>src/main.rs</code>에 작성되어 있다.</p>
 <p>현재 디렉토리를 프로젝트로 만들고 싶다면 <code>cargo init</code> 명령어를 사용한다.</p>
 <p>Rust 코드를 실행해보자. <code>rustc</code>로 컴파일하면 실행 파일이 생성된다:</p>
-<pre><code class="language-bash">$ rustc src/main.rs
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">$ rustc src/main.rs
 $ ./main
-Hello, world!
-</code></pre></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+Hello, world!</code>
+        </deckgo-highlight-code></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

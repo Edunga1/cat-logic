@@ -232,44 +232,45 @@ Is Trigger 허용시 충돌하더라도 물리연산이 일어나지 않는다.<
 위에서는 <code>AndroidBuilder</code> 클래스의 <code>PerformBuild()</code> 메소드를 실행 시켰다.</p>
 <p>즉, <strong>유니티에서 사용하는 스크립트 언어</strong>로 빌드 정보를 직접 작성해야 한다.</p>
 <p>아래는 빌드 스크립트 예시 - C# :</p>
-<pre><code class="language-Csharp">using UnityEditor;
+<deckgo-highlight-code language="Csharp"  >
+          <code slot="code">using UnityEditor;
 
-/// &#x3C;summary>
+/// &lt;summary&gt;
 /// 안드로이드 빌더
-/// &#x3C;/summary>
+/// &lt;/summary&gt;
 class AndroidBuilder {
 
-    /// &#x3C;summary>
+    /// &lt;summary&gt;
     /// 파라미터 파싱, 인자에 부여 된 값을 반환
-    /// &#x3C;/summary>
-    /// &#x3C;param name="name">인자 이름&#x3C;/param>
-    /// &#x3C;returns>인자의 값, 없는 인자라면 null&#x3C;/returns>
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;name&quot;&gt;인자 이름&lt;/param&gt;
+    /// &lt;returns&gt;인자의 값, 없는 인자라면 null&lt;/returns&gt;
     private static string GetArg(string name) {
         var args = System.Environment.GetCommandLineArgs();
-        for (int i = 0; i &#x3C; args.Length; i++) {
-            if (args[i] == name &#x26;&#x26; args.Length > i + 1) {
+        for (int i = 0; i &lt; args.Length; i++) {
+            if (args[i] == name &amp;&amp; args.Length &gt; i + 1) {
                 return args[i + 1];
             }
         }
         return null;
     }
 
-    /// &#x3C;summary>
+    /// &lt;summary&gt;
     /// 빌드 실행
-    /// &#x3C;/summary>
+    /// &lt;/summary&gt;
     static void PerformBuild () {
-        string output = GetArg("-o");
-        output = "./" + (output == null ? "out.apk" : output);
-        string[] scenes = {"Assets/Scenes/SceneStart.unity", "Assets/Scenes/SceneGame.unity"};
+        string output = GetArg(&quot;-o&quot;);
+        output = &quot;./&quot; + (output == null ? &quot;out.apk&quot; : output);
+        string[] scenes = {&quot;Assets/Scenes/SceneStart.unity&quot;, &quot;Assets/Scenes/SceneGame.unity&quot;};
 
         BuildPipeline.BuildPlayer(scenes, output, BuildTarget.Android, BuildOptions.None);
     }
-}
-</code></pre>
+}</code>
+        </deckgo-highlight-code>
 <p><code>-logFile</code>: 로그 파일 위치. 지정 시 생성됨. 위에서는 standard out으로 설정함. 즉 터미널에서 출력 된다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/unity3d/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

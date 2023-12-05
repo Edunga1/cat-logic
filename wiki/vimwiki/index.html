@@ -118,8 +118,9 @@ vimwiki로 문서의 링크를 걸거나(markdown <a href="../language-server-pr
 <p>vimwiki 경로의 markdown 파일은 <code>.md</code> 확장자를 가지더라도 <code>vimwiki</code> 파일타입을 가진다(<code>set ft?</code>).
 그래서 다른 경로의 마크다운 파일과 비교할 때 미묘하게 구문 강조가 다르거나 기능이 달라서 혼란스러울 수 있다.</p>
 <p><code>g:vimwiki_filetypes</code> 옵션으로 filetype을 수정할 수는 있으나 <code>vimwiki</code>, <code>markdown</code> 모두 가진다:</p>
-<pre><code class="language-vim">let g:vimwiki_filetypes = ['markdown']
-</code></pre>
+<deckgo-highlight-code language="vim"  >
+          <code slot="code">let g:vimwiki_filetypes = [&#39;markdown&#39;]</code>
+        </deckgo-highlight-code>
 <p>지금은 큰 불편함이 없어서 그대로 사용하고 있지만,
 마크다운 파일 타입을 사용하면 여러 플러그인에서 제공하는 광범위한 기능을 제공받을 수 있게된다.
 예를들어, <a href="https://github.com/preservim/tagbar">Tagbar</a>로 마크다운 문서 레이아웃을 확인할 수도 있다.</p>
@@ -130,20 +131,22 @@ vimwiki로 문서의 링크를 걸거나(markdown <a href="../language-server-pr
 추천을 가장 많이 받은 덧글은 마크다운 파일 타입을 더 선호한다는 내용.</p>
 <p>이 내용은 <code>&#x3C;cr></code>로 생성되는 Wiki Link <code>[[link]]</code>와 관련된 내용은 아니다.
 링크는 <code>syntax</code> 옵션으로 마크다운 링크 <code>./some.md</code>로 생성되도록 설정할 수 있다:</p>
-<pre><code class="language-vim">let g:vimwiki_list = [
+<deckgo-highlight-code language="vim"  >
+          <code slot="code">let g:vimwiki_list = [
     \{
-    \   'path': '~/workspace/cat-logic/docs/wiki',
-    \   'syntax': 'markdown',
-    \   'ext' : '.md',
-    \   'diary_rel_path': '.',
+    \   &#39;path&#39;: &#39;~/workspace/cat-logic/docs/wiki&#39;,
+    \   &#39;syntax&#39;: &#39;markdown&#39;,
+    \   &#39;ext&#39; : &#39;.md&#39;,
+    \   &#39;diary_rel_path&#39;: &#39;.&#39;,
     \}
-\]
-</code></pre>
+\]</code>
+        </deckgo-highlight-code>
 <h2 id="버그" style="position:relative;"><a href="#%EB%B2%84%EA%B7%B8" aria-label="버그 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>버그</h2>
 <h3 id="강조체-기울임체가-전체-글자에-적용되는-문제" style="position:relative;"><a href="#%EA%B0%95%EC%A1%B0%EC%B2%B4-%EA%B8%B0%EC%9A%B8%EC%9E%84%EC%B2%B4%EA%B0%80-%EC%A0%84%EC%B2%B4-%EA%B8%80%EC%9E%90%EC%97%90-%EC%A0%81%EC%9A%A9%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="강조체 기울임체가 전체 글자에 적용되는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>강조체, 기울임체가 전체 글자에 적용되는 문제</h3>
 <p>한국어는 단어에 조사를 붙여쓰면서 어절이 된다:</p>
-<pre><code class="language-text">**동해물.**과 백두산이
-</code></pre>
+<deckgo-highlight-code language="text"  >
+          <code slot="code">**동해물.**과 백두산이</code>
+        </deckgo-highlight-code>
 <p><code>ft=vimwiki</code>에서 위처럼 작성하면 <code>**</code> 이후 모든 글자가 볼드가 된다.
 vim에서만 이상하게 보이지만, syntax highlighting이 망가져서 여간 불편한게 아니다.</p>
 <p><code>ft=markdown</code>에서는 괜찮다. vimwiki가 syntax highlighting 제공하면서 발생하는 문제다.</p>
@@ -155,6 +158,6 @@ vim에서만 이상하게 보이지만, syntax highlighting이 망가져서 여�
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

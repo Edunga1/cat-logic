@@ -116,21 +116,24 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>Unity 기준.</p>
 <p><a href="https://forum.unity.com/threads/whats-the-best-way-to-move-to-a-target.224126/">What's the best way to move to a target?</a></p>
 <p>간단하게 구현하면 다음과 같이 할 수 있다:</p>
-<pre><code class="language-csharp">transform.position += (target.position - transform.position).normalized * Time.deltaTime;
-</code></pre>
+<deckgo-highlight-code language="csharp"  >
+          <code slot="code">transform.position += (target.position - transform.position).normalized * Time.deltaTime;</code>
+        </deckgo-highlight-code>
 <p>normalized로 vector 정규화하면 방향만 남고 크기는 1인 단위 벡터가 된다.
 여기에 deltaTime을 곱해주면 게임 엔진의 프레임을 고려한 속도가 된다.</p>
 <p>이 방법은 두 오브젝트가 서로를 향해 이동할 때 문제가 있다.
 서로를 넘어가는 시점부터 둘 다 같은 방향으로 이동하게 된다.</p>
 <p>부드러운 이동을 위해서는 다음과 같이 할 수 있다:</p>
-<pre><code class="language-csharp">transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
-</code></pre>
+<deckgo-highlight-code language="csharp"  >
+          <code slot="code">transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);</code>
+        </deckgo-highlight-code>
 <p>Lerp는 선형보간(Linear Interpolation)으로, 두 지점 사이의 중간 지점을 계산한다.
 마찬가지로 deltaTime을 곱해주므로 프레임을 고려하며, 가속도가 적용되기 때문에 부드러운 이동이 가능하다.</p>
 <p>게임 케릭터를 구현을 위해 위 로직을 사용하면 어색하다.
 가속도가 없고 목표 지점을 넘어가지 않는 <code>MoveTowards</code>를 사용하는 것이 좋다.</p>
-<pre><code class="language-csharp">transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
-</code></pre>
+<deckgo-highlight-code language="csharp"  >
+          <code slot="code">transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);</code>
+        </deckgo-highlight-code>
 <p>케릭터의 속도 <code>speed</code>를 고려하는 방식이다.</p>
 <p>references:</p>
 <ul>
@@ -140,6 +143,6 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-04ccf66c701e8c91e70c.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-69f802432ab926eb02b8.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="54dfb29651887221e13d";</script><script src="/cat-logic/webpack-runtime-c473c086ec216f67a5b2.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8193acbf7c21d4904637";</script><script src="/cat-logic/webpack-runtime-fa2d919ffee3e852f2e7.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
