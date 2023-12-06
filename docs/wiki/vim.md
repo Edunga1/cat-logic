@@ -517,6 +517,12 @@ Staged (1)
 M docs/wiki/vim.md
 ```
 
+#### `:Git mergetool`
+
+`git mergetool`과 같다. merge conflicts 처리하는 용도로 사용하는데, fugitive는 충돌 지점을 quickfix로 보여준다.
+
+quickfix로 충돌 지점을 점프하고, `GWrite`(`git add`와 같음)로 stage에 반영한다.
+
 ### rmagatti/auto-session
 
 https://github.com/rmagatti/auto-session
