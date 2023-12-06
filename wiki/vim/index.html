@@ -163,6 +163,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p><a href="#tpopevim-fugitive">tpope/vim-fugitive</a></p>
 <ul>
 <li><a href="#git"><code>:Git</code></a></li>
+<li><a href="#git-mergetool"><code>:Git mergetool</code></a></li>
 </ul>
 </li>
 <li>
@@ -690,6 +691,9 @@ M docs/wiki/vim.md
 Staged (1)
 M docs/wiki/vim.md</code>
         </deckgo-highlight-code>
+<h4 id="git-mergetool" style="position:relative;"><a href="#git-mergetool" aria-label="git mergetool permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>:Git mergetool</code></h4>
+<p><code>git mergetool</code>과 같다. merge conflicts 처리하는 용도로 사용하는데, fugitive는 충돌 지점을 quickfix로 보여준다.</p>
+<p>quickfix로 충돌 지점을 점프하고, <code>GWrite</code>(<code>git add</code>와 같음)로 stage에 반영한다.</p>
 <h3 id="rmagattiauto-session" style="position:relative;"><a href="#rmagattiauto-session" aria-label="rmagattiauto session permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>rmagatti/auto-session</h3>
 <p><a href="https://github.com/rmagatti/auto-session">https://github.com/rmagatti/auto-session</a></p>
 <p>자동으로 세션을 저장하고 복구해주는 neovim 플러그인.
