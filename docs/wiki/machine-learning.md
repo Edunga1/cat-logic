@@ -407,6 +407,23 @@ where
 
 ref. https://news.hada.io/topic?id=9185
 
+### Google Gemnini
+
+구글의 Multimodal AI 모델. `제미나이`로 발음한다.\
+멀티모달은 이미지, 음성, 텍스트 등 다양한 타입을 결합하여 처리할 수 있음을 의미한다.
+
+https://deepmind.google/technologies/gemini
+
+시연연상: https://youtu.be/UIZAiXYceBI?si=oSRGhGQjQITgwZ-d
+
+편집된 영상이라 정확히 확인되지 않지만, 매우 빠른 응답을 제공한다. 사용자와 실시간 대화할 정도.\
+실시간으로 사용자와 대화하고, vision 처리한다. 마치 아이언맨 자비스를 보는 느낌.
+
+Ultra, Pro, Nano 3가지 크기가 있다. Nano는 핸드폰과 같은 디바이스에 탑재될 모양.
+
+2023년 12월 13일에 Google Cloud에 공개된다.\
+Goolge Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
