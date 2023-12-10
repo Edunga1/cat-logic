@@ -91,3 +91,27 @@ fucntion onDeviceOrientation(event) {
 
 직접 수정할 수 없는 헤더가 있다. `Content-Length`나 `Referer` 등이 그러한데, 이런 헤더를 [Forbidden Header Name](https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name)이라 한다.
 
+## Clean URL
+
+https://en.wikipedia.org/wiki/Clean_URL
+
+Clean URL은 사람이 식별하기 쉬운 URL을 말한다.\
+URL은 `.html` 등의 확장자, query string, path 등으로 구성되는데 이런 요소를 나타내기 위해 불필요한 문자가 포함된다.
+
+다음 예시처럼 URL을 간결하게 만들 수 있다.
+
+| Original URL                                 | Clean URL                    |
+|----------------------------------------------|------------------------------|
+| http://example.com/index.php?title=Main_Page | http://example.com/Main_Page |
+| http://example.com/user.php?id=123           | http://example.com/user/123  |
+
+[퍼머링크(permalink)](https://en.wikipedia.org/wiki/Permalink)는 주소는 한 번 정해지면 변경되지 않는다는 의미로 만들어진 말이다.\
+어떤 시스템은 컨텐츠가 추가되면서 URL이 변경되기도 한다. 그러면 기존 링크는 유효하지 않게 되므로 퍼머링크를 제공하기도 한다.
+
+### Slug
+
+[gatsby](./gatsbyjs.md) 등 몇몇 시스템은 *Slug*라는 이름으로 Clean URL을 지원한다.
+다만 Slug는 구현체마다 다르게 동작할 수 있어서 주의가 필요하다.
+문서 제목을 Slug로 사용한다면 비-영문자와 공백과 특수문자 등을 어떻게 처리할 지 고민해야 한다.\
+[gatsby](./gatsbyjs.md)는 자체적으로 Slug를 제공하고 커스텀할 수 있다.
+하지만 Slug가 생성되는 부분이 한 두 군데가 아니므로 모두  찾아서 처리하지 않으면 제대로 동작하지 않는 링크가 생길 수 있다.
