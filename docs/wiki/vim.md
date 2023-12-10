@@ -71,7 +71,7 @@ https://github.com/nanotee/nvim-lua-guide#modules
 `init.vim` 대신 `init.lua`에서 설정을 명세할 수 있다.
 
 vim 함수를 `:call Foo()`로 호출하는 것처럼, lua 함수도 `:lua Foo()`로 호출할 수 있다.
-예를들어 LSP에 설정된 코드 액션 매핑이 있는데: 
+예를들어 LSP에 설정된 코드 액션 매핑이 있는데:
 
 ```lua
 vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
@@ -426,7 +426,7 @@ endfunction
 디렉토리나 파일 이름의 prefix로 파일 타입을 지정해도 된다:
 
 > The generic names for the filetype plugins are:
-> 
+>
 > 	ftplugin/<filetype>.vim
 > 	ftplugin/<filetype>_<name>.vim
 > 	ftplugin/<filetype>/<name>.vim

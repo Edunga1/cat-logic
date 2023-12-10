@@ -496,7 +496,7 @@ https://hynek.me/articles/testing-packaging 글에서 src 레이아웃을 사용
 [https://github.com/pypa/packaging.python.org/issues/320#issuecomment-495990983](https://github.com/pypa/packaging.python.org/issues/320#issuecomment-495990983)\
 덧글에 논의 내용을 올려주었다.\
 **싱글 모듈**을 제외한 구조는 src 레이아웃을 따른다고 한다.
-    
+
 > This was discussed at the Packaging Mini Summit ([notes for that](https://docs.google.com/document/d/1Wz2-ECkicJgAmQDxMFivWmU2ZunKvPZ2UfQ59zDGj7g/edit#)). Here's my rough summary from memory + the notes:
 >
 > - We should use a name for non-src/ layout that isn't negative-tone:

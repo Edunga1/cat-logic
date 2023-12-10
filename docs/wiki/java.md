@@ -130,8 +130,8 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#query-by-exa
 
 ```java
 // 검색 할 데이터 준비
-Person person = new Person();                         
-person.setFirstname("Dave");                          
+Person person = new Person();
+person.setFirstname("Dave");
 
 // 쿼리
 personRepository.findAll(Example.of(person));
@@ -215,7 +215,7 @@ Stackoverflow Post: https://stackoverflow.com/questions/26543612/should-i-use-ja
 ### DB에 쿼리하는 방법
 
 [**Query Methods**](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods)
-    
+
 ```java
 public interface UserRepository extends Repository<User, Long> {
   List<User> findByEmailAddressAndLastname(String emailAddress, String lastname);
@@ -236,7 +236,7 @@ Collection<User> findAllActiveUsers();
 ```
 
 [**Querydsl**](http://querydsl.com/static/querydsl/latest/reference/html/)
-    
+
 ```java
 QCustomer customer = QCustomer.customer;
 Customer bob = queryFactory.selectFrom(customer)

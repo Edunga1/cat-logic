@@ -30,14 +30,14 @@ onPositionChanged(new Vector3(0, 0, 0));
 
 이제 등록된 `SyncPosition`이 호출된다.
 
-## events or an observer interface? Pros/cons? 
+## events or an observer interface? Pros/cons?
 
 https://stackoverflow.com/questions/550785
 
 첫 번째 답변은 이벤트를 사용함에 있어서 특징에 대해서 설명한다:
 > Less maintenance
 > 적은 유지보수
-> 
+>
 > The pattern is built into the language so everybody knows how to use it
 > 패턴이 언어에 내장되어 있기 때문에, 누구나 사용하는 방법에 대해 알고 있습니다.
 

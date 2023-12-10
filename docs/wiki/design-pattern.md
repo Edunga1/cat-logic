@@ -248,7 +248,7 @@ Example().printFunctionType(1)
 
 이름 그대로 확장이 필요할 때 사용하는데, 때문에 확장 함수 문서에서 Decorator Pattern을 언급한다:
 
-> Kotlin provides the ability to extend a class or an interface with new functionality without having to inherit from the class or use design patterns such as **Decorator**. 
+> Kotlin provides the ability to extend a class or an interface with new functionality without having to inherit from the class or use design patterns such as **Decorator**.
 >
 > 데코레이터와 같은 디자인 패턴이나 상속 없이 클래스를 확장하거나 인터페이스에 새로운 기능을 추가할 수 있다.
 

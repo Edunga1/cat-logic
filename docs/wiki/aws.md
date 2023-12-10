@@ -255,7 +255,7 @@ AZ간 통신은 내부망을 통해서만 이루어진다.
 ### 주요 네트워킹 서비스
 
 * VPC: AWS 클라우드상에 만드는 가상 네트워크
-* VPN: On-premise 데이터 센터와 VPC의 IPSec VPN 연결 
+* VPN: On-premise 데이터 센터와 VPC의 IPSec VPN 연결
 * Direct Connect: On-premise 데이터 센터와 VPC의 전용선 연결
 * Route 53: 관리형 DNS 서비스
 

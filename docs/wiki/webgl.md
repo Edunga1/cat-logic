@@ -5,7 +5,7 @@ created: 2023-03-01
 
 ## WebGL2
 
-> GPU에서 실행되는 코드를 제공해만 합니다. 그 코드는 두 개 함수 쌍 형태로 제공되어야 하고, 각각의 함수는 정점 셰이더(vertex shader)와 프래그먼트 셰이더(fragment shader)라고 불립니다. 각각은 매우 엄격한 타입(strictly-types)을 가지는 C/C++과 유사한 GLSL(GL Shader Language)로 작성되어야 합니다. 
+> GPU에서 실행되는 코드를 제공해만 합니다. 그 코드는 두 개 함수 쌍 형태로 제공되어야 하고, 각각의 함수는 정점 셰이더(vertex shader)와 프래그먼트 셰이더(fragment shader)라고 불립니다. 각각은 매우 엄격한 타입(strictly-types)을 가지는 C/C++과 유사한 GLSL(GL Shader Language)로 작성되어야 합니다.
 
 WebGL2는 두 가지 언어로 개발한다.
 

@@ -121,15 +121,15 @@ QA 툴 커뮤니티로 보이는데, 모든 경우의 수, 직교(Orthogonal), P
 > ...(생략)
 >
 > 3. Pairwise
-> 
+>
 > 동작모드    설정    이퀄라이저
 > 순차        Hold    Off
 > 순차        착신    Live
 > 순차반복    Hold    Live
 > 순차반복    착신    Off
-> 
+>
 > 4. Orthogonal Array
-> 
+>
 > 동작모드    설정    이퀄라이저
 > 순차        Hold    Off
 > 순차        착신    Live

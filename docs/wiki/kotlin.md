@@ -248,7 +248,7 @@ https://www.netguru.com/blog/traversing-through-dates-with-kotlin-range-expressi
 
 https://kotlinlang.org/docs/type-safe-builders.html
 
-> Type-safe builders allow creating Kotlin-based domain-specific languages (DSLs) suitable for building complex hierarchical data structures in a semi-declarative way. 
+> Type-safe builders allow creating Kotlin-based domain-specific languages (DSLs) suitable for building complex hierarchical data structures in a semi-declarative way.
 
 Type-safe 빌더는 비 선언적인 방법으로, 복잡한 계층의 데이터 구조를 만드는데 적합한 Kotlin DSL을 만들 수 있습니다.
 

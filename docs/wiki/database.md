@@ -337,7 +337,7 @@ MC/DC Coverage는 expression에서 모든 branch를 커버하기 위한 Test Cas
 [Fossile](https://www.fossil-scm.org/home/doc/trunk/www/index.wiki)
 
 > **Quick Start**
-> 
+>
 > 1. [Download](https://www.fossil-scm.org/home/uv/download.html) or install using a package manager or [compile from sources](https://www.fossil-scm.org/home/doc/trunk/www/build.wiki).
 > 2. fossil init REPOSITORY-DIR/new-repository
 > 3. fossil open REPOSITORY-DIR/new-repository
