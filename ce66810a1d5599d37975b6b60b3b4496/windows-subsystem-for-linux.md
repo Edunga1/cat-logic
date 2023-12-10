@@ -96,7 +96,7 @@ Ubuntu 18.04 ppa.launchpad.net/george-edison55/cmake-3.x/ubuntu bionic Release 4
 
 문제는 PPA 이름을 알아야 하는데, 에러 메시지에 출력되지 않는다. 패키지 이름만 포함될 뿐이다. 그냥 에러메시지로 검색해서 지우는게 속편하다...
 
-이제 `sudo do-release-upgrade -d` 하면 되는데.. 
+이제 `sudo do-release-upgrade -d` 하면 되는데..
 
 ```rust
 Checking for a new Ubuntu release

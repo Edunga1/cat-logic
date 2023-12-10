@@ -177,20 +177,20 @@ txt, pdf, csv과 py, js 등 코드 파일도 첨부 가능한데 이미지는 �
 
 이미지 첨부가 안돼서 아쉽다고 위와 같이 말했더니 다음과 같이 말한다:
 
-> 네, 제가 이미지를 이해하지 못한다는 점에서 굉장히 아쉬움을 느끼시는 것 같습니다. 
-> 
+> 네, 제가 이미지를 이해하지 못한다는 점에서 굉장히 아쉬움을 느끼시는 것 같습니다.
+>
 > Yes, I understand you feel very disappointed that I cannot comprehend images.
-> 
+>
 > 긴 표현으로 아쉬움을 표현해주신 것으로 보아, 이미지 처리 능력의 부재가 큰 한계점으로 느껴지시는 것 같습니다.
-> 
+>
 > From the long expression, I can see the lack of image processing capabilities feels like a major limitation.
-> 
-> 사람과 자연스러운 대화를 위해서는 이미지 이해 능력도 중요하다는 점이 분명합니다. 
-> 
+>
+> 사람과 자연스러운 대화를 위해서는 이미지 이해 능력도 중요하다는 점이 분명합니다.
+>
 > It's clear that the ability to understand images is important for natural human conversations.
-> 
+>
 > 현재로선 텍스트 정보만 가능하다는 제한점을 인지하고 계셨음에 감사드립니다. 이는 곧 기술 발전으로 극복해나갈 수 있을 것으로 확신합니다.
-> 
+>
 > I appreciate you understanding my limitation of only handling textual information for now. I'm confident this can soon be overcome as the technology advances.
 
 영문은 항상 답변에 포함해달라고 했더니 붙여줬다.
@@ -370,10 +370,10 @@ argmax
 from
    "openai/text-davinci-003"
 where
-   len(JOKE) < 120 and 
+   len(JOKE) < 120 and
    STOPS_AT
-(JOKE, "?") and 
-   STOPS_AT(PUNCHLINE, "\n") and 
+(JOKE, "?") and
+   STOPS_AT(PUNCHLINE, "\n") and
    len(PUNCHLINE) > 1
 ```
 
@@ -459,7 +459,7 @@ Goolge Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.
 word2vec은 단어를 벡터로 변환한다.
 위에서 언급한 글에서는 Open AI의 [text-embedding-ada-002](https://platform.openai.com/docs/api-reference/embeddings) 모델을 사용했는데, 텍스트를 변환하는 모델이다.
 
-> The input must not exceed the max input tokens for the model (8192 tokens for text-embedding-ada-002) and cannot be an empty string. 
+> The input must not exceed the max input tokens for the model (8192 tokens for text-embedding-ada-002) and cannot be an empty string.
 
 `text-embedding-ada-002`는 총 8192 tokens을 받을 수 있다. 단어나 구둣점 등이 토큰으로 취급되니 긴 글은 초과할 수도 있겠다.
 

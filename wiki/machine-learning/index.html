@@ -513,10 +513,10 @@ VR기기를 예시로 매우 빠르게 객체를 구분해 내는 것을 보여�
 from
    &quot;openai/text-davinci-003&quot;
 where
-   len(JOKE) &lt; 120 and 
+   len(JOKE) &lt; 120 and
    STOPS_AT
-(JOKE, &quot;?&quot;) and 
-   STOPS_AT(PUNCHLINE, &quot;\n&quot;) and 
+(JOKE, &quot;?&quot;) and
+   STOPS_AT(PUNCHLINE, &quot;\n&quot;) and
    len(PUNCHLINE) &gt; 1</code>
         </deckgo-highlight-code>
 <p>위와 같이 얻고자 하는 결과의 조건을 명시하면 다음과 같은 결과를 얻을 수 있다:</p>

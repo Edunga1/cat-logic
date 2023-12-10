@@ -245,8 +245,8 @@ WHERE
 <p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#query-by-example">https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#query-by-example</a></p>
 <deckgo-highlight-code language="java"  >
           <code slot="code">// 검색 할 데이터 준비
-Person person = new Person();                         
-person.setFirstname(&quot;Dave&quot;);                          
+Person person = new Person();
+person.setFirstname(&quot;Dave&quot;);
 
 // 쿼리
 personRepository.findAll(Example.of(person));</code>
