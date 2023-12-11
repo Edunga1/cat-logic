@@ -407,7 +407,7 @@ where
 
 ref. https://news.hada.io/topic?id=9185
 
-### Google Gemnini
+### Google Gemini
 
 구글의 Multimodal AI 모델. `제미나이`로 발음한다.\
 멀티모달은 이미지, 음성, 텍스트 등 다양한 타입을 결합하여 처리할 수 있음을 의미한다.
