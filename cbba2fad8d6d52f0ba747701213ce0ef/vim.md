@@ -809,7 +809,9 @@ ref. https://github.com/peitalin/vim-jsx-typescript#vim-jsx-typescript
 ref. https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-589954199
 > This brings a new problem. Typescript language server excepts from a typescript file to not have JSX in it. Which means that <> is considered a type assertion, JSX is not recognized as JSX but as regular Typescript syntax and the list goes on.
 
-### `vim-colors-solarized` colorscheme 플러그인이 점점 느려지게 만드는 현상
+### colorscheme 플러그인이 점점 느려지게 만드는 현상
+
+2023-04-14
 
 vimwiki로 문서 수정할 때, `<cr>` *엔터를 꾹 누르고 있으면 점점 느려지는* 문제.
 vimwiki가 키보드 엔터 시 함수 호출이 많다. 그래서 더욱 돋보이는 듯 하다.
@@ -841,6 +843,11 @@ colorscheme solarized
 `:echo g:colors_name`로 현재 colorscheme을 알 수 있다. 변수를 찾을 수 없으면 사용하지 않는 것.
 
 colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. 하지만 곧바로 복구된다. colorscheme을 사용할 때는 한 번 느려지면 다시 vim 실행하기 전까지는 복구되지 않는다.
+
+2023-12-11
+
+처음에는 `vim-colors-solarized` 플러그인 문제인 줄 알았다.\
+최근에 treesitter 구문 강조를 위해서 `sonokai` colorscheme 플러그인을 설치했는데, 마찬가지로 느려지는 문제가 발생한다.
 
 ### Ubuntu에 설치한 vim이 시작 시 `.vimrc`에서 많은 에러가 발생하는 현상
 
