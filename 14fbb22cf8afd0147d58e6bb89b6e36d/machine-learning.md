@@ -310,6 +310,16 @@ copilot 만큼의 성능은 나오지 않는 거 같다. 프롬프트를 추가�
 다만 이건 메뉴얼을 좀 더 보기쉽게 커뮤니티 차원에서 치트시트를 만드는 것이다보니
 내 문맥에 따른 명령어를 추천해주는 것은 아니다.
 
+#### Copilot Chat
+
+https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat-in-your-ide
+
+JetBrains AI Assistant 처럼 채팅 기반 코딩 도우미.
+Copilot 구독하고 있어야 한다.
+
+현재 작업중인 파일에 대한 문맥을 가지고 있어 보이지만, 코드 편집 권한은 없어 보인다.\
+그래서 기존 Copilot과 비교하면 접근성은 좀 떨어진다. ChatGPT를 플러그인으로 쓰는 정도.
+
 #### 커밋 메시지 작성 도움받기
 
 나는 보통 `git commit -v`로 커밋 메시지를 작성한다.
