@@ -3,6 +3,8 @@ created: 2023-04-13
 ---
 # C#
 
+[Unity 3D](./unity3d.md) 또는 [Ultima Online](./game.md)으로 C# 사용했다.
+
 ## Event
 
 C#에서 옵저버 패턴과 유사한 기능을 하는 event가 있다.

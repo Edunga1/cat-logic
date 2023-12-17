@@ -3,6 +3,8 @@ created: 2023-01-10
 ---
 # DevOps
 
+Development + Operations.
+
 ## DevOps의 인적 확장
 
 * 원문: https://medium.com/@mattklein123/the-human-scalability-of-devops-e36c37d3db6a
