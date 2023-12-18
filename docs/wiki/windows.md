@@ -22,3 +22,18 @@ https://learn.microsoft.com/en-us/windows/powertoys/
 
 [오픈소스 프로젝트](https://github.com/microsoft/PowerToys)다.
 잘만하면 윈도우 API 사용법을 배울 수 있겠다.
+
+## Batch 파일
+
+`.bat` 파일을 만들어서 실행할 수 있다.
+
+다음은 2개의 프로그램을 실행하는 예지다:
+
+```bat
+start https://poe.game.daum.net/
+start "" "C:\Program Files\poe-overlay\poe-overlay.exe"
+```
+
+`start`는 프로그램을 실행하는 명령어인데,
+첫 번째 줄은 열린 웹 브라우저의 탭으로 `https://poe.game.daum.net/`를 연다.
+두 번재 줄은 2번째 인자의 프로그램을 실행한다.
