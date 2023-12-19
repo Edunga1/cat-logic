@@ -439,6 +439,47 @@ Goolge Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.
 내가 기대했던 반응 속도나 추론 능력이 아니라서 아쉽다.\
 구글은 [바드 데모](https://news.hada.io/topic?id=8430)에서와 마찬가지로 이번에도 기대에 못 미치는 거 같다.
 
+### llamafile
+
+https://github.com/Mozilla-Ocho/llamafile?tab=readme-ov-file
+
+LLaMA 모델을 여러 OS나 환경에서 실행하기 쉽게 만든 단일 파일.
+그냥 다운로드 받고, 바로 실행해볼 수 있다.
+
+아래 예시는 4GB, 7b 모델이다. 한국어로 답변은 안해주던데, 이미지 쿼리를 이렇게 빠르게 해볼 수 있어서 놀랍다.
+
+---
+
+https://justine.lol/oneliners/ 이 글에서 사용 방법에 대해서 설명한다.
+
+llamafile 다운로드하고 실행 권한을 추가한다:
+
+```bash
+$ curl --location https://huggingface.co/jartine/llava-v1.5-7B-GGUF/resolve/main/llava-v1.5-7b-q4-main.llamafile > llamafile
+$ chmod +x llamafile
+```
+
+다운만 받아도 실행할 수 있다. 버전 체크 해본다:
+
+```bash
+$ ./llamafile --version
+llamafile v0.4.0 main
+```
+
+이미지를 다운받아서, 이미지에 대해 쿼리해보자:
+
+```bash
+$ curl https://justine.lol/oneliners/lemurs.jpg > image.jpg
+$ ./llamafile \
+    --image image.jpg --temp 0 -ngl 35 \
+    -e -p '### User: What do you see?\n### Assistant:' \
+    --silent-prompt 2>/dev/null
+```
+
+다음과 같이 답변하는 것을 볼 수 있다:
+
+> The image features a group of three baby lemurs, two of which are being held by their mother. They appear to be in a lush green environment with trees and grass surrounding them. The mother lemur is holding her babies close to her body, providing protection and warmth. The scene captures the bond between the mother and her young ones as they navigate through the natural habitat together.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
