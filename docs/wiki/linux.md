@@ -103,3 +103,38 @@ USAGE:
 
 For more information try --help
 ```
+
+### 2024 데비안 컨퍼런스가 한국에서 열린다
+
+https://news.hada.io/topic?id=12440
+
+다음은 데비안 메일링 리스트 내용:\
+https://lists.debian.org/debconf-announce/2023/12/msg00000.html
+
+한국의 부산, 포루투갈의 아베이루, 영국의 버밍엄, 프랑스의 브레스트가 후보지였다.
+
+각 지역에 대한 소개 페이지가 있는데, 부산은 다음과 같다:\
+https://wiki.debian.org/DebConf/24/Bids/Korea
+
+인상 깊은 점이 몇 개 있는데. 아마도 한국 관계자분이 작성하신 듯.
+
+> Payment is easy in Korea.
+> - Credit cards are accepted virtually everywhere. No cash required.
+> - No additional tips or tax. You pay exactly as much as the written prices, which include all of tax and service fees.
+
+팁과 세금이 없다는 점. 표기된 가격 그대로 지불하면 된단다.
+
+> It's safe and convenient metropolis.
+> - One of the lowest crime rate
+> - Well-lit streets and many shops open late at night.
+> - Its public transportation is excellent and easy to use.
+
+안전하다고 한다. 범죄율이 가장 낮은 곳 중 하나이고, 늦게까지 영업하며, 대중교통이 편리하단다.
+
+음식에 대한 설명도 있다.
+
+> Partake in timeless classics such as Bibimbap, a harmonious blend of rice, fresh vegetables, and savory sauces, or savor the fermented richness of Kimchi, a ubiquitous side dish that imparts a piquant zest to any meal. Revel in the crispiness of Jeon, savory pancakes abundant with vegetables, or luxuriate in the comforting warmth of Sundubu Jjigae, a spicy tofu stew.
+
+이제는 외국인도 익숙할만한 비빔도 있고, 순두부찌개에 대한 내용이 있어서 재밌다.
+
+위치는 부산 부경대학교이다. 허락만 된다면 구경해보고 싶다.
