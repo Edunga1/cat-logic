@@ -159,31 +159,37 @@ vimscript, lua를 사용하지 않고 구현했으며, 해보진 않았지만 vs
 
 게임 개발자인 이효승님의 발표.
 
-unreal engine 개발 이전부터 사용해왔음
-게임 엔진 자체가 매우 무거운 프로그램인데, 에디터까지 무거운 매우 불편한 환경이라 neovim으로 가벼운 에디팅 환경이 필요했다.
-visual studio는 매우 무겁다. 다른 게임 엔진들도 visual studio 사용을 가정하고 tool chain이 제공된다.
-neovim으로 UE에서 debug는 하지 않는다.
-UE에서 neovim lsp 사용하는 것이 목표.
+vim은 unreal engine 개발 이전부터 사용해왔다.
+
+게임 엔진 자체가 매우 무거운데, 에디터까지 무거운 불편한 환경이라 neovim으로 가벼운 에디팅 환경이 필요했다.
+
+Visual Studio는 매우 무겁지만, 대부분 게임 엔진들은 Visual Studio 사용을 가정하고 tool chain을 제공한다.\
+(그래서 vim으로 다양한 기능을 사용하기 어렵다.)
+
+neovim으로 UE에서 debug는 하지 않는다. UE에서 neovim의 lsp를 사용하는 것이 목표이다.
 
 windows에서 neovim 설치부터 시작하자.
-`winget` 사용. config는 `%AppData%`에 있음.
-GUI 사용하는 편이 편리함. Neovim-QT. neovim 설치하면 기본으로 설치됨. neovide라는 선택지도 있다.
-마우스 인터랙션 잘 됨
-윈도우즈는 c빌드가 필요한 플러그인 설치함에 어려움 있음. 기본적인 도구가 제공되지 않기 때문. 따라서 별도 설치해야 한다.
-developer command prompt for vs 2022 설치 필요.
-telescope, treesitter 플러그인이 빌드가 필요함.
-UE는 c++ 사용하므로 clang lsp 사용.
+`winget`으로 설치하고, vim config는 `%AppData%`에 위치한다.
+Neovim GUI 사용하는 편이 편리하다. Neovim-QT은 neovim 설치하면 기본으로 설치됨. neovide라는 선택지도 있다.
+Neovim-QT의 장점은 vim pane 크기 조절 등 마우스 인터랙션을 잘 지원한다.
 
-UE Project Setting
-모듈 단위로 dll 생성하여 링크함. 모듈마다 dependency 관리됨.
-엔진에서 자동으로 생성하는 소스 코드
-PS, xbox 등 게임 플랫폼마다 달라지는 매크로들. 빌드 타켓에 따른 매크로.
-Unreal Build Tool(UBT)라는 도구로 Compile DB 생성, clang lsp로 인덱싱하여 LSP 사용.
-이제, UE가 제공하는 정의에 대해 접근할 수 있다.
-인덱싱 매우 느림. 1만가지 심볼에 대해서 수십시간 소요.
+윈도우즈에서는 C 빌드가 필요한 플러그인 설치에 어려움이 있다. 기본적인 도구가 제공되지 않기 때문이다.
+developer command prompt for vs 2022 설치하면 빌드에 필요한 도구를 설치할 수 있따.
+telescope, treesitter 등 주요한 플러그인들이 C 빌드를 수행한다.
 
-결론: UE + neovim + clang 쓸만하지만 완벽하지 않다. neovim의 생산성이 좋다.
-메인을 vs, 서브로 neovim 사용.
+UE는 개발 언어로 C++ 사용하므로 clang lsp 사용한다.
+
+UE의 프로젝트는 모듈 단위로 dll 생성하여 링크한다. 모듈마다 필요한 dependency 목록을 괸리한다.
+
+UE에서 자동으로 생성하는 소스 코드와 PS, xbox 등 게임 플랫폼마다 달라지는 매크로들을 빌드해서 생성해야 한다.
+
+Unreal Build Tool(UBT)라는 도구로 Compile DB 생성, clang lsp로 인덱싱하여 LSP 사용하는 구조로 동작한다.
+설정을 모두 마치고 빌드하면 UE가 제공하는 정의하는 심볼에 접근할 수 있다.
+
+인덱싱은 매우 느림. 1만가지 심볼에 대해서 수십시간 소요된다.
+
+UE + neovim + clang 쓸만하지만 완벽하지 않다. neovim의 생산성이 좋았다.
+하지만 인덱싱에 너무 많은 시간이 소요되어서 메인 개발 도구로 Visual Studio를 서브 도구로 neovim을 사용하고 있다.
 
 ### 트리시터로 나만의 플러그인 만들기
 
