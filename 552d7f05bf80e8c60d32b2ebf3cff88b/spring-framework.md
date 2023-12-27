@@ -186,6 +186,113 @@ build("https://www.google.com/search?q=%ED%91%B8%EB%B0%94&oq=%ED%91%B8%EB%B0%94&
 
 placeholder`{url}`는 사용하지 않았고, build로 전달하는 순서대로 replace 한다.
 
+### Actuator
+
+Spring Boot는 Actuator로 운영 환경에서 사용할 수 있는 모니터링 및 관리 도구를 제공한다.
+
+- 2.1.0 문서: https://docs.spring.io/spring-boot/docs/2.1.0.M1/reference/html/production-ready.html
+- 3.2.x 문서: https://docs.spring.io/spring-boot/docs/3.2.x/reference/html/actuator.html#actuator
+
+문서 제목부터 *Production-ready Features*로 안정감이 느껴진다.
+
+기본적으로 `/actuator`에서 현재 제공하고 있는 도구 목록을 보여주는데, json으로 제공된다:
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "http://localhost:5001/actuator",
+      "templated": false
+    },
+    "beans": {
+      "href": "http://localhost:5001/actuator/beans",
+      "templated": false
+    },
+    "health": {
+      "href": "http://localhost:5001/actuator/health",
+      "templated": false
+    },
+    "health-path": {
+      "href": "http://localhost:5001/actuator/health/{*path}",
+      "templated": true
+    },
+    "httptrace": {
+      "href": "http://localhost:5001/actuator/httptrace",
+      "templated": false
+    }
+  }
+}
+```
+
+#### httptrace(httpexchanges)
+
+httptrace는 최근 HTTP 요청 내역을 관리하는 기능이다. Spring Boot 3 부터는 `httpexchanges`라 부른다.
+
+- 2.1.0: https://docs.spring.io/spring-boot/docs/2.1.0.M1/reference/html/production-ready-http-tracing.html
+- 3.2.x: https://docs.spring.io/spring-boot/docs/3.2.x/reference/html/actuator.html#actuator.http-exchanges
+
+기능 활성화를 위해서 버전에 따라 설정이 상이하다.
+
+2.7.5 기준으로 `management.endpoints.web.exposure.include=httptrace`를 설정 추가하고, `HttpTraceRepository` Bean을 구현하면 활성화 할 수 있다.\
+Bean 구현하는 것은 [2.2.0 M3 부터 변경](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2.0-M3-Release-Notes#actuator-http-trace-and-auditing-are-disabled-by-default)되었는데, 이전 버전에서는 구현없이 가능했던 모양.
+
+Spring Boot 3부터는 명칭 변경으로 `management.endpoints.web.exposure.include=httpexchanges`로 변경되었다.
+Bean 인터페이스 이름도 `HttpExchangeRepository`로 변경되었다.
+
+어느 버전이든 `HttpTraceRepository`를 in-memory 버전 저장소로 간편하게 구현할 수 있다.\
+다음은 Spring Boot 2 기준 예시 코드:
+
+```kotlin
+@Bean
+fun httpTraceRepository(): HttpTraceRepository = InMemoryHttpTraceRepository()
+```
+
+내 경우, 운영에서는 `health` 말고는 Actuator 기능을 비활성화했기 때문에 Bean 생성 조건에 property 확인을 추가했다:
+
+```kotlin
+@Bean
+@ConditionalOnExpression("'\${management.endpoints.web.exposure.include}'.contains('httptrace')")
+fun httpTraceRepository(): HttpTraceRepository = InMemoryHttpTraceRepository()
+```
+
+서버 시작 후 `/actuator/httptrace`에 접속하면 json으로 제공한다.
+
+```json
+{
+  "traces": [
+    {
+      "timestamp": "2023-12-27T08:24:56.956Z",
+      "principal": null,
+      "session": null,
+      "request": {
+        "method": "GET",
+        "uri": "http://localhost:5001/actuator/",
+        "headers": {
+          "sec-fetch-mode": [
+            "navigate"
+          ]
+          // ... 생략
+        },
+        "remoteAddress": null
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Keep-Alive": [
+            "timeout=60"
+          ]
+          // ... 생략
+        }
+      },
+      "timeTaken": 27
+    }
+  ]
+}
+```
+
+actuator 페이지 접근을 위해 기록된 것을 볼 수 있다.
+최근 요청의 헤더 정보, 응답 코드, URL 등을 알 수 있다.
+
 ## Spring CLI
 
 https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html
