@@ -159,18 +159,20 @@ vimscript, lua를 사용하지 않고 구현했으며, 해보진 않았지만 vs
 
 게임 개발자인 이효승님의 발표.
 
+---
+
 vim은 unreal engine 개발 이전부터 사용해왔다.
 
-게임 엔진 자체가 매우 무거운데, 에디터까지 무거운 불편한 환경이라 neovim으로 가벼운 에디팅 환경이 필요했다.
+게임 엔진 자체가 매우 무거운데, 에디터까지 무거운 불편한 환경이라 Neovim으로 가벼운 에디팅 환경이 필요했다.
 
 Visual Studio는 매우 무겁지만, 대부분 게임 엔진들은 Visual Studio 사용을 가정하고 tool chain을 제공한다.\
 (그래서 vim으로 다양한 기능을 사용하기 어렵다.)
 
-neovim으로 UE에서 debug는 하지 않는다. UE에서 neovim의 lsp를 사용하는 것이 목표이다.
+Neovim으로 UE에서 debug는 하지 않는다. UE에서 Neovim의 lsp를 사용하는 것이 목표이다.
 
-windows에서 neovim 설치부터 시작하자.
+windows에서 Neovim 설치부터 시작하자.
 `winget`으로 설치하고, vim config는 `%AppData%`에 위치한다.
-Neovim GUI 사용하는 편이 편리하다. Neovim-QT은 neovim 설치하면 기본으로 설치됨. neovide라는 선택지도 있다.
+Neovim GUI 사용하는 편이 편리하다. Neovim-QT은 Neovim 설치하면 기본으로 설치됨. neovide라는 선택지도 있다.
 Neovim-QT의 장점은 vim pane 크기 조절 등 마우스 인터랙션을 잘 지원한다.
 
 윈도우즈에서는 C 빌드가 필요한 플러그인 설치에 어려움이 있다. 기본적인 도구가 제공되지 않기 때문이다.
@@ -188,38 +190,58 @@ Unreal Build Tool(UBT)라는 도구로 Compile DB 생성, clang lsp로 인덱싱
 
 인덱싱은 매우 느림. 1만가지 심볼에 대해서 수십시간 소요된다.
 
-UE + neovim + clang 쓸만하지만 완벽하지 않다. neovim의 생산성이 좋았다.
-하지만 인덱싱에 너무 많은 시간이 소요되어서 메인 개발 도구로 Visual Studio를 서브 도구로 neovim을 사용하고 있다.
+UE + Neovim + clang 쓸만하지만 완벽하지 않다. Neovim의 생산성이 좋았다.
+하지만 인덱싱에 너무 많은 시간이 소요되어서 메인 개발 도구로 Visual Studio를 서브 도구로 Neovim을 사용하고 있다.
 
 ### 트리시터로 나만의 플러그인 만들기
 
-[classy.nvim](https://github.com/jcha0713/classy.nvim) 플러그인을 만든 차주훈님의 발표.
+프론트엔드 개발자인 차주훈님의 [classy.nvim](https://github.com/jcha0713/classy.nvim) 플러그인 개발기.
+
+---
 
 https://github.com/nvim-treesitter/playground
 
-트리시터는.. 구문 분석 framework. 점진적 구문 분석.
-기존 IDE가 가진 문제점. 특정 언어에 특화된 기능, 파일 크기에 비례하는 하이라이트 등 처리 속도.
-neovim 0.5 부터 tree-sitter 공식 지원.
-LSP도 0.5부터 지원함. lsp는 프로젝트 범위에서 언어 기능을 위한 프로토콜.
-tree-sitter는 하나의 버퍼에 대한 기능.
-classy.nvim은 html "class" 속성을 제거, 닫은 태그에서 사용할 수 있고, html 외 파일에서도 동작하는 플러그인.
-플러그인 제작에 영감받은 플러그인은 되지 않았다.
-tree-sitter API를 이용하여 속성 추가, 제거 등 처리한다.
-html과 jsx와 다른 부분을 이해해야 했음. jsx에서는 className을 사용.
-tree-sitter 플러그인 개발하려면 treesitter/playground가 필요한데, 0.10 버전부터는 내장되어 별도 설치 필요 없음.
-`:InspectTree`라는 명령어로 언어위에서 적용되는 treesitter 구문을 열 수 있음. 실시간 적용가능한 도구를 제공해서 유용.
+트리시터는 구문 분석을 위한 framework. 한 번에 모든 코드를 분석하지 않고 점진적 처리로 속도가 빠르다.
+
+기존 IDE가 가진 문제점은 특정 언어에 특화된 기능을 만들거나, 파일 크기에 비례하는 하이라이트 등 처리 속도가 느렸다.
+
+Neovim 0.5 부터 tree-sitter 공식 지원했다. LSP의 지원도 0.5 부터 시작했다.
+
+lsp는 프로젝트 범위에서 언어 기능을 위한 프로토콜인 반면,
+tree-sitter는 하나의 버퍼에 대한 기능을 담당한다.
+
+classy.nvim은 html "class" 속성을 제거, 닫은 태그에서 사용할 수 있고, html 외 jsx, tsx 등에서도 동작하기 위해 만들었다.
+
+플러그인을 제작에 영감을 받은 플러그인이 있었는데, 이런 기능들이 없어서 불편함이 있었다.
+
+tree-sitter API를 이용하여 속성(class) 추가, 제거 등을 처리했다.
+
+html과 jsx와 다른 부분을 이해해야 했는데, 예를들어 jsx는 `className`을 사용한다.
+
+tree-sitter 플러그인 개발하려면 `treesitter/playground`가 필요하다.
+원래는 별도 설치해야 했지만, 0.10 버전부터는 내장되었다.
+
+playground 명령어인 `:InspectTree`로 커서의 코드에 적용된 treesitter 구문을 매핑하여 볼 수 있다.
+현재 코드에서 treesitter 구분을 수정하여 바로 피드백 받을 수 있어서 유용하다.
 
 ### Neovim으로 생산성 퀀텀점프하기 Part 2
 
-이재열님의 발표.
+주최자인 이재열님의 발표. Part 1은 다른 행사에서 진행했었고, 부족하다고 생각해서 Part 2를 이번 행사에 준비하셨다고.
 
-이전 발표에서 이어지는 점.
-내 workflow를 meovim으로 개선하자.
-read, w, m, select, d로 우리가 하는 작업을 atomic 분해할 수 있겠다.
-행동에서 소용되는 시간을 최적화 하자.
+이어지는 내용이기도 하고, Vim을 이용한 생산성과 이론적인 이야기라 정리를 많이 하지 못했다.
+
+---
+
+내 workflow를 Neovim으로 개선하자.
+
+우리가 하는 행동은 read, write, move, select, delete로 atomic 분해할 수 있겠다.
+
+행동에서 소요되는 시간을 최적화 하자.
+
 - 손을 움직이는 것을 줄이는 것
 - 인지부하를 줄이는 것
 - snippet 등으로 명령을 줄이기
+
 의미론 단위로 일을 처리하면 단순화할 수 있다.
 
 ## 소감
