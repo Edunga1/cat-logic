@@ -199,8 +199,6 @@ UE + Neovim + clang 쓸만하지만 완벽하지 않다. Neovim의 생산성이 
 
 ---
 
-https://github.com/nvim-treesitter/playground
-
 트리시터는 구문 분석을 위한 framework. 한 번에 모든 코드를 분석하지 않고 점진적 처리로 속도가 빠르다.
 
 기존 IDE가 가진 문제점은 특정 언어에 특화된 기능을 만들거나, 파일 크기에 비례하는 하이라이트 등 처리 속도가 느렸다.
@@ -218,7 +216,7 @@ tree-sitter API를 이용하여 속성(class) 추가, 제거 등을 처리했다
 
 html과 jsx와 다른 부분을 이해해야 했는데, 예를들어 jsx는 `className`을 사용한다.
 
-tree-sitter 플러그인 개발하려면 `treesitter/playground`가 필요하다.
+tree-sitter 플러그인 개발하려면 [treesitter/playground](https://github.com/nvim-treesitter/playground)가 필요하다.
 원래는 별도 설치해야 했지만, 0.10 버전부터는 내장되었다.
 
 playground 명령어인 `:InspectTree`로 커서의 코드에 적용된 treesitter 구문을 매핑하여 볼 수 있다.

@@ -1,3 +1,6 @@
+---
+created: 2023-05-19
+---
 # Redis
 
 ## SETNX, SET + NX 간단한 Locking System 구현
