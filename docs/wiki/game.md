@@ -123,7 +123,7 @@ Lua는 장황하고, 자체 스크립트 언어는 단순하지만 확장성이 
 
 POE.
 
-## Path Of Building
+### Path Of Building
 
 일명 POB. Path Of Exile의 빌드 계산기.
 
