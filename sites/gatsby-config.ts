@@ -1,41 +1,41 @@
 import { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
-  pathPrefix: process.env.GATSBY_PATH_PREFIX || `/`,
+  pathPrefix: process.env.GATSBY_PATH_PREFIX || "/",
   siteMetadata: {
-    title: `cat logic`,
+    title: "cat logic",
   },
   graphqlTypegen: true,
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `content`,
+        name: "content",
         path: `${__dirname}/src/content`,
       },
     },
-    `gatsby-plugin-sharp`,
+    "gatsby-plugin-sharp",
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 590,
             },
           },
-          `gatsby-remark-autolink-headers`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-relative-linker`,
-          `gatsby-remark-highlight-code`,
+          "gatsby-remark-autolink-headers",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-relative-linker",
+          "gatsby-remark-highlight-code",
         ],
       },
     },
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-catch-links`,
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-catch-links",
     {
-      resolve: `gatsby-plugin-fusejs`,
+      resolve: "gatsby-plugin-fusejs",
       options: {
         query: `
           query LocalSearch {
@@ -63,10 +63,10 @@ const config: GatsbyConfig = {
           })),
       },
     },
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`,
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-robots-txt",
     // development
-    `gatsby-plugin-pnpm`,
+    "gatsby-plugin-pnpm",
   ],
 }
 
