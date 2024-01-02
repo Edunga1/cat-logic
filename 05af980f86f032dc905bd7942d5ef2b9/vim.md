@@ -47,7 +47,7 @@ https://github.com/neovim/neovim
 검색해보면 neovim 커뮤니티에서는 vim에 대한 불만이 많이 보인다. :0\
 아무래도 원작자인 Bram의 방향성과 상충되어서가 아닐까. 잘 모르겠다.
 
-neovim으로 이전한 이유는 [LSP](/docs/wiki/language-server-protocol.md)를 사용하기 위함이었다.
+neovim으로 이전한 이유는 [LSP](./language-server-protocol.md)를 사용하기 위함이었다.
 neovim은 LSP를 자체적으로 제공한다. 바닐라 vim은 [coc.nvim](https://github.com/neoclide/coc.nvim)을 사용해야 한다.
 coc.nvim은 자체 플러그인 기능으로 편리하게 다양한 언어 서버를 설치할 수 있어서 편리하지만, neovim 자체 기능 보다는 느리다.
 솔직하게 말하면 답답할 정도.
