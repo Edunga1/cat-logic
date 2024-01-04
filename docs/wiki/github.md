@@ -155,3 +155,96 @@ GET https://api.github.com/repos/octocat/Hello-World/releases/assets/1
 
 제대로 했다면 success(200)와 함께 response로 바이너리 정보가 문자열로 들어온다.
 바이너리로 파일 생성 작업이 필요할 것이다.
+
+## GitHub CLI
+
+`gh` 명령어로 GitHub 기능을 사용할 수 있다.
+
+자동 완성을 위해서 `gh completion`을 설정한다:
+
+```bash
+# .zshrc
+if command -v gh &> /dev/null; then
+  eval "$(gh completion -s zsh)"
+fi
+```
+
+shell에 맞는 `-s` 옵션을 사용하자.
+
+### GitHub CLI Copilot
+
+`gh extension`으로 copilot 기능을 사용할 수 있다.
+코드 자동완성 기능은 아니고, [copilot-cli](https://githubnext.com/projects/copilot-cli/)와 비슷한 기능이다.
+
+https://docs.github.com/en/copilot/github-copilot-in-the-cli/about-github-copilot-in-the-cli
+
+`gh copilot explain`은 명령어 설명을 받는 기능이다:
+
+```bash
+$ gh copilot explain "sudo apt-get"
+
+Welcome to GitHub Copilot in the CLI!
+version 0.5.3-beta (2023-11-09)
+
+I'm powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve.
+
+Explanation:
+
+  • sudo is used to run a command with elevated rights, typically as a superuser or administrator.
+  • apt-get is the command-line package management tool for Debian-based systems (like Ubuntu).
+    • It is used to manage the installation, upgrade, and removal of software packages.
+    • It interacts with the APT (Advanced Package Tool) package management system.
+    • It requires administrative privileges (hence the use of sudo).
+    • It can be followed by various sub-commands and options to perform specific tasks, such as installing, updating, and removing packages.
+  • The specific command sudo apt-get without any additional sub-commands or options will not produce any meaningful result or action.
+```
+
+`gh copilot suggest`로 명령어 추천을 받을 수도 있다:
+
+```bash
+$ gh copilot suggest "Install git"
+
+Welcome to GitHub Copilot in the CLI!
+version 0.5.3-beta (2023-11-09)
+
+I'm powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve.
+
+? What kind of command can I help you with?
+> generic shell command
+
+Suggestion:
+
+  sudo apt-get install git
+
+? Select an option
+> Exit
+```
+
+명령어 유형을 선택하도록 하는데, 쿼리에 힌트를 주더라도 항상 선택한다.
+
+24년 1월 기준, 2개 기능만 지원한다. 아직은 copilot-cli의 `??` 명령어를 주로 사용할 것 같다.
+
+```bash
+$ gh copilot
+
+Available Commands:
+  config      Configure options
+  explain     Explain a command
+  suggest     Suggest a command
+```
+
+GitHub copilot chat이 포함되기를 기대해 본다. GPT-4 기반이라던데.
+
+`gh copilot`을 사용하기 위해선 extension을 설치해야 한다:
+
+```bash
+$ gh extension install github/gh-copilot
+✓ Installed extension github/gh-copilot
+
+# 설치된 extension 목록
+$ gh extension list
+NAME        REPO               VERSION
+gh copilot  github/gh-copilot  v0.5.3-beta
+```
+
+제거하려면 `gh extension remove github/gh-copilot`.
