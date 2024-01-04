@@ -79,7 +79,15 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li>
 <p><a href="#github">GitHub</a></p>
 <ul>
-<li><a href="#github-api%EB%A1%9C-release-%EB%90%9C-%ED%8C%8C%EC%9D%BC-%EB%8B%A4%EC%9A%B4%EB%B0%9B%EA%B8%B0">Github API로 Release 된 파일 다운받기</a></li>
+<li>
+<p><a href="#github-api%EB%A1%9C-release-%EB%90%9C-%ED%8C%8C%EC%9D%BC-%EB%8B%A4%EC%9A%B4%EB%B0%9B%EA%B8%B0">Github API로 Release 된 파일 다운받기</a></p>
+</li>
+<li>
+<p><a href="#github-cli">GitHub CLI</a></p>
+<ul>
+<li><a href="#github-cli-copilot">GitHub CLI Copilot</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 jzROSZ">
@@ -216,7 +224,81 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>하지만 추가 작업을 하지 않은 이상 다시 <strong>asset</strong> 정보를 반환한다.</p>
 <p>제대로된 바이너리 파일 정보를 받기 위해선 헤더에 <code>Accept: application/octet-stream</code>를 추가해야 한다.</p>
 <p>제대로 했다면 success(200)와 함께 response로 바이너리 정보가 문자열로 들어온다.
-바이너리로 파일 생성 작업이 필요할 것이다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/github/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+바이너리로 파일 생성 작업이 필요할 것이다.</p>
+<h2 id="github-cli" style="position:relative;"><a href="#github-cli" aria-label="github cli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GitHub CLI</h2>
+<p><code>gh</code> 명령어로 GitHub 기능을 사용할 수 있다.</p>
+<p>자동 완성을 위해서 <code>gh completion</code>을 설정한다:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code"># .zshrc
+if command -v gh &amp;&gt; /dev/null; then
+  eval &quot;$(gh completion -s zsh)&quot;
+fi</code>
+        </deckgo-highlight-code>
+<p>shell에 맞는 <code>-s</code> 옵션을 사용하자.</p>
+<h3 id="github-cli-copilot" style="position:relative;"><a href="#github-cli-copilot" aria-label="github cli copilot permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GitHub CLI Copilot</h3>
+<p><code>gh extension</code>으로 copilot 기능을 사용할 수 있다.
+코드 자동완성 기능은 아니고, <a href="https://githubnext.com/projects/copilot-cli/">copilot-cli</a>와 비슷한 기능이다.</p>
+<p><a href="https://docs.github.com/en/copilot/github-copilot-in-the-cli/about-github-copilot-in-the-cli">https://docs.github.com/en/copilot/github-copilot-in-the-cli/about-github-copilot-in-the-cli</a></p>
+<p><code>gh copilot explain</code>은 명령어 설명을 받는 기능이다:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">$ gh copilot explain &quot;sudo apt-get&quot;
+
+Welcome to GitHub Copilot in the CLI!
+version 0.5.3-beta (2023-11-09)
+
+I&#39;m powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve.
+
+Explanation:
+
+  • sudo is used to run a command with elevated rights, typically as a superuser or administrator.
+  • apt-get is the command-line package management tool for Debian-based systems (like Ubuntu).
+    • It is used to manage the installation, upgrade, and removal of software packages.
+    • It interacts with the APT (Advanced Package Tool) package management system.
+    • It requires administrative privileges (hence the use of sudo).
+    • It can be followed by various sub-commands and options to perform specific tasks, such as installing, updating, and removing packages.
+  • The specific command sudo apt-get without any additional sub-commands or options will not produce any meaningful result or action.</code>
+        </deckgo-highlight-code>
+<p><code>gh copilot suggest</code>로 명령어 추천을 받을 수도 있다:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">$ gh copilot suggest &quot;Install git&quot;
+
+Welcome to GitHub Copilot in the CLI!
+version 0.5.3-beta (2023-11-09)
+
+I&#39;m powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve.
+
+? What kind of command can I help you with?
+&gt; generic shell command
+
+Suggestion:
+
+  sudo apt-get install git
+
+? Select an option
+&gt; Exit</code>
+        </deckgo-highlight-code>
+<p>명령어 유형을 선택하도록 하는데, 쿼리에 힌트를 주더라도 항상 선택한다.</p>
+<p>24년 1월 기준, 2개 기능만 지원한다. 아직은 copilot-cli의 <code>??</code> 명령어를 주로 사용할 것 같다.</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">$ gh copilot
+
+Available Commands:
+  config      Configure options
+  explain     Explain a command
+  suggest     Suggest a command</code>
+        </deckgo-highlight-code>
+<p>GitHub copilot chat이 포함되기를 기대해 본다. GPT-4 기반이라던데.</p>
+<p><code>gh copilot</code>을 사용하기 위해선 extension을 설치해야 한다:</p>
+<deckgo-highlight-code language="bash"  >
+          <code slot="code">$ gh extension install github/gh-copilot
+✓ Installed extension github/gh-copilot
+
+# 설치된 extension 목록
+$ gh extension list
+NAME        REPO               VERSION
+gh copilot  github/gh-copilot  v0.5.3-beta</code>
+        </deckgo-highlight-code>
+<p>제거하려면 <code>gh extension remove github/gh-copilot</code>.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/github/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
