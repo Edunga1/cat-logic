@@ -45,6 +45,11 @@ const RelatedLinks = styled.ul`
   }
 `
 
+const ContainerEmptyLinks = styled.div`
+  padding: 1rem;
+  opacity: 0.3;
+`
+
 export default function Wiki(
   {
     title,
@@ -61,11 +66,15 @@ export default function Wiki(
   const relatedItems = relatedLinksToc.map((item, index) => (
     <li key={index}>{item}</li>
   ))
+  const containerRelatedLinks = <div>
+    <RelatedLinksHeader>Related Links</RelatedLinksHeader>
+    <RelatedLinks>{relatedItems}</RelatedLinks>
+  </div>
+  const containerEmptyRelatedLinks = <ContainerEmptyLinks>No related links were calculated :\</ContainerEmptyLinks>
   return (
     <Container>
       <Side>
-        {relatedLinksToc.length > 0 && <RelatedLinksHeader>Related Links</RelatedLinksHeader>}
-        <RelatedLinks>{relatedItems}</RelatedLinks>
+        <div>{relatedLinksToc.length > 0 ? containerRelatedLinks : containerEmptyRelatedLinks}</div>
       </Side>
       <Main>
         <h1>{title}</h1>
