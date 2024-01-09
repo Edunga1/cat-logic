@@ -48,7 +48,7 @@ OpenAI의 `text-embedding-ada-002` 모델을 사용해 보았다.
 아쉽게도 ChatGPT를 예전부터 사용하고 있어서 무료 크레딧이 모두 만료되어 있었다. 총 $18 제공 했었는데.
 
 [Cat Logic](./cat-logic.md) 문서를 임베딩 했고, Cosine 유사도를 계산해 보았다.
-OpenAI를 호출하고 csv로 저장하는 파이썬 코드와 임베딩 결과를 모두 Cat Logic 저장소에 올려두었다:\
+OpenAI를 호출하고 csv로 저장하는 파이썬 코드를 모두 Cat Logic 저장소에 올려두었다:\
 https://github.com/Edunga1/cat-logic/tree/main/embeddings
 
 총 83개의 문서를 처리했다. 한 번에 8천개 토큰 만큼만 호출할 수 있다.
