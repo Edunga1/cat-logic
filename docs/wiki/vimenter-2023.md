@@ -244,4 +244,7 @@ playground 명령어인 `:InspectTree`로 커서의 코드에 적용된 treesitt
 
 ## 소감
 
-TBD
+발표자료(동영상)은 따로 업로드 되었다:\
+https://au-vimenter.github.io/post/2023-12-23-au-vimenter/
+
+참가비 후원까지 깔끔한 행사였다.
