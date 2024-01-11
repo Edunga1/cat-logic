@@ -83,10 +83,11 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 jzROSZ">
-<p>임베딩은 콘텐츠를 벡터로 변환하는 것.</p>
+<p>임베딩은 텍스트나 이미지 등 다른 유형의 데이터를 벡터로 변환하는 것을 말한다.</p>
 <p>예를들어 word2vec은 단어를 벡터로 변환한다.</p>
+<p>벡터는 숫자 배열로 표현되기 때문에, 데이터간 수학적 연산이 가능해진다.</p>
 <h2 id="cat-logic에-적용해보기" style="position:relative;"><a href="#cat-logic%EC%97%90-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0" aria-label="cat logic에 적용해보기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cat Logic에 적용해보기</h2>
-<p><a href="https://news.hada.io/topic?id=11593">임베딩(Embeddings)은 무엇이고 왜 중요한가</a> 글을 읽고 내 TIL 블로그도 똑같이 적용해보고 싶어졌다.</p>
+<p><a href="https://news.hada.io/topic?id=11593">임베딩(Embeddings)은 무엇이고 왜 중요한가</a> 글을 읽고 내 위키 문서에도 똑같이 적용해보고 싶어졌다.</p>
 <p>필자는 Open AI의 임베딩 API를 사용해서 "관련 글"을 구현했다고 한다.
 블로그 글을 임베딩하여 결과를 SQLite에 저장하고 코사인 유사성을 계산했는데 그 비용이 매우 저렴해서 0.04 달러 밖에 들지 않았다고.
 필요할 때마다 변경된 글만 임베딩하면 되므로 유지 비용도 크게 들지 않을 것으로 보인다.
