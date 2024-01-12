@@ -372,7 +372,7 @@ https://lmql.ai/
 자연어는 의도를 정확히 표현하기 어렵다. 그래서 대화를 핑퐁하여 서로를 이해한다.
 인공지능의 프롬프트도 마찬가지다보니 이런 제품이 나온 거 같다.
 
-```lmql
+```
 argmax
    """A list of good dad jokes. A indicates
     ➥ the punchline
@@ -395,7 +395,7 @@ where
 
 위와 같이 얻고자 하는 결과의 조건을 명시하면 다음과 같은 결과를 얻을 수 있다:
 
-```text
+```
 A list of good dad jokes. A indicates the punchline
 Q: How does a penguin build its house?
 A: Igloos it together.
@@ -407,7 +407,7 @@ A: PUNCHLINE Dam!
 
 python으로 구현되어 있어서 쿼리에 파이썬 문법을 사용할 수 있다:
 
-```lmql
+```
 sample(temperature=0.8)
    "A list of things not to forget when
     ➥ going to the sea (not travelling): \n"

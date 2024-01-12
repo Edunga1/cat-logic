@@ -120,7 +120,7 @@ https://docs.localstack.cloud/references/init-hooks/
 credentials 관련 오류가 있으면 `awslocal` 명령을 사용하자. 그러면 credentials(`~/.aws/credentials`)을 확인하지 않는다.
 앱에서 접근해야 한다면 `awslocal`을 사용할 수 없으니, 임의로 넣어놓자:
 
-```text
+```
 [default]
 aws_access_key_id = test
 aws_secret_access_key = test
