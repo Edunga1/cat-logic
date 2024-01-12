@@ -10,13 +10,15 @@ Normalization Form **D**
 
 ### 조합형 한글, 완성형 한글
 
-1.
-```text
+1\.
+
+```
 그린빌 100 단지 아파트
 ```
 
-2.
-```text
+2\.
+
+```
 그린빌 100 단지 아파트
 ```
 
@@ -71,5 +73,5 @@ NFC -> NFD도 가능하다:
 
 ## 읽어볼만한 것
 
-
-[유니코드 6.0의 이모지 사태](https://j.mearie.org/post/2334141016/emoji-on-unicode-6-0)
+- [유니코드 6.0의 이모지 사태](https://j.mearie.org/post/2334141016/emoji-on-unicode-6-0)
+- [유니코드 용어집](https://www.unicode.org/glossary)
