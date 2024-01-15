@@ -3,9 +3,9 @@ created: 2023-10-19
 ---
 # Rust Programming Language
 
-https://www.rust-lang.org/
+Rust를 [SFML](./sfml.md)과 함께 처음 접하고 있다.
 
-SFML을 Rust에서 사용하는 것으로 처음 접해본다.
+https://www.rust-lang.org/
 
 ## Installation
 
@@ -70,3 +70,18 @@ $ rustc src/main.rs
 $ ./main
 Hello, world!
 ```
+
+## Journey to Rust
+
+24년 첫 도전을 Rust와 함께 하는중이다.
+
+Rust 문법을 따로 공부하지 않고, 무작정 사용해보고 있다. 물론 아무런 도움이 없는 것은 아니다.
+[ChatGPT](./machine-learning.md)와 [LSP](./language-server-protocol.md)를 적극 활용하고 있다.
+
+https://github.com/Edunga1/rust-sfml-practice 가 시작 프로젝트다.
+
+ChatGPT가 아니었으면 고생길이 험난했을 것 같다. ChatGPT 덕분에 언어의 러닝커브를 줄일 수 있었다.
+`trait`은 다른 언어에도 있는 개념이지만, lifetime은 예상치 못했다. LSP가 없었더라면 수 많은 에러에 만신창이가 되었을 것이다.
+
+immutable을 우선하는 것과 [lifetime](https://doc.rust-lang.org/rust-by-example/scope/lifetime/struct.html)을 보면 Rust가 메모리 안전성을 중요시하는 것을 알 거 같다.
+그래도 lifetime의 `<'a>`는 뭔가 어색하다. 특히 `'static`은 더욱.
