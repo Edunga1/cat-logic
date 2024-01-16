@@ -187,18 +187,16 @@ Zip code를 얻을 수 있기 때문.</p>
 <h2 id="테이블-이름-컨벤션" style="position:relative;"><a href="#%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9D%B4%EB%A6%84-%EC%BB%A8%EB%B2%A4%EC%85%98" aria-label="테이블 이름 컨벤션 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>테이블 이름 컨벤션</h2>
 <h3 id="단수-vs-복수" style="position:relative;"><a href="#%EB%8B%A8%EC%88%98-vs-%EB%B3%B5%EC%88%98" aria-label="단수 vs 복수 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>단수 vs. 복수</h3>
 <p>테이블 이름은 단수로 지어야 하나 복수로 지어야 하나?</p>
-<p>보통 코드에서 리스트인 변수 이름을 지을때는 항상 복수형을 사용한다.
-왠만하면 ~List 라는 이름을 사용하지 않는다.</p>
+<p>코드에서는 리스트인 변수 이름을 지을때는 <code>~List</code>와 같은 이름을 피하고 복수형을 사용하고 있다.</p>
 <p><a href="https://stackoverflow.com/questions/338156/table-naming-dilemma-singular-vs-plural-names">https://stackoverflow.com/questions/338156/table-naming-dilemma-singular-vs-plural-names</a></p>
-<p>링크를 보면 단수, 복수 모두 비등한데. 1200여개의 점수를 얻은 두 번째 답변이 와닿는다.
-총 6가지 이유를 가지고 설득하는데 특히 와닿았던 건..</p>
+<p>링크를 보면 단수, 복수 모두 비등한데. 1200여개의 점수를 얻은 "단수"를 선호하는 두 번째 답변이 와닿는다.(24년 2244점, 첫 번째 이유가 취소선이 그어져있다.)</p>
+<p>총 6가지 이유를 가지고 설득하는데 특히 와닿았던 건..</p>
 <blockquote>
 <p>Reason 1 (Concept). You can think of bag containing apples like "AppleBag", it doesn't matter if contains 0, 1 or a million apples, it is always the same bag. Tables are just that, containers, the table name must describe what it contains, not how much data it contains. Additionally, the plural concept is more about a spoken language one (actually to determine whether there is one or more).</p>
 </blockquote>
-<p>테이블 이름은 내용(row)을 담고있는 컨테이너를 의미하도록 컨셉을 잡는다.
+<p>테이블 이름은 내용(row)을 담고있는 컨테이너를 의미하도록 개념화 한다.
 따라서 <em>Apple</em>을 가진 테이블 <em>AppleBag</em>과 같이 이름지을 수 있다.
 <em>Apple</em>을 0, 1, 수백만개를 표현할 수 있으므로 적절하다.</p>
-<p>정말로 <em>Apples</em>라는 테이블 이름에 내용(<em>Apple</em>)이 0개면 이상하지 싶다.</p>
 <blockquote>
 <p>Reason 2. (Convenience). it is easier come out with singular names, than with plural ones. Objects can have irregular plurals or not plural at all, but will always have a singular one (with few exceptions like News).</p>
 </blockquote>
@@ -219,7 +217,7 @@ Zip code를 얻을 수 있기 때문.</p>
 <li><em>Orders</em></li>
 <li><em>OrderDetails</em></li>
 </ul>
-<p>규칙이 깨지는 느낌을 받는다. <em>테이블 이름을 Orders로 지었으니 OrdersDetails 였던가?</em></p>
+<p><em>작은 규칙</em>이 깨진다. <em>"테이블 이름을 Orders로 지었으니 OrdersDetails 였던가?"</em></p>
 <h2 id="데이터베이스는-큐가-아닙니다" style="position:relative;"><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%8A%94-%ED%81%90%EA%B0%80-%EC%95%84%EB%8B%99%EB%8B%88%EB%8B%A4" aria-label="데이터베이스는 큐가 아닙니다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>데이터베이스는 큐가 아닙니다.</h2>
 <p><a href="https://news.hada.io/topic?id=6686">시스템 설계 자료 모음</a>에서
 Message Queue Antipattern 단락의 <a href="https://blog.codepath.com/2012/11/15/asynchronous-processing-in-web-applications-part-1-a-database-is-not-a-queue/">A Database Is Not a Queue</a> 글을 읽었다.</p>
