@@ -67,21 +67,19 @@ Zip code를 얻을 수 있기 때문.
 
 테이블 이름은 단수로 지어야 하나 복수로 지어야 하나?
 
-보통 코드에서 리스트인 변수 이름을 지을때는 항상 복수형을 사용한다.
-왠만하면 ~List 라는 이름을 사용하지 않는다.
+코드에서는 리스트인 변수 이름을 지을때는 `~List`와 같은 이름을 피하고 복수형을 사용하고 있다.
 
 https://stackoverflow.com/questions/338156/table-naming-dilemma-singular-vs-plural-names
 
-링크를 보면 단수, 복수 모두 비등한데. 1200여개의 점수를 얻은 두 번째 답변이 와닿는다.
+링크를 보면 단수, 복수 모두 비등한데. 1200여개의 점수를 얻은 "단수"를 선호하는 두 번째 답변이 와닿는다.(24년 2244점, 첫 번째 이유가 취소선이 그어져있다.)
+
 총 6가지 이유를 가지고 설득하는데 특히 와닿았던 건..
 
 > Reason 1 (Concept). You can think of bag containing apples like "AppleBag", it doesn't matter if contains 0, 1 or a million apples, it is always the same bag. Tables are just that, containers, the table name must describe what it contains, not how much data it contains. Additionally, the plural concept is more about a spoken language one (actually to determine whether there is one or more).
 
-테이블 이름은 내용(row)을 담고있는 컨테이너를 의미하도록 컨셉을 잡는다.
+테이블 이름은 내용(row)을 담고있는 컨테이너를 의미하도록 개념화 한다.
 따라서 *Apple*을 가진 테이블 *AppleBag*과 같이 이름지을 수 있다.
 *Apple*을 0, 1, 수백만개를 표현할 수 있으므로 적절하다.
-
-정말로 *Apples*라는 테이블 이름에 내용(*Apple*)이 0개면 이상하지 싶다.
 
 > Reason 2. (Convenience). it is easier come out with singular names, than with plural ones. Objects can have irregular plurals or not plural at all, but will always have a singular one (with few exceptions like News).
 
@@ -104,7 +102,7 @@ https://stackoverflow.com/questions/338156/table-naming-dilemma-singular-vs-plur
 * *Orders*
 * *OrderDetails*
 
-규칙이 깨지는 느낌을 받는다. *테이블 이름을 Orders로 지었으니 OrdersDetails 였던가?*
+*작은 규칙*이 깨진다. *"테이블 이름을 Orders로 지었으니 OrdersDetails 였던가?"*
 
 ## 데이터베이스는 큐가 아닙니다.
 
