@@ -1,9 +1,5 @@
 import * as React from "react"
 import styled from "styled-components"
-import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-
-// Highlighting code blocks
-deckDeckGoHighlightElement()
 
 const Container = styled.div`
   overflow: auto;

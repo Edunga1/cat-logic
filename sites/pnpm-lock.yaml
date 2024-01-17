@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@deckdeckgo/highlight-code':
-        specifier: ^4.4.0
-        version: 4.4.0
       babel-plugin-styled-components:
         specifier: ^2.0.7
         version: 2.1.4(@babel/core@7.23.3)(styled-components@5.3.11)
@@ -41,9 +38,6 @@ importers:
       gatsby-remark-copy-linked-files:
         specifier: ^6.8.0
         version: 6.12.0(gatsby@5.12.9)
-      gatsby-remark-highlight-code:
-        specifier: ^3.3.0
-        version: 3.3.0(@deckdeckgo/highlight-code@4.4.0)(gatsby@5.12.9)
       gatsby-remark-images:
         specifier: ^7.6.0
         version: 7.12.3(gatsby-plugin-sharp@5.12.3)(gatsby@5.12.9)
@@ -1418,17 +1412,6 @@ packages:
   /@builder.io/partytown@0.7.6:
     resolution: {integrity: sha512-snXIGNiZpqjno3XYQN2lbBB+05hsQR/LSttbtIW1c0gmZ7Kh/DIo0YrxlDxCDulAMFPFM8J+4voLwvYepSj3sw==}
     hasBin: true
-
-  /@deckdeckgo/highlight-code@4.4.0:
-    resolution: {integrity: sha512-skWKYvIKBpfS3oc7NYu8PvZJ6mVlu1DSsTGD6gt6rsFA3I8TTbtzbo/6deWY/LWkFG1ceGRE5u6LcdzzvBh9vA==}
-    dependencies:
-      '@deckdeckgo/utils': 5.1.0
-      prismjs: 1.29.0
-    dev: false
-
-  /@deckdeckgo/utils@5.1.0:
-    resolution: {integrity: sha512-ue/1BXkDBZ9k+Tqs3vyCRIjqxjPnl06ab9WGhGubAXoRtJIE7ZN58/pbLsPCYc4xFcY0TPH3tsWhE7eF/FU8Ew==}
-    dev: false
 
   /@emotion/is-prop-valid@1.2.1:
     resolution: {integrity: sha512-61Mf7Ufx4aDxx1xlDeOm8aFFigGHE4z+0sKCa+IHCeZKiyP9RLD0Mmx7m8b9/Cf37f7NAvQOOJAbQQGVr5uERw==}
@@ -5793,16 +5776,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  /gatsby-node-helpers@1.2.1(gatsby@5.12.9):
-    resolution: {integrity: sha512-fYNQhp7/3sBUkb9QR31CZm6XChN2A78npow/PNglx5U1Sv8Zmd07Io8Mc2K7UO2hUCCSuAmgkSqlqq71NupdQA==}
-    peerDependencies:
-      gatsby: '>=2.29'
-    dependencies:
-      camel-case: 4.1.2
-      gatsby: 5.12.9(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)
-      pascal-case: 3.1.2
-    dev: false
-
   /gatsby-page-utils@3.12.1:
     resolution: {integrity: sha512-BGtAvx4JZ143uRHYlUbWS8ZjOJ14fpj3nQfb68y9ZsNL1gdwjdWjuPXTM1gQ+w6wXDsHD/ovmYz1ZHG7qrQjJQ==}
     engines: {node: '>=18.0.0'}
@@ -6046,20 +6019,6 @@ packages:
       unist-util-visit: 2.0.3
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /gatsby-remark-highlight-code@3.3.0(@deckdeckgo/highlight-code@4.4.0)(gatsby@5.12.9):
-    resolution: {integrity: sha512-tnjA7msvOV4NUPVCpFRkKA+uPDPHubrjjbakhfuBbyEQpwQR0LqJ6BYx6oFJtoLkFroD1DPnLb25/biPKnpMUQ==}
-    peerDependencies:
-      '@deckdeckgo/highlight-code': ^3.6.0
-      gatsby: ^3.0.0 || ^4.0.0 || ^5.0.0
-    dependencies:
-      '@deckdeckgo/highlight-code': 4.4.0
-      gatsby: 5.12.9(babel-eslint@10.1.0)(react-dom@18.2.0)(react@18.2.0)(typescript@4.9.5)
-      gatsby-node-helpers: 1.2.1(gatsby@5.12.9)
-      lodash: 4.17.21
-      mdast-util-to-string: 1.1.0
-      unist-util-visit: 2.0.3
     dev: false
 
   /gatsby-remark-images@7.12.3(gatsby-plugin-sharp@5.12.3)(gatsby@5.12.9):
@@ -7759,10 +7718,6 @@ packages:
       vfile-location: 3.2.0
     dev: false
 
-  /mdast-util-to-string@1.1.0:
-    resolution: {integrity: sha512-jVU0Nr2B9X3MU4tSK7JP1CMkSvOj7X5l/GboG1tKRw52lLF1x2Ju92Ms9tNetCcbfX3hzlM73zYo2NKkWSfF/A==}
-    dev: false
-
   /mdast-util-to-string@2.0.0:
     resolution: {integrity: sha512-AW4DRS3QbBayY/jJmD8437V1Gombjf8RSOUCMFBuo5iHi58AGEgVCKQ+ezHkZZDpAQS75hcBMpLqjpJTjtUL7w==}
     dev: false
@@ -8961,11 +8916,6 @@ packages:
     dependencies:
       lodash: 4.17.21
       renderkid: 2.0.7
-
-  /prismjs@1.29.0:
-    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
-    engines: {node: '>=6'}
-    dev: false
 
   /probe-image-size@7.2.3:
     resolution: {integrity: sha512-HubhG4Rb2UH8YtV4ba0Vp5bQ7L78RTONYu/ujmCu5nBI8wGv24s4E9xSKBi0N1MowRpxk76pFCpJtW0KPzOK0w==}
