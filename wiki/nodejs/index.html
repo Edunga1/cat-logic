@@ -210,8 +210,7 @@ cli는 yarn 이름을 같이 사용하지만 프로젝트가 달라서 Homebrew�
 <p><code>node_modules</code> 구조는 <a href="https://pnpm.io/ko/blog/2020/05/27/flat-node-modules-is-not-the-only-way">평탄한 node_modules가 유일한 방법은 아닙니다.</a> 공식 블로그에서 설명한다.</p>
 <p>expressjs를 설치했을 때 <code>node_modules</code> 구조를 비교해보면 다음과 같다:</p>
 <p>npm은</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">.bin
+<pre><code class="language-bash">.bin
 accepts
 array-flatten
 body-parser
@@ -226,14 +225,13 @@ ee-first
 encodeurl
 escape-html
 etag
-express</code>
-        </deckgo-highlight-code>
+express
+</code></pre>
 <p>pnpm은</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">.pnpm
+<pre><code class="language-bash">.pnpm
 .modules.yaml
-express</code>
-        </deckgo-highlight-code>
+express
+</code></pre>
 <p><code>node_modules</code>를 평탄하게 유지하지 않는다. 또한 <code>express</code> 폴더는 <strong>심볼릭 링크</strong>이다.</p>
 <h2 id="nodejs-test-tools" style="position:relative;"><a href="#nodejs-test-tools" aria-label="nodejs test tools permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NodeJS Test Tools</h2>
 <p>지금은 <a href="https://github.com/facebook/jest">Jest</a>를 사용하고 있다.
@@ -242,32 +240,30 @@ express</code>
 <p>테스트 구조를 제공한다.</p>
 <p>설치 : <code>npm install mocha --save-dev</code></p>
 <p>테스트 스크립트 실행 : <code>mocha &#x3C;PATH></code></p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">describe(&#39;어떤 테스트를 할 것인지 대략적인 설명&#39;, function () {
+<pre><code class="language-javascript">describe('어떤 테스트를 할 것인지 대략적인 설명', function () {
 
     beforeEach(function () {
         // 매 it() 마다 실행 할 코드
     });
 
-    it(&#39;테스트 단위 별 설명&#39;, function () {
+    it('테스트 단위 별 설명', function () {
         // 여기에 Assertion 코드를 둔다.
     });
-});</code>
-        </deckgo-highlight-code>
+});
+</code></pre>
 <h3 id="chai---library" style="position:relative;"><a href="#chai---library" aria-label="chai   library permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chai - Library</h3>
 <p>Assertion 라이브러리. 값 비교에 사용한다.</p>
 <p>설치 : <code>npm install chai --save-dev</code></p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">describe(&#39;어떤 테스트를 할 것인지 대략적인 설명&#39;, function () {
+<pre><code class="language-javascript">describe('어떤 테스트를 할 것인지 대략적인 설명', function () {
 
-    it(&#39;테스트 단위 별 설명&#39;, function () {
+    it('테스트 단위 별 설명', function () {
         // 여기에 Assertion 코드를 둔다.
-        var foo = &#39;foo&#39;;
-        expect(foo).to.equal(&#39;foo&#39;); // 통과
-        expect(foo).to.equal(&#39;bar&#39;); // 값이 다르므로 통과하지 못함
+        var foo = 'foo';
+        expect(foo).to.equal('foo'); // 통과
+        expect(foo).to.equal('bar'); // 값이 다르므로 통과하지 못함
     });
-});</code>
-        </deckgo-highlight-code>
+});
+</code></pre>
 <h3 id="istanbul---coverage-tool" style="position:relative;"><a href="#istanbul---coverage-tool" aria-label="istanbul   coverage tool permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Istanbul - Coverage Tool</h3>
 <p>코드 커버리지. 내 <strong>테스트 코드</strong>가 <strong>모듈의 어디까지 테스트하는지 측정</strong> 하는데 사용한다.</p>
 <p>테스트 시 <code>coverage/</code> 폴더가 생성되어 리포트 페이지(html)를 생성한다. 여기서 실제 모듈이 얼마나 호출 되었는지, 어디가 문맥상 접근하지 않았는지 알 수 있다.</p>
@@ -277,51 +273,47 @@ express</code>
 <h2 id="proxyquire" style="position:relative;"><a href="#proxyquire" aria-label="proxyquire permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Proxyquire</h2>
 <p><a href="https://github.com/thlorenz/proxyquire">https://github.com/thlorenz/proxyquire</a></p>
 <h3 id="proxyquire-모듈-로드-순서-문제" style="position:relative;"><a href="#proxyquire-%EB%AA%A8%EB%93%88-%EB%A1%9C%EB%93%9C-%EC%88%9C%EC%84%9C-%EB%AC%B8%EC%A0%9C" aria-label="proxyquire 모듈 로드 순서 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>proxyquire 모듈 로드 순서 문제</h3>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">src/
+<pre><code class="language-bash">src/
     router/
         auth.js
     find-basic-member.js
     app.js
 test/
-    test.js</code>
-        </deckgo-highlight-code>
+    test.js
+</code></pre>
 <p><code>app.js</code> -> <code>auth.js</code> -> <code>find-basic-member.js</code> 이와같은 모듈 의존 관계가 있다.</p>
 <p>테스트 대상은 <code>app.js</code>.
 Mocking 대상은 <code>auth.js</code>가 사용하는 <code>find-basic-member.js</code></p>
 <p>사용 방법:</p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">proxyquire(&#39;../src/router/auth&#39;, {
-    &#39;../find-basic-member&#39;: mockFindBasicMember
+<pre><code class="language-javascript">proxyquire('../src/router/auth', {
+    '../find-basic-member': mockFindBasicMember
 });
-const app = require(&#39;../src/app&#39;); // app uses mock find-basic-member</code>
-        </deckgo-highlight-code>
+const app = require('../src/app'); // app uses mock find-basic-member
+</code></pre>
 <p>위 코드가 Mocking 이 되는 이유는
 <code>app.js</code> -> <code>auth.js</code>의 <code>require('../find-basic-member')</code>를 호출하더라도
 <code>proxyrequire</code>에 의해 캐시된 모듈을 이용하기 때문이다.</p>
 <p>nodejs <code>require</code> 또한 캐시된 정보를 사용하기 때문에 여러번 <code>require</code> 해도 실제 파일을 읽는건 한 번 뿐이다.</p>
 <p><em>Forcing proxyquire to reload modules</em> 단락 참고: <a href="https://github.com/thlorenz/proxyquire">https://github.com/thlorenz/proxyquire</a></p>
 <p>다음과 같이 호출 순서를 변경하면 동작하지 않는다:</p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">const app = require(&#39;../src/app&#39;); // app uses original find-basic-member
-proxyquire(&#39;../src/router/auth&#39;, {
-    &#39;../find-basic-member&#39;: mockFindBasicMember
-});</code>
-        </deckgo-highlight-code>
+<pre><code class="language-javascript">const app = require('../src/app'); // app uses original find-basic-member
+proxyquire('../src/router/auth', {
+    '../find-basic-member': mockFindBasicMember
+});
+</code></pre>
 <p><code>proxyquire</code>가 <code>app.js</code> -> <code>auth.js</code>의 <code>require('../find-basic-member')</code>를 사용한다.</p>
 <h4 id="requireproxyquirenopreservecache-사용하기" style="position:relative;"><a href="#requireproxyquirenopreservecache-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="requireproxyquirenopreservecache 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>require('proxyquire').noPreserveCache()</code> 사용하기</h4>
 <p>위의 예제처럼 사용한 경우 <code>proxyquire()</code> 이후에 로드하는 모듈은 모두 Mock Module을 사용한다.</p>
 <p>따라서 명확하게 Mock Module 의존을 주입할 필요가 있다.</p>
 <p><code>noPreserveCache()</code>는 캐시된 모듈을 사용하지 않고 다시 모듈을 로드한다.</p>
 <p><code>proxyquire()</code>의 반환은 Mock Module 이다. 이를 이용해 의존성을 직접 주입한다.</p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">const mockAuth = proxyquire(&#39;../src/router/auth&#39;, {
-    &#39;../find-basic-member&#39;: mockFindBasicMember
+<pre><code class="language-javascript">const mockAuth = proxyquire('../src/router/auth', {
+    '../find-basic-member': mockFindBasicMember
 });
-const mockApp = proxyquire(&#39;../src/app&#39;, {
-    &#39;./router/auth&#39;: mockAuth
-});</code>
-        </deckgo-highlight-code>
+const mockApp = proxyquire('../src/app', {
+    './router/auth': mockAuth
+});
+</code></pre>
 <p>의존의 의존을 모두 명시한다.</p>
 <h2 id="proxyquire-vs-rewire" style="position:relative;"><a href="#proxyquire-vs-rewire" aria-label="proxyquire vs rewire permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Proxyquire vs. rewire</h2>
 <p>테스트 할 때 Dependency Injection 하는데 사용하는 도구 2가지 비교.</p>
@@ -331,74 +323,66 @@ const mockApp = proxyquire(&#39;../src/app&#39;, {
 <p>proxyquire는 의존 모듈을 덮어 쓴다고 설명하고 있다. <em>overriding dependencies</em></p>
 <h3 id="어떤-차이가-있을까" style="position:relative;"><a href="#%EC%96%B4%EB%96%A4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EC%9E%88%EC%9D%84%EA%B9%8C" aria-label="어떤 차이가 있을까 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>어떤 차이가 있을까?</h3>
 <h4 id="rewire-테스트-대상-내에-선언한-변수를-가로채어-바꾼다" style="position:relative;"><a href="#rewire-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%8C%80%EC%83%81-%EB%82%B4%EC%97%90-%EC%84%A0%EC%96%B8%ED%95%9C-%EB%B3%80%EC%88%98%EB%A5%BC-%EA%B0%80%EB%A1%9C%EC%B1%84%EC%96%B4-%EB%B0%94%EA%BE%BC%EB%8B%A4" aria-label="rewire 테스트 대상 내에 선언한 변수를 가로채어 바꾼다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>rewire: 테스트 대상 내에 선언한 변수를 가로채어 바꾼다.</h4>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">// app.js
+<pre><code class="language-javascript">// app.js
 var foo = 1;
-module.exports = () =&gt; console.log(foo);</code>
-        </deckgo-highlight-code>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">// test.js
-const rewire = require(&#39;rewire&#39;);
-const app = rewire(&#39;./app&#39;);  // 테스트 대상
+module.exports = () => console.log(foo);
+</code></pre>
+<pre><code class="language-javascript">// test.js
+const rewire = require('rewire');
+const app = rewire('./app');  // 테스트 대상
 
-app.__set__(&#39;foo&#39;, 2);
+app.__set__('foo', 2);
 
-app();  // 2</code>
-        </deckgo-highlight-code>
+app();  // 2
+</code></pre>
 <h4 id="proxyquire-테스트-대상이-require하는-모듈을-바꿔서-보내준다" style="position:relative;"><a href="#proxyquire-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%8C%80%EC%83%81%EC%9D%B4-require%ED%95%98%EB%8A%94-%EB%AA%A8%EB%93%88%EC%9D%84-%EB%B0%94%EA%BF%94%EC%84%9C-%EB%B3%B4%EB%82%B4%EC%A4%80%EB%8B%A4" aria-label="proxyquire 테스트 대상이 require하는 모듈을 바꿔서 보내준다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>proxyquire: 테스트 대상이 <code>require</code>하는 모듈을 바꿔서 보내준다.</h4>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">// bar.js
-module.exports = 1;</code>
-        </deckgo-highlight-code>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">// app.js
-const bar = require(&#39;./bar&#39;);
-module.exports = () =&gt; console.log(foo);</code>
-        </deckgo-highlight-code>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">// test.js
-const proxyquire = require(&#39;proxyquire&#39;);
+<pre><code class="language-javascript">// bar.js
+module.exports = 1;
+</code></pre>
+<pre><code class="language-javascript">// app.js
+const bar = require('./bar');
+module.exports = () => console.log(foo);
+</code></pre>
+<pre><code class="language-javascript">// test.js
+const proxyquire = require('proxyquire');
 // 테스트 대상 및 의존 모듈 mocking
-const app = proxyquire(&#39;./app&#39;, {
-    &#39;./bar&#39;: 2
+const app = proxyquire('./app', {
+    './bar': 2
 });
 
-app();  // 2</code>
-        </deckgo-highlight-code>
+app();  // 2
+</code></pre>
 <h3 id="rewire-제한사항" style="position:relative;"><a href="#rewire-%EC%A0%9C%ED%95%9C%EC%82%AC%ED%95%AD" aria-label="rewire 제한사항 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>rewire 제한사항</h3>
 <p>rewire는 <code>const</code>로 선언된 변수는 변경할 수 없었다. 따라서 의존 모듈을 <code>const</code>에 할당하면 stub 할 수 없다.
 이 문제 때문에 일단 proxyquire를 사용하고 있다.</p>
 <h2 id="sinonjs" style="position:relative;"><a href="#sinonjs" aria-label="sinonjs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sinon.JS</h2>
 <p>자바스크립트를 위한 테스트 spies, stubs, mocks.</p>
 <h3 id="new-date-조작하기" style="position:relative;"><a href="#new-date-%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B0" aria-label="new date 조작하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>new Date()</code> 조작하기</h3>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">var clock = sinon.useFakeTimers(new Date(&#39;1800-01-01 00:00:00&#39;));
+<pre><code class="language-javascript">var clock = sinon.useFakeTimers(new Date('1800-01-01 00:00:00'));
 console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
 clock.restore();
-console.log(new Date()); // now</code>
-        </deckgo-highlight-code>
+console.log(new Date()); // now
+</code></pre>
 <p><code>useFakeTimers()</code>로부터 반환되는 객체의 <code>restore()</code>를 호출하여 조작된 시간을 복구할 수 있다.</p>
 <p>주의할 점은 복구하지 않고 다시 조작하는 경우.</p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">var clock1 = sinon.useFakeTimers(new Date(&#39;1800-01-01 00:00:00&#39;));
+<pre><code class="language-javascript">var clock1 = sinon.useFakeTimers(new Date('1800-01-01 00:00:00'));
 console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
-var clock2 = sinon.useFakeTimers(new Date(&#39;2000-12-01 00:00:00&#39;));
+var clock2 = sinon.useFakeTimers(new Date('2000-12-01 00:00:00'));
 console.log(new Date()); // Fri Dec 01 2000 00:00:00 GMT+0900 (KST)
 clock2.restore();
 console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
 clock1.restore();
-console.log(new Date()); // now</code>
-        </deckgo-highlight-code>
+console.log(new Date()); // now
+</code></pre>
 <p>나중에 조작한 시간을 복구해도 이전에 조작한 시간이 남아 있다.</p>
 <p><code>clock1</code>을 바로 복구해도 돌아올 수 있다.</p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">var clock1 = sinon.useFakeTimers(new Date(&#39;1800-01-01 00:00:00&#39;));
+<pre><code class="language-javascript">var clock1 = sinon.useFakeTimers(new Date('1800-01-01 00:00:00'));
 console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
-var clock2 = sinon.useFakeTimers(new Date(&#39;2000-12-01 00:00:00&#39;));
+var clock2 = sinon.useFakeTimers(new Date('2000-12-01 00:00:00'));
 console.log(new Date()); // Fri Dec 01 2000 00:00:00 GMT+0900 (KST)
 clock1.restore();
-console.log(new Date()); // now</code>
-        </deckgo-highlight-code>
+console.log(new Date()); // now
+</code></pre>
 <h2 id="nodejs-data-validation" style="position:relative;"><a href="#nodejs-data-validation" aria-label="nodejs data validation permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NodeJS data validation</h2>
 <p>웹 서버를 작성할 때, 요청 데이터를 수동으로 검증하는 일은 너무 피곤하다.</p>
 <p>Python Django는 자체적으로 Form 클래스를 제공한다:<br>
@@ -433,9 +417,8 @@ virtual host 또는 방화벽으로 막는게 합리적으로 보인다.</p>
 <h2 id="pm2-deploy-시-주의할-점" style="position:relative;"><a href="#pm2-deploy-%EC%8B%9C-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90" aria-label="pm2 deploy 시 주의할 점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pm2 deploy 시 주의할 점</h2>
 <p><a href="http://pm2.keymetrics.io/docs/usage/deployment/#complete-tutorial">pm2 deploy tutorial</a>
 처럼 <code>post-deploy</code>를 다음과 같이 저장하는 경우 조심해야 한다.</p>
-<deckgo-highlight-code language="json"  >
-          <code slot="code">&quot;post-deploy&quot;: &quot;npm install &amp;&amp; pm2 startOrRestart ecosystem.json --env production&quot;</code>
-        </deckgo-highlight-code>
+<pre><code class="language-json">"post-deploy": "npm install &#x26;&#x26; pm2 startOrRestart ecosystem.json --env production"
+</code></pre>
 <p><code>pm2 deploy</code> 하면 다음 절차로 일이 발생한다:</p>
 <ol>
 <li>로컬 <code>ecosystem.json</code>과 같은 설정 파일을 읽어들임</li>
@@ -479,28 +462,27 @@ virtual host 또는 방화벽으로 막는게 합리적으로 보인다.</p>
 <p>문자열 객체에 길이를 구하는 <code>GetStringLength</code> 함수를 작성하는
 자세한 예시를 보여주니 좋다.</p>
 <p>작성한 C++ 코드의 가독성이 좋아 보인다:</p>
-<deckgo-highlight-code language="cpp"  >
-          <code slot="code">TF_BUILTIN(GetStringLength, CodeStubAssembler) {
+<pre><code class="language-cpp">TF_BUILTIN(GetStringLength, CodeStubAssembler) {
     Label not_string(this);
 
     Node* const maybe_string = Parameter(Descriptor::kInputObject);
 
-    GotoIf(TaggedIsSmi(maybe_string), &amp;not_string);
+    GotoIf(TaggedIsSmi(maybe_string), &#x26;not_string);
 
-    GotoIfNot(IsString(maybe_string), &amp;not_string);
+    GotoIfNot(IsString(maybe_string), &#x26;not_string);
 
     Return(LoadStringLength(maybe_string));
 
-    BIND(&amp;not_string);
+    BIND(&#x26;not_string);
 
     Return(UndefinedConstant());
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p><a href="https://blog.hassler.ec/wp/2019/04/07/1-powerful-way-to-write-robust-code/">견고한 코드를 작성하는 방법</a>
 글이 생각났다. 진입점은 깔끔하게 유지하기.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/nodejs/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

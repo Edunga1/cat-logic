@@ -146,21 +146,19 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <h5 id="contolleras와-vm-사용하기" style="position:relative;"><a href="#contolleras%EC%99%80-vm-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="contolleras와 vm 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>contollerAs</code>와 <code>vm</code> 사용하기</h5>
 <p><a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032">https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032</a></p>
 <p>controllerAS + vm 사용하고 <code>this</code> 변수에 담고 직접 사용하지 않는다.</p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">/* avoid */
+<pre><code class="language-javascript">/* avoid */
 function CustomerController() {
     this.name = {};
     this.sendMessage = function() { };
-}</code>
-        </deckgo-highlight-code>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">/* recommended */
+}
+</code></pre>
+<pre><code class="language-javascript">/* recommended */
 function CustomerController() {
     var vm = this;
     vm.name = {};
     vm.sendMessage = function() { };
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <h4 id="서비스-service-factory-provider" style="position:relative;"><a href="#%EC%84%9C%EB%B9%84%EC%8A%A4-service-factory-provider" aria-label="서비스 service factory provider permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>서비스 (service, factory, provider)</h4>
 <h5 id="서비스-코드-작성은-revealing-module-pattern" style="position:relative;"><a href="#%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%EC%9D%80-revealing-module-pattern" aria-label="서비스 코드 작성은 revealing module pattern permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>서비스 코드 작성은 Revealing Module Pattern</h5>
 <p><a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y052">https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y052</a></p>
@@ -171,10 +169,9 @@ function CustomerController() {
 <li>구현 코드가 길어지더라도 스크롤을 내리지 않고 expose 된 기능 및 값을 한눈에 파악할 수 있다.</li>
 <li>함수 설정을 쉽게 할 수 있다. 구현 세부사항을 return 아래로, 호추가능한 인터페이스를 위로 두면 읽기 쉽다.</li>
 </ol>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">/* avoid */
+<pre><code class="language-javascript">/* avoid */
 function dataService() {
-  var someValue = &#39;&#39;;
+  var someValue = '';
   function save() {
     /* */
   };
@@ -187,12 +184,11 @@ function dataService() {
       someValue: someValue,
       validate: validate
   };
-}</code>
-        </deckgo-highlight-code>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">/* recommended */
+}
+</code></pre>
+<pre><code class="language-javascript">/* recommended */
 function dataService() {
-    var someValue = &#39;&#39;;
+    var someValue = '';
     var service = {
         save: save,
         someValue: someValue,
@@ -209,8 +205,8 @@ function dataService() {
     function validate() {
         /* */
     };
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <h3 id="modularity" style="position:relative;"><a href="#modularity" aria-label="modularity permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modularity</h3>
 <h4 id="데이터-서비스를-분리하기" style="position:relative;"><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%84%9C%EB%B9%84%EC%8A%A4%EB%A5%BC-%EB%B6%84%EB%A6%AC%ED%95%98%EA%B8%B0" aria-label="데이터 서비스를 분리하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>데이터 서비스를 분리하기</h4>
 <p><a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#data-services">https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#data-services</a></p>
@@ -245,47 +241,45 @@ function dataService() {
 <p>로컬에 <code>karma</code>만 설치하여 <code>./node_modules/karma/bin/karma</code>로 명령어를 실행할 수 있었다.</p>
 <h3 id="karmaconfjs" style="position:relative;"><a href="#karmaconfjs" aria-label="karmaconfjs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>karma.conf.js</h3>
 <p><code>karma init</code>을 통해 생성되는 카르마 설정파일을 수정한다.</p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">module.exports = function(config) {
+<pre><code class="language-javascript">module.exports = function(config) {
     config.set({
         // ...
 
         // 사용 할 테스트 모듈 목록
-        frameworks: [&#39;mocha&#39;, &#39;chai&#39;, &#39;sinon&#39;],
+        frameworks: ['mocha', 'chai', 'sinon'],
 
 
         // list of files / patterns to load in the browser
         files: [
             // AnguarJS 등 프레임워크와 라이브러리 파일의 경로를 여기에 작성한다.
-            // 왠만하면 index.html 내에 &lt;script&gt; 태그로 임포트하는 파일 순서 그대로 작성한다.
+            // 왠만하면 index.html 내에 &#x3C;script> 태그로 임포트하는 파일 순서 그대로 작성한다.
             // karma가 브라우저에 웹 페이지를 띄울 때 여기에 작성한 파일들을 순서대로 가져오는 거 같다. (순서 중요)
 
             // 테스트 대상이 되는 소스 코드를 포함한다.
-            &#39;www/**/*.js&#39;,
+            'www/**/*.js',
 
             // angular-mocks
-            &#39;node_modules/angular-mocks/angular-mocks.js&#39;,
+            'node_modules/angular-mocks/angular-mocks.js',
 
             // 테스트 스크립트를 포함한다.
             // test 폴더 아래에 abc.spec.js 와 같은 방식으로 작성했다.
-            &#39;test/**/*.spec.js&#39;
+            'test/**/*.spec.js'
         ],
 
         // 콘솔에 출력되는 테스트 진행 상황에 관한 모듈.
         // karma-mocha-repoter를 사용했다.
-        reporters: [&#39;mocha&#39;],
+        reporters: ['mocha'],
 
         // ...
   })
 }
-</code>
-        </deckgo-highlight-code>
+
+</code></pre>
 <h3 id="실행" style="position:relative;"><a href="#%EC%8B%A4%ED%96%89" aria-label="실행 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>실행</h3>
 <p><code>karma start</code> 또는 <code> ./node_modules/karma/bin/karma start</code></p>
 <h2 id="type-hinting" style="position:relative;"><a href="#type-hinting" aria-label="type hinting permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>type hinting</h2>
 <p>컨트롤러 내에서 <code>vm</code>(ViewModel)으로 뷰 모델을 관리 할 때 타입 힌팅을 제대로 얻을 수 없다.</p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">function controller() {
+<pre><code class="language-javascript">function controller() {
     var vm = this;
 
     /**
@@ -294,14 +288,13 @@ function dataService() {
      * @property {string} var
      */
     /**
-     * @type {Array.&lt;CustomType&gt;}
+     * @type {Array.&#x3C;CustomType>}
      */
     vm.list = []; // any
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>따라서 뷰 모델에 <code>@typedef</code>로 하위 모델들을 명시하면서 해결했다.</p>
-<deckgo-highlight-code language="javascript"  >
-          <code slot="code">function controller() {
+<pre><code class="language-javascript">function controller() {
     /**
      * @typedef CustomType
      * @property {number} foo
@@ -309,16 +302,16 @@ function dataService() {
      */
     /**
      * @typedef {ViewModel}
-     * @property {Array.&lt;CustomType&gt;} list
+     * @property {Array.&#x3C;CustomType>} list
      */
     /**
      * @type {ViewModel}
      */
     var vm = this;
 
-    vm.list = []; // Array.&lt;{}&gt;
-}</code>
-        </deckgo-highlight-code>
+    vm.list = []; // Array.&#x3C;{}>
+}
+</code></pre>
 <h2 id="migrating-15-to-16" style="position:relative;"><a href="#migrating-15-to-16" aria-label="migrating 15 to 16 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Migrating 1.5 to 1.6</h2>
 <h3 id="component-lifecycle" style="position:relative;"><a href="#component-lifecycle" aria-label="component lifecycle permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Component Lifecycle</h3>
 <p>Lifecycle이 생겼다.</p>
@@ -331,6 +324,6 @@ function dataService() {
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

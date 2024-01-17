@@ -96,8 +96,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <h3 id="enum-class에서-jackson-jsonformat이-적용되지-않는-문제" style="position:relative;"><a href="#enum-class%EC%97%90%EC%84%9C-jackson-jsonformat%EC%9D%B4-%EC%A0%81%EC%9A%A9%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="enum class에서 jackson jsonformat이 적용되지 않는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>enum class에서 Jackson <code>@JsonFormat</code>이 적용되지 않는 문제</h3>
 <p>Github Issue: <a href="https://github.com/swagger-api/swagger-core/issues/3691">https://github.com/swagger-api/swagger-core/issues/3691</a></p>
 <p>다음과 같이 kotlin 코드를 작성하였다.</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">data class Response(
+<pre><code class="language-kotlin">data class Response(
   @JsonUnwrapped
   val status: Status,
   val data: Any?
@@ -105,30 +104,28 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 enum class Status(val code: Int, val message: String) {
-  SUCCESS(0, &quot;success&quot;),
-  FAIL(1, &quot;fail&quot;)
-}</code>
-        </deckgo-highlight-code>
+  SUCCESS(0, "success"),
+  FAIL(1, "fail")
+}
+</code></pre>
 <p>내가 예상한 serialization 결과:</p>
-<deckgo-highlight-code language="json"  >
-          <code slot="code">{
-  &quot;code&quot;: 0,
-  &quot;message&quot;: &quot;success&quot;,
-  &quot;data&quot;: null
-}</code>
-        </deckgo-highlight-code>
+<pre><code class="language-json">{
+  "code": 0,
+  "message": "success",
+  "data": null
+}
+</code></pre>
 <p>실제 serialization 결과:</p>
-<deckgo-highlight-code language="json"  >
-          <code slot="code">{
-  &quot;status&quot;: &quot;SUCCESS&quot;,
-  &quot;data&quot;: null
-}</code>
-        </deckgo-highlight-code>
+<pre><code class="language-json">{
+  "status": "SUCCESS",
+  "data": null
+}
+</code></pre>
 <p><code>@JsonUnwrapped</code>, <code>@JsonFormat</code>이 적용되지 않았다.
 아직 별다른 해결 방법이 없는 모양. 이슈에서 관련 로직을 <a href="https://github.com/utybo/Tegral/issues/55">재작성한다</a>는 거 같다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/swagger/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

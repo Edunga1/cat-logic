@@ -223,15 +223,14 @@ Git 저장소 동기화를 매우 중요하게 생각한다고 느낌을 받았�
 <p>반면에 Insomnia는 yaml을 사용하지만 메타데이터가 많아서 읽기 어렵다.
 폴더나 다른 연관 정보를 파일 내에 포함시켰기 때문인 것으로 보인다.</p>
 <p>다음은 Insomnia의 Request 저장 내용:</p>
-<deckgo-highlight-code language="yaml"  >
-          <code slot="code">_id: req_7b1a2
+<pre><code class="language-yaml">_id: req_7b1a2
 type: Request
 parentId: fld_8fe1d
 modified: 1692343700512
 created: 1675838070192
-url: &quot;{{ _.url.myApi }}/foo/bar/search&quot;
+url: "{{ _.url.myApi }}/foo/bar/search"
 name: 검색 /search
-description: &quot;&quot;
+description: ""
 method: GET
 body: {}
 parameters:
@@ -240,7 +239,7 @@ parameters:
     disabled: false
     id: pair_664f8
   - name: page
-    value: &quot;1&quot;
+    value: "1"
     disabled: false
     id: pair_5501a
 headers:
@@ -254,8 +253,8 @@ settingSendCookies: true
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true
-settingFollowRedirects: global</code>
-        </deckgo-highlight-code>
+settingFollowRedirects: global
+</code></pre>
 <p>아직 좀 더 살펴봐야 한다.
 API Chaining은 어떻게 처리하는지, 자동완성 등 주요하게 봐야 할 점이 많다.</p>
 <h3 id="postman-vs-insomnia-vs-intellij-builtin-http-비교" style="position:relative;"><a href="#postman-vs-insomnia-vs-intellij-builtin-http-%EB%B9%84%EA%B5%90" aria-label="postman vs insomnia vs intellij builtin http 비교 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Postman vs Insomnia vs IntelliJ builtin <code>.http</code>. 비교</h3>
@@ -324,10 +323,9 @@ IntelliJ 버전에 따른 변경사항이 있는 상황에서, 라이센스 문�
 <p>코드가 공개되어 있어서, 직접 빌드해서 사용할 수 있다: <a href="https://github.com/blinksh/blink">https://github.com/blinksh/blink</a></p>
 <h3 id="build" style="position:relative;"><a href="#build" aria-label="build permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build</h3>
 <p>저장소에 쉽게 설명되어 있다.</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">git clone --recursive https://github.com/blinksh/blink.git &amp;&amp; \
-cd blink &amp;&amp; ./get_frameworks.sh</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">git clone --recursive https://github.com/blinksh/blink.git &#x26;&#x26; \
+cd blink &#x26;&#x26; ./get_frameworks.sh
+</code></pre>
 <ol>
 <li>저장소 클론 받고, 쉘 스크립트를 실행하면, 관련 라이브러리를 알아서 받는다. 5분쯤 걸렸다.</li>
 <li>XCode로 클론받은 저장소를 연다.</li>
@@ -376,6 +374,6 @@ Push notification, ICloud 권한이 없다는 것인데.
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

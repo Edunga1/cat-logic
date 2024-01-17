@@ -230,13 +230,12 @@ return &#x3C;button onClick={() => {}}>Click Me</button></p>
 <p>나가기 버튼의 링크로 직접 이동하면 위와 같은 화면으로 이동한다.</p>
 <h3 id="redir_token" style="position:relative;"><a href="#redir_token" aria-label="redir_token permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>redir_token?</h3>
 <p>변경된 링크는 아래처럼 생겼다:</p>
-<deckgo-highlight-code   >
-          <code slot="code">https://www.youtube.com/redirect
+<pre><code>https://www.youtube.com/redirect
 ?event=comments
-&amp;redir_token=QUFFLUhqbFY2dUdkYjFSNmxnTnZQdnJtLWdUdFNVLW42UXxBQ3Jtc0trdkt2UW1fMWRYdDY0MU1JVTh4ODg0SjVCSUhITi1ualBvN3dUU3ZVR0xjV2h1SnQ5NHdpM2hHdVZmT1JTTWszel9BZlBLQUp4RjJnSDNGVTBuVVdwVnR0VVZ3WURweGE3TUZXalFBQTJIOVhxNXpXdw
-&amp;q=http%3A%2F%2Fwww.asianfans.net%2Fwatch-online-jewel-in-the-palace-episode-1-54248.html
-&amp;stzid=Ugzm01czczwhYRrJQHV4AaABAg.96QNPi1HE5n96bf_VU_ja9</code>
-        </deckgo-highlight-code>
+&#x26;redir_token=QUFFLUhqbFY2dUdkYjFSNmxnTnZQdnJtLWdUdFNVLW42UXxBQ3Jtc0trdkt2UW1fMWRYdDY0MU1JVTh4ODg0SjVCSUhITi1ualBvN3dUU3ZVR0xjV2h1SnQ5NHdpM2hHdVZmT1JTTWszel9BZlBLQUp4RjJnSDNGVTBuVVdwVnR0VVZ3WURweGE3TUZXalFBQTJIOVhxNXpXdw
+&#x26;q=http%3A%2F%2Fwww.asianfans.net%2Fwatch-online-jewel-in-the-palace-episode-1-54248.html
+&#x26;stzid=Ugzm01czczwhYRrJQHV4AaABAg.96QNPi1HE5n96bf_VU_ja9
+</code></pre>
 <p>실제 이동할 사이트 주소를 가진 <code>q</code>와 알 수 없는 <code>redir_token</code>, <code>stzid</code>가 포함되어 있다.</p>
 <p><code>stzid</code> 의미는 이름에서 유추하기 어려워 보인다.
 <code>redir_token</code>은 redirect token을 의미하는 거 같은데, 어떤 용도로 사용하는지 그 정보가 많이 없다.</p>
@@ -249,14 +248,13 @@ return &#x3C;button onClick={() => {}}>Click Me</button></p>
 <p>Google Chrome의 경우 개발도구 설정 -> More tools -> Sensors에서 디바이스 방향을 조정할 수 있다.
 3D 기기 모델로 표현되어 있어서 직관적으로 이해할 수 있다.</p>
 <p>x, y, z 축에 대한 각도로 표현한다. 각각 alpha, beta, gamma 값으로 제공된다.</p>
-<deckgo-highlight-code language="js"  >
-          <code slot="code">window.addEventListener(&quot;deviceorientation&quot;, onDeviceOrientation)
+<pre><code class="language-js">window.addEventListener("deviceorientation", onDeviceOrientation)
 
 fucntion onDeviceOrientation(event) {
   const { alpha, beta, gamma } = event
   console.log(alpha, beta, gamma)
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <h2 id="http" style="position:relative;"><a href="#http" aria-label="http permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP</h2>
 <h3 id="headers" style="position:relative;"><a href="#headers" aria-label="headers permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Headers</h3>
 <p>직접 수정할 수 없는 헤더가 있다. <code>Content-Length</code>나 <code>Referer</code> 등이 그러한데, 이런 헤더를 <a href="https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name">Forbidden Header Name</a>이라 한다.</p>
@@ -294,6 +292,6 @@ URL은 <code>.html</code> 등의 확장자, query string, path 등으로 구성�
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

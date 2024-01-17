@@ -177,18 +177,16 @@ DB 상태를 다시 복구할 수 있다.</p>
 <p>사이트에서 소개하는 예시는 Rails의 RSpec을 사용하지만, 다른 언어/프레임워크에서도 적용하는 것을 목표로 한다.</p>
 <h3 id="single-expectation단일-검증" style="position:relative;"><a href="#single-expectation%EB%8B%A8%EC%9D%BC-%EA%B2%80%EC%A6%9D" aria-label="single expectation단일 검증 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Single Expectation(단일 검증)</h3>
 <p><a href="https://www.betterspecs.org/#single">https://www.betterspecs.org/#single</a></p>
-<deckgo-highlight-code language="ruby"  >
-          <code slot="code">it { is_expected.to respond_with_content_type(:json) }
-it { is_expected.to assign_to(:resource) }</code>
-        </deckgo-highlight-code>
+<pre><code class="language-ruby">it { is_expected.to respond_with_content_type(:json) }
+it { is_expected.to assign_to(:resource) }
+</code></pre>
 <p>한 번에 하나만 검증하는 것은 가독성, 테스트 실패 시 원인 파악이 쉽다는 장점이 있다.
 하지만 DB 등 호출 비용이 큰 경우에는 여러 개를 한 번에 검증하는 것도 허용한다.</p>
-<deckgo-highlight-code language="ruby"  >
-          <code slot="code">it &#39;creates a resource&#39; do
+<pre><code class="language-ruby">it 'creates a resource' do
   expect(response).to respond_with_content_type(:json)
   expect(response).to assign_to(:resource)
-end</code>
-        </deckgo-highlight-code>
+end
+</code></pre>
 <p>관련 SO 질문이 있다: <a href="https://softwareengineering.stackexchange.com/q/7823">Is it OK to have multiple asserts in a single unit test?</a></p>
 <p>답변 채택은 single expectation을 권장하고 테스트를 작성하다보면 결국 하나의 검증만 하게 될거라는 것.
 하지만 더 많은 추천을 받은 답변은 multiple expectation을 하는 것이다.</p>
@@ -197,15 +195,14 @@ end</code>
 <h2 id="테스트-코드-작성" style="position:relative;"><a href="#%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1" aria-label="테스트 코드 작성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>테스트 코드 작성</h2>
 <h3 id="통합-테스트에서도-mocking하면-편리하다" style="position:relative;"><a href="#%ED%86%B5%ED%95%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C%EB%8F%84-mocking%ED%95%98%EB%A9%B4-%ED%8E%B8%EB%A6%AC%ED%95%98%EB%8B%A4" aria-label="통합 테스트에서도 mocking하면 편리하다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>통합 테스트에서도 mocking하면 편리하다.</h3>
 <p>spring framework 환경에서 이야기다. django는 pytest의 fixture를 사용하면 편했다.</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">@SpringBootTest
+<pre><code class="language-kotlin">@SpringBootTest
 @AutoConfigureMockMvc
 class TalkTradeRequestControllerSendingAddressTest(
   private val mvc: MockMvc,
   private val userRepository: UserRepository,
   private val productClient: StaticProductClient,
 ) : DescribeSpec({
-  describe(&quot;GET /users/:id/product&quot;) {
+  describe("GET /users/:id/product") {
     lateinit var user: User
 
     beforeContainer {
@@ -217,17 +214,17 @@ class TalkTradeRequestControllerSendingAddressTest(
       productClient.clearTestData()
     }
 
-    fun requset(id: Long) = mvc.get(&quot;/users/$id/product&quot;) {
+    fun requset(id: Long) = mvc.get("/users/$id/product") {
        contentType = MediaType.APPLICATION_JSON
     }
 
-    context(&quot;상품이 있으면&quot;) {
+    context("상품이 있으면") {
       val product = Product(/*..*/)
       val subject by lazy { request(user.id) }
 
       productClient.putProduct(product)
 
-      it(&quot;응답 코드는 200 OK.&quot;) {
+      it("응답 코드는 200 OK.") {
         subject.andExpect { status { isOk() } }
       }
     }
@@ -235,7 +232,7 @@ class TalkTradeRequestControllerSendingAddressTest(
 })
 
 class StaticProductClient : ProductClient {
-    private val products: MutableMap&lt;Long, Product&gt;
+    private val products: MutableMap&#x3C;Long, Product>
 
     fun putProduct(product: Product) { products[product.userId] = product }
     fun clearTestData() { products.clear() }
@@ -247,16 +244,15 @@ class StaticProductClient : ProductClient {
 class TestProductClientConfig {
     @Bean
     fun testProductClient(): ProductClient = StaticProductClient()
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>mocking 방식 사용하기 전에는 위와같이 테스트용 클라이언트를 만들어서 주입하고,
 통합 테스트 클래스에서 <strong>테스트용 클라이언트</strong>를 주입받아서 운영 코드에서 반환받을 데이터를 넣어주는 형태로 사용했다.</p>
 <p>이 방법은 불편한 부분이 있었는데, 필요한 메서드마다 데이터를 넣는 메서드<code>put~</code>의 구현이 필요하고,
 Repository의 <code>deleteAll</code>과 같이 데이터를 제거하는 메서드<code>clearTestData</code>를 만들 필요가 있었다는 점이다.</p>
 <p>유닛 테스트에서도 마찬가지로 mockito나 mockk를 사용하지 않는다면 이런 불편함이 있을 것이다.</p>
 <p>그래서 통합테스트에서도 mock 객체를 주입하였다.</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">@SpringBootTest
+<pre><code class="language-kotlin">@SpringBootTest
 @AutoConfigureMockMvc
 class TalkTradeRequestControllerSendingAddressTest(
   private val mvc: MockMvc,
@@ -264,7 +260,7 @@ class TalkTradeRequestControllerSendingAddressTest(
   // private val productClient: StaticProductClient,
   private val productClient: ProductClient,
 ) : DescribeSpec({
-  describe(&quot;GET /users/:id/product&quot;) {
+  describe("GET /users/:id/product") {
     lateinit var user: User
 
     beforeContainer {
@@ -277,18 +273,18 @@ class TalkTradeRequestControllerSendingAddressTest(
       // productClient.clearTestData()
     }
 
-    fun requset(id: Long) = mvc.get(&quot;/users/$id/product&quot;) {
+    fun requset(id: Long) = mvc.get("/users/$id/product") {
       contentType = MediaType.APPLICATION_JSON
     }
 
-    context(&quot;상품이 있으면&quot;) {
+    context("상품이 있으면") {
       val product = Product(/*..*/)
       val subject by lazy { request(user.id) }
 
       // productClient.putProduct(product)
       every { productClient.findProduct(any()) } returns product
 
-      it(&quot;응답 코드는 200 OK.&quot;) {
+      it("응답 코드는 200 OK.") {
         subject.andExpect { status { isOk() } }
       }
     }
@@ -299,8 +295,8 @@ class TalkTradeRequestControllerSendingAddressTest(
 class TestProductClientConfig {
     @Bean
     fun testProductClient(): ProductClient = mockk(relaxed=true)
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>위 코드처럼 변경함으로써 편리한 부분이 있었다:</p>
 <ul>
 <li><code>relaxed=true</code>로 한 이유는 <code>null</code> 반환하는 메서드인 경우 굳이 mocking 하지 않아도 되서 편하기 때문이다. 더 제한하고 싶다면 사용하지 않아도 좋아 보인다.</li>
@@ -380,6 +376,6 @@ DAMP는 코드를 읽고 이해하는데 필요한 시간을 줄여 유지보수
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

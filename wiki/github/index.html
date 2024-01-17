@@ -97,82 +97,80 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 여기서 볼 수 있다.</p>
 <hr>
 <p>Release 목록 API</p>
-<deckgo-highlight-code   >
-          <code slot="code">GET https://api.github.com/repos/:owner/:repo/releases</code>
-        </deckgo-highlight-code>
+<pre><code>GET https://api.github.com/repos/:owner/:repo/releases
+</code></pre>
 <p>Release 목록(또는 Latest라면 정보 하나)을 가져오면 success(200)와 함께 이런 형태로 전송 된다.</p>
-<deckgo-highlight-code language="json"  >
-          <code slot="code">{
-  &quot;url&quot;: &quot;https://api.github.com/repos/octocat/Hello-World/releases/1&quot;,
-  &quot;html_url&quot;: &quot;https://github.com/octocat/Hello-World/releases/v1.0.0&quot;,
-  &quot;assets_url&quot;: &quot;https://api.github.com/repos/octocat/Hello-World/releases/1/assets&quot;,
-  &quot;upload_url&quot;: &quot;https://uploads.github.com/repos/octocat/Hello-World/releases/1/assets{?name,label}&quot;,
-  &quot;tarball_url&quot;: &quot;https://api.github.com/repos/octocat/Hello-World/tarball/v1.0.0&quot;,
-  &quot;zipball_url&quot;: &quot;https://api.github.com/repos/octocat/Hello-World/zipball/v1.0.0&quot;,
-  &quot;id&quot;: 1,
-  &quot;tag_name&quot;: &quot;v1.0.0&quot;,
-  &quot;target_commitish&quot;: &quot;master&quot;,
-  &quot;name&quot;: &quot;v1.0.0&quot;,
-  &quot;body&quot;: &quot;Description of the release&quot;,
-  &quot;draft&quot;: false,
-  &quot;prerelease&quot;: false,
-  &quot;created_at&quot;: &quot;2013-02-27T19:35:32Z&quot;,
-  &quot;published_at&quot;: &quot;2013-02-27T19:35:32Z&quot;,
-  &quot;author&quot;: {
-    &quot;login&quot;: &quot;octocat&quot;,
-    &quot;id&quot;: 1,
-    &quot;avatar_url&quot;: &quot;https://github.com/images/error/octocat_happy.gif&quot;,
-    &quot;gravatar_id&quot;: &quot;&quot;,
-    &quot;url&quot;: &quot;https://api.github.com/users/octocat&quot;,
-    &quot;html_url&quot;: &quot;https://github.com/octocat&quot;,
-    &quot;followers_url&quot;: &quot;https://api.github.com/users/octocat/followers&quot;,
-    &quot;following_url&quot;: &quot;https://api.github.com/users/octocat/following{/other_user}&quot;,
-    &quot;gists_url&quot;: &quot;https://api.github.com/users/octocat/gists{/gist_id}&quot;,
-    &quot;starred_url&quot;: &quot;https://api.github.com/users/octocat/starred{/owner}{/repo}&quot;,
-    &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/octocat/subscriptions&quot;,
-    &quot;organizations_url&quot;: &quot;https://api.github.com/users/octocat/orgs&quot;,
-    &quot;repos_url&quot;: &quot;https://api.github.com/users/octocat/repos&quot;,
-    &quot;events_url&quot;: &quot;https://api.github.com/users/octocat/events{/privacy}&quot;,
-    &quot;received_events_url&quot;: &quot;https://api.github.com/users/octocat/received_events&quot;,
-    &quot;type&quot;: &quot;User&quot;,
-    &quot;site_admin&quot;: false
+<pre><code class="language-json">{
+  "url": "https://api.github.com/repos/octocat/Hello-World/releases/1",
+  "html_url": "https://github.com/octocat/Hello-World/releases/v1.0.0",
+  "assets_url": "https://api.github.com/repos/octocat/Hello-World/releases/1/assets",
+  "upload_url": "https://uploads.github.com/repos/octocat/Hello-World/releases/1/assets{?name,label}",
+  "tarball_url": "https://api.github.com/repos/octocat/Hello-World/tarball/v1.0.0",
+  "zipball_url": "https://api.github.com/repos/octocat/Hello-World/zipball/v1.0.0",
+  "id": 1,
+  "tag_name": "v1.0.0",
+  "target_commitish": "master",
+  "name": "v1.0.0",
+  "body": "Description of the release",
+  "draft": false,
+  "prerelease": false,
+  "created_at": "2013-02-27T19:35:32Z",
+  "published_at": "2013-02-27T19:35:32Z",
+  "author": {
+    "login": "octocat",
+    "id": 1,
+    "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/octocat",
+    "html_url": "https://github.com/octocat",
+    "followers_url": "https://api.github.com/users/octocat/followers",
+    "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+    "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+    "organizations_url": "https://api.github.com/users/octocat/orgs",
+    "repos_url": "https://api.github.com/users/octocat/repos",
+    "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/octocat/received_events",
+    "type": "User",
+    "site_admin": false
   },
-  &quot;assets&quot;: [
+  "assets": [
     {
-      &quot;url&quot;: &quot;https://api.github.com/repos/octocat/Hello-World/releases/assets/1&quot;,
-      &quot;browser_download_url&quot;: &quot;https://github.com/octocat/Hello-World/releases/download/v1.0.0/example.zip&quot;,
-      &quot;id&quot;: 1,
-      &quot;name&quot;: &quot;example.zip&quot;,
-      &quot;label&quot;: &quot;short description&quot;,
-      &quot;state&quot;: &quot;uploaded&quot;,
-      &quot;content_type&quot;: &quot;application/zip&quot;,
-      &quot;size&quot;: 1024,
-      &quot;download_count&quot;: 42,
-      &quot;created_at&quot;: &quot;2013-02-27T19:35:32Z&quot;,
-      &quot;updated_at&quot;: &quot;2013-02-27T19:35:32Z&quot;,
-      &quot;uploader&quot;: {
-        &quot;login&quot;: &quot;octocat&quot;,
-        &quot;id&quot;: 1,
-        &quot;avatar_url&quot;: &quot;https://github.com/images/error/octocat_happy.gif&quot;,
-        &quot;gravatar_id&quot;: &quot;&quot;,
-        &quot;url&quot;: &quot;https://api.github.com/users/octocat&quot;,
-        &quot;html_url&quot;: &quot;https://github.com/octocat&quot;,
-        &quot;followers_url&quot;: &quot;https://api.github.com/users/octocat/followers&quot;,
-        &quot;following_url&quot;: &quot;https://api.github.com/users/octocat/following{/other_user}&quot;,
-        &quot;gists_url&quot;: &quot;https://api.github.com/users/octocat/gists{/gist_id}&quot;,
-        &quot;starred_url&quot;: &quot;https://api.github.com/users/octocat/starred{/owner}{/repo}&quot;,
-        &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/octocat/subscriptions&quot;,
-        &quot;organizations_url&quot;: &quot;https://api.github.com/users/octocat/orgs&quot;,
-        &quot;repos_url&quot;: &quot;https://api.github.com/users/octocat/repos&quot;,
-        &quot;events_url&quot;: &quot;https://api.github.com/users/octocat/events{/privacy}&quot;,
-        &quot;received_events_url&quot;: &quot;https://api.github.com/users/octocat/received_events&quot;,
-        &quot;type&quot;: &quot;User&quot;,
-        &quot;site_admin&quot;: false
+      "url": "https://api.github.com/repos/octocat/Hello-World/releases/assets/1",
+      "browser_download_url": "https://github.com/octocat/Hello-World/releases/download/v1.0.0/example.zip",
+      "id": 1,
+      "name": "example.zip",
+      "label": "short description",
+      "state": "uploaded",
+      "content_type": "application/zip",
+      "size": 1024,
+      "download_count": 42,
+      "created_at": "2013-02-27T19:35:32Z",
+      "updated_at": "2013-02-27T19:35:32Z",
+      "uploader": {
+        "login": "octocat",
+        "id": 1,
+        "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/octocat",
+        "html_url": "https://github.com/octocat",
+        "followers_url": "https://api.github.com/users/octocat/followers",
+        "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+        "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+        "organizations_url": "https://api.github.com/users/octocat/orgs",
+        "repos_url": "https://api.github.com/users/octocat/repos",
+        "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/octocat/received_events",
+        "type": "User",
+        "site_admin": false
       }
     }
   ]
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>업로드한 파일 URL을 얻기 위해서는 <code>assets</code> 정보에 접근해야 한다.
 <code>assets</code> 또한 많은 정보를 가지고 있다.
 여러개의 asset을 가지고 있을 수 있기 때문에 적당한 것을 찾는 것이 선행되어야 할 것이다.</p>
@@ -184,43 +182,41 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <hr>
 <p>private repository는 <code>url</code>을 이용해야 한다.
 <code>url</code>은 <strong>Github API</strong> 주소이기 때문에 <code>url</code>로 http <strong>GET</strong> 요청을 해야한다.</p>
-<deckgo-highlight-code   >
-          <code slot="code">GET https://api.github.com/repos/octocat/Hello-World/releases/assets/1</code>
-        </deckgo-highlight-code>
-<deckgo-highlight-code language="json"  >
-          <code slot="code">{
-  &quot;url&quot;: &quot;https://api.github.com/repos/octocat/Hello-World/releases/assets/1&quot;,
-  &quot;browser_download_url&quot;: &quot;https://github.com/octocat/Hello-World/releases/download/v1.0.0/example.zip&quot;,
-  &quot;id&quot;: 1,
-  &quot;name&quot;: &quot;example.zip&quot;,
-  &quot;label&quot;: &quot;short description&quot;,
-  &quot;state&quot;: &quot;uploaded&quot;,
-  &quot;content_type&quot;: &quot;application/zip&quot;,
-  &quot;size&quot;: 1024,
-  &quot;download_count&quot;: 42,
-  &quot;created_at&quot;: &quot;2013-02-27T19:35:32Z&quot;,
-  &quot;updated_at&quot;: &quot;2013-02-27T19:35:32Z&quot;,
-  &quot;uploader&quot;: {
-    &quot;login&quot;: &quot;octocat&quot;,
-    &quot;id&quot;: 1,
-    &quot;avatar_url&quot;: &quot;https://github.com/images/error/octocat_happy.gif&quot;,
-    &quot;gravatar_id&quot;: &quot;&quot;,
-    &quot;url&quot;: &quot;https://api.github.com/users/octocat&quot;,
-    &quot;html_url&quot;: &quot;https://github.com/octocat&quot;,
-    &quot;followers_url&quot;: &quot;https://api.github.com/users/octocat/followers&quot;,
-    &quot;following_url&quot;: &quot;https://api.github.com/users/octocat/following{/other_user}&quot;,
-    &quot;gists_url&quot;: &quot;https://api.github.com/users/octocat/gists{/gist_id}&quot;,
-    &quot;starred_url&quot;: &quot;https://api.github.com/users/octocat/starred{/owner}{/repo}&quot;,
-    &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/octocat/subscriptions&quot;,
-    &quot;organizations_url&quot;: &quot;https://api.github.com/users/octocat/orgs&quot;,
-    &quot;repos_url&quot;: &quot;https://api.github.com/users/octocat/repos&quot;,
-    &quot;events_url&quot;: &quot;https://api.github.com/users/octocat/events{/privacy}&quot;,
-    &quot;received_events_url&quot;: &quot;https://api.github.com/users/octocat/received_events&quot;,
-    &quot;type&quot;: &quot;User&quot;,
-    &quot;site_admin&quot;: false
+<pre><code>GET https://api.github.com/repos/octocat/Hello-World/releases/assets/1
+</code></pre>
+<pre><code class="language-json">{
+  "url": "https://api.github.com/repos/octocat/Hello-World/releases/assets/1",
+  "browser_download_url": "https://github.com/octocat/Hello-World/releases/download/v1.0.0/example.zip",
+  "id": 1,
+  "name": "example.zip",
+  "label": "short description",
+  "state": "uploaded",
+  "content_type": "application/zip",
+  "size": 1024,
+  "download_count": 42,
+  "created_at": "2013-02-27T19:35:32Z",
+  "updated_at": "2013-02-27T19:35:32Z",
+  "uploader": {
+    "login": "octocat",
+    "id": 1,
+    "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/octocat",
+    "html_url": "https://github.com/octocat",
+    "followers_url": "https://api.github.com/users/octocat/followers",
+    "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+    "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+    "organizations_url": "https://api.github.com/users/octocat/orgs",
+    "repos_url": "https://api.github.com/users/octocat/repos",
+    "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/octocat/received_events",
+    "type": "User",
+    "site_admin": false
   }
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>하지만 추가 작업을 하지 않은 이상 다시 <strong>asset</strong> 정보를 반환한다.</p>
 <p>제대로된 바이너리 파일 정보를 받기 위해선 헤더에 <code>Accept: application/octet-stream</code>를 추가해야 한다.</p>
 <p>제대로 했다면 success(200)와 함께 response로 바이너리 정보가 문자열로 들어온다.
@@ -228,25 +224,23 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <h2 id="github-cli" style="position:relative;"><a href="#github-cli" aria-label="github cli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GitHub CLI</h2>
 <p><code>gh</code> 명령어로 GitHub 기능을 사용할 수 있다.</p>
 <p>자동 완성을 위해서 <code>gh completion</code>을 설정한다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code"># .zshrc
-if command -v gh &amp;&gt; /dev/null; then
-  eval &quot;$(gh completion -s zsh)&quot;
-fi</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash"># .zshrc
+if command -v gh &#x26;> /dev/null; then
+  eval "$(gh completion -s zsh)"
+fi
+</code></pre>
 <p>shell에 맞는 <code>-s</code> 옵션을 사용하자.</p>
 <h3 id="github-cli-copilot" style="position:relative;"><a href="#github-cli-copilot" aria-label="github cli copilot permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GitHub CLI Copilot</h3>
 <p><code>gh extension</code>으로 copilot 기능을 사용할 수 있다.
 코드 자동완성 기능은 아니고, <a href="https://githubnext.com/projects/copilot-cli/">copilot-cli</a>와 비슷한 기능이다.</p>
 <p><a href="https://docs.github.com/en/copilot/github-copilot-in-the-cli/about-github-copilot-in-the-cli">https://docs.github.com/en/copilot/github-copilot-in-the-cli/about-github-copilot-in-the-cli</a></p>
 <p><code>gh copilot explain</code>은 명령어 설명을 받는 기능이다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">$ gh copilot explain &quot;sudo apt-get&quot;
+<pre><code class="language-bash">$ gh copilot explain "sudo apt-get"
 
 Welcome to GitHub Copilot in the CLI!
 version 0.5.3-beta (2023-11-09)
 
-I&#39;m powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve.
+I'm powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve.
 
 Explanation:
 
@@ -256,52 +250,49 @@ Explanation:
     • It interacts with the APT (Advanced Package Tool) package management system.
     • It requires administrative privileges (hence the use of sudo).
     • It can be followed by various sub-commands and options to perform specific tasks, such as installing, updating, and removing packages.
-  • The specific command sudo apt-get without any additional sub-commands or options will not produce any meaningful result or action.</code>
-        </deckgo-highlight-code>
+  • The specific command sudo apt-get without any additional sub-commands or options will not produce any meaningful result or action.
+</code></pre>
 <p><code>gh copilot suggest</code>로 명령어 추천을 받을 수도 있다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">$ gh copilot suggest &quot;Install git&quot;
+<pre><code class="language-bash">$ gh copilot suggest "Install git"
 
 Welcome to GitHub Copilot in the CLI!
 version 0.5.3-beta (2023-11-09)
 
-I&#39;m powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve.
+I'm powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve.
 
 ? What kind of command can I help you with?
-&gt; generic shell command
+> generic shell command
 
 Suggestion:
 
   sudo apt-get install git
 
 ? Select an option
-&gt; Exit</code>
-        </deckgo-highlight-code>
+> Exit
+</code></pre>
 <p>명령어 유형을 선택하도록 하는데, 쿼리에 힌트를 주더라도 항상 선택한다.</p>
 <p>24년 1월 기준, 2개 기능만 지원한다. 아직은 copilot-cli의 <code>??</code> 명령어를 주로 사용할 것 같다.</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">$ gh copilot
+<pre><code class="language-bash">$ gh copilot
 
 Available Commands:
   config      Configure options
   explain     Explain a command
-  suggest     Suggest a command</code>
-        </deckgo-highlight-code>
+  suggest     Suggest a command
+</code></pre>
 <p>GitHub copilot chat이 포함되기를 기대해 본다. GPT-4 기반이라던데.</p>
 <p><code>gh copilot</code>을 사용하기 위해선 extension을 설치해야 한다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">$ gh extension install github/gh-copilot
+<pre><code class="language-bash">$ gh extension install github/gh-copilot
 ✓ Installed extension github/gh-copilot
 
 # 설치된 extension 목록
 $ gh extension list
 NAME        REPO               VERSION
-gh copilot  github/gh-copilot  v0.5.3-beta</code>
-        </deckgo-highlight-code>
+gh copilot  github/gh-copilot  v0.5.3-beta
+</code></pre>
 <p>제거하려면 <code>gh extension remove github/gh-copilot</code>.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/github/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

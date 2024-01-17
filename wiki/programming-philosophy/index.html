@@ -104,8 +104,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <h3 id="좋은-코드" style="position:relative;"><a href="#%EC%A2%8B%EC%9D%80-%EC%BD%94%EB%93%9C" aria-label="좋은 코드 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>좋은 코드</h3>
 <p>14:20 장면을 보면 Linked List의 node를 제거하는 함수 구현 코드 2개를 비교한다.</p>
 <p><strong>Code 1</strong></p>
-<deckgo-highlight-code language="c"  >
-          <code slot="code">remove_list_entry(entry)
+<pre><code class="language-c">remove_list_entry(entry)
 {
     prev = NULL;
     walk = head;
@@ -114,37 +113,36 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 
     while (walk != entry) {
         prev = walk;
-        walk = walk-&gt;next;
+        walk = walk->next;
     }
 
     // Remove the entry by updating the
     // head or the previous entry
 
     if (!prev)
-        head = entry-&gt;next;
+        head = entry->next;
     else
-        prev-&gt;next = entry-&gt;next;
-}</code>
-        </deckgo-highlight-code>
+        prev->next = entry->next;
+}
+</code></pre>
 <p><strong>Code 2</strong></p>
-<deckgo-highlight-code language="c"  >
-          <code slot="code">remove_list_entry(entry)
+<pre><code class="language-c">remove_list_entry(entry)
 {
-    // The &quot;indirect&quot; pointer points to the
-    // *address* of the thing we&#39;ll update
+    // The "indirect" pointer points to the
+    // *address* of the thing we'll update
 
-    indirect = &amp;head;
+    indirect = &#x26;head;
 
     // Walk the list, looking for the thing that
     // points to the entry we want to remove
 
     while ((*indirect) != entry)
-        indirect = &amp;(*indirect)-&gt;next;
+        indirect = &#x26;(*indirect)->next;
 
     // ... and just remove it
-    *indirect = entry-&gt;next;
-}</code>
-        </deckgo-highlight-code>
+    *indirect = entry->next;
+}
+</code></pre>
 <p>차이점은 마지막 부분의 if-else 키워드의 유무이다.</p>
 <p>첫 번째 코드는 조건문을 통해 제거하는 노드가 첫 번째인지 아닌지 <code>if (!prev)</code> 판단한다.
 반면에 두 번째 코드는 제거하려는 노드가 가리키는 주소를 다음 노드로 변경한다.</p>
@@ -241,6 +239,6 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

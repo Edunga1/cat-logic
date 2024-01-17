@@ -149,21 +149,19 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>데이터 중복을 최소화하는 작업</p>
 <h4 id="제-1-정규화-first-normal-form" style="position:relative;"><a href="#%EC%A0%9C-1-%EC%A0%95%EA%B7%9C%ED%99%94-first-normal-form" aria-label="제 1 정규화 first normal form permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>제 1 정규화 (First Normal Form)</h4>
 <p>inflexible 부분을 제거하는 것이 목적</p>
-<deckgo-highlight-code   >
-          <code slot="code">------------------------------------------------------------------------
+<pre><code>------------------------------------------------------------------------
 | name | email           | email2             | email...               |
 ------------------------------------------------------------------------
 | john | apple@gmail.com | banana@hanmail.net |                        |
 | paul | cat@gmail.com   | null               |                        |
-------------------------------------------------------------------------</code>
-        </deckgo-highlight-code>
+------------------------------------------------------------------------
+</code></pre>
 <p>사용자에 대한 이메일 목록을 관리하고자 할 때, 테이블이 하나라면 <strong>이메일이 추가</strong>되면 컬럼이 늘어나게 된다.</p>
 <p>또한 paul은 하나의 이메일을 가지지만 여러개의 메일을 가진 john에 의해 빈 필드를 가져야만 한다.</p>
 <p>이 문제를 1:N or N:N 관계로 분리하여 해결하는 것이 제 1 정규화.</p>
 <h4 id="제-2-정규화-second-normal-form" style="position:relative;"><a href="#%EC%A0%9C-2-%EC%A0%95%EA%B7%9C%ED%99%94-second-normal-form" aria-label="제 2 정규화 second normal form permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>제 2 정규화 (Second Normal Form)</h4>
 <p><strong>Composite Key</strong>를 사용할 때 일반 필드가 Composite Key 중 <strong>일부분</strong>에 의존할 때 문제가 발생한다.</p>
-<deckgo-highlight-code   >
-          <code slot="code">-----------------------------------------------------------------------
+<pre><code>-----------------------------------------------------------------------
 | Cours  | Date      | CourseTitle      | Room | Capacity | Available |
 -----------------------------------------------------------------------
 | SQL101 | 3/1/2013  | SQL Fundamentals | 4A   | 12       | 4         |
@@ -171,8 +169,8 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 | SQL101 | 4/14/2013 | SQL Fundamentals | 7B   | 14       | 10        |
 | SQL101 | 5/28/2013 | SQL Fundamentals | 12A  | 8        | 8         |
 | CS200  | 4/15/2012 | C Programming    | 4A   | 12       | 11        |
------------------------------------------------------------------------</code>
-        </deckgo-highlight-code>
+-----------------------------------------------------------------------
+</code></pre>
 <p>Cours + Date가 <strong>Composite primary key</strong>라고 할 때</p>
 <p>CourseTitle은 Course에 <strong>의존된다.</strong></p>
 <p>CourseTitle을 Course를 FK, PK로 한 테이블로 분리하여 해결하는 것이 제 2 정규화.</p>
@@ -250,10 +248,9 @@ ruby 생태계에서는 <a href="https://github.com/resque/resque">resque</a> �
 <p>파일, 내용이 많으면 <code>docker-entrypoint-initdb.d/</code>에 두는 것만으로는 시작이 오래 걸린다.
 이를 해결하기 위해서 데이터를 이미지 내에 포함할 수 있다. 대신 이미지 크기가 그만큼 늘어난다.
 개인적으로는 이 방법으로 테이블만 생성하고, integration 테스트하는데 사용하고 있다.</p>
-<deckgo-highlight-code language="dockerfile"  >
-          <code slot="code">FROM mysql:5.6 AS builder
+<pre><code class="language-dockerfile">FROM mysql:5.6 AS builder
 
-RUN [&quot;sed&quot;, &quot;-i&quot;, &quot;s/exec \&quot;$@\&quot;/echo \&quot;not running $@\&quot;/&quot;, &quot;/usr/local/bin/docker-entrypoint.sh&quot;]
+RUN ["sed", "-i", "s/exec \"$@\"/echo \"not running $@\"/", "/usr/local/bin/docker-entrypoint.sh"]
 
 ENV MYSQL_ROOT_PASSWORD=0000 \
     MYSQL_DATABASE=test_quicket \
@@ -262,14 +259,14 @@ ENV MYSQL_ROOT_PASSWORD=0000 \
 
 COPY schema /docker-entrypoint-initdb.d
 
-RUN [&quot;/usr/local/bin/docker-entrypoint.sh&quot;, &quot;mysqld&quot;, &quot;--datadir&quot;, &quot;/initialized-db&quot;]
+RUN ["/usr/local/bin/docker-entrypoint.sh", "mysqld", "--datadir", "/initialized-db"]
 
 FROM mysql:5.6
 
 ENV TZ=Asia/Seoul
 
-COPY --from=builder /initialized-db /var/lib/mysql</code>
-        </deckgo-highlight-code>
+COPY --from=builder /initialized-db /var/lib/mysql
+</code></pre>
 <ul>
 <li>multi-stage build 이용하여 builder stage에서 설정 및 sql 파일을 복사하고 부트스트래핑 스크립트를 직접 실행한다.</li>
 <li>main stage에서 builder의 DB 데이터를 COPY하고 실행한다.</li>
@@ -281,16 +278,15 @@ COPY --from=builder /initialized-db /var/lib/mysql</code>
 </blockquote>
 <p>MySQL 8.0.13에서부터 인덱스 생성 시 함수를 사용할 수 있다.</p>
 <p>예를들어 컬럼에만 인덱스를 걸면:</p>
-<deckgo-highlight-code language="sql"  >
-          <code slot="code">CREATE TABLE stats
+<pre><code class="language-sql">CREATE TABLE stats
 (
     id         int auto_increment primary key,
     created_at datetime not null
 );
 CREATE INDEX idx_created_at ON stats (created_at);
 
-EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;</code>
-        </deckgo-highlight-code>
+EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -350,16 +346,15 @@ EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;</code>
 </tbody>
 </table>
 <p>하지만 functional key parts를 사용하면:</p>
-<deckgo-highlight-code language="sql"  >
-          <code slot="code">CREATE TABLE stats
+<pre><code class="language-sql">CREATE TABLE stats
 (
     id         int auto_increment primary key,
     created_at datetime not null
 );
 CREATE INDEX idx_created_at_month ON stats ((MONTH(created_at)));
 
-EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;</code>
-        </deckgo-highlight-code>
+EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -431,13 +426,12 @@ EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;</code>
 <p><a href="https://dev.mysql.com/doc/refman/8.0/en/create-table-secondary-indexes.html">https://dev.mysql.com/doc/refman/8.0/en/create-table-secondary-indexes.html</a></p>
 <p>Virtual Column은 MySQL 5.7에서 추가되었다.
 Funcitonal Key Parts를 사용할 수 없었던 5.7에서는 Virtual Column을 이용하여 대체 사용할 수 있다.</p>
-<deckgo-highlight-code language="sql"  >
-          <code slot="code">CREATE TABLE jemp (
+<pre><code class="language-sql">CREATE TABLE jemp (
   c JSON,
-  g INT GENERATED ALWAYS AS (c-&gt;&quot;$.id&quot;),
+  g INT GENERATED ALWAYS AS (c->"$.id"),
   INDEX i (g)
-);</code>
-        </deckgo-highlight-code>
+);
+</code></pre>
 <p><code>GENERATED ALWAYS AS</code>를 사용하여 Virtual Column을 생성한다.
 이 컬럼에 대해 정의한 인덱스를 "Virtual Column"라 한다.</p>
 <h2 id="h2-database" style="position:relative;"><a href="#h2-database" aria-label="h2 database permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>H2 Database</h2>
@@ -530,6 +524,6 @@ SELECT j FROM tbl WHERE i > 0;</p>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

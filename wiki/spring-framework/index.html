@@ -161,8 +161,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <h4 id="transactional-test" style="position:relative;"><a href="#transactional-test" aria-label="transactional test permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Transactional Test</h4>
 <p>통합 테스트에서 teardown 시점에 트랜잭션을 롤백하는 방법은 편리해서 자주 사용하는 방법이다.</p>
 <p>SpringBootTest에서는 <code>@Transactional</code>을 사용하여 테스트 후에 롤백할 수 있다:</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">@Import(TestClientConfig::class)
+<pre><code class="language-kotlin">@Import(TestClientConfig::class)
 @ExtendWith(SpringExtension::class)
 @AutoConfigureWebTestClient
 @SpringBootTest
@@ -173,7 +172,7 @@ class UserAddressTest {
 
   @BeforeEach
   fun prepare() {
-    userAddressRepository.save(UserAddress(uid = 1234, address1 = &quot;서울시&quot;))
+    userAddressRepository.save(UserAddress(uid = 1234, address1 = "서울시"))
   }
 
   @Test
@@ -185,11 +184,10 @@ class UserAddressTest {
   fun test2() {
     assertThat(userAddressRepository.count()).isEqualTo(1)
   }
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>하지만 <code>@Nested</code> 클래스에서는 롤백되지 않는다:</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">@Import(TestClientConfig::class)
+<pre><code class="language-kotlin">@Import(TestClientConfig::class)
 @ExtendWith(SpringExtension::class)
 @AutoConfigureWebTestClient
 @SpringBootTest
@@ -200,7 +198,7 @@ class DescribeShippingAddressDetailAAA {
 
   @BeforeEach
   fun prepare() {
-    userAddressRepository.save(UserAddress(uid = 1234, address1 = &quot;서울시 구로구 구로동&quot;))
+    userAddressRepository.save(UserAddress(uid = 1234, address1 = "서울시 구로구 구로동"))
   }
 
   @Nested
@@ -215,8 +213,8 @@ class DescribeShippingAddressDetailAAA {
       assertThat(userAddressRepository.count()).isEqualTo(1)
     }
   }
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p><code>@Nested</code>에서 롤백되지 않는 것은 <a href="https://stackoverflow.com/questions/44203244/transaction-roll-back-is-not-working-in-test-case-in-nested-class-of-junit5">예상 가능한 범위</a>라고
 Spring TestContext Framework 개발자가 말한다:</p>
 <blockquote>
@@ -232,51 +230,47 @@ Spring 5.3의 마일스톤에 포함되어 있다.</p>
 <p><code>@configurationProperties</code>가 설정된 클래스에 매핑해 주는데 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding">Relaxed Binding</a>을 사용한다.</p>
 <p>매우 관대한 규칙으로 property에 binding 하는데, <a href="https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0">Relaxed Binding 2.0 Github Wiki</a>에 그 규칙을 설명하고 있다.</p>
 <p>예를들어 다음 설정은 모두 같은 것을 의미한다:</p>
-<deckgo-highlight-code   >
-          <code slot="code">spring.jpa.database-platform=mysql
+<pre><code>spring.jpa.database-platform=mysql
 spring.jpa.databasePlatform=mysql
-spring.JPA.database_platform=mysql</code>
-        </deckgo-highlight-code>
+spring.JPA.database_platform=mysql
+</code></pre>
 <p>공식적으로 추천하는 포맷은 kebab-case를 사용하는 것이다:</p>
 <blockquote>
 <p>We recommend that properties are stored in lowercase kabab format. i.e. <code>my.property-name=foo</code>.</p>
 </blockquote>
 <p><code>@ConfigurationProperties</code> 예시. 생성자를 통해서 주입받는다.</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">@ConstructorBinding
-@ConfigurationProperties(prefix = &quot;foo.bar&quot;)
+<pre><code class="language-kotlin">@ConstructorBinding
+@ConfigurationProperties(prefix = "foo.bar")
 class MyConfig(val baz: String)
 
 // ConstructorBinding 사용하려면 EnableConfigurationProperties가 필요
 @EnableConfigurationProperties(MyConfig::class)
 @SpringBootApplication
-class Application</code>
-        </deckgo-highlight-code>
+class Application
+</code></pre>
 <h3 id="uri-links" style="position:relative;"><a href="#uri-links" aria-label="uri links permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URI Links</h3>
 <p><a href="https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-uri-building.html#uri-encoding">https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-uri-building.html#uri-encoding</a></p>
 <p><code>UriComponentsBuilder</code>로 query parameter에 URL을 전달하기 위해 다음과 같이 작성하면 인코딩 문제가 발생한다.</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">fun build(url: String) = UriComponentsBuilder
-  .fromUriString(&quot;https://example.com&quot;)
-  .queryParam(&quot;url&quot;, url)
+<pre><code class="language-kotlin">fun build(url: String) = UriComponentsBuilder
+  .fromUriString("https://example.com")
+  .queryParam("url", url)
   .build()
   .toString()
 
-build(&quot;https://www.google.com/search?q=%ED%91%B8%EB%B0%94&amp;oq=%ED%91%B8%EB%B0%94&amp;aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&amp;sourceid=chrome&amp;ie=UTF-8&quot;)
-// https://example.com?url=https://www.google.com/search?q=%ED%91%B8%EB%B0%94&amp;oq=%ED%91%B8%EB%B0%94&amp;aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&amp;sourceid=chrome&amp;ie=UTF-8</code>
-        </deckgo-highlight-code>
+build("https://www.google.com/search?q=%ED%91%B8%EB%B0%94&#x26;oq=%ED%91%B8%EB%B0%94&#x26;aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&#x26;sourceid=chrome&#x26;ie=UTF-8")
+// https://example.com?url=https://www.google.com/search?q=%ED%91%B8%EB%B0%94&#x26;oq=%ED%91%B8%EB%B0%94&#x26;aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&#x26;sourceid=chrome&#x26;ie=UTF-8
+</code></pre>
 <p><code>url=</code> 파라미터의 url에 포함된 slash가 인코딩 되지 않는다.</p>
 <p>다음과 같이 <code>build()</code>로 전달하면 올바르게 인코딩한다.</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">fun build(url: String) = UriComponentsBuilder
-    .fromUriString(&quot;https://example.com&quot;)
-    .queryParam(&quot;url&quot;, &quot;{url}&quot;)
+<pre><code class="language-kotlin">fun build(url: String) = UriComponentsBuilder
+    .fromUriString("https://example.com")
+    .queryParam("url", "{url}")
     .build(url)
     .toString()
 
-build(&quot;https://www.google.com/search?q=%ED%91%B8%EB%B0%94&amp;oq=%ED%91%B8%EB%B0%94&amp;aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&amp;sourceid=chrome&amp;ie=UTF-8&quot;)
-// https://example.com?url=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3D%25ED%2591%25B8%25EB%25B0%2594%26oq%3D%25ED%2591%25B8%25EB%25B0%2594%26aqs%3Dchrome..69i64j46i340i512j0i512l8.2053j0j1%26sourceid%3Dchrome%26ie%3DUTF-8</code>
-        </deckgo-highlight-code>
+build("https://www.google.com/search?q=%ED%91%B8%EB%B0%94&#x26;oq=%ED%91%B8%EB%B0%94&#x26;aqs=chrome..69i64j46i340i512j0i512l8.2053j0j1&#x26;sourceid=chrome&#x26;ie=UTF-8")
+// https://example.com?url=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3D%25ED%2591%25B8%25EB%25B0%2594%26oq%3D%25ED%2591%25B8%25EB%25B0%2594%26aqs%3Dchrome..69i64j46i340i512j0i512l8.2053j0j1%26sourceid%3Dchrome%26ie%3DUTF-8
+</code></pre>
 <p><code>/</code>, <code>=</code>, <code>&#x26;</code> 등 URI 요소를 인코딩한 것을 볼 수 있다.</p>
 <p>placeholder<code>{url}</code>는 사용하지 않았고, build로 전달하는 순서대로 replace 한다.</p>
 <h3 id="actuator" style="position:relative;"><a href="#actuator" aria-label="actuator permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Actuator</h3>
@@ -287,32 +281,31 @@ build(&quot;https://www.google.com/search?q=%ED%91%B8%EB%B0%94&amp;oq=%ED%91%B8%
 </ul>
 <p>문서 제목부터 <em>Production-ready Features</em>로 안정감이 느껴진다.</p>
 <p>기본적으로 <code>/actuator</code>에서 현재 제공하고 있는 도구 목록을 보여주는데, json으로 제공된다:</p>
-<deckgo-highlight-code language="json"  >
-          <code slot="code">{
-  &quot;_links&quot;: {
-    &quot;self&quot;: {
-      &quot;href&quot;: &quot;http://localhost:5001/actuator&quot;,
-      &quot;templated&quot;: false
+<pre><code class="language-json">{
+  "_links": {
+    "self": {
+      "href": "http://localhost:5001/actuator",
+      "templated": false
     },
-    &quot;beans&quot;: {
-      &quot;href&quot;: &quot;http://localhost:5001/actuator/beans&quot;,
-      &quot;templated&quot;: false
+    "beans": {
+      "href": "http://localhost:5001/actuator/beans",
+      "templated": false
     },
-    &quot;health&quot;: {
-      &quot;href&quot;: &quot;http://localhost:5001/actuator/health&quot;,
-      &quot;templated&quot;: false
+    "health": {
+      "href": "http://localhost:5001/actuator/health",
+      "templated": false
     },
-    &quot;health-path&quot;: {
-      &quot;href&quot;: &quot;http://localhost:5001/actuator/health/{*path}&quot;,
-      &quot;templated&quot;: true
+    "health-path": {
+      "href": "http://localhost:5001/actuator/health/{*path}",
+      "templated": true
     },
-    &quot;httptrace&quot;: {
-      &quot;href&quot;: &quot;http://localhost:5001/actuator/httptrace&quot;,
-      &quot;templated&quot;: false
+    "httptrace": {
+      "href": "http://localhost:5001/actuator/httptrace",
+      "templated": false
     }
   }
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <h4 id="httptracehttpexchanges" style="position:relative;"><a href="#httptracehttpexchanges" aria-label="httptracehttpexchanges permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>httptrace(httpexchanges)</h4>
 <p>httptrace는 최근 HTTP 요청 내역을 관리하는 기능이다. Spring Boot 3 부터는 <code>httpexchanges</code>라 부른다.</p>
 <ul>
@@ -326,84 +319,77 @@ Bean 구현하는 것은 <a href="https://github.com/spring-projects/spring-boot
 Bean 인터페이스 이름도 <code>HttpExchangeRepository</code>로 변경되었다.</p>
 <p>어느 버전이든 <code>HttpTraceRepository</code>를 in-memory 버전 저장소로 간편하게 구현할 수 있다.<br>
 다음은 Spring Boot 2 기준 예시 코드:</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">@Bean
-fun httpTraceRepository(): HttpTraceRepository = InMemoryHttpTraceRepository()</code>
-        </deckgo-highlight-code>
+<pre><code class="language-kotlin">@Bean
+fun httpTraceRepository(): HttpTraceRepository = InMemoryHttpTraceRepository()
+</code></pre>
 <p>내 경우, 운영에서는 <code>health</code> 말고는 Actuator 기능을 비활성화했기 때문에 Bean 생성 조건에 property 확인을 추가했다:</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">@Bean
-@ConditionalOnExpression(&quot;&#39;\${management.endpoints.web.exposure.include}&#39;.contains(&#39;httptrace&#39;)&quot;)
-fun httpTraceRepository(): HttpTraceRepository = InMemoryHttpTraceRepository()</code>
-        </deckgo-highlight-code>
+<pre><code class="language-kotlin">@Bean
+@ConditionalOnExpression("'\${management.endpoints.web.exposure.include}'.contains('httptrace')")
+fun httpTraceRepository(): HttpTraceRepository = InMemoryHttpTraceRepository()
+</code></pre>
 <p>서버 시작 후 <code>/actuator/httptrace</code>에 접속하면 json으로 제공한다.</p>
-<deckgo-highlight-code language="json"  >
-          <code slot="code">{
-  &quot;traces&quot;: [
+<pre><code class="language-json">{
+  "traces": [
     {
-      &quot;timestamp&quot;: &quot;2023-12-27T08:24:56.956Z&quot;,
-      &quot;principal&quot;: null,
-      &quot;session&quot;: null,
-      &quot;request&quot;: {
-        &quot;method&quot;: &quot;GET&quot;,
-        &quot;uri&quot;: &quot;http://localhost:5001/actuator/&quot;,
-        &quot;headers&quot;: {
-          &quot;sec-fetch-mode&quot;: [
-            &quot;navigate&quot;
+      "timestamp": "2023-12-27T08:24:56.956Z",
+      "principal": null,
+      "session": null,
+      "request": {
+        "method": "GET",
+        "uri": "http://localhost:5001/actuator/",
+        "headers": {
+          "sec-fetch-mode": [
+            "navigate"
           ]
           // ... 생략
         },
-        &quot;remoteAddress&quot;: null
+        "remoteAddress": null
       },
-      &quot;response&quot;: {
-        &quot;status&quot;: 200,
-        &quot;headers&quot;: {
-          &quot;Keep-Alive&quot;: [
-            &quot;timeout=60&quot;
+      "response": {
+        "status": 200,
+        "headers": {
+          "Keep-Alive": [
+            "timeout=60"
           ]
           // ... 생략
         }
       },
-      &quot;timeTaken&quot;: 27
+      "timeTaken": 27
     }
   ]
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>actuator 페이지 접근을 위해 기록된 것을 볼 수 있다.
 최근 요청의 헤더 정보, 응답 코드, URL 등을 알 수 있다.</p>
 <h2 id="spring-cli" style="position:relative;"><a href="#spring-cli" aria-label="spring cli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spring CLI</h2>
 <p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html">https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html</a></p>
 <p>Installation(Homebrew):</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">$ brew tap spring-io/tap
-$ brew install spring-boot</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">$ brew tap spring-io/tap
+$ brew install spring-boot
+</code></pre>
 <p>도움말 확인하려면 <code>spring help &#x3C;command></code><br>
 e.g. <code>spring help init</code></p>
 <h3 id="빠른-프로젝트-생성" style="position:relative;"><a href="#%EB%B9%A0%EB%A5%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%83%9D%EC%84%B1" aria-label="빠른 프로젝트 생성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>빠른 프로젝트 생성</h3>
 <p>Kotlin + Spring Boot + Gradle 프로젝트를 빠르게 생성 해보자.</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">spring init --language kotlin --type gradle-project-kotlin --extract demo</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">spring init --language kotlin --type gradle-project-kotlin --extract demo
+</code></pre>
 <p><code>demo</code> 디렉토리와 함께 프로젝트가 생성된다.<br>
 <code>--extract</code> 옵션을 생략하면 zip 파일로 생성된다.</p>
 <p>Application 코드를 생성해 주지만 <code>ApplicationRunner</code>로 간단하게 hello world 출력해보자:</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">@SpringBootApplication
+<pre><code class="language-kotlin">@SpringBootApplication
 class DemoApplication: ApplicationRunner {
     override fun run(args: ApplicationArguments) {
-        println(&quot;Hello, world!&quot;)
+        println("Hello, world!")
     }
 }
 
-fun main(args: Array&lt;String&gt;) {
-    runApplication&lt;DemoApplication&gt;(*args)
-}</code>
-        </deckgo-highlight-code>
+fun main(args: Array&#x3C;String>) {
+    runApplication&#x3C;DemoApplication>(*args)
+}
+</code></pre>
 <hr>
 <p><code>spring init --list</code>로 설정 기본값을 확인할 수 있다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">Parameters
+<pre><code class="language-bash">Parameters
 +-------------+------------------------------------------+------------------------------+
 | Id          | Description                              | Default value                |
 +-------------+------------------------------------------+------------------------------+
@@ -418,11 +404,10 @@ fun main(args: Array&lt;String&gt;) {
 | packaging   | project packaging                        | jar                          |
 | type        | project type                             | gradle-project               |
 | version     | project version                          | 0.0.1-SNAPSHOT               |
-+-------------+------------------------------------------+------------------------------+</code>
-        </deckgo-highlight-code>
++-------------+------------------------------------------+------------------------------+
+</code></pre>
 <p><code>--type</code> 옵션에 사용 할 프로젝트 유형 목록도 표시된다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">Project types (* denotes the default)
+<pre><code class="language-bash">Project types (* denotes the default)
 +-----------------------+--------------------------------------------------------------+--------------------------------------------+
 | Id                    | Description                                                  | Tags                                       |
 +-----------------------+--------------------------------------------------------------+--------------------------------------------+
@@ -437,15 +422,14 @@ fun main(args: Array&lt;String&gt;) {
 | maven-build           | Generate a Maven pom.xml.                                    | build:maven,format:build                   |
 |                       |                                                              |                                            |
 | maven-project         | Generate a Maven based project archive.                      | build:maven,format:project                 |
-+-----------------------+--------------------------------------------------------------+--------------------------------------------+</code>
-        </deckgo-highlight-code>
++-----------------------+--------------------------------------------------------------+--------------------------------------------+
+</code></pre>
 <p>포함할 의존성도 선택할 수 있는데, 간단한 설명이 포함되어 있어서 유용하다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">Supported dependencies
+<pre><code class="language-bash">Supported dependencies
 +--------------------------------------+--------------------------------------------------------------+-------------------------------+
 | Id                                   | Description                                                  | Required version              |
 +--------------------------------------+--------------------------------------------------------------+-------------------------------+
-| activemq                             | Spring JMS support with Apache ActiveMQ &#39;Classic&#39;.           |                               |
+| activemq                             | Spring JMS support with Apache ActiveMQ 'Classic'.           |                               |
 |                                      |                                                              |                               |
 | actuator                             | Supports built in (or custom) endpoints that let you monitor |                               |
 |                                      | and manage your application - such as application health,    |                               |
@@ -458,8 +442,8 @@ fun main(args: Array&lt;String&gt;) {
 |                                      | STOMP.                                                       |                               |
 |                                      |                                                              |                               |
 | zipkin                               | Enable and expose span and trace IDs to Zipkin.              |                               |
-+--------------------------------------+--------------------------------------------------------------+-------------------------------+</code>
-        </deckgo-highlight-code>
++--------------------------------------+--------------------------------------------------------------+-------------------------------+
+</code></pre>
 <p>의존성을 추가하려면 <code>--dependencies=actuator,webflux</code>와 같이 사용한다.</p>
 <h2 id="caching" style="position:relative;"><a href="#caching" aria-label="caching permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caching</h2>
 <p><a href="https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-caching.html">https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-caching.html</a></p>
@@ -478,8 +462,7 @@ fun main(args: Array&lt;String&gt;) {
 </blockquote>
 <p><code>spring-boot-starter-cache</code>를 사용하면 <code>CaffeineCacheManager</code>를 알아서 만들어 준다고 한다.
 내 경우에는 직접 <code>CacheManager</code> 구성해서 <code>spring-boot-starter-cache</code>가 필요하지 않았다.</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">@EnableCaching
+<pre><code class="language-kotlin">@EnableCaching
 @Configuration
 class CacheConfig {
     @Bean
@@ -502,16 +485,15 @@ enum class CacheType(
     val cacheName: String,
     val duration: Duration,
 ) {
-    CACHE_POLICY1(&quot;policy1&quot;, Duration.ofMinutes(10)),
-    CACHE_POLICY2(&quot;policy2&quot;, Duration.ofMinutes(50)),
+    CACHE_POLICY1("policy1", Duration.ofMinutes(10)),
+    CACHE_POLICY2("policy2", Duration.ofMinutes(50)),
     ;
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>enum으로 만료 시간에 다른 캐시 정책을 여러개 만들었다.</p>
-<deckgo-highlight-code language="kotlin"  >
-          <code slot="code">@Cacheable(cacheNames = [&quot;policy1&quot;])
-fun getItems(): Set&lt;Items&gt; = repository.find()</code>
-        </deckgo-highlight-code>
+<pre><code class="language-kotlin">@Cacheable(cacheNames = ["policy1"])
+fun getItems(): Set&#x3C;Items> = repository.find()
+</code></pre>
 <p>사용을 위해선 캐시 이름을 맞춰서 사용한다.
 캐시 이름이 변경되면 캐시 선언 부분과 사용 부분 모두 수정하는데, 이는 캐시 이름을 <code>const val</code>로 만들어서 처리할 수 있다.</p>
 <h2 id="troubleshooting" style="position:relative;"><a href="#troubleshooting" aria-label="troubleshooting permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
@@ -520,9 +502,8 @@ fun getItems(): Set&lt;Items&gt; = repository.find()</code>
 <code>Cannot resolve configuration property 'foo.bar'</code> 경고가 출력되는 문제. 서버 시작은 잘 된다.</p>
 <p><code>org.springframework.boot:spring-boot-configuration-processor</code> 의존성을 추가하고, <code>gradle compileJava</code>를 실행하면 된다.</p>
 <p>gradle(kts) 예시:</p>
-<deckgo-highlight-code language="gradle"  >
-          <code slot="code">kapt(&quot;org.springframework.boot:spring-boot-configuration-processor&quot;)</code>
-        </deckgo-highlight-code>
+<pre><code class="language-gradle">kapt("org.springframework.boot:spring-boot-configuration-processor")
+</code></pre>
 <h3 id="webclient-첫-요청이-느린-문제" style="position:relative;"><a href="#webclient-%EC%B2%AB-%EC%9A%94%EC%B2%AD%EC%9D%B4-%EB%8A%90%EB%A6%B0-%EB%AC%B8%EC%A0%9C" aria-label="webclient 첫 요청이 느린 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WebClient 첫 요청이 느린 문제</h3>
 <p>상황: 서버 시작 직후 다른 서버의 API를 호출하는 내 API가 느려서 클라이언트에서 타임아웃이 자주 발생함.<br>
 해결: netty http client의 <code>warmup</code> + 사용자 진입 전 미리 타겟 서버 API 호출</p>
@@ -542,6 +523,6 @@ fun getItems(): Set&lt;Items&gt; = repository.find()</code>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

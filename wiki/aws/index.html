@@ -130,19 +130,16 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>AWS 관련</p>
 <h2 id="awscli" style="position:relative;"><a href="#awscli" aria-label="awscli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>awscli</code></h2>
 <h3 id="ecr-로그인하기" style="position:relative;"><a href="#ecr-%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%95%98%EA%B8%B0" aria-label="ecr 로그인하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ECR 로그인하기</h3>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">aws ecr get-login-password --region &lt;REGION&gt; | docker login --username AWS --password-stdin &lt;AWS_ACCOUNT_ID&gt;.dkr.ecr.&lt;REGION&gt;.amazonaws.com</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">aws ecr get-login-password --region &#x3C;REGION> | docker login --username AWS --password-stdin &#x3C;AWS_ACCOUNT_ID>.dkr.ecr.&#x3C;REGION>.amazonaws.com
+</code></pre>
 <p><code>REGION</code>: 서울 리전이라면 <code>ap-northeast-2</code></p>
 <p><code>AWS_ACCOUNT_ID</code> 구하기:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">aws sts get-caller-identity</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">aws sts get-caller-identity
+</code></pre>
 <p><code>Account</code> 필드의 값이 <code>AWS_ACCOUNT_ID</code> 이다.</p>
 <p>e.g. account id = <code>1234</code>, region = <code>ap-northeast-2</code>:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 1234.dkr.ecr.ap-northeast-2.amazonaws.com</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 1234.dkr.ecr.ap-northeast-2.amazonaws.com
+</code></pre>
 <p>ref:</p>
 <ul>
 <li><a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html">https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html</a></li>
@@ -158,27 +155,23 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li><a href="https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html">새 access key 생성</a>:\</li>
 </ol>
 <p>foreground로 읽으니 파일로 저장하자.</p>
-<deckgo-highlight-code language="sh"  >
-          <code slot="code">aws iam create-access-key &gt; access-key.json</code>
-        </deckgo-highlight-code>
+<pre><code class="language-sh">aws iam create-access-key > access-key.json
+</code></pre>
 <ol start="2">
 <li><a href="https://docs.aws.amazon.com/cli/latest/reference/configure/">새 access key로 도구 업데이트</a>:</li>
 </ol>
-<deckgo-highlight-code language="sh"  >
-          <code slot="code">aws configure</code>
-        </deckgo-highlight-code>
+<pre><code class="language-sh">aws configure
+</code></pre>
 <ol start="3">
 <li><a href="https://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html">기존 access key 비활성화</a>:</li>
 </ol>
-<deckgo-highlight-code language="sh"  >
-          <code slot="code">aws iam update-access-key --access-key-id &lt;OLD_ACCESS_KEY_ID&gt; --status Inactive</code>
-        </deckgo-highlight-code>
+<pre><code class="language-sh">aws iam update-access-key --access-key-id &#x3C;OLD_ACCESS_KEY_ID> --status Inactive
+</code></pre>
 <p>2번에서 <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/import.html">aws configure cli</a> 명으로로 <code>--csv</code> 포맷의 파일을 읽어서 업데이트 할 수 있다.
 그러면 interactive로 secret key를 입력하지 않고 자동화할 수 있을 듯한데, 1번의 생성 명령어에서 csv 포맷을 제공하지 않는다.</p>
 <p>기존 access-key를 확인하려면 <a href="https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html">list-access-keys</a>를 사용하면 된다:</p>
-<deckgo-highlight-code language="sh"  >
-          <code slot="code">aws iam list-access-keys</code>
-        </deckgo-highlight-code>
+<pre><code class="language-sh">aws iam list-access-keys
+</code></pre>
 <h2 id="localstack" style="position:relative;"><a href="#localstack" aria-label="localstack permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LocalStack</h2>
 <p><a href="https://github.com/localstack/localstack">https://github.com/localstack/localstack</a></p>
 <p>로컬 환경에서 AWS 클라우드 스택을 구축하는 도구이다.</p>
@@ -187,30 +180,28 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>LocalStack은 AWS 기능 대부분을 제공한다. <a href="https://docs.localstack.cloud/references/coverage/">https://docs.localstack.cloud/references/coverage/</a> 여기에서 어떤 기능을 커버하는지 확인할 수 있는데, 왠만한 서비스는 다 있는 것으로 보인다.</p>
 <p>도커로 실행하면 더 쉽다. 저장소의 <a href="https://github.com/localstack/localstack/blob/master/docker-compose.yml">docker-compose.yml</a> 확인하고 그대로 사용해도 된다.</p>
 <p>Kinesis를 사용하기 위해서 다음과 같이 사용하고 있다:</p>
-<deckgo-highlight-code language="yml"  >
-          <code slot="code">version: &quot;3.8&quot;
+<pre><code class="language-yml">version: "3.8"
 
 services:
   localstack:
     image: localstack/localstack
     ports:
-      - &quot;127.0.0.1:4566:4566&quot;
-      - &quot;127.0.0.1:4510-4559:4510-4559&quot;
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4510-4559:4510-4559"
     environment:
       - DEBUG=1
       - DOCKER_HOST=unix:///var/run/docker.sock
     volumes:
-      - &quot;/var/run/docker.sock:/var/run/docker.sock&quot;
-      - &quot;./data:/var/lib/localstack&quot;
-      - &quot;./kinesis-my-stream.sh:/etc/localstack/init/ready.d/kinesis-my-stream.sh&quot;</code>
-        </deckgo-highlight-code>
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./data:/var/lib/localstack"
+      - "./kinesis-my-stream.sh:/etc/localstack/init/ready.d/kinesis-my-stream.sh"
+</code></pre>
 <p>다른 점은 볼륨의 마지막 부분인데, hook을 통해서 스트림을 생성하도록 했다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">##!/bin/bash
+<pre><code class="language-bash">##!/bin/bash
 
 aws --endpoint-url=http://localhost:4566 kinesis create-stream --stream-name my-event-dev --shard-count 1 --region ap-northeast-2
-aws --endpoint-url=http://localhost:4566 kinesis list-streams --region ap-northeast-2</code>
-        </deckgo-highlight-code>
+aws --endpoint-url=http://localhost:4566 kinesis list-streams --region ap-northeast-2
+</code></pre>
 <p>hook에 대해선 다음 문서에서 설명한다:<br>
 <a href="https://docs.localstack.cloud/references/init-hooks/">https://docs.localstack.cloud/references/init-hooks/</a></p>
 <p>위 예시에서 보듯이 <code>aws</code> 명령어가 LocalStack과 잘 호환된다.
@@ -218,16 +209,14 @@ aws --endpoint-url=http://localhost:4566 kinesis list-streams --region ap-northe
 <code>awslocal</code> 명령어도 제공하는데, endpoint를 명시하지 않아도 된다.</p>
 <p>credentials 관련 오류가 있으면 <code>awslocal</code> 명령을 사용하자. 그러면 credentials(<code>~/.aws/credentials</code>)을 확인하지 않는다.
 앱에서 접근해야 한다면 <code>awslocal</code>을 사용할 수 없으니, 임의로 넣어놓자:</p>
-<deckgo-highlight-code   >
-          <code slot="code">[default]
+<pre><code>[default]
 aws_access_key_id = test
-aws_secret_access_key = test</code>
-        </deckgo-highlight-code>
+aws_secret_access_key = test
+</code></pre>
 <p>환경 변수를 사용해도 된다:</p>
-<deckgo-highlight-code   >
-          <code slot="code">AWS_ACCESS_KEY_ID = test
-AWS_SECRET_ACCESS_KEY = test</code>
-        </deckgo-highlight-code>
+<pre><code>AWS_ACCESS_KEY_ID = test
+AWS_SECRET_ACCESS_KEY = test
+</code></pre>
 <p>검증은 localstack이 넘길테니 임의로 넣어두면 클라이언트 단에서 credentials 존재 여부 정도만 확인하니 괜찮다.</p>
 <h2 id="kinesis" style="position:relative;"><a href="#kinesis" aria-label="kinesis permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kinesis</h2>
 <p>Consumer 라이브러리를 KCL(Kinesis Client Library)라고 부르고,
@@ -275,9 +264,8 @@ transaction은 <code>GetRecrods</code> API 호출을 의미하는 거 같다.</p
 KCL 2.0으로 업데이트되면서 <code>kinesisEndpoint</code> <code>dynamodbEndpoint</code> <a href="https://docs.aws.amazon.com/streams/latest/dev/kcl-migration.html#client-configuration-removals">설정이 제거</a>되었다.</p>
 <p>Client 생성 주체인 KCL for Node.js에서 진행해야 하지만, 여기엔 설정을 제공하지 않는다. 저장소가 거의 죽어있다.</p>
 <p>KCL for Java는 client builder를 통해서 endpoint를 설정할 수 있다. 저장소도 자주 업데이트 된다.</p>
-<deckgo-highlight-code language="java"  >
-          <code slot="code">KinesisAsyncClient.builder().endpointOverride(URI.create(&quot;https://&lt;kinesis endpoint&gt;&quot;)).build().</code>
-        </deckgo-highlight-code>
+<pre><code class="language-java">KinesisAsyncClient.builder().endpointOverride(URI.create("https://&#x3C;kinesis endpoint>")).build().
+</code></pre>
 <h2 id="storage-service" style="position:relative;"><a href="#storage-service" aria-label="storage service permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Service</h2>
 <p>2021-09-31 AWS CEP 내용 정리한 것.</p>
 <p>Storage는 크게 Block, File, Object로 나뉜다.</p>
@@ -402,6 +390,6 @@ EC2는 Regional 서비스에 포함된다.</p>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

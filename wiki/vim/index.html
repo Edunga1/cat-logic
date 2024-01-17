@@ -281,20 +281,18 @@ neovim에 맞춰진 플러그인은 ~.nvim 이라는 접미사를 붙이는 것�
 <p><code>init.vim</code> 대신 <code>init.lua</code>에서 설정을 명세할 수 있다.</p>
 <p>vim 함수를 <code>:call Foo()</code>로 호출하는 것처럼, lua 함수도 <code>:lua Foo()</code>로 호출할 수 있다.
 예를들어 LSP에 설정된 코드 액션 매핑이 있는데:</p>
-<deckgo-highlight-code language="lua"  >
-          <code slot="code">vim.keymap.set(&#39;n&#39;, &#39;&lt;space&gt;ca&#39;, vim.lsp.buf.code_action, bufopts)</code>
-        </deckgo-highlight-code>
+<pre><code class="language-lua">vim.keymap.set('n', '&#x3C;space>ca', vim.lsp.buf.code_action, bufopts)
+</code></pre>
 <p>직접 호출하려면 <code>:lua vim.lsp.buf.code_action()</code>로 호출한다.</p>
 <h3 id="내장-language-server-protocol-사용하기" style="position:relative;"><a href="#%EB%82%B4%EC%9E%A5-language-server-protocol-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="내장 language server protocol 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>내장 Language Server Protocol 사용하기</h3>
 <p>Noevim은 자체적으로 <a href="../language-server-protocol">Language Server Protocol</a>을 제공한다.</p>
 <p>Vim을 IDE처럼 사용하기 위해서는 몇 가지 플러그인이 필요하다.</p>
 <p><a href="https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33">.vimrc</a>에 다음 플러그인을 추가한다.</p>
-<deckgo-highlight-code   >
-          <code slot="code">Plug &#39;neovim/nvim-lspconfig&#39;
-Plug &#39;williamboman/mason.nvim&#39;
-Plug &#39;williamboman/mason-lspconfig.nvim&#39;
-Plug &#39;jose-elias-alvarez/null-ls.nvim&#39;</code>
-        </deckgo-highlight-code>
+<pre><code>Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+</code></pre>
 <p>각 플러그인의 역할은 다음과 같다:</p>
 <ul>
 <li><a href="https://github.com/neovim/nvim-lspconfig">nvim-lspconfig</a>: LSP 설정할 수 있다. 이것만 필수사항.</li>
@@ -302,12 +300,11 @@ Plug &#39;jose-elias-alvarez/null-ls.nvim&#39;</code>
 <li><a href="https://github.com/jose-elias-alvarez/null-ls.nvim">null-ls</a>: diagnostic, linter, code action을 사용할 수 있게한다. 아쉽게도 23년에 개발 중단되었다. 그러나 여전히 사용할만하다.</li>
 </ul>
 <p>lua init 파일에서 다음과 같이 설정한다:</p>
-<deckgo-highlight-code language="lua"  >
-          <code slot="code">-- null-ls 설정은 생략
-require(&quot;mason&quot;).setup()
-require(&quot;mason-lspconfig&quot;).setup()
-require&#39;lspconfig&#39;.tsserver.setup{}</code>
-        </deckgo-highlight-code>
+<pre><code class="language-lua">-- null-ls 설정은 생략
+require("mason").setup()
+require("mason-lspconfig").setup()
+require'lspconfig'.tsserver.setup{}
+</code></pre>
 <p>Language Server를 설치한다: <code>:MasonInstall typescript-language-server</code><br>
 <code>:Mason</code> 명령으로 대화형 UI를 통해 목록을 확인하고 설치할 수 있다.</p>
 <p><span
@@ -371,9 +368,8 @@ require&#39;lspconfig&#39;.tsserver.setup{}</code>
 <ol>
 <li>ctrl + p</li>
 </ol>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">nnoremap &lt;expr&gt; &lt;C-p&gt; (len(system(&#39;git rev-parse&#39;)) ? &#39;:Files&#39; : &#39;:GFiles --exclude-standard --others --cached&#39;).&quot;\&lt;cr&gt;&quot;</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">nnoremap &#x3C;expr> &#x3C;C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\&#x3C;cr>"
+</code></pre>
 <p>이 방법은 별도 검색창이 출력되고, interactive하게 파일 이름을 검색한다.</p>
 <ol start="2">
 <li><code>:Rg</code> or <code>:Ag</code></li>
@@ -420,42 +416,38 @@ quickfix는 모든 창에서, location-list는 현재 창에서만 유지한다�
 <p>모든 buffer에 대해서 적용하므로 <code>:buffers</code>등 명령어로 적용 대상을 잘 확인하자.</p>
 <h4 id="user-function" style="position:relative;"><a href="#user-function" aria-label="user function permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>User Function</h4>
 <p>사용자 함수에 대한 메뉴얼은 <code>:help userfunc</code>에서 설명한다.</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">function! MyFunction() abort
-  echo &quot;Hello World!&quot;
-endfunction</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">function! MyFunction() abort
+  echo "Hello World!"
+endfunction
+</code></pre>
 <p>위 함수는 <code>:call MyFunction()</code>으로 호출할 수 있다.</p>
 <p><code>function!</code>의 <code>!</code>는 함수가 이미 존재하면 덮어쓴다는 의미다.
 <code>function</code>은 함수가 이미 존재하면 에러가 발생한다.
 <code>:help E122</code>에서 설명한다.</p>
 <p><code>abort</code>는 에러가 발생하면 함수를 거기서 종료한다. <code>:help func-abort</code>에서 설명한다.</p>
 <hr>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">function s:MyFunction()
-  echo &quot;Hello World!&quot;
-endfunction</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">function s:MyFunction()
+  echo "Hello World!"
+endfunction
+</code></pre>
 <p><code>s:</code>를 붙이면 local function이 된다.
 함수는 정의된 스크립트에서만 호출할 수 있다. 즉, <code>call MyFunction()</code>로 호출할 수 없다.
 vim은 많은 플러그인을 통해 함수가 정의되어 이름 충돌할 수 있으므로 local function을 사용하는 것이 좋다.</p>
 <h3 id="fuzzy-매칭-matchfuzzy" style="position:relative;"><a href="#fuzzy-%EB%A7%A4%EC%B9%AD-matchfuzzy" aria-label="fuzzy 매칭 matchfuzzy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fuzzy 매칭: <code>matchfuzzy()</code></h3>
 <p><code>:h matchfuzzy()</code></p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">:echo matchfuzzy([&#39;red apple&#39;, &#39;yello banana&#39;], &#39;ra&#39;)  &quot; [&#39;red apple&#39;]</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">:echo matchfuzzy(['red apple', 'yello banana'], 'ra')  " ['red apple']
+</code></pre>
 <p>dictionary를 검색할 수도 있다:</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">let s:lst = [
-  \ {&#39;name&#39;: &#39;john&#39;, &#39;age&#39;: 20},
-  \ {&#39;name&#39;: &#39;jane&#39;, &#39;age&#39;: 30},
-  \ {&#39;name&#39;: &#39;joe&#39;, &#39;age&#39;: 40},
-  \ {&#39;name&#39;: &#39;jill&#39;, &#39;age&#39;: 50},
+<pre><code class="language-vim">let s:lst = [
+  \ {'name': 'john', 'age': 20},
+  \ {'name': 'jane', 'age': 30},
+  \ {'name': 'joe', 'age': 40},
+  \ {'name': 'jill', 'age': 50},
   \]
 
-echo s:lst-&gt;matchfuzzy(&#39;je&#39;, {&#39;key&#39;: &#39;name&#39;})
-&quot; [{&#39;age&#39;: 40, &#39;name&#39;: &#39;joe&#39;}, {&#39;age&#39;: 30, &#39;name&#39;: &#39;jane&#39;}]</code>
-        </deckgo-highlight-code>
+echo s:lst->matchfuzzy('je', {'key': 'name'})
+" [{'age': 40, 'name': 'joe'}, {'age': 30, 'name': 'jane'}]
+</code></pre>
 <p>fuzzy search하는 함수.</p>
 <h3 id="make-and-makeprg" style="position:relative;"><a href="#make-and-makeprg" aria-label="make and makeprg permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>:make</code> and <code>makeprg</code></h3>
 <p><code>:make</code> 명령은 <code>makeprg</code>에 설정한 것을 실행한다.
@@ -545,9 +537,8 @@ HTML 태그의 경우 <code>&#x3C;div></code>에서 사용하면 <code>&#x3C;/di
 </ol>
 <p><code>let @</code>을 사용하면 직접 register에 값을 할당할 수 있다.
 응용하면, <code>+</code> register에 클립보드를 연결했다면, 클립보드에 현재 파일 경로를 저장할 수 있다:</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">:let @+=expand(&#39;%&#39;)</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">:let @+=expand('%')
+</code></pre>
 <h2 id="variables" style="position:relative;"><a href="#variables" aria-label="variables permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variables</h2>
 <h3 id="path" style="position:relative;"><a href="#path" aria-label="path permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>path</code></h3>
 <p><code>:find</code> 검색 범위를 결정한다.
@@ -561,8 +552,7 @@ netrw, find 사용법</p>
 <h2 id="plugin-만들기" style="position:relative;"><a href="#plugin-%EB%A7%8C%EB%93%A4%EA%B8%B0" aria-label="plugin 만들기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin 만들기</h2>
 <p><code>:h write-plugin</code> nvim의 사용자 메뉴얼 플러그인 작성 섹션.</p>
 <h3 id="프로젝트-구조" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0" aria-label="프로젝트 구조 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 구조</h3>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">.
+<pre><code class="language-bash">.
 │   # 폴더 내의 모든 파일을 자동으로 로드한다.
 ├── autoload
 │   └── vimwiki_link
@@ -573,17 +563,16 @@ netrw, find 사용법</p>
     │   # vimwiki 파일 타입인 버퍼를 열면 자동으로 로드한다.
     ├── vimwiki
     │   └── script.vim
-    └── vimwiki.vim</code>
-        </deckgo-highlight-code>
+    └── vimwiki.vim
+</code></pre>
 <h3 id="autoload" style="position:relative;"><a href="#autoload" aria-label="autoload permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>autoload</code></h3>
 <p><code>:h autoload</code></p>
 <p><code>autoload/vimwiki_link/base.vim</code> 파일이 있으면 <code>vimwiki_link#base#Function()</code> 함수 이름으로 정의한다.</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code"># autoload/vimwiki_link/base.vim
+<pre><code class="language-vim"># autoload/vimwiki_link/base.vim
 function! vimwiki_link#base#follow_link() abort
   # ...
-endfunction</code>
-        </deckgo-highlight-code>
+endfunction
+</code></pre>
 <p>폴더 및 파일 이름이 네임스페이스가 된다. 만약 다른 네임스페이스로 선언하면 에러가 발생한다.</p>
 <h3 id="ftplugin" style="position:relative;"><a href="#ftplugin" aria-label="ftplugin permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>ftplugin</code></h3>
 <ul>
@@ -598,13 +587,12 @@ endfunction</code>
 ftplugin/<filetype>_<name>.vim
 ftplugin/<filetype>/<name>.vim</p>
 </blockquote>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">&quot; ftplugin/vimwiki.vim
+<pre><code class="language-vim">" ftplugin/vimwiki.vim
 command! -buffer VimwikiSmartLink call vimwiki_link#base#follow_link()
 
-nnoremap &lt;silent&gt;&lt;script&gt;&lt;buffer&gt; &lt;Plug&gt;VimwikiSmartLink :VimwikiSmartLink&lt;CR&gt;
-nnoremap &lt;CR&gt;&lt;CR&gt; &lt;Plug&gt;VimwikiSmartLink</code>
-        </deckgo-highlight-code>
+nnoremap &#x3C;silent>&#x3C;script>&#x3C;buffer> &#x3C;Plug>VimwikiSmartLink :VimwikiSmartLink&#x3C;CR>
+nnoremap &#x3C;CR>&#x3C;CR> &#x3C;Plug>VimwikiSmartLink
+</code></pre>
 <p>보통 파일 타입에 맞는 명령어를 정의하거나 매핑을 생성하고
 <code>autoload</code>의 함수를 호출하는 구조로 많이 사용하는 거 같다.</p>
 <p>nvim이라면 <code>~/.config/nvim/ftplugin</code> 디렉토리에 파일을 만들면 된다.</p>
@@ -617,14 +605,13 @@ with mappings that are only to be used from other mappings.</p>
 <p>매핑할 때 사용하는 특수 키 이름이다. 매핑 충돌을 피하기 위한 대책이다.
 이 특수 키로 먼저 매핑하고, 실제 키에 매핑한다.</p>
 <p>예를들어 vimwiki에는 다음과 같은 코드가 있다:</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">nnoremap &lt;silent&gt;&lt;script&gt;&lt;buffer&gt; &lt;Plug&gt;VimwikiFollowLink :VimwikiFollowLink&lt;CR&gt;
+<pre><code class="language-vim">nnoremap &#x3C;silent>&#x3C;script>&#x3C;buffer> &#x3C;Plug>VimwikiFollowLink :VimwikiFollowLink&#x3C;CR>
 
-&quot; ... 중간 생략
+" ... 중간 생략
 
-&quot; map_key는 최종적으로 :map 같은 명령어를 실행한다.
-call vimwiki#u#map_key(&#39;n&#39;, &#39;&lt;CR&gt;&#39;, &#39;&lt;Plug&gt;VimwikiFollowLink&#39;)</code>
-        </deckgo-highlight-code>
+" map_key는 최종적으로 :map 같은 명령어를 실행한다.
+call vimwiki#u#map_key('n', '&#x3C;CR>', '&#x3C;Plug>VimwikiFollowLink')
+</code></pre>
 <h2 id="plugins" style="position:relative;"><a href="#plugins" aria-label="plugins permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugins</h2>
 <p>사용중인 플러그인.</p>
 <h3 id="chrisbracsvvim" style="position:relative;"><a href="#chrisbracsvvim" aria-label="chrisbracsvvim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chrisbra/csv.vim</h3>
@@ -687,8 +674,7 @@ Range <code>%</code>를 제외하면 현재 라인만 동작한다는데, 커서
 </ul>
 <p>unsage 하려면 Staged 목록에서 보여지므로 이동하여 <code>u</code> 눌러야 한다.</p>
 <p><code>:Git</code> 입력하면 이렇게 표시된다:</p>
-<deckgo-highlight-code language="fugitive"  >
-          <code slot="code">Head: main
+<pre><code class="language-fugitive">Head: main
 Merge: origin/main
 Help: g?
 
@@ -696,8 +682,8 @@ Unstaged (1)
 M docs/wiki/vim.md
 
 Staged (1)
-M docs/wiki/vim.md</code>
-        </deckgo-highlight-code>
+M docs/wiki/vim.md
+</code></pre>
 <h4 id="git-mergetool" style="position:relative;"><a href="#git-mergetool" aria-label="git mergetool permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>:Git mergetool</code></h4>
 <p><code>git mergetool</code>과 같다. merge conflicts 처리하는 용도로 사용하는데, fugitive는 충돌 지점을 quickfix로 보여준다.</p>
 <p>quickfix로 충돌 지점을 점프하고, <code>GWrite</code>(<code>git add</code>와 같음)로 stage에 반영한다.</p>
@@ -711,27 +697,25 @@ lua 스크립트에서 <code>require().setup</code> 해야해서, neovim만 가�
 또는 복구 후에 <code>:SessionDelete</code>로 삭제하고 vim을 종료하면 다음 한 번은 복구하지 않는다.</p>
 <h4 id="startify에-세션-목록-표시하기" style="position:relative;"><a href="#startify%EC%97%90-%EC%84%B8%EC%85%98-%EB%AA%A9%EB%A1%9D-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0" aria-label="startify에 세션 목록 표시하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Startify에 세션 목록 표시하기</h4>
 <p>Startify에서 시작 화면에서 auto-session이 저장한 세션을 보여주도록 연동해서 사용하고 있다.</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">function s:sessions()
-  let path = stdpath(&#39;data&#39;)..&quot;/sessions/&quot;
-  let sessions = systemlist(&#39;ls &#39;.path)
-  return map(sessions, &#39;{
-        \ &quot;line&quot;: substitute(v:val, &quot;%&quot;, &quot;/&quot;, &quot;g&quot;),
-        \ &quot;cmd&quot;: &quot;SessionRestoreFromFile &quot;.path.v:val
-        \ }&#39;)
+<pre><code class="language-vim">function s:sessions()
+  let path = stdpath('data').."/sessions/"
+  let sessions = systemlist('ls '.path)
+  return map(sessions, '{
+        \ "line": substitute(v:val, "%", "/", "g"),
+        \ "cmd": "SessionRestoreFromFile ".path.v:val
+        \ }')
 endfunction
 
 let g:startify_lists = [
-  \ { &#39;type&#39;: function(&#39;s:sessions&#39;), &#39;header&#39;: [&#39;   Sessions&#39;] },
-  \ { &#39;type&#39;: &#39;files&#39;,     &#39;header&#39;: [&#39;   MRU&#39;]            },
-  \ { &#39;type&#39;: &#39;dir&#39;,       &#39;header&#39;: [&#39;   MRU &#39;. getcwd()] },
-  \ { &#39;type&#39;: &#39;bookmarks&#39;, &#39;header&#39;: [&#39;   Bookmarks&#39;]      },
-  \ { &#39;type&#39;: &#39;commands&#39;,  &#39;header&#39;: [&#39;   Commands&#39;]       },
-  \ ]</code>
-        </deckgo-highlight-code>
+  \ { 'type': function('s:sessions'), 'header': ['   Sessions'] },
+  \ { 'type': 'files',     'header': ['   MRU']            },
+  \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+  \ { 'type': 'commands',  'header': ['   Commands']       },
+  \ ]
+</code></pre>
 <p>그러면 Startify 시작화면이 다음과 같이 세션 목록을 보여준다.</p>
-<deckgo-highlight-code   >
-          <code slot="code">[e]  &lt;empty buffer&gt;
+<pre><code>[e]  &#x3C;empty buffer>
 
 Sessions
 
@@ -746,15 +730,14 @@ MRU
 [5]  ~/workspace/cat-logic/docs/wiki/book.md
 [6]  ~/dotfiles/vim/.vimrc
 [7]  ~/dotfiles/README.md
-[8]  ~/dotfiles/vim/vim-include/vim-startify.vim</code>
-        </deckgo-highlight-code>
+[8]  ~/dotfiles/vim/vim-include/vim-startify.vim
+</code></pre>
 <p>auto-session에서 세션 파일 명에 <code>%</code> 포함하고 있어서 이상하게 보이긴 한다.</p>
 <h2 id="용어" style="position:relative;"><a href="#%EC%9A%A9%EC%96%B4" aria-label="용어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>용어</h2>
 <h3 id="---more---라고-출력되는-pager" style="position:relative;"><a href="#---more---%EB%9D%BC%EA%B3%A0-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-pager" aria-label="   more   라고 출력되는 pager permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>-- More --</code>라고 출력되는 pager</h3>
 <p><code>-- More --</code>로 프롬프트가 출력되면 pager를 사용하고 있다는 뜻이다.</p>
 <p><code>:let</code>이나 <code>:highlight</code> 등 명령어를 입력하면 <code>-- More --</code> 메시지가 있는 pager로 진입한다.</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">Special        xxx ctermfg=224 guifg=Orange
+<pre><code class="language-vim">Special        xxx ctermfg=224 guifg=Orange
 SpecialChar    xxx links to Special
 Delimiter      xxx links to Special
 SpecialComment xxx links to Special
@@ -763,31 +746,28 @@ DiagnosticError xxx ctermfg=1 guifg=Red
 DiagnosticWarn xxx ctermfg=3 guifg=Orange
 DiagnosticInfo xxx ctermfg=4 guifg=LightBlue
 DiagnosticHint xxx ctermfg=7 guifg=LightGrey
--- More -- SPACE/d/j: screen/page/line down, b/u/k: up, q: quit</code>
-        </deckgo-highlight-code>
+-- More -- SPACE/d/j: screen/page/line down, b/u/k: up, q: quit
+</code></pre>
 <p><code>:h pager</code>로 pager에 대한 정보를 알 수 있다.</p>
 <p>메뉴얼 화면 같은 경우 버퍼로 열리는데, 반면에 pager는 다른 화면과 달라서 처음 만나면 당혹스럽다.
 어쨌든 <code>q</code>를 입력하면 빠져나오고 <code>hjklud</code>키로 이동도 된다.
 그러나 검색 기능은 없다 :(</p>
 <p>하지만 <code>:redir</code>을 통한 출력 전환으로 레지스터로 저장하면 하여 버퍼에 가져오면 된다.</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">:redir @a    &quot; a 레지스터에 출력을 전환
-:highlight   &quot; pager로 출력되는 명령어 실행
-G&lt;CR&gt;        &quot; 맨 아래로 이동하고 빠져나오자. 보여진 만큼만 저장된다.
-:redir end   &quot; 출력 전환 종료
-&quot;ap          &quot; a 레지스터 내용 붙여넣기</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">:redir @a    " a 레지스터에 출력을 전환
+:highlight   " pager로 출력되는 명령어 실행
+G&#x3C;CR>        " 맨 아래로 이동하고 빠져나오자. 보여진 만큼만 저장된다.
+:redir end   " 출력 전환 종료
+"ap          " a 레지스터 내용 붙여넣기
+</code></pre>
 <p><a href="https://vi.stackexchange.com/q/5729">How can I perform a search when vim displays content using "more" pager?</a><br>
 이 질문에서 정보를 얻었다.</p>
 <p>덧글에 pipeline을 통한 짧은 버전도 있다:</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">redir @a | sil highlight | redir end   &quot; @a 전환, 명령(silently), 전환 종료
-&quot;ap                                    &quot; a 레지스터 붙여넣기</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">redir @a | sil highlight | redir end   " @a 전환, 명령(silently), 전환 종료
+"ap                                    " a 레지스터 붙여넣기
+</code></pre>
 <p>명령어로 만들어둬도 좋겠다:</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">command! -nargs=1 -complete=command Redir redir @a | sil &lt;args&gt; | redir end | echo &quot;Saved to @a&quot;</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">command! -nargs=1 -complete=command Redir redir @a | sil &#x3C;args> | redir end | echo "Saved to @a"
+</code></pre>
 <p>이렇게 사용할 수 있다:
 <code>:Redir highlight</code>
 <code>:Redir let</code></p>
@@ -811,14 +791,13 @@ directly (without changing modes).  Where you might use ":...<CR>" in the
 <p>이유없이 느려진다면 프로파일링 해보자.</p>
 <p>아래 함수 내용을 직접 실행하거나, 번거로우니 함수 자체를 정의해두고 <code>:call StartProfiling()</code> 호출하자.
 느려지게 만드는 액션을 하고 <code>:profile stop</code> 또는 vim에서 나가면, <code>vim-profiling.log</code> 파일이 생성된다.</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">function! StartProfiling()
+<pre><code class="language-vim">function! StartProfiling()
   :profile start vim-profiling.log
   :profile file *
   :profile func *
-  echo &#39;profiling is started. log file: vim-profiling.log&#39;
-endfunction</code>
-        </deckgo-highlight-code>
+  echo 'profiling is started. log file: vim-profiling.log'
+endfunction
+</code></pre>
 <h3 id="text-object-개선하기" style="position:relative;"><a href="#text-object-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0" aria-label="text object 개선하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>text object 개선하기</h3>
 <p>vim에서 기본적으로 <code>viw</code>로 단어를, <code>vip</code>로 문단을 선택할 수 있다.
 더 나아가서 각 언어에 맞게 함수, 클래스를 선택할 수 있는 방법이 있다.</p>
@@ -834,11 +813,10 @@ Selection을 점진적으로 확장/축소하는 기능을 제공하는 플러�
 뿐만 아니라 Text Object로 점프하는 기능도 제공하는데,
 나는 이 기능은 막았다.</p>
 <p>설정을 통해 키 매핑을 비활성화 할 수 있다:</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">let g:is_pythonsense_suppress_motion_keymaps = 0
+<pre><code class="language-vim">let g:is_pythonsense_suppress_motion_keymaps = 0
 let g:is_pythonsense_suppress_keymaps = 0
-let g:is_pythonsense_alternate_motion_keymaps = 0</code>
-        </deckgo-highlight-code>
+let g:is_pythonsense_alternate_motion_keymaps = 0
+</code></pre>
 <h4 id="vim-expand-region" style="position:relative;"><a href="#vim-expand-region" aria-label="vim expand region permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>vim-expand-region</h4>
 <p><a href="https://github.com/terryma/vim-expand-region">terryma/vim-expand-region</a></p>
 <p>Expand Selection, Shrink Selection 기능을 제공하는 플러그인.</p>
@@ -848,30 +826,26 @@ let g:is_pythonsense_alternate_motion_keymaps = 0</code>
 <p><code>vim-textobj-python</code> 플러그인이 없으면, 함수, 클래스 레벨에서 제대로 동작하지 않는다.</p>
 <p>별다른 설정을 하지 않으면, 첫 레벨부터 렉이 있어서,
 다음과 같이 설정하여 사용하고 있다:</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">call expand_region#custom_text_objects(&#39;python&#39;, {
-  \ &#39;af&#39; :1,
-  \ &#39;if&#39; :1,
-  \ &#39;ac&#39; :1,
-  \ &#39;ic&#39; :1,
-  \ })</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">call expand_region#custom_text_objects('python', {
+  \ 'af' :1,
+  \ 'if' :1,
+  \ 'ac' :1,
+  \ 'ic' :1,
+  \ })
+</code></pre>
 <h3 id="command-대신-command를-사용하자" style="position:relative;"><a href="#command-%EB%8C%80%EC%8B%A0-command%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%9E%90" aria-label="command 대신 command를 사용하자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>command</code> 대신 <code>command!</code>를 사용하자.</h3>
 <p><code>.vimrc</code>를 리로드하면 이미 정의된 command라고 에러가 나는 경우가 있다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">Error detected while processing /home/pair/.vimrc:
+<pre><code class="language-bash">Error detected while processing /home/pair/.vimrc:
 line  375:
-E174: Command already exists: add ! to replace it</code>
-        </deckgo-highlight-code>
+E174: Command already exists: add ! to replace it
+</code></pre>
 <p>해결하기 위해선 힌트 그대로, <code>!</code> 만 붙여주면 된다. 그러면 replace 하므로 에러가 발생하지 않는다.</p>
 <p>다음과 같은 구문이 있으면</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">command TestCore call &lt;SID&gt;run_test_core()</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">command TestCore call &#x3C;SID>run_test_core()
+</code></pre>
 <p>다음과 같이 변경해주면 된다.</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">command! TestCore call &lt;SID&gt;run_test_core()</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">command! TestCore call &#x3C;SID>run_test_core()
+</code></pre>
 <h3 id="옵션이-어느-파일에서-변경되었는지-알려면-verbose" style="position:relative;"><a href="#%EC%98%B5%EC%85%98%EC%9D%B4-%EC%96%B4%EB%8A%90-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EB%B3%80%EA%B2%BD%EB%90%98%EC%97%88%EB%8A%94%EC%A7%80-%EC%95%8C%EB%A0%A4%EB%A9%B4-verbose" aria-label="옵션이 어느 파일에서 변경되었는지 알려면 verbose permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>옵션이 어느 파일에서 변경되었는지 알려면 <code>:verbose</code></h3>
 <p><code>:verbose set filetype?</code></p>
 <p>파일 타입을 어느 파일에서 결정했는지 알려면 위처럼 사용하면 된다.</p>
@@ -882,29 +856,26 @@ E174: Command already exists: add ! to replace it</code>
 설치 여부를 판단하지 않으면 vim 실행 시 에러 문구가 출력되어 번거롭다.</p>
 <p>vim 기능으로는 제공하지 않는다.</p>
 <p>Package Manager로 <a href="https://github.com/junegunn/vim-plug">vim-plug</a>를 사용한다면 <code>plugs</code> 변수를 확인하는 방법이 유효하다.</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">if !has_key(plugs, &#39;sonokai&#39;)
-  &quot; &#39;sonokai&#39; not installed
+<pre><code class="language-vim">if !has_key(plugs, 'sonokai')
+  " 'sonokai' not installed
   finish
 endif
 
-&quot; do something with &#39;sonokai&#39;</code>
-        </deckgo-highlight-code>
+" do something with 'sonokai'
+</code></pre>
 <p><code>plugs</code>는 dictionary로 플러그인 이름을 key로 가지고 있다:</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">&quot; echo plugs로 구조를 확인할 수 있다.
-{&#39;sonokai&#39;: {&#39;uri&#39;: &#39;https://git::@github.com/sainnhe/sonokai.git&#39;, &#39;dir&#39;: &#39;/home/dupark/.local/share/nvim/plugged/sonokai/&#39;, &#39;frozen&#39;: 0, &#39;branch&#39;: &#39;&#39;}}</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">" echo plugs로 구조를 확인할 수 있다.
+{'sonokai': {'uri': 'https://git::@github.com/sainnhe/sonokai.git', 'dir': '/home/dupark/.local/share/nvim/plugged/sonokai/', 'frozen': 0, 'branch': ''}}
+</code></pre>
 <h2 id="issues" style="position:relative;"><a href="#issues" aria-label="issues permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Issues</h2>
 <h3 id="typescript-filetype-문제" style="position:relative;"><a href="#typescript-filetype-%EB%AC%B8%EC%A0%9C" aria-label="typescript filetype 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Typescript filetype 문제</h3>
 <p>typescript language server에서 JSX 문법을 확인하지 못한다면 파일 타입을 확인해보자.
 <code>:set ft?</code>로 확인했을 때 <code>typescriptreact</code>가 아니라 <code>typescript</code>면 문제가 있다.</p>
 <p><code>:set filetype=typescriptreact</code>로 변경하면 JSX의 하이라이팅이나 타입 체크가 정상적으로 동작한다.</p>
 <p><code>.vimrc</code>에 filetype을 변경하도록 설정하자:</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">&quot; set filetypes as typescriptreact
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+</code></pre>
 <p>ref. <a href="https://github.com/peitalin/vim-jsx-typescript#vim-jsx-typescript">https://github.com/peitalin/vim-jsx-typescript#vim-jsx-typescript</a></p>
 <blockquote>
 <p>Changelog: filetypes were updated from typescript.tsx to typescriptreact Please set filetypes as typescriptreact, not typescript.tsx as in prior versions in your .vimrc if you have any issues</p>
@@ -917,23 +888,21 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact</code>
 <p>2023-04-14</p>
 <p>vimwiki로 문서 수정할 때, <code>&#x3C;cr></code> <em>엔터를 꾹 누르고 있으면 점점 느려지는</em> 문제.
 vimwiki가 키보드 엔터 시 함수 호출이 많다. 그래서 더욱 돋보이는 듯 하다.</p>
-<deckgo-highlight-code   >
-          <code slot="code">FUNCTIONS SORTED ON TOTAL TIME
+<pre><code>FUNCTIONS SORTED ON TOTAL TIME
 count  total (s)   self (s)  function
-    4   1.671452   0.000150  &lt;SNR&gt;199_CR()
+    4   1.671452   0.000150  &#x3C;SNR>199_CR()
     4   1.669305   0.000430  vimwiki#lst#kbd_cr()
-    4   1.667958   0.000952  &lt;SNR&gt;211_cr_on_empty_line()
+    4   1.667958   0.000952  &#x3C;SNR>211_cr_on_empty_line()
     1   0.261215   0.000028  vimwiki#u#count_exe()
     1   0.261187   0.000350  vimwiki#lst#kbd_o()
-    5   0.093622   0.009607  &lt;SNR&gt;211_get_corresponding_item()
-   16   0.087560   0.002484  airline#check_mode()</code>
-        </deckgo-highlight-code>
+    5   0.093622   0.009607  &#x3C;SNR>211_get_corresponding_item()
+   16   0.087560   0.002484  airline#check_mode()
+</code></pre>
 <p>프로파일링 해보니, 엔터가 입력될 때 마다 거의 초단위로 시간이 소요되었다.</p>
 <p>결론은 colorscheme 옵션을 제거하면 괜찮다. 프로파일링으로는 딱히 힌트를 얻지 못했다.
 <code>soliarized</code>로 사용하고 있었다:</p>
-<deckgo-highlight-code language="vim"  >
-          <code slot="code">colorscheme solarized</code>
-        </deckgo-highlight-code>
+<pre><code class="language-vim">colorscheme solarized
+</code></pre>
 <p>플러그인을 하나씩 제외하면서 테스트하는 것으로 원인을 찾을 수 있었다.
 기본 테마도 나름 볼만하다 :|</p>
 <p><code>:echo g:colors_name</code>로 현재 colorscheme을 알 수 있다. 변수를 찾을 수 없으면 사용하지 않는 것.</p>
@@ -944,10 +913,9 @@ count  total (s)   self (s)  function
 <h3 id="ubuntu에-설치한-vim이-시작-시-vimrc에서-많은-에러가-발생하는-현상" style="position:relative;"><a href="#ubuntu%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%9C-vim%EC%9D%B4-%EC%8B%9C%EC%9E%91-%EC%8B%9C-vimrc%EC%97%90%EC%84%9C-%EB%A7%8E%EC%9D%80-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81" aria-label="ubuntu에 설치한 vim이 시작 시 vimrc에서 많은 에러가 발생하는 현상 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ubuntu에 설치한 vim이 시작 시 <code>.vimrc</code>에서 많은 에러가 발생하는 현상</h3>
 <p>askubuntu 질문: <a href="https://askubuntu.com/questions/284957/vi-getting-multiple-sorry-the-command-is-not-available-in-this-version-af">vi, getting multiple "Sorry, the command is not available in this version..." after reinstall</a></p>
 <p>올바른 vim 버전인지 확인하자. vim.tiny로 설치되었을 수 있다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">$ readlink -f `which vim`
-/usr/bin/vim.tiny</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">$ readlink -f `which vim`
+/usr/bin/vim.tiny
+</code></pre>
 <p>ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. <code>/usr/bin/vim.basic</code>을 가르켜야 한다.
 최근에는 neovim을 사용하고 있어서 이 편이 더 좋을지도.</p>
 <h2 id="관련-기사" style="position:relative;"><a href="#%EA%B4%80%EB%A0%A8-%EA%B8%B0%EC%82%AC" aria-label="관련 기사 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>관련 기사</h2>
@@ -956,6 +924,6 @@ count  total (s)   self (s)  function
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

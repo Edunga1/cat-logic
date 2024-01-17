@@ -124,14 +124,13 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>이는 의도한대로 path를 만들지 않을 수 있다는 의미다.
 <a href="https://github.com/sindresorhus/slugify">slugify</a>라는 라이브러리를 사용하는데, slug로 사용할 수 없는 문자도 있다.</p>
 <p>slugify는 cli 도구로 제공해서 테스트해볼 수 있다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">$ npx slugify-cli &#39;wh안at&#39;
+<pre><code class="language-bash">$ npx slugify-cli 'wh안at'
 wh-at
 
-# &quot;/인공지능&quot;의 URI encoding
-$ npx slugify-cli &#39;/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5&#39;
-ec-9-d-b8-ea-b3-b5-ec-a7-80-eb-8-a-a5</code>
-        </deckgo-highlight-code>
+# "/인공지능"의 URI encoding
+$ npx slugify-cli '/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5'
+ec-9-d-b8-ea-b3-b5-ec-a7-80-eb-8-a-a5
+</code></pre>
 <p>한글이나 특수문자를 변환하는 모습이다.</p>
 <blockquote>
 <p>If you have a route called <code>src/pages/wholesome/{Animal.slogan}.js</code> where <code>slogan</code> is <code>I ♥ Dogs</code> the final URL will be <code>/wholesome/i-love-dogs</code>.
@@ -149,24 +148,23 @@ slugify를 끌 수 있는 방법은 찾지 못했다.</p>
 <p>GraphQL에 대한 타입을 직접 명세할 필요 없다. gatsby 설정을 통해 자동으로 타입을 생성한다.</p>
 <p>먼저, <code>gatsby-config.js</code> 설정에 <code>graphqlTypegen: true</code>를 추가한다.</p>
 <p>쿼리에 이름을 <code>WikiList</code>와 같이 지정하고, 인자를 <code>{ data }: PageProps&#x3C;Queries.WikiListQuery></code>로 지정한다:</p>
-<deckgo-highlight-code language="jsx"  >
-          <code slot="code">export default function IndexPage(
-  { data }: PageProps&lt;Queries.WikiListQuery&gt;,
+<pre><code class="language-jsx">export default function IndexPage(
+  { data }: PageProps&#x3C;Queries.WikiListQuery>,
 ) {
   const { edges, totalCount } = data.allMarkdownRemark
-  const items = edges.map(({ node }) =&gt; ({
+  const items = edges.map(({ node }) => ({
     id: node.id,
     path: `./wiki/${node.id}`,
-    title: node.headings?.at(0)?.value ?? &quot;(Untitled)&quot;,
+    title: node.headings?.at(0)?.value ?? "(Untitled)",
   }))
 
   return (
-    &lt;main style={pageStyles}&gt;
-      &lt;h1&gt;
+    &#x3C;main style={pageStyles}>
+      &#x3C;h1>
         {totalCount} Pages
-      &lt;/h1&gt;
-      &lt;WikiList items={items} /&gt;
-    &lt;/main&gt;
+      &#x3C;/h1>
+      &#x3C;WikiList items={items} />
+    &#x3C;/main>
   )
 }
 
@@ -184,8 +182,8 @@ export const pageQuery = graphql`
       totalCount
     }
   }
-`</code>
-        </deckgo-highlight-code>
+`
+</code></pre>
 <p>타입 정보는 <code>gatsby-types.d.ts</code>에 자동으로, <code>Queries</code> 네임스페이스에 <code>~Query</code> 접미사를 붙여서 정의된다.</p>
 <h2 id="파일명을-마크다운-문서의-url로-사용하기" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%BC%EB%AA%85%EC%9D%84-%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EB%AC%B8%EC%84%9C%EC%9D%98-url%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="파일명을 마크다운 문서의 url로 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파일명을 마크다운 문서의 URL로 사용하기</h2>
 <p><a href="https://www.gatsbyjs.com/plugins/gatsby-source-filesystem/?=files#helper-functions">https://www.gatsbyjs.com/plugins/gatsby-source-filesystem/?=files#helper-functions</a></p>
@@ -193,15 +191,14 @@ export const pageQuery = graphql`
 Node API는 <code>gatsby-node.ts</code>을 통해 GraphQL에 데이터를 추가할 수 있다.<br>
 <code>gatsby-source-filesystem</code> 플러그인은 파일 경로를 가져올 수 있는 <code>createFilePath</code> 함수를 제공한다.</p>
 <p>파일명을 <code>MarkdownRemark</code>에 추가하기 위해, <code>gatsby-node.ts</code>에 다음과 같이 정의한다:</p>
-<deckgo-highlight-code language="ts"  >
-          <code slot="code">import { GatsbyNode } from &quot;gatsby&quot;
-import { createFilePath } from &quot;gatsby-source-filesystem&quot;
+<pre><code class="language-ts">import { GatsbyNode } from "gatsby"
+import { createFilePath } from "gatsby-source-filesystem"
 
-export const onCreateNode: GatsbyNode[&quot;onCreateNode&quot;] = ({
+export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
   actions,
   getNode,
-}) =&gt; {
+}) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -212,11 +209,10 @@ export const onCreateNode: GatsbyNode[&quot;onCreateNode&quot;] = ({
       value: slug,
     })
   }
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>이제 <code>MarkdownRemark</code>에 <code>slug</code> 필드가 추가되었으므로, Query에서 <code>slug</code>를 사용할 수 있다:</p>
-<deckgo-highlight-code language="ts"  >
-          <code slot="code">export const pageQuery = graphql`
+<pre><code class="language-ts">export const pageQuery = graphql`
   query WikiList {
     allMarkdownRemark {
       edges {
@@ -233,16 +229,15 @@ export const onCreateNode: GatsbyNode[&quot;onCreateNode&quot;] = ({
       totalCount
     }
   }
-`</code>
-        </deckgo-highlight-code>
+`
+</code></pre>
 <p><code>fields.slug</code>로 접근하면 된다.</p>
 <h2 id="issues" style="position:relative;"><a href="#issues" aria-label="issues permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Issues</h2>
 <h3 id="다른-md-파일에-대한-링크를-생성할-수-없는-문제" style="position:relative;"><a href="#%EB%8B%A4%EB%A5%B8-md-%ED%8C%8C%EC%9D%BC%EC%97%90-%EB%8C%80%ED%95%9C-%EB%A7%81%ED%81%AC%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="다른 md 파일에 대한 링크를 생성할 수 없는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>다른 <code>.md</code> 파일에 대한 링크를 생성할 수 없는 문제</h3>
 <p><a href="https://stackoverflow.com/questions/62013570/is-it-possible-to-create-a-link-in-a-gatsby-md-file-using-the-markdown-path-no">Is it possible to create a link in a Gatsby .md file using the markdown path, not the eventual url?</a></p>
 <p>내가 원하는 동작은 깃허브 내에서도 <code>.md</code> 간 링크가 동작하는 것이다. 링크 뿐만 아니라 다른 기능도 마찬가지. gatsby의 정적 사이트에서도 마찬가지로 동작해야 한다.</p>
-<deckgo-highlight-code language="markdown"  >
-          <code slot="code">[Link to another document](./another-doc.md)</code>
-        </deckgo-highlight-code>
+<pre><code class="language-markdown">[Link to another document](./another-doc.md)
+</code></pre>
 <p>위 코드가 GitHub에서는 정상적으로 링크가 동작한다.<br>
 하지만 gatsby에서는 <code>./current-doc/another-doc.md</code>로 링크가 생성되고, 동작하지 않는다.</p>
 <p>내부 링크를 변경해주는 플러그인이 있긴 하지만, 이 이슈에 해결할 수 있는 플러그인은 없다.
@@ -252,19 +247,18 @@ SO 질문도 이게 가능한지 묻는 것이고, 답변은 gatsby 빌드에 �
 <p>처리한 방법:<br>
 <a href="https://github.com/Edunga1/cat-logic/commit/b2762545eb481fde2dfc8deb5ebbade31fab38a7">https://github.com/Edunga1/cat-logic/commit/b2762545eb481fde2dfc8deb5ebbade31fab38a7</a></p>
 <p><code>replaceAll</code>을 이용해서 <code>.md</code>를 제거하고, <code>../</code>를 추가한다:</p>
-<deckgo-highlight-code language="typescript"  >
-          <code slot="code">// replace markdown links to wiki pages with internal links
-// e.g. &lt;a href=&quot;./javascript.md&quot;&gt; -&gt; &lt;a href=&quot;../javascript&quot;&gt;
+<pre><code class="language-typescript">// replace markdown links to wiki pages with internal links
+// e.g. &#x3C;a href="./javascript.md"> -> &#x3C;a href="../javascript">
 export default function replaceWikiLinks(text: string) {
-  const regex = /&lt;a href=&quot;\.\/([^&quot;]+)\.md&quot;&gt;/g
+  const regex = /&#x3C;a href="\.\/([^"]+)\.md">/g
   return text.replaceAll(
     regex,
-    (_, p1) =&gt; {
-      return `&lt;a href=&quot;../${p1}&quot;&gt;`
+    (_, p1) => {
+      return `&#x3C;a href="../${p1}">`
     }
   )
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p><code>&#x3C;a href="./javascript.md"></code>를 <code>&#x3C;a href="../javascript"></code>로 변경하는 방법이다.</p>
 <p>와중에 주석만 작성하고, 코드는 copilot이 작성해줬다. 😎 (&#x3C;- 이 부분도 copilot이 작성해줬다. 괄호 안에 있는 것도!)</p>
 <h3 id="사이트에-중간-경로가-있으면-이미지가-보여지지-않는-문제" style="position:relative;"><a href="#%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%97%90-%EC%A4%91%EA%B0%84-%EA%B2%BD%EB%A1%9C%EA%B0%80-%EC%9E%88%EC%9C%BC%EB%A9%B4-%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B0%80-%EB%B3%B4%EC%97%AC%EC%A7%80%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="사이트에 중간 경로가 있으면 이미지가 보여지지 않는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>사이트에 중간 경로가 있으면 이미지가 보여지지 않는 문제</h3>
@@ -290,9 +284,8 @@ gatsby config는 <a href="https://www.gatsbyjs.com/docs/how-to/previews-deploys-
 <h3 id="pnpm-사용-시-빌드가-실패하는-문제" style="position:relative;"><a href="#pnpm-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EB%B9%8C%EB%93%9C%EA%B0%80-%EC%8B%A4%ED%8C%A8%ED%95%98%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="pnpm 사용 시 빌드가 실패하는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pnpm 사용 시 빌드가 실패하는 문제</h3>
 <p>pnpm에 등록된 이슈로 확인하자: <a href="https://github.com/pnpm/pnpm/issues/991">https://github.com/pnpm/pnpm/issues/991</a></p>
 <p><code>gatsby build</code> <code>gatsby develop</code> 모두 실패한다.</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">Module not found: Error: Can&#39;t resolve &#39;prop-types&#39; in &#39;.../.cache&#39;</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">Module not found: Error: Can't resolve 'prop-types' in '.../.cache'
+</code></pre>
 <p>이 문제를 해결하기 위한 별도 플러그인이 있다: <a href="https://github.com/Js-Brecht/gatsby-plugin-pnpm">https://github.com/Js-Brecht/gatsby-plugin-pnpm</a></p>
 <p>플러그인을 추가할 정도로 pnpm의 가치가 있어야 할텐데.</p>
 <h3 id="링크-경로에-space-포함-시-링크가-동작하지-않는-문제" style="position:relative;"><a href="#%EB%A7%81%ED%81%AC-%EA%B2%BD%EB%A1%9C%EC%97%90-space-%ED%8F%AC%ED%95%A8-%EC%8B%9C-%EB%A7%81%ED%81%AC%EA%B0%80-%EB%8F%99%EC%9E%91%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="링크 경로에 space 포함 시 링크가 동작하지 않는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>링크 경로에 space 포함 시 링크가 동작하지 않는 문제</h3>
@@ -304,6 +297,6 @@ gatsby config는 <a href="https://www.gatsbyjs.com/docs/how-to/previews-deploys-
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

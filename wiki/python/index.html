@@ -182,41 +182,38 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 jzROSZ">
 <h2 id="개발환경-구성" style="position:relative;"><a href="#%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1" aria-label="개발환경 구성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>개발환경 구성</h2>
 <p>pyenv, pyenv-virtualenv로 파이썬 가상환경을 관리하자.</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">brew install pyenv
-brew install pyenv-virtualenv</code>
-        </deckgo-highlight-code>
+<pre><code class="language-bash">brew install pyenv
+brew install pyenv-virtualenv
+</code></pre>
 <h2 id="개발도구" style="position:relative;"><a href="#%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC" aria-label="개발도구 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>개발도구</h2>
 <p>vim 기본 설정으로는 텍스트에디터 역할밖에 못한다.</p>
 <p>최소한 pyright는 사용하자.</p>
 <p>왠만해선 pyright + pylint + mypy는 권장한다. python 2 프로젝트라도 도움을 받을 수 있다.
 에러가 너무 많다면 설정을 타협하자. 아래 레거시를 위한 설정에서 다룬다.</p>
 <p>nvim-lspconfig, null-ls 이용하여 다음과 같이 설정, 사용하고 있다.</p>
-<deckgo-highlight-code language="lua"  >
-          <code slot="code">-- vim 설정 파일의 일부분
-server = require &#39;lspconfig&#39;.pyright,
+<pre><code class="language-lua">-- vim 설정 파일의 일부분
+server = require 'lspconfig'.pyright,
 sources = {
     null_ls.builtins.diagnostics.pylint,
     null_ls.builtins.diagnostics.mypy.with {
-        extra_args = { &#39;--ignore-missing-imports&#39; }
+        extra_args = { '--ignore-missing-imports' }
     },
     null_ls.builtins.formatting.autopep8,
     null_ls.builtins.formatting.isort,
-},</code>
-        </deckgo-highlight-code>
+},
+</code></pre>
 <h3 id="pyright" style="position:relative;"><a href="#pyright" aria-label="pyright permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pyright</h3>
 <p><a href="https://github.com/microsoft/pyright">https://github.com/microsoft/pyright</a></p>
 <p><a href="../language-server-protocol">language server</a> for python.</p>
 <p>django 프로젝트라면 <a href="https://github.com/sbdchd/django-types">django-types</a>를 설치하자.
 mypy와 django-stubs처럼 django model의 필드 타입을 제공한다.</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">class User(models.Model):
+<pre><code class="language-python">class User(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
 
 user = User.objects.get(id=1)
-user.age = 10  # should error</code>
-        </deckgo-highlight-code>
+user.age = 10  # should error
+</code></pre>
 <p><code>age</code> 필드는 <code>IntegerField</code>로 추정하기 때문에 <code>user.age = 10</code>에서 타입 문제가 있다고 알려준다.
 django-types는 이런 문제를 해결해준다.</p>
 <p>django-types는 django-stubs의 fork project이다.</p>
@@ -238,12 +235,11 @@ django-types는 이런 문제를 해결해준다.</p>
 </blockquote>
 <p>정적 타입 검사 도구.</p>
 <p>타입 명세를 할 수 없는 경우에는 <code>Need type annotation for "variable"</code> 에러 메시지를 막기 위해 <code>my.ini</code> 생성하고 다음과 같이 설정하자:</p>
-<deckgo-highlight-code   >
-          <code slot="code">[mypy]
+<pre><code>[mypy]
 
-# disable error &#39;Need type annotation for &quot;variable&quot;&#39;
-disallow_untyped_defs = False</code>
-        </deckgo-highlight-code>
+# disable error 'Need type annotation for "variable"'
+disallow_untyped_defs = False
+</code></pre>
 <h4 id="django-stubs" style="position:relative;"><a href="#django-stubs" aria-label="django stubs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Django Stubs</h4>
 <p><a href="https://github.com/typeddjango/django-stubs">https://github.com/typeddjango/django-stubs</a></p>
 <p>django는 <code>objects</code> 등 마법을 사용해서 타입 제공을 제대로 받을 수 없다.</p>
@@ -277,12 +273,11 @@ macOS 기준으로는 별도 도구 없이 설치되었지만, python alpine 이
 <h3 id="python-code-formatter-autopep8-vs-black-vs-yapf" style="position:relative;"><a href="#python-code-formatter-autopep8-vs-black-vs-yapf" aria-label="python code formatter autopep8 vs black vs yapf permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python code formatter: autopep8 vs black vs yapf</h3>
 <p>파이썬 코드 formatter 3종 비교.</p>
 <p><a href="https://github.com/neoclide/coc.nvim">coc.nvim</a>에서는 파이썬 파일을 열 때 3개 중 하나를 선택하도록 한다:</p>
-<deckgo-highlight-code language="sh"  >
-          <code slot="code">Formatter autopep8 is not installed. Install?:
+<pre><code class="language-sh">Formatter autopep8 is not installed. Install?:
 1. Yes
 2. Use black
-3. Use yapf</code>
-        </deckgo-highlight-code>
+3. Use yapf
+</code></pre>
 <p><a href="https://www.reddit.com/r/Python/comments/8oqy03/blog_a_comparison_of_autopep8_black_and_yapf_code/.md">Blog: A comparison of autopep8, black, and yapf - Code formatters for Python</a><br>
 3개를 비교한 다른 글. 덧글에는 black을 사용하고 만족했다나.</p>
 <table>
@@ -313,26 +308,23 @@ macOS 기준으로는 별도 도구 없이 설치되었지만, python alpine 이
 </table>
 <p><strong>실제 사용 비교</strong></p>
 <p>비교 대상 코드</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">{
-  &quot;refundDeposit&quot;: self.refund_deposit and _deposit_to_dict(self.refund_deposit)
-}</code>
-        </deckgo-highlight-code>
+<pre><code class="language-python">{
+  "refundDeposit": self.refund_deposit and _deposit_to_dict(self.refund_deposit)
+}
+</code></pre>
 <p><strong>black</strong></p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">{
-  &quot;refundDeposit&quot;: self.refund_deposit
+<pre><code class="language-python">{
+  "refundDeposit": self.refund_deposit
   and _deposit_to_dict(self.refund_deposit)
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>이게 맞나?</p>
 <p><strong>yapf</strong></p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">{
-  &quot;refundDeposit&quot;:
+<pre><code class="language-python">{
+  "refundDeposit":
   self.refund_deposit and _deposit_to_dict(self.refund_deposit)
-}</code>
-        </deckgo-highlight-code>
+}
+</code></pre>
 <p>이게 맞나?2</p>
 <p><strong>autopep8</strong>
 코드를 변경하지 않는다.</p>
@@ -342,15 +334,14 @@ macOS 기준으로는 별도 도구 없이 설치되었지만, python alpine 이
 disable 하는 편이 차라리 낫다.</p>
 <p>파이썬 도구는 <code>pyrightconfig.json</code>, <code>mypy.ini</code> 등 설정 파일을 사용하거나, 공통 설정 파일인 <code>pyproject.toml</code>을 사용한다.</p>
 <p>아래는 <code>pyproject.toml</code>에 설정한 내용이다:</p>
-<deckgo-highlight-code language="toml"  >
-          <code slot="code">[tool.mypy]
-python_version = &quot;3.8&quot;
-plugins = [&quot;mypy_django_plugin.main&quot;]
+<pre><code class="language-toml">[tool.mypy]
+python_version = "3.8"
+plugins = ["mypy_django_plugin.main"]
 disallow_untyped_defs = false
 
 
 [tool.django-stubs]
-django_settings_module = &quot;app.settings&quot;
+django_settings_module = "app.settings"
 
 
 [tool.pyright]
@@ -359,25 +350,25 @@ reportGeneralTypeIssues = true
 
 [tool.pylint.master]
 load-plugins = [
-  &quot;pylint_django&quot;,
+  "pylint_django",
 ]
-django-settings-module = &quot;app.settings&quot;
+django-settings-module = "app.settings"
 [tool.pylint.messages_control]
 disable = [
-  &quot;missing-docstring&quot;,
-  &quot;too-few-public-methods&quot;,
-  &quot;too-many-instance-attributes&quot;,
-  &quot;trailing-newlines&quot;,
-  &quot;too-many-arguments&quot;,
-  &quot;too-many-public-methods&quot;,
-  &quot;invalid-name&quot;,
-  &quot;too-many-locals&quot;,
-  &quot;too-many-return-statements&quot;,
-  &quot;too-many-lines&quot;,
+  "missing-docstring",
+  "too-few-public-methods",
+  "too-many-instance-attributes",
+  "trailing-newlines",
+  "too-many-arguments",
+  "too-many-public-methods",
+  "invalid-name",
+  "too-many-locals",
+  "too-many-return-statements",
+  "too-many-lines",
 ]
 [tool.pylint.format]
-max-line-length = 150</code>
-        </deckgo-highlight-code>
+max-line-length = 150
+</code></pre>
 <p>mypy, pyright, pylint 설정을 모두 <code>pyproject.toml</code>에 넣었다.</p>
 <p><code>reportGeneralTypeIssues = false</code>는 <code>Cannot access member "id" for type "UserFactory"   Member "id" is unknown</code> 같은 에러를 무시한다.
 django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가 발생하는데 무시하자. 최신 버전부터는 이런 문제가 없는지 확인하지 않았다.<br>
@@ -392,16 +383,15 @@ django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가
 <p><a href="https://docs.python.org/3/library/unittest.mock.html">https://docs.python.org/3/library/unittest.mock.html</a></p>
 <p>설치: <code>pip install mock</code></p>
 <h3 id="decorator를-사용한-mocking" style="position:relative;"><a href="#decorator%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-mocking" aria-label="decorator를 사용한 mocking permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decorator를 사용한 mocking.</h3>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">from mock import patch
+<pre><code class="language-python">from mock import patch
 import mymodule
 
 
 class Mytest(unittest.TestCase):
-  @patch.object(mymodule, &#39;method&#39;)
+  @patch.object(mymodule, 'method')
   def test_normal(self):
-    pass</code>
-        </deckgo-highlight-code>
+    pass
+</code></pre>
 <p>테스트는 주로 클래스로 하나의 테스트 슈트를 구성하고,
 Mocking은 각 테스트(method)에 <code>@patch.object</code>나 <code>@patch</code> decorator를 주로 사용하고 있다.</p>
 <p><code>requests</code> 모듈을 mocking 한다고 가정하자.</p>
@@ -414,25 +404,23 @@ Mocking은 각 테스트(method)에 <code>@patch.object</code>나 <code>@patch</
 <p><code>requests</code> 자체가 mock 객체이기 때문에, <code>requests</code>의 <code>get</code>, <code>post</code> 등 모든 함수들이
 mock 객체가 된다.</p>
 <p><code>get</code> 응답을 대체하고 싶으면, 테스트 안에서, 넘어오는 mock 객체를 변경해야 한다:</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">class Mytest(unittest.TestCase):
-  @patch.object(mymodule, &#39;requests&#39;)
+<pre><code class="language-python">class Mytest(unittest.TestCase):
+  @patch.object(mymodule, 'requests')
   def test_normal(self, mock_requests):
-    mock_requests.get.return_value = None</code>
-        </deckgo-highlight-code>
+    mock_requests.get.return_value = None
+</code></pre>
 <p>테스트 내에서만 mocking 정보를 명시하기 때문에, 다른 테스트에서 재사용할 수 없다.</p>
 <h3 id="patchobjectmymodule-requests-newmyrequests" style="position:relative;"><a href="#patchobjectmymodule-requests-newmyrequests" aria-label="patchobjectmymodule requests newmyrequests permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>@patch.object(mymodule, 'requests', new=MyRequests)</code></h3>
 <p><code>requests</code>가 <code>MyRequests</code>로 대체된다.</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">class MyRequests(object):
+<pre><code class="language-python">class MyRequests(object):
   @staticmethod
   def get(*args, **kwargs):
     res = Mock()
     res.headers = {
-      &#39;content-type&#39;: &#39;text/html&#39;
+      'content-type': 'text/html'
     }
-    return res</code>
-        </deckgo-highlight-code>
+    return res
+</code></pre>
 <p>위와 같은 방법으로 <code>get</code> 함수만 내가 원하는 응답을 내려주게 하고,
 <code>post</code> 등 다른 함수는 기본 mock 객체를 내려준다.</p>
 <p>mocking 정보를 다른 테스트에서도 재사용할 수 있어서 유용하다.</p>
@@ -449,28 +437,26 @@ multi-stage build와 virtualenv를 사용하지 않는 프로세스를 구축해
 최근에 조금씩 사용해보고 있다.</p>
 <p><code>poetry init --python=3.10 -q</code>로 초기화하면 <code>pypoject.toml</code> 파일이 생성된다.
 <code>-q</code> 옵션이 없으면 너무 많은 정보를 물어봐서 번거롭다.</p>
-<deckgo-highlight-code language="toml"  >
-          <code slot="code">[tool.poetry]
-name = &quot;myproject&quot;
-version = &quot;0.1.0&quot;
-description = &quot;&quot;
+<pre><code class="language-toml">[tool.poetry]
+name = "myproject"
+version = "0.1.0"
+description = ""
 authors = []
 
 [tool.poetry.dependencies]
-python = &quot;^3.10&quot;
+python = "^3.10"
 
 
 [build-system]
-requires = [&quot;poetry-core&quot;]
-build-backend = &quot;poetry.core.masonry.api&quot;</code>
-        </deckgo-highlight-code>
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+</code></pre>
 <p>위와같이 만들어 준다.</p>
 <p><code>poetry shell</code>을 입력하면 virtualenv으로 진입한다. 없으면 생성한다.</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">❯ poetry shell
+<pre><code class="language-bash">❯ poetry shell
 Creating virtualenv myproject-jPR28GGN-py3.11 in /home/username/.cache/pypoetry/virtualenvs
-Spawning shell within /home/username/.cache/pypoetry/virtualenvs/myproject-jPR28GGN-py3.11</code>
-        </deckgo-highlight-code>
+Spawning shell within /home/username/.cache/pypoetry/virtualenvs/myproject-jPR28GGN-py3.11
+</code></pre>
 <p>home에 가상환경 정보를 저장하므로, <code>pyenv versions</code>에 노출되지 않아서 괜찮아 보인다.
 프로젝트가 많으면 너무 많은 가상환경이 생성되기 때문이다.</p>
 <p><code>poetry add rx</code>로 의존 모듈을 추가한다. 알아서 <code>pyproject.toml</code>에 추가하고, lock file<code>poetry.lock</code>을 업데이트한다.</p>
@@ -490,11 +476,10 @@ Django만 설치했는데, Django가 사용하는 다른 패키지도 포함된�
 <blockquote>
 <p>For instance, if your project requires a newer Python than is available with your system, a standard workflow would be:</p>
 </blockquote>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">pyenv install 3.9.8
+<pre><code class="language-bash">pyenv install 3.9.8
 pyenv local 3.9.8  # Activate Python 3.9 for the current project
-poetry install</code>
-        </deckgo-highlight-code>
+poetry install
+</code></pre>
 <blockquote>
 <p>poetry 문서 중: <a href="https://python-poetry.org/docs/managing-environments/#switching-between-environments">https://python-poetry.org/docs/managing-environments/#switching-between-environments</a></p>
 </blockquote>
@@ -520,8 +505,7 @@ poetry install</code>
 <h2 id="packaging" style="position:relative;"><a href="#packaging" aria-label="packaging permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Packaging</h2>
 <h3 id="__all__" style="position:relative;"><a href="#__all__" aria-label="__all__ permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>__all__</code></h3>
 <p><code>my_module.py</code>라는 파일이 있다고 하자:</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">__all__ = [&#39;foo&#39;, &#39;Bar&#39;]
+<pre><code class="language-python">__all__ = ['foo', 'Bar']
 
 
 def foo():
@@ -532,26 +516,23 @@ class Bar:
   pass
 
 
-_baz = 1</code>
-        </deckgo-highlight-code>
+_baz = 1
+</code></pre>
 <p>파일 최상단에 <code>__all__</code>을 사용한다고 <code>my_module.py</code>을 임포트 했을 때 <code>_baz</code>에 접근하지 못하게 할 수는 없다.</p>
 <p><code>from my_module import _baz</code></p>
 <p>하지만 <code>__all__</code>을 사용하면 <code>__init__.py</code>를 사용했을 때 효과가 있다.</p>
-<deckgo-highlight-code   >
-          <code slot="code">my_module/
+<pre><code>my_module/
   __init__.py
-  my_module.py</code>
-        </deckgo-highlight-code>
+  my_module.py
+</code></pre>
 <p>위 구조로 만들어 두고 <code>__init__.py</code>에서 <code>my_module.py</code>를 asterisk를 이용하여 임포트한다:</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">from my_module.my_module import *  # NOQA</code>
-        </deckgo-highlight-code>
+<pre><code class="language-python">from my_module.my_module import *  # NOQA
+</code></pre>
 <p>flake8이 경고를 출력하므로 <code># NOQA</code>로 무시하도록 했다.</p>
 <p>이렇게하면 <code>my_module</code>을 사용하는 곳에선 <code>foo</code>, <code>bar</code>만 가져올 수 있다.</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">from my_module import foo, bar  # 가능
-from my_module import _baz  # 불가능</code>
-        </deckgo-highlight-code>
+<pre><code class="language-python">from my_module import foo, bar  # 가능
+from my_module import _baz  # 불가능
+</code></pre>
 <h2 id="프로젝트-구조" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0" aria-label="프로젝트 구조 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 구조</h2>
 <h3 id="pypa에서-프로젝트-구조를-src-레이아웃으로-바꾸다" style="position:relative;"><a href="#pypa%EC%97%90%EC%84%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0%EB%A5%BC-src-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%EC%9C%BC%EB%A1%9C-%EB%B0%94%EA%BE%B8%EB%8B%A4" aria-label="pypa에서 프로젝트 구조를 src 레이아웃으로 바꾸다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PyPA에서 프로젝트 구조를 <code>src/</code> 레이아웃으로 바꾸다.</h3>
 <p>PR: <a href="https://github.com/pypa/sampleproject/pull/104">https://github.com/pypa/sampleproject/pull/104</a></p>
@@ -651,8 +632,7 @@ Natural (may imply unduly that “src” is discouraged)</p>
 <h3 id="django-rest-framework-serializer" style="position:relative;"><a href="#django-rest-framework-serializer" aria-label="django rest framework serializer permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Django REST Framework Serializer</h3>
 <p><a href="https://www.django-rest-framework.org/api-guide/serializers/">https://www.django-rest-framework.org/api-guide/serializers/</a></p>
 <p>Django Form은 HTML Form을 위한 기능이라 REST API의 중첩 구조 등 JSON을 대응하기엔 부족하다.</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">class UserSerializer(serializers.Serializer):
+<pre><code class="language-python">class UserSerializer(serializers.Serializer):
   email = serializers.EmailField()
   username = serializers.CharField(max_length=100)
 
@@ -661,42 +641,41 @@ class CommentSerializer(serializers.Serializer):
   content = serializers.CharField(max_length=200)
   created = serializers.DateTimeField()
 
-serializer = CommentSerializer(data={&#39;user&#39;: {&#39;email&#39;: &#39;foobar&#39;, &#39;username&#39;: &#39;doe&#39;}, &#39;content&#39;: &#39;baz&#39;})
+serializer = CommentSerializer(data={'user': {'email': 'foobar', 'username': 'doe'}, 'content': 'baz'})
 serializer.is_valid()
 # False
 serializer.errors
-# {&#39;user&#39;: {&#39;email&#39;: [&#39;Enter a valid e-mail address.&#39;]}, &#39;created&#39;: [&#39;This field is required.&#39;]}</code>
-        </deckgo-highlight-code>
+# {'user': {'email': ['Enter a valid e-mail address.']}, 'created': ['This field is required.']}
+</code></pre>
 <h3 id="wtforms" style="position:relative;"><a href="#wtforms" aria-label="wtforms permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WTForms</h3>
 <p><a href="https://github.com/wtforms/wtforms">https://github.com/wtforms/wtforms</a></p>
 <p>Django Integration인 <a href="https://github.com/wtforms/wtforms-django">WTForms-Django 프로젝트</a>가 있다.</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">class LocationForm(Form):
-  id = HiddenField(&#39;id&#39;)
-  title = StringField(_l(&#39;Title&#39;), [Required()])
-  location = CoordinatesField(_l(&#39;Coordinates&#39;))
+<pre><code class="language-python">class LocationForm(Form):
+  id = HiddenField('id')
+  title = StringField(_l('Title'), [Required()])
+  location = CoordinatesField(_l('Coordinates'))
 
 class ProjectForm(Form):
-  title = StringField(_l(&#39;Title&#39;))
-  manager = StringField(_l(&#39;Manager&#39;))
-  description = StringField(_l(&#39;Description&#39;))
+  title = StringField(_l('Title'))
+  manager = StringField(_l('Manager'))
+  description = StringField(_l('Description'))
   locations = FieldList(FormField(LocationForm), min_entries=1)
 
 document = {
-  &#39;title&#39;: unicode,
-  &#39;description&#39;: unicode,
-  &#39;manager&#39;: unicode,
-  &#39;locations&#39;: [{
-    &#39;id&#39;: uuid.UUID,
-    &#39;title&#39;: unicode,
-    &#39;location&#39;: {&#39;coordinates&#39;:[float], &#39;text&#39;:unicode}
+  'title': unicode,
+  'description': unicode,
+  'manager': unicode,
+  'locations': [{
+    'id': uuid.UUID,
+    'title': unicode,
+    'location': {'coordinates':[float], 'text':unicode}
     }],
   }
 
 f = ProjectForm()
 f.process(data=document)
-f.locations.data</code>
-        </deckgo-highlight-code>
+f.locations.data
+</code></pre>
 <ul>
 <li>예제가 모두 HTML Form 기준으로 되어있다. HTML Form을 대응하는 용도인 거 같다.</li>
 <li>cleaned data를 얻을 수 없다. <code>StringField</code>에 숫자를 보내면? 숫자가 나옴. 문자열이 아님.</li>
@@ -705,8 +684,7 @@ f.locations.data</code>
 <h3 id="marshmallow" style="position:relative;"><a href="#marshmallow" aria-label="marshmallow permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Marshmallow</h3>
 <p><a href="https://github.com/marshmallow-code/marshmallow">https://github.com/marshmallow-code/marshmallow</a></p>
 <p>Django가 아니라면 이 솔루션이 적절한 듯.</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">class ArtistSchema(Schema):
+<pre><code class="language-python">class ArtistSchema(Schema):
     name = fields.Str()
 
 class AlbumSchema(Schema):
@@ -714,16 +692,16 @@ class AlbumSchema(Schema):
     release_date = fields.Date()
     artist = fields.Nested(ArtistSchema())
 
-bowie = dict(name=&quot;David Bowie&quot;)
-album = dict(artist=bowie, title=&quot;Hunky Dory&quot;, release_date=date(1971, 12, 17))
+bowie = dict(name="David Bowie")
+album = dict(artist=bowie, title="Hunky Dory", release_date=date(1971, 12, 17))
 
 schema = AlbumSchema()
 result = schema.dump(album)
 pprint(result, indent=2)
-# { &#39;artist&#39;: {&#39;name&#39;: &#39;David Bowie&#39;},
-#   &#39;release_date&#39;: &#39;1971-12-17&#39;,
-#   &#39;title&#39;: &#39;Hunky Dory&#39;}</code>
-        </deckgo-highlight-code>
+# { 'artist': {'name': 'David Bowie'},
+#   'release_date': '1971-12-17',
+#   'title': 'Hunky Dory'}
+</code></pre>
 <h2 id="rxpy" style="position:relative;"><a href="#rxpy" aria-label="rxpy permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rxpy</h2>
 <p>Rxpy는 ReactiveX의 파이썬 구현체이다.</p>
 <p><code>pip install rx</code>로 설치. <code>rxpy</code>가 아니다.</p>
@@ -731,8 +709,7 @@ pprint(result, indent=2)
 <p><a href="https://www.tutorialspoint.com/rxpy/rxpy_concurrency_using_scheduler.htm">https://www.tutorialspoint.com/rxpy/rxpy_concurrency_using_scheduler.htm</a></p>
 <p>위 문서에서 제공하는 예제이다.</p>
 <p>다음 코드는 rxpy를 사용하지만 병럴처리를 하지 않는 코드이다.</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">import random
+<pre><code class="language-python">import random
 import time
 import rx
 from rx import operators as ops
@@ -743,23 +720,22 @@ def adding_delay(value):
 rx.of(1,2,3,4,5).pipe(
    ops.map(lambda a: adding_delay(a))
 ).subscribe(
-   lambda s: print(&quot;From Task 1: {0}&quot;.format(s)),
+   lambda s: print("From Task 1: {0}".format(s)),
    lambda e: print(e),
-   lambda: print(&quot;Task 1 complete&quot;)
+   lambda: print("Task 1 complete")
 )
 # Task 2
 rx.range(1, 5).pipe(
    ops.map(lambda a: adding_delay(a))
 ).subscribe(
-   lambda s: print(&quot;From Task 2: {0}&quot;.format(s)),
+   lambda s: print("From Task 2: {0}".format(s)),
    lambda e: print(e),
-   lambda: print(&quot;Task 2 complete&quot;)
+   lambda: print("Task 2 complete")
 )
-input(&quot;Press any key to exit\n&quot;)</code>
-        </deckgo-highlight-code>
+input("Press any key to exit\n")
+</code></pre>
 <p>rxpy를 사용하더라도 쓰레드를 사용하지 않으면 병렬처리 되지 않는다. 결과를 보면 다음과 같다:</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">From Task 1: 1
+<pre><code class="language-bash">From Task 1: 1
 From Task 1: 2
 From Task 1: 3
 From Task 1: 4
@@ -769,12 +745,11 @@ From Task 2: 1
 From Task 2: 2
 From Task 2: 3
 From Task 2: 4
-Task 2 complete</code>
-        </deckgo-highlight-code>
+Task 2 complete
+</code></pre>
 <p>이 코드는 <a href="https://rxpy.readthedocs.io/en/latest/reference_scheduler.html#rx.scheduler.CurrentThreadScheduler">CurrentThreadScheduler</a>를 사용하여 처리한다. 즉 하나의 스레드만 쓴다.</p>
 <p><strong>병렬처리 하기</strong></p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">import multiprocessing
+<pre><code class="language-python">import multiprocessing
 import time
 from threading import current_thread
 
@@ -785,7 +760,7 @@ from rx.scheduler.threadpoolscheduler import ThreadPoolScheduler
 # calculate cpu count, using which will create a ThreadPoolScheduler
 thread_count = multiprocessing.cpu_count()
 thread_pool_scheduler = ThreadPoolScheduler(thread_count)
-print(&#39;CPU count is {0}&#39;.format(thread_count))
+print('CPU count is {0}'.format(thread_count))
 
 
 def asyn(inp):
@@ -806,7 +781,7 @@ def generate_nums():
 
 
 def print_t(it):
-    print(f&#39;{current_thread().name}: {it}&#39;)
+    print(f'{current_thread().name}: {it}')
 
 
 rx.from_iterable(generate_nums())\
@@ -814,19 +789,18 @@ rx.from_iterable(generate_nums())\
         ops.flat_map(asyn),
         ops.do_action(
             on_next=print_t,
-            on_completed=lambda: print_t(&#39;process done&#39;),
+            on_completed=lambda: print_t('process done'),
         ),
     )\
     .run()
 
 
-print_t(&#39;program done&#39;)</code>
-        </deckgo-highlight-code>
+print_t('program done')
+</code></pre>
 <p><code>run()</code>으로 프로세스 종료를 기다릴 수 있다. <code>subscribe()</code> 사용하면 스레드를 기다리지 않고 즉시 끝난다.</p>
 <p>위 코드는 cpu 수인 12개 쓰레드로 25개의 아이템을 처리하는 예제다.
 각 아이템마다 3초 대기하므로, 12개의 쓰레드가 병렬처리하여 총 9초가 소요되어야 한다.</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">❯ time python test.py
+<pre><code class="language-bash">❯ time python test.py
 CPU count is 12
 ThreadPoolExecutor-0_0: 0
 ThreadPoolExecutor-0_3: 3
@@ -855,8 +829,8 @@ ThreadPoolExecutor-0_6: 23            # 여기서 6s
 ThreadPoolExecutor-0_5: 24
 ThreadPoolExecutor-0_5: process done
 MainThread: program done
-python test.py  0.06s user 0.03s system 0% cpu 9.169 total</code>
-        </deckgo-highlight-code>
+python test.py  0.06s user 0.03s system 0% cpu 9.169 total
+</code></pre>
 <p><code>ThreadPoolExecutor-0_N</code> 이름으로 0~11, 총 12개의 쓰레드가 보인다.
 주석으로 표기한 지점에서 3초, 6초 소요되었다. 마지막 24번까지 9초.</p>
 <p>RXPY 예제 프로젝트를 만들었다: <a href="https://github.com/edunga1/practice-rxpy">https://github.com/edunga1/practice-rxpy</a> <br>
@@ -897,14 +871,12 @@ b. create a global connection pool and pass that to various redis instances thro
 <p><code>source_type</code> 이 <code>trade | order</code>로 테이블 이름 조합으로만 저장된다.
 원하는 포맷으로 저장할 수 있어야 한다.</p>
 <h2 id="디버깅" style="position:relative;"><a href="#%EB%94%94%EB%B2%84%EA%B9%85" aria-label="디버깅 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>디버깅</h2>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">import pdb; pdb.set_trace()</code>
-        </deckgo-highlight-code>
+<pre><code class="language-python">import pdb; pdb.set_trace()
+</code></pre>
 <p>위 코드로 breakpoint를 설정할 수 있다.</p>
-<deckgo-highlight-code language="bash"  >
-          <code slot="code">(Pdb) ?
+<pre><code class="language-bash">(Pdb) ?
 
-Documented commands (type help &lt;topic&gt;):
+Documented commands (type help &#x3C;topic>):
 ========================================
 EOF    bt         cont      enable  jump  pp       run      unt
 a      c          continue  exit    l     q        s        until
@@ -919,8 +891,8 @@ exec  pdb
 
 Undocumented commands:
 ======================
-retval  rv</code>
-        </deckgo-highlight-code>
+retval  rv
+</code></pre>
 <p>자주 사용하는 명령어:</p>
 <ul>
 <li><code>?</code> 도움말</li>
@@ -936,18 +908,16 @@ retval  rv</code>
 <p>디버깅 명령어는 코드의 요소 이름과 충돌할 수 있는데, 이럴 때는 <code>!</code>를 붙여서 사용한다: <code>!l .</code></p>
 <p>디버깅할 때 <code>dir()</code>, <code>type()</code>는 특히 자주 사용한다.</p>
 <p><code>dir()</code> 객체의 속성을 출력한다.</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">(Pdb) dir(datetime)
-[&#39;__add__&#39;, &#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__radd__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__rsub__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__sub__&#39;, &#39;__subclasshook__&#39;, &#39;astimezone&#39;, &#39;combine&#39;, &#39;ctime&#39;, &#39;date&#39;, &#39;day&#39;, &#39;dst&#39;, &#39;fromordinal&#39;, &#39;fromtimestamp&#39;, &#39;hour&#39;, &#39;isocalendar&#39;, &#39;isoformat&#39;, &#39;isoweekday&#39;, &#39;max&#39;, &#39;microsecond&#39;, &#39;min&#39;, &#39;minute&#39;, &#39;month&#39;, &#39;now&#39;, &#39;replace&#39;, &#39;resolution&#39;, &#39;second&#39;, &#39;strftime&#39;, &#39;strptime&#39;, &#39;time&#39;, &#39;timetuple&#39;, &#39;timetz&#39;, &#39;today&#39;, &#39;toordinal&#39;, &#39;tzinfo&#39;, &#39;tzname&#39;, &#39;utcfromtimestamp&#39;, &#39;utcnow&#39;, &#39;utcoffset&#39;, &#39;utctimetuple&#39;, &#39;weekday&#39;, &#39;year&#39;]</code>
-        </deckgo-highlight-code>
+<pre><code class="language-python">(Pdb) dir(datetime)
+['__add__', '__class__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__ne__', '__new__', '__radd__', '__reduce__', '__reduce_ex__', '__repr__', '__rsub__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', 'astimezone', 'combine', 'ctime', 'date', 'day', 'dst', 'fromordinal', 'fromtimestamp', 'hour', 'isocalendar', 'isoformat', 'isoweekday', 'max', 'microsecond', 'min', 'minute', 'month', 'now', 'replace', 'resolution', 'second', 'strftime', 'strptime', 'time', 'timetuple', 'timetz', 'today', 'toordinal', 'tzinfo', 'tzname', 'utcfromtimestamp', 'utcnow', 'utcoffset', 'utctimetuple', 'weekday', 'year']
+</code></pre>
 <p><code>type()</code> 객체의 타입을 출력한다.</p>
-<deckgo-highlight-code language="python"  >
-          <code slot="code">(Pdb) type(datetime.now())
-&lt;type &#39;datetime.datetime&#39;&gt;</code>
-        </deckgo-highlight-code></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<pre><code class="language-python">(Pdb) type(datetime.now())
+&#x3C;type 'datetime.datetime'>
+</code></pre></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-e101619dec43049db7ea.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-80770bc490fb21c603e3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-bcd51849816ad1b0ea36.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-eac6dae0cba018bce5b6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-edf762ada97e4ebbea88.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-cc3d6b8d2b3cfeddb733.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="42f7a9ef22faf824f374";</script><script src="/cat-logic/webpack-runtime-1c2d78319869daffa773.js" async></script><script src="/cat-logic/app-e101619dec43049db7ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d123e65431c8fad5b6e6";</script><script src="/cat-logic/webpack-runtime-b46e99ab2bac18ec7253.js" async></script><script src="/cat-logic/app-bcd51849816ad1b0ea36.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
