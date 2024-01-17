@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -83,7 +83,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p><a href="#semantic-versioning">Semantic Versioning</a></p>
 </li>
 <li>
-<p><a href="#x--prefix"><code>X-</code> prefix?</a></p>
+<p><a href="#x--prefix"><code class="language-text">X-</code> prefix?</a></p>
 </li>
 <li>
 <p><a href="#iso-8601---%EB%82%A0%EC%A7%9C-%EC%8B%9C%EA%B0%84-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B5%AD%EC%A0%9C-%ED%91%9C%EC%A4%80">ISO 8601 - 날짜, 시간 관련 커뮤니케이션 국제 표준</a></p>
@@ -95,8 +95,8 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 jzROSZ">
 <h2 id="semantic-versioning" style="position:relative;"><a href="#semantic-versioning" aria-label="semantic versioning permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Semantic Versioning</h2>
-<p><code>9.12.3</code>과 같이 3개의 넘버링으로 소프트웨어 버전을 표현하는 방식이다.</p>
-<p><code>X.Y.Z</code>를 각각 major, minor, patch 버전이라 부른다.</p>
+<p><code class="language-text">9.12.3</code>과 같이 3개의 넘버링으로 소프트웨어 버전을 표현하는 방식이다.</p>
+<p><code class="language-text">X.Y.Z</code>를 각각 major, minor, patch 버전이라 부른다.</p>
 <p><a href="https://semver.org/">https://semver.org/</a> 이런 사이트가 있지만 막상 버전 갱신하려면 헷갈린다.</p>
 <p>가끔 관점을 다르게 볼 때 명확해지기도 하는데, 다음 코멘트가 이런 상황에 딱 들어맞다고 생각한다:</p>
 <blockquote>
@@ -104,40 +104,39 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <upgrades may break API> . <downgrades may break API> . <fine either way></p>
 </blockquote>
 <p>쓰레드는 <a href="https://users.rust-lang.org/t/semver-for-refactoring-change/81370/5">리팩토링은 어떤 버전을 올려야 하나요?</a></p>
-<h2 id="x--prefix" style="position:relative;"><a href="#x--prefix" aria-label="x  prefix permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>X-</code> prefix?</h2>
-<p><code>experimental</code> 혹은 <code>extension</code>의 약자라고 한다.
+<h2 id="x--prefix" style="position:relative;"><a href="#x--prefix" aria-label="x  prefix permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">X-</code> prefix?</h2>
+<p><code class="language-text">experimental</code> 혹은 <code class="language-text">extension</code>의 약자라고 한다.
 보통 비공식적(unofficial) 사양을 나타내는데 주로 사용한다.</p>
-<p>HTTP에는 <code>x-forwareded-for</code>처럼 <code>x</code>를 prefix로 하는 헤더가 많다.</p>
+<p>HTTP에는 <code class="language-text">x-forwareded-for</code>처럼 <code class="language-text">x</code>를 prefix로 하는 헤더가 많다.</p>
 <p>docker-compose.yml 명세할 때 사용자 정의 영역으로 구분하기 위해서도 쓴다.</p>
 <p>다음은 <a href="https://github.com/apache/airflow/blob/main/docs/apache-airflow/howto/docker-compose/docker-compose.yaml#L44">airflow Github</a>에서 제공하는 docker-compose.yml 예시:</p>
-<pre><code class="language-yaml">x-airflow-common:
-  &#x26;airflow-common
-  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.0.2}
-  environment:
-    &#x26;airflow-common-env
-    AIRFLOW__CORE__EXECUTOR: CeleryExecutor
-    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
-    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
-    AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
-    AIRFLOW__CORE__FERNET_KEY: ''
-    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
-    AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
+<div class="gatsby-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">x-airflow-common</span><span class="token punctuation">:</span>
+  <span class="token important">&amp;airflow-common</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>AIRFLOW_IMAGE_NAME<span class="token punctuation">:</span><span class="token punctuation">-</span>apache/airflow<span class="token punctuation">:</span>2.0.2<span class="token punctuation">}</span>
+  <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+    <span class="token important">&amp;airflow-common-env</span>
+    <span class="token key atrule">AIRFLOW__CORE__EXECUTOR</span><span class="token punctuation">:</span> CeleryExecutor
+    <span class="token key atrule">AIRFLOW__CORE__SQL_ALCHEMY_CONN</span><span class="token punctuation">:</span> postgresql+psycopg2<span class="token punctuation">:</span>//airflow<span class="token punctuation">:</span>airflow@postgres/airflow
+    <span class="token key atrule">AIRFLOW__CELERY__RESULT_BACKEND</span><span class="token punctuation">:</span> db+postgresql<span class="token punctuation">:</span>//airflow<span class="token punctuation">:</span>airflow@postgres/airflow
+    <span class="token key atrule">AIRFLOW__CELERY__BROKER_URL</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>//<span class="token punctuation">:</span>@redis<span class="token punctuation">:</span>6379/0
+    <span class="token key atrule">AIRFLOW__CORE__FERNET_KEY</span><span class="token punctuation">:</span> <span class="token string">''</span>
+    <span class="token key atrule">AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION</span><span class="token punctuation">:</span> <span class="token string">'true'</span>
+    <span class="token key atrule">AIRFLOW__CORE__LOAD_EXAMPLES</span><span class="token punctuation">:</span> <span class="token string">'true'</span>
+    <span class="token key atrule">AIRFLOW__API__AUTH_BACKEND</span><span class="token punctuation">:</span> <span class="token string">'airflow.api.auth.backend.basic_auth'</span>
 
-services:
-  # ...
-</code></pre>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token comment"># ...</span></code></pre></div>
 <h2 id="iso-8601---날짜-시간-관련-커뮤니케이션-국제-표준" style="position:relative;"><a href="#iso-8601---%EB%82%A0%EC%A7%9C-%EC%8B%9C%EA%B0%84-%EA%B4%80%EB%A0%A8-%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B5%AD%EC%A0%9C-%ED%91%9C%EC%A4%80" aria-label="iso 8601   날짜 시간 관련 커뮤니케이션 국제 표준 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ISO 8601 - 날짜, 시간 관련 커뮤니케이션 국제 표준</h2>
 <p>포맷 간단 요약: <a href="https://www.cryptosys.net/pki/manpki/pki_iso8601datetime.html">https://www.cryptosys.net/pki/manpki/pki_iso8601datetime.html</a></p>
 <p><strong>특징</strong></p>
 <ul>
-<li>타임존을 표기할 수 있다. <code>+hh:mm</code> 가 붙는다: <code>"2020-07-10T02:41:29.477+07:00"</code>
+<li>타임존을 표기할 수 있다. <code class="language-text">+hh:mm</code> 가 붙는다: <code class="language-text">"2020-07-10T02:41:29.477+07:00"</code>
 <ul>
 <li><a href="https://ko.wikipedia.org/wiki/ISO_8601#%ED%91%9C%EC%A4%80_%EC%8B%9C%EA%B0%84%EB%8C%80_%EC%A7%80%EC%A0%95%EC%9E%90(time_zone_designator)">표준 시간대 지정자</a>라고 한다.</li>
 </ul>
 </li>
 <li>Z 문자가 붙으면 UTC를 의미한다.</li>
-<li><code>"2020-01-01T10:00:00+09:00"</code> 는 UTC <code>"2020-01-01T01:00:00Z"</code> 와 같다.
+<li><code class="language-text">"2020-01-01T10:00:00+09:00"</code> 는 UTC <code class="language-text">"2020-01-01T01:00:00Z"</code> 와 같다.
 <ul>
 <li>9시간으로 offset이 포함되어 있다는 의미다.</li>
 </ul>
@@ -148,14 +147,14 @@ services:
 </ul>
 <p>사용하려면:</p>
 <ul>
-<li><a href="../javascript">javascript</a>의 경우 <code>new Date().toJSON()</code>: <code>"2020-07-10T02:42:55.338Z"</code></li>
-<li><a href="../python">python</a>의 경우 <code>datetime.now().isoformat()</code>: <code>'2020-07-10T02:43:36.933276'</code></li>
+<li><a href="../javascript">javascript</a>의 경우 <code class="language-text">new Date().toJSON()</code>: <code class="language-text">"2020-07-10T02:42:55.338Z"</code></li>
+<li><a href="../python">python</a>의 경우 <code class="language-text">datetime.now().isoformat()</code>: <code class="language-text">'2020-07-10T02:43:36.933276'</code></li>
 </ul>
-<p><a href="../python">python</a>의 경우 시간대 지정자 <code>Z</code>가 생략되었다.</p>
+<p><a href="../python">python</a>의 경우 시간대 지정자 <code class="language-text">Z</code>가 생략되었다.</p>
 <h3 id="python의-datetimeisoformat은-iso-8601을-위반한다" style="position:relative;"><a href="#python%EC%9D%98-datetimeisoformat%EC%9D%80-iso-8601%EC%9D%84-%EC%9C%84%EB%B0%98%ED%95%9C%EB%8B%A4" aria-label="python의 datetimeisoformat은 iso 8601을 위반한다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>python의 datetime.isoformat()은 ISO 8601을 위반한다.</h3>
 <p><a href="https://stackoverflow.com/questions/19654578/python-utc-datetime-objects-iso-format-doesnt-include-z-zulu-or-zero-offset">https://stackoverflow.com/questions/19654578/python-utc-datetime-objects-iso-format-doesnt-include-z-zulu-or-zero-offset</a></p>
 <blockquote>
-<p>Python <code>datetime</code> objects don't have time zone info by default, and without it, Python actually violates the ISO 8601 specification (<a href="http://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators">if no time zone info is given, assumed to be local time</a>)</p>
+<p>Python <code class="language-text">datetime</code> objects don't have time zone info by default, and without it, Python actually violates the ISO 8601 specification (<a href="http://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators">if no time zone info is given, assumed to be local time</a>)</p>
 </blockquote>
 <p>위키 중:</p>
 <blockquote>
@@ -166,6 +165,6 @@ services:
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

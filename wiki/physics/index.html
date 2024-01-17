@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -105,9 +105,9 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 속도 velocity, 질량 mass, 탄성 elasticity, 마찰 friction, 가속도 acceleration</p>
 <p>매 프레임마다 다음 순서로 계산한다:</p>
 <ol>
-<li><code>intersection</code> 충돌 여부 확인</li>
-<li><code>penetration depth resolution</code> 겹침 해결</li>
-<li><code>collision resolution</code> 충돌 계산</li>
+<li><code class="language-text">intersection</code> 충돌 여부 확인</li>
+<li><code class="language-text">penetration depth resolution</code> 겹침 해결</li>
+<li><code class="language-text">collision resolution</code> 충돌 계산</li>
 </ol>
 <p>1에서 작용하지 않은 것으로 판단하면 2, 3을 진행하지 않는다.
 2에서 다음 프레임까지의 Delta Time 및 속도에 따라 겹치는 정도가 다르다. 팅겨내기 전에 표면으로 돌려보내기 위한 계산이다.
@@ -116,22 +116,19 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>Unity 기준.</p>
 <p><a href="https://forum.unity.com/threads/whats-the-best-way-to-move-to-a-target.224126/">What's the best way to move to a target?</a></p>
 <p>간단하게 구현하면 다음과 같이 할 수 있다:</p>
-<pre><code class="language-csharp">transform.position += (target.position - transform.position).normalized * Time.deltaTime;
-</code></pre>
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp">transform<span class="token punctuation">.</span>position <span class="token operator">+=</span> <span class="token punctuation">(</span>target<span class="token punctuation">.</span>position <span class="token operator">-</span> transform<span class="token punctuation">.</span>position<span class="token punctuation">)</span><span class="token punctuation">.</span>normalized <span class="token operator">*</span> Time<span class="token punctuation">.</span>deltaTime<span class="token punctuation">;</span></code></pre></div>
 <p>normalized로 vector 정규화하면 방향만 남고 크기는 1인 단위 벡터가 된다.
 여기에 deltaTime을 곱해주면 게임 엔진의 프레임을 고려한 속도가 된다.</p>
 <p>이 방법은 두 오브젝트가 서로를 향해 이동할 때 문제가 있다.
 서로를 넘어가는 시점부터 둘 다 같은 방향으로 이동하게 된다.</p>
 <p>부드러운 이동을 위해서는 다음과 같이 할 수 있다:</p>
-<pre><code class="language-csharp">transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime);
-</code></pre>
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp">transform<span class="token punctuation">.</span>position <span class="token operator">=</span> Vector3<span class="token punctuation">.</span><span class="token function">Lerp</span><span class="token punctuation">(</span>transform<span class="token punctuation">.</span>position<span class="token punctuation">,</span> target<span class="token punctuation">.</span>position<span class="token punctuation">,</span> Time<span class="token punctuation">.</span>deltaTime<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>Lerp는 선형보간(Linear Interpolation)으로, 두 지점 사이의 중간 지점을 계산한다.
 마찬가지로 deltaTime을 곱해주므로 프레임을 고려하며, 가속도가 적용되기 때문에 부드러운 이동이 가능하다.</p>
 <p>게임 케릭터를 구현을 위해 위 로직을 사용하면 어색하다.
-가속도가 없고 목표 지점을 넘어가지 않는 <code>MoveTowards</code>를 사용하는 것이 좋다.</p>
-<pre><code class="language-csharp">transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
-</code></pre>
-<p>케릭터의 속도 <code>speed</code>를 고려하는 방식이다.</p>
+가속도가 없고 목표 지점을 넘어가지 않는 <code class="language-text">MoveTowards</code>를 사용하는 것이 좋다.</p>
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp">transform<span class="token punctuation">.</span>position <span class="token operator">=</span> Vector3<span class="token punctuation">.</span><span class="token function">MoveTowards</span><span class="token punctuation">(</span>transform<span class="token punctuation">.</span>position<span class="token punctuation">,</span> target<span class="token punctuation">.</span>position<span class="token punctuation">,</span> Time<span class="token punctuation">.</span>deltaTime <span class="token operator">*</span> speed<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>케릭터의 속도 <code class="language-text">speed</code>를 고려하는 방식이다.</p>
 <p>references:</p>
 <ul>
 <li><a href="https://ko.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-vectors/a/vector-magnitude-normalization">Khan Academy - 벡터 크기와 정규화</a></li>
@@ -140,6 +137,6 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

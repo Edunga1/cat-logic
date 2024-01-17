@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -133,14 +133,14 @@ pring Bean은 프레임워크에 의해 생성 및 주입되기 때문에, IDE�
 <h3 id="wsl2에서-freezing-현상" style="position:relative;"><a href="#wsl2%EC%97%90%EC%84%9C-freezing-%ED%98%84%EC%83%81" aria-label="wsl2에서 freezing 현상 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WSL2에서 Freezing 현상</h3>
 <p>TL;DR: JetBrains Tool 경로를 Windows Defender의 검사 예외로 추가한다.</p>
 <ul>
-<li><code>\\wsl$\Ubuntu</code></li>
-<li><code>\\wsl.localhost\Ubuntu</code></li>
-<li><code>C:\Program Files\JetBrains</code></li>
-<li><code>%LOCALAPPDATA%\JetBrains</code></li>
-<li><code>%APPDATA%\JetBrains</code></li>
+<li><code class="language-text">\\wsl$\Ubuntu</code></li>
+<li><code class="language-text">\\wsl.localhost\Ubuntu</code></li>
+<li><code class="language-text">C:\Program Files\JetBrains</code></li>
+<li><code class="language-text">%LOCALAPPDATA%\JetBrains</code></li>
+<li><code class="language-text">%APPDATA%\JetBrains</code></li>
 </ul>
 <hr>
-<p><code>scanning files to index</code> 단계에서 멈추는 증상.</p>
+<p><code class="language-text">scanning files to index</code> 단계에서 멈추는 증상.</p>
 <p>프로그램 자체가 먹통이 되기도 한다.
 몇시간 기다려 보았는데, scanning이 너무 오래 걸려서 포기했다.</p>
 <p><a href="https://youtrack.jetbrains.com/issue/IDEA-293604/IntelliJ-is-slow-hanging-when-working-with-WSL-filesystem">https://youtrack.jetbrains.com/issue/IDEA-293604/IntelliJ-is-slow-hanging-when-working-with-WSL-filesystem</a></p>
@@ -182,27 +182,25 @@ pring Bean은 프레임워크에 의해 생성 및 주입되기 때문에, IDE�
 <p><a href="https://youtrack.jetbrains.com/issue/IDEA-264036">https://youtrack.jetbrains.com/issue/IDEA-264036</a></p>
 <p>querydsl q-class를 생성하는데, 생성된 파일을 인식하지 못하는 현상.
 테스트나 실행도 잘 되지만, 에디터에서는 에러로 표시되어 불편하다.</p>
-<pre><code class="language-kotlin">sourceSets.main.get().java.srcDirs(
-    "build/generated",
-    "build/generated/sources/annotationProcessor",
-)
-</code></pre>
-<p><code>build.gradle.kts</code>에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.</p>
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin">sourceSets<span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>java<span class="token punctuation">.</span><span class="token function">srcDirs</span><span class="token punctuation">(</span>
+    <span class="token string-literal singleline"><span class="token string">"build/generated"</span></span><span class="token punctuation">,</span>
+    <span class="token string-literal singleline"><span class="token string">"build/generated/sources/annotationProcessor"</span></span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span></code></pre></div>
+<p><code class="language-text">build.gradle.kts</code>에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.</p>
 <h3 id="http-파일-사용하기" style="position:relative;"><a href="#http-%ED%8C%8C%EC%9D%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="http 파일 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.http 파일 사용하기</h3>
 <p><a href="https://www.jetbrains.com/help/idea/exploring-http-syntax.html">https://www.jetbrains.com/help/idea/exploring-http-syntax.html</a></p>
-<p><code>.http</code> 확장자 파일을 열면 에디터 내에서 http 요청을 보낼 수 있다.
+<p><code class="language-text">.http</code> 확장자 파일을 열면 에디터 내에서 http 요청을 보낼 수 있다.
 또한 헤더 정보나 curl 파싱 등 편리한 기능이나 응답 결과를 전역 변수로 저장하고,
 전역 변수를 다른 요청의 파라미터로 전달도 가능하다(api chaining)</p>
 <p>버전마다 기능 제공이 조금씩 달라지는 듯 하다. 여기 내용은 2021.1.3 버전에 대한 내용임.</p>
 <h4 id="전역-변수로-api간-chaining-하기" style="position:relative;"><a href="#%EC%A0%84%EC%97%AD-%EB%B3%80%EC%88%98%EB%A1%9C-api%EA%B0%84-chaining-%ED%95%98%EA%B8%B0" aria-label="전역 변수로 api간 chaining 하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>전역 변수로 API간 Chaining 하기</h4>
 <p>다음은 토큰 생성 API로 토큰을 저장하고, 다른 API에 사용하는 예시다.</p>
 <p>응답 구조는 다음과 같다고 가정한다:</p>
-<pre><code class="language-json">{
-  "token": "AA86811JjjaCD43"
-}
-</code></pre>
-<p><code>.http</code> file:</p>
-<pre><code>### 토큰 생성 API
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"token"</span><span class="token operator">:</span> <span class="token string">"AA86811JjjaCD43"</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">.http</code> file:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">### 토큰 생성 API
 POST http://localhost:5000/generate-token
 
 > {%
@@ -211,29 +209,28 @@ client.global.set("mtoken", response.body.token)
 
 ### 상품 조회 API
 GET http://localhost:5000/my-products
-X-APP-TOKEN: {{mtoken}}
-</code></pre>
-<p><code>{% ... %}</code> 구문으로 호출 후에 대한 javascript 코드를 작성하고,
-<code>{{VARIABLE}}</code> 구문으로 전역 변수에 접근한다.</p>
+X-APP-TOKEN: {{mtoken}}</code></pre></div>
+<p><code class="language-text">{% ... %}</code> 구문으로 호출 후에 대한 javascript 코드를 작성하고,
+<code class="language-text">{{VARIABLE}}</code> 구문으로 전역 변수에 접근한다.</p>
 <p>스크립트 구문을 http 요청 전에 두면 호출 전에 대한 처리도 가능하다.</p>
 <h4 id="swagger와-openapi-스키마를-이용한-자동-완성" style="position:relative;"><a href="#swagger%EC%99%80-openapi-%EC%8A%A4%ED%82%A4%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%EC%99%84%EC%84%B1" aria-label="swagger와 openapi 스키마를 이용한 자동 완성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Swagger와 OpenAPI 스키마를 이용한 자동 완성</h4>
 <p><a href="https://www.jetbrains.com/idea/whatsnew/2023-2/">2023 버전부터</a> request body의 자동 완성도 제공한다.</p>
 <p><img src="https://www.jetbrains.com/idea/whatsnew/2023-2/img/2_Swagger_and_OpenAPI_schemas_in_the_HTTP_Client.png" alt="jetbrain schema completion"></p>
 <p>enum의 경우 특정 값만 받는 필드도 자동완성 된다.
-다만 enum class는 enum 이름을 자동 완성하기 때문에 <code>@JsonValue</code>으로 역직렬화할 변수를 변경해도 enum 이름을 자동 완성했다.</p>
+다만 enum class는 enum 이름을 자동 완성하기 때문에 <code class="language-text">@JsonValue</code>으로 역직렬화할 변수를 변경해도 enum 이름을 자동 완성했다.</p>
 <p>이 기능이 도입되면서 insomnia, postman과 비교했을 때 접근성 말고는 뚜렷한 장점이 없었는데,
 이제 intellij 만의 특별한 장점이 생겼다.</p>
 <h3 id="scratches" style="position:relative;"><a href="#scratches" aria-label="scratches permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scratches</h3>
 <p>프로젝트 생성 없이 간단하게 코드를 실행할 수 있는 파일을 scratch라 한다.
-위 단락의 <code>.http</code> 파일도 scratch로 생성해서 관리하면 어느 프로젝트에서나 파일을 열어서 실행할 수 있다.</p>
+위 단락의 <code class="language-text">.http</code> 파일도 scratch로 생성해서 관리하면 어느 프로젝트에서나 파일을 열어서 실행할 수 있다.</p>
 <p>구글 드라이브나 드랍박스 등 클라우드에 연동해서, 집에서나 회사에서나 접근 가능한 나만의 코드 조각 저장소로 가꾸는 방법도 좋다.</p>
 <p>scratch 파일은 현재 프로젝트의 모듈을 기반으로 설정할 수 있다.(jvm 기반 언어라면 classpath를 현재 프로젝트로 설정한다.)
 이 말은 현재 프로젝트나 프로젝트가 참조하는 라이브러리의 모듈을 불러올 수 있다는 것이다.
 그래서 특정 프로젝트 기반으로 만든 scratch를 다른 프로젝트에서 열면 심볼을 못 찾을 수도 있다.</p>
-<p><code>command + shift + n</code>으로 생성할 수 있고, Project View의 가장 하단에 <code>Show Scratch Files</code> -> <code>Scratches</code>에서 생성한 파일을 확인할 수 있다.
-Package View에서는 <code>Scratches</code>가 보이지 않는다.</p>
-<p><code>Show Scratch Files</code> 기능으로 새 창에서 파일 목록을 볼 수 있고, 파일 내용 검색도 가능하다.
-나는 Scratch 파일을 자주 사용하고 많이 관리하고 있어서, <code>option + s</code>로 단축키를 지정해서 사용하고 있다.</p>
+<p><code class="language-text">command + shift + n</code>으로 생성할 수 있고, Project View의 가장 하단에 <code class="language-text">Show Scratch Files</code> -> <code class="language-text">Scratches</code>에서 생성한 파일을 확인할 수 있다.
+Package View에서는 <code class="language-text">Scratches</code>가 보이지 않는다.</p>
+<p><code class="language-text">Show Scratch Files</code> 기능으로 새 창에서 파일 목록을 볼 수 있고, 파일 내용 검색도 가능하다.
+나는 Scratch 파일을 자주 사용하고 많이 관리하고 있어서, <code class="language-text">option + s</code>로 단축키를 지정해서 사용하고 있다.</p>
 <h2 id="datagrip" style="position:relative;"><a href="#datagrip" aria-label="datagrip permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataGrip</h2>
 <p>MySQL Workbench, Sequel Pro 등 몇 가지 무료 데이터베이스 클라이언트를 사용해 보았지만, 유료인 DataGrip이 가장 편리했다.</p>
 <h3 id="keymaps" style="position:relative;"><a href="#keymaps" aria-label="keymaps permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>keymaps</h3>
@@ -248,64 +245,62 @@ Package View에서는 <code>Scratches</code>가 보이지 않는다.</p>
 <tbody>
 <tr>
 <td align="left">Database Tools and SQL -> Attach Session</td>
-<td align="left"><code>opt</code> <code>o</code></td>
+<td align="left"><code class="language-text">opt</code> <code class="language-text">o</code></td>
 <td align="left">staging, prod, local 등 자주 전환하는 경우 유용하다.</td>
 </tr>
 <tr>
 <td align="left">Database Tools and SQL -> Transpose</td>
-<td align="left"><code>opt</code> <code>t</code></td>
+<td align="left"><code class="language-text">opt</code> <code class="language-text">t</code></td>
 <td align="left">열과 행 반전. 컬럼이 많은 경우 보기 편리</td>
 </tr>
 <tr>
 <td align="left">Other -> Pin Active Tab</td>
-<td align="left"><code>opt</code> <code>p</code></td>
+<td align="left"><code class="language-text">opt</code> <code class="language-text">p</code></td>
 <td align="left">탭 고정. 탭 여러개를 비교를 자주할 때 유용</td>
 </tr>
 <tr>
 <td align="left">Main Menu -> Navigate -> File Structure</td>
-<td align="left"><code>opt</code> <code>l</code></td>
+<td align="left"><code class="language-text">opt</code> <code class="language-text">l</code></td>
 <td align="left">(쿼리 결과에서) 컬럼 목록 및 이동. 컬럼이 많은 경우 검색으로 이동 가능</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-xml">&#x3C;keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
-  &#x3C;action id="Console.Jdbc.ChooseSession">
-    &#x3C;keyboard-shortcut first-keystroke="alt o" />
-  &#x3C;/action>
-  &#x3C;action id="Console.TableResult.Transpose">
-    &#x3C;keyboard-shortcut first-keystroke="alt t" />
-  &#x3C;/action>
-  &#x3C;action id="FileStructurePopup">
-    &#x3C;keyboard-shortcut first-keystroke="meta f12" />
-    &#x3C;keyboard-shortcut first-keystroke="alt l" />
-  &#x3C;/action>
-  &#x3C;action id="PinActiveEditorTab" />
-  &#x3C;action id="PinActiveTabToggle">
-    &#x3C;keyboard-shortcut first-keystroke="alt p" />
-  &#x3C;/action>
-  &#x3C;action id="PinToolwindowTab" />
-&#x3C;/keymap>
-</code></pre>
-<p>위 설정을 <code>~/Library/Application\ Support/JetBrains/DataGrip{version}/keymaps</code>에 두면 keymap 목록에 등록된다.</p>
+<div class="gatsby-highlight" data-language="xml"><pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keymap</span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>macOS copy<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Mac OS X 10.5+<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Console.Jdbc.ChooseSession<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keyboard-shortcut</span> <span class="token attr-name">first-keystroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alt o<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Console.TableResult.Transpose<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keyboard-shortcut</span> <span class="token attr-name">first-keystroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alt t<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>FileStructurePopup<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keyboard-shortcut</span> <span class="token attr-name">first-keystroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>meta f12<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keyboard-shortcut</span> <span class="token attr-name">first-keystroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alt l<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>PinActiveEditorTab<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>PinActiveTabToggle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keyboard-shortcut</span> <span class="token attr-name">first-keystroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alt p<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>PinToolwindowTab<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keymap</span><span class="token punctuation">></span></span></code></pre></div>
+<p>위 설정을 <code class="language-text">~/Library/Application\ Support/JetBrains/DataGrip{version}/keymaps</code>에 두면 keymap 목록에 등록된다.</p>
 <h3 id="live-templates" style="position:relative;"><a href="#live-templates" aria-label="live templates permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Live Templates</h3>
 <p>Live Template은 Snippet의 일종이다.
-기본으로 제공되는 <code>sel</code>, <code>lim</code>을 특히 자주 사용한다.</p>
-<p>에디터에 <code>sel</code>만 입력하면 <code>select * from |;</code> 코드를 자동 완성하고, <code>|</code>에 커서가 가면서 테이블 이름 목록을 보여준다.
+기본으로 제공되는 <code class="language-text">sel</code>, <code class="language-text">lim</code>을 특히 자주 사용한다.</p>
+<p>에디터에 <code class="language-text">sel</code>만 입력하면 <code class="language-text">select * from |;</code> 코드를 자동 완성하고, <code class="language-text">|</code>에 커서가 가면서 테이블 이름 목록을 보여준다.
 설정 -> Editor -> Live Templates 메뉴에서 확인하고, 관리할 수 있다.</p>
-<p><code>sel</code>의 경우 다음과 같이 작성되어 있다:</p>
-<pre><code>select * from $table$$END$;
-</code></pre>
-<p><code>$text$</code>가 예약어인데, <code>$table$</code>은 테이블 목록을 보여주기 위함이고,
-<code>$END$</code>는 입력란을 모두 채웠을 때 이동 할 커서 위치이다.</p>
+<p><code class="language-text">sel</code>의 경우 다음과 같이 작성되어 있다:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">select * from $table$$END$;</code></pre></div>
+<p><code class="language-text">$text$</code>가 예약어인데, <code class="language-text">$table$</code>은 테이블 목록을 보여주기 위함이고,
+<code class="language-text">$END$</code>는 입력란을 모두 채웠을 때 이동 할 커서 위치이다.</p>
 <p>응용하면 여러가지 편리한 템플릿을 만들 수 있다.</p>
 <ul>
-<li><code>last</code>: <code>select * from $table$ order by 1 desc$END$;</code></li>
-<li><code>where</code>: <code>select * from $table$ where $END$;</code></li>
-<li><code>source</code>: <code>select * from $table$ where source_type = '$value1$' and source_id = $value2$$END$;</code></li>
+<li><code class="language-text">last</code>: <code class="language-text">select * from $table$ order by 1 desc$END$;</code></li>
+<li><code class="language-text">where</code>: <code class="language-text">select * from $table$ where $END$;</code></li>
+<li><code class="language-text">source</code>: <code class="language-text">select * from $table$ where source_type = '$value1$' and source_id = $value2$$END$;</code></li>
 </ul>
-<p><code>source</code>는 source id, type 구조로 복합키를 많이 사용해서 만들었다.</p>
+<p><code class="language-text">source</code>는 source id, type 구조로 복합키를 많이 사용해서 만들었다.</p>
 <h2 id="intellij-idea-datagrip-버전을-fallback-버전으로-다운그레이드했다" style="position:relative;"><a href="#intellij-idea-datagrip-%EB%B2%84%EC%A0%84%EC%9D%84-fallback-%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EB%8B%A4%EC%9A%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%ED%96%88%EB%8B%A4" aria-label="intellij idea datagrip 버전을 fallback 버전으로 다운그레이드했다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IntelliJ IDEA, DataGrip 버전을 fallback 버전으로 다운그레이드했다.</h2>
-<p>회사 라이센스가 만료되어 <code>2022.3</code> 버전에서 <code>2021.1</code> 버전으로 돌아갔다.
+<p>회사 라이센스가 만료되어 <code class="language-text">2022.3</code> 버전에서 <code class="language-text">2021.1</code> 버전으로 돌아갔다.
 구매 요청하면 되지만, <a href="https://sales.jetbrains.com/hc/en-gb/articles/207240845-What-is-a-perpetual-fallback-license">perpetual 라이센스</a>를 제공해서 사용하겠다 했다.
 경험해보고 만족하면 개인적으로도 구매할 수 있을 거 같고, 최신 버전 사용하지 못한다고 해서 개발을 못한다고 생각하면 그건 또 자존심 상할 문제다.</p>
 <p>어쨌든.. 다운그레이드했고, 몇가지 문제점은 있었다.</p>
@@ -314,9 +309,9 @@ Package View에서는 <code>Scratches</code>가 보이지 않는다.</p>
 <p><a href="https://www.jetbrains.com/help/idea/scratches.html">scratches</a> 폴더를 내가 별도 설정하여 쓰고 있다.</p>
 <p>구글 드라이브의 공유 폴더였고, 간단한 코드 조각들을 집, 회사 모두에서 쉽게 볼 수 있게하는 것이 목적이었다.
 당시 kotlin 입문한 상황이라 이는 공부하는데 매우 유용한 방식이었다.</p>
-<p><code>Edit Custom Properties</code> 기능으로 <code>idea.scratch.path/scratches</code> 프로퍼티에 경로를 설정하였으나 먹히지 않았다.</p>
-<p>해당 변수는 <code>2021.2</code> 버전부터 추가된 것으로 추정하고 있다.</p>
-<p><code>2021.2</code> 이전 버전에서는 <code>idea.scratch.path</code> 이 프로퍼티에 <code>scratches</code> 디렉토리가 있는 폴더의 경로로 설정해야 한다.</p>
+<p><code class="language-text">Edit Custom Properties</code> 기능으로 <code class="language-text">idea.scratch.path/scratches</code> 프로퍼티에 경로를 설정하였으나 먹히지 않았다.</p>
+<p>해당 변수는 <code class="language-text">2021.2</code> 버전부터 추가된 것으로 추정하고 있다.</p>
+<p><code class="language-text">2021.2</code> 이전 버전에서는 <code class="language-text">idea.scratch.path</code> 이 프로퍼티에 <code class="language-text">scratches</code> 디렉토리가 있는 폴더의 경로로 설정해야 한다.</p>
 <h3 id="프로젝트-열면-즉시-멈추거나-꺼지는-문제" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%97%B4%EB%A9%B4-%EC%A6%89%EC%8B%9C-%EB%A9%88%EC%B6%94%EA%B1%B0%EB%82%98-%EA%BA%BC%EC%A7%80%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="프로젝트 열면 즉시 멈추거나 꺼지는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 열면 즉시 멈추거나 꺼지는 문제</h3>
 <p>처음에는 라이센스 문제인 줄 알았다. 현재 fallback license를 삭제하고 free tier로 하면 되었기 때문.</p>
 <p>정확한 문제는 fallback license를 사용하기 위해서 로그인하고, 로그인한 계정을 동기화하면서 발생했다.</p>
@@ -325,12 +320,12 @@ Package View에서는 <code>Scratches</code>가 보이지 않는다.</p>
 특히 문제가된 플러그인은 직접 설치한 것은 아닌 것으로 기억한다.</p>
 <h3 id="datagrip-디렉토리-추가-안-됨" style="position:relative;"><a href="#datagrip-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EC%B6%94%EA%B0%80-%EC%95%88-%EB%90%A8" aria-label="datagrip 디렉토리 추가 안 됨 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataGrip 디렉토리 추가 안 됨</h3>
 <p>scratches 폴더 추가하는 것처럼 쿼리를 모아놓은 폴더를 추가하여 사용 중이다.
-<code>Attach directory to project</code> 메뉴로 그냥 추가하면 된다. 문제는 해당 기능을 눌러도 아무 반응이 없다.</p>
+<code class="language-text">Attach directory to project</code> 메뉴로 그냥 추가하면 된다. 문제는 해당 기능을 눌러도 아무 반응이 없다.</p>
 <p>아직 이유를 찾지 못했지만, 새로운 프로젝트를 추가하여 재현해보면 잘 됐다. 그래서 거기다 추가하고 connection 정보도 옮겨서 사용했다.</p>
 <p>이 문제도 메뉴를 선택해도 무반응이며, 에러 메시지도 없다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/jetbrains/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

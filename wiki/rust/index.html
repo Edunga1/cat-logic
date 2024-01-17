@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -89,16 +89,14 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p><a href="https://www.rust-lang.org/">https://www.rust-lang.org/</a></p>
 <h2 id="installation" style="position:relative;"><a href="#installation" aria-label="installation permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
 <p>Ubuntu on WSL, OSX 사용중이라 편의상 Homebrew로 설치했다.</p>
-<pre><code class="language-bash">$ brew install rust
-</code></pre>
-<p><code>rustc</code>, <code>cargo</code>가 설치되었는지 확인한다.</p>
-<pre><code class="language-bash">❯ rustc --version
-rustc 1.72.1 (d5c2e9c34 2023-09-13) (Homebrew)
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ brew <span class="token function">install</span> rust</code></pre></div>
+<p><code class="language-text">rustc</code>, <code class="language-text">cargo</code>가 설치되었는지 확인한다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ rustc <span class="token parameter variable">--version</span>
+rustc <span class="token number">1.72</span>.1 <span class="token punctuation">(</span>d5c2e9c34 <span class="token number">2023</span>-09-13<span class="token punctuation">)</span> <span class="token punctuation">(</span>Homebrew<span class="token punctuation">)</span>
 
 
-❯ cargo --version
-cargo 1.72.1
-</code></pre>
+❯ <span class="token function">cargo</span> <span class="token parameter variable">--version</span>
+<span class="token function">cargo</span> <span class="token number">1.72</span>.1</code></pre></div>
 <p>cargo는 패키지 매니저이다.</p>
 <p>패키지는 몇 개 사이트에서 찾을 수 있는 것으로 보인다.
 SFML을 기준으로는 다음 2개 사이트에서 찾을 수 있었다.</p>
@@ -107,43 +105,41 @@ SFML을 기준으로는 다음 2개 사이트에서 찾을 수 있었다.</p>
 <li><a href="https://crates.io/crates/sfml">https://crates.io/crates/sfml</a></li>
 </ul>
 <p>docs.rs는 라이브러리 문서화에 특화되어 있는 것으로 보인다.
-crates.io처럼 <code>cargo add sfml</code>와 같은 설치 명령어 안내 문구가 없다.</p>
+crates.io처럼 <code class="language-text">cargo add sfml</code>와 같은 설치 명령어 안내 문구가 없다.</p>
 <h2 id="프로젝트-시작하기" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0" aria-label="프로젝트 시작하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 시작하기</h2>
-<p><code>cargo</code> 명령어로 프로젝트를 생성하거나 패키지를 설치할 수 있다.</p>
-<p>다음은 <code>hell_world</code> 프로젝트를 생성하는 명령어이다.</p>
-<pre><code class="language-bash">$ cargo new sfml-rust-start
-     Created binary (application) `sfml-rust-start` package
+<p><code class="language-text">cargo</code> 명령어로 프로젝트를 생성하거나 패키지를 설치할 수 있다.</p>
+<p>다음은 <code class="language-text">hell_world</code> 프로젝트를 생성하는 명령어이다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">cargo</span> new sfml-rust-start
+     Created binary <span class="token punctuation">(</span>application<span class="token punctuation">)</span> <span class="token variable"><span class="token variable">`</span>sfml-rust-start<span class="token variable">`</span></span> package
 
-$ cd sfml-rust-start
+$ <span class="token builtin class-name">cd</span> sfml-rust-start
 
-$ tree -a .
-.
+$ tree <span class="token parameter variable">-a</span> <span class="token builtin class-name">.</span>
+<span class="token builtin class-name">.</span>
 ├── Cargo.toml
 ├── .git
 ├── .gitignore
 └── src
-    └── main.rs
-</code></pre>
-<p><code>Cargo.toml</code> 파일과 함께 git 저장소가 생성된다.
-hello world를 출력하는 기본적인 코드가 <code>src/main.rs</code>에 작성되어 있다.</p>
-<p>현재 디렉토리를 프로젝트로 만들고 싶다면 <code>cargo init</code> 명령어를 사용한다.</p>
-<p>Rust 코드를 실행해보자. <code>rustc</code>로 컴파일하면 실행 파일이 생성된다:</p>
-<pre><code class="language-bash">$ rustc src/main.rs
+    └── main.rs</code></pre></div>
+<p><code class="language-text">Cargo.toml</code> 파일과 함께 git 저장소가 생성된다.
+hello world를 출력하는 기본적인 코드가 <code class="language-text">src/main.rs</code>에 작성되어 있다.</p>
+<p>현재 디렉토리를 프로젝트로 만들고 싶다면 <code class="language-text">cargo init</code> 명령어를 사용한다.</p>
+<p>Rust 코드를 실행해보자. <code class="language-text">rustc</code>로 컴파일하면 실행 파일이 생성된다:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ rustc src/main.rs
 $ ./main
-Hello, world!
-</code></pre>
+Hello, world<span class="token operator">!</span></code></pre></div>
 <h2 id="journey-to-rust" style="position:relative;"><a href="#journey-to-rust" aria-label="journey to rust permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Journey to Rust</h2>
 <p>24년 첫 도전을 Rust와 함께 하는중이다.</p>
 <p>Rust 문법을 따로 공부하지 않고, 무작정 사용해보고 있다. 물론 아무런 도움이 없는 것은 아니다.
 <a href="../machine-learning">ChatGPT</a>와 <a href="../language-server-protocol">LSP</a>를 적극 활용하고 있다.</p>
 <p><a href="https://github.com/Edunga1/rust-sfml-practice">https://github.com/Edunga1/rust-sfml-practice</a> 가 시작 프로젝트다.</p>
 <p>ChatGPT가 아니었으면 고생길이 험난했을 것 같다. ChatGPT 덕분에 언어의 러닝커브를 줄일 수 있었다.
-<code>trait</code>은 다른 언어에도 있는 개념이지만, lifetime은 예상치 못했다. LSP가 없었더라면 수 많은 에러에 만신창이가 되었을 것이다.</p>
+<code class="language-text">trait</code>은 다른 언어에도 있는 개념이지만, lifetime은 예상치 못했다. LSP가 없었더라면 수 많은 에러에 만신창이가 되었을 것이다.</p>
 <p>immutable을 우선하는 것과 <a href="https://doc.rust-lang.org/rust-by-example/scope/lifetime/struct.html">lifetime</a>을 보면 Rust가 메모리 안전성을 중요시하는 것을 알 거 같다.
-그래도 lifetime의 <code>&#x3C;'a></code>는 뭔가 어색하다. 특히 <code>'static</code>은 더욱.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+그래도 lifetime의 <code class="language-text">&lt;'a></code>는 뭔가 어색하다. 특히 <code class="language-text">'static</code>은 더욱.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

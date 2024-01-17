@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -97,81 +97,75 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>줄여서 WSL. 윈도우10부터 리눅스를 실행할 수 있다.</p>
 <h2 id="vim-설정" style="position:relative;"><a href="#vim-%EC%84%A4%EC%A0%95" aria-label="vim 설정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>vim 설정</h2>
 <h3 id="clipboard-공유" style="position:relative;"><a href="#clipboard-%EA%B3%B5%EC%9C%A0" aria-label="clipboard 공유 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>clipboard 공유</h3>
-<pre><code class="language-vim">let g:clipboard = {
-          \   'name': 'win32yank-wsl',
-          \   'copy': {
-          \      '+': 'win32yank.exe -i --crlf',
-          \      '*': 'win32yank.exe -i --crlf',
-          \    },
-          \   'paste': {
-          \      '+': 'win32yank.exe -o --lf',
-          \      '*': 'win32yank.exe -o --lf',
-          \   },
-          \   'cache_enabled': 0,
-          \ }
-</code></pre>
+<div class="gatsby-highlight" data-language="vim"><pre class="language-vim"><code class="language-vim"><span class="token keyword">let</span> g<span class="token punctuation">:</span><span class="token builtin">clipboard</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+          \   <span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'win32yank-wsl'</span><span class="token punctuation">,</span>
+          \   <span class="token string">'copy'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          \      <span class="token string">'+'</span><span class="token punctuation">:</span> <span class="token string">'win32yank.exe -i --crlf'</span><span class="token punctuation">,</span>
+          \      <span class="token string">'*'</span><span class="token punctuation">:</span> <span class="token string">'win32yank.exe -i --crlf'</span><span class="token punctuation">,</span>
+          \    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          \   <span class="token string">'paste'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          \      <span class="token string">'+'</span><span class="token punctuation">:</span> <span class="token string">'win32yank.exe -o --lf'</span><span class="token punctuation">,</span>
+          \      <span class="token string">'*'</span><span class="token punctuation">:</span> <span class="token string">'win32yank.exe -o --lf'</span><span class="token punctuation">,</span>
+          \   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          \   <span class="token string">'cache_enabled'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+          \ <span class="token punctuation">}</span></code></pre></div>
 <p>win32yank.exe 실행파일 필요.</p>
 <p>다른 플랫폼 설정에 섞이지 않도록 예외처리 하자:</p>
-<pre><code class="language-vim">function! s:IsWSL()
-  if has("unix") &#x26;&#x26; filereadable("/proc/version")
-    let lines = readfile("/proc/version")
-    if lines[0] =~ "Microsoft"
-      return 1
-    endif
-  endif
-  return 0
-endfunction
+<div class="gatsby-highlight" data-language="vim"><pre class="language-vim"><code class="language-vim"><span class="token keyword">function</span><span class="token operator">!</span> s<span class="token punctuation">:</span><span class="token function">IsWSL</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token function">has</span><span class="token punctuation">(</span><span class="token string">"unix"</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">filereadable</span><span class="token punctuation">(</span><span class="token string">"/proc/version"</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> <span class="token builtin">lines</span> <span class="token operator">=</span> <span class="token function">readfile</span><span class="token punctuation">(</span><span class="token string">"/proc/version"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token builtin">lines</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=~</span> <span class="token string">"Microsoft"</span>
+      <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">endif</span>
+  <span class="token keyword">endif</span>
+  <span class="token keyword">return</span> <span class="token number">0</span>
+<span class="token keyword">endfunction</span>
 
-if !s:IsWSL()
-  finish
-endif
-</code></pre>
+<span class="token keyword">if</span> <span class="token operator">!</span>s<span class="token punctuation">:</span><span class="token function">IsWSL</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">finish</span>
+<span class="token keyword">endif</span></code></pre></div>
 <p>ref. <a href="https://github.com/Edunga1/dotfiles/blob/master/vim/vim-include/_wsl.vim">https://github.com/Edunga1/dotfiles/blob/master/vim/vim-include/_wsl.vim</a></p>
 <h2 id="http-관련-명령어가-동작하지-않는-문제" style="position:relative;"><a href="#http-%EA%B4%80%EB%A0%A8-%EB%AA%85%EB%A0%B9%EC%96%B4%EA%B0%80-%EB%8F%99%EC%9E%91%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="http 관련 명령어가 동작하지 않는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>http 관련 명령어가 동작하지 않는 문제</h2>
-<p><code>curl</code> <code>wget</code> <code>docker pull</code>  <code>npm install</code> 등 명령어가 일체 먹히지 않는다.
-<code>git</code> 등 간접적으로 http를 사용하는 명렁어도 동작하지 않는다.</p>
+<p><code class="language-text">curl</code> <code class="language-text">wget</code> <code class="language-text">docker pull</code>  <code class="language-text">npm install</code> 등 명령어가 일체 먹히지 않는다.
+<code class="language-text">git</code> 등 간접적으로 http를 사용하는 명렁어도 동작하지 않는다.</p>
 <p><a href="https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021">https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021</a></p>
 <ol>
-<li><code>/etc/wsl.conf</code> 파일을 만들고 아래 내용을 추가한다.</li>
+<li><code class="language-text">/etc/wsl.conf</code> 파일을 만들고 아래 내용을 추가한다.</li>
 </ol>
-<pre><code class="language-conf">[network]
-generateResolvConf = false
-</code></pre>
+<div class="gatsby-highlight" data-language="conf"><pre class="language-conf"><code class="language-conf">[network]
+generateResolvConf = false</code></pre></div>
 <ol start="2">
-<li>window에서 <code>wsl --shutdown</code> 실행하고 다시 wsl을 실행한다.</li>
-<li><code>/etc/resolv.conf</code> 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.</li>
+<li>window에서 <code class="language-text">wsl --shutdown</code> 실행하고 다시 wsl을 실행한다.</li>
+<li><code class="language-text">/etc/resolv.conf</code> 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.</li>
 </ol>
-<pre><code class="language-conf">nameserver 8.8.8.8
-</code></pre>
+<div class="gatsby-highlight" data-language="conf"><pre class="language-conf"><code class="language-conf">nameserver 8.8.8.8</code></pre></div>
 <h2 id="ubuntu-버전-업그레이드" style="position:relative;"><a href="#ubuntu-%EB%B2%84%EC%A0%84-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C" aria-label="ubuntu 버전 업그레이드 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ubuntu 버전 업그레이드</h2>
 <p>18.04 -> 20.04로 업그레이드했다. 이슈가 하나 있었는데, WSL 보다는 ubuntu 이슈라 봐도 될 듯.</p>
-<p>업그레이드를 위해선 <code>sudo do-release-upgrade -d</code> 명령어만 입력하면 되는데..</p>
+<p>업그레이드를 위해선 <code class="language-text">sudo do-release-upgrade -d</code> 명령어만 입력하면 되는데..</p>
 <p>문제는 <strong>설치된 패키지들을 모두 최신 버전으로 업데이트</strong> 해야 된다.</p>
 <p>명령어를 통해서 모든 패키지를 업데이트하자:</p>
 <ul>
-<li><code>sudo apt update</code></li>
-<li><code>sudo apt upgrade</code></li>
-<li><code>sudo apt dist-upgrade</code></li>
+<li><code class="language-text">sudo apt update</code></li>
+<li><code class="language-text">sudo apt upgrade</code></li>
+<li><code class="language-text">sudo apt dist-upgrade</code></li>
 </ul>
 <p>패키지 업데이트 도중 개인 패키지 저장소인 PPA(Personal Package Archive)를 추가한 적이 있고, 이 PPA가 사라졌으면 에러가 난다.
 404로 출력된다. 따라서 업데이트 하지 않도록 PPA를 제거해야 했다.</p>
-<p>나는 <code>CMake</code>를 PPA를 통해서 설치 했었는데. 이 PPA가 사라져서 에러가 발생했다.</p>
-<pre><code class="language-bash">Ubuntu 18.04 ppa.launchpad.net/george-edison55/cmake-3.x/ubuntu bionic Release 404 Not Found [IP: 91.189.95.83 80]
-</code></pre>
+<p>나는 <code class="language-text">CMake</code>를 PPA를 통해서 설치 했었는데. 이 PPA가 사라져서 에러가 발생했다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">Ubuntu <span class="token number">18.04</span> ppa.launchpad.net/george-edison55/cmake-3.x/ubuntu bionic Release <span class="token number">404</span> Not Found <span class="token punctuation">[</span>IP: <span class="token number">91.189</span>.95.83 <span class="token number">80</span><span class="token punctuation">]</span></code></pre></div>
 <p>제거하기 위해 2가지 방법이 있다.</p>
 <ul>
-<li>파일을 지운다: <code>sudo rm /etc/apt/sources.list.d/george-edison55-ubuntu-cmake-3_x-bionic.list</code></li>
-<li>명령어를 통해 지운다: <code>sudo add-apt-repository --remove ppa:whatever/ppa</code></li>
+<li>파일을 지운다: <code class="language-text">sudo rm /etc/apt/sources.list.d/george-edison55-ubuntu-cmake-3_x-bionic.list</code></li>
+<li>명령어를 통해 지운다: <code class="language-text">sudo add-apt-repository --remove ppa:whatever/ppa</code></li>
 </ul>
 <p>문제는 PPA 이름을 알아야 하는데, 에러 메시지에 출력되지 않는다. 패키지 이름만 포함될 뿐이다. 그냥 에러메시지로 검색해서 지우는게 속편하다...</p>
-<p>이제 <code>sudo do-release-upgrade -d</code> 하면 되는데..</p>
-<pre><code class="language-rust">Checking for a new Ubuntu release
-You have not rebooted after updating a package which requires a reboot. Please reboot before upgrading.
-</code></pre>
+<p>이제 <code class="language-text">sudo do-release-upgrade -d</code> 하면 되는데..</p>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token class-name">Checking</span> <span class="token keyword">for</span> a new <span class="token class-name">Ubuntu</span> release
+<span class="token class-name">You</span> have not rebooted after updating a package which requires a reboot<span class="token punctuation">.</span> <span class="token class-name">Please</span> reboot before upgrading<span class="token punctuation">.</span></code></pre></div>
 <p>업그레이드 후에는 리붓 해야한다... :(</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/windows-subsystem-for-linux/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

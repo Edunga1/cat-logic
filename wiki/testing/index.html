@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -128,24 +128,24 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </ol>
 <p>위 과정을 거친다.</p>
 <p>테스트를 하면서 사용한 데이터를 다시 제거하지 않으면, 다음 테스트에 영향을 미치게 된다.
-이를 해결하기 위해서 Setup에서 <code>TRANSACTION START</code>, Teardown에서 <code>ROLLBACK</code> 하면
+이를 해결하기 위해서 Setup에서 <code class="language-text">TRANSACTION START</code>, Teardown에서 <code class="language-text">ROLLBACK</code> 하면
 DB 상태를 다시 복구할 수 있다.</p>
-<p>트랜잭션을 사용하지 않고, <code>DELETE FROM</code> DDL을 통하여 데이터를 삭제할 수도 있으나,
+<p>트랜잭션을 사용하지 않고, <code class="language-text">DELETE FROM</code> DDL을 통하여 데이터를 삭제할 수도 있으나,
 테스트를 중간에 멈췄을 때 상태를 복구할 수 없다.
 또, 트랜잭션은 최소한의 안정장치가 될 수 있을 거 같다.
 잘못 입력한 데이터베이스 URL을 대응할 수 있지 않을까.</p>
 <p>Django는 테스트 시 데이터 삭제 여부에 대한 옵션이 있다:<br>
 <a href="https://docs.djangoproject.com/en/2.2/topics/testing/advanced/#django-db-connection-creation">https://docs.djangoproject.com/en/2.2/topics/testing/advanced/#django-db-connection-creation</a></p>
-<p>Spring에서 테스트에 <code>@Transactional</code> 사용하지 말 것을 설명하는 글도 있다:<br>
+<p>Spring에서 테스트에 <code class="language-text">@Transactional</code> 사용하지 말 것을 설명하는 글도 있다:<br>
 <a href="https://dev.to/henrykeys/don-t-use-transactional-in-tests-40eb">Don’t Use @Transactional in Tests</a></p>
-<p>테스트에 <code>@Transactional</code>을 붙이면 위와 테스트를 트랜잭션으로 묶을 수 있다. 하지만 그러면서 발생하는 문제점도 있다.</p>
+<p>테스트에 <code class="language-text">@Transactional</code>을 붙이면 위와 테스트를 트랜잭션으로 묶을 수 있다. 하지만 그러면서 발생하는 문제점도 있다.</p>
 <ul>
 <li><a href="https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93_%EC%96%91%EC%84%B1%EA%B3%BC_%EA%B1%B0%EC%A7%93_%EC%9D%8C%EC%84%B1">false negative</a>으로 테스트를 망침</li>
 <li>운영코드에는 버그가 있지만, 테스트에서 성공하는 것을 <strong>false negative</strong> 라고한다.</li>
 <li>이는 개발자의 테스트에 대한 신뢰도 감소로 이어진다. 테스트를 덜 작성하게 될 것이다.</li>
 <li>직접 테스트하지 않는 이상 발견할 수 없는 버그가 운영 코드에 포함된다.</li>
 </ul>
-<p>글에서 설명하는 false negative 예제: 운영 코드에는 <code>@Transactional</code> 빠졌지만, 테스트에는 있어서 성공하고, 직접 호출하면 실패한다.</p>
+<p>글에서 설명하는 false negative 예제: 운영 코드에는 <code class="language-text">@Transactional</code> 빠졌지만, 테스트에는 있어서 성공하고, 직접 호출하면 실패한다.</p>
 <h3 id="테스트에서의-transactional-사용에-대해-질문이-있습니다---toby-vs-chatgpt-2" style="position:relative;"><a href="#%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C%EC%9D%98-transactional-%EC%82%AC%EC%9A%A9%EC%97%90-%EB%8C%80%ED%95%B4-%EC%A7%88%EB%AC%B8%EC%9D%B4-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4---toby-vs-chatgpt-2" aria-label="테스트에서의 transactional 사용에 대해 질문이 있습니다   toby vs chatgpt 2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>테스트에서의 @Transactional 사용에 대해 질문이 있습니다 - Toby vs ChatGPT (2)</h3>
 <p><a href="https://youtu.be/-961J2c1YsM">https://youtu.be/-961J2c1YsM</a></p>
 <ul>
@@ -177,16 +177,14 @@ DB 상태를 다시 복구할 수 있다.</p>
 <p>사이트에서 소개하는 예시는 Rails의 RSpec을 사용하지만, 다른 언어/프레임워크에서도 적용하는 것을 목표로 한다.</p>
 <h3 id="single-expectation단일-검증" style="position:relative;"><a href="#single-expectation%EB%8B%A8%EC%9D%BC-%EA%B2%80%EC%A6%9D" aria-label="single expectation단일 검증 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Single Expectation(단일 검증)</h3>
 <p><a href="https://www.betterspecs.org/#single">https://www.betterspecs.org/#single</a></p>
-<pre><code class="language-ruby">it { is_expected.to respond_with_content_type(:json) }
-it { is_expected.to assign_to(:resource) }
-</code></pre>
+<div class="gatsby-highlight" data-language="ruby"><pre class="language-ruby"><code class="language-ruby">it <span class="token punctuation">{</span> is_expected<span class="token punctuation">.</span>to respond_with_content_type<span class="token punctuation">(</span><span class="token symbol">:json</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+it <span class="token punctuation">{</span> is_expected<span class="token punctuation">.</span>to assign_to<span class="token punctuation">(</span><span class="token symbol">:resource</span><span class="token punctuation">)</span> <span class="token punctuation">}</span></code></pre></div>
 <p>한 번에 하나만 검증하는 것은 가독성, 테스트 실패 시 원인 파악이 쉽다는 장점이 있다.
 하지만 DB 등 호출 비용이 큰 경우에는 여러 개를 한 번에 검증하는 것도 허용한다.</p>
-<pre><code class="language-ruby">it 'creates a resource' do
-  expect(response).to respond_with_content_type(:json)
-  expect(response).to assign_to(:resource)
-end
-</code></pre>
+<div class="gatsby-highlight" data-language="ruby"><pre class="language-ruby"><code class="language-ruby">it <span class="token string-literal"><span class="token string">'creates a resource'</span></span> <span class="token keyword">do</span>
+  expect<span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">.</span>to respond_with_content_type<span class="token punctuation">(</span><span class="token symbol">:json</span><span class="token punctuation">)</span>
+  expect<span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">.</span>to assign_to<span class="token punctuation">(</span><span class="token symbol">:resource</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span></code></pre></div>
 <p>관련 SO 질문이 있다: <a href="https://softwareengineering.stackexchange.com/q/7823">Is it OK to have multiple asserts in a single unit test?</a></p>
 <p>답변 채택은 single expectation을 권장하고 테스트를 작성하다보면 결국 하나의 검증만 하게 될거라는 것.
 하지만 더 많은 추천을 받은 답변은 multiple expectation을 하는 것이다.</p>
@@ -195,113 +193,111 @@ end
 <h2 id="테스트-코드-작성" style="position:relative;"><a href="#%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1" aria-label="테스트 코드 작성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>테스트 코드 작성</h2>
 <h3 id="통합-테스트에서도-mocking하면-편리하다" style="position:relative;"><a href="#%ED%86%B5%ED%95%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C%EB%8F%84-mocking%ED%95%98%EB%A9%B4-%ED%8E%B8%EB%A6%AC%ED%95%98%EB%8B%A4" aria-label="통합 테스트에서도 mocking하면 편리하다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>통합 테스트에서도 mocking하면 편리하다.</h3>
 <p>spring framework 환경에서 이야기다. django는 pytest의 fixture를 사용하면 편했다.</p>
-<pre><code class="language-kotlin">@SpringBootTest
-@AutoConfigureMockMvc
-class TalkTradeRequestControllerSendingAddressTest(
-  private val mvc: MockMvc,
-  private val userRepository: UserRepository,
-  private val productClient: StaticProductClient,
-) : DescribeSpec({
-  describe("GET /users/:id/product") {
-    lateinit var user: User
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@SpringBootTest</span>
+<span class="token annotation builtin">@AutoConfigureMockMvc</span>
+<span class="token keyword">class</span> <span class="token function">TalkTradeRequestControllerSendingAddressTest</span><span class="token punctuation">(</span>
+  <span class="token keyword">private</span> <span class="token keyword">val</span> mvc<span class="token operator">:</span> MockMvc<span class="token punctuation">,</span>
+  <span class="token keyword">private</span> <span class="token keyword">val</span> userRepository<span class="token operator">:</span> UserRepository<span class="token punctuation">,</span>
+  <span class="token keyword">private</span> <span class="token keyword">val</span> productClient<span class="token operator">:</span> StaticProductClient<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">DescribeSpec</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function">describe</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"GET /users/:id/product"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">lateinit</span> <span class="token keyword">var</span> user<span class="token operator">:</span> User
 
-    beforeContainer {
-      user = userRepository.save(/*..*/)
-    }
+    beforeContainer <span class="token punctuation">{</span>
+      user <span class="token operator">=</span> userRepository<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token comment">/*..*/</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
 
-    afterContainer {
-      userRepository.deleteAll()
-      productClient.clearTestData()
-    }
+    afterContainer <span class="token punctuation">{</span>
+      userRepository<span class="token punctuation">.</span><span class="token function">deleteAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      productClient<span class="token punctuation">.</span><span class="token function">clearTestData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
 
-    fun requset(id: Long) = mvc.get("/users/$id/product") {
-       contentType = MediaType.APPLICATION_JSON
-    }
+    <span class="token keyword">fun</span> <span class="token function">requset</span><span class="token punctuation">(</span>id<span class="token operator">:</span> Long<span class="token punctuation">)</span> <span class="token operator">=</span> mvc<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/users/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">id</span></span><span class="token string">/product"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       contentType <span class="token operator">=</span> MediaType<span class="token punctuation">.</span>APPLICATION_JSON
+    <span class="token punctuation">}</span>
 
-    context("상품이 있으면") {
-      val product = Product(/*..*/)
-      val subject by lazy { request(user.id) }
+    <span class="token function">context</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"상품이 있으면"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">val</span> product <span class="token operator">=</span> <span class="token function">Product</span><span class="token punctuation">(</span><span class="token comment">/*..*/</span><span class="token punctuation">)</span>
+      <span class="token keyword">val</span> subject <span class="token keyword">by</span> lazy <span class="token punctuation">{</span> <span class="token function">request</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">}</span>
 
-      productClient.putProduct(product)
+      productClient<span class="token punctuation">.</span><span class="token function">putProduct</span><span class="token punctuation">(</span>product<span class="token punctuation">)</span>
 
-      it("응답 코드는 200 OK.") {
-        subject.andExpect { status { isOk() } }
-      }
-    }
-  }
-})
+      <span class="token function">it</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"응답 코드는 200 OK."</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        subject<span class="token punctuation">.</span><span class="token function">andExpect</span> <span class="token punctuation">{</span> status <span class="token punctuation">{</span> <span class="token function">isOk</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-class StaticProductClient : ProductClient {
-    private val products: MutableMap&#x3C;Long, Product>
+<span class="token keyword">class</span> StaticProductClient <span class="token operator">:</span> ProductClient <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> products<span class="token operator">:</span> MutableMap<span class="token operator">&lt;</span>Long<span class="token punctuation">,</span> Product<span class="token operator">></span>
 
-    fun putProduct(product: Product) { products[product.userId] = product }
-    fun clearTestData() { products.clear() }
+    <span class="token keyword">fun</span> <span class="token function">putProduct</span><span class="token punctuation">(</span>product<span class="token operator">:</span> Product<span class="token punctuation">)</span> <span class="token punctuation">{</span> products<span class="token punctuation">[</span>product<span class="token punctuation">.</span>userId<span class="token punctuation">]</span> <span class="token operator">=</span> product <span class="token punctuation">}</span>
+    <span class="token keyword">fun</span> <span class="token function">clearTestData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> products<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
 
-    override fun findProduct(userId: Long): Product? = products[userId]
-}
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">findProduct</span><span class="token punctuation">(</span>userId<span class="token operator">:</span> Long<span class="token punctuation">)</span><span class="token operator">:</span> Product<span class="token operator">?</span> <span class="token operator">=</span> products<span class="token punctuation">[</span>userId<span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 
-@Configuration
-class TestProductClientConfig {
-    @Bean
-    fun testProductClient(): ProductClient = StaticProductClient()
-}
-</code></pre>
+<span class="token annotation builtin">@Configuration</span>
+<span class="token keyword">class</span> TestProductClientConfig <span class="token punctuation">{</span>
+    <span class="token annotation builtin">@Bean</span>
+    <span class="token keyword">fun</span> <span class="token function">testProductClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> ProductClient <span class="token operator">=</span> <span class="token function">StaticProductClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>mocking 방식 사용하기 전에는 위와같이 테스트용 클라이언트를 만들어서 주입하고,
 통합 테스트 클래스에서 <strong>테스트용 클라이언트</strong>를 주입받아서 운영 코드에서 반환받을 데이터를 넣어주는 형태로 사용했다.</p>
-<p>이 방법은 불편한 부분이 있었는데, 필요한 메서드마다 데이터를 넣는 메서드<code>put~</code>의 구현이 필요하고,
-Repository의 <code>deleteAll</code>과 같이 데이터를 제거하는 메서드<code>clearTestData</code>를 만들 필요가 있었다는 점이다.</p>
+<p>이 방법은 불편한 부분이 있었는데, 필요한 메서드마다 데이터를 넣는 메서드<code class="language-text">put~</code>의 구현이 필요하고,
+Repository의 <code class="language-text">deleteAll</code>과 같이 데이터를 제거하는 메서드<code class="language-text">clearTestData</code>를 만들 필요가 있었다는 점이다.</p>
 <p>유닛 테스트에서도 마찬가지로 mockito나 mockk를 사용하지 않는다면 이런 불편함이 있을 것이다.</p>
 <p>그래서 통합테스트에서도 mock 객체를 주입하였다.</p>
-<pre><code class="language-kotlin">@SpringBootTest
-@AutoConfigureMockMvc
-class TalkTradeRequestControllerSendingAddressTest(
-  private val mvc: MockMvc,
-  private val userRepository: UserRepository,
-  // private val productClient: StaticProductClient,
-  private val productClient: ProductClient,
-) : DescribeSpec({
-  describe("GET /users/:id/product") {
-    lateinit var user: User
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@SpringBootTest</span>
+<span class="token annotation builtin">@AutoConfigureMockMvc</span>
+<span class="token keyword">class</span> <span class="token function">TalkTradeRequestControllerSendingAddressTest</span><span class="token punctuation">(</span>
+  <span class="token keyword">private</span> <span class="token keyword">val</span> mvc<span class="token operator">:</span> MockMvc<span class="token punctuation">,</span>
+  <span class="token keyword">private</span> <span class="token keyword">val</span> userRepository<span class="token operator">:</span> UserRepository<span class="token punctuation">,</span>
+  <span class="token comment">// private val productClient: StaticProductClient,</span>
+  <span class="token keyword">private</span> <span class="token keyword">val</span> productClient<span class="token operator">:</span> ProductClient<span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">DescribeSpec</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function">describe</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"GET /users/:id/product"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">lateinit</span> <span class="token keyword">var</span> user<span class="token operator">:</span> User
 
-    beforeContainer {
-      user = userRepository.save(/*..*/)
-      clearAllMocks()
-    }
+    beforeContainer <span class="token punctuation">{</span>
+      user <span class="token operator">=</span> userRepository<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token comment">/*..*/</span><span class="token punctuation">)</span>
+      <span class="token function">clearAllMocks</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
 
-    afterContainer {
-      userRepository.deleteAll()
-      // productClient.clearTestData()
-    }
+    afterContainer <span class="token punctuation">{</span>
+      userRepository<span class="token punctuation">.</span><span class="token function">deleteAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token comment">// productClient.clearTestData()</span>
+    <span class="token punctuation">}</span>
 
-    fun requset(id: Long) = mvc.get("/users/$id/product") {
-      contentType = MediaType.APPLICATION_JSON
-    }
+    <span class="token keyword">fun</span> <span class="token function">requset</span><span class="token punctuation">(</span>id<span class="token operator">:</span> Long<span class="token punctuation">)</span> <span class="token operator">=</span> mvc<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/users/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$</span><span class="token expression">id</span></span><span class="token string">/product"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      contentType <span class="token operator">=</span> MediaType<span class="token punctuation">.</span>APPLICATION_JSON
+    <span class="token punctuation">}</span>
 
-    context("상품이 있으면") {
-      val product = Product(/*..*/)
-      val subject by lazy { request(user.id) }
+    <span class="token function">context</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"상품이 있으면"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">val</span> product <span class="token operator">=</span> <span class="token function">Product</span><span class="token punctuation">(</span><span class="token comment">/*..*/</span><span class="token punctuation">)</span>
+      <span class="token keyword">val</span> subject <span class="token keyword">by</span> lazy <span class="token punctuation">{</span> <span class="token function">request</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">}</span>
 
-      // productClient.putProduct(product)
-      every { productClient.findProduct(any()) } returns product
+      <span class="token comment">// productClient.putProduct(product)</span>
+      every <span class="token punctuation">{</span> productClient<span class="token punctuation">.</span><span class="token function">findProduct</span><span class="token punctuation">(</span><span class="token function">any</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> returns product
 
-      it("응답 코드는 200 OK.") {
-        subject.andExpect { status { isOk() } }
-      }
-    }
-  }
-})
+      <span class="token function">it</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"응답 코드는 200 OK."</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        subject<span class="token punctuation">.</span><span class="token function">andExpect</span> <span class="token punctuation">{</span> status <span class="token punctuation">{</span> <span class="token function">isOk</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-@Configuration
-class TestProductClientConfig {
-    @Bean
-    fun testProductClient(): ProductClient = mockk(relaxed=true)
-}
-</code></pre>
+<span class="token annotation builtin">@Configuration</span>
+<span class="token keyword">class</span> TestProductClientConfig <span class="token punctuation">{</span>
+    <span class="token annotation builtin">@Bean</span>
+    <span class="token keyword">fun</span> <span class="token function">testProductClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> ProductClient <span class="token operator">=</span> <span class="token function">mockk</span><span class="token punctuation">(</span>relaxed<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p>위 코드처럼 변경함으로써 편리한 부분이 있었다:</p>
 <ul>
-<li><code>relaxed=true</code>로 한 이유는 <code>null</code> 반환하는 메서드인 경우 굳이 mocking 하지 않아도 되서 편하기 때문이다. 더 제한하고 싶다면 사용하지 않아도 좋아 보인다.</li>
-<li>호출 검증(mockk <code>verify {}</code>)도 가능해져서, 불필요하게 마지막 호출 정보를 <code>StaticProductClient</code>에 저장한다거나 할 필요가 없다.</li>
-<li><code>clearTestData</code> 구현하는 대신 mock 라이브러리의 초기화 함수<code>clearAllMocks()</code>를 사용할 수 있다.</li>
+<li><code class="language-text">relaxed=true</code>로 한 이유는 <code class="language-text">null</code> 반환하는 메서드인 경우 굳이 mocking 하지 않아도 되서 편하기 때문이다. 더 제한하고 싶다면 사용하지 않아도 좋아 보인다.</li>
+<li>호출 검증(mockk <code class="language-text">verify {}</code>)도 가능해져서, 불필요하게 마지막 호출 정보를 <code class="language-text">StaticProductClient</code>에 저장한다거나 할 필요가 없다.</li>
+<li><code class="language-text">clearTestData</code> 구현하는 대신 mock 라이브러리의 초기화 함수<code class="language-text">clearAllMocks()</code>를 사용할 수 있다.</li>
 <li>테스트마다 초기화함수 호출하지 않고, global tear down hook에서 초기화 함수를 호출하면 편하다.</li>
 </ul>
 <h2 id="ab-test" style="position:relative;"><a href="#ab-test" aria-label="ab test permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A/B Test</h2>
@@ -337,10 +333,10 @@ class TestProductClientConfig {
 <p>public class FizzBuzz {
 public static final String FIZZ = "Buzz";
 // . . .</p>
-<p>The unit test will still pass, because the test is referencing against the same wrong <code>FizzBuzz.FIZZ</code> variable that the production code is referencing.</p>
+<p>The unit test will still pass, because the test is referencing against the same wrong <code class="language-text">FizzBuzz.FIZZ</code> variable that the production code is referencing.</p>
 </blockquote>
 <p>테스트가 프로덕션 상수를 참조하면, 실제로 코드가 잘못되어도 테스트는 통과할 수 있다.
-<code>FizzBuzz.FIZZ</code> 변수를 참조하기 때문에 프로덕션 코드가 참조하는 것과 같은 잘못된 값으로 테스트가 통과할 수 있다.</p>
+<code class="language-text">FizzBuzz.FIZZ</code> 변수를 참조하기 때문에 프로덕션 코드가 참조하는 것과 같은 잘못된 값으로 테스트가 통과할 수 있다.</p>
 <p>덧글 중:</p>
 <blockquote>
 <p>There's a third one, readability. Like you say, re-use is good, and if done right you can argue it's readable. However, in a test you need to know EXACTLY what the test is doing right there and then.</p>
@@ -376,6 +372,6 @@ DAMP는 코드를 읽고 이해하는데 필요한 시간을 줄여 유지보수
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

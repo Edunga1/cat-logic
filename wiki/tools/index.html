@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -100,7 +100,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <ul>
 <li><a href="#insomnium">Insomnium</a></li>
 <li><a href="#bruno">Bruno</a></li>
-<li><a href="#postman-vs-insomnia-vs-intellij-builtin-http-%EB%B9%84%EA%B5%90">Postman vs Insomnia vs IntelliJ builtin <code>.http</code>. 비교</a></li>
+<li><a href="#postman-vs-insomnia-vs-intellij-builtin-http-%EB%B9%84%EA%B5%90">Postman vs Insomnia vs IntelliJ builtin <code class="language-text">.http</code>. 비교</a></li>
 </ul>
 </li>
 <li>
@@ -128,7 +128,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li>사용자 구분
 <ul>
 <li>처음 서버 실행하면 기본 계정으로 로그인해서 계정 생성</li>
-<li>시작 계정 정보는 <code>shiori</code>/<code>gopher</code>. 왜 서버 시작시 알려주지 않지?</li>
+<li>시작 계정 정보는 <code class="language-text">shiori</code>/<code class="language-text">gopher</code>. 왜 서버 시작시 알려주지 않지?</li>
 </ul>
 </li>
 <li>태그 기능</li>
@@ -148,31 +148,31 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>위 링크에 잘 나와 있다.</p>
 <p>크롬 기준 테스트 해본다:</p>
 <ol>
-<li>도커로 서버 실행: <code>docker run -d --rm --name shiori -p 8080:8080 -v $(pwd):/srv/shiori radhifadlillah/shiori</code></li>
+<li>도커로 서버 실행: <code class="language-text">docker run -d --rm --name shiori -p 8080:8080 -v $(pwd):/srv/shiori radhifadlillah/shiori</code></li>
 <li><a href="https://github.com/go-shiori/shiori-web-ext/releases">https://github.com/go-shiori/shiori-web-ext/releases</a></li>
 </ol>
 <p>zip 파일 받아서 압축 해제한다.
 3. <a href="chrome://extensions/">chrome://extensions/</a>
-<code>Load unpacked</code> 압축 해제한 폴더 선택
-4. shiori 아이콘이 생성되었으면 <code>우클릭 메뉴 - Options</code>
+<code class="language-text">Load unpacked</code> 압축 해제한 폴더 선택
+4. shiori 아이콘이 생성되었으면 <code class="language-text">우클릭 메뉴 - Options</code>
 5. shiori 로그인 팝업 출력되면 입력:
-Server: <code>http://localhost:8080</code>
-Username: <code>shiori</code> Password: <code>gopher</code></p>
+Server: <code class="language-text">http://localhost:8080</code>
+Username: <code class="language-text">shiori</code> Password: <code class="language-text">gopher</code></p>
 <h2 id="mysql" style="position:relative;"><a href="#mysql" aria-label="mysql permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MySQL</h2>
 <h3 id="mysql-workbench" style="position:relative;"><a href="#mysql-workbench" aria-label="mysql workbench permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MySQL Workbench</h3>
 <p><a href="https://www.mysql.com/products/workbench/">https://www.mysql.com/products/workbench/</a></p>
-<p><code>brew cask install mysqlworkbench</code></p>
+<p><code class="language-text">brew cask install mysqlworkbench</code></p>
 <p>가끔씩 발생하는 버그가 답답해서 요즘은 Datagrip을 많이 쓴다. 유로다.</p>
 <h3 id="mycli" style="position:relative;"><a href="#mycli" aria-label="mycli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mycli</h3>
 <p><a href="https://www.mycli.net">https://www.mycli.net</a></p>
 <p>기본 mysql cli 보다 다양한 기능을 제공하는 도구.</p>
-<p><code>\dt</code>, <code>\G</code> 등 유용한 shortcuts.</p>
+<p><code class="language-text">\dt</code>, <code class="language-text">\G</code> 등 유용한 shortcuts.</p>
 <h2 id="redisinsight---gui-redis-client" style="position:relative;"><a href="#redisinsight---gui-redis-client" aria-label="redisinsight   gui redis client permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RedisInsight - GUI Redis Client</h2>
 <ul>
 <li><a href="https://redis.com/redis-enterprise/redis-insight">https://redis.com/redis-enterprise/redis-insight</a></li>
 <li><a href="https://github.com/RedisInsight/RedisInsight">https://github.com/RedisInsight/RedisInsight</a></li>
 </ul>
-<p>osx는 <code>brew install --cask redisinsight</code>로 설치한다.</p>
+<p>osx는 <code class="language-text">brew install --cask redisinsight</code>로 설치한다.</p>
 <p>GitHub 릴리즈 날짜 기준 21년 11월에 최초 배포된 것으로 나온다.
 지금 23년 기준으로 정말 얼마 안되었다.</p>
 <p>redis 공식 도구이며, redis 문서는 방문할 때 마다 친절해서 놀라운데, 그 철학이 도구에도 담겼나보다.
@@ -195,12 +195,12 @@ Browser 모드와 Workbench 모드가 있는데, Workbench 모드가 익숙한 �
 <p>Insomnia의 8.0 이전 Fork인 <a href="https://github.com/ArchGPT/insomnium">Insomnium</a>이 있다.
 다만 Homebrew 설치를 아직 제공하지 않는다. 이걸 사용하거나 다른 대체제를 찾아야겠다.</p>
 <hr>
-<p>standalone 버전인 Postman, Insomnia 그리고 IntelliJ 내장형 <code>.http</code>. 사용해보고 비교한다.</p>
+<p>standalone 버전인 Postman, Insomnia 그리고 IntelliJ 내장형 <code class="language-text">.http</code>. 사용해보고 비교한다.</p>
 <p>꼭 필요로 하는 기능은 다음과 같다:</p>
 <ul>
 <li>private 데이터 동기화</li>
 <li>api auth token, api path 등 민감 정보를 동기화 시 감출 수 있어야 함</li>
-<li>자동 완성. <code>content-type</code> 헤더를 설정했으면 정의된 값들을 잘 알려주는 가 등</li>
+<li>자동 완성. <code class="language-text">content-type</code> 헤더를 설정했으면 정의된 값들을 잘 알려주는 가 등</li>
 <li>curl로 import, export 가능</li>
 </ul>
 <p>추가로 pre-request script 기능이 있으면 좋겠다. 호출 전에 토큰 정보를 받아올 때 유용하다.</p>
@@ -219,45 +219,44 @@ Star가 1,500여개 이지만, 아직 8개의 배포만 있고 성숙한 저장�
 <p>Git Sync 기능을 제공한다.
 Git 저장소 동기화를 매우 중요하게 생각한다고 느낌을 받았는데, 저장되는 파일 형식이 읽기 쉬운 형태로 되어있는 점이다.</p>
 <p><img src="https://github.com/usebruno/bruno/raw/main/assets/images/version-control.png" alt="Bruno collaborate via Git"></p>
-<p><code>.bru</code>라는 별도 파일 확장자를 사용하지만 내용은 읽기 쉽다.</p>
+<p><code class="language-text">.bru</code>라는 별도 파일 확장자를 사용하지만 내용은 읽기 쉽다.</p>
 <p>반면에 Insomnia는 yaml을 사용하지만 메타데이터가 많아서 읽기 어렵다.
 폴더나 다른 연관 정보를 파일 내에 포함시켰기 때문인 것으로 보인다.</p>
 <p>다음은 Insomnia의 Request 저장 내용:</p>
-<pre><code class="language-yaml">_id: req_7b1a2
-type: Request
-parentId: fld_8fe1d
-modified: 1692343700512
-created: 1675838070192
-url: "{{ _.url.myApi }}/foo/bar/search"
-name: 검색 /search
-description: ""
-method: GET
-body: {}
-parameters:
-  - name: q
-    value: 키워드
-    disabled: false
-    id: pair_664f8
-  - name: page
-    value: "1"
-    disabled: false
-    id: pair_5501a
-headers:
-  - name: accept
-    value: application/json;charset=UTF-8
-authentication: {}
-metaSortKey: 0
-isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
-settingDisableRenderRequestBody: false
-settingEncodeUrl: true
-settingRebuildPath: true
-settingFollowRedirects: global
-</code></pre>
+<div class="gatsby-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">_id</span><span class="token punctuation">:</span> req_7b1a2
+<span class="token key atrule">type</span><span class="token punctuation">:</span> Request
+<span class="token key atrule">parentId</span><span class="token punctuation">:</span> fld_8fe1d
+<span class="token key atrule">modified</span><span class="token punctuation">:</span> <span class="token number">1692343700512</span>
+<span class="token key atrule">created</span><span class="token punctuation">:</span> <span class="token number">1675838070192</span>
+<span class="token key atrule">url</span><span class="token punctuation">:</span> <span class="token string">"{{ _.url.myApi }}/foo/bar/search"</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> 검색 /search
+<span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">""</span>
+<span class="token key atrule">method</span><span class="token punctuation">:</span> GET
+<span class="token key atrule">body</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token key atrule">parameters</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> q
+    <span class="token key atrule">value</span><span class="token punctuation">:</span> 키워드
+    <span class="token key atrule">disabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">id</span><span class="token punctuation">:</span> pair_664f8
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> page
+    <span class="token key atrule">value</span><span class="token punctuation">:</span> <span class="token string">"1"</span>
+    <span class="token key atrule">disabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">id</span><span class="token punctuation">:</span> pair_5501a
+<span class="token key atrule">headers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> accept
+    <span class="token key atrule">value</span><span class="token punctuation">:</span> application/json;charset=UTF<span class="token punctuation">-</span><span class="token number">8</span>
+<span class="token key atrule">authentication</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token key atrule">metaSortKey</span><span class="token punctuation">:</span> <span class="token number">0</span>
+<span class="token key atrule">isPrivate</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">settingStoreCookies</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">settingSendCookies</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">settingDisableRenderRequestBody</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">settingEncodeUrl</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">settingRebuildPath</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">settingFollowRedirects</span><span class="token punctuation">:</span> global</code></pre></div>
 <p>아직 좀 더 살펴봐야 한다.
 API Chaining은 어떻게 처리하는지, 자동완성 등 주요하게 봐야 할 점이 많다.</p>
-<h3 id="postman-vs-insomnia-vs-intellij-builtin-http-비교" style="position:relative;"><a href="#postman-vs-insomnia-vs-intellij-builtin-http-%EB%B9%84%EA%B5%90" aria-label="postman vs insomnia vs intellij builtin http 비교 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Postman vs Insomnia vs IntelliJ builtin <code>.http</code>. 비교</h3>
+<h3 id="postman-vs-insomnia-vs-intellij-builtin-http-비교" style="position:relative;"><a href="#postman-vs-insomnia-vs-intellij-builtin-http-%EB%B9%84%EA%B5%90" aria-label="postman vs insomnia vs intellij builtin http 비교 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Postman vs Insomnia vs IntelliJ builtin <code class="language-text">.http</code>. 비교</h3>
 <table>
 <thead>
 <tr>
@@ -323,9 +322,8 @@ IntelliJ 버전에 따른 변경사항이 있는 상황에서, 라이센스 문�
 <p>코드가 공개되어 있어서, 직접 빌드해서 사용할 수 있다: <a href="https://github.com/blinksh/blink">https://github.com/blinksh/blink</a></p>
 <h3 id="build" style="position:relative;"><a href="#build" aria-label="build permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build</h3>
 <p>저장소에 쉽게 설명되어 있다.</p>
-<pre><code class="language-bash">git clone --recursive https://github.com/blinksh/blink.git &#x26;&#x26; \
-cd blink &#x26;&#x26; ./get_frameworks.sh
-</code></pre>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token parameter variable">--recursive</span> https://github.com/blinksh/blink.git <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>
+<span class="token builtin class-name">cd</span> blink <span class="token operator">&amp;&amp;</span> ./get_frameworks.sh</code></pre></div>
 <ol>
 <li>저장소 클론 받고, 쉘 스크립트를 실행하면, 관련 라이브러리를 알아서 받는다. 5분쯤 걸렸다.</li>
 <li>XCode로 클론받은 저장소를 연다.</li>
@@ -374,6 +372,6 @@ Push notification, ICloud 권한이 없다는 것인데.
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

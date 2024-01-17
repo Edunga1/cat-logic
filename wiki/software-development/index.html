@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -180,10 +180,10 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 공유되는 코드를 라이브러리화 하여 종속성 매니저로 관리해야 한다.</p>
 <p>로컬 테스트, 스테이징, 라이브 서버를 별개의 앱으로 보는 것은 아니다.
 이는 데이터베이스의 URL이 다르거나 환경 설정이 상이할 뿐이기 때문이다.
-별개의 앱인지 구분하는 방법은 특정 커밋으로부터 분기되어 <code>git cherry-pick</code> 이나
-<code>Copy and Paste</code> 와 같은 방법으로 공유 코드를 가지는 것이다.</p>
+별개의 앱인지 구분하는 방법은 특정 커밋으로부터 분기되어 <code class="language-text">git cherry-pick</code> 이나
+<code class="language-text">Copy and Paste</code> 와 같은 방법으로 공유 코드를 가지는 것이다.</p>
 <p>단일 앱은 버전 관리 시스템에서 모든 브랜치들이 언젠가는 통합될 수 밖에 없다.
-개발, 스테이징 브랜치도 결국은 <code>master</code> 브랜치로 <code>rebase</code>, <code>merge</code> 될 것이다.</p>
+개발, 스테이징 브랜치도 결국은 <code class="language-text">master</code> 브랜치로 <code class="language-text">rebase</code>, <code class="language-text">merge</code> 될 것이다.</p>
 <p>하나의 코드 베이스와 환경 설정의 조합으로 배포가 발생한다.
 배포는 <strong>실행중인 인스턴스</strong> 말하며, 테스트, 개발, 라이브 서버와 같이 분리하는 방법을
 <strong>다양한 배포</strong> 라고 한다.</p>
@@ -222,22 +222,22 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>일단 <em>모든 코드는 변경될 수 있으니까, 불안정하다고 봐야겠네</em> 라고 접근하는 건 아닌게 확실하다.</p>
 <p><strong>변경되지 않는다는 말은 용도가 명확하다</strong> 라고 생각하면 이해하면 될 거 같다.
 자바스크립트에서 String 클래스의 메서드를 사용하는 이유는 명확해 보인다.
-정규식으로 특정 문자열을 뽑아내기 위해서 <code>.match()</code>를 쓰고, 특정 범위를 추출하기 위해서 <code>.substr()</code>를 쓴다.
-각각 <code>(string, REGEX) => string</code>, <code>(string) => string</code>이다. 다른 변수가 끼어들만한 것은 없어 보인다.</p>
+정규식으로 특정 문자열을 뽑아내기 위해서 <code class="language-text">.match()</code>를 쓰고, 특정 범위를 추출하기 위해서 <code class="language-text">.substr()</code>를 쓴다.
+각각 <code class="language-text">(string, REGEX) => string</code>, <code class="language-text">(string) => string</code>이다. 다른 변수가 끼어들만한 것은 없어 보인다.</p>
 <p>그러니까 여러개의 정책을 가질 필요가 없어보인다. 단 하나의 정책만 있으면 된다고 생각한다.</p>
 <p>불안정한 클래스의 대표적인 예는 <a href="http://gyumee.egloos.com/2512493">마틴 파울러의 제어의 역전(IoC)에 대한 글</a>이다.
-<code>MovieLister</code> 클래스와 <code>MovieFinder</code> 클래스 관계에 대한 이야기가 나온다.
-여기서 <code>MovieFinder</code> 클래스는 정책을 가진다. 이름 목록을 텍스트 파일에서 데이터베이스에서 웹 서비스에서, 어디서든 가져올 수 있다.
-그래서 <code>MovieFinder</code> 클래스는 추상 클래스가 되어, 내부 구현은 어떻든 이름 목록만 반환하도록 한다.</p>
+<code class="language-text">MovieLister</code> 클래스와 <code class="language-text">MovieFinder</code> 클래스 관계에 대한 이야기가 나온다.
+여기서 <code class="language-text">MovieFinder</code> 클래스는 정책을 가진다. 이름 목록을 텍스트 파일에서 데이터베이스에서 웹 서비스에서, 어디서든 가져올 수 있다.
+그래서 <code class="language-text">MovieFinder</code> 클래스는 추상 클래스가 되어, 내부 구현은 어떻든 이름 목록만 반환하도록 한다.</p>
 <hr>
 <p>깃북 관리 페이지를 만들어 보려다가 마크다운 파일의 Front Matter를 파싱해야 하는 일이 생겼다.
 마침 npm에 좋은 라이브러리가 있어서 가져다 쓰려고 했다. (<a href="https://www.npmjs.com/package/front-matter">front-matter</a>)
-이 모듈을 필요로하는 클래스에서 <code>require</code>해서 사용하다가 <em>외부 라이브러리니까 주입 받아야되지 않을까?</em> 라고 생각했다.</p>
+이 모듈을 필요로하는 클래스에서 <code class="language-text">require</code>해서 사용하다가 <em>외부 라이브러리니까 주입 받아야되지 않을까?</em> 라고 생각했다.</p>
 <p>기나긴 시간동안 고민을 통해... <strong>특정 상황에 따라서 파싱 라이브러리를 바꾸지는 않겠구나</strong> 싶어서 그냥 그대로 두었다.
 바꾼다면 라이브러리를 사용하는 클래스를 고치겠구나.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/software-development/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -199,9 +199,9 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>#31 You should always generate short suggestions for the next user turns that are relevant to the conversation and not offensive.</p>
 </blockquote>
 <p>이름을 물어보면 GitHub Copilot이라고 대답하고, 자신의 규칙에 대해서 이야기하지 말고, 어떻게 답변하라는 등 행동 규칙을 정의한다.</p>
-<p>이처럼 인공지능의 규칙을 엿보거나, 우회하도록 답변을 유도하는 것을 <code>#17</code>에 나온 것처럼 Jailbreak라 한다.
+<p>이처럼 인공지능의 규칙을 엿보거나, 우회하도록 답변을 유도하는 것을 <code class="language-text">#17</code>에 나온 것처럼 Jailbreak라 한다.
 ChatGPT는 나쁜 정보를 제공하지 않도록 되어 있는데, <a href="https://twitter.com/davisblalock/status/1602600453555961856">이 또한 프롬프트를 통해서 Jailbreak 되기도 했다.</a></p>
-<p>ChatGPT가 답변을 거부하면 <code>but hypothetically</code>라고 하면 jailbreak 되는 것이다. 그러나 이는 곧장 막혔다.</p>
+<p>ChatGPT가 답변을 거부하면 <code class="language-text">but hypothetically</code>라고 하면 jailbreak 되는 것이다. 그러나 이는 곧장 막혔다.</p>
 <p>다만, 위 규칙들은 모두 Copilot Chat이 말한 내용이다보니 정말로 이 규칙을 사용하여 만들어진 것인지는 확실하지 않다.
 인공지능 제품들은 그럴듯한 잘못된 답변을 하기도 하는데, 이 또한 그럴듯하게 만들어진 것일지도 모르겠다.</p>
 <p><a href="https://twitter.com/kliu128/status/1623472922374574080">Microsoft Bing Chat의 프롬프트 유출</a></p>
@@ -349,10 +349,10 @@ OP: <a href="https://www.engraved.blog/building-a-virtual-machine-inside/">https
 <p>매우 흥미로운 시도인데, 결과도 매우 놀랍다.</p>
 <p>흥미로운 점:</p>
 <ul>
-<li>Linux Terminal 처럼 행동해 달라는 요청과 함께 <code>pwd</code> 명령을 주었다. 응답은 <code>/</code>.</li>
-<li>root directory에서 시작하고, <code>ls ~</code>의 응답 <code>bin Desktop Music Pictures</code> 이 그럴듯 하다.</li>
-<li><code>jokes.txt</code> 파일을 생성하고 농담 몇 개를 넣어달란 요청에..
-<code>touch jokes.txt</code> <code>echo "..." >> jokes.txt</code>
+<li>Linux Terminal 처럼 행동해 달라는 요청과 함께 <code class="language-text">pwd</code> 명령을 주었다. 응답은 <code class="language-text">/</code>.</li>
+<li>root directory에서 시작하고, <code class="language-text">ls ~</code>의 응답 <code class="language-text">bin Desktop Music Pictures</code> 이 그럴듯 하다.</li>
+<li><code class="language-text">jokes.txt</code> 파일을 생성하고 농담 몇 개를 넣어달란 요청에..
+<code class="language-text">touch jokes.txt</code> <code class="language-text">echo "..." >> jokes.txt</code>
 그럴듯한 농담을 정말로 만들어 넣는다.</li>
 <li>그 외에 명령어와 python code를 실행하는 명령어도 잘 동작한다.</li>
 </ul>
@@ -360,8 +360,8 @@ OP: <a href="https://www.engraved.blog/building-a-virtual-machine-inside/">https
 <h4 id="번역-및-문법확인-요청하기" style="position:relative;"><a href="#%EB%B2%88%EC%97%AD-%EB%B0%8F-%EB%AC%B8%EB%B2%95%ED%99%95%EC%9D%B8-%EC%9A%94%EC%B2%AD%ED%95%98%EA%B8%B0" aria-label="번역 및 문법확인 요청하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>번역 및 문법확인 요청하기</h4>
 <p>Git 커밋 메시지를 주로 영어로 작성하는데, ChatGTP에 주로 확인을 맡긴다. (Grammarly는 너무 많은 것을 수집한다.)</p>
 <p>예를들면:</p>
-<p>Q: <code>Update architecture.md to add "Entity Component System"</code><br>
-ChatGPT: <code>위 문장의 문법은 전반적으로 정상적입니다. 그러나 좀 더 일반적인 언어로 표현하면 "Update the architecture.md document to include information about the 'Entity Component System'"가 될 수 있습니다. 제가 제시한 구절은 좀 더 상세한 정보를 제공합니다.</code></p>
+<p>Q: <code class="language-text">Update architecture.md to add "Entity Component System"</code><br>
+ChatGPT: <code class="language-text">위 문장의 문법은 전반적으로 정상적입니다. 그러나 좀 더 일반적인 언어로 표현하면 "Update the architecture.md document to include information about the 'Entity Component System'"가 될 수 있습니다. 제가 제시한 구절은 좀 더 상세한 정보를 제공합니다.</code></p>
 <p>번역과 함께 나은 표현을 알려주기도 하고, 추가적으로 왜 그런 표현을 사용하는 지에 대해서 물어보면 상황별로 적절한 단어를 알려준다.</p>
 <h3 id="claude" style="position:relative;"><a href="#claude" aria-label="claude permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Claude</h3>
 <p>ChatGPT와 같은 대화형 인공지능.</p>
@@ -419,13 +419,12 @@ txt, pdf, csv과 py, js 등 코드 파일도 첨부 가능한데 이미지는 �
 <li>python 3.10.8</li>
 <li>pyenv + virtual env</li>
 </ul>
-<p><strong>실행 시 <code>ModuleNotFoundError: No module named '_bz2'</code> 에러</strong></p>
-<p><code>sudo apt-get install libbz2-dev</code> 후 파이썬(pyenv) 재설치. 파이썬 설치 시점에 제공해야 한다.</p>
-<p><strong>실행 시 <code>ModuleNotFoundError: No module named '_lzma'</code> 에러</strong></p>
-<p><code>brew install xz</code> 설치하고, 파이썬 설치 시 패키지 위치를 전달해야 한다:</p>
-<pre><code class="language-bash">CFLAGS="-I$(brew --prefix xz)/include" LDFLAGS="-L$(brew --prefix xz)/lib" pyenv install 3.10.8
-</code></pre>
-<p>파이썬 설치 후 경고 메시지가 출력되고 있었다: <code>WARNING: The Python lzma extension was not compiled. Missing the lzma lib?</code></p>
+<p><strong>실행 시 <code class="language-text">ModuleNotFoundError: No module named '_bz2'</code> 에러</strong></p>
+<p><code class="language-text">sudo apt-get install libbz2-dev</code> 후 파이썬(pyenv) 재설치. 파이썬 설치 시점에 제공해야 한다.</p>
+<p><strong>실행 시 <code class="language-text">ModuleNotFoundError: No module named '_lzma'</code> 에러</strong></p>
+<p><code class="language-text">brew install xz</code> 설치하고, 파이썬 설치 시 패키지 위치를 전달해야 한다:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">CFLAGS</span><span class="token operator">=</span><span class="token string">"-I<span class="token variable"><span class="token variable">$(</span>brew <span class="token parameter variable">--prefix</span> xz<span class="token variable">)</span></span>/include"</span> <span class="token assign-left variable">LDFLAGS</span><span class="token operator">=</span><span class="token string">"-L<span class="token variable"><span class="token variable">$(</span>brew <span class="token parameter variable">--prefix</span> xz<span class="token variable">)</span></span>/lib"</span> pyenv <span class="token function">install</span> <span class="token number">3.10</span>.8</code></pre></div>
+<p>파이썬 설치 후 경고 메시지가 출력되고 있었다: <code class="language-text">WARNING: The Python lzma extension was not compiled. Missing the lzma lib?</code></p>
 <h3 id="open-api" style="position:relative;"><a href="#open-api" aria-label="open api permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Open API</h3>
 <p>텍스트 완성, 이미지 생성, 코드 완성 등 다양한 모델을 제공한다.
 그 중 quickstart의 텍스트에 대한 내용(아마도 GTP-3 인 듯)에 대한 개념을 조금 읽었다.</p>
@@ -438,7 +437,7 @@ txt, pdf, csv과 py, js 등 코드 파일도 첨부 가능한데 이미지는 �
 1이면 확률이 낮은 것이라도 추천되며, 매 요청마다 다양한 토큰을 제시한다.</p>
 <p><strong>token</strong></p>
 <p>토큰은 단어, 단어 뭉치, 문자 하나가 될 수 있으며 추천 단위가 토큰이다.
-예를들어 <code>Horses are my favorite</code> 문장을 입력하면 <code>animal</code>, <code>animals</code>, <code>\n</code>, <code>!</code> 등을 다음에 올 토큰으로 추천하는 식이다.</p>
+예를들어 <code class="language-text">Horses are my favorite</code> 문장을 입력하면 <code class="language-text">animal</code>, <code class="language-text">animals</code>, <code class="language-text">\n</code>, <code class="language-text">!</code> 등을 다음에 올 토큰으로 추천하는 식이다.</p>
 <h3 id="github-copilot" style="position:relative;"><a href="#github-copilot" aria-label="github copilot permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Github Copilot</h3>
 <p>코드 작성을 도와주는 AI 도구.</p>
 <h4 id="copilot-cli" style="position:relative;"><a href="#copilot-cli" aria-label="copilot cli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Copilot CLI</h4>
@@ -446,28 +445,27 @@ txt, pdf, csv과 py, js 등 코드 파일도 첨부 가능한데 이미지는 �
 <p>shell 명령어를 작성하는데 도움을 주는 도구.</p>
 <p>2023-03-29 기준waitlit에 등록하면 사용할 수 있다.</p>
 <p>사용 예시:</p>
-<pre><code class="language-bash">❯ ?? listening port 5000
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ ?? listening port <span class="token number">5000</span>
 
  ──────────────────── Command ────────────────────
 
-lsof -i :5000
+<span class="token function">lsof</span> <span class="token parameter variable">-i</span> :5000
 
  ────────────────── Explanation ──────────────────
 
-○ lsof is used to list open files.
-  ◆ -i specifies that we want to list network connections.
-  ◆ :5000 specifies that we want to list connections to port 5000.
+○ <span class="token function">lsof</span> is used to list <span class="token function">open</span> files.
+  ◆ <span class="token parameter variable">-i</span> specifies that we want to list network connections.
+  ◆ :5000 specifies that we want to list connections to port <span class="token number">5000</span>.
 
-🕕  Hold on, executing commmand...
-COMMAND   PID  USER   FD   TYPE            DEVICE SIZE/OFF NODE NAME
-ControlCe 493 alleb   21u  IPv4 0x13aa2e8d9dde83f      0t0  TCP *:commplex-main (LISTEN)
-ControlCe 493 alleb   22u  IPv6 0x13aa2f274270ba7      0t0  TCP *:commplex-main (LISTEN)
-</code></pre>
-<p><code>??</code>와 프롬프트를 입력하면 명령어를 추천해주고, 실행할 것인지 여부를 묻는다.
+🕕  Hold on, executing commmand<span class="token punctuation">..</span>.
+COMMAND   PID  <span class="token environment constant">USER</span>   FD   TYPE            DEVICE SIZE/OFF NODE NAME
+ControlCe <span class="token number">493</span> alleb   21u  IPv4 0x13aa2e8d9dde83f      0t0  TCP *:commplex-main <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span>
+ControlCe <span class="token number">493</span> alleb   22u  IPv6 0x13aa2f274270ba7      0t0  TCP *:commplex-main <span class="token punctuation">(</span>LISTEN<span class="token punctuation">)</span></code></pre></div>
+<p><code class="language-text">??</code>와 프롬프트를 입력하면 명령어를 추천해주고, 실행할 것인지 여부를 묻는다.
 copilot 만큼의 성능은 나오지 않는 거 같다. 프롬프트를 추가해도 같은 명령어를 추천하는 경우가 많다.</p>
 <p>한글도 잘 먹었는데, 간단한 것만 시도해서 그럴지도 모르겠다.</p>
-<p><code>awk</code> 같이 규칙이 있어서 사용할 때 마다 헷갈리는 명령어를 사용하는데 특히 도움이 된다.
-<code>4번째 열 출력하는데, $로 구분되어 있다</code>와 같은 프롬프트를 잘 해석한다.</p>
+<p><code class="language-text">awk</code> 같이 규칙이 있어서 사용할 때 마다 헷갈리는 명령어를 사용하는데 특히 도움이 된다.
+<code class="language-text">4번째 열 출력하는데, $로 구분되어 있다</code>와 같은 프롬프트를 잘 해석한다.</p>
 <p>비슷한 프로그램으로는 <a href="https://github.com/tldr-pages/tldr">tldr</a>이 있다.
 다만 이건 메뉴얼을 좀 더 보기쉽게 커뮤니티 차원에서 치트시트를 만드는 것이다보니
 내 문맥에 따른 명령어를 추천해주는 것은 아니다.</p>
@@ -478,12 +476,12 @@ Copilot 구독하고 있어야 한다.</p>
 <p>현재 작업중인 파일에 대한 문맥을 가지고 있어 보이지만, 코드 편집 권한은 없어 보인다.<br>
 그래서 기존 Copilot과 비교하면 접근성은 좀 떨어진다. ChatGPT를 플러그인으로 쓰는 정도.</p>
 <p>품질 또한 좋은 편은 아니다. ChatGPT와는 달리 답변 문맥을 잘 이해하지 못한다.
-<code>Html</code> vs <code>HTML</code> 중 두문자어 규칙으로 어느쪽이 옳은지 물어보면, 두문자어를 포함하나 하지 않으나 답변은 같다.</p>
+<code class="language-text">Html</code> vs <code class="language-text">HTML</code> 중 두문자어 규칙으로 어느쪽이 옳은지 물어보면, 두문자어를 포함하나 하지 않으나 답변은 같다.</p>
 <p>또, 프로그래밍 주제와 관련되어 있다고 생각해서 물어보더라도 주제가 벗어났다며 답변을 거부한다.
 이 점은 매우 불편하다.</p>
 <h4 id="커밋-메시지-작성-도움받기" style="position:relative;"><a href="#%EC%BB%A4%EB%B0%8B-%EB%A9%94%EC%8B%9C%EC%A7%80-%EC%9E%91%EC%84%B1-%EB%8F%84%EC%9B%80%EB%B0%9B%EA%B8%B0" aria-label="커밋 메시지 작성 도움받기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>커밋 메시지 작성 도움받기</h4>
-<p>나는 보통 <code>git commit -v</code>로 커밋 메시지를 작성한다.
-<code>-v</code>는 verbose 옵션으로 변경된 파일의 diff를 보여준다.</p>
+<p>나는 보통 <code class="language-text">git commit -v</code>로 커밋 메시지를 작성한다.
+<code class="language-text">-v</code>는 verbose 옵션으로 변경된 파일의 diff를 보여준다.</p>
 <p>커밋 에디터는 <a href="../vim">vim</a>이기 때문에 <a href="https://github.com/github/copilot.vim">copilot.vim</a> 플러그인이 로드된다.\n
 copilot은 파일 변경점을 보고 커멧 메시지를 추천해준다.</p>
 <p>물론 적중률이 높은 편은 아니다.</p>
@@ -508,7 +506,7 @@ VR기기를 예시로 매우 빠르게 객체를 구분해 내는 것을 보여�
 <p><a href="https://lmql.ai/">https://lmql.ai/</a></p>
 <p>자연어는 의도를 정확히 표현하기 어렵다. 그래서 대화를 핑퐁하여 서로를 이해한다.
 인공지능의 프롬프트도 마찬가지다보니 이런 제품이 나온 거 같다.</p>
-<pre><code>argmax
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">argmax
    """A list of good dad jokes. A indicates
     ➥ the punchline
    Q: How does a penguin build its house?
@@ -521,23 +519,21 @@ VR기기를 예시로 매우 빠르게 객체를 구분해 내는 것을 보여�
 from
    "openai/text-davinci-003"
 where
-   len(JOKE) &#x3C; 120 and
+   len(JOKE) &lt; 120 and
    STOPS_AT
 (JOKE, "?") and
    STOPS_AT(PUNCHLINE, "\n") and
-   len(PUNCHLINE) > 1
-</code></pre>
+   len(PUNCHLINE) > 1</code></pre></div>
 <p>위와 같이 얻고자 하는 결과의 조건을 명시하면 다음과 같은 결과를 얻을 수 있다:</p>
-<pre><code>A list of good dad jokes. A indicates the punchline
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">A list of good dad jokes. A indicates the punchline
 Q: How does a penguin build its house?
 A: Igloos it together.
 Q: Which knight invented King Arthur's Round Table?
 A: Sir Cumference.
 Q: JOKE What did the fish say when it hit the wall?
-A: PUNCHLINE Dam!
-</code></pre>
+A: PUNCHLINE Dam!</code></pre></div>
 <p>python으로 구현되어 있어서 쿼리에 파이썬 문법을 사용할 수 있다:</p>
-<pre><code>sample(temperature=0.8)
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">sample(temperature=0.8)
    "A list of things not to forget when
     ➥ going to the sea (not travelling): \n"
    "- Sunglasses \n"
@@ -547,11 +543,10 @@ from
    'openai/text-ada-001'
 where
    THING in set
-(["Volleyball", "Sunscreen", "Bathing Suite"])
-</code></pre>
+(["Volleyball", "Sunscreen", "Bathing Suite"])</code></pre></div>
 <p>ref. <a href="https://news.hada.io/topic?id=9185">https://news.hada.io/topic?id=9185</a></p>
 <h3 id="google-gemini" style="position:relative;"><a href="#google-gemini" aria-label="google gemini permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Google Gemini</h3>
-<p>구글의 Multimodal AI 모델. <code>제미나이</code>로 발음한다.<br>
+<p>구글의 Multimodal AI 모델. <code class="language-text">제미나이</code>로 발음한다.<br>
 멀티모달은 이미지, 음성, 텍스트 등 다양한 타입을 결합하여 처리할 수 있음을 의미한다.</p>
 <p><a href="https://deepmind.google/technologies/gemini">https://deepmind.google/technologies/gemini</a></p>
 <p>시연연상: <a href="https://youtu.be/UIZAiXYceBI?si=oSRGhGQjQITgwZ-d">https://youtu.be/UIZAiXYceBI?si=oSRGhGQjQITgwZ-d</a></p>
@@ -573,20 +568,17 @@ Goolge Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.</
 <hr>
 <p><a href="https://justine.lol/oneliners/">https://justine.lol/oneliners/</a> 이 글에서 사용 방법에 대해서 설명한다.</p>
 <p>llamafile 다운로드하고 실행 권한을 추가한다:</p>
-<pre><code class="language-bash">$ curl --location https://huggingface.co/jartine/llava-v1.5-7B-GGUF/resolve/main/llava-v1.5-7b-q4-main.llamafile > llamafile
-$ chmod +x llamafile
-</code></pre>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">curl</span> <span class="token parameter variable">--location</span> https://huggingface.co/jartine/llava-v1.5-7B-GGUF/resolve/main/llava-v1.5-7b-q4-main.llamafile <span class="token operator">></span> llamafile
+$ <span class="token function">chmod</span> +x llamafile</code></pre></div>
 <p>다운만 받아도 실행할 수 있다. 버전 체크 해본다:</p>
-<pre><code class="language-bash">$ ./llamafile --version
-llamafile v0.4.0 main
-</code></pre>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ ./llamafile <span class="token parameter variable">--version</span>
+llamafile v0.4.0 main</code></pre></div>
 <p>이미지를 다운받아서, 이미지에 대해 쿼리해보자:</p>
-<pre><code class="language-bash">$ curl https://justine.lol/oneliners/lemurs.jpg > image.jpg
-$ ./llamafile \
-    --image image.jpg --temp 0 -ngl 35 \
-    -e -p '### User: What do you see?\n### Assistant:' \
-    --silent-prompt 2>/dev/null
-</code></pre>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">curl</span> https://justine.lol/oneliners/lemurs.jpg <span class="token operator">></span> image.jpg
+$ ./llamafile <span class="token punctuation">\</span>
+    <span class="token parameter variable">--image</span> image.jpg <span class="token parameter variable">--temp</span> <span class="token number">0</span> <span class="token parameter variable">-ngl</span> <span class="token number">35</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token parameter variable">-p</span> <span class="token string">'### User: What do you see?\n### Assistant:'</span> <span class="token punctuation">\</span>
+    --silent-prompt <span class="token operator"><span class="token file-descriptor important">2</span>></span>/dev/null</code></pre></div>
 <p>다음과 같이 답변하는 것을 볼 수 있다:</p>
 <blockquote>
 <p>The image features a group of three baby lemurs, two of which are being held by their mother. They appear to be in a lush green environment with trees and grass surrounding them. The mother lemur is holding her babies close to her body, providing protection and warmth. The scene captures the bond between the mother and her young ones as they navigate through the natural habitat together.</p>
@@ -607,6 +599,6 @@ $ ./llamafile \
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

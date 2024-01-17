@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -224,52 +224,51 @@ Is Trigger 허용시 충돌하더라도 물리연산이 일어나지 않는다.<
 </ul>
 <h2 id="osx-커맨드라인으로-유니티-빌드하기" style="position:relative;"><a href="#osx-%EC%BB%A4%EB%A7%A8%EB%93%9C%EB%9D%BC%EC%9D%B8%EC%9C%BC%EB%A1%9C-%EC%9C%A0%EB%8B%88%ED%8B%B0-%EB%B9%8C%EB%93%9C%ED%95%98%EA%B8%B0" aria-label="osx 커맨드라인으로 유니티 빌드하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OSX 커맨드라인으로 유니티 빌드하기</h2>
 <p>안드로이드 빌드를 기준으로 함</p>
-<p><code>/Applications/Unity/Unity.app/Contents/MacOS/Unity -quit -batchmode -executeMethod AndroidBuilder.PerformBuild -logFile /dev/stdout</code></p>
-<p><code>/Applications/Unity/Unity.app/Contents/MacOS/Unity</code>: Mac에서 유니티 설치 시 어플리케이션 위치.
-<code>-batchmode</code>로 실행하지 않으면 GUI 모드로 실행 됨.</p>
-<p><code>-quit -batchmode</code>: GUI 모드로 실행하지 않고 터미널에서 작업 함. 완료 시 종료. (<code>-quit</code>)</p>
-<p><code>-executeMethod</code>: 유니티가 지원하는 값이 아닌, 실행 할 스크립트 메소드.
-위에서는 <code>AndroidBuilder</code> 클래스의 <code>PerformBuild()</code> 메소드를 실행 시켰다.</p>
+<p><code class="language-text">/Applications/Unity/Unity.app/Contents/MacOS/Unity -quit -batchmode -executeMethod AndroidBuilder.PerformBuild -logFile /dev/stdout</code></p>
+<p><code class="language-text">/Applications/Unity/Unity.app/Contents/MacOS/Unity</code>: Mac에서 유니티 설치 시 어플리케이션 위치.
+<code class="language-text">-batchmode</code>로 실행하지 않으면 GUI 모드로 실행 됨.</p>
+<p><code class="language-text">-quit -batchmode</code>: GUI 모드로 실행하지 않고 터미널에서 작업 함. 완료 시 종료. (<code class="language-text">-quit</code>)</p>
+<p><code class="language-text">-executeMethod</code>: 유니티가 지원하는 값이 아닌, 실행 할 스크립트 메소드.
+위에서는 <code class="language-text">AndroidBuilder</code> 클래스의 <code class="language-text">PerformBuild()</code> 메소드를 실행 시켰다.</p>
 <p>즉, <strong>유니티에서 사용하는 스크립트 언어</strong>로 빌드 정보를 직접 작성해야 한다.</p>
 <p>아래는 빌드 스크립트 예시 - C# :</p>
-<pre><code class="language-Csharp">using UnityEditor;
+<div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp"><span class="token keyword">using</span> <span class="token namespace">UnityEditor</span><span class="token punctuation">;</span>
 
-/// &#x3C;summary>
-/// 안드로이드 빌더
-/// &#x3C;/summary>
-class AndroidBuilder {
+<span class="token comment">/// &lt;summary></span>
+<span class="token comment">/// 안드로이드 빌더</span>
+<span class="token comment">/// &lt;/summary></span>
+<span class="token keyword">class</span> <span class="token class-name">AndroidBuilder</span> <span class="token punctuation">{</span>
 
-    /// &#x3C;summary>
-    /// 파라미터 파싱, 인자에 부여 된 값을 반환
-    /// &#x3C;/summary>
-    /// &#x3C;param name="name">인자 이름&#x3C;/param>
-    /// &#x3C;returns>인자의 값, 없는 인자라면 null&#x3C;/returns>
-    private static string GetArg(string name) {
-        var args = System.Environment.GetCommandLineArgs();
-        for (int i = 0; i &#x3C; args.Length; i++) {
-            if (args[i] == name &#x26;&#x26; args.Length > i + 1) {
-                return args[i + 1];
-            }
-        }
-        return null;
-    }
+    <span class="token comment">/// &lt;summary></span>
+    <span class="token comment">/// 파라미터 파싱, 인자에 부여 된 값을 반환</span>
+    <span class="token comment">/// &lt;/summary></span>
+    <span class="token comment">/// &lt;param name="name">인자 이름&lt;/param></span>
+    <span class="token comment">/// &lt;returns>인자의 값, 없는 인자라면 null&lt;/returns></span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> <span class="token function">GetArg</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span></span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> args <span class="token operator">=</span> System<span class="token punctuation">.</span>Environment<span class="token punctuation">.</span><span class="token function">GetCommandLineArgs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">int</span></span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> args<span class="token punctuation">.</span>Length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>args<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> name <span class="token operator">&amp;&amp;</span> args<span class="token punctuation">.</span>Length <span class="token operator">></span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> args<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    /// &#x3C;summary>
-    /// 빌드 실행
-    /// &#x3C;/summary>
-    static void PerformBuild () {
-        string output = GetArg("-o");
-        output = "./" + (output == null ? "out.apk" : output);
-        string[] scenes = {"Assets/Scenes/SceneStart.unity", "Assets/Scenes/SceneGame.unity"};
+    <span class="token comment">/// &lt;summary></span>
+    <span class="token comment">/// 빌드 실행</span>
+    <span class="token comment">/// &lt;/summary></span>
+    <span class="token keyword">static</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> PerformBuild <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">string</span></span> output <span class="token operator">=</span> <span class="token function">GetArg</span><span class="token punctuation">(</span><span class="token string">"-o"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        output <span class="token operator">=</span> <span class="token string">"./"</span> <span class="token operator">+</span> <span class="token punctuation">(</span>output <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token punctuation">?</span> <span class="token string">"out.apk"</span> <span class="token punctuation">:</span> output<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> scenes <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"Assets/Scenes/SceneStart.unity"</span><span class="token punctuation">,</span> <span class="token string">"Assets/Scenes/SceneGame.unity"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-        BuildPipeline.BuildPlayer(scenes, output, BuildTarget.Android, BuildOptions.None);
-    }
-}
-</code></pre>
-<p><code>-logFile</code>: 로그 파일 위치. 지정 시 생성됨. 위에서는 standard out으로 설정함. 즉 터미널에서 출력 된다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/unity3d/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+        BuildPipeline<span class="token punctuation">.</span><span class="token function">BuildPlayer</span><span class="token punctuation">(</span>scenes<span class="token punctuation">,</span> output<span class="token punctuation">,</span> BuildTarget<span class="token punctuation">.</span>Android<span class="token punctuation">,</span> BuildOptions<span class="token punctuation">.</span>None<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">-logFile</code>: 로그 파일 위치. 지정 시 생성됨. 위에서는 standard out으로 설정함. 즉 터미널에서 출력 된다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/unity3d/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

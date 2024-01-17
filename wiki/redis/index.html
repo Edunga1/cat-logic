@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -88,39 +88,39 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li><a href="https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode">https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode</a></li>
 <li><a href="https://redis.io/commands/set/">https://redis.io/commands/set/</a></li>
 </ul>
-<p><code>2.6.12</code>부터 <code>SETNX</code> Deprecated 되고, <code>set</code>에 <code>NX</code> 옵션이 추가되었다.</p>
+<p><code class="language-text">2.6.12</code>부터 <code class="language-text">SETNX</code> Deprecated 되고, <code class="language-text">set</code>에 <code class="language-text">NX</code> 옵션이 추가되었다.</p>
 <blockquote>
 <p>SETNX is short for "SET if Not eXists".</p>
 </blockquote>
-<p><code>NX</code>는 <code>Not eXists</code>의 약자로, 해당 키가 존재하지 않을 때만 <code>SET</code>을 수행한다.</p>
+<p><code class="language-text">NX</code>는 <code class="language-text">Not eXists</code>의 약자로, 해당 키가 존재하지 않을 때만 <code class="language-text">SET</code>을 수행한다.</p>
 <blockquote>
 <p>The command SET resource-name anystring NX EX max-lock-time is a simple way to implement a locking system with Redis.</p>
 </blockquote>
-<p><code>SET resource-name anystring NX EX max-lock-time</code>와 같이 사용하는 것은 Redis에서 Locking System을 구현하는 간단한 방법이다.</p>
-<p><code>EX max-lock-time</code>으로 인해 초 단위로 만료 시간을 지정할 수 있다.
-잘 설정되었다면 <code>"OK"</code>를 반환하고, 만료 시간이 지나기 전에 다시 호출하면 <code>nil</code>을 반환한다.</p>
+<p><code class="language-text">SET resource-name anystring NX EX max-lock-time</code>와 같이 사용하는 것은 Redis에서 Locking System을 구현하는 간단한 방법이다.</p>
+<p><code class="language-text">EX max-lock-time</code>으로 인해 초 단위로 만료 시간을 지정할 수 있다.
+잘 설정되었다면 <code class="language-text">"OK"</code>를 반환하고, 만료 시간이 지나기 전에 다시 호출하면 <code class="language-text">nil</code>을 반환한다.</p>
 <p>이 방식으로 간단한 분산 Locking System을 구현할 수 있다.</p>
 <p>클라이언트에서 각자 포인트를 적립, 차감하는 로직이 있다고 가정하자.</p>
 <p>Process:</p>
 <ul>
-<li>각 클라이언는 위 명령어로 포인트를 처리하기 전에 Locking 한다: <code>SET point-user123 foo NX EX 60</code></li>
-<li>만약 Locking에 실패하면(<code>nil</code>을 반환하면) "다른 클라이언트에서 처리 중입니다."와 같은 메시지를 반환한다.</li>
-<li>Locking에 성공하면(<code>"OK"</code>를 반환하면) 포인트를 처리한다.</li>
-<li>처리가 끝나면 <code>DEL point-user123</code>로 Locking을 해제한다.</li>
+<li>각 클라이언는 위 명령어로 포인트를 처리하기 전에 Locking 한다: <code class="language-text">SET point-user123 foo NX EX 60</code></li>
+<li>만약 Locking에 실패하면(<code class="language-text">nil</code>을 반환하면) "다른 클라이언트에서 처리 중입니다."와 같은 메시지를 반환한다.</li>
+<li>Locking에 성공하면(<code class="language-text">"OK"</code>를 반환하면) 포인트를 처리한다.</li>
+<li>처리가 끝나면 <code class="language-text">DEL point-user123</code>로 Locking을 해제한다.</li>
 </ul>
 <p>설령 클라이언트가 처리 중에 비정상 종료되더라도 60초 후에는 Locking이 해제되기 때문에 무한정 Locking은 피할 수 있다.</p>
-<p>좀 더 견고하게 Unlocking 프로세스를 만들고 싶다면 <code>DEL</code> 명령어를 직접 사용하지 않고, 일련의 해제 프로세스를 호출하는 것이 좋다:</p>
+<p>좀 더 견고하게 Unlocking 프로세스를 만들고 싶다면 <code class="language-text">DEL</code> 명령어를 직접 사용하지 않고, 일련의 해제 프로세스를 호출하는 것이 좋다:</p>
 <ul>
-<li><code>foo</code>와 같은 고정 문자열 대신, 랜덤한 문자열을 사용한다.</li>
+<li><code class="language-text">foo</code>와 같은 고정 문자열 대신, 랜덤한 문자열을 사용한다.</li>
 <li>클라이언트은 포인트 처리 후 해제 프로세스에 위 문자열을 전달한다.</li>
-<li>해제 프로세스는 전달 받은 문자열과 <code>GET</code> 명령어로 해당 키의 값을 비교한다.</li>
-<li>같으면 <code>DEL</code> 명령어로 Locking을 해제한다.</li>
+<li>해제 프로세스는 전달 받은 문자열과 <code class="language-text">GET</code> 명령어로 해당 키의 값을 비교한다.</li>
+<li>같으면 <code class="language-text">DEL</code> 명령어로 Locking을 해제한다.</li>
 </ul>
 <p>각 클라이언트에서 직접 삭제하는 대신, 해제 프로세스에 위임하는 방법이다.
 이러면 다른 클라이언트가 직접 해제하는 것을 방지할 수 있다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/redis/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

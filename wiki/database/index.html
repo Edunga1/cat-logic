@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style type="text/css">
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.1"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
     .anchor.before {
       position: absolute;
       top: 0;
@@ -118,7 +118,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li>
 <p><a href="#h2-database">H2 Database</a></p>
 <ul>
-<li><a href="#numberformatexception-for-input-string--%EC%97%90%EB%9F%AC"><code>NumberFormatException: for input String: "..."</code> 에러</a></li>
+<li><a href="#numberformatexception-for-input-string--%EC%97%90%EB%9F%AC"><code class="language-text">NumberFormatException: for input String: "..."</code> 에러</a></li>
 </ul>
 </li>
 <li>
@@ -149,19 +149,18 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p>데이터 중복을 최소화하는 작업</p>
 <h4 id="제-1-정규화-first-normal-form" style="position:relative;"><a href="#%EC%A0%9C-1-%EC%A0%95%EA%B7%9C%ED%99%94-first-normal-form" aria-label="제 1 정규화 first normal form permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>제 1 정규화 (First Normal Form)</h4>
 <p>inflexible 부분을 제거하는 것이 목적</p>
-<pre><code>------------------------------------------------------------------------
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">------------------------------------------------------------------------
 | name | email           | email2             | email...               |
 ------------------------------------------------------------------------
 | john | apple@gmail.com | banana@hanmail.net |                        |
 | paul | cat@gmail.com   | null               |                        |
-------------------------------------------------------------------------
-</code></pre>
+------------------------------------------------------------------------</code></pre></div>
 <p>사용자에 대한 이메일 목록을 관리하고자 할 때, 테이블이 하나라면 <strong>이메일이 추가</strong>되면 컬럼이 늘어나게 된다.</p>
 <p>또한 paul은 하나의 이메일을 가지지만 여러개의 메일을 가진 john에 의해 빈 필드를 가져야만 한다.</p>
 <p>이 문제를 1:N or N:N 관계로 분리하여 해결하는 것이 제 1 정규화.</p>
 <h4 id="제-2-정규화-second-normal-form" style="position:relative;"><a href="#%EC%A0%9C-2-%EC%A0%95%EA%B7%9C%ED%99%94-second-normal-form" aria-label="제 2 정규화 second normal form permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>제 2 정규화 (Second Normal Form)</h4>
 <p><strong>Composite Key</strong>를 사용할 때 일반 필드가 Composite Key 중 <strong>일부분</strong>에 의존할 때 문제가 발생한다.</p>
-<pre><code>-----------------------------------------------------------------------
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">-----------------------------------------------------------------------
 | Cours  | Date      | CourseTitle      | Room | Capacity | Available |
 -----------------------------------------------------------------------
 | SQL101 | 3/1/2013  | SQL Fundamentals | 4A   | 12       | 4         |
@@ -169,8 +168,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 | SQL101 | 4/14/2013 | SQL Fundamentals | 7B   | 14       | 10        |
 | SQL101 | 5/28/2013 | SQL Fundamentals | 12A  | 8        | 8         |
 | CS200  | 4/15/2012 | C Programming    | 4A   | 12       | 11        |
------------------------------------------------------------------------
-</code></pre>
+-----------------------------------------------------------------------</code></pre></div>
 <p>Cours + Date가 <strong>Composite primary key</strong>라고 할 때</p>
 <p>CourseTitle은 Course에 <strong>의존된다.</strong></p>
 <p>CourseTitle을 Course를 FK, PK로 한 테이블로 분리하여 해결하는 것이 제 2 정규화.</p>
@@ -185,7 +183,7 @@ Zip code를 얻을 수 있기 때문.</p>
 <h2 id="테이블-이름-컨벤션" style="position:relative;"><a href="#%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9D%B4%EB%A6%84-%EC%BB%A8%EB%B2%A4%EC%85%98" aria-label="테이블 이름 컨벤션 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>테이블 이름 컨벤션</h2>
 <h3 id="단수-vs-복수" style="position:relative;"><a href="#%EB%8B%A8%EC%88%98-vs-%EB%B3%B5%EC%88%98" aria-label="단수 vs 복수 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>단수 vs. 복수</h3>
 <p>테이블 이름은 단수로 지어야 하나 복수로 지어야 하나?</p>
-<p>코드에서는 리스트인 변수 이름을 지을때는 <code>~List</code>와 같은 이름을 피하고 복수형을 사용하고 있다.</p>
+<p>코드에서는 리스트인 변수 이름을 지을때는 <code class="language-text">~List</code>와 같은 이름을 피하고 복수형을 사용하고 있다.</p>
 <p><a href="https://stackoverflow.com/questions/338156/table-naming-dilemma-singular-vs-plural-names">https://stackoverflow.com/questions/338156/table-naming-dilemma-singular-vs-plural-names</a></p>
 <p>링크를 보면 단수, 복수 모두 비등한데. 1200여개의 점수를 얻은 "단수"를 선호하는 두 번째 답변이 와닿는다.(24년 2244점, 첫 번째 이유가 취소선이 그어져있다.)</p>
 <p>총 6가지 이유를 가지고 설득하는데 특히 와닿았던 건..</p>
@@ -240,33 +238,32 @@ ruby 생태계에서는 <a href="https://github.com/resque/resque">resque</a> �
 <h2 id="mysql" style="position:relative;"><a href="#mysql" aria-label="mysql permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MySQL</h2>
 <h3 id="mysql-docker-image" style="position:relative;"><a href="#mysql-docker-image" aria-label="mysql docker image permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MySQL Docker Image</h3>
 <p>Official mysql image: <a href="https://hub.docker.com/_/mysql">https://hub.docker.com/_/mysql</a></p>
-<p>공식 이미지는 시작 시 <code>docker-entrypoint-initdb.d/</code> 폴더에 sql, sh, gz 파일을 두면 자동으로 실행하는 구조로 되어있다.:</p>
+<p>공식 이미지는 시작 시 <code class="language-text">docker-entrypoint-initdb.d/</code> 폴더에 sql, sh, gz 파일을 두면 자동으로 실행하는 구조로 되어있다.:</p>
 <blockquote>
 <p>it will execute files with extensions .sh, .sql and .sql.gz that are found in /docker-entrypoint-initdb.d</p>
 </blockquote>
 <h3 id="이미지-내에-데이터-포함하기" style="position:relative;"><a href="#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%82%B4%EC%97%90-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%8F%AC%ED%95%A8%ED%95%98%EA%B8%B0" aria-label="이미지 내에 데이터 포함하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>이미지 내에 데이터 포함하기</h3>
-<p>파일, 내용이 많으면 <code>docker-entrypoint-initdb.d/</code>에 두는 것만으로는 시작이 오래 걸린다.
+<p>파일, 내용이 많으면 <code class="language-text">docker-entrypoint-initdb.d/</code>에 두는 것만으로는 시작이 오래 걸린다.
 이를 해결하기 위해서 데이터를 이미지 내에 포함할 수 있다. 대신 이미지 크기가 그만큼 늘어난다.
 개인적으로는 이 방법으로 테이블만 생성하고, integration 테스트하는데 사용하고 있다.</p>
-<pre><code class="language-dockerfile">FROM mysql:5.6 AS builder
+<div class="gatsby-highlight" data-language="dockerfile"><pre class="language-dockerfile"><code class="language-dockerfile"><span class="token instruction"><span class="token keyword">FROM</span> mysql:5.6 <span class="token keyword">AS</span> builder</span>
 
-RUN ["sed", "-i", "s/exec \"$@\"/echo \"not running $@\"/", "/usr/local/bin/docker-entrypoint.sh"]
+<span class="token instruction"><span class="token keyword">RUN</span> [<span class="token string">"sed"</span>, <span class="token string">"-i"</span>, <span class="token string">"s/exec \"$@\"/echo \"not running $@\"/"</span>, <span class="token string">"/usr/local/bin/docker-entrypoint.sh"</span>]</span>
 
-ENV MYSQL_ROOT_PASSWORD=0000 \
-    MYSQL_DATABASE=test_quicket \
-    MYSQL_USER=testuser \
-    MYSQL_PASSWORD=testpassword
+<span class="token instruction"><span class="token keyword">ENV</span> MYSQL_ROOT_PASSWORD=0000 <span class="token operator">\</span>
+    MYSQL_DATABASE=test_quicket <span class="token operator">\</span>
+    MYSQL_USER=testuser <span class="token operator">\</span>
+    MYSQL_PASSWORD=testpassword</span>
 
-COPY schema /docker-entrypoint-initdb.d
+<span class="token instruction"><span class="token keyword">COPY</span> schema /docker-entrypoint-initdb.d</span>
 
-RUN ["/usr/local/bin/docker-entrypoint.sh", "mysqld", "--datadir", "/initialized-db"]
+<span class="token instruction"><span class="token keyword">RUN</span> [<span class="token string">"/usr/local/bin/docker-entrypoint.sh"</span>, <span class="token string">"mysqld"</span>, <span class="token string">"--datadir"</span>, <span class="token string">"/initialized-db"</span>]</span>
 
-FROM mysql:5.6
+<span class="token instruction"><span class="token keyword">FROM</span> mysql:5.6</span>
 
-ENV TZ=Asia/Seoul
+<span class="token instruction"><span class="token keyword">ENV</span> TZ=Asia/Seoul</span>
 
-COPY --from=builder /initialized-db /var/lib/mysql
-</code></pre>
+<span class="token instruction"><span class="token keyword">COPY</span> <span class="token options"><span class="token property">--from</span><span class="token punctuation">=</span><span class="token string">builder</span></span> /initialized-db /var/lib/mysql</span></code></pre></div>
 <ul>
 <li>multi-stage build 이용하여 builder stage에서 설정 및 sql 파일을 복사하고 부트스트래핑 스크립트를 직접 실행한다.</li>
 <li>main stage에서 builder의 DB 데이터를 COPY하고 실행한다.</li>
@@ -278,15 +275,14 @@ COPY --from=builder /initialized-db /var/lib/mysql
 </blockquote>
 <p>MySQL 8.0.13에서부터 인덱스 생성 시 함수를 사용할 수 있다.</p>
 <p>예를들어 컬럼에만 인덱스를 걸면:</p>
-<pre><code class="language-sql">CREATE TABLE stats
-(
-    id         int auto_increment primary key,
-    created_at datetime not null
-);
-CREATE INDEX idx_created_at ON stats (created_at);
+<div class="gatsby-highlight" data-language="sql"><pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> stats
+<span class="token punctuation">(</span>
+    id         <span class="token keyword">int</span> <span class="token keyword">auto_increment</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
+    created_at <span class="token keyword">datetime</span> <span class="token operator">not</span> <span class="token boolean">null</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> idx_created_at <span class="token keyword">ON</span> stats <span class="token punctuation">(</span>created_at<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
-</code></pre>
+<span class="token keyword">EXPLAIN</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> stats <span class="token keyword">WHERE</span> <span class="token keyword">MONTH</span><span class="token punctuation">(</span>created_at<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -346,15 +342,14 @@ EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
 </tbody>
 </table>
 <p>하지만 functional key parts를 사용하면:</p>
-<pre><code class="language-sql">CREATE TABLE stats
-(
-    id         int auto_increment primary key,
-    created_at datetime not null
-);
-CREATE INDEX idx_created_at_month ON stats ((MONTH(created_at)));
+<div class="gatsby-highlight" data-language="sql"><pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> stats
+<span class="token punctuation">(</span>
+    id         <span class="token keyword">int</span> <span class="token keyword">auto_increment</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">,</span>
+    created_at <span class="token keyword">datetime</span> <span class="token operator">not</span> <span class="token boolean">null</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> idx_created_at_month <span class="token keyword">ON</span> stats <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">MONTH</span><span class="token punctuation">(</span>created_at<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
-</code></pre>
+<span class="token keyword">EXPLAIN</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> stats <span class="token keyword">WHERE</span> <span class="token keyword">MONTH</span><span class="token punctuation">(</span>created_at<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -426,18 +421,17 @@ EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
 <p><a href="https://dev.mysql.com/doc/refman/8.0/en/create-table-secondary-indexes.html">https://dev.mysql.com/doc/refman/8.0/en/create-table-secondary-indexes.html</a></p>
 <p>Virtual Column은 MySQL 5.7에서 추가되었다.
 Funcitonal Key Parts를 사용할 수 없었던 5.7에서는 Virtual Column을 이용하여 대체 사용할 수 있다.</p>
-<pre><code class="language-sql">CREATE TABLE jemp (
-  c JSON,
-  g INT GENERATED ALWAYS AS (c->"$.id"),
-  INDEX i (g)
-);
-</code></pre>
-<p><code>GENERATED ALWAYS AS</code>를 사용하여 Virtual Column을 생성한다.
+<div class="gatsby-highlight" data-language="sql"><pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> jemp <span class="token punctuation">(</span>
+  c JSON<span class="token punctuation">,</span>
+  g <span class="token keyword">INT</span> GENERATED ALWAYS <span class="token keyword">AS</span> <span class="token punctuation">(</span>c<span class="token operator">-</span><span class="token operator">></span><span class="token string">"$.id"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">INDEX</span> i <span class="token punctuation">(</span>g<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p><code class="language-text">GENERATED ALWAYS AS</code>를 사용하여 Virtual Column을 생성한다.
 이 컬럼에 대해 정의한 인덱스를 "Virtual Column"라 한다.</p>
 <h2 id="h2-database" style="position:relative;"><a href="#h2-database" aria-label="h2 database permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>H2 Database</h2>
-<h3 id="numberformatexception-for-input-string--에러" style="position:relative;"><a href="#numberformatexception-for-input-string--%EC%97%90%EB%9F%AC" aria-label="numberformatexception for input string  에러 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>NumberFormatException: for input String: "..."</code> 에러</h3>
-<p><code>UNION ALL</code> 쿼리로 3개의 테이블을 포함하고, 컬럼 하나가 integer 타입일 때 발생했다.</p>
-<p><code>CAST(foo as char)</code> 명시적으로 타입 캐스팅을 통해 통일하여 해결했다.</p>
+<h3 id="numberformatexception-for-input-string--에러" style="position:relative;"><a href="#numberformatexception-for-input-string--%EC%97%90%EB%9F%AC" aria-label="numberformatexception for input string  에러 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">NumberFormatException: for input String: "..."</code> 에러</h3>
+<p><code class="language-text">UNION ALL</code> 쿼리로 3개의 테이블을 포함하고, 컬럼 하나가 integer 타입일 때 발생했다.</p>
+<p><code class="language-text">CAST(foo as char)</code> 명시적으로 타입 캐스팅을 통해 통일하여 해결했다.</p>
 <h2 id="sqlite의-알려지지-않은-이야기" style="position:relative;"><a href="#sqlite%EC%9D%98-%EC%95%8C%EB%A0%A4%EC%A7%80%EC%A7%80-%EC%95%8A%EC%9D%80-%EC%9D%B4%EC%95%BC%EA%B8%B0" aria-label="sqlite의 알려지지 않은 이야기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SQLite의 알려지지 않은 이야기</h2>
 <p><a href="https://news.hada.io/topic?id=4558">https://news.hada.io/topic?id=4558</a></p>
 <p>많은 개발 토픽이 담겨있다.</p>
@@ -524,6 +518,6 @@ SELECT j FROM tbl WHERE i > 0;</p>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-ede1544401507b7c7ecc.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-adf0ad85d5744a13b71d.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-5c2e2980702c72fc27d4.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-8f631674f884ce01bddf.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-f6ed90c5ec297fc14e0e.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="78227a24af1cfffb0f84";</script><script src="/cat-logic/webpack-runtime-abe5e8b6beb0fa112ac8.js" async></script><script src="/cat-logic/app-ede1544401507b7c7ecc.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="ed0d14045f6b8a176af6";</script><script src="/cat-logic/webpack-runtime-b9e17581036125160ba2.js" async></script><script src="/cat-logic/app-adf0ad85d5744a13b71d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
