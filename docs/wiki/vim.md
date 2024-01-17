@@ -342,6 +342,19 @@ vim에서 터미널을 실행한다. vim 터미널은 터미널 모드로 전환
 나는 markdown 파일 작업 중 `:terminal mdcat %`으로 현재 파일의 preview 보는 용도로 사용한다.\
 [mdcat](https://github.com/swsnr/mdcat)은 markdown용 cat이다.
 
+### 자동 서식: `formatoptions`
+
+vim으로 커밋 메시지를 작성할 때, 자동으로 줄바꿈 되는 것을 경험했다면 이 옵션이 사용된 것이다.(아마도 vim 기본 설정으로 보인다.)
+
+- `:h formatoptions`
+- `:h fo-tables`
+
+`formatoptions`는 어떤 자동 서식을 적용할 지 옵션을 가지고있다. `:set formatoptions?`로 확인하자.
+
+Git 커밋메시지의 파일 타입은 `ft=gitcommit`이며, 옵션을 확인해보면 `formatoptions=jtln`이다.\
+이 중 `t`가 자동 줄바꿈 한다고 `:h fo-tables`에서 설명한다. `textwidth` 옵션 만큼 길어지면 자동 줄바꿈한다.\
+비활성화는 `t` 옵션을 제거하거나(`set formatoptions-=t`) `textwidth`를 0으로 설정하면 된다(`set textwidth=0`).
+
 ## 구문 강조
 
 `:h syntax`
