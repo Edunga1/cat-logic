@@ -10,7 +10,7 @@ C++ 라이브러리로 사용하거나 다른 언어의 바인딩을 통해 사�
 
 [공식문서](https://www.sfml-dev.org/tutorials/2.5/graphics-draw.php)에 나와있는 튜토리얼 중 하나:
 
-```c++
+```cpp
 #include <SFML/Graphics.hpp>
 
 int main()
@@ -58,7 +58,7 @@ OSX 기준.
 2. 프로젝트 루트에 `cmake_modules` 폴더를 생성
 2. [FindSFML.cmake](https://github.com/SFML/SFML-Game-Development-Book/blob/master/CMake/FindSFML.cmake) 작성하고, `cmake_modules` 안에 둔다.
 2. `CmakeLists.txt` 작성하여 프로젝트 루트에 둔다. 위 폴더와는 관련 없다.
-    ```c++
+    ```cpp
     #Change this if you need to target a specific CMake version
     cmake_minimum_required(VERSION 2.6)
 
@@ -109,7 +109,7 @@ OSX 기준.
     include(CPack)
     ```
 2. 예제 코드 `main.cpp`는 다음과 같다.
-    ```c++
+    ```cpp
     #include "config.h"
     #include <iostream>
     #include <SFML/Graphics.hpp>
@@ -135,7 +135,7 @@ OSX 기준.
     ```
     - 여기서 알 수 있는것은 `config.h`에서 설정 정보를 읽어와 출력하는 것.
 2. `config.h.in` 파일을 다음과 같이 작성한다. `cmake`를 통해서 `config.h`를 생성할 것이다.
-    ```c++
+    ```cpp
     #define myproject_VERSION_MAJOR @myproject_VERSION_MAJOR@
     #define myproject_VERSION_MINOR @myproject_VERSION_MINOR@
     ```

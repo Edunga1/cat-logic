@@ -119,18 +119,18 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 이러한 Coroutine은 <code class="language-text">WaitForSeconds</code> 이외에도 프레임 기반이나 실제 시간 기반으로 suspend하는 등 여러가지가 있다.</p>
 <p>이 방식을 비슷하게 구현해 보았다.</p>
 <p><a href="https://github.com/Edunga1/practice-canvas-coroutine">https://github.com/Edunga1/practice-canvas-coroutine</a></p>
-<div class="gatsby-highlight" data-language="javscript"><pre class="language-javscript"><code class="language-javscript">*_update() {
-  this.x += 1
-  this.y += 1
-  yield* waitForSeconds(1)
-  this.y -= 1
-  yield* waitForSeconds(2)
-  this.x -= 1
-  this.y += 1
-  yield* waitForSeconds(1)
-  this.y -= 1
-  yield* waitForSeconds(3)
-}</code></pre></div></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/html-canvas/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token operator">*</span><span class="token function">_update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">+=</span> <span class="token number">1</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">+=</span> <span class="token number">1</span>
+  <span class="token keyword">yield</span><span class="token operator">*</span> <span class="token function">waitForSeconds</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">-=</span> <span class="token number">1</span>
+  <span class="token keyword">yield</span><span class="token operator">*</span> <span class="token function">waitForSeconds</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">-=</span> <span class="token number">1</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">+=</span> <span class="token number">1</span>
+  <span class="token keyword">yield</span><span class="token operator">*</span> <span class="token function">waitForSeconds</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">-=</span> <span class="token number">1</span>
+  <span class="token keyword">yield</span><span class="token operator">*</span> <span class="token function">waitForSeconds</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/html-canvas/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
