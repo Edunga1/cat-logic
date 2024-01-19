@@ -10,7 +10,7 @@ created: 2023-04-13
 C#에서 옵저버 패턴과 유사한 기능을 하는 event가 있다.
 
 이벤트 정의:
-```c#
+```csharp
 public delegate void PositionEvent(Vector3 position);
 public event PositionEvent onPositionChanged;
 ```
@@ -18,7 +18,7 @@ public event PositionEvent onPositionChanged;
 delegate는 함수를 표현하는 방법이다.
 
 이벤트 등록:
-```c#
+```csharp
 onPositionChanged += SyncPosition;
 ```
 
@@ -26,7 +26,7 @@ onPositionChanged += SyncPosition;
 `+` 연산자를 사용하여 이벤트에 함수를 등록한다.
 
 이벤트 발생:
-```c#
+```csharp
 onPositionChanged(new Vector3(0, 0, 0));
 ```
 

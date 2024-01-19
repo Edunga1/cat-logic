@@ -52,7 +52,7 @@ IEnumerator waiter()
 
 https://github.com/Edunga1/practice-canvas-coroutine
 
-```javscript
+```js
 *_update() {
   this.x += 1
   this.y += 1
