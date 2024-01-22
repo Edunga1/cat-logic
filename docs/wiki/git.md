@@ -378,6 +378,32 @@ $ git log --follow --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
 2018-01-11 ebd76bb05 Add "Chocolate Problem"
 ```
 
+## `git worktree`
+
+`git worktree add <path> <branch>`로 현재 프로젝트를 `<path>`에 생성하고 `<branch>`로 체크아웃한다. 현재 프로젝트와 연결된다.
+git에서는 작업 영역을 working tree라 부르니, 알아두면 좋겠다.
+
+`git worktree`는 현재 작업중인 내용을 stash나 commit 등으로 저장하지 않고, 다른 작업을 처리할 때 유용하다.
+다만, [java](./java.md)나 [kotlin](./kotlin.md) 프로젝트 같이 [IDE](./jetbrains.md)에서 인덱싱하여 작업 영역이 무거운 경우에는 비효율적일 수 있다.
+새 worktree에서 다시 인덱싱을 하기 때문이다.
+
+`git worktree list`로 목록을 확인할 수 있으며, 복사된 프로젝트나 원본 프로젝트에서도 확인 가능하다.
+
+```bash
+$ git worktree list
+/Users/me/workspace/some-api         e9169a43 [staging]
+/Users/me/workspace/some-api-new     e826395c [new-branch]
+```
+
+worktree가 사용하는 branch는 `git branch`에서 구분되어 표시된다:
+
+```bash
+$ git branch
+* new-branch  # 현재 worktree에서 사용하는 branch
+  master
++ staging     # 다른(원본) worktree
+```
+
 ## Troubleshooting
 
 ### Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
