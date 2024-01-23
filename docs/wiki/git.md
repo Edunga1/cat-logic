@@ -404,6 +404,9 @@ $ git branch
 + staging     # 다른(원본) worktree
 ```
 
+worktree를 제거하기 위해서는 `git worktree remove <path>`를 사용한다. Tab을 통한 경로 자동 완성이 된다.
+worktree에서 사용한 브랜치는 계속 유지된다.
+
 ## Troubleshooting
 
 ### Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
