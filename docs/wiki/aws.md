@@ -13,17 +13,19 @@ AWS 관련
 aws ecr get-login-password --region <REGION> | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com
 ```
 
-`REGION`: 서울 리전이라면 `ap-northeast-2`
-
-`AWS_ACCOUNT_ID` 구하기:
+`REGION`은 서울 리전이라면 `ap-northeast-2`.
+`AWS_ACCOUNT_ID`는 `aws sts get-caller-identity` 명령의 결과로 구할 수 있다. `Account` 필드의 값이 `AWS_ACCOUNT_ID` 이다.
 
 ```bash
-aws sts get-caller-identity
+$ aws sts get-caller-identity
+{
+    "UserId": "",
+    "Account": "",
+    "Arn": ""
+}
 ```
 
-`Account` 필드의 값이 `AWS_ACCOUNT_ID` 이다.
-
-e.g. account id = `1234`, region = `ap-northeast-2`:
+예를들어 account id = `1234`, region = `ap-northeast-2` 라면 다음과 같이 입력한다:
 
 ```bash
 aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 1234.dkr.ecr.ap-northeast-2.amazonaws.com
