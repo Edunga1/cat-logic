@@ -84,12 +84,12 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <ul>
 <li>
 <ul>
-<li><a href="#httpswwwfacebookcomiamprogrammerioposts1379005945454259">https://www.facebook.com/iamprogrammer.io/posts/1379005945454259</a></li>
-<li><a href="#httpsstackoverflowcomquestions9392365">https://stackoverflow.com/questions/9392365</a></li>
-<li><a href="#httpsstackoverflowcomquestions34764195">https://stackoverflow.com/questions/34764195</a></li>
-<li><a href="#httpswwwcodentalkscomttopic2973">https://www.codentalks.com/t/topic/2973</a></li>
-<li><a href="#httpszariskiwordpresscom20170225sha-1-ecb6a9eb8f8c">https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/</a></li>
-<li><a href="#httpswwwmathstatdalcaselingermd5collision">https://www.mathstat.dal.ca/~selinger/md5collision</a></li>
+<li><a href="#%EB%A6%AC%EB%88%84%EC%8A%A4-%ED%86%A0%EB%B0%9C%EC%A6%88%EC%9D%98-%EC%9D%98%EA%B2%AC">리누스 토발즈의 의견</a></li>
+<li><a href="#%ED%95%B4%EC%8B%9C-%EC%B6%A9%EB%8F%8C%EC%9D%84-%EC%9E%AC%ED%98%84%ED%95%9C-so-%EA%B8%80">해시 충돌을 재현한 SO 글</a></li>
+<li><a href="#%EC%BB%A4%EB%B0%8B-%ED%95%B4%EC%8B%9C%EB%A5%BC-%EA%B2%B0%EC%A0%95%ED%95%98%EB%8A%94-%EC%9A%94%EC%86%8C">커밋 해시를 결정하는 요소</a></li>
+<li><a href="#%ED%95%B4%EC%8B%9C-%EC%B4%9D%EB%8F%8C-%EC%9C%A0%EB%A8%B8">해시 총돌 유머</a></li>
+<li><a href="#sha1-%EC%B8%B5%EB%8F%8C-%EC%84%A4%EB%AA%85">sha1 층돌 설명</a></li>
+<li><a href="#md5-%EC%B6%A9%EB%8F%8C-%EC%98%88%EC%A0%9C">md5 충돌 예제</a></li>
 </ul>
 </li>
 </ul>
@@ -142,34 +142,50 @@ that has been built up completely with "git".</p>
 </blockquote>
 <p><em>명령어 자동완성하기</em>: <a href="https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion">https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion</a></p>
 <h2 id="깃-커밋-해시-충돌에-관하여" style="position:relative;"><a href="#%EA%B9%83-%EC%BB%A4%EB%B0%8B-%ED%95%B4%EC%8B%9C-%EC%B6%A9%EB%8F%8C%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC" aria-label="깃 커밋 해시 충돌에 관하여 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>깃 커밋 해시 충돌에 관하여</h2>
-<p>갑자기 커밋 해시는 어떤 정보를 기반하여 만들어지는지 궁금했다.
-커밋 해시는 커밋 <code class="language-text">git commit</code> 할 때 생성되고,
-주로 커밋 해시로 파일들을 특정 상태로 맞추는데 <code class="language-text">git checkout</code> 사용한다.</p>
-<p>그런데 커밋 할 때 해시가 충돌하지는 않을까? 싶어서 찾아봤다.</p>
+<p>어느날 커밋 해시는 어떤 정보를 기반하여 만들어지는지 궁금했다.
+커밋 해시는 <code class="language-text">git commit</code> 할 때 생성되고, 커밋 해시로 <code class="language-text">git checkout</code>하여 특정 revision으로 이동한다.</p>
+<p>따라오는 질문은 "커밋 할 때 해시가 충돌할 여지는 없는가" 였다.</p>
 <p>먼저, <a href="https://git-scm.com/book/ko/v1/Git-%EB%8F%84%EA%B5%AC-%EB%A6%AC%EB%B9%84%EC%A0%84-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0">git-scm</a>의 글
-<a href="https://git-scm.com/book/ko/v1/Git-%EB%8F%84%EA%B5%AC-%EB%A6%AC%EB%B9%84%EC%A0%84-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0#SHA-1-%ED%95%B4%EC%8B%9C-%EA%B0%92%EC%97%90-%EB%8C%80%ED%95%9C-%EB%8B%A8%EC%83%81">SHA-1 해시 값에 대한 단상</a>에서
-걱정에 대한 현실적인 조언을 해 준다. 또 실제로 발생하면 어떤 일이 일어나는지 알려준다.</p>
-<h4 id="httpswwwfacebookcomiamprogrammerioposts1379005945454259" style="position:relative;"><a href="#httpswwwfacebookcomiamprogrammerioposts1379005945454259" aria-label="httpswwwfacebookcomiamprogrammerioposts1379005945454259 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.facebook.com/iamprogrammer.io/posts/1379005945454259">https://www.facebook.com/iamprogrammer.io/posts/1379005945454259</a></h4>
-<p>그래도 운이 정말 나빠서, 해시 충돌이 나는 것이 우려된다면 리누스 토발즈도 이 이슈에 대해 언급했다.
+<a href="https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%EB%A6%AC%EB%B9%84%EC%A0%84-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0#:~:text=%EB%85%B8%ED%8A%B8-,SHA%2D1%20%ED%95%B4%EC%8B%9C%20%EA%B0%92%EC%97%90%20%EB%8C%80%ED%95%9C%20%EB%8B%A8%EC%83%81,-Git%EC%9D%84%20%EC%93%B0%EB%8A%94">SHA-1 해시 값에 대한 단상</a>에서
+이러한 걱정에 대한 현실적인 조언을 해 준다. 또 실제로 발생하면 어떤 일이 일어나는지 알려준다.</p>
+<p>요약하면, 해시 중복이 생성되면, 현재 구현으로는 커밋은 성공하지만, checkout하면 최초의 revision으로 이동한다.
+하지만 충돌이 발생할 확률은 현실적으로 불가능하다.</p>
+<blockquote>
+<p>SHA-1 해시 값에 대한 단상</p>
+<p>Git을 쓰는 사람들은 가능성이 작긴 하지만 언젠가 SHA-1 값이 중복될까 봐 걱정한다. 정말 그렇게 되면 어떤 일이 벌어질까?</p>
+<p>이미 있는 SHA-1 값이 Git 데이터베이스에 커밋되면 새로운 개체라고 해도 이미 커밋된 것으로 생각하고 이전의 커밋을 재사용한다. 그래서 해당 SHA-1 값의 커밋을 Checkout 하면 항상 처음 저장한 커밋만 Checkout 된다.</p>
+<p>그러나 해시 값이 중복되는 일은 일어나기 어렵다. SHA-1 값의 크기는 20 바이트(160비트)이다. 해시 값이 중복될 확률이 50%가 되는 데 필요한 개체의 수는 280이다. 이 수는 1자 2,000해 ('자’는 '경’의 '억’배 - 1024, 충돌 확률을 구하는 공식은 p = (n(n-1)/2) * (1/2^160) )이다. 즉, 지구에 존재하는 모래알의 수에 1,200을 곱한 수와 맞먹는다.</p>
+<p>아직도 SHA-1 해시 값이 중복될까 봐 걱정하는 사람들을 위해 좀 더 덧붙이겠다. 지구에서 약 6억 5천만 명의 인구가 개발하고 각자 매초 Linux 커널 히스토리 전체와(650만 개) 맞먹는 개체를 쏟아 내고 바로 Push 한다고 가정하자. 이런 상황에서 해시 값의 충돌 날 확률이 50%가 되기까지는 약 2년이 걸린다. 그냥 어느 날 동료가 한 순간에 모두 늑대에게 물려 죽을 확률이 훨씬 더 높다.</p>
+</blockquote>
+<h4 id="리누스-토발즈의-의견" style="position:relative;"><a href="#%EB%A6%AC%EB%88%84%EC%8A%A4-%ED%86%A0%EB%B0%9C%EC%A6%88%EC%9D%98-%EC%9D%98%EA%B2%AC" aria-label="리누스 토발즈의 의견 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>리누스 토발즈의 의견</h4>
+<p>그래도 운이 정말 나빠서, 해시 충돌 문제에 벗어날 수 없다면, 리누스 토발즈도 이 이슈에 대해 언급했다.
 아쉽게도 원글이 있던 google+가 종료되어 볼 수 없지만 예전에 올라온 나프다 게시글에 누군가 요약해 주었다.</p>
-<p>사람이 소스코드의 변경을 지켜보고 있기 때문에 괜찮고, 또 대안은 있다고..</p>
-<h4 id="httpsstackoverflowcomquestions9392365" style="position:relative;"><a href="#httpsstackoverflowcomquestions9392365" aria-label="httpsstackoverflowcomquestions9392365 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://stackoverflow.com/questions/9392365">https://stackoverflow.com/questions/9392365</a></h4>
-<p>사실 가장 먼저 본 글은 SO의 글이다.
-<a href="https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081">답변</a>에서,
-기발하게도 해시 사이즈를 4-bit로 줄여서 실제로 재현했다. <code class="language-text">push</code>, <code class="language-text">clone</code> 할 때 에러가 난다.</p>
-<h4 id="httpsstackoverflowcomquestions34764195" style="position:relative;"><a href="#httpsstackoverflowcomquestions34764195" aria-label="httpsstackoverflowcomquestions34764195 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://stackoverflow.com/questions/34764195">https://stackoverflow.com/questions/34764195</a></h4>
+<p><a href="https://www.facebook.com/iamprogrammer.io/posts/1379005945454259">https://www.facebook.com/iamprogrammer.io/posts/1379005945454259</a></p>
+<p>사람이 소스코드의 변경을 지켜보고 있기 때문에 괜찮고, 또 대안은 있다고 한다.</p>
+<h4 id="해시-충돌을-재현한-so-글" style="position:relative;"><a href="#%ED%95%B4%EC%8B%9C-%EC%B6%A9%EB%8F%8C%EC%9D%84-%EC%9E%AC%ED%98%84%ED%95%9C-so-%EA%B8%80" aria-label="해시 충돌을 재현한 so 글 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>해시 충돌을 재현한 SO 글</h4>
+<p>사실 충돌 문제에 대해 가장 먼저 접한 것은 StackOverflow의 질문이었다.</p>
+<p><a href="https://stackoverflow.com/questions/9392365">https://stackoverflow.com/questions/9392365</a></p>
+<p><a href="https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081">답변</a>에서,
+해시 사이즈를 4-bit로 줄여서 실제로 재현했다. <code class="language-text">push</code>, <code class="language-text">clone</code> 할 때 에러가 발생한다.</p>
+<h4 id="커밋-해시를-결정하는-요소" style="position:relative;"><a href="#%EC%BB%A4%EB%B0%8B-%ED%95%B4%EC%8B%9C%EB%A5%BC-%EA%B2%B0%EC%A0%95%ED%95%98%EB%8A%94-%EC%9A%94%EC%86%8C" aria-label="커밋 해시를 결정하는 요소 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>커밋 해시를 결정하는 요소</h4>
 <p>커밋 해시가 무엇으로 결정되는지 알려주는 SO 글. 부모 커밋, 커미터, 메시지 등.</p>
-<h4 id="httpswwwcodentalkscomttopic2973" style="position:relative;"><a href="#httpswwwcodentalkscomttopic2973" aria-label="httpswwwcodentalkscomttopic2973 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.codentalks.com/t/topic/2973">https://www.codentalks.com/t/topic/2973</a></h4>
+<p><a href="https://stackoverflow.com/questions/34764195">https://stackoverflow.com/questions/34764195</a></p>
+<h4 id="해시-총돌-유머" style="position:relative;"><a href="#%ED%95%B4%EC%8B%9C-%EC%B4%9D%EB%8F%8C-%EC%9C%A0%EB%A8%B8" aria-label="해시 총돌 유머 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>해시 총돌 유머</h4>
+<p>여기 있는 사이트가 사라졌다 :|</p>
 <blockquote>
 <p>뻘글) git 불안해서 못쓰겟음니다 -.-;</p>
 </blockquote>
+<p><a href="https://www.codentalks.com/t/topic/2973">https://www.codentalks.com/t/topic/2973</a></p>
 <p>찾다가 나온 유머글 ㅎㅎ. <a href="https://www.codentalks.com/uploads/default/original/2X/9/98fa43031c7cfbf44c714ad5819ea504ef37e70c.jpg">덧글에 있는 만화</a>처럼
 걱정, 우려만 해서는 안되겠다.</p>
-<h4 id="httpszariskiwordpresscom20170225sha-1-ecb6a9eb8f8c" style="position:relative;"><a href="#httpszariskiwordpresscom20170225sha-1-ecb6a9eb8f8c" aria-label="httpszariskiwordpresscom20170225sha 1 ecb6a9eb8f8c permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/">https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/</a></h4>
+<h4 id="sha1-층돌-설명" style="position:relative;"><a href="#sha1-%EC%B8%B5%EB%8F%8C-%EC%84%A4%EB%AA%85" aria-label="sha1 층돌 설명 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sha1 층돌 설명</h4>
+<p>여기도 사이트가 사라졌다 :-|</p>
 <p>sha1 충돌 이슈에 설명. 해시에 대한 기초 설명, 구글이 sha-1 충돌 재현에 대한 주변 설명.</p>
-<h4 id="httpswwwmathstatdalcaselingermd5collision" style="position:relative;"><a href="#httpswwwmathstatdalcaselingermd5collision" aria-label="httpswwwmathstatdalcaselingermd5collision permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.mathstat.dal.ca/~selinger/md5collision">https://www.mathstat.dal.ca/~selinger/md5collision</a></h4>
-<p>이 글엔 실제로 다른 파일인데 같은 MD5 sum을 가진 예제를 제공한다.
-근데 다운받아보면 실행도 안되고, 바이너리지만 열어보면 내용도 같아 보이는데.. 심지어 파일 크기도 같다 :(</p>
+<p><a href="https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/">https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/</a></p>
+<h4 id="md5-충돌-예제" style="position:relative;"><a href="#md5-%EC%B6%A9%EB%8F%8C-%EC%98%88%EC%A0%9C" aria-label="md5 충돌 예제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>md5 충돌 예제</h4>
+<p>여기 예제 사이트에서는 다른 파일인데 같은 MD5 sum을 가진 예제를 제공한다.
+근데 다운받아보면 실행도 안되고, 바이너리지만 열어보면 내용도 같아 보이는데.. 심지어 파일 크기도 같다. 제대로 된 예제가 맞나?</p>
+<p><a href="https://www.mathstat.dal.ca/~selinger/md5collision">https://www.mathstat.dal.ca/~selinger/md5collision</a></p>
 <h2 id="git-rebase--i" style="position:relative;"><a href="#git-rebase--i" aria-label="git rebase  i permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">git rebase -i</code></h2>
 <p><a href="https://meetup.toast.com/posts/39">https://meetup.toast.com/posts/39</a></p>
 <p>여러개의 커밋을 묶는데, <code class="language-text">git reset HEAD~#</code> 후 다시 커밋을 생성하는 방법도 있지만,
