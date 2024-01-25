@@ -73,6 +73,20 @@ INFO[0000] mem: 8GiB
 INFO[0000] disk: 60GiB
 ```
 
+#### 바인딩한 포트로 컨테이너의 네트워크 접근이 안되는 문제
+
+`docker ps`로 포트 바인딩을 확인되는데도, `localhost:포트`로 액세스할 수 없는 경우가 종종 발생한다.
+
+docker-desktop 등 다른 도구에서는 그런적이 없었던 거 같은데, colima 사용하면서, 재시작하지 않고 오래 사용하면 발생하는 거 같기도 하다.
+
+어쨌든 `colima stop`으로 중지하고 다시 `colima start`로 재시작하면 해결되었다. `colima restart`도 아마 될 듯.
+
+[Colima 이슈](https://github.com/abiosoft/colima/issues/71#issuecomment-1048749674)에 비슷한 내용으로 등록된 것도 있는데,
+내 경우는 colima를 시작하지 얼마 안된 경우에는 발생하지 않았다는 점에서 좀 다르다. 이슈어는 방금 시작한 후 포트가 활성화되지 않았다고 한다.\
+리액션이 가장 많은 답변은 `docker.sock`이 오래된 파일을 가르키고 있어서 발생했고, symlink를 새로 만들어서 해결했다고 한다.
+
+> Solved it by removing the old symlink and then sudo ln -s /Users/$USER/.colima/docker.sock /var/run/docker.sock.
+
 ### OSX 에서 수동으로 Docker 환경 구성하기
 
 **docker desktop 또는 rancher desktop이 나와서 이 방법은 비추천.**
