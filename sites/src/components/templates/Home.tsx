@@ -51,6 +51,6 @@ export type WikiItem = {
   path: string;
   title: string;
   head: string;
-  modified?: Date;
+  created?: Date;
 }
 
