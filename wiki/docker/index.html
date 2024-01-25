@@ -82,10 +82,21 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li>
 <p><a href="#docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0">Docker 환경 구성하기</a></p>
 <ul>
-<li><a href="#docker-desktop">Docker Desktop</a></li>
-<li><a href="#rancher-desktop">Rancher Desktop</a></li>
-<li><a href="#colima">Colima</a></li>
-<li><a href="#osx-%EC%97%90%EC%84%9C-%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0">OSX 에서 수동으로 Docker 환경 구성하기</a></li>
+<li>
+<p><a href="#docker-desktop">Docker Desktop</a></p>
+</li>
+<li>
+<p><a href="#rancher-desktop">Rancher Desktop</a></p>
+</li>
+<li>
+<p><a href="#colima">Colima</a></p>
+<ul>
+<li><a href="#%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%9C-%ED%8F%AC%ED%8A%B8%EB%A1%9C-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%9D%98-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%A0%91%EA%B7%BC%EC%9D%B4-%EC%95%88%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C">바인딩한 포트로 컨테이너의 네트워크 접근이 안되는 문제</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#osx-%EC%97%90%EC%84%9C-%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0">OSX 에서 수동으로 Docker 환경 구성하기</a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -168,6 +179,16 @@ INFO<span class="token punctuation">[</span>0000<span class="token punctuation">
 INFO<span class="token punctuation">[</span>0000<span class="token punctuation">]</span> cpu: <span class="token number">2</span>
 INFO<span class="token punctuation">[</span>0000<span class="token punctuation">]</span> mem: 8GiB
 INFO<span class="token punctuation">[</span>0000<span class="token punctuation">]</span> disk: 60GiB</code></pre></div>
+<h4 id="바인딩한-포트로-컨테이너의-네트워크-접근이-안되는-문제" style="position:relative;"><a href="#%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%9C-%ED%8F%AC%ED%8A%B8%EB%A1%9C-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%9D%98-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%A0%91%EA%B7%BC%EC%9D%B4-%EC%95%88%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="바인딩한 포트로 컨테이너의 네트워크 접근이 안되는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>바인딩한 포트로 컨테이너의 네트워크 접근이 안되는 문제</h4>
+<p><code class="language-text">docker ps</code>로 포트 바인딩을 확인되는데도, <code class="language-text">localhost:포트</code>로 액세스할 수 없는 경우가 종종 발생한다.</p>
+<p>docker-desktop 등 다른 도구에서는 그런적이 없었던 거 같은데, colima 사용하면서, 재시작하지 않고 오래 사용하면 발생하는 거 같기도 하다.</p>
+<p>어쨌든 <code class="language-text">colima stop</code>으로 중지하고 다시 <code class="language-text">colima start</code>로 재시작하면 해결되었다. <code class="language-text">colima restart</code>도 아마 될 듯.</p>
+<p><a href="https://github.com/abiosoft/colima/issues/71#issuecomment-1048749674">Colima 이슈</a>에 비슷한 내용으로 등록된 것도 있는데,
+내 경우는 colima를 시작하지 얼마 안된 경우에는 발생하지 않았다는 점에서 좀 다르다. 이슈어는 방금 시작한 후 포트가 활성화되지 않았다고 한다.<br>
+리액션이 가장 많은 답변은 <code class="language-text">docker.sock</code>이 오래된 파일을 가르키고 있어서 발생했고, symlink를 새로 만들어서 해결했다고 한다.</p>
+<blockquote>
+<p>Solved it by removing the old symlink and then sudo ln -s /Users/$USER/.colima/docker.sock /var/run/docker.sock.</p>
+</blockquote>
 <h3 id="osx-에서-수동으로-docker-환경-구성하기" style="position:relative;"><a href="#osx-%EC%97%90%EC%84%9C-%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C-docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="osx 에서 수동으로 docker 환경 구성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OSX 에서 수동으로 Docker 환경 구성하기</h3>
 <p><strong>docker desktop 또는 rancher desktop이 나와서 이 방법은 비추천.</strong></p>
 <p><strong>1. Homebrew로 Docker와 Docker-machine 설치</strong></p>
