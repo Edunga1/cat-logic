@@ -8,8 +8,8 @@ import Home, { WikiItem } from "../components/templates/Home"
 export default function IndexPage(
   { data }: PageProps<Queries.IndexPageQuery>,
 ) {
-  const files = parseWikiItems(data.allFile.nodes)
-  const [items, setItems] = React.useState(files)
+  const allItems = parseWikiItems(data.allFile.nodes)
+  const [items, setItems] = React.useState(allItems)
   const [query, setQuery] = React.useState("")
   const result = useGatsbyPluginFusejs(query, data.fusejs)
 
@@ -17,7 +17,7 @@ export default function IndexPage(
     if (query) {
       setItems(mapSearchResultToWikiItem(result))
     } else {
-      setItems(files)
+      setItems(allItems)
     }
   }, [query])
 
@@ -39,9 +39,6 @@ export const pageQuery = graphql`
       # wiki list
       nodes {
         name
-        fields {
-          gitLogLatestDate
-        }
         childMarkdownRemark {
           headings(depth: h1) {
             value
@@ -81,15 +78,18 @@ function mapSearchResultToWikiItem(result: SearchResult[]): WikiItem[] {
 function parseWikiItems(nodes: Queries.IndexPageQuery["allFile"]["nodes"]): WikiItem[] {
   return nodes
     .concat()
-    .map(({ fields, childMarkdownRemark }) => ({
+    .sort((a, b) => {
+      const aCreated = a.childMarkdownRemark?.frontmatter?.created
+        ? new Date(a.childMarkdownRemark.frontmatter.created).getTime()
+        : 0
+      const bCreated = b.childMarkdownRemark?.frontmatter?.created
+        ? new Date(b.childMarkdownRemark.frontmatter.created).getTime()
+        : 0
+      return bCreated - aCreated
+    })
+    .map(({ childMarkdownRemark }) => ({
       path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),
       title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
       head: childMarkdownRemark?.fields?.head ?? "",
-      modified: fields?.gitLogLatestDate ? new Date(fields.gitLogLatestDate) : undefined,
     }))
-    .sort((a, b) => {
-      const aCreated = a.modified?.getTime() ?? 0
-      const bCreated = b.modified?.getTime() ?? 0
-      return bCreated - aCreated
-    })
 }

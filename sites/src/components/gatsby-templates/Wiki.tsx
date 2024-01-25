@@ -11,6 +11,7 @@ const relatedLinkStyle = {
 export default function BlogPostTemplate(
   { data }: PageProps<Queries.WikiDetailQuery>,
 ) {
+  // TODO: implement git log latest date
   const {
     tableOfContents,
     html,
@@ -46,6 +47,13 @@ export const pageQuery = graphql`
       }
       tableOfContents
       html
+      children {
+        ... on File {
+          fields {
+            gitLogLatestDate
+          }
+        }
+      }
     }
   }
 `
@@ -70,4 +78,4 @@ function extractRelatedDocs(data: Queries.WikiDetailQuery) {
     .filter(x => x.similarity < 1)
     .sort((a, b) => b.similarity - a.similarity)
     .slice(0, 5)
-}
+} 
