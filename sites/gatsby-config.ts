@@ -4,6 +4,7 @@ const config: GatsbyConfig = {
   pathPrefix: process.env.GATSBY_PATH_PREFIX || "/",
   siteMetadata: {
     title: "cat logic",
+    siteUrl: process.env.GATSBY_SITE_URL || "https://edunga1.github.io/cat-logic",
   },
   graphqlTypegen: true,
   plugins: [
@@ -69,10 +70,6 @@ const config: GatsbyConfig = {
     // development
     "gatsby-plugin-pnpm",
   ],
-}
-
-if (config.siteMetadata && process.env.GATSBY_SITE_URL) {
-  config.siteMetadata.siteUrl = process.env.GATSBY_SITE_URL
 }
 
 export default config
