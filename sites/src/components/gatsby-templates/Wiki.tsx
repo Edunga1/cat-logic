@@ -70,4 +70,4 @@ function extractRelatedDocs(data: Queries.WikiDetailQuery) {
     .filter(x => x.similarity < 1)
     .sort((a, b) => b.similarity - a.similarity)
     .slice(0, 5)
-} 
+}
