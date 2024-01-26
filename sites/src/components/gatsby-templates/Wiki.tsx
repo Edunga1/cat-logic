@@ -11,7 +11,6 @@ const relatedLinkStyle = {
 export default function BlogPostTemplate(
   { data }: PageProps<Queries.WikiDetailQuery>,
 ) {
-  // TODO: implement git log latest date
   const {
     tableOfContents,
     html,
@@ -35,7 +34,7 @@ export default function BlogPostTemplate(
 
 export const pageQuery = graphql`
   query WikiDetail($id: String!) {
-    markdownRemark(id: {eq: $id}) {
+    markdownRemark(id: { eq: $id }) {
       headings(depth: h1) {
         value
       }
@@ -47,13 +46,6 @@ export const pageQuery = graphql`
       }
       tableOfContents
       html
-      children {
-        ... on File {
-          fields {
-            gitLogLatestDate
-          }
-        }
-      }
     }
   }
 `
