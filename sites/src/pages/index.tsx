@@ -78,18 +78,15 @@ function mapSearchResultToWikiItem(result: SearchResult[]): WikiItem[] {
 function parseWikiItems(nodes: Queries.IndexPageQuery["allFile"]["nodes"]): WikiItem[] {
   return nodes
     .concat()
-    .sort((a, b) => {
-      const aCreated = a.childMarkdownRemark?.frontmatter?.created
-        ? new Date(a.childMarkdownRemark.frontmatter.created).getTime()
-        : 0
-      const bCreated = b.childMarkdownRemark?.frontmatter?.created
-        ? new Date(b.childMarkdownRemark.frontmatter.created).getTime()
-        : 0
-      return bCreated - aCreated
-    })
     .map(({ childMarkdownRemark }) => ({
       path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),
       title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
       head: childMarkdownRemark?.fields?.head ?? "",
+      created: childMarkdownRemark?.frontmatter?.created ? new Date(childMarkdownRemark.frontmatter.created) : undefined,
     }))
+    .sort((a, b) => {
+      const aCreated = a.created?.getTime() ?? 0
+      const bCreated = b.created?.getTime() ?? 0
+      return bCreated - aCreated
+    })
 }
