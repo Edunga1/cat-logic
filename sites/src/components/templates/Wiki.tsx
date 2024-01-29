@@ -70,7 +70,7 @@ export default function Wiki(
     <RelatedLinksHeader>Related Links</RelatedLinksHeader>
     <RelatedLinks>{relatedItems}</RelatedLinks>
   </div>
-  const containerEmptyRelatedLinks = <ContainerEmptyLinks>No related links were calculated :\</ContainerEmptyLinks>
+  const containerEmptyRelatedLinks = <ContainerEmptyLinks>No related links were calculated :(</ContainerEmptyLinks>
   return (
     <Container>
       <Side>

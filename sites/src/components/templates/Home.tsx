@@ -33,7 +33,7 @@ const Counter = styled.div`
 `
 
 export default function Home(
-  { items, setQuery }: { items: WikiItem[]; setQuery: (arg0: string) => void },
+  { items, setQuery }: { items: Wiki[]; setQuery: (arg0: string) => void },
 ) {
   return (
     <Container>
@@ -47,7 +47,7 @@ export default function Home(
   )
 }
 
-export type WikiItem = {
+export type Wiki = {
   path: string;
   title: string;
   head: string;

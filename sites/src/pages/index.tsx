@@ -3,7 +3,7 @@ import { graphql, HeadFC, PageProps } from "gatsby"
 import "./global.css"
 import { createWikiLink } from "../utils/wiki"
 import { useGatsbyPluginFusejs } from "react-use-fusejs"
-import Home, { WikiItem } from "../components/templates/Home"
+import Home, { Wiki } from "../components/templates/Home"
 
 export default function IndexPage(
   { data }: PageProps<Queries.IndexPageQuery>,
@@ -66,7 +66,7 @@ interface SearchResult {
   refIndex: number
 }
 
-function mapSearchResultToWikiItem(result: SearchResult[]): WikiItem[] {
+function mapSearchResultToWikiItem(result: SearchResult[]): Wiki[] {
   return result
     .map(it => ({
       path: createWikiLink(it.item.name),
@@ -75,7 +75,7 @@ function mapSearchResultToWikiItem(result: SearchResult[]): WikiItem[] {
     }))
 }
 
-function parseWikiItems(nodes: Queries.IndexPageQuery["allFile"]["nodes"]): WikiItem[] {
+function parseWikiItems(nodes: Queries.IndexPageQuery["allFile"]["nodes"]): Wiki[] {
   return nodes
     .concat()
     .map(({ childMarkdownRemark }) => ({
