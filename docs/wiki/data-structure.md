@@ -1,3 +1,6 @@
+---
+created: 2016-10-19
+---
 # 자료구조
 
 ## Associative Array와 Hash Table
