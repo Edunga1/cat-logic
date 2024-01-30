@@ -66,8 +66,6 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-robots-txt",
-    // development
-    "gatsby-plugin-pnpm",
   ],
 }
 

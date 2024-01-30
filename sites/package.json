@@ -7,16 +7,14 @@
   "keywords": [
     "gatsby"
   ],
-  "packageManager": "pnpm@8.10.2",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "publish": "pnpm build && gh-pages -d public"
+    "publish": "npm build && gh-pages -d public"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
@@ -49,7 +47,6 @@
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
-    "gatsby-plugin-pnpm": "^1.2.10",
     "typescript": "^4.9.5"
   }
 }
