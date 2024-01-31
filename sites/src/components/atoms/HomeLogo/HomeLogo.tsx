@@ -10,10 +10,16 @@ const Container = styled.div`
   text-shadow: 1px 1px 2px pink;
 `
 
+const LogoFrame = styled.iframe`
+  border: none;
+  width: 100%;
+  height: 100px;
+`
+
 export default function HomeLogo() {
   return (
     <Container>
-      CAT LOGIC
+      <LogoFrame src="https://edunga1.github.io/canvas-floating-alphabet/?w=CAT%20LOGIC"/>
     </Container>
   )
 }
