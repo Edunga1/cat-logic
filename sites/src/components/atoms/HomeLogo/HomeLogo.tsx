@@ -17,6 +17,7 @@ const LogoFrame = styled.iframe`
 `
 
 export default function HomeLogo() {
+  // TODO: need to check if the iframe is valid
   return (
     <Container>
       <LogoFrame src="https://edunga1.github.io/canvas-floating-alphabet/?w=CAT%20LOGIC"/>
