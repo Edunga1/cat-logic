@@ -4,7 +4,7 @@ import device from "../../constants/device"
 import theme from "../../constants/theme"
 import HomeLogo from "../atoms/HomeLogo/HomeLogo"
 import SearchBox from "../molecules/SearchBox"
-import WikiList from "../molecules/WikiList"
+import WikiCatalog from "../molecules/WikiCatalog"
 
 const Container = styled.div`
   padding-top: 10%;
@@ -22,8 +22,10 @@ const Container = styled.div`
 `
 
 const MainContainer = styled.div`
-  width: fit-content;
+  width: 100%;
+  max-width: 40rem;
   margin: 0 auto;
+  padding: 0 1rem;
   display: grid;
 `
 
@@ -37,11 +39,11 @@ export default function Home(
 ) {
   return (
     <Container>
-      <HomeLogo />
       <MainContainer>
+        <HomeLogo />
         <SearchBox onChange={setQuery} holder="I guess..." />
         <Counter>{items.length} docs</Counter>
-        <WikiList items={items} fallback="No results found :(" />
+        <WikiCatalog items={items} fallback="No results found :(" />
       </MainContainer>
     </Container>
   )

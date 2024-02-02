@@ -3,17 +3,14 @@ import styled from "styled-components"
 
 const Container = styled.div`
   height: 20rem;
-  display: grid;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  user-select: none;
-  text-shadow: 1px 1px 2px pink;
 `
 
 const LogoFrame = styled.iframe`
   border: none;
   width: 100%;
-  height: 100px;
+  height: 7rem;
 `
 
 export default function HomeLogo() {

@@ -13,7 +13,6 @@ const Container = styled.div`
 const List = styled.ul`
   margin: 0;
   padding: 0;
-  width: 600px;
 
   > * {
     padding: .3rem 0;
