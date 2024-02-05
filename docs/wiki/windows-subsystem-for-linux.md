@@ -45,27 +45,6 @@ endif
 
 ref. https://github.com/Edunga1/dotfiles/blob/master/vim/vim-include/_wsl.vim
 
-## http 관련 명령어가 동작하지 않는 문제
-
-`curl` `wget` `docker pull`  `npm install` 등 명령어가 일체 먹히지 않는다.
-`git` 등 간접적으로 http를 사용하는 명렁어도 동작하지 않는다.
-
-https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021
-
-1. `/etc/wsl.conf` 파일을 만들고 아래 내용을 추가한다.
-
-```conf
-[network]
-generateResolvConf = false
-```
-
-2. window에서 `wsl --shutdown` 실행하고 다시 wsl을 실행한다.
-3. `/etc/resolv.conf` 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.
-
-```conf
-nameserver 8.8.8.8
-```
-
 ## Ubuntu 버전 업그레이드
 
 18.04 -> 20.04로 업그레이드했다. 이슈가 하나 있었는데, WSL 보다는 ubuntu 이슈라 봐도 될 듯.
@@ -104,3 +83,33 @@ You have not rebooted after updating a package which requires a reboot. Please r
 ```
 
 업그레이드 후에는 리붓 해야한다... :(
+
+## 문제점
+
+[MacOS](./mac-os.md)와 다르게 문제점들이 좀 있다.
+[Jetbrains IDE](./jetbrains.md)가 WSL 경로에서 프로젝트를 실행을 잘 지원하지 못한다거나
+WSL 내 git 바이너리가 윈도우 마운트 경로(`/mnt/c/...`로 접근한다)에서 느린 문제 등 매끄럽지 못한 부분이 있다.
+
+운영체제 지식이 부족해서 정확한 원인을 알기 어렵다.
+특히 윈도우와 리눅스 두 환경을 고려해야 하다보니 관련된 정보를 찾기가 어렵다.
+
+### http 관련 명령어가 동작하지 않는 문제
+
+`curl` `wget` `docker pull`  `npm install` 등 명령어가 일체 먹히지 않는다.
+`git` 등 간접적으로 http를 사용하는 명렁어도 동작하지 않는다.
+
+https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021
+
+1. `/etc/wsl.conf` 파일을 만들고 아래 내용을 추가한다.
+
+```conf
+[network]
+generateResolvConf = false
+```
+
+2. window에서 `wsl --shutdown` 실행하고 다시 wsl을 실행한다.
+3. `/etc/resolv.conf` 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.
+
+```conf
+nameserver 8.8.8.8
+```
