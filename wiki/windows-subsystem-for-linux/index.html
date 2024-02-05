@@ -86,10 +86,14 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#http-%EA%B4%80%EB%A0%A8-%EB%AA%85%EB%A0%B9%EC%96%B4%EA%B0%80-%EB%8F%99%EC%9E%91%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C">http 관련 명령어가 동작하지 않는 문제</a></p>
+<p><a href="#ubuntu-%EB%B2%84%EC%A0%84-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C">Ubuntu 버전 업그레이드</a></p>
 </li>
 <li>
-<p><a href="#ubuntu-%EB%B2%84%EC%A0%84-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C">Ubuntu 버전 업그레이드</a></p>
+<p><a href="#%EB%AC%B8%EC%A0%9C%EC%A0%90">문제점</a></p>
+<ul>
+<li><a href="#http-%EA%B4%80%EB%A0%A8-%EB%AA%85%EB%A0%B9%EC%96%B4%EA%B0%80-%EB%8F%99%EC%9E%91%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C">http 관련 명령어가 동작하지 않는 문제</a></li>
+<li><a href="#%ED%81%B4%EB%A6%BD%EB%B3%B4%EB%93%9C%EB%A5%BC-%EC%9D%BD%EC%96%B4%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%A8">클립보드를 읽어서 이미지를 생성할 수 없는 문제(해결하지 못함)</a></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -125,20 +129,6 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
   <span class="token keyword">finish</span>
 <span class="token keyword">endif</span></code></pre></div>
 <p>ref. <a href="https://github.com/Edunga1/dotfiles/blob/master/vim/vim-include/_wsl.vim">https://github.com/Edunga1/dotfiles/blob/master/vim/vim-include/_wsl.vim</a></p>
-<h2 id="http-관련-명령어가-동작하지-않는-문제" style="position:relative;"><a href="#http-%EA%B4%80%EB%A0%A8-%EB%AA%85%EB%A0%B9%EC%96%B4%EA%B0%80-%EB%8F%99%EC%9E%91%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="http 관련 명령어가 동작하지 않는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>http 관련 명령어가 동작하지 않는 문제</h2>
-<p><code class="language-text">curl</code> <code class="language-text">wget</code> <code class="language-text">docker pull</code>  <code class="language-text">npm install</code> 등 명령어가 일체 먹히지 않는다.
-<code class="language-text">git</code> 등 간접적으로 http를 사용하는 명렁어도 동작하지 않는다.</p>
-<p><a href="https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021">https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021</a></p>
-<ol>
-<li><code class="language-text">/etc/wsl.conf</code> 파일을 만들고 아래 내용을 추가한다.</li>
-</ol>
-<div class="gatsby-highlight" data-language="conf"><pre class="language-conf"><code class="language-conf">[network]
-generateResolvConf = false</code></pre></div>
-<ol start="2">
-<li>window에서 <code class="language-text">wsl --shutdown</code> 실행하고 다시 wsl을 실행한다.</li>
-<li><code class="language-text">/etc/resolv.conf</code> 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.</li>
-</ol>
-<div class="gatsby-highlight" data-language="conf"><pre class="language-conf"><code class="language-conf">nameserver 8.8.8.8</code></pre></div>
 <h2 id="ubuntu-버전-업그레이드" style="position:relative;"><a href="#ubuntu-%EB%B2%84%EC%A0%84-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C" aria-label="ubuntu 버전 업그레이드 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ubuntu 버전 업그레이드</h2>
 <p>18.04 -> 20.04로 업그레이드했다. 이슈가 하나 있었는데, WSL 보다는 ubuntu 이슈라 봐도 될 듯.</p>
 <p>업그레이드를 위해선 <code class="language-text">sudo do-release-upgrade -d</code> 명령어만 입력하면 되는데..</p>
@@ -162,7 +152,49 @@ generateResolvConf = false</code></pre></div>
 <p>이제 <code class="language-text">sudo do-release-upgrade -d</code> 하면 되는데..</p>
 <div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token class-name">Checking</span> <span class="token keyword">for</span> a new <span class="token class-name">Ubuntu</span> release
 <span class="token class-name">You</span> have not rebooted after updating a package which requires a reboot<span class="token punctuation">.</span> <span class="token class-name">Please</span> reboot before upgrading<span class="token punctuation">.</span></code></pre></div>
-<p>업그레이드 후에는 리붓 해야한다... :(</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/windows-subsystem-for-linux/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>업그레이드 후에는 리붓 해야한다... :(</p>
+<h2 id="문제점" style="position:relative;"><a href="#%EB%AC%B8%EC%A0%9C%EC%A0%90" aria-label="문제점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>문제점</h2>
+<p><a href="../mac-os">MacOS</a>와 다르게 문제점들이 좀 있다.
+<a href="../jetbrains">Jetbrains IDE</a>가 WSL 경로에서 프로젝트를 실행을 잘 지원하지 못한다거나
+WSL 내 git 바이너리가 윈도우 마운트 경로(<code class="language-text">/mnt/c/...</code>로 접근한다)에서 느린 문제 등 매끄럽지 못한 부분이 있다.</p>
+<p>운영체제 지식이 부족해서 정확한 원인을 알기 어렵다.
+특히 윈도우와 리눅스 두 환경을 고려해야 하다보니 관련된 정보를 찾기가 어렵다.</p>
+<h3 id="http-관련-명령어가-동작하지-않는-문제" style="position:relative;"><a href="#http-%EA%B4%80%EB%A0%A8-%EB%AA%85%EB%A0%B9%EC%96%B4%EA%B0%80-%EB%8F%99%EC%9E%91%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="http 관련 명령어가 동작하지 않는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>http 관련 명령어가 동작하지 않는 문제</h3>
+<p><code class="language-text">curl</code> <code class="language-text">wget</code> <code class="language-text">docker pull</code>  <code class="language-text">npm install</code> 등 명령어가 일체 먹히지 않는다.
+<code class="language-text">git</code> 등 간접적으로 http를 사용하는 명렁어도 동작하지 않는다.</p>
+<p><a href="https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021">https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021</a></p>
+<ol>
+<li><code class="language-text">/etc/wsl.conf</code> 파일을 만들고 아래 내용을 추가한다.</li>
+</ol>
+<div class="gatsby-highlight" data-language="conf"><pre class="language-conf"><code class="language-conf">[network]
+generateResolvConf = false</code></pre></div>
+<ol start="2">
+<li>window에서 <code class="language-text">wsl --shutdown</code> 실행하고 다시 wsl을 실행한다.</li>
+<li><code class="language-text">/etc/resolv.conf</code> 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.</li>
+</ol>
+<div class="gatsby-highlight" data-language="conf"><pre class="language-conf"><code class="language-conf">nameserver 8.8.8.8</code></pre></div>
+<h3 id="클립보드를-읽어서-이미지를-생성할-수-없는-문제해결하지-못함" style="position:relative;"><a href="#%ED%81%B4%EB%A6%BD%EB%B3%B4%EB%93%9C%EB%A5%BC-%EC%9D%BD%EC%96%B4%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%A8" aria-label="클립보드를 읽어서 이미지를 생성할 수 없는 문제해결하지 못함 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>클립보드를 읽어서 이미지를 생성할 수 없는 문제(해결하지 못함)</h3>
+<p><code class="language-text">xclip</code> 명령어로 클립보드를 읽어서 파일로 저장할 수 있다. 하지만 WSL에서는 그게 안된다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ xclip <span class="token parameter variable">-selection</span> clipboard <span class="token parameter variable">-t</span> image/png <span class="token parameter variable">-out</span> <span class="token operator">></span> <span class="token string">"image.png"</span>
+Error: target image/png not available</code></pre></div>
+<p>원인은 클립보드와 관련되어 있는 것 같다.
+개인용 지식 관리 도구인 <a href="https://github.com/dendronhq/dendron/issues/2310">Dendron이라는 저장소의 이슈</a>에서 같은 문제를 겪은 사람이 있었다.</p>
+<blockquote>
+<p>Then, when I tried to paste the image, it said no image on clipboard. That is because the image is on my windows clipboard, not in the ubuntu instance.</p>
+</blockquote>
+<p>ubuntu의 클립보드에는 이미지가 없기 때문이라고 한다.</p>
+<p>이건 알려진 문제점이다. 클립보드가 공유되지 않기 때문에 WSL에서는 powershell을 통해서 읽어야 한다:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ powershell.exe Get-Clipboard
+hello world</code></pre></div>
+<p>powershell 클립보드 접근을 통해서 이미지를 만드는 몇가지 예제를 찾았지만, 동작하지는 않았다:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ powershell.exe <span class="token parameter variable">-Command</span> <span class="token string">"(Get-Clipboard -Format image).Save('foo.png')"</span></code></pre></div>
+<p>ChatGPT에도 물어봤는데, 다음과 같이 말한다:</p>
+<blockquote>
+<p>WSL(Windows Subsystem for Linux)에서 윈도우의 클립보드에 복사된 이미지를 파일로 생성하려면 몇 가지 단계를 따라야 합니다.</p>
+<p>먼저, 복사된 이미지 데이터를 얻으려면 PowerShell의 Get-Clipboard 명령을 사용할 수 있습니다. 그러나 이 명령은 텍스트 데이터만 WSL로 전달할 수 있으므로, 이미지 데이터를 먼저 Base64로 인코딩해야 합니다.
+... 생략</p>
+</blockquote>
+<p>C# 스크립트를 작성하고, powershell을 통해서 실행하는 절차를 설명하는데, 복잡한 방법이라 판단해서 보류했다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/windows-subsystem-for-linux/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
