@@ -113,3 +113,41 @@ generateResolvConf = false
 ```conf
 nameserver 8.8.8.8
 ```
+
+### 클립보드를 읽어서 이미지를 생성할 수 없는 문제(해결하지 못함)
+
+`xclip` 명령어로 클립보드를 읽어서 파일로 저장할 수 있다. 하지만 WSL에서는 그게 안된다.
+
+```bash
+$ xclip -selection clipboard -t image/png -out > "image.png"
+Error: target image/png not available
+```
+
+원인은 클립보드와 관련되어 있는 것 같다.
+개인용 지식 관리 도구인 [Dendron이라는 저장소의 이슈](https://github.com/dendronhq/dendron/issues/2310)에서 같은 문제를 겪은 사람이 있었다.
+
+> Then, when I tried to paste the image, it said no image on clipboard. That is because the image is on my windows clipboard, not in the ubuntu instance.
+
+ubuntu의 클립보드에는 이미지가 없기 때문이라고 한다.
+
+이건 알려진 문제점이다. 클립보드가 공유되지 않기 때문에 WSL에서는 powershell을 통해서 읽어야 한다:
+
+```bash
+$ powershell.exe Get-Clipboard
+hello world
+```
+
+powershell 클립보드 접근을 통해서 이미지를 만드는 몇가지 예제를 찾았지만, 동작하지는 않았다:
+
+```bash
+$ powershell.exe -Command "(Get-Clipboard -Format image).Save('foo.png')"
+```
+
+ChatGPT에도 물어봤는데, 다음과 같이 말한다:
+
+> WSL(Windows Subsystem for Linux)에서 윈도우의 클립보드에 복사된 이미지를 파일로 생성하려면 몇 가지 단계를 따라야 합니다.
+>
+> 먼저, 복사된 이미지 데이터를 얻으려면 PowerShell의 Get-Clipboard 명령을 사용할 수 있습니다. 그러나 이 명령은 텍스트 데이터만 WSL로 전달할 수 있으므로, 이미지 데이터를 먼저 Base64로 인코딩해야 합니다.
+> ... 생략
+
+C# 스크립트를 작성하고, powershell을 통해서 실행하는 절차를 설명하는데, 복잡한 방법이라 판단해서 보류했다.
