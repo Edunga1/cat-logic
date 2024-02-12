@@ -115,3 +115,28 @@ URL은 `.html` 등의 확장자, query string, path 등으로 구성되는데 �
 문서 제목을 Slug로 사용한다면 비-영문자와 공백과 특수문자 등을 어떻게 처리할 지 고민해야 한다.\
 [gatsby](./gatsbyjs.md)는 자체적으로 Slug를 제공하고 커스텀할 수 있다.
 하지만 Slug가 생성되는 부분이 한 두 군데가 아니므로 모두  찾아서 처리하지 않으면 제대로 동작하지 않는 링크가 생길 수 있다.
+
+## Bookmarklet
+
+북마크의 URL 대신 자바스크립트 코드를 저장하면 현재 페이지에서 실행할 수 있다.
+
+크롬 기준으로 아무 페이지나 북마크로 저장하고, 북마크 편집으로 위 코드를 URL 대신 붙여넣으면 저장할 수 있다.
+
+https://en.wikipedia.org/wiki/Bookmarklet
+
+다음은 위키백과에서 제공하는 예시 코드인데, 선택한 텍스트를 위키 백과에서 검색하는 Bookmarklet이다.
+
+```js
+javascript:(function(document) {
+function se(d) {
+    return d.selection ? d.selection.createRange(1).text : d.getSelection(1);
+};
+let d = se(document);
+for (i=0; i<frames.length && (d==document || d=='document'); i++) d = se(frames[i].document);
+if (d=='document') d = prompt('Enter%20search%20terms%20for%20Wikipedia','');
+open('https://en.wikipedia.org' + (d ? '/w/index.php?title=Special:Search&search=' + encodeURIComponent(d) : '')).focus();
+})(document);
+```
+
+간단한 확장 프로그램처럼 사용하기 유용하다.
+위 코드만으로도 사전 검색을 한다거나 검색 결과를 열거나 등 응용 가능하다.
