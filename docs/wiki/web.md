@@ -140,3 +140,11 @@ open('https://en.wikipedia.org' + (d ? '/w/index.php?title=Special:Search&search
 
 간단한 확장 프로그램처럼 사용하기 유용하다.
 위 코드만으로도 사전 검색을 한다거나 검색 결과를 열거나 등 응용 가능하다.
+
+예를들어 다음은 선택한 텍스트를 다음 사전으로 검색한다:
+
+```js
+javascript:(function(document) {function se(d) {    return d.selection ? d.selection.createRange(1).text : d.getSelection(1);};let d = se(document);for (i=0; i<frames.length && (d==document || d==%27document%27); i++) d = se(frames[i].document);if (d==%27document%27) d = prompt(%27Enter search terms for Dictionary%27,%27%27);open(%27https://dic.daum.net/%27 + (d ? %27/search.do?q=%27 + encodeURIComponent(d) : %27%27)).focus();})(document);
+```
+
+북마크 저장하면서 코드가 인코딩 되었다.
