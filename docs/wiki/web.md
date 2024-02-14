@@ -148,3 +148,49 @@ javascript:(function(document) {function se(d) {    return d.selection ? d.selec
 ```
 
 북마크 저장하면서 코드가 인코딩 되었다.
+
+## 로컬 파일을 서빙하는 간단한 웹 서버 띄우기
+
+아주 간단한 방법은 `SimpleHTTPServer` 또는 `live-server`를 사용하는 것이다.
+
+[python](./python.md) 또는 [node.js](./nodejs.md) 둘 중 하나는 왠만하면 설치되어 있을 것이므로 접근성이 좋다.
+
+### `SimpleHTTPServer` 또는 `live-server`
+
+일반적으로 알려진 방법은 python의 `SimpleHTTPServer` 모듈을 사용하는 것이다.
+
+```sh
+python -m SimpleHTTPServer
+```
+
+node.js로 만들어진 hot-reload 기능을 제공하는 `live-server`를 사용할 수도 있다.
+
+```sh
+$ npm install -g live-server
+$ live-server
+```
+
+### Throttling 기능이 있는 웹 서버
+
+서버의 지연 사항을 시뮬레이션 필요성이 있는 경우가 있다.
+chrome 개발자 도구에서 네트워크 탭에서는 throttling 기능을 제공한다.
+하지만 이 방법은 모든 네트워크 요청에 대해 적용되므로 특정 포트에 대해서만 적용할 수 없다.
+
+StackOverflow 질문에서 이에 대한 답변을 찾을 수 있었다:\
+https://stackoverflow.com/q/13654663
+
+
+질문자 본인이 `lighttpd`로 특별한 설정 없이 해결했다고 한다.
+
+덧글에서 이 방법을 docker 이미지로 만들어서 제공해서 사용하기 쉽게 만들었다:\
+https://hub.docker.com/r/pbertera/lighttpd-throttle
+
+```sh
+docker run -it -p 8080:8080 \
+  -e LIGHTTPD_PORT=8080 \
+  -e LIGHTTPD_THROTTLE=100 \
+  -v $(pwd):/var/www \
+  pbertera/lighttpd-throttle
+```
+
+현재 경로의 파일을 volume으로 연결하고, `8080` 포트로 서빙하며, `100` kb 대역폭으로 제한한다.
