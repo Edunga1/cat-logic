@@ -271,6 +271,22 @@ CREATE TABLE jemp (
 
 `CAST(foo as char)` 명시적으로 타입 캐스팅을 통해 통일하여 해결했다.
 
+## Redshift
+
+MySQL과 다르게, group by로 aggregation 시 aggregation function을 사용하지 않는 컬럼을 select에 포함할 수 없다.
+
+이를 해결하기 위해서, 모든 값을 보고싶다면 `listagg`를 사용하자. MySQL의 `group_concat`와 비슷하다.\
+아무 값이나 보고 싶다면 `any_value`를 사용하자. MySQL의 그냥 컬럼을 select하는 것과 비슷하다.
+
+```sql
+select
+  family,
+  listagg(name, ', ') as names,
+  any_value(age) as age
+from users
+group by family;
+```
+
 ## SQLite의 알려지지 않은 이야기
 
 https://news.hada.io/topic?id=4558
