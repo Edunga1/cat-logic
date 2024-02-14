@@ -122,6 +122,9 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </ul>
 </li>
 <li>
+<p><a href="#redshift">Redshift</a></p>
+</li>
+<li>
 <p><a href="#sqlite%EC%9D%98-%EC%95%8C%EB%A0%A4%EC%A7%80%EC%A7%80-%EC%95%8A%EC%9D%80-%EC%9D%B4%EC%95%BC%EA%B8%B0">SQLite의 알려지지 않은 이야기</a></p>
 <ul>
 <li>
@@ -432,6 +435,16 @@ Funcitonal Key Parts를 사용할 수 없었던 5.7에서는 Virtual Column을 �
 <h3 id="numberformatexception-for-input-string--에러" style="position:relative;"><a href="#numberformatexception-for-input-string--%EC%97%90%EB%9F%AC" aria-label="numberformatexception for input string  에러 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">NumberFormatException: for input String: "..."</code> 에러</h3>
 <p><code class="language-text">UNION ALL</code> 쿼리로 3개의 테이블을 포함하고, 컬럼 하나가 integer 타입일 때 발생했다.</p>
 <p><code class="language-text">CAST(foo as char)</code> 명시적으로 타입 캐스팅을 통해 통일하여 해결했다.</p>
+<h2 id="redshift" style="position:relative;"><a href="#redshift" aria-label="redshift permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Redshift</h2>
+<p>MySQL과 다르게, group by로 aggregation 시 aggregation function을 사용하지 않는 컬럼을 select에 포함할 수 없다.</p>
+<p>이를 해결하기 위해서, 모든 값을 보고싶다면 <code class="language-text">listagg</code>를 사용하자. MySQL의 <code class="language-text">group_concat</code>와 비슷하다.<br>
+아무 값이나 보고 싶다면 <code class="language-text">any_value</code>를 사용하자. MySQL의 그냥 컬럼을 select하는 것과 비슷하다.</p>
+<div class="gatsby-highlight" data-language="sql"><pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span>
+  family<span class="token punctuation">,</span>
+  listagg<span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token string">', '</span><span class="token punctuation">)</span> <span class="token keyword">as</span> names<span class="token punctuation">,</span>
+  any_value<span class="token punctuation">(</span>age<span class="token punctuation">)</span> <span class="token keyword">as</span> age
+<span class="token keyword">from</span> users
+<span class="token keyword">group</span> <span class="token keyword">by</span> family<span class="token punctuation">;</span></code></pre></div>
 <h2 id="sqlite의-알려지지-않은-이야기" style="position:relative;"><a href="#sqlite%EC%9D%98-%EC%95%8C%EB%A0%A4%EC%A7%80%EC%A7%80-%EC%95%8A%EC%9D%80-%EC%9D%B4%EC%95%BC%EA%B8%B0" aria-label="sqlite의 알려지지 않은 이야기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SQLite의 알려지지 않은 이야기</h2>
 <p><a href="https://news.hada.io/topic?id=4558">https://news.hada.io/topic?id=4558</a></p>
 <p>많은 개발 토픽이 담겨있다.</p>
