@@ -120,6 +120,18 @@ https://www.mathstat.dal.ca/~selinger/md5collision
 ++>>>>>>> dbecef5 (4321)
 ```
 
+### Commit
+
+`git commit --verbose` 옵션을 자주 사용한다.
+커밋 메시지를 작성할 때 변경  내용을 함께 보여줘서 유용하기 때문이다.
+
+다음 설정은 옵션 생략하고, 기본 설정을 변경한다:
+
+```bash
+[commit]
+  verbose = true
+```
+
 위 예시는 `git rebase`의 충돌 결과라 `parent of dbecef5` 메시지와 함께 rebase를 시작한 커밋의 원본 코드를 보여준다.
 
 ## `git rebase -i`
