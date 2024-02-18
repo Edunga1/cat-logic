@@ -95,6 +95,12 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </ul>
 </li>
 <li>
+<p><a href="#configurations">Configurations</a></p>
+<ul>
+<li><a href="#conflict-style">Conflict Style</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#git-rebase--i"><code class="language-text">git rebase -i</code></a></p>
 </li>
 <li>
@@ -186,6 +192,26 @@ that has been built up completely with "git".</p>
 <p>여기 예제 사이트에서는 다른 파일인데 같은 MD5 sum을 가진 예제를 제공한다.
 근데 다운받아보면 실행도 안되고, 바이너리지만 열어보면 내용도 같아 보이는데.. 심지어 파일 크기도 같다. 제대로 된 예제가 맞나?</p>
 <p><a href="https://www.mathstat.dal.ca/~selinger/md5collision">https://www.mathstat.dal.ca/~selinger/md5collision</a></p>
+<h2 id="configurations" style="position:relative;"><a href="#configurations" aria-label="configurations permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurations</h2>
+<p><code class="language-text">.gitconfig</code> 파일에 설정을 저장하거나 <code class="language-text">git config</code> 명령어로 설정을 추가하거나 확인한다.</p>
+<h3 id="conflict-style" style="position:relative;"><a href="#conflict-style" aria-label="conflict style permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conflict Style</h3>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token punctuation">[</span>merge<span class="token punctuation">]</span>
+  conflictStyle <span class="token operator">=</span> zdiff3</code></pre></div>
+<p>커밋 충돌 시 diff를 보여주는 방식을 개선한다.
+기본값의 경우 다음과 같이 나타난다면:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">++<span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;</span> HEAD
+ +python <span class="token parameter variable">-m</span> SimpleHTTPServer <span class="token number">1234</span>
++<span class="token operator">+=</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
++ python <span class="token parameter variable">-m</span> SimpleHTTPServer <span class="token number">4321</span></code></pre></div>
+<p><code class="language-text">zdiff3</code>은 원본 코드를 중간에 함께 보여준다:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">++<span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;</span> HEAD
+ +python <span class="token parameter variable">-m</span> SimpleHTTPServer <span class="token number">1234</span>
+++<span class="token operator">||</span><span class="token operator">||</span><span class="token operator">||</span><span class="token operator">|</span> parent of dbecef5 <span class="token punctuation">(</span><span class="token number">4321</span><span class="token punctuation">)</span>
+++python <span class="token parameter variable">-m</span> SimpleHTTPServer <span class="token number">8080</span>
++<span class="token operator">+=</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
++ python <span class="token parameter variable">-m</span> SimpleHTTPServer <span class="token number">4321</span>
+++<span class="token operator">>></span><span class="token operator">>></span><span class="token operator">>></span><span class="token operator">></span> dbecef5 <span class="token punctuation">(</span><span class="token number">4321</span><span class="token punctuation">)</span></code></pre></div>
+<p>위 예시는 <code class="language-text">git rebase</code>의 충돌 결과라 <code class="language-text">parent of dbecef5</code> 메시지와 함께 rebase를 시작한 커밋의 원본 코드를 보여준다.</p>
 <h2 id="git-rebase--i" style="position:relative;"><a href="#git-rebase--i" aria-label="git rebase  i permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">git rebase -i</code></h2>
 <p><a href="https://meetup.toast.com/posts/39">https://meetup.toast.com/posts/39</a></p>
 <p>여러개의 커밋을 묶는데, <code class="language-text">git reset HEAD~#</code> 후 다시 커밋을 생성하는 방법도 있지만,
