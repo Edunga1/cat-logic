@@ -87,6 +87,41 @@ https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/
 
 https://www.mathstat.dal.ca/~selinger/md5collision
 
+## Configurations
+
+`.gitconfig` 파일에 설정을 저장하거나 `git config` 명령어로 설정을 추가하거나 확인한다.
+
+### Conflict Style
+
+```bash
+[merge]
+  conflictStyle = zdiff3
+```
+
+커밋 충돌 시 diff를 보여주는 방식을 개선한다.
+기본값의 경우 다음과 같이 나타난다면:
+
+```bash
+++<<<<<<< HEAD
+ +python -m SimpleHTTPServer 1234
+++=======
++ python -m SimpleHTTPServer 4321
+```
+
+`zdiff3`은 원본 코드를 중간에 함께 보여준다:
+
+```bash
+++<<<<<<< HEAD
+ +python -m SimpleHTTPServer 1234
+++||||||| parent of dbecef5 (4321)
+++python -m SimpleHTTPServer 8080
+++=======
++ python -m SimpleHTTPServer 4321
+++>>>>>>> dbecef5 (4321)
+```
+
+위 예시는 `git rebase`의 충돌 결과라 `parent of dbecef5` 메시지와 함께 rebase를 시작한 커밋의 원본 코드를 보여준다.
+
 ## `git rebase -i`
 
 https://meetup.toast.com/posts/39
