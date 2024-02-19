@@ -339,3 +339,10 @@ JPA와 QueryDSL을 많이 사용했다는 누군가 Kotlin + JPA를 사용하면
 추가로 clean architecture로 개발하면 JPA의 영속 계층의 cache나 dirty-checking을 사용하기 어려웠다고 한다.
 
 그래서 `spring-data-jpa` + `jooq`를 사용하다가, Exposed를 사용중이라고.
+
+## Annotation Processing
+
+QueryDSL의 QClass와 같이 annotation processing로 생성되는 모듈은 gradle 명령어로 생성할 수 있다: `gradle kaptKotlin`.
+
+간편하게 프로젝트 빌드를 할 수도 있겠지만 불필요한 task가 포함되어 있고, 완성되지 않는 코드에 대해서 빌드하여 결국 실패할 것이므로,
+소요시간도 짧은 `gradle kaptKotlin`을 사용하는 것이 좋다.
