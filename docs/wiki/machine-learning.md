@@ -10,9 +10,11 @@
 ### 인공지능 제품의 프롬프트 유출
 
 대규모 언어 모델들이 마치 사용자에게 도움을 주려는 것처럼 보이는 이유가 뭘까?\
-재밌게도 그 원리는 프롬프트를 통해서 인공지능에게 지침을 주기 때문인 거 같다.
+재밌게도 그 원리는 GitHub가 프롬프트를 통해서 인공지능에게 지침을 주기 때문인 거 같다.
 
-[GitHub Copilot Chat의 프롬프트 유출](https://twitter.com/marvinvonhagen/status/1657060506371346432)
+#### GitHub Copilot의 프롬프트 유출
+
+[트위터](https://twitter.com/marvinvonhagen/status/1657060506371346432)의 누군가 Copilot의 프롬프트를 유출했다.
 
 > #01 You are an AI programming assistant.
 >
