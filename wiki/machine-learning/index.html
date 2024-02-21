@@ -153,6 +153,9 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li>
 <p><a href="#llamafile">llamafile</a></p>
 </li>
+<li>
+<p><a href="#phidata">Phidata</a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -632,6 +635,95 @@ $ ./llamafile <span class="token punctuation">\</span>
 <blockquote>
 <p>The image features a group of three baby lemurs, two of which are being held by their mother. They appear to be in a lush green environment with trees and grass surrounding them. The mother lemur is holding her babies close to her body, providing protection and warmth. The scene captures the bond between the mother and her young ones as they navigate through the natural habitat together.</p>
 </blockquote>
+<h3 id="phidata" style="position:relative;"><a href="#phidata" aria-label="phidata permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Phidata</h3>
+<p>phidata는 function call을 통한 AI Assistant를 만드는 toolkit이다.</p>
+<p><a href="https://github.com/phidatahq/phidata">https://github.com/phidatahq/phidata</a></p>
+<p>AI가 사용할 수 있는 도구(function call)을 제공하고 사용자가 프롬프트로 요청하면, AI가 도구를 사용하여 답변을 생성한다.
+도구로는 웹 검색, 파이썬, DB가 있다.</p>
+<p>신기한 점은 저장소 설명대로 파이썬 의존성만 몇 개 설치하면 바로 사용할 수 있다는 점이다.
+Open AI API 키가 없이도 모델을 사용할 수 있다. 그래서 어떤 모델을 어떻게 사용하는 지 모르겠다.</p>
+<hr>
+<p>저장소에서 소개하는 AI에게 쿼리하는 예제는 매우 간단하다:</p>
+<p>poetry로 구성했다.</p>
+<div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">tool.poetry</span><span class="token punctuation">]</span>
+<span class="token key property">name</span> <span class="token punctuation">=</span> <span class="token string">"phidata-start"</span>
+<span class="token key property">version</span> <span class="token punctuation">=</span> <span class="token string">"0.1.0"</span>
+<span class="token key property">description</span> <span class="token punctuation">=</span> <span class="token string">""</span>
+<span class="token key property">authors</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">tool.poetry.dependencies</span><span class="token punctuation">]</span>
+<span class="token key property">python</span> <span class="token punctuation">=</span> <span class="token string">"3.10.8"</span>
+<span class="token key property">phidata</span> <span class="token punctuation">=</span> <span class="token string">"^2.3.41"</span>
+<span class="token key property">openai</span> <span class="token punctuation">=</span> <span class="token string">"^1.12.0"</span>
+
+
+<span class="token punctuation">[</span><span class="token table class-name">build-system</span><span class="token punctuation">]</span>
+<span class="token key property">requires</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"poetry-core"</span><span class="token punctuation">]</span>
+<span class="token key property">build-backend</span> <span class="token punctuation">=</span> <span class="token string">"poetry.core.masonry.api"</span></code></pre></div>
+<p><code class="language-text">poetry shell</code>로 가상 환경을 만들고, <code class="language-text">poetry install</code>로 의존성을 설치한다.
+<code class="language-text">phidata</code>와 <code class="language-text">openai</code> 단 두개만 설치하면 된다.</p>
+<p>이제 스크립트를 작성하자:</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> phi<span class="token punctuation">.</span>assistant <span class="token keyword">import</span> Assistant
+
+assistant <span class="token operator">=</span> Assistant<span class="token punctuation">(</span>description<span class="token operator">=</span><span class="token string">"You help people with their health and fitness goals."</span><span class="token punctuation">)</span>
+assistant<span class="token punctuation">.</span>print_response<span class="token punctuation">(</span><span class="token string">"Share a quick healthy breakfast recipe."</span><span class="token punctuation">,</span> markdown<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre></div>
+<p>실행하면 다음과 같은 결과를 얻을 수 있다:</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">
+phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
+╭──────────┬───────────────────────────────────────────────────────────╮
+│ Message  │ Share a quick healthy breakfast recipe.                   │
+├──────────┼───────────────────────────────────────────────────────────┤
+│ Response │ Certainly<span class="token operator">!</span> Here's a simple and healthy breakfast recipe   │
+│ <span class="token punctuation">(</span><span class="token number">26</span>.2s<span class="token punctuation">)</span>  │ <span class="token keyword">for</span> an Avocado Toast with Poached Egg:                    │
+│          │                                                           │
+│          │                       Ingredients:                        │
+│          │                                                           │
+│          │  • <span class="token number">1</span> slice of whole-grain bread                           │
+│          │  • <span class="token number">1</span>/2 ripe avocado                                       │
+│          │  • <span class="token number">1</span> egg                                                  │
+│          │  • Salt and pepper, to taste                              │
+│          │  • Red pepper flakes <span class="token punctuation">(</span>optional<span class="token punctuation">)</span>                           │
+│          │  • A few leaves of fresh spinach or arugula <span class="token punctuation">(</span>optional<span class="token punctuation">)</span>    │
+│          │  • A splash of vinegar <span class="token punctuation">(</span>for poaching the egg<span class="token punctuation">)</span>             │
+│          │                                                           │
+│          │                       Instructions:                       │
+│          │                                                           │
+│          │  <span class="token number">1</span> Toast the Bread                                        │
+│          │     • Begin by toasting your whole-grain bread to your    │
+│          │       preferred level of crispiness.                      │
+│          │  <span class="token number">2</span> Poach the Egg                                          │
+│          │     • Fill a pot with about <span class="token number">3</span> inches of water, <span class="token function">add</span> a      │
+│          │       splash of vinegar, and bring to a light simmer.     │
+│          │     • Crack the egg into a small bowl or cup.             │
+│          │     • Create a gentle whirlpool <span class="token keyword">in</span> the pot by stirring    │
+│          │       with a spoon.                                       │
+│          │     • Carefully slide the egg into the center of the      │
+│          │       whirlpool. The swirling water will <span class="token builtin class-name">help</span> the egg     │
+│          │       white wrap around the yolk.                         │
+│          │     • Let it cook <span class="token keyword">for</span> about <span class="token number">3</span>-4 minutes <span class="token keyword">for</span> a soft poach, │
+│          │       or longer <span class="token keyword">if</span> you prefer a firmer yolk.              │
+│          │     • Use a slotted spoon to remove the egg from the      │
+│          │       water and <span class="token builtin class-name">set</span> aside to drain on a kitchen towel.    │
+│          │  <span class="token number">3</span> Mash the Avocado                                       │
+│          │     • While the egg is poaching, slice the avocado <span class="token keyword">in</span>     │
+│          │       half, remove the pit, scoop out the flesh, and mash │
+│          │       it with a fork.                                     │
+│          │     • Spread the mashed avocado onto your toasted bread.  │
+│          │     • Season with salt, pepper, and red pepper flakes <span class="token keyword">if</span>  │
+│          │       desired.                                            │
+│          │  <span class="token number">4</span> Assemble the Avocado Toast                             │
+│          │     • Place the poached egg on <span class="token function">top</span> of the mashed avocado. │
+│          │     • Add a handful of fresh spinach or arugula on the    │
+│          │       side <span class="token keyword">for</span> extra greens.                              │
+│          │     • Adjust seasoning to your taste.                     │
+│          │  <span class="token number">5</span> Serve                                                  │
+│          │     • Serve immediately and enjoy your healthy and        │
+│          │       filling breakfast<span class="token operator">!</span>                                  │
+│          │                                                           │
+│          │ This breakfast provides you with a good balance of        │
+│          │ protein, healthy fats, and whole grains to start your day │
+│          │ with energy.                                              │
+╰──────────┴───────────────────────────────────────────────────────────╯</code></pre></div>
 <h2 id="hugging-face" style="position:relative;"><a href="#hugging-face" aria-label="hugging face permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hugging Face</h2>
 <p>머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
 사용자가 머신러닝 모델과 데이터셋을 공유할 수 있는 플랫폼.</p>
