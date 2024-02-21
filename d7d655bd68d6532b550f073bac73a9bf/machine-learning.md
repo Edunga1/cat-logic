@@ -654,6 +654,64 @@ phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
 ╰──────────┴───────────────────────────────────────────────────────────╯
 ```
 
+웹 검색으로 정보륾 모으는 것도 가능하다.\
+다음은 duckduckgo를 이용해 검색하는 예시인데, 정보를 찾기위한 모델의 고뇌가 돋보인다.
+
+`duckduckgo-search` 모듈이 필요하다.
+
+```python
+from phi.assistant import Assistant
+from phi.tools.duckduckgo import DuckDuckGo
+
+
+assistant = Assistant(tools=[DuckDuckGo()], show_tools_calls=True)
+assistant.print_response("한국어로, poetry 사용법에 대해서 조사해 주세요.", markdown=True)
+```
+
+결과는 다음과 같다:
+
+```shell
+phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
+╭──────────┬───────────────────────────────────────────────────────────╮
+│ Message  │ 한국어로, poetry 사용법에 대해서 조사해 주세요.           │
+├──────────┼───────────────────────────────────────────────────────────┤
+│ Response │ 죄송합니다, 제가 잘못된 정보를 얻어왔습니다. poetry에     │
+│ (49.4s)  │ 대한 사용법 조사를 다시 시도하겠습니다. 조금만            │
+│          │ 기다려주십시오.죄송합니다, 결과가 부정확합니다. 다시      │
+│          │ 시도하겠습니다.죄송합니다, 제가 드린 정보가 poetry의      │
+│          │ 사용법과 관련이 없었습니다. 해당 도구에 대한 정보를 찾기  │
+│          │ 위해 다시 시도하겠습니다.Poetry는 파이썬 프로젝트를 위한  │
+│          │ 의존성 관리 및 패키징을 용이하게 하는 도구입니다. 여기  … │
+│          │ 가지 참고할 수 있는 자료입니다:                           │
+│          │                                                           │
+│          │  1 Poetry - Python dependency management and packaging    │
+│          │    made easy: Poetry의 공식 웹사이트에서는 Python         │
+│          │    패키징과 의존성 관리를 간편하게 만들어주며, 프로젝트 … │
+│          │    결정적인 방법으로 관리할 수 있는 모든 도구를           │
+│          │    제공합니다.                                            │
+│          │  2 Dependency Management With Python Poetry - Real        │
+│          │    Python: Real Python 웹사이트에서 제공하는 튜토리얼로   │
+│          │    Python 프로젝트에 필요한 외부 패키지를 지정, 설치 및   │
+│          │    해결하는 방법에 대해 배울 수 있습니다.                 │
+│          │  3 Poetry: Python packaging and dependency management     │
+│          │    made easy: GitHub의 Poetry 저장소 페이지에서는 Python  │
+│          │    프로젝트의 의존성을 선언, 관리 및 설치하는 데 도움을   │
+│          │    주며, 기존의 setup.py, requirements.txt 등을           │
+│          │    pyproject.toml 기반 프로젝트 형식으로 대체합니다.      │
+│          │  4 How to Use Poetry to Install Python Packages and       │
+│          │    Manage Dependencies: Data to Fish 웹사이트에서는       │
+│          │    pyproject.toml 파일에 패키지를 추가하고 관리하는       │
+│          │    방법을 단계별로 안내합니다.                            │
+│          │  5 Python Poetry: Package and venv Management Made Easy:  │
+│          │    Python Land에서는 Poetry가 가상 환경 관리와 Python     │
+│          │    패키지 설치, 의존성 관리에서 어떻게 편리한 도구인지를  │
+│          │    설명합니다.                                            │
+│          │                                                           │
+│          │ 위의 자료들을 통해 Poetry에 대해 충분한 정보를 얻을 수    │
+│          │ 있을 것입니다.                                            │
+╰──────────┴───────────────────────────────────────────────────────────╯
+```
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
