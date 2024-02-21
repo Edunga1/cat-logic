@@ -597,7 +597,6 @@ assistant.print_response("Share a quick healthy breakfast recipe.", markdown=Tru
 실행하면 다음과 같은 결과를 얻을 수 있다:
 
 ```shell
-
 phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
 ╭──────────┬───────────────────────────────────────────────────────────╮
 │ Message  │ Share a quick healthy breakfast recipe.                   │
