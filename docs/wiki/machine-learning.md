@@ -712,6 +712,52 @@ phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
 ╰──────────┴───────────────────────────────────────────────────────────╯
 ```
 
+#### 나만의 도구 만들기
+
+```python
+from phi.assistant import Assistant
+from requests import get
+
+def get_html(url: str):
+    """Get the HTML of a webpage.
+
+    Args:
+        url (str): The URL of the webpage.
+
+    Returns:
+        str: The HTML of the webpage.
+    """
+    return get(url).text
+
+
+assistant = Assistant(tools=[get_html], show_tools_calls=True)
+assistant.print_response("`https://news.hada.io/topic?id=13436` 사이트의 내용을 3줄 요약해 주세요.", markdown=True)
+```
+
+`tools`에 함수를 제공하면 되는데, docstring을 잘 작성하면 AI가 알아서 사용하는 거 같다!
+
+다음은 사용 결과:
+
+```shell
+phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
+╭──────────┬───────────────────────────────────────────────────────────╮
+│          │ `https://news.hada.io/topic?id=13436` 사이트의 내용을 3 … │
+│ Message  │ 요약해 주세요.                                            │
+├──────────┼───────────────────────────────────────────────────────────┤
+│ Response │                                                           │
+│ (12.1s)  │  1 phidata는 인간처럼 문제를 해결하기 위해 LLM(Large      │
+│          │    Language Model)을 이용하여 함수를 호출하고, 그 응답을  │
+│          │    바탕으로 다음 단계를 지능적으로 선택하여 작업을        │
+│          │    수행하는 AI 비서를 만드는 도구입니다.                  │
+│          │  2 이 툴킷을 사용하기 위해, 사용자는 Assistant를          │
+│          │    생성하고, Tools(Functions), Knowledge(VectorDB),       │
+│          │    Storage(DB)를 추가해야 합니다.                         │
+│          │  3 이 툴킷은 Streamlit, FastAPI, Django와 같은            │
+│          │    프레임워크를 이용해 서빙함으로써 AI 애플리케이션을     │
+│          │    구축할 수 있도록 지원합니다.                           │
+╰──────────┴───────────────────────────────────────────────────────────╯
+```
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
