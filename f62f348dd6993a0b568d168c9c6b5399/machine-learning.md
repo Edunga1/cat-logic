@@ -761,6 +761,9 @@ phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
 여기있는 코드도 copilot과 함께 작성하다보니, 내가 직접 짠 코드는 거의 없다.\
 인공지능의 발전이 새삼 대단하다고 느낀다.
 
+이 예제코드는 내 저장소에 올려두었다:\
+https://github.com/Edunga1/practice-phidata
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
