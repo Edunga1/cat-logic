@@ -812,6 +812,19 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 │          │    프레임워크를 이용해 서빙함으로써 AI 애플리케이션을     │
 │          │    구축할 수 있도록 지원합니다.                           │
 ╰──────────┴───────────────────────────────────────────────────────────╯</code></pre></div>
+<p>프롬프트를 정말 다양하게 사용할 수 있다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">message <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"""
+`$</span><span class="token interpolation"><span class="token punctuation">{</span>url<span class="token punctuation">}</span></span><span class="token string">` 사이트의 내용을 요약해주세요.
+
+horizontal line으로 총 4개 구역을 나눠주세요.
+
+첫 번째 구역은 본문 내용을 10줄 이내로 요약해주세요.
+두 번째 구역은 리액션이 많은 덧글을 최대 3개까지 원문 그대로 포함해주세요.
+세 번째 구역은 모든 덧글을 요약해 주세요. 원문은 포함하지 않아도 됩니다.
+마지막 구역은 URL에서 다음 시퀀스 정보를 찾아서 다음 글을 매우 간략하게 요약해주고, URL을 함께 포함해주세요.
+"""</span></span></code></pre></div>
+<p>이렇게 작성하면, 실제로 도구를 2번 호출하기도 한다.</p>
+<hr>
 <p>여기있는 코드도 copilot과 함께 작성하다보니, 내가 직접 짠 코드는 거의 없다.<br>
 인공지능의 발전이 새삼 대단하다고 느낀다.</p>
 <p>이 예제코드는 내 저장소에 올려두었다:<br>
