@@ -546,6 +546,115 @@ $ ./llamafile \
 
 > The image features a group of three baby lemurs, two of which are being held by their mother. They appear to be in a lush green environment with trees and grass surrounding them. The mother lemur is holding her babies close to her body, providing protection and warmth. The scene captures the bond between the mother and her young ones as they navigate through the natural habitat together.
 
+### Phidata
+
+phidata는 function call을 통한 AI Assistant를 만드는 toolkit이다.
+
+https://github.com/phidatahq/phidata
+
+AI가 사용할 수 있는 도구(function call)을 제공하고 사용자가 프롬프트로 요청하면, AI가 도구를 사용하여 답변을 생성한다.
+도구로는 웹 검색, 파이썬, DB가 있다.
+
+신기한 점은 저장소 설명대로 파이썬 의존성만 몇 개 설치하면 바로 사용할 수 있다는 점이다.
+Open AI API 키가 없이도 모델을 사용할 수 있다. 그래서 어떤 모델을 어떻게 사용하는 지 모르겠다.
+
+---
+
+저장소에서 소개하는 AI에게 쿼리하는 예제는 매우 간단하다:
+
+poetry로 구성했다.
+
+```toml
+[tool.poetry]
+name = "phidata-start"
+version = "0.1.0"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "3.10.8"
+phidata = "^2.3.41"
+openai = "^1.12.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+```
+
+`poetry shell`로 가상 환경을 만들고, `poetry install`로 의존성을 설치한다.
+`phidata`와 `openai` 단 두개만 설치하면 된다.
+
+이제 스크립트를 작성하자:
+
+```python
+from phi.assistant import Assistant
+
+assistant = Assistant(description="You help people with their health and fitness goals.")
+assistant.print_response("Share a quick healthy breakfast recipe.", markdown=True)
+```
+
+실행하면 다음과 같은 결과를 얻을 수 있다:
+
+```shell
+
+phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
+╭──────────┬───────────────────────────────────────────────────────────╮
+│ Message  │ Share a quick healthy breakfast recipe.                   │
+├──────────┼───────────────────────────────────────────────────────────┤
+│ Response │ Certainly! Here's a simple and healthy breakfast recipe   │
+│ (26.2s)  │ for an Avocado Toast with Poached Egg:                    │
+│          │                                                           │
+│          │                       Ingredients:                        │
+│          │                                                           │
+│          │  • 1 slice of whole-grain bread                           │
+│          │  • 1/2 ripe avocado                                       │
+│          │  • 1 egg                                                  │
+│          │  • Salt and pepper, to taste                              │
+│          │  • Red pepper flakes (optional)                           │
+│          │  • A few leaves of fresh spinach or arugula (optional)    │
+│          │  • A splash of vinegar (for poaching the egg)             │
+│          │                                                           │
+│          │                       Instructions:                       │
+│          │                                                           │
+│          │  1 Toast the Bread                                        │
+│          │     • Begin by toasting your whole-grain bread to your    │
+│          │       preferred level of crispiness.                      │
+│          │  2 Poach the Egg                                          │
+│          │     • Fill a pot with about 3 inches of water, add a      │
+│          │       splash of vinegar, and bring to a light simmer.     │
+│          │     • Crack the egg into a small bowl or cup.             │
+│          │     • Create a gentle whirlpool in the pot by stirring    │
+│          │       with a spoon.                                       │
+│          │     • Carefully slide the egg into the center of the      │
+│          │       whirlpool. The swirling water will help the egg     │
+│          │       white wrap around the yolk.                         │
+│          │     • Let it cook for about 3-4 minutes for a soft poach, │
+│          │       or longer if you prefer a firmer yolk.              │
+│          │     • Use a slotted spoon to remove the egg from the      │
+│          │       water and set aside to drain on a kitchen towel.    │
+│          │  3 Mash the Avocado                                       │
+│          │     • While the egg is poaching, slice the avocado in     │
+│          │       half, remove the pit, scoop out the flesh, and mash │
+│          │       it with a fork.                                     │
+│          │     • Spread the mashed avocado onto your toasted bread.  │
+│          │     • Season with salt, pepper, and red pepper flakes if  │
+│          │       desired.                                            │
+│          │  4 Assemble the Avocado Toast                             │
+│          │     • Place the poached egg on top of the mashed avocado. │
+│          │     • Add a handful of fresh spinach or arugula on the    │
+│          │       side for extra greens.                              │
+│          │     • Adjust seasoning to your taste.                     │
+│          │  5 Serve                                                  │
+│          │     • Serve immediately and enjoy your healthy and        │
+│          │       filling breakfast!                                  │
+│          │                                                           │
+│          │ This breakfast provides you with a good balance of        │
+│          │ protein, healthy fats, and whole grains to start your day │
+│          │ with energy.                                              │
+╰──────────┴───────────────────────────────────────────────────────────╯
+```
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
