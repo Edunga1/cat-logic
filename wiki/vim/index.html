@@ -892,6 +892,26 @@ count  total (s)   self (s)  function
 <p>2023-12-11</p>
 <p>처음에는 <code class="language-text">vim-colors-solarized</code> 플러그인 문제인 줄 알았다.<br>
 최근에 treesitter 구문 강조를 위해서 <code class="language-text">sonokai</code> colorscheme 플러그인을 설치했는데, 마찬가지로 느려지는 문제가 발생한다.</p>
+<p>2024-02-22</p>
+<p>드디어 원인을 찾았다!</p>
+<p>정확한 증상 발생 시점은 <code class="language-text">.vimrc</code>에서 <code class="language-text">color &lt;theme></code>을 설정하면 느려지는 문제였다.<br>
+vim 실행 후 직접 <code class="language-text">:color &lt;theme></code> 명령어로 설정하면 느려지지 않는다.<br>
+<code class="language-text">.virmc</code> 내에서도 특정 코드 후에 <code class="language-text">color &lt;theme></code>을 설정하면 느려지는 문제가 발생한다.</p>
+<p>원인이 되는 코드는 extra whitespace를 강조하는 코드였다:</p>
+<div class="gatsby-highlight" data-language="vim"><pre class="language-vim"><code class="language-vim"><span class="token builtin">autocmd</span> ColorScheme <span class="token operator">*</span>
+  \ <span class="token builtin">highlight</span> SpecialKey guibg<span class="token operator">=</span>#<span class="token number">424242</span> ctermfg<span class="token operator">=</span><span class="token number">236</span> ctermbg<span class="token operator">=</span><span class="token number">234</span> |
+  \ <span class="token builtin">highlight</span> ExtraWhitespace ctermbg<span class="token operator">=</span><span class="token keyword">red</span> guibg<span class="token operator">=</span><span class="token keyword">red</span> |
+  \ <span class="token keyword">match</span> ExtraWhitespace <span class="token operator">/</span>\s\<span class="token operator">+</span>$<span class="token operator">/</span> |
+  \ <span class="token builtin">autocmd</span> BufWinEnter <span class="token operator">*</span> <span class="token keyword">match</span> ExtraWhitespace <span class="token operator">/</span>\s\<span class="token operator">+</span>$<span class="token operator">/</span> |
+  \ <span class="token builtin">autocmd</span> InsertEnter <span class="token operator">*</span> <span class="token keyword">match</span> ExtraWhitespace <span class="token operator">/</span>\s\<span class="token operator">+</span>\<span class="token operator">%</span>#\@<span class="token operator">&lt;</span><span class="token operator">!</span>$<span class="token operator">/</span> |
+  \ <span class="token builtin">autocmd</span> InsertLeave <span class="token operator">*</span> <span class="token keyword">match</span> ExtraWhitespace <span class="token operator">/</span>\s\<span class="token operator">+</span>$<span class="token operator">/</span> |
+  \ <span class="token builtin">autocmd</span> BufWinLeave <span class="token operator">*</span> <span class="token keyword">call</span> <span class="token function">clearmatches</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre></div>
+<p>이 코드 이후에 <code class="language-text">color &lt;theme></code>을 설정하면 느려지는 문제가 발생한다.</p>
+<p>코드는 내가 처음 vim을 접할 때 전임자가 만들어 놓은 vim 설정에서 가져온 것이다.
+아마 개선할 수 있을지도.</p>
+<p>colorscheme 명령어를 다른 곳으로 옮기는 것으로 해결했다.<br>
+dotfiles 저장소에도 반영했다: <a href="https://github.com/Edunga1/dotfiles/commit/bc4efcceab5695b671c68d14912f1d85e7b0e048">https://github.com/Edunga1/dotfiles/commit/bc4efcceab5695b671c68d14912f1d85e7b0e048</a></p>
+<p>너무 후련하다.</p>
 <h3 id="ubuntu에-설치한-vim이-시작-시-vimrc에서-많은-에러가-발생하는-현상" style="position:relative;"><a href="#ubuntu%EC%97%90-%EC%84%A4%EC%B9%98%ED%95%9C-vim%EC%9D%B4-%EC%8B%9C%EC%9E%91-%EC%8B%9C-vimrc%EC%97%90%EC%84%9C-%EB%A7%8E%EC%9D%80-%EC%97%90%EB%9F%AC%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81" aria-label="ubuntu에 설치한 vim이 시작 시 vimrc에서 많은 에러가 발생하는 현상 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ubuntu에 설치한 vim이 시작 시 <code class="language-text">.vimrc</code>에서 많은 에러가 발생하는 현상</h3>
 <p>askubuntu 질문: <a href="https://askubuntu.com/questions/284957/vi-getting-multiple-sorry-the-command-is-not-available-in-this-version-af">vi, getting multiple "Sorry, the command is not available in this version..." after reinstall</a></p>
 <p>올바른 vim 버전인지 확인하자. vim.tiny로 설치되었을 수 있다:</p>
