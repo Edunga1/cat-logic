@@ -871,6 +871,37 @@ colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. �
 처음에는 `vim-colors-solarized` 플러그인 문제인 줄 알았다.\
 최근에 treesitter 구문 강조를 위해서 `sonokai` colorscheme 플러그인을 설치했는데, 마찬가지로 느려지는 문제가 발생한다.
 
+2024-02-22
+
+드디어 원인을 찾았다!
+
+정확한 증상 발생 시점은 `.vimrc`에서 `color <theme>`을 설정하면 느려지는 문제였다.\
+vim 실행 후 직접 `:color <theme>` 명령어로 설정하면 느려지지 않는다.\
+`.virmc` 내에서도 특정 코드 후에 `color <theme>`을 설정하면 느려지는 문제가 발생한다.
+
+원인이 되는 코드는 extra whitespace를 강조하는 코드였다:
+
+```vim
+autocmd ColorScheme *
+  \ highlight SpecialKey guibg=#424242 ctermfg=236 ctermbg=234 |
+  \ highlight ExtraWhitespace ctermbg=red guibg=red |
+  \ match ExtraWhitespace /\s\+$/ |
+  \ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/ |
+  \ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/ |
+  \ autocmd InsertLeave * match ExtraWhitespace /\s\+$/ |
+  \ autocmd BufWinLeave * call clearmatches()
+```
+
+이 코드 이후에 `color <theme>`을 설정하면 느려지는 문제가 발생한다.
+
+코드는 내가 처음 vim을 접할 때 전임자가 만들어 놓은 vim 설정에서 가져온 것이다.
+아마 개선할 수 있을지도.
+
+colorscheme 명령어를 다른 곳으로 옮기는 것으로 해결했다.\
+dotfiles 저장소에도 반영했다: https://github.com/Edunga1/dotfiles/commit/bc4efcceab5695b671c68d14912f1d85e7b0e048
+
+너무 후련하다.
+
 ### Ubuntu에 설치한 vim이 시작 시 `.vimrc`에서 많은 에러가 발생하는 현상
 
 askubuntu 질문: [vi, getting multiple "Sorry, the command is not available in this version..." after reinstall](https://askubuntu.com/questions/284957/vi-getting-multiple-sorry-the-command-is-not-available-in-this-version-af)
