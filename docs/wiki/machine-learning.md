@@ -1,3 +1,6 @@
+---
+created: 2022-12-05
+---
 # Machine Learning
 
 [페이스북 그룹 덧글 중에서](https://www.facebook.com/groups/255834461424286/?multi_permalinks=1929705450703837):
