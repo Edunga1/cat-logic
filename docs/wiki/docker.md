@@ -36,6 +36,14 @@ container runtime을 containerd, dockerd 중 선택할 수 있는데, docker에 
 
 WSL2을 잘 지원한다.
 
+`rdctl` 명령어를 제공한다.
+
+다음과 같이 시작할 수 있다: `rdctl start --path /mnt/c/Program\ Files/Rancher\ Desktop/Rancher\ Desktop.exe`
+
+`--path` 옵션이 필수는 아닌 거 같지만, 내 경우는 찾지 못했다. 그래서 실행 파일로 시작하는 것과 비교해서 별다른 장정이 없다.
+
+종료는 그래도 편할 수도 있겠다: `rdctl shutdown`
+
 ### Colima
 
 https://github.com/abiosoft/colima/
