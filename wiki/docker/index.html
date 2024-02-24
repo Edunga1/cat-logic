@@ -125,9 +125,17 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </ul>
 </li>
 <li>
+<p><a href="#troubleshooting">Troubleshooting</a></p>
+<ul>
+<li>
 <p><a href="#%EB%A7%A5%EB%B6%81-m2-%EC%9D%B4%EC%8A%88">맥북 m2 이슈</a></p>
 <ul>
 <li><a href="#mysql56">mysql:5.6</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#wsl2%EC%97%90%EC%84%9C-nvidia-gpu-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%ED%95%B4%EA%B2%B0%EC%A4%91">WSL2에서 Nvidia GPU 사용하기 (해결중...)</a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -429,9 +437,10 @@ base로 하고 있어서, 참고하여 Dockerfile을 다시 작성하기로 했�
 IP address that the special 'host-gateway' string in --add-host resolves to.
 Defaults to the IP address of the default bridge</p>
 </blockquote>
-<h2 id="맥북-m2-이슈" style="position:relative;"><a href="#%EB%A7%A5%EB%B6%81-m2-%EC%9D%B4%EC%8A%88" aria-label="맥북 m2 이슈 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>맥북 m2 이슈</h2>
+<h2 id="troubleshooting" style="position:relative;"><a href="#troubleshooting" aria-label="troubleshooting permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
+<h3 id="맥북-m2-이슈" style="position:relative;"><a href="#%EB%A7%A5%EB%B6%81-m2-%EC%9D%B4%EC%8A%88" aria-label="맥북 m2 이슈 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>맥북 m2 이슈</h3>
 <p>Intel CPU(amd64) -> M2(arm)로 옮기면서 발생한 문제</p>
-<h3 id="mysql56" style="position:relative;"><a href="#mysql56" aria-label="mysql56 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mysql:5.6</h3>
+<h4 id="mysql56" style="position:relative;"><a href="#mysql56" aria-label="mysql56 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mysql:5.6</h4>
 <p>mysql 8 버전 이하는 arm64 용으로<a href="https://hub.docker.com/r/arm64v8/mysql/">제공하지 않는 것</a>으로 보인다.
 그래서 <code class="language-text">docker pull mysql:5.6</code> 하면 manifest를 찾을 수 없다며 실패한다:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ <span class="token function">docker</span> pull mysql:5.6
@@ -439,9 +448,57 @@ Defaults to the IP address of the default bridge</p>
 no matching manifest <span class="token keyword">for</span> linux/arm64/v8 <span class="token keyword">in</span> the manifest list entries</code></pre></div>
 <p>해결을 위해선 그냥 amd64 것을 사용해도 동작하므로 <code class="language-text">--platform</code> 옵션을 줘서 amd64 것으로 받는다:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ <span class="token function">docker</span> pull <span class="token parameter variable">--platform</span> linux/amd64 mysql:5.6</code></pre></div>
+<h3 id="wsl2에서-nvidia-gpu-사용하기-해결중" style="position:relative;"><a href="#wsl2%EC%97%90%EC%84%9C-nvidia-gpu-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%ED%95%B4%EA%B2%B0%EC%A4%91" aria-label="wsl2에서 nvidia gpu 사용하기 해결중 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WSL2에서 Nvidia GPU 사용하기 (해결중...)</h3>
+<p>Docker와 GPU 모두 잘 모르므로 일단 관련 정보만 좀 수집하자.</p>
+<p>해결하고자 하는 문제는 WSL2에서 GPU(Nvidia 사용중)를 사용하는 것이다.</p>
+<p>docker는 <code class="language-text">--gpus</code> 옵션으로 GPU를 사용할 수 있다. 하지만 내 경우에는 다음과 같은 에러가 발생했다:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--gpus</span><span class="token operator">=</span>all <span class="token parameter variable">-v</span> ollama:/root/.ollama <span class="token parameter variable">-p</span> <span class="token number">11434</span>:11434 <span class="token parameter variable">--name</span> ollama ollama/ollama
+f94d6b2f2858892727c28c259e4d224b7f53414efa198d89e72bb06825cbeab6
+docker: Error response from daemon: could not <span class="token keyword">select</span> device driver <span class="token string">""</span> with capabilities: <span class="token punctuation">[</span><span class="token punctuation">[</span>gpu<span class="token punctuation">]</span><span class="token punctuation">]</span>.</code></pre></div>
+<p>ollama는 LLM을 사용하기 쉽게 해주는 도구. GPU로 향상된 성능을 이용하고 싶었다.</p>
+<hr>
+<p>Nvidia 공식 WSL2 지원 문서:<br>
+<a href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html">https://docs.nvidia.com/cuda/wsl-user-guide/index.html</a></p>
+<p>위 링크는 <a href="https://github.com/NVIDIA/nvidia-docker/issues/1034#issuecomment-703102098">nvidia-docker 이슈</a>의 덧글에서 얻는 정보다.</p>
+<blockquote>
+<p>Note that NVIDIA Container Toolkit does not yet support Docker Desktop WSL 2 backend.</p>
+</blockquote>
+<p>2020년 10월에는 위 문구가 있었나 본데, 2024년 2월에는 해당 문구가 없어졌다. 지원하는 건가?</p>
+<hr>
+<p>GPU 지원 여부를 확인하려면:<br>
+<code class="language-text">docker run -it --gpus=all --rm nvidia/cuda:11.4.2-base-ubuntu20.04 nvidia-smi</code></p>
+<p><a href="https://www.docker.com/blog/wsl-2-gpu-support-for-docker-desktop-on-nvidia-gpus/">WSL 2 GPU Support for Docker Desktop on NVIDIA GPUs</a> 글에선 다음과 같이 응답한다:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--gpus</span><span class="token operator">=</span>all <span class="token parameter variable">--rm</span> nvidia/cuda:11.4.2-base-ubuntu20.04 nvidia-smi
+Tue Dec  <span class="token number">7</span> <span class="token number">13</span>:25:19 <span class="token number">2021</span>
++-----------------------------------------------------------------------------+
+<span class="token operator">|</span> NVIDIA-SMI <span class="token number">510.00</span>       Driver Version: <span class="token number">510.06</span>       CUDA Version: <span class="token number">11.6</span>     <span class="token operator">|</span>
+<span class="token operator">|</span>-------------------------------+----------------------+----------------------+
+<span class="token operator">|</span> GPU  Name        Persistence-M<span class="token operator">|</span> Bus-Id        Disp.A <span class="token operator">|</span> Volatile Uncorr. ECC <span class="token operator">|</span>
+<span class="token operator">|</span> Fan  Temp  Perf  Pwr:Usage/Cap<span class="token operator">|</span>         Memory-Usage <span class="token operator">|</span> GPU-Util  Compute M. <span class="token operator">|</span>
+<span class="token operator">|</span>                               <span class="token operator">|</span>                      <span class="token operator">|</span>               MIG M. <span class="token operator">|</span>
+<span class="token operator">|</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token operator">+=</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token operator">+=</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token operator">|</span>
+<span class="token operator">|</span>   <span class="token number">0</span>  NVIDIA GeForce <span class="token punctuation">..</span>.  On   <span class="token operator">|</span> 00000000:01:00.0 Off <span class="token operator">|</span>                  N/A <span class="token operator">|</span>
+<span class="token operator">|</span> N/A    0C    P0    13W /  N/A <span class="token operator">|</span>    132MiB /  4096MiB <span class="token operator">|</span>     N/A      Default <span class="token operator">|</span>
+<span class="token operator">|</span>                               <span class="token operator">|</span>                      <span class="token operator">|</span>                  N/A <span class="token operator">|</span>
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+<span class="token operator">|</span> Processes:                                                                  <span class="token operator">|</span>
+<span class="token operator">|</span>  GPU   GI   CI        PID   Type   Process name                  GPU Memory <span class="token operator">|</span>
+<span class="token operator">|</span>        ID   ID                                                   Usage      <span class="token operator">|</span>
+<span class="token operator">|</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token operator">|</span>
+<span class="token operator">|</span>  No running processes found                                                 <span class="token operator">|</span>
++-----------------------------------------------------------------------------</code></pre></div>
+<p>반면에 나는 제대로된 응답을 받지 못한다:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--gpus</span><span class="token operator">=</span>all <span class="token parameter variable">--rm</span> nvidia/cuda:11.4.2-base-ubuntu20.04 nvidia-smi
+Unable to <span class="token function">find</span> image <span class="token string">'nvidia/cuda:11.4.2-base-ubuntu20.04'</span> locally
+docker: Error response from daemon: manifest <span class="token keyword">for</span> nvidia/cuda:11.4.2-base-ubuntu20.04 not found: manifest unknown: manifest unknown.
+See <span class="token string">'docker run --help'</span><span class="token builtin class-name">.</span></code></pre></div>
 <h2 id="references" style="position:relative;"><a href="#references" aria-label="references permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>References</h2>
 <p>NodeJS 어플리케이션의 Dockerizing<br>
-<a href="https://nodejs.org/en/docs/guides/nodejs-docker-webapp/">https://nodejs.org/en/docs/guides/nodejs-docker-webapp/</a></p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/docker/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<a href="https://nodejs.org/en/docs/guides/nodejs-docker-webapp/">https://nodejs.org/en/docs/guides/nodejs-docker-webapp/</a></p>
+<p>WSL 2 GPU Support for Docker Desktop on NVIDIA GPUs<br>
+<a href="https://www.docker.com/blog/wsl-2-gpu-support-for-docker-desktop-on-nvidia-gpus/">https://www.docker.com/blog/wsl-2-gpu-support-for-docker-desktop-on-nvidia-gpus/</a></p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/docker/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
