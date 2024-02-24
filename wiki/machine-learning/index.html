@@ -159,6 +159,9 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li><a href="#%EB%82%98%EB%A7%8C%EC%9D%98-%EB%8F%84%EA%B5%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0">나만의 도구 만들기</a></li>
 </ul>
 </li>
+<li>
+<p><a href="#ollama">Ollama</a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -833,6 +836,30 @@ horizontal line으로 총 4개 구역을 나눠주세요.
 인공지능의 발전이 새삼 대단하다고 느낀다.</p>
 <p>이 예제코드는 내 저장소에 올려두었다:<br>
 <a href="https://github.com/Edunga1/practice-phidata">https://github.com/Edunga1/practice-phidata</a></p>
+<h3 id="ollama" style="position:relative;"><a href="#ollama" aria-label="ollama permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ollama</h3>
+<p>ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.</p>
+<p><a href="https://github.com/ollama/ollama">https://github.com/ollama/ollama</a></p>
+<p>실행은 Docker로 하자:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-v</span> ollama:/root/.ollama <span class="token parameter variable">-p</span> <span class="token number">11434</span>:11434 <span class="token parameter variable">--name</span> ollama ollama/ollama</code></pre></div>
+<p>GPU를 사용할 수 있지만 나는 WSL2 환경에서 실행하지 못하고 있다:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--gpus</span><span class="token operator">=</span>all <span class="token parameter variable">-v</span> ollama:/root/.ollama <span class="token parameter variable">-p</span> <span class="token number">11434</span>:11434 <span class="token parameter variable">--name</span> ollama ollama/ollama</code></pre></div>
+<p>백그라운드로 실행해 두고, <a href="../shell">shell</a>에서 실행해보자:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-ti</span> ollama ollama run llama2
+pulling manifest
+pulling 8934d96d3f08<span class="token punctuation">..</span>. <span class="token number">100</span>% ▕█████████████████████████████████████████████████████▏ <span class="token number">3.8</span> GB
+pulling 8c17c2ebb0ea<span class="token punctuation">..</span>. <span class="token number">100</span>% ▕█████████████████████████████████████████████████████▏ <span class="token number">7.0</span> KB
+pulling 7c23fb36d801<span class="token punctuation">..</span>. <span class="token number">100</span>% ▕█████████████████████████████████████████████████████▏ <span class="token number">4.8</span> KB
+pulling 2e0493f67d0c<span class="token punctuation">..</span>. <span class="token number">100</span>% ▕█████████████████████████████████████████████████████▏   <span class="token number">59</span> B
+pulling fa304d675061<span class="token punctuation">..</span>. <span class="token number">100</span>% ▕█████████████████████████████████████████████████████▏   <span class="token number">91</span> B
+pulling 42ba7f8a01dd<span class="token punctuation">..</span>. <span class="token number">100</span>% ▕█████████████████████████████████████████████████████▏  <span class="token number">557</span> B
+verifying sha256 digest
+writing manifest
+removing any unused layers
+success
+<span class="token operator">>></span><span class="token operator">></span> hi?
+Hello<span class="token operator">!</span> It's <span class="token function">nice</span> to meet you. Is there something I can <span class="token builtin class-name">help</span> you with or would you like to chat?</code></pre></div>
+<p><code class="language-text">ollama run &lt;LLM></code>으로만 실행해도 모델 다운로드 후 바로 대화할 수 있다.</p>
+<p>로컬 LLM으로 <a href="https://github.com/phidatahq/phidata">phidata</a>를 시작하는 것이 내 목표.</p>
 <h2 id="hugging-face" style="position:relative;"><a href="#hugging-face" aria-label="hugging face permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hugging Face</h2>
 <p>머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
 사용자가 머신러닝 모델과 데이터셋을 공유할 수 있는 플랫폼.</p>
