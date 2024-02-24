@@ -405,11 +405,13 @@ https://docs.docker.com/engine/reference/commandline/dockerd/
 > IP address that the special 'host-gateway' string in --add-host resolves to.
 > Defaults to the IP address of the default bridge
 
-## 맥북 m2 이슈
+## Troubleshooting
+
+### 맥북 m2 이슈
 
 Intel CPU(amd64) -> M2(arm)로 옮기면서 발생한 문제
 
-### mysql:5.6
+#### mysql:5.6
 
 mysql 8 버전 이하는 arm64 용으로[제공하지 않는 것](https://hub.docker.com/r/arm64v8/mysql/)으로 보인다.
 그래서 `docker pull mysql:5.6` 하면 manifest를 찾을 수 없다며 실패한다:
@@ -426,7 +428,77 @@ no matching manifest for linux/arm64/v8 in the manifest list entries
 ❯ docker pull --platform linux/amd64 mysql:5.6
 ```
 
+### WSL2에서 Nvidia GPU 사용하기 (해결중...)
+
+Docker와 GPU 모두 잘 모르므로 일단 관련 정보만 좀 수집하자.
+
+해결하고자 하는 문제는 WSL2에서 GPU(Nvidia 사용중)를 사용하는 것이다.
+
+docker는 `--gpus` 옵션으로 GPU를 사용할 수 있다. 하지만 내 경우에는 다음과 같은 에러가 발생했다:
+
+```bash
+$ docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+f94d6b2f2858892727c28c259e4d224b7f53414efa198d89e72bb06825cbeab6
+docker: Error response from daemon: could not select device driver "" with capabilities: [[gpu]].
+```
+
+ollama는 LLM을 사용하기 쉽게 해주는 도구. GPU로 향상된 성능을 이용하고 싶었다.
+
+---
+
+Nvidia 공식 WSL2 지원 문서:\
+https://docs.nvidia.com/cuda/wsl-user-guide/index.html
+
+위 링크는 [nvidia-docker 이슈](https://github.com/NVIDIA/nvidia-docker/issues/1034#issuecomment-703102098)의 덧글에서 얻는 정보다.
+
+> Note that NVIDIA Container Toolkit does not yet support Docker Desktop WSL 2 backend.
+
+2020년 10월에는 위 문구가 있었나 본데, 2024년 2월에는 해당 문구가 없어졌다. 지원하는 건가?
+
+---
+
+GPU 지원 여부를 확인하려면:\
+`docker run -it --gpus=all --rm nvidia/cuda:11.4.2-base-ubuntu20.04 nvidia-smi`
+
+[WSL 2 GPU Support for Docker Desktop on NVIDIA GPUs](https://www.docker.com/blog/wsl-2-gpu-support-for-docker-desktop-on-nvidia-gpus/) 글에선 다음과 같이 응답한다:
+
+```bash
+$ docker run -it --gpus=all --rm nvidia/cuda:11.4.2-base-ubuntu20.04 nvidia-smi
+Tue Dec  7 13:25:19 2021
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 510.00       Driver Version: 510.06       CUDA Version: 11.6     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  On   | 00000000:01:00.0 Off |                  N/A |
+| N/A    0C    P0    13W /  N/A |    132MiB /  4096MiB |     N/A      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------
+```
+
+반면에 나는 제대로된 응답을 받지 못한다:
+
+```bash
+$ docker run -it --gpus=all --rm nvidia/cuda:11.4.2-base-ubuntu20.04 nvidia-smi
+Unable to find image 'nvidia/cuda:11.4.2-base-ubuntu20.04' locally
+docker: Error response from daemon: manifest for nvidia/cuda:11.4.2-base-ubuntu20.04 not found: manifest unknown: manifest unknown.
+See 'docker run --help'.
+```
+
 ## References
 
 NodeJS 어플리케이션의 Dockerizing\
 https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+
+WSL 2 GPU Support for Docker Desktop on NVIDIA GPUs\
+https://www.docker.com/blog/wsl-2-gpu-support-for-docker-desktop-on-nvidia-gpus/
