@@ -3,6 +3,8 @@ created: 2023-01-07
 ---
 # Data analysis
 
+데이터 분석 기법에 대한 이것저것 주워들은 것들.
+
 ## 이중차분법
 
 이중차분(difference in differences, DID)은 두 집단의 difference를 difference한 두 시기로 비교해보는 것이다.

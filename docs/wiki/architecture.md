@@ -3,7 +3,7 @@ created: 2023-01-05
 ---
 # Architecture
 
-소프트웨어 아키텍처와 디자인.
+소프트웨어 아키텍처 이야기.
 
 ## Robert C. Martin - Clean Architecture and Design
 

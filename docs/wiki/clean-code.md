@@ -3,6 +3,8 @@ created: 2023-04-12
 ---
 # Clean Code
 
+코드를 작 잘성하는 방법. 읽기 쉬운 코드에 대한 이야기.
+
 ### Redux 가이드의 보일러 플레이트 줄이기
 
 https://ko.redux.js.org/usage/reducing-boilerplate/#%EC%95%A1%EC%85%98

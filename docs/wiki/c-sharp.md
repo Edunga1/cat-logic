@@ -3,7 +3,9 @@ created: 2023-04-13
 ---
 # C#
 
-[Unity 3D](./unity3d.md) 또는 [Ultima Online](./game.md)으로 C# 사용했다.
+윈도우 애플리케이션 보다는 게임 개발 도구나 게임 소스를 통해 많이 접했다.
+
+특히 [Unity 3D](./unity3d.md) 또는 [Ultima Online](./game.md)으로 C# 코드를 많이 본다.
 
 ## Event
 
