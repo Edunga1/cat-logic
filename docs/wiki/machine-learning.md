@@ -792,6 +792,47 @@ horizontal line으로 총 4개 구역을 나눠주세요.
 이 예제코드는 내 저장소에 올려두었다:\
 https://github.com/Edunga1/practice-phidata
 
+### Ollama
+
+ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.
+
+https://github.com/ollama/ollama
+
+실행은 Docker로 하자:
+
+```bash
+$ docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+```
+
+GPU를 사용할 수 있지만 나는 WSL2 환경에서 실행하지 못하고 있다:
+
+```bash
+$ docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+```
+
+백그라운드로 실행해 두고, [shell](./shell.md)에서 실행해보자:
+
+```bash
+$ docker exec -ti ollama ollama run llama2
+pulling manifest
+pulling 8934d96d3f08... 100% ▕█████████████████████████████████████████████████████▏ 3.8 GB
+pulling 8c17c2ebb0ea... 100% ▕█████████████████████████████████████████████████████▏ 7.0 KB
+pulling 7c23fb36d801... 100% ▕█████████████████████████████████████████████████████▏ 4.8 KB
+pulling 2e0493f67d0c... 100% ▕█████████████████████████████████████████████████████▏   59 B
+pulling fa304d675061... 100% ▕█████████████████████████████████████████████████████▏   91 B
+pulling 42ba7f8a01dd... 100% ▕█████████████████████████████████████████████████████▏  557 B
+verifying sha256 digest
+writing manifest
+removing any unused layers
+success
+>>> hi?
+Hello! It's nice to meet you. Is there something I can help you with or would you like to chat?
+```
+
+`ollama run <LLM>`으로만 실행해도 모델 다운로드 후 바로 대화할 수 있다.
+
+로컬 LLM으로 [phidata](https://github.com/phidatahq/phidata)를 시작하는 것이 내 목표.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
