@@ -792,6 +792,60 @@ horizontal line으로 총 4개 구역을 나눠주세요.
 이 예제코드는 내 저장소에 올려두었다:\
 https://github.com/Edunga1/practice-phidata
 
+#### 로컬 LLM 사용하기
+
+Ollama를 사용해서 로컬 LLM을 쉽게 띄우고, phidata로 도구를 쥐어주는 것이 아이디어다.
+
+```python
+import sys
+from phi.llm.ollama.chat import Ollama
+
+from phi.tools.toolkit import Toolkit
+from phi.assistant.assistant import Assistant
+from requests import get
+
+
+class WebpageVisitor(Toolkit):
+    def get_html(self, url: str):
+        """Get the HTML of a webpage.
+
+        Args:
+            url (str): The URL of the webpage.
+
+        Returns:
+            str: The HTML of the webpage.
+        """
+        print(f"============== Visiting {url}")
+        return get(url).text
+
+
+url = sys.argv[1]
+message = f"""
+Please summarize the contents of the site: {url}.
+
+Use `get_html` to get the HTML of the webpage.
+
+If the body content contains another link, visit it. And repeat this process up to five times.
+
+List all the links you visited in a bullet list.
+"""
+
+assistant = Assistant(
+    run_id="webpage_summarizer",
+    tools=[WebpageVisitor()],
+    llm=Ollama(model="llama2", host="localhost:11434"),
+)
+assistant.print_response(message, markdown=True)
+```
+
+모델은 `llama2`를 사용했다. 기존처럼 `get_html` 함수를 사용해서 제공하면 이상하게도 오류가 난다.
+`Toolkit`을 구현하면 오류가 나지 않는다.
+
+Ollama는 docker로 띄우고 host로 제공했다.
+
+문제는 도구를 전혀 사용하지 않는다.
+URL 자체를 기반한 답변하는데, 당연히 제대로된 답변을 못한다.
+
 ### Ollama
 
 ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.

@@ -157,6 +157,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p><a href="#phidata">Phidata</a></p>
 <ul>
 <li><a href="#%EB%82%98%EB%A7%8C%EC%9D%98-%EB%8F%84%EA%B5%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0">나만의 도구 만들기</a></li>
+<li><a href="#%EB%A1%9C%EC%BB%AC-llm-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">로컬 LLM 사용하기</a></li>
 </ul>
 </li>
 <li>
@@ -836,6 +837,52 @@ horizontal line으로 총 4개 구역을 나눠주세요.
 인공지능의 발전이 새삼 대단하다고 느낀다.</p>
 <p>이 예제코드는 내 저장소에 올려두었다:<br>
 <a href="https://github.com/Edunga1/practice-phidata">https://github.com/Edunga1/practice-phidata</a></p>
+<h4 id="로컬-llm-사용하기" style="position:relative;"><a href="#%EB%A1%9C%EC%BB%AC-llm-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="로컬 llm 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>로컬 LLM 사용하기</h4>
+<p>Ollama를 사용해서 로컬 LLM을 쉽게 띄우고, phidata로 도구를 쥐어주는 것이 아이디어다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">import</span> sys
+<span class="token keyword">from</span> phi<span class="token punctuation">.</span>llm<span class="token punctuation">.</span>ollama<span class="token punctuation">.</span>chat <span class="token keyword">import</span> Ollama
+
+<span class="token keyword">from</span> phi<span class="token punctuation">.</span>tools<span class="token punctuation">.</span>toolkit <span class="token keyword">import</span> Toolkit
+<span class="token keyword">from</span> phi<span class="token punctuation">.</span>assistant<span class="token punctuation">.</span>assistant <span class="token keyword">import</span> Assistant
+<span class="token keyword">from</span> requests <span class="token keyword">import</span> get
+
+
+<span class="token keyword">class</span> <span class="token class-name">WebpageVisitor</span><span class="token punctuation">(</span>Toolkit<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get_html</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> url<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Get the HTML of a webpage.
+
+        Args:
+            url (str): The URL of the webpage.
+
+        Returns:
+            str: The HTML of the webpage.
+        """</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"============== Visiting </span><span class="token interpolation"><span class="token punctuation">{</span>url<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> get<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>text
+
+
+url <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+message <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"""
+Please summarize the contents of the site: </span><span class="token interpolation"><span class="token punctuation">{</span>url<span class="token punctuation">}</span></span><span class="token string">.
+
+Use `get_html` to get the HTML of the webpage.
+
+If the body content contains another link, visit it. And repeat this process up to five times.
+
+List all the links you visited in a bullet list.
+"""</span></span>
+
+assistant <span class="token operator">=</span> Assistant<span class="token punctuation">(</span>
+    run_id<span class="token operator">=</span><span class="token string">"webpage_summarizer"</span><span class="token punctuation">,</span>
+    tools<span class="token operator">=</span><span class="token punctuation">[</span>WebpageVisitor<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    llm<span class="token operator">=</span>Ollama<span class="token punctuation">(</span>model<span class="token operator">=</span><span class="token string">"llama2"</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">"localhost:11434"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+assistant<span class="token punctuation">.</span>print_response<span class="token punctuation">(</span>message<span class="token punctuation">,</span> markdown<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre></div>
+<p>모델은 <code class="language-text">llama2</code>를 사용했다. 기존처럼 <code class="language-text">get_html</code> 함수를 사용해서 제공하면 이상하게도 오류가 난다.
+<code class="language-text">Toolkit</code>을 구현하면 오류가 나지 않는다.</p>
+<p>Ollama는 docker로 띄우고 host로 제공했다.</p>
+<p>문제는 도구를 전혀 사용하지 않는다.
+URL 자체를 기반한 답변하는데, 당연히 제대로된 답변을 못한다.</p>
 <h3 id="ollama" style="position:relative;"><a href="#ollama" aria-label="ollama permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ollama</h3>
 <p>ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.</p>
 <p><a href="https://github.com/ollama/ollama">https://github.com/ollama/ollama</a></p>
