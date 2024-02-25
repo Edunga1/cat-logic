@@ -881,8 +881,8 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 <p>모델은 <code class="language-text">llama2</code>를 사용했다. 기존처럼 <code class="language-text">get_html</code> 함수를 사용해서 제공하면 이상하게도 오류가 난다.
 <code class="language-text">Toolkit</code>을 구현하면 오류가 나지 않는다.</p>
 <p>Ollama는 docker로 띄우고 host로 제공했다.</p>
-<p>문제는 도구를 전혀 사용하지 않는다.
-URL 자체를 기반한 답변하는데, 당연히 제대로된 답변을 못한다.</p>
+<p>문제는 도구를 전혀 사용하지 않는다. URL 자체를 기반한 답변을 하는데, 당연히 제대로된 답변을 못한다.
+아마도 모델 성능 문제인 거 같다. GPT-4의 경우에도 프롬프트의 해석에 따라서 도구를 사용하는 빈도가 달라졌기 때문.</p>
 <h3 id="ollama" style="position:relative;"><a href="#ollama" aria-label="ollama permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ollama</h3>
 <p>ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.</p>
 <p><a href="https://github.com/ollama/ollama">https://github.com/ollama/ollama</a></p>
