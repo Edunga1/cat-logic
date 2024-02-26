@@ -249,7 +249,7 @@ disallow_untyped_defs = False</code></pre></div>
 예를들어 Pylint는 <a href="https://pylint.readthedocs.io/en/latest/user_guide/messages/warning/broad-exception-caught.html">broad-exception-caught</a>와 <a href="https://pylint.readthedocs.io/en/latest/user_guide/messages/convention/consider-using-f-string.html">consider-using-f-string</a>을 잡아주지만 Ruff는 그렇지 않다.</p>
 <p>아직 많이 사용해보지 않아서 그 차이가 어느정도인지는 잘 모르겠다.
 기능은 부족하지만 매우 빠른 장점으로 앞으로 자주 사용할 것 같다.</p>
-<p>nvim은 <a href="https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#ruff">null-ls</a>에서 제공한다. diagnostic, formatter 두 개 소스로 제공한다.
+<p>nvim은 <a href="../BUILTINS#ruff">null-ls</a>에서 제공한다. diagnostic, formatter 두 개 소스로 제공한다.
 Pylint와 함께 사용해보면 Ruff의 반응이 빨라서 항상 Pylint보다 Ruff의 진단이 먼저 노출된다.</p>
 <p><strong>개발 환경 구성 시 주의해야 한다.</strong></p>
 <p>Ruff 설명대로 rust로 작성되어 있어서 로컬 개발 환경이나, 개발용 Docker 환경 구성을 위해서 Rust 런타임 환경을 구성이 필요할 수 있다.
@@ -259,8 +259,8 @@ macOS 기준으로는 별도 도구 없이 설치되었지만, python alpine 이
 <p><a href="https://github.com/apache/airflow/blob/main/pyproject.toml#L29">Apache Airflow</a>,
 <a href="https://github.com/tiangolo/fastapi/blob/master/pyproject.toml#L164">FastAPI</a>,
 <a href="https://github.com/huggingface/transformers/blob/main/pyproject.toml#L5">Hugging Face</a>,
-<a href="https://github.com/pandas-dev/pandas/blob/main/pyproject.toml#L194.md">Pandas</a>
-<a href="https://github.com/scipy/scipy/blob/main/pyproject.toml#L121.md">SciPy</a>
+<a href="../pyproject.toml#L194">Pandas</a>
+<a href="../pyproject.toml#L121">SciPy</a>
 등 대규모 프로젝트에서 ruff를 사용하고 있다. pylint와 함께 사용하는 곳도 아닌곳도 있다.</p>
 <blockquote>
 <p>Ruff can be used to replace Flake8 (plus dozens of plugins), isort, pydocstyle, yesqa, eradicate, pyupgrade, and autoflake, all while executing tens or hundreds of times faster than any individual tool.</p>
@@ -273,7 +273,7 @@ macOS 기준으로는 별도 도구 없이 설치되었지만, python alpine 이
 <span class="token number">1</span>. Yes
 <span class="token number">2</span>. Use black
 <span class="token number">3</span>. Use yapf</code></pre></div>
-<p><a href="https://www.reddit.com/r/Python/comments/8oqy03/blog_a_comparison_of_autopep8_black_and_yapf_code/.md">Blog: A comparison of autopep8, black, and yapf - Code formatters for Python</a><br>
+<p><a href="../blog_a_comparison_of_autopep8_black_and_yapf_code/">Blog: A comparison of autopep8, black, and yapf - Code formatters for Python</a><br>
 3개를 비교한 다른 글. 덧글에는 black을 사용하고 만족했다나.</p>
 <table>
 <thead>
