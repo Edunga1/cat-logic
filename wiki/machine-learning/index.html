@@ -888,6 +888,98 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 <blockquote>
 <p>But only GPT4 can do function calling reliably. local/oss models are great for completion therefore most of the examples you'll see with OSS models will be of RAG</p>
 </blockquote>
+<hr>
+<p>OpenAI의 <code class="language-text">GPT-3.5-turbo</code>만 하더라도 잘 동작한다.
+모델 성능에 따른 function calling의 사용 문제가 맞는 듯.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_html</span><span class="token punctuation">(</span>url<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Get the HTML of a webpage.
+
+    Args:
+        url (str): The URL of the webpage.
+
+    Returns:
+        str: The HTML of the webpage.
+    """</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Fetching HTML from </span><span class="token interpolation"><span class="token punctuation">{</span>url<span class="token punctuation">}</span></span><span class="token string">..."</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> get<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>text
+
+
+url <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+message <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"""
+</span><span class="token interpolation"><span class="token punctuation">{</span>url<span class="token punctuation">}</span></span><span class="token string"> 사이트의 내용을 요약해주세요. 다른 링크는 방문하지 마세요.
+
+horizontal line으로 총 3개 구역을 나눠주세요.
+
+첫 번째 구역은 본문 내용을 10줄 이내로 요약해주세요.
+두 번째 구역은 리액션이 많은 덧글을 최대 3개까지 원문 그대로 포함해주세요.
+마지막 구역은 모든 덧글을 요약해 주세요. 원문은 포함하지 않아도 됩니다.
+"""</span></span>
+
+
+assistant <span class="token operator">=</span> Assistant<span class="token punctuation">(</span>
+    tools<span class="token operator">=</span><span class="token punctuation">[</span>get_html<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    llm<span class="token operator">=</span>OpenAIChat<span class="token punctuation">(</span>
+        model<span class="token operator">=</span><span class="token string">"gpt-3.5-turbo-0125"</span><span class="token punctuation">,</span>
+        max_tokens<span class="token operator">=</span><span class="token number">4096</span><span class="token punctuation">,</span>
+        temperature<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+assistant<span class="token punctuation">.</span>print_response<span class="token punctuation">(</span>message<span class="token punctuation">,</span> markdown<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre></div>
+<p><code class="language-text">다른 링크는 방문하지 마세요.</code>라는 조건을 추가하지 않으면 엉뚱한 링크를 추가 방문하려고 한다.
+그러다 보니 토큰 초과로 실패하는 문제가 있었다. <code class="language-text">GPT-3.5-turbo-0125</code>의 최대 토큰은 <code class="language-text">16,385</code>.</p>
+<p>다음은 응답 결과이다:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ python assistant.py https://news.hada.io/topic<span class="token punctuation">\</span>?id<span class="token punctuation">\</span><span class="token operator">=</span><span class="token number">13464</span>
+Fetching HTML from https://news.hada.io/topic?id<span class="token operator">=</span><span class="token number">13464</span><span class="token punctuation">..</span>.
+╭──────────┬──────────────────────────────────────────────────────────────────────╮
+│          │                                                                      │
+│          │ https://news.hada.io/topic?id<span class="token operator">=</span><span class="token number">13464</span> 사이트의 내용을 요약해주세요.    │
+│          │ 다른 링크는 방문하지 마세요.                                         │
+│          │                                                                      │
+│          │ horizontal line으로 총 <span class="token number">3</span>개 구역을 나눠주세요.                        │
+│          │                                                                      │
+│          │ 첫 번째 구역은 본문 내용을 <span class="token number">10</span>줄 이내로 요약해주세요.                 │
+│          │ 두 번째 구역은 리액션이 많은 덧글을 최대 <span class="token number">3</span>개까지 원문 그대로         │
+│          │ 포함해주세요.                                                        │
+│          │ 마지막 구역은 모든 덧글을 요약해 주세요. 원문은 포함하지 않아도      │
+│          │ 됩니다.                                                              │
+│ Message  │                                                                      │
+├──────────┼──────────────────────────────────────────────────────────────────────┤
+│ Response │ ──────────────────────────────────────────────────────────────────── │
+│ <span class="token punctuation">(</span><span class="token number">12</span>.7s<span class="token punctuation">)</span>  │                                                                      │
+│          │                                 요약                                 │
+│          │                                                                      │
+│          │                              본문 내용                               │
+│          │                                                                      │
+│          │  • 개발자 생산성 측정 시 흔히 저지르는 실수는 <span class="token string">'근무 시간'</span>과 같은     │
+│          │    투입물에 의존하는 것이며, 이는 잘못된 행동을 유발할 수 있음.      │
+│          │  • 기업 문화가 화면 앞 시간을 가치 있게 여기고 보상한다면, 개발자는  │
+│          │    시간을 너무 많이 쏟게 되어 작업 품질을 보장하기 어려워짐.         │
+│          │  • 더 엄한 환경에서는 <span class="token string">'일찍 출근하고 늦게 퇴근하는'</span> 경쟁이 생김.     │
+│          │                                                                      │
+│          │ ──────────────────────────────────────────────────────────────────── │
+│          │                                                                      │
+│          │                             리액션 덧글                              │
+│          │                                                                      │
+│          │  <span class="token number">1</span> *******                                                           │
+│          │     • <span class="token string">"아찔하네요. 매니저의 관점과 실무자의 관점이 차이가 있을 것    │
+│          │       같아요,,"</span>                                                      │
+│          │  <span class="token number">2</span> ********                                                          │
+│          │     • <span class="token string">"딱 llm이 필요한 부분인듯해요"</span>                                 │
+│          │  <span class="token number">3</span> ********                                                          │
+│          │     • <span class="token string">"저는 최근에는 이런 글에 대해서 좀 비판적으로 보는 것이        │
+│          │       사람들이 결국 이러한 글을 보고 내리는 결론이 아무 관리도       │
+│          │       안하는 것을 선택하는 것이라고 생각합니다."</span>                     │
+│          │                                                                      │
+│          │ ──────────────────────────────────────────────────────────────────── │
+│          │                                                                      │
+│          │                            전체 덧글 요약                            │
+│          │                                                                      │
+│          │  • 덧글들은 경영자와 실무자 사이의 관점 차이, 필요한 부분에 대한     │
+│          │    언급, 글의 비판적 시각 등 다양한 의견이 포함되어 있습니다.        │
+╰──────────┴──────────────────────────────────────────────────────────────────────╯</code></pre></div>
+<p><code class="language-text">GPT-3.5-turbo-0125</code>로 2번 성공, 2번 토큰 초과 실패하여 든 비용은 $0.02.
+GPT-4와 비교하면 훨씬 저렴하기도 하지만, 사용 토큰 제한량에서 크게 차이가 나서 많이 사용할 수 없는 구조다.</p>
+<p>나중에 앱을 고도화 한다면 이 토큰 차이로 인해서 품질이 달라질 수도 있겠다.</p>
 <h3 id="ollama" style="position:relative;"><a href="#ollama" aria-label="ollama permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ollama</h3>
 <p>ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.</p>
 <p><a href="https://github.com/ollama/ollama">https://github.com/ollama/ollama</a></p>
