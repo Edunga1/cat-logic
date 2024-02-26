@@ -9,7 +9,7 @@ const visit = require("unist-util-visit")
 module.exports = function({ markdownAST }) {
   visit(markdownAST, "link", node => {
     if (isRelativeLink(node.url)) {
-      node.url = node.url.replace(/.*\/(.+)\.md(#.*)?$/, (_, base, hash) => {
+      node.url = node.url.replace(/.*\/(.+)\.md(#.*)?.*$/, (_, base, hash) => {
         return `../${base}${hash || ""}`
       })
     }
@@ -19,5 +19,5 @@ module.exports = function({ markdownAST }) {
 }
 
 function isRelativeLink(url) {
-  return url && url.startsWith("/") && url.endsWith(".md")
+  return url && url.match(/.*\/(.+)\.md(#.*)?/)
 }
