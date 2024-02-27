@@ -841,22 +841,10 @@ assistant.print_response(message, markdown=True)
 모델은 `llama2`를 사용했다. 기존처럼 `get_html` 함수를 사용해서 제공하면 이상하게도 오류가 난다.
 `Toolkit`을 구현하면 오류가 나지 않는다.
 
-Ollama는 docker로 띄우고 `host`로 제공했다.
+Ollama는 docker로 띄우고 host로 제공했다.
 
-문제는 도구를 거의 사용(function calling)하지 않는다. 그래서 제대로된 답변을 하지 못하고, URL 문자열에 기반한 내용으로 답변한다.
-아마도 모델 성능 문제인 거 같다. GPT-4의 경우에도 프롬프트 작성에 따라서 도구를 사용하는 빈도가 달라졌기 때문.
-
-Ollama로 llama2, llama2:13b, llava, mistral는 모두 function calling에 실패했고,\
-gemma는 가끔 성공했다. 대신 HTML 응답을 제대로 파싱하지 못하고, 추상적인 답변을 한다.
-
-```bash
-Thistext is a snippet of a larger article. The article is about a person who is doing something. The text is about
-aperson who is doing something and it is also about a person who is doing something. The text is also about a
-personwho is doing something and it is also about a person who is doing something. The text is also about a person
-whois doing something and it is also about a person who is doing something. The text is also about a person who is
-doingsomething and it is also about a person who is doing something. The text is also about a person who is doing
-somethingand it is also about a person who is doing something.
-```
+문제는 도구를 전혀 사용(function calling)하지 않는다. URL 자체를 기반한 답변을 하는데, 당연히 제대로된 답변을 못한다.
+아마도 모델 성능 문제인 거 같다. GPT-4의 경우에도 프롬프트의 해석에 따라서 도구를 사용하는 빈도가 달라졌기 때문.
 
 [오픈소스 모델을 지원하는지?](https://github.com/phidatahq/phidata/issues/121#issuecomment-1963098829) 질문에
 기여자의 답변 내용을 보면, GPT-4 말고는 function calling을 제대로 사용할 수 없다고 한다:
