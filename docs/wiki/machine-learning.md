@@ -154,6 +154,30 @@ GPT가 파이썬 코드를 실행할 수 있고, Dalle를 사용하여 이미지
 
 다른 모델에서 같은 방식을 시도했더니 비슷한 답별을 받았다고 한다.
 
+### Function calling
+
+Function calling은 모델이 사람이 만든 함수를 호출하도록 하는 아이디어다.
+
+OpenAI는 *"Learn how to connect large language models to external tools"*. 즉 외부 도구를 연결한다고 표현한다.
+
+[phidata](https://github.com/phidatahq/phidata/)는 function calling AI 앱을 만드는 툴킷을 제공한다.
+
+#### OpenAI의 Function calling
+
+[OpenAI의 Function calling](https://platform.openai.com/docs/guides/function-calling) 가이드 문서에서는 다음과 같이 설명한다:
+
+> In an API call, you can describe functions and have the model intelligently choose to output a JSON object containing arguments to call one or many functions. The Chat Completions API does not call the function; instead, the model generates JSON that you can use to call the function in your code.
+
+함수를 설명하면 모델이 함수 호출을 위한 인자가 있는 JSON 객체를 생성한다.
+
+모든 모델에서 사용할 수 있는 기능은 아니다. `gpt-3.5-turbo`와 `gpt-4-turbo`가 function calling에 특화되어 있다고:
+
+> The latest models (gpt-3.5-turbo-0125 and gpt-4-turbo-preview) have been trained to both detect when a function should to be called (depending on the input) and to respond with JSON that adheres to the function signature more closely than previous models.
+
+모델 외부에 대한 사이트이펙트가 있으니 주의하라고 한다:
+
+> With this capability also comes potential risks. We strongly recommend building in user confirmation flows before taking actions that impact the world on behalf of users (sending an email, posting something online, making a purchase, etc).
+
 ## Products
 
 ### ChatGPT
