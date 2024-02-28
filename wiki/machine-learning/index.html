@@ -89,6 +89,12 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li><a href="#openai-chatgpt-4%EC%9D%98-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8-%EC%9C%A0%EC%B6%9C">OpenAI ChatGPT-4의 프롬프트 유출</a></li>
 </ul>
 </li>
+<li>
+<p><a href="#function-calling">Function calling</a></p>
+<ul>
+<li><a href="#openai%EC%9D%98-function-calling">OpenAI의 Function calling</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -267,6 +273,24 @@ For citing quotes from the 'browser' tool: please render in this format: '【{me
 <p>사실 이 유출이 실제로 사용된 것인지는 확실하지 않다.
 프롬프트를 발설하지 말라는 지침이 없는 것도 특이하다.</p>
 <p>다른 모델에서 같은 방식을 시도했더니 비슷한 답별을 받았다고 한다.</p>
+<h3 id="function-calling" style="position:relative;"><a href="#function-calling" aria-label="function calling permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Function calling</h3>
+<p>Function calling은 모델이 사람이 만든 함수를 호출하도록 하는 아이디어다.</p>
+<p>OpenAI는 <em>"Learn how to connect large language models to external tools"</em>. 즉 외부 도구를 연결한다고 표현한다.</p>
+<p><a href="https://github.com/phidatahq/phidata/">phidata</a>는 function calling AI 앱을 만드는 툴킷을 제공한다.</p>
+<h4 id="openai의-function-calling" style="position:relative;"><a href="#openai%EC%9D%98-function-calling" aria-label="openai의 function calling permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OpenAI의 Function calling</h4>
+<p><a href="https://platform.openai.com/docs/guides/function-calling">OpenAI의 Function calling</a> 가이드 문서에서는 다음과 같이 설명한다:</p>
+<blockquote>
+<p>In an API call, you can describe functions and have the model intelligently choose to output a JSON object containing arguments to call one or many functions. The Chat Completions API does not call the function; instead, the model generates JSON that you can use to call the function in your code.</p>
+</blockquote>
+<p>함수를 설명하면 모델이 함수 호출을 위한 인자가 있는 JSON 객체를 생성한다.</p>
+<p>모든 모델에서 사용할 수 있는 기능은 아니다. <code class="language-text">gpt-3.5-turbo</code>와 <code class="language-text">gpt-4-turbo</code>가 function calling에 특화되어 있다고:</p>
+<blockquote>
+<p>The latest models (gpt-3.5-turbo-0125 and gpt-4-turbo-preview) have been trained to both detect when a function should to be called (depending on the input) and to respond with JSON that adheres to the function signature more closely than previous models.</p>
+</blockquote>
+<p>모델 외부에 대한 사이트이펙트가 있으니 주의하라고 한다:</p>
+<blockquote>
+<p>With this capability also comes potential risks. We strongly recommend building in user confirmation flows before taking actions that impact the world on behalf of users (sending an email, posting something online, making a purchase, etc).</p>
+</blockquote>
 <h2 id="products" style="position:relative;"><a href="#products" aria-label="products permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Products</h2>
 <h3 id="chatgpt" style="position:relative;"><a href="#chatgpt" aria-label="chatgpt permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ChatGPT</h3>
 <p><a href="https://openai.com/blog/chatgpt/">https://openai.com/blog/chatgpt/</a></p>
@@ -889,8 +913,7 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 <p>But only GPT4 can do function calling reliably. local/oss models are great for completion therefore most of the examples you'll see with OSS models will be of RAG</p>
 </blockquote>
 <hr>
-<p>OpenAI의 <code class="language-text">GPT-3.5-turbo</code>만 하더라도 잘 동작한다.
-모델 성능에 따른 function calling의 사용 문제가 맞는 듯.</p>
+<p>OpenAI의 <code class="language-text">GPT-3.5-turbo</code>도 잘 동작한다.</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_html</span><span class="token punctuation">(</span>url<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""Get the HTML of a webpage.
 
