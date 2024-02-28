@@ -482,7 +482,7 @@ from my_module import _baz  # 불가능
 
 PR: https://github.com/pypa/sampleproject/pull/104
 
-PR 내용을 읽어보면 Pycon US 2019에서 src 레이아웃으로 전환하기로 했다고 한다.
+PR 내용을 읽어보면 PyCon US 2019에서 src 레이아웃으로 전환하기로 했다고 한다.
 
 PyCon US Packaging Mini-Summit 2019 토론장: [https://discuss.python.org/t/pycon-us-packaging-mini-summit-2019/833](https://discuss.python.org/t/pycon-us-packaging-mini-summit-2019/833)
 
