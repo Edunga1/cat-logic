@@ -853,8 +853,7 @@ Ollama는 docker로 띄우고 host로 제공했다.
 
 ---
 
-OpenAI의 `GPT-3.5-turbo`만 하더라도 잘 동작한다.
-모델 성능에 따른 function calling의 사용 문제가 맞는 듯.
+OpenAI의 `GPT-3.5-turbo`도 잘 동작한다.
 
 ```python
 def get_html(url: str):
