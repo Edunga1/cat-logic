@@ -129,6 +129,12 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p><a href="#git-worktree"><code class="language-text">git worktree</code></a></p>
 </li>
 <li>
+<p><a href="#git-large-file-storagelfs">Git Large File Storage(LFS)</a></p>
+<ul>
+<li><a href="#%EC%82%AC%EC%9A%A9%EB%B2%95">사용법</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#troubleshooting">Troubleshooting</a></p>
 <ul>
 <li><a href="#git-commit-%EC%8B%9C-waiting-for-your-editor-to-close-the-file-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-%EC%BB%A4%EB%B0%8B%EC%9D%B4-%EC%95%88%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C">Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제</a></li>
@@ -566,6 +572,48 @@ git에서는 작업 영역을 working tree라 부르니, 알아두면 좋겠다.
 + staging     <span class="token comment"># 다른(원본) worktree</span></code></pre></div>
 <p>worktree를 제거하기 위해서는 <code class="language-text">git worktree remove &lt;path></code>를 사용한다. Tab을 통한 경로 자동 완성이 된다.
 worktree에서 사용한 브랜치는 계속 유지된다.</p>
+<h2 id="git-large-file-storagelfs" style="position:relative;"><a href="#git-large-file-storagelfs" aria-label="git large file storagelfs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git Large File Storage(LFS)</h2>
+<p>Git Large File Storage는 대용량 파일의 버전 관리를 위한 도구이다.</p>
+<p>Git은 리모트 저장소로부터 clone 받을 때 대용량 파일은 실제 파일이 아닌, 참조만 받아온다.<br>
+그래서 clone 받을 때 빠르게 받을 수 있다.</p>
+<p>References:</p>
+<ul>
+<li>git-lfs 공식 사이트: <a href="https://git-lfs.com/">https://git-lfs.com/</a></li>
+<li>GitHub의 LFS 설명: <a href="https://docs.github.com/ko/repositories/working-with-files/managing-large-files/about-git-large-file-storage">https://docs.github.com/ko/repositories/working-with-files/managing-large-files/about-git-large-file-storage</a></li>
+</ul>
+<p>Git LFS는 Git의 확장으로 분류한다:</p>
+<blockquote>
+<p>An open source Git extension for versioning large files</p>
+</blockquote>
+<p><code class="language-text">git lfs</code> 명령어로 제공하지만, Git에 내장된 것은 아니다. 별도 설치가 필요하다.<br>
+Linux, macOS는 <code class="language-text">brew install git-lfs</code>로 설치 가능.</p>
+<h3 id="사용법" style="position:relative;"><a href="#%EC%82%AC%EC%9A%A9%EB%B2%95" aria-label="사용법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>사용법</h3>
+<p>최근 Huggingface에서 <a href="https://huggingface.co/Trelis/Llama-2-7b-chat-hf-function-calling-v2">모델</a>을 다운로드 받고 실행해 보면서 처음 사용해 보았다.<br>
+<code class="language-text">.git</code> 폴더는 모든 리비전에 대한 내용을 담고 있어서 그런지, 모델 저장소의 경우 용량이 매우 커졌다.</p>
+<p>대용량 파일을 업로드 할 일이 없어서 업로드에 대한 내용은 생략한다.</p>
+<p>git clone 전에 하거나 clone 후에 하는지에 따라 사용 방법이 다르다.</p>
+<hr>
+<p><strong>Clone 전</strong></p>
+<ol>
+<li><code class="language-text">git lfs install</code>로 LFS 사용을 활성화한다. (비활성화는 <code class="language-text">git lfs uninstall</code>)</li>
+</ol>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">git</span> lfs <span class="token function">install</span>
+Updated Git hooks.
+Git LFS initialized.</code></pre></div>
+<ol start="2">
+<li><code class="language-text">git clone</code> 한다.</li>
+</ol>
+<p><code class="language-text">git lfs install</code>은 한 번만 실행하면 전역으로 적용된다.
+앞으로 clone 받는 저장소에 대해서 대용량 파일을 실제 파일로 받겠다는 의미다.</p>
+<p>다운로드 진행 상황이 UI로 표시되지 않기 때문에 clone이 멈춘듯한 모습으로 보이지만,
+<code class="language-text">du -sh .git</code> 명령어로 용량을 확인하면 계속 증가하는 것을 볼 수 있다.</p>
+<p><code class="language-text">git lfs install</code>을 하지 않고 clone을 받는 것과 비교하면 완료 속도가 다른 것을 체감할 수 있다.</p>
+<hr>
+<p><strong>Clone 후</strong></p>
+<p><code class="language-text">git lfs pull</code>로 대용량 파일을 다운로드 받는다.</p>
+<p>이 경우에도 멈춘듯한 모습으로 보이지만, 실제로는 다운로드가 진행된다.</p>
+<p>도움말 <code class="language-text">git lfs pull --help</code>에 다르면 <code class="language-text">git lfs fetch</code> 명령어와 같다고 한다.<br>
+아마도 특정 파일만 다운로드 받을 수도 있는 모양.</p>
 <h2 id="troubleshooting" style="position:relative;"><a href="#troubleshooting" aria-label="troubleshooting permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
 <h3 id="git-commit-시-waiting-for-your-editor-to-close-the-file-메시지와-함께-커밋이-안되는-문제" style="position:relative;"><a href="#git-commit-%EC%8B%9C-waiting-for-your-editor-to-close-the-file-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-%EC%BB%A4%EB%B0%8B%EC%9D%B4-%EC%95%88%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="git commit 시 waiting for your editor to close the file 메시지와 함께 커밋이 안되는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제</h3>
 <p><code class="language-text">git commit -v</code>로 커밋 메시지 작성 후 <code class="language-text">ww</code> 또는 <code class="language-text">:wq</code>로 저장하여 나와도 커밋이 안된다.
