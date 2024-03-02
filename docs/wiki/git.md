@@ -483,6 +483,65 @@ $ git branch
 worktree를 제거하기 위해서는 `git worktree remove <path>`를 사용한다. Tab을 통한 경로 자동 완성이 된다.
 worktree에서 사용한 브랜치는 계속 유지된다.
 
+## Git Large File Storage(LFS)
+
+Git Large File Storage는 대용량 파일의 버전 관리를 위한 도구이다.
+
+Git은 리모트 저장소로부터 clone 받을 때 대용량 파일은 실제 파일이 아닌, 참조만 받아온다.\
+그래서 clone 받을 때 빠르게 받을 수 있다.
+
+References:
+
+- git-lfs 공식 사이트: https://git-lfs.com/
+- GitHub의 LFS 설명: https://docs.github.com/ko/repositories/working-with-files/managing-large-files/about-git-large-file-storage
+
+Git LFS는 Git의 확장으로 분류한다:
+
+> An open source Git extension for versioning large files
+
+`git lfs` 명령어로 제공하지만, Git에 내장된 것은 아니다. 별도 설치가 필요하다.\
+Linux, macOS는 `brew install git-lfs`로 설치 가능.
+
+### 사용법
+
+최근 Huggingface에서 [모델](https://huggingface.co/Trelis/Llama-2-7b-chat-hf-function-calling-v2)을 다운로드 받고 실행해 보면서 처음 사용해 보았다.\
+`.git` 폴더는 모든 리비전에 대한 내용을 담고 있어서 그런지, 모델 저장소의 경우 용량이 매우 커졌다.
+
+대용량 파일을 업로드 할 일이 없어서 업로드에 대한 내용은 생략한다.
+
+git clone 전에 하거나 clone 후에 하는지에 따라 사용 방법이 다르다.
+
+---
+
+**Clone 전**
+
+1. `git lfs install`로 LFS 사용을 활성화한다. (비활성화는 `git lfs uninstall`)
+  ```bash
+  $ git lfs install
+  Updated Git hooks.
+  Git LFS initialized.
+  ```
+2. `git clone` 한다.
+
+`git lfs install`은 한 번만 실행하면 전역으로 적용된다.
+앞으로 clone 받는 저장소에 대해서 대용량 파일을 실제 파일로 받겠다는 의미다.
+
+다운로드 진행 상황이 UI로 표시되지 않기 때문에 clone이 멈춘듯한 모습으로 보이지만,
+`du -sh .git` 명령어로 용량을 확인하면 계속 증가하는 것을 볼 수 있다.
+
+`git lfs install`을 하지 않고 clone을 받는 것과 비교하면 완료 속도가 다른 것을 체감할 수 있다.
+
+---
+
+**Clone 후**
+
+`git lfs pull`로 대용량 파일을 다운로드 받는다.
+
+이 경우에도 멈춘듯한 모습으로 보이지만, 실제로는 다운로드가 진행된다.
+
+도움말 `git lfs pull --help`에 다르면 `git lfs fetch` 명령어와 같다고 한다.\
+아마도 특정 파일만 다운로드 받을 수도 있는 모양.
+
 ## Troubleshooting
 
 ### Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
