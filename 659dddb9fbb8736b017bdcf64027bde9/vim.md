@@ -152,7 +152,7 @@ vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한
 
 `:global/^/move 0`로 전체 줄을 역정렬할 수 있다. `move 0`가 이동할 줄 번호를 의미하므로, `move 10`이면 10번째 아래의 모든 줄만 역정렬한다.
 
-## Use cases
+## 내 사용 사례
 
 ### 파일 검색
 
@@ -487,7 +487,7 @@ call vimwiki#u#map_key('n', '<CR>', '<Plug>VimwikiFollowLink')
 
 사용중인 플러그인.
 
-### Standard Plugins
+### 내장 플러그인(Standard Plugin)
 
 vim에 기본으로 포함된 플러그인. 별도 설치 없이도 기본 제공된다.
 그래서 주의가 필요한 경우도 있다!
@@ -532,6 +532,24 @@ count  total (s)   self (s)
 ```
 
 프로파일 세부 사항을 보면 정규식 사용으로 추정되는 `matchlist` 함수가 원인으로 보인다.
+
+---
+
+버퍼 진입 시 설정을 끄는 것으로 해결했다.
+
+```vim
+autocmd BufReadPre * if getfsize(expand('%')) > 100000 | execute 'NoMatchParen' | endif
+```
+
+100KB 이상 파일을 열 때 matchparen을 끄는 설정이다.\
+문제는 전역적으로 설정되어서, 문제가 없는 파일에서도 기능이 꺼진다.
+
+버퍼 진입마다 파일 크기를 확인하고 설정을 on/off 하는 것은 소모적이라 생각해서 보류. 더 나은 방법을 찾고 있다.
+
+---
+
+파일 열거나 닫을 때 느린 문제는 아직 처리하지 못했다.
+`:LspStop`, `:TSDisable` 사용하면 빠르게 닫히는 것은 확인해서, 자연스럽게 처리하는 방법을 찾고 있다.
 
 ### chrisbra/csv.vim
 
@@ -856,7 +874,7 @@ endif
 {'sonokai': {'uri': 'https://git::@github.com/sainnhe/sonokai.git', 'dir': '/home/dupark/.local/share/nvim/plugged/sonokai/', 'frozen': 0, 'branch': ''}}
 ```
 
-## Issues
+## 문제 해결
 
 ### Typescript filetype 문제
 
