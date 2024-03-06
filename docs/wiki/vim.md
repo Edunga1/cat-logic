@@ -487,6 +487,52 @@ call vimwiki#u#map_key('n', '<CR>', '<Plug>VimwikiFollowLink')
 
 사용중인 플러그인.
 
+### Standard Plugins
+
+vim에 기본으로 포함된 플러그인. 별도 설치 없이도 기본 제공된다.
+그래서 주의가 필요한 경우도 있다!
+
+도움말은 `:h standard-plugin`.
+
+#### matchparen
+
+괄호에 대한 매칭을 하이라이트한다. `:h matchparen`.
+
+##### 용량이 큰 파일에서 느려지는 문제
+
+이 플러그인의 문제는 큰 파일에서 매우 느려진다는 점이다.
+880KB 크기 JSON 파일을 여는데도 오래 걸렸고, 커서 이동하는데 초 단위로 소요되었다.
+
+```text
+FUNCTIONS SORTED ON TOTAL TIME
+count  total (s)   self (s)  function
+   28   3.302722   3.302551  <SNR>108_Highlight_Matching_Pair()
+```
+
+`108_Highlight_Matching_Pair`가 matchparen의 플러그인 함수로 보이는데, 가장 시간을 많이 소모했다.
+
+```text
+count  total (s)   self (s)
+                              " Remove any previous match.
+   28   0.000272   0.000101   call s:Remove_Matches()
+                            
+                              " Avoid that we remove the popup menu.
+                              " Return when there are no colors (looks like the cursor jumps).
+   28              0.000108   if pumvisible() || (&t_Co < 8 && !has("gui_running"))
+                                return
+   28              0.000009   endif
+                            
+                              " Get the character under the cursor and check if it's in 'matchpairs'.
+   28              0.000078   let c_lnum = line('.')
+   28              0.000058   let c_col = col('.')
+   28              0.000022   let before = 0
+                            
+   28              0.002908   let text = getline(c_lnum)
+   28              3.297441   let matches = matchlist(text, '\(.\)\=\%'.c_col.'c\(.\=\)')
+```
+
+프로파일 세부 사항을 보면 정규식 사용으로 추정되는 `matchlist` 함수가 원인으로 보인다.
+
 ### chrisbra/csv.vim
 
 ![csv.vim sample](res/csv-vim-sample.png)
