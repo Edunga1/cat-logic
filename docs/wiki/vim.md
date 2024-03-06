@@ -152,7 +152,7 @@ vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한
 
 `:global/^/move 0`로 전체 줄을 역정렬할 수 있다. `move 0`가 이동할 줄 번호를 의미하므로, `move 10`이면 10번째 아래의 모든 줄만 역정렬한다.
 
-## Use cases
+## 내 사용 사례
 
 ### 파일 검색
 
@@ -487,7 +487,7 @@ call vimwiki#u#map_key('n', '<CR>', '<Plug>VimwikiFollowLink')
 
 사용중인 플러그인.
 
-### Standard Plugins
+### 내장 플러그인(Standard Plugin)
 
 vim에 기본으로 포함된 플러그인. 별도 설치 없이도 기본 제공된다.
 그래서 주의가 필요한 경우도 있다!
@@ -874,7 +874,7 @@ endif
 {'sonokai': {'uri': 'https://git::@github.com/sainnhe/sonokai.git', 'dir': '/home/dupark/.local/share/nvim/plugged/sonokai/', 'frozen': 0, 'branch': ''}}
 ```
 
-## Issues
+## 문제 해결
 
 ### Typescript filetype 문제
 
