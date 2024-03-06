@@ -533,6 +533,24 @@ count  total (s)   self (s)
 
 프로파일 세부 사항을 보면 정규식 사용으로 추정되는 `matchlist` 함수가 원인으로 보인다.
 
+---
+
+버퍼 진입 시 설정을 끄는 것으로 해결했다.
+
+```vim
+autocmd BufReadPre * if getfsize(expand('%')) > 100000 | execute 'NoMatchParen' | endif
+```
+
+100KB 이상 파일을 열 때 matchparen을 끄는 설정이다.\
+문제는 전역적으로 설정되어서, 문제가 없는 파일에서도 기능이 꺼진다.
+
+버퍼 진입마다 파일 크기를 확인하고 설정을 on/off 하는 것은 소모적이라 생각해서 보류. 더 나은 방법을 찾고 있다.
+
+---
+
+파일 열거나 닫을 때 느린 문제는 아직 처리하지 못했다.
+`:LspStop`, `:TSDisable` 사용하면 빠르게 닫히는 것은 확인해서, 자연스럽게 처리하는 방법을 찾고 있다.
+
 ### chrisbra/csv.vim
 
 ![csv.vim sample](res/csv-vim-sample.png)
