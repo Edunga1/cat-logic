@@ -66,6 +66,7 @@ aws iam update-access-key --access-key-id <OLD_ACCESS_KEY_ID> --status Inactive
 그러면 interactive로 secret key를 입력하지 않고 자동화할 수 있을 듯한데, 1번의 생성 명령어에서 csv 포맷을 제공하지 않는다.
 
 기존 access-key를 확인하려면 [list-access-keys](https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)를 사용하면 된다:
+
 ```sh
 aws iam list-access-keys
 ```
