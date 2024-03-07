@@ -134,6 +134,54 @@ https://www.mathstat.dal.ca/~selinger/md5collision
 
 위 예시는 `git rebase`의 충돌 결과라 `parent of dbecef5` 메시지와 함께 rebase를 시작한 커밋의 원본 코드를 보여준다.
 
+## `git clone`
+
+저장소를 복제하는 명렁어. 가장 기본적인 명령어 중 하나라서 모르는 사람은 없겠다.
+
+### `--depth`
+
+`--depth` 옵션은 저장소의 최신 커밋만 복제한다. 얕은 복제라 한다:
+
+> Create a shallow clone with a history truncated to the specified number of commits.
+
+예를 들어 `--depth 1`로 복제하면 최신 커밋만 복제한다. 이 옵션을 사용하면 저장소의 용량이 줄어드는 장점이 있다.
+
+내 위키 프로젝트의 경우 전체 복제하는 경우 `.git` 폴더의 용량은:
+
+```bash
+$ du -sh .git
+295M    .git
+```
+
+`--depth 1`로 복제하는 경우:
+
+```bash
+$ du -sh .git
+25M     .git
+```
+
+10배의 차이가 있다.
+
+---
+
+GitHub Actions와 같이 배포 시스템을 구축하는 경우 최신 리비전만 필요한 경우가 많다.
+
+https://github.com/actions/checkout 프로젝트는 저장소에 접근하기 위해서 많이 사용하는데, 기본적으로 `--depth 1` 옵션을 사용한다.
+
+이 설정은 변경 가능하다:
+
+```yaml
+with:
+  # Number of commits to fetch. 0 indicates all history for all branches and tags.
+  # Default: 1
+  fetch-depth: ''
+```
+
+---
+
+내 경우는 정적 사이트를 빌드하면서, 커밋 내역을 확인해서 파일의 정보를 사이트에 보여주는 기능이 있었는데,
+기본값으로 사용하면서 제대로 정보를 보여줄 수 없었다.
+
 ## `git rebase -i`
 
 https://meetup.toast.com/posts/39
