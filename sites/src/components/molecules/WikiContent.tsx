@@ -3,10 +3,10 @@ import styled from "styled-components"
 
 const Container = styled.div`
   overflow: auto;
+  overflow-wrap: break-word;
 
   a {
     text-decoration: none;
-    word-wrap: break-word;
   }
 
   // inline code block style
