@@ -191,7 +191,7 @@ data-styled.g8[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li>
 <p><a href="#%EC%9A%A9%EC%96%B4">용어</a></p>
 <ul>
-<li><a href="#---more---%EB%9D%BC%EA%B3%A0-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-pager"><code class="language-text">-- More --</code>라고 출력되는 pager</a></li>
+<li><a href="#pager----more---%EB%A1%9C-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-%ED%99%94%EB%A9%B4">pager: <code class="language-text">-- More --</code>로 출력되는 화면</a></li>
 </ul>
 </li>
 <li>
@@ -779,9 +779,9 @@ MRU
 [8]  ~/dotfiles/vim/vim-include/vim-startify.vim</code></pre></div>
 <p>auto-session에서 세션 파일 명에 <code class="language-text">%</code> 포함하고 있어서 이상하게 보이긴 한다.</p>
 <h2 id="용어" style="position:relative;"><a href="#%EC%9A%A9%EC%96%B4" aria-label="용어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>용어</h2>
-<h3 id="---more---라고-출력되는-pager" style="position:relative;"><a href="#---more---%EB%9D%BC%EA%B3%A0-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-pager" aria-label="   more   라고 출력되는 pager permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">-- More --</code>라고 출력되는 pager</h3>
-<p><code class="language-text">-- More --</code>로 프롬프트가 출력되면 pager를 사용하고 있다는 뜻이다.</p>
-<p><code class="language-text">:let</code>이나 <code class="language-text">:highlight</code> 등 명령어를 입력하면 <code class="language-text">-- More --</code> 메시지가 있는 pager로 진입한다.</p>
+<h3 id="pager----more---로-출력되는-화면" style="position:relative;"><a href="#pager----more---%EB%A1%9C-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-%ED%99%94%EB%A9%B4" aria-label="pager    more   로 출력되는 화면 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pager: <code class="language-text">-- More --</code>로 출력되는 화면</h3>
+<p><code class="language-text">-- More --</code>로 프롬프트가 출력되면 pager 화면을 보고있는 것이다.</p>
+<p><code class="language-text">:let</code>이나 <code class="language-text">:highlight</code> 등 명령어는 pager로 출력된다:</p>
 <div class="gatsby-highlight" data-language="vim"><pre class="language-vim"><code class="language-vim">Special        xxx ctermfg<span class="token operator">=</span><span class="token number">224</span> guifg<span class="token operator">=</span>Orange
 SpecialChar    xxx links <span class="token keyword">to</span> Special
 Delimiter      xxx links <span class="token keyword">to</span> Special
@@ -792,26 +792,31 @@ DiagnosticWarn xxx ctermfg<span class="token operator">=</span><span class="toke
 DiagnosticInfo xxx ctermfg<span class="token operator">=</span><span class="token number">4</span> guifg<span class="token operator">=</span>LightBlue
 DiagnosticHint xxx ctermfg<span class="token operator">=</span><span class="token number">7</span> guifg<span class="token operator">=</span>LightGrey
 <span class="token operator">-</span><span class="token operator">-</span> More <span class="token operator">-</span><span class="token operator">-</span> SPACE<span class="token operator">/</span><span class="token keyword">d</span><span class="token operator">/</span><span class="token keyword">j</span><span class="token punctuation">:</span> screen<span class="token operator">/</span>page<span class="token operator">/</span>line down<span class="token punctuation">,</span> <span class="token keyword">b</span><span class="token operator">/</span><span class="token keyword">u</span><span class="token operator">/</span><span class="token keyword">k</span><span class="token punctuation">:</span> <span class="token keyword">up</span><span class="token punctuation">,</span> <span class="token keyword">q</span><span class="token punctuation">:</span> <span class="token keyword">quit</span></code></pre></div>
-<p><code class="language-text">:h pager</code>로 pager에 대한 정보를 알 수 있다.</p>
-<p>메뉴얼 화면 같은 경우 버퍼로 열리는데, 반면에 pager는 다른 화면과 달라서 처음 만나면 당혹스럽다.
-어쨌든 <code class="language-text">q</code>를 입력하면 빠져나오고 <code class="language-text">hjklud</code>키로 이동도 된다.
-그러나 검색 기능은 없다 :(</p>
-<p>하지만 <code class="language-text">:redir</code>을 통한 출력 전환으로 레지스터로 저장하면 하여 버퍼에 가져오면 된다.</p>
+<p><code class="language-text">:h pager</code>로 pager 설명을 확인하자.</p>
+<p>pager는 다른 화면과 달라서 처음 만나면 당혹스럽다.<br>
+<code class="language-text">q</code>를 입력하면 빠져나오고 j, k로 스크롤한다.</p>
+<p><code class="language-text">g&lt;</code>를 입력하면 마지막 <em>page</em> 화면을 볼 수 있다.
+pager 화면은 아니므로 스크롤 할 수 없다. 마지막 pager의 스크롤 위치에서 보여준다.</p>
+<hr>
+<p>검색 기능이 없어서 불편하다 :(</p>
+<p>하지만 <code class="language-text">:redir</code>을 통한 출력 전환으로 레지스터로 저장하고, 붙여넣는 방법으로 대체할 수 있다.</p>
 <div class="gatsby-highlight" data-language="vim"><pre class="language-vim"><code class="language-vim"><span class="token punctuation">:</span><span class="token keyword">redir</span> @a    <span class="token comment">" a 레지스터에 출력을 전환</span>
 <span class="token punctuation">:</span><span class="token builtin">highlight</span>   <span class="token comment">" pager로 출력되는 명령어 실행</span>
 G<span class="token operator">&lt;</span>CR<span class="token operator">></span>        <span class="token comment">" 맨 아래로 이동하고 빠져나오자. 보여진 만큼만 저장된다.</span>
 <span class="token punctuation">:</span><span class="token keyword">redir</span> end   <span class="token comment">" 출력 전환 종료</span>
-<span class="token string">"ap          "</span> a 레지스터 내용 붙여넣기</code></pre></div>
+<span class="token string">"ap          "</span> a 레지스터 내용 커서 위치에 붙여넣기</code></pre></div>
 <p><a href="https://vi.stackexchange.com/q/5729">How can I perform a search when vim displays content using "more" pager?</a><br>
-이 질문에서 정보를 얻었다.</p>
+질문에서 얻은 정보다.</p>
 <p>덧글에 pipeline을 통한 짧은 버전도 있다:</p>
 <div class="gatsby-highlight" data-language="vim"><pre class="language-vim"><code class="language-vim"><span class="token keyword">redir</span> @a | <span class="token keyword">sil</span> <span class="token builtin">highlight</span> | <span class="token keyword">redir</span> end   <span class="token comment">" @a 전환, 명령(silently), 전환 종료</span>
 <span class="token string">"ap                                    "</span> a 레지스터 붙여넣기</code></pre></div>
 <p>명령어로 만들어둬도 좋겠다:</p>
 <div class="gatsby-highlight" data-language="vim"><pre class="language-vim"><code class="language-vim">command<span class="token operator">!</span> <span class="token operator">-</span>nargs<span class="token operator">=</span><span class="token number">1</span> <span class="token operator">-</span><span class="token builtin">complete</span><span class="token operator">=</span>command Redir <span class="token keyword">redir</span> @a | <span class="token keyword">sil</span> <span class="token operator">&lt;</span><span class="token keyword">args</span><span class="token operator">></span> | <span class="token keyword">redir</span> end | echo <span class="token string">"Saved to @a"</span></code></pre></div>
-<p>이렇게 사용할 수 있다:
-<code class="language-text">:Redir highlight</code>
-<code class="language-text">:Redir let</code></p>
+<p>이렇게 사용할 수 있다:</p>
+<ul>
+<li><code class="language-text">:Redir highlight</code></li>
+<li><code class="language-text">:Redir let</code></li>
+</ul>
 <h2 id="tips" style="position:relative;"><a href="#tips" aria-label="tips permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tips</h2>
 <h3 id="mapping-시-cr-vs-cmdcr" style="position:relative;"><a href="#mapping-%EC%8B%9C-cr-vs-cmdcr" aria-label="mapping 시 cr vs cmdcr permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mapping 시 <code class="language-text">:...&lt;cr></code> vs <code class="language-text">&lt;cmd>...&lt;cr></code></h3>
 <ul>

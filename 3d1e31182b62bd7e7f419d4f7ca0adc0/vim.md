@@ -662,11 +662,11 @@ auto-session에서 세션 파일 명에 `%` 포함하고 있어서 이상하게 
 
 ## 용어
 
-### `-- More --`라고 출력되는 pager
+### pager: `-- More --`로 출력되는 화면
 
-`-- More --`로 프롬프트가 출력되면 pager를 사용하고 있다는 뜻이다.
+`-- More --`로 프롬프트가 출력되면 pager 화면을 보고있는 것이다.
 
-`:let`이나 `:highlight` 등 명령어를 입력하면 `-- More --` 메시지가 있는 pager로 진입한다.
+`:let`이나 `:highlight` 등 명령어는 pager로 출력된다:
 
 ```vim
 Special        xxx ctermfg=224 guifg=Orange
@@ -681,24 +681,30 @@ DiagnosticHint xxx ctermfg=7 guifg=LightGrey
 -- More -- SPACE/d/j: screen/page/line down, b/u/k: up, q: quit
 ```
 
-`:h pager`로 pager에 대한 정보를 알 수 있다.
+`:h pager`로 pager 설명을 확인하자.
 
-메뉴얼 화면 같은 경우 버퍼로 열리는데, 반면에 pager는 다른 화면과 달라서 처음 만나면 당혹스럽다.
-어쨌든 `q`를 입력하면 빠져나오고 `hjklud`키로 이동도 된다.
-그러나 검색 기능은 없다 :(
+pager는 다른 화면과 달라서 처음 만나면 당혹스럽다.\
+`q`를 입력하면 빠져나오고 j, k로 스크롤한다.
 
-하지만 `:redir`을 통한 출력 전환으로 레지스터로 저장하면 하여 버퍼에 가져오면 된다.
+`g<`를 입력하면 마지막 *page* 화면을 볼 수 있다.
+pager 화면은 아니므로 스크롤 할 수 없다. 마지막 pager의 스크롤 위치에서 보여준다.
+
+---
+
+검색 기능이 없어서 불편하다 :(
+
+하지만 `:redir`을 통한 출력 전환으로 레지스터로 저장하고, 붙여넣는 방법으로 대체할 수 있다.
 
 ```vim
 :redir @a    " a 레지스터에 출력을 전환
 :highlight   " pager로 출력되는 명령어 실행
 G<CR>        " 맨 아래로 이동하고 빠져나오자. 보여진 만큼만 저장된다.
 :redir end   " 출력 전환 종료
-"ap          " a 레지스터 내용 붙여넣기
+"ap          " a 레지스터 내용 커서 위치에 붙여넣기
 ```
 
 [How can I perform a search when vim displays content using "more" pager?](https://vi.stackexchange.com/q/5729)\
-이 질문에서 정보를 얻었다.
+질문에서 얻은 정보다.
 
 덧글에 pipeline을 통한 짧은 버전도 있다:
 
@@ -714,8 +720,9 @@ command! -nargs=1 -complete=command Redir redir @a | sil <args> | redir end | ec
 ```
 
 이렇게 사용할 수 있다:
-`:Redir highlight`
-`:Redir let`
+
+- `:Redir highlight`
+- `:Redir let`
 
 ## Tips
 
