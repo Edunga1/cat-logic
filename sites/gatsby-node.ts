@@ -47,23 +47,31 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
   createTypes(typeDefs)
 }
 
-export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
-  const { createPage } = actions
+export const createPages: GatsbyNode["createPages"] = async (
+  {
+    graphql,
+    actions: { createPage },
+  },
+) => {
   const wikiTemplate = path.resolve("src/components/gatsby-templates/Wiki.tsx")
-  return graphql<Queries.LoadPagesQuery>(`
-    query LoadPages ($limit: Int!) {
-      allMarkdownRemark(limit: $limit) {
-        edges {
-          node {
-            id
-            fields {
-              slug
+  const query = graphql<Queries.PagesLoadedQuery>(
+    `
+      query PagesLoaded($limit: Int!) {
+        allMarkdownRemark(limit: $limit) {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
             }
           }
         }
       }
-    }
-  `, { limit: 1000 }).then(result => {
+    `,
+    { limit: 1000 }
+  )
+  return query.then(result => {
     if (result.errors) {
       throw result.errors
     }
