@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
-import theme from "../../../constants/theme"
+import theme from "../../constants/theme"
 
 const S = styled.small`
   margin-left: .5rem;

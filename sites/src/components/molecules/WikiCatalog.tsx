@@ -1,9 +1,9 @@
 import * as React from "react"
 import styled from "styled-components"
-import Link from "../atoms/Link/Link"
-import ListItem from "../atoms/ListItem/ListItem"
-import ColorfulParagraph from "../atoms/ColorfulParagraph/ColorfulParagraph"
-import Small from "../atoms/Small/Small"
+import Link from "../atoms/Link"
+import ListItem from "../atoms/ListItem"
+import ColorfulParagraph from "../atoms/ColorfulParagraph"
+import Small from "../atoms/Small"
 
 const Container = styled.div`
   width: 100%;

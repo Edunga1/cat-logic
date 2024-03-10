@@ -2,7 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 import device from "../../constants/device"
 import theme from "../../constants/theme"
-import HomeLogo from "../atoms/HomeLogo/HomeLogo"
+import HomeLogo from "../atoms/HomeLogo"
 import SearchBox from "../molecules/SearchBox"
 import WikiCatalog from "../molecules/WikiCatalog"
 

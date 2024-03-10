@@ -13,7 +13,7 @@ const LogoFrame = styled.iframe`
   height: 7rem;
 `
 
-export default function HomeLogo() {
+export default function WhatLogo() {
   // TODO: need to check if the iframe is valid
   return (
     <Container>

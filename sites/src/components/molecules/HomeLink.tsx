@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import theme from "../../constants/theme"
-import Link from "../atoms/Link/Link"
+import Link from "../atoms/Link"
 
 const Container = styled.div`
   text-align: right;
