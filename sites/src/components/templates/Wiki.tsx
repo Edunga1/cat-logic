@@ -4,6 +4,7 @@ import Toc from "../../components/molecules/Toc"
 import WikiContent from "../../components/molecules/WikiContent"
 import device from "../../constants/device"
 import Comments from "../molecules/Comments"
+import HomeLink from "../molecules/HomeLink"
 
 const Container = styled.div`
   display: grid;
@@ -51,11 +52,13 @@ export default function Wiki(
     tableOfContents,
     relatedLinksToc,
     wikiContents,
+    slug,
   }: {
     title?: string
     tableOfContents: string
     relatedLinksToc: JSX.Element[]
     wikiContents: string
+    slug: string
   },
 ) {
   const relatedItems = relatedLinksToc.map((item, index) => (
@@ -71,6 +74,7 @@ export default function Wiki(
         {relatedLinksToc.length > 0 ? containerRelatedLinks : null}
       </Side>
       <Main>
+        <HomeLink slug={slug} />
         <h1>{title}</h1>
         <Toc contents={tableOfContents} />
         {<WikiContent contents={wikiContents} />}

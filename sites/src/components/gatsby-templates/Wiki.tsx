@@ -14,6 +14,7 @@ export default function BlogPostTemplate(
   const {
     tableOfContents,
     html,
+    fields,
   } = data.markdownRemark ?? {}
   const docTitle = extractDocTitle(data)
   const relatedDocs = extractRelatedDocs(data)
@@ -28,6 +29,7 @@ export default function BlogPostTemplate(
       tableOfContents={tableOfContents || ""}
       relatedLinksToc={relatedLinksToc}
       wikiContents={removeFirstHeading(html || "")}
+      slug={fields?.slug || ""}
     />
   )
 }
@@ -39,6 +41,7 @@ export const pageQuery = graphql`
         value
       }
       fields {
+        slug
         relatedDocs {
           slug
           similarity
