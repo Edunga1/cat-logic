@@ -499,6 +499,37 @@ PING www.google.com (142.250.199.100): 56 data bytes
 64 bytes from 142.250.199.100: icmp_seq=3 ttl=112 time=67.562 ms
 ```
 
+### gpg
+
+암호화 및 서명 도구. mac/linux는 `brew install gpg`로 설치하자.
+
+#### 키 백업 및 복원
+
+생성된 키를 백업하여 파일로 저장하고, 다른 기기에서 복원한다.
+
+다음 명령어로 이메일 사용자의 키를 `private.gpg` 파일로 백업한다.
+
+```bash
+$ gpg -o private.gpg --export-options backup --export-secret-keys *******@gmail.com
+```
+
+passphrase를 입력하는 과정이 있다.
+
+다음 명령어로 `private.gpg` 파일로부터 복구한다.
+
+```bash
+$ gpg --import-options restore --import private.gpg
+gpg: directory '/Users/john/.gnupg' created
+gpg: key BB7672EBC4E11744: public key "******* (github) <*******@gmail.com>" imported
+gpg: key BB7672EBC4E11744: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+```
+
+마찬가지로 생성 시에 사용한 passphrase를 입력하는 과정이 있다.
+
 ## python shell tools
 
 몇몇 파이썬 모듈은 CLI로 제공한다.
