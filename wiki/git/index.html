@@ -147,6 +147,16 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </ul>
 </li>
 <li>
+<p><a href="#%EC%BB%A4%EB%B0%8B-%EC%84%9C%EB%AA%85%ED%95%98%EA%B8%B0">커밋 서명하기</a></p>
+<ul>
+<li><a href="#gpg-%ED%82%A4-%EC%83%9D%EC%84%B1-gpg---full-generate-key">GPG 키 생성: <code class="language-text">gpg --full-generate-key</code></a></li>
+<li><a href="#gpg-%ED%82%A4-%ED%99%95%EC%9D%B8-gpg---list-secret-keys---keyid-formatlong">GPG 키 확인: <code class="language-text">gpg --list-secret-keys --keyid-format=long</code></a></li>
+<li><a href="#gpg-%ED%82%A4-export-gpg---armor---export-key-id">GPG 키 export: <code class="language-text">gpg --armor --export &lt;key-id></code></a></li>
+<li><a href="#gpg-%ED%82%A4-github%EC%97%90-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0">GPG 키 GitHub에 등록하기</a></li>
+<li><a href="#%EC%84%9C%EB%AA%85%ED%95%98%EA%B8%B0">서명하기</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#troubleshooting">Troubleshooting</a></p>
 <ul>
 <li><a href="#git-commit-%EC%8B%9C-waiting-for-your-editor-to-close-the-file-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-%EC%BB%A4%EB%B0%8B%EC%9D%B4-%EC%95%88%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C">Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제</a></li>
@@ -651,6 +661,123 @@ Git LFS initialized.</code></pre></div>
 <p>이 경우에도 멈춘듯한 모습으로 보이지만, 실제로는 다운로드가 진행된다.</p>
 <p>도움말 <code class="language-text">git lfs pull --help</code>에 다르면 <code class="language-text">git lfs fetch</code> 명령어와 같다고 한다.<br>
 아마도 특정 파일만 다운로드 받을 수도 있는 모양.</p>
+<h2 id="커밋-서명하기" style="position:relative;"><a href="#%EC%BB%A4%EB%B0%8B-%EC%84%9C%EB%AA%85%ED%95%98%EA%B8%B0" aria-label="커밋 서명하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>커밋 서명하기</h2>
+<p>커밋의 서명을 확인하려면 <code class="language-text">git cat-file -p &lt;commit-hash></code> 명령어를 사용한다.</p>
+<p>다음은 mochajs 저장소의 커밋을 확인한 것이다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">git</span> cat-file <span class="token parameter variable">-p</span> HEAD
+tree 6c42701b4c621fa227bd211b6b52473e68004057
+parent 37358738260cfae7c244c157aee21654f2b588f2
+author ***** ***** <span class="token operator">&lt;</span>***************@*****.***<span class="token operator">></span> <span class="token number">1709903697</span> <span class="token parameter variable">-0300</span>
+committer GitHub <span class="token operator">&lt;</span>noreply@github.com<span class="token operator">></span> <span class="token number">1709903697</span> <span class="token parameter variable">-0500</span>
+gpgsig -----BEGIN PGP SIGNATURE-----
+<span class="token punctuation">..</span>.
+ -----END PGP SIGNATURE-----
+<span class="token punctuation">..</span>.</code></pre></div>
+<hr>
+<p>커밋 서명은 GPG를 사용한다.</p>
+<p>GPG CLI는 Homebrew로 설치했다: <code class="language-text">brew install gpg</code></p>
+<h3 id="gpg-키-생성-gpg---full-generate-key" style="position:relative;"><a href="#gpg-%ED%82%A4-%EC%83%9D%EC%84%B1-gpg---full-generate-key" aria-label="gpg 키 생성 gpg   full generate key permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GPG 키 생성: <code class="language-text">gpg --full-generate-key</code></h3>
+<p><code class="language-text">--full-generate-key</code> 옵션은 키 pair를 생성한다.</p>
+<p>키 생성 시 알고리즘 등 키 정보와 사용자 정보를 입력한다.<br>
+<a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key">GitHub의 GPG 키 생성 가이드</a>를 참고했다.</p>
+<p>키 정보는 모두 Enter로 기본 값을 선택했다.</p>
+<ul>
+<li>알고리즘: RSA</li>
+<li>키 사이즈: 3072</li>
+<li>만료 기간: 0(무제한)</li>
+</ul>
+<p>사용자 정보는 이메일 주소만 입력했다. GitHub에 등록한 이메일 주소를 입력한다.
+이메일을 감추고 싶다면 GitHub의 <code class="language-text">no-reply</code> 이메일을 사용하라고 한다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ gpg --full-gen-key
+gpg <span class="token punctuation">(</span>GnuPG<span class="token punctuation">)</span> <span class="token number">2.2</span>.19<span class="token punctuation">;</span> Copyright <span class="token punctuation">(</span>C<span class="token punctuation">)</span> <span class="token number">2019</span> Free Software Foundation, Inc.
+This is <span class="token function">free</span> software: you are <span class="token function">free</span> to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+gpg: keybox <span class="token string">'/home/user/.gnupg/pubring.kbx'</span> created
+Please <span class="token keyword">select</span> what kind of key you want:
+   <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> RSA and RSA <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+   <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> DSA and Elgamal
+   <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> DSA <span class="token punctuation">(</span>sign only<span class="token punctuation">)</span>
+   <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> RSA <span class="token punctuation">(</span>sign only<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">)</span> Existing key from card
+Your selection?
+RSA keys may be between <span class="token number">1024</span> and <span class="token number">4096</span> bits long.
+What keysize <span class="token keyword">do</span> you want? <span class="token punctuation">(</span><span class="token number">3072</span><span class="token punctuation">)</span>
+Requested keysize is <span class="token number">3072</span> bits
+Please specify how long the key should be valid.
+         <span class="token number">0</span> <span class="token operator">=</span> key does not expire
+      <span class="token operator">&lt;</span>n<span class="token operator">></span>  <span class="token operator">=</span> key expires <span class="token keyword">in</span> n days
+      <span class="token operator">&lt;</span>n<span class="token operator">></span>w <span class="token operator">=</span> key expires <span class="token keyword">in</span> n weeks
+      <span class="token operator">&lt;</span>n<span class="token operator">></span>m <span class="token operator">=</span> key expires <span class="token keyword">in</span> n months
+      <span class="token operator">&lt;</span>n<span class="token operator">></span>y <span class="token operator">=</span> key expires <span class="token keyword">in</span> n years
+Key is valid for? <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+Key does not expire at all
+Is this correct? <span class="token punctuation">(</span>y/N<span class="token punctuation">)</span> y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name:
+Email address: *******@gmail.com
+Comment:
+You selected this <span class="token environment constant">USER</span>-ID:
+    <span class="token string">"*******@gmail.com"</span>
+
+Change <span class="token punctuation">(</span>N<span class="token punctuation">)</span>ame, <span class="token punctuation">(</span>C<span class="token punctuation">)</span>omment, <span class="token punctuation">(</span>E<span class="token punctuation">)</span>mail or <span class="token punctuation">(</span>O<span class="token punctuation">)</span>kay/<span class="token punctuation">(</span>Q<span class="token punctuation">)</span>uit? O
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action <span class="token punctuation">(</span>type on the keyboard, move the mouse, utilize the
+disks<span class="token punctuation">)</span> during the prime generation<span class="token punctuation">;</span> this gives the random number
+generator a better chance to gain enough entropy.
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action <span class="token punctuation">(</span>type on the keyboard, move the mouse, utilize the
+disks<span class="token punctuation">)</span> during the prime generation<span class="token punctuation">;</span> this gives the random number
+generator a better chance to gain enough entropy.
+gpg: /home/user/.gnupg/trustdb.gpg: trustdb created
+gpg: key 7754F8835F1D4F23 marked as ultimately trusted
+gpg: directory <span class="token string">'/home/user/.gnupg/openpgp-revocs.d'</span> created
+gpg: revocation certificate stored as <span class="token string">'/home/user/.gnupg/openpgp-revocs.d/EC2773EB41F9362E83E76B177754F8835F1D4F23.rev'</span>
+public and secret key created and signed.
+
+pub   rsa3072 <span class="token number">2024</span>-03-11 <span class="token punctuation">[</span>SC<span class="token punctuation">]</span>
+      EC2773EB41F9362E83E76B177754F8835F1D4F23
+uid                      *******@gmail.com
+sub   rsa3072 <span class="token number">2024</span>-03-11 <span class="token punctuation">[</span>E<span class="token punctuation">]</span></code></pre></div>
+<h3 id="gpg-키-확인-gpg---list-secret-keys---keyid-formatlong" style="position:relative;"><a href="#gpg-%ED%82%A4-%ED%99%95%EC%9D%B8-gpg---list-secret-keys---keyid-formatlong" aria-label="gpg 키 확인 gpg   list secret keys   keyid formatlong permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GPG 키 확인: <code class="language-text">gpg --list-secret-keys --keyid-format=long</code></h3>
+<p><code class="language-text">--list-secret-keys</code> 옵션은 생성된 키 목록을 출력하고<br>
+<code class="language-text">--keyid-format=long</code> 옵션은 키 ID를 출력한다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ gpg --list-secret-keys --keyid-format<span class="token operator">=</span>long
+/home/user/.gnupg/pubring.kbx
+-------------------------------
+sec   rsa3072/7754F8835F1D4F23 <span class="token number">2024</span>-03-11 <span class="token punctuation">[</span>SC<span class="token punctuation">]</span>
+      EC2773EB41F9362E83E76B177754F8835F1D4F23
+uid                 <span class="token punctuation">[</span>ultimate<span class="token punctuation">]</span> *******@gmail.com
+ssb   rsa3072/9E8A974D370C5682 <span class="token number">2024</span>-03-11 <span class="token punctuation">[</span>E<span class="token punctuation">]</span></code></pre></div>
+<p><code class="language-text">7754F8835F1D4F23</code>가 키 ID이다.</p>
+<h3 id="gpg-키-export-gpg---armor---export-key-id" style="position:relative;"><a href="#gpg-%ED%82%A4-export-gpg---armor---export-key-id" aria-label="gpg 키 export gpg   armor   export key id permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GPG 키 export: <code class="language-text">gpg --armor --export &lt;key-id></code></h3>
+<p><code class="language-text">--armor</code> 옵션은 공개 키 정보를 ASCII로 출력한다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ gpg <span class="token parameter variable">--armor</span> <span class="token parameter variable">--export</span> 7754F8835F1D4F23
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+<span class="token punctuation">..</span>.
+-----END PGP PUBLIC KEY BLOCK-----</code></pre></div>
+<h3 id="gpg-키-github에-등록하기" style="position:relative;"><a href="#gpg-%ED%82%A4-github%EC%97%90-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0" aria-label="gpg 키 github에 등록하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GPG 키 GitHub에 등록하기</h3>
+<p>GitHub의 <code class="language-text">Settings</code> > <code class="language-text">SSH and GPG keys</code> > <code class="language-text">New GPG key</code>에 공개키를 등록한다.</p>
+<p><code class="language-text">-----BEGIN PGP PUBLIC KEY BLOCK-----</code>와 <code class="language-text">-----END PGP PUBLIC KEY BLOCK-----</code> 내용을 모두 복사해서 붙여넣는다.</p>
+<h3 id="서명하기" style="position:relative;"><a href="#%EC%84%9C%EB%AA%85%ED%95%98%EA%B8%B0" aria-label="서명하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>서명하기</h3>
+<p><code class="language-text">git commit</code> 명령어에 <code class="language-text">-S</code> 옵션을 추가한다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">git</span> commit <span class="token parameter variable">-S</span> <span class="token parameter variable">-m</span> <span class="token string">"commit message"</span></code></pre></div>
+<p><code class="language-text">-S</code> 옵션 대신 git 설정 <code class="language-text">commit.gpgSign</code>을 <code class="language-text">true</code>로 설정하면 자동 서명된다.</p>
+<p><code class="language-text">-S</code> 옵션은 key-id를 받지만, 생략하면 <code class="language-text">user.signingKey</code> 설정을 사용한다.
+<code class="language-text">git config --global user.signingKey &lt;key-id></code>로 설정하자.</p>
+<p>만약, 키가 없으면 다음과 같이 실패한다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">git</span> commit
+error: gpg failed to sign the data:
+gpg: skipped <span class="token string">"edunga1 &lt;*******@gmail.com>"</span><span class="token builtin class-name">:</span> No secret key
+<span class="token punctuation">[</span>GNUPG:<span class="token punctuation">]</span> INV_SGNR <span class="token number">9</span> edunga1 <span class="token operator">&lt;</span>*******@gmail.com<span class="token operator">></span>
+<span class="token punctuation">[</span>GNUPG:<span class="token punctuation">]</span> FAILURE sign <span class="token number">17</span>
+gpg: signing failed: No secret key
+
+fatal: failed to <span class="token function">write</span> commit object</code></pre></div>
+<p>키가 있으면 passphrase 입력을 요구한다.</p>
 <h2 id="troubleshooting" style="position:relative;"><a href="#troubleshooting" aria-label="troubleshooting permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
 <h3 id="git-commit-시-waiting-for-your-editor-to-close-the-file-메시지와-함께-커밋이-안되는-문제" style="position:relative;"><a href="#git-commit-%EC%8B%9C-waiting-for-your-editor-to-close-the-file-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%ED%95%A8%EA%BB%98-%EC%BB%A4%EB%B0%8B%EC%9D%B4-%EC%95%88%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="git commit 시 waiting for your editor to close the file 메시지와 함께 커밋이 안되는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제</h3>
 <p><code class="language-text">git commit -v</code>로 커밋 메시지 작성 후 <code class="language-text">ww</code> 또는 <code class="language-text">:wq</code>로 저장하여 나와도 커밋이 안된다.
