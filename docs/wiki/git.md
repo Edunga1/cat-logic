@@ -588,6 +588,165 @@ git clone 전에 하거나 clone 후에 하는지에 따라 사용 방법이 다
 도움말 `git lfs pull --help`에 다르면 `git lfs fetch` 명령어와 같다고 한다.\
 아마도 특정 파일만 다운로드 받을 수도 있는 모양.
 
+## 커밋 서명하기
+
+커밋의 서명을 확인하려면 `git cat-file -p <commit-hash>` 명령어를 사용한다.
+
+다음은 mochajs 저장소의 커밋을 확인한 것이다.
+
+```bash
+$ git cat-file -p HEAD
+tree 6c42701b4c621fa227bd211b6b52473e68004057
+parent 37358738260cfae7c244c157aee21654f2b588f2
+author ***** ***** <***************@*****.***> 1709903697 -0300
+committer GitHub <noreply@github.com> 1709903697 -0500
+gpgsig -----BEGIN PGP SIGNATURE-----
+...
+ -----END PGP SIGNATURE-----
+...
+```
+
+---
+
+커밋 서명은 GPG를 사용한다.
+
+GPG CLI는 Homebrew로 설치했다: `brew install gpg`
+
+### GPG 키 생성: `gpg --full-generate-key`
+
+`--full-generate-key` 옵션은 키 pair를 생성한다.
+
+키 생성 시 알고리즘 등 키 정보와 사용자 정보를 입력한다.\
+[GitHub의 GPG 키 생성 가이드](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)를 참고했다.
+
+키 정보는 모두 Enter로 기본 값을 선택했다.
+
+- 알고리즘: RSA
+- 키 사이즈: 3072
+- 만료 기간: 0(무제한)
+
+사용자 정보는 이메일 주소만 입력했다. GitHub에 등록한 이메일 주소를 입력한다.
+이메일을 감추고 싶다면 GitHub의 `no-reply` 이메일을 사용하라고 한다.
+
+```bash
+$ gpg --full-gen-key
+gpg (GnuPG) 2.2.19; Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+gpg: keybox '/home/user/.gnupg/pubring.kbx' created
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+  (14) Existing key from card
+Your selection?
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (3072)
+Requested keysize is 3072 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0)
+Key does not expire at all
+Is this correct? (y/N) y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name:
+Email address: *******@gmail.com
+Comment:
+You selected this USER-ID:
+    "*******@gmail.com"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: /home/user/.gnupg/trustdb.gpg: trustdb created
+gpg: key 7754F8835F1D4F23 marked as ultimately trusted
+gpg: directory '/home/user/.gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/home/user/.gnupg/openpgp-revocs.d/EC2773EB41F9362E83E76B177754F8835F1D4F23.rev'
+public and secret key created and signed.
+
+pub   rsa3072 2024-03-11 [SC]
+      EC2773EB41F9362E83E76B177754F8835F1D4F23
+uid                      *******@gmail.com
+sub   rsa3072 2024-03-11 [E]
+```
+
+### GPG 키 확인: `gpg --list-secret-keys --keyid-format=long`
+
+`--list-secret-keys` 옵션은 생성된 키 목록을 출력하고\
+`--keyid-format=long` 옵션은 키 ID를 출력한다.
+
+```bash
+$ gpg --list-secret-keys --keyid-format=long
+/home/user/.gnupg/pubring.kbx
+-------------------------------
+sec   rsa3072/7754F8835F1D4F23 2024-03-11 [SC]
+      EC2773EB41F9362E83E76B177754F8835F1D4F23
+uid                 [ultimate] *******@gmail.com
+ssb   rsa3072/9E8A974D370C5682 2024-03-11 [E]
+```
+
+`7754F8835F1D4F23`가 키 ID이다.
+
+### GPG 키 export: `gpg --armor --export <key-id>`
+
+`--armor` 옵션은 공개 키 정보를 ASCII로 출력한다.
+
+```bash
+$ gpg --armor --export 7754F8835F1D4F23
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+...
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+### GPG 키 GitHub에 등록하기
+
+GitHub의 `Settings` > `SSH and GPG keys` > `New GPG key`에 공개키를 등록한다.
+
+`-----BEGIN PGP PUBLIC KEY BLOCK-----`와 `-----END PGP PUBLIC KEY BLOCK-----` 내용을 모두 복사해서 붙여넣는다.
+
+### 서명하기
+
+`git commit` 명령어에 `-S` 옵션을 추가한다.
+
+```bash
+$ git commit -S -m "commit message"
+```
+
+`-S` 옵션 대신 git 설정 `commit.gpgSign`을 `true`로 설정하면 자동 서명된다.
+
+`-S` 옵션은 key-id를 받지만, 생략하면 `user.signingKey` 설정을 사용한다.
+`git config --global user.signingKey <key-id>`로 설정하자.
+
+만약, 키가 없으면 다음과 같이 실패한다.
+
+```bash
+$ git commit
+error: gpg failed to sign the data:
+gpg: skipped "edunga1 <*******@gmail.com>": No secret key
+[GNUPG:] INV_SGNR 9 edunga1 <*******@gmail.com>
+[GNUPG:] FAILURE sign 17
+gpg: signing failed: No secret key
+
+fatal: failed to write commit object
+```
+
+키가 있으면 passphrase 입력을 요구한다.
+
 ## Troubleshooting
 
 ### Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
