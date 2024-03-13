@@ -66,6 +66,12 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-robots-txt",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/assets/favicon-16x16.png",
+      },
+    },
   ],
 }
 

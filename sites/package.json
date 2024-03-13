@@ -21,6 +21,7 @@
     "gatsby": "^5.13.1",
     "gatsby-plugin-catch-links": "^5.13.0",
     "gatsby-plugin-fusejs": "^2.0.2",
+    "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.13.0",
     "gatsby-plugin-sitemap": "^6.13.0",
