@@ -18,7 +18,7 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 나같은 경우에도 학생때 매크로를 만들어 보면서 프로그래밍에 흥미를 가지는 계기가 되었다.
 
-### Free Shard
+### 서버 프로젝트
 
 이 게임에서 사설 서버를 Free Shard라고 부른다.
 
