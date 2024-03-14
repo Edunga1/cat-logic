@@ -118,13 +118,6 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p><a href="#%EC%A4%91%EC%A7%80%EB%90%9C-%EB%8F%84%EC%BB%A4-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%97%90%EC%84%9C-%ED%8C%8C%EC%9D%BC-%EB%B3%B5%EC%82%AC%ED%95%98%EA%B8%B0">중지된 도커 컨테이너에서 파일 복사하기</a></p>
 </li>
 <li>
-<p><a href="#jupyter-notebook--nodejs-%EB%8F%84%EC%BB%A4%EB%9D%BC%EC%9D%B4%EC%A7%95-%EA%B8%B0%EB%A1%9D">Jupyter Notebook + NodeJS 도커라이징 기록</a></p>
-<ul>
-<li><a href="#jupyter-docker-stacks">Jupyter Docker Stacks</a></li>
-<li><a href="#end">End</a></li>
-</ul>
-</li>
-<li>
 <p><a href="#hostdockerinternal%EB%A1%9C-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0"><code class="language-text">host.docker.internal</code>로 호스트 서비스 접근하기</a></p>
 <ul>
 <li><a href="#%EB%8C%80%EC%B2%B4%EB%8A%94">대체는?</a></li>
@@ -348,78 +341,6 @@ default   *        virtualbox   Running   tcp://192.168.99.100:2376           v1
 젠킨스 slave의 문제인지. 어차피 볼륨으로 뿜어내는 방식이 내키지 않아서 다른 방식을 찾았다.<br>
 무한 루프를 돌도록해서 컨테이너가 죽지 않도록하여 복사해올까 하다가, 중지된 컨테이너에서 가져올 수 있었다.</p>
 <p>중지된 컨테이너가 다른 컨테이너에 볼륨을 공유하는 data-only 패턴과 비슷한 방식인듯?</p>
-<h2 id="jupyter-notebook--nodejs-도커라이징-기록" style="position:relative;"><a href="#jupyter-notebook--nodejs-%EB%8F%84%EC%BB%A4%EB%9D%BC%EC%9D%B4%EC%A7%95-%EA%B8%B0%EB%A1%9D" aria-label="jupyter notebook  nodejs 도커라이징 기록 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jupyter Notebook + NodeJS 도커라이징 기록</h2>
-<p>Jupyter Notebook이 너무 유용한 거 같아서 NodeJS도 쓰고 싶어졌다.</p>
-<ol>
-<li>
-<p>찾아보니 기존 Jupyter 환경에 npm <code class="language-text">ijavascript</code>라는 cli를 설치하면 기존 Python에 NodeJS 노트까지 추가할 수 있었다.</p>
-</li>
-<li>
-<p>하지만 python, nodejs 관련 모듈을 설치하면 너무 복잡해져서 나중에 다시 환경 구성하기 힘들 거 같아서</p>
-</li>
-</ol>
-<p>도커 쪽으로 눈길을 돌렸다.</p>
-<ol>
-<li>찾아보니 Python, Go, NodeJs 모두 가능한 도커 이미지를 찾았다:</li>
-</ol>
-<p><a href="https://github.com/dting/docker-jupyter-go-js">https://github.com/dting/docker-jupyter-go-js</a><br>
-오피셜(docker hub 말고) Jupyter Notebook 이미지를 base로 작성된
-Go 언어 용 Jupyter 이미지를 base로 작성된 도커 이미지였다. (음)</p>
-<ol>
-<li>문제는 오래된 이미지다 보니 node 버전도 낮고, pip 버전도 낮아서</li>
-</ol>
-<p><a href="https://facebook.github.io/prophet/docs/quick_start.html">fbprophet</a>
-모듈이 설치가 안되었다. Dockerfile을 복사해서 다시 이미지를 빌드하려 했으나
-지금은 사라진 <code class="language-text">jupyter/notebook</code>이라는 이미지를 base로 하고 있어서 다시 작성하기 어려웠다.</p>
-<ol>
-<li>좀 더 찾아보다가 <a href="https://hub.docker.com/r/mfellner/javascript-notebook">https://hub.docker.com/r/mfellner/javascript-notebook</a> 이미지를 찾았다.</li>
-</ol>
-<p>오래 되었지만, 지금도 관리되고 있는 <code class="language-text">jupyter/minimal-notebook</code>를
-base로 하고 있어서, 참고하여 Dockerfile을 다시 작성하기로 했다.</p>
-<ol>
-<li><code class="language-text">mfellner/javascript-notebook</code> Dockerfile을 수정해서 nodejs 버전을 올리고</li>
-</ol>
-<p><code class="language-text">6.0.0</code> -> <code class="language-text">10.15.3</code> 빌드했다.</p>
-<ol>
-<li>실행은 잘 되나, 최초 연결 시 비밀번호/토큰을 입력해야 했다.</li>
-</ol>
-<p>어차피 로컬에서만 사용할거라 불필요하다고 판단돼서, jupyter notebook 옵션인
-<code class="language-text">--NotebookApp.token=''</code>을 시작 스크립트인 <code class="language-text">start-notebook.sh</code>에 주었으나,
-<code class="language-text">mfellner/javascript-notebook</code>에서 원본 스크립트를 <code class="language-text">ijavascript</code> 실행 명령어로 덮어 씌우고 있어서,
-적용되지 않고 계속 토큰을 입력해야 했다.</p>
-<ol>
-<li>
-<p>그래서 덮어 씌우는 부분을 Dockerfile에서 제거하고 빌드했으나, 언어 목록에서 nodejs가 제외되었다. 찾아보니</p>
-<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"argv"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token string">"node"</span><span class="token punctuation">,</span>
-    <span class="token string">"/usr/local/lib/node_modules/ijavascript/lib/kernel.js"</span><span class="token punctuation">,</span>
-    <span class="token string">"{connection_file}"</span><span class="token punctuation">,</span>
-    <span class="token string">"--protocol=5.0"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"display_name"</span><span class="token operator">:</span> <span class="token string">"Javascript (Node.js)"</span><span class="token punctuation">,</span>
-  <span class="token property">"language"</span><span class="token operator">:</span> <span class="token string">"javascript"</span>
-<span class="token punctuation">}</span></code></pre></div>
-<p>커널 정보를 이런 포맷으로, Jupyter Notebook의 특정 위치에 두어야 언어 목록에서 출력되는 것이었다.
-<code class="language-text">ijavascript</code>는 <code class="language-text">ijsinstall</code>이라는 명령어로 환경 구성을 할 때 <code class="language-text">json</code> 파일을 추가도 해 주고 있었다:
-<a href="https://github.com/n-riesco/ijavascript/blob/d459956f76a22f9ec89937e02645ee7555f92d2b/bin/rc.js#L525">https://github.com/n-riesco/ijavascript/blob/d459956f76a22f9ec89937e02645ee7555f92d2b/bin/rc.js#L525</a></p>
-</li>
-<li>
-<p>그래서 간단하게 <code class="language-text">RUN ijsinstall</code> 해 줘서, 원본 <code class="language-text">start-notebook.sh</code>는 수정하지 않아도 잘 실행되도록 했다.</p>
-</li>
-</ol>
-<h3 id="jupyter-docker-stacks" style="position:relative;"><a href="#jupyter-docker-stacks" aria-label="jupyter docker stacks permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jupyter Docker Stacks</h3>
-<p>Jupyter Notebook의 도커 버전은 상당히 많은 시리즈로 되어 있다.
-도커 허브엔 설명이 적고 GitHub: <a href="https://github.com/jupyter/docker-stacks">https://github.com/jupyter/docker-stacks</a> 에 메뉴얼이 잘 되어 있다.</p>
-<p>Dockerfile 관계 트리를 보면 멋있다:<br>
-<a href="http://interactive.blockdiag.com/?compression=deflate&#x26;src=eJyFzTEPgjAQhuHdX9Gws5sQjGzujsaYKxzmQrlr2msMGv-71K0srO_3XGud9NNA8DSfgzESCFlBSdi0xkvQAKTNugw4QnL6GIU10hvX-Zh7Z24OLLq2SjaxpvP10lX35vCf6pOxELFmUbQiUz4oQhYzMc3gCrRt2cWe_FKosmSjyFHC6OS1AwdQWCtyj7sfh523_BI9hKlQ25YdOFdv5fcH0kiEMA">http://interactive.blockdiag.com/?compression=deflate&#x26;src=eJyFzTEPgjAQhuHdX9Gws5sQjGzujsaYKxzmQrlr2msMGv-71K0srO_3XGud9NNA8DSfgzESCFlBSdi0xkvQAKTNugw4QnL6GIU10hvX-Zh7Z24OLLq2SjaxpvP10lX35vCf6pOxELFmUbQiUz4oQhYzMc3gCrRt2cWe_FKosmSjyFHC6OS1AwdQWCtyj7sfh523_BI9hKlQ25YdOFdv5fcH0kiEMA</a></p>
-<p>커스터마이징하려면 <code class="language-text">jupyter/notebook-minimal</code>을 기반으로 하면 될 거 같다.</p>
-<p><a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-base-notebook">https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-base-notebook</a>
-여기에 데이터과학, 머신러닝 등 각 분야에 자주 사용하는 모듈을 미리 설치한 이미지들 정보가 나와있다.</p>
-<h3 id="end" style="position:relative;"><a href="#end" aria-label="end permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>End</h3>
-<p>Jupyter Notebook NodeJS 도커라이징한 것은 여기에 올렸다:<br>
-<a href="https://github.com/Edunga1/jupyter-notebook-nodejs">https://github.com/Edunga1/jupyter-notebook-nodejs</a></p>
-<p>Dockerfile 작성하면서 <code class="language-text">MAINTAINER</code>가 deprecated, <code class="language-text">LABEL</code>을 사용해야 하는 것을 알았다: <a href="https://stackoverflow.com/questions/38899977/how-do-i-declare-multiple-maintainers-in-my-dockerfile">https://stackoverflow.com/questions/38899977/how-do-i-declare-multiple-maintainers-in-my-dockerfile</a></p>
 <h2 id="hostdockerinternal로-호스트-서비스-접근하기" style="position:relative;"><a href="#hostdockerinternal%EB%A1%9C-%ED%98%B8%EC%8A%A4%ED%8A%B8-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0" aria-label="hostdockerinternal로 호스트 서비스 접근하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">host.docker.internal</code>로 호스트 서비스 접근하기</h2>
 <p><code class="language-text">host.docker.internal</code>은 호스트의 ip를 가르키는 DNS name이다.
 <a href="https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host">container에서 호스트의 서비스에 접근</a>이 필요할 때 사용한다.</p>

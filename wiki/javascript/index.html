@@ -140,6 +140,13 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li>
 <p><a href="#null-vs-undefined">null vs undefined</a></p>
 </li>
+<li>
+<p><a href="#jupyter-notebook--javascript-%EB%8F%84%EC%BB%A4%EB%9D%BC%EC%9D%B4%EC%A7%95-%EA%B8%B0%EB%A1%9D">Jupyter Notebook + Javascript 도커라이징 기록</a></p>
+<ul>
+<li><a href="#jupyter-docker-stacks">Jupyter Docker Stacks</a></li>
+<li><a href="#%EC%97%AC%EB%8B%B4">여담</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 bnFahp">
@@ -503,7 +510,51 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token function">something</span><span class="token punctuation">(</span><span class="token string">'regular'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>함수 호출 코드에서 값에 커서를 두고 Rename Symbol해도 JSDoc과 참조하는 모든 코드를 변경한다.</p>
 <h2 id="null-vs-undefined" style="position:relative;"><a href="#null-vs-undefined" aria-label="null vs undefined permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>null vs undefined</h2>
-<p><a href="https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines#null-and-undefined">Microsoft 코딩 가이드라인</a>에는 <code class="language-text">null</code>을 사용하지 말고, <code class="language-text">undefined</code>를 사용하라고 나와있다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/javascript/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p><a href="https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines#null-and-undefined">Microsoft 코딩 가이드라인</a>에는 <code class="language-text">null</code>을 사용하지 말고, <code class="language-text">undefined</code>를 사용하라고 나와있다.</p>
+<h2 id="jupyter-notebook--javascript-도커라이징-기록" style="position:relative;"><a href="#jupyter-notebook--javascript-%EB%8F%84%EC%BB%A4%EB%9D%BC%EC%9D%B4%EC%A7%95-%EA%B8%B0%EB%A1%9D" aria-label="jupyter notebook  javascript 도커라이징 기록 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jupyter Notebook + Javascript 도커라이징 기록</h2>
+<p>Jupyter Notebook이 너무 유용한 거 같아서 <a href="../javascript">Javascript</a>도 쓰고 싶어졌다.</p>
+<p>찾아보니 기존 Jupyter 환경에 npm <code class="language-text">ijavascript</code>라는 cli를 설치하면 기존 Python에 NodeJS 노트까지 추가할 수 있었다.</p>
+<p>python, nodejs 도구를 모두 설치하면 너무 복잡해서 도커 이미지로 만들어서 사용하기로 했다.</p>
+<p>누군가 만들어 놓은 Python, Go, NodeJs 모두 가능한 도커 이미지를 찾았다:
+<a href="https://github.com/dting/docker-jupyter-go-js%5C">https://github.com/dting/docker-jupyter-go-js\</a></p>
+<p>하지만 오래된 이미지다 보니 node 버전도 낮고, pip 버전도 낮아서
+사용하려는 라이브러리 <a href="https://facebook.github.io/prophet/docs/quick_start.html">fbprophet</a> 모듈이 설치가 불가능했다.
+그래서 Dockerfile을 수정하려고 했으나, 지금은 사라진 <code class="language-text">jupyter/notebook</code>이라는 이미지를 base로 하고 있어서 애로사항이 많았다.</p>
+<p>좀 더 찾아보니 <a href="https://hub.docker.com/r/mfellner/javascript-notebook">https://hub.docker.com/r/mfellner/javascript-notebook</a> 이미지를 찾았다.
+오래 되었지만, 지금도 관리되고 있는 <code class="language-text">jupyter/minimal-notebook</code>를 기반으로 하고 있어서, 참고하여 Dockerfile을 다시 작성하기로 했다.</p>
+<p><code class="language-text">mfellner/javascript-notebook</code> Dockerfile을 수정해서 nodejs 버전을 올리고 <code class="language-text">6.0.0</code> -> <code class="language-text">10.15.3</code> 빌드했다.</p>
+<p>실행은 잘 되나, 최초 연결 시 비밀번호/토큰을 입력해야 했다.
+로컬 사용이 목적이라 비활성화 하려고,
+jupyter notebook 옵션인 <code class="language-text">--NotebookApp.token=''</code>을 시작 스크립트 <code class="language-text">start-notebook.sh</code>에 추가했다.
+하지만 <code class="language-text">mfellner/javascript-notebook</code>에서 원본 스크립트를 <code class="language-text">ijavascript</code> 실행 명령어로 덮어 씌우고 있어서,
+비활성화 할 수 없었다.</p>
+<p>그래서 덮어 씌우는 부분을 Dockerfile에서 제거해 보았지만, 언어 목록에서 nodejs가 사라졌다.</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"argv"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"node"</span><span class="token punctuation">,</span>
+    <span class="token string">"/usr/local/lib/node_modules/ijavascript/lib/kernel.js"</span><span class="token punctuation">,</span>
+    <span class="token string">"{connection_file}"</span><span class="token punctuation">,</span>
+    <span class="token string">"--protocol=5.0"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"display_name"</span><span class="token operator">:</span> <span class="token string">"Javascript (Node.js)"</span><span class="token punctuation">,</span>
+  <span class="token property">"language"</span><span class="token operator">:</span> <span class="token string">"javascript"</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>커널 정보를 위와같은 포맷으로, Jupyter Notebook의 특정 위치에 두어야 언어 목록에서 출력되는 구조였다.</p>
+<p><code class="language-text">ijavascript</code>는 <code class="language-text">ijsinstall</code>이라는 명령어에 <code class="language-text">json</code> 파일을 추가하는 프로세스가 포함되어 있었다:
+<a href="https://github.com/n-riesco/ijavascript/blob/d459956f76a22f9ec89937e02645ee7555f92d2b/bin/rc.js#L525">https://github.com/n-riesco/ijavascript/blob/d459956f76a22f9ec89937e02645ee7555f92d2b/bin/rc.js#L525</a></p>
+<p>결론은 원본 <code class="language-text">start-notebook.sh</code>는 수정할 필요 없이 <code class="language-text">RUN ijsinstall</code> 만 추가하면 해결되는 문제였다.</p>
+<h3 id="jupyter-docker-stacks" style="position:relative;"><a href="#jupyter-docker-stacks" aria-label="jupyter docker stacks permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jupyter Docker Stacks</h3>
+<p>Jupyter Notebook의 도커 버전은 상당히 많은 시리즈로 되어 있다.
+도커 허브엔 설명이 부족하고 GitHub 저장소 <a href="https://github.com/jupyter/docker-stacks">https://github.com/jupyter/docker-stacks</a> 에 메뉴얼이 잘 작성되어 있다.</p>
+<p>Dockerfile 관계 트리를 보면 멋있다:<br>
+<a href="http://interactive.blockdiag.com/?compression=deflate&#x26;src=eJyFzTEPgjAQhuHdX9Gws5sQjGzujsaYKxzmQrlr2msMGv-71K0srO_3XGud9NNA8DSfgzESCFlBSdi0xkvQAKTNugw4QnL6GIU10hvX-Zh7Z24OLLq2SjaxpvP10lX35vCf6pOxELFmUbQiUz4oQhYzMc3gCrRt2cWe_FKosmSjyFHC6OS1AwdQWCtyj7sfh523_BI9hKlQ25YdOFdv5fcH0kiEMA">http://interactive.blockdiag.com/?compression=deflate&#x26;src=eJyFzTEPgjAQhuHdX9Gws5sQjGzujsaYKxzmQrlr2msMGv-71K0srO_3XGud9NNA8DSfgzESCFlBSdi0xkvQAKTNugw4QnL6GIU10hvX-Zh7Z24OLLq2SjaxpvP10lX35vCf6pOxELFmUbQiUz4oQhYzMc3gCrRt2cWe_FKosmSjyFHC6OS1AwdQWCtyj7sfh523_BI9hKlQ25YdOFdv5fcH0kiEMA</a></p>
+<p>커스터마이징하려면 <code class="language-text">jupyter/notebook-minimal</code>을 기반으로 하면 될 거 같다.</p>
+<p><a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-base-notebook">https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-base-notebook</a>
+여기에 데이터과학, 머신러닝 등 각 분야에 자주 사용하는 모듈을 미리 설치한 이미지들 정보가 나와있다.</p>
+<h3 id="여담" style="position:relative;"><a href="#%EC%97%AC%EB%8B%B4" aria-label="여담 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>여담</h3>
+<p>Jupyter Notebook NodeJS 도커라이징한 것은 GitHub 저장소에 업로드 했다:<br>
+<a href="https://github.com/Edunga1/jupyter-notebook-nodejs">https://github.com/Edunga1/jupyter-notebook-nodejs</a></p>
+<p>Dockerfile 작성하면서 <code class="language-text">MAINTAINER</code>가 deprecated, <code class="language-text">LABEL</code>을 사용해야 하는 것을 알았다: <a href="https://stackoverflow.com/questions/38899977/how-do-i-declare-multiple-maintainers-in-my-dockerfile">https://stackoverflow.com/questions/38899977/how-do-i-declare-multiple-maintainers-in-my-dockerfile</a></p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/javascript/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
