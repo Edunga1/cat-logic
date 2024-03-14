@@ -18,7 +18,7 @@ created: 2024-03-14
 https://www.spacex.com/vehicles/starship/
 
 총 3단으로 구성되어 있다.
-2단부 "Starship"은 우주선 자체, 1단부 "Super Heavy"는 Booster로 궤도에 올리기 위한 엔진이다. 분리되어 다시 지구로 돌아온다.
+2단부 "Starship"은 우주선 자체, 1단부 "Super Heavy"는 Booster로 궤도에 올리기 위한 부분이다. 분리되어 다시 지구로 돌아온다.
 
 Super Heavy에 달린 엔진은 "Raptor"라는 이름으로, 33개가 있다.
 
