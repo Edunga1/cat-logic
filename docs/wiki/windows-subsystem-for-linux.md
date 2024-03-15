@@ -9,24 +9,27 @@ created: 2022-11-30
 
 ### clipboard 공유
 
+vim register와 wsl 환경에서 클립보드를 공유하려면 vim 설정에 다음과 같이 추가한다:
+
 ```vim
 let g:clipboard = {
-          \   'name': 'win32yank-wsl',
-          \   'copy': {
-          \      '+': 'win32yank.exe -i --crlf',
-          \      '*': 'win32yank.exe -i --crlf',
-          \    },
-          \   'paste': {
-          \      '+': 'win32yank.exe -o --lf',
-          \      '*': 'win32yank.exe -o --lf',
-          \   },
-          \   'cache_enabled': 0,
-          \ }
+  \   'name': 'win32yank-wsl',
+  \   'copy': {
+  \      '+': 'win32yank.exe -i --crlf',
+  \      '*': 'win32yank.exe -i --crlf',
+  \    },
+  \   'paste': {
+  \      '+': 'win32yank.exe -o --lf',
+  \      '*': 'win32yank.exe -o --lf',
+  \   },
+  \   'cache_enabled': 0,
+  \ }
 ```
 
 win32yank.exe 실행파일 필요.
 
-다른 플랫폼 설정에 섞이지 않도록 예외처리 하자:
+다음은 [MacOS](./mac-os.md) 등 다른 환경에서 동작하지 않도록, WSL 확인하는 함수이다.
+
 ```vim
 function! s:IsWSL()
   if has("unix") && filereadable("/proc/version")
