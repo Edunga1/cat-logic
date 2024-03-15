@@ -4,8 +4,15 @@ Microsoft에서 만든 IDE나 에디터와 언어 서버가 통신하기 위한 
 
 https://microsoft.github.io/language-server-protocol
 
-예를 들어 vim에서 파이썬 개발을 위해 설정한다면, [jedi](https://github.com/davidhalter/jedi) 또는 [rope](https://github.com/python-rope/rope) 결정하고, [ycm](https://github.com/ycm-core/YouCompleteMe) 같은 completion 도구를 통해 사용했다.
-언어마다 플러그인이 또 달랐기 때문에 ycm 같은 도구가 인기가 많았으나, 무겁기도 하고 일반적인 GUI IDE와 비교했을 때 기능도 부족하다.
+프로토콜이기 때문에 위 저장소는 스펙을 정의한다.
+
+웹 사이트로 배포하고 있으니 방문해서 보는 편이 보기 좋다.\
+https://microsoft.github.io/language-server-protocol/specifications/specification-current
+
+이전에는 vim에서 파이썬 개발을 위해 설정한다면,
+[jedi](https://github.com/davidhalter/jedi) 또는 [rope](https://github.com/python-rope/rope) 결정하고,
+[ycm](https://github.com/ycm-core/YouCompleteMe) 등 completion 도구를 선택했다.
+언어마다 플러그인이 다르기도 했기 때문에 ycm 같은 통합 도구의 인기가 많았으나, 무겁기도 하고 일반적인 IDE와 비교했을 때 기능도 부족했다.
 
 LSP는 클라이언트와 서버만 선택하면 개발 설정 경험을 언어 공통적으로 가져갈 수 있어서 편리하다.
 
