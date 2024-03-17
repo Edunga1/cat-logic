@@ -223,7 +223,7 @@ fn main() {
 }
 ```
 
-4. 빌드 시 SFML 환경 변수`SFML_INCLUDE_DIR`, `SFML_LIBS_DIR` 2개를 전달해야 한다. \
+4. (필요 시)빌드 시 SFML 환경 변수`SFML_INCLUDE_DIR`, `SFML_LIBS_DIR` 2개를 전달이 필요할 수도 있다.
 Homebrew로 설치했기 때문에 해당 경로를 전달했다.
 
 ```bash
@@ -232,4 +232,4 @@ $ SFML_INCLUDE_DIR=/opt/homebrew/Cellar/sfml/2.6.0/include SFML_LIBS_DIR=/opt/ho
 
 5. 실행 파일을 실행해 본다: `./target/debug/<project-name>`
 
-cargo build 대신 삐르게 실핼하는 방법을 좀 찾아봐야겠다.
+cargo build 대신 빠르게 실핼하는 방법을 좀 찾아봐야겠다.
