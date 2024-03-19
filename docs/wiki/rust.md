@@ -7,12 +7,27 @@ Rust를 [SFML](./sfml.md)과 함께 처음 접하고 있다.
 
 https://www.rust-lang.org/
 
-## Installation
+## 환경 구축하기
 
-Ubuntu on WSL, OSX 사용중이라 편의상 Homebrew로 설치했다.
+Ubuntu on WSL, OSX 환경에서 주로 개발해서 Homebrew로 설치했다.
+
+`rust` 모듈도 있지만, `rustup`을 사용하자. `rustup`은 `rust`의 버전을 관리해주는 툴이다.
+뿐만 아니라 다른 toolchain의 설치도 지원한다.
 
 ```bash
-$ brew install rust
+$ brew install rustup-init
+```
+
+`rustup-init`을 설치하고, `rustup-init`을 실행하면 `rust`와 `cargo`를 설치할 수 있다.
+
+어떤 경로에 설치될 지 물어보는데, 그냥 Enter를 눌러서 기본 경로에 설치했다.
+
+```bash
+$ rustup-init
+# ...
+1) Proceed with standard installation (default - just press enter)
+2) Customize installation
+3) Cancel installation
 ```
 
 `rustc`, `cargo`가 설치되었는지 확인한다.
@@ -25,6 +40,8 @@ rustc 1.72.1 (d5c2e9c34 2023-09-13) (Homebrew)
 ❯ cargo --version
 cargo 1.72.1
 ```
+
+### Cargo
 
 cargo는 패키지 매니저이다.
 
