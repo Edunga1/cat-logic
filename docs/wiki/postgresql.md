@@ -7,6 +7,100 @@ created: 2024-03-20
 
 제대로 사용한 적은 없고, [Amazon Redshift](./amazon-redshift.md)를 통해서 쿼리 작성만 해보았다.
 
+## 샌드박스 환경
+
+도커로 Postgres를 실행해보자.
+
+```sh
+$ docker run -it --rm --name some-postgres -e POSTGRES_PASSWORD=password postgres
+```
+
+`POSTGRES_PASSWORD`는 필수 환경 변수이다. 컨테이너 내에서 접속할 거라 외울 필요는 없다.
+
+이제 `psql`로 접속한다.
+
+```sh
+$ docker exec -ti some-postgres psql -U postgres
+psql (16.2 (Debian 16.2-1.pgdg120+2))
+Type "help" for help.
+
+postgres=# help
+You are using psql, the command-line interface to PostgreSQL.
+Type:  \copyright for distribution terms
+       \h for help with SQL commands
+       \? for help with psql commands
+       \g or terminate with semicolon to execute query
+       \q to quit
+```
+
+### 기본 명령어
+
+`\l` : 데이터베이스 목록
+
+```sh
+postgres=# \l
+                                                      List of databases
+   Name    |  Owner   | Encoding | Locale Provider |  Collate   |   Ctype    | ICU Locale | ICU Rules |   Access privileges
+-----------+----------+----------+-----------------+------------+------------+------------+-----------+-----------------------
+ postgres  | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           |
+ template0 | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           | =c/postgres          +
+           |          |          |                 |            |            |            |           | postgres=CTc/postgres
+ template1 | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           | =c/postgres          +
+           |          |          |                 |            |            |            |           | postgres=CTc/postgres
+(3 rows)
+```
+
+`\c` : 데이터베이스 접속\
+`\d` : 테이블, 뷰, 시퀀스 목록
+
+```sh
+postgres=# \c postgres
+You are now connected to database "postgres" as user "postgres".
+postgres=# \d
+Did not find any relations.
+```
+
+아무 테이블도 없다. 테이블을 만들어보자.
+
+ChatGPT에 부탁해서 학생 테이블 생성 쿼리를 받았다.
+
+```sql
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    gender VARCHAR(10)
+);
+```
+
+```sh
+postgres=# CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    gender VARCHAR(10)
+);
+CREATE TABLE
+postgres=# \d
+               List of relations
+ Schema |      Name       |   Type   |  Owner
+--------+-----------------+----------+----------
+ public | students        | table    | postgres
+ public | students_id_seq | sequence | postgres
+(2 rows)
+```
+
+이제 `\d`로 테이블이 생성되었음을 확인할 수 있다.
+
+```sh
+postgres=# select * from students;
+ id | name | age | gender
+----+------+-----+--------
+(0 rows)
+```
+
+이제 기본적인 쿼리는 다른 SQL과 비슷하므로 사용하는데 큰 어려움은 없다.
+
 ## MySQL 쿼리 차이점
 
 MySQL과 다르게, group by로 aggregation 시 aggregation function을 사용하지 않는 컬럼을 select에 포함할 수 없다.
