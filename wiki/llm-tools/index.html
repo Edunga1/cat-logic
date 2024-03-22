@@ -110,8 +110,9 @@ data-styled.g8[id="Wiki__Main-sc-16q9onf-2"]{content:"kXmPAY,"}/*!sc*/
 <p>AI에게 도구를 쥐어주는 컨셉은 ChatGPT-4의 동작 원리와 비슷해 보인다.
 ChatGPT-4의 프롬프트 유출 내용을 보면, browser와 dalle, python 등의 도구에 대한 사용법을 알려주었다.</p>
 <hr>
-<p>저장소에서 소개하는 AI에게 쿼리하는 예제는 매우 간단하다:</p>
-<p>poetry로 구성했다.</p>
+<p>다음은 Phidata에서 소개하는 간단한 예제이다.<br>
+지금은 OpenAI API 키가 없으면 실행할 수 없다.</p>
+<p>poetry를 사용하고 있어서 <code class="language-text">pyproject.toml</code>를 작성한다.</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">tool.poetry</span><span class="token punctuation">]</span>
 <span class="token key property">name</span> <span class="token punctuation">=</span> <span class="token string">"phidata-start"</span>
 <span class="token key property">version</span> <span class="token punctuation">=</span> <span class="token string">"0.1.0"</span>
@@ -129,12 +130,12 @@ ChatGPT-4의 프롬프트 유출 내용을 보면, browser와 dalle, python 등�
 <span class="token key property">build-backend</span> <span class="token punctuation">=</span> <span class="token string">"poetry.core.masonry.api"</span></code></pre></div>
 <p><code class="language-text">poetry shell</code>로 가상 환경을 만들고, <code class="language-text">poetry install</code>로 의존성을 설치한다.
 <code class="language-text">phidata</code>와 <code class="language-text">openai</code> 단 두개만 설치하면 된다.</p>
-<p>이제 스크립트를 작성하자:</p>
+<p>이제 스크립트를 작성하자 <code class="language-text">assistant.py</code>:</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> phi<span class="token punctuation">.</span>assistant <span class="token keyword">import</span> Assistant
 
 assistant <span class="token operator">=</span> Assistant<span class="token punctuation">(</span>description<span class="token operator">=</span><span class="token string">"You help people with their health and fitness goals."</span><span class="token punctuation">)</span>
 assistant<span class="token punctuation">.</span>print_response<span class="token punctuation">(</span><span class="token string">"Share a quick healthy breakfast recipe."</span><span class="token punctuation">,</span> markdown<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre></div>
-<p>실행하면 다음과 같은 결과를 얻을 수 있다:</p>
+<p>실행하면 OpenAI GPT-4 turbo 모델로 쿼리하여 응답을 받는다:</p>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
 ╭──────────┬───────────────────────────────────────────────────────────╮
 │ Message  │ Share a quick healthy breakfast recipe.                   │
@@ -190,8 +191,9 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 │          │ protein, healthy fats, and whole grains to start your day │
 │          │ with energy.                                              │
 ╰──────────┴───────────────────────────────────────────────────────────╯</code></pre></div>
-<p>다음은 duckduckgo를 이용해 AI가 검색하는 예시이다.
-<code class="language-text">duckduckgo-search</code> 모듈이 필요하다.</p>
+<p>다음은 duckduckgo를 이용해 AI가 검색하는 예시다.
+모델에게 함수를 사용하도록 지시하고, 함수 결과를 종합하여 답변하는 구조다.</p>
+<p><code class="language-text">duckduckgo-search</code> 모듈이 필요하다: <code class="language-text">poetry add duckduckgo-search</code></p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> phi<span class="token punctuation">.</span>assistant <span class="token keyword">import</span> Assistant
 <span class="token keyword">from</span> phi<span class="token punctuation">.</span>tools<span class="token punctuation">.</span>duckduckgo <span class="token keyword">import</span> DuckDuckGo
 
@@ -240,6 +242,9 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 ╰──────────┴───────────────────────────────────────────────────────────╯</code></pre></div>
 <p>정보를 찾기위한 AI의 고뇌가 돋보인다.</p>
 <h3 id="나만의-도구-만들기" style="position:relative;"><a href="#%EB%82%98%EB%A7%8C%EC%9D%98-%EB%8F%84%EA%B5%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0" aria-label="나만의 도구 만들기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>나만의 도구 만들기</h3>
+<p>Phidata는 내가 만든 함수를 사용할 수 있도록 도와준다.</p>
+<p>간단한 예제로 웹페이지의 HTML을 가져오는 도구를 만들어보자.</p>
+<p><code class="language-text">assistant.py</code>의 코드는 다음과 같다:</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> phi<span class="token punctuation">.</span>assistant <span class="token keyword">import</span> Assistant
 <span class="token keyword">from</span> requests <span class="token keyword">import</span> get
 
@@ -257,7 +262,7 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 
 assistant <span class="token operator">=</span> Assistant<span class="token punctuation">(</span>tools<span class="token operator">=</span><span class="token punctuation">[</span>get_html<span class="token punctuation">]</span><span class="token punctuation">,</span> show_tools_calls<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 assistant<span class="token punctuation">.</span>print_response<span class="token punctuation">(</span><span class="token string">"`https://news.hada.io/topic?id=13436` 사이트의 내용을 3줄 요약해 주세요."</span><span class="token punctuation">,</span> markdown<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre></div>
-<p><code class="language-text">tools</code>에 함수를 제공하면 되는데, docstring을 잘 작성하면 AI가 알아서 사용하는 거 같다!</p>
+<p><code class="language-text">tools=</code>에 함수를 제공하면 되는데, docstring을 잘 작성하면 AI가 알아서 사용한다.</p>
 <p>다음은 사용 결과:</p>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
 ╭──────────┬───────────────────────────────────────────────────────────╮
@@ -276,7 +281,7 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 │          │    프레임워크를 이용해 서빙함으로써 AI 애플리케이션을     │
 │          │    구축할 수 있도록 지원합니다.                           │
 ╰──────────┴───────────────────────────────────────────────────────────╯</code></pre></div>
-<p>프롬프트를 정말 다양하게 사용할 수 있다.</p>
+<p>프롬프트를 개선하면 다양한 결과를 얻을 수 있다.</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python">message <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"""
 `$</span><span class="token interpolation"><span class="token punctuation">{</span>url<span class="token punctuation">}</span></span><span class="token string">` 사이트의 내용을 요약해주세요.
 
@@ -287,7 +292,7 @@ horizontal line으로 총 4개 구역을 나눠주세요.
 세 번째 구역은 모든 덧글을 요약해 주세요. 원문은 포함하지 않아도 됩니다.
 마지막 구역은 URL에서 다음 시퀀스 정보를 찾아서 다음 글을 매우 간략하게 요약해주고, URL을 함께 포함해주세요.
 """</span></span></code></pre></div>
-<p>이렇게 작성하면, 실제로 도구를 2번 호출하기도 한다.</p>
+<p>이렇게 프롬프트를 작성하면, 본문을 위해 도구를 한 번 사용하고 다음 글을 요약하기 위해 도구를 한 번 더 사용한다.</p>
 <hr>
 <p>여기있는 코드도 copilot과 함께 작성하다보니, 내가 직접 짠 코드는 거의 없다.<br>
 인공지능의 발전이 새삼 대단하다고 느낀다.</p>
