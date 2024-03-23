@@ -90,6 +90,9 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <ul>
 <li>
 <p><a href="#%EC%84%9C%EB%B2%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8">서버 프로젝트</a></p>
+<ul>
+<li><a href="#servuo">ServUO</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#macro">Macro</a></p>
@@ -123,10 +126,10 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <h3 id="서버-프로젝트" style="position:relative;"><a href="#%EC%84%9C%EB%B2%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8" aria-label="서버 프로젝트 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>서버 프로젝트</h3>
 <p>이 게임에서 사설 서버를 Free Shard라고 부른다.</p>
 <p>이런 사설 서버들이 사용하는 서버 프로젝트로 <a href="https://github.com/runuo/runuo">RunUO</a>, <a href="https://github.com/ServUO/ServUO">ServUO</a>가 있다.</p>
-<p>둘 다 C#으로 오픈 소스로 개발되었다. RunUO는 2020년 이후로 업데이트가 없는 것으로 보이며, ServUO는 아직도 업데이트가 이어지고 있다.
-ServUO는 원본 게임의 최신 버전을 따라가고 있어서 법적 이슈가 없는지 궁금할 정도.</p>
-<p>서버는 클라이언트를 컨트롤하기 위한 패킷을 보낸다.<br>
-<a href="https://github.com/ServUO/ServUO/blob/8b75a7bbf5984585804c771078e5ba8427d2a5c5/Scripts/Items/Equipment/Weapons/ShepherdsCrook.cs#L48">게임 메시지</a>를 보내거나
+<p>둘 다 C#으로 오픈 소스로 개발되었다. RunUO는 2020년 이후로 업데이트가 없는 것으로 보이며, ServUO는 아직도 업데이트가 이어지고 있다.</p>
+<h4 id="servuo" style="position:relative;"><a href="#servuo" aria-label="servuo permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ServUO</h4>
+<p>서버는 클라이언트를 컨트롤하기 위한 패킷을 보낸다.</p>
+<p><a href="https://github.com/ServUO/ServUO/blob/8b75a7bbf5984585804c771078e5ba8427d2a5c5/Scripts/Items/Equipment/Weapons/ShepherdsCrook.cs#L48">게임 메시지</a>를 보내거나
 음식 섭취 <a href="https://github.com/ServUO/ServUO/blob/8b75a7bbf5984585804c771078e5ba8427d2a5c5/Scripts/Items/Consumables/Food.cs#L152">효과음</a>을 재생시킨다.</p>
 <p>플레이어 캐릭터, NPC 등 움직이는 것은 <a href="https://github.com/ServUO/ServUO/blob/master/Server/Mobile.cs">Mobile</a>을 기반으로 하고<br>
 아이템은 <a href="https://github.com/ServUO/ServUO/blob/master/Server/Item.cs#L666">Item</a>을 기반으로 한다.<br>
