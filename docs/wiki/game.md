@@ -39,6 +39,24 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 내용이 방대해서 서버-클라이언트 모델을 가지는 게임을 개발하고 싶다면 학습하는데 좋은 예제가 될 것이다.
 
+##### ServUO 코드 분석
+
+**BaseCreature**
+
+[BaseCreature](https://github.com/Ultima-Lokai/ServUO-Test/blob/master/Scripts/Mobiles/BaseCreature.cs#L179)는 몬스터의 기반 클래스이다.
+
+[Zombie](https://github.com/ServUO/ServUO/blob/master/Scripts/Mobiles/Normal/Zombie.cs#L7) 몬스터의 경우\
+이름은 `a zombie`이고, `Body` 그래픽 ID는 `3`이다.
+
+[룻 품질](https://github.com/ServUO/ServUO/blob/master/Scripts/Mobiles/Normal/Zombie.cs#L49)은 [Meager](https://github.com/ServUO/ServUO/blob/master/Scripts/Misc/LootPack.cs#L503), 빈약한 품질을 가진다.
+
+---
+
+[Mobile의 `Body`](https://github.com/ServUO/ServUO/blob/master/Server/Mobile.cs#L9178)가 클라이언트에 보여줄 그래픽이 아닌가 추정한다.\
+그러니까, 클라이언트와 서버가 약속으로 정한 번호로 보여줄 그래픽을 결정하는 거 같다.
+
+[Mobile의 `Deserialize`](https://github.com/ServUO/ServUO/blob/master/Server/Mobile.cs#L5394)는 데이터소스로부터 데이터를 읽어오는 메서드 같다.
+
 ### Macro
 
 게임 자체가 장황한 행동(낭만)을 요구하기 때문에 수동으로 플레이하기 버거운 편이다.
