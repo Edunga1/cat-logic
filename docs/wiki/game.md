@@ -25,9 +25,11 @@ https://en.wikipedia.org/wiki/Ultima_Online
 이런 사설 서버들이 사용하는 서버 프로젝트로 [RunUO](https://github.com/runuo/runuo), [ServUO](https://github.com/ServUO/ServUO)가 있다.
 
 둘 다 C#으로 오픈 소스로 개발되었다. RunUO는 2020년 이후로 업데이트가 없는 것으로 보이며, ServUO는 아직도 업데이트가 이어지고 있다.
-ServUO는 원본 게임의 최신 버전을 따라가고 있어서 법적 이슈가 없는지 궁금할 정도.
 
-서버는 클라이언트를 컨트롤하기 위한 패킷을 보낸다.\
+#### ServUO
+
+서버는 클라이언트를 컨트롤하기 위한 패킷을 보낸다.
+
 [게임 메시지](https://github.com/ServUO/ServUO/blob/8b75a7bbf5984585804c771078e5ba8427d2a5c5/Scripts/Items/Equipment/Weapons/ShepherdsCrook.cs#L48)를 보내거나
 음식 섭취 [효과음](https://github.com/ServUO/ServUO/blob/8b75a7bbf5984585804c771078e5ba8427d2a5c5/Scripts/Items/Consumables/Food.cs#L152)을 재생시킨다.
 
