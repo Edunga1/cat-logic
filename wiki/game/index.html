@@ -91,7 +91,12 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li>
 <p><a href="#%EC%84%9C%EB%B2%84-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8">서버 프로젝트</a></p>
 <ul>
-<li><a href="#servuo">ServUO</a></li>
+<li>
+<p><a href="#servuo">ServUO</a></p>
+<ul>
+<li><a href="#servuo-%EC%BD%94%EB%93%9C-%EB%B6%84%EC%84%9D">ServUO 코드 분석</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -135,6 +140,16 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 아이템은 <a href="https://github.com/ServUO/ServUO/blob/master/Server/Item.cs#L666">Item</a>을 기반으로 한다.<br>
 모든 클래스는 <a href="https://github.com/ServUO/ServUO/blob/master/Server/IEntity.cs#L7">IEntity</a>를 구현한다.</p>
 <p>내용이 방대해서 서버-클라이언트 모델을 가지는 게임을 개발하고 싶다면 학습하는데 좋은 예제가 될 것이다.</p>
+<h5 id="servuo-코드-분석" style="position:relative;"><a href="#servuo-%EC%BD%94%EB%93%9C-%EB%B6%84%EC%84%9D" aria-label="servuo 코드 분석 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ServUO 코드 분석</h5>
+<p><strong>BaseCreature</strong></p>
+<p><a href="https://github.com/Ultima-Lokai/ServUO-Test/blob/master/Scripts/Mobiles/BaseCreature.cs#L179">BaseCreature</a>는 몬스터의 기반 클래스이다.</p>
+<p><a href="https://github.com/ServUO/ServUO/blob/master/Scripts/Mobiles/Normal/Zombie.cs#L7">Zombie</a> 몬스터의 경우<br>
+이름은 <code class="language-text">a zombie</code>이고, <code class="language-text">Body</code> 그래픽 ID는 <code class="language-text">3</code>이다.</p>
+<p><a href="https://github.com/ServUO/ServUO/blob/master/Scripts/Mobiles/Normal/Zombie.cs#L49">룻 품질</a>은 <a href="https://github.com/ServUO/ServUO/blob/master/Scripts/Misc/LootPack.cs#L503">Meager</a>, 빈약한 품질을 가진다.</p>
+<hr>
+<p><a href="https://github.com/ServUO/ServUO/blob/master/Server/Mobile.cs#L9178">Mobile의 <code class="language-text">Body</code></a>가 클라이언트에 보여줄 그래픽이 아닌가 추정한다.<br>
+그러니까, 클라이언트와 서버가 약속으로 정한 번호로 보여줄 그래픽을 결정하는 거 같다.</p>
+<p><a href="https://github.com/ServUO/ServUO/blob/master/Server/Mobile.cs#L5394">Mobile의 <code class="language-text">Deserialize</code></a>는 데이터소스로부터 데이터를 읽어오는 메서드 같다.</p>
 <h3 id="macro" style="position:relative;"><a href="#macro" aria-label="macro permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Macro</h3>
 <p>게임 자체가 장황한 행동(낭만)을 요구하기 때문에 수동으로 플레이하기 버거운 편이다.
 예를 들면 옷을 만드려면 양에게서 양모를 얻고, 베틀과 물레로 실을 만들고, 실로부터 천을 만들고, 천으로 옷을 만드는 과정을 거친다.</p>
