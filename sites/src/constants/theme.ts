@@ -5,6 +5,8 @@ export default {
     link: "#0D47A1",
     linkVisited: "#B4CFF9",
     accent: "#C9C9C9",
+    background2: "#F5F5F5",
+    backgroundHighlight: "#D0D0D0",
   },
   fonts: {
     body: "-apple-system, Roboto, sans-serif, serif",

@@ -39,6 +39,32 @@ const Container = styled.div`
     margin-left: 0;
     font-style: italic;
   }
+
+  // table style
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    td, th {
+      padding: .2rem .5rem;
+    }
+
+    thead {
+      background-color: ${theme.colors.background2};
+    }
+
+    tbody {
+      font-size: .8rem;
+
+      tr:nth-child(even) {
+        background-color: ${theme.colors.background2};
+      }
+
+      tr:hover {
+        background-color: ${theme.colors.backgroundHighlight};
+      }
+    }
+  }
 `
 
 export default function WikiContent(
