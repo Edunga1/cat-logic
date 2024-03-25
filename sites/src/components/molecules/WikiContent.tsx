@@ -1,9 +1,11 @@
 import * as React from "react"
 import styled from "styled-components"
+import theme from "../../constants/theme"
 
 const Container = styled.div`
   overflow: auto;
   overflow-wrap: break-word;
+  color: ${theme.colors.foreground};
 
   a {
     text-decoration: none;
