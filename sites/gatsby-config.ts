@@ -15,6 +15,7 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/content`,
       },
     },
+    "@colliercz/gatsby-transformer-gitinfo",
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-transformer-remark",
