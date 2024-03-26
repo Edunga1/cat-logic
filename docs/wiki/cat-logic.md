@@ -56,3 +56,12 @@ Cat Logic은 실험적인 프로젝트이기도 하다.
 나무위키처럼 한글과 depth path로 구조적인 문서로 좀 더 보기 좋게 만들고 싶다.
 
 작업 커밋: https://github.com/Edunga1/cat-logic/commit/b8b32647aaf301e38acb61cfaabba9cc906f8bbe
+
+### 2024-03-26
+
+커밋 날짜를 기준으로 문서를 정렬하도록 했다.
+
+https://github.com/Edunga1/cat-logic/commit/10f5d680de2aa422dee3258101b4c4341956f276
+
+github actions/checkout의 fetch-depth를 0으로 설정하면 모든 커밋 내역을 가져올 수 있다.\
+`gatsby-transformer-gitinfo` gatsby 플러그인은 git 정보를 graphql로 가져올 수 있게 해준다.
