@@ -92,6 +92,7 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p><a href="#%EC%9E%84%EB%B2%A0%EB%94%A9">임베딩</a></p>
 <ul>
 <li><a href="#cat-logic%EC%97%90-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0">Cat Logic에 적용해보기</a></li>
+<li><a href="#open-ai%EC%9D%98-%EC%9E%84%EB%B2%A0%EB%94%A9-%EB%AA%A8%EB%8D%B8">Open AI의 임베딩 모델</a></li>
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 ZYlSY">
@@ -229,7 +230,48 @@ OpenAI를 호출하고 csv로 저장하는 파이썬 코드를 모두 Cat Logic 
 <p>같은 자바스크립트 관련 문서인 <code class="language-text">nodejs.md</code>, <code class="language-text">reactjs.md</code>, <code class="language-text">angularjs.md</code>는 유사도가 높다.
 납득이 가는 결과라 만족스럽다.</p>
 <p>임베딩 API를 사용하는데 총 0.03 달러가 소모되었다. 한국 돈으로 40원 정도다.
-<a href="https://wikidocs.net/200466">wikidocs</a> 문서에 따르면 ada-002 모델로 어린 왕자 책 분량인 4만 토큰을 임베딩하는데 0.016 달러가 소모된다고 한다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/embeddings/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<a href="https://wikidocs.net/200466">wikidocs</a> 문서에 따르면 ada-002 모델로 어린 왕자 책 분량인 4만 토큰을 임베딩하는데 0.016 달러가 소모된다고 한다.</p>
+<h2 id="open-ai의-임베딩-모델" style="position:relative;"><a href="#open-ai%EC%9D%98-%EC%9E%84%EB%B2%A0%EB%94%A9-%EB%AA%A8%EB%8D%B8" aria-label="open ai의 임베딩 모델 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Open AI의 임베딩 모델</h2>
+<p>2024년 3월 27일 기준 Open AI의 임베딩 모델은 다음과 같다:</p>
+<table>
+<thead>
+<tr>
+<th>MODEL</th>
+<th>~ PAGES PER DOLLAR</th>
+<th>PERFORMANCE ON MTEB EVAL</th>
+<th>MAX INPUT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text-embedding-3-small</td>
+<td>62,500</td>
+<td>62.3%</td>
+<td>8191</td>
+</tr>
+<tr>
+<td>text-embedding-3-large</td>
+<td>9,615</td>
+<td>64.6%</td>
+<td>8191</td>
+</tr>
+<tr>
+<td>text-embedding-ada-002</td>
+<td>12,500</td>
+<td>61.0%</td>
+<td>8191</td>
+</tr>
+</tbody>
+</table>
+<p>cat-logic은 <code class="language-text">text-embedding-ada-002</code> 모델을 사용해오다가 최근에 추가된 <code class="language-text">text-embedding-3-small</code> 모델로 변경했다.</p>
+<p><code class="language-text">small</code> 모델은 가격대비 성능이 우수하다. OpenAI의 모델은 모두 한국어를 잘 처리하는 듯 하다.</p>
+<p>cat-logic의 문서의 총 문자 수 67만자 정도를 기준으로, 0.01 달러 미만으로 임베딩을 할 수 있었다.
+위 섹션 <code class="language-text">ada-002</code> 모델의 0.03 달러와 비교할 수 있겠다.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">wc</span> ./docs/wiki/**/*.md
+   <span class="token number">353</span>   <span class="token number">1319</span>  <span class="token number">12715</span> ./docs/wiki/2016-08-27-gdg-webtech-workshop-nnn.md
+   <span class="token punctuation">..</span>.
+   <span class="token number">156</span>    <span class="token number">599</span>   <span class="token number">5738</span> ./docs/wiki/windows-subsystem-for-linux.md
+ <span class="token number">15534</span>  <span class="token number">65139</span> <span class="token number">670242</span> total</code></pre></div></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/embeddings/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
