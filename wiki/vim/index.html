@@ -647,8 +647,9 @@ with mappings that are only to be used from other mappings.</p>
 <h4 id="matchparen" style="position:relative;"><a href="#matchparen" aria-label="matchparen permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>matchparen</h4>
 <p>괄호에 대한 매칭을 하이라이트한다. <code class="language-text">:h matchparen</code>.</p>
 <h5 id="용량이-큰-파일에서-느려지는-문제" style="position:relative;"><a href="#%EC%9A%A9%EB%9F%89%EC%9D%B4-%ED%81%B0-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EB%8A%90%EB%A0%A4%EC%A7%80%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="용량이 큰 파일에서 느려지는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>용량이 큰 파일에서 느려지는 문제</h5>
-<p>이 플러그인의 문제는 큰 파일에서 매우 느려진다는 점이다.
-880KB 크기 JSON 파일을 여는데도 오래 걸렸고, 커서 이동하는데 초 단위로 소요되었다.</p>
+<p>이 플러그인의 문제는 큰 파일에서 매우 느려진다는 점이다.</p>
+<p><a href="https://github.com/Edunga1/cat-logic/blob/main/sites/src/related-docs/similarity-result.json">유사성 결과 JSON 파일</a>을
+열 때와 커서를 이동할 때 멈추는 현상이 초 단위로 소요되었다.</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">FUNCTIONS SORTED ON TOTAL TIME
 count  total (s)   self (s)  function
    28   3.302722   3.302551  &lt;SNR>108_Highlight_Matching_Pair()</code></pre></div>
