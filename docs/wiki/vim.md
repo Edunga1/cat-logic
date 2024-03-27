@@ -501,7 +501,9 @@ vim에 기본으로 포함된 플러그인. 별도 설치 없이도 기본 제�
 ##### 용량이 큰 파일에서 느려지는 문제
 
 이 플러그인의 문제는 큰 파일에서 매우 느려진다는 점이다.
-880KB 크기 JSON 파일을 여는데도 오래 걸렸고, 커서 이동하는데 초 단위로 소요되었다.
+
+[유사성 결과 JSON 파일](https://github.com/Edunga1/cat-logic/blob/main/sites/src/related-docs/similarity-result.json)을
+열 때와 커서를 이동할 때 멈추는 현상이 초 단위로 소요되었다.
 
 ```text
 FUNCTIONS SORTED ON TOTAL TIME
