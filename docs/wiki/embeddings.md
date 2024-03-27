@@ -165,3 +165,28 @@ https://github.com/Edunga1/cat-logic/tree/main/embeddings
 
 임베딩 API를 사용하는데 총 0.03 달러가 소모되었다. 한국 돈으로 40원 정도다.
 [wikidocs](https://wikidocs.net/200466) 문서에 따르면 ada-002 모델로 어린 왕자 책 분량인 4만 토큰을 임베딩하는데 0.016 달러가 소모된다고 한다.
+
+## Open AI의 임베딩 모델
+
+2024년 3월 27일 기준 Open AI의 임베딩 모델은 다음과 같다:
+
+| MODEL                  | ~ PAGES PER DOLLAR | PERFORMANCE ON MTEB EVAL | MAX INPUT |
+|------------------------|--------------------|--------------------------|-----------|
+| text-embedding-3-small | 62,500             | 62.3%                    | 8191      |
+| text-embedding-3-large | 9,615              | 64.6%                    | 8191      |
+| text-embedding-ada-002 | 12,500             | 61.0%                    | 8191      |
+
+cat-logic은 `text-embedding-ada-002` 모델을 사용해오다가 최근에 추가된 `text-embedding-3-small` 모델로 변경했다.
+
+`small` 모델은 가격대비 성능이 우수하다. OpenAI의 모델은 모두 한국어를 잘 처리하는 듯 하다.
+
+cat-logic의 문서의 총 문자 수 67만자 정도를 기준으로, 0.01 달러 미만으로 임베딩을 할 수 있었다.
+위 섹션 `ada-002` 모델의 0.03 달러와 비교할 수 있겠다.
+
+```bash
+$ wc ./docs/wiki/**/*.md
+   353   1319  12715 ./docs/wiki/2016-08-27-gdg-webtech-workshop-nnn.md
+   ...
+   156    599   5738 ./docs/wiki/windows-subsystem-for-linux.md
+ 15534  65139 670242 total
+```
