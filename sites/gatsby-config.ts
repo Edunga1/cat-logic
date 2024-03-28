@@ -1,4 +1,5 @@
 import { GatsbyConfig } from "gatsby"
+import Path from "path"
 
 const config: GatsbyConfig = {
   pathPrefix: process.env.GATSBY_PATH_PREFIX || "/",
@@ -12,7 +13,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "content",
-        path: `${__dirname}/src/content`,
+        path: Path.join(__dirname, "..", "docs", "wiki"),
       },
     },
     "@colliercz/gatsby-transformer-gitinfo",
