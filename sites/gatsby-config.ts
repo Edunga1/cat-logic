@@ -16,7 +16,7 @@ const config: GatsbyConfig = {
         path: Path.join(__dirname, "..", "docs", "wiki"),
       },
     },
-    "@colliercz/gatsby-transformer-gitinfo",
+    "gatsby-transformer-gitinfo",
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-transformer-remark",
