@@ -3,7 +3,7 @@ created: 2023-10-19
 ---
 # Rust Programming Language
 
-Rust를 [SFML](./sfml.md)를 통해 처음 접하고 있다.
+Rust를 [SFML](./sfml.md)로 처음 시작중이다.
 
 https://www.rust-lang.org/
 
@@ -60,7 +60,7 @@ crates.io처럼 `cargo add sfml`와 같은 설치 명령어 안내 문구가 없
 
 `cargo` 명령어로 프로젝트를 생성하거나 패키지를 설치할 수 있다.
 
-다음은 `hell_world` 프로젝트를 생성하는 명령어이다.
+다음은 `sfml-rust-start` 이름의 프로젝트를 생성하는 명령어이다.
 
 ```bash
 $ cargo new sfml-rust-start
@@ -92,14 +92,14 @@ Hello, world!
 
 ## Journey to Rust
 
-24년 첫 도전을 Rust와 함께 하는중이다.
+24년의 시작을 Rust로 시작했다.
 
-Rust 문법을 따로 공부하지 않고, 무작정 사용해보고 있다. 물론 아무런 도움이 없는 것은 아니다.
+문법을 따로 공부하지 않고, 무작정 사용해보고 있다. 물론 아무런 도움이 없는 것은 아니다.
 [ChatGPT](./machine-learning.md)와 [LSP](./language-server-protocol.md)를 적극 활용하고 있다.
 
-https://github.com/Edunga1/rust-sfml-practice 가 시작 프로젝트다.
+간단한 [SFML Rust](https://github.com/Edunga1/rust-sfml-practice) 프로젝트로 시작한다.
 
-ChatGPT가 아니었으면 고생길이 험난했을 것 같다. ChatGPT 덕분에 언어의 러닝커브를 줄일 수 있었다.
+ChatGPT가 아니었으면 더 험난했을 것 같다. ChatGPT 덕분에 언어의 러닝커브를 줄일 수 있었다.
 `trait`은 다른 언어에도 있는 개념이지만, lifetime은 예상치 못했다. LSP가 없었더라면 수 많은 에러에 만신창이가 되었을 것이다.
 
 immutable을 우선하는 것과 [lifetime](https://doc.rust-lang.org/rust-by-example/scope/lifetime/struct.html)을 보면 Rust가 메모리 안전성을 중요시하는 것을 알 거 같다.
