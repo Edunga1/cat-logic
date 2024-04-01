@@ -3,9 +3,11 @@ created: 2023-10-19
 ---
 # Rust Programming Language
 
-Rust를 [SFML](./sfml.md)과 함께 처음 접하고 있다.
+Rust를 [SFML](./sfml.md)를 통해 처음 접하고 있다.
 
 https://www.rust-lang.org/
+
+top-down 방식으로 배우기에는 Rust는 꽤 어려운 언어인 거 같다. 학습곡선이 높은 언어로 유명한 언어이기도 하다.
 
 ## 환경 구축하기
 
@@ -102,3 +104,93 @@ ChatGPT가 아니었으면 고생길이 험난했을 것 같다. ChatGPT 덕분�
 
 immutable을 우선하는 것과 [lifetime](https://doc.rust-lang.org/rust-by-example/scope/lifetime/struct.html)을 보면 Rust가 메모리 안전성을 중요시하는 것을 알 거 같다.
 그래도 lifetime의 `<'a>`는 뭔가 어색하다. 특히 `'static`은 더욱.
+
+강의를 보거나 하지 않고, 필요할 때 마다 찾아보고 있어서, 정확한 정보가 아니겠지만 일단 여기에 정리해둔다.
+
+### Lifetime
+
+C언어는 [Dangling Pointer](https://ko.m.wikipedia.org/wiki/%ED%97%88%EC%83%81_%ED%8F%AC%EC%9D%B8%ED%84%B0) 문제가 있다.\
+포인터가 유효한 객체를 가리키지 않는 것이다. 다음은 Wikipedia의 예시이다.
+
+```c
+{
+   char *dp = NULL;
+   /* ... */
+   {
+       char c;
+       dp = &c;
+   }
+     /* c falls out of scope */
+     /* dp is now a dangling pointer */
+}
+```
+
+`dp`는 `c`를 가리키고 있지만, `c`가 스코프를 벗어나면 메모리 해제되고, `dp`는 더 이상 유효한 포인터가 아니다.
+
+Rust는 참조 수명을 통해 이 문제를 방지한다.
+
+```rust
+// compile error
+fn main() {
+    let r;
+    {
+        let x = 5;
+        r = &x;
+    }
+    println!("r: {}", r);
+}
+```
+
+위 코드는 컴파일 되지 않는다. `x`의 수명이 `r`의 수명보다 짧기 때문이다.
+
+### Ownership
+
+Ownership은 메모리 문제를 해결하는 개념이다.
+
+```rust
+fn main() {
+    let foo = String::from("Hello, world!");
+    let bar = foo;                           // moved value from `foo` to `bar`
+    println!("The value is: {:?}", foo);     // error
+    println!("The value is: {:?}", bar);     // ok
+}
+```
+
+코드는 컴파일 되지 않는다. `foo`의 소유권이 `bar`로 이동되었기 때문이다. 그래서 `foo`를 사용할 수 없다.
+
+해결하기 위해선 Copy, Clone, Borrowing 등을 사용해서 소유권을 해결해야 한다.
+
+```rust
+fn main() {
+    let foo = String::from("Hello, world!");
+    let bar = foo.clone();
+    println!("The value is: {:?}", foo);
+}
+```
+
+Clone을 사용하여 해결한 코드이다.
+`clone()`은 rust에서 `Clone` trait를 구현한 것이다. 이제 `foo`, `bar` 모두 사용할 수 있다.
+
+### Null Safety
+
+rust는 Null Safety 언어이다. Null 대신 `Option`을 사용하는데 여기에도 Ownership이 적용된다.
+
+```rust
+fn main() {
+    let opt = Some(String::from("Hello, Rust!"));
+    let value = opt.unwrap();
+    println!("The value is: {:?}", opt);  // error
+}
+```
+
+위 코드는 컴파일 되지 않는다. `opt`의 소유권이 `value`로 이동되었기 때문이다. 그래서 `opt`를 더 이상 사용할 수 없다.
+
+```rust
+fn main() {
+    let mut opt = Some(String::from("Hello, Rust!"));
+    let value = opt.take();
+    println!("The value is: {:?}", opt);  // ok
+}
+```
+
+`take()`는 `Option`의 소유권을 가져가는 메소드이다. `opt`는 `None`이 된다.

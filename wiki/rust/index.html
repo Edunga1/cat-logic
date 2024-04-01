@@ -102,12 +102,18 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </li>
 <li>
 <p><a href="#journey-to-rust">Journey to Rust</a></p>
+<ul>
+<li><a href="#lifetime">Lifetime</a></li>
+<li><a href="#ownership">Ownership</a></li>
+<li><a href="#null-safety">Null Safety</a></li>
+</ul>
 </li>
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 ZYlSY">
-<p>Rust를 <a href="../sfml">SFML</a>과 함께 처음 접하고 있다.</p>
+<p>Rust를 <a href="../sfml">SFML</a>를 통해 처음 접하고 있다.</p>
 <p><a href="https://www.rust-lang.org/">https://www.rust-lang.org/</a></p>
+<p>top-down 방식으로 배우기에는 Rust는 꽤 어려운 언어인 거 같다. 학습곡선이 높은 언어로 유명한 언어이기도 하다.</p>
 <h2 id="환경-구축하기" style="position:relative;"><a href="#%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0" aria-label="환경 구축하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>환경 구축하기</h2>
 <p>Ubuntu on WSL, OSX 환경에서 주로 개발해서 Homebrew로 설치했다.</p>
 <p><code class="language-text">rust</code> 모듈도 있지만, <code class="language-text">rustup</code>을 사용하자. <code class="language-text">rustup</code>은 <code class="language-text">rust</code>의 버전을 관리해주는 툴이다.
@@ -167,7 +173,64 @@ Hello, world<span class="token operator">!</span></code></pre></div>
 <p>ChatGPT가 아니었으면 고생길이 험난했을 것 같다. ChatGPT 덕분에 언어의 러닝커브를 줄일 수 있었다.
 <code class="language-text">trait</code>은 다른 언어에도 있는 개념이지만, lifetime은 예상치 못했다. LSP가 없었더라면 수 많은 에러에 만신창이가 되었을 것이다.</p>
 <p>immutable을 우선하는 것과 <a href="https://doc.rust-lang.org/rust-by-example/scope/lifetime/struct.html">lifetime</a>을 보면 Rust가 메모리 안전성을 중요시하는 것을 알 거 같다.
-그래도 lifetime의 <code class="language-text">&lt;'a></code>는 뭔가 어색하다. 특히 <code class="language-text">'static</code>은 더욱.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+그래도 lifetime의 <code class="language-text">&lt;'a></code>는 뭔가 어색하다. 특히 <code class="language-text">'static</code>은 더욱.</p>
+<p>강의를 보거나 하지 않고, 필요할 때 마다 찾아보고 있어서, 정확한 정보가 아니겠지만 일단 여기에 정리해둔다.</p>
+<h3 id="lifetime" style="position:relative;"><a href="#lifetime" aria-label="lifetime permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lifetime</h3>
+<p>C언어는 <a href="https://ko.m.wikipedia.org/wiki/%ED%97%88%EC%83%81_%ED%8F%AC%EC%9D%B8%ED%84%B0">Dangling Pointer</a> 문제가 있다.<br>
+포인터가 유효한 객체를 가리키지 않는 것이다. 다음은 Wikipedia의 예시이다.</p>
+<div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c"><span class="token punctuation">{</span>
+   <span class="token keyword">char</span> <span class="token operator">*</span>dp <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+   <span class="token comment">/* ... */</span>
+   <span class="token punctuation">{</span>
+       <span class="token keyword">char</span> c<span class="token punctuation">;</span>
+       dp <span class="token operator">=</span> <span class="token operator">&amp;</span>c<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+     <span class="token comment">/* c falls out of scope */</span>
+     <span class="token comment">/* dp is now a dangling pointer */</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">dp</code>는 <code class="language-text">c</code>를 가리키고 있지만, <code class="language-text">c</code>가 스코프를 벗어나면 메모리 해제되고, <code class="language-text">dp</code>는 더 이상 유효한 포인터가 아니다.</p>
+<p>Rust는 참조 수명을 통해 이 문제를 방지한다.</p>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token comment">// compile error</span>
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> r<span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+        r <span class="token operator">=</span> <span class="token operator">&amp;</span>x<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"r: {}"</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>위 코드는 컴파일 되지 않는다. <code class="language-text">x</code>의 수명이 <code class="language-text">r</code>의 수명보다 짧기 때문이다.</p>
+<h3 id="ownership" style="position:relative;"><a href="#ownership" aria-label="ownership permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ownership</h3>
+<p>Ownership은 메모리 문제를 해결하는 개념이다.</p>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> foo <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"Hello, world!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> bar <span class="token operator">=</span> foo<span class="token punctuation">;</span>                           <span class="token comment">// moved value from `foo` to `bar`</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"The value is: {:?}"</span><span class="token punctuation">,</span> foo<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// error</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"The value is: {:?}"</span><span class="token punctuation">,</span> bar<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// ok</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>코드는 컴파일 되지 않는다. <code class="language-text">foo</code>의 소유권이 <code class="language-text">bar</code>로 이동되었기 때문이다. 그래서 <code class="language-text">foo</code>를 사용할 수 없다.</p>
+<p>해결하기 위해선 Copy, Clone, Borrowing 등을 사용해서 소유권을 해결해야 한다.</p>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> foo <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"Hello, world!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> bar <span class="token operator">=</span> foo<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"The value is: {:?}"</span><span class="token punctuation">,</span> foo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Clone을 사용하여 해결한 코드이다.
+<code class="language-text">clone()</code>은 rust에서 <code class="language-text">Clone</code> trait를 구현한 것이다. 이제 <code class="language-text">foo</code>, <code class="language-text">bar</code> 모두 사용할 수 있다.</p>
+<h3 id="null-safety" style="position:relative;"><a href="#null-safety" aria-label="null safety permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Null Safety</h3>
+<p>rust는 Null Safety 언어이다. Null 대신 <code class="language-text">Option</code>을 사용하는데 여기에도 Ownership이 적용된다.</p>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> opt <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"Hello, Rust!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> value <span class="token operator">=</span> opt<span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"The value is: {:?}"</span><span class="token punctuation">,</span> opt<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// error</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>위 코드는 컴파일 되지 않는다. <code class="language-text">opt</code>의 소유권이 <code class="language-text">value</code>로 이동되었기 때문이다. 그래서 <code class="language-text">opt</code>를 더 이상 사용할 수 없다.</p>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> opt <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"Hello, Rust!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> value <span class="token operator">=</span> opt<span class="token punctuation">.</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"The value is: {:?}"</span><span class="token punctuation">,</span> opt<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ok</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">take()</code>는 <code class="language-text">Option</code>의 소유권을 가져가는 메소드이다. <code class="language-text">opt</code>는 <code class="language-text">None</code>이 된다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
