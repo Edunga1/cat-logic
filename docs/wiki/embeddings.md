@@ -158,7 +158,7 @@ https://github.com/Edunga1/cat-logic/tree/main/embeddings
 
 자기 자신과의 유사도는 1이다. 1에 가까울수록 유사도가 높다.\
 `javascript.md` 문서와 `nodejs.md` 문서가 가장 유사하다.\
-`javascript.md` 문서와 `redis.md` 문서가 가장 유사하지 않다.
+`javascript.md` 문서와 `airflow.md` 문서가 가장 유사하지 않다.
 
 같은 자바스크립트 관련 문서인 `nodejs.md`, `reactjs.md`, `angularjs.md`는 유사도가 높다.
 납득이 가는 결과라 만족스럽다.
