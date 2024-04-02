@@ -13,14 +13,13 @@ top-down 방식으로 배우기에는 Rust는 꽤 어려운 언어인 거 같다
 
 Ubuntu on WSL, OSX 환경에서 주로 개발해서 Homebrew로 설치했다.
 
-`rust` 모듈도 있지만, `rustup`을 사용하자. `rustup`은 `rust`의 버전을 관리해주는 툴이다.
-뿐만 아니라 다른 toolchain의 설치도 지원한다.
+`rust` Formula도 있지만, `rustup`을 사용하자. `rustup`은 `rust`의 버전 관리나 toolchain을 관리할 수 있다.
 
 ```bash
 $ brew install rustup-init
 ```
 
-`rustup-init`을 설치하고, `rustup-init`을 실행하면 `rust`와 `cargo`를 설치할 수 있다.
+설치 후, `rustup-init`을 실행하면 `rust`와 `cargo`를 설치하는 과정이 시작된다.
 
 어떤 경로에 설치될 지 물어보는데, 그냥 Enter를 눌러서 기본 경로에 설치했다.
 
@@ -48,12 +47,12 @@ cargo 1.72.1
 cargo는 패키지 매니저이다.
 
 패키지는 몇 개 사이트에서 찾을 수 있는 것으로 보인다.
-SFML을 기준으로는 다음 2개 사이트에서 찾을 수 있었다.
+SFML 패키지를 docs.rs, crates.io 2개 사이트에서 찾을 수 있었다.
 
 - https://docs.rs/crate/sfml/latest
 - https://crates.io/crates/sfml
 
-docs.rs는 라이브러리 문서화에 특화되어 있는 것으로 보인다.
+docs.rs는 라이브러리 문서화에 특화되어 있는 것으로 보인다.\
 crates.io처럼 `cargo add sfml`와 같은 설치 명령어 안내 문구가 없다.
 
 ## 프로젝트 시작하기
@@ -177,7 +176,7 @@ rust는 Null Safety 언어이다. Null 대신 `Option`을 사용하는데 여기
 
 ```rust
 fn main() {
-    let opt = Some(String::from("Hello, Rust!"));
+    let opt = Some(String::from("Hello, world!"));
     let value = opt.unwrap();
     println!("The value is: {:?}", opt);  // error
 }
