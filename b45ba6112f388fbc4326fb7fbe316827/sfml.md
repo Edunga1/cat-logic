@@ -1,9 +1,23 @@
 # SFML
 
-Simple and Fast Multimedia Library. 줄여서 SFML이라 한다.
-멀티미디어를 가져오거나 그리고, Window를 만드는 API를 제공한다.
+Simple and Fast Multimedia Library. 줄여서 SFML. C++ 멀티미디어 라이브러리다.
 
-SDL코드라는 그래픽 라이브러리가 유명한데, SFML은 나오지 얼마되지 않았지만, 좋다고 한다. 오픈헥사곤도 SFML로 만들어 졌다.
+도형이나 이미지를 렌더링하고, 어플리케이션을 만들 수 있다. 그러니까 게임을 만들 수 있다.
+
+이쪽에선 SDL코드라는 그래픽 라이브러리가 유명한데, SFML은 나오지 얼마되지 않았지만 인기가 있는 듯.
+
+오픈헥사곤도 SFML로 만들어 졌다.
+
+> Hello folks!
+>
+> I've recently released my first complete game (powered by SFML) on Steam, Open Hexagon:
+> https://store.steampowered.com/app/1358090/Open_Hexagon/
+>
+> -- https://en.sfml-dev.org/forums/index.php?topic=27414.0
+
+Wikipedia에 SFML로 만들어진 게임 목록란이 있다: https://en.wikipedia.org/wiki/Simple_and_Fast_Multimedia_Library#Video_game_use_examples
+
+---
 
 C++ 라이브러리로 사용하거나 다른 언어의 바인딩을 통해 사용할 수 있다.
 [rust](https://github.com/jeremyletang/rust-sfml), [python](https://github.com/intjelic/python-sfml), [Node.js](https://github.com/XadillaX/sfml.js) 등.
@@ -50,7 +64,7 @@ int main()
 
 OSX 기준.
 
-1. SFML 라이브러리를 다운받는다. **homebrew**로 설치하면 간단하다. `$ brew install sfml`
+1. SFML 라이브러리를 다운받는다. **homebrew**로 설치하면 간단하다. `brew install sfml`
 1. 빌드 도구 CMake를 다운받는다. **homebrew**는 `$ brew install cmake`
 
 **아래부터는 [이 링크](https://github.com/SFML/SFML/wiki/Tutorial%3A-Build-your-SFML-project-with-CMake)에 따름**
