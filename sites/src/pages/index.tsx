@@ -47,6 +47,9 @@ export const pageQuery = graphql`
             slug
             head
           }
+          frontmatter {
+            created
+          }
         }
         fields {
           gitLogLatestDate
@@ -78,15 +81,19 @@ function mapSearchResultToWikiItem(result: SearchResult[]): Wiki[] {
 function parseWikiItems(nodes: Queries.IndexPageQuery["allFile"]["nodes"]): Wiki[] {
   return nodes
     .concat()
-    .map(({ childMarkdownRemark, fields }) => ({
-      path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),
-      title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
-      head: childMarkdownRemark?.fields?.head ?? "",
-      created: fields?.gitLogLatestDate ? new Date(fields.gitLogLatestDate) : undefined,
-    }))
+    .map(({ childMarkdownRemark, fields }) => {
+      const lastModified = fields?.gitLogLatestDate ? new Date(fields.gitLogLatestDate) : undefined
+      const created = childMarkdownRemark?.frontmatter?.created ? new Date(childMarkdownRemark.frontmatter.created) : undefined
+      return {
+        path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),
+        title: childMarkdownRemark?.headings?.at(0)?.value ?? "(Untitled)",
+        head: childMarkdownRemark?.fields?.head ?? "",
+        lastModified: lastModified ?? created,
+      }
+    })
     .sort((a, b) => {
-      const aCreated = a.created?.getTime() ?? 0
-      const bCreated = b.created?.getTime() ?? 0
-      return bCreated - aCreated
+      const aa = a.lastModified?.getTime() ?? 0
+      const bb = b.lastModified?.getTime() ?? 0
+      return bb - aa
     })
 }

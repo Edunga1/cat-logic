@@ -53,6 +53,6 @@ export type Wiki = {
   path: string;
   title: string;
   head: string;
-  created?: Date;
+  lastModified?: Date;
 }
 
