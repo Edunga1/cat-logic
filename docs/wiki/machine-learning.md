@@ -218,6 +218,24 @@ OpenAI는 *"Learn how to connect large language models to external tools"*. 즉 
 
 > With this capability also comes potential risks. We strongly recommend building in user confirmation flows before taking actions that impact the world on behalf of users (sending an email, posting something online, making a purchase, etc).
 
+### AI 이후 프로 바둑 기사들이 더 창의적으로 변화하다.
+
+알파고 이전에는 프로 바둑 기사들의 실력이 거의 정체되어 있었으나,
+알파고 대국 이후로는 오히려 수준이 높아졌다는 이야기.
+
+https://news.hada.io/topic?id=14227
+
+기사들이 단순히 AI를 따라하는 것이 아니라, 더욱 창의적인 수를 두기 시작했다고.
+
+사람은 스스로의 한계를 제한한다는 말이 있다.
+로저 배니스터가 1마일에 4분의 한계를 깨고, 지금은 학생도 이 기록을 넘어선다.
+
+바둑 또한 AI가 이러한 한계를 깼고, 그 한계가 모호해지다 보니 인간도 변화한 것은 아닌가 싶다.
+AI의 인간 대체 등 부정적인 뉴스가 많지만, 이런 긍정적인 이야기도 있어서 희망적이다.
+
+수와 계산기 그리고 컴퓨터까지 인간이 도구를 만들어 내면서 더 발전했던 것처럼,
+AI도 우리의 한계를 돌파하기 위한 하나의 도구로써 받아들이니까 고무적인 거 같다.
+
 ## Products
 
 ### ChatGPT
