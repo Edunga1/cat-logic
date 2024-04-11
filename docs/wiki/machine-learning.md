@@ -631,6 +631,21 @@ $ ./llamafile \
 
 > The image features a group of three baby lemurs, two of which are being held by their mother. They appear to be in a lush green environment with trees and grass surrounding them. The mother lemur is holding her babies close to her body, providing protection and warmth. The scene captures the bond between the mother and her young ones as they navigate through the natural habitat together.
 
+### IntelliJ 2024.1
+
+2024.1 버전부터 라인 단위 코드 자동 완성을 제공한다.
+
+- https://www.jetbrains.com/idea/whatsnew/2024-1/
+- https://blog.jetbrains.com/blog/2024/04/04/full-line-code-completion-in-jetbrains-ides-all-you-need-to-know/
+
+모델은 로컬에서만 실행되어, 인터넷을 통해 전송되지 않는다고:
+
+> The models run locally without sending any code over the internet.
+
+잠깐 사용해 보았는데, 당연하겠지만 Copilot 쪽이 우수하다.
+어느정도 타이핑을 해야 완성을 제안하는데, 절반 정도 작성하면 나머지를 완성해주는 정도라 부족함이 느껴진다.
+반면에 Copilot은 아무것도 입력하지 않아도 제안하고, 제안한 코드에서 수정하는 경우도 있어서 쓸모가 많다.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
