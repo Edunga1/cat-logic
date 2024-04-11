@@ -234,3 +234,5 @@ mod tests {
 이건 GPT에 물어본 내용이라 정확하지 않지만, 레이아웃은 `대상1` - `대상1 테스트` - `대상2` - `대상2 테스트` 레이아웃을 가진다고 한다.
 
 [Ripgrep의 테스트 코드](https://github.com/BurntSushi/ripgrep/blob/master/crates/globset/src/glob.rs)를 참고해보면 이 레이아웃을 따르고 있다.
+
+`carog test`는 `src/` 내의 테스트만 실행한다. `cargo test --all`로 workspace 내 모든 테스트를 실행한다.
