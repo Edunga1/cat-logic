@@ -230,3 +230,7 @@ mod tests {
 통합 테스트는 다른 디렉토리에 위치하므로 `#[cfg(test)]` 주석이 필요 없다.
 
 테스트를 위한 모듈 임포트는 `mod tests` 내에서 이루어지기 때문에 운영 코드와 분리된다.
+
+이건 GPT에 물어본 내용이라 정확하지 않지만, 레이아웃은 `대상1` - `대상1 테스트` - `대상2` - `대상2 테스트` 레이아웃을 가진다고 한다.
+
+[Ripgrep의 테스트 코드](https://github.com/BurntSushi/ripgrep/blob/master/crates/globset/src/glob.rs)를 참고해보면 이 레이아웃을 따르고 있다.

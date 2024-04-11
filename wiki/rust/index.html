@@ -260,7 +260,9 @@ Hello, world<span class="token operator">!</span></code></pre></div>
 <p>You’ll see that because integration tests go in a different directory, they don’t need the <code class="language-text">#[cfg(test)]</code> annotation.</p>
 </blockquote>
 <p>통합 테스트는 다른 디렉토리에 위치하므로 <code class="language-text">#[cfg(test)]</code> 주석이 필요 없다.</p>
-<p>테스트를 위한 모듈 임포트는 <code class="language-text">mod tests</code> 내에서 이루어지기 때문에 운영 코드와 분리된다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>테스트를 위한 모듈 임포트는 <code class="language-text">mod tests</code> 내에서 이루어지기 때문에 운영 코드와 분리된다.</p>
+<p>이건 GPT에 물어본 내용이라 정확하지 않지만, 레이아웃은 <code class="language-text">대상1</code> - <code class="language-text">대상1 테스트</code> - <code class="language-text">대상2</code> - <code class="language-text">대상2 테스트</code> 레이아웃을 가진다고 한다.</p>
+<p><a href="https://github.com/BurntSushi/ripgrep/blob/master/crates/globset/src/glob.rs">Ripgrep의 테스트 코드</a>를 참고해보면 이 레이아웃을 따르고 있다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
