@@ -193,3 +193,40 @@ fn main() {
 ```
 
 `take()`는 `Option`의 소유권을 가져가는 메소드이다. `opt`는 `None`이 된다.
+
+### 테스트 코드 작성하기
+
+Rust는 유닛 테스트 코드를 테스트하려는 코드와 함께 작성하는 것이 일반적이다.
+
+https://doc.rust-lang.org/book/ch11-03-test-organization.html#testing-private-functions
+
+```rust
+pub fn add_two(a: i32) -> i32 {
+    internal_adder(a, 2)
+}
+
+fn internal_adder(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn internal() {
+        assert_eq!(4, internal_adder(2, 2));
+    }
+}
+```
+
+> The `#[cfg(test)]` annotation on the tests module tells Rust to compile and run the test code only when you run `cargo test`, not when you run `cargo build`.
+
+위와 같이 같은 파일에 위치 시키고 `#[cfg(test)]`로 테스트 코드를 작성한다.
+`#[cfg(test)]`는 `cargo test` 명령어로 실행할 때만 컴파일 되도록 한다. 운영 코드의 빌드에는 포함되지 않는다.
+
+> You’ll see that because integration tests go in a different directory, they don’t need the `#[cfg(test)]` annotation. 
+
+통합 테스트는 다른 디렉토리에 위치하므로 `#[cfg(test)]` 주석이 필요 없다.
+
+테스트를 위한 모듈 임포트는 `mod tests` 내에서 이루어지기 때문에 운영 코드와 분리된다.
