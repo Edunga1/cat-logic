@@ -106,6 +106,7 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <li><a href="#lifetime">Lifetime</a></li>
 <li><a href="#ownership">Ownership</a></li>
 <li><a href="#null-safety">Null Safety</a></li>
+<li><a href="#%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0">테스트 코드 작성하기</a></li>
 </ul>
 </li>
 </ul>
@@ -229,7 +230,37 @@ Hello, world<span class="token operator">!</span></code></pre></div>
     <span class="token keyword">let</span> value <span class="token operator">=</span> opt<span class="token punctuation">.</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"The value is: {:?}"</span><span class="token punctuation">,</span> opt<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ok</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p><code class="language-text">take()</code>는 <code class="language-text">Option</code>의 소유권을 가져가는 메소드이다. <code class="language-text">opt</code>는 <code class="language-text">None</code>이 된다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p><code class="language-text">take()</code>는 <code class="language-text">Option</code>의 소유권을 가져가는 메소드이다. <code class="language-text">opt</code>는 <code class="language-text">None</code>이 된다.</p>
+<h3 id="테스트-코드-작성하기" style="position:relative;"><a href="#%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="테스트 코드 작성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>테스트 코드 작성하기</h3>
+<p>Rust는 유닛 테스트 코드를 테스트하려는 코드와 함께 작성하는 것이 일반적이다.</p>
+<p><a href="https://doc.rust-lang.org/book/ch11-03-test-organization.html#testing-private-functions">https://doc.rust-lang.org/book/ch11-03-test-organization.html#testing-private-functions</a></p>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">add_two</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
+    <span class="token function">internal_adder</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">internal_adder</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
+    a <span class="token operator">+</span> b
+<span class="token punctuation">}</span>
+
+<span class="token attribute attr-name">#[cfg(test)]</span>
+<span class="token keyword">mod</span> <span class="token module-declaration namespace">tests</span> <span class="token punctuation">{</span>
+    <span class="token keyword">use</span> <span class="token keyword">super</span><span class="token punctuation">::</span><span class="token operator">*</span><span class="token punctuation">;</span>
+
+    <span class="token attribute attr-name">#[test]</span>
+    <span class="token keyword">fn</span> <span class="token function-definition function">internal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token macro property">assert_eq!</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token function">internal_adder</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<blockquote>
+<p>The <code class="language-text">#[cfg(test)]</code> annotation on the tests module tells Rust to compile and run the test code only when you run <code class="language-text">cargo test</code>, not when you run <code class="language-text">cargo build</code>.</p>
+</blockquote>
+<p>위와 같이 같은 파일에 위치 시키고 <code class="language-text">#[cfg(test)]</code>로 테스트 코드를 작성한다.
+<code class="language-text">#[cfg(test)]</code>는 <code class="language-text">cargo test</code> 명령어로 실행할 때만 컴파일 되도록 한다. 운영 코드의 빌드에는 포함되지 않는다.</p>
+<blockquote>
+<p>You’ll see that because integration tests go in a different directory, they don’t need the <code class="language-text">#[cfg(test)]</code> annotation.</p>
+</blockquote>
+<p>통합 테스트는 다른 디렉토리에 위치하므로 <code class="language-text">#[cfg(test)]</code> 주석이 필요 없다.</p>
+<p>테스트를 위한 모듈 임포트는 <code class="language-text">mod tests</code> 내에서 이루어지기 때문에 운영 코드와 분리된다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
