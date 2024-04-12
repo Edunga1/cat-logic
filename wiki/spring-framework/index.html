@@ -239,11 +239,13 @@ Spring 5.3의 마일스톤에 포함되어 있다.</p>
 <p>Spring Boot는 <code class="language-text">application.properties</code>, <code class="language-text">application.yaml</code>, 환경변수, command-line 인자로부터 설정값을 받을 수 있다.</p>
 <p><code class="language-text">@configurationProperties</code>가 설정된 클래스에 매핑해 주는데 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding">Relaxed Binding</a>을 사용한다.</p>
 <p>매우 관대한 규칙으로 property에 binding 하는데, <a href="https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0">Relaxed Binding 2.0 Github Wiki</a>에 그 규칙을 설명하고 있다.</p>
-<p>예를들어 다음 설정은 모두 같은 것을 의미한다:</p>
+<p>특수 문자는 제거되고, 모두 소문자로 변환한다.
+따라서 다음 설정은 모두 동일한 것으로 간주된다:</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">spring.jpa.database-platform=mysql
 spring.jpa.databasePlatform=mysql
-spring.JPA.database_platform=mysql</code></pre></div>
-<p>공식적으로 추천하는 포맷은 kebab-case를 사용하는 것이다:</p>
+spring.JPA.database_platform=mysql
+spring.jpa.databaseplatform=mysql</code></pre></div>
+<p>추천하는 프로퍼티 작성 스타일은 kebab-case를 사용하는 것이다:</p>
 <blockquote>
 <p>We recommend that properties are stored in lowercase kabab format. i.e. <code class="language-text">my.property-name=foo</code>.</p>
 </blockquote>

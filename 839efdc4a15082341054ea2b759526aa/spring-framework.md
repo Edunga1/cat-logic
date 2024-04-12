@@ -125,15 +125,17 @@ Spring Boot는 `application.properties`, `application.yaml`, 환경변수, comma
 
 매우 관대한 규칙으로 property에 binding 하는데, [Relaxed Binding 2.0 Github Wiki](https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0)에 그 규칙을 설명하고 있다.
 
-예를들어 다음 설정은 모두 같은 것을 의미한다:
+특수 문자는 제거되고, 모두 소문자로 변환한다.
+따라서 다음 설정은 모두 동일한 것으로 간주된다:
 
 ```
 spring.jpa.database-platform=mysql
 spring.jpa.databasePlatform=mysql
 spring.JPA.database_platform=mysql
+spring.jpa.databaseplatform=mysql
 ```
 
-공식적으로 추천하는 포맷은 kebab-case를 사용하는 것이다:
+추천하는 프로퍼티 작성 스타일은 kebab-case를 사용하는 것이다:
 
 > We recommend that properties are stored in lowercase kabab format. i.e. `my.property-name=foo`.
 
