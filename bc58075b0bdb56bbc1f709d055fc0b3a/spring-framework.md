@@ -3,6 +3,16 @@ created: 2023-01-08
 ---
 # Spring framework
 
+자바 기반 엔터프라이즈 애플리케이션을 개발하기 위한 프레임워크.
+
+> A key element of Spring is infrastructural support at the application level: Spring focuses on the "plumbing" of enterprise applications so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.
+
+특정 배포 환경에 종속되지 않도록 애플리케이션 수준의 인프라 지원을 제공하는 것이 핵심 요소.
+
+> Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
+
+Spring Boot의 목적은 실행만 하면 되는 스프링 기반 애플리케이션을 쉽게 만드는 것이다.
+
 [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/index.html)
 
 ## Features
