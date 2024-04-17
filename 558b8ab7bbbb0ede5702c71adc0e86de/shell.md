@@ -1,11 +1,10 @@
 # Shell 명령어
 
-## man - 매뉴얼
+Shell 명령어 도구 모음
+
+## man - 매뉴얼 페이지
 
 어떤 명령이든 `man COMMAND`로 메뉴얼을 확인하자. 내장 명령어라면 대부분 제공한다.
-
-[tldr](https://github.com/tldr-pages/tldr) 도구도 좋다.
-브라우저로 검색할 필요 없이 `tldr COMMAND`로 간단한 사용 예제도 볼 수 있다.
 
 Bash에 대한 내용도 `man bash`로 알 수 있다. `if [ -e file ]`에서 `-e`를 모르겠다면 메뉴얼에서 확인할 수 있다.
 
@@ -44,6 +43,41 @@ The sections of the manual are:
 
 `intro`는 각종 명령어와 도구, shell 등에 대한 소개(introduction)를 담당하고 여러 섹션의 메뉴얼이 있는데,
 `man 1 intro`, `man 3 intro`, `man 9 intro` 등으로 각 section을 확인할 수 있다.
+
+### tldr - 명령어 예제 도구
+
+[tldr](https://github.com/tldr-pages/tldr) 명령줄 도구는 각 명령어에 대한 간단한 사용 예제를 제공한다.
+
+브라우저로 검색할 필요 없이 `tldr COMMAND`로 간단한 사용 예제도 볼 수 있다.
+
+커뮤니티 기반으로 지속적으로 업데이트된다. 얼마나 활발한지는 저장소의 커밋을 보면 된다.
+
+다음은 예시. `curl` 명령어에 대한 사용 법을 보고싶다면:
+
+```bash
+$ tldr curl
+
+  curl
+
+  Transfers data from or to a server.
+  Supports most protocols, including HTTP, FTP, and POP3.
+  More information: https://curl.se/docs/manpage.html.
+
+  - Download the contents of a URL to a file:
+    curl http://example.com --output path/to/file
+
+  - Download a file, saving the output under the filename indicated by the URL:
+    curl --remote-name http://example.com/filename
+
+  - Download a file, following location redirects, and automatically continuing (resuming) a previous file transfer and return an error on server error:
+    curl --fail --remote-name --location --continue-at - http://example.com/filename
+
+  - Send form-encoded data (POST request of type application/x-www-form-urlencoded). Use --data @file_name or --data @'-' to read from STDIN:
+    curl --data 'name=bob' http://example.com/form
+
+  - Send a request with an extra header, using a custom HTTP method:
+    curl --header 'X-My-Header: 123' --request PUT http://example.com
+```
 
 ## `set -ex`
 
