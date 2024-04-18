@@ -5,6 +5,7 @@ const InputBorder = styled.div`
   max-width: fit-content;
   font-size: 0;
   padding: 2px;
+  margin-bottom: 1rem;
 
   // gardient border
   --bg-size: 400%;

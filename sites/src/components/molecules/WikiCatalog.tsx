@@ -8,6 +8,7 @@ import Small from "../atoms/Small"
 const Container = styled.div`
   width: 100%;
   display: flex;
+  background: linear-gradient(35deg, #f0f0f0, #ffffff, #fafafa);
 `
 
 const List = styled.ul`
