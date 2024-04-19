@@ -7,7 +7,7 @@ created: 2016-11-24
 
 ## TED - Linus Torvalds: 리눅스의 기본 철학
 
-[TED - 리누스 토발스(Linus Torvalds): 리눅스의 기본 철학](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=ko)
+[TED - 리누스 토발즈(Linus Torvalds): 리눅스의 기본 철학](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=ko)
 
 ### 좋은 코드
 
@@ -62,7 +62,7 @@ remove_list_entry(entry)
 첫 번째 코드는 조건문을 통해 제거하는 노드가 첫 번째인지 아닌지 `if (!prev)` 판단한다.
 반면에 두 번째 코드는 제거하려는 노드가 가리키는 주소를 다음 노드로 변경한다.
 
-리누스 토발스가 말하는 것은 특수 조건이 사라지면서 코드가 더 간결해 진다는 것이다.
+리누스 토발즈가 말하는 것은 특수 조건이 사라지면서 코드가 더 간결해 진다는 것이다.
 
 물론 이 예시는 적절하지 않다고 한다. 너무 작은 규모이고, 단적인 예시이라는 것이다.
 더 큰 프로젝트는 다양한 관점에서 좋은 코드를 찾아야 한다.
@@ -73,7 +73,7 @@ remove_list_entry(entry)
 
 <!-- TBD: 코드를 순서도로 표현한 예시를 넣자. -->
 
-### 리누스 토발스의 개발자 자세
+### 리누스 토발즈의 개발자 자세
 
 16:40 장면부터
 
@@ -81,6 +81,9 @@ remove_list_entry(entry)
 
 하늘을 보며 걷는(미래 지향적인) 사람들과 일하는 게 좋으며,
 자신은 그 **사람들이 구멍에 빠지지 않게 구멍을 메우는 일** 을 한다고 한다. Wow..
+
+[리누스 토발즈의 인터뷰](https://kldp.org/node/96360)에서 좋아하는 것을 찾고, 깊게 파고들어 보라고 한다.
+파고들면 자연스레 영역을 넓힐 수 있을 거라고.
 
 ## 개발에 대한 사소한 생각
 
