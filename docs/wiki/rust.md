@@ -236,3 +236,9 @@ mod tests {
 [Ripgrep의 테스트 코드](https://github.com/BurntSushi/ripgrep/blob/master/crates/globset/src/glob.rs)를 참고해보면 이 레이아웃을 따르고 있다.
 
 `carog test`는 `src/` 내의 테스트만 실행한다. `cargo test --all`로 workspace 내 모든 테스트를 실행한다.
+
+## References
+
+[파이썬 프로그래머를 위한 러스트](https://indosaram.github.io/rust-python-book/)\
+한국어로 작성된 e-book이다. 파이썬에 익숙한 사람이라면 이 책이 적절할 듯. 나는 pdf로 다운받아서 보고 있다.\
+환경 구성부터 시작한다.
