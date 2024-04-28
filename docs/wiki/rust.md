@@ -237,7 +237,7 @@ mod tests {
 
 `carog test`는 `src/` 내의 테스트만 실행한다. `cargo test --all`로 workspace 내 모든 테스트를 실행한다.
 
-## Articles
+## Articles and References
 
 [Rust로 게임 개발 3년 후에 떠나며](https://news.hada.io/topic?id=14521)
 
@@ -270,8 +270,12 @@ Rust의 코드는 Borrow 수정으로 코드의 너무 많은 부분이 변경�
 대부분 암시적인 python, javascript과 달리 Rust는 대부분 명시해야 한다. 그래서 장황한 코드를 만드는 것이 아닌가 싶다.
 하지만 안정성을 위해서 설계된 것이니 공감은 한다.
 
-## References
+---
 
-[파이썬 프로그래머를 위한 러스트](https://indosaram.github.io/rust-python-book/)\
-한국어로 작성된 e-book이다. 파이썬에 익숙한 사람이라면 이 책이 적절할 듯. 나는 pdf로 다운받아서 보고 있다.\
-환경 구성부터 시작한다.
+[파이썬 프로그래머를 위한 러스트](https://indosaram.github.io/rust-python-book/)
+
+한국어로 작성된 e-book이다. 파이썬에 익숙한 사람이라면 이 책이 적절할 듯. 나는 pdf로 다운받아서 보고 있다.
+
+환경 구성부터 시작한다. Bottom-up 방식으로 설명한다.
+나는 Top-down 방식으로 Rust를 시작해서 고통스러운 부분이 있었다.
+Rust는 Bottom-up 방식으로 배우는 편이 좋은 거 같다.
