@@ -110,7 +110,7 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#references">References</a></p>
+<p><a href="#articles-and-references">Articles and References</a></p>
 </li>
 </ul>
 </li>
@@ -267,10 +267,36 @@ Hello, world<span class="token operator">!</span></code></pre></div>
 <p>이건 GPT에 물어본 내용이라 정확하지 않지만, 레이아웃은 <code class="language-text">대상1</code> - <code class="language-text">대상1 테스트</code> - <code class="language-text">대상2</code> - <code class="language-text">대상2 테스트</code> 레이아웃을 가진다고 한다.</p>
 <p><a href="https://github.com/BurntSushi/ripgrep/blob/master/crates/globset/src/glob.rs">Ripgrep의 테스트 코드</a>를 참고해보면 이 레이아웃을 따르고 있다.</p>
 <p><code class="language-text">carog test</code>는 <code class="language-text">src/</code> 내의 테스트만 실행한다. <code class="language-text">cargo test --all</code>로 workspace 내 모든 테스트를 실행한다.</p>
-<h2 id="references" style="position:relative;"><a href="#references" aria-label="references permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>References</h2>
-<p><a href="https://indosaram.github.io/rust-python-book/">파이썬 프로그래머를 위한 러스트</a><br>
-한국어로 작성된 e-book이다. 파이썬에 익숙한 사람이라면 이 책이 적절할 듯. 나는 pdf로 다운받아서 보고 있다.<br>
-환경 구성부터 시작한다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<h2 id="articles-and-references" style="position:relative;"><a href="#articles-and-references" aria-label="articles and references permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Articles and References</h2>
+<p><a href="https://news.hada.io/topic?id=14521">Rust로 게임 개발 3년 후에 떠나며</a></p>
+<p>Rust의 아쉬운 점을 서술한 글이다.</p>
+<p>빠르게 반복 개발되어야 하는 게임 개발에서 Rust는 적합하지 않았다고 한다.
+게임 개발의 핵심은 프로토타이핑을 통한 플레이 경험의 향상이지, 크래시가 없는 코드가 우선이 아니라고 한다.</p>
+<p>리팩토링에 의한 코드의 재구조화 문제.<br>
+익숙해지는 문제와 별개로 Borrow Checker나 요구 사항 변경으로 인한 코드 변경이 대규모 코드 구조 변경을 유발한다고 한다.
+Indirection(Box, Rc 등을 말함)은 코드를 장황하게 만들고, 상태 관리하기 어렵게 한다고.</p>
+<p>생산성을 떨어뜨리는 에코 시스템.<br>
+반복 개발 필요한 상황에서 Hot Reloading이 중요한데, Rust 라이브러리가 있지만 부족하다고한다.
+Procedural Macro는 컴파일 시간을 늘리는 반면에, C#의 리플렉션은 사용하기 쉽고 퍼포먼스의 영향이 있지만 빠르게 개발할 수 있게 한다고.
+Orphan Rule(잘 모르겠다)은 안전성을 위해서 생산성을 크게 떨어뜨린다고 한다. 라이브러리가 아닌 애플리케이션 코드에서는 끌 수 있어야 한다고 주장한다.</p>
+<p>Rust의 안정성에 대해서.<br>
+동적 Borrow Checking은 예상하지 못하는 크래시를 발생시킨다고 한다.
+<code class="language-text">RefCell</code>을 통한 <code class="language-text">.borrow_mut()</code>에서 크래시를 겪었다고. 게임에서 <code class="language-text">RefCell</code>은 유용하지만 어렵게 만든다고 한다.</p>
+<p>반면에 장점도 있다.<br>
+컴파일만 되면 보통을 잘 동작한다. 크게 노력하지 않아도 퍼포먼스가 좋다.
+Rust Analyzer로 IDE 사용성이 크게 개선되었다고 한다. Trait과 Enum이 잘 설계되어 있다고 한다.</p>
+<p>Rust 입문자로써 내 생각.<br>
+아직 시작 단계지만 어느정도 공감한 부분이 있다. 특히 생산성 부분이다.
+Rust의 코드는 Borrow 수정으로 코드의 너무 많은 부분이 변경되어야 한다는 점이다.
+이건 매우 고통스럽다. Rust Analyzer나 GitHub Copilot이 아니었다면 진작에 포기했었을 것이다.
+대부분 암시적인 python, javascript과 달리 Rust는 대부분 명시해야 한다. 그래서 장황한 코드를 만드는 것이 아닌가 싶다.
+하지만 안정성을 위해서 설계된 것이니 공감은 한다.</p>
+<hr>
+<p><a href="https://indosaram.github.io/rust-python-book/">파이썬 프로그래머를 위한 러스트</a></p>
+<p>한국어로 작성된 e-book이다. 파이썬에 익숙한 사람이라면 이 책이 적절할 듯. 나는 pdf로 다운받아서 보고 있다.</p>
+<p>환경 구성부터 시작한다. Bottom-up 방식으로 설명한다.
+나는 Top-down 방식으로 Rust를 시작해서 고통스러운 부분이 있었다.
+Rust는 Bottom-up 방식으로 배우는 편이 좋은 거 같다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/rust/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
