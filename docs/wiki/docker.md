@@ -3,6 +3,8 @@ created: 2017-02-28
 ---
 # Docker
 
+컨테이너 기반의 가상화 플랫폼.
+
 ## Docker 환경 구성하기
 
 여러가지 선택지가 있으나 MacOS, Linux라면 Colima를 가장 추천한다.

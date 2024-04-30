@@ -3,11 +3,14 @@ created: 2023-02-26
 ---
 # Computer Graphics
 
+그래픽 처리 기술에 대해 정리한다.
+
 ## 화가 알고리즘(painter's algorithm)
+
+가장 간단한 알고리즘. 먼 곳부터 순서대로 그리면서 가까운 물체가 이전에 그린 먼 물체를 가리는 방법이다.
 
 https://en.wikipedia.org/wiki/Painter%27s_algorithm
 
-가장 간단한 알고리즘. 먼 곳부터 순서대로 그리면서 가까운 물체가 이전에 그린 먼 물체를 가리는 방법이다.
 depth-sort 알고리즘 또는 priority fill 라고도 한다.
 
 **복잡하지 않다는 점**, **메모리 효율이** 좋다는 장점이 있다.

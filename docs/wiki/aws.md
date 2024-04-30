@@ -7,6 +7,9 @@ AWS 관련
 
 ## `awscli`
 
+linux, macos는 `brew install awscli`로 설치하자.
+`pip install awscli`도 가능하지만, python 가상 환경을 사용하면 관리하기 번거롭다.
+
 ### ECR 로그인하기
 
 ```bash
