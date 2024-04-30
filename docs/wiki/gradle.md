@@ -6,7 +6,7 @@ https://docs.gradle.org/current/userguide/userguide.html
 
 JVM에서 가장 많이 사용되는 빌드 도구이다.
 
-Jaav, Kotlin 등 JVM 기반 언어뿐만 아니라 C++, Javascript 등 언어도 제공한다. 그런데 본 적은 없는 듯.
+[Java](java.md), [Kotlin](kotlin.md) 등 JVM 기반 언어뿐만 아니라 C++, Javascript 등 언어도 제공한다. 그런데 본 적은 없는 듯.
 
 Gradle 빌드 스크립트는 Groovy 또는 Kotlin으로 작성할 수 있다. 여기서는 Kotlin을 기준으로 작성했다.
 
