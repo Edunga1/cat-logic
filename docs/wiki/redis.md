@@ -3,6 +3,8 @@ created: 2023-05-19
 ---
 # Redis
 
+메모리 기반의 key-value 저장소.
+
 ## SETNX, SET + NX 간단한 Locking System 구현
 
 * https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode
@@ -43,3 +45,15 @@ Process:
 각 클라이언트에서 직접 삭제하는 대신, 해제 프로세스에 위임하는 방법이다.\
 이러면 다른 클라이언트가 `DEL` 명령어로 아무 배경없이 Locking 해제하는 것을 막을 수 있다.
 Locking 처리한 클라이언트만 해제할 수 있는 일종의 보증 절차를 만드는 것이다.
+
+## 라이선스를 BSD에서 SSPL로 변경
+
+24년 4월, 클라우드 서비스 대항격인 라이선스 변경을 발표했다.
+
+문제가 되는 SSPL 라이선스는 MongoDB가 처음으로 도입했고, 일반 사용자에게는 영향이 없지만, 클라우드 서비스 업체에는 제약이 생긴다고 한다.
+
+이로 인해 Redis를 호환하는 프로젝트들이 생성되고 있다.
+
+- Microsoft의 [Garnet](https://github.com/microsoft/garnet)
+- Linux Foundation의 [Valkey](https://github.com/valkey-io/valkey)
+- [Redict](https://codeberg.org/redict/redict)
