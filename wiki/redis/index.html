@@ -92,9 +92,11 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p><a href="#redis">Redis</a></p>
 <ul>
 <li><a href="#setnx-set--nx-%EA%B0%84%EB%8B%A8%ED%95%9C-locking-system-%EA%B5%AC%ED%98%84">SETNX, SET + NX 간단한 Locking System 구현</a></li>
+<li><a href="#%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4%EB%A5%BC-bsd%EC%97%90%EC%84%9C-sspl%EB%A1%9C-%EB%B3%80%EA%B2%BD">라이선스를 BSD에서 SSPL로 변경</a></li>
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 ZYlSY">
+<p>메모리 기반의 key-value 저장소.</p>
 <h2 id="setnx-set--nx-간단한-locking-system-구현" style="position:relative;"><a href="#setnx-set--nx-%EA%B0%84%EB%8B%A8%ED%95%9C-locking-system-%EA%B5%AC%ED%98%84" aria-label="setnx set  nx 간단한 locking system 구현 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SETNX, SET + NX 간단한 Locking System 구현</h2>
 <ul>
 <li><a href="https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode">https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode</a></li>
@@ -130,7 +132,16 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 </ul>
 <p>각 클라이언트에서 직접 삭제하는 대신, 해제 프로세스에 위임하는 방법이다.<br>
 이러면 다른 클라이언트가 <code class="language-text">DEL</code> 명령어로 아무 배경없이 Locking 해제하는 것을 막을 수 있다.
-Locking 처리한 클라이언트만 해제할 수 있는 일종의 보증 절차를 만드는 것이다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/redis/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+Locking 처리한 클라이언트만 해제할 수 있는 일종의 보증 절차를 만드는 것이다.</p>
+<h2 id="라이선스를-bsd에서-sspl로-변경" style="position:relative;"><a href="#%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4%EB%A5%BC-bsd%EC%97%90%EC%84%9C-sspl%EB%A1%9C-%EB%B3%80%EA%B2%BD" aria-label="라이선스를 bsd에서 sspl로 변경 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>라이선스를 BSD에서 SSPL로 변경</h2>
+<p>24년 4월, 클라우드 서비스 대항격인 라이선스 변경을 발표했다.</p>
+<p>문제가 되는 SSPL 라이선스는 MongoDB가 처음으로 도입했고, 일반 사용자에게는 영향이 없지만, 클라우드 서비스 업체에는 제약이 생긴다고 한다.</p>
+<p>이로 인해 Redis를 호환하는 프로젝트들이 생성되고 있다.</p>
+<ul>
+<li>Microsoft의 <a href="https://github.com/microsoft/garnet">Garnet</a></li>
+<li>Linux Foundation의 <a href="https://github.com/valkey-io/valkey">Valkey</a></li>
+<li><a href="https://codeberg.org/redict/redict">Redict</a></li>
+</ul></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/redis/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
