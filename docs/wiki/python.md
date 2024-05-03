@@ -14,17 +14,12 @@ brew install pyenv-virtualenv
 
 ## 개발도구
 
-vim 기본 설정으로는 텍스트에디터 역할밖에 못한다.
-
-최소한 pyright는 사용하자.
-
-왠만해선 pyright + pylint + mypy는 권장한다. python 2 프로젝트라도 도움을 받을 수 있다.
-에러가 너무 많다면 설정을 타협하자. 아래 레거시를 위한 설정에서 다룬다.
+pyright + pylint + mypy 사용을 권장한다. python2 프로젝트도 타입이나 참조 문제를 잡아준다.
+에러가 너무 많다면 설정을 타협하자.
 
 nvim-lspconfig, null-ls 이용하여 다음과 같이 설정, 사용하고 있다.
 
 ```lua
--- vim 설정 파일의 일부분
 server = require 'lspconfig'.pyright,
 sources = {
     null_ls.builtins.diagnostics.pylint,
@@ -38,9 +33,9 @@ sources = {
 
 ### pyright
 
-https://github.com/microsoft/pyright
-
 [language server](./language-server-protocol.md) for python.
+
+https://github.com/microsoft/pyright
 
 django 프로젝트라면 [django-types](https://github.com/sbdchd/django-types)를 설치하자.
 mypy와 django-stubs처럼 django model의 필드 타입을 제공한다.
@@ -61,27 +56,28 @@ django-types는 django-stubs의 fork project이다.
 
 > non-mypy type checkers like pyright will work better with Django.
 
-#### pyright 설치
+vim에서는 coc-nvim 또는 nvim-lspconfig를 사용하여 pyright를 설치할 수 있다.
 
 * nvim-lspconfig은 `Mason`을 사용하자: `:MasonInstall pyright`
 * [coc-nvim](https://github.com/fannheyward/coc-pyright): `:CocInstall coc-pyright`
 
 ### pylint
 
-https://github.com/PyCQA/pylint
 정적 분석 도구.
+
+https://github.com/PyCQA/pylint
 
 ### mypy
 
 https://github.com/python/mypy
 
-> Optional static typing for Python
-
 정적 타입 검사 도구.
+
+> Optional static typing for Python
 
 타입 명세를 할 수 없는 경우에는 `Need type annotation for "variable"` 에러 메시지를 막기 위해 `my.ini` 생성하고 다음과 같이 설정하자:
 
-```
+```toml
 [mypy]
 
 # disable error 'Need type annotation for "variable"'
@@ -90,17 +86,16 @@ disallow_untyped_defs = False
 
 #### Django Stubs
 
-https://github.com/typeddjango/django-stubs
-
 django는 `objects` 등 마법을 사용해서 타입 제공을 제대로 받을 수 없다.
-
 djang-stubs는 django 매직과 관련된 타입 정보를 제공한다.
+
+https://github.com/typeddjango/django-stubs
 
 ### Ruff
 
-https://github.com/charliermarsh/ruff
-
 rust로 작성된 python linter.
+
+https://github.com/charliermarsh/ruff
 
 Pylint와 비교하여 매우 빠르다. README에 벤치마크가 있는데 Pylint로 > 60s 걸리는 코드베이스가 0.29s 걸린다고 한다.
 
