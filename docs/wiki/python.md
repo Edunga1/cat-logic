@@ -14,7 +14,7 @@ brew install pyenv-virtualenv
 
 ## 개발도구
 
-pyright + pylint + mypy 사용을 권장한다. python2 프로젝트도 타입이나 참조 문제를 잡아준다.
+pyright + pylint or ruff + mypy 사용을 권장한다. python2 프로젝트도 타입이나 참조 문제를 잡아준다.
 에러가 너무 많다면 설정을 타협하자.
 
 nvim-lspconfig, null-ls 이용하여 다음과 같이 설정, 사용하고 있다.
@@ -104,7 +104,7 @@ Pylint와 비교하여 매우 빠르다. README에 벤치마크가 있는데 Pyl
 단점은 아직 Pylint보다 많은 기능을 제공하지 않는다.
 예를들어 Pylint는 [broad-exception-caught](https://pylint.readthedocs.io/en/latest/user_guide/messages/warning/broad-exception-caught.html)와 [consider-using-f-string](https://pylint.readthedocs.io/en/latest/user_guide/messages/convention/consider-using-f-string.html)을 잡아주지만 Ruff는 그렇지 않다.
 
-아직 많이 사용해보지 않아서 그 차이가 어느정도인지는 잘 모르겠다.
+아직 많이 사용해보지 않아서 대응하는 정도의 차이가 얼만큼인지 모르겠다.
 기능은 부족하지만 매우 빠른 장점으로 앞으로 자주 사용할 것 같다.
 
 nvim은 [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#ruff)에서 제공한다. diagnostic, formatter 두 개 소스로 제공한다.
@@ -152,9 +152,8 @@ Formatter autopep8 is not installed. Install?:
 | [black](https://github.com/psf/black)          | 31.2k | 가장 많은 star                   |
 | [yapf](https://github.com/google/yapf)         | 13k   | 구글이 maintainer                |
 
-**실제 사용 비교**
+원본 코드
 
-비교 대상 코드
 ```python
 {
   "refundDeposit": self.refund_deposit and _deposit_to_dict(self.refund_deposit)
@@ -169,7 +168,7 @@ Formatter autopep8 is not installed. Install?:
 }
 ```
 
-이게 맞나?
+줄바꿈 후에 dict 필드와 같은 들여쓰기 레벨를 사용한다.
 
 **yapf**
 ```python
@@ -179,12 +178,11 @@ Formatter autopep8 is not installed. Install?:
 }
 ```
 
-이게 맞나?2
+줄바꿈 하면서 들여쓰기를 없애버렸다.
 
-**autopep8**
-코드를 변경하지 않는다.
+**autopep8**는 코드를 변경하지 않는다.
 
-개인적으로는 black, yapf의 스타일이 별로라서 autopep8을 사용하고 있다.
+개인적으로는 black, yapf의 스타일이 마음에 들지 않아서 autopep8을 사용하고 있다.
 
 ### 레거시를 위한 설정
 
