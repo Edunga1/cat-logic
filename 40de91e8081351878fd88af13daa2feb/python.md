@@ -268,12 +268,16 @@ Mocking은 각 테스트(method)에 `@patch.object`나 `@patch` decorator를 주
 
 `requests` 모듈을 mocking 한다고 가정하자.
 
-### `@patch('requests.get')`
+### @patch
+
+`@patch('requests.get')`
 
 어디서든 `requests.get()` 사용한다면, mock 객체를 반환한다.
 간단한 방법이지만, `mymodule`에서 `requests`를 사용함을 암시적으로 보여준다.
 
-### `@patch.object(mymodule, 'requests')`
+### @patch.object
+
+`@patch.object(mymodule, 'requests')`
 
 `mymodule` 내에서만 `requests`를 사용한다는 점을 명시적으로 표현한다.
 개인적으로 이 방법을 더 많이 사용한다.
@@ -292,7 +296,9 @@ class Mytest(unittest.TestCase):
 
 테스트 내에서만 mocking 정보를 명시하기 때문에, 다른 테스트에서 재사용할 수 없다.
 
-### `@patch.object(mymodule, 'requests', new=MyRequests)`
+### @patch.object new
+
+`@patch.object(mymodule, 'requests', new=MyRequests)`
 
 `requests`가 `MyRequests`로 대체된다.
 
@@ -312,7 +318,9 @@ class MyRequests(object):
 
 mocking 정보를 다른 테스트에서도 재사용할 수 있어서 유용하다.
 
-### `@patch.object(mymodule, 'method', return_value=None)`
+### @patch.object return_value
+
+`@patch.object(mymodule, 'method', return_value=None)`
 
 `mymodule.method()` 반환값을 `None`으로 대체한다.
 

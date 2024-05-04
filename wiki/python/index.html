@@ -124,10 +124,10 @@ data-styled.g10[id="Wiki__RelatedLinks-sc-16q9onf-4"]{content:"ikXvAQ,"}/*!sc*/
 <p><a href="#python-mock">Python mock</a></p>
 <ul>
 <li><a href="#decorator%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-mocking">Decorator를 사용한 mocking.</a></li>
-<li><a href="#patchrequestsget"><code class="language-text">@patch('requests.get')</code></a></li>
-<li><a href="#patchobjectmymodule-requests"><code class="language-text">@patch.object(mymodule, 'requests')</code></a></li>
-<li><a href="#patchobjectmymodule-requests-newmyrequests"><code class="language-text">@patch.object(mymodule, 'requests', new=MyRequests)</code></a></li>
-<li><a href="#patchobjectmymodule-method-return_valuenone"><code class="language-text">@patch.object(mymodule, 'method', return_value=None)</code></a></li>
+<li><a href="#patch">@patch</a></li>
+<li><a href="#patchobject">@patch.object</a></li>
+<li><a href="#patchobject-new">@patch.object new</a></li>
+<li><a href="#patchobject-return_value">@patch.object return_value</a></li>
 </ul>
 </li>
 <li>
@@ -389,10 +389,12 @@ django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가
 <p>테스트는 주로 클래스로 하나의 테스트 슈트를 구성하고,
 Mocking은 각 테스트(method)에 <code class="language-text">@patch.object</code>나 <code class="language-text">@patch</code> decorator를 주로 사용하고 있다.</p>
 <p><code class="language-text">requests</code> 모듈을 mocking 한다고 가정하자.</p>
-<h3 id="patchrequestsget" style="position:relative;"><a href="#patchrequestsget" aria-label="patchrequestsget permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">@patch('requests.get')</code></h3>
+<h3 id="patch" style="position:relative;"><a href="#patch" aria-label="patch permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@patch</h3>
+<p><code class="language-text">@patch('requests.get')</code></p>
 <p>어디서든 <code class="language-text">requests.get()</code> 사용한다면, mock 객체를 반환한다.
 간단한 방법이지만, <code class="language-text">mymodule</code>에서 <code class="language-text">requests</code>를 사용함을 암시적으로 보여준다.</p>
-<h3 id="patchobjectmymodule-requests" style="position:relative;"><a href="#patchobjectmymodule-requests" aria-label="patchobjectmymodule requests permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">@patch.object(mymodule, 'requests')</code></h3>
+<h3 id="patchobject" style="position:relative;"><a href="#patchobject" aria-label="patchobject permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@patch.object</h3>
+<p><code class="language-text">@patch.object(mymodule, 'requests')</code></p>
 <p><code class="language-text">mymodule</code> 내에서만 <code class="language-text">requests</code>를 사용한다는 점을 명시적으로 표현한다.
 개인적으로 이 방법을 더 많이 사용한다.</p>
 <p><code class="language-text">requests</code> 자체가 mock 객체이기 때문에, <code class="language-text">requests</code>의 <code class="language-text">get</code>, <code class="language-text">post</code> 등 모든 함수들이
@@ -403,7 +405,8 @@ mock 객체가 된다.</p>
   <span class="token keyword">def</span> <span class="token function">test_normal</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> mock_requests<span class="token punctuation">)</span><span class="token punctuation">:</span>
     mock_requests<span class="token punctuation">.</span>get<span class="token punctuation">.</span>return_value <span class="token operator">=</span> <span class="token boolean">None</span></code></pre></div>
 <p>테스트 내에서만 mocking 정보를 명시하기 때문에, 다른 테스트에서 재사용할 수 없다.</p>
-<h3 id="patchobjectmymodule-requests-newmyrequests" style="position:relative;"><a href="#patchobjectmymodule-requests-newmyrequests" aria-label="patchobjectmymodule requests newmyrequests permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">@patch.object(mymodule, 'requests', new=MyRequests)</code></h3>
+<h3 id="patchobject-new" style="position:relative;"><a href="#patchobject-new" aria-label="patchobject new permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@patch.object new</h3>
+<p><code class="language-text">@patch.object(mymodule, 'requests', new=MyRequests)</code></p>
 <p><code class="language-text">requests</code>가 <code class="language-text">MyRequests</code>로 대체된다.</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyRequests</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
   <span class="token decorator annotation punctuation">@staticmethod</span>
@@ -416,7 +419,8 @@ mock 객체가 된다.</p>
 <p>위와 같은 방법으로 <code class="language-text">get</code> 함수만 내가 원하는 응답을 내려주게 하고,
 <code class="language-text">post</code> 등 다른 함수는 기본 mock 객체를 내려준다.</p>
 <p>mocking 정보를 다른 테스트에서도 재사용할 수 있어서 유용하다.</p>
-<h3 id="patchobjectmymodule-method-return_valuenone" style="position:relative;"><a href="#patchobjectmymodule-method-return_valuenone" aria-label="patchobjectmymodule method return_valuenone permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">@patch.object(mymodule, 'method', return_value=None)</code></h3>
+<h3 id="patchobject-return_value" style="position:relative;"><a href="#patchobject-return_value" aria-label="patchobject return_value permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@patch.object return_value</h3>
+<p><code class="language-text">@patch.object(mymodule, 'method', return_value=None)</code></p>
 <p><code class="language-text">mymodule.method()</code> 반환값을 <code class="language-text">None</code>으로 대체한다.</p>
 <h2 id="package-manager" style="position:relative;"><a href="#package-manager" aria-label="package manager permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Package manager</h2>
 <p>pipenv를 시범적으로 회사에서 사용하고 있다가, 최근에 개인 프로젝트에 poetry를 사용하고 있다.
