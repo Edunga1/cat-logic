@@ -170,6 +170,28 @@ fn main() {
 Clone을 사용하여 해결한 코드이다.
 `clone()`은 rust에서 `Clone` trait를 구현한 것이다. 이제 `foo`, `bar` 모두 사용할 수 있다.
 
+---
+
+소유권 문제는 다음 예제에서 두드러진다.
+
+```rust
+fn dummy(x: String) {
+    println!("{}", x);
+  	// x is dropped
+}
+
+fn main() {
+    let x = String::from("Hello");
+    dummy(x);
+    println!("{}", x);  // This line won't compile
+}
+```
+
+`dummy()` 함수로 `x`의 값을 넘기고, `x`의 값은 `dummy()`에서 사라진다.
+그래서 `main()`에서 `x`를 사용할 수 없다. 간단한 코드지만 처음보면 잘 이해되지 않는 부분.
+
+ref. https://indosaram.github.io/rust-python-book/ch5-02.html#%EA%B0%92%EC%97%90-%EB%8C%80%ED%95%9C-%EC%86%8C%EC%9C%A0%EA%B6%8C
+
 ### Null Safety
 
 rust는 Null Safety 언어이다. Null 대신 `Option`을 사용하는데 여기에도 Ownership이 적용된다.

@@ -220,6 +220,21 @@ Hello, world<span class="token operator">!</span></code></pre></div>
 <span class="token punctuation">}</span></code></pre></div>
 <p>Clone을 사용하여 해결한 코드이다.
 <code class="language-text">clone()</code>은 rust에서 <code class="language-text">Clone</code> trait를 구현한 것이다. 이제 <code class="language-text">foo</code>, <code class="language-text">bar</code> 모두 사용할 수 있다.</p>
+<hr>
+<p>소유권 문제는 다음 예제에서 두드러진다.</p>
+<div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">dummy</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  	<span class="token comment">// x is dropped</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">dummy</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// This line won't compile</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">dummy()</code> 함수로 <code class="language-text">x</code>의 값을 넘기고, <code class="language-text">x</code>의 값은 <code class="language-text">dummy()</code>에서 사라진다.
+그래서 <code class="language-text">main()</code>에서 <code class="language-text">x</code>를 사용할 수 없다. 간단한 코드지만 처음보면 잘 이해되지 않는 부분.</p>
+<p>ref. <a href="https://indosaram.github.io/rust-python-book/ch5-02.html#%EA%B0%92%EC%97%90-%EB%8C%80%ED%95%9C-%EC%86%8C%EC%9C%A0%EA%B6%8C">https://indosaram.github.io/rust-python-book/ch5-02.html#%EA%B0%92%EC%97%90-%EB%8C%80%ED%95%9C-%EC%86%8C%EC%9C%A0%EA%B6%8C</a></p>
 <h3 id="null-safety" style="position:relative;"><a href="#null-safety" aria-label="null safety permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Null Safety</h3>
 <p>rust는 Null Safety 언어이다. Null 대신 <code class="language-text">Option</code>을 사용하는데 여기에도 Ownership이 적용된다.</p>
 <div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
