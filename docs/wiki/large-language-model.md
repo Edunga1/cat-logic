@@ -435,6 +435,9 @@ ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.
 
 https://github.com/ollama/ollama
 
+모델 저장소를 제공하여, 유명한 모델이나 다른 사람이 커스텀한 모델을 쉽게 다운받아 사용할 수 있다.
+[홈페이지](https://ollama.com/)에서 검색할 수 있다.
+
 실행은 Docker로 하자:
 
 ```bash
