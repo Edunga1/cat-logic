@@ -1,7 +1,11 @@
 ---
 created: 2024-02-29
 ---
-# LLM 도구
+# Large Language Model
+
+Large Language Model. 인공 신경망으로 구성된 언어 모델이다.
+
+## LLM 도구
 
 로컬 환경에서 LLM을 사용하자.
 
@@ -10,7 +14,7 @@ GPT-4는 너무 비싸더라. 한글은 토큰으로 전환하면 분량이 영�
 
 하지만 공개된 버전의 LLM보다 상용 LLM의 품질은 훨씬 좋다.
 
-## Phidata
+### Phidata
 
 phidata는 function call을 통한 AI Assistant를 만드는 toolkit이다.
 
@@ -186,7 +190,7 @@ phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
 
 정보를 찾기위한 AI의 고뇌가 돋보인다.
 
-### 나만의 도구 만들기
+#### 나만의 도구 만들기
 
 Phidata는 내가 만든 함수를 사용할 수 있도록 도와준다.
 
@@ -263,7 +267,7 @@ horizontal line으로 총 4개 구역을 나눠주세요.
 이 예제코드는 내 저장소에 올려두었다:\
 https://github.com/Edunga1/practice-phidata
 
-### 로컬 LLM 사용하기
+#### 로컬 LLM 사용하기
 
 Ollama를 사용해서 로컬 LLM을 쉽게 띄우고, phidata로 도구를 쥐어주는 것이 아이디어다.
 
@@ -425,7 +429,7 @@ GPT-4와 비교하면 훨씬 저렴하기도 하지만, 사용 토큰 제한량�
 
 나중에 앱을 고도화 한다면 이 토큰 차이로 인해서 품질이 달라질 수도 있겠다.
 
-## Ollama
+### Ollama
 
 ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.
 
