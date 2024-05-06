@@ -3,6 +3,66 @@ created: 2022-11-28
 ---
 # Python
 
+파이썬은 Guido van Rossum이 1989년에 만든 프로그래밍 언어이다.[^1]
+
+[^1]: [Python (programming language) - Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+---
+
+`python` 명령어 도구를 제공한다.
+
+터미널에 `python -m this`를 입력하면 `Zen of Python`라 불리는 파이썬의 **핵심 철학*을 보여주는 이스터 에그이다.
+
+```bash
+$ python -m this
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+```
+
+번역기의 도움을 받아보면..
+
+> 추한 것보다 아름다운 것이 낫습니다.
+> 명시적인 것이 암시적인 것보다 낫습니다.
+> 단순한 것이 복잡한 것보다 낫습니다.
+> Complex한 것이 Complicated한 것보다 낫습니다.
+> 중첩된 것보다 펼쳐진 것이 낫습니다.
+> 조밀한 것보다 드문드문한 것이 좋습니다.
+> 가독성이 중요합니다.
+> 특별한 경우라고 해서 규칙을 어길 만큼 특별하지 않습니다.
+> 실용성이 순수성을 이긴다고 해도요.
+> 오류는 결코 조용히 넘어가서는 안 됩니다.
+> 명시적으로 침묵하지 않는 한 말입니다.
+> 모호한 상황에 직면했을 때 추측의 유혹을 거부하세요.
+> 분명한 방법이 하나, 가급적이면 단 하나만 있어야 합니다.
+> 네덜란드인이 아니라면 처음에는 그 방법이 분명하지 않을 수도 있습니다.
+> 지금이 안 하는 것보다 낫습니다.
+> 안 하는 것이 지금 하는 것보다 낫긴 하지만요.
+> 구현이 설명하기 어렵다면 나쁜 생각입니다.
+> 구현이 설명하기 쉽다면 좋은 생각일 수 있습니다.
+> 네임스페이스는 정말 좋은 아이디어입니다. 더 많이 만들어 봅시다!
+
+파이썬은 초보자가 배우기 쉬운 언어로 유명하다. 이는 철학에 투영된다.
+단순하고 읽기 쉬운 코드를 지향한다.
+
 ## 개발환경 구성
 
 pyenv, pyenv-virtualenv로 파이썬 가상환경을 관리하자.
