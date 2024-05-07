@@ -13,7 +13,7 @@ const Container = styled.div`
   width: fit-content;
 
   @media (${device.larger}) {
-    grid-template-columns: minmax(300px, 1fr) minmax(400px, 1000px);
+    grid-template-columns: minmax(200px, 1fr) minmax(500px, 1000px);
   }
 `
 
