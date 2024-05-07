@@ -4,12 +4,22 @@ import theme from "../../constants/theme"
 import Link from "../atoms/Link"
 
 const Container = styled.div`
+  font-size: 2rem;
   text-align: right;
-  margin-top: 1rem;
 
   a {
     color: ${theme.colors.foreground};
     opacity: 0.2;
+    font-weight: 700;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:after {
+      content: "»";
+      margin-left: .1rem;
+    }
   }
 `
 
@@ -24,7 +34,7 @@ export default function HomeLink(
 
   return (
     <Container>
-      <Link href={href}>CAT LOGIC</Link>
+      <Link href={href}>CAT</Link>
     </Container>
   )
 }
