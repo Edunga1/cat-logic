@@ -397,7 +397,9 @@ disable 하는 편이 차라리 낫다.</p>
 
 
 <span class="token punctuation">[</span><span class="token table class-name">tool.pyright</span><span class="token punctuation">]</span>
-<span class="token key property">reportGeneralTypeIssues</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">reportGeneralTypeIssues</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
+<span class="token key property">reportCallIssue</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
+<span class="token key property">reportAttributeAccessIssue</span> <span class="token punctuation">=</span> <span class="token boolean">false</span>
 
 
 <span class="token punctuation">[</span><span class="token table class-name">tool.pylint.master</span><span class="token punctuation">]</span>
@@ -426,6 +428,7 @@ django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가
 타입을 잘 명세하는 경우, <code class="language-text">Literal['foo', 'bar']</code> 와 같이 명세하고 에러를 정적 체크하는 것은 매우 유용한데, 이런 에러도 무시하게 된다.
 <code class="language-text">cannot access member ~</code>만 무시하고 <code class="language-text">Argument of type "Literal['foo', 'bar']" cannot be assigned to parameter "param_name" of type</code> 같은 에러는 리포트 받고 싶은데, 아직 방법을 찾지 못했다.<br>
 일단 <code class="language-text">true</code>로 설정하여 번거롭지만 <code class="language-text">Cannot access member ~</code> 에러도 리포트 받도록 했다.</p>
+<p>나머지 pyright의 <code class="language-text">reportCallIssue</code>, <code class="language-text">reportAttributeAccessIssue</code>도 무시한다. factory boy나 django model에서 에러로 간주되어서 비활성화하였다.</p>
 <p><code class="language-text">disallow_untyped_defs</code>는 mypy에서 타입 명세하지 않으면 에러 메시지를 출력하는 옵션이다. 이것도 무시한다.</p>
 <p>pyproject.toml은 최근에서야 대부분 도구가 지원하는 것 같다.
 도구 버전이 낮으면 toml 양식을 인식하지 못하는 경우가 있어서 최신 버전인지 확인해야 한다.

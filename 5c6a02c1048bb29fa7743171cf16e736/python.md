@@ -265,7 +265,9 @@ django_settings_module = "app.settings"
 
 
 [tool.pyright]
-reportGeneralTypeIssues = true
+reportGeneralTypeIssues = false
+reportCallIssue = false
+reportAttributeAccessIssue = false
 
 
 [tool.pylint.master]
@@ -297,6 +299,8 @@ django, factory-boy 등 파이썬 매직을 사용하는 경우 이런 문제가
 타입을 잘 명세하는 경우, `Literal['foo', 'bar']` 와 같이 명세하고 에러를 정적 체크하는 것은 매우 유용한데, 이런 에러도 무시하게 된다.
 `cannot access member ~`만 무시하고 `Argument of type "Literal['foo', 'bar']" cannot be assigned to parameter "param_name" of type` 같은 에러는 리포트 받고 싶은데, 아직 방법을 찾지 못했다.\
 일단 `true`로 설정하여 번거롭지만 `Cannot access member ~` 에러도 리포트 받도록 했다.
+
+나머지 pyright의 `reportCallIssue`, `reportAttributeAccessIssue`도 무시한다. factory boy나 django model에서 에러로 간주되어서 비활성화하였다.
 
 `disallow_untyped_defs`는 mypy에서 타입 명세하지 않으면 에러 메시지를 출력하는 옵션이다. 이것도 무시한다.
 
