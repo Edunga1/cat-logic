@@ -30,7 +30,7 @@
     "gatsby-remark-copy-linked-files": "^6.13.0",
     "gatsby-remark-images": "^7.13.0",
     "gatsby-remark-prismjs": "^7.13.0",
-    "gatsby-remark-relative-linker": "github:Edunga1/gatsby-remark-relative-linker",
+    "gatsby-remark-relative-linker": "github:edunga1/gatsby-remark-relative-linker",
     "gatsby-source-filesystem": "^5.13.0",
     "gatsby-transformer-gitinfo": "github:edunga1/gatsby-transformer-gitinfo",
     "gatsby-transformer-remark": "^6.13.0",
