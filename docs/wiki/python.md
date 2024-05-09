@@ -1,7 +1,7 @@
 ---
 created: 2022-11-28
 ---
-# Python
+# Python Programming Language
 
 파이썬은 Guido van Rossum이 1989년에 만든 프로그래밍 언어이다.[^1]
 
