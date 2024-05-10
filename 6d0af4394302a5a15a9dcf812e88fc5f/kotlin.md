@@ -51,6 +51,21 @@ foo?.bar?.baz?.run {
 변수이름이 길어질수록 줄바꿈도 생기고 코드도 길어져서 읽기 어려워지는데, scope function은 획기적으로 줄여준다.
 계산 결과를 담아야 하는 경우가 생기면 담을 변수를 미리 선언하여 초기화 할 필요가 있으니 더욱 답답해진다.
 
+### 예외 처리
+
+Java와 달리 Kotlin은 checked exception을 지원하지 않는다.
+checked exception은 예외 처리를 강제하는 기능이다.
+
+https://kotlinlang.org/docs/exceptions.html#checked-exceptions
+
+코틀린의 공식 문서에 Checked Exception에 대한 언급이 있다:
+
+> Bruce Eckel says this about checked exceptions:
+> 
+> > Examination of small programs leads to the conclusion that requiring exception specifications could both enhance developer productivity and enhance code quality, but experience with large software projects suggests a different result – decreased productivity and little or no increase in code quality.
+
+작은 프로그램에서는 코드 품질과 생산성을 높일 수 있었지만, 대규모 프로젝트에서는 생산성이 감소하고 코드 품질 또한 적거나 증가하지 않았다고.
+
 ## Testing
 
 test framework: [Kotest](https://github.com/kotest/kotest)

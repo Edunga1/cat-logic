@@ -101,6 +101,7 @@ data-styled.g12[id="Wiki__Title-sc-16q9onf-6"]{content:"gqJxRk,"}/*!sc*/
 <p><a href="#features">Features</a></p>
 <ul>
 <li><a href="#scope-functions">Scope Functions</a></li>
+<li><a href="#%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC">예외 처리</a></li>
 </ul>
 </li>
 <li>
@@ -167,6 +168,18 @@ context object의 상태로 계산하여 반환하고 싶으면 <code class="lan
 <span class="token punctuation">}</span></code></pre></div>
 <p>변수이름이 길어질수록 줄바꿈도 생기고 코드도 길어져서 읽기 어려워지는데, scope function은 획기적으로 줄여준다.
 계산 결과를 담아야 하는 경우가 생기면 담을 변수를 미리 선언하여 초기화 할 필요가 있으니 더욱 답답해진다.</p>
+<h3 id="예외-처리" style="position:relative;"><a href="#%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC" aria-label="예외 처리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>예외 처리</h3>
+<p>Java와 달리 Kotlin은 checked exception을 지원하지 않는다.
+checked exception은 예외 처리를 강제하는 기능이다.</p>
+<p><a href="https://kotlinlang.org/docs/exceptions.html#checked-exceptions">https://kotlinlang.org/docs/exceptions.html#checked-exceptions</a></p>
+<p>코틀린의 공식 문서에 Checked Exception에 대한 언급이 있다:</p>
+<blockquote>
+<p>Bruce Eckel says this about checked exceptions:</p>
+<blockquote>
+<p>Examination of small programs leads to the conclusion that requiring exception specifications could both enhance developer productivity and enhance code quality, but experience with large software projects suggests a different result – decreased productivity and little or no increase in code quality.</p>
+</blockquote>
+</blockquote>
+<p>작은 프로그램에서는 코드 품질과 생산성을 높일 수 있었지만, 대규모 프로젝트에서는 생산성이 감소하고 코드 품질 또한 적거나 증가하지 않았다고.</p>
 <h2 id="testing" style="position:relative;"><a href="#testing" aria-label="testing permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing</h2>
 <p>test framework: <a href="https://github.com/kotest/kotest">Kotest</a>
 mocking: <a href="https://github.com/mockk/mockk">MockK</a></p>
