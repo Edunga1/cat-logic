@@ -67,7 +67,9 @@ https://help.canary.tools/hc/en-gb/articles/360021010477-How-do-I-create-a-Slow-
 사용자 세션에 따라 달라지는 값은 아니다.
 시크릿 탭에서 열어도 같은 값을 가진다. 따라서 사용자마다 생성하는 것은 아닌것으로 보인다.
 
-## Device Orientation API
+## Web API
+
+### Device Orientation API
 
 디바이스의 방향에 대한 정보를 제공하는 API
 
