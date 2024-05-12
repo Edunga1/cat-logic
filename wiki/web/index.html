@@ -113,7 +113,11 @@ data-styled.g12[id="Wiki__Title-sc-16q9onf-6"]{content:"gqJxRk,"}/*!sc*/
 </ul>
 </li>
 <li>
-<p><a href="#device-orientation-api">Device Orientation API</a></p>
+<p><a href="#web-api">Web API</a></p>
+<ul>
+<li><a href="#device-orientation-api">Device Orientation API</a></li>
+<li><a href="#%ED%84%B0%EC%B9%98-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EC%99%80-%EB%A7%88%EC%9A%B0%EC%8A%A4-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%97%90%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98">터치 이벤트와 마우스 이벤트 에뮬레이션</a></li>
+</ul>
 </li>
 <li>
 <p><a href="#http">HTTP</a></p>
@@ -270,7 +274,8 @@ return &#x3C;button onClick={() => {}}>Click Me</button></p>
 <p>여기선 slow redirect, fast redirect 방식에 따라 토큰에 포함되는 정보를 달리 하는데, 브라우저와 플러그인 정보의 포함 차이라 한다.</p>
 <p>사용자 세션에 따라 달라지는 값은 아니다.
 시크릿 탭에서 열어도 같은 값을 가진다. 따라서 사용자마다 생성하는 것은 아닌것으로 보인다.</p>
-<h2 id="device-orientation-api" style="position:relative;"><a href="#device-orientation-api" aria-label="device orientation api permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Device Orientation API</h2>
+<h2 id="web-api" style="position:relative;"><a href="#web-api" aria-label="web api permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Web API</h2>
+<h3 id="device-orientation-api" style="position:relative;"><a href="#device-orientation-api" aria-label="device orientation api permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Device Orientation API</h3>
 <p>디바이스의 방향에 대한 정보를 제공하는 API</p>
 <p>Google Chrome의 경우 개발도구 설정 -> More tools -> Sensors에서 디바이스 방향을 조정할 수 있다.
 3D 기기 모델로 표현되어 있어서 직관적으로 이해할 수 있다.</p>
@@ -281,6 +286,23 @@ fucntion <span class="token function">onDeviceOrientation</span><span class="tok
   <span class="token keyword">const</span> <span class="token punctuation">{</span> alpha<span class="token punctuation">,</span> beta<span class="token punctuation">,</span> gamma <span class="token punctuation">}</span> <span class="token operator">=</span> event
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>alpha<span class="token punctuation">,</span> beta<span class="token punctuation">,</span> gamma<span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre></div>
+<h3 id="터치-이벤트와-마우스-이벤트-에뮬레이션" style="position:relative;"><a href="#%ED%84%B0%EC%B9%98-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EC%99%80-%EB%A7%88%EC%9A%B0%EC%8A%A4-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%97%90%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98" aria-label="터치 이벤트와 마우스 이벤트 에뮬레이션 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>터치 이벤트와 마우스 이벤트 에뮬레이션</h3>
+<p>브라우저는 단일 터치 이벤트가 발생하면 마우스 이벤트를 추가 발생시킨다. 이를 마우스 이벤트 에뮬레이션 이라고 한다.</p>
+<blockquote>
+<p>Browsers typically dispatch emulated mouse and click events when there is only a single active touch point. Multi-touch interactions involving two or more active touch points will usually only generate touch events.</p>
+<p>브라우저는 단일 터치가 발생할 때 일반적으로 마우스 및 클릭 이벤트를 추가로 발생시킵니다.
+두 개 이상의 터치 포인트를 포함하는 멀티 터치는 일반적으로 터치 이벤트만 생성합니다.</p>
+<p>ref. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Using_Touch_Events">https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Using_Touch_Events</a></p>
+</blockquote>
+<p>내 경우 <code class="language-text">touchend</code> 후에 <code class="language-text">mousemove</code>, <code class="language-text">mousedown</code>, <code class="language-text">mouseup</code> 이벤트가 발생해서 의도대로 동작하지 않아서 수정해야 했다.<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup></p>
+<p>마우스 에뮬레이션을 막으려면 <code class="language-text">preventDefault()</code>를 호출한다.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"touchend"</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// some code</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities_API">InputDeviceCapabilities</a>를 통한 터치와 마우스 이벤트의 구분도 가능해 보인다.
+하지만 2024년 5월 기준 아직 실험적인 기능이다.</p>
+<p><code class="language-text">e.sourceCapabilities.firesTouchEvents</code>는 터치 이벤트면 <code class="language-text">true</code>를 반환하고, 마우스 이벤트면 <code class="language-text">false</code>를 반환한다.</p>
 <h2 id="http" style="position:relative;"><a href="#http" aria-label="http permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP</h2>
 <h3 id="headers" style="position:relative;"><a href="#headers" aria-label="headers permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Headers</h3>
 <p>직접 수정할 수 없는 헤더가 있다. <code class="language-text">Content-Length</code>나 <code class="language-text">Referer</code> 등이 그러한데, 이런 헤더를 <a href="https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name">Forbidden Header Name</a>이라 한다.</p>
@@ -357,7 +379,13 @@ chrome 개발자 도구에서 네트워크 탭에서는 throttling 기능을 제
   <span class="token parameter variable">-e</span> <span class="token assign-left variable">LIGHTTPD_THROTTLE</span><span class="token operator">=</span><span class="token number">100</span> <span class="token punctuation">\</span>
   <span class="token parameter variable">-v</span> <span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>:/var/www <span class="token punctuation">\</span>
   pbertera/lighttpd-throttle</code></pre></div>
-<p>현재 경로의 파일을 volume으로 연결하고, <code class="language-text">8080</code> 포트로 서빙하며, <code class="language-text">100</code> kb 대역폭으로 제한한다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/web/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>현재 경로의 파일을 volume으로 연결하고, <code class="language-text">8080</code> 포트로 서빙하며, <code class="language-text">100</code> kb 대역폭으로 제한한다.</p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-1"><a href="https://github.com/Edunga1/canvas-floating-alphabet/commit/296f08884f14e49c8ac36d73da7f3e6551c83701">코드 수정 커밋</a><a href="#fnref-1" class="footnote-backref">↩</a></li>
+</ol>
+</div></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/web/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
