@@ -87,6 +87,35 @@ fucntion onDeviceOrientation(event) {
 }
 ```
 
+### 터치 이벤트와 마우스 이벤트 에뮬레이션
+
+브라우저는 단일 터치 이벤트가 발생하면 마우스 이벤트를 추가 발생시킨다. 이를 마우스 이벤트 에뮬레이션 이라고 한다.
+
+> Browsers typically dispatch emulated mouse and click events when there is only a single active touch point. Multi-touch interactions involving two or more active touch points will usually only generate touch events.
+> 
+> 브라우저는 단일 터치가 발생할 때 일반적으로 마우스 및 클릭 이벤트를 추가로 발생시킵니다.
+> 두 개 이상의 터치 포인트를 포함하는 멀티 터치는 일반적으로 터치 이벤트만 생성합니다.
+>
+> ref. https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Using_Touch_Events
+
+내 경우 `touchend` 후에 `mousemove`, `mousedown`, `mouseup` 이벤트가 발생해서 의도대로 동작하지 않아서 수정해야 했다.[^1]
+
+마우스 에뮬레이션을 막으려면 `preventDefault()`를 호출한다.
+
+```js
+window.addEventListener("touchend", e => {
+  e.preventDefault()
+  // some code
+})
+```
+
+[InputDeviceCapabilities](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities_API)를 통한 터치와 마우스 이벤트의 구분도 가능해 보인다.
+하지만 2024년 5월 기준 아직 실험적인 기능이다.
+
+`e.sourceCapabilities.firesTouchEvents`는 터치 이벤트면 `true`를 반환하고, 마우스 이벤트면 `false`를 반환한다.
+
+[^1]: [코드 수정 커밋](https://github.com/Edunga1/canvas-floating-alphabet/commit/296f08884f14e49c8ac36d73da7f3e6551c83701)
+
 ## HTTP
 
 ### Headers
