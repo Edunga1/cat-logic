@@ -575,6 +575,7 @@ txt, pdf, csv과 py, js 등 코드 파일도 첨부 가능한데 이미지는 �
 예를들어 <code class="language-text">Horses are my favorite</code> 문장을 입력하면 <code class="language-text">animal</code>, <code class="language-text">animals</code>, <code class="language-text">\n</code>, <code class="language-text">!</code> 등을 다음에 올 토큰으로 추천하는 식이다.</p>
 <h3 id="github-copilot" style="position:relative;"><a href="#github-copilot" aria-label="github copilot permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Github Copilot</h3>
 <p>코드 작성을 도와주는 AI 도구.</p>
+<p>가장 만족하는 AI 도구이다. 코딩 생산성이 배가 된다.</p>
 <h4 id="copilot-cli" style="position:relative;"><a href="#copilot-cli" aria-label="copilot cli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Copilot CLI</h4>
 <p><a href="https://githubnext.com/projects/copilot-cli/">https://githubnext.com/projects/copilot-cli/</a></p>
 <p>shell 명령어를 작성하는데 도움을 주는 도구.</p>
@@ -617,9 +618,11 @@ Copilot 구독하고 있어야 한다.</p>
 <h4 id="커밋-메시지-작성-도움받기" style="position:relative;"><a href="#%EC%BB%A4%EB%B0%8B-%EB%A9%94%EC%8B%9C%EC%A7%80-%EC%9E%91%EC%84%B1-%EB%8F%84%EC%9B%80%EB%B0%9B%EA%B8%B0" aria-label="커밋 메시지 작성 도움받기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>커밋 메시지 작성 도움받기</h4>
 <p>나는 보통 <code class="language-text">git commit -v</code>로 커밋 메시지를 작성한다.
 <code class="language-text">-v</code>는 verbose 옵션으로 변경된 파일의 diff를 보여준다.</p>
-<p>커밋 에디터는 <a href="../vim">vim</a>이기 때문에 <a href="https://github.com/github/copilot.vim">copilot.vim</a> 플러그인이 로드된다.\n
-copilot은 파일 변경점을 보고 커멧 메시지를 추천해준다.</p>
-<p>물론 적중률이 높은 편은 아니다.</p>
+<p>copilot은 diff를 보고 커밋 메시지를 완성하려고 한다.
+diff가 짧을수록 내가 의도한 문구가 나오고, 길면 제대로 추천하지 못한다.</p>
+<p>여러 파일에 파편적으로 변경이 있을 때도 제대로 추천하지 못한다.
+이는 사람이 리뷰한 것에 비유할 수 있을텐데, 내가 다른 사람을 코드 리뷰 할 때도 변경 사항이 파편적이면 제대로 리뷰하기 어렵다.
+그래서 자동 완성되는 커밋 메시지는 내가 올바른 단위로 커밋을 나누었는지 참고하는 용도로 사용할 수 있다.</p>
 <h3 id="aws-codewhisperer" style="position:relative;"><a href="#aws-codewhisperer" aria-label="aws codewhisperer permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AWS CodeWhisperer</h3>
 <p><a href="https://aws.amazon.com/ko/codewhisperer/">https://aws.amazon.com/ko/codewhisperer/</a></p>
 <p>Copilot과 마찬가지로 코드 작성을 도와주는 도구다.
