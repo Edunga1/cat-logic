@@ -412,6 +412,8 @@ quickstart: https://beta.openai.com/docs/quickstart
 
 코드 작성을 도와주는 AI 도구.
 
+가장 만족하는 AI 도구이다. 코딩 생산성이 배가 된다.
+
 #### Copilot CLI
 
 https://githubnext.com/projects/copilot-cli/
@@ -474,10 +476,12 @@ Copilot 구독하고 있어야 한다.
 나는 보통 `git commit -v`로 커밋 메시지를 작성한다.
 `-v`는 verbose 옵션으로 변경된 파일의 diff를 보여준다.
 
-커밋 에디터는 [vim](./vim.md)이기 때문에 [copilot.vim](https://github.com/github/copilot.vim) 플러그인이 로드된다.\n
-copilot은 파일 변경점을 보고 커멧 메시지를 추천해준다.
+copilot은 diff를 보고 커밋 메시지를 완성하려고 한다.
+diff가 짧을수록 내가 의도한 문구가 나오고, 길면 제대로 추천하지 못한다.
 
-물론 적중률이 높은 편은 아니다.
+여러 파일에 파편적으로 변경이 있을 때도 제대로 추천하지 못한다.
+이는 사람이 리뷰한 것에 비유할 수 있을텐데, 내가 다른 사람을 코드 리뷰 할 때도 변경 사항이 파편적이면 제대로 리뷰하기 어렵다.
+그래서 자동 완성되는 커밋 메시지는 내가 올바른 단위로 커밋을 나누었는지 참고하는 용도로 사용할 수 있다.
 
 ### AWS CodeWhisperer
 
