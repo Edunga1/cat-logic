@@ -194,6 +194,7 @@ data-styled.g12[id="Wiki__Title-sc-16q9onf-6"]{content:"gqJxRk,"}/*!sc*/
 <li>
 <p><a href="#tpopevim-fugitive">tpope/vim-fugitive</a></p>
 <ul>
+<li><a href="#git-command"><code class="language-text">:Git &lt;command></code></a></li>
 <li><a href="#git"><code class="language-text">:Git</code></a></li>
 <li><a href="#git-mergetool"><code class="language-text">:Git mergetool</code></a></li>
 </ul>
@@ -726,11 +727,18 @@ count  total (s)   self (s)  function
 다만, 파일 내용에 공백 추가하여 수정하는 형태이므로 사용에 유의하자.<br>
 Range <code class="language-text">%</code>를 제외하면 현재 라인만 동작한다는데, 커서와 동일한 컬럼에 걸친 모든 곳을 처리하는지 여러개의 컬럼이 수정된다.</p>
 <h3 id="tpopevim-fugitive" style="position:relative;"><a href="#tpopevim-fugitive" aria-label="tpopevim fugitive permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>tpope/vim-fugitive</h3>
+<p>Git wrapper 플러그인. Git을 사용하면 추천한다.
+터미널 커맨드로 처리해도 좋지만, vim에서 바로 처리할 수 있어 접근성의 차원이 다르다.</p>
 <p><a href="https://github.com/tpope/vim-fugitive">https://github.com/tpope/vim-fugitive</a></p>
+<h4 id="git-command" style="position:relative;"><a href="#git-command" aria-label="git command permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">:Git &lt;command></code></h4>
+<p><code class="language-text">:Git &lt;command></code>는 <code class="language-text">git &lt;command></code>에 대응한다.</p>
+<p>예를들어 <code class="language-text">Git log</code>는 <code class="language-text">git log</code>와 같은데, 객체와 상호작용할 수 있다.</p>
+<p>커밋 해시에 커서를 두고 <code class="language-text">&lt;cr></code> 누르면 해당 커밋의 변경 사항을 볼 수 있다. <code class="language-text">o</code>는 분할 창에서, <code class="language-text">O</code>는 새 탭에서 연다.</p>
+<p>이렇듯 터미널에서 명령어를 일일이 실행하지 않고, 인터랙티브한 환경에서 동작하여 편리하다.</p>
 <h4 id="git" style="position:relative;"><a href="#git" aria-label="git permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">:Git</code></h4>
+<p>인자 없이 <code class="language-text">:Git</code> 실행하면 현재 git status를 보여준다.</p>
 <p><a href="../28251">Git Fugitive how to git add a visually selected chunk of code - stackexchange</a></p>
-<p><code class="language-text">:Git</code> 실행하면 현재 git status를 보여준다.
-여기서 꽤 많은 일을 처리할 수 있는데, <code class="language-text">g?</code> 입력하면 도움말을 볼 수 있다.</p>
+<p>여기서 꽤 많은 일을 처리할 수 있는데, <code class="language-text">g?</code> 입력하면 도움말을 볼 수 있다.</p>
 <p>파일 경로에서 Enter 누르면 해당 파일의 Buffer를 연다.</p>
 <p>원하는 라인만 stage 또는 unstage 하거나, discard 하고 싶다면:</p>
 <ol>
