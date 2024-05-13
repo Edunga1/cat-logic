@@ -563,13 +563,27 @@ Range `%`를 제외하면 현재 라인만 동작한다는데, 커서와 동일�
 
 ### tpope/vim-fugitive
 
+Git wrapper 플러그인. Git을 사용하면 추천한다.
+터미널 커맨드로 처리해도 좋지만, vim에서 바로 처리할 수 있어 접근성의 차원이 다르다.
+
 https://github.com/tpope/vim-fugitive
+
+#### `:Git <command>`
+
+`:Git <command>`는 `git <command>`에 대응한다.
+
+예를들어 `Git log`는 `git log`와 같은데, 객체와 상호작용할 수 있다.
+
+커밋 해시에 커서를 두고 `<cr>` 누르면 해당 커밋의 변경 사항을 볼 수 있다. `o`는 분할 창에서, `O`는 새 탭에서 연다.
+
+이렇듯 터미널에서 명령어를 일일이 실행하지 않고, 인터랙티브한 환경에서 동작하여 편리하다.
 
 #### `:Git`
 
+인자 없이 `:Git` 실행하면 현재 git status를 보여준다.
+
 [Git Fugitive how to git add a visually selected chunk of code - stackexchange](https://vi.stackexchange.com/a/28251.md)
 
-`:Git` 실행하면 현재 git status를 보여준다.
 여기서 꽤 많은 일을 처리할 수 있는데, `g?` 입력하면 도움말을 볼 수 있다.
 
 파일 경로에서 Enter 누르면 해당 파일의 Buffer를 연다.
