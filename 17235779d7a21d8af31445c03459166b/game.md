@@ -3,7 +3,7 @@ created: 2023-05-11
 ---
 # Game
 
-게임과 관련된 개발 이야기들.
+게임과 관련된 흥미로운 개발 이야기들.
 
 ## Ultima Online
 
@@ -196,3 +196,23 @@ https://poestack.com/
 
 GitHub Organization이 존재하는데, PoeStack 프로젝트는 공개되지 않은 것으로 보인다.
 https://github.com/PoeStack
+
+## Stardew Valley
+
+농장 경영 게임. 내가 해 본 게임은 아니다. 그럼에도 지면을 할당하는 이유는 개발자 ConcernedApe(닉네임)가 흥미롭기 때문이다.
+
+1인 개발자로 [Stardew Valley](https://store.steampowered.com/app/413150/Stardew_Valley/)를 개발했고, 스팀기준 리뷰만 59만개, 그 중 98%가 압도적 긍정 리뷰다.
+
+[3천만 판매를 기록한 Stardew Valley 개발자 "나는 게임을 만든 사람일 뿐, 아직도 하루 종일 컴퓨터에 굽신거리고 있다"](https://www.gamesradar.com/games/simulation/30-million-copies-later-stardew-valley-creator-says-im-just-a-dude-who-made-a-game-and-still-spends-all-day-hunched-over-the-computer/) 기사에서 인터뷰한 내용이 있다.
+
+> "My goal in life isn't about making money," Barone adds. "I want to create things and share them with the world. That's what it's all about. That's what I'm doing. That's what I will do, regardless of any other circumstances, as long as I can financially support myself to be able to do that. If I couldn't, I would get a job and spend my free time creating stuff to try to get back to doing that."
+>
+> "제 인생의 목표는 돈을 버는 것이 아닙니다."라고 Barone은 덧붙입니다. "저는 무언가를 창조하고 그것을 세상과 공유하고 싶습니다. 그게 전부입니다. 그게 제가 하고 있는 일이죠. 다른 어떤 상황과도 상관없이 재정적으로 뒷받침할 수 있는 한 그렇게 할 것입니다. 그렇게 할 수 없다면 직업을 구하고 여가 시간을 활용해 다시 그 일을 하려고 노력할 것입니다."
+
+겸손함이 보이는 대목이다.
+
+> "I was just making the game I wanted to play. What I would say is, I was tapping into a certain zeitgeist that I wasn't aware of, or conscious of, but I wasn't the only one who was feeling that way. We wanted to play games that were a little bit different. ... I think if I hadn't done it, someone else probably would have in a similar timeframe." 
+>
+> "저는 제가 하고 싶은 게임을 만들고 있었을 뿐입니다. 제가 알지 못하거나 의식하지 못했던 어떤 시대정신을 활용하고 있었지만 저만 그렇게 느낀 것은 아니었습니다. 조금은 다른 게임을 하고 싶었어요... 제가 하지 않았다면 아마 비슷한 시기에 다른 누군가가 했을 거라고 생각합니다."
+
+본인이 하고 싶은 게임을 만들었다는 부분. 자신에게 만족스러운 게임을 만들기 위해서 노력했을 것이고, 아마 그 기준은 높을 것이다.
