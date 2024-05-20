@@ -135,7 +135,7 @@ https://wiki.debian.org/DebConf/24/Bids/Korea
 
 > Partake in timeless classics such as Bibimbap, a harmonious blend of rice, fresh vegetables, and savory sauces, or savor the fermented richness of Kimchi, a ubiquitous side dish that imparts a piquant zest to any meal. Revel in the crispiness of Jeon, savory pancakes abundant with vegetables, or luxuriate in the comforting warmth of Sundubu Jjigae, a spicy tofu stew.
 
-이제는 외국인도 익숙할만한 비빔도 있고, 순두부찌개에 대한 내용이 있어서 재밌다.
+이제는 외국인도 익숙할만한 비빔밥도 있고, 순두부찌개에 대한 내용이 있어서 재밌다.
 
 위치는 부산 부경대학교이다. 허락만 된다면 구경해보고 싶다.
 
