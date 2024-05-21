@@ -29,8 +29,15 @@ https://www.jetbrains.com/writerside/
 
 ## Marksman - Language Server for Markdown
 
-Marksman은 markdown 파일을 위한 [Language Server](./language-server-protocol.md)이다.\
-nvim-lsp를 통해서 간접적으로 설치되어 사용한다.
+Marksman은 markdown 파일을 위한 [Language Server](./language-server-protocol.md)이다.
+
+https://github.com/artempyanykh/marksman
+
+할 수 있는 것:
+
+- 헤더 `#` 기반 textobject 지원한다. 따라서 `#`을 기준으로 블록을 처리하거나, 심볼 검색할 수 있다.
+- 내부 문서 링크를 지원한다. 링크 문서로 이동하거나, 미리보기를 제공한다.
+- 위키 링크 `[[...]]`, 마크다운 링크 `[ref]: http://example.com "Title"`를 지원한다.
 
 [상대 경로를 자동 완성하지 못하는 문제](https://github.com/artempyanykh/marksman/issues/182)가 있다.
 항상 프로젝트 루트 기준으로 링크 완성을 해준다.
