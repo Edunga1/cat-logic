@@ -307,18 +307,21 @@ actuator 페이지 접근을 위해 기록된 것을 볼 수 있다.
 
 ## Spring CLI
 
+새 Spring 프로젝트를 빠르게 시작할 수 있는 도구.
+
 https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html
 
-Installation(Homebrew):
+Homebrew로 설치:
+
 ```bash
 $ brew tap spring-io/tap
 $ brew install spring-boot
 ```
 
-도움말 확인하려면 `spring help <command>`\
-e.g. `spring help init`
+- `spring help <command>`: 명령어 도움말을 확인할 수 있다.
+- `spring init --list`: 사용 가능한 프로젝트 유형 목록을 확인할 수 있다.
 
-### 빠른 프로젝트 생성
+### 프로젝트 생성
 
 Kotlin + Spring Boot + Gradle 프로젝트를 빠르게 생성 해보자.
 
@@ -346,7 +349,7 @@ fun main(args: Array<String>) {
 
 ---
 
-`spring init --list`로 설정 기본값을 확인할 수 있다:
+`spring init --list`의 가장 마지막 부분에 설정 기본값이 표시된다:
 
 ```bash
 Parameters
