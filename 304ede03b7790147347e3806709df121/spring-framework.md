@@ -489,6 +489,10 @@ Spring AI 프로젝트는 다양한 언어 모델과 플랫폼의 통합을 제�
 
 ### Spring AI 프로젝트 시작하기
 
+이 시작 프로젝트는 https://github.com/Edunga1/spring-ai-web-start 에 올려두었다.
+
+---
+
 Spring CLI로 빠르게 시작해 보자.
 
 ```bash
