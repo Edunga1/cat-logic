@@ -478,6 +478,74 @@ fun getItems(): Set<Items> = repository.find()
 사용을 위해선 캐시 이름을 맞춰서 사용한다.
 캐시 이름이 변경되면 캐시 선언 부분과 사용 부분 모두 수정하는데, 이는 캐시 이름을 `const val`로 만들어서 처리할 수 있다.
 
+## Spring AI
+
+Spring AI 프로젝트는 다양한 언어 모델과 플랫폼의 통합을 제공한다. Chat, text-to-image, 임베딩 등 다양한 모델과 통합을 제공한다.
+
+- 개요: https://spring.io/projects/spring-ai
+- 시작하기: https://docs.spring.io/spring-ai/reference/getting-started.html
+
+2024년 5월 아직 정식 릴리즈가 아닌 Milestone Release 단계이다.
+
+### Spring AI 프로젝트 시작하기
+
+Spring CLI로 빠르게 시작해 보자.
+
+```bash
+$ spring init --language kotlin --type gradle-project-kotlin -d spring-ai-ollama,web --extract spring-ai-start
+```
+
+kotlin, gradle + kotlin dsl 그리고 `spring-ai-ollama` 의존성을 가진 프로젝트를 생성한다.
+알아서 milestone 저장소를 추가해 준다.
+
+[ollama](large-language-model.md)는 AI 모델을 로컬에서 쉽게 사용하도록 도와주는 도구다.
+무료로 사용할 수 있으므로 이 프로젝트에서 비용 발생하지 않는다.
+
+application.properties에 Ollama host와 사용할 모델을 설정한다:
+
+```
+spring.application.name=demo
+spring.ai.ollama.base-url=http://localhost:11434
+spring.ai.ollama.chat.options.model=llama3
+```
+
+간단한 컨트롤러를 작성하자:
+
+```kotlin
+package com.example.springaiwebstart
+
+import org.springframework.ai.ollama.OllamaChatClient
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+class ChatController(
+    private val client: OllamaChatClient,
+) {
+    @GetMapping("/chat")
+    fun chat(q: String) = mapOf(
+        "response" to client.call(q)
+    )
+}
+```
+
+이제 `ollama`로 모델만 서빙하면 된다. docker로 띄우면 매우 간단해진다.
+
+```bash
+# ollama 시작
+$ docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama serve
+
+# llama3 모델 다운로드
+$ docker exec -it ollama ollama pull llama3
+```
+
+모델 다운로드가 꽤 오래 걸린다. 완료되면 프로젝트를 시작하고 간단한 쿼리를 날려보자.
+
+```bash
+$ curl http://localhost:8080/chat\?q\=hello
+{"response":"Hello! It's nice to meet you. Is there something I can help you with, or would you like to chat?"}
+```
+
 ## Troubleshooting
 
 ### IntelliJ에서 Properties의 선언부를 찾을 수 없는 경우
