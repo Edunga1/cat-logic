@@ -223,9 +223,9 @@ OpenAI는 *"Learn how to connect large language models to external tools"*. 즉 
 알파고 이전에는 프로 바둑 기사들의 실력이 거의 정체되어 있었으나,
 알파고 대국 이후로는 오히려 수준이 높아졌다는 이야기.
 
-https://news.hada.io/topic?id=14227
+기사 원문: https://news.hada.io/topic?id=14227
 
-기사들이 단순히 AI를 따라하는 것이 아니라, 더욱 창의적인 수를 두기 시작했다고.
+바둑기사들이 단순히 AI를 따라하는 것이 아니라, 더욱 창의적인 수를 두기 시작했다고.
 
 사람은 스스로의 한계를 제한한다는 말이 있다.
 로저 배니스터가 1마일에 4분의 한계를 깨고, 지금은 학생도 이 기록을 넘어선다.
