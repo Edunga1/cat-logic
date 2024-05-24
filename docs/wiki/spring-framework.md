@@ -480,12 +480,15 @@ fun getItems(): Set<Items> = repository.find()
 
 ## Spring AI
 
-Spring AI 프로젝트는 다양한 언어 모델과 플랫폼의 통합을 제공한다. Chat, text-to-image, 임베딩 등 다양한 모델과 통합을 제공한다.
+Spring AI 프로젝트는 다양한 언어 모델과 플랫폼의 통합을 제공한다.
 
 - 개요: https://spring.io/projects/spring-ai
 - 시작하기: https://docs.spring.io/spring-ai/reference/getting-started.html
 
 2024년 5월 아직 정식 릴리즈가 아닌 Milestone Release 단계이다.
+
+OpenAI Key로 ChatGPT를 연동하거나, Ollama로 로컬 LLM을 다운로드 받아서 연결하거나 이외에도 Google Gemini, 임베딩 모델, 이미지 생성 등 다양한 
+플랫폼과 모델을 사용할 수 있다.
 
 ### Spring AI 프로젝트 시작하기
 
