@@ -570,8 +570,8 @@ kapt("org.springframework.boot:spring-boot-configuration-processor")
 
 ### WebClient 첫 요청이 느린 문제
 
-상황: 서버 시작 직후 다른 서버의 API를 호출하는 내 API가 느려서 클라이언트에서 타임아웃이 자주 발생함.\
-해결: netty http client의 `warmup` + 사용자 진입 전 미리 타겟 서버 API 호출
+서버 시작 직후 API를 호출하는데 너무 느려서 타임아웃이 된다면, warmup을 고려하자.
+netty http client의 warmup과 사용자 호출이 진입되기 전에 의존 API를 한 번씩 호출해 두는 것으로 사용자의 요청에서의 지연을 줄일 수 있다.
 
 https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initialization_4
 
