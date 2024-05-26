@@ -98,6 +98,7 @@ data-styled.g12[id="Wiki__Title-sc-16q9onf-6"]{content:"gqJxRk,"}/*!sc*/
 <p><a href="#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%97%B0%EC%8A%B5">알고리즘 연습</a></p>
 <ul>
 <li><a href="#%EB%95%85%EB%94%B0%EB%A8%B9%EA%B8%B0-%EA%B2%8C%EC%9E%84">땅따먹기 게임</a></li>
+<li><a href="#linear-map">Linear Map</a></li>
 </ul>
 </li>
 </ul></div><div class="WikiContent__Container-sc-q3jb6a-0 ZYlSY">
@@ -160,7 +161,71 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
  <span class="token comment">//아래는 테스트로 출력해 보기 위한 코드입니다.</span>
 <span class="token keyword">var</span> board <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span> <span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">hopscotch</span><span class="token punctuation">(</span>board<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/algorithm-practice/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">hopscotch</span><span class="token punctuation">(</span>board<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<h2 id="linear-map" style="position:relative;"><a href="#linear-map" aria-label="linear map permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Linear Map</h2>
+<p>어떤 범위의 숫자를 다른 범위로 변환하는 함수.</p>
+<p>아직 의도한대로 구현하지 못했다.</p>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> math <span class="token keyword">import</span> ceil
+
+<span class="token keyword">def</span> <span class="token function">linear_map</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> input_min<span class="token punctuation">,</span> input_max<span class="token punctuation">,</span> output_min<span class="token punctuation">,</span> output_max<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    r <span class="token operator">=</span> <span class="token punctuation">(</span>x <span class="token operator">-</span> input_min<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>output_max <span class="token operator">-</span> output_min<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>input_max <span class="token operator">-</span> input_min<span class="token punctuation">)</span> <span class="token operator">+</span> output_min
+    <span class="token keyword">return</span> ceil<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+
+data <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> input_min<span class="token punctuation">,</span> input_max<span class="token punctuation">,</span> output_min<span class="token punctuation">,</span> output_max <span class="token keyword">in</span> data<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'=== </span><span class="token interpolation"><span class="token punctuation">{</span>input_min<span class="token punctuation">}</span></span><span class="token string">~</span><span class="token interpolation"><span class="token punctuation">{</span>input_max<span class="token punctuation">}</span></span><span class="token string"> > </span><span class="token interpolation"><span class="token punctuation">{</span>output_min<span class="token punctuation">}</span></span><span class="token string">~</span><span class="token interpolation"><span class="token punctuation">{</span>output_max<span class="token punctuation">}</span></span><span class="token string"> ============'</span></span><span class="token punctuation">)</span>
+    output_range <span class="token operator">=</span> output_max <span class="token operator">-</span> output_min <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>input_min<span class="token punctuation">,</span> input_max <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        y <span class="token operator">=</span> linear_map<span class="token punctuation">(</span>x<span class="token punctuation">,</span> input_min<span class="token punctuation">,</span> input_max<span class="token punctuation">,</span> output_min<span class="token punctuation">,</span> output_max<span class="token punctuation">)</span>
+        y1 <span class="token operator">=</span> linear_map<span class="token punctuation">(</span>x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> input_min<span class="token punctuation">,</span> input_max<span class="token punctuation">,</span> output_min<span class="token punctuation">,</span> output_max<span class="token punctuation">)</span> <span class="token keyword">if</span> x <span class="token operator">&lt;</span> input_max <span class="token keyword">else</span> output_max <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'= x=</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token punctuation">}</span></span><span class="token string">\t\ty=</span><span class="token interpolation"><span class="token punctuation">{</span>y<span class="token punctuation">}</span></span><span class="token string">\t</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token punctuation">(</span>y1<span class="token operator">-</span>y<span class="token punctuation">)</span><span class="token operator">/</span>output_range<span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">:</span><span class="token format-spec">.2f</span><span class="token punctuation">}</span></span><span class="token string">%'</span></span><span class="token punctuation">)</span></code></pre></div>
+<p>아래는 출력 결과.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">=== 1~7 > 0~9 ============
+= x=1           y=0     20.00%
+= x=2           y=2     10.00%
+= x=3           y=3     20.00%
+= x=4           y=5     10.00%
+= x=5           y=6     20.00%
+= x=6           y=8     10.00%
+= x=7           y=9     10.00%
+=== 1~7 > 0~99 ============
+= x=1           y=0     17.00%
+= x=2           y=17    16.00%
+= x=3           y=33    17.00%
+= x=4           y=50    16.00%
+= x=5           y=66    17.00%
+= x=6           y=83    16.00%
+= x=7           y=99    1.00%
+=== 1~10 > 0~9 ============
+= x=1           y=0     10.00%
+= x=2           y=1     10.00%
+= x=3           y=2     10.00%
+= x=4           y=3     10.00%
+= x=5           y=4     10.00%
+= x=6           y=5     10.00%
+= x=7           y=6     10.00%
+= x=8           y=7     10.00%
+= x=9           y=8     10.00%
+= x=10          y=9     10.00%
+=== 1~10 > 0~99 ============
+= x=1           y=0     11.00%
+= x=2           y=11    11.00%
+= x=3           y=22    11.00%
+= x=4           y=33    11.00%
+= x=5           y=44    11.00%
+= x=6           y=55    11.00%
+= x=7           y=66    11.00%
+= x=8           y=77    11.00%
+= x=9           y=88    11.00%
+= x=10          y=99    1.00%</code></pre></div>
+<p>0<del>9로 변환하는 것과 0</del>99로 변환 결과가 다르다. 비율이 일정하게 나눠지지 않는다.
+마지막 x에 대해서 비율이 높거나 낮은 문제가 있다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/algorithm-practice/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
