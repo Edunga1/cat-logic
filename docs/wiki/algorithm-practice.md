@@ -86,3 +86,78 @@ function hopscotch(board, size) {
 var board = [[ 1, 2, 3, 5 ], [ 5, 6, 7, 8 ], [ 4, 3, 2, 1]];
 console.log(hopscotch(board, 3));
 ```
+
+## Linear Map
+
+어떤 범위의 숫자를 다른 범위로 변환하는 함수.
+
+아직 의도한대로 구현하지 못했다.
+
+```python
+from math import ceil
+
+def linear_map(x, input_min, input_max, output_min, output_max):
+    r = (x - input_min) * (output_max - output_min) / (input_max - input_min) + output_min
+    return ceil(r)
+
+data = [
+    (1, 7, 0, 9),
+    (1, 7, 0, 99),
+    (1, 10, 0, 9),
+    (1, 10, 0, 99),
+]
+
+for input_min, input_max, output_min, output_max in data:
+    print(f'=== {input_min}~{input_max} > {output_min}~{output_max} ============')
+    output_range = output_max - output_min + 1
+    for x in range(input_min, input_max + 1):
+        y = linear_map(x, input_min, input_max, output_min, output_max)
+        y1 = linear_map(x + 1, input_min, input_max, output_min, output_max) if x < input_max else output_max + 1
+        print(f'= x={x}\t\ty={y}\t{(y1-y)/output_range*100:.2f}%')
+```
+
+아래는 출력 결과.
+
+```
+=== 1~7 > 0~9 ============
+= x=1           y=0     20.00%
+= x=2           y=2     10.00%
+= x=3           y=3     20.00%
+= x=4           y=5     10.00%
+= x=5           y=6     20.00%
+= x=6           y=8     10.00%
+= x=7           y=9     10.00%
+=== 1~7 > 0~99 ============
+= x=1           y=0     17.00%
+= x=2           y=17    16.00%
+= x=3           y=33    17.00%
+= x=4           y=50    16.00%
+= x=5           y=66    17.00%
+= x=6           y=83    16.00%
+= x=7           y=99    1.00%
+=== 1~10 > 0~9 ============
+= x=1           y=0     10.00%
+= x=2           y=1     10.00%
+= x=3           y=2     10.00%
+= x=4           y=3     10.00%
+= x=5           y=4     10.00%
+= x=6           y=5     10.00%
+= x=7           y=6     10.00%
+= x=8           y=7     10.00%
+= x=9           y=8     10.00%
+= x=10          y=9     10.00%
+=== 1~10 > 0~99 ============
+= x=1           y=0     11.00%
+= x=2           y=11    11.00%
+= x=3           y=22    11.00%
+= x=4           y=33    11.00%
+= x=5           y=44    11.00%
+= x=6           y=55    11.00%
+= x=7           y=66    11.00%
+= x=8           y=77    11.00%
+= x=9           y=88    11.00%
+= x=10          y=99    1.00%
+```
+
+0~9로 변환하는 것과 0~99로 변환 결과가 다르다. 비율이 일정하게 나눠지지 않는다.
+마지막 x에 대해서 비율이 높거나 낮은 문제가 있다.
