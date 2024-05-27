@@ -305,6 +305,37 @@ fun httpTraceRepository(): HttpTraceRepository = InMemoryHttpTraceRepository()
 actuator 페이지 접근을 위해 기록된 것을 볼 수 있다.
 최근 요청의 헤더 정보, 응답 코드, URL 등을 알 수 있다.
 
+### Transaction
+
+#### 트랜잭션 로그 확인하기
+
+`org.springframework.transaction`의 로그 레벨을 log4j, slf4j 기준 `TRACE`로 조정해야 한다: `org.springframework.transaction: TRACE` 
+
+그러면 다음과 같이 로그가 출력된다:
+
+```
+2024-05-27T17:05:03.693+09:00 TRACE 19245 --- [-1 @coroutine#3] o.s.t.i.TransactionInterceptor           : Getting transaction for [com.example.MyService.process]
+
+
+2024-05-27T17:05:03.694+09:00 TRACE 19245 --- [-1 @coroutine#3] o.s.t.i.TransactionInterceptor           : Getting transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAllByIdInBatch]
+
+2024-05-27T17:05:03.708+09:00 TRACE 19245 --- [-1 @coroutine#3] o.s.t.i.TransactionInterceptor           : Completing tran2024-05-27T17:05:03.708+09:00 TRACE 19245 --- [-1 @coroutine#3] o.s.t.i.TransactionInterceptor           : Completing transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAllByIdInBatch]
+
+2024-05-27T17:05:03.709+09:00 TRACE 19245 --- [-1 @coroutine#3] o.s.t.i.TransactionInterceptor           : Getting transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.saveAll]
+
+2024-05-27T17:05:03.712+09:00 TRACE 19245 --- [-1 @coroutine#3] o.s.t.i.TransactionInterceptor           : Completing transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.saveAll]
+
+
+2024-05-27T17:05:03.712+09:00 TRACE 19245 --- [-1 @coroutine#3] o.s.t.i.TransactionInterceptor           : Completing transaction for [com.example.MyService.process]saction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteAllByIdInBatch]
+```
+
+트랜잭션의 시작은 `Getting transaction for`로 시작하고, 종료는 `Completing transaction for`로 끝난다.
+
+기본적으로 쿼리 전후에 트랜잭션의 시작과 종료가 발생하지만(위 예제에서는 `SimpleJpaRepository`의 메서드 호출로 시작과 종료가 발생),
+`@Transactional`을 통한 명시적인 트랜잭션 사용 시, 해당 메서드 전후로 트랜잭션 시작과 종료가 발생한다(위 예제에서는 `MyService.process`).
+
+로그 대신 코드로 확인하고 싶다면 `TransactionSynchronizationManager.isActualTransactionActive()`를 사용한다. 전역 객체이므로 디버그 모드에서도 별도 주입 없이 사용할 수 있어서 간편하다.
+
 ## Spring CLI
 
 새 Spring 프로젝트를 빠르게 시작할 수 있는 도구.
