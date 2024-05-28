@@ -564,6 +564,46 @@ gpg:   secret keys imported: 1
 
 마찬가지로 생성 시에 사용한 passphrase를 입력하는 과정이 있다.
 
+### act - Run GitHub Actions locally
+
+로컬에서 GitHub Actions를 실행해 볼 수 있는 도구.
+
+`brew install act`로 설치한다.
+
+Docker를 사용하므로 Docker가 실행되고 있어야 한다.
+
+잘못된 구성인 경우 Docker가 실행되지 않았더라도 미리 확인할 수 있었다.
+
+```bash
+$ docker ps
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+~/workspace/gatsby-transformer-gitinfo main*                                                                                                                                                                                       22:42:32
+$ act
+INFO[0000] Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock'
+Error: Invalid run/uses syntax for job:Test step:Install dependencies
+```
+
+WSL에서 제대로 실행하지 못했는데.
+
+```bash
+$ act
+INFO[0000] Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock'
+[Test/Test] 🚀  Start image=node:16-buster-slim
+[Test/Test]   🐳  docker pull image=node:16-buster-slim platform= username= forcePull=true
+[Test/Test]   🐳  docker create image=node:16-buster-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Test/Test]   🐳  docker run image=node:16-buster-slim platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+Error: failed to copy content to container: Error response from daemon: mount /mnt/wsl/rancher-desktop/run/docker-mounts/b3b14dc5-4a5e-4ab0-81ba-6782e5a1f73b:/var/lib/docker/overlay2/b61781f329077fa54f2cd457f74312c7a36f23d336e1d81402b48ce9b4de2117/merged/run/docker.sock, flags: 0x5000: not a directory
+```
+
+[~/.actrc에 설정을 추가하면](https://github.com/nektos/act/issues/2239#issuecomment-1979819940) 해결된다고 해서, 넣었더니 잘 된다:
+
+```
+--container-daemon-socket -
+```
+
+Docker 소켓을 job 컨테이너에 마운트하지 않도록 비활성화한다고.
+
 ## python shell tools
 
 몇몇 파이썬 모듈은 CLI로 제공한다.
