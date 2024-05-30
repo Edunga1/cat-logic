@@ -2,6 +2,7 @@ export default {
   colors: {
     foreground: "#333333",
     highlight: "#512DA8",
+    lowlight: "#BDBDBD",
     link: "#0D47A1",
     linkVisited: "#B4CFF9",
     accent: "#C9C9C9",

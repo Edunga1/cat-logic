@@ -15,7 +15,11 @@ export default function BlogPostTemplate(
     tableOfContents,
     html,
     fields,
-  } = data.markdownRemark ?? {}
+  } = data.file?.childMarkdownRemark ?? {}
+  const {
+    gitLogLatestHash,
+    gitLogLatestDate,
+  } = data.file?.fields ?? {}
   const docTitle = extractDocTitle(data)
   const relatedDocs = extractRelatedDocs(data)
   const relatedLinksToc = relatedDocs.map(doc => {
@@ -30,25 +34,33 @@ export default function BlogPostTemplate(
       relatedLinksToc={relatedLinksToc}
       wikiContents={removeFirstHeading(html || "")}
       slug={fields?.slug || ""}
+      lastModified={gitLogLatestDate ? new Date(gitLogLatestDate) : undefined}
+      lastCommitHash={gitLogLatestHash || undefined}
     />
   )
 }
 
 export const pageQuery = graphql`
   query WikiDetail($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      headings(depth: h1) {
-        value
-      }
+    file(childMarkdownRemark: {id: {eq: $id}}) {
       fields {
-        slug
-        relatedDocs {
-          slug
-          similarity
-        }
+        gitLogLatestHash
+        gitLogLatestDate
       }
-      tableOfContents
-      html
+      childMarkdownRemark {
+        headings(depth: h1) {
+          value
+        }
+        fields {
+          slug
+          relatedDocs {
+            slug
+            similarity
+          }
+        }
+        tableOfContents
+        html
+      }
     }
   }
 `
@@ -63,12 +75,12 @@ export function Head(
 }
 
 function extractDocTitle(data: Queries.WikiDetailQuery) {
-  const { headings } = data.markdownRemark ?? {}
+  const { headings } = data.file?.childMarkdownRemark ?? {}
   return headings?.[0]?.value || undefined
 }
 
 function extractRelatedDocs(data: Queries.WikiDetailQuery) {
-  const relatedDocs = data.markdownRemark?.fields?.relatedDocs || []
+  const relatedDocs = data.file?.childMarkdownRemark?.fields?.relatedDocs || []
   return relatedDocs
     .filter(x => x.similarity < 1)
     .sort((a, b) => b.similarity - a.similarity)
