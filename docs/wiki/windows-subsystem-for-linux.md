@@ -105,7 +105,7 @@ https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021
 
 1. `/etc/wsl.conf` 파일을 만들고 아래 내용을 추가한다.
 
-```conf
+```
 [network]
 generateResolvConf = false
 ```
@@ -113,7 +113,7 @@ generateResolvConf = false
 2. window에서 `wsl --shutdown` 실행하고 다시 wsl을 실행한다.
 3. `/etc/resolv.conf` 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.
 
-```conf
+```
 nameserver 8.8.8.8
 ```
 

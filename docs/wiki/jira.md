@@ -22,7 +22,7 @@ Issue & Project Tracking Software
 
 나의 `Work In Progress` 필터는 다음과 같다.
 
-```jql
+```
 assignee = currentUser() AND (status not in (Backlog, Done, RELEASED) OR (status in (Done, RELEASED) AND updated > -1w)) ORDER BY status DESC, due ASC, created DESC
 ```
 

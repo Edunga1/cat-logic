@@ -29,7 +29,7 @@ https://learn.microsoft.com/en-us/windows/powertoys/
 
 다음은 2개의 프로그램을 실행하는 예지다:
 
-```bat
+```
 start https://poe.game.daum.net/
 start "" "C:\Program Files\poe-overlay\poe-overlay.exe"
 ```
