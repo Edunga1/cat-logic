@@ -77,7 +77,7 @@ Wiki: http://wiki.easyuo.com/index.php?title=Main_Page
 
 GUI를 전용으로 개발하기 위한 별도 프로그램이 있다.
 
-```easyuo
+```
 finditem ENK C_ , #BACKPACKID
 if #FINDSTACK < %cost
    gosub GetMetal
@@ -125,7 +125,7 @@ https://www.uosteam.com/
 그러면 게임 클라이언트는 다이얼로그를 보여줄 필요 없이, 클릭한 내용을 서버로 전송한다.
 그래서 이 프로그램으로 캐릭터를 조작하면 프로그램을 사용하지 않는 사용자보다 훨씬 유리한 상황이 된다.
 
-```uos
+```
 usetype '0xf6c' 'any' 'ground' '2'
 waitforgump 'any' 15000
 replygump 0xdd8b146a 1
