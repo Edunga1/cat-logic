@@ -4,9 +4,9 @@ import Toc from "../../components/molecules/Toc"
 import WikiContent from "../../components/molecules/WikiContent"
 import device from "../../constants/device"
 import theme from "../../constants/theme"
-import Link from "../atoms/Link"
 import Comments from "../molecules/Comments"
 import HomeLink from "../molecules/HomeLink"
+import GitHubCommitLink from "../organisms/GitHubCommitLink"
 
 const Container = styled.div`
   display: grid;
@@ -61,15 +61,9 @@ const Title = styled.h1`
   color: ${theme.colors.foreground};
 `
 
-const ModificationContainer = styled.div`
+const TitleBottom = styled.div`
   display: flex;
   justify-content: flex-end;
-  gap: .5rem;
-`
-
-const LastModified = styled.p`
-  font-size: .7rem;
-  color: ${theme.colors.lowlight};
 `
 
 export default function Wiki(
@@ -81,6 +75,7 @@ export default function Wiki(
     slug,
     lastModified,
     lastCommitHash,
+    gitHubRepositoryUrl,
   }: {
     title?: string
     tableOfContents: string
@@ -89,6 +84,7 @@ export default function Wiki(
     slug: string
     lastModified?: Date
     lastCommitHash?: string
+    gitHubRepositoryUrl?: string
   },
 ) {
   const relatedItems = relatedLinksToc.map((item, index) => (
@@ -98,12 +94,12 @@ export default function Wiki(
     <RelatedLinksHeader>Related Links</RelatedLinksHeader>
     <RelatedLinks>{relatedItems}</RelatedLinks>
   </div>
-  // TODO: Separate to a component and add a link to the repository
-  const modifiedTime = lastModified
-    ? <LastModified>{lastModified.toLocaleString()}</LastModified>
-    : null
-  const commitHash = lastCommitHash
-    ? <LastModified>{lastCommitHash.substring(0, 6)}</LastModified>
+  const githubLink = lastModified
+    ? <GitHubCommitLink
+        lastModified={lastModified}
+        gitHubRepositoryUrl={gitHubRepositoryUrl}
+        hash={lastCommitHash}
+      />
     : null
 
   return (
@@ -116,9 +112,9 @@ export default function Wiki(
           <HomeLink slug={slug} />
           <Title>{title}</Title>
         </TitleContainer>
-        <ModificationContainer>{modifiedTime}{commitHash}</ModificationContainer>
+        <TitleBottom>{githubLink}</TitleBottom>
         <Toc contents={tableOfContents} />
-        {<WikiContent contents={wikiContents} />}
+        <WikiContent contents={wikiContents} />
         <Comments />
       </Main>
     </Container>

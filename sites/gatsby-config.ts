@@ -6,6 +6,8 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: "cat logic",
     siteUrl: process.env.GATSBY_SITE_URL || "https://edunga1.github.io/cat-logic",
+    // Unset to empty string otherwise GraphQL type generation will fail
+    gitHubRepositoryUrl: process.env.GITHUB_REPOSITORY_URL || "",
   },
   graphqlTypegen: true,
   plugins: [

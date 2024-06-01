@@ -26,6 +26,7 @@ export default function BlogPostTemplate(
     const link = doc.slug
     return <a key={link} href={`../${link}`} style={relatedLinkStyle}>{link}</a>
   })
+  const gitHubRepositoryUrl = data.site?.siteMetadata?.gitHubRepositoryUrl || undefined
 
   return (
     <Wiki
@@ -36,6 +37,7 @@ export default function BlogPostTemplate(
       slug={fields?.slug || ""}
       lastModified={gitLogLatestDate ? new Date(gitLogLatestDate) : undefined}
       lastCommitHash={gitLogLatestHash || undefined}
+      gitHubRepositoryUrl={gitHubRepositoryUrl}
     />
   )
 }
@@ -60,6 +62,11 @@ export const pageQuery = graphql`
         }
         tableOfContents
         html
+      }
+    }
+    site {
+      siteMetadata {
+        gitHubRepositoryUrl
       }
     }
   }
