@@ -25,9 +25,9 @@ https://learn.microsoft.com/en-us/windows/powertoys/
 
 ## Batch 파일
 
-`.bat` 파일을 만들어서 실행할 수 있다.
+윈도우에서 스크립트를 `.bat` 파일로 만들어서 실행할 수 있다.
 
-다음은 2개의 프로그램을 실행하는 예지다:
+다음은 2개의 프로그램을 시작하는 예제.
 
 ```
 start https://poe.game.daum.net/
@@ -36,7 +36,7 @@ start "" "C:\Program Files\poe-overlay\poe-overlay.exe"
 
 `start`는 프로그램을 실행하는 명령어인데,
 첫 번째 줄은 열린 웹 브라우저의 탭으로 `https://poe.game.daum.net/`를 연다.
-두 번재 줄은 2번째 인자의 프로그램을 실행한다.
+두 번째 줄은 2번째 인자의 프로그램을 실행한다. 첫 번째 인자는 창 제목이다.
 
 ## Install vs. Portable
 
