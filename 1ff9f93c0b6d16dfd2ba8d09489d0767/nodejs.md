@@ -111,6 +111,63 @@ express
 
 `node_modules`를 평탄하게 유지하지 않는다. 또한 `express` 폴더는 **심볼릭 링크**이다.
 
+## Test Runner
+
+v20.0.0부터 node.js에서 테스트 러너를 자체적으로 제공한다.
+v18.0.0, v16.17.0 부터 실험적 기능으로 추가되었다.
+
+https://nodejs.org/docs/latest/api/test.html
+
+사용 방법은 jest와 흡사하다.
+
+```javascript
+const test = require('node:test');
+const assert = require('assert');
+
+test('top level test', async (t) => {
+  await t.test('subtest 1', (t) => {
+    assert.strictEqual(1, 1);
+  });
+
+  await t.test('subtest 2', (t) => {
+    assert.strictEqual(2, 2);
+  });
+}); 
+```
+
+assert 라이브러리는 오래전부터 제공했었다.
+
+`describe()` - `it()` 스타일도 지원한다.
+
+```javascript
+const assert = require('assert');
+const { describe, it } = require('node:test');
+
+describe('A thing', () => {
+  it('should work', () => {
+    assert.strictEqual(1, 1);
+  });
+
+  it('should be ok', () => {
+    assert.strictEqual(2, 2);
+  });
+
+  describe('a nested thing', () => {
+    it('should work', () => {
+      assert.strictEqual(3, 3);
+    });
+  });
+});
+```
+
+Mocking 라이브러리도 제공한다고 하니 이제는 별도 라이브러리를 설치할 필요 없이 가능할 거 같다.
+
+---
+
+관련 문서
+
+[10 modern Node.js runtime features to start using in 2024](https://snyk.io/blog/10-modern-node-js-runtime-features/)
+
 ## NodeJS Test Tools
 
 지금은 [Jest](https://github.com/facebook/jest)를 사용하고 있다.
