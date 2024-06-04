@@ -168,6 +168,47 @@ Mocking 라이브러리도 제공한다고 하니 이제는 별도 라이브러�
 
 [10 modern Node.js runtime features to start using in 2024](https://snyk.io/blog/10-modern-node-js-runtime-features/)
 
+---
+
+gatsby 관련 플러그인을 jest에서 node.js 테스트 러너로 마이그레이션해 보았다.
+
+작업 커밋: https://github.com/Edunga1/gatsby-transformer-gitinfo/commit/ccdc7f4ec61e487db047678d32c0f65d85cacd03
+
+장점은 jest 의존성을 없앨 수 있었다는 점 하나 뿐인 듯.
+다른 테스트 도구의 인터페이스와 비슷해서 크게 손이 많이 가지는 않았다.
+다만 assertion 부분은 오래전부터 자체 제공했던 인터페이스를 유지하고 있어서, 모두 손봐야 했다.
+
+또한 jest가 제공하는 편리한 검증 함수에 비하면 node.js의 검증 도구는 협소하다.
+예를들어 두 Object가 다른 한 쪽의 부분 집합인지 확인하는 함수가 없어서, 항상 전체가 같은지 확인해야 한다.
+부분 비교를 하고 싶으면 직접 구현하거나, `lodash` 등 외부 라이브러리를 사용해야 하는데 테스트 때문에 추가해야 하는데 그러면 다른 테스트 도구를 사용하는 편이 낫겠다.
+
+또한 jest의 `expect.any(String)` 같은 matcher의 지원이 없어서 테스트 코드의 가독성이 떨어진다.
+
+이런 Jest 코드가 있으면:
+
+```javascript
+expect(createNodeField).toHaveBeenCalledWith({
+  node,
+  name: "gitLogLatestHash",
+  value: expect.any(String),
+})
+```
+
+아래와 같이 3개의 키를 가진 객체인지, 각 키의 값을 검증함으로써 같은 수준의 검증을 수행한다.
+테스트 코드가 장황해진다. 검증이 많아진다면 더욱 그렇다.
+
+```javascript
+assert.strictEqual(Object.keys(createNodeField.mock.calls[3].arguments[0]).length, 3)
+assert.strictEqual(node, node)
+assert.strictEqual(name, "gitLogLatestHash")
+assert.ok(typeof value === "string")
+```
+
+또다른 이슈라면, 위 프로젝트는 esm을 사용하고 있어서 `node` 명령어로 호출할 수 없다.
+`babel-node`를 통해서 실행해야 한다. `node -r @babel/register --test **/*.spec.js`로 실행한다.
+운영 코드를 `.mjs`로 작성하거나 commonjs 모듈로 전환하면 babel-node를 사용하지 않아도 되겠지만.
+babel을 사용하지 않는다면 `node --test **/*.spec.js`로 실행한다.
+
 ## NodeJS Test Tools
 
 지금은 [Jest](https://github.com/facebook/jest)를 사용하고 있다.
