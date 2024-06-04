@@ -937,7 +937,7 @@ ref. https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-58995
 
 2023-04-14
 
-vimwiki로 문서 수정할 때, `<cr>` *엔터를 꾹 누르고 있으면 점점 느려지는* 문제.
+vimwiki로 문서 수정할 때, `<cr>` *엔터를 꾹 누르고 있으면 점점 느려지는* 문제.\
 vimwiki가 키보드 엔터 시 함수 호출이 많다. 그래서 더욱 돋보이는 듯 하다.
 
 ```
@@ -970,7 +970,8 @@ colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. �
 
 2023-12-11
 
-처음에는 `vim-colors-solarized` 플러그인 문제인 줄 알았다.\
+`vim-colors-solarized` 플러그인 문제가 아니었다.
+
 최근에 treesitter 구문 강조를 위해서 `sonokai` colorscheme 플러그인을 설치했는데, 마찬가지로 느려지는 문제가 발생한다.
 
 2024-02-22
@@ -994,15 +995,12 @@ autocmd ColorScheme *
   \ autocmd BufWinLeave * call clearmatches()
 ```
 
-이 코드 이후에 `color <theme>`을 설정하면 느려지는 문제가 발생한다.
+이 코드는 줄 끝에 불필요한 공백을 찾아서 강조한다.
+내가 처음 vim을 접할 때 전임자의 vim 설정에서 가져온 건데 유용하게 사용하고 있는 거다.
+하지만 이 코드 이후에 `color <theme>`을 설정하면 느려지는 문제가 발생한다.
 
-코드는 내가 처음 vim을 접할 때 전임자가 만들어 놓은 vim 설정에서 가져온 것이다.
-아마 개선할 수 있을지도.
-
-colorscheme 명령어를 다른 곳으로 옮기는 것으로 해결했다.\
+colorscheme 명령을 전체 설정의 앞부분에서 실행하도록 위치를 옮겼다.\
 dotfiles 저장소에도 반영했다: https://github.com/Edunga1/dotfiles/commit/bc4efcceab5695b671c68d14912f1d85e7b0e048
-
-너무 후련하다.
 
 ### Ubuntu에 설치한 vim이 시작 시 `.vimrc`에서 많은 에러가 발생하는 현상
 
