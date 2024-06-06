@@ -209,10 +209,10 @@ assert.ok(typeof value === "string")
 운영 코드를 `.mjs`로 작성하거나 commonjs 모듈로 전환하면 babel-node를 사용하지 않아도 되겠지만.
 babel을 사용하지 않는다면 `node --test **/*.spec.js`로 실행한다.
 
-## NodeJS Test Tools
+## Third-party testing libraries
 
-지금은 [Jest](https://github.com/facebook/jest)를 사용하고 있다.
-이거 하나면 대부분 가능하더라.
+mocha, chai 등의 라이브러리 조합 대신에 [Jest](https://github.com/facebook/jest)가 인기있다.\
+Jest는 통합 테스트 프레임워크이다. 테스트에 필요한 모든 도구를 제공하므로 별도 라이브러리를 추가 설치할 필요가 없어졌다.
 
 ### Mocha - Framework
 
@@ -265,11 +265,54 @@ Mocha와 함께 실행 : `istanbul cover _mocha` (`_mocha`인 이유는 Mocha의
 
 별도의 코드는 없다.
 
-## Proxyquire
+### Sinon.JS - Mocking Library
+
+자바스크립트를 위한 테스트 spies, stubs, mocks.
+
+---
+
+`new Date()` 조작하기
+
+```javascript
+var clock = sinon.useFakeTimers(new Date('1800-01-01 00:00:00'));
+console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
+clock.restore();
+console.log(new Date()); // now
+```
+
+`useFakeTimers()`로부터 반환되는 객체의 `restore()`를 호출하여 조작된 시간을 복구할 수 있다.
+
+주의할 점은 복구하지 않고 다시 조작하는 경우.
+
+```javascript
+var clock1 = sinon.useFakeTimers(new Date('1800-01-01 00:00:00'));
+console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
+var clock2 = sinon.useFakeTimers(new Date('2000-12-01 00:00:00'));
+console.log(new Date()); // Fri Dec 01 2000 00:00:00 GMT+0900 (KST)
+clock2.restore();
+console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
+clock1.restore();
+console.log(new Date()); // now
+```
+
+나중에 조작한 시간을 복구해도 이전에 조작한 시간이 남아 있다.
+
+`clock1`을 바로 복구해도 돌아올 수 있다.
+
+```javascript
+var clock1 = sinon.useFakeTimers(new Date('1800-01-01 00:00:00'));
+console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
+var clock2 = sinon.useFakeTimers(new Date('2000-12-01 00:00:00'));
+console.log(new Date()); // Fri Dec 01 2000 00:00:00 GMT+0900 (KST)
+clock1.restore();
+console.log(new Date()); // now
+```
+
+### Proxyquire
 
 https://github.com/thlorenz/proxyquire
 
-### proxyquire 모듈 로드 순서 문제
+#### proxyquire 모듈 로드 순서 문제
 
 ```bash
 src/
@@ -335,7 +378,7 @@ const mockApp = proxyquire('../src/app', {
 
 의존의 의존을 모두 명시한다.
 
-## Proxyquire vs. rewire
+#### Proxyquire vs. rewire
 
 테스트 할 때 Dependency Injection 하는데 사용하는 도구 2가지 비교.
 
@@ -347,9 +390,9 @@ proxyquire: https://github.com/thlorenz/proxyquire
 
 proxyquire는 의존 모듈을 덮어 쓴다고 설명하고 있다. *overriding dependencies*
 
-### 어떤 차이가 있을까?
+##### 차이점
 
-#### rewire: 테스트 대상 내에 선언한 변수를 가로채어 바꾼다.
+rewire: 테스트 대상 내에 선언한 변수를 가로채어 바꾼다.
 
 ```javascript
 // app.js
@@ -367,7 +410,7 @@ app.__set__('foo', 2);
 app();  // 2
 ```
 
-#### proxyquire: 테스트 대상이 `require`하는 모듈을 바꿔서 보내준다.
+proxyquire: 테스트 대상이 `require`하는 모듈을 바꿔서 보내준다.
 
 ```javascript
 // bar.js
@@ -391,51 +434,10 @@ const app = proxyquire('./app', {
 app();  // 2
 ```
 
-### rewire 제한사항
+##### rewire 제한사항
 
 rewire는 `const`로 선언된 변수는 변경할 수 없었다. 따라서 의존 모듈을 `const`에 할당하면 stub 할 수 없다.
 이 문제 때문에 일단 proxyquire를 사용하고 있다.
-
-## Sinon.JS
-
-자바스크립트를 위한 테스트 spies, stubs, mocks.
-
-### `new Date()` 조작하기
-
-```javascript
-var clock = sinon.useFakeTimers(new Date('1800-01-01 00:00:00'));
-console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
-clock.restore();
-console.log(new Date()); // now
-```
-
-`useFakeTimers()`로부터 반환되는 객체의 `restore()`를 호출하여 조작된 시간을 복구할 수 있다.
-
-주의할 점은 복구하지 않고 다시 조작하는 경우.
-
-```javascript
-var clock1 = sinon.useFakeTimers(new Date('1800-01-01 00:00:00'));
-console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
-var clock2 = sinon.useFakeTimers(new Date('2000-12-01 00:00:00'));
-console.log(new Date()); // Fri Dec 01 2000 00:00:00 GMT+0900 (KST)
-clock2.restore();
-console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
-clock1.restore();
-console.log(new Date()); // now
-```
-
-나중에 조작한 시간을 복구해도 이전에 조작한 시간이 남아 있다.
-
-`clock1`을 바로 복구해도 돌아올 수 있다.
-
-```javascript
-var clock1 = sinon.useFakeTimers(new Date('1800-01-01 00:00:00'));
-console.log(new Date()); // Wed Jan 01 1800 00:00:00 GMT+0900 (KST)
-var clock2 = sinon.useFakeTimers(new Date('2000-12-01 00:00:00'));
-console.log(new Date()); // Fri Dec 01 2000 00:00:00 GMT+0900 (KST)
-clock1.restore();
-console.log(new Date()); // now
-```
 
 ## NodeJS data validation
 
