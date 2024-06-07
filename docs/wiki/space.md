@@ -32,9 +32,7 @@ Super Heavy에 달린 엔진은 "Raptor"라는 이름으로, 33개가 있다.
 > 
 > Super Heavy will be powered by 33 Raptor engines
 
-## 뉴스
-
-### 스타쉽 3차 발사
+### 스타쉽 3차 발사 시험
 
 2024년 3월 14일 오후 9시 경. 스타쉽 3차 발사가 이루어졌고, 우주로 올라갔다.
 
