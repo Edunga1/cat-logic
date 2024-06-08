@@ -71,7 +71,33 @@ Raptor 엔진이 꺼지고 Starship 엔진이 점화되는 모습이 너무 멋�
 [유튜브 안될과학](https://www.youtube.com/watch?v=K2kLVm_QOIg)에서 4차 시험에 대한 리뷰를 했다.
 아쉽게도 나는 생방송을 보지 못했다.
 
-특징
+스페이스X의 트위터에서 4차 시험 영상을 볼 수 있다.\
+https://x.com/SpaceX/status/1798689697184764071
 
 - Raptor 엔진 33개 중 1개가 발사 직후에 꺼졌다.
+- 분리된 Raptor 엔진은 정상적으로 바다에 착수했다.
 - Super Heavy에 장착된 핫 스테이징 어댑터를 분리했다. 이전 시험에서는 분리하지 않았다. 안될과학에서는 이 무게만 10톤이라고 한다.
+- Starship은 인도양으로 재진입하는 과정에서, 꼬리 날개가 열과 압력으로 인해 뼈대가 드러나는 모습이 보였다. 하지만 떨어지지 않았다.
+- 꼬리 날개의 영향으로 재진입 각도가 제대로 조절되지 않았다. 안될과학에서는 이런 상황에서도 자세를 조절하는 프로그램이 세팅되어 있다고 한다.
+- 스페이스X에서는 Starship을 하루에 한 대씩 생상하는 것이 목표라고 한다.
+
+---
+
+![starship fourth launch - raptor engine](./res/starship-fourth-launch-raptor-engine.png)
+
+발사 직후 Raptor 엔진이 하나 꺼진 모습. 아래 그래픽과 영상에서 모두 확인할 수 있다.
+
+![starship fourth launch - landing burn](./res/starship-fourth-launch-landing-burn.png)
+
+착수하는 Raptor engine 모습. 3개의 엔진을 점화하여 Landing Burn을 통해 역 추력을 사용한다.
+
+![starship fourth launch - burning tail wing](./res/starship-fourth-launch-starship-burning-wing.png)
+
+재진입 중에 꼬리 날개가 불타는 모습. 뼈대가 드러났다.
+영상에서는 사람들이 탄식하는 소리가 들린다 ㅎ
+
+![starship fourth launch - starship landing 1](./res/starship-fourth-launch-starship-landing-1.png)
+
+![starship fourth launch - starship landing 2](./res/starship-fourth-launch-starship-landing-2.png)
+
+지구에 착수하기 위해 각도를 변경하는 모습. 고도가 높을 때는 수평이지만, 0km 지점에 가까워지면서 수직으로 변한다.
