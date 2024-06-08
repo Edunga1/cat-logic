@@ -9,7 +9,7 @@ created: 2024-03-14
 
 > 출처: https://imgur.com/gallery/4fPrpX8
 
-이 이미지처럼 자유롭게 흘러가고 싶다.
+우주를 유유히 떠다니고 싶다.
 
 ## SpaceX 스타쉽(Starship)
 
