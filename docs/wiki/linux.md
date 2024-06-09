@@ -12,7 +12,7 @@ pid 1번으로 실행되는 프로세스. 0번이 있기 때문에 2번째로 �
 
 소스코드는 깃허브에 공개되어 있다: https://github.com/systemd/systemd
 
-저장소에서 인상적인 점은 [ARCHITECTURE.md](https://github.com/systemd/systemd/blob/main/docs/ARCHITECTURE.md) 파일이다.
+저장소에서 인상적인 점은 [ARCHITECTURE.md](https://github.com/systemd/systemd/blob/main/docs/ARCHITECTURE.md) 파일의 내용이다.
 이 파일은 폴더 구조와 테스트 방법 등 처음 프로젝트를 접하는 사람을 위한 내용을 담고 있다. linux의 핵심적인 프로세스의 저장소이고, 설명을 잘하고 있어서 본보기로 삼아서 볼만하다고 생각한다.
 
 **전체 레이아웃**
@@ -34,7 +34,7 @@ pid 1번으로 실행되는 프로세스. 0번이 있기 때문에 2번째로 �
 ```
 
 * `src/` 폴더 내에 모든 소스코드가 위치한다.
-* 많은 폴더가 있지만 크게 2분류인데, 각 컴포넌트에서 공유되는 4개의 폴더와 그 외 폴더로 나눌 수 있다. 4개 폴더는 공유 코드라고 부른다:
+* 많은 폴더가 있지만 크게 2분류인데, 각 컴포넌트에서 공유되는 4개의 폴더와 그 외 폴더로 나눌 수 있다. 4개 폴더는 공유 코드라 부른다.
   * `src/basic/`와 `src/fundamental/`의 코드는 다른 모든 코드로부터 사용되는 초석인 코드이다.
   * `src/libsystemd/`는 `libsystemd.so` 공유 라이브러리를 구현하는 코드인데, 위 코드를 사용한다.
   * `src/shared/`는 공유 라이브러리로 expose되는 컴포넌트들에서 사용되는 유틸리티와 코드를 제공한다.
