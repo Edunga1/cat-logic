@@ -524,7 +524,7 @@ while read line; do
 
     curl -s -X GET --location "http://API_HOST_ASIS/some/api/path/${param1}" \
     -H "Authorization: Bearer ${token}" \
-    
+
     | python -m json.tool \
     > diffc
 
