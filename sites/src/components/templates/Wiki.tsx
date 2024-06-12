@@ -7,16 +7,7 @@ import theme from "../../constants/theme"
 import Comments from "../molecules/Comments"
 import HomeLink from "../molecules/HomeLink"
 import GitHubCommitLink from "../organisms/GitHubCommitLink"
-
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  width: fit-content;
-
-  @media (${device.larger}) {
-    grid-template-columns: minmax(200px, 1fr) minmax(500px, 1000px);
-  }
-`
+import PageLayout from "./layout/PageLayout"
 
 const Side = styled.div`
   display: none;
@@ -103,10 +94,8 @@ export default function Wiki(
     : null
 
   return (
-    <Container>
-      <Side>
-        {relatedLinksToc.length > 0 ? containerRelatedLinks : null}
-      </Side>
+    <PageLayout>
+      {relatedLinksToc.length > 0 ? containerRelatedLinks : null}
       <Main>
         <TitleContainer>
           <HomeLink slug={slug} />
@@ -117,6 +106,6 @@ export default function Wiki(
         <WikiContent contents={wikiContents} />
         <Comments />
       </Main>
-    </Container>
+    </PageLayout>
   )
 }
