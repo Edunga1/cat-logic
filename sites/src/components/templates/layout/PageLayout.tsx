@@ -16,13 +16,12 @@ const Container = styled.div`
 
   @media (${device.larger}) {
     padding: 1rem 1rem 3rem 1rem;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
   }
 `
 
 const Main = styled.div`
   width: 100%;
-  max-width: 40rem;
   padding: 0 1rem;
   display: grid;
 `
@@ -44,7 +43,7 @@ export default function PageLayout(
     : [children, null]
   return (
     <Container>
-      <div />
+      <Side />
       <Main>{main}</Main>
       <Side>{side}</Side>
     </Container>
