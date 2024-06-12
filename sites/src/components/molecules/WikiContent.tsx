@@ -6,6 +6,7 @@ const Container = styled.div`
   overflow: auto;
   overflow-wrap: break-word;
   color: ${theme.colors.foreground};
+  font-size: .8rem;
 
   a {
     text-decoration: none;
