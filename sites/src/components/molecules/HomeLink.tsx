@@ -4,7 +4,7 @@ import theme from "../../constants/theme"
 import Link from "../atoms/Link"
 
 const Container = styled.div`
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: right;
 
   a {

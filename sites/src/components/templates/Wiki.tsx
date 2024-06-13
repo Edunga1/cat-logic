@@ -2,20 +2,11 @@ import * as React from "react"
 import styled from "styled-components"
 import Toc from "../../components/molecules/Toc"
 import WikiContent from "../../components/molecules/WikiContent"
-import device from "../../constants/device"
 import theme from "../../constants/theme"
 import Comments from "../molecules/Comments"
 import HomeLink from "../molecules/HomeLink"
 import GitHubCommitLink from "../organisms/GitHubCommitLink"
 import PageLayout from "./layout/PageLayout"
-
-const Side = styled.div`
-  display: none;
-
-  @media (${device.larger}) {
-    display: block;
-  }
-`
 
 const Main = styled.div`
   padding: 0 1rem;
@@ -47,7 +38,7 @@ const TitleContainer = styled.div`
 
 const Title = styled.h1`
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: ${theme.colors.foreground};
 `

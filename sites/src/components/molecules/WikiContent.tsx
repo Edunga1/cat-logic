@@ -8,8 +8,9 @@ const Container = styled.div`
   color: ${theme.colors.foreground};
   font-size: .8rem;
 
+  // link style
   a {
-    text-decoration: none;
+    text-decoration-style: dotted;
   }
 
   // inline code block style
