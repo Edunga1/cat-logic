@@ -211,10 +211,13 @@ babel을 사용하지 않는다면 `node --test **/*.spec.js`로 실행한다.
 
 ## Third-party testing libraries
 
-mocha, chai 등의 라이브러리 조합 대신에 [Jest](https://github.com/facebook/jest)가 인기있다.\
-Jest는 통합 테스트 프레임워크이다. 테스트에 필요한 모든 도구를 제공하므로 별도 라이브러리를 추가 설치할 필요가 없어졌다.
+테스트 프레임워크인 mocha를 기반에 검증 라이브러리로 chai를 채택하는 라이브러리 조합 방식 대신,
+[Jest](https://github.com/facebook/jest)를 사용하면 모든 기능을 한 번에 제공받을 수 있다.
+다른 테스트 라이브러리 의존을 추가할 필요가 없다는 장점이 있다.
 
-### Mocha - Framework
+아래 도구들은 Jest 이전에 주로 사용하던 도구들이다.
+
+### Mocha - Test Framework
 
 테스트 구조를 제공한다.
 
@@ -224,18 +227,17 @@ Jest는 통합 테스트 프레임워크이다. 테스트에 필요한 모든 �
 
 ```javascript
 describe('어떤 테스트를 할 것인지 대략적인 설명', function () {
+  beforeEach(function () {
+    // 매 it() 마다 실행 할 코드
+  });
 
-    beforeEach(function () {
-        // 매 it() 마다 실행 할 코드
-    });
-
-    it('테스트 단위 별 설명', function () {
-        // 여기에 Assertion 코드를 둔다.
-    });
+  it('테스트 단위 별 설명', function () {
+    // 여기에 Assertion 코드를 둔다.
+  });
 });
 ```
 
-### Chai - Library
+### Chai - Assertion Library
 
 Assertion 라이브러리. 값 비교에 사용한다.
 
@@ -253,23 +255,26 @@ describe('어떤 테스트를 할 것인지 대략적인 설명', function () {
 });
 ```
 
-### Istanbul - Coverage Tool
+### Istanbul - Test Coverage Tool
 
-코드 커버리지. 내 **테스트 코드**가 **모듈의 어디까지 테스트하는지 측정** 하는데 사용한다.
+코드 커버리지 도구. 내 **테스트 코드**가 **모듈의 어디까지 테스트하는지 측정**하는데 사용한다.
 
-테스트 시 `coverage/` 폴더가 생성되어 리포트 페이지(html)를 생성한다. 여기서 실제 모듈이 얼마나 호출 되었는지, 어디가 문맥상 접근하지 않았는지 알 수 있다.
+https://github.com/istanbuljs/nyc
 
-설치 : `npm install istanbul --save-dev`
+기존 istanbul은 deprecated 되고, nyc로 새로운 프로젝트로 이전되었다. 아래 내용은 istanbul을 기준의 내용이다.
 
-Mocha와 함께 실행 : `istanbul cover _mocha` (`_mocha`인 이유는 Mocha의 프로세스 이름을 이용하기 때문)
+---
 
-별도의 코드는 없다.
+설치: `npm install istanbul --save-dev`
+
+테스트 시 `coverage/` 폴더가 생성되어 리포트 페이지(html)를 생성한다. 페이지를 통해서 실제 모듈이 얼마나 호출 되었는지, 어디까지 테스트 되었는지 확인한다.
+
+Mocha와 함께 실행: `istanbul cover _mocha` (`_mocha`인 이유는 Mocha의 프로세스 이름을 이용하기 때문)
 
 ### Sinon.JS - Mocking Library
 
 자바스크립트를 위한 테스트 spies, stubs, mocks.
-
----
+가짜 객체를 만들어서 기존 객체를 대체하여 테스트에 맞게 조작하는 도구이다.
 
 `new Date()` 조작하기
 
@@ -308,7 +313,9 @@ clock1.restore();
 console.log(new Date()); // now
 ```
 
-### Proxyquire
+### Proxyquire - Stubbing Module Dependency Library
+
+모듈 의존성을 원하는 객체로 대체하여 임포트하는 라이브러리.
 
 https://github.com/thlorenz/proxyquire
 
