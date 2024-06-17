@@ -261,6 +261,8 @@ mod tests {
 
 ## Articles and References
 
+### Rust로 게임 개발 3년 후에 떠나며
+
 [Rust로 게임 개발 3년 후에 떠나며](https://news.hada.io/topic?id=14521)
 
 Rust의 아쉬운 점을 서술한 글이다.
@@ -292,7 +294,7 @@ Rust의 코드는 Borrow 수정으로 코드의 너무 많은 부분이 변경�
 대부분 암시적인 python, javascript과 달리 Rust는 대부분 명시해야 한다. 그래서 장황한 코드를 만드는 것이 아닌가 싶다.
 하지만 안정성을 위해서 설계된 것이니 공감은 한다.
 
----
+### 파이썬 프로그래머를 위한 러스트
 
 [파이썬 프로그래머를 위한 러스트](https://indosaram.github.io/rust-python-book/)
 
@@ -301,3 +303,40 @@ Rust의 코드는 Borrow 수정으로 코드의 너무 많은 부분이 변경�
 환경 구성부터 시작한다. Bottom-up 방식으로 설명한다.
 나는 Top-down 방식으로 Rust를 시작해서 고통스러운 부분이 있었다.
 Rust는 Bottom-up 방식으로 배우는 편이 좋은 거 같다.
+
+### 인기 러스트 웹 프레임워크 5종 "내게 맞는 것은 무엇일까?"
+
+ITWorld의 [인기 러스트 웹 프레임워크 5종 "내게 맞는 것은 무엇일까?"](https://www.itworld.co.kr/news/340785) 글은 Rust 웹 프레임워크를 소개한다.
+
+[actix-web](https://github.com/actix/actix-web)은 가장 인기있는 웹 프레임워크라고 한다.
+
+```toml
+[dependencies]
+actix-web = "4"
+```
+
+```rust
+use actix_web::{get, web, App, HttpServer, Responder};
+
+#[get("/hello/{name}")]
+async fn greet(name: web::Path<String>) -> impl Responder {
+    format!("Hello {name}!")
+}
+
+#[actix_web::main] // or #[tokio::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| {
+        App::new().service(greet)
+    })
+    .bind(("127.0.0.1", 8080))?
+    .run()
+    .await
+}
+```
+
+attribute로 path와 method를 지정하는 모습이다.
+
+이외에도 [Rocket](https://github.com/rwf2/Rocket), [warp](https://github.com/seanmonstar/warp), [axum](https://github.com/tokio-rs/axum), [poem](https://github.com/poem-web/poem)를 소개한다.
+
+actix-web, rocket, axum의 GitHub Star가 10,000개 이상으로 사용해 볼만해 보인다.
+axum은 tokio 조직에서 관리하고 있다. tokio는 비동기 라이브러리로 알려진 조직이다.
