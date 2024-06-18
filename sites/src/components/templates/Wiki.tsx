@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Toc from "../../components/molecules/Toc"
 import WikiContent from "../../components/molecules/WikiContent"
 import theme from "../../constants/theme"
+import Link from "../atoms/Link"
 import Comments from "../molecules/Comments"
 import HomeLink from "../molecules/HomeLink"
 import GitHubCommitLink from "../organisms/GitHubCommitLink"
@@ -90,7 +91,7 @@ export default function Wiki(
       <Main>
         <TitleContainer>
           <HomeLink slug={slug} />
-          <Title>{title}</Title>
+          <Link href="."><Title>{title}</Title></Link>
         </TitleContainer>
         <TitleBottom>{githubLink}</TitleBottom>
         <Toc contents={tableOfContents} />
