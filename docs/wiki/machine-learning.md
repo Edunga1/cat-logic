@@ -430,11 +430,16 @@ quickstart: https://beta.openai.com/docs/quickstart
 
 #### Copilot CLI
 
-https://githubnext.com/projects/copilot-cli/
-
 shell 명령어를 작성하는데 도움을 주는 도구.
 
-2023-03-29 기준waitlit에 등록하면 사용할 수 있다.
+https://githubnext.com/projects/copilot-cli/
+
+2023-03-29 기준 대기자 명단에 등록해야 사용할 수 있었으나 정식 릴리즈 되어 이제 누구나 사용할 수 있다.
+
+copilot cli는 2개의 방식으로 제공한다. 
+다른 하나는 GitHub Cli의 플러그인으로 제공하는 것인데, 다음 문단에서 설명한다.
+
+---
 
 사용 예시:
 
@@ -468,6 +473,58 @@ copilot 만큼의 성능은 나오지 않는 거 같다. 프롬프트를 추가�
 비슷한 프로그램으로는 [tldr](https://github.com/tldr-pages/tldr)이 있다.
 다만 이건 메뉴얼을 좀 더 보기쉽게 커뮤니티 차원에서 치트시트를 만드는 것이다보니
 내 문맥에 따른 명령어를 추천해주는 것은 아니다.
+
+---
+
+다른 방식으로는 GitHub Cli의 플러그인이다. 따라서 `gh` 명령어를 통해서 사용한다.
+
+https://docs.github.com/en/copilot/github-copilot-in-the-cli/using-github-copilot-in-the-cli
+
+2개 기능을 제공하는데 명령어 설명하는 `explain`과 명령어를 추천해주는 `suggest`이다.
+
+다음은 `explain`의 사용법.
+
+```bash
+$ gh copilot explain "wget -q0- http://ollama:11434/api/health"
+
+Welcome to GitHub Copilot in the CLI!
+version 0.5.3-beta (2023-11-09)
+
+I'm powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve.
+
+Explanation:
+
+  • wget is used to download files from the web.
+    • -q0- specifies that we want a quiet output and the downloaded content should be printed to the terminal.
+    • http://ollama:11434/api/health is the URL from which we want to download the content.
+```
+
+`suggest`는 명령어를 추천해준다.
+
+```bash
+$ gh copilot suggest "Download a png file from a URL."
+
+Welcome to GitHub Copilot in the CLI!
+version 0.5.3-beta (2023-11-09)
+
+I'm powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve.
+
+? What kind of command can I help you with?
+> generic shell command
+
+Suggestion:
+
+  curl -O <URL>
+
+? Select an option  [Use arrows to move, type to filter]
+  Copy command to clipboard
+  Explain command
+  Revise command
+  Rate response
+> Exit
+```
+
+명령어 유형과 명령어를 어떻게 할 것인지 총 2번의 인터랙션으로 사용성은 별로.
 
 #### Copilot Chat
 
