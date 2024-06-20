@@ -5,7 +5,7 @@ created: 2023-01-03
 
 AWS 관련
 
-## `awscli`
+## awscli
 
 linux, macos는 `brew install awscli`로 설치하자.
 `pip install awscli`도 가능하지만, python 가상 환경을 사용하면 관리하기 번거롭다.
@@ -76,18 +76,19 @@ aws iam list-access-keys
 
 ## LocalStack
 
-https://github.com/localstack/localstack
-
 로컬 환경에서 AWS 클라우드 스택을 구축하는 도구이다.
 
-클라우드 기능을 사용하면 의존 때문에 개발 환경을 구축하기 쉽지 않다.
+https://github.com/localstack/localstack
+
+클라우드 기능을 사용하면 로컬 개발 환경을 구축하기 쉽지 않다.
 서비스에 가입하거나 비용을 지불하기엔 개발하기 너무 가혹하다.
 
-LocalStack은 AWS 기능 대부분을 제공한다. https://docs.localstack.cloud/references/coverage/ 여기에서 어떤 기능을 커버하는지 확인할 수 있는데, 왠만한 서비스는 다 있는 것으로 보인다.
+LocalStack은 AWS 기능 대부분을 구현한다.
+https://docs.localstack.cloud/references/coverage/ 여기에서 어떤 기능을 커버하는지 확인할 수 있는데, 왠만한 서비스는 다 있는 것으로 보인다.
 
-도커로 실행하면 더 쉽다. 저장소의 [docker-compose.yml](https://github.com/localstack/localstack/blob/master/docker-compose.yml) 확인하고 그대로 사용해도 된다.
+Docker로 실행하면 더 쉽다. LocalStack 저장소의 [docker-compose.yml](https://github.com/localstack/localstack/blob/master/docker-compose.yml) 그대로 사용해도 된다.
 
-Kinesis를 사용하기 위해서 다음과 같이 사용하고 있다:
+예를들어 Kinesis를 사용하기 위해서 다음과 같이 구성할 수 있다:
 
 ```yml
 version: "3.8"
@@ -107,19 +108,23 @@ services:
       - "./kinesis-my-stream.sh:/etc/localstack/init/ready.d/kinesis-my-stream.sh"
 ```
 
-다른 점은 볼륨의 마지막 부분인데, hook을 통해서 스트림을 생성하도록 했다:
+공식 compose 파일과 다른 점은 볼륨의 마지막 부분인데, hook을 통해서 스트림을 생성하도록 했다.
 
 ```bash
-##!/bin/bash
+#!/bin/bash
 
 aws --endpoint-url=http://localhost:4566 kinesis create-stream --stream-name my-event-dev --shard-count 1 --region ap-northeast-2
 aws --endpoint-url=http://localhost:4566 kinesis list-streams --region ap-northeast-2
 ```
 
+hook은 localstack가 제공하는 라이프 사이클에 따라 실행되는 이벤트다.
+
+`ready.d` 디렉토리는 LocalStack이 준비되어 요청을 받을 수 있는 상태가 되었을 때 실행되는 READY 단계의 스크립트를 모아놓는다.
+
 hook에 대해선 다음 문서에서 설명한다:\
 https://docs.localstack.cloud/references/init-hooks/
 
-위 예시에서 보듯이 `aws` 명령어가 LocalStack과 잘 호환된다.
+hook 스크립트를 보면 알 수 있듯이 `aws` 명령어가 LocalStack과 잘 호환된다.
 `--endpoint-url`을 통해서 LocalStack와 통신한다.
 `awslocal` 명령어도 제공하는데, endpoint를 명시하지 않아도 된다.
 
@@ -139,7 +144,7 @@ AWS_ACCESS_KEY_ID = test
 AWS_SECRET_ACCESS_KEY = test
 ```
 
-검증은 localstack이 넘길테니 임의로 넣어두면 클라이언트 단에서 credentials 존재 여부 정도만 확인하니 괜찮다.
+검증은 localstack이 넘길테니 임의로 넣어두면 클라이언트 단에서는 credentials 존재 여부 정도만 확인하니 어떤 값을 넣어도 무방하다.
 
 ## Kinesis
 
