@@ -15,7 +15,8 @@ GPT-4는 너무 비싸더라. 한글은 쿼리하기 위해서 토큰화하면 �
 
 ### Phidata
 
-phidata는 function call을 통한 AI Assistant를 만드는 toolkit이다.
+phidata는 AI Assistant를 만드는 toolkit이다.
+특히 function calling을 추가할 수 있어서, 더 똑똑한 assistant를 만들 수 있다.
 
 https://github.com/phidatahq/phidata
 
