@@ -2,4 +2,4 @@
 .DS_Store
 
 # Windows
-*.Zone.Identifier
+*:Zone.Identifier
