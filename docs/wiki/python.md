@@ -480,6 +480,18 @@ poetry install
 - `poetry env remove 3.7`
 - `poetry env remove test-O3eWbxRl-py3.7` (가상 환경 전체 이름이다.)
 
+---
+
+Dockerize 한다면, 이 가상환경은 불필요하다.
+`poetry install`로 의존성 설치하면 가상 환경에 설치하기 때문에, docker 컨테이너에서 `pip list`로 의존성을 확인하면, `poetry` 의존성만 설치된 것을 확인할 수 있다.
+이를 피하기 위해서 `poetry config virtualenvs.create false`로 가상 환경을 생성하지 않도록 하자.
+
+```Dockerfile
+RUN pip install poetry
+RUN poetry config virtualenvs.create false
+RUN poetry install --only main --no-root --no-directory
+```
+
 ### pipenv
 
 https://github.com/pypa/pipenv
