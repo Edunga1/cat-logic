@@ -506,6 +506,9 @@ link: https://packaging.python.org/guides/tool-recommendations/
 
 ## Packaging
 
+파이썬의 모듈 단위인 패키지는 디렉토리로 구성된다.
+디렉토리 내에 `__init__.py` 파일이 있으면, 해당 디렉토리는 패키지로 인식된다.
+
 ### `__all__`
 
 `my_module.py`라는 파일이 있다고 하자:
