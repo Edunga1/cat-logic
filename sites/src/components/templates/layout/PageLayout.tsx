@@ -9,6 +9,7 @@ const Container = styled.div`
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
+  position: relative;
 
   a {
     color: ${theme.colors.link};
@@ -16,12 +17,13 @@ const Container = styled.div`
 
   @media (${device.larger}) {
     padding: 1rem 1rem 3rem 1rem;
-    grid-template-columns: .5fr minmax(auto, 40rem) auto;
+    grid-template-columns: .5fr minmax(auto, 40rem) 10rem;
     > :nth-child(1) {
       grid-column: 2;
     }
     > :nth-child(2) {
       grid-column: 3;
+      position: fixed;
     }
   }
 `
