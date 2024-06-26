@@ -24,9 +24,15 @@ const Container = styled.div`
 `
 
 export default function Toc(
-  { contents }: { contents: string },
+  {
+    className,
+    contents,
+  }: {
+    className?: string,
+    contents: string,
+  },
 ) {
   return (
-    <Container dangerouslySetInnerHTML={{ __html: contents }} />
+    <Container className={className} dangerouslySetInnerHTML={{ __html: contents }} />
   )
 }

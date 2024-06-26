@@ -2,6 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 import Toc from "../../components/molecules/Toc"
 import WikiContent from "../../components/molecules/WikiContent"
+import device from "../../constants/device"
 import theme from "../../constants/theme"
 import Link from "../atoms/Link"
 import Comments from "../molecules/Comments"
@@ -49,6 +50,19 @@ const TitleBottom = styled.div`
   justify-content: flex-end;
 `
 
+const TocMain = styled(Toc)`
+  display: block;
+
+  @media (${device.larger}) {
+    display: none;
+  }
+`
+
+const TocSide = styled(Toc)`
+  margin-top: 2rem;
+  max-width: 20rem;
+`
+
 export default function Wiki(
   {
     title,
@@ -87,17 +101,18 @@ export default function Wiki(
 
   return (
     <PageLayout>
-      {relatedLinksToc.length > 0 ? containerRelatedLinks : null}
       <Main>
         <TitleContainer>
           <HomeLink slug={slug} />
           <Link href="."><Title>{title}</Title></Link>
         </TitleContainer>
         <TitleBottom>{githubLink}</TitleBottom>
-        <Toc contents={tableOfContents} />
+        <TocMain contents={tableOfContents} />
         <WikiContent contents={wikiContents} />
         <Comments />
       </Main>
+      {relatedLinksToc.length > 0 ? containerRelatedLinks : null}
+      <TocSide contents={tableOfContents} />
     </PageLayout>
   )
 }

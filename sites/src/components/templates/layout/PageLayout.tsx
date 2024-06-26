@@ -47,7 +47,7 @@ export default function PageLayout(
   { children }: { children: React.ReactNode | React.ReactNode[] },
 ) {
   const [main, side] = Array.isArray(children)
-    ? [children.slice(1), children[0]]
+    ? [children[0], children.slice(1)]
     : [children, null]
   return (
     <Container>
