@@ -64,11 +64,12 @@ Command line으로만 도커를 시작할 수 있다.
 GUI를 제공하지 않지만 Docker Desktop이나 Rancher Desktop에서도 GUI를 잘 사용하지 않으니 딱히 문제는 안된다.
 
 `colima` 명령어를 제공하고, `colima start`로 도커를 시작한다.
-다만 기본으로 memory가 `2`GiB로 설정되는데, 메모리 문제로 [airflow 컨테이너](https://github.com/marclamberti/docker-airflow/blob/main/docker-compose.yml)가 시작하자마자 죽는 문제가 있었다.
+다만 기본으로 memory가 2GiB로 설정되는데 이는 특정 도커 이미지를 사용할 때 예기치 않은 문제를 일으킬 수 있다.
+내 경우 메모리 문제로 [airflow 컨테이너](https://github.com/marclamberti/docker-airflow/blob/main/docker-compose.yml)가 시작하자마자 죽는 문제가 있었다.
 
-`colima start --memory 8 --cpu 4`와 같이 자원 할당을 늘려서 시작할 수 있다.
+`colima start --memory 8 --cpu 4` 와 같이 `--memory`, `--cpu` 옵션으로 메모리와 CPU를 늘릴 수 있다.
 
-현재 자원 할당 상태를 보려면 `colima status -e`:
+현재 자원 할당 상태를 보려면 `colima status -e`를 입력하자.
 
 ```bash
 ❯ colima status -e
