@@ -2,7 +2,9 @@
 
 터미널 기반 텍스트 편집기.
 
-My [.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)를 dotfiles에 올려두었다.
+[.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)는 vim 설정 파일이다.
+누구나 같은 설정 파일을 사용한다면 같은 환경을 재현할 수 있다.
+vim은 사람마다 다른 형태를 가지면서도 복제하기 쉽다.
 
 ---
 
@@ -326,15 +328,24 @@ HTML 태그의 경우 `<div>`에서 사용하면 `</div>`로 이동한다.
 [matchit.zip](https://github.com/vim-scripts/matchit.zip/)이라는 플러그인으로 제공되기도 했다.
 내 경우 다른 사람이 사용하던 `.vimrc`로 시작했는데, matchit.zip이 포함되어 있었다.
 
-### 터미널 에뮬레이터: `:terminal`
+### 터미널 에뮬레이터
+
+vim에서 터미널을 실행할 수 있다. `:terminal` 명령어로 실행하면 `Terminal-mode`로 전환한다.
 
 `:h terminal`
 
-vim에서 터미널을 실행한다. vim 터미널은 터미널 모드로 전환한다.
-`tmap`으로 매핑 설정한다. `:h mapmode-t`.
+터미널 모드의 매핑은 `tmap`으로 설정한다. `:h mapmode-t`.
 
 다른 모드와 달리 커서가 동작하지 않고, 키 입력이 터미널로 전달되는데, `CTRL-\ CTRL-N`으로 normal 모드로 전환할 수 있다.
-아무 모드에서나 normal 모드로 전환하는 단축키다. `:h t_CTRL-\_CTRL-N`.
+이건 터미널 모드 뿐만 아니라 아무 모드에서나 normal 모드로 전환하는 단축키다. `:h t_CTRL-\_CTRL-N`.
+
+나는 불편해서 `<leader>esc`로 normal 모드로 전환하는 매핑을 추가했다.
+
+```vim
+tnoremap <leader><esc> <c-\><c-n>
+```
+
+터미널 모드에서만 동작하게 `tnoremap`으로 설정했다.
 
 ---
 
@@ -367,7 +378,9 @@ neovim은 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 
 **하지만 기본 `colorscheme`으로는 정교한 구문 강조를 지원하지 않는다**.\
 [tresitter wiki의 gallery](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Gallery)에서 treesitter를 지원하는 `colorscheme`을 설치하자.
 
-## Registers
+## 레지스터(Registers)
+
+레지스터는 텍스트를 저장하는 공간이다.
 
 `:h registers`
 
