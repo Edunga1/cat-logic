@@ -663,6 +663,19 @@ Goolge Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.
 내가 기대했던 반응 속도나 추론 능력이 아니라서 아쉽다.\
 구글은 [바드 데모](https://news.hada.io/topic?id=8430)에서와 마찬가지로 이번에도 기대에 못 미치는 거 같다.
 
+### Google Chrome
+
+크롬은 [125 버전부터 콘솔 에러를 Gemini로 해석해주는 기능을 추가](https://developer.chrome.com/docs/devtools/console/understand-messages)했다.
+또한 [Chrome 내에 Gemini Nano를 탑재하는 계획](https://developer.chrome.com/docs/ai/built-in)한다.
+이를 이용하면 민감 데이터를 로컬에서 사용하는 AI 기능을 제공하거나, 오프라인에서 사용할 수 있으며 서버 부하 분산에 도움이 된다.
+
+콘솔 에러 해석 기능을 사용하기 위해선 언어 설정, 나이 제한 등이 있다.
+업무용 비즈니스 계정은 관리자가 설정이 필요한 듯.
+
+![google chrome console ai](./res/google-chrome-console-ai-example.webp)
+
+콘솔 에러 지점에 마우스를 올리면 아이콘이 나타나고, 누르면 실시간 해석이 시작된다.
+
 ### llamafile
 
 https://github.com/Mozilla-Ocho/llamafile?tab=readme-ov-file
