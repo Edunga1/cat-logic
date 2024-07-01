@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
+import theme from "../../constants/theme"
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -18,8 +19,13 @@ const Container = styled.div`
     }
   }
 
+  // link style
   a {
     text-decoration: none;
+
+    &:hover {
+      color: ${theme.colors.highlight};
+    }
   }
 `
 

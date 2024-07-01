@@ -11,6 +11,10 @@ const Container = styled.div`
   // link style
   a {
     text-decoration-style: dotted;
+
+    &:visited {
+      color: ${theme.colors.linkVisited};
+    }
   }
 
   // inline code block style
