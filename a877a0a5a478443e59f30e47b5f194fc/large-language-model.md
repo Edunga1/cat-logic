@@ -473,3 +473,11 @@ Hello! It's nice to meet you. Is there something I can help you with or would yo
 
 로컬 LLM으로 [phidata](https://github.com/phidatahq/phidata)를 시작하는 것이 내 목표.
 
+### Spring AI
+
+[Spring AI](/docs/wiki/spring-framework.md#spring-ai) 문서 참조.
+
+Spring Boot는 OpenAI, Ollama 등 AI 플랫폼을 쉽게 연동할 수 있게 해준다.
+[Spring 프레임워크](/docs/wiki/spring-framework.md)에 익숙하면 좋은 선택으로 보인다.
+
+다만 2024년 7월 1.0.0 SNAPSHOT 단계여서 운영 레벨에서 사용하기에는 무리가 있다.
