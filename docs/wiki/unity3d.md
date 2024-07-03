@@ -5,12 +5,12 @@ created: 2016-10-18
 
 게임 엔진 또는 컨텐츠 제작 도구.
 
-에디터는 눈에 보이는대로 사물을 배치하고, 스크립트를 붙일 수 있어서 직관적으로 컨텐츠를 제작할 수 있다.
-기본 제공하는 에디터 기능 외에도, 사용자가 만든 플러그인으로 에디터를 확장할 수 있다.
+유니티는 눈에 보이는대로 사물을 배치하고, 필요한 컴포넌트를 추가함으로써 객체를 확장할 수 있다.
+에디터의 기본 기능 뿐 아니라, 사용자들이 만든 플러그인으로 에디터 기능을 확장할 수 있다.
 
 게임 엔진이므로 게임의 필수적인 부분을 제공한다.
 게임의 시간을 제어한다거나, 렌더링 정책을 결정하거나, 물리연산을 제공한다.\
-대부분은 [스크립트](https://docs.unity3d.com/ScriptReference/)를 통해 Unity가 제공하는 API를 이용하면 된다.
+[스크립트](https://docs.unity3d.com/ScriptReference/)를 통해 Unity가 제공하는 API를 이용하면 된다.
 
 ## VSCode 연동
 
@@ -39,7 +39,9 @@ intellisense 동작은 하지 않는다. (이미 [plugin 이슈](https://github.
 Rigidbody의 질량(mass)에 영향을 받지 않음
 
 **유니티 메뉴얼에서는 가속도을 수정하는 것은 현실적이지 않은 결과가 나올 수 있으므로 직접 변경하지 말 것을 권고하고 있다.**
->In most cases you should not modify the velocity directly, as this can result in unrealistic behaviour
+
+> In most cases you should not modify the velocity directly, as this can result in unrealistic behaviour
+
 ref. https://docs.unity3d.com/ScriptReference/Rigidbody-velocity.html
 
 #### Rigidbody.AddForce(Vector3)
