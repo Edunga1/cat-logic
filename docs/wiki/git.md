@@ -529,6 +529,77 @@ $ git branch
 worktree를 제거하기 위해서는 `git worktree remove <path>`를 사용한다. Tab을 통한 경로 자동 완성이 된다.
 worktree에서 사용한 브랜치는 계속 유지된다.
 
+## git-bisect
+
+`git bisect` 명령은 이진 탐색을 이용하여 버그가 처음 발생한 커밋을 찾는데 사용한다.
+메뉴얼 상으로는 버그라고 하지만, 특정 커밋을 찾는데 사용할 수 있다고 보면 된다.
+`bisect`는 2등분한다는 의미다.
+
+이진 검색을 사용하기 때문에, 아무리 커밋이 많아도 `log(n)` 안에 찾을 수 있다.
+커밋이 1억개가 있더라도 27번만 검색하면 된다.
+
+흐름은 올바른 커밋과 잘못된 커밋을 먼저 선정하면, git이 자동으로 중간 커밋으로 체크아웃한다.
+사용자는 현재 커밋에서 동작을 확인하고 올바른지 잘못되었는지 알려주면, git이 다음 중간 커밋으로 체크아웃을 반복한다.
+올바른 커밋과 잘못된 커밋이 변경되는 지점을 찾으면 git은 경계 지점을 찾아서 멈춘다.
+
+다음은 사용 예시.
+
+```bash
+~/myproject                                                                      master*
+❯ g bisect start
+status: waiting for both good and bad commits
+
+~/myproject                                                                      master|bisect
+❯ g bisect bad HEAD
+status: waiting for good commit(s), bad commit known
+
+~/myproject                                                                      master|bisect
+❯ g bisect good 9867149b9a0097a8830159a14ca23182828a352c
+Bisecting: 36 revisions left to test after this (roughly 5 steps)
+[c5adff3fa82925bbbf12dde653af264a54e002d6] V1.0.27
+
+~/myproject                                                                      @c5adff3f|bisect
+❯ g bisect good
+Bisecting: 17 revisions left to test after this (roughly 4 steps)
+[e31a874ebfdd7d254f8e90541d367b310b6168c0] V1.0.33
+
+~/myproject                                                                      @e31a874e|bisect
+❯ g bisect good
+Bisecting: 8 revisions left to test after this (roughly 3 steps)
+[c634c9cbbb6c023ae068dad96cf945e2295272ef] V1.0.37
+
+~/myproject                                                                      @c634c9cb|bisect
+❯ g bisect good
+Bisecting: 3 revisions left to test after this (roughly 2 steps)
+[7977f9b61481a366a50afd263f57c88591e858f5] V1.0.39
+
+~/myproject                                                                      @7977f9b6|bisect
+❯ g bisect good
+Bisecting: 1 revision left to test after this (roughly 1 step)
+[3f30e3a9f617c7acd6e9310573564b3e56fecb30] V1.0.40
+
+~/myproject                                                                      @3f30e3a9|bisect
+❯ g bisect good
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[e0b7dbc3921062a6f06a1997efb891b0b1b6041d] imp: improve some logic
+
+~/myproject                                                                      @e0b7dbc3|bisect
+❯ g bisect bad
+e0b7dbc3921062a6f06a1997efb891b0b1b6041d is the first bad commit
+commit e0b7dbc3921062a6f06a1997efb891b0b1b6041d (HEAD, origin/imp-logic)
+Author: John Doe
+Date:  Fri Mar 25 22:49:24 2022 +0900
+
+    imp: improve some logic
+
+
+
+ src/foo.py
+ src/bar.py
+ src/tests/foo_test.py |
+ 3 files changed, 2 insertions(+), 238 deletions(-)
+```
+
 ## Git Large File Storage(LFS)
 
 Git Large File Storage는 대용량 파일의 버전 관리를 위한 도구이다.
