@@ -23,6 +23,7 @@ vimwiki로 문서의 링크를 걸거나(markdown [LSP](./language-server-protoc
 * `:VWS` 모든 문서 패턴 검색 (location-list). `VimwikiSearch`의 약자
     * 보통 다른 작업 영역에서 `<leader>ww`로 wiki index를 열고, `:VWS`로 검색하는 방식으로 사용한다.\
       다른 작업 영역에서는 `:VWS`가 동작하지 않기 때문에 index로 먼저 이동한다.
+* `vah`로 현재 헤더, `vaH`로 하위 헤더까지 선택한다. `h`는 header를 선택하는 text object selector다.
 
 ## FileType
 
