@@ -27,6 +27,9 @@ README.md docs      sites
 
 하단의 `1 editor`, `2 cli`, `3 serv`는 각각 창(Window)을 나타낸다.
 
+새로운 프로젝트가 아닌 이상 `tmux` 명령어를 잘 사용하지 않는다.
+기존 프로젝트는 `tmuxinator`로 파일로 관리하여 window 설정을 자동화하는 편이다.
+
 ## 특징
 
 하나의 화면에서 여러개의 터미널을 제어할 수 있다.
@@ -48,14 +51,15 @@ set -g prefix C-a
 
 ## Tmuxinator
 
-https://github.com/tmuxinator/tmuxinator
+tmux 설정을 파일로 관리하는 도구.
 
-tmux session을 관리하는데 도움을 주는 도구.
-파일로 tmux 설정을 저장하거나, 저장된 파일로 tmux 세션을 생성한다.
+https://github.com/tmuxinator/tmuxinator
 
 설정 파일을 `~/.config/tmuxinator/`에 저장하여 전역으로 사용하거나
 프로젝트별로 `./.tmuxinator.yml`에 저장하여 사용할 수 있다.
 개인 프로젝트는 코드베이스에 포함하는 것도 좋겠다.
+
+`tmuxinator` 명령어를 제공한다. 명렁어가 길어서 `tmuxn`으로 alias를 만들어 사용하는 중.
 
 ### 지역적으로 사용할 경우
 
@@ -92,3 +96,12 @@ $ tmuxinator my-project  # or tmuxinator start my-project
 
 start 시 설정 이름을 지정하면 `~/.config/tmuxinator/`에서 `name`을 찾는다.
 
+## 플러그인
+
+Tmux 플러그인과 플러그인을 관리하는 매니저가 있다.
+
+[TPM](https://github.com/tmux-plugins/tpm)은 Tmux Plugin Manager다.
+사용하기 위해서 프로젝트를 Clone 받고, `.tmux.conf`에 설정을 추가해야 하는 과정이 번거롭다.
+
+[Tmux Resurrect](https://github.com/tmux-plugins/tmux-resurrect)는 세션을 저장하고 복원하는 플러그인을 사용했었는데,
+특별히 사용할 일이 없어서 제거했다.
