@@ -25,9 +25,20 @@ https://www.youtube.com/playlist?list=PLo6lBZn6hgca1T7cNZXpiq4q395ljbEI_
 2. `penetration depth resolution` 겹침 해결
 3. `collision resolution` 충돌 계산
 
-1에서 작용하지 않은 것으로 판단하면 2, 3을 진행하지 않는다.
-2에서 다음 프레임까지의 Delta Time 및 속도에 따라 겹치는 정도가 다르다. 팅겨내기 전에 표면으로 돌려보내기 위한 계산이다.
+1에서 작용하지 않은 것으로 판단하면 2, 3을 진행하지 않는다.\
+2에서 다음 프레임까지의 Delta Time 및 속도에 따라 겹치는 정도가 다르다. 팅겨내기 전에 표면으로 돌려보내기 위한 계산이다.\
 3에서 물체 충돌 후 반작용을 위한 계산을 한다.
+
+[다음](https://edunga1.github.io/canvas-collision-simulation/)은 내 구현 결과이다.
+동그라미를 드래그해서 움직이면 다른 동그라미와 충돌한다.
+
+<iframe src="https://edunga1.github.io/canvas-collision-simulation/" width="100%" height="300px"></iframe>
+
+동그라미 업데이트 순서가 작은 것 -> 큰 것 순서로 이루어진다.
+이 순서에 의한 문제점이 있다.
+아무 동그라미나 드래그해서 다른 2개의 동그라미를 충돌시키면 항상 작은 동그라미가 밀려난다.
+즉, A를 드래그해서 B -> C 순서로 충돌시키나 C -> B 순서로 충돌시키나 항상 B가 밀려난다.
+업데이트 순서가 반대였으면 항상 C만 밀려났을 것이다.
 
 ## Movement
 
