@@ -285,11 +285,17 @@ open -n -a "Google Chrome" --args --profile-directory="Profile 1"
 open -n -a "Google Chrome" --args --profile-directory="Profile 2"
 ```
 
-명령어는 `~/bin` 폴더에 저장했다.
+명령어는 `~/bin/devchrome`과 같이 저장했다.
+이제 `devchrome`만 입력하면 2개 크롬이 함께 열린다.
 
 `-a` 옵션은 문자열을 받는데, `-b`는 번들 식별자를 사용한다: `open -b com.google.Chrome`
 
 번들 ID를 알려면: `osascript -e 'id of app "Google Chrome"'`
+
+`--args` 옵션은 어플리케이션에 전달할 인자로 보인다.
+`--profile-directory`에 사용할 값은 `~/Library/Application Support/Google/Chrome/`에서 찾을 수 있다.
+문제는 프로파일 이름을 한글로 바꾸면 경로에서는 확인되는데, `--profile-directory`에는 인식이 안된다.
+`Profile 6` 등 기본 이름의 폴더가 있으니 그걸 찾아서 사용해야 한다.
 
 ## displayplacer - 멀티 모니터 설정 관리 도구
 
