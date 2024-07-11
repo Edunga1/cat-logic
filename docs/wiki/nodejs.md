@@ -9,6 +9,24 @@ node.js(2009)를 시작으로 Deno(2018), Bun(2023) 등 다양한 런타임이 �
 
 웹 프론트엔드 개발과 서버 사이드를 같은 언어로 작성할 수 있다는 점은 초기 프로젝트 개발에 매력적인 요소이다.
 
+---
+
+[NodeJS 소개 페이지에 따르면...](https://nodejs.org/en/about)
+
+> Node.js is similar in design to, and influenced by, systems like Ruby's [Event Machine](https://github.com/eventmachine/eventmachine) and Python's [Twisted](https://twisted.org/).
+
+Ruby의 Event Machine과 Python의 Twisted에 영향을 받았다고 한다.
+두 라이브러리 모두 이벤트 기반 비동기 처리 라이브러리로 보인다.
+Node.JS가 이런 라이브러리들과 다른 점은 런타임 차원에서 제공해서 이벤트의 시작을 명시적으로 하지 않아도 된다고 한다.
+그래서 비동기 처리를 하는 이벤트루프가 사용자에게 숨겨진다고.
+
+또한 HTTP는 Node.JS에서 일급 객체(First-class citizen)로 취급된다고 한다.
+스트리밍과 저지연을 염두하고 설계되어서, 웹 프레임워크나 라이브러리와 잘 맞는다고 한다.
+
+마지막으로 스레드 없이 설계되었다고 해서 멀티 코어의 이점이 없는 것은 아니라고 말한다.
+[child_process](https://nodejs.org/api/child_process.html) 모듈을 사용하면 fork 할 수 있으며, 
+동일한 인터페이스를 가진 [cluster](https://nodejs.org/api/cluster.html) 모듈을 사용해서 소켓을 공유할 수 있다고 마무리한다.
+
 ## Package Manager
 
 npm은 node.js의 패키지 관리자이다.
