@@ -76,6 +76,19 @@ const config: GatsbyConfig = {
         icon: "src/assets/favicon-16x16.png",
       },
     },
+    // only works in production. `serve` will work
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID ? [process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID] : [],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
+        pluginConfig: {
+          head: false,
+        },
+      },
+    },
   ],
 }
 
