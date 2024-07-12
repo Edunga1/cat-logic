@@ -9,7 +9,7 @@ env:
   GATSBY_PATH_PREFIX: /cat-logic
   GATSBY_SITE_URL: https://edunga1.github.io/cat-logic
   GITHUB_REPOSITORY_URL: https://github.com/edunga1/cat-logic
-  GATSBY_GOOGLE_ANALYTICS_TRACKING_ID: ${{ env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID }}
+  GATSBY_GOOGLE_ANALYTICS_TRACKING_ID: ${{ vars.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID }}
 
 jobs:
   publish:
