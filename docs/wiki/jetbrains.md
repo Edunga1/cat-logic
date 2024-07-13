@@ -167,7 +167,7 @@ MySQL Workbench, Sequel Pro 등 몇 가지 무료 데이터베이스 클라이�
 </keymap>
 ```
 
-위 설정을 `~/Library/Application\ Support/JetBrains/DataGrip{version}/keymaps`에 두면 keymap 목록에 등록된다.
+위 설정을 `~/Library/Application\ Support/JetBrains/DataGrip{version}/keymaps`에 `name.xml` 파일로 두면, 프로그램 내에서 keymap 이름으로 찾을 수 있다.
 
 ### Live Templates
 
