@@ -128,6 +128,41 @@ express
 
 `node_modules`를 평탄하게 유지하지 않는다. 또한 `express` 폴더는 **심볼릭 링크**이다.
 
+## Builit-in Modules
+
+### fs - File System
+
+#### mkdtemp
+
+[fs.mkdtemp](https://nodejs.org/docs/v20.15.1/api/fs.html#fsmkdtempprefix-options-callback)는 임시 디렉토리를 생성한다.
+중복 이름을 피하여 생성해 줘서 편리하다.
+
+
+
+예를들어 다음과 같이 사용하여 `/tmp` 디렉토리에 임시 폴더를 생성할 수 있다.
+동기 버전을 사용했다.
+
+```javascript
+const { mkdtempSync } = require('fs')
+const { tmpdir } = require('os')
+
+console.log(mkdtempSync(tmpdir() + '/my-temp-folder-'))  // /tmp/my-temp-folder-GqR04W
+console.log(mkdtempSync(tmpdir() + '/my-temp-folder-'))  // /tmp/my-temp-folder-egRlg4
+```
+
+몇 번 실행하면 `/tmp`에 임시 폴더가 많이 생성되어 있다.
+
+```bash
+$ ls /tmp | grep my-temp
+my-temp-folder-egRlg4
+my-temp-folder-EqXLKK
+my-temp-folder-GqR04W
+my-temp-folder-LBeRjv
+```
+---
+
+[gatsby-transformer-gitinfo](https://github.com/kraynel/gatsby-transformer-gitinfo/blob/master/src/__tests__/gatsby_node.js#L68)라는 프로젝트는 통합 테스트에서 Git 프로젝트를 생성하기 위해서 사용한다.
+
 ## Test Runner
 
 v20.0.0부터 node.js에서 테스트 러너를 자체적으로 제공한다.
