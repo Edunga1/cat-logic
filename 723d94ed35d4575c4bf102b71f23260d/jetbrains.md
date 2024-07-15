@@ -137,19 +137,24 @@ Package View에서는 `Scratches`가 보이지 않는다.
 ## DataGrip
 
 MySQL Workbench, Sequel Pro 등 몇 가지 무료 데이터베이스 클라이언트를 사용해 보았지만, 유료인 DataGrip이 가장 편리했다.
+쿼리 실행하는 데 있어서 실수할 여지를 줄여주는지, 쿼리 결과가 보기 편한지, 데이터 입력 및 추출이 편한지 등을 고려한 선택이다.
+그런 면에서 Workbench는 좋은 선택인데, 문제는 크래시 등 불안정한 면이 있는데 업데이트가 잘 이루어지지 않는다.
 
 ### keymaps
 
-| name                                     | shortcut  | note                                                                   |
-| :--------------------------------------- | :-------- | :--------------------------------------------------------------------- |
-| Database Tools and SQL -> Attach Session | `opt` `o` | staging, prod, local 등 자주 전환하는 경우 유용하다.                   |
-| Database Tools and SQL -> Transpose      | `opt` `t` | 열과 행 반전. 컬럼이 많은 경우 보기 편리                               |
-| Other -> Pin Active Tab                  | `opt` `p` | 탭 고정. 탭 여러개를 비교를 자주할 때 유용                             |
-| Main Menu -> Navigate -> File Structure  | `opt` `l` | (쿼리 결과에서) 컬럼 목록 및 이동. 컬럼이 많은 경우 검색으로 이동 가능 |
+이 설정은 `2024.1` 버전 기준이다.
+이전 버전에서는 `Attach Data Source` 대신 `Attach Session`을 사용했다.
+
+| name                                         | shortcut  | note                                                                   |
+| :------------------------------------------- | :-------- | :--------------------------------------------------------------------- |
+| Database Tools and SQL -> Attach Data Source | `opt` `o` | staging, prod, local 등 접속 환경의 변경이 잦은 경우 유용              |
+| Database Tools and SQL -> Transpose          | `opt` `t` | 열과 행 반전. 컬럼이 많은 경우 보기 편리                               |
+| Other -> Pin Active Tab                      | `opt` `p` | 탭 고정. 탭 여러개를 비교를 자주할 때 유용                             |
+| Main Menu -> Navigate -> File Structure      | `opt` `l` | (쿼리 결과에서) 컬럼 목록 및 이동. 컬럼이 많은 경우 검색으로 이동 가능 |
 
 ```xml
 <keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
-  <action id="Console.Jdbc.ChooseSession">
+  <action id="Console.Jdbc.ChooseDataSource">
     <keyboard-shortcut first-keystroke="alt o" />
   </action>
   <action id="Console.TableResult.Transpose">
