@@ -397,6 +397,19 @@ pipenv를 시범적으로 회사에서 사용하고 있다가, 최근에 개인 
 `pipenv`나 `poetry` 모두 운영 환경을 위한 dockerizing 시 cli 도구나 가상환경은 필요하지 않기 때문에,
 multi-stage build와 virtualenv를 사용하지 않는 프로세스를 구축해야 한다.
 
+[Python 현대적 모범 사례](https://www.stuartellis.name/articles/python-modern-practices/)라는 글에서는
+[pip-tools](https://github.com/jazzband/pip-tools)와 [uv](https://github.com/astral-sh/uv)의 추천이 있다.
+두 도구 모두 이 글에서 처음 알게 되었다. 나중에 써보고 추가하자.
+
+**2024년 7월 기준 GitHub star 수**
+
+| package   | forks | stars |
+|-----------|-------|-------|
+| poetry    | 2.2k  | 30.5k |
+| pipenv    | 1.9k  | 24.7k |
+| pip-tools | 0.6k  | 7.6k  |
+| uv        | 0.4k  | 15.1k |
+
 ### poetry
 
 https://github.com/python-poetry/poetry
