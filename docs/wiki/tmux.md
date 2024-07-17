@@ -96,6 +96,31 @@ $ tmuxinator my-project  # or tmuxinator start my-project
 
 start 시 설정 이름을 지정하면 `~/.config/tmuxinator/`에서 `name`을 찾는다.
 
+### 내 사용 방법
+
+주로, 각 프로젝트마다 `.tmuxinator.yml` 파일을 생성하는 지역적으로 사용한다.
+
+`.git/info/exclude`에 `.tmuxinator.yml`을 추가하여 코드베이스에는 포함하지 않을 수 있다.
+
+다음은 에디터와 터미널 용 창을 생성하는 템플릿이다.
+
+```yaml
+name: my-project
+
+windows:
+  - editor: vi
+  - cli:
+      layout: even-horizontal
+      panes:
+        -
+        - npm run test-watch
+```
+
+두 번째 창은 빈 pane과 테스트 watch 모드나 서버와 같이 foreground 상주하는 명령어를 실행해 두는 창을 분할해 둔다.
+
+[fasd](https://github.com/clvv/fasd)를 사용하므로,
+터미널을 열고 `z my` 입력 후 `tmuxn`만 입력하면 개발 환경이 준비가 끝난다.
+
 ## 플러그인
 
 Tmux 플러그인과 플러그인을 관리하는 매니저가 있다.
