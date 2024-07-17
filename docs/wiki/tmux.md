@@ -56,15 +56,14 @@ tmux 설정을 파일로 관리하는 도구.
 https://github.com/tmuxinator/tmuxinator
 
 설정 파일을 `~/.config/tmuxinator/`에 저장하여 전역으로 사용하거나
-프로젝트별로 `./.tmuxinator.yml`에 저장하여 사용할 수 있다.
-개인 프로젝트는 코드베이스에 포함하는 것도 좋겠다.
+프로젝트별로 `./.tmuxinator.yml`에 저장하여 지역적으로 사용할 수 있다.
 
-`tmuxinator` 명령어를 제공한다. 명렁어가 길어서 `tmuxn`으로 alias를 만들어 사용하는 중.
+`tmuxinator` 명령어를 제공한다. 명렁어가 길어서 `tmuxn` alias 만들어서 사용하는 중.
 
 ### 지역적으로 사용할 경우
 
 ```yaml
-project_name: my-project
+name: my-project
 
 windows:
   - editor: vi
@@ -72,11 +71,13 @@ windows:
   - server: npm run develop
 ```
 
+`.tmuxinator.yml`로 저장하고 다음 명령어로 실행한다.
+
 ```bash
 $ tmuxinator  # or tmuxinator start
 ```
 
-start 시 설정 이름을 생략하면 `./.tmuxinator.yml`을 찾는다.
+start 시 설정 이름을 생략하면 `.tmuxinator.yml`을 찾는다.
 
 ### 전역적으로 사용할 경우
 
@@ -95,6 +96,7 @@ $ tmuxinator my-project  # or tmuxinator start my-project
 ```
 
 start 시 설정 이름을 지정하면 `~/.config/tmuxinator/`에서 `name`을 찾는다.
+일치하는 이름이 없으면 `.tmuxinator.yml`을 찾는다.
 
 ### 내 사용 방법
 
