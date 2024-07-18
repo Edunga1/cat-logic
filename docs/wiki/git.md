@@ -5,13 +5,15 @@ Git은 2005년 4월 3일에 리누스 토발즈가 개발을 시작해서,
 
 [2.6.12-rc3의 릴리즈 메일](https://lkml.iu.edu/hypermail/linux/kernel/0504.2/0784.html)에 Git에 대해서 언급된다.
 
-> Ok,
-> you know what the subject line means by now, but this release is a bit
-> different from the usual ones, for obvious reasons. It's the first in a
-> _long_ time that I've done without using BK, and it's the first one ever
+> Ok,\
+> you know what the subject line means by now, but this release is a bit\
+> different from the usual ones, for obvious reasons. It's the first in a\
+> _long_ time that I've done without using BK, and it's the first one ever\
 > that has been built up completely with "git".
 
 *명령어 자동완성하기*: [https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion](https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion)
+
+git에서 언급하는 `HEAD`, `upstream` 등 용어에 대한 설명은 `git help glossary`로 확인할 수 있다.
 
 ## 깃 커밋 해시 충돌에 관하여
 
