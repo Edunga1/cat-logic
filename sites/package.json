@@ -33,7 +33,7 @@
     "gatsby-remark-prismjs": "^7.13.0",
     "gatsby-remark-relative-linker": "github:edunga1/gatsby-remark-relative-linker",
     "gatsby-source-filesystem": "^5.13.0",
-    "gatsby-transformer-gitinfo": "github:edunga1/gatsby-transformer-gitinfo",
+    "gatsby-transformer-gitinfo": "github:edunga1/gatsby-transformer-gitinfo#v2.0.0",
     "gatsby-transformer-remark": "^6.13.0",
     "gh-pages": "^5.0.0",
     "prismjs": "^1.29.0",

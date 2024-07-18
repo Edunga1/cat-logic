@@ -35,7 +35,7 @@ export const pageQuery = graphql`
   query IndexPage {
     allFile(
       filter: {childMarkdownRemark: {id: {ne: null}}}
-      sort: {fields: {gitLogLatestDate: DESC}}
+      sort: {fields: {gitLogs: {date: DESC}}}
     ) {
       nodes {
         name
@@ -52,7 +52,9 @@ export const pageQuery = graphql`
           }
         }
         fields {
-          gitLogLatestDate
+          gitLogs {
+            date
+          }
         }
       }
     }
@@ -82,7 +84,8 @@ function parseWikiItems(nodes: Queries.IndexPageQuery["allFile"]["nodes"]): Wiki
   return nodes
     .concat()
     .map(({ childMarkdownRemark, fields }) => {
-      const lastModified = fields?.gitLogLatestDate ? new Date(fields.gitLogLatestDate) : undefined
+      const gitLogLatestDate = fields?.gitLogs?.at(0)?.date
+      const lastModified = gitLogLatestDate ? new Date(gitLogLatestDate) : undefined
       const created = childMarkdownRemark?.frontmatter?.created ? new Date(childMarkdownRemark.frontmatter.created) : undefined
       return {
         path: createWikiLink(childMarkdownRemark?.fields?.slug ?? ""),

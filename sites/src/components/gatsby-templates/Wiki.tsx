@@ -7,7 +7,6 @@ const relatedLinkStyle = {
   fontSize: "0.5em",
   marginRight: "0.5em",
 }
-
 export default function BlogPostTemplate(
   { data }: PageProps<Queries.WikiDetailQuery>,
 ) {
@@ -17,9 +16,9 @@ export default function BlogPostTemplate(
     fields,
   } = data.file?.childMarkdownRemark ?? {}
   const {
-    gitLogLatestHash,
-    gitLogLatestDate,
-  } = data.file?.fields ?? {}
+    hash: gitLogLatestHash,
+    date: gitLogLatestDate,
+  } = data.file?.fields?.gitLogs?.at(0) ?? {}
   const docTitle = extractDocTitle(data)
   const relatedDocs = extractRelatedDocs(data)
   const relatedLinksToc = relatedDocs.map(doc => {
@@ -46,8 +45,10 @@ export const pageQuery = graphql`
   query WikiDetail($id: String!) {
     file(childMarkdownRemark: {id: {eq: $id}}) {
       fields {
-        gitLogLatestHash
-        gitLogLatestDate
+        gitLogs {
+          hash
+          date
+        }
       }
       childMarkdownRemark {
         headings(depth: h1) {
