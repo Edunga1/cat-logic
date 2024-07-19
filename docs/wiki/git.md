@@ -605,6 +605,22 @@ Date:  Fri Mar 25 22:49:24 2022 +0900
 `git bisect run` 명령은 good, bad를 자동 판단하는 스크립트를 작성하여, 커밋 탐색을 자동화하는 명령이다.
 <!-- TODO: 예시 추가 -->
 
+## git-rset
+
+`git reset`은 HEAD를 이동시키는 명령어다. 즉, 작업 영역을 변경한다.
+
+remote branch의 변경이 있으면, `fatal: Not possible to fast-forward, aborting.` 에러가 발생하는 fast-forward가 불가능한 경우를 피하기 위해서
+일반적으로 `git reset --hard origin/<branch>`로 변경하곤 한다. 다만 문제는 브랜치 이름이 길어지면 입력이 번거롭다는 점.
+git completion으로 해결할 수 있지만, 별칭을 사용하는 것도 편리한 방법이다.
+
+`git reset --hard @{u}`를 사용하면 upstream branch로 reset할 수 있다. `@{u}`는 `@{upstream}`의 축약어다.
+
+```bash
+# ~/workspace/my-project new-awesome-feature-wip-and-too-long-branch-name
+$ g reset --hard @{u}
+HEAD is now at 93a0251b work-in-progress
+```
+
 ## Git Large File Storage(LFS)
 
 Git Large File Storage는 대용량 파일의 버전 관리를 위한 도구이다.
