@@ -6,6 +6,7 @@ import device from "../../constants/device"
 import theme from "../../constants/theme"
 import Link from "../atoms/Link"
 import Comments from "../molecules/Comments"
+import GrassActivity from "../molecules/GrassActivity"
 import HomeLink from "../molecules/HomeLink"
 import GitHubCommitLink from "../organisms/GitHubCommitLink"
 import PageLayout from "./layout/PageLayout"
@@ -73,6 +74,7 @@ export default function Wiki(
     lastModified,
     lastCommitHash,
     gitHubRepositoryUrl,
+    activityDates,
   }: {
     title?: string
     tableOfContents: string
@@ -82,6 +84,7 @@ export default function Wiki(
     lastModified?: Date
     lastCommitHash?: string
     gitHubRepositoryUrl?: string
+    activityDates?: Date[]
   },
 ) {
   const relatedItems = relatedLinksToc.map((item, index) => (
@@ -106,6 +109,7 @@ export default function Wiki(
           <HomeLink slug={slug} />
           <Link href="."><Title>{title}</Title></Link>
         </TitleContainer>
+        <GrassActivity dates={activityDates || []} />
         <TitleBottom>{githubLink}</TitleBottom>
         <TocMain contents={tableOfContents} />
         <WikiContent contents={wikiContents} />
