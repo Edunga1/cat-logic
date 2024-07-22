@@ -768,3 +768,16 @@ $ ./llamafile \
 > - 개발자들은 pre-trained된 모델을 사용해서 본인들의 문제를 풀수 있게 해준다
 >
 > 는 정말 멋진 말이네요.
+
+## 교육 자료
+
+### Pretraining LLMs
+
+deeplearning.ai에서 제공하는 김성훈 교수님의 강의.
+
+https://www.deeplearning.ai/short-courses/pretraining-llms/
+
+교수님은 [모두의 딥러닝 강의](https://www.youtube.com/playlist?list=PLlMkM4tgfjnLSOjrEJN31gZATbcj_MpUm)로도 알려져 있다. 2016년 알파고로 딥러닝을 알게되고, 모두의 딥러닝 강의로 기초적인 내용을 배웠다.
+당시에 강의 인증해서 tensorflow 티셔츠도 얻었다.
+이 분은 사실 그 이전에도 알고는 있었는데, 2010년도 쯤에 구글 개발자와 함께 대학교 순회 강의를 하셨다.
+그만큼 교육에 대해 관심이 많으신 듯. [페이스북](https://www.facebook.com/hunkims/posts/pfbid02EZAJqfhSQAeWWuGqA2nY7XrPVsfERKqV7GaYHq51BGV5qyiQzTFNdwdHQuQmheMYl)에 인공지능 분야의 주요 인물인 Andrew Ng 교수와 함께 수업을 준비했다는 인증샷에서 설레이는 마음이 느껴진다.
