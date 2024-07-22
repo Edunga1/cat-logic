@@ -321,6 +321,10 @@ Gemini의 소개 영상처럼 실시간으로 대화하거나, 수학 문제를 
 발표 이후부터, 무료로 사용할 수 있다. 다만 quota는 매우 적은편. 찾아보면 3시간에 몇 개의 대화를 할 수 있는 정도라 한다.
 하지만 음성과 비디오를 통한 대화는 비활성화 되어있다.
 
+2024-07-18, [gpt-4o mini가 공개](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/)되었다.
+gpt-3.5 turbo 보다 성능이 좋고, [LMSYS 리더보드에서 채팅 부분에서 gpt-4를 능가](https://x.com/lmsysorg/status/1813999088758673875)했다고 한다.
+비용 효울적인 작은 모델이라고 하니 기대된다. 무료 사용자에게 제공할 예정이라고 한다.
+
 ### Claude
 
 ChatGPT와 같은 대화형 인공지능.
