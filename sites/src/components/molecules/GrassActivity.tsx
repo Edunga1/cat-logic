@@ -5,10 +5,14 @@ import styled from "styled-components"
 
 const Container = styled.div`
   height: 3rem;
+  overflow: hidden;
+`
+
+const PointContainer = styled.div`
+  width: calc(100% - .5rem);
+  height: 100%;
   position: relative;
   display: flex;
-  // TODO: this might be tricky. children are out of the container
-  margin-right: .5rem;
 `
 
 const Point = styled.div<
@@ -21,7 +25,7 @@ const Point = styled.div<
   height: .5rem;
   position: absolute;
   left: ${props => props.left.toFixed(2)}%;
-  background-color: ${props => props.fixed ? "#eee" : "#c0debf"};
+  background-color: ${props => props.fixed ? "rgba(200,200,200,.5)" : "rgba(192,222,191,.5)"};
   z-index: ${props => props.fixed ? 0 : 1};
 
   > span {
@@ -32,11 +36,6 @@ const Point = styled.div<
     position: inherit;
     cursor: default;
     user-select: none;
-  }
-
-  &:hover {
-    background-color: #67c767;
-    z-index: 2;
   }
 `
 
@@ -54,19 +53,21 @@ export default function GrassActivity(
   const points = calculatePoints(steps, activityDates)
   return (
     <Container>
-      {
-        points.map((point, index) => {
-          return (
-            <Point
-              key={index}
-              left={point.rate * 100}
-              fixed={point.isFixed}
-            >
-              <span>{point.label}</span>
-            </Point>
-          )
-        })
-      }
+      <PointContainer>
+        {
+          points.map((point, index) => {
+            return (
+              <Point
+                key={index}
+                left={point.rate * 100}
+                fixed={point.isFixed}
+              >
+                <span>{point.label}</span>
+              </Point>
+            )
+          })
+        }
+      </PointContainer>
     </Container>
   )
 }
