@@ -145,6 +145,7 @@ Lua는 장황하고, 자체 스크립트 언어는 단순하지만 확장성이 
 ## Path Of Exile
 
 일명 POE. 핵앤슬래시 게임이다.
+개발사는 [GGG](/docs/wiki/company.md#ggg-컨텐츠-개발-속도-이야기)이다. 뉴질랜드에 위치해 있다.
 
 ### Path Of Building
 
