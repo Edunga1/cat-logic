@@ -182,9 +182,9 @@ settingFollowRedirects: global
 아직 좀 더 살펴봐야 한다.
 API Chaining은 어떻게 처리하는지, 자동완성 등 주요하게 봐야 할 점이 많다.
 
-### Postman vs Insomnia vs IntelliJ builtin `.http`. 비교
+### Postman vs Insomnia vs JetBrains IDE builtin `.http`. 비교
 
-|                    | Postman   | Insomnia                             | IntelliJ                             |
+|                    | Postman   | Insomnia                             | JetBrains Built-in                   |
 | ---                | ---       | ---                                  | ---                                  |
 | 데이터 동기화      | 가입 필요 | Git repository 명시적 commit, push   | 파일 저장 위치를 cloud와 동기화 가능 |
 | 민감 데이터 처리   | 불가      | export, 동기화 되지 않는 environment | 불가                                 |
@@ -202,13 +202,14 @@ Postman은 closed source + 데이터 저장을 postman에 위임해야 한다. �
 Insomnia는 version control을 기본으로, github 등에 private repository에 저장할 수 있다.
 팀 간 API 공유가 필요하더라도 이 것으로 가능해 보인다. 유료 결제로 제공도 한다.
 
-IntelliJ는 메인으로 사용해선 안되겠다. 개발하면서 에디터 방식이 편하다보니 많은 파일을 생성해 버렸는데,
-IntelliJ 버전에 따른 변경사항이 있는 상황에서, 라이센스 문제로 버전을 바꾸다보니 잘 사용하던 것을 못쓰게 되기도 한다. (fallback license로 회귀)
-구글 드라이브에 동기화 해놓고 사용하면 편리하긴 한데, 충돌이 잦다. 방금 수정한 데이터가 클라우드 버전과 맞지 않아 어느 것을 사용할 것인지 계속 물어본다.
-그리고 이쪽이 부가기능이라 기능이 좀 부실하다. 개발 도구가 IntelliJ라면 접근성은 가장 좋다. Endpoints, Spring Annotation으로부터 바로 생성할 수도 있다.
-
-IntelliJ가 업데이트될 때 마다 이 기능을 많이 개선되고 있다.
+JetBrains IDE는 업데이트될 때 마다 http client 기능을 많이 개선하고 있다.
 [2023 버전부터는 body에 대한 필드와 값도 자동완성](./jetbrains.md)을 지원한다.
+scratch 파일로 저장하면 프로젝트에 상관없이 빠른 접근성을 기대할 수 있는데, `show scratches`로 빠르게 검색 및 열 수 있다.
+다만 조심해야 할 점은 `show scratches`에서 delete 키만 누르면 바로 삭제된다.
+경고창 없이 즉시 삭제되므로 삭제되었다는 피드백이 없다.
+나는 구글 드라이브로 공유 폴더에 저장하고 있는데, 삭제하면 드라이브 휴지통에서 복구해야 한다.
+
+[JetBrains Aqua](https://www.jetbrains.com/aqua/)는 테스트 도구로, API Client도 사용할 수 있다.
 
 ## Blink Shell
 
