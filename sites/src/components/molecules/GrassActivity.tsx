@@ -6,6 +6,10 @@ import styled from "styled-components"
 const Container = styled.div`
   height: 3rem;
   overflow: hidden;
+  border-top: 1px dotted rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
 `
 
 const PointContainer = styled.div`
