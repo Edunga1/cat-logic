@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-
-// TODO: MUST REFACTOR THIS COMPONENT
+import GrassPoint from "../atoms/GrassPoint"
 
 const Container = styled.div`
   height: 3rem;
@@ -19,28 +18,15 @@ const PointContainer = styled.div`
   display: flex;
 `
 
-const Point = styled.div<
+const GrassPointWrapper = styled(GrassPoint)<
   {
     left: number
-    fixed: boolean
+    fixed?: boolean
   }
 >`
-  width: .5rem;
-  height: .5rem;
   position: absolute;
   left: ${props => props.left.toFixed(2)}%;
-  background-color: ${props => props.fixed ? "rgba(200,200,200,.5)" : "rgba(192,222,191,.5)"};
   z-index: ${props => props.fixed ? 0 : 1};
-
-  > span {
-    font-size: .5rem;
-    top: 1rem;
-    white-space: nowrap;
-    transform: rotate(-15deg);
-    position: inherit;
-    cursor: default;
-    user-select: none;
-  }
 `
 
 export default function GrassActivity(
@@ -59,17 +45,13 @@ export default function GrassActivity(
     <Container>
       <PointContainer>
         {
-          points.map((point, index) => {
-            return (
-              <Point
-                key={index}
-                left={point.rate * 100}
-                fixed={point.isFixed}
-              >
-                <span>{point.label}</span>
-              </Point>
-            )
-          })
+          points.map((point, index) =>
+            <GrassPointWrapper
+              key={index}
+              left={point.rate * 100}
+              label={point.label}
+            />
+          )
         }
       </PointContainer>
     </Container>
