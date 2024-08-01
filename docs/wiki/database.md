@@ -271,17 +271,17 @@ CREATE TABLE jemp (
 
 `CAST(foo as char)` 명시적으로 타입 캐스팅을 통해 통일하여 해결했다.
 
+## PostgreSQL
+
+[PostgreSQL](/docs/wiki/postgresql.md) 문서에서 내용을 다룸.
+
 ## SQLite의 알려지지 않은 이야기
 
 https://news.hada.io/topic?id=4558
 
 많은 개발 토픽이 담겨있다.
 
-### 용어 및 단어
-
-본문에 나오는 모르는 용어들을 검색해본다.
-
-#### MC/DC Coverage
+### MC/DC Coverage
 
 본문 중:
 > 실제로 DO-178B의 프로세스를 따르기 시작했고, 그중 하나가 100% MCDC Test Coverage
@@ -298,7 +298,7 @@ https://news.hada.io/topic?id=4558
 
 MC/DC Coverage는 expression에서 모든 branch를 커버하기 위한 Test Case를 만들기 위한 방법으로 보인다.
 
-#### DO-127B
+### DO-127B
 
 본문 중:
 > 실제로 DO-178B의 프로세스를 따르기 시작했고, 그중 하나가 100% MCDC Test Coverage
@@ -307,7 +307,7 @@ MC/DC Coverage는 expression에서 모든 branch를 커버하기 위한 Test Cas
 
 > DO-178B (항공기 시스템과 장비 인증에 관한 소프트웨어 고려사항)는 RTCA 사에 의해 발표된 소프트웨어 개발 표준이다.
 
-#### covering index
+### covering index
 
 본문 중:
 > 예를 들어서, 나는 Covering Index에 대해서는 전혀 몰랐는데, 독일에서 열린 PHP 컨퍼런스에 참석했을 때, MySQL의 David Axmark도 참여해서 강연을 했음
@@ -324,7 +324,7 @@ MC/DC Coverage는 expression에서 모든 branch를 커버하기 위한 Test Cas
 > CREATE INDEX idx ON tbl(i, j);
 > SELECT j FROM tbl WHERE i > 0;
 
-#### Fossil
+### Fossil
 
 본문 중:
 > Fossil 구축
