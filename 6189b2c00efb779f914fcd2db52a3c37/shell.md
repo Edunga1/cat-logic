@@ -455,6 +455,48 @@ Error: failed to copy content to container: Error response from daemon: mount /m
 
 Docker 소켓을 job 컨테이너에 마운트하지 않도록 비활성화한다고.
 
+### jq
+
+Lightweight and flexible command-line JSON processor.
+
+`brew install jq`로 설치하자.
+
+jsonpath와 같이 JSON 데이터를 필터링 등 처리하는데 사용한다.
+
+옵션 없이 사용하여 pretty print 용도로 사용할 수 있다.
+
+```bash
+$ echo '{"glossary":{"title":"example glossary","GlossDiv":{"title":"S","GlossList":{"GlossEntry":{"ID":"SGML","SortAs":"SGML","GlossTerm":"Standard Generalized Markup Language","Acronym":"SGML","Abbrev":"ISO 8879:1986","GlossDef":{"para":"A meta-markup language, used to create markup languages such as DocBook.","GlossSeeAlso":["GML","XML"]},"GlossSee":"markup"}}}}}' | jq
+
+{
+  "glossary": {
+    "title": "example glossary",
+    "GlossDiv": {
+      "title": "S",
+      "GlossList": {
+        "GlossEntry": {
+          "ID": "SGML",
+          "SortAs": "SGML",
+          "GlossTerm": "Standard Generalized Markup Language",
+          "Acronym": "SGML",
+          "Abbrev": "ISO 8879:1986",
+          "GlossDef": {
+            "para": "A meta-markup language, used to create markup languages such as DocBook.",
+            "GlossSeeAlso": [
+              "GML",
+              "XML"
+            ]
+          },
+          "GlossSee": "markup"
+        }
+      }
+    }
+  }
+}
+```
+
+출력의 syntax highlighting 지원해서 보기 편리한 것이 장점.
+
 ## python shell tools
 
 몇몇 파이썬 모듈은 CLI로 제공한다.
@@ -470,6 +512,25 @@ $ echo '{"foo":"bar"}' | python -m json.tool
 
 API 마이그레이션 중 응답 diff를 보기 위해서 formatting 일관성을 맞춘다거나,
 위 예제처럼 whitespace를 제거해서 보기 어려운 형태를 바꾸는 등 용도로 유용하다.
+
+그러나 한글은 unicode로 출력되어 알아볼 수 없는 문제가 있다.
+
+```bash
+$ echo '{"foo":"얍"}' | python -m json.tool
+{
+    "foo": "\uc58d"
+}
+```
+
+`jq`는 이런 문제가 없다.
+사용 가능하다면 `jq`를 사용하는 것이 좋다.
+
+```bash
+$ echo '{"foo":"얍"}' | jq
+{
+  "foo": "얍"
+}
+```
 
 ---
 
