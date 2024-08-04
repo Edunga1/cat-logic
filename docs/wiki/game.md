@@ -153,6 +153,52 @@ Lua는 장황하고, 자체 스크립트 언어는 단순하지만 확장성이 
 클라이언트 데이터를 어떻게 관리하는 지 엿볼 수 있는 부분.
 인벤토리 내 아이템 크기, 이름, 추가된 리그, 아이템 옵션과 옵션 범위 등 게임 상에서 보여지는 모든 정보를 제공한다.
 
+```json
+{
+    "w": 2,
+    "h": 2,
+    "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL0FieXNzdXMiLCJ3IjoyLCJoIjoyLCJzY2FsZSI6MX1d/a12f5424c8/Abyssus.png",
+    "league": "Affliction",
+    "name": "Replica Abyssus",
+    "typeLine": "Ezomyte Burgonet",
+    "baseType": "Ezomyte Burgonet",
+    "rarity": "Unique",
+    "ilvl": 80,
+    "properties": [
+        {
+            "name": "Armour",
+            "values": [ [ "748", 1 ] ],
+            "displayMode": 0,
+            "type": 16
+        }
+    ],
+    "requirements": [
+        {
+            "name": "Level",
+            "values": [ [ "60", 0 ] ],
+            "displayMode": 0,
+            "type": 62
+        }
+    ],
+    "explicitMods": [ "+23 to all Attributes" ],
+    "flavourText": [ "\"While Prototype #3 does imbue its wearer with strength to match the original,\r" ],
+    "replica": true,
+    "frameType": 3,
+    "extended": {
+        "base_defence_percentile": 80,
+        "ar": 823,
+        "ar_aug": true,
+        "mods": {
+            "explicit": [ { "name": "", "tier": "", "level": 1, "magnitudes": [ { "hash": "explicit.stat_1379411836", "min": 20, "max": 25 } ] } ]
+        },
+        "hashes": {
+            "explicit": [ [ "explicit.stat_1379411836", [ 0 ] ] ]
+        },
+        "text": "Item Class: Helmets"
+    }
+}
+```
+
 ### Path Of Building
 
 일명 POB. Path Of Exile의 빌드 계산기.
