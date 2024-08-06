@@ -116,3 +116,13 @@ select
 from users
 group by family;
 ```
+
+날짜 차이를 구할때는 `-` 연산자를 사용하면 human readable한 값으로 출력된다.
+
+```sql
+select TIMESTAMP '2024-02-01 11:55:30' - TIMESTAMP '2024-01-30 04:11:05' as diff;
+      diff
+-----------------
+ 2 days 07:44:25
+(1 row)
+```
