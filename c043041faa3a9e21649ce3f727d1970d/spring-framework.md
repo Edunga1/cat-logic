@@ -447,6 +447,25 @@ Supported dependencies
 
 의존성을 추가하려면 `--dependencies=actuator,webflux`와 같이 사용한다.
 
+### 예시
+
+가장 일반적인 세팅인 kotlin + gradle(kts) + web + jpa:
+```bash
+$ spring init --language kotlin --type gradle-project-kotlin -d data-jpa,web --extract spring-kotlin-web
+```
+
+여기에 mysql jdbc connector를 추가하면:
+
+```bash
+$ spring init --language kotlin --type gradle-project-kotlin -d data-jpa,web,mysql --extract spring-kotlin-web-mysql
+```
+
+좀 더 운영을 생각한다면 actuator도 추가할 수 있겠다:
+
+```bash
+$ spring init --language kotlin --type gradle-project-kotlin -d data-jpa,web,mysql,actuator --extract spring-kotlin-web
+```
+
 ## Caching
 
 https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-caching.html
