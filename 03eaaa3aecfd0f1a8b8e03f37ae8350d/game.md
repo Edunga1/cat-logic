@@ -199,6 +199,27 @@ Lua는 장황하고, 자체 스크립트 언어는 단순하지만 확장성이 
 }
 ```
 
+### 공식 API
+
+https://www.pathofexile.com/developer/docs
+
+읽기 전용 범위 내에서 API를 제공하는 듯 보인다.
+대부분 서드파티 프로그램이나 사이트는 가치 계산에 집중되어 있는데,
+제공하는 API를 보면 그럴 수 밖에 없는 거 같다.
+계정, 캐릭터, 리그, 창고 등을 조회할 수 있다.
+
+POE만의 방대한 패시브 스킬 트리와 아틀라스 패시브 트리는 GitHub로 공개한다.
+
+- https://github.com/grindinggear/skilltree-export
+- https://github.com/grindinggear/atlastree-export
+
+`data.json` 파일에서 패시브 트리 데이터를 확인할 수 있다. 무자비의 경우 `ruthless.json`.
+리그마다 `.json`을 갱신하므로 이전 리그에 대한 트리를 확인하려면 태그나 revision을 옮겨야 한다.
+
+살펴보면, 스킬마다 ID가 부여되어 있고, 스킬간 연결은 `in`과 `out`으로 이루어져 있다.
+예를들어 `iron reflexes(10661)`의 경우 `dexterity(8544)`로만 연결되어 있어서 `"out"=["8544"]`로 설정되어 있고,
+반대로 `dexterity(8544)`는 `"in"=["16544", "11364", "58545", "10661"]`로 `iron reflexes(10661)`를 포함한다.
+
 ### Path Of Building
 
 일명 POB. Path Of Exile의 빌드 계산기.
