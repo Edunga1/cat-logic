@@ -22,6 +22,7 @@ const Container = styled.div`
     background-color: #f5f5f5;
     border-radius: .5rem;
     padding: .2rem .4rem;
+    word-break: break-word;
   }
 
   // code block style
