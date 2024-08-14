@@ -46,7 +46,8 @@ https://jakarta.ee/specifications/platform/8/platform-spec-8.html#a84
 클라이언트 사이드 API를 `java.net`으로 제공한다. 서버 사이드는 Jakarta Servlet, Jakarta Server Pages,Jakarta Server Faces 등에서 제공한다.
 
 ref. https://reflectoring.io/comparison-of-java-http-clients/
-```
+
+```java
 HttpClient client = HttpClient.newBuilder()
   .version(Version.HTTP_2)
   .followRedirects(Redirect.NORMAL)
@@ -63,7 +64,7 @@ HttpRequest request = HttpRequest.newBuilder()
 client.sendAsync(request, BodyHandlers.ofString())
   .thenApply(HttpResponse::body)
   .thenAccept(System.out::println)
-  .join();java
+  .join();
 ```
 
 #### JNDI (Java Naming and Directory Interface)
