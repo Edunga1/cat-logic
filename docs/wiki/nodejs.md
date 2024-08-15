@@ -137,8 +137,6 @@ express
 [fs.mkdtemp](https://nodejs.org/docs/v20.15.1/api/fs.html#fsmkdtempprefix-options-callback)는 임시 디렉토리를 생성한다.
 중복 이름을 피하여 생성해 줘서 편리하다.
 
-
-
 예를들어 다음과 같이 사용하여 `/tmp` 디렉토리에 임시 폴더를 생성할 수 있다.
 동기 버전을 사용했다.
 
@@ -211,6 +209,9 @@ describe('A thing', () => {
   });
 });
 ```
+
+실행은 `node --test`로 실행한다.
+지켜보기 모드는 `node --test --watch`.
 
 Mocking 라이브러리도 제공한다고 하니 이제는 별도 라이브러리를 설치할 필요 없이 가능할 거 같다.
 
