@@ -1,33 +1,39 @@
 import * as path from "path"
 import Data from "./similarity-result.json"
 
-const mapPathToData = Data.reduce(
-  (acc, doc) => {
-    const filenameX = path.basename(doc.filename_x)
-    const filenameY = path.basename(doc.filename_y)
-    if (!acc.has(filenameX)) {
-      acc.set(filenameX, [])
-    }
-    acc.get(filenameX)?.push({
-      path: filenameY,
-      similarity: doc.similarity,
-    })
-    return acc
-  },
-  new Map<string, Doc[]>()
-)
+export default function getRelatedDocs(filepath: string): RelatedDoc[] {
+  const docsByPath = mapData(Data)
+  return findRelatedDocs(docsByPath, filepath)
+}
 
-interface Doc {
+interface RelatedDoc {
   path: string;
   similarity: number;
 }
 
-export default function getRelatedDocs(filepath: string): Doc[] {
+function mapData(docs: typeof Data): Map<string, RelatedDoc[]> {
+  return docs.reduce(
+    (acc, doc) => {
+      const filenameX = path.basename(doc.filename_x)
+      const filenameY = path.basename(doc.filename_y)
+      if (!acc.has(filenameX)) {
+        acc.set(filenameX, [])
+      }
+      acc.get(filenameX)?.push({
+        path: filenameY,
+        similarity: doc.similarity,
+      })
+      return acc
+    },
+    new Map<string, RelatedDoc[]>()
+  )
+}
+
+function findRelatedDocs(map: Map<string, RelatedDoc[]>, filepath: string): RelatedDoc[] {
   const filename = path.basename(filepath)
-  const paths = Array.from(mapPathToData.keys())
-  const found = paths.find(x => x.includes(filename))
+  const found = Array.from(map.keys()).find(x => x.includes(filename))
   if (!found) {
     return []
   }
-  return mapPathToData.get(found) ?? []
+  return map.get(found) ?? []
 }
