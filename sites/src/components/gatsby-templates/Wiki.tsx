@@ -2,11 +2,8 @@ import * as React from "react"
 import { graphql, PageProps } from "gatsby"
 import Wiki from "../../components/templates/Wiki"
 import { removeFirstHeading } from "../../utils/html-string"
+import Link from "../atoms/Link"
 
-const relatedLinkStyle = {
-  fontSize: "0.5em",
-  marginRight: "0.5em",
-}
 export default function BlogPostTemplate(
   { data }: PageProps<Queries.WikiDetailQuery>,
 ) {
@@ -20,9 +17,9 @@ export default function BlogPostTemplate(
   const { hash: gitLogLatestHash, date: gitLogLatestDate } = commitLogs[0] || {}
   const docTitle = extractDocTitle(data)
   const relatedDocs = extractRelatedDocs(data)
-  const relatedLinksToc = relatedDocs.map(doc => {
+  const relatedLinks = relatedDocs.map(doc => {
     const link = doc.slug
-    return <a key={link} href={`../${link}`} style={relatedLinkStyle}>{link}</a>
+    return <Link key={link} href={`../${link}`}>{link}</Link>
   })
   const gitHubRepositoryUrl = data.site?.siteMetadata?.gitHubRepositoryUrl || undefined
 
@@ -30,7 +27,7 @@ export default function BlogPostTemplate(
     <Wiki
       title={docTitle}
       tableOfContents={tableOfContents || ""}
-      relatedLinksToc={relatedLinksToc}
+      relatedLinks={relatedLinks}
       wikiContents={removeFirstHeading(html || "")}
       slug={fields?.slug || ""}
       lastModified={gitLogLatestDate ? new Date(gitLogLatestDate) : undefined}

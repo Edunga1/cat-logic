@@ -8,29 +8,13 @@ import Link from "../atoms/Link"
 import Comments from "../molecules/Comments"
 import GrassActivity from "../molecules/GrassActivity"
 import HomeLink from "../molecules/HomeLink"
+import RelatedLinks from "../molecules/RelatedLinks"
 import GitHubCommitLink from "../organisms/GitHubCommitLink"
 import PageLayout from "./layout/PageLayout"
 
 const Main = styled.div`
   padding: 0 1rem;
   overflow: auto;
-`
-
-const RelatedLinksHeader = styled.h3`
-  margin: 0;
-  padding: 1rem 0 0 1rem;
-  font-size: 1rem;
-`
-
-const RelatedLinks = styled.ul`
-  list-style: none;
-  padding-left: 1rem;
-  margin: 0;
-
-  > li {
-    padding: 0;
-    line-height: 1;
-  }
 `
 
 const TitleContainer = styled.div`
@@ -68,7 +52,7 @@ export default function Wiki(
   {
     title,
     tableOfContents,
-    relatedLinksToc,
+    relatedLinks,
     wikiContents,
     slug,
     lastModified,
@@ -78,7 +62,7 @@ export default function Wiki(
   }: {
     title?: string
     tableOfContents: string
-    relatedLinksToc: JSX.Element[]
+    relatedLinks: JSX.Element[]
     wikiContents: string
     slug: string
     lastModified?: Date
@@ -87,13 +71,6 @@ export default function Wiki(
     activityDates?: Date[]
   },
 ) {
-  const relatedItems = relatedLinksToc.map((item, index) => (
-    <li key={index}>{item}</li>
-  ))
-  const containerRelatedLinks = <div>
-    <RelatedLinksHeader>Related Links</RelatedLinksHeader>
-    <RelatedLinks>{relatedItems}</RelatedLinks>
-  </div>
   const githubLink = lastModified
     ? <GitHubCommitLink
         lastModified={lastModified}
@@ -115,7 +92,7 @@ export default function Wiki(
         <WikiContent contents={wikiContents} />
         <Comments />
       </Main>
-      {relatedLinksToc.length > 0 ? containerRelatedLinks : null}
+      <RelatedLinks>{relatedLinks}</RelatedLinks>
       <TocSide contents={tableOfContents} />
     </PageLayout>
   )
