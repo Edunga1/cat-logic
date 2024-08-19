@@ -416,6 +416,31 @@ netrw, find 사용법
 `**` 사용하기 전과 비교해보면 검색 수가 달라지는 것을 알 수 있다.
 `.gitignore`의 무시한 파일, `node_modules` 같이 무거운 폴더도 검색된다.
 
+## Text Objects
+
+텍스트 오브젝트는 vim에서 선택 및 조작할 수 있는 텍스트 단위를 말한다.
+
+`:h text-objects`
+
+`w`는 단어, `s`는 문장, `p`는 문단 등이 있다.
+선택하는 명령어와 조합하여 `viw`, `vis`, `vip`와 같이 사용할 수 있다.
+각각 단어, 문장, 문단을 선택한다.
+
+`w`는 문자와 숫자, underscore로 이루어진 문자열을 말한다.
+`W`는 공백을 제외한 연속되는 문자열을 말한다. (`:h word`, `:h WORD` 참고)
+
+`s`entence는 마침표, 느낌표, 물음표로 끝나는 문장을 말한다.
+`p`aragraph는 빈 줄로 구분된 문단을 말한다.
+
+`t`는 tag를 말한다(`:tag-blocks`).
+HTML 또는 XML 태그를 선택한다.
+
+몇 가지 텍스트 오브젝트만 알아두면 빠르게 텍스트를 편집하거나 네비게이션할 수 있다.
+또 플러그인을 통해 사용자 정의 텍스트 오브젝트를 만들 수 있다.
+
+[nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)는
+언어마다 표현 방식이 다른 함수, 변수, 클래스 등 다양한 텍스트 오브젝트를 일반화하여 제공하는 플러그인이다.
+
 ## Plugin 만들기
 
 `:h write-plugin` nvim의 사용자 메뉴얼 플러그인 작성 섹션.
@@ -819,8 +844,6 @@ endfunction
 
 vim에서 기본적으로 `viw`로 단어를, `vip`로 문단을 선택할 수 있다.
 더 나아가서 각 언어에 맞게 함수, 클래스를 선택할 수 있는 방법이 있다.
-
-선택 단위를 text object라 한다. `:h text-objects` 참고하자.
 
 [Python](./python.md)은 들여쓰기로, [Javscript](./javascript.md)는 중괄호로 함수를 표현한다.
 이렇게 언어마다 달라지는 부분을 표현하기 위해서 저마다 설정이 필요하다.
