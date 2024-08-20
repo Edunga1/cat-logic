@@ -8,7 +8,7 @@ const Container = styled.div<
 >`
   width: .5rem;
   height: .5rem;
-  background-color: ${props => props.highlighted ? "rgba(200,200,200,.5)" : "rgba(192,222,191,.5)"};
+  background-color: ${props => props.highlighted ? "rgba(200,200,200,1)" : "rgba(192,222,191,1)"};
 
   > span {
     font-size: .5rem;
