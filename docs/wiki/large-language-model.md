@@ -432,8 +432,19 @@ GPT-4와 비교하면 훨씬 저렴하기도 하지만, 사용 토큰 제한량�
 ### Ollama
 
 ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.
+모델을 다운로드하고, 실행하고 기본적인 chat 인터페이스를 제공한다.
 
 https://github.com/ollama/ollama
+
+2024년 7월 26일 [0.3 버전](https://github.com/ollama/ollama/releases/tag/v0.3.0)을 출시하면서 tool-calling 기능이 추가되었다.
+phidata의 tools 기능과 같은 기능이다.
+phidata는 python 함수의 docstring을 명세하면 프롬프트에 자동으로 추가해 주는 반면에,
+ollama는 tool 정보를 따로 명세해야 한다.
+
+phidata는 chatgpt 모델이 아니면 도구 사용이 불가능했는데,
+ollama는 어떤지 시도해 봐야겠다.
+
+#### Docker로 Ollama 시작하기
 
 모델 저장소를 제공하여, 유명한 모델이나 다른 사람이 커스텀한 모델을 쉽게 다운받아 사용할 수 있다.
 [홈페이지](https://ollama.com/)에서 검색할 수 있다.
@@ -470,8 +481,6 @@ Hello! It's nice to meet you. Is there something I can help you with or would yo
 ```
 
 `ollama run <LLM>`으로만 실행해도 모델 다운로드 후 바로 대화할 수 있다.
-
-로컬 LLM으로 [phidata](https://github.com/phidatahq/phidata)를 시작하는 것이 내 목표.
 
 ### Spring AI
 
