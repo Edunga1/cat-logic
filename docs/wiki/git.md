@@ -621,6 +621,33 @@ $ g reset --hard @{u}
 HEAD is now at 93a0251b work-in-progress
 ```
 
+## git-shortlog
+
+`git shortlog`는 커밋 내역을 요약한다.
+
+```bash
+$ git shortlog
+
+Alleb (2):
+      Implment something
+      Fix something
+
+Bella (3):
+      Initial commit
+      Add something
+      Update something
+```
+
+기본 옵션으로는 사용자 별로 커밋 내역을 요약한다.
+
+`-s` 옵션은 커밋 수만 보여준다.
+
+```bash
+$ git shortlog -s
+     2  Alleb
+     3  Bella
+```
+
 ## Git Large File Storage(LFS)
 
 Git Large File Storage는 대용량 파일의 버전 관리를 위한 도구이다.
