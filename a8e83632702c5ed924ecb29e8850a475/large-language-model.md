@@ -482,6 +482,83 @@ Hello! It's nice to meet you. Is there something I can help you with or would yo
 
 `ollama run <LLM>`으로만 실행해도 모델 다운로드 후 바로 대화할 수 있다.
 
+#### Ollama tool-calling
+
+tool-calling은 0.3.0 버전부터 추가된 기능이다.
+사용자가 정의한 함수를 AI 모델에 알려주고, 프롬프트에 따라 함수를 호출하는 양식화된 응답을 생성하도록 한다.
+즉, 함수를 Ollama가 호출해 주는 것은 아니고, AI가 필요로 하는 도구(함수) 이름과 인자를 응답에 포함시키는 것이다.
+
+공식 문서는 파이썬 예제는 다음과 같다.
+날씨를 가져오는 도구를 정의하고, 토론토의 날씨를 물어보는 예제다.
+도구를 직접 실행하지 않으므로 구현은 필요하지 않다.
+
+```bash
+import ollama
+
+response = ollama.chat(
+    model='llama3.1',
+    messages=[{'role': 'user', 'content': 
+        'What is the weather in Toronto?'}],
+
+		# provide a weather checking tool to the model
+    tools=[{
+      'type': 'function',
+      'function': {
+        'name': 'get_current_weather',
+        'description': 'Get the current weather for a city',
+        'parameters': {
+          'type': 'object',
+          'properties': {
+            'city': {
+              'type': 'string',
+              'description': 'The name of the city',
+            },
+          },
+          'required': ['city'],
+        },
+      },
+    },
+  ],
+)
+
+print(response['message'])
+```
+
+위 코드를 실행하면 응답과 함께 도구 호출 정보를 일련의 양식으로 응답한다.
+
+```bash
+$ python src/example.py
+{
+  'role': 'assistant',
+  'content': '',
+  'tool_calls': [
+    {
+      'function': {
+        'name': 'get_current_weather',
+        'arguments': {
+          'city': 'Toronto',
+        },
+      },
+    },
+  ],
+}
+```
+
+위 양식으로 함수를 실행하는 것은 사용자가 구현한다.
+[파이썬으로 작성된 공식 예제](https://github.com/ollama/ollama-python/blob/main/examples/tools/main.py)가 있으니 참고하자.
+함수 호출까지 구현하는 것이 번거로워 보이지만, 모듈화를 잘 해두면 편리하게 사용할 수 있을 거 같다.
+
+[설명에 따르면](https://ollama.com/blog/tool-support), 특정 모델만 지원한다.
+Ollama 공식 홈페이지의 [모델 목록](https://ollama.com/search?c=tools)에서 `tools` 카테고리를 확인하면 된다.
+
+---
+
+도커로 위 예제를 실행할 환경을 구축하려면.
+
+1. ollama 실행: `docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama`
+2. Llama 3.1 모델 다운로드: `docker exec -ti ollama ollama run llama3.1`
+3. Ollama python dependency 설치: `pip install ollama`
+
 ### Spring AI
 
 [Spring AI](/docs/wiki/spring-framework.md#spring-ai) 문서 참조.
