@@ -500,7 +500,7 @@ response = ollama.chat(
     messages=[{'role': 'user', 'content': 
         'What is the weather in Toronto?'}],
 
-		# provide a weather checking tool to the model
+    # provide a weather checking tool to the model
     tools=[{
       'type': 'function',
       'function': {
@@ -527,7 +527,6 @@ print(response['message'])
 위 코드를 실행하면 응답과 함께 도구 호출 정보를 일련의 양식으로 응답한다.
 
 ```bash
-$ python src/example.py
 {
   'role': 'assistant',
   'content': '',
@@ -547,6 +546,9 @@ $ python src/example.py
 위 양식으로 함수를 실행하는 것은 사용자가 구현한다.
 [파이썬으로 작성된 공식 예제](https://github.com/ollama/ollama-python/blob/main/examples/tools/main.py)가 있으니 참고하자.
 함수 호출까지 구현하는 것이 번거로워 보이지만, 모듈화를 잘 해두면 편리하게 사용할 수 있을 거 같다.
+특이한 점은, 도구 사용 응답인 경우 챗 응답은 비어있다.
+그래서 함수 반환값을 `role=tool`로 설정하고, `이전 프롬프트` + `이전 응답` + `함수 반환값`를 다시 AI에 전달하여 최종 응답을 얻는 프로세스로 되어있다.
+컨텍스트를 유지하기 위한 방식인 모양이다.
 
 [설명에 따르면](https://ollama.com/blog/tool-support), 특정 모델만 지원한다.
 Ollama 공식 홈페이지의 [모델 목록](https://ollama.com/search?c=tools)에서 `tools` 카테고리를 확인하면 된다.
