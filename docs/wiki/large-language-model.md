@@ -582,7 +582,7 @@ available_functions = {
 }
 
 messages: Sequence[ollama.Message] = [
-    {'role': 'user', 'content': 'Summarize this page: "https://www.reddit.com/r/pathofexile/comments/1exyavx/325_updated_guide_to_recombinators/"?'},
+    {'role': 'user', 'content': 'Summarize this page: "https://www.reddit.com/r/pathofexile/comments/1exyavx/325_updated_guide_to_recombinators/"'},
 ]
 
 response = ollama.chat(
