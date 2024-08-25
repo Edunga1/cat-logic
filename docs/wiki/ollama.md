@@ -3,18 +3,24 @@ created: 2024-08-25
 ---
 # Ollama
 
-ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.
-모델을 다운로드하고, 실행하고 기본적인 chat 인터페이스를 제공한다.
+Ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.
 
 https://github.com/ollama/ollama
 
+binary와 [python](/docs/wiki/python.md) 라이브러리를 제공한다.
+간단한 모델 테스트 정도는 binary로 확인하고, Ollama로 AI Assistant를 만드는 용도로 라이브러리를 사용하면 된다.
+
+1. [ollama](https://github.com/ollama/ollama) binary
+  1. cli 클라이언트와 서버를 제공
+  2. `114343` 포트로 http 서버 제공
+  3. cli, rest api로 서버 제어 및 모델 다운로드, 실행 가능
+2. [ollama-python](https://github.com/ollama/ollama) 라이브러리
+  1. Python으로 Ollama를 사용하는 라이브러리
+
 2024년 7월 26일 [0.3 버전](https://github.com/ollama/ollama/releases/tag/v0.3.0)을 출시하면서 tool-calling 기능이 추가되었다.
-phidata의 tools 기능과 같은 기능이다.
+[phidata](/docs/wiki/large-language-model.md#phidata)의 tools 기능과 같은 기능이다.
 phidata는 python 함수의 docstring을 명세하면 프롬프트에 자동으로 추가해 주는 반면에,
 ollama는 tool 정보를 따로 명세해야 한다.
-
-phidata는 chatgpt 모델이 아니면 도구 사용이 불가능했는데,
-ollama는 어떤지 시도해 봐야겠다.
 
 ## Docker로 Ollama 시작하기
 
