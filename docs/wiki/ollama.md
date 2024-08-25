@@ -139,7 +139,7 @@ Ollama 공식 홈페이지의 [모델 목록](https://ollama.com/search?c=tools)
 2. Llama 3.1 모델 다운로드: `docker exec -ti ollama ollama run llama3.1`
 3. Ollama python dependency 설치: `pip install ollama`
 
-## tool-calling 예제
+### tool-calling 예제
 
 공식 예제를 참고하여, 웹 페이지를 요약하는 도구를 만들어 보았다.
 
