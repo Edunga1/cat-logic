@@ -4,6 +4,43 @@
 
 [^1]: https://kotlinlang.org/docs/faq.html
 
+## 시작하기
+
+[IntelliJ IDEA](/docs/wiki/jetbrains.md#intellij)를 사용하는 것이 좋지만.
+
+직접 컴파일하고 실행해 보려면 kotlin compiler를 설치해야 한다.
+OSX는 `brew install kotlin`으로 설치하면 간단.
+`kotlinc`와 `kotlin` 그리고 `kotlinc-jvm` 등 플랫폼 별 명령어가 제공된다.
+
+```kotlin
+fun main() {
+    println("Hello, World!")
+}
+```
+
+`hello.kt` 파일로 저장했다면.
+
+```bash
+$ kotlinc hello.kt -include-runtime -d hello.jar
+```
+
+`kotlinc`로 jar 파일을 생성한다.
+
+```bash
+$ java -jar hello.jar
+Hello, World!
+```
+
+`java`로 실행한다.
+
+```bash
+$ kotlinc hello.kt
+$ kotlin HelloKt.class
+Hello, World!
+```
+
+인자를 생략하면 `HelloKt.class` 파일이 생성되고, `kotlin`으로 실행할 수도 있다.
+
 ## Features
 
 ### Scope Functions
