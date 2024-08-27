@@ -7,8 +7,8 @@ Ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.
 
 https://github.com/ollama/ollama
 
-binary와 [python](/docs/wiki/python.md) 라이브러리를 제공한다.
-간단한 모델 테스트 정도는 binary로 확인하고, Ollama로 AI Assistant를 만드는 용도로 라이브러리를 사용하면 된다.
+cli와 [python](/docs/wiki/python.md) 라이브러리를 제공한다.
+간단한 모델 테스트 정도는 cli로 확인하고, Ollama로 AI Assistant를 만드는 용도로 라이브러리를 사용하면 된다.
 
 1. [ollama](https://github.com/ollama/ollama) binary
   1. cli 클라이언트와 서버를 제공
@@ -16,11 +16,6 @@ binary와 [python](/docs/wiki/python.md) 라이브러리를 제공한다.
   3. cli, rest api로 서버 제어 및 모델 다운로드, 실행 가능
 2. [ollama-python](https://github.com/ollama/ollama) 라이브러리
   1. Python으로 Ollama를 사용하는 라이브러리
-
-2024년 7월 26일 [0.3 버전](https://github.com/ollama/ollama/releases/tag/v0.3.0)을 출시하면서 tool-calling 기능이 추가되었다.
-[phidata](/docs/wiki/large-language-model.md#phidata)의 tools 기능과 같은 기능이다.
-phidata는 python 함수의 docstring을 명세하면 프롬프트에 자동으로 추가해 주는 반면에,
-ollama는 tool 정보를 따로 명세해야 한다.
 
 ## Docker로 Ollama 시작하기
 
@@ -62,9 +57,14 @@ Hello! It's nice to meet you. Is there something I can help you with or would yo
 
 ## Ollama tool-calling
 
-tool-calling은 0.3.0 버전부터 추가된 기능이다.
-사용자가 정의한 함수를 AI 모델에 알려주고, 프롬프트에 따라 함수를 호출하는 양식화된 응답을 생성하도록 한다.
-즉, 함수를 Ollama가 호출해 주는 것은 아니고, AI가 필요로 하는 도구(함수) 이름과 인자를 응답에 포함시키는 것이다.
+2024년 7월 26일, [0.3.0 버전](https://github.com/ollama/ollama/releases/tag/v0.3.0)을 출시하면서 tool-calling 기능이 추가되었다.
+[phidata](/docs/wiki/large-language-model.md#phidata)의 tools 기능과 같은 기능이다.
+phidata는 python 함수의 docstring을 명세하면 프롬프트에 자동으로 추가해 주는 반면에,
+ollama는 tool 정보를 따로 명세해야 한다.
+
+사용자가 정의한 함수를 AI 모델에 알려주면, AI가 자연어로 된 답변 대신 함수 호출을 위한 규격화된 정보를 응답한다.
+즉, 함수를 Ollama가 호출해 주는 것은 아니고, 함수(도구) 이름과 인자를 응답에 포함시키는 것이다.
+이 정보를 이용해 함수를 호출하는 프로세스를 구현하고, 그 결과를 다시 AI에 전달하여 최종 답변을 얻는다.
 
 공식 문서는 파이썬 예제는 다음과 같다.
 날씨를 가져오는 도구를 정의하고, 토론토의 날씨를 물어보는 예제다.
