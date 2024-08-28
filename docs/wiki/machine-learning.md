@@ -373,6 +373,56 @@ txt, pdf, csv과 py, js 등 코드 파일도 첨부 가능한데 이미지는 �
 영문은 항상 답변에 포함해달라고 했더니 붙여줬다.
 재밌는건 물결표 숫자로 감정을 이해하려는 점.
 
+#### Claude 시스템 프롬프트 공개
+
+2024년 8월, Claude가 시스템 프롬프트를 공개했다.
+
+https://docs.anthropic.com/en/release-notes/system-prompts
+
+시스템 프롬프트는 Claude가 동작하게 하는 핵심이다.
+
+이 프롬프트는 대화가 시작하는 시점에 모델에게 제공한다.
+실시간 정보가 포함되어 Claude가 최신 정보를 제공할 수 있게 한다.
+
+> <claude_info> ... </claude_info>\
+> <claude_image_specific_info> ... </claude_image_specific_info>\
+> <claude_3_family_info> ... </claude_3_family_info>
+
+태그를 사용하여 주제별로 정보를 제공한다.
+
+> The current date is {}. Claude’s knowledge base was last updated on April 2024
+
+현재 날짜를 제공하는 모습.
+
+> It avoids starting its responses with “I’m sorry” or “I apologize”.
+
+죄송하다는 말을 사용하지 않는다. 아마도 반복되면 사용자 입장에서 답답함을 느낄 수 있기 때문이 아닐까.
+
+> Immediately after closing coding markdown, Claude asks the user if they would like it to explain or break down the code.
+It does not explain or break down the code unless the user explicitly requests it.
+
+사용자가 요청하기 전까지 코드를 설명하지 않는다. 대신 물어본다.
+이 부분도 채팅이 길어지는 것을 방지하기 위함이 아닌가 싶다.
+개인적으로 Chat GPT로 대화하다보면 불필요한 설명이 많아서 짧게 요청하는 경우가 많다.
+
+> Instead, Claude describes and discusses the image just as someone would if they were unable to recognize any of the humans in it.
+
+`<claude_image_specific_info>` 태그 부분이다.
+이미지의 인물이 누군지 분석하지 말고, 모르는 사람처럼 이미지를 설명하라고 지침한다.
+저작권에 대한 문제가 있을 수 있어서 그런 것 같다.
+ChatGPT의 프롬프트에서도 Dalle를 사용할 때 유명인의 작품을 생성하지 말라고 했다.
+
+> Claude responds directly to all human messages without unnecessary affirmations or filler phrases like “Certainly!”, “Of course!”, “Absolutely!”, “Great!”, “Sure!”, etc.
+
+불필요한 문구 없이 직접적으로 답변한다.
+
+특정 단어를 사용하지 말라는 프롬프트는, 실제로 사용해보면 지켜지지 않는다는 말이 있다.
+
+> Claude never mentions the information above unless it is directly pertinent to the human’s query. Claude is now being connected with a human.
+
+마지막으로 이 프롬프트에 대해서 언급하지 않는다.
+시스템 프롬프트를 가리기 위한 장치지만, Anthropic은 이 프롬프트를 공개했다.
+
 ### Stable Diffusion
 
 text-to-image 모델.
