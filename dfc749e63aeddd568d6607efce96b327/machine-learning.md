@@ -848,6 +848,18 @@ ChatGPT 또한 OpenAI API가 아닌 Azure를 사용한다. AI Assistant 도구�
 
 사용량은 얼마나 되는지 아직 확인하지 못했다.
 
+[Settings - Tokens](https://github.com/settings/tokens)에서 토큰을 **어떤 권한도 없이** 생성하여 사용할 수 있다.
+Phidata로 Azure 연동하여 GPT-4o 모델을 사용했는데, OpenAI의 사양과 다른 거 같다.
+OpenAI는 요청 컨텍스트 크기가 128k 토큰이지만, Azure는 8k 토큰으로 보인다.
+
+```bash
+$ python src/azure.py
+# ... 생략
+openai.APIStatusError: Error code: 413 - {'error': {'code': 'tokens_limit_reached', 'message': 'Request body too large for gpt-4o model. Max size: 8000 tokens.', 'details': None}}
+```
+
+웹 페이지 파싱하는 코드인데, 태그가 포함되다보니 8k는 부족하다.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
