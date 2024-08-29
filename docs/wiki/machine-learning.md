@@ -836,6 +836,18 @@ WaitList를 신청받고 있다.
 완전 무료로 할 수 없을 거 같은데, 어떤 제약사항이 있을지 의심되는 부분이다.
 우선 신청해 두자.
 
+---
+
+2024년 8월 29일. public beta에 참여 권한을 얻었다.
+
+[GitHub Marketplace](https://github.com/marketplace/models)에서 모델 목록을 확인하고,
+Playground 기능으로 모델을 사용해볼 수 있다. 권한이 없었을 때는 사용할 수 없었다.
+
+안내에 따르면, `GITHUB_TOKEN`으로 Microsoft Azure AI 서비스를 사용할 수 있다.
+ChatGPT 또한 OpenAI API가 아닌 Azure를 사용한다. AI Assistant 도구와 통합하려면 주의해야 할 듯.
+
+사용량은 얼마나 되는지 아직 확인하지 못했다.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
