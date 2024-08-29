@@ -849,8 +849,7 @@ ChatGPT 또한 OpenAI API가 아닌 Azure를 사용한다. AI Assistant 도구�
 사용량은 얼마나 되는지 아직 확인하지 못했다.
 
 [Settings - Tokens](https://github.com/settings/tokens)에서 토큰을 **어떤 권한도 없이** 생성하여 사용할 수 있다.
-Phidata로 Azure 연동하여 GPT-4o 모델을 사용했는데, OpenAI의 사양과 다른 거 같다.
-OpenAI는 요청 컨텍스트 크기가 128k 토큰이지만, Azure는 8k 토큰으로 보인다.
+GitHub models가 제공하는 제한량은 매우 적다.
 
 ```bash
 $ python src/azure.py
@@ -858,7 +857,20 @@ $ python src/azure.py
 openai.APIStatusError: Error code: 413 - {'error': {'code': 'tokens_limit_reached', 'message': 'Request body too large for gpt-4o model. Max size: 8000 tokens.', 'details': None}}
 ```
 
-웹 페이지 파싱하는 코드인데, 태그가 포함되다보니 8k는 부족하다.
+웹 페이지 파싱하는 코드인데, 태그를 포함하다 보니 8K는 부족하다.
+
+[Prototyping with AI models](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits)에 제한량이 명세되어 있다.
+
+각 모델은 제한량 티어가 부여되는데 Low, High, Embedding 3가지가 있다.
+
+- Low는 분당 요청 수 15회, 일일 요청 수 150회, 토큰 길이는 8K 요청 4K 응답으로 제한한다.
+- High는 분당 요청 수 10, 일일 요청 수 50회, 토큰 길이는 Low와 같다.
+- Embedding은 요청 수는 Low와 같지만, 토큰 길이는 64K로 제한한다.
+
+GPT-4o는 High로 분류되어 있다. GPT-4o mini는 Low로 분류한다.
+매우 적은 제한량이므로, 재미로라도 공개하기에는 무리가 있다.
+특히 토큰 길이 제한량은 매우 작은 규모의 서비스로 제한하여 구상해야 한다.
+분당 요청 수를 최대로 사용한다면 5~10분이면 소진하기 때문이다.
 
 ## Hugging Face
 
