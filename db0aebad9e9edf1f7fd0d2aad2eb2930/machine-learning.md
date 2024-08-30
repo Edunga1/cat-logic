@@ -827,7 +827,12 @@ $ ./llamafile \
 
 2024년 8월 1일. 깃허브에서 llama, gpt-4o 등 모델을 무료로 사용할 수 있는 플랫폼을 제공한다는 소식.
 
-https://github.blog/news-insights/product-news/introducing-github-models/
+- https://github.blog/news-insights/product-news/introducing-github-models/
+- https://github.com/marketplace/models
+  - 별도 Models 페이지가 없다. Marketplace의 Models 카테고리에서 확인할 수 있다.
+- https://github.com/orgs/community/discussions/134377
+  - Models 소개 GitHub 커뮤니티 게시글
+  - 무료 제한량이 너무 적다는 의견도 있다.
 
 WaitList를 신청받고 있다.
 각종 모델을 테스트할 수 있는 Playground를 제공하고, 운영 환경에서 사용할 수 있도록 인프라를 제공한다는 거 같다.
