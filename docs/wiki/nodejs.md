@@ -366,7 +366,7 @@ clock1.restore();
 console.log(new Date()); // now
 ```
 
-## NodeJS data validation
+## Joi - 데이터 검증 라이브러리
 
 웹 서버를 작성할 때, 요청 데이터를 수동으로 검증하는 일은 너무 피곤하다.
 
