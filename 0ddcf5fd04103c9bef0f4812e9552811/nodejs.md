@@ -366,7 +366,7 @@ clock1.restore();
 console.log(new Date()); // now
 ```
 
-## NodeJS data validation
+## Joi - 데이터 검증 라이브러리
 
 웹 서버를 작성할 때, 요청 데이터를 수동으로 검증하는 일은 너무 피곤하다.
 
@@ -389,11 +389,12 @@ NodeJS는 아직까지 사용해본 적이 없다.
 https://github.com/Edunga1/grooming-type-checker
 
 expressjs나 다른 프레임워크는 어떻게 처리하는지 찾아보니 Joi를 사용하는가 보다.
-Joi는 hapijs의 생태계에서 개발되었다.
-
-hapijs에 종속되지 않아서 어느 곳에서나 사용할 수 있다:
+[Joi](https://github.com/hapijs/joi)는 [hapijs](https://github.com/hapijs/hapi)의 생태계에서 개발되었다.
+Joi는 24년 9월 기준 Star 수가 20k로 인기있는 라이브러리이다. HapiJS는 웹 프레임워크다.
 
 > The most powerful schema description language and data validator for JavaScript.
+
+Joi는 hapijs에 종속되지 않아서 어느 곳에서나 사용할 수 있다.
 
 ## NodeJS 서버 로컬 요청만 허용하기
 
