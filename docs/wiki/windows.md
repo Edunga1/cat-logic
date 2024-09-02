@@ -35,8 +35,16 @@ start "" "C:\Program Files\poe-overlay\poe-overlay.exe"
 ```
 
 `start`는 프로그램을 실행하는 명령어인데,
-첫 번째 줄은 열린 웹 브라우저의 탭으로 `https://poe.game.daum.net/`를 연다.
-두 번째 줄은 2번째 인자의 프로그램을 실행한다. 첫 번째 인자는 창 제목이다.
+- 첫 번째 줄은 열린 웹 브라우저의 탭으로 `https://poe.game.daum.net/`를 연다.
+- 두 번째 줄은 2번째 인자의 프로그램을 실행한다. 첫 번째 인자는 창 제목이다.
+
+프로그램을 관리자 권한으로 실행하려면 `powershell`을 사용한다.
+
+```
+powershell -Command "Start-Process 'C:\Program Files\poe-overlay\poe-overlay.exe' -Verb RunAs"
+```
+
+이렇게하면 배치 파일을 실행할 때 User Account Control 확인 창이 뜬다.
 
 ## Install vs. Portable
 
