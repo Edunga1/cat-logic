@@ -3,6 +3,15 @@ created: 2018-01-03
 ---
 # CSS
 
+## align-content로 세로 정렬이 가능하다는 소식
+
+`align-content` 속성은 `flex`나 `grid` 레이아웃에서 사용할 수 있었는데, 이제 `block` 요소에서도 사용할 수 있다.
+즉, 기본 `div` 태그에서도 사용할 수 있다는 것.
+
+https://web.dev/blog/align-content-block
+
+크롬 기준으로 123버전(2024년 4월)부터 사용할 수 있다.
+
 ## Grid Layout
 
 [MDN: 그리드 레이아웃 기본 개념](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Grid_Layout/%EA%B7%B8%EB%A6%AC%EB%93%9C_%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B0%9C%EB%85%90)
