@@ -15,7 +15,11 @@ created: 2024-03-14
 
 스타쉽은 우주 여객기로, 행성 간 이동을 위한 우주선이다.
 
-https://www.spacex.com/vehicles/starship/
+https://www.spacex.com/vehicles/starship/ \
+이 링크에 가면 스타쉽의 제원을 볼 수 있다.
+
+웹에서 보면 크기가 가늠되지 않겠지만, 여객기인 만큼 상당히 크다.
+총 높이만 무려 121m이다. 국내법에서 고층건물을 120m로 정의하니, 스타쉽은 고층 건물을 우주로 보내는 것과 같다.
 
 총 3단으로 구성되어 있다.
 2단부 "Starship"은 우주선 자체, 1단부 "Super Heavy"는 Booster로 궤도에 올리기 위한 부분이다. 분리되어 다시 지구로 돌아온다.
@@ -101,3 +105,8 @@ https://x.com/SpaceX/status/1798689697184764071
 ![starship fourth launch - starship landing 2](./res/starship-fourth-launch-starship-landing-2.png)
 
 지구에 착수하기 위해 각도를 변경하는 모습. 고도가 높을 때는 수평이지만, 0km 지점에 가까워지면서 수직으로 변한다.
+
+## 다른 민간 우주 기업
+
+아마존의 [블루 오리진](https://www.blueorigin.com/)이 있다.
+하지만 별다른 뉴스가 들려오지 않아서 잘 모르겠다.
