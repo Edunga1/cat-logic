@@ -3,6 +3,8 @@ created: 2023-05-10
 ---
 # Windows
 
+내용들은 Windows 10 기준이다.
+
 ## Microsoft PowerToys
 
 https://learn.microsoft.com/en-us/windows/powertoys/
