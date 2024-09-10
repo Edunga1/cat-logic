@@ -388,6 +388,16 @@ neovim은 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 
 
 `:h registers`
 
+레지스터는 크게 두 가지로 구분할 수 있다.
+사용자가 직접 사용하는 레지스터와 vim이 제공하는 읽기 전용 레지스터다.
+
+사용자 레지스터는 원하는 텍스트를 저장하고, 읽는 용도로 사용한다.
+`"ayy`로 현재 라인을 `a` 레지스터에 저장하고, `"ap`로 붙여넣기한다.
+
+직접 사용하는 방식 외에도 매크로의 녹화와 재생 또한 레지스터를 사용한다.
+응용하면 텍스트로 명령어를 저장하고, 매크로로 실행할 수 있다.
+
+vim이 제공하는 읽기 전용 레지스터는 클립보드, 마지막 삭제된 텍스트 등 다양한 트리거에 의해 저장된다.
 자주 사용하는 특수 레지스터는 알아두면 좋다.
 
 1. `+` 클립보드 레지스터. 정확히는 selection register. 클립보드가 활성되지 않으면 unnamed register와 같다.
@@ -396,7 +406,8 @@ neovim은 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 
     * e.g. `"_dd` 현재 라인을 삭제하지만 unnamed register에 저장하지 않는다.
 
 `let @`을 사용하면 직접 register에 값을 할당할 수 있다.
-응용하면, `+` register에 클립보드를 연결했다면, 클립보드에 현재 파일 경로를 저장할 수 있다:
+예를들어, `+` register에 클립보드를 연결했다면, 다음은 클립보드에 현재 파일 경로를 복사한다.
+
 ```vim
 :let @+=expand('%')
 ```
