@@ -82,7 +82,7 @@ redis 공식 도구이며, redis 문서는 방문할 때 마다 친절해서 놀
 Browser 모드와 Workbench 모드가 있는데, Workbench 모드가 익숙한 에디터 형태로 쿼리한다.
 이 에디터에서 공식 문서 수준의 자동 완성 기능을 제공하는데 매우 편리하다.
 
-## API Clients
+## API 클라이언트
 
 ⚠️  2023년 9월. Insomnia가 버전 8.0.0으로 넘어오면서 로그인을 하도록 정책을 변경했다.
 그러면서 기존의 로컬 데이터는 모두 사라지는 현상이 발생한다.
@@ -210,6 +210,20 @@ scratch 파일로 저장하면 프로젝트에 상관없이 빠른 접근성을 
 나는 구글 드라이브로 공유 폴더에 저장하고 있는데, 삭제하면 드라이브 휴지통에서 복구해야 한다.
 
 [JetBrains Aqua](https://www.jetbrains.com/aqua/)는 테스트 도구로, API Client도 사용할 수 있다.
+
+### 그 외
+
+사용해보진 않았지만, 고려해 볼 만한 도구들.
+
+[Yaak](https://yaak.app/)
+
+2024년 9월 10일. [Yaak Is Now Open Source](https://yaak.app/blog/now-open-source) 글로 오픈소스로 전환했다는 소식을 알렸다.
+[Geek News](https://news.hada.io/topic?id=16723)에서 번역해 주었다. 글에서 오픈소스 전환 고민을 많이 한 흔적이 보인다.
+특히 컨트리뷰션과 피드백에 대한 부담감이 컸던 것으로 보인다.
+그래서 3개월 전에는 [Why Not Open Source?](https://yaak.app/blog/why-not-open-source) 글도 작성했다.
+하지만 클로즈소스와 마찬가지로 운영해도 된다는 조언에 공개하게 되었다고 한다.
+
+저장소는 https://github.com/yaakapp/app
 
 ## Blink Shell
 
