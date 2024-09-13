@@ -344,6 +344,33 @@ Gemini의 소개 영상처럼 실시간으로 대화하거나, 수학 문제를 
 gpt-3.5 turbo 보다 성능이 좋고, [LMSYS 리더보드에서 채팅 부분에서 gpt-4를 능가](https://x.com/lmsysorg/status/1813999088758673875)했다고 한다.
 비용 효울적인 작은 모델이라고 하니 기대된다. 무료 사용자에게 제공할 예정이라고 한다.
 
+#### OpenAI o1
+
+2024년 9월 12일 공개된 OpenAI의 새로운 모델. o1.
+
+https://openai.com/o1/
+
+> We've developed a new series of AI models designed to spend more time thinking before they respond
+
+더 많은 생각하고 답변하는 모델이라고 소개한다.
+
+공개된 시점에는 유료 플랜인 Plus/Team 사용자에게 o1-preview, o1-mini 제공한다.
+
+성능은 작지만 더 빠르고 저렴한 버전인 o1-mini는 무료 사용자에게도 제공될 예정이다.
+
+---
+
+성능은 ChatGPT-4o와 비교해서 우월한 수준인데,
+[벤치마크](https://openai.com/index/learning-to-reason-with-llms/#evals)에 따르면.
+
+> A score of 13.9 places it among the top 500 students nationally and above the cutoff for the USA Mathematical Olympiad.
+
+미국 고등학생 수학 경시대회인 AIME에서 상위 500명에 드는 수준의 성과를 냈다고 한다.
+
+> GPT-4o only solved on average 12% (1.8/15) of problems. o1 averaged 74% (11.1/15) with a single sample per problem, 83% (12.5/15) with consensus among 64 samples, and 93% (13.9/15) when re-ranking 1000 samples with a learned scoring function.
+
+o1은 15점 중 13.9점을 받았고, GPT-4o는 1.8점을 받았다.
+
 ### Claude
 
 ChatGPT와 같은 대화형 인공지능.
