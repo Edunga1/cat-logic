@@ -1,3 +1,6 @@
+---
+created: 2016-11-16
+---
 # Javascript & Typescript Programming Language
 
 ## 자바스크립트와 이벤트 루프
