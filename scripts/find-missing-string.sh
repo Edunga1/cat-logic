@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 디렉토리를 지정하지 않았을 경우 현재 디렉토리를 사용
-DIR=${1:-.}
+DIR=${1:-docs/wiki/}
 # 검색할 문자열
 WORD='created:'
 
