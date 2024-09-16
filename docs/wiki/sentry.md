@@ -1,4 +1,4 @@
-# Sentry (APM, Error Tracking)
+# Sentry - APM & Error Tracking
 
 ## Timezone을 KST로 변경하기.
 
