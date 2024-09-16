@@ -1,3 +1,6 @@
+---
+created: 2022-11-29
+---
 # Kotlin Programming Language
 
 오픈 소스, 정적 타입 언어로 JVM, 안드로이드, JavaScript, WASM, Native를 대상으로 한다.[^1]
