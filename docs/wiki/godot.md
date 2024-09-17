@@ -5,6 +5,11 @@ created: 2024-09-17
 
 Godot은 오픈소스 게임 엔진이다.
 
+Scene 저장 시 스크립트가 자동 포매팅된다.
+Godot 에디터 설정이 Tab 및 4칸이 기본 설정인데,
+`Editor` > `Editor Settings` > `Text Editor` > `Indent`에서 변경할 수 있다.
+다른 에디터의 기본 값과 다르면 불편하므로 변경하는 편이 좋다.
+
 ## WSL + Vim 호환성
 
 아직 제대로 사용해보지 않았다. 검색해 본 내용만 정리해 둔다.
