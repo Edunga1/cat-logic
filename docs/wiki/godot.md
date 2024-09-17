@@ -20,6 +20,9 @@ Scene 파일인 `.tscn`은 사람이 읽을 수 있는 형태로 저장된다.
 변경 여부는 에디터 내에서도 `3 Changes`와 같이 표시된다.
 이러한 점은 에디터 없이도 개발할 수 있게 해줄 것이다.
 
+2D 튜토리얼은 [간단한 닷지 게임](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html)을 만드는 것이다.
+1시간 정도 소요될 거 같다. 에셋만 다운로드 받으면 바로 시작할 수 있다.
+
 ## WSL + Vim 호환성
 
 아직 제대로 사용해보지 않았다. 검색해 본 내용만 정리해 둔다.
