@@ -134,6 +134,7 @@ Language Server를 설치한다: `:MasonInstall typescript-language-server`\
 ---
 
 * [nvim-lspconfig/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)에서 설정 가능한 language server 목록을 확인할 수 있다.
+    * 또는 `:h lspconfig-all` 도움말에서 확인할 수 있다.
 * [null-js/BUILTIN_CONFIG](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md) 제공하는 lsp 도구 목록
 
 ## 도움말 `:help`
