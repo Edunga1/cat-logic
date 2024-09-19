@@ -100,6 +100,8 @@ docker-desktop 등 다른 도구에서는 그런적이 없었던 거 같은데, 
 
 ### Podman
 
+Docker의 대체제로 알려진 Podman도 있다.
+
 WSL 기준으로 작성한다.
 
 https://podman.io/docs/installation
@@ -110,8 +112,10 @@ https://podman.io/docs/installation
 다만 검색해보면 20.04 기준으로 지원을 했었는지 관련된 문서를 찾을 수 있었다.
 
 Windows 지면이 별도 설명되어 있는데, [Podman for Windows](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md) 문서를 참고하라고 한다.
-정리하면, [GitHub Release](https://github.com/containers/podman/releases)에서 exe 파일을 받아서 설치하면, Powershell에서 `podman` 명령어를, WSL에서는 `podman.exe` 명령어를 사용할 수 있다.
-이후 `podman machine init`으로 초기화하고, `podman machine start`로 시작한다.
+정리하면, [GitHub Release](https://github.com/containers/podman/releases)에서 exe 파일을 받아서 설치하면 Powershell에서 `podman` 명령어를 사용할 수 있다.
+WSL에서는 `$PATH`에 Podman 경로가 자동으로 추가되어 `podman.exe` 명령어를 사용할 수 있다.
+
+설치한 후 `podman machine init`으로 초기화하고, `podman machine start`로 시작한다.
 다음부터는 `podman machine start`로만 시작하면 된다.
 
 WSL에서는 `podman` 명령어를 제공하지 않기 때문에, alias를 만들거나 해야한다.
