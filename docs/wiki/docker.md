@@ -3,7 +3,9 @@ created: 2017-02-28
 ---
 # Docker
 
-컨테이너 기반의 가상화 플랫폼.
+운영체제 수준 가상화 컨테이너 관리 도구.
+
+Docker Desktop의 라이센스가 문제된다면, 대체제인 [Podman](/docs/wiki/podman.md)을 사용할 수 있다.
 
 ## Docker 환경 구성하기
 
@@ -97,38 +99,6 @@ docker-desktop 등 다른 도구에서는 그런적이 없었던 거 같은데, 
 리액션이 가장 많은 답변은 `docker.sock`이 오래된 파일을 가르키고 있어서 발생했고, symlink를 새로 만들어서 해결했다고 한다.
 
 > Solved it by removing the old symlink and then sudo ln -s /Users/$USER/.colima/docker.sock /var/run/docker.sock.
-
-### Podman
-
-Docker의 대체제로 알려진 Podman도 있다.
-
-WSL 기준으로 작성한다.
-
-https://podman.io/docs/installation
-
-공식 문서의 Ubuntu 지면을 따라 설치하면 안된다.
-우선 `apt list podman`으로 패키지를 확인할 수 없었다.
-24년 9월 기준으로 Ubuntu 20.10 and newer 버전을 지원한다고 나와 있어서인지, 20.04에서는 찾을 수 없었다.
-다만 검색해보면 20.04 기준으로 지원을 했었는지 관련된 문서를 찾을 수 있었다.
-
-Windows 지면이 별도 설명되어 있는데, [Podman for Windows](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md) 문서를 참고하라고 한다.
-정리하면, [GitHub Release](https://github.com/containers/podman/releases)에서 exe 파일을 받아서 설치하면 Powershell에서 `podman` 명령어를 사용할 수 있다.
-WSL에서는 `$PATH`에 Podman 경로가 자동으로 추가되어 `podman.exe` 명령어를 사용할 수 있다.
-
-설치한 후 `podman machine init`으로 초기화하고, `podman machine start`로 시작한다.
-다음부터는 `podman machine start`로만 시작하면 된다.
-
-WSL에서는 `podman` 명령어를 제공하지 않기 때문에, alias를 만들거나 해야한다.
-하지만 alias의 문제는 `podman` 명령어를 사용하는 스크립트에서는 사용할 수 없다.
-non-interactive shell에서는 사용자 profile을 읽지 않기 때문이다.
-그래서 내 경우는 `$PATH`에 포함된 디렉토리에 Symbolic link를 만들어서 사용했다.
-
-```bash
-# PATH에 포함된 디렉토리 내에서
-$ ln -s "/mnt/c/Program Files/RedHat/Podman//podman.exe"
-```
-
-`podman.exe` 경로는 다를 수 있으니 `which podman.exe`로 확인하자.
 
 ### OSX 에서 수동으로 Docker 환경 구성하기
 
