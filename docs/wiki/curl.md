@@ -154,4 +154,5 @@ token5,orange
 ## Reference
 
 https://antonz.org/mastering-curl/ \
-curl mastering 가이드. 잘 사용하지 않지만 유용한 옵션들을 소개한다.
+curl 가이드. 유용하지만 몰랐던 옵션들도 소개한다.
+직접 실행할 수 있는 환경이 제공된다.
