@@ -19,6 +19,7 @@ https://podman.io/docs/installation
 Windows 지면이 별도 설명되어 있는데, [Podman for Windows](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md) 문서를 참고하라고 한다.
 정리하면, [GitHub Release](https://github.com/containers/podman/releases)에서 exe 파일을 받아서 설치하면 Powershell에서 `podman` 명령어를 사용할 수 있다.
 WSL에서는 `$PATH`에 Podman 경로가 자동으로 추가되어 `podman.exe` 명령어를 사용할 수 있다.
+`podman.exe` 이외에도 폴더 내 모든 파일들이 `$PATH`에 추가되면서, 자동 완성에 방해가 되는 것은 단점이다.
 
 설치한 후 `podman machine init`으로 초기화하고, `podman machine start`로 시작한다.
 다음부터는 `podman machine start`로만 시작하면 된다.
