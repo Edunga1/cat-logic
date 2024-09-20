@@ -28,6 +28,7 @@ WSL에서는 `podman` 명령어를 제공하지 않기 때문에, alias를 만�
 하지만 alias의 문제는 `podman` 명령어를 사용하는 스크립트에서는 사용할 수 없다.
 non-interactive shell에서는 사용자 profile을 읽지 않기 때문이다.
 그래서 내 경우는 `$PATH`에 포함된 디렉토리에 Symbolic link를 만들어서 사용했다.
+나는 `~/bin`을 `$PATH`에 포함시켜두고 있어서 여기에 만들었다.
 
 ```bash
 # PATH에 포함된 디렉토리 내에서
