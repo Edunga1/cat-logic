@@ -7,6 +7,9 @@ created: 2024-09-18
 
 [Docker Desktop](/docs/wiki/docker.md)의 대체제로 사용할 수 있다.
 
+docker-compose와 호환되는 [podman-compose](https://github.com/containers/podman-compose)는
+WSL에서 `brew install podman-compose`로 설치할 수 있었다.
+
 ## WSL에서 Podman 사용하기
 
 https://podman.io/docs/installation
@@ -36,3 +39,12 @@ $ ln -s "/mnt/c/Program Files/RedHat/Podman//podman.exe"
 ```
 
 `podman.exe` 경로는 다를 수 있으니 `which podman.exe`로 확인하자.
+
+## 확인중인 문제
+
+`podman run` 명령어를 사용할 때, `The directory name is invalid.` 에러가 발생하는 문제.
+
+```bash
+❯ podman run --rm -t -i -v `pwd`:/app embedding
+Error: open /proc/self/uid_map: The directory name is invalid.
+```
