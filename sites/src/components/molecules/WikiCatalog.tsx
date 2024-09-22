@@ -29,7 +29,8 @@ export default function WikiList(
         ? <List>
           {items.map((item, i) => (
             <ListItem key={i}>
-              <Link href={item.path}>{item.title}</Link>{item.head && <i><Small>{item.head}</Small></i>}
+              <Link href={item.path}>{item.title}</Link>
+              {item.head && <i><Small>{item.head}</Small></i>}
             </ListItem>
           ))}
         </List>
