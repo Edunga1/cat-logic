@@ -92,8 +92,8 @@ export default function Wiki(
         <WikiContent contents={wikiContents} />
         <Comments />
       </Main>
-      <RelatedLinks>{relatedLinks}</RelatedLinks>
       <TocSide contents={tableOfContents} />
+      <RelatedLinks>{relatedLinks}</RelatedLinks>
     </PageLayout>
   )
 }

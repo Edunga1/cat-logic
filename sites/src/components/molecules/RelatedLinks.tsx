@@ -16,6 +16,15 @@ const Links = styled.ul`
   > li {
     padding: .1rem 0;
     line-height: 1;
+    display: inline;
+
+    ::after {
+      content: " • ";
+    }
+
+    :last-child::after {
+      content: "";
+    }
   }
 `
 
