@@ -1,5 +1,5 @@
 import { GatsbyConfig } from "gatsby"
-import Path from "path"
+import path from "path"
 
 const config: GatsbyConfig = {
   pathPrefix: process.env.GATSBY_PATH_PREFIX || "/",
@@ -15,7 +15,8 @@ const config: GatsbyConfig = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "content",
-        path: Path.join(__dirname, "..", "docs", "wiki"),
+        // Path to the directory where the markdown files to be published are located
+        path: path.join(__dirname, "..", "docs", "wiki"),
       },
     },
     "gatsby-transformer-gitinfo",

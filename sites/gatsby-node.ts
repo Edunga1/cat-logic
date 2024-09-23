@@ -5,11 +5,9 @@ import getRelatedDocs from "./src/related-docs/RelatedDocs"
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
-  actions,
+  actions: { createNodeField },
   getNode,
 }) => {
-  const { createNodeField } = actions
-
   if (node.internal.type === "MarkdownRemark") {
     createNodeField({
       name: "slug",
