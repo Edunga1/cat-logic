@@ -859,10 +859,10 @@ $ ./llamafile \
 
 - https://github.blog/news-insights/product-news/introducing-github-models/
 - https://github.com/marketplace/models
-  - 별도 Models 페이지가 없다. Marketplace의 Models 카테고리에서 확인할 수 있다.
+  - GitHub Models를 위한 별도 페이지가 없다. 대신 Marketplace의 Models 카테고리에서 사용할 수 있는 모델을 확인할 수 있다.
 - https://github.com/orgs/community/discussions/134377
-  - Models 소개 GitHub 커뮤니티 게시글
-  - 무료 제한량이 너무 적다는 의견도 있다.
+  - GitHub Models를 소개하는 GitHub 커뮤니티 게시글
+  - 무료 제한량이 너무 적다는 의견이 있는데, 동감한다.
 
 WaitList를 신청받고 있다.
 각종 모델을 테스트할 수 있는 Playground를 제공하고, 운영 환경에서 사용할 수 있도록 인프라를 제공한다는 거 같다.
@@ -870,6 +870,9 @@ WaitList를 신청받고 있다.
 
 완전 무료로 할 수 없을 거 같은데, 어떤 제약사항이 있을지 의심되는 부분이다.
 우선 신청해 두자.
+
+OpenAI o1 모델을 발표하면서 GitHub Models에서도 사용할 수 있게 되었다.
+하지만 사용량 제한은 다른 모델보다 더욱 박한데, 1일 8개 요청으로 제한한다.
 
 ---
 
