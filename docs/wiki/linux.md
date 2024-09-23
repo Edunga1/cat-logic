@@ -3,6 +3,13 @@ created: 2023-01-11
 ---
 # Linux
 
+오픈소스 기반의 운영체제.
+
+이 문서 레벨은 아주 낮다.
+[Realtime Linux](https://news.hada.io/topic?id=16860) 라던가,
+[리눅스 커널](https://news.hada.io/topic?id=4080) 같은 것은 모른다.
+리눅스와 관련된 아티클을 읽으면서 흥미로운 내용을 정리하는 수준으로 작성한다.
+
 ## systemd
 
 pid 1번으로 실행되는 프로세스. 0번이 있기 때문에 2번째로 실행되는 프로세스다.
