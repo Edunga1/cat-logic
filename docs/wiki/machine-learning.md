@@ -343,9 +343,20 @@ Gemini의 소개 영상처럼 실시간으로 대화하거나, 수학 문제를 
 발표 이후부터, 무료로 사용할 수 있다. 다만 quota는 매우 적은편. 찾아보면 3시간에 몇 개의 대화를 할 수 있는 정도라 한다.
 하지만 음성과 비디오를 통한 대화는 비활성화 되어있다.
 
-2024-07-18, [gpt-4o mini가 공개](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/)되었다.
+2024년 07월 18일, [gpt-4o mini가 공개](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/)되었다.
 gpt-3.5 turbo 보다 성능이 좋고, [LMSYS 리더보드에서 채팅 부분에서 gpt-4를 능가](https://x.com/lmsysorg/status/1813999088758673875)했다고 한다.
 비용 효울적인 작은 모델이라고 하니 기대된다. 무료 사용자에게 제공할 예정이라고 한다.
+
+2024년 9월 25일, 영상에서 인상을 주었던 [고급 보이스 모드(Advanced Voice Mode)가 플러스 사용자에게 공개](https://openai.com/index/chatgpt-can-now-see-hear-and-speak/)되었다.
+이전에는 제한된 사용자에게만 베타 버전으로 제공되었었다.
+[특이점이 온다 갤러리](https://gall.dcinside.com/thesingularity) 유저들의 후기를 보면, 하루 1시간 제한이 있다고 한다.
+성능은 높지 않는 듯. [GPT-3](https://gall.dcinside.com/thesingularity/532515) 수준이라는 글이 있다.
+
+[갤러리의 통역 사용 예시 글](https://gall.dcinside.com/thesingularity/532471)을 보면 응답 속도와 말 끊기 기능으로 인해 사람과 이야기하는 듯한 자연스러움에서 좋았다고 한다.
+물론 동사무소를 우체국으로 번역하는 등 성능 문제는 아쉬워 보인다.
+
+[Voice mode FAQ](https://help.openai.com/en/articles/8400625-voice-mode-faq)에서 제한량에 대해 명확하게 설명하지 않고, 15분 남으면 알림을 준다는 정도로 설명하지 않는 것을 보면
+제한량을 변동적으로 조절하는 것이 아닌가 추정.
 
 #### OpenAI o1
 
