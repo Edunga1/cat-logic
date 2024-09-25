@@ -355,6 +355,9 @@ gpt-3.5 turbo 보다 성능이 좋고, [LMSYS 리더보드에서 채팅 부분�
 [갤러리의 통역 사용 예시 글](https://gall.dcinside.com/thesingularity/532471)을 보면 응답 속도와 말 끊기 기능으로 인해 사람과 이야기하는 듯한 자연스러움에서 좋았다고 한다.
 물론 동사무소를 우체국으로 번역하는 등 성능 문제는 아쉬워 보인다.
 
+[갤러리의 목소리 성격을 바꾸는 후기](https://gall.dcinside.com/thesingularity/532449)는 정말 신기하다.
+사용자가 요청하는 형태로 목소리와 분위기를 바꿔준다.
+
 [Voice mode FAQ](https://help.openai.com/en/articles/8400625-voice-mode-faq)에서 제한량에 대해 명확하게 설명하지 않고, 15분 남으면 알림을 준다는 정도로 설명하지 않는 것을 보면
 제한량을 변동적으로 조절하는 것이 아닌가 추정.
 
