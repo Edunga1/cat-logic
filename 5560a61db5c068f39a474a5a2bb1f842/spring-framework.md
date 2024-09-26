@@ -336,9 +336,10 @@ actuator 페이지 접근을 위해 기록된 것을 볼 수 있다.
 
 로그 대신 코드로 확인하고 싶다면 `TransactionSynchronizationManager.isActualTransactionActive()`를 사용한다. 전역 객체이므로 디버그 모드에서도 별도 주입 없이 사용할 수 있어서 간편하다.
 
-## Spring CLI
+## Spring Boot CLI
 
 새 Spring 프로젝트를 빠르게 시작할 수 있는 도구.
+프로젝트는 Spring Boot를 기반으로 한다.
 
 https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html
 
@@ -449,7 +450,17 @@ Supported dependencies
 
 ### 예시
 
-가장 일반적인 세팅인 kotlin + gradle(kts) + web + jpa:
+설정 없이, 바로 시작할 수 있는 웹 서버:
+
+```bash
+$ spring init --language kotlin --type gradle-project-kotlin -d web --extract spring-web
+```
+
+`spring-web` 폴더로 이동 후 `./gradlew bootRun`으로 웹 서버를 시작할 수 있다.
+포트 설정이 필요하다면 `./gradlew bootRun --args='--server.port=8888'`.
+
+JPA 추가하여 kotlin + gradle(kts) + web + jpa:
+
 ```bash
 $ spring init --language kotlin --type gradle-project-kotlin -d data-jpa,web --extract spring-kotlin-web
 ```
