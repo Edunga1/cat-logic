@@ -3,6 +3,7 @@ import { graphql, PageProps } from "gatsby"
 import Wiki from "../../components/templates/Wiki"
 import { removeFirstHeading } from "../../utils/html-string"
 import Link from "../atoms/Link"
+import { createWikiLink } from "../../utils/wiki"
 
 export default function BlogPostTemplate(
   { data }: PageProps<Queries.WikiDetailQuery>,
@@ -17,9 +18,8 @@ export default function BlogPostTemplate(
   const { hash: gitLogLatestHash, date: gitLogLatestDate } = commitLogs[0] || {}
   const docTitle = extractDocTitle(data)
   const relatedDocs = extractRelatedDocs(data)
-  const relatedLinks = relatedDocs.map(doc => {
-    const link = doc.slug
-    return <Link key={link} href={`../${link}`}>{link}</Link>
+  const relatedLinks = relatedDocs.map((doc, i) => {
+    return <Link key={i} href={createWikiLink(doc.slug)}>{doc.slug}</Link>
   })
   const gitHubRepositoryUrl = data.site?.siteMetadata?.gitHubRepositoryUrl || undefined
 

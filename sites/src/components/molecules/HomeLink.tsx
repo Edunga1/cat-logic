@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import theme from "../../constants/theme"
+import { createWikiIndexPath } from "../../utils/wiki"
 import Link from "../atoms/Link"
 
 const Container = styled.div`
@@ -29,7 +30,7 @@ export default function HomeLink(
   const [href, setHref] = React.useState("")
 
   React.useEffect(() => {
-    setHref(removeSlugFromPath(window.location.href, slug))
+    setHref(createWikiIndexPath(slug))
   })
 
   return (
@@ -37,10 +38,4 @@ export default function HomeLink(
       <Link href={href}>CAT</Link>
     </Container>
   )
-}
-
-function removeSlugFromPath(href: string, slug: string): string {
-  // remove slug from href and return the path
-  const url = new URL(href)
-  return url.pathname.replace(`wiki${slug}`, "")
 }
