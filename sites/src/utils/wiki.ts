@@ -1,13 +1,7 @@
 const WIKI_PATH = "wiki"
 
-/**
- * Create a link to a wiki page.
- *
- * This could be called during server-side rendering.
- */
 export function createWikiLink(slug: string) {
-  if (slug.startsWith('/')) return `/${WIKI_PATH}${slug}`
-  return `/wiki/${slug}`
+  return new URL(slug.replace(/^\//, ""), `${location.origin}/${WIKI_PATH}/`).href
 }
 
 /**
