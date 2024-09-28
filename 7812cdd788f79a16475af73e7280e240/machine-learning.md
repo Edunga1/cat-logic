@@ -796,6 +796,25 @@ Goolge Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.
 내가 기대했던 반응 속도나 추론 능력이 아니라서 아쉽다.\
 구글은 [바드 데모](https://news.hada.io/topic?id=8430)에서와 마찬가지로 이번에도 기대에 못 미치는 거 같다.
 
+#### Gemini API
+
+구글의 AI 서비스의 브랜딩이 좀 혼란스럽다. Gemini API, Vertex AI, AI Studio 등 용어가 많아서 좀 헷갈린다.
+가격 정보도 많은 문서에서 다루고 있어서 찾기 어렵다.
+어쨌든 Gemini API 페이지에서 소개하는 AI 모델들은 무료 티어를 제공하고 있다.
+
+https://ai.google.dev/pricing
+
+도메인이 AI Studio를 가르키는 거 같은데, 현재는 Gemini API로 소개하며 Gemini 1.5 Flash, Gemini 1.5 Pro, Gemini 1.0 Pro, Text Embedding 004 4개의 모델을 큐레이션한다.
+
+![Gemini API text-embedding-004 pricing](./res/gemini-text-embedding-004-early-pricing.png)
+
+Gemini 3개 모델은 채팅 모델로 보이고, 무료 제한량이 분당 2~15건, 하루 50~1500건이다.
+Text Embedding 004는 이름에서 알 수 있듯이 텍스트 임베딩 모델인데 분당 1,500건 제한만 있다.
+토큰 제한량은 모르겠지만, 내가 사용하기에는 충분해서 무료 티어로 다양한 시도를 할 수 있겠다.
+
+유료 플랜은 https://cloud.google.com/vertex-ai/generative-ai/pricing 에서 확인할 수 있다.
+텍스트 임베딩 모델은 모델 이름을 적어두고 있지 않아서 공통 적용되는 건지. Open AI와 비교해서 좀 정리가 너무 안되어 보인다.
+
 ### Google Chrome
 
 크롬은 [125 버전부터 콘솔 에러를 Gemini로 해석해주는 기능을 추가](https://developer.chrome.com/docs/devtools/console/understand-messages)했다.
