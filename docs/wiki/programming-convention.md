@@ -88,3 +88,12 @@ https://stackoverflow.com/questions/19654578/python-utc-datetime-objects-iso-for
 
 지정자를 생략하면 로컬 시각으로 간주된다고 한다.\
 서버-클라이언트간 통신에서 로컬 시각을 사용하지 말고, 오프셋을 명시적으로 표기하는 편이 좋다.
+
+## 이름 짓기
+
+[Decima 엔진](https://en.wikipedia.org/wiki/Decima_(game_engine))은 2013년에 공개된 PS4 등 다양한 플랫폼에서 실행되는 게임을 위한 게임 엔진이다.
+공식 홈페이지의 소개란에서는 이름 짓기의 중요성을 강조한다.
+
+> We couldn't be too concerned before, too busy making games. Besides, everybody knows that Naming Things is the number one problem in software design. But we found a new partner, and they were adamant about Doing This Right. And you need to have a name. Otherwise you can't announce it.
+>
+> 이전에는 게임을 만들느라 너무 바빠서 신경 쓸 겨를이 없었습니다. 게다가 소프트웨어 디자인에서 네이밍이 가장 큰 문제라는 것은 누구나 알고 있는 사실입니다. 하지만 우리는 새로운 파트너를 찾았고, 그들은 이 일을 제대로 하겠다고 단호하게 말했습니다. 그리고 이름이 있어야 합니다. 그렇지 않으면 발표할 수 없습니다.  
