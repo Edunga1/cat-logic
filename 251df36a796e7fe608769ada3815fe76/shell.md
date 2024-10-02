@@ -522,19 +522,30 @@ $ echo '{"foo":"얍"}' | python -m json.tool
 }
 ```
 
-`jq`는 이런 문제가 없다.
-사용 가능하다면 `jq`를 사용하는 것이 좋다.
+이 문제는 직접 import해서 사용하면 해결할 수 있다.
 
 ```bash
-$ echo '{"foo":"얍"}' | jq
+$ echo '{"foo":"얍"}' | python -c 'import json, sys; print(json.dumps(json.load(sys.stdin), ensure_ascii=False, indent=4))'
 {
-  "foo": "얍"
+    "foo": "얍"
 }
 ```
 
+여기에 추가로 property를 정렬할 수도 있다.
+
+```bash
+$ echo '{"foo":"얍", "bar":"바"}' | python -c 'import json, sys; print(json.dumps(json.load(sys.stdin), ensure_ascii=False, indent=4, sort_keys=True))'
+{
+    "bar": "바",
+    "foo": "얍"
+}
+```
+
+이렇게 정렬하는 것은 diff를 보기 좋게 만들 때 유용하다.
+
 ---
 
-어떻게 stdout으로 출력하는 지 코드를 좀 살펴봤다.
+어떻게 stdout으로 출력하는지 코드를 좀 살펴봤다.
 
 ```python
 import argparse
