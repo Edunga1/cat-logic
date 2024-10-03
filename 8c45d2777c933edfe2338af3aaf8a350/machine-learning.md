@@ -52,6 +52,18 @@ https://youtu.be/WXuK6gekU1Y
 이 다큐멘터리를 볼 때마다 그날이 느껴진다.
 사람들의 반응의 변화와, 사람들 머리속에 '인공지능'이 새겨졌던 날.
 
+### 데미스 하사비스
+
+Google DeepMind의 CEO. 2024년 노벨 화확상의 후보에 올랐다.
+
+> Next on the list are John Jumper, director of Google DeepMind; Demis Hassabis, chief executive of Google DeepMind; and biochemist David Baker from the University of Washington. They were recognised for their contributions to predicting protein structure that led to the creation of AIs, such as RoseTTAFold and AlphaFold, that can generate exceptionally accurate three-dimensional models of proteins.
+
+https://www.chemistryworld.com/news/predictions-for-the-2024-chemistry-prize-highlight-growing-importance-of-ai-and-computational-methods/4020172.article
+
+단백질 구조를 딥러닝으로 예측하는 기술을 개발한 것으로 후보에 오른 것이다.
+
+2024년 노벨상은 10월 7일부터 14일까지 발표할 예정이다. 화학상은 9일에 결정된다.
+
 ## Interesting Things
 
 ### 인공지능 제품의 프롬프트 유출
