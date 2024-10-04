@@ -119,6 +119,16 @@ https://github.com/microsoft/WSL/issues/4619
     - 이 명령어로 해결 방법에 대한 검증을 하고있다.
 - 방화벽에서 inbound/outbound rule을 확인하라는 글도 있으나, 동작하지 않는다.
 
+### 윈도우 마운트 경로에서 git 명령어가 느려지는 문제
+
+`git status` 등 명령어가 `/mnt` 경로에서 매우 느린 문제이다.
+
+https://github.com/microsoft/WSL/issues/4197
+
+2019년 리포트된 이슈인데, 2024년에도 오픈되어 있다.
+대안은 `git.exe`를 설치하고 사용하는 것이다. 즉 두 벌의 binary를 사용하는 것.
+하지만 매우 번거롭다. 설정 파일이 분리되며, `git` 명령어를 사용하기 위해선 별도 스크립트를 작성해야 한다.
+
 ### http 관련 명령어가 동작하지 않는 문제
 
 `curl` `wget` `docker pull`  `npm install` 등 명령어가 일체 먹히지 않는다.
