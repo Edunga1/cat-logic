@@ -9,12 +9,13 @@ created: 2023-01-05
 
 엉클밥이라고 불리는 Robert C. Martin의 Clean Architecture를 소개하는 이야기.
 
-[Clean Architecture and Design](https://amara.org/videos/0AtjY87egE3m/url/1216370/)
+[Robert C. Martin - Clean Architecture and Design](https://amara.org/videos/0AtjY87egE3m/url/1216370/)
 
 영상은 NDC 2014 프레젠테이션이다.
-위 페이지에서 한국인 분이 자막을 번역하여 달아주셔서 2018년에 처음 보았다.
+위 사이트에서 한국인 분이 자막을 번역하여 달아주셨다.
 
-14년이나 18년이나 당시 즉각적인 반응은 별로 없었던 거 같은데, 20년에 들어오면서 책으로도 소개되고 이제 왠만한 사람들은 들어봤을 정도가 되었다.
+최초 발표일인 14년이나, 처음 보게된 18년이나 당시 즉각적인 반응은 별로 없었던 거 같은데,
+20년에 들어서서 갑자기 클린 아키텍처가 주목받기 시작했다.
 
 영상은 왜 대부분 프로젝트의 구조가 같은지 의문에서 시작한다.
 회사마다 관심있는 것은 다른데 왜 같은 구조를 가지는 것인가?
