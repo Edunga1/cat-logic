@@ -90,8 +90,8 @@ You have not rebooted after updating a package which requires a reboot. Please r
 ## 문제점
 
 [MacOS](./mac-os.md)와 다르게 문제점들이 좀 있다.
-[Jetbrains IDE](./jetbrains.md)가 WSL 경로에서 프로젝트를 실행을 잘 지원하지 못한다거나
-WSL 내 git 바이너리가 윈도우 마운트 경로(`/mnt/c/...`로 접근한다)에서 느린 문제 등 매끄럽지 못한 부분이 있다.
+대부분 네트워크와 파일 시스템 관련 문제들이다. 발생하면 매우 답답한 문제들인데, 해결될 기미가 보이지 않는다.
+만약 WSL 사용을 포기한다면 이 문제들이 큰 이유가 될 것이다.
 
 운영체제 지식이 부족해서 정확한 원인을 알기 어렵다.
 특히 윈도우와 리눅스 두 환경을 고려해야 하다보니 관련된 정보를 찾기가 어렵다.
@@ -128,27 +128,6 @@ https://github.com/microsoft/WSL/issues/4197
 2019년 리포트된 이슈인데, 2024년에도 오픈되어 있다.
 대안은 `git.exe`를 설치하고 사용하는 것이다. 즉 두 벌의 binary를 사용하는 것.
 하지만 매우 번거롭다. 설정 파일이 분리되며, `git` 명령어를 사용하기 위해선 별도 스크립트를 작성해야 한다.
-
-### http 관련 명령어가 동작하지 않는 문제
-
-`curl` `wget` `docker pull`  `npm install` 등 명령어가 일체 먹히지 않는다.
-`git` 등 간접적으로 http를 사용하는 명렁어도 동작하지 않는다.
-
-https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021
-
-1. `/etc/wsl.conf` 파일을 만들고 아래 내용을 추가한다.
-
-```
-[network]
-generateResolvConf = false
-```
-
-2. window에서 `wsl --shutdown` 실행하고 다시 wsl을 실행한다.
-3. `/etc/resolv.conf` 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.
-
-```
-nameserver 8.8.8.8
-```
 
 ### 클립보드를 읽어서 이미지를 생성할 수 없는 문제(해결하지 못함)
 
@@ -187,3 +166,33 @@ ChatGPT에도 물어봤는데, 다음과 같이 말한다:
 > ... 생략
 
 C# 스크립트를 작성하고, powershell을 통해서 실행하는 절차를 설명하는데, 복잡한 방법이라 판단해서 보류했다.
+
+### 해결된 듯한 문제
+
+WSL 버전이 업그레이드되면서 자연스레 해결된 것으로 보이는 것들.
+
+#### http 관련 명령어가 동작하지 않는 문제
+
+아래는 이전에 해결했던 기록이다.
+이제 더 이상 발생하지 않는데, `/etc/resolve.conf` 파일은 WSL이 자동으로 생성하고 관리하는 것으로 보인다.
+
+---
+
+`curl` `wget` `docker pull`  `npm install` 등 명령어가 일체 먹히지 않는다.
+`git` 등 간접적으로 http를 사용하는 명렁어도 동작하지 않는다.
+
+https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021
+
+1. `/etc/wsl.conf` 파일을 만들고 아래 내용을 추가한다.
+
+```
+[network]
+generateResolvConf = false
+```
+
+2. window에서 `wsl --shutdown` 실행하고 다시 wsl을 실행한다.
+3. `/etc/resolv.conf` 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.
+
+```
+nameserver 8.8.8.8
+```
