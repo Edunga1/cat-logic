@@ -605,7 +605,7 @@ Date:  Fri Mar 25 22:49:24 2022 +0900
 `git bisect run` 명령은 good, bad를 자동 판단하는 스크립트를 작성하여, 커밋 탐색을 자동화하는 명령이다.
 <!-- TODO: 예시 추가 -->
 
-## git-rset
+## git-reset
 
 `git reset`은 HEAD를 이동시키는 명령어다. 즉, 작업 영역을 변경한다.
 
