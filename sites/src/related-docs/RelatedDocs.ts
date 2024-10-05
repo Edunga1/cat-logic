@@ -7,8 +7,8 @@ export default function getRelatedDocs(filepath: string): RelatedDoc[] {
 }
 
 interface RelatedDoc {
-  path: string;
-  similarity: number;
+  path: string
+  similarity: number
 }
 
 function mapData(docs: typeof Data): Map<string, RelatedDoc[]> {

@@ -73,10 +73,10 @@ export default function Wiki(
 ) {
   const githubLink = lastModified
     ? <GitHubCommitLink
-        lastModified={lastModified}
-        gitHubRepositoryUrl={gitHubRepositoryUrl}
-        hash={lastCommitHash}
-      />
+      lastModified={lastModified}
+      gitHubRepositoryUrl={gitHubRepositoryUrl}
+      hash={lastCommitHash}
+    />
     : null
 
   return (

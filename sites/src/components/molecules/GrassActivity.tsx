@@ -18,7 +18,7 @@ const PointContainer = styled.div`
   display: flex;
 `
 
-const GrassPointWrapper = styled(GrassPoint)<
+const GrassPointWrapper = styled(GrassPoint) <
   {
     left: number
     fixed?: boolean
