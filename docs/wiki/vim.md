@@ -110,7 +110,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 
 각 플러그인의 역할은 다음과 같다:
 
-- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): LSP 설정할 수 있다. 이것만 필수사항.
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): LSP 설정을 쉽게 관리한다. nvim 만으로도 LSP를 사용할 수 있지만, 이 플러그인을 사용하면 더 편리하다.
 - [mason & mason-lspconfig](https://github.com/williamboman/mason.nvim): language server와 개발 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim): diagnostic, linter, code action을 사용할 수 있게한다. 아쉽게도 23년에 개발 중단되었다. 그러나 여전히 사용할만하다.
 
