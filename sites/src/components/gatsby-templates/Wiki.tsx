@@ -17,9 +17,9 @@ export default function BlogPostTemplate(
   const { hash: gitLogLatestHash, date: gitLogLatestDate } = commitLogs[0] || {}
   const docTitle = extractDocTitle(data)
   const relatedDocs = extractRelatedDocs(data)
+  // TODO: "추론 애플리케이션" 문서에서 에러가 있음
   const relatedLinks = relatedDocs.map(doc => {
-    const link = doc.slug
-    return <Link key={link} href={`../${link}`}>{link}</Link>
+    return <Link key={doc.slug} href={`../${doc.slug}`}>{doc.title}</Link>
   })
   const gitHubRepositoryUrl = data.site?.siteMetadata?.gitHubRepositoryUrl || undefined
 
@@ -62,6 +62,16 @@ export const pageQuery = graphql`
         html
       }
     }
+    allMarkdownRemark {
+      nodes {
+        headings(depth: h1) {
+          value
+        }
+        fields {
+          slug
+        }
+      }
+    }
     site {
       siteMetadata {
         gitHubRepositoryUrl
@@ -84,12 +94,21 @@ function extractDocTitle(data: Queries.WikiDetailQuery) {
   return headings?.[0]?.value || undefined
 }
 
-function extractRelatedDocs(data: Queries.WikiDetailQuery) {
+function extractRelatedDocs(data: Queries.WikiDetailQuery): {
+  slug: string,
+  title: string,
+  similarity: number,
+}[] {
   const relatedDocs = data.file?.childMarkdownRemark?.fields?.relatedDocs || []
-  return relatedDocs
+  const mostSimilarDocs = relatedDocs
     .filter(x => x.similarity < 1)
     .sort((a, b) => b.similarity - a.similarity)
     .slice(0, 5)
+  return mostSimilarDocs.map(x => ({
+    slug: x.slug,
+    title: getDocTitle(x.slug, data),
+    similarity: x.similarity,
+  }))
 }
 
 function extractLogDates(data: Queries.WikiDetailQuery) {
@@ -98,4 +117,9 @@ function extractLogDates(data: Queries.WikiDetailQuery) {
     .map(x => x && x.date && new Date(x.date) || null)
     .filter(x => x !== null)
     .map(x => x as Date)
+}
+
+function getDocTitle(slug: string, data: Queries.WikiDetailQuery) {
+  const doc = data.allMarkdownRemark?.nodes.find(x => x.fields?.slug === `/${slug}/`)
+  return doc?.headings?.[0]?.value || "?"
 }
