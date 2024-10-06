@@ -870,11 +870,8 @@ fatal: failed to write commit object
 
 ### Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
 
-`git commit -v`로 커밋 메시지 작성 후 `ww` 또는 `:wq`로 저장하여 나와도 커밋이 안된다.
+`git commit -v`로 커밋 메시지 작성 후 `zz` 또는 `:wq`로 저장하여 나와도 커밋이 안된다.
 약 3번 중 1번 꼴로 발생한다.
-
-`nvim` 사용중이고, `git config --global core.editor` 설정해도 계속 발생한다.
-Windows 10 WSL 2와 M2 맥북 모두에서 발생하고 있어서, 내 vim 설정 문제도 고려중인데.. 최근에는 플러그인 제거만 했다.
 
 ```bash
 ❯ g commit -v
@@ -882,22 +879,7 @@ hint: Waiting for your editor to close the file... error: There was a problem wi
 Please supply the message using either -m or -F option.
 ```
 
-vim으로 작업하는 경우에는 발생하지 않는다. 오직 커밋 메시지 작성 시에만 발생한다.
-
-**플러그인 문제?**
-
-플러그인의 문제일 확률이 높아 보인다.
-`.vimrc`를 임시로 제거해서, 거의 vanilla 상태로 테스트해보니 발생하지 않는다.
-
-**연속으로 발생하는 경향**
-
-`echo "a" >> a && git add -A && git commit -v` 반복하여 테스트하는데,
-첫 라인을 띄워놓고 둘째 라인부터 메시지를 작성하면 발생할 확률이 높다.
-또한 바로 다음 커밋에서도 같은 방식을 사용하면 거의 무조건 발생한다.
-
-**진짜 해치웠나?**
-
-Startify의 세션 저장 기능 때문에 발생하는 것으로 보인다.
+Startify의 세션 저장 기능이 원인이었다.
 
 ```vim
 function! GetUniqueSessionName()
