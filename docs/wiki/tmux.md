@@ -120,7 +120,7 @@ windows:
 
 두 번째 창은 빈 pane과 테스트 watch 모드나 서버와 같이 foreground 상주하는 명령어를 실행해 두는 창을 분할해 둔다.
 
-[fasd](https://github.com/clvv/fasd)를 사용하므로,
+[zoxide](https://github.com/ajeetdsouza/zoxide)를 사용하므로,
 터미널을 열고 `z my` 입력 후 `tmuxn`만 입력하면 개발 환경이 준비가 끝난다.
 
 ## 플러그인
