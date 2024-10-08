@@ -64,6 +64,17 @@ https://www.chemistryworld.com/news/predictions-for-the-2024-chemistry-prize-hig
 
 2024년 노벨상은 10월 7일부터 14일까지 발표할 예정이다. 화학상은 9일에 결정된다.
 
+## 2024년 노벨상
+
+> The Nobel Prize in Physics 2024 was awarded to John J. Hopfield and Geoffrey E. Hinton "for foundational discoveries and inventions that enable machine learning with artificial neural networks"
+
+24년 10월 8일. 노벨 물리학상은 인공 신경망을 이용한 머신 러닝의 근본을 발견한 공로로 John J. Hopfield와 Geoffrey E. Hinton에게 수여되었다.
+
+https://www.nobelprize.org/prizes/physics/2024/summary/
+
+다음날인 10월 9일에는 노벨 화학상의 수상자가 발표된다.
+여기에는 데미스 하사비스가 후보에 올랐다.
+
 ## Interesting Things
 
 ### 인공지능 제품의 프롬프트 유출
