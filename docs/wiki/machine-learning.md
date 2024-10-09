@@ -54,26 +54,31 @@ https://youtu.be/WXuK6gekU1Y
 
 ### 데미스 하사비스
 
-Google DeepMind의 CEO. 2024년 노벨 화확상의 후보에 올랐다.
+Google DeepMind의 CEO. 2024년 노벨 화학상을 수상했다.
 
 > Next on the list are John Jumper, director of Google DeepMind; Demis Hassabis, chief executive of Google DeepMind; and biochemist David Baker from the University of Washington. They were recognised for their contributions to predicting protein structure that led to the creation of AIs, such as RoseTTAFold and AlphaFold, that can generate exceptionally accurate three-dimensional models of proteins.
 
 https://www.chemistryworld.com/news/predictions-for-the-2024-chemistry-prize-highlight-growing-importance-of-ai-and-computational-methods/4020172.article
 
-단백질 구조를 딥러닝으로 예측하는 기술을 개발한 것으로 후보에 오른 것이다.
+단백질 구조를 딥러닝으로 예측하는 기술을 개발한 것으로 수상한 것이다.
 
-2024년 노벨상은 10월 7일부터 14일까지 발표할 예정이다. 화학상은 9일에 결정된다.
+2024년 노벨상은 10월 7일부터 14일까지 발표할 예정이다. 화학상은 9일에 결정되었다.
 
 ## 2024년 노벨상
 
 > The Nobel Prize in Physics 2024 was awarded to John J. Hopfield and Geoffrey E. Hinton "for foundational discoveries and inventions that enable machine learning with artificial neural networks"
 
-24년 10월 8일. 노벨 물리학상은 인공 신경망을 이용한 머신 러닝의 근본을 발견한 공로로 John J. Hopfield와 Geoffrey E. Hinton에게 수여되었다.
+24년 10월 8일, 노벨 물리학상은 인공 신경망을 이용한 머신 러닝의 근본을 발견한 공로로 John J. Hopfield와 Geoffrey E. Hinton에게 수여되었다.
 
 https://www.nobelprize.org/prizes/physics/2024/summary/
 
-다음날인 10월 9일에는 노벨 화학상의 수상자가 발표된다.
-여기에는 데미스 하사비스가 후보에 올랐다.
+---
+
+> The Nobel Prize in Chemistry 2024 was awarded with one half to David Baker "for computational protein design" and the other half jointly to Demis Hassabis and John M. Jumper "for protein structure prediction"
+
+10월 9일, 노벨 화학상은 계산 단백질 설계에 대한 공로로 David Baker와 단백질 구조 예측에 대한 공로로 Demis Hassabis, John M. Jumper에게 수여되었다.
+
+https://www.nobelprize.org/prizes/chemistry/2024/summary/
 
 ## Interesting Things
 
