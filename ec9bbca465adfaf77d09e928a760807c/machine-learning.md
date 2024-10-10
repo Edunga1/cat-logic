@@ -101,7 +101,7 @@ https://www.facebook.com/story.php?story_fbid=27006446892333407&id=1000018438480
   > The same equations have the same solutions.
   - "식이 같으면 현상도 같다."라는 말인데, [리처드 파인만 강의에서 나왔다고](https://www.feynmanlectures.caltech.edu/II_12.html).
 
-수학 난제 중 하나도 해결되곱 되니 같은 함수가 나왔다는 이야기가 있었는데..
+수학 난제 중 하나도 해결하고 보니 같은 함수가 나왔다는 이야기가 있었는데..
 
 ## Interesting Things
 
