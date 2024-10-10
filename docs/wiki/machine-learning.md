@@ -82,6 +82,12 @@ https://www.nobelprize.org/prizes/chemistry/2024/summary/
 
 ---
 
+그리고.. 머신러닝과 관계는 없지만, 10월 10일 노벨 문학상은 대한민국의 소설가 한강에게 수여되었다.
+
+https://www.nobelprize.org/prizes/literature/2024/summary/
+
+---
+
 ![neural network function equation](res/neural-network-function-equation.jpg)
 
 https://www.facebook.com/story.php?story_fbid=27006446892333407&id=100001843848045
