@@ -80,6 +80,29 @@ https://www.nobelprize.org/prizes/physics/2024/summary/
 
 https://www.nobelprize.org/prizes/chemistry/2024/summary/
 
+---
+
+![neural network function equation](res/neural-network-function-equation.jpg)
+
+https://www.facebook.com/story.php?story_fbid=27006446892333407&id=100001843848045
+
+인공 신경망(neural network)의 함수는 다른 함수와 닮았다는 이미지.
+나는 이해하지 못했지만, 덧글에서 재밌는 이야기가 있다.
+
+- 이미지의 함수 3개는 각기 다른 분야에서 사용되는 함수라고 한다.
+  > 포트폴리오 최적화: 돈을 여러 곳에 나누어 투자해서 위험은 줄이고 이익은 늘리는 방법을 찾는 거예요.\
+  > 스핀 글라스: 자석이 서로 끌어당기거나 밀어내는 힘을 연구하는 방법이에요.\
+  > 신경망: 뇌가 어떻게 생각하고 기억하는지, 컴퓨터로 흉내 내는 방법이에요.
+  > 
+  > [댓글 중](https://www.facebook.com/sjoonkwon/posts/pfbid02aBHVAvTG8vVUEt6EmELn66mTdkDgxkQ5Caasr7Nx3QoQFheUo9QAYV6ugfpkX2r4l?comment_id=896474601969359)
+- 위 댓글의 답글에서 보충 설명을 해주셨다.
+  > 셋 모두 critical phenomena & emergence (self-organized criticality)를 설명하기 위한 최소한의 수학적 원리 (자신과 백그라운드의 관계, 자신과 이웃의 관계 사이의 밸런스)를 표현하고 있다는 점이 동일합니다.
+- 파인만의 인용문도 언급되었다.
+  > The same equations have the same solutions.
+  - "식이 같으면 현상도 같다."라는 말인데, [리처드 파인만 강의에서 나왔다고](https://www.feynmanlectures.caltech.edu/II_12.html).
+
+수학 난제 중 하나도 해결되곱 되니 같은 함수가 나왔다는 이야기가 있었는데..
+
 ## Interesting Things
 
 ### 인공지능 제품의 프롬프트 유출
