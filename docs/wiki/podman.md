@@ -10,6 +10,26 @@ created: 2024-09-18
 docker-compose와 호환되는 [podman-compose](https://github.com/containers/podman-compose)는
 WSL에서 `brew install podman-compose`로 설치할 수 있었다.
 
+리소스 설정은 `podman machine set`으로 할 수 있는데, WSL에서는 지원하지 않는다.
+
+```bash
+$ podman machine set --memory 8192
+Error: changing memory not supported for WSL machines
+```
+
+```bash
+$ podman machine ls
+NAME                     VM TYPE     CREATED         LAST UP         CPUS        MEMORY      DISK SIZE
+podman-machine-default*  wsl         45 minutes ago  14 minutes ago  6           2GiB        100GiB
+```
+
+내 머신 설정으로는 메모리가 2GiB 밖에 되지 않아서, Ollama 등 무거운 이미지를 실행할 수 없었다.
+
+---
+
+- `podman machine`에 대한 정보: https://docs.podman.io/en/v5.2.2/markdown/podman-machine.1.html
+- podman 설치: https://podman.io/docs/installation
+
 ## WSL에서 Podman 사용하기
 
 https://podman.io/docs/installation
