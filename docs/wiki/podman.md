@@ -34,8 +34,7 @@ non-interactive shell에서는 사용자 profile을 읽지 않기 때문이다.
 나는 `~/bin`을 `$PATH`에 포함시켜두고 있어서 여기에 만들었다.
 
 ```bash
-# PATH에 포함된 디렉토리 내에서
-$ ln -s "/mnt/c/Program Files/RedHat/Podman//podman.exe"
+ln -s "/mnt/c/Program Files/RedHat/Podman//podman.exe" ~/bin/podman:w
 ```
 
 `podman.exe` 경로는 다를 수 있으니 `which podman.exe`로 확인하자.
