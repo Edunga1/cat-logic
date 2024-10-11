@@ -5,7 +5,8 @@ created: 2017-02-28
 
 운영체제 수준 가상화 컨테이너 관리 도구.
 
-Docker Desktop의 라이센스가 문제된다면, 대체제인 [Podman](/docs/wiki/podman.md)을 사용할 수 있다.
+[podman](/docs/wiki/podman.md)의 선택지도 있다.
+docker 명령어와 호환된다. 다만 WSL에서는 리소스 설정을 할 수 없어서 사용하지 않는다.
 
 ## Docker 환경 구성하기
 
