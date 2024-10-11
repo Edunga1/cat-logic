@@ -29,8 +29,18 @@ brew install --cask docker
 
 https://rancherdesktop.io/
 
+**설치**
+
+MacOS:
+
 ```bash
 brew install --cask rancher
+```
+
+WSL:
+
+```powershell
+winget install rancher-desktop
 ```
 
 Docker Desktop과 흡사하다. 기본적으로 [k8s](./kubernetes.md) 제공한다.
