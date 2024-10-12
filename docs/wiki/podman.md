@@ -10,12 +10,16 @@ created: 2024-09-18
 docker-compose와 호환되는 [podman-compose](https://github.com/containers/podman-compose)는
 WSL에서 `brew install podman-compose`로 설치할 수 있었다.
 
-리소스 설정은 `podman machine set`으로 할 수 있는데, WSL에서는 지원하지 않는다.
+**[WSL](/docs/wiki/windows-subsystem-for-linux.md)에서는 CPU, 메모리 등 리소스를 변경할 수 없다.**
+
+`podman machine set` 옵션으로 리소스 변경이 가능하지만, WSL에서는 변경할 수 없다는 에러 문구가 출력된다.
 
 ```bash
 $ podman machine set --memory 8192
 Error: changing memory not supported for WSL machines
 ```
+
+메모리 뿐만 아니라 CPU도 변경할 수 없다.
 
 ```bash
 $ podman machine ls
