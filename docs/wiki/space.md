@@ -106,6 +106,32 @@ https://x.com/SpaceX/status/1798689697184764071
 
 지구에 착수하기 위해 각도를 변경하는 모습. 고도가 높을 때는 수평이지만, 0km 지점에 가까워지면서 수직으로 변한다.
 
+### 스타쉽 5차 발사 시험
+
+2024년 10월 13일 오후 9시, 5차 시험이 진행되었다.
+
+전체 영상은 [스페이스X 트위터](https://x.com/i/broadcasts/1RDGlyognOgJL)에서 볼 수 있다.
+
+이번 시험에서 성공한 임무는 1단 Super Heavy를 발사대인 Chopsticks에 착륙시킨 것이다.
+
+![starship fifth launch - landing](./res/starship-fifth-launch-landing.png)
+
+Super Heavy가 Chopsticks을 향해 착륙하는 모습이다.
+어떻게 단순 원통처럼 생긴 것이 원하는 지점으로 세밀하게 움직일 수 있는지 신기하다.
+
+![starship fifth launch - chopsticks](./res/starship-fifth-launch-chopsticks.png)
+
+Chopsticks와 결합되는 모습.
+
+아주 멀어서 크기가 실감나지 않는데, Super Heavy의 높이만 71m이다.
+20층 아파트 한 채가 부유하는 것과 같다.
+
+다음은 랜딩 애니메이션 버전.
+
+![starship fifth launch - landing animated](./res/starship-fifth-launch-landing.gif)
+
+결합되는 지점에서 더 내려가지 않는다. 마지막 순간에 결합된 것이다.
+
 ## 다른 민간 우주 기업
 
 아마존의 [블루 오리진](https://www.blueorigin.com/)이 있다.
