@@ -173,10 +173,14 @@ shell에 맞는 `-s` 옵션을 사용하자.
 
 ### GitHub CLI Copilot
 
-`gh extension`으로 copilot 기능을 사용할 수 있다.
-코드 자동완성 기능은 아니고, [copilot-cli](https://githubnext.com/projects/copilot-cli/)와 비슷한 기능이다.
+`gh` 명령어의 확장으로 GitHub Copilot을 사용할 수 있다.
+
+[copilot-cli](https://githubnext.com/projects/copilot-cli/)와 비슷한 기능으로,
+터미널에서 쿼리하는 방식으로 명령어 추천이나 설명을 요청하는 기능이다.
 
 https://docs.github.com/en/copilot/github-copilot-in-the-cli/about-github-copilot-in-the-cli
+
+설치하려면: `gh extension install github/gh-copilot`
 
 `gh copilot explain`은 명령어 설명을 받는 기능이다:
 
