@@ -170,11 +170,14 @@ vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한
 
 `:global/^/move 0`로 전체 줄을 역정렬할 수 있다. `move 0`가 이동할 줄 번호를 의미하므로, `move 10`이면 10번째 아래의 모든 줄만 역정렬한다.
 
-## 내 사용 사례
+## 사용 사례
 
 ### 파일 검색
 
 [fzf.vim](https://github.com/junegunn/fzf.vim)이 제공하는 기능 몇가지를 사용한다.
+
+fzf.vim이 제공하는 미리보기 창으로 파일을 검색한다.
+코드를 미리 볼 수 있고, interactive 검색이 가능한 장점이 있다.
 
 1. ctrl + p
 
@@ -182,17 +185,28 @@ vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한
 nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
 ```
 
-이 방법은 별도 검색창이 출력되고, interactive하게 파일 이름을 검색한다.
+현재 작업 경로가 git 저장소인 경우 `:GFiles`로,
+git 저장소가 아닌 경우 `:Files`로 파일을 검색하기 때문에 어떤 명령을 사용할 지 고려하지 않아도 된다.
+
+`:GFiles`는 .gitignore를 확인하기 때문에 불필요한 파일을 제외하고 검색할 수 있다.
+일부러 제외된 파일을 검색하기 위해선 `:Files`나 `:FZF`를 입력한다.
 
 2. `:Rg` or `:Ag`
 
-각각 [ripgrep](https://github.com/BurntSushi/ripgrep), [the_silver_searcher를](https://github.com/ggreer/the_silver_searcher) 사용한다.
+각각 [ripgrep](https://github.com/BurntSushi/ripgrep), [the_silver_searcher를](https://github.com/ggreer/the_silver_searcher) 사용하는 명렁어다.
 따라서 각 도구 설치가 필요하다.
 
-보통 `:Rg wiki`와 같은 방법으로 명령어를 통해서 1차 검색하고 검색창에서 추가 필터링한다.
-이 방법은 파일 내용도 함께 검색한다.
+도구 이름에서 보이듯이 grep, 즉 파일 내용을 검색한다.
+검색 결과 미리보기 창에서 다시 검색할 수 있다.
 
 두 도구 차이점은 모르겠다. 검색 결과는 조금 다르다.
+
+### 창 네비게이션
+
+1. 팝업 창으로 커서 이동
+
+nvim의 diagnostic 또는 hover(<s-k>)는 팝업 창을 띄운다.
+커서를 옮기면 팝업 창이 사라지는데, 팝업 안으로 커서를 이동하려면 `<c-w>w`를 사용한다.(`:h CTRL-W_w`)
 
 ## 내장 기능
 
