@@ -5,8 +5,6 @@ import theme from "../../constants/theme"
 const Container = styled.div`
   box-sizing: border-box;
   padding: 1rem 1rem 1rem 0;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
 
   ul {
     list-style: none;

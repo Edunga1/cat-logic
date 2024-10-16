@@ -39,7 +39,9 @@ const Side = styled.div`
 
   @media (${device.larger}) {
     display: block;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
+    height: 100%;
+    overflow-y: auto;
   }
 `
 

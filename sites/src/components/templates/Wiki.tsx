@@ -44,7 +44,6 @@ const TocMain = styled(Toc)`
 `
 
 const TocSide = styled(Toc)`
-  margin-top: 2rem;
   max-width: 20rem;
 `
 
