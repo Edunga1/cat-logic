@@ -23,7 +23,9 @@ Scene 파일인 `.tscn`은 사람이 읽을 수 있는 형태로 저장된다.
 2D 튜토리얼은 [간단한 닷지 게임](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html)을 만드는 것이다.
 1시간 정도 소요될 거 같다. 에셋만 다운로드 받으면 바로 시작할 수 있다.
 
-## WSL + Vim LSP 호환성
+## 외부 에디터 사용
+
+### WSL 호환성
 
 Reddit에서 [Godot을 WSL에서 설치하는 방법?](https://www.reddit.com/r/godot/comments/1cph9n7/how_to_install_godot_on_wsl2/)이라는
 질문에 대한 답변에서, [그러지 말라고 한다](https://www.reddit.com/r/godot/comments/1cph9n7/comment/l3knvb3/).
@@ -31,7 +33,7 @@ Reddit에서 [Godot을 WSL에서 설치하는 방법?](https://www.reddit.com/r/
 프로젝트를 WSL 안에 두고 사용해도 문제가 없다는 [답변](https://www.reddit.com/r/godot/comments/1cph9n7/comment/limqgpv/)도 있다.
 유니티 프로젝트를 WSL 안에 두고 사용 시도를 했었는데, 잘 안되었던 것으로 기억한다.
 
-### Language Server Protocol
+#### Language Server Protocol
 
 [Gist](https://gist.github.com/lucasecdb/2baf6d328a10d7fea9ec085d868923a0)에는
 WSL에서 [vim](/docs/wiki/vim.md) godot [lsp](/docs/wiki/language-server-protocol.md)를 사용하는 방법이 나와 있다.
@@ -58,6 +60,13 @@ Windows 10 일 때와 마찬가지로 WSL에서는 포트 정보를 찾을 수 �
 
 정리하면 Godot에서 LSP를 활성화하고, Vim에서 nvim-lspconfig로 `gdscript` 설정만 했다:\
 https://github.com/Edunga1/dotfiles/blob/main/vim/lua/lsp/servers/gdscript.lua
+
+### 성가신 외부 파일 수정 팝업 끄기
+
+외부 에디터에서 파일을 수정하고 Godot 앱으로 돌아오면 수정된 파일을 다시 가져올 지, 버릴지 물어본다.
+수정할 때 마다 팝업이 떠서 불편한데, 설정을 통해 항상 수정 파일을 다시 가져오도록 할 수 있다.
+
+Editor -> Editor Settings -> Text Editor -> Behavior -> Files에서 `Auto reload Scripts on External Change`를 체크하면 된다.
 
 ## GDScript
 
