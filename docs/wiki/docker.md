@@ -350,16 +350,25 @@ https://docs.docker.com/engine/reference/commandline/dockerd/
 > IP address that the special 'host-gateway' string in --add-host resolves to.
 > Defaults to the IP address of the default bridge
 
-## Troubleshooting
+## 에러
 
-### 맥북 m2 이슈
+### "docker: request returned Bad Gateway for API route and version"
 
-Intel CPU(amd64) -> M2(arm)로 옮기면서 발생한 문제
+환경은 WSL2 + Rancher Desktop.
 
-#### mysql:5.6
+```bash
+$ docker run -v $(pwd):/root/godot -v /tmp:/root/output godot-android godot -v --export-debug Android /root/output/MyApp.apk
+docker: request returned Bad Gateway for API route and version http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/7814b7e6b2291abd01cffcaa8c4de37f39e5d9507289cd7b2ea68e161516b633/start, check if the server supports the requested API version.
+```
 
-mysql 8 버전 이하는 arm64 용으로[제공하지 않는 것](https://hub.docker.com/r/arm64v8/mysql/)으로 보인다.
-그래서 `docker pull mysql:5.6` 하면 manifest를 찾을 수 없다며 실패한다:
+`/tmp` 디렉토리를 볼륨으로 연결하면서 발생했다.
+다른 디렉토리를 변경하여 해결.
+
+### "no matching manifest for linux/arm64/v8 in the manifest list entries"
+
+환경은 MacOS M series.
+
+다음과 같이 `docker pull mysql:5.6` manifest를 찾을 수 없다며 실패한다:
 
 ```bash
 ❯ docker pull mysql:5.6
@@ -367,13 +376,21 @@ mysql 8 버전 이하는 arm64 용으로[제공하지 않는 것](https://hub.do
 no matching manifest for linux/arm64/v8 in the manifest list entries
 ```
 
+docker는 이미지를 다운로드할 때, 호스트의 아키텍처와 일치하는 이미지를 자동으로 찾는다.
+M series는 arm 기반이므로 해당 아키텍처의 이미지를 찾지만, 찾을 수 없다는 의미의 에러인 것.
+
+원인은 mysql 8버전 미만은 arm64 용으로 [제공하지 않는다](https://hub.docker.com/r/arm64v8/mysql/).
 해결을 위해선 그냥 amd64 것을 사용해도 동작하므로 `--platform` 옵션을 줘서 amd64 것으로 받는다:
 
 ```bash
 ❯ docker pull --platform linux/amd64 mysql:5.6
 ```
 
-### WSL2에서 Nvidia GPU 사용하기 (해결중...)
+mysql 8부터는 arm64 아키텍처를 지원하므로 `mysql:8`를 사용하는 것도 방법.
+
+## 확인중인 문제
+
+### WSL2에서 Nvidia GPU 사용하기
 
 Docker와 GPU 모두 잘 모르므로 일단 관련 정보만 좀 수집하자.
 
