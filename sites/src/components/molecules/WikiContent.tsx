@@ -8,6 +8,13 @@ const Container = styled.div`
   color: ${theme.colors.foreground};
   font-size: .8rem;
 
+  // heading style
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1.5rem 0 .8rem;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+  }
+
   // link style
   a {
     text-decoration-style: dotted;
