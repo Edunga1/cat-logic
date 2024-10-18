@@ -83,3 +83,17 @@ https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting_la
 유니티의 컴포넌트 개념을 Godot에서는 노드로 표현하는데, 이 노드를 식별하기 위해 사용한다.
 
 [^1]: https://docs.godotengine.org/en/stable/getting_started/first_2d_game/03.coding_the_player.html
+
+## 웹 빌드
+
+아직 확실하지 않음. 나중에 시도해보자.
+
+기본적으로 웹 빌드하면 쓰레드 사용으로 SharedArrayBuffer와 이를 위한 CrossOriginIsolation의 활성화가 필요하다.
+하지만 github pages 등 대부분 호스팅 사이트에서는 이를 지원하지 않는다.
+이를 비활성화할 수 있는 방법이 있다고 한다.
+
+[Godot 4.3 will FINALLY fix web builds, no SharedArrayBuffers required!](https://forum.godotengine.org/t/godot-4-3-will-finally-fix-web-builds-no-sharedarraybuffers-required/38885)\
+이 글에서는 `THREADS_ENABLED`를 추가하면서 더 이상 SharedArrayBuffer가 필요하지 않다고 한다.
+
+이 [godot-ci](https://github.com/yet-another-lucas/plumbing-adventure/blob/main/.github/workflows/ci.yml) workflow를 사용한 프로젝트는 관련된 설정은 보이지 않지만, 웹에서 잘 동작한다.
+아마도 Base Workflows에서 이미 설정되어 있는 듯.
