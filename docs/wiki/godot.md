@@ -86,7 +86,38 @@ https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting_la
 
 ## 웹 빌드
 
-아직 확실하지 않음. 나중에 시도해보자.
+빌드를 위해선 다음의 순서로 진행한다. 4.3 버전 기준이다.
+
+1. **Export Templates** 설치
+2. Web Preset 생성 (export_presets.cfg)
+3. Export
+
+1, 2는 한 번만 진행한다.
+
+Export Templates는 빌드를 위한 도구를 설치하는 과정이다.
+프로젝트 레벨이 아닌 Godot 엔진 레벨에서 설치하는 것으로 보인다.
+Editor -> Manage Export Templates...에서 `Download and Install` 버튼을 클릭하기만 하면 설치된다.
+CLI로 설치할 수 있는지는 모르겠다.
+
+Web Preset은 빌드 설정을 저장한다.
+웹, 데스크탑, AOS, IOS 등 플랫폼 별로 Preset을 만들면 export_presets.cfg에 설정이 저장된다.
+
+이제 에디터나 `godot.exe` 또는 `godot` cli로 export할 수 있다.
+다음은 CLI로 빌드하는 방법. WSL 및 godot.exe를 binary로 사용하고 있다.
+
+```bash
+$ mkdir -p build/web
+$ godot.exe --export-release "HTML5" ./build/web/index.html
+```
+
+godot.exe는 윈도우 앱 기반이라 그런지, Godot 엔진이 시작되고 빌드 후 종료된다.
+
+이제 `build/web/index.html`을 서빙하면 실행된다.
+`live-server build/web` 등 도구로 확인한다.
+
+---
+
+아래는 쓰레드를 사용한 고성능 웹 빌드에 대한 내용인데, 내 경우는 해당 기능을 사용하지 않는지 문제가 없다.
 
 기본적으로 웹 빌드하면 쓰레드 사용으로 SharedArrayBuffer와 이를 위한 CrossOriginIsolation의 활성화가 필요하다.
 하지만 github pages 등 대부분 호스팅 사이트에서는 이를 지원하지 않는다.
