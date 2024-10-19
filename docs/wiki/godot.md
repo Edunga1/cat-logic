@@ -23,6 +23,11 @@ Scene 파일인 `.tscn`은 사람이 읽을 수 있는 형태로 저장된다.
 2D 튜토리얼은 [간단한 닷지 게임](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html)을 만드는 것이다.
 1시간 정도 소요될 거 같다. 에셋만 다운로드 받으면 바로 시작할 수 있다.
 
+윈도우에서 설치 시 `godot.exe` 바이너리를 제공한다.
+프로젝트 내에서 `godot.exe`를 실행하면 해당 프로젝트를 연다.
+그 외 옵션으로 빌드 등 다양한 기능을 제공한다.
+CLI에 대한 정보는: https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html
+
 ## 외부 에디터 사용
 
 ### WSL 호환성
