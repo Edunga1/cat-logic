@@ -1001,6 +1001,41 @@ GPT-4o는 High로 분류되어 있다. GPT-4o mini는 Low로 분류한다.
 특히 토큰 길이 제한량은 매우 작은 규모의 서비스로 제한하여 구상해야 한다.
 분당 요청 수를 최대로 사용한다면 5~10분이면 소진하기 때문이다.
 
+### Adobe MAX Sneaks 2024 - Turntable
+
+2024년 10월 15일에 열린 Adobe MAX의 내용 중 하나.
+Sneaks는 Adobe의 실험적인 기술을 소개하는 세션이다.
+여기서 소개되는 기술은 제품으로 출시되지 않을 수도 있다.
+
+Turntable은 2D 이미지를 AI 기술로 추론하여 이미지를 수정하는 기술이다.
+
+![Sneaks Turntable Warrior](./res/adobe-max-sneaks-2024-turntable-warrior.gif)
+
+2D 벡터 이미지를 만들면, 마치 3D에서 시점을 옮긴 것처럼 회전 등 변형한다.
+위 이미지처럼 전사 이미지를 회전하거나, 다음과 같이 용 이미지를 회전하기도 한다.
+
+![Sneaks Turntable Dragon](./res/adobe-max-sneaks-2024-turntable-dragon.gif)
+
+다른 시점에서의 이미지를 만들고 싶다면, 다음과 같이 쉽게 수정할 수 있다.
+
+![Sneaks Turntable Warrior Back](./res/adobe-max-sneaks-2024-turntable-warrior-back.gif)
+
+다음은 하나의 원본 이미지를 만들어 두고, 다른 이미지에 원본과 동일한 변형을 적용하는 기능이다.
+
+![Sneaks Turntable Original Copy](./res/adobe-max-sneaks-2024-turntable-original-copy.gif)
+
+뿔이 없지만 각각 다른 방향을 바라보는 박쥐 이미지에, 원본 이미지의 뿔을 적용하는 모습이다.
+하나의 원본만 있으면 다양한 바리에이션을 만들 수 있다.
+
+Turntable의 소개는 유튜브에 소개되어 있다:\
+https://www.youtube.com/watch?v=gfct0aH2COw
+
+Sneaks 전체 기술 소개는 Adobe 공식 사이트에 공개되어 있다.
+Turntable은 전체 영상 중 1시간 12분부터 소개된다:\
+https://www.adobe.com/max/2024/sessions/max-sneaks-gs3.html
+
+참고로 Sneaks는 아콰피나가 진행자로 출연한다.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
