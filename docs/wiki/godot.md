@@ -20,13 +20,19 @@ Scene 파일인 `.tscn`은 사람이 읽을 수 있는 형태로 저장된다.
 변경 여부는 에디터 내에서도 `3 Changes`와 같이 표시된다.
 이러한 점은 에디터 없이도 개발할 수 있게 해줄 것이다.
 
-2D 튜토리얼은 [간단한 닷지 게임](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html)을 만드는 것이다.
-1시간 정도 소요될 거 같다. 에셋만 다운로드 받으면 바로 시작할 수 있다.
-
 윈도우에서 설치 시 `godot.exe` 바이너리를 제공한다.
 프로젝트 내에서 `godot.exe`를 실행하면 해당 프로젝트를 연다.
 그 외 옵션으로 빌드 등 다양한 기능을 제공한다.
 CLI에 대한 정보는: https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html
+
+## 튜토리얼
+
+공식 사이트에서 [간단한 2D 닷지 게임](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html)을 만드는 과정을 소개한다.
+1시간 정도 소요된다. 에셋만 다운로드 받으면 바로 시작할 수 있다.
+애니메이션, 사운드, 물리학, 스크립트 등 기본적인 기능을 다룬다.
+
+실습하여 내 저장소에 업로드하였다. 추가로 GitHub Actions를 이용하여 빌드하고, GitHub Pages로 배포한다.\
+https://github.com/Edunga1/godot-start-2d-game
 
 ## 외부 에디터 사용
 
