@@ -78,9 +78,14 @@ while read line; do
     token=${arrline[0]}
     param1=${arrline[1]}
 
+    # 입력이 #로 시작하면 pass
+    if [[ $token == \#* ]]
+    then
+        continue
+    fi
+
     curl -s -X GET --location "http://API_HOST_ASIS/some/api/path/${param1}" \
     -H "Authorization: Bearer ${token}" \
-
     | python -m json.tool \
     > diffc
 
