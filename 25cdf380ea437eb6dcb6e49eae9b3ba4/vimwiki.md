@@ -1,20 +1,41 @@
 ---
 created: 2022-12-31
 ---
-# Vimwiki
+# VimWiki
 
-vim 기반 개인 위키 플러그인.
+개인 위키 Vim 플러그인.
 
 https://github.com/vimwiki/vimwiki
 
-vimwiki는 문서를 작성하는 플랫폼으로써 사용한다.\
-vimwiki와 관계없이 문서를 마크다운으로 작성하면,
-vimwiki로 문서의 링크를 걸거나(markdown [LSP](./language-server-protocol.md)를 사용하기도 한다.) 이동한다.\
-작업 중에는 기억나지 않는 것들을 `VWS`로 검색한다.
+VimWiki는 문서를 작성하는 플랫폼으로써 작동한다.
 
-그래서 [cat-logic](./cat-logic.md)은 vimwiki, [gatsbyjs](./gatsbyjs.md), [markdown](./markdown.md)등 여러 플랫폼이 엮여있다.
+주로 마크다운 기반으로 작성한다.
+VimWiki를 설치하고 경로를 설정한 후 마크다운 파일을 열면,
+기본적으로 `filetype`을 `vimwiki`로 설정한다.
+그러면 Markdown과 MediaWiki 문법을 지원하는 [LSP](./language-server-protocol.md)처럼 동작한다.
 
-## 자주 사용하는 기능
+## 기능
+
+**LSP로써의 VimWiki** \
+내부 링크로 이동한다거나, 현재 문서를 참조하는 모든 문서를 검색하는 등 LSP와 같은 기능을 제공한다.
+추가적인 동작도 하는데, 예를들어, 내부 링크에서 <cr>로 해당 문서로 이동하고, 웹 링크라면 브라우저로 연다.
+
+**마크다운 도구로써의 VimWiki** \
+HTML로 내보내거나, 위키 검색을 한다거나, 여러개의 위키를 관리할 수 있는 등 VimWiki 고유의 기능을 제공한다.
+일반적인 코딩 작업에는 LSP로 대부분 해결할 수 있어서, Vim 플러그인을 추가로 설치하지 않는 반면에,
+문서 작성을 하다보면 VimWiki가 제공하는 편리 기능들이 도움이 된다.
+
+따라서 [Markdown](./markdown.md) LSP를 별도로 설치할 필요성은 없다.
+하지만 둘 다 사용하면 vim-lsp의 공통 경험과 VimWiki의 향상된 기능을 사용할 수 있어서 좋다.
+함께 사용하면서 기능이 충돌한다거나 등 문제는 없었다.
+
+**Viewer로써의 VimWiki** \
+`vimwiki`로 파일 타입이 변경되면서, 구문 강조는 VimWiki가 제공하는 것으로 변경된다.
+그리고 VimWiki가 제공하는 기능 중에는 문서를 탐색하는 기능도 많아서, 뷰어로써 사용하는 것도 가능하다.
+`conceallevel`로 불필요한 구문을 가리고 텍스트만 볼 수도 있는데, 이건 기본 vim 기능으로도 가능한 듯.
+별도의 마크다운 뷰어를 사용하지 않고, 작성과 동시에 뷰어로 접근성을 높인다.
+
+### 자주 사용하는 기능
 
 * `<leader>ww` wiki index 열기
 * `<enter>` 문서 열기
