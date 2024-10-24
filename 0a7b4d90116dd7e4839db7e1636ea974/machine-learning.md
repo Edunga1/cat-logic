@@ -1002,6 +1002,10 @@ GPT-4o는 High로 분류되어 있다. GPT-4o mini는 Low로 분류한다.
 특히 토큰 길이 제한량은 매우 작은 규모의 서비스로 제한하여 구상해야 한다.
 분당 요청 수를 최대로 사용한다면 5~10분이면 소진하기 때문이다.
 
+### GitHub Copilot Workspace
+
+[GitHub Workspace](/docs/wiki/github.md#github-workspace) 참조.
+
 ### Adobe MAX Sneaks 2024 - Turntable
 
 2024년 10월 15일에 열린 Adobe MAX의 내용 중 하나.
