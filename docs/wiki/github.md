@@ -252,3 +252,14 @@ gh copilot  github/gh-copilot  v0.5.3-beta
 ```
 
 제거하려면 `gh extension remove github/gh-copilot`.
+
+## GitHub Copilot Workspace
+
+Copilot과 함께 프로젝트의 문제 정의, 계획을 세우고, 구현을 도와주는 AI 개발 환경이다.
+
+https://githubnext.com/projects/copilot-workspace/
+
+2024년 10월 기준, [GitHub Next](https://githubnext.com/)의 실험적인 프로젝트이다.
+나는 4월에 Waitlist에 등록해서 10월 24일에 초대를 받았다.
+
+사용 방법은 별도 저장소로 문서화되어 있다: https://github.com/githubnext/copilot-workspace-user-manual
