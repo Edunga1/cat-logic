@@ -263,3 +263,80 @@ https://githubnext.com/projects/copilot-workspace/
 나는 4월에 Waitlist에 등록해서 10월 24일에 초대를 받았다.
 
 사용 방법은 별도 저장소로 문서화되어 있다: https://github.com/githubnext/copilot-workspace-user-manual
+
+첫 사용 소감은, 개인 프로젝트의 진행이 막연할 때 사용하면 좋겠다.
+잘 짜여진 흐름으로 작업을 진행할 수 있도록 가이드를 해주기 때문이다.
+
+공개 프로젝트라면 잘 모르겠다. 아직 얼만큼 성능이 얼마나 좋은지 잘 몰라서 평가하기 어렵다.
+
+Workspace는 저장소의 모든 파일을 분석한다.
+저장소에 대해서 일일이 설명하지 않아도 어떤 프로젝트인지 알고 상황에 맞춰서 진행한다.
+
+### 사용법
+
+Workspace로 작업할 저장소를 선택하는 것으로부터 시작한다.
+선택하기 위해서 GitHub의 연동(권한)이 필요하다. Copilot Workspace는 별도 앱으로 동작하기 때문이다.
+
+아이디어 구상 -> 작업 계획 -> 구현 순서로 진행된다.
+모든 것은 자연어로 입력으로 이루어진다.
+
+![copilot workspace task](./res/copilot-workspace-task.png)
+
+Task 단계에서는 어떤 작업을 할 것인지 고민하는 단계다.
+상단을 보면 `Brainstorm`이라고 되어 있다.
+
+내가 입력한 것은 `Write a friendly README` 일 뿐이다.
+그랬더니 현재 저장소의 상황을 브리핑했다.
+`Current Behavior`이 그 부분이다.
+README.md 파일이 없고, 프로젝트에 대한 문서, 정보, 목적, 설치 방법, 협업 방법 등이 없다고 한다.
+
+그리고 해결 방법을 제안한다.
+`Proposed Solution` 지점이다.
+README.md 파일을 생성할 것이고, 부족한 부분을 채울거란다.
+
+친절하게도 `Suggested Questions`을 제시한다.
+부족한 부분을 질문을 통해서 채워보라는 것이다.
+물론 직접 내가 작성할 수도 있도록 되어있다.
+GitHub의 세심한 배려가 느껴진다.
+
+`Generate Plan` 버튼을 누르면 Plan 단계로 넘어간다.
+
+![copilot workspace plan](./res/copilot-workspace-plan.png)
+
+Plan 단계는 Workspace가 제안한 작업을 내가 검토하는 단계다.
+
+왼쪽 지면에 TODO 목록을 만들어 놓았다.
+우선 순위가 중요한지, 아이템의 위치를 변경할 수 있고, 직접 추가, 삭제가 가능하다.
+
+가운데는 어떤 파일을 작업할 것인지 보여준다.
+
+`Implement selected files` 버튼을 누르는 것으로 Workspace가 작업을 시작한다.
+
+![copilot workspace implementation](./res/copilot-workspace-implementation.png)
+
+README 추가 정도는 간단한지 작업은 빠르게 진행되었다.
+
+Plan 단계에서 한글로 작성하자고 했는데, 정말로 한글로 작성했다.
+프로젝트 설명은 틀린 부분이 있다.
+`적 캐릭터의 이동` 기능은 없다. 그냥 적 캐릭터가 없다.
+그 외에는 맞다.
+
+여기서도 Workspace의 결과를 내가 검토하고 수정할 수 있다.
+모든 단계는 사용자의 피드백으로 마무리한다.
+
+오른쪽 상단의 `Create pull request` 버튼을 눌러서 다음으로 진행한다.
+
+![copilot workspace pull request 1](./res/copilot-workspace-pull-request-1.png)
+
+사용자가 명령만 하면 모든 것은 Workspace가 처리한다는 기조인가?
+
+브랜치 이름부터 PR 제목, 설명까지 모두 작성해줬다.
+시작은 비어있는데, 내용을 생성하는 버튼이 있다.
+
+![copilot workspace pull request 2](./res/copilot-workspace-pull-request-2.png)
+
+PR까지 생성한 모습이다.
+이로써 코드 반영만 내가 하면 된다.
+
+아이디어 구상부터 구현까지 Workspace가 모두 처리했다.
+떠밀리듯 구현한 느낌이다.
