@@ -5,6 +5,12 @@ created: 2017-01-25
 
 Git 저장소 호스팅 서비스.
 
+## GitHub Copilot
+
+AI 기반의 코드 완성 도구.
+
+자세한 내용은 [문서 참조](/docs/wiki/machine-learning.md#github-copilot)
+
 ## GitHub CLI
 
 `gh` 명령어로 GitHub 기능을 사용할 수 있다.
