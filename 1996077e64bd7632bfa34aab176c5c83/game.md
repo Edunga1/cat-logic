@@ -7,9 +7,9 @@ created: 2023-05-11
 
 ## Ultima Online
 
-https://en.wikipedia.org/wiki/Ultima_Online
+97년에 출시한 2D MMORPG. 역사가 오래된 만큼 많은 게임들의 기반이 되는 시스템을 가지고 있다.
 
-97년에 나온 2D MMORPG. 역사가 오래된 만큼 많은 게임들의 기반이 되는 시스템을 가지고 있다.
+https://en.wikipedia.org/wiki/Ultima_Online
 
 서버-클라이언트간 패킷이 공개되어 있다.\
 이를 이용하여 **사설 서버**, **매크로**와 **서드파티 프로그램**이 개발되었다.
@@ -20,7 +20,7 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 ### 서버 프로젝트
 
-이 게임에서 사설 서버를 Free Shard라고 부른다.
+사설 서버를 Free Shard라고 부른다.
 
 이런 사설 서버들이 사용하는 서버 프로젝트로 [RunUO](https://github.com/runuo/runuo), [ServUO](https://github.com/ServUO/ServUO)가 있다.
 
