@@ -140,7 +140,7 @@ personRepository.findAll(Example.of(person));
 
 사용해보진 않았다. Entity 인스턴스가 쿼리 용도로 사용한다. 복잡한 쿼리의 경우 가독성이 떨어진다.
 
-###### QueryDSL
+##### QueryDSL
 
 http://www.querydsl.com/static/querydsl/4.1.3/reference/html_single/#d0e321
 
@@ -171,7 +171,7 @@ session.query(User).filter(User.name == 'Edwardo').all()
 sqlalchemy의 경우 python의 연산자 오버로딩을 힘입어 높은 가독성을 가진다.
 numpy와 같은 [python](./python.md) 라이브러리도 같은 이유에서 사용하기 편리한 인터페이스를 가졌다.
 
-####### querydsl-sql
+##### querydsl-sql
 
 http://querydsl.com/static/querydsl/latest/reference/html/ch02s03.html
 
@@ -184,13 +184,13 @@ https://youtu.be/zMAX7g6rO_Y?t=1169
 local db로부터 q-class를 생성해야 한다. 이 것 때문에 배포 전략을 다시 변경해야 할 수도 있다.
 querydsl-jpa가 entity로부터 생성한 q-class를 함께 사용할 수 없다.
 
-####### infobip-spring-data-querydsl
+###### infobip-spring-data-querydsl
 
 https://github.com/infobip/infobip-spring-data-querydsl
 
 또다른 native query의 대안. Union 쿼리 등 동작하는 것을 확인했다.
 
-##### JPA 기본 메서드는 다른 method의 위임 용으로만 사용해야 한다.
+###### JPA 기본 메서드는 다른 method의 위임 용으로만 사용해야 한다.
 
 https://github.com/infobip/infobip-spring-data-querydsl
 
