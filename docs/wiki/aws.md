@@ -3,8 +3,6 @@ created: 2023-01-03
 ---
 # Amazon Web Service
 
-AWS 관련
-
 ## awscli
 
 linux, macos는 `brew install awscli`로 설치하자.
@@ -16,8 +14,8 @@ linux, macos는 `brew install awscli`로 설치하자.
 aws ecr get-login-password --region <REGION> | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com
 ```
 
-`REGION`은 서울 리전이라면 `ap-northeast-2`.
-`AWS_ACCOUNT_ID`는 `aws sts get-caller-identity` 명령의 결과로 구할 수 있다. `Account` 필드의 값이 `AWS_ACCOUNT_ID` 이다.
+`REGION`은 서울 리전이라면 `ap-northeast-2`. \
+`AWS_ACCOUNT_ID`는 `aws sts get-caller-identity` 명령어로 구할 수 있다. `Account` 필드의 값이다.
 
 ```bash
 $ aws sts get-caller-identity
