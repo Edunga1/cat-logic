@@ -396,6 +396,18 @@ Git 커밋메시지의 파일 타입은 `ft=gitcommit`이며, 옵션을 확인�
 이 중 `t`가 자동 줄바꿈 한다고 `:h fo-tables`에서 설명한다. `textwidth` 옵션 만큼 길어지면 자동 줄바꿈한다.\
 비활성화는 `t` 옵션을 제거하거나(`set formatoptions-=t`) `textwidth`를 0으로 설정하면 된다(`set textwidth=0`).
 
+### 실행취소 관리(Local History)
+
+Vim은 실행취소 `u`와 다시실행 `CTRL-R`을 지원한다.\
+그리고 실행취소 내역은 **트리 구조**로 관리된다.
+
+- `:h undo-tree`
+- `:h undolist`
+- `:h earlier`
+- `:h later`
+
+작성중!
+
 ## 구문 강조
 
 `:h syntax`
