@@ -79,6 +79,12 @@ const Container = styled.div`
       }
     }
   }
+
+  // hr style
+  hr {
+    border: none;
+    border-top: 1px dashed #aaa;
+  }
 `
 
 export default function WikiContent(
