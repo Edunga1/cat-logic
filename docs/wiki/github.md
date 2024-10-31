@@ -156,6 +156,8 @@ GitHub의 세심한 배려가 느껴진다.
 
 `Generate Plan` 버튼을 누르면 Plan 단계로 넘어간다.
 
+---
+
 ![copilot workspace plan](./res/copilot-workspace-plan.png)
 
 Plan 단계는 Workspace가 제안한 작업을 내가 검토하는 단계다.
@@ -166,6 +168,8 @@ Plan 단계는 Workspace가 제안한 작업을 내가 검토하는 단계다.
 가운데는 어떤 파일을 작업할 것인지 보여준다.
 
 `Implement selected files` 버튼을 누르는 것으로 Workspace가 작업을 시작한다.
+
+---
 
 ![copilot workspace implementation](./res/copilot-workspace-implementation.png)
 
@@ -180,6 +184,10 @@ Plan 단계에서 한글로 작성하자고 했는데, 정말로 한글로 작�
 모든 단계는 사용자의 피드백으로 마무리한다.
 
 오른쪽 상단의 `Create pull request` 버튼을 눌러서 다음으로 진행한다.
+
+구현에 문제가 있다면, `Revise` 창에 수정할 내용을 입력하면 다시 구현한다.
+
+---
 
 ![copilot workspace pull request 1](./res/copilot-workspace-pull-request-1.png)
 
