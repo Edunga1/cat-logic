@@ -396,7 +396,7 @@ Git 커밋메시지의 파일 타입은 `ft=gitcommit`이며, 옵션을 확인�
 이 중 `t`가 자동 줄바꿈 한다고 `:h fo-tables`에서 설명한다. `textwidth` 옵션 만큼 길어지면 자동 줄바꿈한다.\
 비활성화는 `t` 옵션을 제거하거나(`set formatoptions-=t`) `textwidth`를 0으로 설정하면 된다(`set textwidth=0`).
 
-### 실행취소 관리(Local History)
+### 실행취소(undo) 관리(Local History)
 
 Vim은 실행취소 `u`와 다시실행 `CTRL-R`을 지원한다.\
 그리고 실행취소 내역은 **트리 구조**로 저장된다.
@@ -404,14 +404,22 @@ Vim은 실행취소 `u`와 다시실행 `CTRL-R`을 지원한다.\
 
 - `:h undo-tree`
 - `:h undolist`
-- `:h earlier`
-- `:h later`
 
-작성중!
+`:undolist`는 변경사항 트리의 Leaf 노드를 보여준다.
+undo 시점이 Leaf 노드가 된다. 이 노드는 `:undo 노드번호`로 되돌릴 수 있다.
+되돌리는 시점도 Leaf 노드를 생성한다.
+
+노드에는 시간도 표시되는데, `:earlier`와 `:later`로 시간을 기준으로 이동할 수 있다.
+예를들어 `:earlier 1h`로 1시간 전으로 이동한다.
 
 #### undotree 플러그인
 
+undolist를 트리 구조로 보여주는 플러그인.
+
 https://github.com/mbbill/undotree
+
+undolist는 직관적으로 보기 어렵다.
+이 플러그인은 트리 구조를 보여주며, 방향키를 통해 이동 및 미리보기를 제공한다.
 
 ## 구문 강조
 
