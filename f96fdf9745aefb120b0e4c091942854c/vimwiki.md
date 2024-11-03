@@ -46,15 +46,19 @@ HTML로 내보내거나, 위키 검색을 한다거나, 여러개의 위키를 �
       다른 작업 영역에서는 `:VWS`가 동작하지 않기 때문에 index로 먼저 이동한다.
 * `vah`로 현재 헤더, `vaH`로 하위 헤더까지 선택한다. `h`는 header를 선택하는 text object selector다.
 
-## FileType
+## vimwiki FileType
 
-vimwiki 경로의 markdown 파일은 `.md` 확장자를 가지더라도 `vimwiki` 파일타입을 가진다(`set ft?`).
-그래서 다른 경로의 마크다운 파일과 비교할 때 미묘하게 구문 강조가 다르거나 기능이 달라서 혼란스러울 수 있다.
+vimwiki 경로의 markdown 파일은 `vimwiki` 파일타입을 가진다(`set ft?`).
+플러그인 자체의 구문 강조를 사용하게 되고, filetype 변경으로 인해 다른 플러그인의 기능을 사용할 수 없다.
+그래서 혼란스러울 수 있다.
 
-`g:vimwiki_filetypes` 옵션으로 filetype을 수정할 수는 있으나 `vimwiki`, `markdown` 모두 가진다:
+`g:vimwiki_filetypes` 옵션으로 filetype을 변경할 수 있다.
+
 ```vim
 let g:vimwiki_filetypes = ['markdown']
 ```
+
+다만 `vimwiki`의 파일 타입도 함께 가진다.
 
 지금은 큰 불편함이 없어서 그대로 사용하고 있지만,
 마크다운 파일 타입을 사용하면 여러 플러그인에서 제공하는 광범위한 기능을 제공받을 수 있게된다.
