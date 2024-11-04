@@ -7,7 +7,7 @@ created: 2023-10-27
 
 ## Writerside App
 
-Markdown, XML 기반 문서 작성 도구.
+Jetbrains의 문서 작성 도구.
 
 https://www.jetbrains.com/writerside/
 
@@ -19,13 +19,12 @@ https://www.jetbrains.com/writerside/
 > Writerside는 현재 얼리 액세스 프로그램으로 배포되고 있으며 완전 무료입니다.
 >
 > Writerside가 출시된 후에도 무료 버전이나 EAP 프로그램이 지속적으로 제공될 예정이므로 계속 무료로 도구를 사용할 수 있습니다.
->
-> 테마와 레이아웃이 Jetbrain의 공식 문서과 같아서 퀄리티가 기본적으로 좋다.
 
-에디터에서 작성하면 미리보기를 제공하는데, 로컬 호스팅을 통해서 보여준다.
+테마와 레이아웃이 Jetbrain의 공식 문서과 같아서 퀄리티가 기본적으로 좋다.
 
-[The Git Tool Window](https://www.jetbrains.com/idea/guide/tutorials/creating-a-project-from-github/the-git-tool-window/)\
-파일이 로컬에 저장은 되지만, Git 저장소와 연동하는 것을 권장하고 있다.
+에디터에서 작성하면 미리보기를 제공하는데, 로컬 호스팅하여 보여준다.
+
+파일이 로컬에 저장은 되지만, [Git 저장소와 연동하는 것을 권장하고 있다](https://www.jetbrains.com/idea/guide/tutorials/creating-a-project-from-github/the-git-tool-window/).
 
 ## Marksman - Language Server for Markdown
 
