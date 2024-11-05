@@ -50,7 +50,16 @@ let g:clipboard = {
   \ }
 ```
 
-win32yank.exe 실행파일 필요.
+[win32yank.exe](https://github.com/equalsraf/win32yank) 실행파일이 필요하다.
+저장소 Release 페이지에서 다운로드 후 `PATH`에 추가한다.
+
+```bash
+$ curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+$ unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+$ mv /tmp/win32yank.exe ~/bin  # 나는 ~/bin을 $PATH에 추가했다.
+```
+
+---
 
 다음은 [MacOS](./mac-os.md) 등 다른 환경에서 동작하지 않도록, WSL 확인하는 함수이다.
 
