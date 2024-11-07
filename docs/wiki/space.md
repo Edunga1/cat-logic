@@ -5,21 +5,21 @@ created: 2024-03-14
 
 무한한 공간을 떠도는 것을 꿈꾼다.
 
-![a person in a spaceship](./res/person-on-spaceship.png)
+![a person on a spaceship](./res/person-on-spaceship.png)
 
 > 출처: https://imgur.com/gallery/4fPrpX8
 
-우주를 유유히 떠다니고 싶다.
+이렇게 우주를 거닐고 싶다.
 
-## SpaceX 스타쉽(Starship)
+## SpaceX Starship
 
-스타쉽은 우주 여객기로, 행성 간 이동을 위한 우주선이다.
+스타쉽은 우주 여객기로, 행성 간 이동이 목적인 우주선이다.
 
 https://www.spacex.com/vehicles/starship/ \
-이 링크에 가면 스타쉽의 제원을 볼 수 있다.
+공식 홈페이지에 가면 스타쉽의 제원을 볼 수 있다.
 
-웹에서 보면 크기가 가늠되지 않겠지만, 여객기인 만큼 상당히 크다.
-총 높이만 무려 121m이다. 국내법에서 고층건물을 120m로 정의하니, 스타쉽은 고층 건물을 우주로 보내는 것과 같다.
+여객기인 만큼 상당히 크다. 총 높이만 무려 121m이다.
+국내법에서 고층건물을 120m로 정의하니, 스타쉽은 고층 건물을 우주로 보내는 것과 같다.
 
 총 3단으로 구성되어 있다.
 2단부 "Starship"은 우주선 자체, 1단부 "Super Heavy"는 Booster로 궤도에 올리기 위한 부분이다. 분리되어 다시 지구로 돌아온다.
@@ -38,13 +38,13 @@ Super Heavy에 달린 엔진은 "Raptor"라는 이름으로, 33개가 있다.
 
 ### 스타쉽 3차 발사 시험
 
-2024년 3월 14일 오후 9시 경. 스타쉽 3차 발사가 이루어졌고, 우주로 올라갔다.
+2024년 3월 14일 오후 9시 경. 스타쉽 3차 발사가 이루어졌다.
 
 [조선비즈 - “화성으로 가자” 스페이스X의 초대형 우주선 스타십, 3차 발사 만에 지구궤도 올랐다](https://biz.chosun.com/science-chosun/technology/2024/03/14/JH6FGNK5YNC5FEBSKINGFFOR34/)
 
 ![starship third launch 1](./res/starship-third-launch-integrated.png)
 
-하단의 정보 패널에서 왼쪽 부분이 Super Heavy, 오른쪽 부분이 Starship의 상태를 보여준다.
+하단 패널에서 왼쪽 부분이 Super Heavy, 오른쪽 부분이 Starship의 정보를 보여준다.
 
 양쪽에 동그라미로 표시된 것이 엔진이다.\
 왼쪽은 Super Heavy에 달린 Raptor 엔진 33개이고, 오른쪽은 Starship에 달린 엔진 6개다.
