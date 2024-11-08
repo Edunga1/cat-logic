@@ -302,10 +302,24 @@ CTRL + SPACE 입력하면 저장한 명령어나 히스토리를 선택할 수 �
 
 https://github.com/junegunn/fzf
 
-A command-line fuzzy-finder. 검색 도구로 사용한다. 매우 추천하는 도구.
-인터렉티브 UI를 잘 제공해서, 주 기능인 파일 검색외에도 리스트에 대한 UNIX 파이프라인 필터로 사용하기 유용하다.
+A command-line fuzzy-finder.
 
 ![fzf github preview](https://raw.githubusercontent.com/junegunn/i/master/fzf-preview.png)
+
+터미널 도구의 기본 동작은 텍스트 출력으로 이루어지는데,
+사람 입장에서는 이 출력을 읽고 필요한 정보를 찾아내기 어렵다.
+fzf는 이 출력에 대한 상호작용을 제공한다.
+예를들어, 파일 목록을 출력하고 fzf에 넘기면 방향키로 선택하거나 fuzzy 검색할 수 있다.
+
+Fuzzy search는 문자열이 일부만 일치해도 검색하는 알고리즘이다.
+예를들어 `foo bar baz`는 `fbb`로 검색될 수 있다.
+
+**명령어 내역 검색 개선**
+
+셸에서 `ctrl + r`로 명령어 내역을 검색할 수 있는데, 기본 기능은 제한적이다.
+검색 후보를 `ctrl + r`을 다시 누르는 것으로 하나씩 탐색한다.
+fzf는 이 기능을 확장하여 미리 모든 후보를 나열한다.
+fuzzy 검색으로 더 나은 검색이 가능하다.
 
 **preview window scrolling**
 
@@ -314,7 +328,7 @@ A command-line fuzzy-finder. 검색 도구로 사용한다. 매우 추천하는 
 
 **현재 디렉토리 내에서 파일 검색**
 
-`CTRL-T`를 누르면 파일 인터렉티브로 파일을 검색한다. 선택하면 파일 경로가 붙여 넣는다.
+`CTRL-T`를 누르면 파일 대화식으로 파일을 검색한다. 선택하면 파일 경로가 입력창에 입력된다.
 예를들어 `cat `까지 입력하고 `CTRL-T`로 파일을 찾아 선택하면 `cat /path/to/file` 경로가 완성된다.
 
 fzf가 없으면 보통, tab 두 번 눌러서 모든 파일을 확인할텐데, `CTRL-T`를 사용하는 편이 더 편리하다.
