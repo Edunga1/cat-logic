@@ -7,10 +7,12 @@ created: 2023-05-10
 
 ## Microsoft PowerToys
 
+윈도우 유틸리티 모음 프로그램.
+다양한 편의 기능을 제공한다.
+
 https://learn.microsoft.com/en-us/windows/powertoys/
 
-유틸리티 모음 프로그램.
-다양한 편의 기능을 제공한다.
+powershell로 설치: `winget install --id Microsoft.PowerToys`
 
 내가 주로 사용하는 기능은:
 - [FancyZones](https://learn.microsoft.com/en-us/windows/powertoys/fancyzones): 창을 원하는 위치에 배치할 수 있게 해준다. 레이아웃 템플릿을 여러개 만들어서 관리할 수 있는 기능 등.
