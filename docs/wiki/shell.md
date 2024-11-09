@@ -306,6 +306,8 @@ A command-line fuzzy-finder.
 
 ![fzf github preview](https://raw.githubusercontent.com/junegunn/i/master/fzf-preview.png)
 
+linuxbrew or homebrew로 설치하려면: `brew install fzf`
+
 터미널 도구의 기본 동작은 텍스트 출력으로 이루어지는데,
 사람 입장에서는 이 출력을 읽고 필요한 정보를 찾아내기 어렵다.
 fzf는 이 출력에 대한 상호작용을 제공한다.
@@ -316,10 +318,23 @@ Fuzzy search는 문자열이 일부만 일치해도 검색하는 알고리즘이
 
 **명령어 내역 검색 개선**
 
-셸에서 `ctrl + r`로 명령어 내역을 검색할 수 있는데, 기본 기능은 제한적이다.
-검색 후보를 `ctrl + r`을 다시 누르는 것으로 하나씩 탐색한다.
-fzf는 이 기능을 확장하여 미리 모든 후보를 나열한다.
-fuzzy 검색으로 더 나은 검색이 가능하다.
+셸에서 `ctrl + r`는 reveerse-i-search 이름의 기능으로 명령어 내역을 검색할 수 있는데,
+`ctrl + r`을 다시 누르는 것으로 하나씩 탐색한다.
+
+```bash
+$ apt list --installed | grep locales
+bck-i-search: grep_
+```
+
+fzf는 이 기능을 확장하여 Fuzzy 검색을 제공하며, 방향키로 선택할 수 있다.
+
+```bash
+  1599    apt list --installed | grep locales
+  1688    brew ls | grep win
+  1710    brew ls | grep z
+▌ 1780    brew ls | grep fzf
+> grep
+```
 
 **preview window scrolling**
 
