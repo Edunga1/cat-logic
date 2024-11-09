@@ -1,6 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 
+const Container = styled.div`
+`
+
 const Header = styled.h3`
   margin: 0;
   padding: 1rem 0 .5rem 1rem;
@@ -29,19 +32,25 @@ const Links = styled.ul`
 `
 
 export default function RelatedLinks(
-  { children }: { children: JSX.Element[] },
+  {
+    className,
+    children,
+  }: {
+    className?: string,
+    children: JSX.Element[],
+  },
 ) {
   return (
     <>
       {children.length > 0 &&
-        <>
-          <Header>Related Links</Header>
+        <Container className={className}>
+          <Header>Related</Header>
           <Links>
             {children.map((child, index) => (
               <li key={index}>{child}</li>
             ))}
           </Links>
-        </>
+        </Container>
       }
     </>
   )

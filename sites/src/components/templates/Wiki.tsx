@@ -44,8 +44,12 @@ const TocMain = styled(Toc)`
 `
 
 const TocSide = styled(Toc)`
-  margin-top: 10rem;
+  margin-top: 1rem;
   max-width: 20rem;
+`
+
+const RelatedLinksSide = styled(RelatedLinks)`
+  margin-top: 4rem;
 `
 
 export default function Wiki(
@@ -92,8 +96,8 @@ export default function Wiki(
         <WikiContent contents={wikiContents} />
         <Comments />
       </Main>
+      <RelatedLinksSide>{relatedLinks}</RelatedLinksSide>
       <TocSide contents={tableOfContents} />
-      <RelatedLinks>{relatedLinks}</RelatedLinks>
     </PageLayout>
   )
 }

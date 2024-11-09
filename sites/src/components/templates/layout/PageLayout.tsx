@@ -17,7 +17,7 @@ const Container = styled.div`
 
   @media (${device.larger}) {
     padding: 1rem 1rem 3rem 1rem;
-    grid-template-columns: .5fr minmax(auto, 40rem) 10rem;
+    grid-template-columns: .5fr minmax(auto, 50rem) 10rem;
     > :nth-child(1) {
       grid-column: 2;
     }
