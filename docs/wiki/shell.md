@@ -235,7 +235,7 @@ ref. https://www.cyberciti.biz/tips/nohup-execute-commands-after-you-exit-from-a
 
 #### `nohup`으로 실행한 프로세스를 종료하는 방법
 
-##### `ps aux`로 찾아보자
+**`ps aux`로 찾아보자**
 
 *X.* `ps aux | grep nohup` 결과는 없다.
 
@@ -249,7 +249,7 @@ bash alleb 33723 0.0 0.0 4283996 1252 ?? S 11:16AM 0:00.29 /bin/bash ./tick.sh
 
 PID를 알 수 있으므로 `kill -9 33723`으로 종료할 수 있다.
 
-##### background로 띄운 경우 좀 더 알기 쉽다.
+**background로 실행하면 좀 더 알기 쉽다.**
 
 ```bash
 ~/workspace/nohup-test
@@ -264,7 +264,7 @@ appending output to nohup.out
 
 Background Job으로 실행하면 PID가 바로 출력되어 알 수 있다.
 
-##### 좀 더 똑똑한 방법
+**stdout을 파일로 저장해 두는 방법**
 
 백그라운드로 전환 시 출력되는 PID를 파일로 저장하자.
 
