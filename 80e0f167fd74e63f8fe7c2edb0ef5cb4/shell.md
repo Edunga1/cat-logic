@@ -298,7 +298,7 @@ CTRL + SPACE 입력하면 저장한 명령어나 히스토리를 선택할 수 �
 * `marker mark` - 명령어를 북마크한다.
 * `marker remove` - 북마크를 삭제한다.
 
-### FZF
+### fzf
 
 https://github.com/junegunn/fzf
 
@@ -348,9 +348,10 @@ fzf는 이 기능을 확장하여 Fuzzy 검색을 제공하며, 방향키로 선
 
 fzf가 없으면 보통, tab 두 번 눌러서 모든 파일을 확인할텐데, `CTRL-T`를 사용하는 편이 더 편리하다.
 
-#### FZF + git
+#### fzf + git
 
-##### 브랜치 목록 및 작업 내용
+**브랜치 목록 및 작업 내용**
+
 ```bash
 lsb = !git branch \
   | fzf --preview 'echo {} | cut -c3- | xargs git show --color=always' --height 90% \
@@ -525,6 +526,28 @@ $ echo '{"glossary":{"title":"example glossary","GlossDiv":{"title":"S","GlossLi
 ```
 
 출력의 syntax highlighting 지원해서 보기 편리한 것이 장점.
+
+### zoxide
+
+> A smarter cd command.
+
+자주 이동하는 디렉토리를 기억하고, `z <keyword>`와 같이 입력하면 적절한 디렉토리로 이동한다.
+
+https://github.com/ajeetdsouza/zoxide
+
+지금은 개발이 중단된 [fasd](https://github.com/clvv/fasd)의 대체제.
+
+`brew install zoxide`로 설치하자.
+설치 후에 `cd` 커맨드를 사용해야 데이터가 수집된다.
+
+`z <keyword>`로 이동하면 되는데, 폴더 이름의 일부분만 입력해도 찾아서 이동한다.
+예를들어 `cd bran-new-project`를 사용한 내역이 있다면, `z new`나 `z bran`으로 이동할 수 있다.
+
+키워드가 겹치는 경우가 있으면 우선 순위에 따라 결정된다.
+우선 순위를 확인하고 싶다면 `z <keyword> ` 입력한 후 <tab>키를 입력하면 목록이 출력된다.
+키워드 다음에 스페이스가 중요하다.
+
+지금은 사용하지 않는 `fasd` 쪽이 더 간단하게 사용할 수 있었다.
 
 ## python shell tools
 
