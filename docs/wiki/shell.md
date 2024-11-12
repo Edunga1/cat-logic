@@ -538,6 +538,15 @@ https://github.com/ajeetdsouza/zoxide
 지금은 개발이 중단된 [fasd](https://github.com/clvv/fasd)의 대체제.
 
 `brew install zoxide`로 설치하자.
+설치한 후 `eval "$(zoxide init zsh)"`를 `.zshrc`에 추가한다:
+
+```bash
+# zoxide 명령어가 있는 경우에만 init 실행
+if command -v zoxide  &> /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+```
+
 설치 후에 `cd` 커맨드를 사용해야 데이터가 수집된다.
 
 `z <keyword>`로 이동하면 되는데, 폴더 이름의 일부분만 입력해도 찾아서 이동한다.
