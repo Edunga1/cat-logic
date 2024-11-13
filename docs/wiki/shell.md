@@ -531,13 +531,13 @@ $ echo '{"glossary":{"title":"example glossary","GlossDiv":{"title":"S","GlossLi
 
 > A smarter cd command.
 
-자주 이동하는 디렉토리를 기억하고, `z <keyword>`와 같이 입력하면 적절한 디렉토리로 이동한다.
+`z <keyword>`와 같이 입력하면, 자주 방문하는 디렉토리를 자동으로 찾아 이동한다.
 
 https://github.com/ajeetdsouza/zoxide
 
-지금은 개발이 중단된 [fasd](https://github.com/clvv/fasd)의 대체제.
+지금은 개발이 중단된 [fasd](https://github.com/clvv/fasd)의 대체재.
 
-`brew install zoxide`로 설치하자.
+`brew install zoxide`로 설치하자. \
 설치한 후 `eval "$(zoxide init zsh)"`를 `.zshrc`에 추가한다:
 
 ```bash
