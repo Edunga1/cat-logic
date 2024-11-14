@@ -97,3 +97,22 @@ https://stackoverflow.com/questions/19654578/python-utc-datetime-objects-iso-for
 > We couldn't be too concerned before, too busy making games. Besides, everybody knows that Naming Things is the number one problem in software design. But we found a new partner, and they were adamant about Doing This Right. And you need to have a name. Otherwise you can't announce it.
 >
 > 이전에는 게임을 만들느라 너무 바빠서 신경 쓸 겨를이 없었습니다. 게다가 소프트웨어 디자인에서 네이밍이 가장 큰 문제라는 것은 누구나 알고 있는 사실입니다. 하지만 우리는 새로운 파트너를 찾았고, 그들은 이 일을 제대로 하겠다고 단호하게 말했습니다. 그리고 이름이 있어야 합니다. 그렇지 않으면 발표할 수 없습니다.  
+
+## Architecture Decision Record (ADR)
+
+소프트웨어 아키텍처에 대한 결정을 문서화하는 것.
+프로그래밍 언어나 라이브러리 등 기술적 결정을 문서화하여 코드 베이스에 함께 저장한다.
+
+다음 깃허브 저장소는 ADR의 예제를 모아두었다. \
+https://github.com/joelparkerhenderson/architecture-decision-record
+
+관련 글:
+
+- [ADR을 써야하는 이유](https://news.hada.io/topic?id=2665)
+- [ARCHITECTURE.md를 추가합시다](https://news.hada.io/topic?id=3700)
+
+아직 직접 작성해본 적은 없다.
+
+개인적인 생각으로는, ADR을 PR을 통해 코드베이스에 반영한다면 협업자와의 합의를 PR로 증명할 수 있을 듯.
+
+꼭 아키텍처와 관련된 내용 뿐만 아니라, 코드 스타일 등 컨벤션에 대한 협의점을 문서화하는 데도 사용할 수 있을 것 같다.
