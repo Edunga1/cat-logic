@@ -46,31 +46,27 @@ Reddit에서 [Godot을 WSL에서 설치하는 방법?](https://www.reddit.com/r/
 
 #### Language Server Protocol
 
-[Gist](https://gist.github.com/lucasecdb/2baf6d328a10d7fea9ec085d868923a0)에는
-WSL에서 [vim](/docs/wiki/vim.md) godot [lsp](/docs/wiki/language-server-protocol.md)를 사용하는 방법이 나와 있다.
-Neovim에서 Godot LSP가 제대로 동작하지 않아서 워크플로우를 작성했다고 한다.
+[공식 문서](https://docs.godotengine.org/en/stable/tutorials/editor/external_editor.html)에서는 외부 에디터를 사용하는 방법으로 소개하고 있다.
 
-설명이 너무 장황해서 이 방법을 사용하지는 않았다.
-공식 문서의 가이드를 따라보기로 했는데..
-
----
-
-[공식 문서](https://docs.godotengine.org/en/stable/tutorials/editor/external_editor.html)는 자체 제공하는 에디터와 구분하여,
-외부 에디터를 사용하는 방법으로 소개한다.
-
-Godot 앱에서 `6005` 포트로 Langueage Server를 실행하고, 외부 에디터에서 LSP를 사용하도록 가이드한다.
-[nvim-lspconfig의 gdscript 설정](https://github.com/neovim/nvim-lspconfig/blob/16666f1bc40f69ce05eb1883fd8c0d076284d8a5/lua/lspconfig/configs/gdscript.lua)에서도 `6005` 포트에 연결하도록 기본 설정되어 있다.
+Godot 에디터에서 `6005` 포트로 Langueage Server를 실행하고, 외부 에디터에서 LSP를 사용하는 구조이다.
+참고로 [nvim-lspconfig의 gdscript 기본설정](https://github.com/neovim/nvim-lspconfig/blob/16666f1bc40f69ce05eb1883fd8c0d076284d8a5/lua/lspconfig/configs/gdscript.lua)도 `6005` 포트에 연결하도록 기본 설정되어 있다.
 
 Windows 10 + WSL2 환경에서, 공식 문서에 따라 Godot에서 LSP를 활성화하고, Vim LSP 설정하였지만 윈도우 앱에서 오픈한 포트에 연결하지 못했다.
 윈도우 포트 정보에서는 확인되지만, WSL에서는 포트를 찾지 못했다. 아마도 WSL 이슈인 것 같다.
 
-Windows 11 업그레이드하면서 다시 시도했는데.. 잘 된다.
-Windows 10 일 때와 마찬가지로 WSL에서는 포트 정보를 찾을 수 없는데도 잘 동작한다.
-이전 환경과 다른 점은 `winget`으로 Godot을 설치했다는 점이다. 관계가 있을지는 모르겠다.
+**Windows 11 업그레이드하면서 다시 시도했고, 동작했다**.
+WSL에서 포트 정보를 찾을 수 없는데도 잘 동작한다.
+이전과 다른 점은 `winget`으로 Godot을 설치했다는 점인데, 관계가 있을지는 모르겠다.
 어쨌든 LSP가 잘 동작해서, Vim에서도 타입과 함수 정보를 볼 수 있다.
 
-정리하면 Godot에서 LSP를 활성화하고, Vim에서 nvim-lspconfig로 `gdscript` 설정만 했다:\
-https://github.com/Edunga1/dotfiles/blob/main/vim/lua/lsp/servers/gdscript.lua
+정리하면:
+
+- Godot에서 LSP를 활성화하고
+- Vim에서 nvim-lspconfig로 `gdscript` [설정만 했다](https://github.com/Edunga1/dotfiles/commit/9dbb085adc52f09a6f3592447dbd7ad01c9b37c9).
+
+gdscript 언어 서버의 기능은 많이 부족한 것으로 보인다.
+이름 변경이나 정의로 이동 등 자주 사용하는 기능이 동작하지 않는다.
+하지만 `preload(경로)` 함수의 파일이 존재하는지 확인은 해준다.
 
 ### 성가신 외부 파일 수정 팝업 끄기
 
