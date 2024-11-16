@@ -135,3 +135,16 @@ godot.exe는 윈도우 앱 기반이라 그런지, Godot 엔진이 시작되고 
 
 이 [godot-ci](https://github.com/yet-another-lucas/plumbing-adventure/blob/main/.github/workflows/ci.yml) workflow를 사용한 프로젝트는 관련된 설정은 보이지 않지만, 웹에서 잘 동작한다.
 아마도 Base Workflows에서 이미 설정되어 있는 듯.
+
+## 참고
+
+### Node간 커뮤니케이션 방법
+
+https://www.reddit.com/r/godot/comments/11x8mpj/best_way_to_handle_communication_between_nodes/ \
+노드간 커뮤니케이션하는 가장 좋은 방법을 묻는 레딧 글이다.
+
+https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fou927127ybc41.png \
+이 이미지는 Scene Tree에서 논리적인 흐름 방향의 개요를 설명한다.
+
+부모는 자식 노드의 함수를 호출하고, 자식은 부모를 signal을 통해 호출한다.
+형제 노드간에는 signal을 통해 통신한다.
