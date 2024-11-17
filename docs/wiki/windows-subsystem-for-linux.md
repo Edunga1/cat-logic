@@ -29,6 +29,13 @@ SUSE-Linux-Enterprise-15-SP6    SUSE Linux Enterprise 15 SP6
 openSUSE-Tumbleweed             openSUSE Tumbleweed
 ```
 
+WSL 버전은 1, 2 두 가지가 있다.
+대부분 글은 WSL2를 기준으로 작성되어 있다.
+[마이크로소프트의 공식 문서에서는 WSL2를 권장](https://learn.microsoft.com/ko-kr/windows/wsl/compare-versions)한다.
+
+WSL2는 `Windows 11 또는 Windows 10, 버전 1903, 빌드 18362` 이상에서 사용할 수 있다.
+[1903 버전은 2019년 5월에 출시](https://learn.microsoft.com/ko-kr/lifecycle/announcements/windows-10-1903-end-of-servicing)되었다.
+
 ## vim 설정
 
 ### clipboard 공유
