@@ -157,6 +157,9 @@ token5,orange
 데이터를 `,` 대신 다른 구분자로 나누고 싶으면 `IFS`를 변경하면 된다.
 탭으로 구분된 파일이라면 `IFS=$'\t'`로 변경하면 된다.
 
+python으로 json을 읽어서 비교하고 있는데, [jq](/docs/wiki/shell.md#jq)를 사용하는 것도 좋은 방법이다.
+구문 강조가 제공되고, 필드 제거 등 jq의 기능을 활용할 수 있다.
+
 ## Reference
 
 https://antonz.org/mastering-curl/ \
