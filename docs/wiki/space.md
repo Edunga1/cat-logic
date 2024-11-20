@@ -132,6 +132,45 @@ Chopsticks와 결합되는 모습.
 
 결합되는 지점에서 더 내려가지 않는다. 마지막 순간에 결합된 것이다.
 
+### 스타쉽 6차 발사 시험
+
+2024년 11월 20일 오전 7시 6차 시험이 진행되었다. 7시에 일어나서 시청하지 못했다.
+
+생방송은 [스페이스X 트위터](https://x.com/i/broadcasts/1RDGlydZAeOJL)에서 볼 수 있다.
+
+[일론 머스크의 트위터](https://x.com/elonmusk/status/1858867695233425734)에 따르면 6차 발사 시험의 목표는 4가지라고 한다.
+
+1. 진공 상태에서 랩터 엔진의 재시작
+2. 스타쉽의 주간 착륙
+3. 더 높은 최대 가열 상태에서 재진입
+4. 더 빠른 부스터 잡기
+
+그리고 수천 개의 작은 설계 변화도 테스트한다고.
+
+![starship sixth launch - banana](./res/starship-sixth-launch-banana.png)
+
+이번 시험의 재밌는 점은 스타쉽 내부에 바나나가 들어있는 점이다.
+외부에도 바나나 캐릭터 그림이 그려져 있다.
+
+![starship sixth launch - banana printing](./res/starship-sixth-launch-banana-printing.png)
+
+이는 [트위터 글](https://x.com/SpaceX/status/1858241453824287192)에서 고화질로 학인할 수 있다.
+
+아쉽게도 부스터의 Chopsticks 착륙은 이번 시험에서 제외되었다.
+Chopsticks에 문제가 있었다는 듯.
+
+따라서 부스터는 바다에 착수했고, 일부러 폭발시켰다.
+아쉽게도 생방송 영상에서는 보이지 않는다.
+
+![starship sixth launch - booster explosion](./res/starship-sixth-launch-booster-explosion.gif)
+
+바다에 착륙하면 재사용할 수 없다고 한다.
+그래서 폭발을 시켜도 무방하다고.
+
+2단부 스타쉽 또한 바다에 착수했다.
+
+[안될과학에서 6차 시험을 생방송하고, 요약 리뷰를 했다.](https://www.youtube.com/watch?v=iku23rilj5g)
+
 ## 다른 민간 우주 기업
 
 아마존의 [블루 오리진](https://www.blueorigin.com/)이 있다.
