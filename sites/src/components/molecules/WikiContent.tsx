@@ -6,7 +6,6 @@ const Container = styled.div`
   overflow: auto;
   overflow-wrap: break-word;
   color: ${theme.colors.foreground};
-  font-size: .8rem;
 
   // heading style
   h1, h2, h3, h4, h5, h6 {
