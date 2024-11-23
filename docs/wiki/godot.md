@@ -89,6 +89,9 @@ https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting_la
 `$`는 `get_node()`의 단축어인데, `$AnimatedSprite2D.play()`는 `get_node("AnimatedSprite2D").play()`와 같다.[^1]
 유니티의 컴포넌트 개념을 Godot에서는 노드로 표현하는데, 이 노드를 식별하기 위해 사용한다.
 
+LSP 지원은 조금 아쉬운데, 변수나 함수 이름을 변경하는 등 기본 기능이 지원되지 않아서 코드 작성에서 애로사항이 크다.
+프로젝트가 커지면 리팩토링이 어려울 듯. C#을 사용하면 더 괜찮을 것 같다. 나중에 사용해 보자.
+
 [^1]: https://docs.godotengine.org/en/stable/getting_started/first_2d_game/03.coding_the_player.html
 
 ## 웹 빌드
