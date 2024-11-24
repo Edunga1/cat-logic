@@ -1,6 +1,9 @@
+---
+created: 2016-11-07
+---
 # SCP
 
-**Remote - Local 간 파일 전송**
+Remote - Local 간 파일 전송 도구.
 
 ```bash
 scp [옵션] <원본 파일 / 경로> <전송 위치 파일 / 경로>
@@ -18,6 +21,6 @@ Remote to Local
 scp root@123.456.78.9:/usr/local/abc.xml /home/oracle/
 ```
 
-## 옵션
+옵션
 
--r : (recursive) 폴더 전송
+- `-r`: (recursive) 폴더 전송
