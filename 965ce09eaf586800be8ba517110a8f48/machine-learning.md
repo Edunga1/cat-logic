@@ -447,6 +447,26 @@ https://openai.com/o1/
 
 o1은 15점 중 13.9점을 받았고, GPT-4o는 1.8점을 받았다.
 
+#### "나를 그려줘" 챌린지
+
+2024년 10월 즈음에 시작된 챌린지로 보이는, ChatGPT-4o를 이용한 챌린지.
+
+ChatGPT와 대화하다보면 "Memory Updated"라는 메시지가 출력되는데,
+이는 계정 레벨에서 사용자의 정보를 저장하는 것을 의미한다.
+다음 대화에서 ChatGPT는 이 정보를 바탕으로 대화를 진행한다.
+
+이 정보를 이용하여 ChatGPT가 생각하는 내 모습을 그리도록 요청하는 것이 이 챌린지의 방식이다.
+
+[레딧 글](https://www.reddit.com/r/ChatGPT/comments/1gne6m6/comment/lwafuc9/)에 사람들이 공유한 그림들이 있다.
+고양이를 키우는 사람들은 고양이가 포함되고, 취미에 대해서 많이 기록하는지 암벽등반부터 등산까지 다양하다.
+
+[OpenAI의 CPO도 여기에 참여](https://www.linkedin.com/posts/kevinweil_want-to-try-something-fun-with-chatgpt-with-activity-7264370818149691392-auDd) 했다.
+
+나는 취미 보다는 개발에 대해서 주로 질문해서인지, 단순한 그림이 나왔다.
+Vim과 Kotllin 단어가 들어간 그림이다.
+
+![chatgpt drawing me challenge](./res/chatgpt-4o-drawing-me-challenge.png)
+
 ### Claude
 
 ChatGPT와 같은 대화형 인공지능.
