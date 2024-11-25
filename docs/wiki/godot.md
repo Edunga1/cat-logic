@@ -64,10 +64,6 @@ WSL에서 포트 정보를 찾을 수 없는데도 잘 동작한다.
 - Godot에서 LSP를 활성화하고
 - Vim에서 nvim-lspconfig로 `gdscript` [설정만 했다](https://github.com/Edunga1/dotfiles/commit/9dbb085adc52f09a6f3592447dbd7ad01c9b37c9).
 
-gdscript 언어 서버의 기능은 많이 부족한 것으로 보인다.
-이름 변경이나 정의로 이동 등 자주 사용하는 기능이 동작하지 않는다.
-하지만 `preload(경로)` 함수의 파일이 존재하는지 확인은 해준다.
-
 ### 성가신 외부 파일 수정 팝업 끄기
 
 외부 에디터에서 파일을 수정하고 Godot 앱으로 돌아오면 수정된 파일을 다시 가져올 지, 버릴지 물어본다.
@@ -88,9 +84,6 @@ https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting_la
 엔진과 커뮤니케이션하기 위한 지원이 포함되어 있는 듯.
 `$`는 `get_node()`의 단축어인데, `$AnimatedSprite2D.play()`는 `get_node("AnimatedSprite2D").play()`와 같다.[^1]
 유니티의 컴포넌트 개념을 Godot에서는 노드로 표현하는데, 이 노드를 식별하기 위해 사용한다.
-
-LSP 지원은 조금 아쉬운데, 변수나 함수 이름을 변경하는 등 기본 기능이 지원되지 않아서 코드 작성에서 애로사항이 크다.
-프로젝트가 커지면 리팩토링이 어려울 듯. C#을 사용하면 더 괜찮을 것 같다. 나중에 사용해 보자.
 
 [^1]: https://docs.godotengine.org/en/stable/getting_started/first_2d_game/03.coding_the_player.html
 
