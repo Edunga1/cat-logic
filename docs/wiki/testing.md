@@ -233,12 +233,12 @@ class TestProductClientConfig {
 
 [VWO](https://vwo.com/)는 테스트 및 최적화 플랫폼이다.
 
-이 사이트에 A/B 테스트 기간 계산기라는 페이지가 있다: https://vwo.com/tools/ab-test-duration-calculator/
+이 사이트는 A/B 테스트 기간 계산기를 웹으로 제공한다. \
+https://vwo.com/tools/ab-test-duration-calculator/
 
-현재 전환율, 목표로 하는 개선율, 조합 수, 일일 방문자 수, 테스트 대상 비율을 입력하면
-얼마동안 테스트를 진행하면 좋을지 계산해주는 페이지다.
+현재 전환율, 목표로 하는 개선율, 조합 수, 일일 방문자 수, 테스트 대상 비율을 입력하면 적절한 테스트 기간을 산정해준다.
 
-계산 식은 블로그에서 시트로 공개하고 있다: https://vwo.com/blog/ab-test-duration-calculator/
+계산 식은 블로그에서 별도 공개했다: https://vwo.com/blog/ab-test-duration-calculator/
 
 ## Scraps
 
