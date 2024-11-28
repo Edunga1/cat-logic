@@ -290,7 +290,7 @@ SO 질문: https://stackoverflow.com/questions/6453235/what-does-damp-not-dry-me
 - DAMP: Descriptive And Meaningful Phrases. 설명적이고 의미 있는 구문을 사용하는 것. 코드의 가독성을 높여준다.
 - DRY: Don't Repeat Yourself. 반복하지 않는 것.
 
-답변 중:
+아래는 달린 답변에서 인용한 내용들이다.
 
 > It's a balance, not a contradiction
 
@@ -307,7 +307,7 @@ DAMP는 코드를 읽고 이해하는데 필요한 시간을 줄여 유지보수
 
 테스트는 동일한 항목을 반복하기 때문에 중복이 더 허용된다.
 
-답변의 덧글 중:
+이 답변의 덧글이다:
 
 > DRYing out test code has the potential to create an obscure test by introducing a [mystery guest](http://xunitpatterns.com/Obscure%20Test.html#Mystery%20Guest)
 
