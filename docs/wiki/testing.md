@@ -73,7 +73,10 @@ https://www.betterspecs.org/
 
 Better Specs는 테스트 작성에 대한 모범 사례(best practice) 모음이다.
 
-사이트에서 소개하는 예시는 Rails의 RSpec을 사용하지만, 다른 언어/프레임워크에서도 적용하는 것을 목표로 한다.
+사이트에서는 Rails의 RSpec을 사용한 예제지만, 테스트 패턴에 대한 이야기이므로 다른 언어/프레임워크에도 적용할 수 있다.
+
+https://jakegoulding.com/presentations/rspec-structure/ \
+이 슬라이드는 Better Specs의 구조를 요약한다.
 
 ### Single Expectation(단일 검증)
 
