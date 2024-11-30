@@ -115,6 +115,29 @@ remove_list_entry(entry)
 
 > 저는 제가 좋아하는 일을 처음부터 지금까지 계속 해오고 있는 것입니다. 좋아하는 일을 빨리 찾아냈다는 것이 중요한 차이점인 것 같고요... 만약 여러분이 무엇을 좋아하는지 스스로 모르고 있다면 여러분을 도와줄 수 있는 사람은 아무도 없습니다. 리눅스 커널 관련해서 실력자가 되려면 무엇을 해야 하는지 제게 물어보는 사람들이 많은데요... 그럴때마다 항상 같은 대답을 합니다. 커널 내부에서 특별히 관심있는 분야를 찾아서 계속 파고들라고요. 그러다 보면 여러가지 일들을 추가로 하게 되고 메인테이너도 될 수 있지요.
 
+### 리누스 토발즈의 과격한 점
+
+리누스 토발즈는 과격한 면이 있다.
+
+[Git 메일링 리스트 중 하나](https://harmful.cat-v.org/software/c++/linus)를 보면, C++에 대한 논쟁이 있다.
+원 저자가 예의없이 질문을 하긴 했지만, 리누스 토발즈의 답변은 더 매콤하다.
+
+다음은 메일 중 일부이다.
+
+> > When I first looked at Git source code two things struck me as odd:
+> > 1. Pure C as opposed to C++. No idea why. Please don't talk about portability,
+> > it's BS.
+>
+> *YOU* are full of bullshit.
+
+마지막 줄이 답변이다.
+
+C++를 아주 싫어하는데, C++ 개발자를 배제하는 것만으로도 C를 선택하는 이유가 충분하다고 말한다:
+
+> Quite frankly, even if \
+> the choice of C were to do *nothing* but keep the C++ programmers out, \
+> that in itself would be a huge reason to use C.
+
 ## 개발에 대한 사소한 생각
 
 가끔 정말 사소할 수 있거나, 피부로는 느끼지만 말로 표현할 수 없었던 것들이 있다.
