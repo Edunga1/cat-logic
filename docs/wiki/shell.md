@@ -309,12 +309,14 @@ A command-line fuzzy-finder.
 linuxbrew or homebrew로 설치하려면: `brew install fzf`
 
 터미널 도구의 기본 동작은 텍스트 출력으로 이루어지는데,
-사람 입장에서는 이 출력을 읽고 필요한 정보를 찾아내기 어렵다.
+사람 입장에서는 눈으로 이 출력을 읽고 필요한 정보를 찾아내기 어렵다.
 fzf는 이 출력에 대한 상호작용을 제공한다.
 예를들어, 파일 목록을 출력하고 fzf에 넘기면 방향키로 선택하거나 fuzzy 검색할 수 있다.
 
 Fuzzy search는 문자열이 일부만 일치해도 검색하는 알고리즘이다.
+fzf는 이 알고리즘을 사용하여 검색을 제공한다.
 예를들어 `foo bar baz`는 `fbb`로 검색될 수 있다.
+fuzzy search를 이용한 도구에는 [MacOS](/docs/wiki/mac-os.md)의 클립보드 관리 도구인 [maccy](https://github.com/p0deje/Maccy)가 있다.
 
 **명령어 내역 검색 개선**
 
