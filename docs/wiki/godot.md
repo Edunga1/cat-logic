@@ -144,3 +144,22 @@ https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fou927127ybc41.png \
 
 부모는 자식 노드의 함수를 호출하고, 자식은 부모를 signal을 통해 호출한다.
 형제 노드간에는 signal을 통해 통신한다.
+
+### Build Containers
+
+https://github.com/godotengine/build-containers
+
+고도에서 공식으로 제공하는 빌드 컨테이너.
+[podman](/docs/wiki/podman.md)을 필요로하며, 가상화 환경에서 빌드를 제공하여 복잡한 구성을 생략할 수 있다.
+다만 WSL2에서 제대로 사용할 수 없었다. podman 설치부터 애로사항이 있다.
+
+---
+
+https://github.com/abarichello/godot-ci
+
+GitHub 또는 GitLab에서 CI로 제공하는 도커 이미지 및 CI 설정 예제.
+
+앱 빌드의 경우 GitHub Actions를 사용할 수 없는지, GitLab을 통해 사용하도록 예제가 구성되어 있다.
+이 방법도 성공하지는 못했다. 예제에서 설정 수정이 조금 더 필요했다.
+Actions는 GitHub에서 트리거 되기전에 진행하기 어려운데, [act](https://github.com/nektos/act)를 통해 로컬에서 테스트할 수 있다.
+다만, 완벽하게 재현되지 않는지, 실제 트리거 되었을 때와 에러 내용이 달랐다.
