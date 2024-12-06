@@ -136,11 +136,11 @@ https://www.mathstat.dal.ca/~selinger/md5collision
 
 위 예시는 `git rebase`의 충돌 결과라 `parent of dbecef5` 메시지와 함께 rebase를 시작한 커밋의 원본 코드를 보여준다.
 
-## `git clone`
+## git clone
 
 저장소를 복제하는 명렁어. 가장 기본적인 명령어 중 하나라서 모르는 사람은 없겠다.
 
-### `--depth`
+### --depth
 
 `--depth` 옵션은 저장소의 최신 커밋만 복제한다. 얕은 복제라 한다:
 
@@ -182,7 +182,7 @@ with:
 내 경우는 정적 사이트를 빌드하면서, 커밋 내역을 확인해서 파일의 정보를 사이트에 보여주는 기능이 있었는데,
 기본값으로 사용하면서 제대로 정보를 보여줄 수 없었다.
 
-## `git rebase -i`
+## git rebase -i
 
 https://meetup.toast.com/posts/39
 
@@ -348,7 +348,7 @@ $ glog
 
 만약 A와 B가 같은 파일을 작업하게 되면, 당연하게도 conflict 발생한다.
 
-## `git revert -m`
+## git revert -m
 
 `-m`, `--mainline` 옵션은 merge commit을 되돌리는데 사용한다. merge는 2개의 커밋을 병합하는 것이므로, 둘 중 어느 상태로 돌릴 것인지 결정해야 한다.
 
@@ -369,9 +369,9 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 
 `5c54ea` 되돌려서 parent commit 중 하나인 `b73ce1`로 돌아간다. 물론 새로운 커밋이기 때문에 hash는 별개다.
 
-## `git log`
+## git log
 
-### `git log --graph`
+### git log --graph
 
 TL;DR
 
@@ -380,7 +380,7 @@ TL;DR
 - 옵션에 대한 정보: https://git-scm.com/docs/git-log#_commit_ordering
 - 기본 값은 `--topo-order`로 보인다.
 
-#### `--date-order` 로 피라미드 그래프 방지하기
+#### --date-order 로 피라미드 그래프 방지하기
 
 ```bash
 git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)<%an>%C(reset)%C(bold yellow)%d%C(reset)' --all
@@ -445,13 +445,13 @@ Commit Ordering
 - `--topo-order` 8 6 5 3 7 4 2 1 순서로 표기한다.
 - `--date-order` 8 7 6 5 4 3 2 1 순서로 표기한다.
 
-### `--date-order` 와 `--author-date-order` 비교
+### --date-order 와 `--author-date-order` 비교
 
 ![--date-order and --author-date-order comparison](res/git-log-graph-author-date-order-comparison.png)
 
 왼쪽이 `--date-order` 오른쪽이 `--author-date-order`이다.
 
-### `--follow`
+### --follow
 
 기본적으로 `git log FILENAME`은 현재 파일 이름에 대해서만 로그를 보여준다.
 
