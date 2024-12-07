@@ -80,6 +80,9 @@ https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting_la
 > GDScript looks like Python as you structure your code blocks using indentations, but it doesn't work the same way in practice. It's inspired by multiple languages, including Squirrel, Lua, and Python.
 
 파이썬과 유사한 문법을 가지지만, 같은 방식으로 동작하지 않으며 Squirrel, Lua, Python에 영감을 받았다고 한다.
+python과 같이 `self`를 지원하지만, 함수 시그니처에서 `self`를 명시적으로 사용하지 않아도 된다.
+
+`owner`는 부모 노드를 가리킨다. scene에서 노드를 추가할 일이 많기 때문에, 부모 노드를 참조할 일이 많다.
 
 엔진과 커뮤니케이션하기 위한 지원이 포함되어 있는 듯.
 `$`는 `get_node()`의 단축어인데, `$AnimatedSprite2D.play()`는 `get_node("AnimatedSprite2D").play()`와 같다.[^1]
