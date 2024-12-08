@@ -90,6 +90,37 @@ python과 같이 `self`를 지원하지만, 함수 시그니처에서 `self`를 
 
 [^1]: https://docs.godotengine.org/en/stable/getting_started/first_2d_game/03.coding_the_player.html
 
+## 디자인 패턴
+
+### Signal
+
+공식 문서 [Using Signals](https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html)를 참조하자.
+
+Signal은 Godot 버전의 옵저버 패턴이다.[^2]
+Godot은 이를 내장하고 있다.
+
+[^2]: `... As mentioned in the introduction, signals are Godot's version of the observer pattern.`
+
+부모 노드 -> 자식 노드로 커뮤니케이션은 자식 노드를 직접 참조하면 되는 반면에, \
+자식 노드 -> 부모 노드로 커뮤니케이션은 signal을 일반적으로 사용한다.(또 다른 방법은 `owner`를 사용하는 것이다.)
+
+자식 노드에서는 `signal`을 선언하고, observer에 `emit()`을 통해 notification 한다.
+
+```gd
+singal hit
+
+func _process(delta):
+  if is_colliding():
+    emit_signal("hit")
+```
+
+observer가 되는 노드에서는 `connect()`를 통해 observer를 등록하거나, tscn 파일에서 observer 노드의 트리거 될 함수를 설정한다.
+
+```gd
+func _on_Enemy_hit():
+  queue_free()
+```
+
 ## 웹 빌드
 
 빌드를 위해선 다음의 순서로 진행한다. 4.3 버전 기준이다.
