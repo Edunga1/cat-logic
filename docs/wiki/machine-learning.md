@@ -1040,6 +1040,22 @@ https://www.adobe.com/max/2024/sessions/max-sneaks-gs3.html
 
 참고로 Sneaks는 아콰피나가 진행자로 출연한다.
 
+### Sora
+
+OpenAI의 영상 생성 모델이 2024년 12월 9일에 출시되었다.
+
+https://openai.com/index/sora-is-here/
+
+Sora는 [10달 전에 공개](https://news.hada.io/topic?id=13383)되어 화제를 모았다.
+
+기본적으로 구독 플랜에 포함되어 유료이며, 월 20달러인 Plus 플랜은 1000 크레딧으로 50개의 동영상 분량이다.
+화질은 720p, 5초 길이로 제한된다.
+
+최근에 Plus 상위 플랜인 Pro 플랜이 추가되었다. 월 200달러로 10,000 크레딧을 제공한다.
+화질은 1080p, 20초 길이로 제한된다.
+
+Plus 모델에는 워터마크가 강제된다.
+
 ## Open AI API
 
 텍스트 완성, 이미지 생성, 코드 완성 등 다양한 모델을 제공한다.
