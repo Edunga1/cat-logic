@@ -613,27 +613,6 @@ CFLAGS="-I$(brew --prefix xz)/include" LDFLAGS="-L$(brew --prefix xz)/lib" pyenv
 
 파이썬 설치 후 경고 메시지가 출력되고 있었다: `WARNING: The Python lzma extension was not compiled. Missing the lzma lib?`
 
-### Open API
-
-텍스트 완성, 이미지 생성, 코드 완성 등 다양한 모델을 제공한다.
-그 중 quickstart의 텍스트에 대한 내용(아마도 GTP-3 인 듯)에 대한 개념을 조금 읽었다.
-
-quickstart: https://beta.openai.com/docs/quickstart
-
-**temprature**
-
-모델 설정 중 하나다. 0~1 값을 가진다.
-**0에 가까울수록 랜덤성이 감소하고 1에 가까울수록 증가한다.**
-0이면 항상 같은 토큰이 추천되고, 1에 가까울수록 다양한 토큰이 추천된다.
-
-매 요청마다 temprature가 0이면 확률(probability)이 가장 높은 것 하나만 추천되므로 안정적이다.
-1이면 확률이 낮은 것이라도 추천되며, 매 요청마다 다양한 토큰을 제시한다.
-
-**token**
-
-토큰은 단어, 단어 뭉치, 문자 하나가 될 수 있으며 추천 단위가 토큰이다.
-예를들어 `Horses are my favorite` 문장을 입력하면 `animal`, `animals`, `\n`, `!` 등을 다음에 올 토큰으로 추천하는 식이다.
-
 ### Github Copilot
 
 코드 작성을 도와주는 AI 도구.
@@ -1060,6 +1039,27 @@ Turntable은 전체 영상 중 1시간 12분부터 소개된다:\
 https://www.adobe.com/max/2024/sessions/max-sneaks-gs3.html
 
 참고로 Sneaks는 아콰피나가 진행자로 출연한다.
+
+## Open AI API
+
+텍스트 완성, 이미지 생성, 코드 완성 등 다양한 모델을 제공한다.
+그 중 quickstart의 텍스트에 대한 내용(아마도 GTP-3 인 듯)에 대한 개념을 조금 읽었다.
+
+quickstart: https://beta.openai.com/docs/quickstart
+
+**temprature**
+
+모델 설정 중 하나다. 0~1 값을 가진다.
+**0에 가까울수록 랜덤성이 감소하고 1에 가까울수록 증가한다.**
+0이면 항상 같은 토큰이 추천되고, 1에 가까울수록 다양한 토큰이 추천된다.
+
+매 요청마다 temprature가 0이면 확률(probability)이 가장 높은 것 하나만 추천되므로 안정적이다.
+1이면 확률이 낮은 것이라도 추천되며, 매 요청마다 다양한 토큰을 제시한다.
+
+**token**
+
+토큰은 단어, 단어 뭉치, 문자 하나가 될 수 있으며 추천 단위가 토큰이다.
+예를들어 `Horses are my favorite` 문장을 입력하면 `animal`, `animals`, `\n`, `!` 등을 다음에 올 토큰으로 추천하는 식이다.
 
 ## Hugging Face
 
