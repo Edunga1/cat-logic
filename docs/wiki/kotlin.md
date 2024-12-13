@@ -144,7 +144,6 @@ https://www.betterspecs.org/
 Kotest의 `DescribeSpec` 스타일을 사용하면 RSpec와 유사하게 작성할 수 있다.
 테스트 코드 구조도 참고하면 도움이 많이 된다. 큰 구조는 `describe` `context` `it` 3개의 범위로 이루어진다.
 
-e.g. 테스트 코드 예시
 ```kotlin
 class BuyerSendingAddressServiceTest : DescribeSpec({
   describe("add 함수는") {
@@ -159,6 +158,8 @@ class BuyerSendingAddressServiceTest : DescribeSpec({
   }
 })
 ```
+
+추가 내용은 [테스팅 문서](/docs/wiki/testing.md#better-specs)에 기술했다.
 
 ### Kotest
 
