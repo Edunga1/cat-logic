@@ -126,3 +126,40 @@ select TIMESTAMP '2024-02-01 11:55:30' - TIMESTAMP '2024-01-30 04:11:05' as diff
  2 days 07:44:25
 (1 row)
 ```
+
+---
+
+group by, where 절 등에서 `DATE_FORMAT()` 사용한다면, PostgreSQL에서는 `DATE_TRUNC`를 고려하자.
+지정한 단위로 날짜를 잘라준다. 예를들어 `MONTH`가 기준이라면 일자 아래는 가장 작은 값으로 변경된다.
+
+```sql
+postgres=# select NOW(), DATE_TRUNC('YEAR', NOW());
+              now              |       date_trunc
+-------------------------------+------------------------
+ 2024-12-16 08:39:44.096672+00 | 2024-01-01 00:00:00+00
+(1 row)
+
+postgres=# select NOW(), DATE_TRUNC('MONTH', NOW());
+              now              |       date_trunc
+-------------------------------+------------------------
+ 2024-12-16 08:39:20.209035+00 | 2024-12-01 00:00:00+00
+(1 row)
+
+postgres=# select NOW(), DATE_TRUNC('HOUR', NOW());
+              now              |       date_trunc
+-------------------------------+------------------------
+ 2024-12-16 08:39:47.338668+00 | 2024-12-16 08:00:00+00
+(1 row)
+```
+
+`DATE_FORMAT()`과 같은 기능이 필요하다면 `TO_CHAR()`를 사용한다.
+
+```sql
+postgres=# select TO_CHAR(NOW(), 'YYYY-MM-DD HH24:MI:SS');
+       to_char
+---------------------
+ 2024-12-16 08:45:27
+(1 row)
+```
+
+MySQL의 포맷과 다르다.
