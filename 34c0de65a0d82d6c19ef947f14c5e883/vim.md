@@ -465,6 +465,28 @@ vim이 제공하는 읽기 전용 레지스터는 클립보드, 마지막 삭제
 
 ## Variables
 
+변수는 `:let`으로 할당하고, `:echo`로 출력한다.
+
+변수는 다양한 scope를 가질 수 있는데, `:h variable-scope`에서 확인할 수 있다.
+스코프는 prepending(앞에 붙이는)으로 결정된다.
+전역 변수는 `g:`, 스크립트 변수는 `s:`와 같은 형식으로 사용한다.
+
+> (nothing) In a function: local to a function; otherwise: global
+>
+> (아무것도 없으면) 함수 내에서는 로컬 변수; 그 외에는 전역 변수
+>
+> :h variable-scope 중에서.
+
+> Inside functions global variables are accessed with "g:".  Omitting this will access a variable local to a function.
+> 
+> 함수 내에서 전역 변수는 "g:"로 접근한다. 생략하면 함수 내에서 로컬 변수에 접근한다.
+> 
+> h: global-variable 중에서.
+
+prepending을 생략하면 일반적으로 전역 변수지만, 함수 내에서는 로컬 변수를 가리킨다.
+
+현재 scope에 따라 의미가 달라질 수 있으므로 명시하는 편이 암시적인 오류를 줄일 수 있다.
+
 ### `path`
 
 `:find` 검색 범위를 결정한다.
