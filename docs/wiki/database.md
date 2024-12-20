@@ -275,6 +275,18 @@ CREATE TABLE jemp (
 
 [PostgreSQL](/docs/wiki/postgresql.md) 문서에서 내용을 다룸.
 
+## Realworld Data Dump
+
+Stack Exchange는 주기적으로 데이터 덤프를 제공한다.
+각 사이트의 모든 질문과 답변 등을 포함하는 데이터 파일이다.
+
+https://archive.org/details/stackexchange
+
+데이터 사이즈는 2024년 기준으로 92.3GB이다.
+
+온라인에서 직접 쿼리할 수 있는 [화면](https://data.stackexchange.com/stackoverflow/query/new)을 제공한다.
+대략적인 스키마 정보나 쿼리 에디터를 사용할 수 있다.
+
 ## SQLite의 알려지지 않은 이야기
 
 https://news.hada.io/topic?id=4558
