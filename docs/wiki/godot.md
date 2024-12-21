@@ -21,8 +21,8 @@ Scene 파일인 `.tscn`은 사람이 읽을 수 있는 형태로 저장된다.
 이러한 점은 에디터 없이도 개발할 수 있게 해줄 것이다.
 
 윈도우에서 설치 시 `godot.exe` 바이너리를 제공한다.
-프로젝트 내에서 `godot.exe`를 실행하면 해당 프로젝트를 연다.
-그 외 옵션으로 빌드 등 다양한 기능을 제공한다.
+프로젝트 내에서 `godot.exe`를 입력하면 프로젝트를 실행한다.
+
 CLI에 대한 정보는: https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html
 
 ## 튜토리얼
