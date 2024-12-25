@@ -121,6 +121,25 @@ func _on_Enemy_hit():
   queue_free()
 ```
 
+`owner`를 사용하면 다음과 같이 사용할 수 있다.
+
+```gd
+func _process(delta):
+  if is_colliding():
+    owner.on_hit()
+```
+
+다만 이 방식은 부모 노드가 `on_hit` 함수를 가지고 있어야 한다.
+안전한 처리를 위해서 ready 함수에서 부모 노드의 검증을 할 수 있다.
+
+```gd
+func _ready():
+  if not owner.has_method("on_hit"):
+    push_error("Owner node must have 'on_hit' method")
+```
+
+예외 처리가 필요하지만 이 방식의 이점은 부모 노드에 자식 노드를 추가하는 것만으로도 효과를 볼 수 있다는 점이다.
+
 ## 웹 빌드
 
 빌드를 위해선 다음의 순서로 진행한다. 4.3 버전 기준이다.
