@@ -116,6 +116,42 @@ https://kotlinlang.org/docs/exceptions.html#checked-exceptions
 
 작은 프로그램에서는 코드 품질과 생산성을 높일 수 있었지만, 대규모 프로젝트에서는 생산성이 감소하고 코드 품질 또한 적거나 증가하지 않았다고.
 
+### Destructuring declarations
+
+객체를 여러개의 변수로 분리하는 기능이다
+
+```kotlin
+val (name, age) = person
+```
+
+https://kotlinlang.org/docs/destructuring-declarations.html
+
+모든 객체가 가능한 것은 아니고, `componentN` 함수를 제공하는 객체만 가능하다.(`component1`, `component2` 등)
+data class는 기본적으로 `componentN` 함수를 제공한다. data class의 생성자 순서에 따라 `componentN` 함수가 생성된다.
+
+refactor project는 [reactor-kotlin-extensions](https://github.com/reactor/reactor-kotlin-extension)를 사용하면 `Tuples`의 `componentN` 함수를 사용할 수 있다.
+`Tuples`는 `zipWhen` 등에서 주로 사용하고, `it.t1` `it.t2` 등으로 접근하게 되는데 가독성이 떨어지는데 destructuring declarations를 사용하면 가독성이 개선된다.
+
+```kotlin
+Mono.just("Hello, ")
+    .zipWhen { Mono.just("World!") }
+    .map { it.t1 + it.t2 }
+    .block()
+```
+
+```kotlin
+import reactor.kotlin.core.util.function.component1
+import reactor.kotlin.core.util.function.component2
+
+Mono.just("Hello, ")
+    .zipWhen { Mono.just("World!") }
+    .map { (hello, world) -> hello + world }  // it.t1, it.t2 대신 destructuring declarations 사용
+    .block()
+```
+
+다만 확장 함수로 `componentN` 함수를 제공하고 있어서, `import reactor.kotlin.core.util.function.component1` import 구문을 직접 추가해야 한다.
+IntelliJ 2024 버전 기준으로는 아직 자동 import 기능이 없다.
+
 ## Testing
 
 test framework: [Kotest](https://github.com/kotest/kotest)
