@@ -1157,3 +1157,36 @@ https://yozm.wishket.com/magazine/detail/2183/
 > 저는 사실 많은 플러그인을 사용하지 않습니다. 배포판에 포함된 것(예: matchit, termdebug)을 제외하고는요. 필요한 것이 있으면 빠른 해킹을 하거나 Vim 베이스에 추가하는 경향이 있습니다. 그것이 창시자의 특권입니다 :-).
 
 그리고 협업자들과 커뮤니케이션하는 방식. 그리고 젊은 개발자들에게 여유를 가지고 개발하라는 조언을 했다.
+
+## Troubleshooting
+
+### Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
+
+Vim으로 커밋 메시지 작성 후 `ZZ` 또는 `:wq`로 저장하여 나와도 커밋이 반영되지 않는 문제로,
+주기는 3번 중 1번 꼴로 자주 발생한다.
+
+```bash
+❯ g commit -v
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'nvim'.
+Please supply the message using either -m or -F option.
+```
+
+원인은 [Startify](https://github.com/mhinz/vim-startify)의 세션 저장과 관련된 문제였다.
+
+```vim
+function! GetUniqueSessionName()
+  let path = fnamemodify(getcwd(), ':~:t')
+  let path = empty(path) ? 'no-project' : path
+  return substitute(path, '/', '-', 'g')
+endfunction
+
+autocmd VimLeavePre * execute 'SSave! ' . GetUniqueSessionName()
+```
+
+vim을 종료할 때 세션을 저장하고, Startify의 시작 화면에 Session 목록을 노출하도록 설정했는데, 저장하는 시점이 원인이었다.
+이 설정을 제거한 후로는 문제가 발생하지 않았다.
+정확히 `SSave`의 문제인지, `GetUniqueSessionName`의 문제인지는 모르겠다.
+
+제거 커밋: https://github.com/Edunga1/dotfiles/commit/9998b7c454e321d48d326e20da56af2328055a46
+
+세션을 자동 저장하는 것은 마음에 들어서 [auto-session](https://github.com/rmagatti/auto-session)으로 변경했다.
