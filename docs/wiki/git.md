@@ -875,34 +875,3 @@ fatal: failed to write commit object
 ```
 
 키가 있으면 passphrase 입력을 요구한다.
-
-## Troubleshooting
-
-### Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
-
-`git commit -v`로 커밋 메시지 작성 후 `zz` 또는 `:wq`로 저장하여 나와도 커밋이 안된다.
-약 3번 중 1번 꼴로 발생한다.
-
-```bash
-❯ g commit -v
-hint: Waiting for your editor to close the file... error: There was a problem with the editor 'nvim'.
-Please supply the message using either -m or -F option.
-```
-
-Startify의 세션 저장 기능이 원인이었다.
-
-```vim
-function! GetUniqueSessionName()
-  let path = fnamemodify(getcwd(), ':~:t')
-  let path = empty(path) ? 'no-project' : path
-  return substitute(path, '/', '-', 'g')
-endfunction
-
-autocmd VimLeavePre * execute 'SSave! ' . GetUniqueSessionName()
-```
-
-vim을 종료할 때 세션을 저장하고, Startify의 시작 화면에 Session 목록을 노출하도록 설정했었다.
-이 설정을 제거하니까 몇 번의 테스트에도 커밋 실패가 발생하지 않았다.
-`SSave`의 문제인지, `GetUniqueSessionName`의 문제인지는 모르겠다.
-
-제거 커밋: https://github.com/Edunga1/dotfiles/commit/9998b7c454e321d48d326e20da56af2328055a46
