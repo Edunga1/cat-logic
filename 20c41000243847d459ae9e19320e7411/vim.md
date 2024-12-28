@@ -1088,7 +1088,8 @@ colorscheme solarized
 플러그인을 하나씩 제외하면서 테스트하는 것으로 원인을 찾을 수 있었다.
 기본 테마도 나름 볼만하다 :|
 
-`:echo g:colors_name`로 현재 colorscheme을 알 수 있다. 변수를 찾을 수 없으면 사용하지 않는 것.
+`:echo g:colors_name` 또는 `:colorscheme`으로 사용중인 테마의 이름을 알 수 있다.
+변수를 찾을 수 없으면 사용하지 않는 것이다.
 
 colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. 하지만 곧바로 복구된다. colorscheme을 사용할 때는 한 번 느려지면 다시 vim 실행하기 전까지는 복구되지 않는다.
 
@@ -1131,22 +1132,21 @@ dotfiles 저장소에도 반영했다: https://github.com/Edunga1/dotfiles/commi
 askubuntu 질문: [vi, getting multiple "Sorry, the command is not available in this version..." after reinstall](https://askubuntu.com/questions/284957/vi-getting-multiple-sorry-the-command-is-not-available-in-this-version-af)
 
 올바른 vim 버전인지 확인하자. vim.tiny로 설치되었을 수 있다:
+
 ```bash
 $ readlink -f `which vim`
 /usr/bin/vim.tiny
 ```
 
-ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. `/usr/bin/vim.basic`을 가르켜야 한다.
-최근에는 neovim을 사용하고 있어서 이 편이 더 좋을지도.
+ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. `/usr/bin/vim.basic`을 가르켜야 대부분의 기능을 사용할 수 있다.
 
 ## 관련 기사
 
-2023년 8월. "Vim은 제 인생에서 매우 중요한 부분입니다” Vim 창시자 인터뷰\
-https://yozm.wishket.com/magazine/detail/2183/
+2023년 8월. ["Vim은 제 인생에서 매우 중요한 부분입니다"](https://yozm.wishket.com/magazine/detail/2183/) Vim 창시자 인터뷰.
 
 원문은 https://evrone.com/blog/bram-moolenaar-interview
 
-외부 플러그인을 사용하기 보다는, 직접 구현하거나 vim 베이스에 포함한다고.
+플러그인을 사용하기 보다는, 직접 구현하거나 vim 베이스에 포함한다고.
 
 > Evrone: Using plenty of web manuals we can discover great plugins to extend the awesome functionality of Vim. Do you have any plugin favorites and must-haves you could recommend to our audience?
 >
