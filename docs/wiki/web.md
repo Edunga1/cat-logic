@@ -125,6 +125,17 @@ window.addEventListener("touchend", e => {
 
 직접 수정할 수 없는 헤더가 있다. `Content-Length`나 `Referer` 등이 그러한데, 이런 헤더를 [Forbidden Header Name](https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name)이라 한다.
 
+### Server-Sent Events
+
+HTTP를 통해 서버에서 클라이언트로 이벤트를 보내는 기술이다.
+웹 소켓보다 간단하고, 서버에서 클라이언트로의 스트림이 필요한 경우에 사용한다.
+
+https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+
+클라이언트는 `EventSource`를 통해 서버와의 연결을 열고, 서버는 `Content-Type: text/event-stream` 헤더로 스트림을 보낸다.
+
+<!-- TBD: 데모 저장소, 커뮤니케이션 graph 추가 -->
+
 ## Clean URL
 
 https://en.wikipedia.org/wiki/Clean_URL
