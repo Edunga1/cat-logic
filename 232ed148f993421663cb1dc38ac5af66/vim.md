@@ -137,6 +137,10 @@ Language Server를 설치한다: `:MasonInstall typescript-language-server`\
     * 또는 `:h lspconfig-all` 도움말에서 확인할 수 있다.
 * [null-js/BUILTIN_CONFIG](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md) 제공하는 lsp 도구 목록
 
+서술한대로 null-ls는 개발 중단되었다.
+하지만 null-ls 없이도 충분히 다른 LSP를 추가할 수 있다. 예를들어 [eslint](https://github.com/neovim/nvim-lspconfig/blob/16666f1bc40f69ce05eb1883fd8c0d076284d8a5/lua/lspconfig/configs/eslint.lua)는 nvim-lspconfig에서 제공하기 때문에 `require'lspconfig'.eslint.setup{}`으로 추가할 수 있다. null-ls처럼 diagnostic, formatting, code action을 구분하지 않는다.
+제공되지 않는 것은 nvim-lspconfig의 [다른 예제를 보고 따라하면 추가할 수 있다](https://github.com/neovim/nvim-lspconfig/tree/master?tab=readme-ov-file#contributions).
+
 ## 도움말 `:help`
 
 vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한다.
