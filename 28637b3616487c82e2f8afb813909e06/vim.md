@@ -67,13 +67,12 @@ coc.nvim은 자체 플러그인 기능으로 편리하게 다양한 언어 서�
 vim에서 사용하는 변수, 옵션, 함수를 lua 스크립트에서도 사용할 수 있다.
 그래서 `.vimrc` 내용을 lua로 이전할 수 있는데, 나는 그냥 vimscript로 사용중이다.
 
-lua 스크립트로만 초기화할 수 있는 부분이 있다. neovim 전용 플러그인들이다.
+lua 스크립트로만 초기화할 수 있는 플러그인들이 있다.
 neovim에 맞춰진 플러그인은 ~.nvim 이라는 접미사를 붙이는 것이 관례인데,
-이런 플러그인들은 lua 스크립트로 include해서 직접 초기화하는 방식을 사용하기도 한다.
-[nvim-lsp](https://github.com/neovim/nvim-lspconfig)를 보면 `require'lspconfig'.pyright.setup{}` 처럼 사용한다.
-어쨌든 대부분 설정들은 lua나 vimscript 모두 제공하므로 취향껏 사용하면 된다.
+이런 플러그인들은 lua 스크립트로 include해서 직접 초기화하는 방식을 주로 사용한다.
+예를들어 [nvim-lsp](https://github.com/neovim/nvim-lspconfig)를 보면 `require'lspconfig'.pyright.setup{}`로 초기화한다.
 
-vim과 다른점은 `:h vim-differences`에서 확인하자.
+vim과 neovim의 다른점은 `:h vim-differences`에서 확인하자.
 
 ### Lua 가이드
 
