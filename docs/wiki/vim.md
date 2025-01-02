@@ -532,6 +532,18 @@ HTML 또는 XML 태그를 선택한다.
 
 `:h write-plugin` nvim의 사용자 메뉴얼 플러그인 작성 섹션.
 
+몇몇 플러그인 설명을 보면 `filetype plugin indent on` 구문을 추가하라고 하는데,
+스크립트를 읽어들이는 옵션이다.
+
+`:h filetype-overview`, `:h filetype`, `:h filetype-plugin-on`, `:h filetype-indent-on` \
+위 구문은 사실 `filetype on`, `filetype plugin on`, `filetype indent on`를 한 번에 나타낸 것이다. \
+`filetype on`은 filetype 감지(detection)을 활성화한다. `$VIMRUNTIME/filetype.vim` 파일을 읽는 것을 의미하며, `BufRead`와 같은 filetype 이벤트를 발생시킨다. \
+`filetype plugin on`은 `ftplugin`을 읽어들인다. `runtimepath`에 있는 ftplugin 관련 파일을 읽어들이며, 일반적으로 플러그인은 여기에 작성한다. \
+`filetype indent on`은 `indent` 파일을 읽어들인다. `runtimepath`에 있는 indent 관련 파일을 읽어들인다. \
+그래서 `filetype plugin on`을 사용하여 플러그인 파일을 읽도록 유도하는 것이다.
+
+vim-plug를 사용한다면 알아서 `filetype plugin indent on`을 [추가해 주는 것으로 보인다](https://github.com/junegunn/vim-plug/blob/d80f495fabff8446972b8695ba251ca636a047b0/plug.vim#L396).
+
 ### 프로젝트 구조
 
 ```bash
