@@ -25,6 +25,7 @@ const Container = styled.div`
 
   // inline code block style
   code:not(pre code) {
+    font-size: 80%;
     background-color: #f5f5f5;
     border-radius: .5rem;
     padding: .2rem .4rem;
