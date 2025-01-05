@@ -415,7 +415,8 @@ multi-stage build와 virtualenv를 사용하지 않는 프로세스를 구축해
 https://github.com/python-poetry/poetry
 
 pipenv 보다 star가 더 많다. `pyproject.toml`에 의존성이나, 환경 정보를 저장한다.
-최근에 조금씩 사용해보고 있다.
+
+Homebrew `brew install poetry`로 설치하자.
 
 `poetry init --python=3.10 -q`로 초기화하면 `pypoject.toml` 파일이 생성된다.
 `-q` 옵션이 없으면 너무 많은 정보를 물어봐서 번거롭다.
