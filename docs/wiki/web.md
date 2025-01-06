@@ -136,6 +136,12 @@ https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server
 
 <!-- TBD: 데모 저장소, 커뮤니케이션 graph 추가 -->
 
+> Warning: When not used over HTTP/2, SSE suffers from a limitation to the maximum number of open connections [^2]
+
+[^2]: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#listening_for_custom_events
+
+HTTP 커넥션을 점유하므로, HTTP/2 미만 환경에서는 브라우저의 커넥션 제한에 걸릴 수 있다.
+
 ## Clean URL
 
 https://en.wikipedia.org/wiki/Clean_URL
