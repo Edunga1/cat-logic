@@ -146,17 +146,19 @@ HTTP 커넥션을 점유하므로, HTTP/2 미만 환경에서는 브라우저의
 
 https://en.wikipedia.org/wiki/Clean_URL
 
-Clean URL은 사람이 식별하기 쉬운 URL을 말한다.\
-URL은 `.html` 등의 확장자, query string, path 등으로 구성되는데 이런 요소를 나타내기 위해 불필요한 문자가 포함된다.
+> Clean URLs (also known as user-friendly URLs, pretty URLs, search-engine–friendly URLs or RESTful URLs)
 
-다음 예시처럼 URL을 간결하게 만들 수 있다.
+Clean URL은 사람이 식별하기 쉬운 URL을 말한다.
+
+URL은 `.html` 등의 확장자, query string, path 등으로 구성되는데 이런 요소를 나타내기 위해 불필요한 문자가 포함된다.
+이런 URL을 간결하게 만들 수 있다.
 
 | Original URL                                 | Clean URL                    |
 |----------------------------------------------|------------------------------|
 | http://example.com/index.php?title=Main_Page | http://example.com/Main_Page |
 | http://example.com/user.php?id=123           | http://example.com/user/123  |
 
-[퍼머링크(permalink)](https://en.wikipedia.org/wiki/Permalink)는 주소는 한 번 정해지면 변경되지 않는다는 의미로 만들어진 말이다.\
+[퍼머링크(permalink)](https://en.wikipedia.org/wiki/Permalink)는 주소는 한 번 정해지면 변경되지 않는다는 의미로 만들어진 말이다.
 어떤 시스템은 컨텐츠가 추가되면서 URL이 변경되기도 한다. 그러면 기존 링크는 유효하지 않게 되므로 퍼머링크를 제공하기도 한다.
 
 ### Slug
