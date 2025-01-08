@@ -13,10 +13,10 @@ const LogoFrame = styled.iframe`
   height: 7rem;
 `
 
-export default function WhatLogo() {
+export default function HomeLogo() {
   return (
     <Container>
-      <LogoFrame src="https://edunga1.github.io/canvas-floating-alphabet/?w=SPRING%20HAS%20SPRUNG&t=1&s=5&i=1"/>
+      <LogoFrame src="https://edunga1.github.io/canvas-floating-alphabet/?w=CAT%20%20LOGIC&t=1&s=5&i=1"/>
     </Container>
   )
 }
