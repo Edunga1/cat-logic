@@ -317,3 +317,10 @@ DAMP는 코드를 읽고 이해하는데 필요한 시간을 줄여 유지보수
 테스트 코드를 DRY하면, 모호한 테스트를 만들게 되어 mystery guest가 발생하게 된다.
 
 mystery guest: 테스트를 읽는 사람이 Fixture와 Verification 로직이 테스트 메서드 외부에서 동작하여 이해할 수 없게 되는 것.
+
+## 참고 자료
+
+### systemd
+
+[systemd](/docs/wiki/linux.md#systemd)는 fuzzing을 이용한 유닛테스트와 qemu 또는 systemd-nspawn 이용한 통합테스트를 사용한다.
+프로젝트의 테스트 구조와 방법은 [docs/ARCHITECTURE.md](https://github.com/systemd/systemd/blob/main/docs/ARCHITECTURE.md#unit-tests)에 설명되어 있다.
