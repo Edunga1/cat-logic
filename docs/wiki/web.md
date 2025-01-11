@@ -134,13 +134,17 @@ https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server
 
 클라이언트는 `EventSource`를 통해 서버와의 연결을 열고, 서버는 `Content-Type: text/event-stream` 헤더로 스트림을 보낸다.
 
-<!-- TBD: 데모 저장소, 커뮤니케이션 graph 추가 -->
-
 > Warning: When not used over HTTP/2, SSE suffers from a limitation to the maximum number of open connections [^2]
 
 [^2]: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#listening_for_custom_events
 
 HTTP 커넥션을 점유하므로, HTTP/2 미만 환경에서는 브라우저의 커넥션 제한에 걸릴 수 있다.
+
+---
+
+https://github.com/yellyB/sse-start
+
+Server-Sent Events 데모. Flask 서버와 간단한 HTML 클라이언트로 구성되어 있다.
 
 ## Clean URL
 
