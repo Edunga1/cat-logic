@@ -171,7 +171,16 @@ Chopsticks에 문제가 있었다는 듯.
 
 [안될과학에서 6차 시험을 생방송하고, 요약 리뷰를 했다.](https://www.youtube.com/watch?v=iku23rilj5g)
 
-## 다른 민간 우주 기업
+## Blue Origin
 
-아마존의 [블루 오리진](https://www.blueorigin.com/)이 있다.
-하지만 별다른 뉴스가 들려오지 않아서 잘 모르겠다.
+아마존의 [블루 오리진](https://www.blueorigin.com/).
+
+### New Glenn
+
+2025년 1월 13일 오전 6시(UTC). 첫 시험이 진행되었다. 미션 이름은 NG-1.
+
+https://www.blueorigin.com/missions/ng-1 에서 라이브 중계했다.
+
+#### NG-1
+
+2025년 1월 13일 오전 6시(UTC) 발사가 예정되었으나, 두 번 밀려서 8시로 변경되었다가, 최종적으로 발사 취소되었다.
