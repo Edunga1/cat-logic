@@ -534,6 +534,12 @@ https://github.com/pypa/pipenv
 
 link: https://packaging.python.org/guides/tool-recommendations/
 
+### uv
+
+https://github.com/astral-sh/uv
+
+uv는 파이썬 패키지 관리 도구 기능 뿐만 아니라, 파이썬 관리 기능도 제공한다.
+
 ## Packaging
 
 파이썬의 모듈 단위인 패키지는 디렉토리로 구성된다.
