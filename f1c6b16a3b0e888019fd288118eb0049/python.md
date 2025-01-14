@@ -540,6 +540,13 @@ https://github.com/astral-sh/uv
 
 uv는 파이썬 패키지 관리 도구 기능 뿐만 아니라, 파이썬 관리 기능도 제공한다.
 
+- `uv venv`: 가상환경 생성. `.venv` 디렉토리가 생성된다. `source .venv/bin/activate`로 활성화한다.
+- `uv add PACKAGE_NAME`: 패키지 설치. `pyproject.toml`에 추가된다.
+    - `uv pip COMMAND`: `pip`의 인터페이스를 어느정도 제공한다. 실제로 `pip`를 사용하는 것은 아니라고. `pyproject.toml`을 업데이트하지 않는다.
+- `uv tree`: 패키지 트리를 보여준다.
+
+uv로 설치한 패키지는 `pip` 명령어로 확인할 수 없다.
+
 ## Packaging
 
 파이썬의 모듈 단위인 패키지는 디렉토리로 구성된다.
