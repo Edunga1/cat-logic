@@ -410,6 +410,17 @@ multi-stage build와 virtualenv를 사용하지 않는 프로세스를 구축해
 | pip-tools | 0.6k  | 7.6k  |
 | uv        | 0.4k  | 15.1k |
 
+**2025년 1월 기준 GitHub star 수**
+
+| package   | forks | stars |
+|-----------|-------|-------|
+| poetry    | 2.3k  | 32.3k |
+| pipenv    | 1.9k  | 25k   |
+| pip-tools | 0.6k  | 7.8k  |
+| uv        | 0.9k  | 35.8k |
+
+uv의 성장 속도가 매우 빠르다.
+
 ### poetry
 
 https://github.com/python-poetry/poetry
