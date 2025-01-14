@@ -410,6 +410,17 @@ multi-stage build와 virtualenv를 사용하지 않는 프로세스를 구축해
 | pip-tools | 0.6k  | 7.6k  |
 | uv        | 0.4k  | 15.1k |
 
+**2025년 1월 기준 GitHub star 수**
+
+| package   | forks | stars |
+|-----------|-------|-------|
+| poetry    | 2.3k  | 32.3k |
+| pipenv    | 1.9k  | 25k   |
+| pip-tools | 0.6k  | 7.8k  |
+| uv        | 0.9k  | 35.8k |
+
+uv의 성장 속도가 매우 빠르다.
+
 ### poetry
 
 https://github.com/python-poetry/poetry
@@ -522,6 +533,12 @@ https://github.com/pypa/pipenv
 >For software that is not distributed with (or developed for) your system, we recommend using a virtual environment, possibly with an environment manager like conda or pipenv, to help avoid disrupting your system Python installation.
 
 link: https://packaging.python.org/guides/tool-recommendations/
+
+### uv
+
+https://github.com/astral-sh/uv
+
+uv는 파이썬 패키지 관리 도구 기능 뿐만 아니라, 파이썬 관리 기능도 제공한다.
 
 ## Packaging
 
