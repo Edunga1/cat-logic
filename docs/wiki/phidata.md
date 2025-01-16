@@ -4,7 +4,6 @@ created: 2024-02-21
 # Phidata
 
 phidata는 AI Assistant를 만드는 toolkit이다.
-특히 function calling을 추가할 수 있어서, 더 똑똑한 assistant를 만들 수 있다.
 
 https://github.com/phidatahq/phidata
 
@@ -17,9 +16,6 @@ OPENAI_API_KEY 없이도 사용할 수 있다.
 
 OPENAI_API_KEY를 제공하면 해당 Key가 사용된다.
 두 번 사용한 후 OpenAI에서 사용량을 확인해보니 $0.10 사용되었다. 한글로 사용해서 그런지 비싸다.
-
-AI에게 도구를 쥐어주는 컨셉은 ChatGPT-4의 동작 원리와 비슷해 보인다.
-ChatGPT-4의 프롬프트 유출 내용을 보면, browser와 dalle, python 등의 도구에 대한 사용법을 알려주었다.
 
 ---
 
