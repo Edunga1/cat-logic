@@ -171,6 +171,19 @@ Chopsticks에 문제가 있었다는 듯.
 
 [안될과학에서 6차 시험을 생방송하고, 요약 리뷰를 했다.](https://www.youtube.com/watch?v=iku23rilj5g)
 
+### 스타쉽 7차 발사 시험
+
+한국 시간으로 2025년 1월 17일 오전 7시 37분에 7차 시험이 진행되었다.
+
+결과는 헤비 부스터를 Chopsticks에 성공적으로 착륙시켰지만...\
+우주선 자체인 스타쉽은 공중에서 폭파했다.
+
+https://x.com/KingDomRedux/status/1880027949862384107
+
+위 트위터 링크에서 폭파 장면을 볼 수 있는데, 아름답다.
+일론 머스크가 해당 트윗에 "Success is uncertain, but entertainment is guaranteed!"(성공은 불확실하지만, 즐거움은 보장된다!)라고
+[답했다](https://x.com/elonmusk/status/1880040599761596689).
+
 ## Blue Origin
 
 아마존의 [블루 오리진](https://www.blueorigin.com/).
