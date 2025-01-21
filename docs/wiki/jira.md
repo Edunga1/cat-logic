@@ -112,3 +112,6 @@ function jira-open() {
 `open`은 macOS에서 제공하므로 OS에 따라 다른 명령어를 사용해야 한다.
 [WSL](/docs/wiki/windows-subsystem-for-linux.md)에서는 `explorer.exe`를 사용할 수 있다.
 `alias open=explorer.exe`를 추가하면 자연스럽게 연동된다.
+
+내 셸 스크립트는 dotfiles에 업로드 하였다: \
+https://github.com/Edunga1/dotfiles/blob/f7805039ec1d2feeecdb5dd7ead5c30ad4460b59/shell/.zshrc#L168-L195
