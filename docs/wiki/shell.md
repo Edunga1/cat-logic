@@ -592,6 +592,27 @@ fi
 
 `zoxide` 명령어를 제공한다. 디렉토리 정보를 관리하는 데이터베이스를 관리하는 용도다.
 
+키워드가 겹쳐서 원하는 디렉토리가 아닌 곳으로 이동한다면, `zoxide edit`으로 데이터베이스를 수정할 수 있다.
+데이터베이스 목록이 출력되고, 키를 입력하여 스코어를 낮추거나 높여서 우선순위를 조정한다.
+
+```bash
+$ zoxide edit
+┌───────────────────────────  zoxide-edit  ─────────────────────────┐
+│                                                                   │
+│ >   < 31/31 ────────────────────────────────────────────────────  │
+│   ctrl-r:reload    ctrl-d:delete                                  │
+│   ctrl-w:increment ctrl-s:decrement                               │
+│                                                                   │
+│    SCORE PATH                                                     │
+│ ▌  364.0 /home/user/workspace/cat-logic                         │ │
+│    340.0 /home/user/workspace/cat-logic/sites                   │ │
+│     72.0 /home/user/dotfiles                                    │ │
+│     60.0 /home/user/workspace/godot-pacman                      │ │
+│     12.5 /home/user/workspace                                   │ │
+│      5.0 /home/user/workspace/cat-logic/embeddings              │ │
+│      4.8 /home/user/workspace/project-grass                       │
+```
+
 ## python shell tools
 
 몇몇 파이썬 모듈은 CLI로 제공한다.
