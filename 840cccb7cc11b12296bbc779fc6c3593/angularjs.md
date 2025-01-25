@@ -26,7 +26,7 @@ https://github.com/johnpapa/angular-styleguide
 
 #### 컨트롤러
 
-##### `contollerAs`와 `vm` 사용하기
+##### `controllerAs`와 `vm` 사용하기
 
 https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032
 
@@ -60,7 +60,7 @@ https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y0
 
 1. 이는 서비스가 사용 가능한 정보를 파악하는데 도움을 주고 유닛 테스트 대상이며 Mocking 할 수 있음을 의미한다.
 1. 구현 코드가 길어지더라도 스크롤을 내리지 않고 expose 된 기능 및 값을 한눈에 파악할 수 있다.
-1. 함수 설정을 쉽게 할 수 있다. 구현 세부사항을 return 아래로, 호추가능한 인터페이스를 위로 두면 읽기 쉽다.
+1. 함수 설정을 쉽게 할 수 있다. 구현 세부사항을 return 아래로, 호출가능한 인터페이스를 위로 두면 읽기 쉽다.
 
 ```javascript
 /* avoid */
@@ -113,12 +113,12 @@ https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#data-ser
 
 XHR calls, local storage, stashing in memory 등으로 부터 데이터를 얻는 로직은 factory로 분리한다.
 
-1. 컨틀롤러의 역할은 정보(데이터)를 모으고 뷰에 출력하는 것이므로 데이터 관리를 해선 안된다.
+1. 컨트롤러의 역할은 정보(데이터)를 모으고 뷰에 출력하는 것이므로 데이터 관리를 해선 안된다.
 2. 테스트 할 때 Mock 구성을 쉽게 만든다.
 3. 데이터 저장소(server, local storage, memory)로부터 데이터 핸들링하는 코드가 더 명확해 진다.
     - http header를 포함하는 코드
     - `$http`와 같은 다른 서비스나 데이터와 커뮤니케이션 하는 코드
-    - 컨틀롤러와 같이 데이터 서비스를 호출자가 하나의 지점으로 통하게 하고 데이터를 감추어 캡슐화 함
+    - 컨트롤러와 같이 데이터 서비스를 호출자가 하나의 지점으로 통하게 하고 데이터를 감추어 캡슐화 함
 
 
 ## 테스트
@@ -131,7 +131,7 @@ NPM modules:
 * angular-mocks
 * karma
 * karma-mocha
-* karma-mocha-repoter
+* karma-mocha-reporter
 * karma-chai
 * karma-chrome-launcher
 * mocha
@@ -157,7 +157,7 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            // AnguarJS 등 프레임워크와 라이브러리 파일의 경로를 여기에 작성한다.
+            // AngularJS 등 프레임워크와 라이브러리 파일의 경로를 여기에 작성한다.
             // 왠만하면 index.html 내에 <script> 태그로 임포트하는 파일 순서 그대로 작성한다.
             // karma가 브라우저에 웹 페이지를 띄울 때 여기에 작성한 파일들을 순서대로 가져오는 거 같다. (순서 중요)
 
