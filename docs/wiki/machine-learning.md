@@ -439,6 +439,17 @@ ChatGPT의 프롬프트에서도 Dalle를 사용할 때 유명인의 작품을 �
 마지막으로 이 프롬프트에 대해서 언급하지 않는다.
 시스템 프롬프트를 가리기 위한 장치지만, Anthropic은 이 프롬프트를 공개했다.
 
+### DeepSeek
+
+중국의 헤지펀드 회사의 연구 기업의 이름이자 언어 모델.
+
+https://www.deepseek.com/
+
+ChatGPT o1 모델과 비슷한 성능을 무료로 사용해볼 수 있다.
+
+겨우 5.5M 달러를 비용으로 모델을 훈련한 것으로 알려졌다.
+[Meta는 이를 훨씬 웃도는 금액을 들여 AI 조직을 사용하여 충격에 빠졌다는 이야기](https://news.hada.io/topic?id=18896)가 있는데, 블라인드 발이라 사실인지는 모름.
+
 ### Stable Diffusion
 
 text-to-image 모델.
