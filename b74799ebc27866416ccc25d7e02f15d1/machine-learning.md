@@ -441,7 +441,7 @@ ChatGPT의 프롬프트에서도 Dalle를 사용할 때 유명인의 작품을 �
 
 ### DeepSeek
 
-중국의 헤지펀드 회사의 연구 기업의 이름이자 언어 모델.
+중국의 헤지펀드 회사의 인공지능 연구 기업 이름이자 언어 모델.
 
 https://www.deepseek.com/
 
@@ -452,14 +452,12 @@ ChatGPT o1 모델과 비슷한 성능을 무료로 사용해볼 수 있다.
 
 ### Stable Diffusion
 
-text-to-image 모델.
+Stability AI에서 공개한 text-to-image 모델.
 
-#### promptbook
-
-프롬프트를 설명하는 ebook:
+프롬프트를 설명하는 ebook: \
 https://openart.ai/promptbook
 
-* SD는 [LAION-5B](https://laion.ai/blog/laion-5b/) 데이터 세트의 이미지로 트레이닝 했다.
+Stable Diffusion은 [LAION-5B](https://laion.ai/blog/laion-5b/) 데이터 세트의 이미지로 트레이닝 했다.
 
 #### 따라하기
 
