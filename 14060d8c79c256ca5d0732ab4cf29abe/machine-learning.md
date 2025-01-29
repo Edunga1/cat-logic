@@ -450,6 +450,32 @@ ChatGPT o1 모델과 비슷한 성능을 무료로 사용해볼 수 있다.
 겨우 5.5M 달러를 비용으로 모델을 훈련한 것으로 알려졌다.
 [Meta는 이를 훨씬 웃도는 금액을 들여 AI 조직을 사용하여 충격에 빠졌다는 이야기](https://news.hada.io/topic?id=18896)가 있는데, 블라인드 발이라 사실인지는 모름.
 
+deepseek-v3, deepseek-r1 2개의 채팅 모델이 있다.
+r1은 심층 분석 모델로 생각하는 페이즈와 답변을 생성하는 페이즈로 나누는 패턴을 사용한다.
+
+ollama로 공개된 v3, r1 모두 사용할 수 있다.
+`ollama run deepseek-v3`, `ollama run deepseek-r1`.
+
+다음은 사용 예시:
+
+```bash
+$ ollama run deepseek-r1
+>>> 사과는 무슨색?
+<think>
+Alright, the user is asking about the color of apples in Korean. I need to respond clearly and accurately.
+
+I know that apples come in various colors like red, green, and yellow depending on the type.
+
+I should explain that apples are typically red but also mention other colors for different varieties.
+
+Let me put this into a clear and friendly response.
+</think>
+
+사과는 보통 빨간색이지만, Certain品种의 사과는 Other colors так한 다양한 цвет을 가질 수 있습니다.
+````
+
+파인 튜닝이 되지 않아서인지 답변에 다양한 언어가 섞여 있다.
+
 ### Stable Diffusion
 
 Stability AI에서 공개한 text-to-image 모델.
