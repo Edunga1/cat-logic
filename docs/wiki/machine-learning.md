@@ -890,12 +890,10 @@ ChatGPT 또한 OpenAI API가 아닌 Azure를 사용한다. AI Assistant 도구�
 GitHub models가 제공하는 제한량은 매우 적다.
 
 ```bash
-$ python src/azure.py
-# ... 생략
 openai.APIStatusError: Error code: 413 - {'error': {'code': 'tokens_limit_reached', 'message': 'Request body too large for gpt-4o model. Max size: 8000 tokens.', 'details': None}}
 ```
 
-웹 페이지 파싱하는 코드인데, 태그를 포함하다 보니 8K는 부족하다.
+웹 페이지 파싱하는 코드를 작성했는데, 태그를 포함하다 보니 8K는 부족해서 에러가 발생했다.
 
 [Prototyping with AI models](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits)에 제한량이 명세되어 있다.
 
