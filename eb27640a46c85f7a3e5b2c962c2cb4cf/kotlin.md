@@ -294,6 +294,34 @@ https://github.com/kotest/kotest/issues/2629 \
 
 `SpringTestExtension`을 잘 구현하면 가능할지도.
 
+#### IntelliJ 타이핑 렉 문제
+
+400줄 정도되는 테스트 파일에서 타이핑하면 버벅이는 문제가 있다.
+
+```kotlin
+class MyTest : DescribeSpec({
+  describe("My Test") {
+    // ...
+  }
+})
+```
+
+위와 같이 lambda 표현식으로 작성하면 현상이 발생한다.
+다음과 같이 init 블록을 사용하면 버벅임이 없다.
+
+```kotlin
+class MyTest : DescribeSpec() {
+  init {
+    describe("My Test") {
+      // ...
+    }
+  }
+}
+```
+
+lambda가 원인인 것은 [깃허브 이슈](https://github.com/kotest/kotest-intellij-plugin/issues/184)에서 확인했다.
+[댓글에 init block vs lambda 비교한 동영상](https://youtrack.jetbrains.com/issue/IDEA-295228/Slow-typing-performance-when-using-Kotest-plugin#focus=Comments-27-6461505.0-0)이 첨부되어 있다.
+
 ## [Language Server](./language-server-protocol.md)
 
 https://github.com/fwcd/kotlin-language-server
