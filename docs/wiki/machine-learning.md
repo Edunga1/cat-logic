@@ -522,11 +522,16 @@ CFLAGS="-I$(brew --prefix xz)/include" LDFLAGS="-L$(brew --prefix xz)/lib" pyenv
 
 파이썬 설치 후 경고 메시지가 출력되고 있었다: `WARNING: The Python lzma extension was not compiled. Missing the lzma lib?`
 
-### Github Copilot
+### GitHub Copilot
 
 코드 작성을 도와주는 AI 도구.
 
 가장 만족하는 AI 도구이다. 코딩 생산성이 배가 된다.
+
+vim, vscode, jetbrain 에디터 등 에디터의 플러그인 형태로 제공된다.
+
+깃허브 저장소에서 copilot chat 기능으로 저장소를 분석할 수 있다.
+내가 주로 사용하는 방식은 특정 로직을 처리하는 파일을 찾는다거나(maccy 저장소에서 fuzzy 알고리즘 사용하는 지점을 찾는 등) 내 프로젝트에서 오탈자를 찾아 달라고 요청하는 식이다. 여기서 더 나아간 형태가 copilot workspace가 되겠다.
 
 #### Copilot CLI
 
