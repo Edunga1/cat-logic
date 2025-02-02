@@ -12,9 +12,11 @@ https://microsoft.github.io/language-server-protocol/specifications/specificatio
 이전에는 vim에서 파이썬 개발을 위해 설정한다면,
 [jedi](https://github.com/davidhalter/jedi) 또는 [rope](https://github.com/python-rope/rope) 결정하고,
 [ycm](https://github.com/ycm-core/YouCompleteMe) 등 completion 도구를 선택했다.
-언어마다 플러그인이 다르기도 했기 때문에 ycm 같은 통합 도구의 인기가 많았으나, 무겁기도 하고 일반적인 IDE와 비교했을 때 기능도 부족했다.
+언어마다 플러그인이 다르기 때문에 ycm 같은 통합 도구의 인기가 많았으나, 무겁기도 하고 일반적인 IDE와 비교했을 때 기능도 부족했다.
 
-LSP는 클라이언트와 서버만 선택하면 개발 설정 경험을 언어 공통적으로 가져갈 수 있어서 편리하다.
+2020년대부터 LSP를 지원하는 에디터가 늘어나면서, 에디터들의 평준화가 이루어지고 있는 것 같다.
+이제 선호하는 에디터만 있다면, 언어 기능은 대부분 지원되는 듯.
+다만, JVM 언어의 지원은 아직도 요원하다.
 
 VSCode가 대표적인 LSP 클라이언트다.
 
