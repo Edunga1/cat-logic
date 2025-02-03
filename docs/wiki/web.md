@@ -132,7 +132,7 @@ HTTP를 통해 서버에서 클라이언트로 이벤트를 보내는 기술이�
 
 https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
 
-클라이언트는 `EventSource`를 통해 서버와의 연결을 열고, 서버는 `Content-Type: text/event-stream` 헤더로 스트림을 보낸다.
+클라이언트는 `new EventSource("url")`를 통해 서버 연결을 열고, 서버는 `Content-Type: text/event-stream` 헤더로 스트림으로 응답한다.
 
 > Warning: When not used over HTTP/2, SSE suffers from a limitation to the maximum number of open connections [^2]
 
@@ -140,11 +140,20 @@ https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server
 
 HTTP 커넥션을 점유하므로, HTTP/2 미만 환경에서는 브라우저의 커넥션 제한에 걸릴 수 있다.
 
+각 메시지는 `event`, `data` 2개의 필드로 구성된다.
+`event`는 이벤트 핸들러를 통해 구독할 수 있다.
+
+> A string identifying the type of event described. If this is specified, an event will be dispatched on the browser to the listener for the specified event name;
+the website source code should use `addEventListener()` to listen for named events.
+
 ---
 
 https://github.com/yellyB/sse-start
 
 Server-Sent Events 데모. Flask 서버와 간단한 HTML 클라이언트로 구성되어 있다.
+
+크롬 브라우저는 별도 클라이언트 없이도 이벤트를 받아서 화면에 출력한다.
+서버 URL로 접속만 하면 된다.
 
 ## Clean URL
 
