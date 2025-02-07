@@ -130,6 +130,10 @@ Language Server를 설치한다: `:MasonInstall typescript-language-server`\
 이제 설치한 language server가 지원하는 파일을 열면 자동으로 LSP가 활성화된다.\
 `:LspInfo`로 현재 활성화된 LSP 목록을 확인할 수 있다.
 
+`<C-]>`로 변수, 함수 등 정의부나 심볼로 이동하도록 매핑되어 있다(`:h vim.lsp.tagfunc()`).
+[직접 정의부 이동을 매핑](https://github.com/Edunga1/dotfiles/blob/9da2e8fafc64921b9ab458215ef7e5e6977f543f/vim/lua/lsp/servers/utils/common.lua#L15)하고 사용해보면 매끄럽지 않다.
+neovim이 직접 tagfunc을 [구현한 것](https://github.com/neovim/neovim/blob/5371659524089b425887af1ce14bf9a374f0f234/runtime/lua/vim/lsp/_tagfunc.lua#L93)을 사용하는 편이 낫다.
+
 ---
 
 * [nvim-lspconfig/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)에서 설정 가능한 language server 목록을 확인할 수 있다.
