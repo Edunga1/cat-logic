@@ -472,7 +472,7 @@ Let me put this into a clear and friendly response.
 </think>
 
 사과는 보통 빨간색이지만, Certain品种의 사과는 Other colors так한 다양한 цвет을 가질 수 있습니다.
-````
+```
 
 파인 튜닝이 되지 않아서인지 답변에 다양한 언어가 섞여 있다.
 
@@ -541,7 +541,7 @@ https://githubnext.com/projects/copilot-cli/
 
 2023-03-29 기준 대기자 명단에 등록해야 사용할 수 있었으나 정식 릴리즈 되어 이제 누구나 사용할 수 있다.
 
-copilot cli는 2개의 방식으로 제공한다. 
+copilot cli는 2개의 방식으로 제공한다.
 다른 하나는 GitHub Cli의 플러그인으로 제공하는 것인데, 다음 문단에서 설명한다.
 
 ---
