@@ -647,6 +647,31 @@ Copilot 구독하고 있어야 한다.
 또, 프로그래밍 주제와 관련되어 있다고 생각해서 물어보더라도 주제가 벗어났다며 답변을 거부한다.
 이 점은 매우 불편하다.
 
+#### Copilot Agent Mode
+
+2025년 2월 6일에 소개된 Copilot의 Agent 모드.
+기존 Copilot 자동 완성 기능, Copilot Chat + Edit의 파일 수정 기능(Cursor와 같은)에서 더 나아간 기능이다.
+
+깃허브 블로그에서 소개했다:\
+https://github.blog/news-insights/product-news/github-copilot-the-agent-awakens/
+
+> To get started, you’ll need to download VS Code Insiders and then enable the agent mode setting for GitHub Copilot Chat
+>
+> ...
+>
+> Agent mode will change the way developers work in their editor; and as such, we will bring it to all IDEs that Copilot supports.
+
+VSCode Insiders 버전에서 우선 만나볼 수 있다. 추후 다른 IDE에도 지원할 예정이라고.
+
+[예제 영상](https://www.youtube.com/watch?v=of--3Fq1M3w)을 보면:
+- 사용자가 Agent 모드 채팅으로 구현을 지시한다.
+- 코드 작성해주는 것은 기존 Copilot Chat과 같다. Agent 모드는 코드 작성 후 유닛 테스트 실행을 제안한다.
+- 사용자가 직접 테스트를 실행하고 터미널의 실패 메시지를 만난다. 그러면 Agent가 자동으로 동작하여 테스트를 수정하고 테스트 재실행을 제안한다.
+- 성공적으로 유닛 테스트가 통과되면, Agent는 통합 테스트 실행을 제안한다.
+
+Agent 모드는 이처럼 사용자의 목적을 완료하기까지 모든 과정에 참여한다.
+사람이 소프트웨어 개발이라는 창의적인 작업에 집중하도록 도와준다고 한다.
+
 #### 커밋 메시지 작성 도움받기
 
 나는 보통 `git commit -v`로 커밋 메시지를 작성한다.
