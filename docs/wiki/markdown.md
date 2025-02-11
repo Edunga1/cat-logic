@@ -42,3 +42,9 @@ https://github.com/artempyanykh/marksman
 
 [상대 경로를 자동 완성하지 못하는 문제](https://github.com/artempyanykh/marksman/issues/182)가 있다.
 항상 프로젝트 루트 기준으로 링크 완성을 해준다.
+
+## Vim
+
+[Vimwiki](/docs/wiki/vimwiki.md)에서 Text Object를 제공한다.
+예를들어 `vaH`는 하위 제목까지 포함한 내용을 선택한다.
+즉, Vimwiki로 마크다운 유틸 플러그인으로써 사용해도 좋다.
