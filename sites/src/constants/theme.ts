@@ -5,7 +5,7 @@ export default {
     lowlight: "#BDBDBD",
     link: "#0D47A1",
     linkVisited: "#607aa1",
-    background2: "#F5F5F5",
+    background: "#F5F5F5",
     backgroundHighlight: "#D0D0D0",
   },
   fonts: {

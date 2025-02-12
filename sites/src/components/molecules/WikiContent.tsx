@@ -6,6 +6,10 @@ const Container = styled.div`
   overflow: auto;
   overflow-wrap: break-word;
   color: ${theme.colors.foreground};
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border-radius: .5rem;
+  border: 1px solid rgb(238, 238, 238);
 
   // heading style
   h1, h2, h3, h4, h5, h6 {
@@ -64,14 +68,14 @@ const Container = styled.div`
     }
 
     thead {
-      background-color: ${theme.colors.background2};
+      background-color: ${theme.colors.background};
     }
 
     tbody {
       font-size: .8rem;
 
       tr:nth-child(even) {
-        background-color: ${theme.colors.background2};
+        background-color: ${theme.colors.background};
       }
 
       tr:hover {
