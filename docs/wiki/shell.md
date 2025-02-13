@@ -613,6 +613,46 @@ $ zoxide edit
 │      4.8 /home/user/workspace/project-grass                       │
 ```
 
+### p10k
+
+Powerlevel10k는 Zsh 프롬프트 테마이다.
+
+https://github.com/romkatv/powerlevel10k
+
+다음과 같이 프롬프트에 vcs 정보, 실행 시간, 현재 시각 등을 입맛에 맞게 추가하는 도구다.
+
+```bash
+~/workspace/cat-logic main* 11s                  16:20:24
+❯
+```
+
+원하는 정보를 추가할 수 있다. *segment*라고 부른다.
+`~/.p10k.zsh`에서 `POWERLEVEL9K_LEFT_PROMPT_ELEMENTS` 등 변수에 `prompt_` 접두어를 가진 함수를 추가한다.
+
+```
+() {
+  function prompt_jira_summary() {
+    local data="$(jiras 2>/dev/null)"
+    if [[ -z "$data" ]]; then
+      return
+    fi
+    p10k segment -t "$data" -f grey
+  }
+
+  typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+    context
+    dir
+    vcs
+    jira_summary  # 추가
+    command_execution_time
+  )
+}
+```
+
+위 예제는 `jiras`라는 [JIRA](/docs/wiki/jira.md) 이슈 이름을 가져오는 명령어를 사용해서 브랜치 이름 다음에 이슈 이름을 출력하는 예제다.
+문제는 캐시 정책을 사용하지 않았기 때문에 명령어 입력할 때마다 API를 호출하는 것으로 보인다.
+개선하기 위해서는 p10k의 캐시 정책이 있는지 확인하거나 git hook으로 체크아웃 할 때 마다 이슈 이름을 저장하고 프롬프트에서 사용하는 방법이 있을 듯.
+
 ## python shell tools
 
 몇몇 파이썬 모듈은 CLI로 제공한다.
