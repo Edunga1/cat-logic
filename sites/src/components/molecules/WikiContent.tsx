@@ -20,7 +20,13 @@ const Container = styled.div`
 
   // link style
   a {
-    text-decoration-style: dotted;
+    &:link {
+      text-decoration: none;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     &:visited {
       color: ${theme.colors.linkVisited};
