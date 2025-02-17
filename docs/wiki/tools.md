@@ -134,7 +134,7 @@ Insomnia 사태로 인해 Insomnium과 선택을 고민중인 API Client.
 https://github.com/usebruno/bruno
 
 Git Sync 기능을 제공한다.
-Git 저장소 동기화를 매우 중요하게 생각한다고 느낌을 받았는데, 저장되는 파일 형식이 읽기 쉬운 형태로 되어있는 점이다.
+Git 저장소 동기화를 매우 중요하게 생각한다고 느낌을 받았는데, 이유는 저장되는 파일 형식이 사람이 읽기 쉬운 형태로 저장되는 점이다.
 
 ![Bruno collaborate via Git](https://github.com/usebruno/bruno/raw/main/assets/images/version-control.png)
 
@@ -182,9 +182,9 @@ settingFollowRedirects: global
 아직 좀 더 살펴봐야 한다.
 API Chaining은 어떻게 처리하는지, 자동완성 등 주요하게 봐야 할 점이 많다.
 
-### Postman vs Insomnia vs JetBrains IDE builtin `.http`. 비교
+### Postman vs Insomnia vs JetBrains IDE Http Client. 비교
 
-|                    | Postman   | Insomnia                             | JetBrains Built-in                   |
+|                    | Postman   | Insomnia                             | JetBrains Http Client                |
 | ---                | ---       | ---                                  | ---                                  |
 | 데이터 동기화      | 가입 필요 | Git repository 명시적 commit, push   | 파일 저장 위치를 cloud와 동기화 가능 |
 | 민감 데이터 처리   | 불가      | export, 동기화 되지 않는 environment | 불가                                 |
