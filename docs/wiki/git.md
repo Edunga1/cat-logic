@@ -136,11 +136,13 @@ https://www.mathstat.dal.ca/~selinger/md5collision
 
 위 예시는 `git rebase`의 충돌 결과라 `parent of dbecef5` 메시지와 함께 rebase를 시작한 커밋의 원본 코드를 보여준다.
 
-## git clone
+## 명령어
+
+### git clone
 
 저장소를 복제하는 명렁어. 가장 기본적인 명령어 중 하나라서 모르는 사람은 없겠다.
 
-### --depth
+#### --depth
 
 `--depth` 옵션은 저장소의 최신 커밋만 복제한다. 얕은 복제라 한다:
 
@@ -182,7 +184,7 @@ with:
 내 경우는 정적 사이트를 빌드하면서, 커밋 내역을 확인해서 파일의 정보를 사이트에 보여주는 기능이 있었는데,
 기본값으로 사용하면서 제대로 정보를 보여줄 수 없었다.
 
-## git rebase -i
+### git rebase -i
 
 https://meetup.toast.com/posts/39
 
@@ -348,7 +350,7 @@ $ glog
 
 만약 A와 B가 같은 파일을 작업하게 되면, 당연하게도 conflict 발생한다.
 
-## git revert -m
+### git revert -m
 
 `-m`, `--mainline` 옵션은 merge commit을 되돌리는데 사용한다. merge는 2개의 커밋을 병합하는 것이므로, 둘 중 어느 상태로 돌릴 것인지 결정해야 한다.
 
@@ -369,9 +371,9 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 
 `5c54ea` 되돌려서 parent commit 중 하나인 `b73ce1`로 돌아간다. 물론 새로운 커밋이기 때문에 hash는 별개다.
 
-## git log
+### git log
 
-### git log --graph
+#### git log --graph
 
 TL;DR
 
@@ -380,7 +382,7 @@ TL;DR
 - 옵션에 대한 정보: https://git-scm.com/docs/git-log#_commit_ordering
 - 기본 값은 `--topo-order`로 보인다.
 
-#### --date-order 로 피라미드 그래프 방지하기
+##### --date-order 로 피라미드 그래프 방지하기
 
 ```bash
 git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)<%an>%C(reset)%C(bold yellow)%d%C(reset)' --all
@@ -403,7 +405,7 @@ git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(b
 
 ![with --date-order](res/git-log-graph-date-order.png)
 
-#### 옵션 설명
+##### 옵션 설명
 
 `git log --help` 에서 정렬과 관련된 내용을 확인하면 어떻게 정렬 방법에 대해서 설명하고 있다.
 
@@ -445,13 +447,13 @@ Commit Ordering
 - `--topo-order` 8 6 5 3 7 4 2 1 순서로 표기한다.
 - `--date-order` 8 7 6 5 4 3 2 1 순서로 표기한다.
 
-### --date-order 와 `--author-date-order` 비교
+#### --date-order 와 `--author-date-order` 비교
 
 ![--date-order and --author-date-order comparison](res/git-log-graph-author-date-order-comparison.png)
 
 왼쪽이 `--date-order` 오른쪽이 `--author-date-order`이다.
 
-### --follow
+#### --follow
 
 기본적으로 `git log FILENAME`은 현재 파일 이름에 대해서만 로그를 보여준다.
 
@@ -502,7 +504,7 @@ $ git log --follow --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
 2018-01-11 ebd76bb05 Add "Chocolate Problem"
 ```
 
-## `git worktree`
+### git-worktree
 
 `git worktree add <path> <branch>`로 현재 프로젝트를 `<path>`에 생성하고 `<branch>`로 체크아웃한다. 현재 프로젝트와 연결된다.
 git에서는 작업 영역을 working tree라 부르니, 알아두면 좋겠다.
@@ -531,7 +533,7 @@ $ git branch
 worktree를 제거하기 위해서는 `git worktree remove <path>`를 사용한다. Tab을 통한 경로 자동 완성이 된다.
 worktree에서 사용한 브랜치는 계속 유지된다.
 
-## git-bisect
+### git-bisect
 
 `git bisect` 명령은 이진 탐색을 이용하여 버그가 처음 발생한 커밋을 찾는데 사용한다.
 메뉴얼 상으로는 버그라고 하지만, 특정 커밋을 찾는데 사용할 수 있다고 보면 된다.
@@ -605,7 +607,7 @@ Date:  Fri Mar 25 22:49:24 2022 +0900
 `git bisect run` 명령은 good, bad를 자동 판단하는 스크립트를 작성하여, 커밋 탐색을 자동화하는 명령이다.
 <!-- TODO: 예시 추가 -->
 
-## git-reset
+### git-reset
 
 `git reset`은 HEAD를 이동시키는 명령어다. 즉, 작업 영역을 변경한다.
 
@@ -621,7 +623,7 @@ $ g reset --hard @{u}
 HEAD is now at 93a0251b work-in-progress
 ```
 
-## git-shortlog
+### git-shortlog
 
 `git shortlog`는 커밋 내역을 요약한다.
 
@@ -648,7 +650,7 @@ $ git shortlog -s
      3  Bella
 ```
 
-## git checkout
+### git-checkout
 
 브랜치를 변경하거나, 파일을 복구하는 기능.
 
