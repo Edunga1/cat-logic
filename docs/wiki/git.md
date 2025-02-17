@@ -660,6 +660,21 @@ $ git shortlog -s
 `git checkout -p`로 interactive 파일을 복구할 수 있다. \
 `git add -p`와 같은 방식으로 hunk 단위로 선택하거나 파일을 직접 수정하여 복구한다.
 
+## Revisions
+
+revision은 `dae86e1950b1277e545cee180551750029cfe735`, `{upstream}`, `v1.7.4.2-679-g3bee7fb`, `master` 등 커밋을 가리키는 표현이다.
+
+`git help revisions`에서 설명한다.
+
+`git rebase @{u}`은 현재 브랜치의 upstream branch로 rebase한다.
+현재 브랜치가 리모트에서 변경되고, 일일이 이름을 모두 타이핑하지 않고 `@{u}`로 간단하게 사용할 수 있어서 자주 사용한다.
+
+`git checkout master@{10 days ago}`는 10일 전의 master 브랜치로 checkout한다.
+`bisect`와 더불어 디버깅하기 용이한 명령어다.
+`days` 이외에도 `minutes`, `years` 그리고 조합하여 사용도 가능하고, `1979-02-26 18:30:00`와 같은 날짜 포맷도 사용할 수 있다.
+
+> A ref followed by the suffix @ with a date specification enclosed in a brace pair (e.g.  {yesterday}, {1 month 2 weeks 3 days 1 hour 1 second ago} or {1979-02-26 18:30:00}) specifies the value of the ref at a prior point in time.
+
 ## Git Large File Storage(LFS)
 
 Git Large File Storage는 대용량 파일의 버전 관리를 위한 도구이다.
