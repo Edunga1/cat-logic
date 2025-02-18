@@ -10,10 +10,10 @@ https://ogp.me/
 
 ![Open Graph Protocol](./res/open-graph-protocol-example.png)
 
-위와 같은 미리보기를 구성하는데 사용할 수 있다.
+위 이미지 같은 미리보기를 구성하는데 사용하는 메타 태그를 가리킨다.
 head 태그 안에 meta 태그와 `og:` 접두사를 가진 속성이 이 프로토콜의 사양이다.
 
-위 SO 질문의 경우 아래와 같은 메타데이터를 가지고 있다:
+위 StackOverflow 질문은 아래와 같은 메타데이터를 가지고 있다:
 
 ```html
 <meta property="og:type" content="website">
@@ -28,9 +28,11 @@ head 태그 안에 meta 태그와 `og:` 접두사를 가진 속성이 이 프로
 
 트위터의 경우 Twitter Card라 부르는 독립적인 메타데이터를 사용하는데, 위의 `twitter:title`이 해당한다.
 
-## `<h1>` ~ `<h6>` 구역 제목 요소
+## 구역 제목 요소
 
-### 여러개의 `<h1>` 사용을 피할 것
+`<h1>` `<h6>` 등 heading tag.
+
+### h1 여러개 사용하는 것을 피할 것
 
 [Avoid using multiple `<h1>` elements on one page - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#avoid_using_multiple_h1_elements_on_one_page)
 
@@ -39,4 +41,4 @@ head 태그 안에 meta 태그와 `og:` 접두사를 가진 속성이 이 프로
 `<h1>` 여러개를 사용하는 것이 허용되긴 하지만, 좋은 방법은 아니다.
 페이지에는 보통 페이지의 내용을 설명하는 하나의 `<h1>` 요소가 있어야 한다.
 
-SEO 관점에서도 하나만 있는 것이 좋다고 한다.
+SEO 관점에서 하나만 있는 것이 좋다고 한다.
