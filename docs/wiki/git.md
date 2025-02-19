@@ -535,6 +535,13 @@ worktree에서 사용한 브랜치는 계속 유지된다.
 
 ### git-bisect
 
+1. `git bisect start` 명령어로 시작.
+2. `git bisect bad <commit>` 명렁어로 버그 발생 지점 지정.
+3. `git bisect good <commit>` 명령어로 정상 지점 지정.
+4. 자동으로  중간 커밋으로 체크아웃 됨. 동작 확인.
+5. `git bisect good` or `git bisect bad` 명령어로 계속 진행.
+6. 버그가 처음 발생한 커밋에서 자동 종료.
+
 `git bisect` 명령은 이진 탐색을 이용하여 버그가 처음 발생한 커밋을 찾는데 사용한다.
 메뉴얼 상으로는 버그라고 하지만, 특정 커밋을 찾는데 사용할 수 있다고 보면 된다.
 `bisect`는 2등분한다는 의미다.
@@ -550,45 +557,45 @@ worktree에서 사용한 브랜치는 계속 유지된다.
 
 ```bash
 ~/myproject                                                                      master*
-❯ g bisect start
+❯ git bisect start
 status: waiting for both good and bad commits
 
 ~/myproject                                                                      master|bisect
-❯ g bisect bad HEAD
+❯ git bisect bad HEAD
 status: waiting for good commit(s), bad commit known
 
 ~/myproject                                                                      master|bisect
-❯ g bisect good 9867149b9a0097a8830159a14ca23182828a352c
+❯ git bisect good 9867149b9a0097a8830159a14ca23182828a352c
 Bisecting: 36 revisions left to test after this (roughly 5 steps)
 [c5adff3fa82925bbbf12dde653af264a54e002d6] V1.0.27
 
 ~/myproject                                                                      @c5adff3f|bisect
-❯ g bisect good
+❯ git bisect good
 Bisecting: 17 revisions left to test after this (roughly 4 steps)
 [e31a874ebfdd7d254f8e90541d367b310b6168c0] V1.0.33
 
 ~/myproject                                                                      @e31a874e|bisect
-❯ g bisect good
+❯ git bisect good
 Bisecting: 8 revisions left to test after this (roughly 3 steps)
 [c634c9cbbb6c023ae068dad96cf945e2295272ef] V1.0.37
 
 ~/myproject                                                                      @c634c9cb|bisect
-❯ g bisect good
+❯ git bisect good
 Bisecting: 3 revisions left to test after this (roughly 2 steps)
 [7977f9b61481a366a50afd263f57c88591e858f5] V1.0.39
 
 ~/myproject                                                                      @7977f9b6|bisect
-❯ g bisect good
+❯ git bisect good
 Bisecting: 1 revision left to test after this (roughly 1 step)
 [3f30e3a9f617c7acd6e9310573564b3e56fecb30] V1.0.40
 
 ~/myproject                                                                      @3f30e3a9|bisect
-❯ g bisect good
+❯ git bisect good
 Bisecting: 0 revisions left to test after this (roughly 0 steps)
 [e0b7dbc3921062a6f06a1997efb891b0b1b6041d] imp: improve some logic
 
 ~/myproject                                                                      @e0b7dbc3|bisect
-❯ g bisect bad
+❯ git bisect bad
 e0b7dbc3921062a6f06a1997efb891b0b1b6041d is the first bad commit
 commit e0b7dbc3921062a6f06a1997efb891b0b1b6041d (HEAD, origin/imp-logic)
 Author: John Doe
