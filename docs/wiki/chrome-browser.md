@@ -32,3 +32,14 @@ uBlock Origin 기준으로 필터에 `||accounts.google.com/gsi/*$xhr,script,3p`
 
 - 참조: https://www.reddit.com/r/chrome/comments/1cdsikx/how_to_disable_the_new_sign_in_popup/
 - 공식 문서: https://support.google.com/chrome/answer/14264742
+
+## 북마크
+
+파이어폭스와 달리 크롬은 북마크에 태그 기능이 없다.
+흉내는 낼 수 있는데, 북마크 저장할 때 이름에 `#태그`를 붙이고 검색할 때 `#태그`로 검색하는 것이다.
+주소창 등에서 fuzzy search가 되므로 `#태그1 #태그2`로 검색해도 어느정도 검색이 된다.
+
+![chrome bookmarks tagging](./res/chrome-bookmarks-tagging.png)
+
+이미지와 같이 북마크 이름 끝에 태그를 붙이고, 태그 순서를 바꿔도 검색이 된다.
+단점은 북마크 이름에 의해 검색이 방해되어 원하는 북마크가 나오지 않기도 한다.
