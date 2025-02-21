@@ -43,6 +43,9 @@ https://github.com/artempyanykh/marksman
 [상대 경로를 자동 완성하지 못하는 문제](https://github.com/artempyanykh/marksman/issues/182)가 있다.
 항상 프로젝트 루트 기준으로 링크 완성을 해준다.
 
+한글이 포함되면 링크 자동완성을 못하는 문제가 있다.\
+예를들어 `한글 [link]()` 중 소괄호 내에서 자동완성이 안된다. `한글 [link](` 중에서는 된다.
+
 ## Vim
 
 [Vimwiki](/docs/wiki/vimwiki.md)에서 Text Object를 제공한다.
