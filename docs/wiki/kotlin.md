@@ -158,7 +158,7 @@ test framework: [Kotest](https://github.com/kotest/kotest)
 mocking: [MockK](https://github.com/mockk/mockk)
 
 junit + mockito 대신 Kotest + MockK를 사용하자.
-kotlin의 타입 관련 문제가 없고, kotlin DSL와 infix 함수로 테스트 코드의 가독성이 좋다.
+kotlin의 타입 관련 문제가 해결되고, [Kotlin DSL](#kotlin-dsl)을 이용한 유려한 코드 작성을 도와준다.
 
 e.g. assertion
 ```kotlin
