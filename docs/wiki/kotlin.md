@@ -322,6 +322,11 @@ class MyTest : DescribeSpec() {
 lambda가 원인인 것은 [깃허브 이슈](https://github.com/kotest/kotest-intellij-plugin/issues/184)에서 확인했다.
 [댓글에 init block vs lambda 비교한 동영상](https://youtrack.jetbrains.com/issue/IDEA-295228/Slow-typing-performance-when-using-Kotest-plugin#focus=Comments-27-6461505.0-0)이 첨부되어 있다.
 
+### MockK
+
+`confirmVerified`는 모든 stubbing이 모두 검증`verify()`이 되었는지 확인한다. 그렇지 않으면 실패한다. 
+`checkUnnecessaryStub`는 모든 stubbing이 사용되었는지 확인한다. 
+
 ## [Language Server](./language-server-protocol.md)
 
 https://github.com/fwcd/kotlin-language-server
