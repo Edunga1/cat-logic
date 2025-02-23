@@ -324,8 +324,21 @@ lambda가 원인인 것은 [깃허브 이슈](https://github.com/kotest/kotest-i
 
 ### MockK
 
-`confirmVerified`는 모든 stubbing이 모두 검증`verify()`이 되었는지 확인한다. 그렇지 않으면 실패한다. 
-`checkUnnecessaryStub`는 모든 stubbing이 사용되었는지 확인한다. 
+Kotlin Mocking 라이브러리.
+
+https://github.com/mockk/mockk
+
+다음 검증 함수는 테스트를 위해 Mock 객체를 잘 사용했는지 확인한다:
+
+- `confirmVerified`는 모든 stubbing이 모두 검증(`verify()`) 되었는지 확인한다. 모두 검증하지 않으면 실패한다.
+- `checkUnnecessaryStub`는 모든 stubbing이 한 번 이상 사용되었는지 확인한다.
+
+불필요한 stubbing은 테스트 코드를 복잡하게 만드는데,
+이런 검증 함수를 사용하면 불필요한 stubbing을 찾아내고, 명확한 테스트 코드를 작성할 수 있다.
+전역 설정을 통해 before/after test에서 자동으로 검증하면 좋다.
+`clearAllMocks`를 before에, `confirmVerified`를 after에 넣어야 한다.
+둘 다 after 시점에 한다면 `confirmVerified`의 실패로 인해 `clearAllMocks`가 실행되지 않는다.
+이는 다음 테스트에 영향을 주는 문제가 발생한다.
 
 ## [Language Server](./language-server-protocol.md)
 
