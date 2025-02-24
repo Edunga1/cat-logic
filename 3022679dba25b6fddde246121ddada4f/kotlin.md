@@ -335,10 +335,49 @@ https://github.com/mockk/mockk
 
 불필요한 stubbing은 테스트 코드를 복잡하게 만드는데,
 이런 검증 함수를 사용하면 불필요한 stubbing을 찾아내고, 명확한 테스트 코드를 작성할 수 있다.
-전역 설정을 통해 before/after test에서 자동으로 검증하면 좋다.
+전역 설정을 통해 before/after 시점에 검증하면 좋다.
+
 `clearAllMocks`를 before에, `confirmVerified`를 after에 넣어야 한다.
 둘 다 after 시점에 한다면 `confirmVerified`의 실패로 인해 `clearAllMocks`가 실행되지 않는다.
 이는 다음 테스트에 영향을 주는 문제가 발생한다.
+
+After의 실패가 Before에 영향을 주지 않기 때문에 다음과 같이 분리한다.
+
+```kotlin
+// Better
+class ProjectConfig : AbstractProjectConfig() {
+    override fun extensions(): List<Extension> = listOf(BeforeContainerListener, AfterContainerListener)
+}
+
+private val BeforeContainerListener = object : BeforeContainerListener {
+    override suspend fun beforeContainer(testCase: TestCase) {
+        clearAllMocks()
+    }
+}
+
+private val AfterContainerListener = object : AfterContainerListener {
+    override suspend fun afterContainer(testCase: TestCase, result: TestResult) {
+        checkUnnecessaryStub()
+    }
+}
+```
+
+다음은 `checkUnnecessaryStub`의 실패로 인해 `clearAllMocks`가 실행되지 않는 문제가 있다.
+정상적인 테스트가 실패할 수 있어서 리포트 확인에 방해가 된다.
+
+```kotlin
+// Bad
+class ProjectConfig : AbstractProjectConfig() {
+    override fun extensions(): List<Extension> = listOf(BeforeContainerListener, AfterContainerListener)
+}
+
+private val AfterContainerListener = object : AfterContainerListener {
+    override suspend fun afterContainer(testCase: TestCase, result: TestResult) {
+        checkUnnecessaryStub()
+        clearAllMocks()
+    }
+}
+```
 
 ## [Language Server](./language-server-protocol.md)
 
