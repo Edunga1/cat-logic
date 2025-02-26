@@ -138,6 +138,21 @@ C++를 아주 싫어하는데, C++ 개발자를 배제하는 것만으로도 C�
 > the choice of C were to do *nothing* but keep the C++ programmers out, \
 > that in itself would be a huge reason to use C.
 
+## 게이브 뉴웰의 경력
+
+마이크로소프트에 일하기 위해 하버드 대학을 자퇴했다.
+이후에 인터뷰하기를 마이크로소프트에서의 첫 3개월간 배운 것이 하버드 시절보다 많다고 한다.:
+
+> Newell said he didn't want to make Harvard seem bad but noted he "learned more in three months with those guys at Microsoft than I did the entire time I was at Harvard." [^1]
+
+13년간 마이크로소프트에서 일하고, 게임 Doom에 감명을 받아 하프라이프를 개발, 성공적으로 출시했다.
+[하프라이프의 위대한 점을 설명하는 글](https://news.hada.io/topic?id=19387)에 따르면 2가지 원칙이 있는데, 게임에 스토리를 부여하는 것과 플레이어의 컨트롤을 뺏지 않는 것이라고 한다.
+
+이후에는 대표적인 게임 플랫폼인 스팀을 만들고, 게임으로는 포탈, 레프트4데드를 개발했다.
+연이어 성공적인 사업을 이룬 것을 보거나 [밸브의 조직 문화](/docs/wiki/valve.md)를 보면 원칙을 세우고 고수하는 것이 중요하지 않나 생각한다.
+
+[^1]: https://web.archive.org/web/20250105202241/https://www.neowin.net/news/gabe-newell-i-learned-more-in-three-months-at-microsoft-than-entire-time-at-harvard/
+
 ## 개발에 대한 사소한 생각
 
 가끔 정말 사소할 수 있거나, 피부로는 느끼지만 말로 표현할 수 없었던 것들이 있다.
