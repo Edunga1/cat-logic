@@ -993,6 +993,17 @@ Sora는 [10달 전에 공개](https://news.hada.io/topic?id=13383)되어 화제�
 
 Plus 모델에는 워터마크가 강제된다.
 
+### Perplexity
+
+언어 모델 기반 검색 엔진.
+ChatGPT와 같이 일반적으로 채팅 기반 플랫폼을 사용한다.
+
+https://www.perplexity.ai/
+
+유료 버전인 Pro 라이센스를 사용하면 OpenAI 모델, Claude 모델, LLaMA 등 선택할 수 있다.
+
+MacOS 클라이언트를 제공한다. Homebrew로는 설치를 제공하지 않는다.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
