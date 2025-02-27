@@ -1000,9 +1000,16 @@ ChatGPT와 같이 일반적으로 채팅 기반 플랫폼을 사용한다.
 
 https://www.perplexity.ai/
 
-유료 버전인 Pro 라이센스를 사용하면 OpenAI 모델, Claude 모델, LLaMA 등 선택할 수 있다.
+유료 버전인 Pro 구독을 사용하면 OpenAI 모델, Claude 모델, LLaMA 등 선택할 수 있다.
 
 MacOS 클라이언트를 제공한다. Homebrew로는 설치를 제공하지 않는다.
+
+API도 제공한다.
+Pro 구독은 월마다 $5 만큼의 API 크레딧을 제공한다:
+
+> With Perplexity Pro, you get $5 monthly to use on pplx-api.
+>
+> https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro
 
 ## Hugging Face
 
