@@ -48,9 +48,7 @@ const TocSide = styled(Toc)`
   max-width: 20rem;
 `
 
-const RelatedLinksSide = styled(RelatedLinks)`
-  margin-top: 4rem;
-`
+const RelatedLinksSide = styled(RelatedLinks)``
 
 export default function Wiki(
   {

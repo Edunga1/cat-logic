@@ -26,6 +26,7 @@ const Container = styled.div`
   // link style
   a {
     text-decoration: none;
+    color: ${theme.colors.link};
 
     &:hover {
       color: ${theme.colors.highlight};
