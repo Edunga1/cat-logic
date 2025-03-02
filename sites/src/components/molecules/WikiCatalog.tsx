@@ -4,10 +4,15 @@ import Link from "../atoms/Link"
 import ListItem from "../atoms/ListItem"
 import ColorfulParagraph from "../atoms/ColorfulParagraph"
 import Small from "../atoms/Small"
+import theme from "../../constants/theme"
 
 const Container = styled.div`
   width: 100%;
   display: flex;
+
+  a {
+    color: ${theme.colors.link};
+  }
 `
 
 const List = styled.ul`
