@@ -1011,6 +1011,8 @@ Pro 구독은 월마다 $5 만큼의 API 크레딧을 제공한다:
 >
 > https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro
 
+2025년 기준, SKT 사용자는 [1년 Pro 구독을 무료](https://perplexity.sktadotevent.com/)로 제공하는 이벤트를 진행한다.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
