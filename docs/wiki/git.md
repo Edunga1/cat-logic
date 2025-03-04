@@ -899,3 +899,38 @@ fatal: failed to write commit object
 ```
 
 키가 있으면 passphrase 입력을 요구한다.
+
+## 여러개의 git 설정파일 사용하기
+
+`[include]`, `[includeIf]` 설정을 사용하여 여러 개의 git 설정 파일을 관리할 수 있다.
+`git config --help`의 `Conditional includes`에서 설명한다.
+
+```bash
+# ~/.gitconfig
+[includeIf "gitdir:~/workspace/"]
+  path = ~/.gitconfig.local
+[includeIf "gitdir:~/workspace-foo/"]
+  path = ~/.gitconfig.foo
+
+# ~/.gitconfig.local
+[user]
+	email = foo@example.com
+	name = Foo
+
+# ~/.gitconfig.foo
+[commit]
+  gpgSign = true
+[user]
+	email = bar@example.com
+	name = Bar
+  signingkey = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+```
+
+위 예시는 `~/workspace/` 디렉토리에 있는 프로젝트에서는 `~/.gitconfig.local` 설정을 사용하고,
+`~/workspace-foo/` 디렉토리에 있는 프로젝트에서는 `~/.gitconfig.foo` 설정을 사용한다.
+
+`gitdir:`은 `.git` 디렉토리의 GLOB 패턴으로 사용되며, `true`이면 설정을 적용한다:
+
+> The data that follows the keyword gitdir: is used as a glob pattern. If the location of the .git directory matches the pattern, the include condition is met.
+
+나는 회사와 개인 프로젝트를 분리하고 사용자 정보와 서명 설정을 다르게 사용하고 있다.
