@@ -914,15 +914,15 @@ fatal: failed to write commit object
 
 # ~/.gitconfig.local
 [user]
-	email = foo@example.com
-	name = Foo
+	email = local@example.com
+	name = Local Name
 
 # ~/.gitconfig.foo
 [commit]
   gpgSign = true
 [user]
-	email = bar@example.com
-	name = Bar
+	email = foo@example.com
+	name = Foo Bar
   signingkey = ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ```
 
