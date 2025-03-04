@@ -907,27 +907,27 @@ fatal: failed to write commit object
 
 ```bash
 # ~/.gitconfig
-[includeIf "gitdir:~/workspace/"]
-  path = ~/.gitconfig.local
 [includeIf "gitdir:~/workspace-foo/"]
   path = ~/.gitconfig.foo
-
-# ~/.gitconfig.local
-[user]
-	email = local@example.com
-	name = Local Name
+[includeIf "gitdir:~/workspace-bar/"]
+  path = ~/.gitconfig.bar
 
 # ~/.gitconfig.foo
+[user]
+	email = foo@example.com
+	name = Foo
+
+# ~/.gitconfig.bar
 [commit]
   gpgSign = true
 [user]
-	email = foo@example.com
-	name = Foo Bar
+	email = bar@example.com
+	name = Bar
   signingkey = ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ```
 
-위 예시는 `~/workspace/` 디렉토리에 있는 프로젝트에서는 `~/.gitconfig.local` 설정을 사용하고,
-`~/workspace-foo/` 디렉토리에 있는 프로젝트에서는 `~/.gitconfig.foo` 설정을 사용한다.
+위 예시는 `~/workspace-foo/` 디렉토리에 있는 프로젝트에서는 `~/.gitconfig.foo` 설정을 사용하고,
+`~/workspace-bar/` 디렉토리에 있는 프로젝트에서는 `~/.gitconfig.bar` 설정을 사용한다.
 
 `gitdir:`은 `.git` 디렉토리의 GLOB 패턴으로 사용되며, `true`이면 설정을 적용한다:
 
