@@ -9,6 +9,50 @@ vim에서 다운로드한 로그 파일을 연다고 할 때 터미널에서 경
 대신 브라우저에서 다운로드 폴더를 열고, 단축키로 경로만 복사하는 식으로 사용한다.
 이 과정을 더 줄일 수 있으면 좋을텐데.
 
+## Automator
+
+automator.app은 애플이 제공하는 자동화 도구이다.
+
+운영체제에 내장되어 있다.
+
+이 블로그에서 처음 알게 되었다:\
+https://interfacecraft.online/posts/blog/2025/how-i-automated-my-computer-life-with-macos-folder-actions/
+
+### Folder Action
+
+폴더에 파일이 추가되면 실행되는 워크플로우이다.
+예를들어 특정 폴더에 이미지 파일을 추가하면, 자동으로 WebP로 변환하는 워크플로우를 만들 수 있다.
+
+워크플로우 생성은 `File -> New`로 `Folder Action`을 선택한다.
+`Folder Action receives files and folders added to`에서 액션을 실행할 폴더를 선택한다.
+
+만들어둔 워크플로우는 재사용할 수 있다.
+
+![folder action attachment](./res/mac-os-workflow-folder-action-attachment.png)
+
+아무 폴더나 선택하여 `우클릭 -> Services -> Folder Action Setup` 메뉴에서 관리한다.
+
+#### WebP 변환 워크플로우
+
+폴더에 이미지를 넣으면 WebP로 변환하여, 다운로드 폴더에 저장하는 워크플로우를 만든다.
+
+WebP 변환을 위해서 `cwebp` 명령어가 필요하다: `brew install webp`
+
+1. `Get Specified Finder Items` 액션을 추가
+2. `Run Shell Script` 액션을 추가
+    `Pass Input`은 `as arguments`로 설정한다.
+3. 스크립트를 작성한다. `USERNAME`을 사용자 이름으로 변경.
+    ```bash
+    for f in "$@"; do
+        /opt/homebrew/bin/cwebp -q 70 "$f" -o "/Users/USERNAME/Downloads/$(date +"%Y_%m_%d_%I_%M_%p_%s").webp";
+        rm -f "$f"
+    done
+    ```
+
+
+이제 이미지 파일을 폴더에 넣으면, WebP로 변환되어 다운로드 폴더에 저장된다.
+항상 삭제하기 때문에, WebP의 성공 여부와 관계 없이 원본 파일은 삭제되는 것을 유의.
+
 ## Homebrew - 맥용 패키지 관리자
 
 https://brew.sh/
