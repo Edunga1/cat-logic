@@ -41,11 +41,16 @@ ref:
 [비밀번호 변경](https://docs.aws.amazon.com/cli/latest/reference/iam/change-password.html)(응답 메시지 없음):\
 `aws iam change-password --old-password <OLD_PASSWORD> --new-password <NEW_PASSWORD>`
 
+#### Access Key 교체
+
 [Access Key 교체](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_credentials_access-keys.html#rotating_access_keys_cli)
+플로우가 조금 복잡하다. 다음 순서로 진행한다.
 
-플로우가 조금 복잡하다. 새 access key 생성 -> 새 access key로 도구 업데이트 -> 기존 access key 비활성화 순서로 진행한다.
+1. 새 access key 생성
+2. 새 access key로 도구 업데이트
+3. 기존 access key 비활성화
 
-기존 access key는 비활성화만 하고 나중에 직접 삭제하자.
+안전한 제거를 위해서, 기존 access key는 비활성화를 한 후에, 나중에 콘솔을 통해서 삭제하자.
 
 1. [새 access key 생성](https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html):\
 foreground로 읽으니 파일로 저장하자.
@@ -57,6 +62,9 @@ aws iam create-access-key > access-key.json
 ```sh
 aws configure
 ```
+
+새 Access key가 잘 동작하는지 확인하자 `aws sts get-caller-identity` 명령어로 확인한다.
+잘못되었다면 다음과 같은 에러가 발생한다: `An error occurred (InvalidClientTokenId) when calling the GetCallerIdentity operation: The security token included in the request is invalid.`
 
 3. [기존 access key 비활성화](https://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html):
 ```sh
