@@ -79,22 +79,11 @@ console.log(foo); // 2
 Angular가 아닌 AngularJS에 대한 이야기.
 이제는 사용하지 않지만 [스타일가이드](https://github.com/johnpapa/angular-styleguide/)의 철학은 한 번 읽어볼만 하다.
 
+[AngularJS 문서](./angularjs.md) 참고.
+
 ## Visual Studio Code에서 타입 힌팅 사용하기
 
-Javascript 개발을 하다보면 이런 문구를 많이 만나게 된다:
-
-`Uncaught SyntaxError: Invalid or unexpected token`\
-`Uncaught TypeError: arg1.trim is not a function`
-
-
-```javascript
-function foo(arg1) {
-    var str = arg1.trim(); // Uncaught TypeError ...
-}
-```
-
-이럴때면 [정적 타입](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C%ED%98%95_%EC%B2%B4%EA%B3%84) 언어의 IDE가 제공하는
-타입힌트가 그리워진다.
+[정적 타입](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C%ED%98%95_%EC%B2%B4%EA%B3%84) 언어의 IDE가 제공하는 타입 힌트 도움 처럼 js 또한 jsdoc을 작성하면 제공받을 수 있다.
 
 Visual Studio Code(또는 [LSP](./language-server-protocol.md)를 사용하는 에디터라면)에서
 **JSDoc** 활용하면 에디터에서 타입 힌트를 제공받을 수 있다.
