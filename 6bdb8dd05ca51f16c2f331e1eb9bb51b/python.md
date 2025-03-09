@@ -432,7 +432,8 @@ Homebrew `brew install poetry`로 설치하자.
 자주사용하는 명령어:
 
 1. `poetry shell`: 가상환경 진입. 현재 파이썬 바이너리 버전을 사용한다.
-2. `poetry install`: 의존성 설치. `poetry.lock` 파일을 업데이트한다.
+    2.0.0 버전부터는 `poetry env activate`로 [대체되었다](https://github.com/python-poetry/poetry/releases/tag/2.0.0).
+3. `poetry install`: 의존성 설치. `poetry.lock` 파일을 업데이트한다.
 
 `poetry init --python=3.10 -q`로 초기화하면 `pypoject.toml` 파일이 생성된다.
 `-q` 옵션이 없으면 너무 많은 정보를 물어봐서 번거롭다.
@@ -540,12 +541,16 @@ https://github.com/astral-sh/uv
 
 uv는 파이썬 패키지 관리 도구 기능 뿐만 아니라, 파이썬 관리 기능도 제공한다.
 
-- `uv venv`: 가상환경 생성. `.venv` 디렉토리가 생성된다. `source .venv/bin/activate`로 활성화한다.
+- `uv venv`: 가상환경 생성. `.venv` 디렉토리가 생성된다. `source .venv/bin/activate`로 가상환경을 활성화한다.
 - `uv add PACKAGE_NAME`: 패키지 설치. `pyproject.toml`에 추가된다.
     - `uv pip COMMAND`: `pip`의 인터페이스를 어느정도 제공한다. 실제로 `pip`를 사용하는 것은 아니라고. `pyproject.toml`을 업데이트하지 않는다.
 - `uv tree`: 패키지 트리를 보여준다.
 
 uv로 설치한 패키지는 `pip` 명령어로 확인할 수 없다.
+
+다른 도구처럼 `uv shell` 같은 명령어를 제공하지 않는 것과 명령어를 모두 일일이 타이핑해야 하는 것이 조금 불편하다.
+그래서 [`uv shell`를 추가를 제안하는 이슈](https://github.com/astral-sh/uv/issues/1910)가 등록되어 있다.
+사용자가 빠르게 가상환경에 진입할 수 있고, 가상환경이 없으면 에러 문구를 출력할 수 있도록 하자는 것이 요지.
 
 ## Packaging
 
