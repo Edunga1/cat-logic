@@ -383,3 +383,20 @@ displayplacer "id:364EA7DB-CF15-4E52-95AC-E3162BC3D207 res:1440x2560 hz:60 color
 ```
 
 마지막 줄이 현재 설정된 값을 적용할 수 있는 명령어인데, 복사해두고 아침마다 입력하여 배열을 복구하고 있다.
+
+## 불편한 점
+
+### 웹 링크와 크롬 프로필 문제
+
+Incognito 모드 창이나 다른 프로필 창이 필요해서 여러개의 크롬 창을 사용하는 경우가 있다.
+이때 이메일이나 슬랙 등 브라우저 외부에서 링크를 클릭하면, 원치않는 창에서 열리는 문제가 있다.
+
+검색해 보면 링크는 항상 가장 마지막에 사용된 창에서 열린다고 한다.
+사용해 보면 그렇지만은 않은 게, 듀얼 모니터로 각 창을 띄워두고 마지막 포커스를 기본 프로필 창으로 둬도 링크는 엉뚱한 창에서 열린다.
+
+[레딧 글](https://www.reddit.com/r/MacOS/comments/136uodg/open_links_in_different_chrome_profiles/)에 따르면 [Velja](https://apps.apple.com/us/app/velja/id1607635845) 앱이 이 문제를 해결해준다고.
+다만 유료 앱이다.
+
+브라우저를 선택할 수 있도록 하는 무료 앱인 [browserosaurus](https://github.com/will-stone/browserosaurus)는 크롬 프로필은 지원하지 않는다.
+프로젝트의 [이슈 #56](https://github.com/will-stone/browserosaurus/issues/56)을 보면, 프로필 선택을 지원하려다가 최종 미지원하는 것으로 최종 결정되었다.
+어쟀든 browserosaurus는 맥의 기본 브라우저를 browserosaurus로 변경하면 링크를 열 때 선택할 수 창이 뜨는 아이디어로 동작한다.
