@@ -341,7 +341,7 @@ Agent 훈련할 때는 게임 상태를 관리하겠지만, 최종 생성 모델
 
 [OpenAI 문서](/docs/wiki/openai.md) 참조.
 
-### Claude
+### Anthropic Claude
 
 ChatGPT와 같은 대화형 인공지능.
 
@@ -438,6 +438,24 @@ ChatGPT의 프롬프트에서도 Dalle를 사용할 때 유명인의 작품을 �
 
 마지막으로 이 프롬프트에 대해서 언급하지 않는다.
 시스템 프롬프트를 가리기 위한 장치지만, Anthropic은 이 프롬프트를 공개했다.
+
+#### Claude Code
+
+코드베이스에 대해 쿼리하는 **명령줄 도구**.
+
+https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview
+
+2025년 3월 기준 프리뷰 단계에 있다.
+프리뷰 단계지만 무료 기간이 없다.
+
+[레딧 BEWARE CALUDE CODE IS NOT FREE 글](https://www.reddit.com/r/ClaudeAI/comments/1ixi2rg/beware_claude_code_is_not_free/)을 보면
+쿼리 2~3개에 $5 사용되었다고. 덧글에도 비슷한 경험을 한 사람들이 있다.
+비용이 적은 사람도 있는 걸 보면, 코드베이스의 크기에 따라 달라지는 것으로 주정.
+
+[튜토리얼](https://docs.anthropic.com/ko/docs/agents-and-tools/claude-code/tutorials)에서 사용법을 확인할 수 있다.
+`claude` 명령어를 입력하면 대화형 모드로 진입한다.
+명령줄 버전의 ChatGPT라고 생각해도 무방해 보인다.
+에디터 통합이 없는 것은 아쉬운 점.
 
 ### DeepSeek
 
