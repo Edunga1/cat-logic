@@ -10,6 +10,7 @@ const Container = styled.div`
   margin-top: 1rem;
   border-radius: .5rem;
   border: 1px solid rgb(238, 238, 238);
+  font-family: Arial, Helvetica, sans-serif;
 
   // heading style
   h1, h2, h3, h4, h5, h6 {
@@ -36,9 +37,9 @@ const Container = styled.div`
   // inline code block style
   code:not(pre code) {
     font-size: 80%;
-    background-color: #f5f5f5;
-    border-radius: .5rem;
-    padding: .2rem .4rem;
+    background-color: #e3e6e8;
+    border-radius: 4px;
+    padding: 2px 4px;
     word-break: break-word;
   }
 
