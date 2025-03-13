@@ -667,6 +667,12 @@ $ git shortlog -s
 `git checkout -p`로 interactive 파일을 복구할 수 있다. \
 `git add -p`와 같은 방식으로 hunk 단위로 선택하거나 파일을 직접 수정하여 복구한다.
 
+인자 없이 `git checkout`은 현재 브랜치에 다시 체크아웃한다.
+메뉴얼에는 추적 정보를 보여주는 비싼 부수효과라지만, hook이 있다면 다시 실행한다.
+나는 브랜치 설명을 `$PS1`에 추가해 두고, checkout hook에 갱신하고 있어서 유용하게 사용하고 있다.
+
+> You could omit `<branch>`, in which case the command degenerates to "check out the current branch", which is a glorified no-op with rather expensive side-effects to show only the tracking information
+
 ## Revisions
 
 revision은 `dae86e1950b1277e545cee180551750029cfe735`, `{upstream}`, `v1.7.4.2-679-g3bee7fb`, `master` 등 커밋을 가리키는 표현이다.
