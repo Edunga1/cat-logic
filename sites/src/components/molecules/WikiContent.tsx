@@ -22,15 +22,17 @@ const Container = styled.div`
   // link style
   a {
     &:link {
+      color: ${theme.colors.link};
       text-decoration: none;
-    }
-
-    &:hover {
-      text-decoration: underline;
     }
 
     &:visited {
       color: ${theme.colors.linkVisited};
+    }
+
+    &:hover {
+      color: ${theme.colors.linkHover};
+      text-decoration: underline;
     }
   }
 
