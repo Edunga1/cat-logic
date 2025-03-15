@@ -11,7 +11,13 @@ Git은 2005년 4월 3일에 리누스 토발즈가 개발을 시작해서,
 > _long_ time that I've done without using BK, and it's the first one ever\
 > that has been built up completely with "git".
 
-*명령어 자동완성하기*: [https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion](https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion)
+> 제목이 무슨 뜻인지 이제는 알고 계실 테지만,\
+> 이 릴리스는 명백한 이유로 평소와는 조금 다릅니다.\
+> BitKeeper를 사용하지 않고 내가 한 첫 번째 릴리스가 오랜만이고,\
+> "git"으로 완전히 구축된 첫 번째 릴리스입니다.
+
+탭을 통한 *명령어 자동완성*하려면 [shell completion](https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion)을 설치해야 한다.
+Homebrew로 설치했다면 `git-completion.bash`가 자동으로 설치된다.
 
 git에서 언급하는 `HEAD`, `upstream` 등 용어에 대한 설명은 `git help glossary`로 확인할 수 있다.
 
