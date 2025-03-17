@@ -8,7 +8,7 @@ const Container = styled.div`
   position: relative;
 
   @media (${device.larger}) {
-    grid-template-columns: .5fr minmax(auto, 50rem) 10rem;
+    grid-template-columns: 0.5fr minmax(auto, 50rem) 10rem;
     > :nth-child(1) {
       grid-column: 2;
     }
@@ -39,9 +39,11 @@ const SideContent = styled.div`
   position: fixed;
 `
 
-export default function PageLayout(
-  { children }: { children: React.ReactNode | React.ReactNode[] },
-) {
+export default function PageLayout({
+  children,
+}: {
+  children: React.ReactNode | React.ReactNode[];
+}) {
   const [main, side] = Array.isArray(children)
     ? [children[0], children.slice(1)]
     : [children, null]

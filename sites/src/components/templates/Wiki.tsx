@@ -20,7 +20,7 @@ const Main = styled.div`
 const TitleContainer = styled.div`
   display: flex;
   margin: 1rem 0;
-  gap: .5rem;
+  gap: 0.5rem;
 `
 
 const Title = styled.h1`
@@ -50,43 +50,43 @@ const TocSide = styled(Toc)`
 
 const RelatedLinksSide = styled(RelatedLinks)``
 
-export default function Wiki(
-  {
-    title,
-    tableOfContents,
-    relatedLinks,
-    wikiContents,
-    slug,
-    lastModified,
-    lastCommitHash,
-    gitHubRepositoryUrl,
-    activityDates,
-  }: {
-    title?: string
-    tableOfContents: string
-    relatedLinks: JSX.Element[]
-    wikiContents: string
-    slug: string
-    lastModified?: Date
-    lastCommitHash?: string
-    gitHubRepositoryUrl?: string
-    activityDates?: Date[]
-  },
-) {
-  const githubLink = lastModified
-    ? <GitHubCommitLink
+export default function Wiki({
+  title,
+  tableOfContents,
+  relatedLinks,
+  wikiContents,
+  slug,
+  lastModified,
+  lastCommitHash,
+  gitHubRepositoryUrl,
+  activityDates,
+}: {
+  title?: string;
+  tableOfContents: string;
+  relatedLinks: JSX.Element[];
+  wikiContents: string;
+  slug: string;
+  lastModified?: Date;
+  lastCommitHash?: string;
+  gitHubRepositoryUrl?: string;
+  activityDates?: Date[];
+}) {
+  const githubLink = lastModified ? (
+    <GitHubCommitLink
       lastModified={lastModified}
       gitHubRepositoryUrl={gitHubRepositoryUrl}
       hash={lastCommitHash}
     />
-    : null
+  ) : null
 
   return (
     <PageLayout>
       <Main>
         <TitleContainer>
           <HomeLink slug={slug} />
-          <Link href="."><Title>{title}</Title></Link>
+          <Link href=".">
+            <Title>{title}</Title>
+          </Link>
         </TitleContainer>
         <GrassActivity dates={activityDates || []} />
         <TitleBottom>{githubLink}</TitleBottom>

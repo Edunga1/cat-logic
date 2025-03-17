@@ -11,9 +11,13 @@ const Counter = styled.div`
   color: ${theme.fonts.body};
 `
 
-export default function Home(
-  { items, setQuery }: { items: Wiki[]; setQuery: (arg0: string) => void },
-) {
+export default function Home({
+  items,
+  setQuery,
+}: {
+  items: Wiki[];
+  setQuery: (arg0: string) => void;
+}) {
   return (
     <PageLayout>
       <div>
@@ -31,5 +35,4 @@ export type Wiki = {
   title: string;
   head: string;
   lastModified?: Date;
-}
-
+};
