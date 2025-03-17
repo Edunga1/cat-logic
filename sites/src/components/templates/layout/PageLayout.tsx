@@ -5,16 +5,11 @@ import device from "../../../constants/device"
 const Container = styled.div`
   padding-top: 3rem;
   display: grid;
+  grid-template-areas: "main side";
   position: relative;
 
   @media (${device.larger}) {
-    grid-template-columns: 0.5fr minmax(auto, 50rem) 10rem;
-    > :nth-child(1) {
-      grid-column: 2;
-    }
-    > :nth-child(2) {
-      grid-column: 3;
-    }
+    grid-template-columns: minmax(auto, 50rem) 14rem;
   }
 `
 
@@ -22,21 +17,21 @@ const Main = styled.div`
   width: 100%;
   padding: 0 1rem;
   display: grid;
+  grid-area: main;
 `
 
 const Side = styled.div`
   display: none;
+  grid-area: side;
+  position: sticky;
+  top: 0;
+  max-height: calc(100vh - 3rem);
+  padding: 1rem 1rem;
+  overflow-y: auto;
 
   @media (${device.larger}) {
     display: block;
-    padding: 1rem 1rem;
-    height: 100%;
-    overflow-y: auto;
   }
-`
-
-const SideContent = styled.div`
-  position: fixed;
 `
 
 export default function PageLayout({
@@ -50,9 +45,7 @@ export default function PageLayout({
   return (
     <Container>
       <Main>{main}</Main>
-      <Side>
-        <SideContent>{side}</SideContent>
-      </Side>
+      <Side>{side}</Side>
     </Container>
   )
 }
