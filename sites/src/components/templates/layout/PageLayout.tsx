@@ -3,7 +3,8 @@ import styled from "styled-components"
 import device from "../../../constants/device"
 
 const Container = styled.div`
-  padding-top: 3rem;
+  --height-offset: 3rem;
+  padding-top: var(--height-offset);
   display: grid;
   grid-template-areas: "main side";
   position: relative;
@@ -25,7 +26,7 @@ const Side = styled.div`
   grid-area: side;
   position: sticky;
   top: 0;
-  max-height: calc(100vh - 3rem);
+  max-height: calc(100vh - var(--height-offset));
   padding: 1rem 1rem;
   overflow-y: auto;
 
