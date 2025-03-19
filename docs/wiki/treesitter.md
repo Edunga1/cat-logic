@@ -18,7 +18,8 @@ Treesitter의 표현식은 Scheme을 통해 정의되며, `.scm` 확장자를 �
 > 
 > [Queries](https://tree-sitter.github.io/tree-sitter/syntax-highlighting#queries) 중에서
 
-nvim에서 treesitter textobject 쿼리를 추가하려면 `<nvim-config>/queries/<language>/textobjects.scm`을 생성한다.
+nvim에서 treesitter textobject 쿼리를 추가하려면 `<nvim-config>/queries/<language>/textobjects.scm`을 생성하거나,
+nvim-treesitter의 `:TSEditQuery textobjects` 명령어를 통해 내장된 쿼리를 수정한다.
 
 다음은 javascript에서 Object의 key를 `@property`로, value를 `@value`로 지정하는 쿼리이다.
 
