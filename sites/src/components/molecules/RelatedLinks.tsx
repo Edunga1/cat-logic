@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import theme from "../../constants/theme"
 
 const Container = styled.div`
 `
@@ -27,6 +28,22 @@ const Links = styled.ul`
 
     :last-child::after {
       content: "";
+    }
+
+    > a {
+      &:link {
+        color: ${theme.colors.link};
+        text-decoration: none;
+      }
+
+      &:visited {
+        color: ${theme.colors.linkVisited};
+      }
+
+      &:hover {
+        color: ${theme.colors.linkHover};
+        text-decoration: underline;
+      }
     }
   }
 `
