@@ -10,18 +10,19 @@ const Container = styled.div`
   position: relative;
 
   @media (${device.larger}) {
-    grid-template-columns: minmax(auto, 50rem) 14rem;
+    grid-template-columns: auto 14rem;
   }
 `
 
 const Main = styled.div`
+  grid-area: main;
   width: 100%;
   padding: 0 1rem;
   display: grid;
-  grid-area: main;
 `
 
 const Side = styled.div`
+  grid-area: side;
   display: none;
   grid-area: side;
   position: sticky;
