@@ -8,19 +8,18 @@ phidata는 AI Assistant를 만드는 toolkit이다.
 https://github.com/phidatahq/phidata
 
 AI가 사용할 수 있는 도구(function call)을 제공하고 사용자가 프롬프트로 요청하면, AI가 도구를 사용하여 답변을 생성한다.
-도구로는 웹 검색, 파이썬, DB가 있다.
 
-OPENAI_API_KEY 없이도 사용할 수 있다.
-실제 동작은 phidata의 API를 사용하여 phidata는 OpenAI의 ChatGPT-4 Turbo를 사용한다. 그래서 무료로 시도해볼 수 있다.
-다만 2024-02-22, 사용량이 너무 많아서 막았다. 무료로 사용하게 뒀던 것이 대단한데, 아마 조만간 영구히 막을 것 같다.
+OPENAI_API_KEY 없이 무료로 사용할 수 있었으나, 2024년 2월 22일에 사용량이 너무 많아서 막았다.
 
-OPENAI_API_KEY를 제공하면 해당 Key가 사용된다.
-두 번 사용한 후 OpenAI에서 사용량을 확인해보니 $0.10 사용되었다. 한글로 사용해서 그런지 비싸다.
+OPENAI_API_KEY를 제공하면 OpenAI의 모델을 사용한다.
+초기에는 ChatGPT-4 Turbo 모델을 사용했다.
+두 번 사용한 후 OpenAI에서 사용량을 확인해보니 $0.10 사용되었다.
+한글 기준이라 좀 비쌌다.
 
 ---
 
-다음은 Phidata에서 소개하는 간단한 예제이다.\
-지금은 OpenAI API 키가 없으면 실행할 수 없다.
+다음은 Phidata에서 소개하는 간단한 예제이다.
+OpenAI API 키가 필요하다.
 
 poetry를 사용하고 있어서 `pyproject.toml`를 작성한다.
 
@@ -241,19 +240,14 @@ horizontal line으로 총 4개 구역을 나눠주세요.
 """
 ```
 
-이렇게 프롬프트를 작성하면, 본문을 위해 도구를 한 번 사용하고 다음 글을 요약하기 위해 도구를 한 번 더 사용한다.
+이렇게 프롬프트를 작성하면, 본문을 위해 도구를 한 번 사용하고 다음 글을 요약하기 위해 다시 사용하여 총 2번 사용한다.
 
----
-
-여기있는 코드도 copilot과 함께 작성하다보니, 내가 직접 짠 코드는 거의 없다.\
-인공지능의 발전이 새삼 대단하다고 느낀다.
-
-이 예제코드는 내 저장소에 올려두었다:\
+예제코드는 저장소에 올려두었다:\
 https://github.com/Edunga1/practice-phidata
 
 #### 로컬 LLM 사용하기
 
-Ollama를 사용해서 로컬 LLM을 쉽게 띄우고, phidata로 도구를 쥐어주는 것이 아이디어다.
+[Ollama](/docs/wiki/ollama.md)를 사용해서 로컬 LLM을 쉽게 띄우고, phidata로 도구를 쥐어주는 것이 아이디어다.
 
 ```python
 import sys
@@ -297,7 +291,7 @@ assistant = Assistant(
 assistant.print_response(message, markdown=True)
 ```
 
-모델은 `llama2`를 사용했다. 기존처럼 `get_html` 함수를 사용해서 제공하면 이상하게도 오류가 난다.
+모델은 `llama2`를 사용했다. 기존처럼 `get_html` 함수를 사용해서 제공하면 오류가 난다.
 `Toolkit`을 구현하면 오류가 나지 않는다.
 
 Ollama는 docker로 띄우고 host로 제공했다.

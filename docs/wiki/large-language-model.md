@@ -3,7 +3,7 @@ created: 2024-02-29
 ---
 # Large Language Model
 
-인공 신경망으로 구성된 언어 모델을 말한다.
+인공 신경망으로 구성된 대규모 언어 모델을 말한다.
 
 ## AI Assistant 제작 도구
 
@@ -14,19 +14,19 @@ GPT-4는 너무 비싸다.
 그래서 비용이 더 많이 들고, 더 적은 내용만 API의 입력으로 전달된다.
 
 그래도 공개 LLM보다 ChatGPT 같은 상용 LLM의 품질이 훨씬 좋다.
-특히 한글 지원에서 성능차이가 크게 나타난다.
+특히 한글 지원에서 품질 차이가 크게 나타난다.
 
-phidata와 ollama는 function calling을 지원한다.
-자연어 응답 대신, 함수 호출하는 응답을 만드는 기능이다.
-API를 호출하거나 사용자가 만든 함수를 사용할 수 있으면 더 정확한 답변을 만들어 낼 수 있다.
+phidata와 ollama는 'function calling' 기능으로 답변의 품질을 개선한다.
+AI가 함수 호출을 통해 답변을 생성하는 기능이다.
 
 ### Phidata
 
-[Phidata](/docs/wiki/phidata.md)는 AI Assistant를 만드는 도구다.
+[Phidata](/docs/wiki/phidata.md)는 AI Assistant를 만드는 도구로 function calling 기능을 제공한다.
 
 ### Ollama
 
 [Ollama](/docs/wiki/ollama.md)는 AI Assistant를 만들거나 모델을 실행하는 도구다.
+tool-calling 이름으로 function calling 기능을 제공한다.
 
 ### Spring AI
 
