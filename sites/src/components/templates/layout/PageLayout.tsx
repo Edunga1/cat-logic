@@ -4,26 +4,27 @@ import device from "../../../constants/device"
 
 const Container = styled.div`
   --height-offset: 3rem;
-  padding-top: var(--height-offset);
+
   display: grid;
   grid-template-areas: "main side";
-  position: relative;
+  padding-top: var(--height-offset);
 
   @media (${device.larger}) {
-    grid-template-columns: auto 14rem;
+    grid-template-columns: 3fr 1fr;
+    padding-left: 10rem;
   }
 `
 
 const Main = styled.div`
+  display: grid;
   grid-area: main;
   width: 100%;
   padding: 0 1rem;
-  display: grid;
 `
 
 const Side = styled.div`
-  grid-area: side;
   display: none;
+  grid-area: side;
   grid-area: side;
   position: sticky;
   top: 0;
