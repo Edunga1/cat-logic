@@ -173,7 +173,7 @@ phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
 
 정보를 찾기위한 AI의 고뇌가 돋보인다.
 
-#### 나만의 도구 만들기
+## 나만의 도구 만들기
 
 Phidata는 내가 만든 함수를 사용할 수 있도록 도와준다.
 
@@ -245,7 +245,7 @@ horizontal line으로 총 4개 구역을 나눠주세요.
 예제코드는 저장소에 올려두었다:\
 https://github.com/Edunga1/practice-phidata
 
-#### 로컬 LLM 사용하기
+## 로컬 LLM 사용하기
 
 [Ollama](/docs/wiki/ollama.md)를 사용해서 로컬 LLM을 쉽게 띄우고, phidata로 도구를 쥐어주는 것이 아이디어다.
 
