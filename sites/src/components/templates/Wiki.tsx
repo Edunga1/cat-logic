@@ -13,7 +13,6 @@ import GitHubCommitLink from "../organisms/GitHubCommitLink"
 import PageLayout from "./layout/PageLayout"
 
 const Main = styled.div`
-  padding: 0 1rem;
   overflow: auto;
 `
 
