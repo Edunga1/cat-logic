@@ -6,12 +6,11 @@ const Container = styled.div`
   --height-offset: 3rem;
 
   display: grid;
-  grid-template-areas: "main side";
+  grid-template-areas: "margin main side";
   padding-top: var(--height-offset);
 
   @media (${device.larger}) {
-    grid-template-columns: 3fr 1fr;
-    padding-left: 10rem;
+    grid-template-columns: 0.3fr 3fr 1fr;
   }
 `
 
@@ -37,6 +36,15 @@ const Side = styled.div`
   }
 `
 
+const Margin = styled.div`
+  display: none;
+  grid-area: margin;
+
+  @media (${device.larger}) {
+    display: block;
+  }
+`
+
 export default function PageLayout({
   children,
 }: {
@@ -47,8 +55,9 @@ export default function PageLayout({
     : [children, null]
   return (
     <Container>
+      {side && <Margin />}
       <Main>{main}</Main>
-      <Side>{side}</Side>
+      {side && <Side>{side}</Side>}
     </Container>
   )
 }
