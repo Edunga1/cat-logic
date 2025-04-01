@@ -499,9 +499,9 @@ vim이 제공하는 읽기 전용 레지스터는 클립보드, 마지막 삭제
 > :h variable-scope 중에서.
 
 > Inside functions global variables are accessed with "g:".  Omitting this will access a variable local to a function.
-> 
+>
 > 함수 내에서 전역 변수는 "g:"로 접근한다. 생략하면 함수 내에서 로컬 변수에 접근한다.
-> 
+>
 > h: global-variable 중에서.
 
 prepending을 생략하면 일반적으로 전역 변수지만, 함수 내에서는 로컬 변수를 가리킨다.
@@ -1184,9 +1184,9 @@ ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. `/usr/bin
 > Evrone: Using plenty of web manuals we can discover great plugins to extend the awesome functionality of Vim. Do you have any plugin favorites and must-haves you could recommend to our audience?
 >
 > Evrone: Vim의 멋진 기능을 확장하기 위해 많은 웹 매뉴얼을 사용하여 훌륭한 플러그인을 찾을 수 있습니다. 추천할만한 플러그인이 있을까요?
-> 
+>
 > Bram: I have to admit I don’t use many plugins, other than what is included with the distribution (such as matchit and termdebug). When I need something I tend to either make a quick hack or add it to the Vim base. That’s the luxury of being the creator :-).
-> 
+>
 > 저는 사실 많은 플러그인을 사용하지 않습니다. 배포판에 포함된 것(예: matchit, termdebug)을 제외하고는요. 필요한 것이 있으면 빠른 해킹을 하거나 Vim 베이스에 추가하는 경향이 있습니다. 그것이 창시자의 특권입니다 :-).
 
 그리고 협업자들과 커뮤니케이션하는 방식. 그리고 젊은 개발자들에게 여유를 가지고 개발하라는 조언을 했다.
