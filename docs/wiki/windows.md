@@ -63,11 +63,11 @@ powershell -Command "Start-Process 'C:\Program Files\poe-overlay\poe-overlay.exe
 
 이렇게하면 배치 파일을 실행할 때 User Account Control 확인 창이 뜬다.
 
-## Install vs. Portable
+## Installation vs. Portable
 
 윈도우 프로그램의 실행 방식은 크게 설치형과 포터블형으로 나뉜다.
 
-두 방식의 차이를 생각해 본 적이 없었는데 [awakened poe trade](https://snosme.github.io/awakened-poe-trade/download)라는 프로그램에서 시작 시간에서 차이가 난다고 되어 있었다.
+[awakened poe trade](https://snosme.github.io/awakened-poe-trade/download)라는 프로그램에서는 설치 방식에 따라 시작 시간에서 차이가 난다고 한다.
 
 | Download link           | Automatic updates | Startup time |
 |-------------------------|-------------------|--------------|
@@ -76,4 +76,4 @@ powershell -Command "Start-Process 'C:\Program Files\poe-overlay\poe-overlay.exe
 | Linux (AppImage)        | ✔                 | n/a          |
 | macOS (dmg)             | ❌                | n/a          |
 
-자동 업데이트의 경우 프로그램에 대한 내용이라 실행 방식과는 관련이 없을 거 같다.
+자동 업데이트의 경우 프로그램에 대한 내용이라 실행 방식과는 관련이 없을 듯.
