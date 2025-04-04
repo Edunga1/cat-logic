@@ -1,11 +1,11 @@
 ---
 created: 2024-02-21
 ---
-# Phidata
+# Agno
 
-phidata는 AI Assistant를 만드는 toolkit이다.
+agno는 AI Assistant를 만드는 toolkit이다.
 
-https://github.com/phidatahq/phidata
+https://github.com/agno-agi/agno
 
 AI가 사용할 수 있는 도구(function call)을 제공하고 사용자가 프롬프트로 요청하면, AI가 도구를 사용하여 답변을 생성한다.
 
@@ -16,9 +16,13 @@ OPENAI_API_KEY를 제공하면 OpenAI의 모델을 사용한다.
 두 번 사용한 후 OpenAI에서 사용량을 확인해보니 $0.10 사용되었다.
 한글 기준이라 좀 비쌌다.
 
----
+2025년 1월, Phidata에서 Agno로 [리브랜딩 했다](https://www.linkedin.com/posts/ashpreetbedi_phidata-is-now-agno-announcing-our-new-activity-7290750031312179200-mGAd).
 
-다음은 Phidata에서 소개하는 간단한 예제이다.
+<!-- TBD: 예제 phidata -> agno로 변경 -->
+
+### 공식 예제
+
+다음은 공식문서에서 소개하는 간단한 예제이다.
 OpenAI API 키가 필요하다.
 
 poetry를 사용하고 있어서 `pyproject.toml`를 작성한다.
@@ -299,8 +303,8 @@ Ollama는 docker로 띄우고 host로 제공했다.
 문제는 도구를 전혀 사용(function calling)하지 않는다. URL 자체를 기반한 답변을 하는데, 당연히 제대로된 답변을 못한다.
 아마도 모델 성능 문제인 거 같다. GPT-4의 경우에도 프롬프트의 해석에 따라서 도구를 사용하는 빈도가 달라졌기 때문.
 
-[오픈소스 모델을 지원하는지?](https://github.com/phidatahq/phidata/issues/121#issuecomment-1963098829) 질문에
-기여자의 답변 내용을 보면, GPT-4 말고는 function calling을 제대로 사용할 수 없다고 한다:
+[오픈소스 모델을 지원하는지?](https://github.com/agno-agi/agno/issues/121#issuecomment-1963098829)
+질문의 답변에 GPT-4 말고는 function calling을 제대로 사용할 수 없다고 한다:
 
 > But only GPT4 can do function calling reliably. local/oss models are great for completion therefore most of the examples you'll see with OSS models will be of RAG
 
