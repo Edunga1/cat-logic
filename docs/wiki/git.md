@@ -510,6 +510,22 @@ $ git log --follow --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
 2018-01-11 ebd76bb05 Add "Chocolate Problem"
 ```
 
+#### 브랜치간 커밋 비교
+
+bitbucket, github에서 Pull Request를 머지할 때, 예를들어 staging -> master 머지한다면 staging의 커밋만 보여준다.
+이는 `git log`로 구현할 수 있다.
+
+```bash
+$ git log --oneline --no-merges --left-only staging...master
+
+8447882a feature: add something
+abdb9882 fix: update something
+316ec8c6 chore: fix typo
+```
+
+- `--left-only` 옵션은 왼쪽인 staging 브랜치에만 존재하는 커밋을 보여준다.
+- `--no-merges`는 머지 커밋을 제외한다.
+
 ### git-worktree
 
 `git worktree add <path> <branch>`로 현재 프로젝트를 `<path>`에 생성하고 `<branch>`로 체크아웃한다. 현재 프로젝트와 연결된다.
