@@ -13,12 +13,12 @@ created: 2022-12-05
 
 ---
 
-2024년. 코드 레벨에서 인공지능을 많이 사용해보고 있다.
+2024년부터 코딩할 때 인공지능을 많이 사용해보고 있다.
 
 적극적으로 사용하려는 시도의 이유는 많은데, 그 중 하나는 다음 글이다.
 
 [AI가 당신의 직업은 빼앗지 않지만, 당신의 급여는 갉아먹을 것입니다](https://news.hada.io/topic?id=13557).\
-이 글은 평소의 내 생각을 조금 깨는 듯한 글이었다. 사실 내용은 자세히 읽진 않았지만, 글 제목만으로도 임팩트가 크다.\
+내 생각을 깨는 글이었다. 내용은 자세히 읽진 않았지만, 제목만으로도 임팩트가 크다.\
 언젠가 직업들이 AI에 대체될 거라고는 생각했다. 그러니까 0에서 1로 단숨에 바뀔거라는 생각이 은연중에 있었다.\
 하지만 실제로는 0.1, 0.12 조금씩 바뀌어 나갈 것이다. 급여와 일자리는 줄어가고, 데워지는 물 속 개구리처럼 변화를 느끼지 못할 것만 같다.
 
@@ -32,7 +32,7 @@ https://youtu.be/WXuK6gekU1Y
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WXuK6gekU1Y?si=strpQpmEXFpvh6Z2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-한국어 자동 번역을 사용하면 한글 자막이 나온다.
+한국어 자동 번역을 사용하면 보는데 무리없는 수준으로 한글 자막이 나온다.
 
 일반인들이 바둑을 두는 장면과 함께, 데미스 하사비스가 대학 강연에서 AI를 설명하는 장면에서 시작한다.
 알카노이드를 플레이하는 AI를 보여주는데, 처음에는 어설프지만 나중에는 사람이 플레이하는 것처럼,
