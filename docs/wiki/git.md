@@ -1,5 +1,9 @@
 # Git
 
+the stupid content tracker.
+
+위는 `man git` 입력하면 볼 수 있는 Git을 설명하는 문구이다.
+
 Git은 2005년 4월 3일에 리누스 토발즈가 개발을 시작해서,
 17일 후인 4월 20일에 리눅스 2.6.12-rc3 커널을 [Git으로 공개](https://patrickcollison.com/fast)했다.
 
