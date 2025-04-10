@@ -11,7 +11,8 @@ created: 2022-11-28
 
 `python` 명령어 도구를 제공한다.
 
-터미널에 `python -m this`를 입력하면 `Zen of Python`라 불리는 파이썬의 **핵심 철학*을 보여주는 이스터 에그이다.
+터미널에 `python -m this`를 입력하면 `Zen of Python`라 불리는 파이썬의 **핵심 철학**을 담은 문단을 보여준다.
+이는 [pep-20](https://peps.python.org/pep-0020/)의 내용이다.
 
 ```bash
 $ python -m this
