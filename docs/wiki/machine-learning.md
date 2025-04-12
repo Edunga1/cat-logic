@@ -574,6 +574,10 @@ vim, vscode, jetbrain 에디터 등 에디터의 플러그인 형태로 제공�
 깃허브 저장소에서 copilot chat 기능으로 저장소를 분석할 수 있다.
 내가 주로 사용하는 방식은 특정 로직을 처리하는 파일을 찾는다거나(maccy 저장소에서 fuzzy 알고리즘 사용하는 지점을 찾는 등) 내 프로젝트에서 오탈자를 찾아 달라고 요청하는 식이다. 여기서 더 나아간 형태가 copilot workspace가 되겠다.
 
+요금제는 월간 제한이 있는 Copilot Free, 월 구독형 Copilot Pro가 대표적.
+2025년 4월 4일에 [Copilot Pro+가 출시되었다](https://github.blog/changelog/2025-04-04-announcing-github-copilot-pro/).
+월간 $10인 Pro의 약 4배 가격인 $39로 매우 비싸다. 기능은 Pro와 동일하지만, 고급 모델에 대한 접근을 제공한다.
+
 #### Copilot CLI
 
 shell 명령어를 작성하는데 도움을 주는 도구.
