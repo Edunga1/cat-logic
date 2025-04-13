@@ -578,6 +578,21 @@ vim, vscode, jetbrain 에디터 등 에디터의 플러그인 형태로 제공�
 2025년 4월 4일에 [Copilot Pro+가 출시되었다](https://github.blog/changelog/2025-04-04-announcing-github-copilot-pro/).
 월간 $10인 Pro의 약 4배 가격인 $39로 매우 비싸다. 기능은 Pro와 동일하지만, 고급 모델에 대한 접근을 제공한다.
 
+### copilot.vim
+
+vim에서 copilot을 사용할 수 있도록 해주는 플러그인.
+
+https://github.com/github/copilot.vim
+
+github에서 공식적으로 제공한다.
+유명한 vim 플러그인 개발자가 개발하고 메인테이너로 있다.
+다만 대부분 혼자서 개발하고 있다보니 기능 면에서는 부족한 점이 많다.
+릴리즈 노트조차 제대로 작성되지 않고 있어서 어떤 변경사항이 있는지 추적할 수 없다.
+
+vscode, jetbrain 에디터에서 제공하는 플러그인은 chat 기능이 포함되어 있지만, vim 플러그인은 chat 기능이 없다.
+자동 완성 기능만 제공한다. 가장 지원이 잘 되는 쪽은 vscode인 듯.
+copilot agent 등 vscode insider에 적극적으로 신규 기능을 지원하고 있다.
+
 #### Copilot CLI
 
 shell 명령어를 작성하는데 도움을 주는 도구.
