@@ -7,7 +7,7 @@ created: 2019-09-28
 
 ## 북마크 매니저 shiori
 
-[https://github.com/go-shiori/shior](https://github.com/go-shiori/shiori)
+https://github.com/go-shiori/shiori
 
 Go로 구현되고, 웹 서버 + 클라이언트 조합으로 구성된다.
 

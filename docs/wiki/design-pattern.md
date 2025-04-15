@@ -35,7 +35,7 @@ Repository Pattern에는 두 종류가 있다. Generic Repository와 Specific Re
 
 ### Generic Repository vs. Specific Repository
 
-https://stackoverflow.com/questions/1230571/advantage-of-creating-a-generic-repository-vs-specific-repository-for-each-obje
+https://stackoverflow.com/q/1230571
 
 * 점수를 많이 받은 답은 **Specific Repository를 더 선호한다**. 그 이유는 아래와 같다.
 * 모든 엔티티가 저장소를 가지는 것은 아니기 때문이다.
