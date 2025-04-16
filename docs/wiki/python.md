@@ -526,21 +526,24 @@ RUN poetry install --only main --no-root --no-directory
 
 ### pipenv
 
+파이썬 패키지와 가상 환경 관리 도구.
+
 https://github.com/pypa/pipenv
 
-이런 불편함을 알았는지 환경 분리도 가능하고, lock 파일도 별도로 관리할 수 있는
-[pipenv](https://github.com/pypa/pipenv)가 있다. `pyenv`와 좀 헷갈린다.
+파이썬 공식 [의존성 관리 튜토리얼 문서](https://packaging.python.org/en/latest/tutorials/managing-dependencies/)와
+[도구 추천 문서](https://packaging.python.org/guides/tool-recommendations/)에서 pipenv 사용을 권장하고, 사용 방법을 다룬다.
 
-[python.org](https://www.python.org/)에서도 가상 `pipenv`를 이용하여 가상환경 사용을 추천하고 있다:
->For software that is not distributed with (or developed for) your system, we recommend using a virtual environment, possibly with an environment manager like conda or pipenv, to help avoid disrupting your system Python installation.
+> This tutorial walks you through the use of Pipenv to manage dependencies for an application. It will show you how to install and use the necessary tools and make strong recommendations on best practices.
 
-link: https://packaging.python.org/guides/tool-recommendations/
+[PEP-0394](https://peps.python.org/pep-0394/)에서도 가상 `pipenv`를 이용하여 가상환경 사용을 추천한다:
+
+> For software that is not distributed with (or developed for) your system, we recommend using a virtual environment, possibly with an environment manager like conda or pipenv, to help avoid disrupting your system Python installation.
 
 ### uv
 
-https://github.com/astral-sh/uv
-
 uv는 파이썬 패키지 관리 도구 기능 뿐만 아니라, 파이썬 관리 기능도 제공한다.
+
+https://github.com/astral-sh/uv
 
 - `uv venv`: 가상환경 생성. `.venv` 디렉토리가 생성된다. `source .venv/bin/activate`로 가상환경을 활성화한다.
 - `uv add PACKAGE_NAME`: 패키지 설치. `pyproject.toml`에 추가된다.
