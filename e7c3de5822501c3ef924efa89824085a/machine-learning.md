@@ -1573,3 +1573,24 @@ https://www.deeplearning.ai/short-courses/pretraining-llms/
 당시에 강의 인증해서 tensorflow 티셔츠도 얻었다.
 이 분은 사실 그 이전에도 알고는 있었는데, 2010년도 쯤에 구글 개발자와 함께 대학교 순회 강의를 하셨다.
 그만큼 교육에 대해 관심이 많으신 듯. [페이스북](https://www.facebook.com/hunkims/posts/pfbid02EZAJqfhSQAeWWuGqA2nY7XrPVsfERKqV7GaYHq51BGV5qyiQzTFNdwdHQuQmheMYl)에 인공지능 분야의 주요 인물인 Andrew Ng 교수와 함께 수업을 준비했다는 인증샷에서 설레이는 마음이 느껴진다.
+
+## Model Context Protocol(MCP)
+
+2024년 11월에 Anthropic에서 [발표](https://www.anthropic.com/news/model-context-protocol)한 AI 모델과 AI가 사용하는 도구를 연결하는 프로토콜.
+AI도구가 많아지면서 난립하는 연동 방식을 정리하기 위해 고안되었다.
+
+개발 환경 세계를 통일한 [Language Server Protocol](/docs/wiki/language-server-protocol.md)와 유사한데,
+실제로 영감을 받았다고 한다:
+
+> MCP takes some inspiration from the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/), which standardizes how to add support for programming languages across a whole ecosystem of development tools.
+
+프로토콜의 사양은 [modelcontextprotocol.io](https://modelcontextprotocol.io/specification)에서 관리한다.
+AI가 사용할 수 있는 도구를 정의한 MCP 서버, 사용자와 대면하는 Host, Host에서 서버와 통신하는 Client가 JSON-RPC 2.0 메시지로 통신한다.
+
+사용자 입장에서 선택할 것은, MCP Client를 제공하는 Host와 MCP 서버이다.
+Client는 VSCode, IntelliJ(2025.1 부터) 등이 지원한다.
+MCP 서버는 [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers)에 정리되어 있다.
+
+VSCode에서 [playwright-mcp](https://github.com/microsoft/playwright-mcp)를 사용하는 예시로,
+Copilot Chat을 통해 [Playwright](https://playwright.dev/)를 실행, 대화를 통해서 브라우저를 조작할 수 있다.
+예를들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘"라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘"같은 명령을 내릴 수 있다.
