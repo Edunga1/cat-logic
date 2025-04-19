@@ -247,7 +247,7 @@ mod tests {
 위와 같이 같은 파일에 위치 시키고 `#[cfg(test)]`로 테스트 코드를 작성한다.
 `#[cfg(test)]`는 `cargo test` 명령어로 실행할 때만 컴파일 되도록 한다. 운영 코드의 빌드에는 포함되지 않는다.
 
-> You’ll see that because integration tests go in a different directory, they don’t need the `#[cfg(test)]` annotation. 
+> You’ll see that because integration tests go in a different directory, they don’t need the `#[cfg(test)]` annotation.
 
 통합 테스트는 다른 디렉토리에 위치하므로 `#[cfg(test)]` 주석이 필요 없다.
 

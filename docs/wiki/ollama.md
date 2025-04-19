@@ -75,7 +75,7 @@ import ollama
 
 response = ollama.chat(
     model='llama3.1',
-    messages=[{'role': 'user', 'content': 
+    messages=[{'role': 'user', 'content':
         'What is the weather in Toronto?'}],
 
     # provide a weather checking tool to the model
@@ -219,4 +219,3 @@ URL을 요약해 달라는 요청을 하면, GET 요청을 보내고, 그 결과
 ```
 
 텍스트 요약이 아니라, HTML 요약이 되었다.
-

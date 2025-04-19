@@ -15,7 +15,7 @@ Treesitter의 표현식은 Scheme을 통해 정의되며, `.scm` 확장자를 �
 > ... The default names for the query files use the `.scm` file. We chose this extension because it commonly used for files written in [Scheme](https://en.wikipedia.org/wiki/Scheme_%28programming_language%29), a popular dialect of Lisp, and these query files use a Lisp-like syntax.
 >
 > Alternatively, you can think of .scm as an acronym for “Source Code Matching”.
-> 
+>
 > [Queries](https://tree-sitter.github.io/tree-sitter/syntax-highlighting#queries) 중에서
 
 nvim에서 treesitter textobject 쿼리를 추가하려면 `<nvim-config>/queries/<language>/textobjects.scm`을 생성하거나,

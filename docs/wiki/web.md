@@ -95,7 +95,7 @@ fucntion onDeviceOrientation(event) {
 브라우저는 단일 터치 이벤트가 발생하면 마우스 이벤트를 추가 발생시킨다. 이를 마우스 이벤트 에뮬레이션 이라고 한다.
 
 > Browsers typically dispatch emulated mouse and click events when there is only a single active touch point. Multi-touch interactions involving two or more active touch points will usually only generate touch events.
-> 
+>
 > 브라우저는 단일 터치가 발생할 때 일반적으로 마우스 및 클릭 이벤트를 추가로 발생시킵니다.
 > 두 개 이상의 터치 포인트를 포함하는 멀티 터치는 일반적으로 터치 이벤트만 생성합니다.
 >

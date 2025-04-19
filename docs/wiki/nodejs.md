@@ -24,7 +24,7 @@ Node.JS가 이런 라이브러리들과 다른 점은 런타임 차원에서 제
 스트리밍과 저지연을 염두하고 설계되어서, 웹 프레임워크나 라이브러리와 잘 맞는다고 한다.
 
 마지막으로 스레드 없이 설계되었다고 해서 멀티 코어의 이점이 없는 것은 아니라고 말한다.
-[child_process](https://nodejs.org/api/child_process.html) 모듈을 사용하면 fork 할 수 있으며, 
+[child_process](https://nodejs.org/api/child_process.html) 모듈을 사용하면 fork 할 수 있으며,
 동일한 인터페이스를 가진 [cluster](https://nodejs.org/api/cluster.html) 모듈을 사용해서 소켓을 공유할 수 있다고 마무리한다.
 
 ## Package Manager
@@ -182,7 +182,7 @@ test('top level test', async (t) => {
   await t.test('subtest 2', (t) => {
     assert.strictEqual(2, 2);
   });
-}); 
+});
 ```
 
 assert 라이브러리는 오래전부터 제공했었다.
