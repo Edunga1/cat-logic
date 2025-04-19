@@ -285,7 +285,7 @@ https://github.com/PoeStack
 
 겸손함이 보이는 대목이다.
 
-> "I was just making the game I wanted to play. What I would say is, I was tapping into a certain zeitgeist that I wasn't aware of, or conscious of, but I wasn't the only one who was feeling that way. We wanted to play games that were a little bit different. ... I think if I hadn't done it, someone else probably would have in a similar timeframe." 
+> "I was just making the game I wanted to play. What I would say is, I was tapping into a certain zeitgeist that I wasn't aware of, or conscious of, but I wasn't the only one who was feeling that way. We wanted to play games that were a little bit different. ... I think if I hadn't done it, someone else probably would have in a similar timeframe."
 >
 > "저는 제가 하고 싶은 게임을 만들고 있었을 뿐입니다. 제가 알지 못하거나 의식하지 못했던 어떤 시대정신을 활용하고 있었지만 저만 그렇게 느낀 것은 아니었습니다. 조금은 다른 게임을 하고 싶었어요... 제가 하지 않았다면 아마 비슷한 시기에 다른 누군가가 했을 거라고 생각합니다."
 

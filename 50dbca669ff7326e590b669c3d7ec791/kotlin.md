@@ -111,7 +111,7 @@ https://kotlinlang.org/docs/exceptions.html#checked-exceptions
 코틀린의 공식 문서에 Checked Exception에 대한 언급이 있다:
 
 > Bruce Eckel says this about checked exceptions:
-> 
+>
 > > Examination of small programs leads to the conclusion that requiring exception specifications could both enhance developer productivity and enhance code quality, but experience with large software projects suggests a different result – decreased productivity and little or no increase in code quality.
 
 작은 프로그램에서는 코드 품질과 생산성을 높일 수 있었지만, 대규모 프로젝트에서는 생산성이 감소하고 코드 품질 또한 적거나 증가하지 않았다고.
