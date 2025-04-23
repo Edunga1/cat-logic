@@ -104,19 +104,20 @@ Vim을 IDE처럼 사용하기 위해서는 몇 가지 플러그인이 필요하�
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'nvimtools/none-ls.nvim'
 ```
 
 각 플러그인의 역할은 다음과 같다:
 
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): LSP 설정을 쉽게 관리한다. nvim 만으로도 LSP를 사용할 수 있지만, 이 플러그인을 사용하면 더 편리하다.
 - [mason & mason-lspconfig](https://github.com/williamboman/mason.nvim): language server와 개발 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.
-- [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim): diagnostic, linter, code action을 사용할 수 있게한다. 아쉽게도 23년에 개발 중단되었다. 그러나 여전히 사용할만하다.
+- [none-ls(null-ls)](https://github.com/nvimtools/none-ls.nvim): LSP가 아닌 도구(prettier, ruff 등)를 LSP처럼 사용할 수 있게 플러그해 준다.
 
+null-ls는 개발 중단하면서, none-ls 프로젝트에서 개발 진행한다.
 lua init 파일에서 다음과 같이 설정한다:
 
 ```lua
--- null-ls 설정은 생략
+-- none-ls 설정은 생략
 require("mason").setup()
 require("mason-lspconfig").setup()
 require'lspconfig'.tsserver.setup{}
@@ -138,11 +139,7 @@ neovim이 직접 tagfunc을 [구현한 것](https://github.com/neovim/neovim/blo
 
 * [nvim-lspconfig/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)에서 설정 가능한 language server 목록을 확인할 수 있다.
     * 또는 `:h lspconfig-all` 도움말에서 확인할 수 있다.
-* [null-js/BUILTIN_CONFIG](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md) 제공하는 lsp 도구 목록
-
-서술한대로 null-ls는 개발 중단되었다.
-하지만 null-ls 없이도 충분히 다른 LSP를 추가할 수 있다. 예를들어 [eslint](https://github.com/neovim/nvim-lspconfig/blob/16666f1bc40f69ce05eb1883fd8c0d076284d8a5/lua/lspconfig/configs/eslint.lua)는 nvim-lspconfig에서 제공하기 때문에 `require'lspconfig'.eslint.setup{}`으로 추가할 수 있다. null-ls처럼 diagnostic, formatting, code action을 구분하지 않는다.
-제공되지 않는 것은 nvim-lspconfig의 [다른 예제를 보고 따라하면 추가할 수 있다](https://github.com/neovim/nvim-lspconfig/tree/master?tab=readme-ov-file#contributions).
+* [none-js/BUILTINS](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md) 제공하는 lsp 도구 목록
 
 ## 도움말 `:help`
 
