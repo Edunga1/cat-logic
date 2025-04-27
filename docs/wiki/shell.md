@@ -653,6 +653,35 @@ https://github.com/romkatv/powerlevel10k
 문제는 캐시 정책을 사용하지 않았기 때문에 명령어 입력할 때마다 API를 호출하는 것으로 보인다.
 개선하기 위해서는 p10k의 캐시 정책이 있는지 확인하거나 git hook으로 체크아웃 할 때 마다 이슈 이름을 저장하고 프롬프트에서 사용하는 방법이 있을 듯.
 
+### lychee
+
+죽은 링크를 찾는 도구.
+
+https://github.com/lycheeverse/lychee
+
+마크다운, HTML 등 문서에서 웹 URL, 로컬 파일, 이메일 링크를 검사한다.
+
+`lychee` 명령어를 제공, `lychee ./docs/wiki`와 같이 사용한다.
+
+```bash
+$ lychee ./docs/wiki
+[403] https://openai.com/index/hello-gpt-4o/ | Network error: Forbidden
+[200] https://docs.python.org/3/library/unittest.mock.html
+[200] https://pypi.org/project/django-composite-foreignkey/
+```
+
+`[link](/docs/wiki/foo.md)` 절대 경로로 명세된 로컬 경로는 판단하지 못한다.
+
+```bash
+[WARN ] Error creating request: InvalidPathToUri("/docs/wiki/foo.md")
+```
+
+상대 경로는 올바르게 검사한다.
+
+```bash
+[200] file:///home/john/workspace/project/docs/wiki/foo.md
+```
+
 ## python shell tools
 
 몇몇 파이썬 모듈은 CLI로 제공한다.
