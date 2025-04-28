@@ -9,6 +9,34 @@ vim에서 다운로드한 로그 파일을 연다고 할 때 터미널에서 경
 대신 브라우저에서 다운로드 폴더를 열고, 단축키로 경로만 복사하는 식으로 사용한다.
 이 과정을 더 줄일 수 있으면 좋을텐데.
 
+## 환경 설정
+
+System Settings(System Preferences)의 설정은 커맨드 라인에서 `defaults` 명령어로 변경할 수 있다.
+
+예시로 키 반복 속도와 관련된 설정은 `defaults find keyrepeat`로 검색하여 확인한다.
+
+```bash
+$ defaults find keyrepeat
+Found 3 keys in domain 'Apple Global Domain': {
+    InitialKeyRepeat = 15;
+    "InitialKeyRepeat_Level_Saved" = 0;
+    KeyRepeat = 1;
+}
+Found 3 keys in domain 'com.apple.Accessibility': {
+    KeyRepeatDelay = "0.25";
+    KeyRepeatEnabled = 1;
+    KeyRepeatInterval = "0.03333333299999999";
+}
+```
+
+설정 앱에서 변경하는 값은 범위가 정해져 있는 반면에,
+`defaults` 명령어로 변경하는 값은 제한이 없기 때문에 한계를 넘어설 수 있다.
+
+---
+
+- [입력 반복 속도](https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x)를 줄였더니 더 만족스럽다.
+    - 반복 시작 속도(설정 앱 최소치는 15): `defaults write -g InitialKeyRepeat -int 10`
+    - 입력 반복 속도(설정 앱 최소치는 2): `defaults write -g KeyRepeat -int 1`
 ## Automator
 
 automator.app은 애플이 제공하는 자동화 도구이다.
