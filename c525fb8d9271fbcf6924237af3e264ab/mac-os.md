@@ -34,9 +34,11 @@ Found 3 keys in domain 'com.apple.Accessibility': {
 
 ---
 
-- [입력 반복 속도](https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x)를 줄였더니 더 만족스럽다.
-    - 반복 시작 속도(설정 앱 최소치는 15): `defaults write -g InitialKeyRepeat -int 10`
-    - 입력 반복 속도(설정 앱 최소치는 2): `defaults write -g KeyRepeat -int 1`
+- 반복 시작 속도(설정 앱 최소치는 15): `defaults write -g InitialKeyRepeat -int 10`
+- 입력 반복 속도(설정 앱 최소치는 2): `defaults write -g KeyRepeat -int 1`
+    - [입력 반복 속도 질문](https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x)을 참조했다.
+    2(30ms) -> 1(15ms)로 변경하면 매우 빨라져서 쾌적하지만, 커서 이동 정확도가 떨어진다.
+
 ## Automator
 
 automator.app은 애플이 제공하는 자동화 도구이다.
