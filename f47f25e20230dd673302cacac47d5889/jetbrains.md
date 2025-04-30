@@ -7,7 +7,8 @@ IntelliJ, DataGrip 등 JetBrains사 제품에 대한 이야기.
 
 JetBrains의 제품은 연간 구독을 구매하면, 해당 시점의 버전은 영구 라이센스로 지급된다.
 이를 [perpetual fallback license, 영구 폴백 라이센스](https://sales.jetbrains.com/hc/ko/articles/207240845)라고 한다.
-[All Products Pack](https://www.jetbrains.com/all/)을 구매하면 모든 제품의 영구 라이센스를 받을 수 있다.
+[All Products Pack](https://www.jetbrains.com/all/)을 구매하면 모든 제품의 영구 라이센스를 받을 수 있다.\
+2025년 4월, 2025.1 버전 출시와 함께 [All Products Pack 라이센스에 JetbBrains AI가 포함](https://sales.jetbrains.com/hc/en-gb/articles/16544922728466)된다.
 
 IntelliJ 등 몇몇 도구는 Community Edition이라는 무료 버전이 있다.
 개발하는데 문제는 없으나, 몇 가지 플러그인이 제한된다.
