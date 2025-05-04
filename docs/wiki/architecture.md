@@ -7,20 +7,20 @@ created: 2023-01-05
 
 ## Robert C. Martin - Clean Architecture and Design
 
-엉클밥이라고 불리는 Robert C. Martin의 Clean Architecture를 소개하는 이야기.
+Robert C. Martin의 Clean Architecture를 소개하는 이야기.
 
 [Robert C. Martin - Clean Architecture and Design](https://amara.org/videos/0AtjY87egE3m/url/1216370/)
 
-영상은 NDC 2014 프레젠테이션이다.
+NDC 2014 발표한 영상이다.
 위 사이트에서 한국인 분이 자막을 번역하여 달아주셨다.
 
 최초 발표일인 14년이나, 처음 보게된 18년이나 당시 즉각적인 반응은 별로 없었던 거 같은데,
-20년에 들어서서 갑자기 클린 아키텍처가 주목받기 시작했다.
+2020년에 들어서서 갑자기 클린 아키텍처가 주목받기 시작했다.
 
 영상은 왜 대부분 프로젝트의 구조가 같은지 의문에서 시작한다.
 회사마다 관심있는 것은 다른데 왜 같은 구조를 가지는 것인가?
-
-소프트웨어 아키텍처는 건축 설계 도면에 비유할 수 있을텐데, 도면은 어떤 건물에 대한 설계인지 명확하다.
+소프트웨어 아키텍처를 건축 도면에 비교하는데,
+도면은 어떤 건물에 대한 설계인지 명확하게 표현하지만 소프트웨어 아키텍처는 그렇지 않다.
 
 ## JUnit A Cook's Tour
 
