@@ -26,7 +26,7 @@ https://www.jetbrains.com/writerside/
 
 파일이 로컬에 저장은 되지만, [Git 저장소와 연동하는 것을 권장하고 있다](https://www.jetbrains.com/idea/guide/tutorials/creating-a-project-from-github/the-git-tool-window/).
 
-## Marksman - Language Server for Markdown
+## Marksman
 
 Marksman은 markdown 파일을 위한 [Language Server](./language-server-protocol.md)이다.
 
@@ -46,7 +46,7 @@ https://github.com/artempyanykh/marksman
 한글이 포함되면 링크 자동완성을 못하는 문제가 있다.\
 예를들어 `한글 [link]()` 중 소괄호 내에서 자동완성이 안된다. `한글 [link](` 중에서는 된다.
 
-## Vim
+## Vim 관련
 
 [Vimwiki](/docs/wiki/vimwiki.md)에서 Text Object를 제공한다.
 예를들어 `vaH`는 하위 제목까지 포함한 내용을 선택한다.
