@@ -56,17 +56,15 @@ Homebrew로 설치했다면 `git-completion.bash`가 자동으로 설치된다.
 
 ### 브랜치 이름 중간에서 자동 완성
 
-브랜치 이름을 입력할 때, 중간에서 자동 완성할 수 있다.
-예를들어, `git switch lo`에서 탭을 누르면 feature/**lo**g가 자동 완성된다.
+[macOS](/docs/wiki/mac-os.md)은 git과 함께 자동 완성 스크립트가 내장되어 있는데,
+이 스크립트가 브랜치 이름 중간에서 자동 완성을 제공한다.
+예를들어 `git switch lo`에서 탭을 누르면 feature/**lo**g가 자동 완성된다.
+만약 Homebrew로 설치했다면 동작하지 않을 수도 있다. 첫 글자인 `f`에서만 **f**eature/log가 자동 완성된다.
 
-다만 이 기능은 특정 자동 완성 스크립트에서만 지원한다.
-mac에서 Homebrew로 설치했다면 동작하지 않을 수도 있다. 첫 글자인 `f`에서만 `feature/log`가 자동 완성된다.
-
-[macOS](/docs/wiki/mac-os.md)은 git과 함께 자동 완성 스크립트가 내장되어 있는데, 이 스크립트가 브랜치 이름 중간에서 자동 완성을 제공한다.
-스크립트는 `/usr/share/zsh/<version>/functions`에 위치하고 있다.
-Homebrew로 git을 추가로 설치하면, `/opt/homebrew/share/zsh/site-functions`에 설치된다.
-`.zshrc`에 `eval "$(brew shellenv)"`을 추가했다면 Homebrew의 site-functions도 `$fpath`에 추가되고, 최종적으로 두 경로 모두 포함된다.
-만약 Homebrew functions의 경로가 앞에 위치한다면 내장된 스크립트는 무시된다.
+이 스크립트는 `/usr/share/zsh/<version>/functions`에 위치하고 있다.
+Homebrew로 git을 설치하면, `/opt/homebrew/share/zsh/site-functions`에 `git-completion.bash`가 설치되는데,
+`.zshrc`에 `eval "$(brew shellenv)"`을 추가함으로써 Homebrew의 site-functions가 `$fpath`에 추가된다.
+Homebrew site-functions는 `$fpath`의 가장 앞에 추가하기 때문에, 내장된 자동 완성 스크립트보다 우선적으로 동작한다.
 
 ## 깃 커밋 해시 충돌에 관하여
 
