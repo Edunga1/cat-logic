@@ -66,6 +66,16 @@ Homebrew로 git을 설치하면, `/opt/homebrew/share/zsh/site-functions`에 `gi
 `.zshrc`에 `eval "$(brew shellenv)"`을 추가함으로써 Homebrew의 site-functions가 `$fpath`에 추가된다.
 Homebrew site-functions는 `$fpath`의 가장 앞에 추가하기 때문에, 내장된 자동 완성 스크립트보다 우선적으로 동작한다.
 
+개선된 git completion을 구해서 macOS 외 운영체에서도 사용할 수 있으면 좋을텐데, 찾지 못했다.
+그래서 Homebrew `shellenv` 후 `$fpath` 가장 앞에 추가된 경로를 뒤로 이동시키는 것으로 우선 순위 문제를 임시 해결했다.
+
+```bash
+if command -v brew &> /dev/null; then
+  eval "$(brew shellenv)"
+  fpath=("${fpath[@]:1}" "${fpath[1]}")
+fi
+```
+
 ## 깃 커밋 해시 충돌에 관하여
 
 어느날 커밋 해시는 어떤 정보를 기반하여 만들어지는지 궁금했다.
