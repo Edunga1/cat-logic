@@ -601,9 +601,9 @@ endfunction
 
 > The generic names for the filetype plugins are:
 >
-> 	ftplugin/<filetype>.vim
-> 	ftplugin/<filetype>_<name>.vim
-> 	ftplugin/<filetype>/<name>.vim
+> 	`ftplugin/<filetype>.vim`\
+> 	`ftplugin/<filetype>_<name>.vim`\
+> 	`ftplugin/<filetype>/<name>.vim`
 
 ```vim
 " ftplugin/vimwiki.vim
