@@ -42,3 +42,55 @@ uBlock Origin 기준으로 필터에 `||accounts.google.com/gsi/*$xhr,script,3p`
 
 이미지와 같이 북마크 이름 끝에 태그를 붙이고, 태그 순서를 바꿔도 검색이 된다.
 단점은 북마크 이름에 의해 검색이 방해되어 원하는 북마크가 나오지 않기도 한다.
+
+## 검색 엔진
+
+크롬에서 검색 엔진이라는 것은, 주소창에 입력했을 때 검색할 사이트를 말한다.
+여러개의 검색 엔진을 추가하고, shortcut을 지정하면 검색어를 원하는 사이트에서 빠르게 검색할 수 있다.
+
+주소창에 `chrome://settings/searchEngines` 입력하면 관리 페이지로 이동한다.
+
+검색 엔진 추가 버튼을 누르면 다음과 같은 팝업이 뜬다.
+
+![chrome browser search engine addition](./res/chrome-browser-search-engine-addition.png)
+
+- `Name` 필드는 주소창에 표기될 이름이라 중요하지 않다.
+- `Shortcut`은 주소창에서 이 단어를 입력하고 Tab키를 누르면 진입한다. 일종의 시작어다.
+- `URL with %s in place of query`는 검색어를 입력할 URL이다. `%s`는 검색어가 들어갈 자리다.
+
+**내 사용 예시** \
+위 이미지는 `Perplexity`라는 검색 엔진을 추가하는 모습이다.
+크롬에서 `Command + L`을 눌러 주소창에 포커스를 맞춘 후 `q`, `Tab`을 순서대로 누르면 `Perplexity` 검색 엔진으로 진입한다.
+이제 검색어를 입력하면 Perplexity에서 검색된다.
+구글, Perplexity, 사전 등 자주 가는 사이트를 추가해두면 빠르게 해당 사이트에서 검색할 수 있다.
+
+### 유용한 검색 엔진
+
+개인적으로 유용한 검색 엔진 설정이다.
+
+**Perplexity**
+
+- Name: `Perplexity`
+- Shortcut: `q`
+- URL: `https://www.perplexity.ai/search/?q=%s`
+
+**네이버 영어사전**
+
+- Name: `Naver 사전`
+- Shortcut: `dic`
+- URL: `https://en.dict.naver.com/#/search?query=%s&range=all`
+
+**Jira** \
+지라 이슈 번호로 검색할 때 유용하다.
+`COMPANY`를 도메인에 맞게 대체하자.
+
+- Name: `Jira`
+- Shortcut: `jira`
+- URL: `https://COMPANY.atlassian.net/browse/%s`
+
+**Confluence** \
+지라와 마찬가지로, `COMPANY`를 도메인에 맞게 대체하자.
+
+- Name: `Confluence`
+- Shortcut: `conf`
+- URL: `https://COMPANY.atlassian.net/wiki/search/?text=%s`
