@@ -18,6 +18,10 @@ const Container = styled.div`
     padding-bottom: 5px;
     border-bottom: 1px solid #eee;
   }
+  h2 {
+    &:not(:first-of-type) {
+    margin-top: 5rem;
+  }
 
   // link style
   a {
