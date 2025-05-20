@@ -94,7 +94,7 @@ vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 
 ### 내장 Language Server Protocol 사용하기
 
-Noevim은 자체적으로 [Language Server Protocol](./language-server-protocol.md)을 제공한다.
+Neovim은 자체적으로 [Language Server Protocol](./language-server-protocol.md)을 제공한다.
 
 Vim을 IDE처럼 사용하기 위해서는 몇 가지 플러그인이 필요하다.
 
@@ -325,7 +325,7 @@ fuzzy search하는 함수.
 ### `:make` and `makeprg`
 
 `:make` 명령은 `makeprg`에 설정한 것을 실행한다.
-출력이 quickfix 양식이면 quckfix과 연동할 수 있다!
+출력이 quickfix 양식이면 quickfix과 연동할 수 있다!
 
 #### build integration - How to Do 90% of What Plugins Do
 
@@ -336,11 +336,11 @@ vim 내에서 테스트를 실행하고, 실패한 테스트가 있으면 quickf
 
 영상 일련 과정:
 
-1. `makeprg` 설정한다.: `set makeprg=bundle\ exec\ rspec\ -f\ QuckfixFormatter`
+1. `makeprg` 설정한다.: `set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter`
 2. `:make` 명령으로 `rspec` 테스트 실행한다.
 3. 테스트 실패한 지점을 quickfix로 보여준다.
 
-`rspec`명령에 `--format QuckfixFormatter` 옵션으로 quickfix에서 사용할 수 있는 양식으로 출력된다.
+`rspec`명령에 `--format QuickfixFormatter` 옵션으로 quickfix에서 사용할 수 있는 양식으로 출력된다.
 
 ![rspec formatter](res/rspec-formatter.png)
 
@@ -1137,7 +1137,7 @@ colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. �
 vim 실행 후 직접 `:color <theme>` 명령어로 설정하면 느려지지 않는다.\
 `.virmc` 내에서도 특정 코드 후에 `color <theme>`을 설정하면 느려지는 문제가 발생한다.
 
-원인이 되는 코드는 extra whitespace를 강조하는 코드였다:
+원인이 되는 코드는 extra whitespace를 강조하는 코드였다.
 
 ```vim
 autocmd ColorScheme *
@@ -1155,24 +1155,25 @@ autocmd ColorScheme *
 하지만 이 코드 이후에 `color <theme>`을 설정하면 느려지는 문제가 발생한다.
 
 colorscheme 명령을 전체 설정의 앞부분에서 실행하도록 위치를 옮겼다.\
-dotfiles 저장소에도 반영했다: https://github.com/Edunga1/dotfiles/commit/bc4efcceab5695b671c68d14912f1d85e7b0e048
+dotfiles 저장소에도 반영했다. \
+https://github.com/Edunga1/dotfiles/commit/bc4efcceab5695b671c68d14912f1d85e7b0e048
 
 ### Ubuntu에 설치한 vim이 시작 시 `.vimrc`에서 많은 에러가 발생하는 현상
 
 askubuntu 질문: [vi, getting multiple "Sorry, the command is not available in this version..." after reinstall](https://askubuntu.com/questions/284957/vi-getting-multiple-sorry-the-command-is-not-available-in-this-version-af)
 
-올바른 vim 버전인지 확인하자. vim.tiny로 설치되었을 수 있다:
+올바른 vim 버전인지 확인하자. vim.tiny로 설치되었을 수 있다.
 
 ```bash
 $ readlink -f `which vim`
 /usr/bin/vim.tiny
 ```
 
-ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. `/usr/bin/vim.basic`을 가르켜야 대부분의 기능을 사용할 수 있다.
+Ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. `/usr/bin/vim.basic`을 가르켜야 대부분의 기능을 사용할 수 있다.
 
 ## 관련 기사
 
-2023년 8월. ["Vim은 제 인생에서 매우 중요한 부분입니다"](https://yozm.wishket.com/magazine/detail/2183/) Vim 창시자 인터뷰.
+2023년 8월. ["Vim은 제 인생에서 매우 중요한 부분입니다."](https://yozm.wishket.com/magazine/detail/2183/) Vim 창시자 인터뷰.
 
 원문은 https://evrone.com/blog/bram-moolenaar-interview
 
@@ -1180,7 +1181,7 @@ ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. `/usr/bin
 
 > Evrone: Using plenty of web manuals we can discover great plugins to extend the awesome functionality of Vim. Do you have any plugin favorites and must-haves you could recommend to our audience?
 >
-> Evrone: Vim의 멋진 기능을 확장하기 위해 많은 웹 매뉴얼을 사용하여 훌륭한 플러그인을 찾을 수 있습니다. 추천할만한 플러그인이 있을까요?
+> Evrone: Vim의 멋진 기능을 확장하기 위해 많은 웹 매뉴얼을 사용하여 훌륭한 플러그인을 찾을 수 있습니다. 추천할 만한 플러그인이 있을까요?
 >
 > Bram: I have to admit I don’t use many plugins, other than what is included with the distribution (such as matchit and termdebug). When I need something I tend to either make a quick hack or add it to the Vim base. That’s the luxury of being the creator :-).
 >
@@ -1196,7 +1197,7 @@ Vim으로 커밋 메시지 작성 후 `ZZ` 또는 `:wq`로 저장하여 나와�
 주기는 3번 중 1번 꼴로 자주 발생한다.
 
 ```bash
-❯ g commit -v
+$ git commit -v
 hint: Waiting for your editor to close the file... error: There was a problem with the editor 'nvim'.
 Please supply the message using either -m or -F option.
 ```
@@ -1219,4 +1220,4 @@ vim을 종료할 때 세션을 저장하고, Startify의 시작 화면에 Sessio
 
 제거 커밋: https://github.com/Edunga1/dotfiles/commit/9998b7c454e321d48d326e20da56af2328055a46
 
-세션을 자동 저장하는 것은 마음에 들어서 [auto-session](https://github.com/rmagatti/auto-session)으로 변경했다.
+세션을 자동 저장하는 것은 마음에 들어 [auto-session](https://github.com/rmagatti/auto-session)으로 변경했다.
