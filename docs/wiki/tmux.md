@@ -132,3 +132,36 @@ Tmux 플러그인과 플러그인을 관리하는 매니저가 있다.
 
 [Tmux Resurrect](https://github.com/tmux-plugins/tmux-resurrect)는 세션을 저장하고 복원하는 플러그인을 사용했었는데,
 특별히 사용할 일이 없어서 제거했다.
+
+## Oh My Zsh의 Tmux 플러그인
+
+[Oh My Zsh의 Tmux 플러그인](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux)을 사용하면 편리 기능을 제공한다.
+기존 `tmux` 명령어를 wrapping 하는데, `tmux`만 입력하면 세션이 없으면 생성하고, 있으면 attach 한다.
+그 외에도 몇 가지 alias와 자동 갱신 기능을 제공한다는데 개인적으로는 필요하지 않다.
+
+플러그인 설정은 `~/.zshrc`에 추가한다.
+
+```bash
+plugins=(
+  tmux
+)
+```
+
+zsh 플러그인에서는 [이 기능의 구현](https://github.com/ohmyzsh/ohmyzsh/blob/881c8b78d3e3ade9bccfddb3e616842807d07a59/plugins/tmux/tmux.plugin.zsh#L110-L161)이 조금 복잡한데, 플러그인 없이 약식으로 구현할 수 있다.
+
+```bash
+if command -v tmux &> /dev/null; then
+  function _tmux_run() {
+    if [[ -n "$@" ]]; then
+      command tmux "$@"
+    else
+      tmux attach
+    fi
+  }
+  compdef _tmux _tmux_run
+  alias tmux=_tmux_run
+fi
+```
+
+새로운 세션을 생성하는 부분은 생략했지만, 옵션이 있으면 `tmux $@`를 실행하고, 옵션이 없으면 `tmux attach`를 실행한다.
+`compdef`는 `tmux` 명령어의 자동 완성을 제공한다.
