@@ -381,18 +381,23 @@ private val AfterContainerListener = object : AfterContainerListener {
 
 ## [Language Server](./language-server-protocol.md)
 
-https://github.com/fwcd/kotlin-language-server
+- [Kotlin/kotlin-lsp](https://github.com/Kotlin/kotlin-lsp/)
+- [fwcd/kotlin-language-server](https://github.com/fwcd/kotlin-language-server) (unofficial)
 
-2022-11-29 아직 퍼포먼스가 안나온다. 자주 끊기고, 느리다. \
+[2025-05-20](https://github.com/Kotlin/kotlin-lsp/releases/tag/idea%2F252.16512.17) 드디어 JetBrains에서 공식적으로 Kotlin LSP를 공개했다! \
+[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/pull/3867)에는 23일에 설정이 추가되었다.
+
+fwcd/kotlin-language-server는 Kotlin LSP의 unofficial 버전이다. \
+2019년부터 개발이 시작되었으나, 25년까지도 느려서 운영 레벨에서 사용하기 어렵다. \
 ref. https://www.reddit.com/r/neovim/comments/yf0v86/kotlin_language_server_very_slow/
 
 ### kls_database.db 파일
 
-kotlin-language-server를 사용하면 프로젝트 루트에 `kls_database.db` 파일이 생성된다.
+fwcd/kotlin-language-server는 프로젝트 루트에 `kls_database.db` 파일을 생성한다.
 
 저장소에 [상수로 정의](https://github.com/fwcd/kotlin-language-server/blob/8c40b4fb846086e5cbdea6bc1c11aeba19c7bf52/shared/src/main/kotlin/org/javacs/kt/database/DatabaseService.kt#L30)되어 있다.
-이 정보 말고는 어떤 용도로 사용하는지 저장소에서 설명하지 않기 때문에 자세한 내용은 제대로 알 수 없다.
-`.gitignore`에 추가해도 무방해 보인다.
+이 정보 말고는 어떤 용도로 사용하는지 설명하지 않기 때문에 LSP를 사용하면서 어떤 용도인지 알기 어렵다.
+`.gitignore`에 추가하자.
 
 ## ranges
 
