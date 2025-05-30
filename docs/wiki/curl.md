@@ -62,11 +62,9 @@ $ curl http://httpbin.org/anything/\[008-011\].txt
 
 ## curl 이용한 API 마이그레이션 응답 비교하기
 
-API 이전할 때 기존 API의 응답과 새 API의 응답을 비교해야 할 때 주로 사용하는 방법이다.
+API 이전할 때 기존 API의 응답과 새 API의 응답을 비교해야 할 때 주로 사용하는 스크립트이다.
 
-2개의 API 서버를 띄워놓고, 다량의 API를 각각 호출, 응답을 비교하여 얼마나 다른지 확인하는 스크립트를 작성한다.
-
-`script.sh`:
+2개의 API 서버를 띄워놓고, 다량의 API를 각각 호출, 응답을 diff로 비교하는 로직이다.
 
 ```bash
 #!/bin/bash
@@ -108,8 +106,6 @@ done < $1
 
 위 스크립트에 넘길 token 등 파라미터 정보를 별도 파일에 명세한다.
 
-`param.txt`:
-
 ```
 token1,foo
 token2,bar
@@ -119,7 +115,7 @@ token5,banana
 token5,orange
 ```
 
-이제 `bash script.sh param.txt`로 실행하면, 각 파라미터로 API를 호출하여 응답을 비교한다.
+이제 `bash script.sh param.txt`와 같이 실행하면, 각 파라미터로 API를 호출하여 응답을 비교한다.
 
 응답이 다른 경우 diff를 출력한다.
 
