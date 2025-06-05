@@ -16,7 +16,10 @@ https://semver.org/ 이런 사이트가 있지만 막상 버전 갱신하려면 
 가끔 관점을 다르게 볼 때 명확해지기도 하는데, 다음 코멘트가 이런 상황에 딱 들어맞다고 생각한다:
 
 > Semver has its philosophy, but a pragmatic approach to versioning is:
+>
+> ```
 > <upgrades may break API> . <downgrades may break API> . <fine either way>
+> ```
 
 쓰레드는 [리팩토링은 어떤 버전을 올려야 하나요?](https://users.rust-lang.org/t/semver-for-refactoring-change/81370/5)
 
