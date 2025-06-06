@@ -1,7 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
 import Link from "../atoms/Link"
-import ListItem from "../atoms/ListItem"
 import ColorfulParagraph from "../atoms/ColorfulParagraph"
 import Small from "../atoms/Small"
 import theme from "../../constants/theme"
@@ -22,6 +21,10 @@ const List = styled.ul`
   > * {
     padding: .3rem 0;
   }
+`
+
+const ListItem = styled.li`
+  list-style-type: none;
 `
 
 export default function WikiList(
