@@ -14,17 +14,27 @@ const Container = styled.div`
   }
 `
 
-const List = styled.ul`
+const CatalogTable = styled.table`
   margin: 0;
   padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
 
-  > * {
-    padding: .3rem 0;
+  th {
+    width: 40%;
+    padding: 0.2rem 0;
+    text-align: right;
+    font-weight: normal;
   }
-`
 
-const ListItem = styled.li`
-  list-style-type: none;
+  td {
+    padding: 0;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `
 
 export default function WikiList(
@@ -34,14 +44,18 @@ export default function WikiList(
   return (
     <Container>
       {hasItems
-        ? <List>
+        ? <CatalogTable>
           {items.map((item, i) => (
-            <ListItem key={i}>
-              <Link href={item.path}>{item.title}</Link>
-              {item.head && <i><Small>{item.head}</Small></i>}
-            </ListItem>
+            <tr key={i}>
+              <th>
+                <Link href={item.path}>{item.title}</Link>
+              </th>
+              <td>
+                {item.head && <i><Small>{item.head}</Small></i>}
+              </td>
+            </tr>
           ))}
-        </List>
+        </CatalogTable>
         : <ColorfulParagraph>{fallback}</ColorfulParagraph>
       }
     </Container>
