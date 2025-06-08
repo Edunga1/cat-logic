@@ -1,0 +1,452 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.14.0"/><style data-href="/cat-logic/styles.7063392de47b3110fc97.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#000;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px #fff;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#b3d4fc;text-shadow:none}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{background:hsla(0,0%,100%,.5);color:#9a6e3a}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{box-sizing:border-box}body{margin:0}</style><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><style data-styled="" data-styled-version="5.3.11">.jArVBC{margin:0;padding:1rem 0 .5rem 1rem;font-size:1rem;}/*!sc*/
+data-styled.g1[id="Toc__Header-sc-1f76i2s-0"]{content:"jArVBC,"}/*!sc*/
+.bJJrFa{box-sizing:border-box;padding:0 1rem 1rem 0;}/*!sc*/
+.bJJrFa ul{list-style:none;padding-left:1rem;margin:0;font-size:.8rem;}/*!sc*/
+.bJJrFa ul p{margin:0;}/*!sc*/
+.bJJrFa a{-webkit-text-decoration:none;text-decoration:none;color:#0D47A1;}/*!sc*/
+.bJJrFa a:hover{color:#512DA8;}/*!sc*/
+data-styled.g2[id="Toc__Container-sc-1f76i2s-1"]{content:"bJJrFa,"}/*!sc*/
+.kWzErG{overflow:auto;overflow-wrap:break-word;color:#333333;padding:1.5rem;margin-top:1rem;border-radius:.5rem;border:1px solid rgb(238,238,238);font-family:Arial,Helvetica,sans-serif;}/*!sc*/
+.kWzErG h1,.kWzErG h2,.kWzErG h3,.kWzErG h4,.kWzErG h5,.kWzErG h6{margin:1.5rem 0 .8rem;padding-bottom:5px;border-bottom:1px solid #eee;}/*!sc*/
+.kWzErG h2:not(:first-of-type){margin-top:5rem;}/*!sc*/
+.kWzErG h2 a:link{color:#0D47A1;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.kWzErG h2 a:visited{color:#607AA1;}/*!sc*/
+.kWzErG h2 a:hover{color:#AF15C0;-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+.kWzErG h2 code:not(pre code){font-size:80%;background-color:#e3e6e8;border-radius:4px;padding:2px 4px;word-break:break-word;}/*!sc*/
+.kWzErG h2 pre:has(code){font-size:85%;background-color:#f5f5f5;border-radius:.5rem;padding:1rem;overflow:auto;}/*!sc*/
+.kWzErG h2 img{max-width:100%;}/*!sc*/
+.kWzErG h2 blockquote{border-left:4px solid #ddd;padding-left:1rem;margin-left:0;font-style:italic;}/*!sc*/
+.kWzErG h2 table{width:100%;border-collapse:collapse;}/*!sc*/
+.kWzErG h2 table td,.kWzErG h2 table th{padding:.2rem .5rem;}/*!sc*/
+.kWzErG h2 table thead{background-color:#F5F5F5;}/*!sc*/
+.kWzErG h2 table tbody{font-size:.8rem;}/*!sc*/
+.kWzErG h2 table tbody tr:nth-child(even){background-color:#F5F5F5;}/*!sc*/
+.kWzErG h2 table tbody tr:hover{background-color:#D0D0D0;}/*!sc*/
+.kWzErG h2 hr{border:none;border-top:1px dashed #aaa;}/*!sc*/
+data-styled.g3[id="WikiContent__Container-sc-q3jb6a-0"]{content:"kWzErG,"}/*!sc*/
+.bUjFDA{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.bUjFDA:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g4[id="Link__A-sc-k1di17-0"]{content:"bUjFDA,"}/*!sc*/
+.gcJKrk{padding-top:20rem;}/*!sc*/
+data-styled.g5[id="Comments__Container-sc-1ajj4d9-0"]{content:"gcJKrk,"}/*!sc*/
+.iTVyYc{width:.5rem;height:.5rem;background-color:rgba(192,222,191,1);}/*!sc*/
+.iTVyYc > span{font-size:.5rem;top:1rem;white-space:nowrap;-webkit-transform:rotate(-15deg);-ms-transform:rotate(-15deg);transform:rotate(-15deg);position:inherit;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}/*!sc*/
+data-styled.g6[id="GrassPoint__Container-sc-vhet8f-0"]{content:"iTVyYc,"}/*!sc*/
+.kTfeIb{height:3rem;overflow:hidden;border-top:1px solid rgba(0,0,0,0.1);border-bottom:1px solid rgba(0,0,0,0.1);padding:0.5rem 0;margin-bottom:1rem;}/*!sc*/
+data-styled.g7[id="GrassActivity__Container-sc-1d932e2-0"]{content:"kTfeIb,"}/*!sc*/
+.hzZfMw{width:calc(100% - .5rem);height:100%;position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g8[id="GrassActivity__PointContainer-sc-1d932e2-1"]{content:"hzZfMw,"}/*!sc*/
+.cHXqdT{position:absolute;left:0.00%;z-index:1;}/*!sc*/
+.isrUsa{position:absolute;left:100.00%;z-index:1;}/*!sc*/
+data-styled.g9[id="GrassActivity__GrassPointWrapper-sc-1d932e2-2"]{content:"cHXqdT,isrUsa,"}/*!sc*/
+.kltskx{font-size:1.5rem;text-align:right;}/*!sc*/
+.kltskx a{color:#333333;opacity:0.2;font-weight:700;}/*!sc*/
+.kltskx a:hover{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.kltskx a:after{content:"»";margin-left:.1rem;}/*!sc*/
+data-styled.g10[id="HomeLink__Container-sc-1f7ngt2-0"]{content:"kltskx,"}/*!sc*/
+.etrcVC{font-size:.7rem;color:#BDBDBD;}/*!sc*/
+.etrcVC a{color:#BDBDBD;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g14[id="GitHubCommitLink__Container-sc-13f81rm-0"]{content:"etrcVC,"}/*!sc*/
+.cFPWSV{--height-offset:3rem;display:grid;grid-template-areas:"margin main side";padding-top:var(--height-offset);}/*!sc*/
+@media (min-width:700px){.cFPWSV{grid-template-columns:0.3fr 3fr 1fr;}}/*!sc*/
+data-styled.g15[id="PageLayout__Container-sc-11jfopf-0"]{content:"cFPWSV,"}/*!sc*/
+.bXbYGR{display:grid;grid-area:main;width:100%;padding:0 1rem;}/*!sc*/
+data-styled.g16[id="PageLayout__Main-sc-11jfopf-1"]{content:"bXbYGR,"}/*!sc*/
+.fytAKM{display:none;grid-area:side;grid-area:side;position:-webkit-sticky;position:sticky;top:0;max-height:calc(100vh - var(--height-offset));padding:1rem 1rem;overflow-y:auto;}/*!sc*/
+@media (min-width:700px){.fytAKM{display:block;}}/*!sc*/
+data-styled.g17[id="PageLayout__Side-sc-11jfopf-2"]{content:"fytAKM,"}/*!sc*/
+.eyeBwU{display:none;grid-area:margin;}/*!sc*/
+@media (min-width:700px){.eyeBwU{display:block;}}/*!sc*/
+data-styled.g18[id="PageLayout__Margin-sc-11jfopf-3"]{content:"eyeBwU,"}/*!sc*/
+.jIRpDV{overflow:auto;}/*!sc*/
+data-styled.g19[id="Wiki__Main-sc-16q9onf-0"]{content:"jIRpDV,"}/*!sc*/
+.buAPAA{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin:1rem 0;gap:0.5rem;}/*!sc*/
+data-styled.g20[id="Wiki__TitleContainer-sc-16q9onf-1"]{content:"buAPAA,"}/*!sc*/
+.gysHks{margin:0;font-size:1.5rem;font-weight:700;color:#333333;}/*!sc*/
+data-styled.g21[id="Wiki__Title-sc-16q9onf-2"]{content:"gysHks,"}/*!sc*/
+.keieWK{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;}/*!sc*/
+data-styled.g22[id="Wiki__TitleBottom-sc-16q9onf-3"]{content:"keieWK,"}/*!sc*/
+.ewPrf{display:block;}/*!sc*/
+@media (min-width:700px){.ewPrf{display:none;}}/*!sc*/
+data-styled.g23[id="Wiki__TocMain-sc-16q9onf-4"]{content:"ewPrf,"}/*!sc*/
+.chvTXK{margin-top:1rem;max-width:20rem;}/*!sc*/
+data-styled.g24[id="Wiki__TocSide-sc-16q9onf-5"]{content:"chvTXK,"}/*!sc*/
+</style><link rel="sitemap" type="application/xml" href="/cat-logic/sitemap-index.xml"/><link rel="icon" href="/cat-logic/favicon-32x32.png?v=8ac5e5872e5245b972f101c92acce617" type="image/png"/><link rel="manifest" href="/cat-logic/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/cat-logic/icons/icon-48x48.png?v=8ac5e5872e5245b972f101c92acce617"/><link rel="apple-touch-icon" sizes="72x72" href="/cat-logic/icons/icon-72x72.png?v=8ac5e5872e5245b972f101c92acce617"/><link rel="apple-touch-icon" sizes="96x96" href="/cat-logic/icons/icon-96x96.png?v=8ac5e5872e5245b972f101c92acce617"/><link rel="apple-touch-icon" sizes="144x144" href="/cat-logic/icons/icon-144x144.png?v=8ac5e5872e5245b972f101c92acce617"/><link rel="apple-touch-icon" sizes="192x192" href="/cat-logic/icons/icon-192x192.png?v=8ac5e5872e5245b972f101c92acce617"/><link rel="apple-touch-icon" sizes="256x256" href="/cat-logic/icons/icon-256x256.png?v=8ac5e5872e5245b972f101c92acce617"/><link rel="apple-touch-icon" sizes="384x384" href="/cat-logic/icons/icon-384x384.png?v=8ac5e5872e5245b972f101c92acce617"/><link rel="apple-touch-icon" sizes="512x512" href="/cat-logic/icons/icon-512x512.png?v=8ac5e5872e5245b972f101c92acce617"/><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><title data-gatsby-head="true">Cat Logic - Vim Plugins</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="PageLayout__Container-sc-11jfopf-0 cFPWSV"><div class="PageLayout__Margin-sc-11jfopf-3 eyeBwU"></div><div class="PageLayout__Main-sc-11jfopf-1 bXbYGR"><div class="Wiki__Main-sc-16q9onf-0 jIRpDV"><div class="Wiki__TitleContainer-sc-16q9onf-1 buAPAA"><div class="HomeLink__Container-sc-1f7ngt2-0 kltskx"><a href="" class="Link__A-sc-k1di17-0 bUjFDA">CAT</a></div><a href="." class="Link__A-sc-k1di17-0 bUjFDA"><h1 class="Wiki__Title-sc-16q9onf-2 gysHks">Vim Plugins</h1></a></div><div class="GrassActivity__Container-sc-1d932e2-0 kTfeIb"><div class="GrassActivity__PointContainer-sc-1d932e2-1 hzZfMw"><div class="GrassPoint__Container-sc-vhet8f-0 iTVyYc GrassActivity__GrassPointWrapper-sc-1d932e2-2 cHXqdT"><span>6/8/2025</span></div><div class="GrassPoint__Container-sc-vhet8f-0 iTVyYc GrassActivity__GrassPointWrapper-sc-1d932e2-2 cHXqdT"><span></span></div><div class="GrassPoint__Container-sc-vhet8f-0 iTVyYc GrassActivity__GrassPointWrapper-sc-1d932e2-2 isrUsa"><span>6/8/2025</span></div></div></div><div class="Wiki__TitleBottom-sc-16q9onf-3 keieWK"><div class="GitHubCommitLink__Container-sc-13f81rm-0 etrcVC"><a href="https://github.com/edunga1/cat-logic/commit/18e109610eef3bd551fcb730b751941664636f3a">6/8/2025, 10:51:16 AM</a></div></div><div class="Wiki__TocMain-sc-16q9onf-4 ewPrf"><h3 class="Toc__Header-sc-1f76i2s-0 jArVBC">Table of Contents</h3><div class="Toc__Container-sc-1f76i2s-1 bJJrFa"><ul>
+<li>
+<p><a href="#vim-plugins">Vim Plugins</a></p>
+<ul>
+<li>
+<p><a href="#%EB%82%B4%EC%9E%A5-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8standard-plugin">내장 플러그인(Standard Plugin)</a></p>
+<ul>
+<li>
+<p><a href="#matchparen">matchparen</a></p>
+<ul>
+<li><a href="#%EC%9A%A9%EB%9F%89%EC%9D%B4-%ED%81%B0-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EB%8A%90%EB%A0%A4%EC%A7%80%EB%8A%94-%EB%AC%B8%EC%A0%9C">용량이 큰 파일에서 느려지는 문제</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8">플러그인</a></p>
+<ul>
+<li>
+<p><a href="#chrisbracsvvim">chrisbra/csv.vim</a></p>
+<ul>
+<li><a href="#features">Features</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#tpopevim-fugitive">tpope/vim-fugitive</a></p>
+<ul>
+<li><a href="#git-command"><code class="language-text">:Git &lt;command></code></a></li>
+<li><a href="#git"><code class="language-text">:Git</code></a></li>
+<li><a href="#git-mergetool"><code class="language-text">:Git mergetool</code></a></li>
+</ul>
+</li>
+<li>
+<p><a href="#rmagattiauto-session">rmagatti/auto-session</a></p>
+<ul>
+<li><a href="#startify%EC%97%90-%EC%84%B8%EC%85%98-%EB%AA%A9%EB%A1%9D-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0">Startify에 세션 목록 표시하기</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#nerdtree---%ED%8C%8C%EC%9D%BC-%ED%83%90%EC%83%89%EA%B8%B0">NERDTree - 파일 탐색기</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div><div class="WikiContent__Container-sc-q3jb6a-0 kWzErG">
+<p>주로 사용하는 Vim 플러그인 모음.</p>
+<h2 id="내장-플러그인standard-plugin" style="position:relative;"><a href="#%EB%82%B4%EC%9E%A5-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8standard-plugin" aria-label="내장 플러그인standard plugin permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>내장 플러그인(Standard Plugin)</h2>
+<p>vim에 기본으로 포함된 플러그인. 별도 설치 없이도 기본 제공된다.
+그래서 주의가 필요한 경우도 있다!</p>
+<p>도움말은 <code class="language-text">:h standard-plugin</code>.</p>
+<h3 id="matchparen" style="position:relative;"><a href="#matchparen" aria-label="matchparen permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>matchparen</h3>
+<p>괄호에 대한 매칭을 하이라이트한다. <code class="language-text">:h matchparen</code>.</p>
+<h4 id="용량이-큰-파일에서-느려지는-문제" style="position:relative;"><a href="#%EC%9A%A9%EB%9F%89%EC%9D%B4-%ED%81%B0-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EB%8A%90%EB%A0%A4%EC%A7%80%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="용량이 큰 파일에서 느려지는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>용량이 큰 파일에서 느려지는 문제</h4>
+<p>이 플러그인의 문제는 큰 파일에서 매우 느려진다는 점이다.</p>
+<p><a href="https://github.com/Edunga1/cat-logic/blob/main/sites/src/related-docs/similarity-result.json">유사성 결과 JSON 파일</a>을
+열 때와 커서를 이동할 때 멈추는 현상이 초 단위로 소요되었다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">FUNCTIONS SORTED ON TOTAL TIME
+count  total (s)   self (s)  function
+   28   3.302722   3.302551  &lt;SNR>108_Highlight_Matching_Pair()</code></pre></div>
+<p><code class="language-text">108_Highlight_Matching_Pair</code>가 matchparen의 플러그인 함수로 보이는데, 가장 시간을 많이 소모했다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">count  total (s)   self (s)
+                              " Remove any previous match.
+   28   0.000272   0.000101   call s:Remove_Matches()
+                            
+                              " Avoid that we remove the popup menu.
+                              " Return when there are no colors (looks like the cursor jumps).
+   28              0.000108   if pumvisible() || (&amp;t_Co &lt; 8 &amp;&amp; !has("gui_running"))
+                                return
+   28              0.000009   endif
+                            
+                              " Get the character under the cursor and check if it's in 'matchpairs'.
+   28              0.000078   let c_lnum = line('.')
+   28              0.000058   let c_col = col('.')
+   28              0.000022   let before = 0
+                            
+   28              0.002908   let text = getline(c_lnum)
+   28              3.297441   let matches = matchlist(text, '\(.\)\=\%'.c_col.'c\(.\=\)')</code></pre></div>
+<p>프로파일 세부 사항을 보면 정규식 사용으로 추정되는 <code class="language-text">matchlist</code> 함수가 원인으로 보인다.</p>
+<p>커서 이동 중에 괄호를 만나면 하이라이트를 위해 짝이 맞는 괄호를 찾으면서 실행되어 느린것으로 보인다.
+괄호가 아닌 문자에서는 느려지지 않는다.</p>
+<p><code class="language-text">:NoMatchParen</code>으로 비활성화할 수 있다. 이제 괄호를 만나더라도 기능이 꺼져있어 속도 저하는 없다.</p>
+<hr>
+<p>파일 열거나 닫을 때 느린 문제는 아직 처리하지 못했다.
+<code class="language-text">:LspStop</code>, <code class="language-text">:TSDisable</code> 사용하면 빠르게 닫히는 것은 확인해서, 자연스럽게 처리하는 방법을 찾고 있다.</p>
+<h2 id="플러그인" style="position:relative;"><a href="#%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8" aria-label="플러그인 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>플러그인</h2>
+<p>플러그인 설치는 vim 디렉토리에 파일을 두어 <code class="language-text">runtimepath</code>에 추가하는 방법을 사용하지만,
+일반적으로 플러그인 매니저를 사용한다. 가장 유명한 것으로는 <a href="https://github.com/junegunn/vim-plug">vim-plug</a>가 있다.</p>
+<h3 id="chrisbracsvvim" style="position:relative;"><a href="#chrisbracsvvim" aria-label="chrisbracsvvim permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>chrisbra/csv.vim</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/cat-logic/static/a0263c7cc2a0ff2c19eae5792ce5a208/fe8a7/csv-vim-sample.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 43.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABq0lEQVR42lWS2ZKjMAxFCYHQwdjGYBabzSxJOr3N/3/dHbFMZuZBBaUqjs6V8Ow0Y+g0KlOiKhUak6HqO7RGwVQF3lSP6ChW9sisRWZq5F2LSjNoGcLqC3RV401aeJfnJ3jHcCVoXMYQ9B4+bhBtAmEFQu1wTkeclUNg7/DnG3xHva8f8DEDzz1kjY9kaXEqOnjX+ztkyxA3OZgmoEkQTQ6qiak4wnyAL1fogKBeELgZASUISEQMGYQiYO2DzwYnbXegaAhoNVhBQEvAZaRnjLRJcHkB3Qt4prgrkP8BGgJOBn7REvDxpHgrkAwLBmkZotsMSUMU1W44boYhAc/jP0CnIbIdKMYafr4ZPsAPw2Qz5IjmkcBXMlwju80wWIHmAB6Rea9eQD5anPKGgO8fu2FbICkZ7XA3TOkoGfUvuj8M3WYYjMsO/PiCmIoNqGiH6VDAT8kwpkmSPmaN3iOTbXRfoPoEivr/RSbDYCKgowN9fkO4HJKunFsyvLfwzbpDmiQHDtaXEHW875B+m92Qk6H7e+UVuDwQzBOCn1+Qc4G08KBb2uGzw6lu8Bsrsd3sWBi1AAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="csv.vim sample"
+        title=""
+        src="/cat-logic/static/a0263c7cc2a0ff2c19eae5792ce5a208/fcda8/csv-vim-sample.png"
+        srcset="/cat-logic/static/a0263c7cc2a0ff2c19eae5792ce5a208/12f09/csv-vim-sample.png 148w,
+/cat-logic/static/a0263c7cc2a0ff2c19eae5792ce5a208/e4a3f/csv-vim-sample.png 295w,
+/cat-logic/static/a0263c7cc2a0ff2c19eae5792ce5a208/fcda8/csv-vim-sample.png 590w,
+/cat-logic/static/a0263c7cc2a0ff2c19eae5792ce5a208/efc66/csv-vim-sample.png 885w,
+/cat-logic/static/a0263c7cc2a0ff2c19eae5792ce5a208/c83ae/csv-vim-sample.png 1180w,
+/cat-logic/static/a0263c7cc2a0ff2c19eae5792ce5a208/fe8a7/csv-vim-sample.png 1223w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>csv 파일의 highlighting, 열과 행에 대한 처리 도구를 제공한다.</p>
+<p>newline이 포함되면 큰 따옴표로 묶어서 표현되기도 하는데, 인식 못하는 문제가 있다.</p>
+<h4 id="features" style="position:relative;"><a href="#features" aria-label="features permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h4>
+<p><code class="language-text">:DeleteColumn 2-4</code> 2~4열 제거. <code class="language-text">:DeleteColumn 2</code> 2열만 제거</p>
+<p><code class="language-text">:%ArrangeColumn</code> 명령으로 전체 열의 크기 일정하게 맞출 수 있다.
+다만, 파일 내용에 공백 추가하여 수정하는 형태이므로 사용에 유의하자.<br>
+Range <code class="language-text">%</code>를 제외하면 현재 라인만 동작한다는데, 커서와 동일한 컬럼에 걸친 모든 곳을 처리하는지 여러개의 컬럼이 수정된다.</p>
+<h3 id="tpopevim-fugitive" style="position:relative;"><a href="#tpopevim-fugitive" aria-label="tpopevim fugitive permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>tpope/vim-fugitive</h3>
+<p>Git wrapper 플러그인. Git을 사용하면 추천한다.
+터미널 커맨드로 처리해도 좋지만, vim에서 바로 처리할 수 있어 접근성의 차원이 다르다.</p>
+<p><a href="https://github.com/tpope/vim-fugitive">https://github.com/tpope/vim-fugitive</a></p>
+<h4 id="git-command" style="position:relative;"><a href="#git-command" aria-label="git command permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">:Git &lt;command></code></h4>
+<p><code class="language-text">:Git &lt;command></code>는 <code class="language-text">git &lt;command></code>에 대응한다.</p>
+<p>예를들어 <code class="language-text">Git log</code>는 <code class="language-text">git log</code>와 같은데, 객체와 상호작용할 수 있다.</p>
+<p>커밋 해시에 커서를 두고 <code class="language-text">&lt;cr></code> 누르면 해당 커밋의 변경 사항을 볼 수 있다. <code class="language-text">o</code>는 분할 창에서, <code class="language-text">O</code>는 새 탭에서 연다.</p>
+<p>이렇듯 터미널에서 명령어를 일일이 실행하지 않고, 인터랙티브한 환경에서 동작하여 편리하다.</p>
+<h4 id="git" style="position:relative;"><a href="#git" aria-label="git permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">:Git</code></h4>
+<p>인자 없이 <code class="language-text">:Git</code> 실행하면 현재 git status를 보여준다.</p>
+<p><a href="../28251">Git Fugitive how to git add a visually selected chunk of code - stackexchange</a></p>
+<p>여기서 꽤 많은 일을 처리할 수 있는데, <code class="language-text">g?</code> 입력하면 도움말을 볼 수 있다.</p>
+<p>파일 경로에서 Enter 누르면 해당 파일의 Buffer를 연다.</p>
+<p>원하는 라인만 stage 또는 unstage 하거나, discard 하고 싶다면:</p>
+<ol>
+<li>먼저 변경하려는 파일에서 <code class="language-text">></code> 눌러 변경 사항을 확인</li>
+<li>원하는 라인으로 이동해서 visual mode로 선택 후 실행</li>
+</ol>
+<ul>
+<li><code class="language-text">s</code>: stage</li>
+<li><code class="language-text">u</code>: unstage</li>
+<li><code class="language-text">X</code>: discard</li>
+</ul>
+<p>unsage 하려면 Staged 목록에서 보여지므로 이동하여 <code class="language-text">u</code> 눌러야 한다.</p>
+<p><code class="language-text">:Git</code> 입력하면 이렇게 표시된다:</p>
+<div class="gatsby-highlight" data-language="fugitive"><pre class="language-fugitive"><code class="language-fugitive">Head: main
+Merge: origin/main
+Help: g?
+
+Unstaged (1)
+M docs/wiki/vim.md
+
+Staged (1)
+M docs/wiki/vim.md</code></pre></div>
+<h4 id="git-mergetool" style="position:relative;"><a href="#git-mergetool" aria-label="git mergetool permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">:Git mergetool</code></h4>
+<p><code class="language-text">git mergetool</code>과 같다. merge conflicts 처리하는 용도로 사용하는데, fugitive는 충돌 지점을 quickfix로 보여준다.</p>
+<p>quickfix로 충돌 지점을 점프하고, <code class="language-text">GWrite</code>(<code class="language-text">git add</code>와 같음)로 stage에 반영한다.</p>
+<h3 id="rmagattiauto-session" style="position:relative;"><a href="#rmagattiauto-session" aria-label="rmagattiauto session permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>rmagatti/auto-session</h3>
+<p><a href="https://github.com/rmagatti/auto-session">https://github.com/rmagatti/auto-session</a></p>
+<p>자동으로 세션을 저장하고 복구해주는 neovim 플러그인.
+<code class="language-text">vi</code> 명령어로 인자 없이 열면 최근에 종료한 세션에서 다시 시작한다.
+lua 스크립트에서 <code class="language-text">require().setup</code> 해야해서, neovim만 가능할 듯 싶다.</p>
+<p>세션 정보는 <code class="language-text">stdpath('data')/sessions</code>에 저장된다.</p>
+<p>세션 복구를 원치 않는다면 <code class="language-text">vi -</code>와 같이 사용하자.
+또는 복구 후에 <code class="language-text">:SessionDelete</code>로 삭제하고 vim을 종료하면 다음 한 번은 복구하지 않는다.</p>
+<h4 id="startify에-세션-목록-표시하기" style="position:relative;"><a href="#startify%EC%97%90-%EC%84%B8%EC%85%98-%EB%AA%A9%EB%A1%9D-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0" aria-label="startify에 세션 목록 표시하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Startify에 세션 목록 표시하기</h4>
+<p>Startify에서 시작 화면에서 auto-session이 저장한 세션을 보여주도록 연동해서 사용하고 있다.</p>
+<div class="gatsby-highlight" data-language="vim"><pre class="language-vim"><code class="language-vim"><span class="token keyword">function</span> s<span class="token punctuation">:</span><span class="token function">sessions</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> <span class="token builtin">path</span> <span class="token operator">=</span> <span class="token function">stdpath</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">)</span><span class="token operator">.</span><span class="token operator">.</span><span class="token string">"/sessions/"</span>
+  <span class="token keyword">let</span> sessions <span class="token operator">=</span> <span class="token function">systemlist</span><span class="token punctuation">(</span><span class="token string">'ls '</span><span class="token operator">.</span><span class="token builtin">path</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token function">map</span><span class="token punctuation">(</span>sessions<span class="token punctuation">,</span> '<span class="token punctuation">{</span>
+        \ <span class="token string">"line"</span><span class="token punctuation">:</span> <span class="token function">substitute</span><span class="token punctuation">(</span>v<span class="token punctuation">:</span>val<span class="token punctuation">,</span> <span class="token string">"%"</span><span class="token punctuation">,</span> <span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token string">"g"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        \ <span class="token string">"cmd"</span><span class="token punctuation">:</span> <span class="token string">"SessionRestoreFromFile "</span><span class="token operator">.</span><span class="token builtin">path</span><span class="token operator">.</span>v<span class="token punctuation">:</span>val
+        \ <span class="token punctuation">}</span>'<span class="token punctuation">)</span>
+<span class="token keyword">endfunction</span>
+
+<span class="token keyword">let</span> g<span class="token punctuation">:</span>startify_lists <span class="token operator">=</span> <span class="token punctuation">[</span>
+  \ <span class="token punctuation">{</span> <span class="token string">'type'</span><span class="token punctuation">:</span> <span class="token function">function</span><span class="token punctuation">(</span><span class="token string">'s:sessions'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'header'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'   Sessions'</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  \ <span class="token punctuation">{</span> <span class="token string">'type'</span><span class="token punctuation">:</span> <span class="token string">'files'</span><span class="token punctuation">,</span>     <span class="token string">'header'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'   MRU'</span><span class="token punctuation">]</span>            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  \ <span class="token punctuation">{</span> <span class="token string">'type'</span><span class="token punctuation">:</span> <span class="token string">'dir'</span><span class="token punctuation">,</span>       <span class="token string">'header'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'   MRU '</span><span class="token operator">.</span> <span class="token function">getcwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  \ <span class="token punctuation">{</span> <span class="token string">'type'</span><span class="token punctuation">:</span> <span class="token string">'bookmarks'</span><span class="token punctuation">,</span> <span class="token string">'header'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'   Bookmarks'</span><span class="token punctuation">]</span>      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  \ <span class="token punctuation">{</span> <span class="token string">'type'</span><span class="token punctuation">:</span> <span class="token string">'commands'</span><span class="token punctuation">,</span>  <span class="token string">'header'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'   Commands'</span><span class="token punctuation">]</span>       <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  \ <span class="token punctuation">]</span></code></pre></div>
+<p>그러면 Startify 시작화면이 다음과 같이 세션 목록을 보여준다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[e]  &lt;empty buffer>
+
+Sessions
+
+[0]  /home/dupark/dotfiles.vim
+[1]  /home/dupark/workspace/cat-logic.vim
+[2]  /home/dupark/workspace/game-cosmic-cat-conquest.vim
+
+MRU
+
+[3]  ~/workspace/cat-logic/docs/wiki/vim.md
+[4]  ~/workspace/cat-logic/docs/wiki/machine-learning.md
+[5]  ~/workspace/cat-logic/docs/wiki/book.md
+[6]  ~/dotfiles/vim/.vimrc
+[7]  ~/dotfiles/README.md
+[8]  ~/dotfiles/vim/vim-include/vim-startify.vim</code></pre></div>
+<p>auto-session에서 세션 파일 명에 <code class="language-text">%</code> 포함하고 있어서 이상하게 보이긴 한다.</p>
+<h3 id="nerdtree---파일-탐색기" style="position:relative;"><a href="#nerdtree---%ED%8C%8C%EC%9D%BC-%ED%83%90%EC%83%89%EA%B8%B0" aria-label="nerdtree   파일 탐색기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NERDTree - 파일 탐색기</h3>
+<p>Vim 파일 탐색기 플러그인. 디렉토리 구조를 트리로 보여준다. vim에서 인기있는 플러그인 중 하나.</p>
+<p>플러그인 이름은 <code class="language-text">scrooloose/nerdtree</code>.</p>
+<p>아래는 자주 사용하는 기능.</p>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+<th>내 단축키</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-text">:NERDTreeToggle</code></td>
+<td>트리 Toggle</td>
+<td><code class="language-text">&lt;leader>e</code></td>
+</tr>
+<tr>
+<td><code class="language-text">:NERDTree</code></td>
+<td>새 NERDTree 열기</td>
+<td></td>
+</tr>
+<tr>
+<td><code class="language-text">:NERDTreeFind</code></td>
+<td>현재 파일로 트리 이동</td>
+<td><code class="language-text">&lt;leader>f</code></td>
+</tr>
+<tr>
+<td><code class="language-text">?</code></td>
+<td>도움말 Toggle</td>
+<td>아래 부터는 트리 내 Mapping</td>
+</tr>
+<tr>
+<td><code class="language-text">R</code></td>
+<td>트리 전체 갱신</td>
+<td></td>
+</tr>
+<tr>
+<td><code class="language-text">r</code></td>
+<td>커서 아래의 디렉토리 갱신</td>
+<td></td>
+</tr>
+<tr>
+<td><code class="language-text">CD</code></td>
+<td>트리를 CWD로 복구.</td>
+<td></td>
+</tr>
+<tr>
+<td><code class="language-text">cd</code></td>
+<td>커서 아래 디렉토리로 CWD를 변경</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><code class="language-text">CWD</code>는 <code class="language-text">Current Working Directory</code>의 약자로 현재 작업 디렉토리를 의미한다.</p>
+<p><code class="language-text">cd</code>의 경우 프로젝트 디렉토리를 변경하므로 사용할 일이 드물다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div><div class="PageLayout__Side-sc-11jfopf-2 fytAKM"><div class="Wiki__TocSide-sc-16q9onf-5 chvTXK"><h3 class="Toc__Header-sc-1f76i2s-0 jArVBC">Table of Contents</h3><div class="Toc__Container-sc-1f76i2s-1 bJJrFa"><ul>
+<li>
+<p><a href="#vim-plugins">Vim Plugins</a></p>
+<ul>
+<li>
+<p><a href="#%EB%82%B4%EC%9E%A5-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8standard-plugin">내장 플러그인(Standard Plugin)</a></p>
+<ul>
+<li>
+<p><a href="#matchparen">matchparen</a></p>
+<ul>
+<li><a href="#%EC%9A%A9%EB%9F%89%EC%9D%B4-%ED%81%B0-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%EB%8A%90%EB%A0%A4%EC%A7%80%EB%8A%94-%EB%AC%B8%EC%A0%9C">용량이 큰 파일에서 느려지는 문제</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8">플러그인</a></p>
+<ul>
+<li>
+<p><a href="#chrisbracsvvim">chrisbra/csv.vim</a></p>
+<ul>
+<li><a href="#features">Features</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#tpopevim-fugitive">tpope/vim-fugitive</a></p>
+<ul>
+<li><a href="#git-command"><code class="language-text">:Git &lt;command></code></a></li>
+<li><a href="#git"><code class="language-text">:Git</code></a></li>
+<li><a href="#git-mergetool"><code class="language-text">:Git mergetool</code></a></li>
+</ul>
+</li>
+<li>
+<p><a href="#rmagattiauto-session">rmagatti/auto-session</a></p>
+<ul>
+<li><a href="#startify%EC%97%90-%EC%84%B8%EC%85%98-%EB%AA%A9%EB%A1%9D-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0">Startify에 세션 목록 표시하기</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#nerdtree---%ED%8C%8C%EC%9D%BC-%ED%83%90%EC%83%89%EA%B8%B0">NERDTree - 파일 탐색기</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1L3R7GGF7P"></script><script>
+      
+      function gaOptout(){document.cookie=disableStr+'=true; expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/',window[disableStr]=!0}var gaProperty='G-1L3R7GGF7P',disableStr='ga-disable-'+gaProperty;document.cookie.indexOf(disableStr+'=true')>-1&&(window[disableStr]=!0);
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-1L3R7GGF7P', {"anonymize_ip":true,"send_page_view":false});
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/wiki/vim-plugins/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-a31c4a68abb52a848219.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-2dc4cac91431a09bfced.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-57298879bebfd2b99d95.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="72918bae2e0667d3db8a";</script><script src="/cat-logic/webpack-runtime-a812d3be4cd908c26354.js" async></script><script src="/cat-logic/framework-4bfcb0a3c03c938f10bc.js" async></script><script src="/cat-logic/app-a31c4a68abb52a848219.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
