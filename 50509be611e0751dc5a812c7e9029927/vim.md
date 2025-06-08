@@ -9,8 +9,6 @@ created: 2022-11-27
 누구나 같은 설정 파일을 사용한다면 같은 환경을 재현할 수 있다.
 vim은 사람마다 다른 형태를 가지면서도 복제하기 쉽다.
 
----
-
 vim 보다 [neovim](https://github.com/neovim/neovim)을 사용중이다.
 neovim은 vim의 fork라 호환성이 유지돼서 바로 넘어가더라도 큰 문제가 없다.
 기존 vim 설정을 조금 수정해야 하는데, neovim 메뉴얼 `:h nvim-from-vim`에 잘 설명되어 있다.
@@ -31,8 +29,6 @@ vim은 에디터를 개선해 나가는 즐거움을 준다.
 다른 에디터라면 버전업 될 때마다 설레임이 있겠지만, vim은 그 설레임이 나로부터 시작된다.
 불필요한 기능을 제거하는 것이 아니라, 필요한 기능을 추가한다는 점은 vim만의 차별화된 특성이다.
 
----
-
 vimscript라는 자체 스크립트를 제공하는데, 학습하기 꽤 어려운 언어이다.
 [어떤 글](https://www.reddit.com/r/neovim/comments/l1mne8/learning_vimscript_vs_lua/)에서는 정규식에 빗대어, 학습하는 것이 아니라 그냥 사용하는 것이라고 한다:
 
@@ -41,8 +37,6 @@ vimscript라는 자체 스크립트를 제공하는데, 학습하기 꽤 어려�
 창시자인 Bram Moolenaar의 [23년 인터뷰 중](https://yozm.wishket.com/magazine/detail/2183/)에서 플러그인을 많이 사용하지 않는다고 한다:
 
 > 사실 저는 배포판에 포함된 플러그인(matchit, termdebug 등)을 제외하고는 플러그인 자체를 많이 사용하지 않습니다. 필요한 기능이 있으면 간단한 것은 바로 만들거나 Vim 베이스에 추가하는 편입니다.
-
----
 
 Vim 자체는 텍스트 편집기일 뿐이기 때문에, IDE처럼 사용하기 위해서는 플러그인이 필요하다.
 자세한 사항은 아래의 [내장 Language Server Protocol 사용하기](#내장-language-server-protocol-사용하기)를 참고하자.
@@ -213,6 +207,10 @@ nvim의 diagnostic 또는 hover(<s-k>)는 팝업 창을 띄운다.
 커서를 옮기면 팝업 창이 사라지는데, 팝업 안으로 커서를 이동하려면 `<c-w>w`를 사용한다.(`:h CTRL-W_w`)
 
 ## 내장 기능
+
+### 플러그인 시스템
+
+[Vim 플러그인 문서](/docs/wiki/vim-plugins.md) 참조.
 
 ### quickfix & location list
 
