@@ -761,7 +761,7 @@ revision은 `dae86e1950b1277e545cee180551750029cfe735`, `{upstream}`, `v1.7.4.2-
 `git rebase @{u}`은 현재 브랜치의 upstream branch로 rebase한다.
 현재 브랜치가 리모트에서 변경되고, 일일이 이름을 모두 타이핑하지 않고 `@{u}`로 간단하게 사용할 수 있어서 자주 사용한다.
 
-`git checkout master@{10 days ago}`는 10일 전의 master 브랜치로 checkout한다.
+`git checkout master@{10.days.ago}`는 10일 전의 master 브랜치로 checkout한다.
 `bisect`와 더불어 디버깅하기 용이한 명령어다.
 `days` 이외에도 `minutes`, `years` 그리고 조합하여 사용도 가능하고, `1979-02-26 18:30:00`와 같은 날짜 포맷도 사용할 수 있다.
 
