@@ -11,6 +11,17 @@ const Counter = styled.div`
   color: ${theme.fonts.body};
 `
 
+const SearchBoxContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  > div > :first-child {
+    margin-bottom: 0.5rem;
+  }
+`
+
 export default function Home({
   items,
   setQuery,
@@ -22,8 +33,12 @@ export default function Home({
     <PageLayout>
       <div>
         <HomeLogo />
-        <SearchBox onChange={setQuery} holder="I guess..." />
-        <Counter>{items.length} docs</Counter>
+        <SearchBoxContainer>
+          <div>
+            <SearchBox onChange={setQuery} holder=">" />
+            <Counter>{items.length} docs</Counter>
+          </div>
+        </SearchBoxContainer>
         <WikiCatalog items={items} fallback="No results found :(" />
       </div>
     </PageLayout>
