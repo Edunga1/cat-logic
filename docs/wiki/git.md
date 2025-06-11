@@ -126,7 +126,7 @@ https://stackoverflow.com/questions/9392365
 
 https://stackoverflow.com/questions/34764195
 
-### 해시 총돌 유머
+### 해시 충돌 유머
 
 여기 있는 사이트가 사라졌다 :|
 
