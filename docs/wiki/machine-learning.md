@@ -471,14 +471,18 @@ https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview
 2025년 3월 기준 프리뷰 단계에 있다.
 프리뷰 단계지만 무료 기간이 없다.
 
+2025년 6월 4일, Pro 플랜에 포함되었다.
+하지만 12일 기준, 아직까지 더 비싼 Team 플랜에 포함되지 않았다.
+
 [레딧 BEWARE CALUDE CODE IS NOT FREE 글](https://www.reddit.com/r/ClaudeAI/comments/1ixi2rg/beware_claude_code_is_not_free/)을 보면
 쿼리 2~3개에 $5 사용되었다고. 덧글에도 비슷한 경험을 한 사람들이 있다.
 비용이 적은 사람도 있는 걸 보면, 코드베이스의 크기에 따라 달라지는 것으로 주정.
 
 [튜토리얼](https://docs.anthropic.com/ko/docs/agents-and-tools/claude-code/tutorials)에서 사용법을 확인할 수 있다.
 `claude` 명령어를 입력하면 대화형 모드로 진입한다.
-명령줄 버전의 ChatGPT라고 생각해도 무방해 보인다.
-에디터 통합이 없는 것은 아쉬운 점.
+
+플랫폼이 Shell 기반이고, MCP 클라이언트이기 때문에 아주 광범위한 작업을 처리할 수 있다.
+IDE에서 동작하는 다른 AI 도구와는 다르게, 명령줄 도구를 이용할 수 있다는 것이 큰 장점이다. 대부분의 OS 작업을 처리할 수 있다는 의미가 된다.
 
 ### DeepSeek
 
