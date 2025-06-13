@@ -126,25 +126,6 @@ https://stackoverflow.com/questions/9392365
 
 https://stackoverflow.com/questions/34764195
 
-### 해시 충돌 유머
-
-여기 있는 사이트가 사라졌다 :|
-
-> 뻘글) git 불안해서 못쓰겟음니다 -.-;
-
-https://www.codentalks.com/t/topic/2973
-
-찾다가 나온 유머글 ㅎㅎ. [덧글에 있는 만화](https://www.codentalks.com/uploads/default/original/2X/9/98fa43031c7cfbf44c714ad5819ea504ef37e70c.jpg)처럼
-걱정, 우려만 해서는 안되겠다.
-
-### sha1 층돌 설명
-
-여기도 사이트가 사라졌다 :-|
-
-sha1 충돌 이슈에 설명. 해시에 대한 기초 설명, 구글이 sha-1 충돌 재현에 대한 주변 설명.
-
-https://zariski.wordpress.com/2017/02/25/sha-1-%EC%B6%A9%EB%8F%8C/
-
 ### md5 충돌 예제
 
 여기 예제 사이트에서는 다른 파일인데 같은 MD5 sum을 가진 예제를 제공한다.
