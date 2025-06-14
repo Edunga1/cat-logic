@@ -15,7 +15,6 @@ https://en.wikipedia.org/wiki/Ultima_Online
 이를 이용하여 **사설 서버**, **매크로**와 **서드파티 프로그램**이 개발되었다.
 
 개발 관점에서 흥미롭고 학습하기 좋은 게임이다.
-
 나같은 경우에도 학생때 매크로를 만들어 보면서 프로그래밍에 흥미를 가지는 계기가 되었다.
 
 ### 서버 프로젝트
@@ -24,7 +23,7 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 이런 사설 서버들이 사용하는 서버 프로젝트로 [RunUO](https://github.com/runuo/runuo), [ServUO](https://github.com/ServUO/ServUO)가 있다.
 
-둘 다 C#으로 오픈 소스로 개발되었다. RunUO는 2020년 이후로 업데이트가 없는 것으로 보이며, ServUO는 아직도 업데이트가 이어지고 있다.
+둘 다 C#으로 개발되었다. RunUO는 2020년 이후로 업데이트가 없는 것으로 보이며, ServUO는 아직도 업데이트가 이어지고 있다.
 
 #### ServUO
 
@@ -68,6 +67,8 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 스크립트 기반 매크로 프로그램이다. 자체 언어를 사용한다.
 
+goto 구문을 사용한다.
+
 ![EasyUO](https://pangaea.myramidnight.com/wiki/images/thumb/b/bb/Easyuo.png/300px-Easyuo.png)
 
 Home: https://www.easyuo.com \
@@ -97,7 +98,7 @@ finditem %weapon C_ , #BACKPACKID
 
 #### OpenEUO
 
-EasyUO를 개선한 것으로, 스크립트 언어로 Lua를 사용한다.
+EasyUO를 개선한 것으로, Lua를 사용한다.
 
 http://www.easyuo.com/openeuo/wiki/index.php/First_Steps
 
