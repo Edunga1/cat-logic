@@ -3,11 +3,13 @@ created: 2023-02-25
 ---
 # GatsbyJS
 
-React 기반 웹사이트 프레임워크.
+React를 사용하는 정적 사이트 생성 도구.
 
 > the fastest frontend for the headless web. Build modern websites with React.
 
 https://github.com/gatsbyjs/gatsby
+
+## Slugify
 
 기본 튜토리얼을 따라 홈페이지를 만든다면 File System Route API를 사용하게 되는데,
 [라우팅 시 자동으로 slugify](https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/#routing-and-linking)한다.
