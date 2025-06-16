@@ -52,9 +52,9 @@ brew install jira-cli
 ```
 
 1. CLI를 사용하기 위해선 Jira API 토큰이 필요하다.
-Atlasian 계정 설정에서 API 토큰을 발급받고 환경 변수`JIRA_API_TOKEN`로 저장해야 한다.
+    Atlasian 계정 설정에서 API 토큰을 발급받고 환경 변수`JIRA_API_TOKEN`로 저장해야 한다.
 2. `jira init`으로 최초 한 번 설정을 해야 한다.
-이 과정에서 Cloud 버전이라면 도메인을 입력해야 한다:  `https://[your-domain].atlassian.net`.
+    이 과정에서 Cloud 버전이라면 도메인을 입력해야 한다:  `https://[your-domain].atlassian.net`.
 
 이제 `jira issue view [issue-key]`으로 이슈를 조회할 수 있다.
 `--raw` 옵션으로 json 포맷으로 출력할 수 있다. 기본은 형태가 없어 파싱하기 어려운 구조.
