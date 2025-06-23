@@ -1636,3 +1636,101 @@ AI 도구 제공자가 MCP 클라이언트를 제공하는 것이 일반적이�
 반면에 프로토콜을 고안한 Anthropic의 Claude Desktop은 MCP 클라이언트를 제공한다.
 
 [Claude Code](#claude-code)는 셸 환경에서 동작해서 더 많은 도구를 사용할 수 있다.
+
+### 프로토콜
+
+Claude Desktop으로 서버를 구현하면서 정리한 내용.
+
+#### initialize
+
+프로토콜은 JSON-RPC 2.0 메시지로 통신한다.
+
+[initialize](https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle#initialization)는 MCP 서버와 클라이언트가 처음 연결할 때 호출한다.
+이 단계에서는 프로토콜 버전과 기능 등을 서버와 클라이언트가 협상하는 단계이다.
+
+클라이언트 요청 예시:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "initialize",
+  "params": {
+    "protocolVersion": "2024-11-05",
+    "capabilities": {
+    }
+  }
+}
+```
+
+서버는 다음과 같이 응답한다:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "protocolVersion": "2024-11-05",
+    "capabilities": {
+      "tools": {}
+    },
+    "serverInfo": {
+      "name": "simple-mcp-server",
+      "version": "1.0.0"
+    }
+  }
+}
+```
+
+#### notifications/initialized
+
+성공적으로 초기화가 완료되면, 클라이언트는 `notifications/initialized`를 호출한다.
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "notifications/initialized"
+}
+```
+
+이 단계가 완료되기 전에는 ping, 로깅 등 다른 요청을 하지 말아야 한다.
+
+#### tools/list
+
+[tools/list](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#protocol-messages)는 서버가 제공하는 도구 목록을 요청한다.
+
+요청 예시:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/list",
+}
+```
+
+응답 예시:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "tools": [
+      {
+        "name": "hello",
+        "description": "Returns a hello message",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name to greet (optional)"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
