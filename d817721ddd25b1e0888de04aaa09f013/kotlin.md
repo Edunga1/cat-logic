@@ -209,6 +209,15 @@ Kotest의 Style은 모두 Kotlin DSL로 구성되어 있어 직관적인 구조�
 IntelliJ 사용한다면 [플러그인](https://plugins.jetbrains.com/plugin/14080-kotest)은 반드시 설치하자.
 JUnit처럼 테스트 파일에서 테스트를 실행하거나, 테스트 레이아웃을 위한 별도 창을 제공한다.
 
+테스트 레이아웃이나 코틀린에 어울리는 코드 작성가 가능한 점은 장점이지만, **IDE 통합은 부족하다**.
+실패한 테스트를 클릭하면 해당 지점으로 이동하는 네비게이션이 작동하지 않는 경우가 많다.
+때문에 [고통 스럽다는 이슈](https://github.com/kotest/kotest-intellij-plugin/issues/367)도 있다.
+
+[Kotest 플러그인](https://github.com/kotest/kotest-intellij-plugin)의 IDE 업데이트에 대한 지원도 부족하다.
+테스트 네비게이션이나, 특정 테스트만 실행하는 기능이 IDE 업데이트에 따라 동작하지 않는 문제가 빈번하게 발생한다.
+가장 불만인 지점인데, 항상 파일 내 모든 테스트를 실행해야만 한다.
+이 문제는 IntelliJ 2025 버전에서 지속되고 있다. 2024 버전 어느 시점부터 발생했던 거 같다.
+
 #### IntelliJ + Kotest Integration
 
 플러그인은 모듈로부터 테스트 파일을 만들 수 있는 기능도 제공한다.
