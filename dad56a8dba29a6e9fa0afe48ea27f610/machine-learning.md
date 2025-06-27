@@ -1734,3 +1734,17 @@ Claude Desktop으로 서버를 구현하면서 정리한 내용.
   }
 }
 ```
+
+### MCP Inspector
+
+MCP 그룹에서 공식 제공하는 디버깅 및 개발 도구.
+
+- Repo: https://modelcontextprotocol.io/docs/tools/inspector
+- Introduction: https://github.com/modelcontextprotocol/inspector
+
+```bash
+npx @modelcontextprotocol/inspector <command> <args>
+```
+
+서버 시작 명령어를 함께 넘겨주거나, `npx @modelcontextprotocol/inspector`로 실행하면 MCP Inspector가 시작된다.
+로컬 환경에서 서버가 시작되면, 웹 브라우저에서 서버를 테스트할 수 있다. 일종의 Web UI 기반 MCP 클라이언트인 셈.
