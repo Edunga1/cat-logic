@@ -9,7 +9,7 @@ created: 2017-09-27
 
 ![Game of Life](https://upload.wikimedia.org/wikipedia/commons/7/7e/GameOfLife_Glider_Animation.gif)
 
-수학자 존 호튼 콘퉤이가 고안했으며, 세포 자동자는 폰 노이만이 고안했다.
+수학자 존 호튼 콘웨이가 고안했으며, 세포 자동자는 폰 노이만이 고안했다.
 세포 자동자는 공간에서 각 셀이 살아있거나 죽어있는 상태를 가지며, 이웃한 셀들의 상태에 따라 다음 세대의 상태가 결정된다.
 에코시스템을 표현하는 것으로 보인다.
 

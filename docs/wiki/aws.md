@@ -234,7 +234,7 @@ KinesisAsyncClient.builder().endpointOverride(URI.create("https://<kinesis endpo
 
 ## Storage Service
 
-2021-09-31 AWS CEP 내용 정리한 것.
+2021-09-30 AWS CEP 내용 정리한 것.
 
 Storage는 크게 Block, File, Object로 나뉜다.
 
@@ -270,7 +270,7 @@ HOT - COLD는 오브젝트에 접근했을 때 반응에 대한 내용. Observab
 
 ## Networking
 
-2021-09-31 AWS CEP 내용 정리한 것.
+2021-09-30 AWS CEP 내용 정리한 것.
 
 ![aws-global-infrastructure](res/aws-global-infrastructure.png)
 
@@ -294,7 +294,7 @@ AWS에서는 Static의 반대되는 용어로 `Elastic`을 사용한다.
 
 독립된 가상 클라우드 네트워크. 나만의 네트워크라고 이해하면 된다.
 
-IP 대역은 CIDR(Classes Inter-Domain Routing) 블록 /16 ~ /28 까지 사용 가능하다.
+IP 대역은 CIDR(Classless Inter-Domain Routing) 블록 /16 ~ /28 까지 사용 가능하다.
 
 공인 IP는 비싼 자원이므로 서버 Stop시 해제된다는 등 제약이 있다.
 
