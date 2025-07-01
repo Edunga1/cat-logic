@@ -20,7 +20,7 @@ AI가 사용할 수 있는 도구를 정의한 MCP 서버, 사용자와 대면�
 Client는 VSCode, IntelliJ(2025.1 부터) 등이 지원한다.
 MCP 서버는 [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers)에 정리되어 있다.
 
-VSCode에서 [playwright-mcp](/docs/wiki/playwright.md#paywright-mcp)를 사용하는 예시로,
+VSCode에서 [playwright-mcp](/docs/wiki/playwright.md#playwright-mcp)를 사용하는 예시로,
 Copilot Chat을 통해 [Playwright](/docs/wiki/playwright.md)를 실행, 대화를 통해서 브라우저를 조작할 수 있다.
 예를들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘"라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘"같은 명령을 내릴 수 있다.
 

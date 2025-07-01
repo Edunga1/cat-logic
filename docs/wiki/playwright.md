@@ -6,7 +6,7 @@ Chromium, Firefox, WebKit의 Headless 브라우저를 지원한다.
 - https://playwright.dev/
 - https://github.com/microsoft/playwright
 
-## Paywright MCP
+## Playwright MCP
 
 Playwright [MCP](/docs/wiki/machine-learning.md#model-context-protocolmcp) 서버.
 
