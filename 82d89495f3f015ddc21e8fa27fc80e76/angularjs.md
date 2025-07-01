@@ -173,7 +173,7 @@ module.exports = function(config) {
         ],
 
         // 콘솔에 출력되는 테스트 진행 상황에 관한 모듈.
-        // karma-mocha-repoter를 사용했다.
+        // karma-mocha-reporter를 사용했다.
         reporters: ['mocha'],
 
         // ...
