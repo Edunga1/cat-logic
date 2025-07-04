@@ -8,7 +8,8 @@ Chromium, Firefox, WebKit의 Headless 브라우저를 지원한다.
 
 ## Playwright MCP
 
-Playwright [MCP](/docs/wiki/machine-learning.md#model-context-protocolmcp) 서버.
+Playwright [MCP](/docs/wiki/model-context-protocol.md) 서버.
+MCP 프로토콜을 통해 브라우저를 열고, URL로 이동, 스냅샷을 찍고 화면을 분석하거나, 페이지를 저장 등을 제어한다.
 
 https://github.com/microsoft/playwright-mcp
 
@@ -24,9 +25,11 @@ MCP Server Configuration:
 }
 ```
 
-브라우저 탭을 열고 URL로 이동, 스냅샷을 찍고 화면을 분석하거나, 페이지를 저장할 수 있는 도구를 제공한다.
 
 VSCode + GitHub Copilot Chat으로 시도해본 결과 잘 동작했다.
 Claude 3.7 Sonnet이 가장 잘 동작했다.
 예를들어 "인공 지능 기초 레벨을 다루는 아티클을 검색하고 5개 정도 탭 열어놔줘"라고 했을 때 잘 수행했다.
 반면에 GPT-4o는 탭 하나만 연다던지 도구 여러개를 잘 사용하지 못하는 경우가 있었다.
+
+Google의 Captcha를 통과를 시도했으나, 실패했다.
+이미지 분석은 실패했고, 오디오는 처리하지 못한다.
