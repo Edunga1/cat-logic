@@ -88,6 +88,7 @@ WebP 변환을 위해서 `cwebp` 명령어가 필요하다: `brew install webp`
 https://brew.sh/
 
 Homebrew로 맥에서 어플리케이션(패키지)을 설치하는 도구이다.
+정확히는 Linux 또한 지원한다. linuxbrew로 구분한다.
 
 설치할 수 있는 앱은 크게 2가지로 나뉜다. MacOS 전용 앱과 터미널에서 사용할 수 있는 앱이다.
 전자는 `brew cask install`로 설치하고, 후자는 `brew install`로 설치한다.
@@ -122,6 +123,10 @@ MySQL is configured to only allow connections from localhost by default
 ```
 
 패키지 출처 사이트, 패키지 버전, 의존성, 설치 시 주의사항 등이 포함되어 있다.
+
+패키지의 버저닝을 제공하지 않는다.
+이전에는 `versions` 명령어로 이전 버전을 설치할 수 있었지만, 현재는 최신 버전만 제공한다.
+또는 `node@18` 과 같이 Homebrew에서 명시적으로 버전을 제공하는 경우만 설치할 수 있다.
 
 ### 동작 원리
 
