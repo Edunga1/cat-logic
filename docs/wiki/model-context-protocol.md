@@ -154,3 +154,16 @@ npx @modelcontextprotocol/inspector <command> <args>
 
 서버 시작 명령어를 함께 넘겨주거나, `npx @modelcontextprotocol/inspector`로 실행하면 MCP Inspector가 시작된다.
 로컬 환경에서 서버가 시작되면, 웹 브라우저에서 서버를 테스트할 수 있다. 일종의 Web UI 기반 MCP 클라이언트인 셈.
+
+## Claude Desktop Extension
+
+Claude Desktop에서 설정에 진입하면 확장 프로그램을 관리할 수 있다.
+사실상 MCP 서버를 쉽게 추가할 수 있도록 도와주는 기능이다.
+
+MCP 서버 개발자가 `.dxt` 파일을 만들어서 배포하면, 사용자는 이 파일을 확장 프로그램에 드래그 앤 드롭으로 설치할 수 있다.
+
+`.dxt` 파일은 MCP 서버의 코드(의존성 포함)와 manifest를 포함하는 압축 파일이다.
+
+[anthropics/dxt](https://github.com/anthropics/dxt)는 DXT 파일을 쉽게 만들 수 있는 도구이다.
+`dxt init`으로 manifest를 생성하고, `dxt pack`으로 `.dxt` 파일을 생성한다.
+별도 빌드 프로세스는 없으므로, 개발 의존성을 제외한 상태에서 `dxt pack`을 실행하자.
