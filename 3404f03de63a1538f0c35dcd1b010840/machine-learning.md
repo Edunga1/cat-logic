@@ -1349,6 +1349,20 @@ window.addEventListener('load', () => {
 ```
 </details>
 
+#### Gemini CLI
+
+Gemini CLI는 Gemini 모델을 터미널에서 사용할 수 있게 해주는 명령어를 제공한다.
+
+https://cloud.google.com/gemini/docs/codeassist/gemini-cli
+
+`gemini` 명령어를 통해서 별도의 셸로 진입한다.
+기본 입력은 모두 프롬프트 처리되고, `!`를 붙여서 셸 명령어와 구분한다.
+셸에서 동작하기 때문에, AI가 명령어를 실행할 수 있다.
+Gemini Code Assist를 포함하기 때문에, 프롬프트를 통해 파일을 수정하거나 코딩을 도와준다.
+
+MCP 서버를 붙일 수 있다.
+셸에서 동작하고, MCP 서버를 붙일 수 있는 것으로, Claude Code와 흡사한 도구.
+
 ### Google Chrome
 
 크롬은 [125 버전부터 콘솔 에러를 Gemini로 해석해주는 기능을 추가](https://developer.chrome.com/docs/devtools/console/understand-messages)했다.
