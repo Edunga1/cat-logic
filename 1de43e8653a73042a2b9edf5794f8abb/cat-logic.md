@@ -3,15 +3,16 @@ created: 2023-10-31
 ---
 # The Cat Logic
 
-Cat Logic은 내 TIL, 개인 지식 저장소 별명이다.
+Cat Logic은 내 [TIL](https://github.com/topics/today-i-learned), 개인 지식 저장소 별명이다.
 
-Git 저장소는 https://github.com/edunga1/cat-logic 공개 저장소로 관리한다.
+Git 저장소는 https://github.com/edunga1/cat-logic
 
 ![Cat Logic](res/cat-logic.jpg)
 
-이 로고 이미지는 저장소의 성격을 잘 표현한다.
-내 마음대로 작성하고 싶다. 어떠한 형식에 구애받지 않고, 어떤 문서도 완성되지 않는다.
-어떠한 에디터를 사용해도 좋다. 대부분 [vim](./vim.md)과 [vimwiki](./vimwiki.md) 기반으로 작성하지만 VSCode도 사용하고 있고,
+이 로고 이미지는 저장소의 성격을 잘 표현한다. 내 마음대로 작성하고 싶다.
+어떠한 에디터를 사용해도 좋다. 그래서 마크다운으로 작성한다.
+렌더링 전과 후의 괴리가 가장 적은 형식이다.
+대부분 [vim](./vim.md)과 [vimwiki](./vimwiki.md) 기반으로 작성하지만 VSCode도 사용하고 있고,
 GitHub 모바일 앱이나 웹에서 제공하는 간이 에디터도 사용한다. 모토는 "자유롭게 작성하는 것"이다.
 
 형식에 구애받고 싶지 않으므로, 모든 문서를 일괄적으로 변경하는 것은 피하고자 한다.
