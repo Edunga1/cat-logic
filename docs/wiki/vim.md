@@ -180,14 +180,12 @@ fzf.vim이 제공하는 미리보기 창으로 파일을 검색한다.
 1. ctrl + p
 
 ```vim
-nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
+nnoremap <c-p> :call fzf#vim#gitfiles('', {'dir': getcwd()})<CR>
 ```
 
-현재 작업 경로가 git 저장소인 경우 `:GFiles`로,
-git 저장소가 아닌 경우 `:Files`로 파일을 검색하기 때문에 어떤 명령을 사용할 지 고려하지 않아도 된다.
-
-`:GFiles`는 .gitignore를 확인하기 때문에 불필요한 파일을 제외하고 검색할 수 있다.
-일부러 제외된 파일을 검색하기 위해선 `:Files`나 `:FZF`를 입력한다.
+`:GFiles`는 버퍼의 디렉토리 기준으로 검색한다.
+버퍼 파일이 git 프로젝트가 아니라면 `Not in git repo` 경고와 함께 실패하는게 스트레스인 것도 덤.
+`getcwd()`를 전달하여, 현재 작업 디렉토리 기준으로 검색하도록 변경했다.
 
 2. `:Rg` or `:Ag`
 
