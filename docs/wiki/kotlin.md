@@ -388,13 +388,19 @@ private val AfterContainerListener = object : AfterContainerListener {
 }
 ```
 
-## [Language Server](./language-server-protocol.md)
+## Kotlin Language Server Protocol
+
+Kotlin [LSP](./language-server-protocol.md)는 현재 2개의 구현체가 있다.
 
 - [Kotlin/kotlin-lsp](https://github.com/Kotlin/kotlin-lsp/)
 - [fwcd/kotlin-language-server](https://github.com/fwcd/kotlin-language-server) (unofficial)
 
 [2025-05-20](https://github.com/Kotlin/kotlin-lsp/releases/tag/idea%2F252.16512.17) 드디어 JetBrains에서 공식적으로 Kotlin LSP를 공개했다! \
 [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/pull/3867)에는 23일에 설정이 추가되었다.
+
+7월 14일 기준, 아직도 5월 말에 [릴리즈](https://github.com/Kotlin/kotlin-lsp/blob/main/RELEASES.md)된 버전이 마지막이다.
+[이슈 문의](https://github.com/Kotlin/kotlin-lsp/issues/57)에 따르면, LSP 지원을 개선하기 위한 대규모 인프라 작업이 있었다고 한다.
+지금은 마무리 단계이고, 다음부터는 2주 주기로 릴리즈할 예정이라고 한다.
 
 fwcd/kotlin-language-server는 Kotlin LSP의 unofficial 버전이다. \
 2019년부터 개발이 시작되었으나, 25년까지도 느려서 운영 레벨에서 사용하기 어렵다. \
