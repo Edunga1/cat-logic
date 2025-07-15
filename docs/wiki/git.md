@@ -724,7 +724,7 @@ $ git shortlog -s
 2개의 기능을 가지고 있어서, [2019년 8월, 2.23.0 버전](https://github.blog/2019-08-16-highlights-from-git-2-23/)부터 `git switch`와 `git restore`로 분리되었다.
 `switch`는 브랜치의 변경, `restore`는 파일 복구를 담당한다.
 
-`git checkout -p`로 interactive 파일을 복구할 수 있다. \
+`git checkout -p`로 대화식으로 파일을 복구할 수 있다. \
 `git add -p`와 같은 방식으로 hunk 단위로 선택하거나 파일을 직접 수정하여 복구한다.
 
 인자 없이 `git checkout`은 현재 브랜치에 다시 체크아웃한다.
