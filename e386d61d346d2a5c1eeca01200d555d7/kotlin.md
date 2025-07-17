@@ -404,6 +404,7 @@ kotlin-lsp의 등장으로 [fwcd/kotlin-language-server는 유지보수 중단�
 ### 내역
 
 - 2025-05-20 JetBrains에서 [공식 Kotlin LSP](https://github.com/Kotlin/kotlin-lsp/releases/tag/idea%2F252.16512.17)를 공개했다!
+- 2025-05-22 kotlin-lsp는 [KotlinConf 2025 Keynote](https://youtu.be/F5NaqGF9oT4?si=PkUm35Z1mhCO37LP&t=3764)에서 소개되었다.
 - 2025-05-23 [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/pull/3867)에 Kotlin LSP 설정이 추가되었다.
 - 2025-05-31 [mason](https://github.com/mason-org/mason-registry/pull/10300)에 Kotlin LSP 패키지가 추가되었다.
 
