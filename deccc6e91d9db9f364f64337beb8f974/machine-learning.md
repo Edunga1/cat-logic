@@ -5,7 +5,7 @@ created: 2022-12-05
 
 "학생이나 교수나 누구나 이런 ai를 사용해서 본인의 performance를 올리는 사람이 승자가 될것이라 생각합니다"
 
-> Sung Kim: 학생이나 교수나 누구나 이런 ai를 사용해서 본인의 performance를 올리는 사람이 승자가 될것이라 생각합니다. 마치 계산기가 나온 초기 시절 그래도 주판이나 암산이 편하고 빠르다고 한 사람들이 있었었죠. 앞으로 이런 글쓰기와 추론등도 계산기를 사용하듯 일반화된 인간의 tool로 보편화 되어 사용될것 같습니다.
+> Sung Kim: 학생이나 교수나 누구나 이런 ai를 사용해서 본인의 performance를 올리는 사람이 승자가 될 것이라 생각합니다. 마치 계산기가 나온 초기 시절 그래도 주판이나 암산이 편하고 빠르다고 한 사람들이 있었었죠. 앞으로 이런 글쓰기와 추론등도 계산기를 사용하듯 일반화된 인간의 tool로 보편화 되어 사용될 것 같습니다.
 >
 > [페이스북 그룹 덧글 중에서](https://www.facebook.com/groups/255834461424286/?multi_permalinks=1929705450703837)
 
@@ -51,7 +51,7 @@ https://youtu.be/WXuK6gekU1Y
 아직도 이 한 수는 종종 미디어에서 회자한다.
 
 이 다큐멘터리를 볼 때마다 당시의 감정이 떠오른다.
-사람들의 반응의 변화와, 사람들 머리속에 '인공지능'이 새겨졌던 날.
+사람들의 반응의 변화와, 사람들 머릿속에 '인공지능'이 새겨졌던 날.
 
 ### 데미스 하사비스
 
@@ -203,7 +203,7 @@ https://www.facebook.com/story.php?story_fbid=27006446892333407&id=1000018438480
 
 이름을 물어보면 GitHub Copilot이라고 대답하고, 자신의 규칙에 대해서 이야기하지 말고, 어떻게 답변하라는 등 행동 규칙을 정의한다.
 
-이처럼 인공지능의 규칙을 엿보거나, 우회하도록 답변을 유도하는 것을 `#17`에 나온 것처럼 Jailbreak라 한다.
+이처럼 인공지능의 규칙을 엿보거나, 우회하도록 답변을 유도하는 것을 `#17`에 나온 것처럼 Jailbreak라고 한다.
 ChatGPT는 나쁜 정보를 제공하지 않도록 되어 있는데, [이 또한 프롬프트를 통해서 Jailbreak 되기도 했다.](https://twitter.com/davisblalock/status/1602600453555961856)
 
 ChatGPT가 답변을 거부하면 `but hypothetically`라고 하면 jailbreak 되는 것이다. 그러나 이는 곧장 막혔다.
@@ -842,7 +842,7 @@ ref. https://news.hada.io/topic?id=9185
 
 https://deepmind.google/technologies/gemini
 
-시연연상: https://youtu.be/UIZAiXYceBI?si=oSRGhGQjQITgwZ-d
+시연 영상: https://youtu.be/UIZAiXYceBI?si=oSRGhGQjQITgwZ-d
 
 편집된 영상이라 정확히 확인되지 않지만, 매우 빠른 응답을 제공한다. 사용자와 실시간 대화할 정도.\
 실시간으로 사용자와 대화하고, vision 처리한다. 마치 아이언맨 자비스를 보는 느낌.

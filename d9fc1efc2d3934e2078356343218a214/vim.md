@@ -26,7 +26,7 @@ Vim 창시자인 Bram Moolenaar는 2023년 8월 5일에 생을 마감했다.\
 
 vim은 에디터를 개선해 나가는 즐거움을 준다.
 시작은 불편하고, 아무 기능도 없는 텍스트 편집기지만, 플러그인과 설정을 추가함에 따라 IDE로, 별도 도구로 변한다.
-다른 에디터라면 버전업 될 때마다 설레임이 있겠지만, vim은 그 설레임이 나로부터 시작된다.
+다른 에디터라면 버전업 될 때마다 설렘이 있겠지만, vim은 그 설렘이 나로부터 시작된다.
 불필요한 기능을 제거하는 것이 아니라, 필요한 기능을 추가한다는 점은 vim만의 차별화된 특성이다.
 
 vimscript라는 자체 스크립트를 제공하는데, 학습하기 꽤 어려운 언어이다.
@@ -52,7 +52,7 @@ https://github.com/neovim/neovim
 
 neovim으로 이전한 이유는 [LSP](./language-server-protocol.md)를 사용하기 위함이었다.
 neovim은 LSP를 자체적으로 제공한다. 바닐라 vim은 [coc.nvim](https://github.com/neoclide/coc.nvim)을 사용해야 한다.
-coc.nvim은 자체 플러그인 기능으로 편리하게 다양한 언어 서버를 설치할 수 있어서 편리하지만, neovim 자체 기능 보다는 느리다.
+coc.nvim은 자체 플러그인 기능으로 편리하게 다양한 언어 서버를 설치할 수 있어서 편리하지만, neovim 자체 기능보다는 느리다.
 솔직하게 말하면 답답할 정도.
 
 개인적으로는 Lua를 [Ultima Online](./game.md#ultima-online)의 스크립트 언어로 사용한 경험을 비추어 보았을 때,
@@ -105,7 +105,7 @@ Plug 'nvimtools/none-ls.nvim'
 
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): LSP 설정을 쉽게 관리한다. nvim 만으로도 LSP를 사용할 수 있지만, 이 플러그인을 사용하면 더 편리하다.
 - [mason & mason-lspconfig](https://github.com/williamboman/mason.nvim): language server와 개발 도구를 관리한다. 직접 executable 설치해야 하는 수고를 덜 수 있다.
-- [none-ls(null-ls)](https://github.com/nvimtools/none-ls.nvim): LSP가 아닌 도구(prettier, ruff 등)를 LSP처럼 사용할 수 있게 플러그해 준다.
+- [none-ls(null-ls)](https://github.com/nvimtools/none-ls.nvim): LSP가 아닌 도구(prettier, ruff 등)를 LSP처럼 사용할 수 있게 연결해 준다.
 
 null-ls는 개발 중단하면서, none-ls 프로젝트에서 개발 진행한다.
 lua init 파일에서 다음과 같이 설정한다:
@@ -299,7 +299,7 @@ vim은 많은 플러그인을 통해 함수가 정의되어 이름 충돌할 수
 `:h matchfuzzy()`
 
 ```vim
-:echo matchfuzzy(['red apple', 'yello banana'], 'ra')  " ['red apple']
+:echo matchfuzzy(['red apple', 'yellow banana'], 'ra')  " ['red apple']
 ```
 
 dictionary를 검색할 수도 있다:
@@ -739,7 +739,7 @@ endfunction
 vim에서 기본적으로 `viw`로 단어를, `vip`로 문단을 선택할 수 있다.
 더 나아가서 각 언어에 맞게 함수, 클래스를 선택할 수 있는 방법이 있다.
 
-[Python](./python.md)은 들여쓰기로, [Javscript](./javascript.md)는 중괄호로 함수를 표현한다.
+[Python](./python.md)은 들여쓰기로, [Javascript](./javascript.md)는 중괄호로 함수를 표현한다.
 이렇게 언어마다 달라지는 부분을 표현하기 위해서 저마다 설정이 필요하다.
 
 파이썬에 맞는 text object를 제공하거나,

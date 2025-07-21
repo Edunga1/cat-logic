@@ -94,7 +94,7 @@ Homebrew로 맥에서 어플리케이션(패키지)을 설치하는 도구이다
 전자는 `brew cask install`로 설치하고, 후자는 `brew install`로 설치한다.
 
 `brew install wget`과 같이 사용하며, 이건 `wget`을 설치하는 명령어이다.
-`wget`를 Hoembrew에서는 `formula`라고 부른다:
+`wget`를 Homebrew에서는 `formula`라고 부른다:
 
 > Homebrew formulae are simple Ruby scripts
 
@@ -124,7 +124,7 @@ MySQL is configured to only allow connections from localhost by default
 
 패키지 출처 사이트, 패키지 버전, 의존성, 설치 시 주의사항 등이 포함되어 있다.
 
-패키지의 버저닝을 제공하지 않는다.
+패키지의 버전 관리를 제공하지 않는다.
 이전에는 `versions` 명령어로 이전 버전을 설치할 수 있었지만, 현재는 최신 버전만 제공한다.
 또는 `node@18` 과 같이 Homebrew에서 명시적으로 버전을 제공하는 경우만 설치할 수 있다.
 
@@ -190,9 +190,9 @@ $ brew cask install ngrok
 초록불이 들어오면서 `Remote Login: On`으로 변경된다.
 그리고 `Allow access for`에서 외부 연결에서 사용할 계정을 추가하거나 모두 허용하면 된다.
 
-### 2. `ngrok`을 이용하여 맥북(서버) forwading
+### 2. `ngrok`을 이용하여 맥북(서버) forwarding
 
-접속하려는 기기든 서버가 되는 맥북이든 공유기를 사용하여 Private Network 내에 있을 거 기 때문에,
+접속하려는 기기든 서버가 되는 맥북이든 공유기를 사용하여 Private Network 내에 있을 것이기 때문에,
 공인 IP를 가진 누군가를 통해서 연결해야 한다.
 
 처음 설치했다면, ngrok 서비스에 로그인이 필요할 수 있다.
@@ -255,7 +255,7 @@ brew install secretive
 맥북 프로의 경우 T1 칩에 Secure Enclave가 내장되어 있어, 2016년 이후에 출시된 T1, T2 칩을 제공하는 모델에서만 사용할 수 있다.
 자세한 동작 원리는 모르지만, 메인 프로세서와 격리된 메모리 영역에 데이터를 저장해서 더 안전하다고 한다.
 
-Secretive는 SSH Key를 Secure Encalve에 저장하는 앱이다.
+Secretive는 SSH Key를 Secure Enclave에 저장하는 앱이다.
 SSH Key는 앱에서 직접 생성해주는데, 비대칭 암호화 방식의 경우 ECDSA를 사용하고, **개인키는 Secure Enclave에 저장하면서 사용자에게 보여주지 않는다.**
 
 개인키를 보여주지 않는 특징과 함께 수정할 수도 없다.
