@@ -9,7 +9,7 @@ created: 2022-11-29
 
 ## 시작하기
 
-[IntelliJ IDEA](/docs/wiki/jetbrains.md#intellij)를 사용하는 것이 좋지만.
+[IntelliJ IDEA](/docs/wiki/jetbrains.md#intellij)를 사용하는 것이 좋지만,
 
 직접 컴파일하고 실행해 보려면 kotlin compiler를 설치해야 한다.
 OSX는 `brew install kotlin`으로 설치하면 간단.
@@ -73,7 +73,7 @@ context object의 상태로 계산하여 반환하고 싶으면 `let`이 적합�
 어느 scope function을 사용할 지는 [공식 문서](https://kotlinlang.org/docs/scope-functions.html#function-selection)에서 설명하고 있으니 참고하자.
 
 처음 kotlin을 접하는 개발자와 함께 일하면 scope function으로 리뷰가 많이 오간다.
-어떤 scope function을 사용하던 구현이 가능할 수 있는 경우가 많다보니 갑론을박이 이어진다.
+어떤 scope function을 사용하든 구현이 가능할 수 있는 경우가 많다보니 갑론을박이 이어진다.
 너무 목매지 않는 편이 현명한데, 세심한 개발자라면 올바른 scope function을 사용하는 것이 리뷰하는 입장에서 도움이 된다.
 
 예를들어 `let` 대신 `also`를 사용했다면, lambda에서 계산이 이루어지지 않는다는 것을 직관적으로 알 수 있다.
@@ -209,9 +209,9 @@ Kotest의 Style은 모두 Kotlin DSL로 구성되어 있어 직관적인 구조�
 IntelliJ 사용한다면 [플러그인](https://plugins.jetbrains.com/plugin/14080-kotest)은 반드시 설치하자.
 JUnit처럼 테스트 파일에서 테스트를 실행하거나, 테스트 레이아웃을 위한 별도 창을 제공한다.
 
-테스트 레이아웃이나 코틀린에 어울리는 코드 작성가 가능한 점은 장점이지만, **IDE 통합은 부족하다**.
+테스트 레이아웃이나 코틀린에 어울리는 코드 작성이 가능한 점은 장점이지만, **IDE 통합은 부족하다**.
 실패한 테스트를 클릭하면 해당 지점으로 이동하는 네비게이션이 작동하지 않는 경우가 많다.
-때문에 [고통 스럽다는 이슈](https://github.com/kotest/kotest-intellij-plugin/issues/367)도 있다.
+때문에 [고통스럽다는 이슈](https://github.com/kotest/kotest-intellij-plugin/issues/367)도 있다.
 
 [Kotest 플러그인](https://github.com/kotest/kotest-intellij-plugin)의 IDE 업데이트에 대한 지원도 부족하다.
 테스트 네비게이션이나, 특정 테스트만 실행하는 기능이 IDE 업데이트에 따라 동작하지 않는 문제가 빈번하게 발생한다.
@@ -475,7 +475,7 @@ https://kotlinlang.org/docs/type-safe-builders.html
 
 Type-safe 빌더는 비 선언적인 방법으로, 복잡한 계층의 데이터 구조를 만드는데 적합한 Kotlin DSL을 만들 수 있습니다.
 
-대표적인 예시인 [Kotr](https://ktor.io/docs/routing-in-ktor.html#define_route)의 route handler:
+대표적인 예시인 [Ktor](https://ktor.io/docs/routing-in-ktor.html#define_route)의 route handler:
 
 ```kotlin
 import io.ktor.server.routing.*

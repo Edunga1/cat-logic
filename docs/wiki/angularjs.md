@@ -55,12 +55,12 @@ function CustomerController() {
 
 https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y052
 
-멤버 변수 및 함수는 상단에 위치하여 바로 구분할 수 있도록한다:
+멤버 변수 및 함수는 상단에 위치하여 바로 구분할 수 있도록 한다:
 [Revealing Module Pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript)
 
 1. 이는 서비스가 사용 가능한 정보를 파악하는데 도움을 주고 유닛 테스트 대상이며 Mocking 할 수 있음을 의미한다.
 1. 구현 코드가 길어지더라도 스크롤을 내리지 않고 expose 된 기능 및 값을 한눈에 파악할 수 있다.
-1. 함수 설정을 쉽게 할 수 있다. 구현 세부사항을 return 아래로, 호출가능한 인터페이스를 위로 두면 읽기 쉽다.
+1. 함수 설정을 쉽게 할 수 있다. 구현 세부사항을 return 아래로, 호출 가능한 인터페이스를 위로 두면 읽기 쉽다.
 
 ```javascript
 /* avoid */
@@ -114,7 +114,7 @@ https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#data-ser
 XHR calls, local storage, stashing in memory 등으로 부터 데이터를 얻는 로직은 factory로 분리한다.
 
 1. 컨트롤러의 역할은 정보(데이터)를 모으고 뷰에 출력하는 것이므로 데이터 관리를 해선 안된다.
-2. 테스트 할 때 Mock 구성을 쉽게 만든다.
+2. 테스트할 때 Mock 구성을 쉽게 만든다.
 3. 데이터 저장소(server, local storage, memory)로부터 데이터 핸들링하는 코드가 더 명확해 진다.
     - http header를 포함하는 코드
     - `$http`와 같은 다른 서비스나 데이터와 커뮤니케이션 하는 코드
@@ -189,7 +189,7 @@ module.exports = function(config) {
 
 ## type hinting
 
-컨트롤러 내에서 `vm`(ViewModel)으로 뷰 모델을 관리 할 때 타입 힌팅을 제대로 얻을 수 없다.
+컨트롤러 내에서 `vm`(ViewModel)으로 뷰 모델을 관리 할 때 타입 힌트를 제대로 얻을 수 없다.
 
 ```javascript
 function controller() {

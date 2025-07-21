@@ -4,7 +4,7 @@ created: 2025-04-17
 # Model Context Protocol(MCP)
 
 2024년 11월에 [Anthropic에서 발표](https://www.anthropic.com/news/model-context-protocol)한 AI 모델과 AI가 사용하는 도구를 연결하는 프로토콜.
-AI도구가 많아지면서 난립하는 연동 방식을 정리하기 위해 고안되었다.
+AI 도구가 많아지면서 난립하는 연동 방식을 정리하기 위해 고안되었다.
 
 프로토콜이 고안되기 이전에는 function-calling, tool-calling 등 다양한 이름으로 ollama, phidata 등 AI toolkit에서 제공했다.
 
@@ -22,10 +22,10 @@ MCP 서버는 [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-serv
 
 VSCode에서 [playwright-mcp](/docs/wiki/playwright.md#playwright-mcp)를 사용하는 예시로,
 Copilot Chat을 통해 [Playwright](/docs/wiki/playwright.md)를 실행, 대화를 통해서 브라우저를 조작할 수 있다.
-예를들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘"라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘"같은 명령을 내릴 수 있다.
+예를들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘'라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘' 같은 명령을 내릴 수 있다.
 
 다만 한 응답에서 도구 사용 제한이 있는 것으로 보인다. JetBrains나 VSCode + GitHub Copilot Chat 모두에서 발생한 현상인데,
-URL 40개를 던져주고 확인하고 보고하라고 하면, 5개 정도만 확인하고 나머지는 어떻게든 무시한다.
+URL 40개를 던져주고 확인하고 보고하라고 하면 5개 정도만 확인하고 나머지는 어떻게든 무시한다.
 JetBrains AI는 6번째에 도구 사용 횟수에 제한이 있다고 말하며 응답을 종료하고, Copilot Chat은 도구 사용하지 않고 확인했다며 환각을 보인다.
 모델은 모두 Claude 3.7 Sonnet을 사용했다.
 
