@@ -337,20 +337,21 @@ Kotlin Mocking 라이브러리.
 
 https://github.com/mockk/mockk
 
-다음 검증 함수는 테스트를 위해 Mock 객체를 잘 사용했는지 확인한다:
+#### Stubbing 검증
 
-- `confirmVerified`는 모든 stubbing이 모두 검증(`verify()`) 되었는지 확인한다. 모두 검증하지 않으면 실패한다.
-- `checkUnnecessaryStub`는 모든 stubbing이 한 번 이상 사용되었는지 확인한다.
+다음 검증 함수는 기록(`every`)이 모두 검증(`verify`)했는지 검증한다. 일종의 메타 검증. \
+불필요한 stubbing은 테스트 코드를 복잡하게 만드는데, 이 함수들로 필요한 테스트 코드만 남길 수 있다.
 
-불필요한 stubbing은 테스트 코드를 복잡하게 만드는데,
-이런 검증 함수를 사용하면 불필요한 stubbing을 찾아내고, 명확한 테스트 코드를 작성할 수 있다.
+- `confirmVerified`는 모든 기록이 모두 검증(`verify()`) 되었는지 확인한다. 기록만하고 검증하지 않은 경우를 찾아낸다.
+- `checkUnnecessaryStub`는 모든 기록이 한 번 이상 사용되었는지 확인한다. 기록하고 사용하지 않은 것을 찾아낸다.
+
 전역 설정을 통해 before/after 시점에 검증하면 좋다.
 
-`clearAllMocks`를 before에, `confirmVerified`를 after에 넣어야 한다.
-둘 다 after 시점에 한다면 `confirmVerified`의 실패로 인해 `clearAllMocks`가 실행되지 않는다.
-이는 다음 테스트에 영향을 주는 문제가 발생한다.
+`clearAllMocks`를 before에, 검증 함수를 after에 실행하는 것이 좋다.
+둘 다 after 시점에 한다면 검증 함수의 실패로 인해 `clearAllMocks`가 실행되지 않는다.
+이것은 tearDown이 제대로 동작하지 않은 결과를 초래하므로, 다음 테스트에 영향을 준다.
 
-After의 실패가 Before에 영향을 주지 않기 때문에 다음과 같이 분리한다.
+다음과 같이 `clearAllMocks`를 before에, 검증 함수는 after에서 실행하자.
 
 ```kotlin
 // Better
@@ -371,22 +372,8 @@ private val AfterContainerListener = object : AfterContainerListener {
 }
 ```
 
-다음은 `checkUnnecessaryStub`의 실패로 인해 `clearAllMocks`가 실행되지 않는 문제가 있다.
-정상적인 테스트가 실패할 수 있어서 리포트 확인에 방해가 된다.
-
-```kotlin
-// Bad
-class ProjectConfig : AbstractProjectConfig() {
-    override fun extensions(): List<Extension> = listOf(BeforeContainerListener, AfterContainerListener)
-}
-
-private val AfterContainerListener = object : AfterContainerListener {
-    override suspend fun afterContainer(testCase: TestCase, result: TestResult) {
-        checkUnnecessaryStub()
-        clearAllMocks()
-    }
-}
-```
+`excludeRecords`는 `confirmVerified`의 검증에서 제외하는 함수다.
+전역적으로 stubbing을 기록하는 경우, 검증에서 제외하여 반복되는 검증을 피하는데 사용할 수 있다.
 
 ## Kotlin Language Server Protocol
 
