@@ -167,3 +167,8 @@ MCP 서버 개발자가 `.dxt` 파일을 만들어서 배포하면, 사용자는
 [anthropics/dxt](https://github.com/anthropics/dxt)는 DXT 파일을 쉽게 만들 수 있는 도구이다.
 `dxt init`으로 manifest를 생성하고, `dxt pack`으로 `.dxt` 파일을 생성한다.
 별도 빌드 프로세스는 없으므로, 개발 의존성을 제외한 상태에서 `dxt pack`을 실행하자.
+
+2025-07-23, 클라이언트가 MCP 서버를 제대로 호출하지 못하는 문제가 발생했다.
+[Reddit 에서도 같은 문제를 겪는 사용자들](https://www.reddit.com/r/ClaudeAI/comments/1m6zckh/local_mcp_servers_just_stopped_working/)이 많다.
+도구 호출 자체는 정상적이나, `arguments`를 전달하지 않는 문제다. 사용자의 승인 창에서는 전달한다고 보여주지만, 실제로는 전달하지 않는다.
+실행되지 않는 것과 별개로, 사용자가 보는 입력과 실제 입력이 다른 것은 문제가 될 여지가 있다.
