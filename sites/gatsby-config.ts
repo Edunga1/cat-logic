@@ -54,6 +54,9 @@ const config: GatsbyConfig = {
                       value
                     }
                     rawMarkdownBody
+                    fields {
+                      head
+                    }
                   }
                 }
               }
@@ -66,6 +69,7 @@ const config: GatsbyConfig = {
             name: node.name,
             title: node.childMarkdownRemark?.headings?.[0]?.value,
             rawMarkdownBody: node.childMarkdownRemark?.rawMarkdownBody,
+            head: node.childMarkdownRemark?.fields?.head,
           })),
       },
     },

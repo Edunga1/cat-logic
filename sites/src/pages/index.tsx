@@ -19,7 +19,7 @@ export default function IndexPage(
     } else {
       setItems(allItems)
     }
-  }, [query])
+  }, [query, result])
 
   return (
     <Home
@@ -67,7 +67,7 @@ export const pageQuery = graphql`
   }
 `
 interface SearchResult {
-  item: { name: string; title: string }
+  item: { name: string; title: string; head: string }
   refIndex: number
 }
 
@@ -76,7 +76,7 @@ function mapSearchResultToWikiItem(result: SearchResult[]): Wiki[] {
     .map(it => ({
       path: createWikiLink(it.item.name),
       title: it.item.title ?? "(Untitled)",
-      head: "",
+      head: it.item.head ?? "",
     }))
 }
 
