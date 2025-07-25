@@ -57,7 +57,7 @@ VSCode의 플러그인을 구현했다는 점이 재밌는데,
 그리고 vim은 확장하는데 다른 에디터보다 접근성이 좋다.
 간단하게는 .vimrc에 추가만 하면 된다.
 
-### toggleTerm 플러그인으로 내 손에 맞는 터미널 환경만들기
+### toggleTerm 플러그인으로 내 손에 맞는 터미널 환경 만들기
 
 Front-end 개발자 조성진님의 발표. 주로 [Typescript](./javascript.md)와 lua를 사용하신다고.
 
@@ -129,7 +129,7 @@ Hammerspoon 등에서 사용중이지만, Lua도 좀처럼 익숙해지지 않�
 (그래서 플랫폼에 종속되지 않는 방법으로 환경을 개선할 수 있었으면 한다.)
 
 vimwiki lsp를 만드는 과정은 chatgpt 도움을 받아서 구현하고, coc.nvim으로 vim과 연동하면 쉽겠다고 판단했다.\
-vimwiki lsp를 만들면 vim을 잘 모르더라도 사용할 수 있도록 환경을 만들 수 있을 거 같았다.
+vimwiki lsp를 만들면 vim을 잘 모르더라도 사용할 수 있도록 환경을 만들 수 있을 것 같았다.
 
 (vimwiki는 자체 제공하는 vimwiki 파일 타입과 markdown 파일 타입 모두 제공하는데) vimwiki와 markdown 링크의 간극이 있다.
 
@@ -142,7 +142,7 @@ LSP를 구현하는 간단한 [튜토리얼](https://www.toptal.com/javascript/l
 몇 가지 기능을 구현했는데, 자동 완성 기능은 문서 링크나 리소스 파일 경로를 자동 완성한다.
 잘못된 경로는 diagnostics 판단해 알려준다.
 
-또다른 기능은 문서 링크에서 문서 제목을 보여주는 기능이다.
+또 다른 기능은 문서 링크에서 문서 제목을 보여주는 기능이다.
 lsp diagnostics에 커서를 올리면 경고 문구를 보여주는 것처럼 문서 링크에 커서를 올리면 문서 제목을 파싱하여 보여준다.
 
 lsp를 구현하면서 좋았던 점은 플랫폼에 종속되지 않는 방법으로 구현했다는 점이다.
@@ -169,12 +169,12 @@ Neovim GUI 사용하는 편이 편리하다. Neovim-QT은 Neovim 설치하면 �
 Neovim-QT의 장점은 vim pane 크기 조절 등 마우스 인터랙션을 잘 지원한다.
 
 윈도우즈에서는 C 빌드가 필요한 플러그인 설치에 어려움이 있다. 기본적인 도구가 제공되지 않기 때문이다.
-developer command prompt for vs 2022 설치하면 빌드에 필요한 도구를 설치할 수 있따.
+developer command prompt for vs 2022 설치하면 빌드에 필요한 도구를 설치할 수 있다.
 telescope, treesitter 등 주요한 플러그인들이 C 빌드를 수행한다.
 
 UE는 개발 언어로 C++ 사용하므로 clang lsp 사용한다.
 
-UE의 프로젝트는 모듈 단위로 dll 생성하여 링크한다. 모듈마다 필요한 dependency 목록을 괸리한다.
+UE의 프로젝트는 모듈 단위로 dll 생성하여 링크한다. 모듈마다 필요한 dependency 목록을 관리한다.
 
 UE에서 자동으로 생성하는 소스 코드와 PS, xbox 등 게임 플랫폼마다 달라지는 매크로들을 빌드해서 생성해야 한다.
 
