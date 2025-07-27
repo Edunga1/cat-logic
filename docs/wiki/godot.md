@@ -185,6 +185,24 @@ godot.exe는 윈도우 앱 기반이라 그런지, Godot 엔진이 시작되고 
 이 [godot-ci](https://github.com/yet-another-lucas/plumbing-adventure/blob/main/.github/workflows/ci.yml) workflow를 사용한 프로젝트는 관련된 설정은 보이지 않지만, 웹에서 잘 동작한다.
 아마도 Base Workflows에서 이미 설정되어 있는 듯.
 
+## Godot MCP Server
+
+고도 프로젝트를 에디터로 열거나 프로젝트를 실행 등 기능을 지원하는 [MCP 서버](/docs/wiki/model-context-protocol.md).
+
+https://github.com/Coding-Solo/godot-mcp
+
+설치는 프로젝트를 clone, `npm install`, `npm run build`를 통해 완료한다.
+
+MCP를 통해 프로젝트를 실행하면, 종료할 때, 에러 등 로그를 출력하는데 이 것을 AI가 확인하고 수정해주기 때문에 유용하다.
+그러니 직접 프로젝트를 실행하는 대신 MCP를 통해서 실행하자.
+
+gemini-2.5 pro 모델로 개발을 진행했는데, tscn, 스크립트, 파일 경로 수정 등 모두 잘 처리했다.
+물론 한 번에 되지는 않고, 실행하고 종료를 통해 에러 로그를 확인을 반복했는데, 이 과정이 사용자의 개입이 필요하다.
+실시간 로그를 확인할 수 있다면 완전 자동화가 가능할지도. pro와 도구의 조합이 만족스럽다.
+
+[GitHub](/docs/wiki/github.md) MCP 서버를 설정해놓고, Project에 이슈를 등록, "11번 이슈 처리해줘"와 같이 요청했다.
+그러면 알아서 이슈 정보를 확인하고, 필요한 파일을 수정한다. 커밋까지 `Closes #11`을 추가하라고 하면 거의 자동화가 된다.
+
 ## 참고
 
 ### Node간 커뮤니케이션 방법
