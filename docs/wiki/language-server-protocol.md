@@ -25,8 +25,11 @@ vim에서는 [coc.nvim](https://github.com/neoclide/coc.nvim) 또는 [nvim 내�
 
 ## 역사
 
-생각보다 오래되지 않았다. Microsoft가 [Visual Studio Code](https://code.visualstudio.com/)를 위해서 만들었다[^1].
-VSCode가 2015년에 첫 릴리즈가 나왔다고 하니 지금 2023년 기준 8년이 된다.
+생각보다 오래되지 않았다.
+그러니까, vim을 포함해서 에디터 생태계가 스트레스로부터 자유로워진 지 얼마 되지 않았다.
+
+Microsoft가 [Visual Studio Code](https://code.visualstudio.com/)를 위해서 만들었다[^1].
+VSCode가 2015년에 첫 릴리즈가 나왔다고 하니 2025년 지금 10주년을 맞이한다.
 최초 발표 후 짧은 시간에 널리 퍼졌다. 이제 언어 지원을 하는 도구는 대부분 LSP를 사용한다.
 
 [^1]: LSP was originally developed for Microsoft Visual Studio Code and is now an open standard. [Wikipedia](https://en.wikipedia.org/wiki/Language_Server_Protocol)
