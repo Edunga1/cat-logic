@@ -20,7 +20,13 @@ const Container = styled.div`
   }
   h2 {
     &:not(:first-of-type) {
-    margin-top: 5rem;
+      margin-top: 5rem;
+    }
+  }
+
+  // text style
+  p {
+    line-height: 1.6;
   }
 
   // link style
