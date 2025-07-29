@@ -95,16 +95,20 @@ function extractDocTitle(data: Queries.WikiDetailQuery) {
   return headings?.[0]?.value || undefined
 }
 
-function extractRelatedDocs(data: Queries.WikiDetailQuery): {
+function extractRelatedDocs(
+  data: Queries.WikiDetailQuery,
+  threshold = 0.46,
+  count = 7,
+): {
   slug: string,
   title: string,
   similarity: number,
 }[] {
   const relatedDocs = data.file?.childMarkdownRemark?.fields?.relatedDocs || []
   const mostSimilarDocs = relatedDocs
-    .filter(x => x.similarity < 1)
+    .filter(x => x.similarity < 1 && x.similarity >= threshold)
     .sort((a, b) => b.similarity - a.similarity)
-    .slice(0, 5)
+    .slice(0, count)
   return mostSimilarDocs.map(x => ({
     slug: x.slug,
     title: getDocTitle(x.slug, data),
