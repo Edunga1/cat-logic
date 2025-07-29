@@ -173,3 +173,9 @@ MCP 서버 개발자가 `.dxt` 파일을 만들어서 배포하면, 사용자는
 도구 호출 자체는 정상적이나, `arguments`를 전달하지 않는 문제다. 사용자의 승인 창에서는 전달한다고 보여주지만, 실제로는 전달하지 않는다.
 실행되지 않는 것과 별개로, 사용자가 보는 입력과 실제 입력이 다른 것은 문제가 될 여지가 있다. \n
 이 이슈는 [Anthropic의 Status 페이지](https://status.anthropic.com/incidents/1874wdtlmhwt)에 기록되어 있다.
+
+## 연관 문서
+
+- [2024-11-26 Anthropic, Model Context Protocol 오픈소스로 공개](https://news.hada.io/topic?id=17951)
+- [2025-06-29 MCP: (우연한) 범용 플러그인 시스템 (worksonmymachine.substack.com)](https://news.hada.io/topic?id=21706)
+    - MCP를 AI 도구의 프로토콜로 제한하는 것이 아니라, 범용 플러그인 시스템으로 확장할 수 있는 가능성을 제시한다.
