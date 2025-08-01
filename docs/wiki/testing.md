@@ -107,7 +107,7 @@ end
 
 ## 테스트 코드 작성
 
-### 통합 테스트에서도 mocking하면 편리하다.
+### 통합 테스트에서 Mocking
 
 spring framework 환경에서 이야기다. django는 pytest의 fixture를 사용하면 편했다.
 
@@ -164,15 +164,9 @@ class TestProductClientConfig {
 }
 ```
 
-mocking 방식 사용하기 전에는 위와같이 테스트용 클라이언트를 만들어서 주입하고,
-통합 테스트 클래스에서 **테스트용 클라이언트**를 주입받아서 운영 코드에서 반환받을 데이터를 넣어주는 형태로 사용했다.
-
-이 방법은 불편한 부분이 있었는데, 필요한 메서드마다 데이터를 넣는 메서드`put~`의 구현이 필요하고,
-Repository의 `deleteAll`과 같이 데이터를 제거하는 메서드`clearTestData`를 만들 필요가 있었다는 점이다.
-
-유닛 테스트에서도 마찬가지로 mockito나 mockk를 사용하지 않는다면 이런 불편함이 있을 것이다.
-
-그래서 통합테스트에서도 mock 객체를 주입하였다.
+위 코드는 테스트용 클라이언트를 구현하는 방법이다.
+이 방법은 불편한 부분이 있었는데, 테스트 데이터를 주입하는 `putProduct`와 같은 메서드를 구현해야 한다는 점이다.
+그러면 마찬가지로 `clearTestData`와 같은 Teardown 메서드도 구현해야 한다.
 
 ```kotlin
 @SpringBootTest
@@ -223,10 +217,44 @@ class TestProductClientConfig {
 
 위 코드처럼 변경함으로써 편리한 부분이 있었다:
 
-- `relaxed=true`로 한 이유는 `null` 반환하는 메서드인 경우 굳이 mocking 하지 않아도 되서 편하기 때문이다. 더 제한하고 싶다면 사용하지 않아도 좋아 보인다.
-- 호출 검증(mockk `verify {}`)도 가능해져서, 불필요하게 마지막 호출 정보를 `StaticProductClient`에 저장한다거나 할 필요가 없다.
-- `clearTestData` 구현하는 대신 mock 라이브러리의 초기화 함수`clearAllMocks()`를 사용할 수 있다.
-- 테스트마다 초기화함수 호출하지 않고, global tear down hook에서 초기화 함수를 호출하면 편하다.
+- `relaxed=true`로 한 이유는 반환을 확인하지 않는 경우, 굳이 mocking하지 않아도 된다. 호출 검증은 해야겠지만.
+- 호출 검증(mockk `verify {}`)으로 쉽게 검증할 수 있다.
+- `clearTestData` 구현하는 대신 mock 라이브러리의 초기화 함수`clearAllMocks()`로 Teardown을 할 수 있다.
+
+### Creation Method
+
+테스트 객체를 생성하는 메서드.
+
+[xUnit Patterns](http://xunitpatterns.com/Creation%20Method.html)에서 다룬다.
+
+> While it is possible (and often very desirable) to have Creation Methods that take no parameters whatsoever, many tests will require some customization of the created object. A [Parameterized Creation Method](http://xunitpatterns.com/Creation%20Method.html#Parameterized%20Creation%20Method) allows the test to pass in some attributes to be used in the creation of the object but we should pass only those attributes that are expected to affect (or those we want to demonstrate do not affect) the test's outcome as otherwise we could be headed down the slippery slope to [Obscure Tests](http://xunitpatterns.com/Obscure%20Test.html).
+
+생성 함수(Creation Method)는 파라미터를 받지 않는 것이 좋다. \
+파라미터를 받아야 하는 경우에는 테스트 결과에 영향을 주는 것만 전달해야 한다. \
+그렇지 않으면 테스트가 모호해지는 Obscure Test로 이어질 수 있다.
+
+복잡한 데이터 구조를 가지는 경우, 파라미터를 전달하면 보통 모호성이 발생한다.
+예를들어 `new Person("John", "Doe", 30, "New York")`와 같이 전달한다면, 30이라는 것이 나이를 의미하는지, 다른 의미인지 구현을 보지 않으면 알 수 없다.
+
+`foo.reserve(): Boolean`과 같은 메서드가 있을 때, 테스트에서 반복되어 별개 함수로 분리할 수 있다.
+이 경우에도 생성 함수와 비슷한 문제를 가지는데, `true/false`를 반환하도록 파라미터로 전달하는 버전과 각각 구분하여 반환하는 버전을 만들 수 있다.
+
+```kotlin
+// parameterized creation method
+fun givenFooReserveReturns(value: Boolean) {
+  every { foo.reserve() } returns value
+}
+
+// non-parameterized creation method
+fun givenFooSuccessfullyReserves() {
+  every { foo.reserve() } returns true
+}
+fun givenFooFailsToReserve() {
+  every { foo.reserve() } returns false
+}
+```
+
+코드가 더 많겠지만, 그래도 non-parameterized creation method 버전이 테스트에서는 보기 더 명확하다.
 
 ## A/B Test
 
