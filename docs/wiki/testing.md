@@ -348,6 +348,9 @@ mystery guest: 테스트를 읽는 사람이 Fixture와 Verification 로직이 �
 
 ## 참고 자료
 
+- [xUnit Test Patterns](http://xunitpatterns.com/)
+    - 라이센스가 괜찮은지, [e-book](https://github.com/zhenguoli/software-development-ebooks-1/blob/master/%5BxUnit%20Test%20Patterns%20Refactoring%20Test%20Code%20(Addison-Wesley%20Signature%20Series%20(Fowler))%20Kindle%20Edition%20by%20Gerard%20Meszaros%20-%202007%5D.pdf)이 업로드되어 있다.
+
 ### systemd
 
 [systemd](/docs/wiki/linux.md#systemd)는 fuzzing을 이용한 유닛테스트와 qemu 또는 systemd-nspawn 이용한 통합테스트를 사용한다.
