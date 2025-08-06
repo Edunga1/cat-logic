@@ -435,3 +435,12 @@ Incognito 모드 창이나 다른 프로필 창이 필요해서 여러개의 크
 브라우저를 선택할 수 있도록 하는 무료 앱인 [browserosaurus](https://github.com/will-stone/browserosaurus)는 크롬 프로필은 지원하지 않는다.
 프로젝트의 [이슈 #56](https://github.com/will-stone/browserosaurus/issues/56)을 보면, 프로필 선택을 지원하려다가 최종 미지원하는 것으로 최종 결정되었다.
 어쟀든 browserosaurus는 맥의 기본 브라우저를 browserosaurus로 변경하면 링크를 열 때 선택할 수 창이 뜨는 아이디어로 동작한다.
+
+## Hammerspoon
+
+Hammerspoon은 Lua 스크립트로 맥OS를 자동화하는 도구이다.
+
+- https://www.hammerspoon.org
+- https://github.com/Hammerspoon/hammerspoon
+
+<!-- TBD -->
