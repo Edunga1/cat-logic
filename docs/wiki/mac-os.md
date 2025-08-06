@@ -453,6 +453,7 @@ Spoon은 Lua 스크립트로 구성되어 있으며, Hammerspoon의 `~/.hammersp
 
 ![MiroWindowsManager Example](https://github.com/miromannino/miro-windows-manager/raw/imgs/example.gif)
 
+`Spoons` 폴더에 `MiroWindowsManager.spoon` 다운로드 받아 폴더째 넣는다.
 `init.lua`에 아래와 같이 키 바인딩을 설정하여 사용할 수 있다.
 
 ```lua
