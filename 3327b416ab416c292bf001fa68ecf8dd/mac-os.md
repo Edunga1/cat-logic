@@ -443,4 +443,27 @@ Hammerspoon은 Lua 스크립트로 맥OS를 자동화하는 도구이다.
 - https://www.hammerspoon.org
 - https://github.com/Hammerspoon/hammerspoon
 
-<!-- TBD -->
+`brew install hammerspoon`으로 설치하자.
+
+모듈 단위를 Spoon이라고 부른다.
+[Spoons 페이지](https://www.hammerspoon.org/Spoons/)에서 만들어진 Spoon을 찾아볼 수 있다.
+Spoon은 Lua 스크립트로 구성되어 있으며, Hammerspoon의 `~/.hammerspoon/Spoons` 폴더에 두고, `~/.hammerspoon/init.lua`에서 불러와 사용할 수 있다.
+
+[MiroWindowsManager](https://www.hammerspoon.org/Spoons/MiroWindowsManager.html)는 내가 자주 사용하는 Spoon인데, 이것으로 설정 예시를 보자. 윈도우에 내장된 Win + 방향키의 기능을 제공하는 Spoon이다.
+
+![MiroWindowsManager Example](https://github.com/miromannino/miro-windows-manager/raw/imgs/example.gif)
+
+`init.lua`에 아래와 같이 키 바인딩을 설정하여 사용할 수 있다.
+
+```lua
+local hyper = {'ctrl', 'shift'}
+hs.loadSpoon('MiroWindowsManager')
+spoon.MiroWindowsManager:bindHotkeys({
+  up = {hyper, 'up'},
+  right = {hyper, 'right'},
+  down = {hyper, 'down'},
+  left = {hyper, 'left'},
+  fullscreen = {hyper, 'f'},
+  nextscreen = {hyper, 'n'}
+})
+```
