@@ -358,7 +358,7 @@ HTML 태그의 경우 `<div>`에서 사용하면 `</div>`로 이동한다.
 [matchit.zip](https://github.com/vim-scripts/matchit.zip/)이라는 플러그인으로 제공되기도 했다.
 내 경우 다른 사람이 사용하던 `.vimrc`로 시작했는데, matchit.zip이 포함되어 있었다.
 
-### 터미널 에뮬레이터
+### 터미널
 
 vim에서 터미널을 실행할 수 있다. `:terminal` 명령어로 실행하면 `Terminal-mode`로 전환한다.
 
@@ -538,6 +538,13 @@ HTML 또는 XML 태그를 선택한다.
 
 [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)는
 언어마다 표현 방식이 다른 함수, 변수, 클래스 등 다양한 텍스트 오브젝트를 일반화하여 제공하는 플러그인이다.
+
+## AI Integration
+
+주 사용 AI 플러그인.
+
+- copilot.vim
+- CopilotChat.nvim
 
 ## Plugin 만들기
 
