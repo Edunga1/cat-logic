@@ -68,7 +68,7 @@ Linux, MacOS 모두 지원한다.
 
 > Container runtimes on macOS (and Linux) with minimal setup
 
-MacOs는 homebrew로 쉽게 설치할 수 있다: `brew install colima`
+[Homebrew](/docs/wiki/mac-os.md#homebrew-맥용-패키지-관리자)로 쉽게 설치할 수 있다: `brew install colima`
 
 [아직 WSL2를 지원하지 않으니](https://github.com/abiosoft/colima/issues/434) 주의.
 [Lima](https://github.com/lima-vm/)라는 가상머신 지원 도구를 사용하는데, 아직 윈도우를 지원하지 않아서 colima도 제공할 수 없다는 듯. 조만간 WSL도 제공할 수 있을 거 같다고 하니 기다려 보자.
@@ -80,7 +80,12 @@ GUI를 제공하지 않지만 Docker Desktop이나 Rancher Desktop에서도 GUI�
 다만 기본으로 memory가 2GiB로 설정되는데 이는 특정 도커 이미지를 사용할 때 예기치 않은 문제를 일으킬 수 있다.
 내 경우 메모리 문제로 [airflow 컨테이너](https://github.com/marclamberti/docker-airflow/blob/main/docker-compose.yml)가 시작하자마자 죽는 문제가 있었다.
 
-`colima start --memory 8 --cpu 4` 와 같이 `--memory`, `--cpu` 옵션으로 메모리와 CPU를 늘릴 수 있다.
+가상 환경의 리소스를 늘리려면 시작 시 인자로 넘긴다.  `colima start --memory 8 --cpu 4`
+
+- `--memory`: 메모리 크기, GiB 단위로 지정
+- `--cpu`: CPU 코어 수, 기본값은 2
+- `--disk`: 디스크 크기, GiB 단위로 지정, 기본값은 60GiB
+    - Docker 컨테이너 에러로 `no space left on device`가 발생한다면 디스크 크기를 늘려보자.
 
 현재 자원 할당 상태를 보려면 `colima status -e`를 입력하자.
 
