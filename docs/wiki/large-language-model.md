@@ -5,6 +5,27 @@ created: 2024-02-29
 
 인공 신경망으로 구성된 대규모 언어 모델을 말한다.
 
+## Open Models
+
+### gpt-oss
+
+OpenAI의 오픈 소스 모델.
+[2025년 8월 5일](https://openai.com/index/introducing-gpt-oss/)에 공개하였다.
+
+파라미터 수에 따라 20b, 120b 모델이 있다.
+
+Hugging Face [openai/gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b)에 공개하였다.
+
+[Ollama](https://ollama.com/library/gpt-oss)로 사용할 수 있다.
+
+```bash
+ollama pull gpt-oss:20b
+ollama run gpt-oss:20b
+```
+
+b20 기준으로도 파인튜닝 하지 않은 모델 그대로 사용해도 한국어 답변을 잘한다.
+다른 오픈 모델은 한자나 다른 외국어가 섞여있는 경우가 있었다.
+
 ## AI Assistant 제작 도구
 
 로컬 환경에서 LLM을 사용할 수 있도록 도와주는 도구들이 있다.
