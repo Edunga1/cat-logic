@@ -133,6 +133,18 @@ https://openai.com/o1/
 
 o1은 15점 중 13.9점을 받았고, GPT-4o는 1.8점을 받았다.
 
+### GPT-5
+
+2025년 8월 5일 공개된 OpenAI의 새로운 모델. GPT-5.
+
+https://openai.com/index/introducing-gpt-5/
+
+> GPT‑5 is significantly less likely to hallucinate than our previous models.
+
+이전 모델에서 만연했던 환각 문제를 크게 개선했다고 한다.
+
+사용자 평은 썩 좋지 않은데, 모델 라우팅 이슈가 있었다고 하니 좀 더 지켜봐야 할 듯.
+
 ### "나를 그려줘" 챌린지
 
 2024년 10월 즈음에 시작된 챌린지로 보이는, ChatGPT-4o를 이용한 챌린지.
