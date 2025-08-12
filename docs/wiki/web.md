@@ -310,3 +310,32 @@ text input에 입력하면 입력한 이름을 화면에 출력하고, 풍선을
 코드의 `:rainbow[]`와 같이 streamlit에서 제공하는 별도 문법이 있다.
 이외에도 위젯, 레이아웃, 차트 등을 제공한다.
 저장소에서 소개 `A faster way to build and share data apps.` 하는 것처럼 Data 앱을 만드는데 특화되어 있다.
+
+### Litestar
+
+Litestar는 파이썬 서버 웹 프레임워크다.
+
+https://github.com/litestar-org/litestar
+
+`pip install litestar` 또는 `pip install litestar[standard]`로 cli, uvicorn을 포함하여 설치한다.
+
+핸들러의 시그니처를 기반으로 OpenAPI 스키마를 지동으로 생성한다.
+아래 코드와 같이 `dataclass`를 사용하여 응답 타입을 정의할 수 있다.
+
+```python
+# app.py
+from dataclasses import dataclass
+from litestar import Litestar, get
+
+@dataclass
+class Response:
+    hello: str
+
+@get("/")
+async def hello_world() -> Response:
+    return Response(hello="Hello, World!")
+
+app = Litestar(route_handlers=[hello_world])
+```
+
+`litestar run`으로 `app.py`를 실행한다.
