@@ -1598,6 +1598,23 @@ https://notebooklm.google.com/
 >
 > 는 정말 멋진 말이네요.
 
+llama.cpp나 [Ollama](/docs/wiki/ollama.md)로 모델을 추론할 수 있다.
+이쪽 분야에 문외하다보니, 어떤 에코시스템을 이루고 있는지 잘 모르겠다.
+하지만 다운받고 사용하는 과정에서 알게되는 정보들을 조금씩 정리한다.
+
+### 에코시스템
+
+llama.cpp는 GGUF 포맷을 사용한다.
+하지만 OpenAI의 오픈 모델인 [openai/gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b)를 보면 `.gguf` 확장자는 찾을 수 없다.
+대신 `.safetensors` 확장자를 가진 파일 몇 개와 설정 관리로 보이는 파일로 이루어진 것을 볼 수 있다.
+후자는 좀 더 raw한 형태인데, 이처럼 GGUF 포맷이 아닌 모델을 Hugging Face 모델이라 부르는 듯.
+llama.cpp는 GGUF 포맷으로 변환하기 위한 스크립트 이름을 [convert_hf_to_gguf](https://github.com/ggml-org/llama.cpp/blob/07aa869a91837d95fcb5612c65a188763ac38647/convert_hf_to_gguf.py)로 이름지은 것에서 알 수 있다.
+
+HF 모델을 GGUF 포맷으로 변환하는데 리소스가 소모되기 때문에,
+HuggingFace에는 기존 모델을 GGUF 포맷으로 변환하여 올려놓기도 한다.
+이러한 모델은 `-GGUF` 접미사를 붙여서 구분하는 문화가 있는 듯.
+gpt-oss-20b의 경우에는 [ggml-org/gpt-oss-20b-GGUF](https://huggingface.co/ggml-org/gpt-oss-20b-GGUF)가 있는데, ggml.org는 `-GGUF` 모델이 많이 올라와 있다.
+
 ## 교육 자료
 
 ### Pretraining LLMs
