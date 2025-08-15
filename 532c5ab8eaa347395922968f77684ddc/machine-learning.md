@@ -1583,6 +1583,21 @@ https://notebooklm.google.com/
 무료 버전은 하루에 제한량이 매우 적은편이다.
 3개 정도 음성 요약했더니 일일 제한량을 초과했다.
 
+### ComfyUI
+
+Diffusion 모델을 GUI로 사용할 수 있는 플랫폼.
+
+https://github.com/comfyanonymous/ComfyUI
+
+Windows 포터블 버전이 릴리즈 페이지에서 제공된다.
+실행하면 웹 UI가 제공되는 형태.
+
+용량은 의존성이 포함되어 있어서 거의 2기가 정도로 크다.
+압축 해제하면 훨씬 증가한다.
+
+모델 위치는 `ComfyUI/models` 폴더에 넣으면 된다.
+`.safetensors`를 `CompfyUI/models/checkpoints`에 넣는다.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
