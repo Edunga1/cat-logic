@@ -28,6 +28,16 @@ b20 기준으로도 파인튜닝 하지 않은 모델 그대로 사용해도 한
 
 웹 브라우징, 정의된 스키마에 맞춘 함수 호출, 브라우저 작업 같은 에이전트 작업을 [잘 한다고](https://huggingface.co/openai/gpt-oss-20b#tool-use) 한다.
 
+### Wan 2.2
+
+Alibaba에서 공개한 영상 생성 오픈 모델이다.
+
+https://huggingface.co/Wan-AI/models?search=wan2.2
+
+파라미터 수에 따라 5b, 14b가 있고 Text-to-Video, Image-to-Vieo, Text-and-Image-to-Video 모델이 있다.
+
+[ComfyUI](/docs/wiki/machine-learning.md#comfyui)에서 쉽게 사용할 수 있다.
+
 ## AI Assistant 제작 도구
 
 로컬 환경에서 LLM을 사용할 수 있도록 도와주는 도구들이 있다.
