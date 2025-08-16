@@ -1592,11 +1592,24 @@ https://github.com/comfyanonymous/ComfyUI
 Windows 포터블 버전이 릴리즈 페이지에서 제공된다.
 실행하면 웹 UI가 제공되는 형태.
 
-용량은 의존성이 포함되어 있어서 거의 2기가 정도로 크다.
-압축 해제하면 훨씬 증가한다.
+![ComfyUI Wan2.2](./res/comfyui-wan22.png)
 
-모델 위치는 `ComfyUI/models` 폴더에 넣으면 된다.
-`.safetensors`를 `CompfyUI/models/checkpoints`에 넣는다.
+ComfyUI와 Workflow 있으면, Hugging Face에 올라와 있는 공개 모델을 아주 쉽게 사용할 수 있다.
+Workflow는 ComfyUI에서 모델을 실행하기 위한 설정 파일이다.
+UI를 통해 모델을 다운로드 받기 때문에, 준비물은 워크플로우만 있으면 된다.
+
+#### Wan2.2 사용해보기
+
+ComfyUI의 [공식 가이드](https://docs.comfy.org/tutorials/video/wan/wan2_2)를
+참고하여 [Wan2.2](/docs/wiki/large-language-model.md#wan-22)를 사용해 보았다.
+다 읽을 필요도 없이, 워크플로우만 다운로드 받아서 ComfyUI에서 불러오면 된다.
+그러면 필요한 모델을 받을 수 있도록 안내한다.
+
+환경은 RTX 2060 Super, 8GB VRAM이다.
+ti2v-5b 모델을 사용했는데, 가이드에 따르면 [5b 모델이 VRAM 8GB에 적합](https://docs.comfy.org/tutorials/video/wan/wan2_2#wan2-2-ti2v-5b-hybrid-version-workflow-example)하다고 한다.
+
+기본 설정으로는 거의 3시간 이상 소요된다.
+steps를 줄이면 품질이 매우 떨어지는 것을 확인했다.
 
 ## Hugging Face
 
