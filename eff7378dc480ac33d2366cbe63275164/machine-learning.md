@@ -1376,6 +1376,16 @@ MCP 서버를 붙일 수 있다.
 
 콘솔 에러 지점에 마우스를 올리면 아이콘이 나타나고, 누르면 실시간 해석이 시작된다.
 
+### llama.cpp
+
+LLM 추론 라이브러리.
+
+https://github.com/ggml-org/llama.cpp
+
+양자화를 통해 모델 크기를 줄여서 PC에서도 실행할 수 있게 해준다.
+
+`brew install llama.cpp`로 설치. `llama-`로 시작하는 명령어가 꽤 많다.
+
 ### llamafile
 
 https://github.com/Mozilla-Ocho/llamafile?tab=readme-ov-file
