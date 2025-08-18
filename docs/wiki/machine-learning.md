@@ -1386,6 +1386,17 @@ https://github.com/ggml-org/llama.cpp
 
 `brew install llama.cpp`로 설치. `llama-`로 시작하는 명령어가 꽤 많다.
 
+#### llama-cli
+
+`llama-cli`는 모델을 실행하는 명령어다.
+`.gguf` 확장자를 가진 모델 파일을 사용하는데, HuggingFace URL을 전달하여 다운로드할 수도 있다.
+
+- `llama-cli -m name.gguf`
+- `llama-cli -hf https://huggingface.co/username/modelname`
+
+URL을 통해서 모델을 다운로드하면, 모델 실행 시 경로가 표기된다.
+내 경우는 `~/Library/Caches/llama.cpp/` 경로에 다운로드되었다.
+
 ### llamafile
 
 https://github.com/Mozilla-Ocho/llamafile?tab=readme-ov-file
