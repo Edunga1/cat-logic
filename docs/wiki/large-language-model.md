@@ -28,6 +28,10 @@ b20 기준으로도 파인튜닝 하지 않은 모델 그대로 사용해도 한
 
 웹 브라우징, 정의된 스키마에 맞춘 함수 호출, 브라우저 작업 같은 에이전트 작업을 [잘 한다고](https://huggingface.co/openai/gpt-oss-20b#tool-use) 한다.
 
+[agno](/docs/wiki/phidata.md)로 function calling을 요청하면 잘 사용한다!
+문제는 input context 크기가 작아서 웹페이지의 응답을 처리할 수 없는 점.
+많은 모델을 사용하진 않았지만 로컬 모델에서 function calling을 처리하는 모델은 gpt-oss가 처음이다.
+
 ### Wan 2.2
 
 Alibaba에서 공개한 영상 생성 오픈 모델이다.

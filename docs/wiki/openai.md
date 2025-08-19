@@ -145,10 +145,6 @@ https://openai.com/index/introducing-gpt-5/
 
 사용자 평은 썩 좋지 않은데, 모델 라우팅 이슈가 있었다고 하니 좀 더 지켜봐야 할 듯.
 
-## gpt-oss
-
-2025년 8월 5일에 공개된 OpenAI의 오픈 소스 모델. [문서](/docs/wiki/large-language-model.md#gpt-oss) 참조.
-
 ### "나를 그려줘" 챌린지
 
 2024년 10월 즈음에 시작된 챌린지로 보이는, ChatGPT-4o를 이용한 챌린지.
@@ -168,3 +164,7 @@ ChatGPT와 대화하다보면 "Memory Updated"라는 메시지가 출력되는�
 Vim과 Kotllin 단어가 들어간 그림이다.
 
 ![chatgpt drawing me challenge](./res/chatgpt-4o-drawing-me-challenge.png)
+
+## gpt-oss
+
+2025년 8월 5일에 공개된 OpenAI의 오픈 소스 모델. [문서](/docs/wiki/large-language-model.md#gpt-oss) 참조.
