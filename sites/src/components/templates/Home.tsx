@@ -14,7 +14,7 @@ const Counter = styled.div`
 const SearchBoxContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   margin-bottom: 1rem;
 
   > div > :first-child {
