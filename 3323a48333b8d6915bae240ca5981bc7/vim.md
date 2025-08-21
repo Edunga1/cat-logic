@@ -114,7 +114,7 @@ lua init 파일에서 다음과 같이 설정한다:
 -- none-ls 설정은 생략
 require("mason").setup()
 require("mason-lspconfig").setup()
-require'lspconfig'.tsserver.setup{}
+vim.lsp.enable("ts_ls")
 ```
 
 Language Server를 설치한다: `:MasonInstall typescript-language-server`\
