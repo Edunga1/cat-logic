@@ -204,6 +204,17 @@ nnoremap <c-p> :call fzf#vim#gitfiles('', {'dir': getcwd()})<CR>
 nvim의 diagnostic 또는 hover(<s-k>)는 팝업 창을 띄운다.
 커서를 옮기면 팝업 창이 사라지는데, 팝업 안으로 커서를 이동하려면 `<c-w>w`를 사용한다.(`:h CTRL-W_w`)
 
+### 아웃라인 네비게이션
+
+`gO`는 현재 파일의 아웃라인을 보여준다.
+일반적으로 목차(table of contents) 용도.
+아웃 라인에서 선택하면 해당 위치로 커서를 이동한다.
+
+파일 별 구현에 따른다.
+특히, vim 메뉴얼(`:help`)에서 `gO`를 사용하면 긴 메뉴얼을 빠르게 탐색할 수 있다.
+
+lsp는 `vim.lsp.buf.document_symbol()`를 실행한다.
+
 ## 내장 기능
 
 ### 플러그인 시스템
