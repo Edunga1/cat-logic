@@ -7,6 +7,8 @@ Terminal Multiplexer. 여러개의 창을 하나의 터미널에서 관리할 �
 
 https://github.com/tmux/tmux
 
+`brew install tmux`로 설치하자.
+
 **Preview:**
 
 ```bash
@@ -28,7 +30,7 @@ README.md docs      sites
 하단의 `1 editor`, `2 cli`, `3 serv`는 각각 창(Window)을 나타낸다.
 
 새로운 프로젝트가 아닌 이상 `tmux` 명령어를 잘 사용하지 않는다.
-기존 프로젝트는 `tmuxinator`로 파일로 관리하여 window 설정을 자동화하는 편이다.
+Tmuxinator로 설정을 파일로 관리하고, `tmuxinator` 명령어로 실행한다.
 
 ## 특징
 
@@ -51,7 +53,7 @@ set -g prefix C-a
 
 ## Tmuxinator
 
-tmux 설정을 파일로 관리하는 도구.
+tmux 설정을 yaml로 관리하는 도구.
 
 https://github.com/tmuxinator/tmuxinator
 
@@ -102,7 +104,7 @@ start 시 설정 이름을 지정하면 `~/.config/tmuxinator/`에서 `name`을 
 
 주로, 각 프로젝트마다 `.tmuxinator.yml` 파일을 생성하는 지역적으로 사용한다.
 
-`.git/info/exclude`에 `.tmuxinator.yml`을 추가하여 코드베이스에는 포함하지 않을 수 있다.
+`.git/info/exclude`에 `.tmuxinator.yml`을 추가하면 코드베이스에는 포함하지 않을 수 있다.
 
 다음은 에디터와 터미널 용 창을 생성하는 템플릿이다.
 
