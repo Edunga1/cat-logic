@@ -25,6 +25,11 @@ Scene 파일인 `.tscn`은 사람이 읽을 수 있는 형태로 저장된다.
 
 CLI에 대한 정보는: https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html
 
+[LSP](/docs/wiki/language-server-protocol.md)를 Godot 에디터가 지원한다.
+Godot 에디터에서 LSP 서버 실행 옵션을 킨 후 외부 에디터에서 연결하면 된다.
+Godot 에디터와 외부 에디터를 동시에 켜야 하는 점은 아쉽다.
+스탠드얼론 버전이 있었던 거 같은데..
+
 ## 튜토리얼
 
 공식 사이트에서 [간단한 2D 닷지 게임](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html)을 만드는 과정을 소개한다.
