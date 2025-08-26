@@ -1363,6 +1363,11 @@ Gemini Code Assist를 포함하기 때문에, 프롬프트를 통해 파일을 �
 MCP 서버를 붙일 수 있다.
 셸에서 동작하고, MCP 서버를 붙일 수 있는 것으로, Claude Code와 흡사한 도구.
 
+요금제는 꽤 복잡하다. \
+https://cloud.google.com/gemini/docs/quotas \
+개인 사용자는 무료로 사용할 수 있고, Gemini API Key를 발급 받아서 크레딧처럼 사용할 수 있다.
+할당량은 코드 생성을 하는 Code Assist와 일반적인 채팅 모델에 따라 나뉜다.
+
 ### Google Chrome
 
 크롬은 [125 버전부터 콘솔 에러를 Gemini로 해석해주는 기능을 추가](https://developer.chrome.com/docs/devtools/console/understand-messages)했다.
