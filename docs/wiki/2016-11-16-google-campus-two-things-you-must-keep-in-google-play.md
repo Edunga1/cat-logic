@@ -85,7 +85,7 @@ UI에 투자하기 힘들다면 가장 무난한 선택이 될 것이다.
 
 #### Manifest의 Target SDK Version 맞추기
 
-왠만하면 최신 버전으로 Target SDK Version을 맞춰서 개발하는 것이 좋다.
+웬만하면 최신 버전으로 Target SDK Version을 맞춰서 개발하는 것이 좋다.
 
 ### 유용한 기능
 
