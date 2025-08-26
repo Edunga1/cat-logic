@@ -267,7 +267,7 @@ iFrame은 사용하지 않음에도 메인이 로드될 때 함께 로드된다.
 
 **스크립트 예**
 ```html
-<iframe data-src="https://example.com"></firame>
+<iframe data-src="https://example.com"></iframe>
 <iframe data-src="https://another.example.com"></firame>
 <script>
     document.addEventListener('load', () => {
