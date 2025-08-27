@@ -1368,6 +1368,35 @@ https://cloud.google.com/gemini/docs/quotas \
 개인 사용자는 무료로 사용할 수 있고, Gemini API Key를 발급 받아서 크레딧처럼 사용할 수 있다.
 할당량은 코드 생성을 하는 Code Assist와 일반적인 채팅 모델에 따라 나뉜다.
 
+MCP 서버 설정은 다음과 같이 한다.
+
+```json
+{
+  "mcpServers": {
+    "godot": {
+      "command": "node",
+      "args": [
+        "/home/myname/workspace/godot-mcp/build/index.js"
+      ],
+      "env": {
+        "DEBUG": "true",
+        "GODOT_PATH": "/mnt/c/Users/myname/AppData/Local/Microsoft/WinGet/Links/godot.exe"
+      }
+    },
+    "github": {
+      "httpUrl": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer github_pat_abc123..."
+      }
+    }
+  }
+}
+```
+
+remote MCP 설정은 정립되지 않았는지, **클라이언트마다 설정 방법이 다르다**(VSCode는 `"type": "http"`와 `"url": "..."` 조합이다).
+Gemini CLI는 `httpUrl`로 URL을 지정하고, `headers`로 헤더를 지정한다.
+MCP 서버 설정 사양은 [Hands-on with Gemini CLI 문서](https://codelabs.developers.google.com/gemini-cli-hands-on#8)에서 확인할 수 있다.
+
 ### Google Chrome
 
 크롬은 [125 버전부터 콘솔 에러를 Gemini로 해석해주는 기능을 추가](https://developer.chrome.com/docs/devtools/console/understand-messages)했다.
