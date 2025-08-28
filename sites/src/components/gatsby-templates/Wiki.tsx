@@ -18,7 +18,6 @@ export default function BlogPostTemplate(
   const { hash: gitLogLatestHash, date: gitLogLatestDate } = commitLogs[0] || {}
   const docTitle = extractDocTitle(data)
   const relatedDocs = extractRelatedDocs(data)
-  // TODO: "추론 애플리케이션" 을 가르키는 문서에서 에러 있음
   const relatedLinks = relatedDocs.map(doc => {
     return <Link key={doc.slug} href={`/${createWikiLink(doc.slug)}`}>{doc.title}</Link>
   })

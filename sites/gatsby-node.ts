@@ -97,7 +97,7 @@ function getHead(node: Node) {
 }
 
 function parseRelatedDocs(node: Node) {
-  return getRelatedDocs(node.fileAbsolutePath as string)
+  return getRelatedDocs(node.fields.slug as string)
     .map(x => ({
       slug: x.path.replace(/.md$/, ""),
       similarity: x.similarity,

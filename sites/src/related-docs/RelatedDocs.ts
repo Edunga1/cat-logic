@@ -14,8 +14,8 @@ interface RelatedDoc {
 function mapData(docs: typeof Data): Map<string, RelatedDoc[]> {
   return docs.reduce(
     (acc, doc) => {
-      const filenameX = path.basename(doc.filename_x)
-      const filenameY = path.basename(doc.filename_y)
+      const filenameX = doc.filename_x
+      const filenameY = doc.filename_y
       if (!acc.has(filenameX)) {
         acc.set(filenameX, [])
       }
