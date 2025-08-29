@@ -23,24 +23,10 @@ const Container = styled.div`
   }
 `
 
-export default function HomeLink(
-  { slug }: { slug: string },
-) {
-  const [href, setHref] = React.useState("")
-
-  React.useEffect(() => {
-    setHref(removeSlugFromPath(window.location.href, slug))
-  })
-
+export default function HomeLink() {
   return (
     <Container>
-      <Link href={href}>CAT</Link>
+      <Link href="/">CAT</Link>
     </Container>
   )
-}
-
-function removeSlugFromPath(href: string, slug: string): string {
-  // remove slug from href and return the path
-  const url = new URL(href)
-  return url.pathname.replace(`wiki${slug}`, "")
 }

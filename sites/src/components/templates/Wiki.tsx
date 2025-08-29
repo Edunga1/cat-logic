@@ -82,7 +82,7 @@ export default function Wiki({
     <PageLayout>
       <Main>
         <TitleContainer>
-          <HomeLink slug={slug} />
+          <HomeLink />
           <Link href=".">
             <Title>{title}</Title>
           </Link>
