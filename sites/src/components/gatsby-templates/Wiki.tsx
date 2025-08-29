@@ -19,7 +19,7 @@ export default function BlogPostTemplate(
   const docTitle = extractDocTitle(data)
   const relatedDocs = extractRelatedDocs(data)
   const relatedLinks = relatedDocs.map(doc => {
-    return <Link key={doc.slug} href={`/${createWikiLink(doc.slug)}`}>{doc.title}</Link>
+    return <Link key={doc.slug} href={createWikiLink(doc.slug)}>{doc.title}</Link>
   })
   const gitHubRepositoryUrl = data.site?.siteMetadata?.gitHubRepositoryUrl || undefined
 

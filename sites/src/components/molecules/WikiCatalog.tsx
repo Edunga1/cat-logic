@@ -41,6 +41,7 @@ export default function WikiList(
   { items, fallback }: WikiListProps,
 ) {
   const hasItems = items.length > 0
+  console.log(items)
   return (
     <Container>
       {hasItems
