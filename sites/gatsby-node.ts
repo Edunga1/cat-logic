@@ -29,28 +29,28 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   }
 }
 
-export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions: { createTypes } }) => {
-  const typeDefs = `
-    type MarkdownRemark implements Node {
-      fields: Fields
-    }
-    type Doc {
-      slug: String!
-      similarity: Float!
-    }
-    type Fields {
-      relatedDocs: [Doc!]!
-    }
-  `
-  createTypes(typeDefs)
-}
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
+  ({ actions: { createTypes } }) => {
+    createTypes(
+      `
+      type MarkdownRemark implements Node {
+        fields: Fields
+      }
+      type Doc {
+        slug: String!
+        similarity: Float!
+      }
+      type Fields {
+        relatedDocs: [Doc!]!
+      }
+    `,
+    )
+  }
 
-export const createPages: GatsbyNode["createPages"] = async (
-  {
-    graphql,
-    actions: { createPage },
-  },
-) => {
+export const createPages: GatsbyNode["createPages"] = async ({
+  graphql,
+  actions: { createPage },
+}) => {
   const wikiTemplate = path.resolve("src/components/gatsby-templates/Wiki.tsx")
   const query = graphql<Queries.PagesLoadedQuery>(
     `
@@ -67,14 +67,14 @@ export const createPages: GatsbyNode["createPages"] = async (
         }
       }
     `,
-    { limit: 1000 }
+    { limit: 1000 },
   )
-  return query.then(result => {
+  return query.then((result) => {
     if (result.errors) {
       throw result.errors
     }
 
-    result.data?.allMarkdownRemark.edges.forEach(edge => {
+    result.data?.allMarkdownRemark.edges.forEach((edge) => {
       createPage({
         path: path.join("wiki", edge.node.fields?.slug ?? ""),
         component: wikiTemplate,
@@ -97,9 +97,15 @@ function getHead(node: Node) {
 }
 
 function parseRelatedDocs(node: Node) {
-  return getRelatedDocs(node.fields.slug as string)
-    .map(x => ({
-      slug: x.path.replace(/.md$/, ""),
-      similarity: x.similarity,
-    }))
+  type FieldSlug = {
+    fields?: {
+      slug?: string;
+    };
+  };
+  const slug = (node as FieldSlug).fields?.slug as string | undefined
+  if (!slug) return []
+  return getRelatedDocs(slug).map((x) => ({
+    slug: x.path.replace(/.md$/, ""),
+    similarity: x.similarity,
+  }))
 }
