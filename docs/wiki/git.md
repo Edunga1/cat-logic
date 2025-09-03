@@ -566,7 +566,8 @@ abdb9882 fix: update something
 
 ### git-worktree
 
-`git worktree add <path> <branch>`로 현재 프로젝트를 `<path>`에 생성하고 `<branch>`로 체크아웃한다. 현재 프로젝트와 연결된다.
+`git worktree add <path> <branch>`로 현재 프로젝트를 `<path>`에 생성하고 `<branch>`로 체크아웃한다.
+현재 Git 프로젝트와 연결되어 브랜치나 worktree 명령어로 관리할 수 있다.
 git에서는 작업 영역을 working tree라 부르니, 알아두면 좋겠다.
 
 `git worktree`는 현재 작업중인 내용을 stash나 commit 등으로 저장하지 않고, 다른 작업을 처리할 때 유용하다.
