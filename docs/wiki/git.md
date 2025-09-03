@@ -1,3 +1,6 @@
+---
+created: 2016-12-12
+---
 # Git
 
 the stupid content tracker.
