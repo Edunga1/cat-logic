@@ -857,6 +857,12 @@ Goolge Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.
 내가 기대했던 반응 속도나 추론 능력이 아니라서 아쉽다.\
 구글은 [바드 데모](https://news.hada.io/topic?id=8430)에서와 마찬가지로 이번에도 기대에 못 미치는 거 같다.
 
+Gemini의 장점은 유튜브 링크를 전달하면, 자막을 통해 내용을 파악하는 것이 아니라, 영상과 오디오를 분석한다는 점이다.
+그래서 특정 시점의 화면에 무엇이 적혀있는지 질문할 수도 있다. NotebookLM이나 다른 AI 서비스에선 아직 불가하다.
+
+[gemini.google.com](https://gemini.google.com/) 보다 [AI Studio](https://aistudio.google.com/)가 더 많은 기능을 제공한다.
+영상 길이를 조절한다거나, temperature 조절 등 설정이 있다.
+
 #### Gemini API
 
 구글의 AI 서비스의 브랜딩이 좀 혼란스럽다. Gemini API, Vertex AI, AI Studio 등 용어가 많아서 좀 헷갈린다.
