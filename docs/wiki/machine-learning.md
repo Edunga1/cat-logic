@@ -1403,6 +1403,20 @@ remote MCP 설정은 정립되지 않았는지, **클라이언트마다 설정 �
 Gemini CLI는 `httpUrl`로 URL을 지정하고, `headers`로 헤더를 지정한다.
 MCP 서버 설정 사양은 [Hands-on with Gemini CLI 문서](https://codelabs.developers.google.com/gemini-cli-hands-on#8)에서 확인할 수 있다.
 
+#### Nano Banana
+
+나노바나나는 [2025년 8월 26일](https://blog.google/intl/ko-kr/company-news/technology/gempix-nano-banana-kr/)에 공개된 Gemini에 도입한 이미지 편집 모델이다.
+빠르고 퀄리티 높은 이미지 편집으로 공식 출시 이전부터 화제가 되었다.
+
+다음은 사진을 피규어로 바꾸는 예시. 상당히 인기를 끌었다.
+
+```
+Take this drawing and turn it into a figure in reality. Transform the drawing into a figure with the texture of a figure and place it on a desk with a monitor. Behind the figure, there is a box containing the figure you created. Make the character's pose as identical as possible. The texture of the figure must be like that of the finest plastic. The painting of the figure must look as if it were painted by a master.
+```
+
+게임 리소스 등 "투명 배경"을 만들지 못한다.
+가짜 투명 배경을 흉내만 내고 실제로 투명한 배경을 만들지 못한다.
+
 ### Google Chrome
 
 크롬은 [125 버전부터 콘솔 에러를 Gemini로 해석해주는 기능을 추가](https://developer.chrome.com/docs/devtools/console/understand-messages)했다.
