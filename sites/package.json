@@ -15,7 +15,8 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "publish": "npm build && gh-pages -d public",
-    "test": "node --import tsx --test src/**/*.spec.ts"
+    "test": "node --import tsx --test src/**/*.spec.ts",
+    "lint": "eslint 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",

@@ -11,7 +11,6 @@ export default function BlogPostTemplate(
   const {
     tableOfContents,
     html,
-    fields,
   } = data.file?.childMarkdownRemark ?? {}
   const commitLogs = data.file?.fields?.gitLogs || []
   const logDates = extractLogDates(data)
@@ -29,7 +28,6 @@ export default function BlogPostTemplate(
       tableOfContents={tableOfContents || ""}
       relatedLinks={relatedLinks}
       wikiContents={removeFirstHeading(html || "")}
-      slug={fields?.slug || ""}
       lastModified={gitLogLatestDate ? new Date(gitLogLatestDate) : undefined}
       lastCommitHash={gitLogLatestHash || undefined}
       gitHubRepositoryUrl={gitHubRepositoryUrl}

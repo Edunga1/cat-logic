@@ -54,7 +54,6 @@ export default function Wiki({
   tableOfContents,
   relatedLinks,
   wikiContents,
-  slug,
   lastModified,
   lastCommitHash,
   gitHubRepositoryUrl,
@@ -64,7 +63,6 @@ export default function Wiki({
   tableOfContents: string;
   relatedLinks: JSX.Element[];
   wikiContents: string;
-  slug: string;
   lastModified?: Date;
   lastCommitHash?: string;
   gitHubRepositoryUrl?: string;
