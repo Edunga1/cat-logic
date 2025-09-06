@@ -42,7 +42,9 @@ email to the user the crontab file belongs to (unless redirected).
 
 예시처럼, 출력은 redirection을 통해서 남기거나, 그렇지 않으면 사용자의 email로 전송된다고 한다.
 
-## macOS의 경우 email로 결과가 전송된다.
+## MacOS
+
+MacOS의 경우 내장된 `mail`로 결과가 전송된다.
 
 읽지 않은 메일이 있으면, 터미널에 접속하면 다음과 같은 메시지가 나온다:
 
