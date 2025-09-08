@@ -6,6 +6,7 @@ const Header = styled.h3`
   margin: 0;
   padding: 1rem 0 .5rem 1rem;
   font-size: 1rem;
+  display: inline-block;
 `
 
 const Container = styled.div`
@@ -56,8 +57,12 @@ export default function Toc(
 ) {
   return (
     <div className={className} >
-      <Header>Table of Contents</Header>
-      <Container dangerouslySetInnerHTML={{ __html: contents }} />
+      <details open>
+        <summary>
+          <Header>Table of Contents</Header>
+        </summary>
+        <Container dangerouslySetInnerHTML={{ __html: contents }} />
+      </details>
     </div>
   )
 }
