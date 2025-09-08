@@ -16,10 +16,21 @@ const Container = styled.div`
     list-style: none;
     padding-left: 1rem;
     margin: 0;
-    font-size: .8rem;
+    font-size: .875rem;
 
     p {
       margin: 0;
+    }
+
+    li {
+      margin-top: 6px;
+    }
+
+    li, li code {
+      padding: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
