@@ -13,7 +13,6 @@ export default function BlogPostTemplate(
     html,
   } = data.file?.childMarkdownRemark ?? {}
   const commitLogs = data.file?.fields?.gitLogs || []
-  const logDates = extractLogDates(data)
   const { hash: gitLogLatestHash, date: gitLogLatestDate } = commitLogs[0] || {}
   const docTitle = extractDocTitle(data)
   const relatedDocs = extractRelatedDocs(data)
@@ -31,7 +30,6 @@ export default function BlogPostTemplate(
       lastModified={gitLogLatestDate ? new Date(gitLogLatestDate) : undefined}
       lastCommitHash={gitLogLatestHash || undefined}
       gitHubRepositoryUrl={gitHubRepositoryUrl}
-      activityDates={logDates}
     />
   )
 }
@@ -111,14 +109,6 @@ function extractRelatedDocs(
     title: getDocTitle(x.slug, data),
     similarity: x.similarity,
   }))
-}
-
-function extractLogDates(data: Queries.WikiDetailQuery) {
-  const logs = data.file?.fields?.gitLogs || []
-  return logs
-    .map(x => x && x.date && new Date(x.date) || null)
-    .filter(x => x !== null)
-    .map(x => x as Date)
 }
 
 function getDocTitle(slug: string, data: Queries.WikiDetailQuery) {

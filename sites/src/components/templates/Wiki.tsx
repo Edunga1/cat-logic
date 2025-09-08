@@ -6,7 +6,6 @@ import device from "../../constants/device"
 import theme from "../../constants/theme"
 import Link from "../atoms/Link"
 import Comments from "../molecules/Comments"
-import GrassActivity from "../molecules/GrassActivity"
 import HomeLink from "../molecules/HomeLink"
 import RelatedLinks from "../molecules/RelatedLinks"
 import GitHubCommitLink from "../organisms/GitHubCommitLink"
@@ -57,7 +56,6 @@ export default function Wiki({
   lastModified,
   lastCommitHash,
   gitHubRepositoryUrl,
-  activityDates,
 }: {
   title?: string;
   tableOfContents: string;
@@ -85,7 +83,6 @@ export default function Wiki({
             <Title>{title}</Title>
           </Link>
         </TitleContainer>
-        <GrassActivity dates={activityDates || []} />
         <TitleBottom>{githubLink}</TitleBottom>
         <TocMain contents={tableOfContents} />
         <WikiContent contents={wikiContents} />
