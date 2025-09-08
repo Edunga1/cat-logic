@@ -5,14 +5,14 @@ created: 2022-11-27
 
 터미널 기반 텍스트 편집기.
 
-[.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)는 vim 설정 파일이다.
-누구나 같은 설정 파일을 사용한다면 같은 환경을 재현할 수 있다.
-vim은 사람마다 다른 형태를 가지면서도 복제하기 쉽다.
-
-vim 보다 [neovim](https://github.com/neovim/neovim)을 사용중이다.
-neovim은 vim의 fork라 호환성이 유지돼서 바로 넘어가더라도 큰 문제가 없다.
+vim 포크 버전인 [neovim](https://github.com/neovim/neovim)을 사용중이다.
+neovim은 호환성이 유지돼서 vim에서 바로 넘어가더라도 큰 문제가 없다.
 기존 vim 설정을 조금 수정해야 하는데, neovim 메뉴얼 `:h nvim-from-vim`에 잘 설명되어 있다.
 vim에서 제공하는 기능은 대부분 neovim에서도 사용할 수 있다. 다만 2023년 11월 기준으로 vim 9.0은 아직인 듯.
+
+[.vimrc](https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc)는 vim 설정 파일이다.
+누구나 같은 설정 파일을 사용한다면 같은 환경을 재현할 수 있다.
+vim은 사람마다 다른 형태를 가지면서도 설정 파일 덕분에 복제하기 쉽다.
 
 [Wikipedia](https://en.wikipedia.org/wiki/Vim_(text_editor)) 배포 내역을 보면,
 8.0 이전까지는 배포가 느렸지만, 8.0부터는 모던 에디터의 추세에 맞춰 팝업 Window와 비동기 I/O 등이 추가되었다.
