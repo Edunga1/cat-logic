@@ -168,3 +168,10 @@ Vim과 Kotllin 단어가 들어간 그림이다.
 ## gpt-oss
 
 2025년 8월 5일에 공개된 OpenAI의 오픈 소스 모델. [문서](/docs/wiki/large-language-model.md#gpt-oss) 참조.
+
+## MCP 지원
+
+ChatGPT의 [MCP](/docs/wiki/model-context-protocol.md) 지원은 꽤 늦었다.
+[개발 모드](https://platform.openai.com/docs/guides/developer-mode)를 통해 추가할 수 있으며,
+현재 Remote MCP 서버([SSE](/docs/wiki/web.md#server-sent-events), HTTP)만 지원한다. Pro, Plus 사용자에게만 공개되어 있다고 한다.
+하지만 Pro 계정이지만 아직 옵션이 보이지 않았다.
