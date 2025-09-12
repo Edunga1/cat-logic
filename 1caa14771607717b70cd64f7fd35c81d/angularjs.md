@@ -26,7 +26,7 @@ https://github.com/johnpapa/angular-styleguide
 
 #### 컨트롤러
 
-##### `controllerAs`와 `vm` 사용하기
+##### controllerAs와 vm 사용하기
 
 https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032
 
