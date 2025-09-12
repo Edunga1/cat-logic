@@ -90,7 +90,7 @@ Gemini의 소개 영상처럼 실시간으로 대화하거나, 수학 문제를 
 
 2024년 07월 18일, [gpt-4o mini가 공개](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/)되었다.
 gpt-3.5 turbo 보다 성능이 좋고, [LMSYS 리더보드에서 채팅 부분에서 gpt-4를 능가](https://x.com/lmsysorg/status/1813999088758673875)했다고 한다.
-비용 효울적인 작은 모델이라고 하니 기대된다. 무료 사용자에게 제공할 예정이라고 한다.
+비용 효율적인 작은 모델이라고 하니 기대된다. 무료 사용자에게 제공할 예정이라고 한다.
 
 2024년 9월 25일, 영상에서 인상을 주었던 [고급 보이스 모드(Advanced Voice Mode)가 플러스 사용자에게 공개](https://openai.com/index/chatgpt-can-now-see-hear-and-speak/)되었다.
 이전에는 제한된 사용자에게만 베타 버전으로 제공되었었다.

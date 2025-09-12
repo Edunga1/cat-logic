@@ -19,7 +19,7 @@ docker-compose로 airflow 환경 구축하고 테스트할 수 있다.
 
 `airflow`와 `dag` 문자열을 포함하는 파이썬 파일만 DAG 파일로 인식한다.
 
-DAG 스크립트를 모듈화한다고 DAG 생성하는 부분을 분리한다면 DAG 파일을 인식하지 못할 수 있으니 주의해야 한다.
+DAG 스크립트를 모듈화하여 DAG 생성을 분리한다면 DAG 파일을 인식하지 못할 수 있으니 주의해야 한다.
 
 > To consider all Python files instead, disable the DAG_DISCOVERY_SAFE_MODE configuration flag.
 

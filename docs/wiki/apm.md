@@ -18,7 +18,7 @@ https://docs.datadoghq.com/getting_started/tracing/#explore-traces-in-datadog
 ![datadog traces](./res/datadog-traces.png)
 
 검색 쿼리로 특정 서비스로의 호출을 찾을 때 이미지와 같이 사용하는데,
-MSA 환경이고 trace 공유하고 있다면 `Add another span query`로 두 번째 쿼리를 추가하여 **A -> B 방향의 서비스 호출을 찾을 수 있다**.
+MSA 환경이고 trace를 공유하고 있다면 `Add another span query`로 두 번째 쿼리를 추가하여 **A -> B 방향의 서비스 호출을 찾을 수 있다**.
 
 ![datadog traces matching](./res/datadog-traces-matching.png)
 
