@@ -98,24 +98,24 @@ https://github.com/tpope/vim-fugitive
 
 #### `:Git`
 
-인자 없이 `:Git` 실행하면 현재 git status를 보여준다.
+인자 없이 `:Git` 실행하면 현재 작업 상황을 보여준다.
+여기서 stage, unstage, discard 등 다양한 git 작업을 할 수 있다.
+`g?`로 도움말을 볼 수 있다.
 
 [Git Fugitive how to git add a visually selected chunk of code - stackexchange](https://vi.stackexchange.com/a/28251.md)
-
-여기서 꽤 많은 일을 처리할 수 있는데, `g?` 입력하면 도움말을 볼 수 있다.
 
 파일 경로에서 Enter 누르면 해당 파일의 Buffer를 연다.
 
 원하는 라인만 stage 또는 unstage 하거나, discard 하고 싶다면:
-1. 먼저 변경하려는 파일에서 `>` 눌러 변경 사항을 확인
-2. 원하는 라인으로 이동해서 visual mode로 선택 후 실행
-  * `s`: stage
-  * `u`: unstage
-  * `X`: discard
+1. 변경하려는 파일에서 `=`를 눌러서 수정 사항 확인
+2. 원하는 라인으로 이동해서 visual mode로 선택 후 처리
+    * `s`: stage
+    * `u`: unstage
+    * `X`: discard
 
 unsage 하려면 Staged 목록에서 보여지므로 이동하여 `u` 눌러야 한다.
 
-`:Git` 입력하면 이렇게 표시된다:
+다음은 `:Git` 실행한 화면 예시.
 
 ```fugitive
 Head: main
