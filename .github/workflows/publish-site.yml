@@ -14,24 +14,27 @@ env:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./sites
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout current repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Checkout cat-logic-site repository
+        uses: actions/checkout@v3
+        with:
+          repository: Edunga1/cat-logic-site
+          path: cat-logic-site
       - uses: actions/setup-node@v3
         with:
           node-version: 20
       - name: Install dependencies
         run: npm ci
-      - name: Test
-        run: npm test
+        working-directory: ./cat-logic-site
       - name: Build
         run: npm run build
+        working-directory: ./cat-logic-site
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./sites/public
+          publish_dir: ./cat-logic-site/public
