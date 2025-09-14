@@ -1421,6 +1421,20 @@ Take this drawing and turn it into a figure in reality. Transform the drawing in
 게임 리소스 등 "투명 배경"을 만들지 못한다.
 가짜 투명 배경을 흉내만 내고 실제로 투명한 배경을 만들지 못한다.
 
+##### awesome-nano-banana-images
+
+나노 바나나의 다양한 사용 사례를 모아둔 저장소.
+
+https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md
+
+피규어 예시처럼 유용한 사례가 많다.
+와중에 [49번](https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md#case-49-extract-subject-and-place-on-transparent-layerby-nglprz)처럼 투명 배경을 흉내내는 사례도 있다.
+
+[무드 보드](https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md#case-52-fashion-moodboard-collageby-tetumemo)나
+[음식 광고](https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md#case-52-fashion-moodboard-collageby-tetumemo),
+[구도 재현](https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md#case-52-fashion-moodboard-collageby-tetumem)은
+실제로 활용도가 높아 보인다.
+
 ### Google Chrome
 
 크롬은 [125 버전부터 콘솔 에러를 Gemini로 해석해주는 기능을 추가](https://developer.chrome.com/docs/devtools/console/understand-messages)했다.
