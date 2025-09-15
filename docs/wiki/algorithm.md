@@ -3,6 +3,17 @@ created: 2017-09-27
 ---
 # 알고리즘
 
+## simdjson
+
+simd는 하나의 instruction을 여러 데이터에 병렬로 적용하는 기법이다.
+특히 json 파싱은 전통적인 방법으로는 CPU의 병목으로 인해 속도가 매우 느린데, simd를 사용하면 매우 빠르게 처리할 수 있다.
+simdjson은 simd를 사용하여 json을 매우 빠르게 파싱하는 라이브러리이다.
+
+https://github.com/simdjson/simdjson
+
+관련 글
+- [요즘 오픈소스 쪽에서 hot한 주제 중 하나가 simd임...](https://www.facebook.com/share/p/1BEjWJy3q8/)
+
 ## Game Of Life
 
 [라이프 게임](https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9D%B4%ED%94%84_%EA%B2%8C%EC%9E%84)은 [세포 자동자](https://ko.wikipedia.org/wiki/%EC%84%B8%ED%8F%AC_%EC%9E%90%EB%8F%99%EC%9E%90)의 일종이다.
