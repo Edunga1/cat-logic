@@ -3,3 +3,6 @@
 
 # Windows
 *:Zone.Identifier
+
+# tmuxinator
+.tmuxinator
