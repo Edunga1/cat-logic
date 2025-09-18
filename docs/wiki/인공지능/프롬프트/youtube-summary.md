@@ -26,7 +26,7 @@ ai studio에서 gemini-2.5-pro, `Grounding with Google search` 옵션을 끄고 
 - 화면에 코드와 같은 주요한 텍스트 정보가 포함되어 있으면, `<pre>` 블록을 사용하세요.
 
 ### CSS 스타일
-```css
+\`\`\`css
 <style>
     /* 전체 페이지 레이아웃 */
     body {
@@ -82,7 +82,7 @@ ai studio에서 gemini-2.5-pro, `Grounding with Google search` 옵션을 끄고 
     }
     /* === 키워드 하이라이트 스타일을 여기에 직접 정의하세요 === */
 </style>
-```
+\`\`\`
 
 # 사람이 편하게 읽을 수 있도록 정리하세요
 - 주요한 부분은 timestamp를 링크로 추가하세요. 링크는 `https://youtu.be/<video-id>?t=<timestamp>` 구조를 가집니다. t는 초 단위입니다. 모든 링크를 직접 URL로 제공하세요.
