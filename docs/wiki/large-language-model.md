@@ -73,3 +73,14 @@ Spring Boot는 OpenAI, Ollama 등 AI 플랫폼을 쉽게 연동할 수 있게 �
 [Spring 프레임워크](/docs/wiki/spring-framework.md)에 익숙하면 좋은 선택으로 보인다.
 
 다만 2024년 7월 1.0.0 SNAPSHOT 단계여서 운영 레벨에서 사용하기에는 무리가 있다.
+
+## GitHub spec-kit
+
+GitHub에서 공개한 Spec-Driven Development 도구.
+스펙을 명세하고 AI 에이전트를 통해서 개발하는 툴킷이다.
+즉 바이브 코딩 용.
+
+https://github.com/github/spec-kit
+
+툴킷 자체에서 AI를 지원하는 것이 아니라, gemini cli나 claude code 등 도구에 기능을 추가한다.
+claude, gemini, copilot 등 다양한 에이전트 도구를 지원한다.
