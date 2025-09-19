@@ -86,3 +86,52 @@ https://github.com/github/spec-kit
 claude, gemini, copilot 등 다양한 에이전트 도구를 지원한다.
 copilot은 별도 cli용 챗복 도구가 없기 때문에 VSCode에서 사용해야 한다.
 확장성 측면에서 아쉬운 부분.
+
+spec-kit 설정한 후에 cli나 VSCode 채팅 창에서 `/specify`, `/plan`, `/tasks` 등 명령어가 추가된다.
+이 명령어를 통해서 스펙을 작성하고, 개발 계획을 세우고, 작업을 진행하면 미리  작성된 스펙을 참고하여 에이전트가 코드를 작성한다.
+
+사용해보면 preview 단계에서 종료한 [GitHub Copilot Workspace](/docs/wiki/github.md#github-copilot-workspace)에서 넘어온 것이 아닌가.
+진행 흐름이 흡사하다.
+
+### 사용 예시
+
+가장 먼저 현재 폴더에 프로젝트 설정한다.
+`uvx`를 사용하므로 [uv](/docs/wiki/python.md#uv)가 설치되어 있어야 한다.
+uvx는 npx와 같이 임시 패키지를 설치하고 실행하는 도구다.
+아래 명령어를 입력하면 개발 환경과 사용할 AI 에이전트 도구를 선택한다.
+
+```
+uvx --from git+https://github.com/github/spec-kit.git specify init --here
+```
+
+설정이 완료되면 AI 도구에 `/specify` 명령어가 추가된다.
+이제부터 `specify` 명령어 대신 AI 도구를 통해 명령어를 사용하는 것으로 진행한다.
+
+**`/specify` 단계**
+
+`/specify`를 사용하여 개발할 애플리케이션의 사양을 작성한다.
+
+```
+/specify incremental 게임을 구현합니다. 작은 버튼과 골드 보유량을 표시합니다. 버튼을 누르면 골드를 1 증가합니다. 업그레이드 탭이 있습니다. 골드 증가량을 1 증가시키는 업그레이드와 초당 골드 증가 버튼이 있습니다.
+```
+
+**`/plan` 단계**
+
+`/plan`을 사용하여 기술 스택을 설명하고 개발 계획을 세운다.
+
+```
+/plan 수동 검증, 바닐라 JS, 라이브러리 사용 없음. HTML Canvas를 사용한다.
+```
+
+**`/tasks` 단계**
+
+`/tasks`를 사용하여 개발할 작업 목록을 생성한다.
+여기서는 프롬프트를 따로 입력할 필요는 없고, `/tasks`만 입력하면 된다.
+
+**개발 단계**
+
+이제 명령어가 아닌 일반 대화로 개발을 진행한다.
+생성된 `tasks.md` 파일을 참고하여 생성된 작업 목록을 확인한다.
+`T001` 같은 작업 ID가 부여되어 있어서, "T001부터 작업을 시작해줘" 같은 식으로 작업을 요청할 수 있다.
+
+나는 여기서 playwright-mcp 등으로 브라우저를 띄우고 직접 테스트하도록 자동화 했는데, GPT-5 기준으로 잘 동작했다.
