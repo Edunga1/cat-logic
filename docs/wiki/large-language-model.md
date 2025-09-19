@@ -84,3 +84,5 @@ https://github.com/github/spec-kit
 
 툴킷 자체에서 AI를 지원하는 것이 아니라, gemini cli나 claude code 등 도구에 기능을 추가한다.
 claude, gemini, copilot 등 다양한 에이전트 도구를 지원한다.
+copilot은 별도 cli용 챗복 도구가 없기 때문에 VSCode에서 사용해야 한다.
+확장성 측면에서 아쉬운 부분.
