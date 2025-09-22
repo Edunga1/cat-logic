@@ -1,10 +1,12 @@
 # 유튜브 요약 프롬프트
 
-유튜브 영상을 요악하는데 사용하는 프롬프트.
+Gemini를 사용해서 유튜브 영상을 요악하는데 사용한 프롬프트.
 HTML 파일로 출력하여, 정돈된 문서로 만들도록 의도했다.
 
+![youtube summary preview](../../res/youtube-summary-prompt-preview.png)
+
 ai studio에서 gemini-2.5-pro, `Grounding with Google search` 옵션을 끄고 사용한다.
-gemini.google.com에서는 해당 옵션이 없어서 타임스탬프 링크가 구글 검색으로 연결되는 문제가 있다.
+gemini.google.com에서는 이 옵션이 없어서 타임스탬프 링크가 구글 검색으로 연결되는 문제가 있다.
 NotebookLM 등 그 외 AI 도구는 유튜브의 영상 자체를 분석하는 것이 아니라 스크립트를 분석하기 때문에 맥락을 잘 이해하지 못한다.
 
 ```markdown
@@ -97,6 +99,6 @@ NotebookLM 등 그 외 AI 도구는 유튜브의 영상 자체를 분석하는 �
     - 스타일은 실제 형광펜으로 칠한 것처럼 보이게 합니다. 배경색은 rgba를 사용하여 투명도가 포함된 밝고 선명한 색상을 사용하고, 텍스트 가독성이 유지되도록 합니다.
 ```
 
-다음은 결과물.
-
-![youtube summary preview](../../res/youtube-summary-prompt-preview.png)
+- [간단한 절차적 애니메이션 기법](./youtube-summary-results/simple-procedural-animation-technique.html)
+- [셰이더 아트 코딩 입문](./youtube-summary-results/shader-coding.html)
+- [시게루가 설명하는 마리오 월드 1-1 제작 과정](./youtube-summary-results/super-mario-bros-world-1-1.html)
