@@ -99,6 +99,8 @@ NotebookLM 등 그 외 AI 도구는 유튜브의 영상 자체를 분석하는 �
     - 스타일은 실제 형광펜으로 칠한 것처럼 보이게 합니다. 배경색은 rgba를 사용하여 투명도가 포함된 밝고 선명한 색상을 사용하고, 텍스트 가독성이 유지되도록 합니다.
 ```
 
+결과 예시(수정중):
+
 - [간단한 절차적 애니메이션 기법](./youtube-summary-results/simple-procedural-animation-technique.html)
 - [셰이더 아트 코딩 입문](./youtube-summary-results/shader-coding.html)
 - [시게루가 설명하는 마리오 월드 1-1 제작 과정](./youtube-summary-results/super-mario-bros-world-1-1.html)
