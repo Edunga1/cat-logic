@@ -699,6 +699,12 @@ Suggestion:
 
 명령어 유형과 명령어를 어떻게 할 것인지 총 2번의 인터랙션으로 사용성은 별로.
 
+#### Copilot CLI(agent)
+
+기존의 Copilot CLI와는 다른, Gemini CLI와 같은 에이전트 도구.
+
+https://github.com/github/copilot-cli
+
 #### Copilot Chat
 
 https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat-in-your-ide
