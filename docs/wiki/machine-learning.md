@@ -601,7 +601,7 @@ vscode, jetbrain 에디터에서 제공하는 플러그인은 chat 기능이 포
 자동 완성 기능만 제공한다. 가장 지원이 잘 되는 쪽은 vscode인 듯.
 copilot agent 등 vscode insider에 적극적으로 신규 기능을 지원하고 있다.
 
-#### Copilot CLI
+#### Copilot for CLI
 
 shell 명령어를 작성하는데 도움을 주는 도구.
 
@@ -701,7 +701,7 @@ Suggestion:
 
 #### Copilot CLI(agent)
 
-기존의 Copilot CLI와는 다른, Gemini CLI와 같은 에이전트 도구.
+Copilot for CLI와는 다른, Gemini CLI와 같은 에이전트 도구.
 
 https://github.com/github/copilot-cli
 
