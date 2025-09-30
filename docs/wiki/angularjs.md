@@ -5,14 +5,14 @@ created: 2017-09-17
 
 AngularJS(v1)에 대한 이야기.
 
-첫 직장에서 하이브리드 앱을 만들면서, 그리고 학교 프로젝트에서 사용했다.
+학부 프로젝트와 첫 직장에서 하이브리드 앱을 만들던 2017년에 한창 사용했다.
 
-2017년에 한창 사용했고, typescript 기반인 Angular 2+가 나왔다.\n
+이후 [Typescript](/docs/wiki/javascript.md) 기반의 Angular 2+가 나왔다. \
 그래서 꽤 오래전에 종료한 줄 알았는데, 2022년 1월에 종료되었다고 한다. 생각보다 오래 유지했다.
 
 > AngularJS support has officially ended as of January 2022. See what ending support means and read the end of life announcement.
 
-매력적인 점은 [Dependency Injection](https://docs.angularjs.org/guide/di)이다.\n
+매력적인 점은 [Dependency Injection](https://docs.angularjs.org/guide/di)이다. \
 [Spring](./spring-framework.md) bean 처럼 directive, service, controller 등을 등록해 놓으면 이름을 기반으로 주입 받을 수 있다.
 
 ## Johnpapa's AngularJS Style Guide
