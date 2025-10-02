@@ -17,4 +17,4 @@ publish on:
 ## Modules
 
 - `docs/` contains my knowledge base in markdown format. no any dependencies on any other module.
-- `embeddings/` is a pyhon module to generate document embeddings from `docs/` and is used by `sites/`.
+- `embeddings/` is a python module to generate document embeddings from `docs/` and is used by `sites/`.
