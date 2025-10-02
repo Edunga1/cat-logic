@@ -710,6 +710,12 @@ https://github.com/github/copilot-cli
 
 [GitHub CLI](/docs/wiki/github.md#github-cli)를 사용한다면 인증 절차가 생략되고 함께 사용한다.
 
+다음과 같이 `-p` 옵션으로 대화형이 아닌 형태로도 사용할 수 있다. `--allow-all-tools` 옵션을 주면 일일이 승인하지 않아도 된다.
+
+```bash
+copilot -p "문서 10개 정도만 오타를 찾아서 수정해줘. 커밋은 하지마." --allow-all-tools
+```
+
 #### Copilot Chat
 
 https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat-in-your-ide
