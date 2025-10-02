@@ -30,7 +30,7 @@ HTTP 헤더 등 다양한 곳에서 `X-` 접두사로 표기한 정보를 볼 �
 `X`는 `experimental` 혹은 `extension`의 약자라고 한다.
 보통 비공식적(unofficial) 사양을 나타내는데 주로 사용한다.
 
-HTTP 헤더는 `x-forwareded-for`가 있다.
+HTTP 헤더는 `x-forwarded-for`가 있다.
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For) 문서에 따르면 사실상의 표준이라고 한다.
 표준화된 헤더는 `Forwarded`:
 

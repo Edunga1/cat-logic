@@ -46,8 +46,8 @@ pid 1번으로 실행되는 프로세스. 0번이 있기 때문에 2번째로 �
   * `src/libsystemd/`는 `libsystemd.so` 공유 라이브러리를 구현하는 코드인데, 위 코드를 사용한다.
   * `src/shared/`는 공유 라이브러리로 expose되는 컴포넌트들에서 사용되는 유틸리티와 코드를 제공한다.
 * 위 공유 코드들은 다른 코드들의 초석이 되므로 외부의 코드를 사용할 수 없는데, 공유 코드간에도 의존 방향이 존재한다.
-  * `fundermental` <- `basic` <- `libsystemd` <- `shared`
-  * 즉 `fundermental`은 자체 내부 코드만 사용할 수 있고, 다른 모든 공유 코드도 사용할 수 없다.
+  * `fundamental` <- `basic` <- `libsystemd` <- `shared`
+  * 즉 `fundamental`은 자체 내부 코드만 사용할 수 있고, 다른 모든 공유 코드도 사용할 수 없다.
   * `shared`는 안쪽의 3개 공유 코드를 사용할 수 있다. 하지만 그 외부는 사용할 수 없다.
 * `src/core/`는 systemd 서비스 매니저의 메인 로직을 구현한다.
 * `src/core/bpf/`는 PID 1에서 사용된다.

@@ -31,7 +31,7 @@ inflexible 부분을 제거하는 것이 목적
 
 ```
 -----------------------------------------------------------------------
-| Cours  | Date      | CourseTitle      | Room | Capacity | Available |
+| Course | Date      | CourseTitle      | Room | Capacity | Available |
 -----------------------------------------------------------------------
 | SQL101 | 3/1/2013  | SQL Fundamentals | 4A   | 12       | 4         |
 | DB202  | 3/1/2013  | Database Design  | 7B   | 14       | 7         |
@@ -41,7 +41,7 @@ inflexible 부분을 제거하는 것이 목적
 -----------------------------------------------------------------------
 ```
 
-Cours + Date가 **Composite primary key**라고 할 때
+Course + Date가 **Composite primary key**라고 할 때
 
 CourseTitle은 Course에 **의존된다.**
 

@@ -44,7 +44,7 @@ winget install rancher-desktop
 ```
 
 Docker Desktop과 흡사하다. 기본적으로 [k8s](./kubernetes.md) 제공한다.
-불필요 하다면 끄는 편이 리소스 절약에 좋다.
+불필요하다면 끄는 편이 리소스 절약에 좋다.
 container runtime을 containerd, dockerd 중 선택할 수 있는데, docker에 익숙하면 dockerd를 선택하는 것이 좋다.
 
 개인 사용자더라도 docker desktop의 라이센스 정책이 불편하니 그냥 rancher desktop을 사용하는 것이 좋을지도.
