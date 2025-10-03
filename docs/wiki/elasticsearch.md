@@ -93,7 +93,7 @@ Generative AI, Internal Data의 brdige 역할을 Elasticsearch가 담당하는 �
 
 집계(Aggregation)는 3가지 종류로 나뉜다:
 
-- Bucket: docuemnt를 그룹화한다. 필드 값, 범위 등을 기준으로 그룹화한다.
+- Bucket: document를 그룹화한다. 필드 값, 범위 등을 기준으로 그룹화한다.
 - Metric: document를 측정한다. 필드 값의 합계나 평균 등을 계산한다.
 - Pipeline: 문서나 필드 대신 다른 집계의 결과를 사용한다. 다른 결과에 대한 추가 처리를 한다.
 

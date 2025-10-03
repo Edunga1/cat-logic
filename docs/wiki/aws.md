@@ -203,7 +203,7 @@ consumer의 종류에는 shared fan-out과 enhanced fan-out 두 가지가 있다
 > The shared fan-out consumers all share a shard’s 2 MB/second of read throughput and five transactions per second limits and require the use of the GetRecords API
 
 shared fan-out은 컨슈머간 공유되며, 초당 2 MB, 초당 5개의 transaction으로 제한된다.
-transaction은 `GetRecrods` API 호출을 의미하는 거 같다.
+transaction은 `GetRecords` API 호출을 의미하는 거 같다.
 
 > An enhanced fan-out consumer gets its own 2 MB/second allotment of read throughput, allowing multiple consumers to read data from the same stream in parallel, without contending for read throughput with other consumers.
 

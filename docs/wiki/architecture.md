@@ -49,7 +49,7 @@ JUnit에 대해서 분석하고 테스트 프레임워크를 어떻게 구축하
 https://en.wikipedia.org/wiki/Entity_component_system
 
 주로 게임에서 사용하는 구조적 패턴. 데이터 지향적이라고 한다:
-> An ECS comprises *entities* composed from components* of data
+> An ECS comprises *entities* composed from *components* of data
 
 ESC는 데이터의 구성요소로 이루어진 엔티티로 구성됩니다.
 

@@ -11,7 +11,7 @@ docker-compose로 airflow 환경 구축하고 테스트할 수 있다.
 
 [Airflow 공식 문서](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)에서 docker로 실행하는 방법을 잘 설명해놓았다.
 
-### airflow가 DAG 파일을 인식하는 방식
+### Airflow가 DAG 파일을 인식하는 방식
 
 [Loading DAGs](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html#loading-dags)
 

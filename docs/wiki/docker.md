@@ -309,7 +309,7 @@ CONTAINER ID        IMAGE                          COMMAND                  CREA
 
 ---
 
-ionic으로 빌드를 하고, jarsginer로 서명까지하여 릴리즈 apk를 만드는 도커파일을 작성했다.<br>
+ionic으로 빌드를 하고, jarsigner로 서명까지하여 릴리즈 apk를 만드는 도커파일을 작성했다.<br>
 그리고 apk를 생성하면 컨테이너는 종료된다.<br>
 젠킨스에 등록하여 master 브랜치가 업데이트 될 때마다 apk를 뽑아서, GCP bucket에 업로드하도록 작성했다.<br>
 

@@ -25,7 +25,7 @@ MSA 환경이고 trace를 공유하고 있다면 `Add another span query`로 두
 각 검색 결과는 `a`, `b`로 이름 붙는데, `Traces matching`을 통해 서비스 관계에 있는 trace를 찾을 수 있다.
 위 이미지에서는 모든 서비스에서 `foo-api` 서비스로 호출하는 trace를 찾는데, 호출하는 서비스 이름(`Service`)와 리소스 이름(`Resource`)로 집계한다.
 
-`Traces matching`의 `a => b`가 서비스간 관계를 나타낸다. `=>` 말고도 다른 관계도 있다.
+`Traces matching`의 `a => b`가 서비스 간 관계를 나타낸다. `=>` 말고도 다른 관계도 있다.
 
 ![datadog traces matching - pie chart](./res/datadog-traces-matching-pie-chart.png)
 
