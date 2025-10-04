@@ -213,20 +213,20 @@ ACTIVE 속성이 `*`로 변경되었다.
 
 **컨테이너간 데이터 공유** 위해서 사용한다.
 
-1. `foo` 컨테이너를 띄운다:<br>
-`docker run -ti --rm -v /myvol --name foo ubuntu`
+1. `foo` 컨테이너를 띄운다: \
+    `docker run -ti --rm -v /myvol --name foo ubuntu`
 
-2. 그리고 `foo` 컨테이너와 데이터를 함께 사용할 `bar`를 띄운다:<br>
-`docker run -ti --rm --volumes-from foo --name bar ubuntu`
+2. 그리고 `foo` 컨테이너와 데이터를 함께 사용할 `bar`를 띄운다: \
+    `docker run -ti --rm --volumes-from foo --name bar ubuntu`
 
-3. `foo`와 `bar` 내에서 볼륨 연결된 디렉토리가 비어있음을 확인한다:<br>
-`ls myvol`
+3. `foo`와 `bar` 내에서 볼륨 연결된 디렉토리가 비어있음을 확인한다: \
+    `ls myvol`
 
-4. `foo`에서 `text` 라는 파일을 생성해본다:<br>
-`touch myvol/text`
+4. `foo`에서 `text` 라는 파일을 생성해본다 \
+    `touch myvol/text`
 
-5. `bar`에도 `myvol/text` 라는 파일이 생성되었음을 확인한다:<br>
-`ls myvol`
+5. `bar`에도 `myvol/text` 라는 파일이 생성되었음을 확인한다 \
+    `ls myvol`
 
 즉, 호스트 디렉토리 연결 없이 볼륨을 사용한다면 `--volumes-from` 옵션을 사용하는 컨테이너가 있음을 의미한다.
 
@@ -302,19 +302,19 @@ CONTAINER ID        IMAGE                          COMMAND                  CREA
 
 `docker ps -a`로 중지된 컨테이너가 있다면 그 컨테이너로부터 파일을 호스트로 복사해올 수 있다
 
-`docker cp 컨테이너:경로 호스트경로`로 복사한다.<br>
+`docker cp 컨테이너:경로 호스트경로`로 복사한다. \
 컨테이너와 호스트를 반대로 입력하여 중지된 컨테이너에 파일을 주입할 수도 있을 거 같다.
 
 반면 `docker exec`는 중지된 컨테이너에 접속할 수 없다.
 
 ---
 
-ionic으로 빌드를 하고, jarsigner로 서명까지하여 릴리즈 apk를 만드는 도커파일을 작성했다.<br>
-그리고 apk를 생성하면 컨테이너는 종료된다.<br>
-젠킨스에 등록하여 master 브랜치가 업데이트 될 때마다 apk를 뽑아서, GCP bucket에 업로드하도록 작성했다.<br>
+ionic으로 빌드를 하고, jarsigner로 서명까지하여 릴리즈 apk를 만드는 도커파일을 작성했다. \
+그리고 apk를 생성하면 컨테이너는 종료된다. \
+젠킨스에 등록하여 master 브랜치가 업데이트 될 때마다 apk를 뽑아서, GCP bucket에 업로드하도록 작성했다. \
 
-처음엔 볼륨을 연결하여 호스트에 생성되도록 했으나 `mkdir /root/workspace: read-only file system.`에러가 뜬다.<br>
-젠킨스 slave의 문제인지. 어차피 볼륨으로 뿜어내는 방식이 내키지 않아서 다른 방식을 찾았다.<br>
+처음엔 볼륨을 연결하여 호스트에 생성되도록 했으나 `mkdir /root/workspace: read-only file system.`에러가 뜬다. \
+젠킨스 slave의 문제인지. 어차피 볼륨으로 뿜어내는 방식이 내키지 않아서 다른 방식을 찾았다. \
 무한 루프를 돌도록해서 컨테이너가 죽지 않도록하여 복사해올까 하다가, 중지된 컨테이너에서 가져올 수 있었다.
 
 중지된 컨테이너가 다른 컨테이너에 볼륨을 공유하는 data-only 패턴과 비슷한 방식인듯?
