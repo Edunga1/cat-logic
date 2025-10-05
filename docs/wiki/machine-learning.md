@@ -712,8 +712,71 @@ https://github.com/github/copilot-cli
 
 다음과 같이 `-p` 옵션으로 대화형이 아닌 형태로도 사용할 수 있다. `--allow-all-tools` 옵션을 주면 일일이 승인하지 않아도 된다.
 
+아래는 오타를 찾아서 수정해달라는 프롬프트인데, 모델은 GPT-5를 사용했다.
+프로젝트 구조를 인식하고 있어서 `.db` 파일을 제외하고 오타를 찾는다.
+또 자주 틀리는 오타 리스트로 검색하는 등 똑똑하게 처리한다.
+
 ```bash
 copilot -p "문서 10개 정도만 오타를 찾아서 수정해줘. 커밋은 하지마." --allow-all-tools
+
+```
+
+
+```bash
+❯ copilot -p "오타 10개 문서에서 하나씩만 찾아서 수정해. 커밋은 하지마." --allow-all-tools
+✓ Check repo status and list files
+   $ git --no-pager status && git --no-pager ls-files && git --no-pager log -1 --oneline
+   ↪ 239 lines...
+✓ List directory ~/workspace/cat-logic
+   ↪ 15 items...
+Search for common typos
+   $ git --no-pager grep -nE "\b(recieve|recieve|definately|seperate|occured|adress|envrion|teh|becu
+   ase|wich|thier|udpate|coudl|cant|dont|wont|neccessary|necesary|acommodate|accomodate|occured|occu
+   rrence|occurrance|intial|inital|overriden|adress|wierd|untill|wich|unecessary|priviledge|pubic
+   |lenght|implict|paramter|arguement|arguem.*|behaviour|colou?r|optmization|optimizatoin|performenc
+   e|perfromance|occured|seperat|commited|intialize|intialization|lable|Lable|statment|statemet|stat
+   ment|syncron|synchorn|packege|pakage|pakcage)\b" -- ':!embeddings/output_embeddings.db' || true
+
+   ↪ 60 lines...
+Search for many common typos
+   $ git --no-pager grep -nE "\b(defualt|defult|langauge|laguage|udpate|updte|updaet|exmaple|exmple|
+   adress|addres|envrion|environent|environmnet|funtion|fuction|paramter|paramater|paramters|argueme
+   nts|arguement|arguemnt|arguem.*|retreive|retrive|managable|acheive|acheivement|accesable|accident
+   ly|accidentially|accross|agian|alot|anual|aprox|aproximate|aproximately|arbitary|assosciate|async
+   hronous|becuase|becomeing|begining|beteen|bluetoth|boudnary|calender|cancelled|catagory|changable
+   |charachter|charactor|clarif.*|collosal|comming|comit|compatabl|completly|concensus|concurrency|c
+   onfiguation|configuartion|contol|controll|convertion|coprocesss|defination|definiton|dependancy|d
+   ependancies|depricated|desciption|descripton|designes|developement|differenciate|diplay|directoty
+   |dirction|distrib.*|docum.*|dveloper|easilly|effeciency|efficent|eletronic|embeded|embarass|empha
+   siz.*|encription|encyrption|enought|enteries|entires|equialent|equivalant|ethier|explict|explitci
+   t|exponant|exprience|faciliate|favou?rite|feautre|finaly|finnaly|flase|foriegn|formater|formating
+   |foreced|foreach|framwork|frequecy|frequncy|fullfil|funciton|funtional|gloabl|grahpic|grahpics|gu
+   age|guidlines|handfull|heirarchy|helpfull|hierachy|hierarc.*|howver|htlm|identifer|implemen.*|imp
+   rovment|imput|incase|increament|independant|inital|init.*?aliz|intrustion|itsefl|javasript|javscr
+   ipt|judgement|knowlege|lenght|libary|liasion|ligth|lisense|litte|looses|loosing|maintainance|mana
+   gable|medieum|mesage|messege|millise.*|millise.*|minumum|minimun|minmum|miscel.*|mispell.*|mising
+   |modulue|modul.*e$|mutial|mutiple|nessecary|neces|noticable|occured|occuring|occurance|occurr.*|o
+   pertion|optm.*|organise|orgin|orgini.*|orginal|orig.*|ouput|overide|overriden|pacakge|packge|pakc
+   age|paralell|paral.*|param.*|partion|passw|patt?ern|permisson|permiss.*|permenant|perm.*|personal
+   iz.*|posible|possiblity|preceed|preempt.*|preload.*|presance|pres.*nce|proccess.*|programing|prog
+   amming|programatic|propgate|propogate|prox.*|pubic\b|queing|que.*ing|randomn|recieve|recieving|re
+   command|recommand.*|recommend.*|refered|refering|relevent|replacable|reprsent.*|request.*|resouce
+   |resou.*|respons.*|restarant|resta.*|retr.*eive|retun|rstrip|saftey|schedu.*e|seach|searchh|seper
+   ate|shoudl|sigin|similarily|similiar|simliar|simpil.*|sml|softward|specif.*y|speficy|spefic|statm
+   ent|statem.*|streng.*|struc.*e|sturct.*|substract|succes.*|suc.*ess|syncron.*|synchorn.*|targette
+   d|teh|tempro.*|templat.*e|therfore|thier|toghether|tomm?orrow|tran.*fer.*|triger|ture|udp.*|uodat
+   e|useage|utili.*e|valud|vara.*|varaint|varient|verion|vertice.*|viceversa|virtualy|wierd|wihch|wi
+   lle|withing|wont|writ.*en|yestarday)\b" -- ':!embeddings/output_embeddings.db' || true
+
+   ↪ 76 lines...
+Search for specific common typos
+   $ git --no-pager grep -nE "similiar|occured|recieve|teh|adress|udpate|lable|definately|seperate|l
+   enght|paramter|arguement|envrion|intial|inital|overriden|wierd|untill|unecessary|priviledge|accom
+   odate|performence|perfromance|intialize|statment|syncron|packege|pakcage|libary|permisson|behavio
+   ur\b|colour\b|acommodate|accross|exmaple|proccess|untill|identifer|oppurtunit|ouput|seach|stateme
+   t|statment|formater|spefic|speficy|verion|withing|wont\b|cant\b|dont\b|shouldnt\b|wouldnt\b|could
+   nt\b|im\b|doesnt\b|isnt\b|wasnt\b|werent\b" -- ':!embeddings/output_embeddings.db' || true
+   ↪ 103 lines...
 ```
 
 #### Copilot Chat
