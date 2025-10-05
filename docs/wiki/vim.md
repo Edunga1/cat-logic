@@ -924,7 +924,7 @@ colorscheme을 제외하고 재현하면 간헐적으로 느려지긴 한다. �
 
 정확한 증상 발생 시점은 `.vimrc`에서 `color <theme>`을 설정하면 느려지는 문제였다.\
 vim 실행 후 직접 `:color <theme>` 명령어로 설정하면 느려지지 않는다.\
-`.virmc` 내에서도 특정 코드 후에 `color <theme>`을 설정하면 느려지는 문제가 발생한다.
+`.vimrc` 내에서도 특정 코드 후에 `color <theme>`을 설정하면 느려지는 문제가 발생한다.
 
 원인이 되는 코드는 extra whitespace를 강조하는 코드였다.
 

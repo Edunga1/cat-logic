@@ -21,7 +21,7 @@ https://microsoft.github.io/language-server-protocol/specifications/specificatio
 VSCode가 대표적인 LSP 클라이언트다.
 
 vim에서는 [coc.nvim](https://github.com/neoclide/coc.nvim) 또는 [nvim 내장](https://github.com/neovim/nvim-lspconfig)된 것을 사용하면 된다.
-개인적으로는 coc.nvim 사용하다가 nvim으로 갈아탔는데, 더 쾌적하다. 다만 이것저것 설치할 플러그인이 많아서 처음 구성하기가 가따롭다. 반면에 coc.nvim은 설정이 편리하고, 플러그인 하나가 language server 설치 관리자 기능을 포함하고 있어서 처음 설정이 매우 편리하다.
+개인적으로는 coc.nvim 사용하다가 nvim으로 갈아탔는데, 더 쾌적하다. 다만 이것저것 설치할 플러그인이 많아서 처음 구성하기가 까다롭다. 반면에 coc.nvim은 설정이 편리하고, 플러그인 하나가 language server 설치 관리자 기능을 포함하고 있어서 처음 설정이 매우 편리하다.
 
 ## 역사
 

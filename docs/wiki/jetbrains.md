@@ -110,7 +110,7 @@ X-APP-TOKEN: {{mtoken}}
 
 [2023 버전부터](https://www.jetbrains.com/idea/whatsnew/2023-2/) request body의 자동 완성도 제공한다.
 
-![jetbrain schema completion](https://www.jetbrains.com/idea/whatsnew/2023-2/img/2_Swagger_and_OpenAPI_schemas_in_the_HTTP_Client.png)
+![JetBrains schema completion](https://www.jetbrains.com/idea/whatsnew/2023-2/img/2_Swagger_and_OpenAPI_schemas_in_the_HTTP_Client.png)
 
 enum의 경우 특정 값만 받는 필드도 자동완성 된다.
 다만 enum class는 enum 이름을 자동 완성하기 때문에 `@JsonValue`으로 역직렬화할 변수를 변경해도 enum 이름을 자동 완성했다.

@@ -204,7 +204,7 @@ PR까지 생성한 모습이다.
 아이디어 구상부터 구현까지 Workspace가 모두 처리했다.
 떠밀리듯 구현한 느낌이다.
 
-## Github API로 Release 된 파일 다운받기
+## GitHub API로 Release 된 파일 다운받기
 
 [Github API를 사용하기 위한 토큰 발급, 권한 설정 및 인증 방법은 생략](https://developer.github.com/v3/)
 

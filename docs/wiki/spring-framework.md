@@ -133,7 +133,7 @@ Spring Boot는 `application.properties`, `application.yaml`, 환경변수, comma
 
 `@configurationProperties`가 설정된 클래스에 매핑해 주는데 [Relaxed Binding](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding)을 사용한다.
 
-매우 관대한 규칙으로 property에 binding 하는데, [Relaxed Binding 2.0 Github Wiki](https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0)에 그 규칙을 설명하고 있다.
+매우 관대한 규칙으로 property에 binding 하는데, [Relaxed Binding 2.0 GitHub Wiki](https://github.com/spring-projects/spring-boot/wiki/Relaxed-Binding-2.0)에 그 규칙을 설명하고 있다.
 
 특수 문자는 제거되고, 모두 소문자로 변환한다.
 따라서 다음 설정은 모두 동일한 것으로 간주된다:

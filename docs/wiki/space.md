@@ -63,7 +63,7 @@ Super Heavy는 더 이상 엔진을 사용하지 않으므로 불이 모두 꺼�
 
 아래 애니메이션은 Starship과 Super Heavy가 분리되는 모습이다!
 
-![starship third launch seperation animation](./res/starship-third-launch-separation.gif)
+![starship third launch separation animation](./res/starship-third-launch-separation.gif)
 
 Raptor 엔진이 꺼지고 Starship 엔진이 점화되는 모습이 너무 멋져.
 

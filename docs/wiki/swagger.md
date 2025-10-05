@@ -14,7 +14,7 @@ https://github.com/swagger-api/swagger-core
 
 ### enum class에서 Jackson `@JsonFormat`이 적용되지 않는 문제
 
-Github Issue: https://github.com/swagger-api/swagger-core/issues/3691
+GitHub Issue: https://github.com/swagger-api/swagger-core/issues/3691
 
 다음과 같이 kotlin 코드를 작성하였다.
 
