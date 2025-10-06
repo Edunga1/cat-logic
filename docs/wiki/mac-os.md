@@ -51,7 +51,7 @@ https://interfacecraft.online/posts/blog/2025/how-i-automated-my-computer-life-w
 ### Folder Action
 
 폴더에 파일이 추가되면 실행되는 워크플로우이다.
-예를들어 특정 폴더에 이미지 파일을 추가하면, 자동으로 WebP로 변환하는 워크플로우를 만들 수 있다.
+예를 들어 특정 폴더에 이미지 파일을 추가하면, 자동으로 WebP로 변환하는 워크플로우를 만들 수 있다.
 
 워크플로우 생성은 `File -> New`로 `Folder Action`을 선택한다.
 `Folder Action receives files and folders added to`에서 액션을 실행할 폴더를 선택한다.
@@ -310,7 +310,7 @@ e.g.
 arch -x86_64 <COMMAND>
 ```
 
-예를들어 m2 맥북에서 `uname -m`로 확인하면 아키텍처가 `arm64` 이지만:
+예를 들어 m2 맥북에서 `uname -m`로 확인하면 아키텍처가 `arm64` 이지만:
 
 ```bash
 ❯ uname -m

@@ -19,7 +19,7 @@ Task는 빌드가 실행되는 작업 단위이다.
 
 > A task represents some independent unit of work that a build performs, such as compiling classes, creating a JAR, generating Javadoc, or publishing archives to a repository.
 
-예를들어 컴파일, JAR 파일 생성, 문서 생성, 모듈 배포 등이 있다.
+예를 들어 컴파일, JAR 파일 생성, 문서 생성, 모듈 배포 등이 있다.
 
 https://docs.gradle.org/current/userguide/more_about_tasks.html
 

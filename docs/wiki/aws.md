@@ -27,7 +27,7 @@ $ aws sts get-caller-identity
 }
 ```
 
-예를들어 account id = `1234`, region = `ap-northeast-2` 라면 다음과 같이 입력한다:
+예를 들어 account id = `1234`, region = `ap-northeast-2` 라면 다음과 같이 입력한다:
 
 ```bash
 aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 1234.dkr.ecr.ap-northeast-2.amazonaws.com
@@ -95,7 +95,7 @@ https://docs.localstack.cloud/references/coverage/ 여기에서 어떤 기능을
 
 Docker로 실행하면 더 쉽다. LocalStack 저장소의 [docker-compose.yml](https://github.com/localstack/localstack/blob/master/docker-compose.yml) 그대로 사용해도 된다.
 
-예를들어 Kinesis를 사용하기 위해서 다음과 같이 구성할 수 있다:
+예를 들어 Kinesis를 사용하기 위해서 다음과 같이 구성할 수 있다:
 
 ```yml
 version: "3.8"

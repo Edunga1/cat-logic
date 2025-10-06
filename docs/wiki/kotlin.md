@@ -67,7 +67,7 @@ scope functions는 lambda 함수 내에서 context object를 액세스하는 함
 context object를 `it` 또는 `this` 중 어느 것으로 접근할 것인지
 그리고 반환 값은 Lambda Result 또는 Context Object 중 어느 것인지 따라서 선택한다.
 
-예를들어 context object로 추가 로직을 처리하고, 특별히 반환할 것이 없으면 `also`.
+예를 들어 context object로 추가 로직을 처리하고, 특별히 반환할 것이 없으면 `also`.
 context object의 상태로 계산하여 반환하고 싶으면 `let`이 적합하다.
 
 어느 scope function을 사용할 지는 [공식 문서](https://kotlinlang.org/docs/scope-functions.html#function-selection)에서 설명하고 있으니 참고하자.
@@ -76,7 +76,7 @@ context object의 상태로 계산하여 반환하고 싶으면 `let`이 적합�
 어떤 scope function을 사용하든 구현이 가능할 수 있는 경우가 많다보니 갑론을박이 이어진다.
 너무 목매지 않는 편이 현명한데, 세심한 개발자라면 올바른 scope function을 사용하는 것이 리뷰하는 입장에서 도움이 된다.
 
-예를들어 `let` 대신 `also`를 사용했다면, lambda에서 계산이 이루어지지 않는다는 것을 직관적으로 알 수 있다.
+예를 들어 `let` 대신 `also`를 사용했다면, lambda에서 계산이 이루어지지 않는다는 것을 직관적으로 알 수 있다.
 
 ---
 

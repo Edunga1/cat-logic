@@ -64,7 +64,7 @@ vim에서 사용하는 변수, 옵션, 함수를 lua 스크립트에서도 사�
 lua 스크립트로만 초기화할 수 있는 플러그인들이 있다.
 neovim에 맞춰진 플러그인은 ~.nvim 이라는 접미사를 붙이는 것이 관례인데,
 이런 플러그인들은 lua 스크립트로 include해서 직접 초기화하는 방식을 주로 사용한다.
-예를들어 [nvim-lsp](https://github.com/neovim/nvim-lspconfig)를 보면 `require'lspconfig'.pyright.setup{}`로 초기화한다.
+예를 들어 [nvim-lsp](https://github.com/neovim/nvim-lspconfig)를 보면 `require'lspconfig'.pyright.setup{}`로 초기화한다.
 
 vim과 neovim의 다른점은 `:h vim-differences`에서 확인하자.
 
@@ -78,7 +78,7 @@ https://github.com/nanotee/nvim-lua-guide#modules
 `init.vim` 대신 `init.lua`에서 설정을 명세할 수 있다.
 
 vim 함수를 `:call Foo()`로 호출하는 것처럼, lua 함수도 `:lua Foo()`로 호출할 수 있다.
-예를들어 LSP에 설정된 코드 액션 매핑이 있는데:
+예를 들어 LSP에 설정된 코드 액션 매핑이 있는데:
 
 ```lua
 vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
@@ -148,7 +148,7 @@ vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한
 `:h KEYWORD`와 같이 사용한다.
 키워드 전체를 입력하지 않아도 된다.
 키워드 일부만 입력해도 가장 근접한 키워드를 찾는다.
-예를들어 `:h usr_12.txt` 대신 `:h 12.txt`만 입력해도 된다.
+예를 들어 `:h usr_12.txt` 대신 `:h 12.txt`만 입력해도 된다.
 
 ### 도움말 탐색하기
 
@@ -421,7 +421,7 @@ undo 시점이 Leaf 노드가 된다. 이 노드는 `:undo 노드번호`로 되�
 되돌리는 시점도 Leaf 노드를 생성한다.
 
 노드에는 시간도 표시되는데, `:earlier`와 `:later`로 시간을 기준으로 이동할 수 있다.
-예를들어 `:earlier 1h`로 1시간 전으로 이동한다.
+예를 들어 `:earlier 1h`로 1시간 전으로 이동한다.
 
 ### 자동완성
 
@@ -443,7 +443,7 @@ undo 시점이 Leaf 노드가 된다. 이 노드는 `:undo 노드번호`로 되�
 
 `syntax on`으로 구문 강조를 활성화한다. vim은 기본적으로 언어별 문법 강조를 제공한다.\
 그 목록은 메뉴얼에서 확인할 수 있다. `ft-<LANGUAGE>-syntax` 이름으로 언어별 메뉴얼이 제공된다.\
-예를들어 `:h ft-python-syntax`로 파이썬 문법 강조에 대한 메뉴얼을 확인할 수 있다.
+예를 들어 `:h ft-python-syntax`로 파이썬 문법 강조에 대한 메뉴얼을 확인할 수 있다.
 
 neovim은 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 플러그인으로 언어별 요소를 분석하여 더 정교하게 구문을 분석한다.
 **하지만 기본 `colorscheme`으로는 정교한 구문 강조를 지원하지 않는다**.\
@@ -473,7 +473,7 @@ vim이 제공하는 읽기 전용 레지스터는 클립보드, 마지막 삭제
     * e.g. `"_dd` 현재 라인을 삭제하지만 unnamed register에 저장하지 않는다.
 
 `let @`을 사용하면 직접 register에 값을 할당할 수 있다.
-예를들어, `+` register에 클립보드를 연결했다면, 다음은 클립보드에 현재 파일 경로를 복사한다.
+예를 들어, `+` register에 클립보드를 연결했다면, 다음은 클립보드에 현재 파일 경로를 복사한다.
 
 ```vim
 :let @+=expand('%')
@@ -633,7 +633,7 @@ nvim이라면 `~/.config/nvim/ftplugin` 디렉토리에 파일을 만들면 된�
 매핑할 때 사용하는 특수 키 이름이다. 매핑 충돌을 피하기 위한 대책이다.
 이 특수 키로 먼저 매핑하고, 실제 키에 매핑한다.
 
-예를들어 vimwiki에는 다음과 같은 코드가 있다:
+예를 들어 vimwiki에는 다음과 같은 코드가 있다:
 
 ```vim
 nnoremap <silent><script><buffer> <Plug>VimwikiFollowLink :VimwikiFollowLink<CR>

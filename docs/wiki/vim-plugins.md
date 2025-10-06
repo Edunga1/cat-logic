@@ -90,7 +90,7 @@ https://github.com/tpope/vim-fugitive
 
 `:Git <command>`는 `git <command>`에 대응한다.
 
-예를들어 `Git log`는 `git log`와 같은데, 객체와 상호작용할 수 있다.
+예를 들어 `Git log`는 `git log`와 같은데, 객체와 상호작용할 수 있다.
 
 커밋 해시에 커서를 두고 `<cr>` 누르면 해당 커밋의 변경 사항을 볼 수 있다. `o`는 분할 창에서, `O`는 새 탭에서 연다.
 

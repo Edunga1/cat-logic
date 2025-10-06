@@ -182,7 +182,7 @@ https://dev.mysql.com/doc/refman/8.0/en/create-index.html#create-index-functiona
 
 MySQL 8.0.13에서부터 인덱스 생성 시 함수를 사용할 수 있다.
 
-예를들어 컬럼에만 인덱스를 걸면:
+예를 들어 컬럼에만 인덱스를 걸면:
 
 ```sql
 CREATE TABLE stats

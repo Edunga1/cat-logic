@@ -61,7 +61,7 @@ Homebrew로 설치했다면 `git-completion.bash`가 자동으로 설치된다.
 
 [macOS](/docs/wiki/mac-os.md)은 git과 함께 자동 완성 스크립트가 내장되어 있는데,
 이 스크립트가 브랜치 이름 중간에서 자동 완성을 제공한다.
-예를들어 `git switch lo`에서 탭을 누르면 feature/**lo**g가 자동 완성된다.
+예를 들어 `git switch lo`에서 탭을 누르면 feature/**lo**g가 자동 완성된다.
 만약 Homebrew로 설치했다면 동작하지 않을 수도 있다. 첫 글자인 `f`에서만 **f**eature/log가 자동 완성된다.
 
 이 스크립트는 `/usr/share/zsh/<version>/functions`에 위치하고 있다.
@@ -246,7 +246,7 @@ https://meetup.toast.com/posts/39
 
 각 커밋을 의미하는 라인을 다시 정렬하면 git history가 그렇게 바뀐다.
 
-예를들어 A라는 작업과 B라는 작업이 있다.
+예를 들어 A라는 작업과 B라는 작업이 있다.
 A는 기능 하나를 추가하는 것이고, B는 A 작업을 하다보니 파일을 옮기고, 스타일을 바꾸는 작업들을 했다.
 
 ```bash
@@ -553,7 +553,7 @@ $ git log --follow --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
 
 #### 브랜치간 커밋 비교
 
-bitbucket, github에서 Pull Request를 머지할 때, 예를들어 staging -> master 머지한다면 staging의 커밋만 보여준다.
+bitbucket, github에서 Pull Request를 머지할 때, 예를 들어 staging -> master 머지한다면 staging의 커밋만 보여준다.
 이는 `git log`로 구현할 수 있다.
 
 ```bash

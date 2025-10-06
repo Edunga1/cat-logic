@@ -22,7 +22,7 @@ MCP 서버는 [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-serv
 
 VSCode에서 [playwright-mcp](/docs/wiki/playwright.md#playwright-mcp)를 사용하는 예시로,
 Copilot Chat을 통해 [Playwright](/docs/wiki/playwright.md)를 실행, 대화를 통해서 브라우저를 조작할 수 있다.
-예를들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘'라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘' 같은 명령을 내릴 수 있다.
+예를 들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘'라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘' 같은 명령을 내릴 수 있다.
 
 다만 한 응답에서 도구 사용 제한이 있는 것으로 보인다. JetBrains나 VSCode + GitHub Copilot Chat 모두에서 발생한 현상인데,
 URL 40개를 던져주고 확인하고 보고하라고 하면 5개 정도만 확인하고 나머지는 어떻게든 무시한다.

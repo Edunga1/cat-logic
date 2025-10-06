@@ -130,7 +130,7 @@ select TIMESTAMP '2024-02-01 11:55:30' - TIMESTAMP '2024-01-30 04:11:05' as diff
 ---
 
 group by, where 절 등에서 `DATE_FORMAT()` 사용한다면, PostgreSQL에서는 `DATE_TRUNC`를 고려하자.
-지정한 단위로 날짜를 잘라준다. 예를들어 `MONTH`가 기준이라면 일자 아래는 가장 작은 값으로 변경된다.
+지정한 단위로 날짜를 잘라준다. 예를 들어 `MONTH`가 기준이라면 일자 아래는 가장 작은 값으로 변경된다.
 
 ```sql
 postgres=# select NOW(), DATE_TRUNC('YEAR', NOW());

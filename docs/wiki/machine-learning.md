@@ -125,7 +125,7 @@ https://www.facebook.com/story.php?story_fbid=27006446892333407&id=1000018438480
 **token**
 
 토큰은 단어, 단어 뭉치, 문자 하나가 될 수 있으며 추천 단위가 토큰이다.
-예를들어 `Horses are my favorite` 문장을 입력하면 `animal`, `animals`, `\n`, `!` 등을 다음에 올 토큰으로 추천하는 식이다.
+예를 들어 `Horses are my favorite` 문장을 입력하면 `animal`, `animals`, `\n`, `!` 등을 다음에 올 토큰으로 추천하는 식이다.
 
 ## Interesting Things
 

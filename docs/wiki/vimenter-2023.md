@@ -207,7 +207,7 @@ classy.nvim은 html "class" 속성을 제거, 닫은 태그에서 사용할 수 
 
 tree-sitter API를 이용하여 속성(class) 추가, 제거 등을 처리했다.
 
-html과 jsx와 다른 부분을 이해해야 했는데, 예를들어 jsx는 `className`을 사용한다.
+html과 jsx와 다른 부분을 이해해야 했는데, 예를 들어 jsx는 `className`을 사용한다.
 
 tree-sitter 플러그인 개발하려면 [treesitter/playground](https://github.com/nvim-treesitter/playground)가 필요하다.
 원래는 별도 설치해야 했지만, 0.10 버전부터는 내장되었다.

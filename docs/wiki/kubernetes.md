@@ -5,7 +5,7 @@
 하나의 Pod 내에서 여러개의 Container를 운영할 때,
 Docker Compose의 `volumes_from`과 같은 기능을 하려면.
 
-예를들어, static 파일을 가진 컨테이너와 Nginx 컨테이너를
+예를 들어, static 파일을 가진 컨테이너와 Nginx 컨테이너를
 운용하는 경우 Nginx에 static 파일을 공유하는 경우에 대한 글.
 
 https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/
