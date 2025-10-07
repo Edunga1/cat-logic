@@ -778,6 +778,34 @@ Search for specific common typos
    ↪ 103 lines...
 ```
 
+##### MCP 설정하기
+
+`copilot` 환경 내에서 `/mcp add`를 입력하면 MCP 설정을 위한 입력 화면이 나온다.
+여기서 처음 TUI를 통한 입력 창 구현을 보았다.
+
+또는 설정 파일을 직접 수정할 수 있다.
+`~/.copilot/mcp-config.json`에 저장한다.
+
+```json
+{
+  "mcpServers": {
+    "godot": {
+      "type": "local",
+      "command": "node",
+      "tools": [
+        "*"
+      ],
+      "args": [
+        "/home/user/godot-mcp/build/index.js"
+      ],
+      "env": {
+        "GODOT_PATH": "/mnt/c/Users/user/AppData/Local/Microsoft/WinGet/Links/godot.exe"
+      }
+    }
+  }
+}
+```
+
 #### Copilot Chat
 
 https://docs.github.com/en/copilot/github-copilot-chat/using-github-copilot-chat-in-your-ide
