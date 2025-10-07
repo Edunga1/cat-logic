@@ -38,7 +38,7 @@ intellisense 동작은 하지 않는다. (이미 [plugin 이슈](https://github.
 
 Rigidbody의 질량(mass)에 영향을 받지 않음
 
-**유니티 메뉴얼에서는 가속도을 수정하는 것은 현실적이지 않은 결과가 나올 수 있으므로 직접 변경하지 말 것을 권고하고 있다.**
+**유니티 매뉴얼에서는 가속도를 수정하는 것은 현실적이지 않은 결과가 나올 수 있으므로 직접 변경하지 말 것을 권고하고 있다.**
 
 > In most cases you should not modify the velocity directly, as this can result in unrealistic behaviour
 
@@ -101,11 +101,11 @@ Is Trigger 허용시 충돌하더라도 물리연산이 일어나지 않는다.
 **Sprite Packer?**
 * Unity 4.6부터 UGUI제공한다.
 * NGUI는 직접적으로 Atlas파일을 생성하지만 UGUI에서는 추상적으로 packing.
-* UGUI에서 만들어지는 Atlas는 Library/AtalsCashe에 생성해 관리한다.
+* UGUI에서 만들어지는 Atlas는 Library/AtlasCache에 생성해 관리한다.
 
 [영상](https://www.youtube.com/watch?v=Pj8Y48ecBZY)을 따라 Atlas를 생성하려고 하였으나 **pack** 버튼을 눌러도 아무 반응이 없음.
 
-**Assets/Resources** 폴더 내에 있는 이미지들은 Atals를 생성할 수 없음. 이는 의도 된 것으로
+**Assets/Resources** 폴더 내에 있는 이미지들은 Atlas를 생성할 수 없음. 이는 의도된 것으로
 
 Resources 폴더 내에 있는 리소스들은 빌드 시 유니티가 자동으로 가져오므로 Atlas를 생성하는 경우 두 번 불러오는 것이므로 의도적으로 막아 놓은 것
 

@@ -56,7 +56,7 @@ falsiness는 좋은 아이디어지만 크락포드는 논리식에서 falsiness
 
 **null** 대신 **undefined** 사용하는 것을 권장하고, `''` 같은 falsy value를 사용하지 말고 명시적으로 비교문을 작성하자.
 
-반복문은 `for` 구문보다 `Array.protoype.forEach`와 같은 배열 메서드를 이용하거나, 꼬리 재귀 함수를 사용하자.
+반복문은 `for` 구문보다 `Array.prototype.forEach`와 같은 배열 메서드를 이용하거나, 꼬리 재귀 함수를 사용하자.
 오브젝트를 순회하고 싶다면 `Object.keys(obj)`로 키를 배열화하여 사용한다.
 
 
