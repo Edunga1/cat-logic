@@ -84,7 +84,7 @@ x, y, z 축에 대한 각도로 표현한다. 각각 alpha, beta, gamma 값으�
 ```js
 window.addEventListener("deviceorientation", onDeviceOrientation)
 
-fucntion onDeviceOrientation(event) {
+function onDeviceOrientation(event) {
   const { alpha, beta, gamma } = event
   console.log(alpha, beta, gamma)
 }

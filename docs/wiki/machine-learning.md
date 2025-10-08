@@ -961,7 +961,7 @@ https://deepmind.google/technologies/gemini
 Ultra, Pro, Nano 3가지 크기가 있다. Nano는 핸드폰과 같은 디바이스에 탑재될 모양.
 
 2023년 12월 13일에 Google Cloud에 공개된다.\
-Goolge Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.
+Google Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.
 
 어느 정도 편집은 예상했지만, [GN⁺: 구글의 최고 AI "Gemini" 데모는 조작되었다](https://news.hada.io/topic?id=12233)라는 글이 있다.\
 실시간 비디오와 오디오가 아닌, 이미지 프레임과 텍스트 프롬프트로 테스트했다는 것.\

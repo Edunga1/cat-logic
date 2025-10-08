@@ -161,7 +161,7 @@ ChatGPT와 대화하다보면 "Memory Updated"라는 메시지가 출력되는�
 [OpenAI의 CPO도 여기에 참여](https://www.linkedin.com/posts/kevinweil_want-to-try-something-fun-with-chatgpt-with-activity-7264370818149691392-auDd) 했다.
 
 나는 취미 보다는 개발에 대해서 주로 질문해서인지, 단순한 그림이 나왔다.
-Vim과 Kotllin 단어가 들어간 그림이다.
+Vim과 Kotlin 단어가 들어간 그림이다.
 
 ![chatgpt drawing me challenge](./res/chatgpt-4o-drawing-me-challenge.png)
 

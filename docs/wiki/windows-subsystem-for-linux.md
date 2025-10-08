@@ -214,12 +214,12 @@ WSL 버전이 업그레이드되면서 자연스레 해결된 것으로 보이�
 #### http 관련 명령어가 동작하지 않는 문제
 
 아래는 이전에 해결했던 기록이다.
-이제 더 이상 발생하지 않는데, `/etc/resolve.conf` 파일은 WSL이 자동으로 생성하고 관리하는 것으로 보인다.
+이제 더 이상 발생하지 않는데, `/etc/resolv.conf` 파일은 WSL이 자동으로 생성하고 관리하는 것으로 보인다.
 
 ---
 
 `curl` `wget` `docker pull`  `npm install` 등 명령어가 일체 먹히지 않는다.
-`git` 등 간접적으로 http를 사용하는 명렁어도 동작하지 않는다.
+`git` 등 간접적으로 http를 사용하는 명령어도 동작하지 않는다.
 
 https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021
 
