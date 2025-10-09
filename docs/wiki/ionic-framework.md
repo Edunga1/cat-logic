@@ -56,7 +56,7 @@ cordova platform add android@6.2.1
 ```
 
 아마도 Android SDK 버전을 업데이트 하면서 발생한 듯.
-Android SDK와 ionic의 android paltform 버전을 맞추어야 하는 거 같다.
+Android SDK와 ionic의 android platform 버전을 맞추어야 하는 거 같다.
 
 이상하게도 `cordova platform list` 결과에 최신 버전이 `6.1.2`로 낮은 버전이 출력 되었다. 그래서 최신 버전을 명시하여 추가했다.
 

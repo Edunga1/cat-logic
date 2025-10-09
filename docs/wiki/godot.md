@@ -53,7 +53,7 @@ Reddit에서 [Godot을 WSL에서 설치하는 방법?](https://www.reddit.com/r/
 
 [공식 문서](https://docs.godotengine.org/en/stable/tutorials/editor/external_editor.html)에서는 외부 에디터를 사용하는 방법으로 소개하고 있다.
 
-Godot 에디터에서 `6005` 포트로 Langueage Server를 실행하고, 외부 에디터에서 LSP를 사용하는 구조이다.
+Godot 에디터에서 `6005` 포트로 Language Server를 실행하고, 외부 에디터에서 LSP를 사용하는 구조이다.
 참고로 [nvim-lspconfig의 gdscript 기본설정](https://github.com/neovim/nvim-lspconfig/blob/16666f1bc40f69ce05eb1883fd8c0d076284d8a5/lua/lspconfig/configs/gdscript.lua)도 `6005` 포트에 연결하도록 기본 설정되어 있다.
 
 Windows 10 + WSL2 환경에서, 공식 문서에 따라 Godot에서 LSP를 활성화하고, Vim LSP 설정하였지만 윈도우 앱에서 오픈한 포트에 연결하지 못했다.
@@ -112,7 +112,7 @@ Godot은 이를 내장하고 있다.
 자식 노드에서는 `signal`을 선언하고, observer에 `emit()`을 통해 notification 한다.
 
 ```gd
-singal hit
+signal hit
 
 func _process(delta):
   if is_colliding():

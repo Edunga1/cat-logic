@@ -702,7 +702,7 @@ HEAD is now at 93a0251b work-in-progress
 $ git shortlog
 
 Alleb (2):
-      Implment something
+      Implement something
       Fix something
 
 Bella (3):

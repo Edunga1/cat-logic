@@ -153,7 +153,7 @@ public void configure(StateMachineTransitionConfigurer<States, Events> transitio
 
 SI 상태(source)가 E1 이벤트를 만나면 S2 상태(target)이 된다.
 
-#### Pytohn transitions
+#### Python transitions
 
 https://github.com/pytransitions/transitions
 

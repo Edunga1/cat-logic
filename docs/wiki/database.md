@@ -250,7 +250,7 @@ EXPLAIN SELECT * FROM stats WHERE MONTH(created_at) = 1;
 https://dev.mysql.com/doc/refman/8.0/en/create-table-secondary-indexes.html
 
 Virtual Column은 MySQL 5.7에서 추가되었다.
-Funcitonal Key Parts를 사용할 수 없었던 5.7에서는 Virtual Column을 이용하여 대체 사용할 수 있다.
+Functional Key Parts를 사용할 수 없었던 5.7에서는 Virtual Column을 이용하여 대체 사용할 수 있다.
 
 ```sql
 CREATE TABLE jemp (
