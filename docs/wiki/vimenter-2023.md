@@ -172,7 +172,7 @@ Neovim-QT의 장점은 vim pane 크기 조절 등 마우스 인터랙션을 잘 
 developer command prompt for vs 2022 설치하면 빌드에 필요한 도구를 설치할 수 있다.
 telescope, treesitter 등 주요한 플러그인들이 C 빌드를 수행한다.
 
-UE는 개발 언어로 C++ 사용하므로 clang lsp 사용한다.
+UE는 개발 언어로 C++ 사용하므로 clang LSP 사용한다.
 
 UE의 프로젝트는 모듈 단위로 dll 생성하여 링크한다. 모듈마다 필요한 dependency 목록을 관리한다.
 

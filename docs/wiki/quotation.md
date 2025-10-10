@@ -5,7 +5,7 @@ created: 2023-05-08
 
 가끔씩 생각날 때 마다 검색할 수 있도록 정리해둔다.
 
-## Make it measureable
+## Make it measurable
 
 https://ita9naiwa.github.io/recsys/2018/07/22/Recys-Diversity-and-Metrics.html
 

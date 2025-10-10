@@ -113,7 +113,7 @@ https://github.com/tpope/vim-fugitive
     * `u`: unstage
     * `X`: discard
 
-unsage 하려면 Staged 목록에서 보여지므로 이동하여 `u` 눌러야 한다.
+unstage 하려면 Staged 목록에서 보여지므로 이동하여 `u` 눌러야 한다.
 
 다음은 `:Git` 실행한 화면 예시.
 

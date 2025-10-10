@@ -131,7 +131,7 @@ class TalkTradeRequestControllerSendingAddressTest(
       productClient.clearTestData()
     }
 
-    fun requset(id: Long) = mvc.get("/users/$id/product") {
+    fun request(id: Long) = mvc.get("/users/$id/product") {
        contentType = MediaType.APPLICATION_JSON
     }
 
@@ -190,7 +190,7 @@ class TalkTradeRequestControllerSendingAddressTest(
       // productClient.clearTestData()
     }
 
-    fun requset(id: Long) = mvc.get("/users/$id/product") {
+    fun request(id: Long) = mvc.get("/users/$id/product") {
       contentType = MediaType.APPLICATION_JSON
     }
 

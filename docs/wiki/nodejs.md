@@ -71,7 +71,7 @@ cli는 yarn 이름을 같이 사용하지만 프로젝트가 달라서 Homebrew�
 
 반면에 npm은 지금까지도 한 프로젝트에서 관리되고 있다.
 그래서 혼란이 없다. node.js에 내장되어 있으므로 따로 설치할 필요도 없다.
-다만 `npm audit`은 짜증만 난다. 이걸로 제대로 고쳐지는 경우가 많이 없는 거 같다.
+다만 `npm audit`은 짜증만 난다. 이걸로 제대로 고쳐지는 경우가 많이 없는 것 같다.
 
 ### pnpm
 
@@ -87,7 +87,7 @@ Monorepo가 아니라면 `pnpm-workspace.yaml`은 필요 없는 것으로 보인
 괜히 빈 내용으로 추가하면 패키지 설치 시 매번 root project 경고가 발생한다.
 
 `pnpm install` 시 warning이 줄어든 것을 확인할 수 있었다.
-단순히 숨긴건지는 모르겠지만 `npm install` 경우에는 수 많은 peer depdency warning으로 신경이 쓰이는 반면에 pnpm은 warning이 없었다.
+단순히 숨긴건지는 모르겠지만 `npm install` 경우에는 수 많은 peer dependency warning으로 신경이 쓰이는 반면에 pnpm은 warning이 없었다.
 
 ---
 

@@ -242,10 +242,10 @@ cd blink && ./get_frameworks.sh
 
 1. 저장소 클론 받고, 쉘 스크립트를 실행하면, 관련 라이브러리를 알아서 받는다. 5분쯤 걸렸다.
 2. XCode로 클론받은 저장소를 연다.
-3. (필요시) Signing & Capabillity 에서 불필요한 권한을 제거한다.
+3. (필요시) Signing & Capability 에서 불필요한 권한을 제거한다.
 4. 빌드한다. 끝.
 
-3번에 대해서, XCode의 Signing & Capabillity에 가면 코드에 서명을 할 수 없다.
+3번에 대해서, XCode의 Signing & Capability에 가면 코드에 서명을 할 수 없다.
 Push notification, ICloud 권한이 없다는 것인데.
 개발자 등록을 하지 않았으니 사용할 수 없다. 권한을 제거하자.
 해당 탭에서 스크롤을 내리면 권한이 등록되어 있는 것을 볼 수 있는데, X를 눌러 제거하자.

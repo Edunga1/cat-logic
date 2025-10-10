@@ -116,7 +116,7 @@ ORM을 통한 객체 참조는 가장 강한 결합도를 가진다.
 
 객체 대신 ID를 사용하면 결합도를 약하게 만들 수 있다.
 
-![how sepration 99p](res/woowahanoop-how-separation-99p.png)
+![how separation 99p](res/woowahanoop-how-separation-99p.png)
 
 결합도를 낮추고, 관련있는 객체끼리 packaging 한다.
 

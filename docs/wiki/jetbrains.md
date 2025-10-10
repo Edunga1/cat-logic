@@ -8,7 +8,7 @@ IntelliJ, DataGrip 등 JetBrains사 제품에 대한 이야기.
 JetBrains의 제품은 연간 구독을 구매하면, 해당 시점의 버전은 영구 라이센스로 지급된다.
 이를 [perpetual fallback license, 영구 폴백 라이센스](https://sales.jetbrains.com/hc/ko/articles/207240845)라고 한다.
 [All Products Pack](https://www.jetbrains.com/all/)을 구매하면 모든 제품의 영구 라이센스를 받을 수 있다.\
-2025년 4월, 2025.1 버전 출시와 함께 [All Products Pack 라이센스에 JetbBrains AI가 포함](https://sales.jetbrains.com/hc/en-gb/articles/16544922728466)된다.
+2025년 4월, 2025.1 버전 출시와 함께 [All Products Pack 라이센스에 JetBrains AI가 포함](https://sales.jetbrains.com/hc/en-gb/articles/16544922728466)된다.
 
 IntelliJ 등 몇몇 도구는 Community Edition이라는 무료 버전이 있다.
 개발하는데 문제는 없으나, 몇 가지 플러그인이 제한된다.
@@ -19,7 +19,7 @@ IntelliJ 등 몇몇 도구는 Community Edition이라는 무료 버전이 있다
 
 이 플러그인이 없으면 불편하다.
 [Spel](https://docs.spring.io/spring-framework/docs/3.0.x/reference/expressions.html) 파싱하지 않아서 하이라이팅, 자동 완성이 되지 않는다.
-pring Bean은 프레임워크에 의해 생성 및 주입되기 때문에, IDE가 unused라고 표시한다.
+Spring Bean은 프레임워크에 의해 생성 및 주입되기 때문에, IDE가 unused라고 표시한다.
 이 외에도 Bean이나 Spring 기능에 대한 다양한 편리 기능을 사용할 수 없다. 그러나 개발하지 못하는 것은 아니다.
 
 ### WSL2에서 Freezing 현상

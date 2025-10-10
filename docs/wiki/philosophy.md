@@ -46,7 +46,7 @@ remove_list_entry(entry)
     prev = NULL;
     walk = head;
 
-    // Walk the lsit
+    // Walk the list
 
     while (walk != entry) {
         prev = walk;

@@ -150,7 +150,7 @@ $ /usr/bin/time git fetch
 
 * real: 총 소요시간
 * user: user mode에서 소요된 CPU time
-* sys: kernal mode에서 소요된 CPU time
+* sys: kernel mode에서 소요된 CPU time
 
 `-h` 옵션으로 익숙한 시간 단위로 표기할 수 있다.
 

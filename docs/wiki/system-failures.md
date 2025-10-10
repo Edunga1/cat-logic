@@ -70,7 +70,7 @@ JAL 516편은 착륙 허가(landing clearance)를 받았고, 관제사가 cleara
 ATC(Air Traffic Control) 지식이 없어서 발생한 문제가 되기 때문이다.\
 하지만 해상보안청 조종사는 "Taxi to holding point C5 JA772A No1"라고 정확히 복창했다. 따라서 기초적인 ATC 지식을 잘못 이해했을 가능성은 없다.
 따라서 이는 "Rule-based Mistake"이다.
-다음 분류는 "Misapplication of a good rule(옳은 규칙을 잘못 적용함)"과 "Applicaiton of a bad rule(잘못된 규칙을 적용)"이다.
+다음 분류는 "Misapplication of a good rule(옳은 규칙을 잘못 적용함)"과 "Application of a bad rule(잘못된 규칙을 적용)"이다.
 "Application of a bad rule"은 원칙을 무시하고 자신만의 규칙을 만들어 적용하는 것이 있다.
 
 [9:45](https://youtu.be/-OrkSFn5wv0?si=fXiSp9GRi6aWjQ_E&t=585)\
