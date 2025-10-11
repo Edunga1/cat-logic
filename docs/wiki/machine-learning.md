@@ -714,7 +714,6 @@ https://github.com/github/copilot-cli
 
 ```bash
 copilot -p "문서 10개 정도만 오타를 찾아서 수정해줘. 커밋은 하지마." --allow-all-tools
-
 ```
 
 아래는 오타를 찾아서 수정해달라는 프롬프트인데, 모델은 GPT-5를 사용했다.
@@ -1691,7 +1690,7 @@ GPT-4o는 High로 분류되어 있다. GPT-4o mini는 Low로 분류한다.
 
 ### GitHub Copilot Workspace
 
-[GitHub Workspace](/docs/wiki/github.md#github-workspace) 참조.
+[GitHub Workspace](/docs/wiki/github.md#github-copilot-workspace) 참조.
 
 ### Adobe MAX Sneaks 2024 - Turntable
 
