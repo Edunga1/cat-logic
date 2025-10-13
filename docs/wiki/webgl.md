@@ -9,7 +9,7 @@ OpenGL을 기반하여 HTML Canvas 요소를 통해 웹 표준에 통합된다.
 
 ## WebGL2
 
-> GPU에서 실행되는 코드를 제공해만 합니다. 그 코드는 두 개 함수 쌍 형태로 제공되어야 하고, 각각의 함수는 정점 셰이더(vertex shader)와 프래그먼트 셰이더(fragment shader)라고 불립니다. 각각은 매우 엄격한 타입(strictly-types)을 가지는 C/C++과 유사한 GLSL(GL Shader Language)로 작성되어야 합니다.
+> GPU에서 실행되는 코드를 제공해야만 합니다. 그 코드는 두 개 함수 쌍 형태로 제공되어야 하고, 각각의 함수는 정점 셰이더(vertex shader)와 프래그먼트 셰이더(fragment shader)라고 불립니다. 각각은 매우 엄격한 타입(strictly typed)을 가지는 C/C++과 유사한 GLSL(GL Shader Language)로 작성되어야 합니다.
 
 WebGL2는 두 가지 언어로 개발한다.
 
@@ -19,9 +19,9 @@ const canvas = document.querySelector("canvas")
 const gl = canvas.getContext("webgl2")
 ```
 
-GLSL이라는 언어로 셰이더와 프라그먼트를 작성하는 코드로 이루어진다:
+GLSL이라는 언어로 셰이더와 프래그먼트를 작성하는 코드로 이루어진다:
 ```glsl
-##version 300 es
+#version 300 es
 
 precision highp float;
 
@@ -57,11 +57,11 @@ void main() {
 
 > WebGL은 단순한 래스터화(rasterization) 엔진일 뿐입니다. WebGL은 여러분이 작성한 코드로 점, 선 및 삼각형들을 그릴 뿐입니다.
 
-> WebGL에서는 무언가를 그릴때 마다 두개의 셰이더가 필요합니다. 정점 셰이더와 프래그먼트 셰이더입니다.
+> WebGL에서는 무언가를 그릴 때마다 두 개의 셰이더가 필요합니다. 정점 셰이더와 프래그먼트 셰이더입니다.
 
 > 프래그먼트 셰이더의 역할은 현재 래스터화 되는 픽셀에 색상을 할당하는 것입니다.
 
-> 프래그먼트 셰이더는 픽셀당 한번씩 호출 됩니다. 호출 될 때마다 여러분이 지정한 out 변수를 어떤 색상으로 설정해야 합니다.
+> 프래그먼트 셰이더는 픽셀당 한 번씩 호출됩니다. 호출될 때마다 여러분이 지정한 out 변수를 어떤 색상으로 설정해야 합니다.
 
 셰이더는 정점 셰이더와 프래그먼트 셰이더 두 가지가 있다.
 

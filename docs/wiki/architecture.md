@@ -214,7 +214,7 @@ DDD의 boundary context가 MSA를 구분짓는 토대가 된다.
   5. Context Map
     * Context 간의 관계를 나타낸다.
     * e.g.
-      * json, yaml, grpc 등으로 커뮤니이션한다 → Published Language
+      * json, yaml, grpc 등으로 커뮤니케이션한다 → Published Language
       * graphql, restapi로 통신한다 → Open Host Service
       * Upstream, Downstream 관계를 나타내고, 정책이 변경되면 따라간다 → Conformist
 

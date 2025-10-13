@@ -258,7 +258,7 @@ EBS의 스냅샷은 전체 Copy가 아니라 Incremental을 저장하므로, 스
 
 ### EFS - Elastic File System
 
-처음부터 얼마나 사용할 지 고민할 필요는 없다. 사용한 만큼 비용 지불. 사용할 때 마다 용량 확장된다.(Scalable)
+처음부터 얼마나 사용할지 고민할 필요는 없다. 사용한 만큼 비용 지불. 사용할 때마다 용량 확장된다.(Scalable)
 
 ### Object Storage
 
