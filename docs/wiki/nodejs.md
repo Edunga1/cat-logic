@@ -462,7 +462,7 @@ pm2로 배포 프로세스를 관리하고 싶어서 설정 파일을 작성하�
 
 ## Jupyter notebook 사용하기
 
-[Jupyter Docker Stacks](docker#Jupyter Docker Stacks)
+[Jupyter Docker Stacks](/docs/wiki/javascript.md#jupyter-docker-stacks)
 
 ## Taming architecture complexity in v8
 
