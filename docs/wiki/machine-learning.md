@@ -476,7 +476,9 @@ https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview
 프리뷰 단계지만 무료 기간이 없다.
 
 2025년 6월 4일, Pro 플랜에 포함되었다.
-하지만 12일 기준, 아직까지 더 비싼 Team 플랜에 포함되지 않았다.
+
+2025년 8월, [Team 플랜](https://www.reddit.com/r/Anthropic/comments/1mvvha9/claude_code_now_on_teams_plan/)에 포함되었다.
+다만 Premium Seat를 추가 구매해야 하는데 가격이 $150이고, 최소 5개 Seat를 구매해야 한다.
 
 [레딧 BEWARE CALUDE CODE IS NOT FREE 글](https://www.reddit.com/r/ClaudeAI/comments/1ixi2rg/beware_claude_code_is_not_free/)을 보면
 쿼리 2~3개에 $5 사용되었다고. 덧글에도 비슷한 경험을 한 사람들이 있다.
