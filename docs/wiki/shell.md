@@ -46,11 +46,16 @@ The sections of the manual are:
 
 ### tldr - 명령어 예제 도구
 
-[tldr](https://github.com/tldr-pages/tldr) 명령줄 도구는 각 명령어에 대한 간단한 사용 예제를 제공한다.
+[tldr](https://github.com/tldr-pages/tldr)은 사용자들이 만드는 명령줄 도구 사용 사례를 모아놓은 저장소다.
+얼마나 활발한지는 저장소의 커밋을 보면 된다.
 
-브라우저로 검색할 필요 없이 `tldr COMMAND`로 간단한 사용 예제도 볼 수 있다.
+이 저장소를 탐색하기 위한 별도 명령어 도구를 제공하는데, 대표적인 클라이언트가 `tldr`이다.
+다른 클라이언트는 [위키 페이지](https://github.com/tldr-pages/tldr/wiki/Clients#console-clients)에 정리되어 있다.
 
-커뮤니티 기반으로 지속적으로 업데이트된다. 얼마나 활발한지는 저장소의 커밋을 보면 된다.
+공식 도구인 [tldr-pages/tldr-c-client](https://github.com/tldr-pages/tldr-c-client)는 `brew install tldr`로 설치할 수 있었지만,
+Deprecation 되어 2025-10-24에 Homebrew에서 비활성화된다. 더 이상 지원하지 않는다고.
+
+Rust로 작성된 비공식인 [tealdeer-rs/tealdeer](https://github.com/tealdeer-rs/tealdeer)가 인기 있는 듯.
 
 다음은 예시. `curl` 명령어에 대한 사용 법을 보고싶다면:
 
