@@ -200,7 +200,7 @@ Postman은 closed source + 데이터 저장을 postman에 위임해야 한다. �
 특히 로그인하지 않으면 매번 뜨는 로그인 유도 메시지를 무시하는 기능도 없다.
 
 Insomnia는 version control을 기본으로, github 등에 private repository에 저장할 수 있다.
-팀 간 API 공유가 필요하더라도 이 것으로 가능해 보인다. 유료 결제로 제공도 한다.
+팀 간 API 공유가 필요하더라도 이것으로 가능해 보인다. 유료 결제로 제공도 한다.
 
 JetBrains IDE는 업데이트될 때 마다 http client 기능을 많이 개선하고 있다.
 [2023 버전부터는 body에 대한 필드와 값도 자동완성](./jetbrains.md)을 지원한다.
