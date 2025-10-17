@@ -7,12 +7,12 @@ created: 2023-10-27
 
 ## Writerside App
 
-Jetbrains의 문서 작성 도구.
+JetBrains의 문서 작성 도구.
 
 https://www.jetbrains.com/writerside/
 
-마크다운을 제공하지만 Writerside 만의 기능이 꽤 많다.
-2023년 10월 기준으로 얼리 엑세스지만, 앞으로도 EAP나 무료 버전이 제공된다고 한다.
+마크다운을 제공하지만 Writerside만의 기능이 꽤 많다.
+2023년 10월 기준으로 얼리 액세스지만, 앞으로도 EAP나 무료 버전이 제공된다고 한다.
 다음은 FAQ 중:
 
 > *Writerside의 가격은 어떻게 되나요?*
@@ -20,7 +20,7 @@ https://www.jetbrains.com/writerside/
 >
 > Writerside가 출시된 후에도 무료 버전이나 EAP 프로그램이 지속적으로 제공될 예정이므로 계속 무료로 도구를 사용할 수 있습니다.
 
-테마와 레이아웃이 Jetbrain의 공식 문서과 같아서 퀄리티가 기본적으로 좋다.
+테마와 레이아웃이 JetBrains의 공식 문서과 같아서 퀄리티가 기본적으로 좋다.
 
 에디터에서 작성하면 미리보기를 제공하는데, 로컬 호스팅하여 보여준다.
 

@@ -30,7 +30,7 @@ https://vimeo.com/96425312
 
 보안적인 코드를 작성하기 위해서
 페이스북의 FBJS, 구글의 Caja project, 마소의 Web Sandbox, 크락포드의 ADSafe와 같은 도구들이 있었다.
-공통적으로 **this**의 단점(*해석이 잘 안되는데, this는 글로벌 오브젝트를 가르키는데 글로벌 오브젝트를 찾기 위해서 느려진다는 거 같다.*)을 꼽았다.
+공통적으로 **this**의 단점(*해석이 잘 안되는데, this는 글로벌 오브젝트를 가리키는데 글로벌 오브젝트를 찾기 위해서 느려진다는 것 같다.*)을 꼽았다.
 **this**를 배제함으로써 더 쉬워졌고, prototypal pattern가 쓸모 없어지면서 functional pattern에 집중하게 되었다.
 
 #### null, falsiness에 대한 이야기
@@ -82,7 +82,7 @@ Angular가 아닌 AngularJS에 대한 이야기.
 
 ## Visual Studio Code에서 타입 힌팅 사용하기
 
-[정적 타입](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C%ED%98%95_%EC%B2%B4%EA%B3%84) 언어의 IDE가 제공하는 타입 힌트 도움 처럼 js 또한 jsdoc을 작성하면 제공받을 수 있다.
+[정적 타입](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C%ED%98%95_%EC%B2%B4%EA%B3%84) 언어의 IDE가 제공하는 타입 힌트 도움처럼 JS 또한 JSDoc을 작성하면 제공받을 수 있다.
 
 Visual Studio Code(또는 [LSP](./language-server-protocol.md)를 사용하는 에디터라면)에서
 **JSDoc** 활용하면 에디터에서 타입 힌트를 제공받을 수 있다.
@@ -218,15 +218,15 @@ something('regular');
 
 [Microsoft 코딩 가이드라인](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines#null-and-undefined)에는 `null`을 사용하지 말고, `undefined`를 사용하라고 나와있다.
 
-## Jupyter Notebook + Javascript 도커라이징 기록
+## Jupyter Notebook + JavaScript 도커라이징 기록
 
-Jupyter Notebook이 너무 유용한 거 같아서 [Javascript](./javascript.md)도 쓰고 싶어졌다.
+Jupyter Notebook이 너무 유용한 거 같아서 [JavaScript](./javascript.md)도 쓰고 싶어졌다.
 
 찾아보니 기존 Jupyter 환경에 npm `ijavascript`라는 cli를 설치하면 기존 Python에 NodeJS 노트까지 추가할 수 있었다.
 
 python, nodejs 도구를 모두 설치하면 너무 복잡해서 도커 이미지로 만들어서 사용하기로 했다.
 
-누군가 만들어 놓은 Python, Go, NodeJs 모두 가능한 도커 이미지를 찾았다:
+누군가 만들어 놓은 Python, Go, Node.js 모두 가능한 도커 이미지를 찾았다:
 https://github.com/dting/docker-jupyter-go-js\
 
 하지만 오래된 이미지다 보니 node 버전도 낮고, pip 버전도 낮아서
@@ -236,7 +236,7 @@ https://github.com/dting/docker-jupyter-go-js\
 좀 더 찾아보니 https://hub.docker.com/r/mfellner/javascript-notebook 이미지를 찾았다.
 오래 되었지만, 지금도 관리되고 있는 `jupyter/minimal-notebook`를 기반으로 하고 있어서, 참고하여 Dockerfile을 다시 작성하기로 했다.
 
-`mfellner/javascript-notebook` Dockerfile을 수정해서 nodejs 버전을 올리고 `6.0.0` -> `10.15.3` 빌드했다.
+`mfellner/javascript-notebook` Dockerfile을 수정해서 Node.js 버전을 올리고 `6.0.0` -> `10.15.3` 빌드했다.
 
 실행은 잘 되나, 최초 연결 시 비밀번호/토큰을 입력해야 했다.
 로컬 사용이 목적이라 비활성화 하려고,
@@ -281,7 +281,7 @@ https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupy
 
 ### 여담
 
-Jupyter Notebook NodeJS 도커라이징한 것은 GitHub 저장소에 업로드 했다:\
+Jupyter Notebook Node.js 도커라이징한 것은 GitHub 저장소에 업로드 했다:\
 https://github.com/Edunga1/jupyter-notebook-nodejs
 
 Dockerfile 작성하면서 `MAINTAINER`가 deprecated, `LABEL`을 사용해야 하는 것을 알았다: https://stackoverflow.com/questions/38899977/how-do-i-declare-multiple-maintainers-in-my-dockerfile
