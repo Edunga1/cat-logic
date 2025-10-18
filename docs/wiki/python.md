@@ -136,7 +136,7 @@ https://github.com/python/mypy
 
 > Optional static typing for Python
 
-타입 명세를 할 수 없는 경우에는 `Need type annotation for "variable"` 에러 메시지를 막기 위해 `my.ini` 생성하고 다음과 같이 설정하자:
+타입 명세를 할 수 없는 경우에는 `Need type annotation for "variable"` 에러 메시지를 막기 위해 `mypy.ini` 생성하고 다음과 같이 설정하자:
 
 ```toml
 [mypy]
@@ -148,7 +148,7 @@ disallow_untyped_defs = False
 #### Django Stubs
 
 django는 `objects` 등 마법을 사용해서 타입 제공을 제대로 받을 수 없다.
-djang-stubs는 django 매직과 관련된 타입 정보를 제공한다.
+django-stubs는 django 매직과 관련된 타입 정보를 제공한다.
 
 https://github.com/typeddjango/django-stubs
 
@@ -436,7 +436,7 @@ Homebrew `brew install poetry`로 설치하자.
     2.0.0 버전부터는 `poetry env activate`로 [대체되었다](https://github.com/python-poetry/poetry/releases/tag/2.0.0).
 3. `poetry install`: 의존성 설치. `poetry.lock` 파일을 업데이트한다.
 
-`poetry init --python=3.10 -q`로 초기화하면 `pypoject.toml` 파일이 생성된다.
+`poetry init --python=3.10 -q`로 초기화하면 `pyproject.toml` 파일이 생성된다.
 `-q` 옵션이 없으면 너무 많은 정보를 물어봐서 번거롭다.
 
 ```toml
