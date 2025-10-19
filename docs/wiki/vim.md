@@ -133,7 +133,7 @@ neovim이 직접 tagfunc을 [구현한 것](https://github.com/neovim/neovim/blo
 
 * [nvim-lspconfig/server_configurations.md](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)에서 설정 가능한 language server 목록을 확인할 수 있다.
     * 또는 `:h lspconfig-all` 도움말에서 확인할 수 있다.
-* [none-js/BUILTINS](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md) 제공하는 lsp 도구 목록
+* [none-ls/BUILTINS](https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md) 제공하는 lsp 도구 목록
 
 ## 도움말 `:help`
 
@@ -447,7 +447,7 @@ undo 시점이 Leaf 노드가 된다. 이 노드는 `:undo 노드번호`로 되�
 
 neovim은 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 플러그인으로 언어별 요소를 분석하여 더 정교하게 구문을 분석한다.
 **하지만 기본 `colorscheme`으로는 정교한 구문 강조를 지원하지 않는다**.\
-[tresitter wiki의 gallery](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Gallery)에서 treesitter를 지원하는 `colorscheme`을 설치하자.
+[treesitter wiki의 gallery](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Gallery)에서 treesitter를 지원하는 `colorscheme`을 설치하자.
 
 ## 레지스터(Registers)
 
@@ -898,7 +898,7 @@ count  total (s)   self (s)  function
 프로파일링 해보니, 엔터가 입력될 때 마다 거의 초단위로 시간이 소요되었다.
 
 결론은 colorscheme 옵션을 제거하면 괜찮다. 프로파일링으로는 딱히 힌트를 얻지 못했다.
-`soliarized`로 사용하고 있었다:
+`solarized`로 사용하고 있었다:
 
 ```vim
 colorscheme solarized

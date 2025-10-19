@@ -21,7 +21,7 @@ https://semver.org/ 이런 사이트가 있지만 막상 버전 갱신하려면 
 > <upgrades may break API> . <downgrades may break API> . <fine either way>
 > ```
 
-쓰레드는 [리팩토링은 어떤 버전을 올려야 하나요?](https://users.rust-lang.org/t/semver-for-refactoring-change/81370/5)
+스레드는 [리팩토링은 어떤 버전을 올려야 하나요?](https://users.rust-lang.org/t/semver-for-refactoring-change/81370/5)
 
 ## `X-` 접두사의 의미
 

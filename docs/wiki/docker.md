@@ -128,13 +128,13 @@ $ brew install docker docker-machine
 
 docker-machine: 맥을 마치 Host OS 처럼 사용 할 수 있도록 해주는 프로그램
 
-**2. Homebrew로 Virtualbox 설치**
+**2. Homebrew로 VirtualBox 설치**
 
 ```bash
 $ brew cask install virtualbox
 ```
 
-Virtualbox: 가상화 프로그램. 맥에서 docker-machine(Host OS, Linux)을 운영하기 위해서 사용
+VirtualBox: 가상화 프로그램. 맥에서 docker-machine(Host OS, Linux)을 운영하기 위해서 사용
 
 **3. docker-machine 설정**
 
@@ -144,7 +144,7 @@ $ docker-machine create -d virtualbox default
 
 virtualbox driver를 이용하여 `default` 이름의 Docker-machine을 생성
 
-virtualbox에 Docker-machine이 올라간다.
+VirtualBox에 Docker-machine이 올라간다.
 
 **4. 생성한 Docker-machine 활성화**
 
