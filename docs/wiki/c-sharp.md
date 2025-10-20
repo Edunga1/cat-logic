@@ -51,4 +51,4 @@ https://stackoverflow.com/questions/550785
 
 두 번째 답변의 덧글 중:
 > Absolutely. This is a bit like asking, "Should I implement the iterator pattern or use foreach and IEnumerable?
-> 이건 이렇게 묻는 것과 같습니다. "이터레이터 패턴을 구현해야 하나요? 아니면 foreach와 IEnumrable을 사용해야 하나요?"
+> 이건 이렇게 묻는 것과 같습니다. "이터레이터 패턴을 구현해야 하나요? 아니면 foreach와 IEnumerable을 사용해야 하나요?"
