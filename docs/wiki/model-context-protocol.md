@@ -150,8 +150,8 @@ https://modelcontextprotocol.io/specification/2025-06-18/server/resources#listin
 
 MCP 그룹에서 공식 제공하는 디버깅 및 개발 도구.
 
-- Repo: https://modelcontextprotocol.io/docs/tools/inspector
-- Introduction: https://github.com/modelcontextprotocol/inspector
+- Repo: https://github.com/modelcontextprotocol/inspector
+- Introduction: https://modelcontextprotocol.io/docs/tools/inspector
 
 ```bash
 npx @modelcontextprotocol/inspector <command> <args>
