@@ -206,7 +206,7 @@ PR까지 생성한 모습이다.
 
 ## GitHub API로 Release 된 파일 다운받기
 
-[Github API를 사용하기 위한 토큰 발급, 권한 설정 및 인증 방법은 생략](https://developer.github.com/v3/)
+[GitHub API를 사용하기 위한 토큰 발급, 권한 설정 및 인증 방법은 생략](https://developer.github.com/v3/)
 
 Release 관련 API는 [https://developer.github.com/v3/repos/releases/](https://developer.github.com/v3/repos/releases/)
  여기서 볼 수 있다.
@@ -219,7 +219,7 @@ Release 목록 API
 GET https://api.github.com/repos/:owner/:repo/releases
 ```
 
-Release 목록(또는 Latest라면 정보 하나)을 가져오면 success(200)와 함께 이런 형태로 전송 된다.
+Release 목록(또는 Latest라면 정보 하나)을 가져오면 success(200)와 함께 이런 형태로 전송된다.
 
 ```json
 {
@@ -296,7 +296,7 @@ Release 목록(또는 Latest라면 정보 하나)을 가져오면 success(200)�
 
 업로드한 파일 URL을 얻기 위해서는 `assets` 정보에 접근해야 한다.
 `assets` 또한 많은 정보를 가지고 있다.
-여러개의 asset을 가지고 있을 수 있기 때문에 적당한 것을 찾는 것이 선행되어야 할 것이다.
+여러 개의 asset을 가지고 있을 수 있기 때문에 적당한 것을 찾는 것이 선행되어야 할 것이다.
 
 여기서 **두 가지** URL을 사용할 수 있는데, `assets[].browser_download_url`와 `assets[].url`이다.
 
@@ -310,7 +310,7 @@ Release 목록(또는 Latest라면 정보 하나)을 가져오면 success(200)�
 ---
 
 private repository는 `url`을 이용해야 한다.
-`url`은 **Github API** 주소이기 때문에 `url`로 http **GET** 요청을 해야한다.
+`url`은 **GitHub API** 주소이기 때문에 `url`로 http **GET** 요청을 해야 한다.
 
 ```
 GET https://api.github.com/repos/octocat/Hello-World/releases/assets/1

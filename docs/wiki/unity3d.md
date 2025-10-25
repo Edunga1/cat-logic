@@ -17,10 +17,10 @@ created: 2016-10-18
 * [Unity Plugin (Unity Visual Studio Code Integration)](https://github.com/dotBunny/VSCode) 설치
 * [VSCode C# extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) 설치
 
-### intellisense 안되는 현상
+### IntelliSense 안되는 현상
 
 C# extension 설치 전에는 code highlighting 조차 동작하지 않지만, 설치 후 code highlighting 동작은 하나..
-intellisense 동작은 하지 않는다. (이미 [plugin 이슈](https://github.com/dotBunny/VSCode/issues/116)로 등록됨)
+IntelliSense 동작은 하지 않는다. (이미 [plugin 이슈](https://github.com/dotBunny/VSCode/issues/116)로 등록됨)
 
 * Unity: 5.4.0f3
 * VSCode C# Extension: 1.3.0
@@ -99,8 +99,8 @@ Is Trigger 허용시 충돌하더라도 물리연산이 일어나지 않는다.
 ## Sprite Packer가 동작하지 않는 현상
 
 **Sprite Packer?**
-* Unity 4.6부터 UGUI제공한다.
-* NGUI는 직접적으로 Atlas파일을 생성하지만 UGUI에서는 추상적으로 packing.
+* Unity 4.6부터 UGUI를 제공한다.
+* NGUI는 직접적으로 Atlas 파일을 생성하지만 UGUI에서는 추상적으로 packing.
 * UGUI에서 만들어지는 Atlas는 Library/AtlasCache에 생성해 관리한다.
 
 [영상](https://www.youtube.com/watch?v=Pj8Y48ecBZY)을 따라 Atlas를 생성하려고 하였으나 **pack** 버튼을 눌러도 아무 반응이 없음.
