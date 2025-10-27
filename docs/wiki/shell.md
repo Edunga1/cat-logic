@@ -231,7 +231,7 @@ stdout은 `nohup.out`에 저장된다.
 
 #### Background Job으로 실행하자.
 
-그냥 `&` 없이 실행하면 foregorund로 돈다. `nohup`만 사용한다고해서 background로 전환되지 않는다.
+그냥 `&` 없이 실행하면 foreground로 돈다. `nohup`만 사용한다고해서 background로 전환되지 않는다.
 이 상태에서 `ctrl + c`로 빠져나오면 **스크립트가 종료**된다.
 
 `nohup COMMAND &`로 백그라운드 잡으로 실행하자.
@@ -325,7 +325,7 @@ fuzzy search를 이용한 도구에는 [MacOS](/docs/wiki/mac-os.md)의 클립�
 
 **명령어 내역 검색 개선**
 
-셸에서 `ctrl + r`는 reveerse-i-search 이름의 기능으로 명령어 내역을 검색할 수 있는데,
+셸에서 `ctrl + r`는 reverse-i-search 이름의 기능으로 명령어 내역을 검색할 수 있는데,
 `ctrl + r`을 다시 누르는 것으로 하나씩 탐색한다.
 
 ```bash

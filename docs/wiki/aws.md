@@ -1,11 +1,11 @@
 ---
 created: 2023-01-03
 ---
-# Amazon Web Service
+# Amazon Web Services
 
 ## awscli
 
-linux, macos는 `brew install awscli`로 설치하자.
+Linux, macOS는 `brew install awscli`로 설치하자.
 
 파이썬 패키지 관리자를 사용한다면, `pip install awscli`도 가능하다.
 
