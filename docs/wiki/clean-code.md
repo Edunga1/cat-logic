@@ -37,7 +37,24 @@ https://ko.redux.js.org/usage/reducing-boilerplate/#%EC%95%A1%EC%85%98
 
 https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/
 
-2019년 11월에 작성된 글로, 요지는 데이터를 검증하는 것보다 파싱을 통해 변환된 타입으로 반환하는 것이 더 좋다는 이야기이다.
+요지는 데이터를 검증하는 것보다 파싱을 통해 변환된 타입으로 반환하는 것이 더 좋다는 이야기이다.
 짧지만 임팩트가 강한 슬로건이 긴 글을 압축한다.
 
-검증에서 끝내면 타입은 검증되었는지를 포함하지 않지만, 파싱을 통해 타입을 변환하면 타입 시스템이 검증된 값을 포함한다.
+```haskell
+validateNonEmpty :: [a] -> IO ()
+validateNonEmpty (_:_) = pure ()
+validateNonEmpty [] = throwIO $ userError "list cannot be empty"
+
+parseNonEmpty :: [a] -> IO (NonEmpty a)
+parseNonEmpty (x:xs) = pure (x:|xs)
+parseNonEmpty [] = throwIO $ userError "list cannot be empty"
+```
+
+`validateNonEmpty` ro수는 리스트가 비어있지 않은지 검증만 한다.
+`parseNonEmpty` 함수는 비어있지 않은 리스트를 `NonEmpty` 타입으로 변환한다. 타입 시스텐이 비어있지 않음을 보장한다.
+각 함수의 반환 값을 사용할 때, 검증 방식은 재검증에 대한 여지가 있지만 파싱 방식은 그렇지 않다.
+
+검증의 위험성은 처리 로직과 함께 사용될 때 드러난다.
+검증을 통과한 입력을 처리하다가, 다른 부분의 검증에 실패하면 이미 수정된 부분을 되돌리기 어렵다.
+모든 검증을 미리 처리할 수 있겠지만, 정말 미리 처리되었는지 그것을 판단하기는 어렵다.
+이런식으로 검증의 더미에 내던지고 에러 케이스를 처리할 것이라 기대하는 안티 패턴을 *Shotgun Parser*이라 한다.
