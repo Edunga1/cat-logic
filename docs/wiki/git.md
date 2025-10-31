@@ -29,7 +29,7 @@ git에서 언급하는 `HEAD`, `upstream` 등 용어에 대한 설명은 `git he
 
 국내 기사로는 2005년 4월 22일에 게시한 [전자신문의 '토발즈, 새 리눅스 관리 툴 선보여'](https://m.etnews.com/200504210061)가 있다.
 
-그 후 20년 후, 2025년 4월 17일에 게시한 [바이라인 네트워크의 '리누스 토발즈의 Git 20주년 소회'](https://byline.network/2025/04/17-440/) 기사에는 20년이 지난 25년에 리누스 토발즈가 밝히는 Git에 대한 소회가 담겨 있다.
+그로부터 20년 후, 2025년 4월 17일에 게시한 [바이라인 네트워크의 '리누스 토발즈의 Git 20주년 소회'](https://byline.network/2025/04/17-440/) 기사에는 20년이 지난 25년에 리누스 토발즈가 밝히는 Git에 대한 소회가 담겨 있다.
 
 10일로 알려진 개발 기간은 사실 아이디어 구상까지 4개월 이상 걸렸다고 한다:
 
@@ -37,7 +37,7 @@ git에서 언급하는 `HEAD`, `upstream` 등 용어에 대한 설명은 `git he
 >
 > (중략)
 >
-> 깃의 첫 번째 버전은 1만줄의 코드로 작성됐다. 그는 깃 개발 초반에 장기적으로 어떻게 될 지 확신할 수 없었다고 했다.
+> 깃의 첫 번째 버전은 1만줄의 코드로 작성됐다. 그는 깃 개발 초반에 장기적으로 어떻게 될지 확신할 수 없었다고 했다.
 
 토발즈는 본인을 라이트 유저라고 표현한다. 이유는 몇 가지 명령어만 사용하기 때문:
 
@@ -46,7 +46,7 @@ git에서 언급하는 `HEAD`, `upstream` 등 용어에 대한 설명은 `git he
 Git 배포 후 본격적으로 사용하기 시작된 계기는 3년이 지난 2008년의 Ruby on Rails 개발자들이었다고 한다.
 개발 패러다임을 많이 바꿨던 Rails 생태계가 여기서도 돋보인다:
 
-> 그는 “깃을 본격적으로 사용하기 시작한 건 낯선 웹 개발자들이었는데, 루비온레일즈 개발자들이 깃을 2008년쯤 사용하기 시작했다”며 “완전히 새로운 유형의 깃 사용자가 생겨난 게 이상했는데, SCM을 한번도 사용해 본 적 없는 젊은이들이 갑자기 깃을 사용하게 된 게 확연히 드러났다”고 말했다.
+> 그는 “깃을 본격적으로 사용하기 시작한 건 낯선 웹 개발자들이었는데, 루비온레일즈 개발자들이 깃을 2008년쯤 사용하기 시작했다”며 “완전히 새로운 유형의 깃 사용자가 생겨난 게 이상했는데, SCM을 한 번도 사용해 본 적 없는 젊은이들이 갑자기 깃을 사용하게 된 게 확연히 드러났다”고 말했다.
 
 본인이 무언가를 개발한다면 그건 세상의 실패라고 재밌는 말을 했다:
 
@@ -59,7 +59,7 @@ Homebrew로 설치했다면 `git-completion.bash`가 자동으로 설치된다.
 
 ### 브랜치 이름 중간에서 자동 완성
 
-[macOS](/docs/wiki/mac-os.md)은 git과 함께 자동 완성 스크립트가 내장되어 있는데,
+[macOS](/docs/wiki/mac-os.md)는 git과 함께 자동 완성 스크립트가 내장되어 있는데,
 이 스크립트가 브랜치 이름 중간에서 자동 완성을 제공한다.
 예를 들어 `git switch lo`에서 탭을 누르면 feature/**lo**g가 자동 완성된다.
 만약 Homebrew로 설치했다면 동작하지 않을 수도 있다. 첫 글자인 `f`에서만 **f**eature/log가 자동 완성된다.
@@ -69,8 +69,8 @@ Homebrew로 git을 설치하면, `/opt/homebrew/share/zsh/site-functions`에 `gi
 `.zshrc`에 `eval "$(brew shellenv)"`을 추가함으로써 Homebrew의 site-functions가 `$fpath`에 추가된다.
 Homebrew site-functions는 `$fpath`의 가장 앞에 추가하기 때문에, 내장된 자동 완성 스크립트보다 우선적으로 동작한다.
 
-개선된 git completion을 구해서 macOS 외 운영체에서도 사용할 수 있으면 좋을텐데, 찾지 못했다.
-그래서 Homebrew `shellenv` 후 `$fpath` 가장 앞에 추가된 경로를 뒤로 이동시키는 것으로 우선 순위 문제를 임시 해결했다.
+개선된 git completion을 구해서 macOS 외 운영체에서도 사용할 수 있으면 좋을 텐데, 찾지 못했다.
+그래서 Homebrew `shellenv` 후 `$fpath` 가장 앞에 추가된 경로를 뒤로 이동시키는 것으로 우선순위 문제를 임시 해결했다.
 
 ```bash
 if command -v brew &> /dev/null; then
@@ -79,11 +79,11 @@ if command -v brew &> /dev/null; then
 fi
 ```
 
-WSL 2 Ubuntu 기준에는 중간 자동 완성 기능이 없어서, 찾아봐야겠다.
+WSL 2 Ubuntu 기준으로는 중간 자동 완성 기능이 없어서, 찾아봐야겠다.
 
 ## 깃 커밋 해시 충돌에 관하여
 
-어느날 커밋 해시는 어떤 정보를 기반하여 만들어지는지 궁금했다.
+어느 날 커밋 해시는 어떤 정보를 기반하여 만들어지는지 궁금했다.
 커밋 해시는 `git commit` 할 때 생성되고, 커밋 해시로 `git checkout`하여 특정 revision으로 이동한다.
 
 따라오는 질문은 "커밋 할 때 해시가 충돌할 여지는 없는가" 였다.
@@ -93,7 +93,7 @@ WSL 2 Ubuntu 기준에는 중간 자동 완성 기능이 없어서, 찾아봐야
 이러한 걱정에 대한 현실적인 조언을 해 준다. 또 실제로 발생하면 어떤 일이 일어나는지 알려준다.
 
 요약하면, 해시 중복이 생성되면, 현재 구현으로는 커밋은 성공하지만, checkout하면 최초의 revision으로 이동한다.
-하지만 충돌이 발생할 확률은 현실적으로 불가능하다.
+하지만 충돌이 발생할 확률은 현실적으로 거의 불가능하다.
 
 > SHA-1 해시 값에 대한 단상
 >
@@ -101,7 +101,7 @@ WSL 2 Ubuntu 기준에는 중간 자동 완성 기능이 없어서, 찾아봐야
 >
 > 이미 있는 SHA-1 값이 Git 데이터베이스에 커밋되면 새로운 개체라고 해도 이미 커밋된 것으로 생각하고 이전의 커밋을 재사용한다. 그래서 해당 SHA-1 값의 커밋을 Checkout 하면 항상 처음 저장한 커밋만 Checkout 된다.
 >
-> 그러나 해시 값이 중복되는 일은 일어나기 어렵다. SHA-1 값의 크기는 20 바이트(160비트)이다. 해시 값이 중복될 확률이 50%가 되는 데 필요한 개체의 수는 280이다. 이 수는 1자 2,000해 ('자’는 '경’의 '억’배 - 1024, 충돌 확률을 구하는 공식은 p = (n(n-1)/2) * (1/2^160) )이다. 즉, 지구에 존재하는 모래알의 수에 1,200을 곱한 수와 맞먹는다.
+> 그러나 해시 값이 중복되는 일은 일어나기 어렵다. SHA-1 값의 크기는 20 바이트(160비트)이다. 해시 값이 중복될 확률이 50%가 되는 데 필요한 개체의 수는 2^80이다. 이 수는 1자 2,000해 ('자’는 '경’의 '억’배 - 10^24, 충돌 확률을 구하는 공식은 p = (n(n-1)/2) * (1/2^160))이다. 즉, 지구에 존재하는 모래알의 수에 1,200을 곱한 수와 맞먹는다.
 >
 > 아직도 SHA-1 해시 값이 중복될까 봐 걱정하는 사람들을 위해 좀 더 덧붙이겠다. 지구에서 약 6억 5천만 명의 인구가 개발하고 각자 매초 Linux 커널 히스토리 전체와(650만 개) 맞먹는 개체를 쏟아 내고 바로 Push 한다고 가정하자. 이런 상황에서 해시 값의 충돌 날 확률이 50%가 되기까지는 약 2년이 걸린다. 그냥 어느 날 동료가 한 순간에 모두 늑대에게 물려 죽을 확률이 훨씬 더 높다.
 
@@ -132,7 +132,7 @@ https://stackoverflow.com/questions/34764195
 ### md5 충돌 예제
 
 여기 예제 사이트에서는 다른 파일인데 같은 MD5 sum을 가진 예제를 제공한다.
-근데 다운받아보면 실행도 안되고, 바이너리지만 열어보면 내용도 같아 보이는데.. 심지어 파일 크기도 같다. 제대로 된 예제가 맞나?
+근데 다운받아보면 실행도 안 되고, 바이너리지만 열어보면 내용도 같아 보이는데.. 심지어 파일 크기도 같다. 제대로 된 예제가 맞나?
 
 https://www.mathstat.dal.ca/~selinger/md5collision
 
@@ -172,7 +172,7 @@ https://www.mathstat.dal.ca/~selinger/md5collision
 ### Commit
 
 `git commit --verbose` 옵션을 자주 사용한다.
-커밋 메시지를 작성할 때 변경  내용을 함께 보여줘서 유용하기 때문이다.
+커밋 메시지를 작성할 때 변경 내용을 함께 보여줘서 유용하기 때문이다.
 
 다음 설정은 옵션 생략하고, 기본 설정을 변경한다:
 
@@ -259,7 +259,7 @@ A는 기능 하나를 추가하는 것이고, B는 A 작업을 하다보니 파�
 
 문제는 A 작업을 처리하기 위해서 3개의 커밋을 남겼는데, 그 사이에 B 작업이 껴 있을 때다.
 
-이 때 `git rebase -i 325da60` 수정할 수 있는 화면이 뜬다.
+이때 `git rebase -i 325da60` 수정할 수 있는 화면이 뜬다.
 
 ```bash
 pick 5fc47ec A
@@ -386,7 +386,7 @@ A
 #
 ```
 
-위처럼 커밋메시지를 작성하고, `log`를 보면 의도한대로 정리된 것을 볼 수 있다.
+위처럼 커밋 메시지를 작성하고, `log`를 보면 의도한 대로 정리된 것을 볼 수 있다.
 
 ```bash
 $ glog
@@ -424,24 +424,24 @@ changes made to b73ce1b168428a561e2dbcac96f97defaffa0e36.
 
 TL;DR
 
-- `--date-order` 로 그래프를 정렬하는데 힌트를 줄 수 있다.
-- `--author-date-order` 로 작성자 및 날짜 정렬
+- `--date-order`로 그래프를 정렬하는 데 힌트를 줄 수 있다.
+- `--author-date-order`로 작성자 및 날짜 정렬
 - 옵션에 대한 정보: https://git-scm.com/docs/git-log#_commit_ordering
-- 기본 값은 `--topo-order`로 보인다.
+- 기본값은 `--topo-order`로 보인다.
 
-##### --date-order 로 피라미드 그래프 방지하기
+##### `--date-order`로 피라미드 그래프 방지하기
 
 ```bash
 git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(cyan)<%an>%C(reset)%C(bold yellow)%d%C(reset)' --all
 ```
 
-git log를 그래프로 보기위해 이렇게 사용 중이다.
+git log를 그래프로 보기 위해 이렇게 사용 중이다.
 
 문제는 `staging -> master` 머지 커밋이 아래 이미지와 같이 피라미드로 보여진다.
 
 ![pyramid graph](res/git-log-graph-pyramid.png)
 
-머지 커밋의 경우 2개의 부모를 가지고 있기 때문에, 두 부모 중 어느 것을 우선적으로 보여줄 지 힌트가 없다.
+머지 커밋의 경우 2개의 부모를 가지고 있기 때문에, 두 부모 중 어느 것을 우선적으로 보여줄지 힌트가 없다.
 따라서 피라미드로 보여지는 것으로 추정한다.
 
 `--date-order` 옵션을 추가하여, 시간 기준으로 보여주도록 옵션을 주면 완화된다:
@@ -454,7 +454,7 @@ git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(b
 
 ##### 옵션 설명
 
-`git log --help` 에서 정렬과 관련된 내용을 확인하면 어떻게 정렬 방법에 대해서 설명하고 있다.
+`git log --help`에서 정렬과 관련된 내용을 확인하면 어떻게 정렬 방법에 대해서 설명하고 있다.
 
 ```bash
 Commit Ordering
@@ -494,7 +494,7 @@ Commit Ordering
 - `--topo-order` 8 6 5 3 7 4 2 1 순서로 표기한다.
 - `--date-order` 8 7 6 5 4 3 2 1 순서로 표기한다.
 
-#### --date-order 와 `--author-date-order` 비교
+#### `--date-order`와 `--author-date-order` 비교
 
 ![--date-order and --author-date-order comparison](res/git-log-graph-author-date-order-comparison.png)
 
@@ -551,7 +551,7 @@ $ git log --follow --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
 2018-01-11 ebd76bb05 Add "Chocolate Problem"
 ```
 
-#### 브랜치간 커밋 비교
+#### 브랜치 간 커밋 비교
 
 bitbucket, github에서 Pull Request를 머지할 때, 예를 들어 staging -> master 머지한다면 staging의 커밋만 보여준다.
 이는 `git log`로 구현할 수 있다.
@@ -573,7 +573,7 @@ abdb9882 fix: update something
 현재 Git 프로젝트와 연결되어 브랜치나 worktree 명령어로 관리할 수 있다.
 git에서는 작업 영역을 working tree라 부르니, 알아두면 좋겠다.
 
-`git worktree`는 현재 작업중인 내용을 stash나 commit 등으로 저장하지 않고, 다른 작업을 처리할 때 유용하다.
+`git worktree`는 현재 작업 중인 내용을 stash나 commit 등으로 저장하지 않고, 다른 작업을 처리할 때 유용하다.
 다만, [java](./java.md)나 [kotlin](./kotlin.md) 프로젝트 같이 [IDE](./jetbrains.md)에서 인덱싱하여 작업 영역이 무거운 경우에는 비효율적일 수 있다.
 새 worktree에서 다시 인덱싱을 하기 때문이다.
 
@@ -602,7 +602,7 @@ worktree에서 사용한 브랜치는 계속 유지된다.
 1. `git bisect start` 명령어로 시작.
 2. `git bisect bad <commit>` 명령어로 버그 발생 지점 지정.
 3. `git bisect good <commit>` 명령어로 정상 지점 지정.
-4. 자동으로  중간 커밋으로 체크아웃 됨. 동작 확인.
+4. 자동으로 중간 커밋으로 체크아웃 됨. 동작 확인.
 5. `git bisect good` or `git bisect bad` 명령어로 계속 진행.
 6. 버그가 처음 발생한 커밋에서 자동 종료.
 
@@ -611,7 +611,7 @@ worktree에서 사용한 브랜치는 계속 유지된다.
 `bisect`는 2등분한다는 의미다.
 
 이진 검색을 사용하기 때문에, 아무리 커밋이 많아도 `log(n)` 안에 찾을 수 있다.
-커밋이 1억개가 있더라도 27번만 검색하면 된다.
+커밋이 1억 개가 있더라도 27번만 검색하면 된다.
 
 흐름은 올바른 커밋과 잘못된 커밋을 먼저 선정하면, git이 자동으로 중간 커밋으로 체크아웃한다.
 사용자는 현재 커밋에서 동작을 확인하고 올바른지 잘못되었는지 알려주면, git이 다음 중간 커밋으로 체크아웃을 반복한다.
@@ -732,7 +732,7 @@ $ git shortlog -s
 `git add -p`와 같은 방식으로 hunk 단위로 선택하거나 파일을 직접 수정하여 복구한다.
 
 인자 없이 `git checkout`은 현재 브랜치에 다시 체크아웃한다.
-메뉴얼에는 추적 정보를 보여주는 비싼 부수효과라지만, hook이 있다면 다시 실행한다.
+메뉴얼에는 추적 정보를 보여주는 비싼 부수 효과라지만, hook이 있다면 다시 실행한다.
 나는 브랜치 설명을 `$PS1`에 추가해 두고, checkout hook에 갱신하고 있어서 유용하게 사용하고 있다.
 
 > You could omit `<branch>`, in which case the command degenerates to "check out the current branch", which is a glorified no-op with rather expensive side-effects to show only the tracking information
@@ -808,7 +808,7 @@ git clone 전에 하거나 clone 후에 하는지에 따라 사용 방법이 다
 
 이 경우에도 멈춘듯한 모습으로 보이지만, 실제로는 다운로드가 진행된다.
 
-도움말 `git lfs pull --help`에 다르면 `git lfs fetch` 명령어와 같다고 한다.\
+도움말 `git lfs pull --help`에 따르면 `git lfs fetch` 명령어와 같다고 한다.\
 아마도 특정 파일만 다운로드 받을 수도 있는 모양.
 
 ## 커밋 서명하기
@@ -970,7 +970,7 @@ fatal: failed to write commit object
 
 키가 있으면 passphrase 입력을 요구한다.
 
-## 여러개의 git 설정파일 사용하기
+## 여러 개의 git 설정 파일 사용하기
 
 `[include]`, `[includeIf]` 설정을 사용하여 여러 개의 git 설정 파일을 관리할 수 있다.
 `git config --help`의 `Conditional includes`에서 설명한다.
@@ -991,9 +991,9 @@ fatal: failed to write commit object
 [commit]
   gpgSign = true
 [user]
-	email = bar@example.com
-	name = Bar
-  signingkey = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  email = bar@example.com
+  name = Bar
+  signingKey = ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ```
 
 위 예시는 `~/workspace-foo/` 디렉토리에 있는 프로젝트에서는 `~/.gitconfig.foo` 설정을 사용하고,
