@@ -11,7 +11,7 @@ created: 2022-11-28
 
 `python` 명령어 도구를 제공한다.
 
-터미널에 `python -m this`를 입력하면 `Zen of Python`라 불리는 파이썬의 **핵심 철학**을 담은 문단을 보여준다.
+터미널에 `python -m this`를 입력하면 `Zen of Python`이라 불리는 파이썬의 **핵심 철학**을 담은 문단을 보여준다.
 이는 [pep-20](https://peps.python.org/pep-0020/)의 내용이다.
 
 ```bash
@@ -64,7 +64,7 @@ Namespaces are one honking great idea -- let's do more of those!
 파이썬은 초보자가 배우기 쉬운 언어로 유명하다. 이는 철학에 투영된다.
 단순하고 읽기 쉬운 코드를 지향한다.
 
-## 개발환경 구성
+## 개발 환경 구성
 
 pyenv, pyenv-virtualenv로 파이썬 가상환경을 관리하자.
 
@@ -173,7 +173,7 @@ Pylint와 함께 사용해보면 Ruff의 반응이 빨라서 항상 Pylint보다
 
 **개발 환경 구성 시 주의해야 한다.**
 
-Ruff 설명대로 rust로 작성되어 있어서 로컬 개발 환경이나, 개발용 Docker 환경 구성을 위해서 Rust 런타임 환경을 구성이 필요할 수 있다.
+Ruff 설명대로 rust로 작성되어 있어서 로컬 개발 환경이나, 개발용 Docker 환경 구성을 위해서 Rust 런타임 환경 구성이 필요할 수 있다.
 macOS 기준으로는 별도 도구 없이 설치되었지만, python alpine 이미지 기준으로 설치에 실패한다.
 
 flake8, isort 등에서 [lint rules](https://beta.ruff.rs/docs/rules/)을 가져왔다. 500+개의 규칙이 있다.
@@ -229,7 +229,7 @@ Formatter autopep8 is not installed. Install?:
 }
 ```
 
-줄바꿈 후에 dict 필드와 같은 들여쓰기 레벨를 사용한다.
+줄바꿈 후에 dict 필드와 같은 들여쓰기 레벨을 사용한다.
 
 **yapf**
 ```python
@@ -241,7 +241,7 @@ Formatter autopep8 is not installed. Install?:
 
 줄바꿈 하면서 들여쓰기를 없애버렸다.
 
-**autopep8**는 코드를 변경하지 않는다.
+**autopep8**은 코드를 변경하지 않는다.
 
 개인적으로는 black, yapf의 스타일이 마음에 들지 않아서 autopep8을 사용하고 있다.
 
@@ -430,7 +430,7 @@ pipenv 보다 star가 더 많다. `pyproject.toml`에 의존성이나, 환경 �
 
 Homebrew `brew install poetry`로 설치하자.
 
-자주사용하는 명령어:
+자주 사용하는 명령어:
 
 1. `poetry shell`: 가상환경 진입. 현재 파이썬 바이너리 버전을 사용한다.
     2.0.0 버전부터는 `poetry env activate`로 [대체되었다](https://github.com/python-poetry/poetry/releases/tag/2.0.0).
@@ -455,7 +455,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 ```
 
-위와같이 만들어 준다.
+위와 같이 만들어 준다.
 
 `poetry shell`을 입력하면 virtualenv으로 진입한다. 없으면 생성한다.
 
@@ -468,10 +468,10 @@ Spawning shell within /home/username/.cache/pypoetry/virtualenvs/myproject-jPR28
 home에 가상환경 정보를 저장하므로, `pyenv versions`에 노출되지 않아서 괜찮아 보인다.
 프로젝트가 많으면 너무 많은 가상환경이 생성되기 때문이다.
 
-`poetry add`로 의존 모듈을 추가한다. 알아서 `pyproject.toml`에 추가하고, lock file`poetry.lock`을 업데이트한다.
+`poetry add`로 의존 모듈을 추가한다. 알아서 `pyproject.toml`에 추가하고, lock file `poetry.lock`을 업데이트한다.
 
 파이썬의 패키지 매니저인 pip는 파이썬 설치 시 함께 제공된다.
-그러나 다른 언어의 패키지 매니저와 비교해 보면 안좋다.
+그러나 다른 언어의 패키지 매니저와 비교해 보면 안 좋다.
 
 `pip install PACKAGE_NAME`로 설치하고 `pip freeze > requirements.txt`로
 의존 모듈 목록을 저장하는데, 의존성의 의존성까지 저장하게 된다.
@@ -501,7 +501,7 @@ poetry install
 > poetry 문서 중: https://python-poetry.org/docs/managing-environments/#switching-between-environments
 
 설치한 가상 환경은 `poetry env list`로 확인할 수 있다.
-여러개의 가상 환경을 사용할 수 있는 구조라서 목록으로 보여준다.
+여러 개의 가상 환경을 사용할 수 있는 구조라서 목록으로 보여준다.
 
 위 예제에서 `pyenv local`을 사용했는데, `pyenv global`은 전역 설정인 반면에 `pyenv local`은 현재 디렉토리에만 적용된다.
 `.python-version` 파일을 생성하는데, pyenv는 이 파일을 읽어서 파이썬 버전을 결정하기 때문이다. 자세한 내용은 `pyenv local --help`를 참고하자.
@@ -535,7 +535,7 @@ https://github.com/pypa/pipenv
 
 > This tutorial walks you through the use of Pipenv to manage dependencies for an application. It will show you how to install and use the necessary tools and make strong recommendations on best practices.
 
-[PEP-0394](https://peps.python.org/pep-0394/)에서도 가상 `pipenv`를 이용하여 가상환경 사용을 추천한다:
+[PEP-0394](https://peps.python.org/pep-0394/)에서도 `pipenv`를 이용하여 가상환경 사용을 추천한다:
 
 > For software that is not distributed with (or developed for) your system, we recommend using a virtual environment, possibly with an environment manager like conda or pipenv, to help avoid disrupting your system Python installation.
 
@@ -547,7 +547,7 @@ https://github.com/astral-sh/uv
 
 - `uv venv`: 가상환경 생성. `.venv` 디렉토리가 생성된다. `source .venv/bin/activate`로 가상환경을 활성화한다.
 - `uv add PACKAGE_NAME`: 패키지 설치. `pyproject.toml`에 추가된다.
-    - `uv pip COMMAND`: `pip`의 인터페이스를 어느정도 제공한다. 실제로 `pip`를 사용하는 것은 아니라고. `pyproject.toml`을 업데이트하지 않는다.
+    - `uv pip COMMAND`: `pip`의 인터페이스를 어느 정도 제공한다. 실제로 `pip`를 사용하는 것은 아니라고. `pyproject.toml`을 업데이트하지 않는다.
 - `uv tree`: 패키지 트리를 보여준다.
 
 다른 도구처럼 `uv shell` 같은 명령어를 제공하지 않는 것과 명령어를 모두 일일이 타이핑해야 하는 것이 조금 불편하다.
@@ -604,7 +604,7 @@ from my_module.my_module import *  # NOQA
 
 flake8이 경고를 출력하므로 `# NOQA`로 무시하도록 했다.
 
-이렇게하면 `my_module`을 사용하는 곳에선 `foo`, `bar`만 가져올 수 있다.
+이렇게 하면 `my_module`을 사용하는 곳에선 `foo`, `bar`만 가져올 수 있다.
 
 ```python
 from my_module import foo, bar  # 가능
@@ -652,7 +652,7 @@ https://hynek.me/articles/testing-packaging 글에서 src 레이아웃을 사용
 >
 > requests is not a single module project. It's a package, containing multiple modules. Using terms from [https://packaging.python.org/glossary/](https://packaging.python.org/glossary/).
 
-구글 시트에서 토론 내용에 대해서 정리 해두었다.
+구글 시트에서 토론 내용에 대해서 정리해 두었다.
 
 [https://docs.google.com/document/d/1Wz2-ECkicJgAmQDxMFivWmU2ZunKvPZ2UfQ59zDGj7g/edit#heading=h.2cgqnlxl8y3e](https://docs.google.com/document/d/1Wz2-ECkicJgAmQDxMFivWmU2ZunKvPZ2UfQ59zDGj7g/edit#heading=h.2cgqnlxl8y3e)
 
@@ -791,7 +791,7 @@ https://www.tutorialspoint.com/rxpy/rxpy_concurrency_using_scheduler.htm
 
 위 문서에서 제공하는 예제이다.
 
-다음 코드는 rxpy를 사용하지만 병럴처리를 하지 않는 코드이다.
+다음 코드는 rxpy를 사용하지만 병렬처리를 하지 않는 코드이다.
 
 ```python
 import random
@@ -985,7 +985,7 @@ DI 라이브러리 사용하지 않고 이상적인 코드를 작성하려고 �
 
 [django-composite-foreignkey](https://pypi.org/project/django-composite-foreignkey/)
 
-2년동안 관리되지 않은 저장소. 이거 사용할 수 있을까?
+2년 동안 관리되지 않은 저장소. 이거 사용할 수 있을까?
 
 [Get ContentType id in Django for generic relation](https://stackoverflow.com/questions/12716970/get-contenttype-id-in-django-for-generic-relation)
 
@@ -1027,7 +1027,7 @@ retval  rv
 
 - `?` 도움말
 - `l` 코드를 출력한다. 라인 번호를 인자로 받으며, 인자가 없으면 현재 라인을 출력한다.
-    - python 2에서는 `l` 연속 호출 시 다음 페이지를 출력해서, `l .` 처렴 명시적으로 현재 라인을 출력했던 거 같다.
+    - python 2에서는 `l` 연속 호출 시 다음 페이지를 출력해서, `l .` 처럼 명시적으로 현재 라인을 출력했던 거 같다.
 - `c` 계속 진행한다.
 - `q` 종료한다.
 - `n` 다음 라인까지 진행한다.
