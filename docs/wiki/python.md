@@ -400,7 +400,7 @@ multi-stage build와 virtualenv를 사용하지 않는 프로세스를 구축해
 
 [Python 현대적 모범 사례](https://www.stuartellis.name/articles/python-modern-practices/)라는 글에서는
 [pip-tools](https://github.com/jazzband/pip-tools)와 [uv](https://github.com/astral-sh/uv)의 추천이 있다.
-두 도구 모두 이 글에서 처음 알게 되었다. 나중에 써보고 추가하자.
+두 도구 모두 이 글에서 처음 알게 되었다.
 
 **2024년 7월 기준 GitHub star 수**
 
@@ -1049,3 +1049,14 @@ retval  rv
 (Pdb) type(datetime.now())
 <type 'datetime.datetime'>
 ```
+
+## 흥미로운 이야기
+
+[AI 과대광고를 넘어: 파이썬의 철학, 단순성, 그리고 프로그래밍의 미래에 대한 귀도 반 로섬의 이야기.](https://news.hada.io/topic?id=23569)
+
+AI 시대에 맞물러 파이썬의 방향성에 대한 귀도 반 로섬의 인터뷰.
+
+[uv는 Python 생태계에 지난 10년간 등장한 최고의 혁신](https://news.hada.io/topic?id=24009)
+
+2025년 10월, uv의 장점을 이야기하는 글.
+uv 이전에도 poetry나 pipenv 같은 도구를 사용해왔던 입장으로써 최근들어 언급이 잦아지는 게 신기하지만, uv가 지금까지의 도구 중 편리한 편에 속한다는 말에는 공감한다.
