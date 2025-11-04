@@ -142,6 +142,11 @@ personRepository.findAll(Example.of(person));
 
 ##### QueryDSL
 
+[querydsl/querydsl](https://github.com/querydsl/querydsl)은 2024년 1월 30일을 마지막으로 업데이트가 신규 릴리즈가 없다.
+[OpenFeign/querydsl](https://github.com/OpenFeign/querydsl)에서 포크하여 유지보수하고 있다.
+
+---
+
 http://www.querydsl.com/static/querydsl/4.1.3/reference/html_single/#d0e321
 
 ```java
