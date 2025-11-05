@@ -675,17 +675,13 @@ $ lychee ./docs/wiki
 [200] https://pypi.org/project/django-composite-foreignkey/
 ```
 
-`[link](/docs/wiki/foo.md)` 절대 경로로 명세된 로컬 경로는 판단하지 못한다.
+`[link](/docs/wiki/foo.md)` 와 같이 로컬 파일에 대한 링크는 실패할 수 있다.
 
 ```bash
 [WARN ] Error creating request: InvalidPathToUri("/docs/wiki/foo.md")
 ```
 
-상대 경로는 올바르게 검사한다.
-
-```bash
-[200] file:///home/john/workspace/project/docs/wiki/foo.md
-```
+이 경우는 `-root-dir <PATH>` 옵션을 전달하여 파일의 경로 기준을 전달하면 해결된다.
 
 ## python shell tools
 
