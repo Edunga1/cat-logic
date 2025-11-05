@@ -6,4 +6,4 @@ then
     exit
 fi
 
-lychee ./docs/wiki/**/*.md
+lychee ./docs/wiki/**/*.md --root-dir $(pwd) -t 5
