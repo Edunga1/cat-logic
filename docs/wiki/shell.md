@@ -660,13 +660,14 @@ https://github.com/romkatv/powerlevel10k
 
 ### lychee
 
-죽은 링크를 찾는 도구.
+Lychee는 문서에서 동작하지 않는 링크를 찾는 도구이다.
+마크다운, HTML 등 문서에서 웹 URL, 로컬 파일, 이메일 링크를 검사한다.
 
 https://github.com/lycheeverse/lychee
 
-마크다운, HTML 등 문서에서 웹 URL, 로컬 파일, 이메일 링크를 검사한다.
+`brew install lychee`로 설치할 수 있다.
 
-`lychee` 명령어를 제공, `lychee ./docs/wiki`와 같이 사용한다.
+`lychee` 명령어를 제공, `lychee ./docs/wiki/**/*.md`와 같이 사용한다.
 
 ```bash
 $ lychee ./docs/wiki
@@ -681,11 +682,13 @@ $ lychee ./docs/wiki
 [WARN ] Error creating request: InvalidPathToUri("/docs/wiki/foo.md")
 ```
 
-이 경우는 `-root-dir <PATH>` 옵션을 전달하여 파일의 경로 기준을 전달하면 해결된다.
+이 경우는 `-root-dir <PATH>` 옵션을 전달하여 파일의 경로 기준을 전달하면 해결된다. \
+예시: `lychee ./docs/wiki/**/*.md -root-dir $(pwd)`
 
 ## python shell tools
 
-몇몇 파이썬 모듈은 CLI로 제공한다.
+몇몇 파이썬 모듈은 CLI로 실행할 수 있는 기능을 제공한다.
+라이브러리 기능을 명령줄 도구로로 사용할 수 있어 유용하다.
 
 ### `python -m json.tool`으로 JSON beautify
 
