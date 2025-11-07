@@ -85,9 +85,9 @@ https://12factor.net/
 
 DIP를 지킨다고 모든 의존성을 주입받아야 될까? 그런 클래스가 있다면 너무 사용하기 어려울 것이다.
 
-[엉클 밥의 principles of component design (한글 자막)](https://amara.org/ko/videos/XJGyts0sfDVQ/info/robert-c-martin-principles-of-component-design/)
+[엉클 밥의 principles of component design (한글 자막)](https://techblog.woowahan.com/2561/)
 에서 어떤 클래스를 주입 받아야 하는지 알려준다. 주제는 컴포넌트 설계에 대한 내용이다.
-우아한 형제들 기술 블로그 [안정된 의존관계 원칙과 안정된 추상화 원칙에 대하여 - 손권남님](https://woowabros.github.io/study/2018/03/05/sdp-sap.html)
+우아한 형제들 기술 블로그 [안정된 의존관계 원칙과 안정된 추상화 원칙에 대하여 - 손권남님](https://techblog.woowahan.com/2561/)
 에서는 안정된 의존관계 원칙에 대해서 집중 조명한다.
 
 String 클래스를 주입받아 사용하지는 않는다. 이러한 유틸 클래스를 모두 주입하면 코드의 복잡도는 더욱 증가할 거 같다.
@@ -104,10 +104,12 @@ String 클래스를 주입받아 사용하지는 않는다. 이러한 유틸 클
 
 그러니까 여러개의 정책을 가질 필요가 없어보인다. 단 하나의 정책만 있으면 된다고 생각한다.
 
-불안정한 클래스의 대표적인 예는 [마틴 파울러의 제어의 역전(IoC)에 대한 글](http://gyumee.egloos.com/2512493)이다.
+불안정한 클래스의 대표적인 예는 [마틴 파울러의 제어의 역전(IoC)에 대한 글](https://martinfowler.com/articles/injection.html)이다.
 `MovieLister` 클래스와 `MovieFinder` 클래스 관계에 대한 이야기가 나온다.
 여기서 `MovieFinder` 클래스는 정책을 가진다. 이름 목록을 텍스트 파일에서 데이터베이스에서 웹 서비스에서, 어디서든 가져올 수 있다.
 그래서 `MovieFinder` 클래스는 추상 클래스가 되어, 내부 구현은 어떻든 이름 목록만 반환하도록 한다.
+
+> But what if they have a completely different form of storing their movie listing: a SQL database, an XML file, a web service, or just another format of text file? In this case we need a different class to grab that data. Now because I've defined a MovieFinder interface, this won't alter my moviesDirectedBy method. But I still need to have some way to get an instance of the right finder implementation into place.
 
 ---
 
