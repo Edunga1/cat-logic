@@ -78,7 +78,7 @@ https://news.hada.io/topic?id=7661
 * 윈도우 실행 파일을 읽고, 실행
 * 시스템 호출은 라이브러리나 실행 파일에 포함되지 않고 os에서 제공한다. 따라서 커널에서 실행되어야 한다.
 * wine의 system dispatcher가 리눅스에서 윈도우 혹은 그 반대로 호출할 수 있도록 스택을 변환한다.
-  * 리눅스 → 윈도우 변환은 왜 필요할까? posix에서 윈도우 프로그램을 실행하는 것인데 그 반대로 변환해야 하는 경우가 있는지?
+    * 리눅스 → 윈도우 변환은 왜 필요할까? posix에서 윈도우 프로그램을 실행하는 것인데 그 반대로 변환해야 하는 경우가 있는지?
 
 ## 직교성(Orthogonality)
 
@@ -165,22 +165,22 @@ DDD의 boundary context가 MSA를 구분짓는 토대가 된다.
 
 * 시스템 모델인 객체와 event의 변화가 일으키는 행동(behavior)을 먼저 식별한다.
 * ubiquitous language, 보편적인 언어를 사용해서 메인 모델을 식별하자
-  * 같은 단어라도 이해 당사자에 따라서 생각하는 것이 달라진다. (커피하면 떠오르는 것? 스위치라는 단어에서 연상되는 것?)
+    * 같은 단어라도 이해 당사자에 따라서 생각하는 것이 달라진다. (커피하면 떠오르는 것? 스위치라는 단어에서 연상되는 것?)
 * code as model. 모델 용어를 코드로 기술해본다.
 * protecting domain knowledge. 도메인 모델이 다른 도메인에 의해 손상되지 않도록 한다.
-  * ubiquitous language에서 결정된 단어가 다른 도메인으로 인해서 해석이 달라지면 안된다.
-  * 같은 단어를 사용하면 도메인을 분리한다.
+    * ubiquitous language에서 결정된 단어가 다른 도메인으로 인해서 해석이 달라지면 안된다.
+    * 같은 단어를 사용하면 도메인을 분리한다.
 
 **DDD**
 
 * 설계 방법에는 전략 Strategic, 전술 Tactical 방식으로 나뉜다.
 * 전술
-  * context 내에서 컴포넌트를 어떻게 나눌 것인지를 결정한다.
-  * 컴포넌트는 pattern도 포함된다.
-  * 대표적인 컴포넌트에는 layered architecture가 있다.
-  * 전략 보다는 좀 더 구체적인 일들을 한다.
+    * context 내에서 컴포넌트를 어떻게 나눌 것인지를 결정한다.
+    * 컴포넌트는 pattern도 포함된다.
+    * 대표적인 컴포넌트에는 layered architecture가 있다.
+    * 전략 보다는 좀 더 구체적인 일들을 한다.
 * 전략
-  * ubiquitous language, bounded context, context map...
+    * ubiquitous language, bounded context, context map...
 
 **ubiquitous language**
 
@@ -199,24 +199,24 @@ DDD의 boundary context가 MSA를 구분짓는 토대가 된다.
 * bounded context를 식별하기 위한 방법 중 하나
 * 복잡한 비즈니스 도메인을 빠르게 탐색하고 학습할 수 있는 워크숍
 * steps
-  1. 도메인 이벤트를 식별한다
-    * 각자 알고있는 이벤트를 작성하고, 토론하지 말고, 각자 판단으로 모두 기록한다.
-  2. 커맨드를 식별한다
-  3. Aggregate를 식별한다
-    * 커맨드와 도메인 이벤트가 영향을 주는 데이터 요소
-    * 명령이 수행되고 이벤트가 발생하는 도메인 오브젝트 집합
-  4. Bounded Context
-    * 한 번에 Bounded Context를 결정하기는 어려움. iteration을 통해 지속적으로 정제한다.
-    * 필요에 따라 액터와 시스템을 구분한다.
-    * 단순히 '사용자' '고객' 보다는 구체적인 Role을 설정한다.
-    * 외부 시스템, 레거시 모두 명세한다.
-    * 정책 Policy. e.g. 회원가입 할 때 입력한 이메일로 컨펌 메일을 발송한다.
-  5. Context Map
-    * Context 간의 관계를 나타낸다.
-    * e.g.
-      * json, yaml, grpc 등으로 커뮤니케이션한다 → Published Language
-      * graphql, restapi로 통신한다 → Open Host Service
-      * Upstream, Downstream 관계를 나타내고, 정책이 변경되면 따라간다 → Conformist
+    1. 도메인 이벤트를 식별한다
+        * 각자 알고있는 이벤트를 작성하고, 토론하지 말고, 각자 판단으로 모두 기록한다.
+    2. 커맨드를 식별한다
+    3. Aggregate를 식별한다
+        * 커맨드와 도메인 이벤트가 영향을 주는 데이터 요소
+        * 명령이 수행되고 이벤트가 발생하는 도메인 오브젝트 집합
+    4. Bounded Context
+        * 한 번에 Bounded Context를 결정하기는 어려움. iteration을 통해 지속적으로 정제한다.
+        * 필요에 따라 액터와 시스템을 구분한다.
+        * 단순히 '사용자' '고객' 보다는 구체적인 Role을 설정한다.
+        * 외부 시스템, 레거시 모두 명세한다.
+        * 정책 Policy. e.g. 회원가입 할 때 입력한 이메일로 컨펌 메일을 발송한다.
+    5. Context Map
+        * Context 간의 관계를 나타낸다.
+        * e.g.
+            * json, yaml, grpc 등으로 커뮤니케이션한다 → Published Language
+            * graphql, restapi로 통신한다 → Open Host Service
+            * Upstream, Downstream 관계를 나타내고, 정책이 변경되면 따라간다 → Conformist
 
 ## REST API
 
