@@ -285,10 +285,3 @@ Jupyter Notebook Node.js 도커라이징한 것은 GitHub 저장소에 업로드
 https://github.com/Edunga1/jupyter-notebook-nodejs
 
 Dockerfile 작성하면서 `MAINTAINER`가 deprecated, `LABEL`을 사용해야 하는 것을 알았다: https://stackoverflow.com/questions/38899977/how-do-i-declare-multiple-maintainers-in-my-dockerfile
-
-## The Coding Train
-
-[The Coding Train](https://www.youtube.com/@TheCodingTrain)은 Daniel Shiffman이 운영하는 유튜브 채널이다.
-주로 자바스크립트 라이브러리인 p5.js를 사용하여 알고리즘의 시각화를 다룬다.
-
-라이브 코딩을 하면서 시간 내에 목표를 구현한다. 화이트보드로 구현 방향을 설명하기도 하고, 오류가 발생하면 왜 발생했는지 추정하기도 한다. 오류를 확인하고 수정하는 과정을 모두 볼 수 있다.
