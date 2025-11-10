@@ -62,7 +62,7 @@ vim에서 사용하는 변수, 옵션, 함수를 lua 스크립트에서도 사�
 그래서 `.vimrc` 내용을 lua로 이전할 수 있는데, 나는 그냥 vimscript로 사용중이다.
 
 lua 스크립트로만 초기화할 수 있는 플러그인들이 있다.
-neovim에 맞춰진 플러그인은 ~.nvim 이라는 접미사를 붙이는 것이 관례인데,
+neovim에 맞춰진 플러그인은 .nvim 이라는 접미사를 붙이는 것이 관례인데,
 이런 플러그인들은 lua 스크립트로 include해서 직접 초기화하는 방식을 주로 사용한다.
 예를 들어 [nvim-lsp](https://github.com/neovim/nvim-lspconfig)를 보면 `require'lspconfig'.pyright.setup{}`로 초기화한다.
 
@@ -197,14 +197,14 @@ nnoremap <c-p> :call fzf#vim#gitfiles('', {'dir': getcwd()})<CR>
 
 두 도구 차이점은 모르겠다. 검색 결과는 조금 다르다.
 
-### 창 네비게이션
+### 창 내비게이션
 
 1. 팝업 창으로 커서 이동
 
 nvim의 diagnostic 또는 hover(<s-k>)는 팝업 창을 띄운다.
 커서를 옮기면 팝업 창이 사라지는데, 팝업 안으로 커서를 이동하려면 `<c-w>w`를 사용한다.(`:h CTRL-W_w`)
 
-### 아웃라인 네비게이션
+### 아웃라인 내비게이션
 
 `gO`는 현재 파일의 아웃라인을 보여준다.
 일반적으로 목차(table of contents) 용도.
@@ -265,7 +265,7 @@ grep으로 검색하고, cdo로 적용, 예시:
 
 #### `cfdo`, `lfdo` 검색된 모든 파일에 명령어 적용
 
-`:cfdo %s/foo/bar` or `:ldo %s/foo/bar`
+`:cfdo %s/foo/bar` or `:lfdo %s/foo/bar`
 
 `cdo`와 차이점은 파일 모든 내용에 대해서 적용한다는 점이 다르다. 검색 목록에서 보이지 않는 라인도 적용되니 주의.
 
