@@ -29,6 +29,25 @@ OpenAI 문서에서는 임베딩하면 다음과 같은 일을 할 수 있다고
 
 입력의 유사성으로 문서를 찾는 임베딩 특성상 키워드 검색에서 가능하던 것들을 지원할 수 없음을 말하고 있다.
 
+## 문서 청크로 대용량 데이터 임베딩
+
+문서의 길이가 임베딩 모델의 최대 입력 토큰 수를 초과한다면, 문서를 청크(chunk)로 분할하면 입력 한도 이내로 줄일 수 있다.
+유명 임베딩 모델의 최대 입력 토큰 수는 적은 편이라 chunking이 권장된다.
+
+- text-embedding-ada-002: 8,192
+- gemini-embedding-001: 2,048
+
+**청크 분할은 의미 단절을 고려해야 한다.** \
+문장을 중간에서 자르면 의미가 달라질 수 있다.
+고정된 크기로 자르는 방식(200자 혹은 단어 단어 별로)은 의미 단절이 발생할 수 있지만,
+일부 겹쳐서(overlap) 자른다면 의미 단절을 완화할 수 있다.
+[Azure 공식 문서](https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-chunk-documents)에 따르면 10-15% 정도 겹치면 단절에 양호한 정도라고 한다.
+
+> ... allows for some overlap (for example, 10-15% of the content) can produce good chunks as input for embedding vector generators.
+
+또 다른 방식으로는 자연어 처리를 통한 문장 구분 방식이 있다.
+HTML, Markdown 등 구조화된 문서에는 의미론적 경계가 있으므로 이를 활용할 수 있다.
+
 ## Cat Logic에 적용해보기
 
 [임베딩(Embeddings)은 무엇이고 왜 중요한가](https://news.hada.io/topic?id=11593) 글을 읽고 내 위키 문서에도 똑같이 적용해보고 싶어졌다.
