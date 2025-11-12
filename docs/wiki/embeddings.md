@@ -48,6 +48,23 @@ OpenAI 문서에서는 임베딩하면 다음과 같은 일을 할 수 있다고
 또 다른 방식으로는 자연어 처리를 통한 문장 구분 방식이 있다.
 HTML, Markdown 등 구조화된 문서에는 의미론적 경계가 있으므로 이를 활용할 수 있다.
 
+[Gemini API File Search](https://ai.google.dev/gemini-api/docs/file-search)는 고정 크기로 자르는 청크 방식과 함께 겹침 [설정](https://ai.google.dev/gemini-api/docs/file-search#chunking_configuration)을 제공한다.
+
+```python
+operation = client.file_search_stores.upload_to_file_search_store(
+    file_search_store_name=file_search_store.name,
+    file_name=sample_file.name,
+    config={
+        'chunking_config': {
+          'white_space_config': {
+            'max_tokens_per_chunk': 200,
+            'max_overlap_tokens': 20
+          }
+        }
+    }
+)
+```
+
 ## Cat Logic에 적용해보기
 
 [임베딩(Embeddings)은 무엇이고 왜 중요한가](https://news.hada.io/topic?id=11593) 글을 읽고 내 위키 문서에도 똑같이 적용해보고 싶어졌다.
