@@ -22,3 +22,16 @@ congestion window.
 > Send ICMP ECHO_REQUEST packets to network hosts. -- `man ping`
 
 포트 번호는 Transport Layer부터 관리되므로, `ping`은 포트 번호를 받지 않는 것으로 보인다.
+
+## Traceroute
+
+`traceroute` 명령어는 호스트까지 경로를 추적하는 도구이다.
+
+traceroute는 IP 패킷의 TTL(Time To Live) 값을 조작하여 각 중간 라우터에서 응답을 받음으로써 경로를 추적한다.
+라우터 등 네트워크 장비 사이의 경로를 홉(Hop)이라고 부르는데, 각 홉을 지날 때 마다 TTL 값이 1씩 감소한다.
+TTL 값이 0이 되면 해당 패킷은 폐기되고, 해당 라우터는 출발지로 ICMP "Time Exceeded" 메시지를 보낸다.
+이를 이용하여 종료된 지점의 IP 주소를 알아낼 수 있다.
+TTL 값을 1부터 순차적으로 증가시키면서 패킷을 보내어 모든 지점의 IP 주소를 알아낼 수 있다.
+
+관련
+- how-did-i-get-here.net 사이트는 traceroute 결과를 시각화 및 설명해준다.
