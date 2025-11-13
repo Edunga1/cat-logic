@@ -7,8 +7,8 @@ created: 2023-10-31
 
 예를 들어 word2vec은 단어를 벡터로 변환한다.
 
-벡터는 숫자 배열로 표현되기 때문에, 데이터간 수학적 연산이 가능해진다.
-거리(Distance)는 서로의 유사성을 나타낸다. 거리가 클 수록 관련성이 낮고, 거리가 작을 수록 관련성이 높다.
+벡터는 숫자 배열로 표현되기 때문에, 데이터 간 수학적 연산이 가능해진다.
+거리(Distance)는 서로의 유사성을 나타낸다. 거리가 클수록 관련성이 낮고, 거리가 작을수록 관련성이 높다.
 
 OpenAI 문서에서는 임베딩하면 다음과 같은 일을 할 수 있다고 한다:
 
@@ -39,7 +39,7 @@ OpenAI 문서에서는 임베딩하면 다음과 같은 일을 할 수 있다고
 
 **청크 분할은 의미 단절을 고려해야 한다.** \
 문장을 중간에서 자르면 의미가 달라질 수 있다.
-고정된 크기로 자르는 방식(200자 혹은 단어 단어 별로)은 의미 단절이 발생할 수 있지만,
+고정된 크기로 자르는 방식(200자 혹은 단어별로)은 의미 단절이 발생할 수 있지만,
 일부 겹쳐서(overlap) 자른다면 의미 단절을 완화할 수 있다.
 [Azure 공식 문서](https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-chunk-documents)에 따르면 10-15% 정도 겹치면 단절에 양호한 정도라고 한다.
 
@@ -65,22 +65,22 @@ operation = client.file_search_stores.upload_to_file_search_store(
 )
 ```
 
-## Cat Logic에 적용해보기
+## Cat Logic에 적용해 보기
 
 [임베딩(Embeddings)은 무엇이고 왜 중요한가](https://news.hada.io/topic?id=11593) 글을 읽고 내 위키 문서에도 똑같이 적용해보고 싶어졌다.
 
-필자는 Open AI의 임베딩 API를 사용해서 "관련 글"을 구현했다고 한다.
+필자는 OpenAI의 임베딩 API를 사용해서 "관련 글"을 구현했다고 한다.
 블로그 글을 임베딩하여 결과를 SQLite에 저장하고 코사인 유사성을 계산했는데 그 비용이 매우 저렴해서 0.04 달러 밖에 들지 않았다고.
 필요할 때마다 변경된 글만 임베딩하면 되므로 유지 비용도 크게 들지 않을 것으로 보인다.
-다만, Open AI의 독점 모델을 사용했는데 모델이 종료되면서 변경해야 했단다.
+다만, OpenAI의 독점 모델을 사용했는데 모델이 종료되면서 변경해야 했단다.
 
 ---
 
-위에서 언급한 글에서는 Open AI의 [text-embedding-ada-002](https://platform.openai.com/docs/api-reference/embeddings) 모델을 사용했는데, 텍스트를 변환하는 모델이다.
+위에서 언급한 글에서는 OpenAI의 [text-embedding-ada-002](https://platform.openai.com/docs/api-reference/embeddings) 모델을 사용했는데, 텍스트를 변환하는 모델이다.
 
 > The input must not exceed the max input tokens for the model (8192 tokens for text-embedding-ada-002) and cannot be an empty string.
 
-`text-embedding-ada-002`는 총 8192 tokens을 받을 수 있다. 단어나 구둣점 등이 토큰으로 취급되니 긴 글은 초과할 수도 있겠다.
+`text-embedding-ada-002`는 총 8192 토큰을 받을 수 있다. 단어나 구두점 등이 토큰으로 취급되니 긴 글은 초과할 수도 있겠다.
 
 검색을 좀 해보니, 한글 성능도 괜찮다고 한다.
 오히려 무료 한글 모델이 성능이 부족하다고 하니 로컬에서 우선적으로 테스트하는 용도로 사용해 볼 듯.
@@ -89,10 +89,10 @@ operation = client.file_search_stores.upload_to_file_search_store(
 
 2023-11-02
 
-[KoBERT](https://github.com/SKTBrain/KoBERT)를 시도해 보고있다.
-22년 이후로 관리되지 않아서인지 설치하는데 애먹고 있다.
+[KoBERT](https://github.com/SKTBrain/KoBERT)를 시도해 보고 있다.
+22년 이후로 관리되지 않아서인지 설치하는 데 애먹고 있다.
 이슈 탭만 보더라도 많은 사람들이 설치에 어려움을 겪고 있다.
-파이썬 의존성 설치와 관련된 문제다. 아쉽게도 README에 환경에 대해서 잘 명세하지 않고 있다.
+파이썬 의존성 설치와 관련된 문제다. 아쉽게도 README에 환경에 대해서 잘 명시하지 않고 있다.
 포크 받아서 의존성 버전 수정하면 어떻게든 해볼 수 있을 듯.
 
 ---
@@ -103,23 +103,23 @@ KoBERT는 환경 구성이 번거로워서 포기했다.
 나중에 시간이 나면 해볼 생각이다.
 
 OpenAI의 `text-embedding-ada-002` 모델을 사용해 보았다.
-아쉽게도 ChatGPT를 예전부터 사용하고 있어서 무료 크레딧이 모두 만료되어 있었다. 총 $18 제공 했었는데.
+아쉽게도 ChatGPT를 예전부터 사용하고 있어서 무료 크레딧이 모두 만료되어 있었다. 총 $18 제공했었는데.
 
-[Cat Logic](./cat-logic.md) 문서를 임베딩 했고, Cosine 유사도를 계산해 보았다.
+[Cat Logic](./cat-logic.md) 문서를 임베딩했고, Cosine 유사도를 계산해 보았다.
 OpenAI를 호출하고 csv로 저장하는 파이썬 코드를 모두 Cat Logic 저장소에 올려두었다:\
 https://github.com/Edunga1/cat-logic/tree/main/embeddings
 
-총 83개의 문서를 처리했다. 한 번에 8천개 토큰 만큼만 호출할 수 있다.
+총 83개의 문서를 처리했다. 한 번에 8천 개 토큰만큼만 호출할 수 있다.
 그래서 문서를 토큰 기준으로 자를 필요가 있다. 문자열 길이로 자르면 토큰 수 계산이 일정하게 되지 않는다.
 
 [tiktoken](https://pypi.org/project/tiktoken/)으로 토큰을 계산할 수 있다.
 
-한글은 단어당 토큰을 더 많이 사용한다. `orange`는 1토큰인 반면에 `귤`은 2토큰이다.
+한글은 단어당 토큰을 더 많이 사용한다. `orange`는 1 토큰인 반면에 `귤`은 2 토큰이다.
 단어를 토큰화하면 일련의 숫자 배열인 토큰으로 변한다. 이것을 인코딩이라 한다.
 배열 크기가 토큰 수가 된다. 다시 디코딩하면 토큰이 단어로 변한다.
 인코딩과 디코딩을 통해 텍스트를 토큰 기준으로 자를 수 있다.
-다만 한글은 1개의 글자가 2개 토큰이 되기도 하므로 경계가 잘리면 의미없는 값이 나올 수 있다.
-전체 문서중 아주 작은 부분일 것이므로 무시하기로 했다.
+다만 한글은 1개의 글자가 2개 토큰이 되기도 하므로 경계가 잘리면 의미 없는 값이 나올 수 있다.
+전체 문서 중 아주 작은 부분일 것이므로 무시하기로 했다.
 
 어쨌든 임베딩하면 다차원 배열로 임베딩 결과가 나오게 되고,
 이걸 numpy로 읽어서, 코사인 유사도를 계산하면 된다.
@@ -219,12 +219,12 @@ https://github.com/Edunga1/cat-logic/tree/main/embeddings
 같은 자바스크립트 관련 문서인 `nodejs.md`, `reactjs.md`, `angularjs.md`는 유사도가 높다.
 납득이 가는 결과라 만족스럽다.
 
-임베딩 API를 사용하는데 총 0.03 달러가 소모되었다. 한국 돈으로 40원 정도다.
-[wikidocs](https://wikidocs.net/200466) 문서에 따르면 ada-002 모델로 어린 왕자 책 분량인 4만 토큰을 임베딩하는데 0.016 달러가 소모된다고 한다.
+임베딩 API를 사용하는 데 총 0.03 달러가 소모되었다. 원화로 40원 정도다.
+[wikidocs](https://wikidocs.net/200466) 문서에 따르면 ada-002 모델로 어린 왕자 책 분량인 4만 토큰을 임베딩하는 데 0.016 달러가 소모된다고 한다.
 
-## Open AI의 임베딩 모델
+## OpenAI의 임베딩 모델
 
-2024년 3월 27일 기준 Open AI의 임베딩 모델은 다음과 같다:
+2024년 3월 27일 기준 OpenAI의 임베딩 모델은 다음과 같다:
 
 | MODEL                  | ~ PAGES PER DOLLAR | PERFORMANCE ON MTEB EVAL | MAX INPUT |
 |------------------------|--------------------|--------------------------|-----------|
@@ -234,9 +234,9 @@ https://github.com/Edunga1/cat-logic/tree/main/embeddings
 
 cat-logic은 `text-embedding-ada-002` 모델을 사용해오다가 최근에 추가된 `text-embedding-3-small` 모델로 변경했다.
 
-`small` 모델은 가격대비 성능이 우수하다. OpenAI의 모델은 모두 한국어를 잘 처리하는 듯 하다.
+`small` 모델은 가격 대비 성능이 우수하다. OpenAI의 모델은 모두 한국어를 잘 처리하는 듯하다.
 
-cat-logic의 문서의 총 문자 수 67만자 정도를 기준으로, 0.01 달러 미만으로 임베딩을 할 수 있었다.
+cat-logic의 문서의 총 문자 수 67만 자 정도를 기준으로, 0.01 달러 미만으로 임베딩을 할 수 있었다.
 위 섹션 `ada-002` 모델의 0.03 달러와 비교할 수 있겠다.
 
 ```bash
