@@ -352,7 +352,7 @@ GET https://api.github.com/repos/octocat/Hello-World/releases/assets/1
 
 하지만 추가 작업을 하지 않은 이상 다시 **asset** 정보를 반환한다.
 
-제대로된 바이너리 파일 정보를 받기 위해선 헤더에 `Accept: application/octet-stream`를 추가해야 한다.
+제대로 된 바이너리 파일 정보를 받기 위해선 헤더에 `Accept: application/octet-stream`를 추가해야 한다.
 
 제대로 했다면 success(200)와 함께 response로 바이너리 정보가 문자열로 들어온다.
 바이너리로 파일 생성 작업이 필요할 것이다.

@@ -16,9 +16,9 @@ Create React App은 명령어 도구라서 처음 프로젝트 생성에만 필�
 
 `npx create-react-app my-app`
 
-### ESlint 구성
+### ESLint 구성
 
-Create Rect App으로 설치하면 eslint가 이미 존재하기 때문에 별도로 설치할 필요가 없다.
+Create React App으로 설치하면 eslint가 이미 존재하기 때문에 별도로 설치할 필요가 없다.
 심지어 React 환경에 맞는 eslint 플러그인도 설치되어 있다.
 하지만 [아주 관대한 규칙](https://www.npmjs.com/package/eslint-config-react-app)만 사용하기 때문에,
 다른 Rule을 따를 필요가 있다. 가장 유명한 것으로 [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)가 있다.
