@@ -1543,6 +1543,14 @@ https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md
 [구도 재현](https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md#case-52-fashion-moodboard-collageby-tetumem)은
 실제로 활용도가 높아 보인다.
 
+#### Gemini File Search
+
+파일을 업로드하면, 임베딩과 인덱싱을 통해서 RAG을 사용할 수 있게 해주는 서비스.
+
+https://ai.google.dev/gemini-api/docs/file-search
+
+업로드 후 인덱싱 하는데 비용이 들고, 이후 쿼리나 파일 저장 비용은 무료다.
+
 ### Google Chrome
 
 크롬은 [125 버전부터 콘솔 에러를 Gemini로 해석해주는 기능을 추가](https://developer.chrome.com/docs/devtools/console/understand-messages)했다.
