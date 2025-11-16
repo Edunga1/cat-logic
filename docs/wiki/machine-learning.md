@@ -1550,6 +1550,7 @@ https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md
 https://ai.google.dev/gemini-api/docs/file-search
 
 업로드 후 인덱싱 하는데 비용이 들고, 이후 쿼리나 파일 저장 비용은 무료다.
+가격은 100만 토큰당 $0.15로 임베딩 모델 금액과 동일하다.
 
 ### Google Chrome
 
