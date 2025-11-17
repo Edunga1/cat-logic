@@ -65,7 +65,7 @@ operation = client.file_search_stores.upload_to_file_search_store(
 )
 ```
 
-## Cat Logic에 적용해 보기
+## 내 위키에 임베딩 활용하기
 
 [임베딩(Embeddings)은 무엇이고 왜 중요한가](https://news.hada.io/topic?id=11593) 글을 읽고 내 위키 문서에도 똑같이 적용해보고 싶어졌다.
 
