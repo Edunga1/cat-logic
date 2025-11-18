@@ -1467,6 +1467,15 @@ window.addEventListener('load', () => {
 ```
 </details>
 
+#### Gemini 3.0
+
+2025년 11월 18일. 아직 출시하지는 않았지만, A/B 테스트로 일부 유출된 품질이 매우 우수해서 화제가 되고 있다.
+
+[The Binding of Isaac](<S-F6>https://x.com/Lentils80/status/1978637501410459867)을 구현했다는 트윗.
+2번만에 완벽하게 동작하는 코드를 생성했다.
+
+한국 시간으로 11월 19일에 [공개한다는 소문](https://gall.dcinside.com/m/thesingularity/881993)이 있다.
+
 #### Gemini CLI
 
 Gemini CLI는 Gemini 모델을 터미널에서 사용할 수 있게 해주는 명령어를 제공한다.
