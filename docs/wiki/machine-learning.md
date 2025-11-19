@@ -1474,7 +1474,12 @@ window.addEventListener('load', () => {
 [The Binding of Isaac](<S-F6>https://x.com/Lentils80/status/1978637501410459867)을 구현했다는 트윗.
 2번만에 완벽하게 동작하는 코드를 생성했다.
 
-한국 시간으로 11월 19일에 [공개한다는 소문](https://gall.dcinside.com/m/thesingularity/881993)이 있다.
+한국 시간으로 11월 19일에 [공개한다는 소문](https://gall.dcinside.com/m/thesingularity/881993)이 있었고,
+실제로 [공개되었다](https://blog.google/products/gemini/gemini-3/).
+
+개인 사용자가 상용 모델의 [2026년도 수능 문제 풀이 벤치마크](https://github.com/hehee9/2026-CSAT)를 진행했는데,
+GPT-5.1과 함께 높은 점수를 기록했다.
+직접 슈퍼마리오 브라더스의 월드 1-1을 구현했는데, 꽤 빠르게 동작하는 캔버스를 생성했다.
 
 #### Gemini CLI
 
