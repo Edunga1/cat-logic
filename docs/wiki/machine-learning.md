@@ -1544,6 +1544,9 @@ Take this drawing and turn it into a figure in reality. Transform the drawing in
 게임 리소스 등 "투명 배경"을 만들지 못한다.
 가짜 투명 배경을 흉내만 내고 실제로 투명한 배경을 만들지 못한다.
 
+[Gemini 3.0](#gemini-30)의 출시와 함께 Nano Banana Pro(2로도 불린다)도 [출시되었다](https://blog.google/intl/ko-kr/company-news/technology/nano-banana-pro/).
+이미지 생성 모델들의 고질인 글자 인식 및 비정상 생성 문제를 크게 개선했다.
+
 ##### awesome-nano-banana-images
 
 나노 바나나의 다양한 사용 사례를 모아둔 저장소.
