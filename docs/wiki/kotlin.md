@@ -339,22 +339,15 @@ https://github.com/mockk/mockk
 
 #### Stubbing 검증
 
-다음 검증 함수는 기록(`every`)이 모두 검증(`verify`)했는지 검증한다. 일종의 메타 검증. \
-불필요한 stubbing은 테스트 코드를 복잡하게 만드는데, 이 함수들로 필요한 테스트 코드만 남길 수 있다.
+다음 검증 함수는 기록(`every`)을 모두 검증(`verify`)했는지 검증한다. 일종의 메타 검증. \
+운영 코드에서 사용하지 않는 불필요한 stubbing은 테스트 코드를 복잡하게 만드는데, 이 함수들로 식별할 수 있다.
 
 - `confirmVerified`는 모든 기록이 모두 검증(`verify()`) 되었는지 확인한다. 기록만하고 검증하지 않은 경우를 찾아낸다.
 - `checkUnnecessaryStub`는 모든 기록이 한 번 이상 사용되었는지 확인한다. 기록하고 사용하지 않은 것을 찾아낸다.
 
-전역 설정을 통해 before/after 시점에 검증하면 좋다.
-
-`clearAllMocks`를 before에, 검증 함수를 after에 실행하는 것이 좋다.
-둘 다 after 시점에 한다면 검증 함수의 실패로 인해 `clearAllMocks`가 실행되지 않는다.
-이것은 tearDown이 제대로 동작하지 않은 결과를 초래하므로, 다음 테스트에 영향을 준다.
-
-다음과 같이 `clearAllMocks`를 before에, 검증 함수는 after에서 실행하자.
+전역 hook을 통해 setUp/tearDown 시점에 검증하면 좋다.
 
 ```kotlin
-// Better
 class ProjectConfig : AbstractProjectConfig() {
     override fun extensions(): List<Extension> = listOf(BeforeContainerListener, AfterContainerListener)
 }
@@ -372,8 +365,30 @@ private val AfterContainerListener = object : AfterContainerListener {
 }
 ```
 
-`excludeRecords`는 `confirmVerified`의 검증에서 제외하는 함수다.
-전역적으로 stubbing을 기록하는 경우, 검증에서 제외하여 반복되는 검증을 피하는데 사용할 수 있다.
+위와 같이 설정하면, 각 테스트 컨테이너 이후에 `checkUnnecessaryStub`가 실행되어 불필요한 stubbing을 찾아낸다.
+Exception이 발생하므로 테스트가 실패하게 된다.
+
+```kotlin
+// afterContainer
+clearAllMocks()
+checkUnnecessaryStub()  // always passes
+```
+
+이 방법은 `clearAllMocks`로 인해 검증하기 전에 기록이 모두 제거되어 `checkUnnecessaryStub`가 항상 통과하는 문제가 있다.
+
+
+```kotlin
+// afterContainer
+try {
+    checkUnnecessaryStub()
+} finally {
+    // avoid skipping clearAllMocks on checkUnnecessaryStub() failure
+    clearAllMocks()
+}
+```
+
+이 방법은 `checkUnnecessaryStub`가 먼저 실행되므로 올바르게 동작한다.
+하지만 검증 실패로 `afterContainer`가 중단되는 것을 대비해 `finally` 블록에서 `clearAllMocks`를 실행해야 한다.
 
 ## Kotlin Language Server Protocol
 
