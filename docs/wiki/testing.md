@@ -256,6 +256,43 @@ fun givenFooFailsToReserve() {
 
 코드가 더 많겠지만, 그래도 non-parameterized creation method 버전이 테스트에서는 보기 더 명확하다.
 
+### 테스트에 로직을 넣지 마세요
+
+테스트 코드에 로직을 넣으면 문제를 찾기 어렵다는 [Google Testing 블로그의 Don't put logic in your tests](https://testing.googleblog.com/2014/07/testing-on-toilet-dont-put-logic-in.html) 글.
+2014년에 작성되엇다.
+
+```java
+@Test public void shouldNavigateToPhotosPage() {
+  String baseUrl = "http://plus.google.com/";
+  Navigator nav = new Navigator(baseUrl);
+  nav.goToPhotosPage();
+  assertEquals(baseUrl + "/u/0/photos", nav.getCurrentUrl());
+}
+```
+
+위 테스트 코드에서 문제점을 바로 찾을 수 있을까?
+잘못된 점은 `baaseUrl + "/u/0/photos"` 부분이다.
+
+```java
+@Test public void shouldNavigateToPhotosPage() {
+  Navigator nav = new Navigator("http://plus.google.com/");
+  nav.goToPhotosPage();
+  assertEquals("http://plus.google.com//u/0/photos", nav.getCurrentUrl()); // Oops!
+}
+```
+
+로직을 제거하면 명백해진다. 실제 slash가 두 개 들어가 있다.
+이 테스트 코드가 실패하면 찾을 수 있지만, 통과하면 문제가 커진다.
+운영 코드에 문제가 있음에도 테스트가 통과하기 때문이다.
+
+> whereas production code describes a general strategy for computing outputs given inputs, tests are concrete examples of input/output pairs
+
+운영 코드는 입력에 대한 출력을 계산하는 일반적인 전략을 설명하는 반면, 테스트는 입력/출력 쌍의 구체적인 예이다.
+
+> When tests do need their own logic, such logic should often be moved out of the test bodies and into utilities and helper functions
+
+테스트에 로직이 필요한 경우, 그러한 로직은 테스트 본문에서 유틸리티 및 헬퍼 함수로 이동해야 한다.
+
 ## A/B Test
 
 다른 주제와 같은 분류가 아닌 거 같지만, 일단 여기에 둔다.
