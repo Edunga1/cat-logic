@@ -52,6 +52,21 @@ Git 배포 후 본격적으로 사용하기 시작된 계기는 3년이 지난 2
 
 > 그는 “내가 만들어야 했던 모든 프로젝트는 다른 사람이 만든 것 중에서 더 나은 걸 찾을 수 없었기 때문에 만들 수밖에 없었다”며 “하지만 나는 다른 사람이 내 문제를 해결해 주는 게 훨씬 더 좋으며, 내가 프로젝트를 구상한다는 건 사실상 세상의 실패”라고 말했다.
 
+### 기본 브랜치의 이름이 master에서 main으로 변경됨
+
+[Git 3.0에서는 기본 브랜치로 main을 사용합니다](https://news.hada.io/topic?id=24651)
+
+[2.52.0](https://raw.githubusercontent.com/git/git/b31ab939fe8e3cbe8be48dddd1c6ac0265991f45/Documentation/RelNotes/2.52.0.adoc) 릴리즈 노트에서 3.0 버전부터 기본 브랜치 이름이 `master`에서 `main`으로 변경된다고 발표했다.
+
+>* Declare that "git init" that is not otherwise configured uses
+  'main' as the initial branch, not 'master', starting Git 3.0.
+
+'master'는 노예 제도를 연상시킨다는 이유로 변경되었다는 말이 있다.
+사용자 반응은 썩 좋지 않다. 노예 제도 문제를 전 세계에서 떠안는 것인지,
+Scrum Master는 Scrum Main으로 불러야 하느냐 라던가 비꼬는 반응이 많다.
+
+반면에 master 6글자 보다는 main의 4글자로 더 짧아져서 좋다는 재밌는 반응도 있다.
+
 ## 자동 완성
 
 탭을 통한 *명령어 자동 완성*하려면 [shell completion](https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion)을 설치해야 한다.
