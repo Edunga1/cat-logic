@@ -1045,6 +1045,7 @@ macOS의 case-insensitive 문제로 보인다. 다른 운영체제에서는 발�
 
 remote에서 `john/feature-FOO`와 `john/feature-foo` 브랜치가 생성된 후, 로컬에서 fetch할 때 충돌이 발생했다.
 git의 안내 메시지는 `.lock` 파일을 삭제하라고 하지만, 실제로는 존재하지 않는다.
+remote git server는 bitbucket 기준이다.
 
 신규로 `git clone`한 디렉토리에서는 발생하지 않는데, 이미 로컬에 데이터가 존재해서 그런 것으로 보인다.
 또한 `feature-FOO` 브랜치 정보를 fetch한 상태에서 `feature-foo` 브랜치를 fetch하는 순차 과정에서는 발생하지 않는다.
