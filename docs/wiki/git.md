@@ -1043,17 +1043,24 @@ remove the file manually to continue.
 
 macOS의 case-insensitive 문제로 보인다. 다른 운영체제에서는 발생하지 않을 수도.
 
-remote에서 `john/feature-FOO`와 `john/feature-foo` 브랜치가 생성된 후, 로컬에서 fetch할 때 충돌이 발생했다.
+remote에서 case-sensitive 브랜치가 2개 이상 생성된 상태에서 로컬에서 fetch할 때 발생한다.
+여기서는 `feature-FOO`와 `feature-foo` 브랜치가 존재하는 상태다.
+
 git의 안내 메시지는 `.lock` 파일을 삭제하라고 하지만, 실제로는 존재하지 않는다.
 remote git server는 bitbucket 기준이다.
 
 신규로 `git clone`한 디렉토리에서는 발생하지 않는데, 이미 로컬에 데이터가 존재해서 그런 것으로 보인다.
 또한 `feature-FOO` 브랜치 정보를 fetch한 상태에서 `feature-foo` 브랜치를 fetch하는 순차 과정에서는 발생하지 않는다.
 
-임시 방편으로는 다음과 같은 방법이 있다:
+이 순차 과정을 재현하는 것으로 해결할 수 있다.
 
-- remote 브랜치에서 중복을 삭제(해당 개발자에게 요청해야 하는 문제)
-- 로컬에서 "순차적으로" fetch한 것처럼 `.git/packed-refs` 파일을 수정해서 branch 정보를 갱신(쉽지 않음)
-- `git fetch john/feature-Foo` 후 `git fetch john/feature-foo` 순서로 fetch(이후 fetch 시 항상 new branch로 인식되는 문제)
+```bash
+# 첫 번째 branch만 fetch
+git fetch refs/heads/john/feature-FOO:refs/remotes/origin/john/feature-FOO
 
-`git clone` 한 상태처럼 fetch하고 싶은데, 아직 방법을 찾지 못했다.
+# branch 정보 갱신
+git pack-refs --all
+
+# 이제 에러가 발생하지 않음
+git fetch
+```
