@@ -1019,3 +1019,40 @@ fatal: failed to write commit object
 > The data that follows the keyword gitdir: is used as a glob pattern. If the location of the .git directory matches the pattern, the include condition is met.
 
 나는 회사와 개인 프로젝트를 분리하고 사용자 정보와 서명 설정을 다르게 사용하고 있다.
+
+## Troubleshooting
+
+### cannot lock ref 에러
+
+Fetch 시 발생하는 문제.
+
+```
+~/workspace/service-foo master                                                                                                                          17:14:26
+❯ g pp
+From bitbucket.org:my-company/service-foo
+ * [new branch]      john/feature-FOO -> origin/john/feature-FOO
+ * [new branch]      john/feature-foo -> origin/john/feature-foo
+error: cannot lock ref 'refs/remotes/origin/john/feature-foo': Unable to create '/Users/me/workspace/service-foo/.git/refs/remotes/origin/john/feature-foo.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+```
+
+macOS의 case-insensitive 문제로 보인다. 다른 운영체제에서는 발생하지 않을 수도.
+
+remote에서 `john/feature-FOO`와 `john/feature-foo` 브랜치가 생성된 후, 로컬에서 fetch할 때 충돌이 발생했다.
+git의 안내 메시지는 `.lock` 파일을 삭제하라고 하지만, 실제로는 존재하지 않는다.
+
+신규로 `git clone`한 디렉토리에서는 발생하지 않는데, 이미 로컬에 데이터가 존재해서 그런 것으로 보인다.
+또한 `feature-FOO` 브랜치 정보를 fetch한 상태에서 `feature-foo` 브랜치를 fetch하는 순차 과정에서는 발생하지 않는다.
+
+임시 방편으로는 다음과 같은 방법이 있다:
+
+- remote 브랜치에서 중복을 삭제(해당 개발자에게 요청해야 하는 문제)
+- 로컬에서 "순차적으로" fetch한 것처럼 `.git/packed-refs` 파일을 수정해서 branch 정보를 갱신(쉽지 않음)
+- `git fetch john/feature-Foo` 후 `git fetch john/feature-foo` 순서로 fetch(이후 fetch 시 항상 new branch로 인식되는 문제)
+
+`git clone` 한 상태처럼 fetch하고 싶은데, 아직 방법을 찾지 못했다.
