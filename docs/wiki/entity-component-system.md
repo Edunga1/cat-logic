@@ -32,69 +32,69 @@ python에는 [esper](https://github.com/benmoran56/esper)라는 ECS 라이브러
 
 System은 절차적 방식으로 로직을 구현한다.
 
-### 예제 코드
+## 예제 코드
 
 Gemini 3.0을 통해 만든 간단한 예제 코드.
 
 ```python
 # 1. Components (데이터만 존재)
 class Position:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
 
-    def __repr__(self):
-        return f"Pos({self.x}, {self.y})"
+  def __repr__(self):
+    return f"Pos({self.x}, {self.y})"
 
 class Velocity:
-    def __init__(self, dx, dy):
-        self.dx = dx
-        self.dy = dy
+  def __init__(self, dx, dy):
+    self.dx = dx
+    self.dy = dy
 
 class Name:
-    def __init__(self, name):
-        self.name = name
+  def __init__(self, name):
+    self.name = name
 
 # 2. Entity Manager (엔티티와 컴포넌트를 관리하는 간단한 월드)
 class World:
-    def __init__(self):
-        self.entities = 0
-        # 컴포넌트 타입별로 데이터를 저장 (예: {Position: {entity_id: instance}})
-        self.components = {}
+  def __init__(self):
+    self.entities = 0
+    # 컴포넌트 타입별로 데이터를 저장 (예: {Position: {entity_id: instance}})
+    self.components = {}
 
-    def create_entity(self):
-        self.entities += 1
-        return self.entities # 단순히 ID만 반환
+  def create_entity(self):
+    self.entities += 1
+    return self.entities # 단순히 ID만 반환
 
-    def add_component(self, entity, component):
-        component_type = type(component)
+  def add_component(self, entity, component):
+    component_type = type(component)
 
-        if component_type not in self.components:
-            self.components[component_type] = {}
+    if component_type not in self.components:
+      self.components[component_type] = {}
 
-        self.components[component_type][entity] = component
+    self.components[component_type][entity] = component
 
-    def get_components(self, component_type):
-        return self.components.get(component_type, {})
+  def get_components(self, component_type):
+    return self.components.get(component_type, {})
 
 # 3. System (로직만 존재)
 class MovementSystem:
-    def update(self, world):
-        print("--- 이동 시스템 가동 ---")
-        # 위치와 속도 컴포넌트를 모두 가져옴
-        positions = world.get_components(Position)
-        velocities = world.get_components(Velocity)
+  def update(self, world):
+    print("--- 이동 시스템 가동 ---")
+    # 위치와 속도 컴포넌트를 모두 가져옴
+    positions = world.get_components(Position)
+    velocities = world.get_components(Velocity)
 
-        # 두 컴포넌트를 모두 가진 엔티티를 찾아서 처리
-        for entity, velocity in velocities.items():
-            if entity in positions:
-                position = positions[entity]
+    # 두 컴포넌트를 모두 가진 엔티티를 찾아서 처리
+    for entity, velocity in velocities.items():
+      if entity in positions:
+        position = positions[entity]
 
-                # 로직 수행: 위치 업데이트
-                position.x += velocity.dx
-                position.y += velocity.dy
+        # 로직 수행: 위치 업데이트
+        position.x += velocity.dx
+        position.y += velocity.dy
 
-                print(f"엔티티 {entity} 이동됨 -> {position}")
+        print(f"엔티티 {entity} 이동됨 -> {position}")
 
 # --- 실행 ---
 
