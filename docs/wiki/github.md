@@ -9,7 +9,7 @@ Git 저장소 호스팅 서비스.
 
 AI 기반의 코드 완성 도구.
 
-자세한 내용은 [문서 참조](/docs/wiki/machine-learning.md#github-copilot)
+자세한 내용은 [문서 참조](/docs/wiki/machine-learning.md#github-copilot).
 
 ## GitHub CLI
 
@@ -37,7 +37,7 @@ https://docs.github.com/en/copilot/github-copilot-in-the-cli/about-github-copilo
 
 설치하려면: `gh extension install github/gh-copilot`
 
-`gh copilot explain`은 명령어 설명을 받는 기능이다:
+`gh copilot explain`은 명령어 설명을 받는 기능이다.
 
 ```bash
 $ gh copilot explain "sudo apt-get"
@@ -58,7 +58,7 @@ Explanation:
   • The specific command sudo apt-get without any additional sub-commands or options will not produce any meaningful result or action.
 ```
 
-`gh copilot suggest`로 명령어 추천을 받을 수도 있다:
+`gh copilot suggest`로 명령어 추천을 받을 수도 있다.
 
 ```bash
 $ gh copilot suggest "Install git"
@@ -126,6 +126,9 @@ https://githubnext.com/projects/copilot-workspace/
 
 Workspace는 저장소의 모든 파일을 분석한다.
 저장소에 대해서 일일이 설명하지 않아도 어떤 프로젝트인지 알고 상황에 맞춰서 진행한다.
+
+[2025년 5월 Tech Prevuiew가 종료되었다](https://gh.io/copilot-workspace-sunset).
+요즘은 에이전트를 통해서 [Spec-Driven Development](/docs/wiki/large-language-model.md#github-spec-kit) 이나 비슷한 흐름으로 개발할 수 있을 정도로 성능이 좋아져서 정식 서비스로 출시하지 않은 것으로 보인다.
 
 ### 사용법
 
