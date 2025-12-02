@@ -390,6 +390,22 @@ try {
 이 방법은 `checkUnnecessaryStub`가 먼저 실행되므로 올바르게 동작한다.
 하지만 검증 실패로 `afterContainer`가 중단되는 것을 대비해 `finally` 블록에서 `clearAllMocks`를 실행해야 한다.
 
+##### 테스트 작성이 까다로워진다.
+
+`checkUnnecessaryStub`는 테스트 작성을 까다롭게 만든다.
+전체 테스트 케이스에 공용으로 사용하는 stubbing(Happy Path)은 각 테스트 케이스 작성을 간편하게 만드는 이점이 있는데,
+`checkUnnecessaryStub`는 이런 패턴을 사용할 수 없게 만든다.
+특히 테스트 케이스가 많이 있고, 각 케이스마다 한두 개만 사용하지 않는 경우에는 각 테스트케이스가 stubbing으로 가득찬다.
+
+고민해 본 회피 방안은.
+
+1. 사용하지 않는 부분만 `clearMocks()`로 제거하는 방법
+2. stubbing 코드라도 깔끔하게 보이도록 별도 함수로 분리하는 방법
+
+또 다른 `checkUnnecessaryStub`가 실패하는 문제는, 병렬 실행과 관련있다.
+운영 코드가 2개 이상 함수를 병렬 호출하고, 일부 호출이 실패하는 케이스를 작성하는 경우이다.
+이 때는 테스트 프로세스에서 stubbing의 실행 여부가 랜덤하게 결정되어 실패한다.
+
 ## Kotlin Language Server Protocol
 
 Kotlin [LSP](./language-server-protocol.md)는 현재 2개의 구현체가 있다.
