@@ -527,7 +527,7 @@ Commit Ordering
 $ git log --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
 2023-12-02 8520c0d1f Add frontmatters
 2023-11-11 f5b670292 Revise book.md and jetbrains.md
-2023-10-26 e5832cc77 Revise tennise inner game
+2023-10-26 e5832cc77 Revise tennis inner game
 2023-10-15 146a5d7b2 Revise book.md
 2023-10-13 9ac5d1ea3 Add heads
 2023-10-11 3c2f6a0c3 Update tennis inner game book
@@ -548,7 +548,7 @@ $ git log --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
 $ git log --follow --pretty=format:"%ad %h %s" --date=short docs/wiki/book.md
 2023-12-02 8520c0d1f Add frontmatters
 2023-11-11 f5b670292 Revise book.md and jetbrains.md
-2023-10-26 e5832cc77 Revise tennise inner game
+2023-10-26 e5832cc77 Revise tennis inner game
 2023-10-15 146a5d7b2 Revise book.md
 2023-10-13 9ac5d1ea3 Add heads
 2023-10-11 3c2f6a0c3 Update tennis inner game book
