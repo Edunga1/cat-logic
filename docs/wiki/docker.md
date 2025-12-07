@@ -10,7 +10,7 @@ docker 명령어와 호환된다. 다만 WSL에서는 리소스 설정을 할 �
 
 ## Docker 환경 구성하기
 
-여러가지 선택지가 있으나 MacOS, Linux라면 Colima를 가장 추천한다.
+여러가지 선택지가 있으나 macOS, Linux라면 Colima를 가장 추천한다.
 WSL2는 Rancher Desktop 추천.
 
 ### Docker Desktop
@@ -23,7 +23,7 @@ brew install --cask docker
 
 가장 쉽게 Docker를 사용할 수 있는 방법이다.
 개인 사용자는 무료로 사용할 수 있다.
-라이센스 정책 변경으로 인해 [기업 사용자는 조건](https://www.docker.com/pricing/faq/)에 따라 유료로 사용해야 한다.
+라이선스 정책 변경으로 인해 [기업 사용자는 조건](https://www.docker.com/pricing/faq/)에 따라 유료로 사용해야 한다.
 
 ### Rancher Desktop
 
@@ -31,7 +31,7 @@ https://rancherdesktop.io/
 
 **설치**
 
-MacOS:
+macOS:
 
 ```bash
 brew install --cask rancher
@@ -47,7 +47,7 @@ Docker Desktop과 흡사하다. 기본적으로 [k8s](./kubernetes.md) 제공한
 불필요하다면 끄는 편이 리소스 절약에 좋다.
 container runtime을 containerd, dockerd 중 선택할 수 있는데, docker에 익숙하면 dockerd를 선택하는 것이 좋다.
 
-개인 사용자더라도 docker desktop의 라이센스 정책이 불편하니 그냥 rancher desktop을 사용하는 것이 좋을지도.
+개인 사용자더라도 docker desktop의 라이선스 정책이 불편하니 그냥 rancher desktop을 사용하는 것이 좋을지도.
 
 WSL2을 잘 지원한다.
 
@@ -63,7 +63,7 @@ WSL2을 잘 지원한다.
 
 https://github.com/abiosoft/colima/
 
-Linux, MacOS 모두 지원한다.
+Linux, macOS 모두 지원한다.
 최소한의 설정으로 컨테이너를 제공한다고 설명한다:
 
 > Container runtimes on macOS (and Linux) with minimal setup
@@ -116,7 +116,7 @@ docker-desktop 등 다른 도구에서는 그런적이 없었던 거 같은데, 
 
 > Solved it by removing the old symlink and then sudo ln -s /Users/$USER/.colima/docker.sock /var/run/docker.sock.
 
-### OSX 에서 수동으로 Docker 환경 구성하기
+### macOS 에서 수동으로 Docker 환경 구성하기
 
 **docker desktop 또는 rancher desktop이 나와서 이 방법은 비추천.**
 
@@ -371,7 +371,7 @@ docker: request returned Bad Gateway for API route and version http://%2Fvar%2Fr
 
 ### "no matching manifest for linux/arm64/v8 in the manifest list entries"
 
-환경은 MacOS M series.
+환경은 macOS M series.
 
 다음과 같이 `docker pull mysql:5.6` manifest를 찾을 수 없다며 실패한다:
 

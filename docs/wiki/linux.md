@@ -12,7 +12,7 @@ created: 2023-01-11
 
 ## systemd
 
-pid 1번으로 실행되는 프로세스. 0번이 있기 때문에 2번째로 실행되는 프로세스다.
+PID 1번으로 실행되는 프로세스. 0번이 있기 때문에 두 번째로 실행되는 프로세스다.
 
 유닉스 기반 시스템에는 [init](https://ko.m.wikipedia.org/wiki/Init) 이라는 모든 프로세스의 부모이자 시작을 관리하는 프로세스가 있는데, 이를 대체한다고 한다.
 [위키](https://ko.m.wikipedia.org/wiki/Init)에는 systemd가 init의 대안이라고 나와있다.
