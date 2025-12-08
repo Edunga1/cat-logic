@@ -209,7 +209,8 @@ scratch 파일로 저장하면 프로젝트에 상관없이 빠른 접근성을 
 경고창 없이 즉시 삭제되므로 삭제되었다는 피드백이 없다.
 나는 구글 드라이브로 공유 폴더에 저장하고 있는데, 삭제하면 드라이브 휴지통에서 복구해야 한다.
 
-[JetBrains Aqua](https://www.jetbrains.com/aqua/)는 테스트 도구로, API Client도 사용할 수 있다.
+[JetBrains Aqua](https://www.jetbrains.com/aqua/)는 테스트 도구로, API Client도 사용할 수 있으나,
+[2025년 4월 개발 중단](https://blog.jetbrains.com/qa/2025/04/aqua-sunset/)되었다.
 
 ### 그 외
 
