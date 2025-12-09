@@ -365,17 +365,16 @@ private val AfterContainerListener = object : AfterContainerListener {
 }
 ```
 
-위와 같이 설정하면, 각 테스트 컨테이너 이후에 `checkUnnecessaryStub`가 실행되어 불필요한 stubbing을 찾아낸다.
+위와 같이 beforeContainer/afterContainer 설정하면, 각 테스트 컨테이너 이후에 `checkUnnecessaryStub`가 실행되어 불필요한 stubbing을 찾아낸다.
 Exception이 발생하므로 테스트가 실패하게 된다.
 
 ```kotlin
 // afterContainer
 clearAllMocks()
-checkUnnecessaryStub()  // always passes
+checkUnnecessaryStub()  // Bad, always passes
 ```
 
-이 방법은 `clearAllMocks`로 인해 검증하기 전에 기록이 모두 제거되어 `checkUnnecessaryStub`가 항상 통과하는 문제가 있다.
-
+이 방식은 잘못되었는데,  `clearAllMocks()`가 먼저 실행되면 `checkUnnecessaryStub`는 항상 통과한다.
 
 ```kotlin
 // afterContainer
@@ -387,8 +386,19 @@ try {
 }
 ```
 
-이 방법은 `checkUnnecessaryStub`가 먼저 실행되므로 올바르게 동작한다.
-하지만 검증 실패로 `afterContainer`가 중단되는 것을 대비해 `finally` 블록에서 `clearAllMocks`를 실행해야 한다.
+이 방식은 afterContainer만 사용하고, `checkUnnecessaryStub`로 인해 afterContainer가 중단되는 것을 방지하기 위해 try-finally 블록을 사용한다.
+장점은 nested container에서도 잘 동작한다.
+아래 예시처럼 `upper` 컨테이너에서 stubbing을 하는 방식에 대응할 수 있다.
+beforeContainer에서 초기화하면 `lower` 컨테이너에서 실행한 함수는 stubbing이 사라져서 사용할 수 없다.
+
+```kotlin
+context("upper") {
+    every { foo.bar() } returns 42
+    context("lower") {
+        // ...
+    }
+}
+```
 
 ##### 테스트 작성이 까다로워진다.
 
