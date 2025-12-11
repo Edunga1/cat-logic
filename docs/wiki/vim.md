@@ -170,6 +170,31 @@ vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한
 
 ## 사용 사례
 
+### 파일 탐색
+
+![nerdtree example](https://github.com/preservim/nerdtree/raw/master/screenshot.png)
+
+이미지의 왼쪽 패널. 파일 탐색기는 vim 내장된 netrw가 있지만, NERDTree를 사용한다.
+인기가 많은 플러그인이다.
+
+https://github.com/preservim/nerdtree
+
+NERDTree 패널 기능
+
+- `hjkl`: 내비게이션
+- `?`: 도움말
+- 폴더에서 `o` 또는 `<CR>`: 열기/접기
+- 파일에서 `o` 또는 `<CR>`: 열기
+- `t`: 새 탭에서 열기
+- `m`: 메뉴 표시. 파일 및 폴더 생성, 삭제, 복사, 이동 등 다양한 기능을 제공한다
+
+명령어
+
+- `:NERDTreeToggle`: NERDTree 패널 열기/닫기. `<leader>e`로 매핑해서 사용중
+- `:NERDTree`: 탐색기 상태를 초기화하고 새로 열 때
+- `:NERDTreeFind`: 현재 버퍼 파일 위치로 탐색기에서 이동. `<leader>f`로 매핑해서 사용중
+
+
 ### 파일 검색
 
 [fzf.vim](https://github.com/junegunn/fzf.vim)이 제공하는 기능 몇가지를 사용한다.
