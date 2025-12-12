@@ -164,7 +164,7 @@ ChatGPT와 대화하다보면 "Memory Updated"라는 메시지가 출력되는�
 
 이 정보를 이용하여 ChatGPT가 생각하는 내 모습을 그리도록 요청하는 것이 이 챌린지의 방식이다.
 
-[레딧 글](https://www.reddit.com/r/ChatGPT/comments/1gne6m6/comment/lwafuc9/)에 사람들이 공유한 그림들이 있다.
+[레딧 글](https://redd.it/1gne6m6)에 사람들이 공유한 그림들이 있다.
 고양이를 키우는 사람들은 고양이가 포함되고, 취미에 대해서 많이 기록하는지 암벽등반부터 등산까지 다양하다.
 
 [OpenAI의 CPO도 여기에 참여](https://www.linkedin.com/posts/kevinweil_want-to-try-something-fun-with-chatgpt-with-activity-7264370818149691392-auDd) 했다.
