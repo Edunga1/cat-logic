@@ -145,6 +145,15 @@ https://openai.com/index/introducing-gpt-5/
 
 사용자 평은 썩 좋지 않은데, 모델 라우팅 이슈가 있었다고 하니 좀 더 지켜봐야 할 듯.
 
+### GPT-5.2
+
+2025년 12월 11일(한국 기준 12일), GPT-5.2가 공개되었다.
+
+https://openai.com/index/introducing-gpt-5-2/
+
+[GitHub copilot](/docs/wiki/github.md#github-copilot)에도 바로 적용되었다.
+0.0.362 버전에선 노출되지 않았는데, 0.0.369 버전에서 확인했다.
+
 ### "나를 그려줘" 챌린지
 
 2024년 10월 즈음에 시작된 챌린지로 보이는, ChatGPT-4o를 이용한 챌린지.

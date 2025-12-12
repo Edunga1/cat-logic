@@ -11,6 +11,9 @@ AI 기반의 코드 완성 도구.
 
 자세한 내용은 [문서 참조](/docs/wiki/machine-learning.md#github-copilot).
 
+지원하는 모델은 [supported-models 페이지](https://docs.github.com/en/copilot/reference/ai-models/supported-models#supported-ai-models-in-copilot)에서 확인할 수 있다.
+OpenAI, Claude, Gemini, xAI 모델을 지원하고, 최신 버전 반영이 빠른편.
+
 ## GitHub CLI
 
 `gh` 명령어로 GitHub 기능을 사용할 수 있다.
