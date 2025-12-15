@@ -169,6 +169,8 @@ SFML의 [Rust](./rust.md) binding.
 
 https://github.com/jeremyletang/rust-sfml
 
+2025년 12월 기준 최신 버전인 0.25.0 버전은 [macOS](/docs/wiki/mac-os.md)에서 테스트 되지 않았다고 되어있다.
+
 1. SFML 설치가 필요하다: `brew install sfml` \
 Homebrew로 설치하면 저장되는 위치를 알고 있어야 한다. osx 기준으로 `/opt/homebrew/Cellar/sfml/<version>`에 설치되었다.
 
