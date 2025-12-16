@@ -712,7 +712,41 @@ https://github.com/github/copilot-cli
 
 [GitHub CLI](/docs/wiki/github.md#github-cli)를 사용한다면 인증 절차가 생략되고 함께 사용한다.
 
-다음과 같이 `-p` 옵션으로 대화형이 아닌 형태로도 사용할 수 있다. `--allow-all-tools` 옵션을 주면 일일이 승인하지 않아도 된다.
+매 요청은 Premium requests 토큰을 소모한다.
+[settings/copilot/features](https://github.com/settings/copilot/features)에서 토큰 잔여량을 확인할 수 있다.
+Pro 기준 월간 300 토큰이 제공된다.
+토큰의 소모량은 모델마다 달라진다.
+이는 [model-multipliers 문서](https://docs.github.com/en/copilot/reference/ai-models/supported-models#model-multipliers)에서 설명한다.
+또는 copilot 대화창에서 `/model` 명령어로 확인할 수 있다. 소모량은 무료, 3x, 1, 0.33x 등 다양하다.
+
+```bash
+ Select Model
+
+ Choose the AI model to use for Copilot CLI. The selected model will be persisted and used for future sessions.
+
+ ❯ 1. Claude Sonnet 4.5 (1x) (default)
+   2. Claude Haiku 4.5 (0.33x)
+   3. Claude Opus 4.5 (Preview) (3x)
+   4. Claude Sonnet 4 (1x)
+   5. GPT-5.1-Codex-Max (Preview) (1x)
+   6. GPT-5.1-Codex (1x)
+   7. GPT-5.2 (Preview) (1x) (current)
+   8. GPT-5.1 (1x)
+   9. GPT-5 (1x)
+   10. GPT-5.1-Codex-Mini (0.33x)
+   11. GPT-5 mini (0x)
+   12. GPT-4.1 (0x)
+   13. Gemini 3 Pro (Preview) (1x)
+   14. Cancel (Esc)
+
+ Confirm with number keys or ↑↓ keys and Enter, Cancel with Esc
+```
+
+##### non-interactive mode
+
+대화형이 아닌 형태로도 사용할 수 있다.
+`-p` 옵션으로 프롬프트를 전달한다.
+`--allow-all-tools` 옵션을 주면 일일이 승인하지 않아도 된다.
 
 ```bash
 copilot -p "문서 10개 정도만 오타를 찾아서 수정해줘. 커밋은 하지마." --allow-all-tools
