@@ -127,6 +127,29 @@ You have not rebooted after updating a package which requires a reboot. Please r
 
 업그레이드 후에는 리붓 해야한다... :(
 
+## Clipboard에서 이미지 붙여넣기
+
+Powershell 명령어를 통해서 클립보드에 있는 이미지를 파일로 저장할 수 있다.
+
+```bash
+powershell.exe -NoProfile -Command "(Get-Clipboard -Format Image).Save('sample.png')"
+```
+
+Linux 계열인 경우 `xclip` 명령어를 통해서 [생성할 수 있다고 하는데](https://unix.stackexchange.com/a/145134), WSL에서는 동작하지 않는다.
+
+```bash
+# image/png 타입이 누락되어 있다.
+$ xclip -selection clipboard -t TARGETS -o
+TIMESTAMP
+TARGETS
+UTF8_STRING
+TEXT
+
+# 실패한다.
+$ xclip -selection clipboard -t image/png -o > /tmp/clipboard.png
+Error: target image/png not available
+```
+
 ## 문제점
 
 [MacOS](./mac-os.md)와 다르게 문제점들이 좀 있다.
