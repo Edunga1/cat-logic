@@ -19,7 +19,16 @@ Atlassian의 Git 저장소 관리 서비스.
 ```bash
 curl --request GET \
   --url 'https://api.bitbucket.org/2.0/repositories/{workspace}/{repository}/pullrequests' \
-  --user "{email}:{token}" \
+  --user '{email}:{token}' \
+  --header 'Accept: application/json'
+```
+
+`--user` 대신 헤더를 명세한다면.
+
+```bash
+curl --request GET \
+  --url 'https://api.bitbucket.org/2.0/repositories/{workspace}/{repository}/pullrequests' \
+  --header "Authorization: Basic $(printf '%s' "${email}:${token}" | base64)" \
   --header 'Accept: application/json'
 ```
 
