@@ -156,6 +156,34 @@ token5,orange
 python으로 json을 읽어서 비교하고 있는데, [jq](/docs/wiki/shell.md#jq)를 사용하는 것도 좋은 방법이다.
 구문 강조가 제공되고, 필드 제거 등 jq의 기능을 활용할 수 있다.
 
+## Options
+
+## --user
+
+`--user` 옵션은 기본 인증(Basic Authentication)을 위한 사용자 이름과 비밀번호를 지정한다.
+
+```bash
+curl 'https://example.com' --user 'username:password'
+```
+
+헤더의 `Authorization: Basic <base64-encoded-credentials>` 형태로, `username:password`를 base64로 인코딩하여 전송한다.
+즉, 해당 옵션 대신 직접 헤더에 인코딩하여 넣는 것과 동일하다.
+
+```bash
+$ curl -v https://example.com -u foo:bar
+* Host example.com:443 was resolved.
+
+# ...생략
+
+> GET / HTTP/2
+> Host: example.com
+> Authorization: Basic Zm9vOmJhcg==
+> User-Agent: curl/8.13.0
+> Accept: */*
+```
+
+`Zm9vOmJhcg==`는 `foo:bar`를 base64로 인코딩한 값이다.
+
 ## Reference
 
 https://antonz.org/mastering-curl/ \
