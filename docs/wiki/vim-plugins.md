@@ -198,7 +198,7 @@ auto-session에서 세션 파일 명에 `%` 포함하고 있어서 이상하게 
 
 Vim 파일 탐색기 플러그인. 디렉토리 구조를 트리로 보여준다. vim에서 인기있는 플러그인 중 하나.
 
-플러그인 이름은 `scrooloose/nerdtree`.
+https://github.com/preservim/nerdtree
 
 아래는 자주 사용하는 기능.
 
