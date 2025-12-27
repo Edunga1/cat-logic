@@ -4,6 +4,7 @@ created: 2025-02-06
 # APM
 
 시스템(애플리케이션) 성능을 모니터링하고 분석하는 소프트웨어.
+Application Performance Management/Monitoring.
 
 ## DataDog
 
