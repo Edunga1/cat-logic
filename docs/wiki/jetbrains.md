@@ -124,6 +124,7 @@ enum의 경우 특정 값만 받는 필드도 자동완성 된다.
 위 단락의 `.http` 파일도 scratch로 생성해서 관리하면 어느 프로젝트에서나 파일을 열어서 실행할 수 있다.
 
 구글 드라이브나 드랍박스 등 클라우드에 연동해서, 집에서나 회사에서나 접근 가능한 나만의 코드 조각 저장소로 가꾸는 방법도 좋다.
+나는 코드 리뷰 중 의심가는 코드 조각을 즉시 실행해보거나, 간단한 알고리즘을 테스트할 때 주로 사용한다.
 
 scratch 파일은 현재 프로젝트의 모듈을 기반으로 설정할 수 있다.(jvm 기반 언어라면 classpath를 현재 프로젝트로 설정한다.)
 이 말은 현재 프로젝트나 프로젝트가 참조하는 라이브러리의 모듈을 불러올 수 있다는 것이다.
@@ -134,6 +135,27 @@ Package View에서는 `Scratches`가 보이지 않는다.
 
 `Show Scratch Files` 기능으로 새 창에서 파일 목록을 볼 수 있고, 파일 내용 검색도 가능하다.
 나는 Scratch 파일을 자주 사용하고 많이 관리하고 있어서, `option + s`로 단축키를 지정해서 사용하고 있다.
+
+#### Scratches 기능의 불안정성
+
+Kotlin Script(.kts)은 오류가 많이 발생한다.
+특히 2025.3 버전에서는 k2 컴파일러를 기본으로 사용하는데, 그러면 scratch file 실행 시 오류가 발생한다.
+
+오류 메시지는 다음과 같다.
+
+```
+Compilation failed: error: error processing script definition class org.jetbrains.kotlin.idea.core.script.k2.definitions.KotlinScratchScript: Unable to construct script definition: Unable to load base class org.jetbrains.kotlin.idea.core.script.k2.definitions.KotlinScratchScript
+```
+
+언어(kts) 기반의 문제 뿐 아니라, IntelliJ 고질병으로 Scratch 기능 자체가 불안정한 편이다.
+매 버전 업데이트마다 Scratch 관련된 기능이 동작하지 않는 문제는 매번 발생하고 고쳐진다.
+특히 `Show Scratch Files`의 검색 기능은 검색되지 않거나, 한글 검색이 안되거나 둘 중 하나는 꼭 발생한다.
+
+매번 이런 문제들이 발생할 때 마다 JetBrains Issue Tracker에서 검색하는데, Scratch 사용자가 적은지 리포트가 적다.
+
+Kotlin Scratch를 사용해야 한다면, Kotlin Notebook이 대안으로 괜찮아 보인다.
+Scratch 처럼 프로젝트를 의존성으로 추가할 수 있고, Interactive 실행이 가능하다.
+Jupyter Notebook를 사용해보았다면 특히나.
 
 ## DataGrip
 
