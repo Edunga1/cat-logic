@@ -136,6 +136,12 @@ Package View에서는 `Scratches`가 보이지 않는다.
 `Show Scratch Files` 기능으로 새 창에서 파일 목록을 볼 수 있고, 파일 내용 검색도 가능하다.
 나는 Scratch 파일을 자주 사용하고 많이 관리하고 있어서, `option + s`로 단축키를 지정해서 사용하고 있다.
 
+`Edit Custom Properties`으로 Scratch 파일 경로를 변경할 수 있는데, 나는 구글 드라이브의 공유 폴더를 설정해서 집, 회사 어디서나 접근 가능하게 사용하고 있다.
+
+```
+idea.scratch.path/scratches=/Users/john/Library/CloudStorage/GoogleDrive-john@example.com/My Drive/dev-sync/scratches
+```
+
 #### Scratches 기능의 불안정성
 
 Kotlin Script(.kts)은 오류가 많이 발생한다.
