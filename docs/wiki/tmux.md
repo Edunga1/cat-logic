@@ -3,7 +3,10 @@ created: 2024-07-06
 ---
 # Tmux
 
-Terminal Multiplexer. 여러개의 창을 하나의 터미널에서 관리할 수 있게 해준다.
+Terminal Multiplexer.
+
+터미널 앱을 종료하더라도 세션을 유지해 주고,
+한 화면에서 여러 개의 창을 생성 및 분할 할 수 있게 해준다.
 
 https://github.com/tmux/tmux
 
@@ -32,6 +35,9 @@ README.md docs      sites
 새로운 프로젝트가 아닌 이상 `tmux` 명령어를 잘 사용하지 않는다.
 Tmuxinator로 설정을 파일로 관리하고, `tmuxinator` 명령어로 실행한다.
 
+창을 생성하고 분할하는 기능은 터미널 앱에서 제공하는 기능과 겹치지만,
+Tmux의 단축어로 인해 접근성의 이점이 있다.
+
 ## 특징
 
 하나의 화면에서 여러개의 터미널을 제어할 수 있다.
@@ -53,14 +59,41 @@ set -g prefix C-a
 
 ## Tmuxinator
 
-tmux 설정을 yaml로 관리하는 도구.
+tmux 설정을 파일로 관리하는 도구.
 
 https://github.com/tmuxinator/tmuxinator
 
-설정 파일을 `~/.config/tmuxinator/`에 저장하여 전역으로 사용하거나
-프로젝트별로 `./.tmuxinator.yml`에 저장하여 지역적으로 사용할 수 있다.
+내 설정 파일 예시.
 
-`tmuxinator` 명령어를 제공한다. 명렁어가 길어서 `tmuxn` alias 만들어서 사용하는 중.
+```yaml
+name: cat
+
+windows:
+  - editor: vi
+  - cli:
+  - site:
+      root: ../cat-logic-site
+      panes:
+        - vi
+  - server:
+      root: ../cat-logic-site
+      layout: main-vertical
+      panes:
+        -
+        - npm run develop
+```
+
+- 4개의 창을 생성
+- 3번째 창은 `../cat-logic-site`를 루트로, 하나의 pane에서 `vi`를 실행
+- 4번째 창은 `../cat-logic-site`를 루트로, 좌우 분할 레이아웃을 사용
+  - 첫 번째 pane은 빈 상태
+  - 두 번째 pane은 `npm run develop` 명령어를 실행
+
+설정 파일을 `~/.config/tmuxinator/`에 저장하여 전역으로 사용하거나
+디렉토리 루트 `./.tmuxinator.yml`에 저장하여 지역적으로 사용할 수 있다.
+
+`tmuxinator` 명령어를 제공한다.
+명렁어가 길어서 `tmuxn` alias 만들어서 사용하는 중.
 
 ### 지역적으로 사용할 경우
 
