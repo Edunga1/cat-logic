@@ -93,3 +93,9 @@ github actions/checkout의 fetch-depth를 0으로 설정하면 모든 커밋 내
 ## Google Search Console 인덱싱 실패
 
 `Page with redirect` 오류로 인덱싱이 지속적으로 실패하는 문제.
+
+- gatsby는 trailing slash가 없으면 slash가 불여서 리다이렉트(301) 시킨다.
+- 하지만 페이지의 내부 링크는 trailing slash가 없는 형태였다.
+- sitemap.xml에는 정상적으로 trailing slash가 포함되어 있다.
+- Google Search Console은 sitemap.xml 보다 페이지의 내부 링크를 우선시하는 듯 하다.
+- <진행중>
