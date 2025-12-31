@@ -89,3 +89,7 @@ https://github.com/Edunga1/cat-logic/commit/10f5d680de2aa422dee3258101b4c4341956
 
 github actions/checkout의 fetch-depth를 0으로 설정하면 모든 커밋 내역을 가져올 수 있다.\
 `gatsby-transformer-gitinfo` gatsby 플러그인은 git 정보를 graphql로 가져올 수 있게 해준다.
+
+## Google Search Console 인덱싱 실패
+
+`Page with redirect` 오류로 인덱싱이 지속적으로 실패하는 문제.
