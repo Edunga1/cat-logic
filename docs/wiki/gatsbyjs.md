@@ -210,6 +210,22 @@ export default function replaceWikiLinks(text: string) {
 
 와중에 주석만 작성하고, 코드는 copilot이 작성해줬다. 😎 (<- 이 부분도 copilot이 작성해줬다. 괄호 안에 있는 것도!)
 
+이 기능은 별도 플러그인으로 구현해 두었다: https://github.com/edunga1/gatsby-remark-relative-linker
+
+`npm install github:edunga1/gatsby-remark-relative-linker`로 설치하고,
+`gatsby-config.js`에 `gatsby-transformer-remark` 플러그인 옵션에 추가한다:
+
+```json
+{
+  resolve: "gatsby-transformer-remark",
+  options: {
+    plugins: [
+      "gatsby-remark-relative-linker",
+    ],
+  },
+}
+```
+
 ### 사이트에 중간 경로가 있으면 이미지가 보여지지 않는 문제
 
 [gatsby-remark-images](https://www.gatsbyjs.com/plugins/gatsby-remark-images/) 플러그인을 사용해서, markdown에서 이미지를 사용하는 경우 문제가 있다.
