@@ -302,7 +302,7 @@ sources <span class="token operator">=</span> <span class="token punctuation">{<
     null_ls<span class="token punctuation">.</span>builtins<span class="token punctuation">.</span>formatting<span class="token punctuation">.</span>isort<span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
 <h3 id="pyright" style="position:relative;"><a href="#pyright" aria-label="pyright permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pyright</h3>
-<p><a href="../language-server-protocol">language server</a> for python.</p>
+<p><a href="../language-server-protocol/">language server</a> for python.</p>
 <p><a href="https://github.com/microsoft/pyright">https://github.com/microsoft/pyright</a></p>
 <p>django 프로젝트라면 <a href="https://github.com/sbdchd/django-types">django-types</a>를 설치하자.
 mypy와 django-stubs처럼 django model의 필드 타입을 제공한다.</p>
@@ -350,7 +350,7 @@ django-stubs는 django 매직과 관련된 타입 정보를 제공한다.</p>
 예를 들어 Pylint는 <a href="https://pylint.readthedocs.io/en/latest/user_guide/messages/warning/broad-exception-caught.html">broad-exception-caught</a>와 <a href="https://pylint.readthedocs.io/en/latest/user_guide/messages/convention/consider-using-f-string.html">consider-using-f-string</a>을 잡아주지만 Ruff는 그렇지 않다.</p>
 <p>아직 많이 사용해보지 않아서 대응하는 정도의 차이가 얼만큼인지 모르겠다.
 기능은 부족하지만 매우 빠른 장점으로 앞으로 자주 사용할 것 같다.</p>
-<p>nvim은 <a href="../BUILTINS#ruff">null-ls</a>에서 제공한다. diagnostic, formatter 두 개 소스로 제공한다.
+<p>nvim은 <a href="../BUILTINS/#ruff">null-ls</a>에서 제공한다. diagnostic, formatter 두 개 소스로 제공한다.
 Pylint와 함께 사용해보면 Ruff의 반응이 빨라서 항상 Pylint보다 Ruff의 진단이 먼저 노출된다.</p>
 <p><strong>개발 환경 구성 시 주의해야 한다.</strong></p>
 <p>Ruff 설명대로 rust로 작성되어 있어서 로컬 개발 환경이나, 개발용 Docker 환경 구성을 위해서 Rust 런타임 환경 구성이 필요할 수 있다.
@@ -360,8 +360,8 @@ macOS 기준으로는 별도 도구 없이 설치되었지만, python alpine 이
 <p><a href="https://github.com/apache/airflow/blob/main/pyproject.toml#L29">Apache Airflow</a>,
 <a href="https://github.com/tiangolo/fastapi/blob/master/pyproject.toml#L164">FastAPI</a>,
 <a href="https://github.com/huggingface/transformers/blob/main/pyproject.toml#L5">Hugging Face</a>,
-<a href="../pyproject.toml#L194">Pandas</a>
-<a href="../pyproject.toml#L121">SciPy</a>
+<a href="../pyproject.toml#L194/">Pandas</a>
+<a href="../pyproject.toml#L121/">SciPy</a>
 등 대규모 프로젝트에서 ruff를 사용하고 있다. pylint와 함께 사용하는 곳도 아닌곳도 있다.</p>
 <blockquote>
 <p>Ruff can be used to replace Flake8 (plus dozens of plugins), isort, pydocstyle, yesqa, eradicate, pyupgrade, and autoflake, all while executing tens or hundreds of times faster than any individual tool.</p>
@@ -1025,8 +1025,8 @@ docker로 실행해볼 수 있다.</p>
 <h3 id="redis-connection을-전역-생성-vs-요청마다-생성" style="position:relative;"><a href="#redis-connection%EC%9D%84-%EC%A0%84%EC%97%AD-%EC%83%9D%EC%84%B1-vs-%EC%9A%94%EC%B2%AD%EB%A7%88%EB%8B%A4-%EC%83%9D%EC%84%B1" aria-label="redis connection을 전역 생성 vs 요청마다 생성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>redis connection을 전역 생성 vs 요청마다 생성</h3>
 <p>SO <a href="https://stackoverflow.com/questions/18022767/python-redis-connection-should-be-closed-on-every-request-flask/18024593">Python Redis connection should be closed on every request? (flask)</a> 질문이다.</p>
 <p>redis connection을 전역으로 하나만 생성해서 필요한 곳에서 import 하여 사용할 지, 매 요청마다 생성하고 닫을 지에 대한 질문이다.</p>
-<p>전자처럼 Top level 객체는 <a href="../nodejs">Node.js</a>나 <a href="../python">python</a>에서는 일반적인 방법이다.
-<a href="../spring-framework">Spring Framework</a>의 경우 주입에 대한 문제에서 자유로우니 Bean으로 생성하고 프레임워크를 통해 주입받는 것이 일반적이다.
+<p>전자처럼 Top level 객체는 <a href="../nodejs/">Node.js</a>나 <a href="../python/">python</a>에서는 일반적인 방법이다.
+<a href="../spring-framework/">Spring Framework</a>의 경우 주입에 대한 문제에서 자유로우니 Bean으로 생성하고 프레임워크를 통해 주입받는 것이 일반적이다.
 그래서 node나 python을 처음 접하는 경우 의존 문제에 대해 난해할 수 있다.
 DI 라이브러리 사용하지 않고 이상적인 코드를 작성하려고 하면 인스턴스 생성하다가 지치게 된다.</p>
 <p>어쨌든 질문에 대한 답은 <code class="language-text">redis-py</code>가 connection pool을 관리하기 때문에 후자를 선택하더라도 우려하는 성능 문제는 없다고 한다.</p>

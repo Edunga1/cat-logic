@@ -156,7 +156,7 @@ data-styled.g20[id="Wiki__TocSide-sc-16q9onf-5"]{content:"chvTXK,"}/*!sc*/
 <p>2024년 11월에 <a href="https://www.anthropic.com/news/model-context-protocol">Anthropic에서 발표</a>한 AI 모델과 AI가 사용하는 도구를 연결하는 프로토콜.
 AI 도구가 많아지면서 난립하는 연동 방식을 정리하기 위해 고안되었다.</p>
 <p>프로토콜이 고안되기 이전에는 function-calling, tool-calling 등 다양한 이름으로 ollama, phidata 등 AI toolkit에서 제공했다.</p>
-<p>개발 환경 세계를 통일한 <a href="../language-server-protocol">Language Server Protocol</a>와 유사한데,
+<p>개발 환경 세계를 통일한 <a href="../language-server-protocol/">Language Server Protocol</a>와 유사한데,
 실제로 영감을 받았다고 한다:</p>
 <blockquote>
 <p>MCP takes some inspiration from the <a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a>, which standardizes how to add support for programming languages across a whole ecosystem of development tools.</p>
@@ -166,8 +166,8 @@ AI가 사용할 수 있는 도구를 정의한 MCP 서버, 사용자와 대면�
 <p>사용자 입장에서 선택할 것은, MCP Client를 제공하는 Host와 MCP 서버이다.
 Client는 VSCode, IntelliJ(2025.1 부터) 등이 지원한다.
 MCP 서버는 <a href="https://github.com/punkpeye/awesome-mcp-servers">Awesome MCP Servers</a>에 정리되어 있다.</p>
-<p>VSCode에서 <a href="../playwright#playwright-mcp">playwright-mcp</a>를 사용하는 예시로,
-Copilot Chat을 통해 <a href="../playwright">Playwright</a>를 실행, 대화를 통해서 브라우저를 조작할 수 있다.
+<p>VSCode에서 <a href="../playwright/#playwright-mcp">playwright-mcp</a>를 사용하는 예시로,
+Copilot Chat을 통해 <a href="../playwright/">Playwright</a>를 실행, 대화를 통해서 브라우저를 조작할 수 있다.
 예를 들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘'라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘' 같은 명령을 내릴 수 있다.</p>
 <p>다만 한 응답에서 도구 사용 제한이 있는 것으로 보인다. JetBrains나 VSCode + GitHub Copilot Chat 모두에서 발생한 현상인데,
 URL 40개를 던져주고 확인하고 보고하라고 하면 5개 정도만 확인하고 나머지는 어떻게든 무시한다.

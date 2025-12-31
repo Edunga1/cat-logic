@@ -299,7 +299,7 @@ Scrum Master는 Scrum Main으로 불러야 하느냐 라던가 비꼬는 반응�
 <p>탭을 통한 <em>명령어 자동 완성</em>하려면 <a href="https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion">shell completion</a>을 설치해야 한다.
 Homebrew로 설치했다면 <code class="language-text">git-completion.bash</code>가 자동으로 설치된다.</p>
 <h3 id="브랜치-이름-중간에서-자동-완성" style="position:relative;"><a href="#%EB%B8%8C%EB%9E%9C%EC%B9%98-%EC%9D%B4%EB%A6%84-%EC%A4%91%EA%B0%84%EC%97%90%EC%84%9C-%EC%9E%90%EB%8F%99-%EC%99%84%EC%84%B1" aria-label="브랜치 이름 중간에서 자동 완성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>브랜치 이름 중간에서 자동 완성</h3>
-<p><a href="../mac-os">macOS</a>는 git과 함께 자동 완성 스크립트가 내장되어 있는데,
+<p><a href="../mac-os/">macOS</a>는 git과 함께 자동 완성 스크립트가 내장되어 있는데,
 이 스크립트가 브랜치 이름 중간에서 자동 완성을 제공한다.
 예를 들어 <code class="language-text">git switch lo</code>에서 탭을 누르면 feature/<strong>lo</strong>g가 자동 완성된다.
 만약 Homebrew로 설치했다면 동작하지 않을 수도 있다. 첫 글자인 <code class="language-text">f</code>에서만 <strong>f</strong>eature/log가 자동 완성된다.</p>
@@ -746,7 +746,7 @@ abdb9882 fix: update something
 현재 Git 프로젝트와 연결되어 브랜치나 worktree 명령어로 관리할 수 있다.
 git에서는 작업 영역을 working tree라 부르니, 알아두면 좋겠다.</p>
 <p><code class="language-text">git worktree</code>는 현재 작업 중인 내용을 stash나 commit 등으로 저장하지 않고, 다른 작업을 처리할 때 유용하다.
-다만, <a href="../java">java</a>나 <a href="../kotlin">kotlin</a> 프로젝트 같이 <a href="../jetbrains">IDE</a>에서 인덱싱하여 작업 영역이 무거운 경우에는 비효율적일 수 있다.
+다만, <a href="../java/">java</a>나 <a href="../kotlin/">kotlin</a> 프로젝트 같이 <a href="../jetbrains/">IDE</a>에서 인덱싱하여 작업 영역이 무거운 경우에는 비효율적일 수 있다.
 새 worktree에서 다시 인덱싱을 하기 때문이다.</p>
 <p><code class="language-text">git worktree list</code>로 목록을 확인할 수 있으며, 복사된 프로젝트나 원본 프로젝트에서도 확인 가능하다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">git</span> worktree list

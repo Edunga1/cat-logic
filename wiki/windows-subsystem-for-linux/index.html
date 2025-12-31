@@ -211,7 +211,7 @@ openSUSE-Tumbleweed             openSUSE Tumbleweed</code></pre></div>
 $ <span class="token function">unzip</span> <span class="token parameter variable">-p</span> /tmp/win32yank.zip win32yank.exe <span class="token operator">></span> /tmp/win32yank.exe
 $ <span class="token function">mv</span> /tmp/win32yank.exe ~/bin  <span class="token comment"># 나는 ~/bin을 $PATH에 추가했다.</span></code></pre></div>
 <hr>
-<p>다음은 <a href="../mac-os">MacOS</a> 등 다른 환경에서 동작하지 않도록, WSL 확인하는 함수이다.</p>
+<p>다음은 <a href="../mac-os/">MacOS</a> 등 다른 환경에서 동작하지 않도록, WSL 확인하는 함수이다.</p>
 <div class="gatsby-highlight" data-language="vim"><pre class="language-vim"><code class="language-vim"><span class="token keyword">function</span><span class="token operator">!</span> s<span class="token punctuation">:</span><span class="token function">IsWSL</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token keyword">if</span> <span class="token function">has</span><span class="token punctuation">(</span><span class="token string">"unix"</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">filereadable</span><span class="token punctuation">(</span><span class="token string">"/proc/version"</span><span class="token punctuation">)</span>
     <span class="token keyword">let</span> <span class="token builtin">lines</span> <span class="token operator">=</span> <span class="token function">readfile</span><span class="token punctuation">(</span><span class="token string">"/proc/version"</span><span class="token punctuation">)</span>
@@ -265,7 +265,7 @@ TEXT
 $ xclip <span class="token parameter variable">-selection</span> clipboard <span class="token parameter variable">-t</span> image/png <span class="token parameter variable">-o</span> <span class="token operator">></span> /tmp/clipboard.png
 Error: target image/png not available</code></pre></div>
 <h2 id="문제점" style="position:relative;"><a href="#%EB%AC%B8%EC%A0%9C%EC%A0%90" aria-label="문제점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>문제점</h2>
-<p><a href="../mac-os">MacOS</a>와 다르게 문제점들이 좀 있다.
+<p><a href="../mac-os/">MacOS</a>와 다르게 문제점들이 좀 있다.
 대부분 네트워크와 파일 시스템 관련 문제들이다. 발생하면 매우 답답한 문제들인데, 해결될 기미가 보이지 않는다.
 만약 WSL 사용을 포기한다면 이 문제들이 큰 이유가 될 것이다.</p>
 <p>운영체제 지식이 부족해서 정확한 원인을 알기 어렵다.

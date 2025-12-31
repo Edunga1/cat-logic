@@ -187,7 +187,7 @@ data-styled.g20[id="Wiki__TocSide-sc-16q9onf-5"]{content:"chvTXK,"}/*!sc*/
 </li>
 </ul></div></details></div><div class="WikiContent__Container-sc-q3jb6a-0 byOqGr">
 <p>운영체제 수준 가상화 컨테이너 관리 도구.</p>
-<p><a href="../podman">podman</a>의 선택지도 있다.
+<p><a href="../podman/">podman</a>의 선택지도 있다.
 docker 명령어와 호환된다. 다만 WSL에서는 리소스 설정을 할 수 없어서 사용하지 않는다.</p>
 <h2 id="docker-환경-구성하기" style="position:relative;"><a href="#docker-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="docker 환경 구성하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker 환경 구성하기</h2>
 <p>여러가지 선택지가 있으나 macOS, Linux라면 Colima를 가장 추천한다.
@@ -205,7 +205,7 @@ WSL2는 Rancher Desktop 추천.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> rancher</code></pre></div>
 <p>WSL:</p>
 <div class="gatsby-highlight" data-language="powershell"><pre class="language-powershell"><code class="language-powershell">winget install rancher-desktop</code></pre></div>
-<p>Docker Desktop과 흡사하다. 기본적으로 <a href="../kubernetes">k8s</a> 제공한다.
+<p>Docker Desktop과 흡사하다. 기본적으로 <a href="../kubernetes/">k8s</a> 제공한다.
 불필요하다면 끄는 편이 리소스 절약에 좋다.
 container runtime을 containerd, dockerd 중 선택할 수 있는데, docker에 익숙하면 dockerd를 선택하는 것이 좋다.</p>
 <p>개인 사용자더라도 docker desktop의 라이선스 정책이 불편하니 그냥 rancher desktop을 사용하는 것이 좋을지도.</p>
@@ -221,7 +221,7 @@ container runtime을 containerd, dockerd 중 선택할 수 있는데, docker에 
 <blockquote>
 <p>Container runtimes on macOS (and Linux) with minimal setup</p>
 </blockquote>
-<p><a href="../mac-os#homebrew-%EB%A7%A5%EC%9A%A9-%ED%8C%A8%ED%82%A4%EC%A7%80-%EA%B4%80%EB%A6%AC%EC%9E%90">Homebrew</a>로 쉽게 설치할 수 있다: <code class="language-text">brew install colima</code></p>
+<p><a href="../mac-os/#homebrew-%EB%A7%A5%EC%9A%A9-%ED%8C%A8%ED%82%A4%EC%A7%80-%EA%B4%80%EB%A6%AC%EC%9E%90">Homebrew</a>로 쉽게 설치할 수 있다: <code class="language-text">brew install colima</code></p>
 <p><a href="https://github.com/abiosoft/colima/issues/434">아직 WSL2를 지원하지 않으니</a> 주의.
 <a href="https://github.com/lima-vm/">Lima</a>라는 가상머신 지원 도구를 사용하는데, 아직 윈도우를 지원하지 않아서 colima도 제공할 수 없다는 듯. 조만간 WSL도 제공할 수 있을 거 같다고 하니 기다려 보자.</p>
 <p>Command line으로만 도커를 시작할 수 있다.

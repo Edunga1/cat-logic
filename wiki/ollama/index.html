@@ -143,7 +143,7 @@ data-styled.g20[id="Wiki__TocSide-sc-16q9onf-5"]{content:"chvTXK,"}/*!sc*/
 </ul></div></details></div><div class="WikiContent__Container-sc-q3jb6a-0 byOqGr">
 <p>Ollama는 LLM을 로컬에서 쉽게 사용할 수 있게 만든 도구다.</p>
 <p><a href="https://github.com/ollama/ollama">https://github.com/ollama/ollama</a></p>
-<p>cli와 <a href="../python">python</a> 라이브러리를 제공한다.
+<p>cli와 <a href="../python/">python</a> 라이브러리를 제공한다.
 간단한 모델 테스트 정도는 cli로 확인하고, Ollama로 AI Assistant를 만드는 용도로 라이브러리를 사용하면 된다.</p>
 <ol>
 <li><a href="https://github.com/ollama/ollama">ollama</a> binary</li>
@@ -160,7 +160,7 @@ data-styled.g20[id="Wiki__TocSide-sc-16q9onf-5"]{content:"chvTXK,"}/*!sc*/
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-v</span> ollama:/root/.ollama <span class="token parameter variable">-p</span> <span class="token number">11434</span>:11434 <span class="token parameter variable">--name</span> ollama ollama/ollama</code></pre></div>
 <p>GPU를 사용할 수 있지만 나는 WSL2 환경에서 실행하지 못하고 있다:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--gpus</span><span class="token operator">=</span>all <span class="token parameter variable">-v</span> ollama:/root/.ollama <span class="token parameter variable">-p</span> <span class="token number">11434</span>:11434 <span class="token parameter variable">--name</span> ollama ollama/ollama</code></pre></div>
-<p>백그라운드로 실행해 두고, <a href="../shell">shell</a>에서 실행해보자:</p>
+<p>백그라운드로 실행해 두고, <a href="../shell/">shell</a>에서 실행해보자:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-ti</span> ollama ollama run llama2
 pulling manifest
 pulling 8934d96d3f08<span class="token punctuation">..</span>. <span class="token number">100</span>% ▕█████████████████████████████████████████████████████▏ <span class="token number">3.8</span> GB
@@ -178,13 +178,13 @@ Hello<span class="token operator">!</span> It's <span class="token function">nic
 <p><code class="language-text">ollama run &lt;LLM></code>으로만 실행해도 모델 다운로드 후 바로 대화할 수 있다.</p>
 <h2 id="ollama-tool-calling" style="position:relative;"><a href="#ollama-tool-calling" aria-label="ollama tool calling permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ollama tool-calling</h2>
 <p>2024년 7월 26일, <a href="https://github.com/ollama/ollama/releases/tag/v0.3.0">0.3.0 버전</a>을 출시하면서 tool-calling 기능이 추가되었다.
-<a href="../large-language-model#phidata">phidata</a>의 tools 기능과 같은 기능이다.
+<a href="../large-language-model/#phidata">phidata</a>의 tools 기능과 같은 기능이다.
 phidata는 python 함수의 docstring을 명세하면 프롬프트에 자동으로 추가해 주는 반면에,
 ollama는 tool 정보를 따로 명세해야 한다.</p>
 <p>사용자가 정의한 함수를 AI 모델에 알려주면, AI가 자연어로 된 답변 대신 함수 호출을 위한 규격화된 정보를 응답한다.
 즉, 함수를 Ollama가 호출해 주는 것은 아니고, 함수(도구) 이름과 인자를 응답에 포함시키는 것이다.
 이 정보를 이용해 함수를 호출하는 프로세스를 구현하고, 그 결과를 다시 AI에 전달하여 최종 답변을 얻는다.</p>
-<p><a href="../model-context-protocol">MCP</a>가 표준이 되면서 tool-calling의 관심이 개인적으로 줄었다.</p>
+<p><a href="../model-context-protocol/">MCP</a>가 표준이 되면서 tool-calling의 관심이 개인적으로 줄었다.</p>
 <p>공식 문서는 파이썬 예제는 다음과 같다.
 날씨를 가져오는 도구를 정의하고, 토론토의 날씨를 물어보는 예제다.
 도구를 직접 실행하지 않으므로 구현은 필요하지 않다.</p>

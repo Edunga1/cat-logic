@@ -311,11 +311,11 @@ vim은 사람마다 다른 형태를 가지면서도 설정 파일 덕분에 복
 <p><a href="https://github.com/neovim/neovim">https://github.com/neovim/neovim</a></p>
 <p>검색해보면 neovim 커뮤니티에서는 vim에 대한 불만이 많이 보인다. :0<br>
 아무래도 원작자인 Bram의 방향성과 상충되어서가 아닐까. 잘 모르겠다.</p>
-<p>neovim으로 이전한 이유는 <a href="../language-server-protocol">LSP</a>를 사용하기 위함이었다.
+<p>neovim으로 이전한 이유는 <a href="../language-server-protocol/">LSP</a>를 사용하기 위함이었다.
 neovim은 LSP를 자체적으로 제공한다. 바닐라 vim은 <a href="https://github.com/neoclide/coc.nvim">coc.nvim</a>을 사용해야 한다.
 coc.nvim은 자체 플러그인 기능으로 편리하게 다양한 언어 서버를 설치할 수 있어서 편리하지만, neovim 자체 기능보다는 느리다.
 솔직하게 말하면 답답할 정도.</p>
-<p>개인적으로는 Lua를 <a href="../game#ultima-online">Ultima Online</a>의 스크립트 언어로 사용한 경험을 비추어 보았을 때,
+<p>개인적으로는 Lua를 <a href="../game/#ultima-online">Ultima Online</a>의 스크립트 언어로 사용한 경험을 비추어 보았을 때,
 딱히 생산성이나 편의성이 높지는 않았다. 다만 vimscript 보다는 학습 곡선이 낮다.</p>
 <p>vim에서 사용하는 변수, 옵션, 함수를 lua 스크립트에서도 사용할 수 있다.
 그래서 <code class="language-text">.vimrc</code> 내용을 lua로 이전할 수 있는데, 나는 그냥 vimscript로 사용중이다.</p>
@@ -339,7 +339,7 @@ neovim에 맞춰진 플러그인은 .nvim 이라는 접미사를 붙이는 것�
 <div class="gatsby-highlight" data-language="lua"><pre class="language-lua"><code class="language-lua">vim<span class="token punctuation">.</span>keymap<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'n'</span><span class="token punctuation">,</span> <span class="token string">'&lt;space>ca'</span><span class="token punctuation">,</span> vim<span class="token punctuation">.</span>lsp<span class="token punctuation">.</span>buf<span class="token punctuation">.</span>code_action<span class="token punctuation">,</span> bufopts<span class="token punctuation">)</span></code></pre></div>
 <p>직접 호출하려면 <code class="language-text">:lua vim.lsp.buf.code_action()</code>로 호출한다.</p>
 <h3 id="내장-language-server-protocol-사용하기" style="position:relative;"><a href="#%EB%82%B4%EC%9E%A5-language-server-protocol-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="내장 language server protocol 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>내장 Language Server Protocol 사용하기</h3>
-<p>Neovim은 자체적으로 <a href="../language-server-protocol">Language Server Protocol</a>을 제공한다.</p>
+<p>Neovim은 자체적으로 <a href="../language-server-protocol/">Language Server Protocol</a>을 제공한다.</p>
 <p>Vim을 IDE처럼 사용하기 위해서는 몇 가지 플러그인이 필요하다.</p>
 <p><a href="https://github.com/Edunga1/dotfiles/blob/master/vim/.vimrc#L28-L33">.vimrc</a>에 다음 플러그인을 추가한다.</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Plug 'neovim/nvim-lspconfig'
@@ -400,12 +400,12 @@ vim<span class="token punctuation">.</span>lsp<span class="token punctuation">.<
 neovim이 직접 tagfunc을 <a href="https://github.com/neovim/neovim/blob/5371659524089b425887af1ce14bf9a374f0f234/runtime/lua/vim/lsp/_tagfunc.lua#L93">구현한 것</a>을 사용하는 편이 낫다.</p>
 <hr>
 <ul>
-<li><a href="../server_configurations">nvim-lspconfig/server_configurations.md</a>에서 설정 가능한 language server 목록을 확인할 수 있다.
+<li><a href="../server_configurations/">nvim-lspconfig/server_configurations.md</a>에서 설정 가능한 language server 목록을 확인할 수 있다.
 <ul>
 <li>또는 <code class="language-text">:h lspconfig-all</code> 도움말에서 확인할 수 있다.</li>
 </ul>
 </li>
-<li><a href="../BUILTINS">none-ls/BUILTINS</a> 제공하는 lsp 도구 목록</li>
+<li><a href="../BUILTINS/">none-ls/BUILTINS</a> 제공하는 lsp 도구 목록</li>
 </ul>
 <h2 id="도움말-help" style="position:relative;"><a href="#%EB%8F%84%EC%9B%80%EB%A7%90-help" aria-label="도움말 help permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>도움말 <code class="language-text">:help</code></h2>
 <p>vim 도움말. 명령어, 함수, 변수 등 키워드로 도움말을 제공한다.
@@ -431,7 +431,7 @@ neovim이 직접 tagfunc을 <a href="https://github.com/neovim/neovim/blob/53716
 <h3 id="파일-탐색" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%BC-%ED%83%90%EC%83%89" aria-label="파일 탐색 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파일 탐색</h3>
 <p><img src="https://github.com/preservim/nerdtree/raw/master/screenshot.png" alt="nerdtree example"></p>
 <p>이미지의 왼쪽 패널. 파일 탐색기는 vim 내장된 netrw가 있지만, NERDTree를 사용한다.</p>
-<p>자세한 내용은 <a href="../vim-plugins#nerdtree---%ED%8C%8C%EC%9D%BC-%ED%83%90%EC%83%89%EA%B8%B0">Vim 플러그인 문서</a> 참조.</p>
+<p>자세한 내용은 <a href="../vim-plugins/#nerdtree---%ED%8C%8C%EC%9D%BC-%ED%83%90%EC%83%89%EA%B8%B0">Vim 플러그인 문서</a> 참조.</p>
 <p>NERDTree 패널 기능</p>
 <h3 id="파일-검색" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%BC-%EA%B2%80%EC%83%89" aria-label="파일 검색 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파일 검색</h3>
 <p><a href="https://github.com/junegunn/fzf.vim">fzf.vim</a>이 제공하는 기능 몇가지를 사용한다.</p>
@@ -467,7 +467,7 @@ neovim이 직접 tagfunc을 <a href="https://github.com/neovim/neovim/blob/53716
 <p>lsp는 <code class="language-text">vim.lsp.buf.document_symbol()</code>를 실행한다.</p>
 <h2 id="내장-기능" style="position:relative;"><a href="#%EB%82%B4%EC%9E%A5-%EA%B8%B0%EB%8A%A5" aria-label="내장 기능 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>내장 기능</h2>
 <h3 id="플러그인-시스템" style="position:relative;"><a href="#%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EC%8B%9C%EC%8A%A4%ED%85%9C" aria-label="플러그인 시스템 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>플러그인 시스템</h3>
-<p><a href="../vim-plugins">Vim 플러그인 문서</a> 참조.</p>
+<p><a href="../vim-plugins/">Vim 플러그인 문서</a> 참조.</p>
 <h3 id="quickfix--location-list" style="position:relative;"><a href="#quickfix--location-list" aria-label="quickfix  location list permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>quickfix &#x26; location list</h3>
 <p><code class="language-text">:h quickfix</code> <code class="language-text">:h location-list</code></p>
 <p>파일 위치를 목록으로 관리한다.
@@ -852,7 +852,7 @@ directly (without changing modes).  Where you might use ":...<CR>" in the
 <h3 id="text-object-개선하기" style="position:relative;"><a href="#text-object-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0" aria-label="text object 개선하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>text object 개선하기</h3>
 <p>vim에서 기본적으로 <code class="language-text">viw</code>로 단어를, <code class="language-text">vip</code>로 문단을 선택할 수 있다.
 더 나아가서 각 언어에 맞게 함수, 클래스를 선택할 수 있는 방법이 있다.</p>
-<p><a href="../python">Python</a>은 들여쓰기로, <a href="../javascript">Javascript</a>는 중괄호로 함수를 표현한다.
+<p><a href="../python/">Python</a>은 들여쓰기로, <a href="../javascript/">Javascript</a>는 중괄호로 함수를 표현한다.
 이렇게 언어마다 달라지는 부분을 표현하기 위해서 저마다 설정이 필요하다.</p>
 <p>파이썬에 맞는 text object를 제공하거나,
 Selection을 점진적으로 확장/축소하는 기능을 제공하는 플러그인이 있다.</p>

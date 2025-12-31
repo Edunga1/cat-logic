@@ -442,7 +442,7 @@ fzf는 이 출력에 대한 상호작용을 제공한다.
 <p>Fuzzy search는 문자열이 일부만 일치해도 검색하는 알고리즘이다.
 fzf는 이 알고리즘을 사용하여 검색을 제공한다.
 예를 들어 <code class="language-text">foo bar baz</code>는 <code class="language-text">fbb</code>로 검색될 수 있다.
-fuzzy search를 이용한 도구에는 <a href="../mac-os">MacOS</a>의 클립보드 관리 도구인 <a href="https://github.com/p0deje/Maccy">maccy</a>가 있다.</p>
+fuzzy search를 이용한 도구에는 <a href="../mac-os/">MacOS</a>의 클립보드 관리 도구인 <a href="https://github.com/p0deje/Maccy">maccy</a>가 있다.</p>
 <p><strong>명령어 내역 검색 개선</strong></p>
 <p>셸에서 <code class="language-text">ctrl + r</code>는 reverse-i-search 이름의 기능으로 명령어 내역을 검색할 수 있는데,
 <code class="language-text">ctrl + r</code>을 다시 누르는 것으로 하나씩 탐색한다.</p>
@@ -491,7 +491,7 @@ bck-i-search: grep_</code></pre></div>
 <h3 id="ping" style="position:relative;"><a href="#ping" aria-label="ping permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ping</h3>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">ping</span> <span class="token number">123.123</span>.123.123
 <span class="token function">ping</span> www.google.com</code></pre></div>
-<p>네트워크 진단 도구. <a href="../network">포트 번호를 받지 않는다. ICMP 메시지를 이용한다.</a></p>
+<p>네트워크 진단 도구. <a href="../network/">포트 번호를 받지 않는다. ICMP 메시지를 이용한다.</a></p>
 <p>호스트 전송 실패 예시:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">❯ <span class="token function">ping</span> <span class="token number">123.123</span>.123.123
 PING <span class="token number">123.123</span>.123.123 <span class="token punctuation">(</span><span class="token number">123.123</span>.123.123<span class="token punctuation">)</span>: <span class="token number">56</span> data bytes
@@ -667,7 +667,7 @@ Error: failed to copy content to container: Error response from daemon: <span cl
     command_execution_time
   )
 }</code></pre></div>
-<p>위 예제는 <code class="language-text">jiras</code>라는 <a href="../jira">JIRA</a> 이슈 이름을 가져오는 명령어를 사용해서 브랜치 이름 다음에 이슈 이름을 출력하는 예제다.
+<p>위 예제는 <code class="language-text">jiras</code>라는 <a href="../jira/">JIRA</a> 이슈 이름을 가져오는 명령어를 사용해서 브랜치 이름 다음에 이슈 이름을 출력하는 예제다.
 문제는 캐시 정책을 사용하지 않았기 때문에 명령어 입력할 때마다 API를 호출하는 것으로 보인다.
 개선하기 위해서는 p10k의 캐시 정책이 있는지 확인하거나 git hook으로 체크아웃 할 때 마다 이슈 이름을 저장하고 프롬프트에서 사용하는 방법이 있을 듯.</p>
 <h3 id="lychee" style="position:relative;"><a href="#lychee" aria-label="lychee permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>lychee</h3>
