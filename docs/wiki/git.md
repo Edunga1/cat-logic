@@ -67,15 +67,15 @@ Scrum Master는 Scrum Main으로 불러야 하느냐 라던가 비꼬는 반응�
 
 반면에 master 6글자 보다는 main의 4글자로 더 짧아져서 좋다는 재밌는 반응도 있다.
 
-## 자동 완성
+## 명령어 자동 완성
 
-탭을 통한 *명령어 자동 완성*하려면 [shell completion](https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion)을 설치해야 한다.
+Tab 키로 *명령어 자동 완성*하려면 [shell completion](https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion)을 설치해야 한다.
 Homebrew로 설치했다면 `git-completion.bash`가 자동으로 설치된다.
 
 ### 브랜치 이름 중간에서 자동 완성
 
 [macOS](/docs/wiki/mac-os.md)는 git과 함께 자동 완성 스크립트가 내장되어 있는데,
-이 스크립트가 브랜치 이름 중간에서 자동 완성을 제공한다.
+이 스크립트는 브랜치 이름 중간에서 자동 완성을 제공한다.
 예를 들어 `git switch lo`에서 탭을 누르면 feature/**lo**g가 자동 완성된다.
 만약 Homebrew로 설치했다면 동작하지 않을 수도 있다. 첫 글자인 `f`에서만 **f**eature/log가 자동 완성된다.
 
@@ -96,7 +96,7 @@ fi
 
 WSL 2 Ubuntu 기준으로는 중간 자동 완성 기능이 없어서, 찾아봐야겠다.
 
-## 깃 커밋 해시 충돌에 관하여
+## 커밋 해시 충돌에 관하여
 
 어느 날 커밋 해시는 어떤 정보를 기반하여 만들어지는지 궁금했다.
 커밋 해시는 `git commit` 할 때 생성되고, 커밋 해시로 `git checkout`하여 특정 revision으로 이동한다.
