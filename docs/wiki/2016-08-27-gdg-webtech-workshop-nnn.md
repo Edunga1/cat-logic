@@ -1,7 +1,12 @@
 ---
 created: 2016-08-27
 ---
-# 2016-08-27 GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"
+# GDG WebTech Workshop "측정하는 놈, 로딩하는 놈, 그리는 놈"
+
+2016년 8월 27일에 있었던 GDG WebTech Workshop의 "측정하는 놈, 로딩하는 놈, 그리는 놈" 후기.
+석촌의 우아한형제들 키친에서 열렸다.
+
+https://onoffmix.com/event/75765
 
 GDG WebTech 워크샵에 참여해서 들었던 크롬 브라우저를 이용한 성능 측정 방법을 정리한 것
 
