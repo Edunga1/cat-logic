@@ -72,7 +72,7 @@ ollama는 tool 정보를 따로 명세해야 한다.
 날씨를 가져오는 도구를 정의하고, 토론토의 날씨를 물어보는 예제다.
 도구를 직접 실행하지 않으므로 구현은 필요하지 않다.
 
-```bash
+```python
 import ollama
 
 response = ollama.chat(
@@ -106,7 +106,7 @@ print(response['message'])
 
 위 코드를 실행하면 응답과 함께 도구 호출 정보를 일련의 양식으로 응답한다.
 
-```bash
+```python
 {
   'role': 'assistant',
   'content': '',
