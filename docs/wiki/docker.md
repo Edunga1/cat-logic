@@ -321,7 +321,7 @@ ionic으로 빌드를 하고, jarsigner로 서명까지하여 릴리즈 apk를 �
 
 ## `host.docker.internal`로 호스트 서비스 접근하기
 
-`host.docker.internal`은 호스트의 ip를 가르키는 DNS name이다.
+`host.docker.internal`은 호스트의 ip를 가리키는 DNS name이다.
 [container에서 호스트의 서비스에 접근](https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host)이 필요할 때 사용한다.
 
 > This is for development purpose and does not work in a production environment outside of Docker Desktop.

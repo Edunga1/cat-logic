@@ -210,8 +210,8 @@ URL을 요약해 달라는 요청을 하면, GET 요청을 보내고, 그 결과
 문제는 html 태그 등 컨텍스트가 너무 많아서 그런지 요약이 잘 안된다.
 
 ```bash
-[assistant] {'role': 'assistant', 'content': '', 'tool_calls': [{'function': {'name': 'get', 'arguments': {'url': 'https://www.reddit.com/r/pathofexail/comments/1exyavx/325_updated_guide_to_recombinators/'}}}]}
-[tool] Making GET request to https://www.reddit.com/r/pathofexail/comments/1exyavx/325_updated_guide_to_recombinators/
+[assistant] {'role': 'assistant', 'content': '', 'tool_calls': [{'function': {'name': 'get', 'arguments': {'url': 'https://www.reddit.com/r/pathofexile/comments/1exyavx/325_updated_guide_to_recombinators/'}}}]}
+[tool] Making GET request to https://www.reddit.com/r/pathofexile/comments/1exyavx/325_updated_guide_to_recombinators/
 [tool] returned:
     <!DOCTYPE html>
     <html lang="en-US" class="is-shredtop-pdp theme-beta">

@@ -131,7 +131,7 @@ Workspace는 저장소의 모든 파일을 분석한다.
 저장소에 대해서 일일이 설명하지 않아도 어떤 프로젝트인지 알고 상황에 맞춰서 진행한다.
 
 [2025년 5월 Tech Preview가 종료되었다](https://gh.io/copilot-workspace-sunset).
-요즘은 에이전트를 통해서 [Spec-Driven Development](/docs/wiki/large-language-model.md#github-spec-kit) 이나 비슷한 흐름으로 개발할 수 있을 정도로 성능이 좋아져서 정식 서비스로 출시하지 않은 것으로 보인다.
+요즘은 에이전트를 통해서 [Spec-Driven Development](/docs/wiki/large-language-model.md#github-spec-kit)이나 비슷한 흐름으로 개발할 수 있을 정도로 성능이 좋아져서 정식 서비스로 출시하지 않은 것으로 보인다.
 
 ### 사용법
 
@@ -362,4 +362,3 @@ GET https://api.github.com/repos/octocat/Hello-World/releases/assets/1
 
 제대로 했다면 success(200)와 함께 response로 바이너리 정보가 문자열로 들어온다.
 바이너리로 파일 생성 작업이 필요할 것이다.
-
