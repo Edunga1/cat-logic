@@ -1596,14 +1596,16 @@ https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md
 [구도 재현](https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md#case-52-fashion-moodboard-collageby-tetumem)은
 실제로 활용도가 높아 보인다.
 
-#### Gemini File Search
+#### Gemini API File Search
 
-파일을 업로드하면, 임베딩과 인덱싱을 통해서 RAG을 사용할 수 있게 해주는 서비스.
+2025년 11월에 공개한, RAG 서비스.
+파일을 업로드하면, 임베딩을 생성하고 인덱싱하여 RAG 인프라를 구축해준다.
 
 https://ai.google.dev/gemini-api/docs/file-search
 
-업로드 후 인덱싱 하는데 비용이 들고, 이후 쿼리나 파일 저장 비용은 무료다.
-가격은 100만 토큰당 $0.15로 임베딩 모델 금액과 동일하다.
+업로드 후 인덱싱 하는데 비용이 들고, 파일 저장 비용은 무료다.
+임베딩과 이후 쿼리에 대한 요금제는 각 모델 요금제가 적용된다.
+임베딩은 임베딩 모델, 쿼리는 Gemini 모델 요금제를 따른다.
 
 ### Google Chrome
 
