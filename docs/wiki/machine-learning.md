@@ -1607,6 +1607,101 @@ https://ai.google.dev/gemini-api/docs/file-search
 임베딩과 이후 쿼리에 대한 요금제는 각 모델 요금제가 적용된다.
 임베딩은 임베딩 모델, 쿼리는 Gemini 모델 요금제를 따른다.
 
+[AI Studio - Api keys](https://aistudio.google.com/app/api-keys)에서 키를 발급받자.
+비용이 든다고 적었지만, Free tier로 시작할 수 있었다.
+임베딩 모델의 가격은 워낙 저렴하기 때문에 문서가 적다면 무료 범위 내에서 충분하다.
+
+##### 예제
+
+아래는 파일 검색 스토어를 생성하고, 파일을 업로드하는 예제 코드이다.
+
+```python
+import os
+from google import genai
+import time
+
+client = genai.Client(api_key=os.environ['GENAI_API_KEY'])
+
+file_search_store = client.file_search_stores.create(
+  config={'display_name': 'your-fileSearchStore-name'},
+)
+
+operation = client.file_search_stores.upload_to_file_search_store(
+  file='../docs/wiki/vim.md',
+  file_search_store_name=file_search_store.name,
+  config={
+    'display_name' : 'display-file-name',
+  }
+)
+
+while not operation.done:
+  time.sleep(5)
+  operation = client.operations.get(operation)
+```
+
+쿼리는 다음과 같이 한다.
+
+```python
+import os
+from google import genai
+from google.genai import types
+
+client = genai.Client(api_key=os.environ['GENAI_API_KEY'])
+
+page = client.file_search_stores.list()
+store = page[0]
+
+response = client.models.generate_content(
+  model="gemini-2.5-flash",
+  contents="""vimscript에 대해 알려줘""",
+  config=types.GenerateContentConfig(
+    tools=[
+      types.Tool(
+        file_search=types.FileSearch(
+          file_search_store_names=[store.name]
+        )
+      )
+    ]
+  )
+)
+
+print(response.text)
+```
+
+쿼리 결과. 문서는 [내 vim 항목](/docs/wiki/vim.md)를 사용했다.
+
+````bash
+Vimscript는 텍스트 편집기인 Vim의 자체 스크립트 언어입니다. 학습하기 꽤 어려운 언어로 알려져 있으며, "Vimscript는 정규식과 같아서 배우는 것이 아니라 그냥 사용하는 것"이라는 비유가 있을  정도입니다.
+
+Vim의 창시자인 Bram Moolenaar도 플러그인을 많이 사용하지 않고, 필요한 기능이 있으면 간단한 것은 직접 만들거나 Vim 베이스에 추가하는 편이라고 언급했습니다.
+
+Vimscript를 사용하면 Vim의 동작을 사용자 정의하고 확장할 수 있습니다. 예를 들어, `.vimrc` 파 일은 Vim 설정 파일로, Vimscript를 사용하여 자신만의 환경을 만들 수 있습니다.
+
+Vimscript의 주요 특징 및 사용법은 다음과 같습니다:
+
+*   **변수 (Variables)**: `:let` 명령어로 변수를 할당하고, `:echo` 명령어로 출력할 수 있습니 다. 변수는 `g:` (전역), `s:` (스크립트)와 같은 접두사를 사용하여 스코프를 지정할 수 있습니다. 접두사가 없으면 함수 내에서는 로컬 변수, 그 외에서는 전역 변수가 됩니다.
+*   **사용자 함수 (User Function)**: `:help userfunc`에서 사용자 함수에 대한 설명을 찾을 수  있습니다. 예를 들어, 다음과 같이 함수를 정의할 수 있습니다.
+    ```vim
+    function! MyFunction() abort
+      echo "Hello World!"
+    endfunction
+    ```
+    `function!`의 `!`는 함수가 이미 존재하면 덮어쓴다는 의미이며, `abort`는 에러 발생 시 함수를 종료합니다.
+    `s:`를 붙여 `function s:MyFunction()`처럼 정의하면 해당 스크립트 내에서만 호출 가능한 로 컬 함수가 됩니다. 이는 이름 충돌을 방지하는 데 유용합니다.
+*   **레지스터 (Registers)**: Vim은 다양한 종류의 레지스터를 제공하여 텍스트를 저장하고 재사 용할 수 있습니다. 예를 들어, `"ayy`로 현재 라인을 `a` 레지스터에 저장하고, `"ap`로 붙여넣기할 수 있습니다. `:let @`를 사용하여 레지스터에 직접 값을 할당하는 것도 가능합니다.
+    *   `+`: 클립보드 레지스터
+    *   `"`: 이름 없는 레지스터. 삭제된 내용이 저장됩니다.
+    *   `_`: 블랙홀 레지스터. 삭제된 내용을 저장하지 않을 때 사용합니다 (예: `"_dd`).
+*   **텍스트 오브젝트 (Text Objects)**: Vim에서 선택하고 조작할 수 있는 텍스트 단위를 말합니 다. `:h text-objects`에서 자세한 내용을 확인할 수 있습니다. `w`는 단어, `s`는 문장, `p`는 문 단을 의미하며, `viw`, `vis`, `vip`와 같이 명령과 조합하여 사용할 수 있습니다.
+*   **다양한 명령어 활용**:
+    *   `vimgrep`, `grep`: 패턴을 검색하고 결과를 quickfix 목록으로 만듭니다.
+    *   `cdo`, `ldo`: quickfix 또는 location-list의 검색 결과에 명령어를 적용합니다.
+    *   `cfdo`, `lfdo`: 검색된 모든 파일에 명령어를 적용합니다.
+    *   `bufdo`: 모든 버퍼 파일에 명령어를 적용합니다.
+
+한편, Vim의 포크 버전인 Neovim은 Vimscript 외에 Lua도 지원하여 더 확장된 기능을 제공합니다. Neovim에서는 LSP (Language Server Protocol)를 자체적으로 제공하며, Lua 스크립트로 플러그인을  초기화하는 방식도 주로 사용됩니다. Lua는 Vimscript보다 학습 곡선이 낮다고 평가되기도 합니다. 하지만 Vim과 Neovim 간의 설정 호환성이 높으므로, 기존 Vim 설정을 크게 변경하지 않고도 Neovim 으로 전환할 수 있습니다.
+````
+
 ### Google Chrome
 
 크롬은 [125 버전부터 콘솔 에러를 Gemini로 해석해주는 기능을 추가](https://developer.chrome.com/docs/devtools/console/understand-messages)했다.
