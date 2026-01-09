@@ -727,6 +727,11 @@ Pro 기준 월간 300 토큰이 제공된다.
  Confirm with number keys or ↑↓ keys and Enter, Cancel with Esc
 ```
 
+세션은 자동 저장된다.
+이전 세션을 불러와서 이어서 작업하기 위해서는 `copilot --resume`을 사용하자.
+세션 선택 화면이 우선 나온다.
+옵션을 생략하면 항상 새로운 세션이 시작되므로, 대화 종료 후 다시 이어서 작업하려면 `--resume` 옵션을 사용해야 한다.
+
 ##### non-interactive mode
 
 대화형이 아닌 형태로도 사용할 수 있다.
