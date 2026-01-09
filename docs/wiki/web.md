@@ -311,6 +311,10 @@ text input에 입력하면 입력한 이름을 화면에 출력하고, 풍선을
 이외에도 위젯, 레이아웃, 차트 등을 제공한다.
 저장소에서 소개 `A faster way to build and share data apps.` 하는 것처럼 Data 앱을 만드는데 특화되어 있다.
 
+https://docs.streamlit.io/develop/api-reference \
+개발 문서가 잘 되어 있다.
+Streamlit에는 HTML과는 다른 고유한 컴포넌트가 많은데, 이를 한 눈에 볼 수 있도록 큐레이션했다.
+
 ### Litestar
 
 Litestar는 파이썬 서버 웹 프레임워크다.
