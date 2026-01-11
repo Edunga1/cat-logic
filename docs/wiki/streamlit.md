@@ -52,3 +52,13 @@ text input에 입력하면 입력한 이름을 화면에 출력하고, 풍선을
 https://docs.streamlit.io/develop/api-reference \
 개발 문서가 잘 되어 있다.
 Streamlit에는 HTML과는 다른 고유한 컴포넌트가 많은데, 이를 한 눈에 볼 수 있도록 큐레이션했다.
+
+## 예제
+
+https://github.com/Edunga1/gemini-file-search-start
+
+[Gemini API File Search](/docs/wiki/machine-learning.md#gemini-api-file-search)를 구현한 예제.
+파일 스토어를 불러와서 테이블로 보여주고, 하나를 선택하면 업로드한 문서를 목록화한다.
+파일을 드래그 앤 드롭으로 업로드할 수 있다.
+업로드한 파일에 대해서 쿼리하는 것이 Gemioni API File Search의 핵심 기능이다.
+테이블, 파일 업로더 등 모든 컴포넌트는 Streamlit가 지원한다.
