@@ -68,7 +68,7 @@ Linux, macOS 모두 지원한다.
 
 > Container runtimes on macOS (and Linux) with minimal setup
 
-[Homebrew](/docs/wiki/mac-os.md#homebrew-맥용-패키지-관리자)로 쉽게 설치할 수 있다: `brew install colima`
+[Homebrew](/docs/wiki/mac-os.md#homebrew---맥용-패키지-관리자)로 쉽게 설치할 수 있다: `brew install colima`
 
 [아직 WSL2를 지원하지 않으니](https://github.com/abiosoft/colima/issues/434) 주의.
 [Lima](https://github.com/lima-vm/)라는 가상머신 지원 도구를 사용하는데, 아직 윈도우를 지원하지 않아서 colima도 제공할 수 없다는 듯. 조만간 WSL도 제공할 수 있을 거 같다고 하니 기다려 보자.
