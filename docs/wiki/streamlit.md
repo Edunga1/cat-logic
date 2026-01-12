@@ -57,7 +57,7 @@ Streamlit에는 HTML과는 다른 고유한 컴포넌트가 많은데, 이를 �
 
 https://github.com/Edunga1/gemini-file-search-start
 
-[Gemini API File Search](/docs/wiki/machine-learning.md#gemini-api-file-search)를 구현한 예제.
+[Gemini API File Search](/docs/wiki/google-gemini.md#gemini-api-file-search)를 구현한 예제.
 파일 스토어를 불러와서 테이블로 보여주고, 하나를 선택하면 업로드한 문서를 목록화한다.
 파일을 드래그 앤 드롭으로 업로드할 수 있다.
 업로드한 파일에 대해서 쿼리하는 것이 Gemioni API File Search의 핵심 기능이다.
