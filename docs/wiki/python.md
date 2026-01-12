@@ -183,8 +183,8 @@ isort와 마찬가지로 사용되지 않는 import는 제거한단다. isort가
 [Apache Airflow](https://github.com/apache/airflow/blob/main/pyproject.toml#L29),
 [FastAPI](https://github.com/tiangolo/fastapi/blob/master/pyproject.toml#L164),
 [Hugging Face](https://github.com/huggingface/transformers/blob/main/pyproject.toml#L5),
-[Pandas](https://github.com/pandas-dev/pandas/blob/main/pyproject.toml#L194.md)
-[SciPy](https://github.com/scipy/scipy/blob/main/pyproject.toml#L121.md)
+[Pandas](https://github.com/pandas-dev/pandas/blob/main/pyproject.toml#L194)
+[SciPy](https://github.com/scipy/scipy/blob/main/pyproject.toml#L121)
 등 대규모 프로젝트에서 ruff를 사용하고 있다. pylint와 함께 사용하는 곳도 아닌곳도 있다.
 
 > Ruff can be used to replace Flake8 (plus dozens of plugins), isort, pydocstyle, yesqa, eradicate, pyupgrade, and autoflake, all while executing tens or hundreds of times faster than any individual tool.
@@ -204,7 +204,7 @@ Formatter autopep8 is not installed. Install?:
 3. Use yapf
 ```
 
-[Blog: A comparison of autopep8, black, and yapf - Code formatters for Python](https://www.reddit.com/r/Python/comments/8oqy03/blog_a_comparison_of_autopep8_black_and_yapf_code/.md)\
+[Blog: A comparison of autopep8, black, and yapf - Code formatters for Python](https://www.reddit.com/r/Python/comments/8oqy03/blog_a_comparison_of_autopep8_black_and_yapf_code/)\
 3개를 비교한 다른 글. 덧글에는 black을 사용하고 만족했다나.
 
 | name                                           | stars | description                      |

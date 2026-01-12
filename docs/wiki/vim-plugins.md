@@ -102,7 +102,7 @@ https://github.com/tpope/vim-fugitive
 여기서 stage, unstage, discard 등 다양한 git 작업을 할 수 있다.
 `g?`로 도움말을 볼 수 있다.
 
-[Git Fugitive how to git add a visually selected chunk of code - stackexchange](https://vi.stackexchange.com/a/28251.md)
+[Git Fugitive how to git add a visually selected chunk of code - stackexchange](https://vi.stackexchange.com/a/28251)
 
 파일 경로에서 Enter 누르면 해당 파일의 Buffer를 연다.
 
