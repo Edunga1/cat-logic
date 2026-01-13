@@ -971,26 +971,6 @@ $ readlink -f `which vim`
 
 Ubuntu에서는 풀 버전의 vim을 설치하지 않는다고 한다. `/usr/bin/vim.basic`을 가르켜야 대부분의 기능을 사용할 수 있다.
 
-## 관련 기사
-
-2023년 8월. ["Vim은 제 인생에서 매우 중요한 부분입니다."](https://yozm.wishket.com/magazine/detail/2183/) Vim 창시자 인터뷰.
-
-원문은 https://evrone.com/blog/bram-moolenaar-interview
-
-플러그인을 사용하기 보다는, 직접 구현하거나 vim 베이스에 포함한다고.
-
-> Evrone: Using plenty of web manuals we can discover great plugins to extend the awesome functionality of Vim. Do you have any plugin favorites and must-haves you could recommend to our audience?
->
-> Evrone: Vim의 멋진 기능을 확장하기 위해 많은 웹 매뉴얼을 사용하여 훌륭한 플러그인을 찾을 수 있습니다. 추천할 만한 플러그인이 있을까요?
->
-> Bram: I have to admit I don’t use many plugins, other than what is included with the distribution (such as matchit and termdebug). When I need something I tend to either make a quick hack or add it to the Vim base. That’s the luxury of being the creator :-).
->
-> 저는 사실 많은 플러그인을 사용하지 않습니다. 배포판에 포함된 것(예: matchit, termdebug)을 제외하고는요. 필요한 것이 있으면 빠른 해킹을 하거나 Vim 베이스에 추가하는 경향이 있습니다. 그것이 창시자의 특권입니다 :-).
-
-그리고 협업자들과 커뮤니케이션하는 방식. 그리고 젊은 개발자들에게 여유를 가지고 개발하라는 조언을 했다.
-
-## Troubleshooting
-
 ### Git commit 시 "Waiting for your editor to close the file..." 메시지와 함께 커밋이 안되는 문제
 
 Vim으로 커밋 메시지 작성 후 `ZZ` 또는 `:wq`로 저장하여 나와도 커밋이 반영되지 않는 문제로,
@@ -1021,3 +1001,21 @@ vim을 종료할 때 세션을 저장하고, Startify의 시작 화면에 Sessio
 제거 커밋: https://github.com/Edunga1/dotfiles/commit/9998b7c454e321d48d326e20da56af2328055a46
 
 세션을 자동 저장하는 것은 마음에 들어 [auto-session](https://github.com/rmagatti/auto-session)으로 변경했다.
+
+## 관련 기사
+
+2023년 8월. ["Vim은 제 인생에서 매우 중요한 부분입니다."](https://yozm.wishket.com/magazine/detail/2183/) Vim 창시자 인터뷰.
+
+원문은 https://evrone.com/blog/bram-moolenaar-interview
+
+플러그인을 사용하기 보다는, 직접 구현하거나 vim 베이스에 포함한다고.
+
+> Evrone: Using plenty of web manuals we can discover great plugins to extend the awesome functionality of Vim. Do you have any plugin favorites and must-haves you could recommend to our audience?
+>
+> Evrone: Vim의 멋진 기능을 확장하기 위해 많은 웹 매뉴얼을 사용하여 훌륭한 플러그인을 찾을 수 있습니다. 추천할 만한 플러그인이 있을까요?
+>
+> Bram: I have to admit I don’t use many plugins, other than what is included with the distribution (such as matchit and termdebug). When I need something I tend to either make a quick hack or add it to the Vim base. That’s the luxury of being the creator :-).
+>
+> 저는 사실 많은 플러그인을 사용하지 않습니다. 배포판에 포함된 것(예: matchit, termdebug)을 제외하고는요. 필요한 것이 있으면 빠른 해킹을 하거나 Vim 베이스에 추가하는 경향이 있습니다. 그것이 창시자의 특권입니다 :-).
+
+그리고 협업자들과 커뮤니케이션하는 방식. 그리고 젊은 개발자들에게 여유를 가지고 개발하라는 조언을 했다.
