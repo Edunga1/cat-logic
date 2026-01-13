@@ -1002,6 +1002,16 @@ vim을 종료할 때 세션을 저장하고, Startify의 시작 화면에 Sessio
 
 세션을 자동 저장하는 것은 마음에 들어 [auto-session](https://github.com/rmagatti/auto-session)으로 변경했다.
 
+### nvim-lspconfig 설정이 병합 대신 덮어쓰기가 되는 문제
+
+`vim.lsp.config('*')`의 의도는 모든 서버에 대해 공통 설정을 적용하는 것인데,
+`vim.lsp.config('ts_ls')`와 같이 특정 서버에 대해 설정하면 병합이 아닌 덮어쓰기가 된다.
+
+이 문제는 2025년 4월 22일에 발의된 [neovim #33577](https://github.com/neovim/neovim/issues/33577) 이슈에서 2026년에도 논의되고 있다.
+[nvim-lspconfig #3827](https://github.com/neovim/nvim-lspconfig/issues/3827)에도 이슈가 등록되었다.
+
+병합으로 동작하지 않는다면, 각 lsp 설정에 공통 설정을 추가하는 보일러 플레이트가 필요하다.
+
 ## 관련 기사
 
 2023년 8월. ["Vim은 제 인생에서 매우 중요한 부분입니다."](https://yozm.wishket.com/magazine/detail/2183/) Vim 창시자 인터뷰.
