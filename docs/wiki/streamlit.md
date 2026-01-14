@@ -13,7 +13,7 @@ https://github.com/streamlit/streamlit
 ```python
 import streamlit as st
 
-st.title(f"Hello Streamlit-er 👋")
+st.title("Hello Streamlit-er 👋")
 st.markdown(
     """
     This is a playground for you to try Streamlit and have fun.
