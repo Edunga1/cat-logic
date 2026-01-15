@@ -759,3 +759,11 @@ $ python -m http.server 8080
 ```
 
 현재 디렉토리를 호스팅한다. python 2에서는 `python -m SimpleHTTPServer`.
+
+## zsh
+
+### Oh My Zsh
+
+zsh 설정을 도와주는 프레임워크.
+
+다만 [Oh My Zsh는 불필요한 부하를 추가함](https://news.hada.io/topic?id=25725)라는 글이 있듯이 플러그인을 추가하면서 성능 저하가 발생할 수 있다.
