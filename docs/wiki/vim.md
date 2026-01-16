@@ -514,7 +514,7 @@ prepending을 생략하면 일반적으로 전역 변수지만, 함수 내에서
 
 현재 scope에 따라 의미가 달라질 수 있으므로 명시하는 편이 암시적인 오류를 줄일 수 있다.
 
-### `path`
+### path
 
 `:find` 검색 범위를 결정한다.
 `:find foo` 파일이나 디렉토리를 검색하고 연다,
@@ -526,6 +526,14 @@ netrw, find 사용법
 `set path+=**` `**`를 추가하면 현재 폴더 내 모든 범위를 검색한다.
 `**` 사용하기 전과 비교해보면 검색 수가 달라지는 것을 알 수 있다.
 `.gitignore`의 무시한 파일, `node_modules` 같이 무거운 폴더도 검색된다.
+
+### wildoptions
+
+wildoptions는 명령어 자동완성 동작을 제어한다. `:h wildoptions`
+
+Vim 9에서 `fuzzy` 옵션이 추가되었는데, 자동완성 시 퍼지 매칭을 사용한다.
+예를들어 `:WikiGraph~` 라는 명령어가 있다면, `:WG`만 입력하고 <tab>으로 자동완성할 수 있다.
+`set wildoptions+=fuzzy`로 활성화하자. 혹시 모르니 기본값인 `pum,tagfile`을 유지한다.
 
 ## Text Objects
 
