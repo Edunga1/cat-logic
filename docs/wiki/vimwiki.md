@@ -14,6 +14,13 @@ VimWiki를 설치하고 경로를 설정한 후 마크다운 파일을 열면,
 기본적으로 `filetype`을 `vimwiki`로 설정한다.
 그러면 Markdown과 MediaWiki 문법을 지원하는 [LSP](./language-server-protocol.md)처럼 동작한다.
 
+2026년 1월 기준, 마지막 커밋이 2024년 10월이다. 거의 2년이 되어가는 중.
+사용하는데 몇 가지 버그가 있어서 지속 개발이 되었으면 좋겠는데 아쉽다.
+대안으로 [wiki.vim](https://github.com/lervag/wiki.vim)이 있다.
+VimWiki에 있던 버그가 wiki.vim에는 없었다.
+syntax highlighting가 없지만 요즘은 [treesitter](/docs/wiki/treesitter.md)가 대신하기 때문에 오히려 괜찮다.
+조금씩 써보면서 이전을 고려중이다.
+
 ## 기능
 
 **LSP로써의 VimWiki** \
