@@ -25,6 +25,15 @@ https://github.com/artempyanykh/marksman
 한글이 포함되면 링크 자동완성을 못하는 문제가 있다.\
 예를 들어 `한글 [link]()` 중 소괄호 내에서 자동완성이 안된다. `한글 [link](` 중에서는 된다.
 
+### 문제점
+
+#### 상대 경로 자동 완성 불가
+
+https://github.com/artempyanykh/marksman/issues/182
+
+내부 문서 링크 시 `[title](./foo.md)`처럼 상대 경로를 자동 완성하지 못한다.
+반면에 LSP 심볼 기능은 잘 동작해서, vim에서 `ctrl-]`로 이동은 된다.
+
 ## Vim 관련
 
 [Vimwiki](/docs/wiki/vimwiki.md)에서 Text Object를 제공한다.
