@@ -3,12 +3,12 @@ created: 2023-12-07
 ---
 # Google Gemini
 
-구글의 Multimodal AI 모델. `제미나이`로 발음한다.\
+구글의 Multimodal AI 모델. `제미나이`로 발음하지만, 한국인에겐 어색한 지 '제미니'라고도 부른다.
 멀티모달은 이미지, 음성, 텍스트 등 다양한 타입을 결합하여 처리할 수 있음을 의미한다.
 
 https://deepmind.google/technologies/gemini
 
-시연 영상: https://youtu.be/UIZAiXYceBI?si=oSRGhGQjQITgwZ-d
+2023년 12월 7일 초기 버전의 시연 영상: https://youtu.be/UIZAiXYceBI?si=oSRGhGQjQITgwZ-d
 
 편집된 영상이라 정확히 확인되지 않지만, 매우 빠른 응답을 제공한다. 사용자와 실시간 대화할 정도.\
 실시간으로 사용자와 대화하고, vision 처리한다. 마치 아이언맨 자비스를 보는 느낌.
@@ -18,9 +18,8 @@ Ultra, Pro, Nano 3가지 크기가 있다. Nano는 핸드폰과 같은 디바이
 2023년 12월 13일에 Google Cloud에 공개된다.\
 Google Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.
 
-어느 정도 편집은 예상했지만, [GN⁺: 구글의 최고 AI "Gemini" 데모는 조작되었다](https://news.hada.io/topic?id=12233)라는 글이 있다.\
+다른 AI 모델과 비교하여 유리하도록 편집한 것은 예상했지만, [GN⁺: 구글의 최고 AI "Gemini" 데모는 조작되었다](https://news.hada.io/topic?id=12233)라는 뉴스가 있을 정도로 파장이 있었다.\
 실시간 비디오와 오디오가 아닌, 이미지 프레임과 텍스트 프롬프트로 테스트했다는 것.\
-내가 기대했던 반응 속도나 추론 능력이 아니라서 아쉽다.\
 구글은 [바드 데모](https://news.hada.io/topic?id=8430)에서와 마찬가지로 이번에도 기대에 못 미치는 거 같다.
 
 Gemini의 장점은 유튜브 링크를 전달하면, 자막을 통해 내용을 파악하는 것이 아니라, 영상과 오디오를 분석한다는 점이다.
