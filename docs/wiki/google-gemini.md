@@ -28,7 +28,7 @@ Gemini의 장점은 유튜브 링크를 전달하면, 자막을 통해 내용을
 [gemini.google.com](https://gemini.google.com/) 보다 [AI Studio](https://aistudio.google.com/)가 더 많은 기능을 제공한다.
 영상 길이를 조절한다거나, temperature 조절 등 설정이 있다.
 
-#### Gemini API
+## Gemini API
 
 구글의 AI 서비스의 브랜딩이 좀 혼란스럽다. Gemini API, Vertex AI, AI Studio 등 용어가 많아서 좀 헷갈린다.
 가격 정보도 많은 문서에서 다루고 있어서 찾기 어렵다.
@@ -47,7 +47,7 @@ Text Embedding 004는 이름에서 알 수 있듯이 텍스트 임베딩 모델�
 유료 플랜은 https://cloud.google.com/vertex-ai/generative-ai/pricing 에서 확인할 수 있다.
 텍스트 임베딩 모델은 모델 이름을 적어두고 있지 않아서 공통 적용되는 건지. Open AI와 비교해서 좀 정리가 너무 안되어 보인다.
 
-#### Gemini 2.5 Pro
+## Gemini 2.5 Pro
 
 2025년 3월, Gemini 2.5 Pro가 공개되었다.
 추론(Reasoning) 모델이다.
@@ -520,7 +520,7 @@ window.addEventListener('load', () => {
 ```
 </details>
 
-#### Gemini 3.0
+## Gemini 3.0
 
 2025년 11월 18일. 아직 출시하지는 않았지만, A/B 테스트로 일부 유출된 품질이 매우 우수해서 화제가 되고 있다.
 
@@ -535,7 +535,7 @@ GPT-5.1과 함께 높은 점수를 기록했다.
 직접 슈퍼마리오 브라더스의 월드 1-1을 구현했는데, 꽤 빠르게 동작하는 [캔버스](https://codepen.io/Edunga1/pen/KwzqGRM)를 생성했다.
 다만 여러 세션에서 시도했는데, 모바일 패드 스타일이 비슷하게 나온 경우가 있어서, 기존에 학습된 코드가 사용된 것은 아닌가 의구심이 든다.
 
-#### Gemini CLI
+## Gemini CLI
 
 Gemini CLI는 Gemini 모델을 터미널에서 사용할 수 있게 해주는 명령어를 제공한다.
 
@@ -583,7 +583,7 @@ remote MCP 설정은 정립되지 않았는지, **클라이언트마다 설정 �
 Gemini CLI는 `httpUrl`로 URL을 지정하고, `headers`로 헤더를 지정한다.
 MCP 서버 설정 사양은 [Hands-on with Gemini CLI 문서](https://codelabs.developers.google.com/gemini-cli-hands-on#8)에서 확인할 수 있다.
 
-#### Nano Banana
+## Nano Banana
 
 나노바나나는 [2025년 8월 26일](https://blog.google/intl/ko-kr/company-news/technology/gempix-nano-banana-kr/)에 공개된 Gemini에 도입한 이미지 편집 모델이다.
 빠르고 퀄리티 높은 이미지 편집으로 공식 출시 이전부터 화제가 되었다.
@@ -600,7 +600,7 @@ Take this drawing and turn it into a figure in reality. Transform the drawing in
 [Gemini 3.0](#gemini-30)의 출시와 함께 Nano Banana Pro(2로도 불린다)도 [출시되었다](https://blog.google/intl/ko-kr/company-news/technology/nano-banana-pro/).
 이미지 생성 모델들의 고질인 글자 인식 및 비정상 생성 문제를 크게 개선했다.
 
-##### awesome-nano-banana-images
+### awesome-nano-banana-images
 
 나노 바나나의 다양한 사용 사례를 모아둔 저장소.
 
@@ -614,7 +614,7 @@ https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md
 [구도 재현](https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md#case-52-fashion-moodboard-collageby-tetumem)은
 실제로 활용도가 높아 보인다.
 
-#### Gemini API File Search
+## Gemini API File Search
 
 2025년 11월에 공개한, RAG 서비스.
 파일을 업로드하면, 임베딩을 생성하고 인덱싱하여 RAG 인프라를 구축해준다.
@@ -629,7 +629,7 @@ https://ai.google.dev/gemini-api/docs/file-search
 비용이 든다고 적었지만, Free tier로 시작할 수 있었다.
 임베딩 모델의 가격은 워낙 저렴하기 때문에 문서가 적다면 무료 범위 내에서 충분하다.
 
-##### 예제
+### 예제
 
 아래는 파일 검색 스토어를 생성하고, 파일을 업로드하는 예제 코드이다.
 
@@ -719,5 +719,3 @@ Vimscript의 주요 특징 및 사용법은 다음과 같습니다:
 
 한편, Vim의 포크 버전인 Neovim은 Vimscript 외에 Lua도 지원하여 더 확장된 기능을 제공합니다. Neovim에서는 LSP (Language Server Protocol)를 자체적으로 제공하며, Lua 스크립트로 플러그인을  초기화하는 방식도 주로 사용됩니다. Lua는 Vimscript보다 학습 곡선이 낮다고 평가되기도 합니다. 하지만 Vim과 Neovim 간의 설정 호환성이 높으므로, 기존 Vim 설정을 크게 변경하지 않고도 Neovim 으로 전환할 수 있습니다.
 ````
-
-
