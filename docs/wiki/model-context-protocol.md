@@ -24,9 +24,12 @@ VSCode에서 [playwright-mcp](/docs/wiki/playwright.md#playwright-mcp)를 사용
 Copilot Chat을 통해 [Playwright](/docs/wiki/playwright.md)를 실행, 대화를 통해서 브라우저를 조작할 수 있다.
 예를 들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘'라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘' 같은 명령을 내릴 수 있다.
 
-다만 한 응답에서 도구 사용 제한이 있는 것으로 보인다. JetBrains나 VSCode + GitHub Copilot Chat 모두에서 발생한 현상인데,
-URL 40개를 던져주고 확인하고 보고하라고 하면 5개 정도만 확인하고 나머지는 어떻게든 무시한다.
-JetBrains AI는 6번째에 도구 사용 횟수에 제한이 있다고 말하며 응답을 종료하고, Copilot Chat은 도구 사용하지 않고 확인했다며 환각을 보인다.
+## 서비스별 도구 호출 제한
+
+하나의 요청에서 도구 사용 제한이 있는 것으로 보인다.
+JetBrains나 VSCode + GitHub Copilot Chat 모두에서 발생한 현상인데,
+URL 40개 각각에 대해 MCP를 사용하라고 요청하면, 실제로는 5개 정도만 사용하고 나머지는 무시된다.
+JetBrains AI Chat은 6번째에 도구 사용 횟수에 제한이 있다고 말하며 응답을 종료하고, Copilot Chat은 도구 사용하지 않고 확인했다며 환각을 보인다.
 모델은 모두 Claude 3.7 Sonnet을 사용했다.
 
 아래는 JetBrains AI의 응답 일부:
