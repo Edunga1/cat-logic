@@ -15,4 +15,5 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pandas-stubs>=2.2.3.250308",
+    "pytest>=9.0.2",
 ]
