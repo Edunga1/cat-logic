@@ -485,6 +485,9 @@ https://code.claude.com/docs/en/overview
 플랫폼이 터미널 기반이고, [MCP](/docs/wiki/model-context-protocol.md) 클라이언트이기 때문에 아주 광범위한 작업을 처리할 수 있다.
 IDE에서 동작하는 다른 AI 도구와는 다르게, 명령줄 도구를 이용할 수 있다는 것이 큰 장점이다. 대부분의 OS 작업을 처리할 수 있다는 의미가 된다.
 
+macOS는 `brew install claude-code`로 설치하자, cask로 제공되기 때문.
+NPM `npm i @anthropic-ai/claude-code`로도 설치할 수 있지만, native installer를 사용하라는 안내가 뜬다.
+
 ### DeepSeek
 
 중국의 헤지펀드 회사의 인공지능 연구 기업 이름이자 언어 모델.
