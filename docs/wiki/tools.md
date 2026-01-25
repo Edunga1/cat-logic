@@ -27,7 +27,7 @@ Go로 구현되고, 웹 서버 + 클라이언트 조합으로 구성된다.
   * 기본적으로 비공개지만, 공개할 수 있다.
   * 공개 취소가 안되더라... 버그인가?
 * 클라로 크롬 확장프로그램을 사용하기 위해서는
-https://github.com/go-shiori/shior
+https://github.com/go-shiori/shiori
 여기서 직접 확장프로그램을 로드해야 한다.
 
 ### 간단하게 사용해보기
@@ -228,7 +228,7 @@ scratch 파일로 저장하면 프로젝트에 상관없이 빠른 접근성을 
 
 ## Blink Shell
 
-iOS용 터미널 앱. [App Store](https://itunes.apple.com/app/id1156707581)에서 판매하는데, 가격은 매우 비싸다.
+iOS용 터미널 앱. [App Store](https://apps.apple.com/us/app/blink-shell-build-code/id1594898306)에서 판매하는데, 가격은 매우 비싸다.
 
 코드가 공개되어 있어서, 직접 빌드해서 사용할 수 있다: https://github.com/blinksh/blink
 

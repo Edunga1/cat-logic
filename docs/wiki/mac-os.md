@@ -167,7 +167,7 @@ brew "util-linux"
 ```
 
 단, 자동 생성하면 의존성의 의존성까지 모두 저장되어 불편하다.
-나같은 경우는 직접 파일을 생성하여 관리한다: https://github.com/Edunga1/dotfiles/blob/main/Brewfile
+나같은 경우는 직접 파일을 생성하여 관리한다: https://github.com/Edunga1/dotfiles/blob/main/osx/Brewfile
 
 ## `ngrok`을 이용하여 맥에서 Remote Login 하기
 

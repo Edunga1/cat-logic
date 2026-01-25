@@ -21,9 +21,7 @@ RDBMS도 MySQL, MsSQL, Oracle 다 쿼리 스펙이 다르다. 그래서 데이�
 
 아무튼. Repository Pattern은 데이터의 중앙화와 API의 일관성을 유지하고 중복 코드를 제거해 준다.
 
-[MSDN의 Repository Pattern](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff649690(v=pandp.10))을 번역한 글: \
-http://vandbt.tistory.com/27
-
+[MSDN의 Repository Pattern](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff649690(v=pandp.10)).
 개념적인 글이라서 코드가 있는 MSDN 글과 보면 좋다: \
 https://docs.microsoft.com/ko-kr/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 
