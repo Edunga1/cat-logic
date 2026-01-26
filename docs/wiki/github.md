@@ -10,6 +10,12 @@ Git 저장소 호스팅 서비스.
 코드 작성을 도와주는 AI 도구.
 
 가장 만족하는 AI 도구이다. 코딩 생산성이 배가 된다.
+나는 2021년 11월에 tech-preview로 시작할 떄부터 사용해왔고, 2022년 6월에 tech-preview의 종료 후 정식 출시하여 유료 구독을 하고 있다.
+당시에는 AI 기반 코드 자동 완성 도구는 아마 GitHub Copilot가 유일했다.
+
+비슷한 도구로는 Tabnine이 있었는데, 이것도 자주 사용했었다.
+Copilot 보다 오래된 도구이고, AI 기반은 아니지만 스마트한 자동 완성 도구로써 반복 작업을 대거 줄여줬기 때문에 도움이 되었다.
+회사 동료에게 추천했었는데, 다들 신기해했다. 간단한 케이스에만 자동 완성되었지만 말이다.
 
 지원하는 모델은 [supported-models 페이지](https://docs.github.com/en/copilot/reference/ai-models/supported-models#supported-ai-models-in-copilot)에서 확인할 수 있다.
 OpenAI, Claude, Gemini, xAI 모델을 지원하고, 최신 버전 반영이 빠른편.
