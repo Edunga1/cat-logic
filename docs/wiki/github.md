@@ -29,20 +29,24 @@ vim, vscode, jetbrain 에디터 등 에디터의 플러그인 형태로 제공�
 2025년 4월 4일에 [Copilot Pro+가 출시되었다](https://github.blog/changelog/2025-04-04-announcing-github-copilot-pro/).
 월간 $10인 Pro의 약 4배 가격인 $39로 매우 비싸다. 기능은 Pro와 동일하지만, 고급 모델에 대한 접근을 제공한다.
 
-### Copilot for CLI
+### Copilot in the CLI
 
 shell 명령어를 작성하는데 도움을 주는 도구.
 
-https://githubnext.com/projects/copilot-cli/
+https://githubnext.com/projects/copilot-completions-cli/ \
+https://www.npmjs.com/package/@githubnext/github-copilot-cli
 
-2023-03-29 기준 대기자 명단에 등록해야 사용할 수 있었으나 정식 릴리즈 되어 이제 누구나 사용할 수 있다.
+- 2023-03-29 대기자 명단에 등록해야 사용할 수 있었으나 정식 릴리즈 되어 이제 누구나 사용할 수 있다.
+- 2024-03-21 정식 출시되었다. 이름은 `GitHub Copilot in the CLI`로 변경되었다.
+    - 설치 방식 또한 github cli 플러그인 확장 형태로 통합되었다. 기존에는 npm, gh extension 모두 지원했다.
+    - `??` 대신 `ghcs` `ghce` 명령어로 대체되었다.
+- 2025-10-25 [Deprecated 되었다](https://github.com/github/gh-copilot).
+    - copilot-cli로 [대체하라고 한다](https://docs.github.com/en/copilot/how-tos/use-copilot-for-common-tasks/use-copilot-in-the-cli).
+    - `gh copilot` 확장 형태는 유지되지만, copilot cli와 동일한 기능이다.
 
-copilot cli는 2개의 방식으로 제공한다.
-다른 하나는 GitHub Cli의 플러그인으로 제공하는 것인데, 다음 문단에서 설명한다.
+#### 사용 방법(deprecated)
 
----
-
-사용 예시:
+더 이상 지원하지 않는 방식. 기록 차원에서 남긴다.
 
 ```bash
 ❯ ?? listening port 5000
@@ -129,7 +133,7 @@ Suggestion:
 
 ### Copilot CLI
 
-Copilot for CLI와는 다른, Gemini CLI와 같은 에이전트 도구.
+코딩 [에이전트](/docs/wiki/google-gemini.md#gemini-cli) 도구.
 
 https://github.com/github/copilot-cli
 
