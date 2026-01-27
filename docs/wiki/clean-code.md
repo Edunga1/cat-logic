@@ -10,13 +10,11 @@ created: 2023-04-12
 https://ko.redux.js.org/usage/reducing-boilerplate/#%EC%95%A1%EC%85%98
 
 > Flux에서는 전통적으로 모든 액션 타입을 문자열 상수로 정의합니다:
-
-```javascript
+> ```javascript
 > const ADD_TODO = 'ADD_TODO'
 > const REMOVE_TODO = 'REMOVE_TODO'
 > const LOAD_ARTICLE = 'LOAD_ARTICLE'
-```
-
+> ```
 > 이게 어떤 이점이 있을까요? **작은 프로젝트에서 상수는 불필요하다는 지적이 종종 있었고 옳은 말**입니다. 큰 프로젝트에서는 액션 타입을 상수로 정의하는 이점들이 있습니다:
 > * 모든 액션 타입이 한 곳에 모이기 때문에 이름 짓기의 일관성을 유지하는데 도움이 됩니다.
 > * 새 기능을 만들기 전에 기존의 모든 액션을 한눈에 보고 싶을 때가 있을겁니다. 여러분이 필요로 하는 액션이 팀의 다른 사람에 의해 이미 추가되었지만 여러분이 모르고 있을 수도 있으니까요.
@@ -47,11 +45,11 @@ parseNonEmpty (x:xs) = pure (x:|xs)
 parseNonEmpty [] = throwIO $ userError "list cannot be empty"
 ```
 
-`validateNonEmpty` ro수는 리스트가 비어있지 않은지 검증만 한다.
-`parseNonEmpty` 함수는 비어있지 않은 리스트를 `NonEmpty` 타입으로 변환한다. 타입 시스텐이 비어있지 않음을 보장한다.
+`validateNonEmpty`는 리스트가 비어있지 않은지 검증만 한다.\
+`parseNonEmpty`는 비어있지 않은 리스트를 `NonEmpty` 타입으로 변환한다. 타입 시스템이 요소가 존재함을 보장한다.
 각 함수의 반환 값을 사용할 때, 검증 방식은 재검증에 대한 여지가 있지만 파싱 방식은 그렇지 않다.
 
 검증의 위험성은 처리 로직과 함께 사용될 때 드러난다.
 검증을 통과한 입력을 처리하다가, 다른 부분의 검증에 실패하면 이미 수정된 부분을 되돌리기 어렵다.
 모든 검증을 미리 처리할 수 있겠지만, 정말 미리 처리되었는지 그것을 판단하기는 어렵다.
-이런식으로 검증의 더미에 내던지고 에러 케이스를 처리할 것이라 기대하는 안티 패턴을 *Shotgun Parser*이라 한다.
+이런 식으로 검증의 더미에 내던지고 에러 케이스를 처리할 것이라 기대하는 안티 패턴을 *Shotgun Parser*이라 한다.
