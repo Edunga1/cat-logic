@@ -629,6 +629,13 @@ https://ai.google.dev/gemini-api/docs/file-search
 비용이 든다고 적었지만, Free tier로 시작할 수 있었다.
 임베딩 모델의 가격은 워낙 저렴하기 때문에 문서가 적다면 무료 범위 내에서 충분하다.
 
+[Streamlit](/docs/wiki/streamlit.md)으로 파일을 업로드 등 관리하고, 쿼리할 수 있는 앱을 만들었다. \
+https://github.com/Edunga1/gemini-file-search-start
+
+개인 위키 문서 수가 100개가 넘어가는데, 정확한 내용이 기억나지 않았을 때 실행해서 내용을 찾는데 유용하게 사용 중이다.
+
+![Gemini File Search Start](./res/gemini-file-search-start.png)
+
 ### 예제
 
 아래는 파일 검색 스토어를 생성하고, 파일을 업로드하는 예제 코드이다.
