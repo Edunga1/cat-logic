@@ -144,6 +144,24 @@ stdout은 이미 *dirlist*로 리다이렉트되었으므로 stderr도 *dirlist*
 반면에 \#2는 stderr을 stdout으로 리다이렉트하고, stdout을 *dirlist*로 리다이렉트한다.
 결론은 각각 *dirlist*와 stdout으로 리다이렉트된다.
 
+## Pipeline
+
+파이프라인은 여러 명령어를 연결하여 한 명령어의 출력을 다음 명령어의 입력으로 사용하는 기능이다.
+
+```bash
+$ yes | head -5
+y
+y
+y
+y
+y
+```
+
+- yes: 무한히 'y'를 출력하는 명령어
+- head -n 5: 처음 5줄만 출력하는 명령어
+
+`head` 프로세스의 종료로 `yes` 프로세스도 종료된다.
+
 ## Built-in Commands
 
 ### time - 명령어 실행시간 측정
