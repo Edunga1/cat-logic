@@ -41,6 +41,8 @@ vimscript라는 자체 스크립트를 제공하는데, 학습하기 꽤 어려�
 Vim 자체는 텍스트 편집기일 뿐이기 때문에, IDE처럼 사용하기 위해서는 플러그인이 필요하다.
 자세한 사항은 아래의 [내장 Language Server Protocol 사용하기](#내장-language-server-protocol-사용하기)를 참고하자.
 
+"vi"는 [POSIX의 표준 텍스트 편집기](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/vi.html)이다.
+
 ## Neovim
 
 Neovim은 vim을 fork하고, vimscript와 더불어 lua도 지원하며, 더 확장된 기능을 제공한다.
