@@ -488,6 +488,12 @@ IDE에서 동작하는 다른 AI 도구와는 다르게, 명령줄 도구를 이
 macOS는 `brew install claude-code`로 설치하자, cask로 제공되기 때문.
 NPM `npm i @anthropic-ai/claude-code`로도 설치할 수 있지만, native installer를 사용하라는 안내가 뜬다.
 
+기존 프로젝트라면 `/init` 명령어로 분석 후 시작하자.
+`CLAUDE.md`를 생성하여 프로젝트 개요와 주요 파일을 기록한다.
+`CLAUDE.md`는 copilot 또한 참조할 수 있다.
+요즘은 `AGENTS.md`로 에이전트 벤더에 종속되지 않는 것이 추세인 듯.
+[codex는 AGENTS.md 파일을 참조한다](https://developers.openai.com/codex/guides/agents-md/).
+
 ### DeepSeek
 
 중국의 헤지펀드 회사의 인공지능 연구 기업 이름이자 언어 모델.
