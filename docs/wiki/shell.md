@@ -556,7 +556,7 @@ $ echo '{"glossary":{"title":"example glossary","GlossDiv":{"title":"S","GlossLi
 
 jq는 특정 필드를 제외할 수 있다.
 
-`jq 'del(.. | .title?) | del(.glossary.GlossDiv.GlossList.GlossEntry.ID)'` 이 명령어는 모든 `title` 이름을 가진 필드를 제거하고, `glssary.GlossDiv.GlossList.GlossEntry.ID` 필드를 제거한다.
+`jq 'del(.. | .title?) | del(.glossary.GlossDiv.GlossList.GlossEntry.ID)'` 이 명령어는 모든 `title` 이름을 가진 필드를 제거하고, `glossary.GlossDiv.GlossList.GlossEntry.ID` 필드를 제거한다.
 
 ```bash
 $ echo '{"glossary":{"title":"example glossary","GlossDiv":{"title":"S","GlossList":{"GlossEntry":{"ID":"SGML","SortAs":"SGML","GlossTerm":"Standard Generalized Markup Language","Acronym":"SGML","Abbrev":"ISO 8879:1986","GlossDef":{"para":"A meta-markup language, used to create markup languages such as DocBook.","GlossSeeAlso":["GML","XML"]},"GlossSee":"markup"}}}}}' | jq 'del(.. | .title?) | del(.glossary.GlossDiv.GlossList.GlossEntry.ID)'

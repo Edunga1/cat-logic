@@ -3,7 +3,7 @@ created: 2023-12-07
 ---
 # Google Gemini
 
-구글의 Multimodal AI 모델. `제미나이`로 발음하지만, 한국인에겐 어색한 지 '제미니'라고도 부른다.
+구글의 Multimodal AI 모델. `제미나이`로 발음하지만, 한국인에겐 어색한지 '제미니'라고도 부른다.
 멀티모달은 이미지, 음성, 텍스트 등 다양한 타입을 결합하여 처리할 수 있음을 의미한다.
 
 https://deepmind.google/technologies/gemini
@@ -36,7 +36,7 @@ Gemini의 장점은 유튜브 링크를 전달하면, 자막을 통해 내용을
 
 https://ai.google.dev/pricing
 
-도메인이 AI Studio를 가르키는 거 같은데, 현재는 Gemini API로 소개하며 Gemini 1.5 Flash, Gemini 1.5 Pro, Gemini 1.0 Pro, Text Embedding 004 4개의 모델을 큐레이션한다.
+도메인이 AI Studio를 가리키는 거 같은데, 현재는 Gemini API로 소개하며 Gemini 1.5 Flash, Gemini 1.5 Pro, Gemini 1.0 Pro, Text Embedding 004 4개의 모델을 큐레이션한다.
 
 ![Gemini API text-embedding-004 pricing](./res/gemini-text-embedding-004-early-pricing.png)
 
@@ -45,7 +45,7 @@ Text Embedding 004는 이름에서 알 수 있듯이 텍스트 임베딩 모델�
 토큰 제한량은 모르겠지만, 내가 사용하기에는 충분해서 무료 티어로 다양한 시도를 할 수 있겠다.
 
 유료 플랜은 https://cloud.google.com/vertex-ai/generative-ai/pricing 에서 확인할 수 있다.
-텍스트 임베딩 모델은 모델 이름을 적어두고 있지 않아서 공통 적용되는 건지. Open AI와 비교해서 좀 정리가 너무 안되어 보인다.
+텍스트 임베딩 모델은 모델 이름을 적어두고 있지 않아서 공통 적용되는 건지. OpenAI와 비교해서 좀 정리가 너무 안되어 보인다.
 
 ## Gemini 2.5 Pro
 
@@ -56,7 +56,7 @@ Text Embedding 004는 이름에서 알 수 있듯이 텍스트 임베딩 모델�
 https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025
 
 [AI 스튜디오](https://aistudio.google.com) 또는 [Gemini 웹](https://gemini.google.com)에서 사용할 수 있다.
-스튜디오에서는 유튜브 링크, 영상 등을 업로드하고 temprature 설정, System 프롬프트 등을 설정할 수 있다.
+스튜디오에서는 유튜브 링크, 영상 등을 업로드하고 temperature 설정, System 프롬프트 등을 설정할 수 있다.
 
 사용 소감은 아주 만족스럽다.
 다른 모델처럼 환각 증상은 있지만, 결과물의 품질이 높다.
@@ -80,7 +80,7 @@ https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-mar
 `data:` 임베디드로 사운드가 포함되어 있었지만 들리지는 않았다.
 
 두 번의 프롬프트로 구현했는데, 첫 번째 결과물은 애니메이션 없이 정적이었다.
-하지만 두 번재 요청에 애니메이션이 있으면 좋겠다고만 요청했는데, 조절 기능까지 구현한 것이다.
+하지만 두 번째 요청에 애니메이션이 있으면 좋겠다고만 요청했는데, 조절 기능까지 구현한 것이다.
 
 ---
 

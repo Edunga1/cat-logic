@@ -3,7 +3,7 @@ created: 2022-12-05
 ---
 # Machine Learning
 
-"학생이나 교수나 누구나 이런 ai를 사용해서 본인의 performance를 올리는 사람이 승자가 될것이라 생각합니다"
+"학생이나 교수나 누구나 이런 ai를 사용해서 본인의 performance를 올리는 사람이 승자가 될 것이라 생각합니다"
 
 > Sung Kim: 학생이나 교수나 누구나 이런 ai를 사용해서 본인의 performance를 올리는 사람이 승자가 될 것이라 생각합니다. 마치 계산기가 나온 초기 시절 그래도 주판이나 암산이 편하고 빠르다고 한 사람들이 있었었죠. 앞으로 이런 글쓰기와 추론등도 계산기를 사용하듯 일반화된 인간의 tool로 보편화 되어 사용될 것 같습니다.
 >
@@ -31,13 +31,13 @@ https://youtu.be/WXuK6gekU1Y
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WXuK6gekU1Y?si=strpQpmEXFpvh6Z2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-한국어 자동 번역을 사용하면 보는데 무리없는 수준으로 한글 자막이 나온다.
+한국어 자동 번역을 사용하면 보는데 무리 없는 수준으로 한글 자막이 나온다.
 
 일반인들이 바둑을 두는 장면과 함께, 데미스 하사비스가 대학 강연에서 AI를 설명하는 장면에서 시작한다.
 알카노이드를 플레이하는 AI를 보여주는데, 처음에는 어설프지만 나중에는 사람이 플레이하는 것처럼,
 구석을 공략하여 공을 벽 위로 올리는 기술을 보여준다. 이 장면을 실시간으로 봤다면 더 놀라웠을 테다.
 
-너무 인상적인 부분이 많아서 알파고 다큐멘터리는 여러번 돌려 봤다.
+너무 인상적인 부분이 많아서 알파고 다큐멘터리는 여러 번 돌려 봤다.
 그리고 첫 대국이 있었던 2016년을 아직도 기억한다.
 
 당시, 대국 이전에는 이세돌 9단이 승리한다는 것이 주된 여론이었다.
