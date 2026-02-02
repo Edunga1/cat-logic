@@ -6,7 +6,7 @@ created: 2025-04-17
 2024년 11월에 [Anthropic에서 발표](https://www.anthropic.com/news/model-context-protocol)한 AI 모델과 AI가 사용하는 도구를 연결하는 프로토콜.
 AI 도구가 많아지면서 난립하는 연동 방식을 정리하기 위해 고안되었다.
 
-프로토콜이 고안되기 이전에는 function-calling, tool-calling 등 다양한 이름으로 ollama, phidata 등 AI toolkit에서 제공했다.
+MCP 이전에는 function-calling, tool-calling 등 다양한 이름으로 ollama, phidata 등 AI toolkit에서 제공했다.
 
 개발 환경 세계를 통일한 [Language Server Protocol](/docs/wiki/language-server-protocol.md)와 유사한데,
 실제로 영감을 받았다고 한다:
@@ -23,6 +23,11 @@ MCP 서버는 [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-serv
 VSCode에서 [playwright-mcp](/docs/wiki/playwright.md#playwright-mcp)를 사용하는 예시로,
 Copilot Chat을 통해 [Playwright](/docs/wiki/playwright.md)를 실행, 대화를 통해서 브라우저를 조작할 수 있다.
 예를 들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘'라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘' 같은 명령을 내릴 수 있다.
+
+클라이언트가 받을 수 있는 응답 크기 제한을 주의해야 한다.
+내 경우는 OpenAPI Specification 문서를 불러왔다가, 응답 크기 제한에 걸려서 실패했다.
+그래서 이를 API 별로 잘라서 도구를 구현해야 했다.
+문제는 이러면 도구 호출 승인의 횟수가 늘어나서, 승인해야 하는 피로도로 사용자 경험이 떨어진다.
 
 ## 서비스별 도구 호출 제한
 
