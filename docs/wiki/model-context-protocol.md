@@ -22,12 +22,17 @@ MCP 서버는 [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-serv
 
 VSCode에서 [playwright-mcp](/docs/wiki/playwright.md#playwright-mcp)를 사용하는 예시로,
 Copilot Chat을 통해 [Playwright](/docs/wiki/playwright.md)를 실행, 대화를 통해서 브라우저를 조작할 수 있다.
-예를 들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘'라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘' 같은 명령을 내릴 수 있다.
+예를 들어 "브라우저를 열고 네이버에서 조선호텔 연락처를 검색해서 알려줘"라던가 "AI 기초 레벨을 다루는 아티클 5개만 탭으로 열어놔줘" 같은 명령을 내릴 수 있다.
 
 클라이언트가 받을 수 있는 응답 크기 제한을 주의해야 한다.
 내 경우는 OpenAPI Specification 문서를 불러왔다가, 응답 크기 제한에 걸려서 실패했다.
 그래서 이를 API 별로 잘라서 도구를 구현해야 했다.
 문제는 이러면 도구 호출 승인의 횟수가 늘어나서, 승인해야 하는 피로도로 사용자 경험이 떨어진다.
+
+MCP 서버를 구현하다 보면 AI가 언제 호출해야 할지 유도하지 못하는 상황에 맞닥뜨린다.
+`tools/list`로 도구 목록은 불러오지만, 제공하는 도구가 적재 적소에 사용되도록 안내하기는 어렵다.
+그래서 의도적인 호출을 유도하기 위해서 "XX 도구로 YY 작업을 수행해줘"라는 식으로 부자연스러운 흐름을 만든다.
+이런 문제를 의식했는지, Anthropic은 [Claude Skills](#claude-skills)를 제안한다.
 
 ## 서비스별 도구 호출 제한
 
@@ -186,6 +191,16 @@ MCP 서버 개발자가 `.dxt` 파일을 만들어서 배포하면, 사용자는
 도구 호출 자체는 정상적이나, `arguments`를 전달하지 않는 문제다. 사용자의 승인 창에서는 전달한다고 보여주지만, 실제로는 전달하지 않는다.
 실행되지 않는 것과 별개로, 사용자가 보는 입력과 실제 입력이 다른 것은 문제가 될 여지가 있다. \n
 이 이슈는 [Anthropic의 Status 페이지](https://status.anthropic.com/incidents/1874wdtlmhwt)에 기록되어 있다.
+
+## Claude Skills
+
+Anthropic이 제안하는 AI 클라이언트의 기술 확장 방식.
+
+https://code.claude.com/docs/en/skills
+
+Anthropic은 [Claude Skills 구축을 위한 완벽 가이드](https://news.hada.io/topic?id=26328)라는 [pdf 문서를 배포](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf?hsLang=en)했다.
+
+> MCP가 “무엇을 할 수 있는지”를 제공한다면, Skills는 “어떻게 해야 하는지”를 고정하는 역할
 
 ## 연관 문서
 
