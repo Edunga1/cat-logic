@@ -202,6 +202,14 @@ Anthropic은 [Claude Skills 구축을 위한 완벽 가이드](https://news.hada
 
 > MCP가 “무엇을 할 수 있는지”를 제공한다면, Skills는 “어떻게 해야 하는지”를 고정하는 역할
 
+> **First level (YAML frontmatter)**: Always loaded in Claude's system prompt.
+Provides just enough information for Claude to know when each skill should
+be used without loading all of it into context.
+
+Skill이 MCP 보다 잘 트리거되는 이유는 시작 시 로드되는 YAML frontmatter 덕분인 것으로 보인다.
+Frontmatter에는 Skill의 전체 정보의 요약본과 함께 언제 사용하는지에 대한 힌트를 포함한다.
+기능을 명세하는 MCP와 달리, Skills는 AI를 위한 지침서 역할을 포함한다.
+
 ## 연관 문서
 
 - [2024-11-26 Anthropic, Model Context Protocol 오픈소스로 공개](https://news.hada.io/topic?id=17951)
