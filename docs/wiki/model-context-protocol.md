@@ -8,7 +8,7 @@ AI 도구가 많아지면서 난립하는 연동 방식을 정리하기 위해 �
 
 MCP 이전에는 function-calling, tool-calling 등 다양한 이름으로 ollama, phidata 등 AI toolkit에서 제공했다.
 
-개발 환경 세계를 통일한 [Language Server Protocol](/docs/wiki/language-server-protocol.md)와 유사한데,
+개발 도구 환경을 표준화한 [Language Server Protocol](/docs/wiki/language-server-protocol.md)와 유사한데,
 실제로 영감을 받았다고 한다:
 
 > MCP takes some inspiration from the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/), which standardizes how to add support for programming languages across a whole ecosystem of development tools.
@@ -16,9 +16,10 @@ MCP 이전에는 function-calling, tool-calling 등 다양한 이름으로 ollam
 프로토콜의 사양은 [modelcontextprotocol.io](https://modelcontextprotocol.io/specification)에서 관리한다.
 AI가 사용할 수 있는 도구를 정의한 MCP 서버, 사용자와 대면하는 Host, Host에서 서버와 통신하는 Client가 JSON-RPC 2.0 메시지로 통신한다.
 
-사용자 입장에서 선택할 것은, MCP Client를 제공하는 Host와 MCP 서버이다.
-Client는 VSCode, IntelliJ(2025.1 부터) 등이 지원한다.
-MCP 서버는 [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers)에 정리되어 있다.
+MCP를 사용하기 위해서, MCP를 지원하는 Client와 미리 구현된 MCP 서버가 필요하다. \
+Client는 VSCode, IntelliJ(2025.1 부터), Claude Desktop 등이 지원한다. \
+로컬 실행 파일 또는 원격 서버 URL 중 선택한다.
+MCP 서버는 [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers)에 다양한 구현체가 등록되어 있다.
 
 VSCode에서 [playwright-mcp](/docs/wiki/playwright.md#playwright-mcp)를 사용하는 예시로,
 Copilot Chat을 통해 [Playwright](/docs/wiki/playwright.md)를 실행, 대화를 통해서 브라우저를 조작할 수 있다.
