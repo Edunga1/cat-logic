@@ -3,10 +3,10 @@ created: 2025-04-17
 ---
 # Model Context Protocol(MCP)
 
-2024년 11월에 [Anthropic에서 발표](https://www.anthropic.com/news/model-context-protocol)한 AI 모델과 AI가 사용하는 도구를 연결하는 프로토콜.
-AI 도구가 많아지면서 난립하는 연동 방식을 정리하기 위해 고안되었다.
+[Anthropic에서 발표](https://www.anthropic.com/news/model-context-protocol)한 AI 모델과 AI가 사용하는 도구를 연결하는 프로토콜.
+AI 도구의 연동 방식이 난립함에 따라 이를 정리하기 위해 고안되었으며, 2024년 11월에 공개되었다.
 
-MCP 이전에는 function-calling, tool-calling 등 다양한 이름으로 ollama, phidata 등 AI toolkit에서 제공했다.
+MCP 이전에는 Ollama, Phidata와 같은 AI 툴킷에서 function-calling, tool-calling 등 다양한 이름으로 유사한 도구 연동 방식을 시도했다.
 
 개발 도구 환경을 표준화한 [Language Server Protocol](/docs/wiki/language-server-protocol.md)와 유사한데,
 실제로 영감을 받았다고 한다:
