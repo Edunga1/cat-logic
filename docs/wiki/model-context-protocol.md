@@ -205,6 +205,8 @@ Anthropic은 [Claude Skills 구축을 위한 완벽 가이드](https://news.hada
 
 ### 불러오는 방식
 
+요약하면 Frontmatter -> SKILL.md 본문 -> 추가 파일 순으로 불러온다.
+
 > * **First level (YAML frontmatter)**: Always loaded in Claude's system prompt. Provides just enough information for Claude to know when each skill should be used without loading all of it into context.
 
 Skill이 MCP 보다 잘 트리거되는 이유는 시작 시 로드되는 YAML frontmatter 덕분인 것으로 보인다.
@@ -215,9 +217,9 @@ Frontmatter에는 Skill의 전체 정보의 요약본과 함께 언제 사용하
 > * **Second level (SKILL.md body)**: Loaded when Claude thinks the skill is relevant to the current task. Contains the full instructions and guidance.
 > * **Third level (Linked files)**: Additional files bundled within the skill directory that Claude can choose to navigate and discover only as needed. This progressive disclosure minimizes token usage while maintaining specialized expertise
 
-Frontmatter의 정보만으로 AI가 Skill을 시작하면 SKILL.md 본문을 불러온다.
-필요에 따라 추가 파일도 불러오는 방식이다.
-이런 구조는 토큰 사용량을 최소화하면서도 전문 지식을 유지하도록 돕는다.
+Frontmatter의 정보만으로 AI가 Skill을 결정하면, 참고를 위해서 SKILL.md 본문을 불러온다.
+필요에 따라 추가 파일도 불러온다.
+이런 분리 구조는 토큰 사용량을 최소화하면서도 전문 지식 유지를 돕는다.
 
 ## 연관 문서
 
