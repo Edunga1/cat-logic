@@ -494,6 +494,10 @@ NPM `npm i @anthropic-ai/claude-code`로도 설치할 수 있지만, native inst
 요즘은 `AGENTS.md`로 에이전트 벤더에 종속되지 않는 것이 추세인 듯.
 [codex는 AGENTS.md 파일을 참조한다](https://developers.openai.com/codex/guides/agents-md/).
 
+이미지 분석 가능하다.
+Web URL을 제공하면 Fetch하여 분석할 수 없지만, 로컬 파일을 제공하면 분석할 수 있다.
+[Playwright](/docs/wiki/playwright.md) MCP 등으로 연동하여 분석할 수 있을 듯.
+
 ### DeepSeek
 
 중국의 헤지펀드 회사의 인공지능 연구 기업 이름이자 언어 모델.
