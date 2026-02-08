@@ -147,7 +147,7 @@ spring.jpa.databaseplatform=mysql
 
 추천하는 프로퍼티 작성 스타일은 kebab-case를 사용하는 것이다:
 
-> We recommend that properties are stored in lowercase kabab format. i.e. `my.property-name=foo`.
+> We recommend that properties are stored in lowercase kebab format. i.e. `my.property-name=foo`.
 
 `@ConfigurationProperties` 예시. 생성자를 통해서 주입받는다.
 
