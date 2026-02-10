@@ -31,11 +31,13 @@ NPM `npm i @anthropic-ai/claude-code`로도 설치할 수 있지만, native inst
 요즘은 `AGENTS.md`로 에이전트 벤더에 종속되지 않는 것이 추세인 듯.
 [codex는 AGENTS.md 파일을 참조한다](https://developers.openai.com/codex/guides/agents-md/).
 
-이미지 분석 가능하다.
-Web URL을 제공하면 Fetch하여 분석할 수 없지만, 로컬 파일을 제공하면 분석할 수 있다.
-[Playwright](/docs/wiki/playwright.md) MCP 등으로 연동하여 분석할 수 있을 듯.
+### 기능
 
-### insights 기능
+- 대화가 길어지면 알아서 압축(compact)하고 새로운 세션에서 이어간다.
+- 이미지 분석 가능하다. Web URL을 직접 전달하면 처리하지 못하지만(저장 후 분석하라고 하면 가능할지도) 로컬 파일은 분석한다.
+- [세션을 분할하여](https://platform.claude.com/docs/en/agent-sdk/sessions#forking-sessions), 기존 세션을 분기할 수 있다.
+
+#### insights 기능
 
 `/insights` 명령어로 사용자의 클로드 코드 사용 패턴을 분석한다. `2.1.30` 버전에서 추가되었다.
 전체 세션에 대해서 분석하여, 클로드가 놓치는 부분을 개선할 수 있도록 사용 방식을 제안한다.
