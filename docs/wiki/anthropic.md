@@ -35,7 +35,7 @@ NPM `npm i @anthropic-ai/claude-code`로도 설치할 수 있지만, native inst
 
 - 대화가 길어지면 알아서 압축(compact)하고 새로운 세션에서 이어간다.
 - 이미지 분석 가능하다. Web URL을 직접 전달하면 처리하지 못하지만(저장 후 분석하라고 하면 가능할지도) 로컬 파일은 분석한다.
-- [세션을 분할하여](https://platform.claude.com/docs/en/agent-sdk/sessions#forking-sessions), 기존 세션을 분기할 수 있다.
+- [세션을 분할하여](https://code.claude.com/docs/en/how-claude-code-works#resume-or-fork-sessions), 기존 세션을 분기할 수 있다.
 
 #### insights 기능
 
