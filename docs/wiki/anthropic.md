@@ -31,6 +31,11 @@ NPM `npm i @anthropic-ai/claude-code`로도 설치할 수 있지만, native inst
 요즘은 `AGENTS.md`로 에이전트 벤더에 종속되지 않는 것이 추세인 듯.
 [codex는 AGENTS.md 파일을 참조한다](https://developers.openai.com/codex/guides/agents-md/).
 
+2026년 2월에는 Opus 4.6 모델의 [fast mode가 추가되었다](https://code.claude.com/docs/en/fast-mode).
+`/fast` 명령어로 전환할 수 있다.
+2.5배 더 빨라진다고 한다. 하지만 가격은 출력 토큰 기준으로 일반 모드가 $25/백만 토큰인 반면에 fast 모드는 $150/백만 토큰으로 [6배 비싸다](https://platform.claude.com/docs/en/about-claude/pricing#fast-mode-pricing). \
+Team Plan은 조직에서 활성화해야 한다.
+
 ### 기능
 
 - 대화가 길어지면 알아서 압축(compact)하고 새로운 세션에서 이어간다.
