@@ -68,5 +68,5 @@ _빠르게 시도할 수 있는 것_ 항목을 보면, insights 기능을 통해
 
 ![Claude Code insights report](./res/claude-code-insights-report.png)
 
-아주 솔직하게 피드백을 준다.
-가장 아래의 섹션에 Claude가 가짜 ID를 사용하여 API를 호출하려고 했고, 내가 중단했다는 내용을 첨부했다.
+제품에 불리한 내용도 솔직하게 피드백을 준다.
+가장 아래 섹션에서 "Claude가 가짜 ID를 사용하여 API를 호출하려고 했고, 내가 중단했다"는 내용이 있다.
