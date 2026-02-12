@@ -3,7 +3,7 @@ created: 2023-02-08
 ---
 # Airflow
 
-### Airflow 연습
+## Airflow 연습
 
 https://github.com/Edunga1/practice-airflow
 
@@ -11,7 +11,7 @@ docker-compose로 airflow 환경 구축하고 테스트할 수 있다.
 
 [Airflow 공식 문서](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)에서 docker로 실행하는 방법을 잘 설명해놓았다.
 
-### Airflow가 DAG 파일을 인식하는 방식
+## Airflow가 DAG 파일을 인식하는 방식
 
 [Loading DAGs](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html#loading-dags)
 
@@ -25,7 +25,7 @@ DAG 스크립트를 모듈화하여 DAG 생성을 분리한다면 DAG 파일을 
 
 모든 파이썬 파일을 DAG 파일로 인식할 수 있는 옵션도 있다고 한다.
 
-### 다음 DAG 실행 시간
+## 다음 DAG 실행 시간
 
 ```sh
 airflow dags next-execution <DAG_ID>
