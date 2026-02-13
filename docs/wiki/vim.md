@@ -1016,11 +1016,31 @@ vim을 종료할 때 세션을 저장하고, Startify의 시작 화면에 Sessio
 
 `vim.lsp.config('*')`의 의도는 모든 서버에 대해 공통 설정을 적용하는 것인데,
 `vim.lsp.config('ts_ls')`와 같이 특정 서버에 대해 설정하면 병합이 아닌 덮어쓰기가 된다.
+특히 `on_attach`는 공통 설정에 특정 서버 설정을 추가로 필요한 경우가 있는데, 덮어쓰기가 되면 공통 설정이 사라져 버린다.
 
 이 문제는 2025년 4월 22일에 발의된 [neovim #33577](https://github.com/neovim/neovim/issues/33577) 이슈에서 2026년에도 논의되고 있다.
 [nvim-lspconfig #3827](https://github.com/neovim/nvim-lspconfig/issues/3827)에도 이슈가 등록되었다.
 
-병합으로 동작하지 않는다면, 각 lsp 설정에 공통 설정을 추가하는 보일러 플레이트가 필요하다.
+`on_attach` 대신 `LspAttach` autocmd를 사용하면 자동명령은 누적되므로 덮어쓰기 문제에서 벗어난다.
+
+```lua
+-- 공통 설정은 on_attach 대신 LspAttach autocmd
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local bufopts = { noremap = true, silent = true, buffer = args.buf }
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    -- ...
+  end,
+})
+
+-- 서버별 설정은 on_attach
+vim.lsp.config('ts_ls', {
+  on_attach = function(_, bufnr)
+    vim.api.nvim_buf_create_user_command(bufnr, 'RenameFile', rename_file, {})
+  end,
+})
+```
 
 ## 관련 기사
 
