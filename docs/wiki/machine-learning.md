@@ -29,8 +29,6 @@ created: 2022-12-05
 
 https://youtu.be/WXuK6gekU1Y
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WXuK6gekU1Y?si=strpQpmEXFpvh6Z2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 한국어 자동 번역을 사용하면 보는데 무리 없는 수준으로 한글 자막이 나온다.
 
 일반인들이 바둑을 두는 장면과 함께, 데미스 하사비스가 대학 강연에서 AI를 설명하는 장면에서 시작한다.
