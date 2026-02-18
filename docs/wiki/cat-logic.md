@@ -98,4 +98,5 @@ github actions/checkout의 fetch-depth를 0으로 설정하면 모든 커밋 내
 - 하지만 페이지의 내부 링크는 trailing slash가 없는 형태였다.
 - sitemap.xml에는 정상적으로 trailing slash가 포함되어 있다.
 - Google Search Console은 sitemap.xml 보다 페이지의 내부 링크를 우선시하는 듯 하다.
+- sitemap를 trailing slash 있는 버전으로 재업로드 했다. `Last read` 날짜가 slash 없는 버전에 있었다.
 - <진행중>
