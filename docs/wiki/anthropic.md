@@ -42,7 +42,7 @@ Team Plan은 조직에서 활성화해야 한다.
 - 이미지 분석 가능하다. Web URL을 직접 전달하면 처리하지 못하지만(저장 후 분석하라고 하면 가능할지도) 로컬 파일은 분석한다.
 - [세션을 분할하여](https://code.claude.com/docs/en/how-claude-code-works#resume-or-fork-sessions), 기존 세션을 분기할 수 있다.
 
-#### insights 기능
+#### insights
 
 `/insights` 명령어로 사용자의 클로드 코드 사용 패턴을 분석한다. `2.1.30` 버전에서 추가되었다.
 전체 세션에 대해서 분석하여, 클로드가 놓치는 부분을 개선할 수 있도록 사용 방식을 제안한다.
@@ -70,3 +70,36 @@ _빠르게 시도할 수 있는 것_ 항목을 보면, insights 기능을 통해
 
 제품에 불리한 내용도 솔직하게 피드백을 준다.
 가장 아래 섹션에서 "Claude가 가짜 ID를 사용하여 API를 호출하려고 했고, 내가 중단했다"는 내용이 있다.
+
+### subagent
+
+`/agents` 명령어로 사용자 정의 subagent를 만들거나, 내장된 subagent를 확인할 수 있다.
+
+https://code.claude.com/docs/en/sub-agents
+
+Claude Code는 6개의 내장 subagent를 기본적으로 제공한다.
+특히 Bash, Explore, Plan는 쉘 명령어 실행이나 파일 탐색, 계획을 수립하면서 자주 사용된다.
+
+사용자 정의 subagent는 YAML 파일로 작성한다.
+
+```yaml
+---
+name: code-reviewer
+description: 사용자가 요청할 때 최고의 코드 퀄리티와 모범 사례를 위해서 코드를 리뷰합니다
+tools: Grep, Read
+model: opus
+---
+당신은 코드 리뷰어입니다. 호출되면, 변경 사항을 확인하고 분석하세요.
+```
+
+frontmatter는 [name과 description만 필수](https://code.claude.com/docs/en/sub-agents#supported-frontmatter-fields)이다.
+
+[Skill](/docs/wiki/claude-skills.md)와 마찬가지로, 호출되는 타이밍이 중요하기 때문에, Code가 subagent에 위임하기 위한 조건을 명세한다.
+
+Code가 subagent에 작업을 위임하는 것은 다음과 같은 장점이 있다.
+
+- 위임하는 작업에 대한 출력을 subagent로 격리하여 주 대화에서 컨텍스트를 보존
+- subagent가 사용할 수 있는 도구 제한
+- 사용자 레벨의 subagent로 프로젝트 간 구성 재사용
+- 도메인 특화 시스템 프롬프트 사용
+- 더 빠르고 저렴한 모델로 라우팅
