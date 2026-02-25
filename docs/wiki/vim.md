@@ -43,6 +43,16 @@ Vim 자체는 텍스트 편집기일 뿐이기 때문에, IDE처럼 사용하기
 
 "vi"는 [POSIX의 표준 텍스트 편집기](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/vi.html)이다.
 
+## Vim 9.2
+
+2026년 2월 14일 Vim 9.2가 출시되었다.
+
+https://www.vim.org/vim-9.2-released.php
+
+인터랙티브 튜토리얼 플러그인이 적용되어 향상된 학습 경험을 제공한다.
+Vim 내에서 `:Tutor`로 실행한다.
+gutter를 통한 학습 진행 상황을 표시된다.
+
 ## Neovim
 
 Neovim은 vim을 fork하고, vimscript와 더불어 lua도 지원하며, 더 확장된 기능을 제공한다.
