@@ -103,3 +103,16 @@ Code가 subagent에 작업을 위임하는 것은 다음과 같은 장점이 있
 - 사용자 레벨의 subagent로 프로젝트 간 구성 재사용
 - 도메인 특화 시스템 프롬프트 사용
 - 더 빠르고 저렴한 모델로 라우팅
+
+#### Custom subagent 시도기
+
+깃 커밋 또는 푸시 전 hook으로 코드 리뷰를 하는 subagent를 만들려고 했다.
+프롬프트가 아닌 굳이 agent를 만드려는 이유는, Claude Code 대화 중에서도 재사용하기 위함이었다.
+
+사용 방식은 agent를 생성하고, `claude -p "마지막 커밋 리뷰해줘"` 명령어로 agent가 트리거되도록 하는 것이다.
+하지만, 이 방식엔 몇 가지 문제가 있었다.
+
+- `claude -p`의 출력은 스트리밍되지 않는다. 즉, 모두 완료되어야 모든 출력이 나온다.\
+  `claude -p "코드 리뷰 요청" --output-format stream-json --verbose`는 너무 많은 정보를 출력하기도 하고, Subagent가 아닌 메인 대화의 출력이 섞인다.
+- agent의 응답 포맷을 지정했지만, Claude Code -> subagent로 전달하는 구조라서 Code가 agent의 출력을 가공해 버린다.\
+  에이전트의 description에 가공하지 말라고 명시해도 무시한다.
