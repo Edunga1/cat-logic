@@ -53,6 +53,11 @@ https://www.vim.org/vim-9.2-released.php
 Vim 내에서 `:Tutor`로 실행한다.
 gutter를 통한 학습 진행 상황을 표시된다.
 
+Vimscript의 개선이 눈에 띈다.
+열거체와 튜플 타입 등이 추가되었고, 내장 함수의 호출 방식을 객체 메서드로 호출할 수 있게 개선되었다.
+
+`CTRL-X CTRL-R`로 레지스터에서 자동완성할 수 있다.
+
 ## Neovim
 
 Neovim은 vim을 fork하고, vimscript와 더불어 lua도 지원하며, 더 확장된 기능을 제공한다.
