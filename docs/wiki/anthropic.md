@@ -36,6 +36,10 @@ NPM `npm i @anthropic-ai/claude-code`로도 설치할 수 있지만, native inst
 2.5배 더 빨라진다고 한다. 하지만 가격은 출력 토큰 기준으로 일반 모드가 $25/백만 토큰인 반면에 fast 모드는 $150/백만 토큰으로 [6배 비싸다](https://platform.claude.com/docs/en/about-claude/pricing#fast-mode-pricing). \
 Team Plan은 조직에서 활성화해야 한다.
 
+Anthropic은 [MCP](/docs/wiki/model-context-protocol.md), [Skills](/docs/wiki/claude-skills.md), [Subagent](#subagent)을 고안하였는데,
+이 셋은 모두 사용자의 의도에 반응하여 작업을 처리하는 개념으로 모두 같은 범주에 속한다고 볼 수 있다.
+아무래도 모델 컨텍스트가 제한되어 있기 때문에 이러한 개념들로 성능이 떨어지는 문제를 보완하려는 것으로 보인다.
+
 ### 기능
 
 - 대화가 길어지면 알아서 압축(compact)하고 새로운 세션에서 이어간다.
