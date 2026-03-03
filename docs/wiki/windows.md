@@ -77,3 +77,16 @@ powershell -Command "Start-Process 'C:\Program Files\poe-overlay\poe-overlay.exe
 | macOS (dmg)             | ❌                | n/a          |
 
 자동 업데이트의 경우 프로그램에 대한 내용이라 실행 방식과는 관련이 없을 듯.
+
+## PowerShell
+
+### winget
+
+윈도우 패키지 매니저.
+PowerShell, cmd 모두에서 사용할 수 있다.
+
+- 패키지 검색: `winget search <package name>`
+- 패키지 설치: `winget install <package name>`
+    - 여러 패키지가 검색되는 경우 출력되는 id를 이용, `winget install --id <package id>`로 패키지 설치
+- 설치 목록: `winget list`
+    - Grep: `winget list | Select-String <keyword>`
