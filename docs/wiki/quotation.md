@@ -7,8 +7,15 @@ created: 2023-05-08
 
 ## Make it measurable
 
-https://ita9naiwa.github.io/recsys/2018/07/22/Recys-Diversity-and-Metrics.html
-
 > Make it measurable
 >
 > 당연하지만, 측정할 수 없는 것은 관리할 수 없고, 관리할 수 없는 것은 개선할 수도 없다. 추천 시스템의 다양성을 측정할 수 있는 간단한 방법에 대해서 알아보자.
+
+https://ita9naiwa.github.io/recsys/2018/07/22/Recys-Diversity-and-Metrics.html
+
+## 나중에 추가하려면 이만큼 걸리고, 지금 추가하면 이만큼의 비용 발생, 기다리는 게 낫다
+
+> - 디자인 리뷰에서 "미래 대비해야 하지 않나?"라는 질문에 단순히 굴복하지 말고, "나중에 추가하려면 이만큼 걸리고, 지금 추가하면 이만큼의 비용 발생, 기다리는 게 낫다"고 제시
+>     - 반박이 아니라 검토를 마쳤음을 보여주는 것
+
+https://news.hada.io/topic?id=27204
