@@ -5,9 +5,15 @@ HTML 파일로 출력하여, 정돈된 문서로 만들도록 의도했다.
 
 ![youtube summary preview](../../res/youtube-summary-prompt-preview.png)
 
-ai studio에서 Pro 모델 선택, `Grounding with Google search` 옵션을 끄고, 반드시 YouTube Video 첨부로 URL을 입력하고, 아래 프롬프트에서 ID를 일치시킨 후 실행해야 한다. 그렇지 않으면 엉뚱한 내용이나 타임스탬프로 생성한다.\
-gemini.google.com에서는 이 옵션이 없어서 타임스탬프 링크가 구글 검색으로 연결되는 문제가 있다.
-NotebookLM 등 그 외 AI 도구는 유튜브의 영상 자체를 분석하는 것이 아니라 스크립트를 분석하기 때문에 맥락을 잘 이해하지 못한다.
+ai studio에서
+- pro 모델 선택
+- `Grounding with Google search` 옵션을 끠
+    - gemini.google.com에서는 이 옵션이 없어서 타임스탬프 링크가 구글 검색으로 연결되는 문제가 있다.
+- YouTube Video 첨부로 URL을 입력하고, 아래 프롬프트에서 ID를 일치
+    - Video 첨부를 사용하지 않거나 ID가 일치하지 않으면 엉뚱한 내용이나 타임스탬프로 생성한다.
+
+NotebookLM 등 그 외 AI 도구는 유튜브의 프레임을  분석하는 것이 아니라, 스크립트를 분석하기 때문에 영상과 일치하지 않거나 중요한 부분이 누락되는 경우가 있다.
+프레임 자체를 분석하면 화면 내 코드를 첨부하는 등 풍부한 정보를 제공한다
 
 ````markdown
 # 개요
