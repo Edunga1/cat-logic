@@ -30,6 +30,11 @@ Godot 에디터에서 LSP 서버 실행 옵션을 킨 후 외부 에디터에서
 Godot 에디터와 외부 에디터를 동시에 켜야 하는 점은 아쉽다.
 스탠드얼론 버전이 있었던 거 같은데..
 
+에디터의 버전 매니저가 없다.
+특정 버전에서 개발을 시작했다면 계속 그 버전을 사용해야 한다.
+Godot 에디터의 버전이 업데이트 되면, 프로젝트 파일 등 에디터로 여는 순간 자동 마이그레이션이 된다.
+특히 [Godot 4.4에는 UID](https://godotengine.org/article/uid-changes-coming-to-godot-4-4/) 개념이 추가되어 파일마다 UID 파일이 생성된다.
+
 ## 튜토리얼
 
 공식 사이트에서 [간단한 2D 닷지 게임](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html)을 만드는 과정을 소개한다.
