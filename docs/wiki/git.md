@@ -1020,6 +1020,50 @@ fatal: failed to write commit object
 
 나는 회사와 개인 프로젝트를 분리하고 사용자 정보와 서명 설정을 다르게 사용하고 있다.
 
+## GIT_TRACE - 추적 로그 활성화
+
+`GIT_TRACE=1` 환경 변수를 설정하면 Git의 내부 동작을 추적하는 메시지가 출력된다.
+
+```
+17:01:08.751919 git.c:775               trace: exec: git-pp
+17:01:08.752642 run-command.c:673       trace: run_command: git-pp
+17:01:08.753360 git.c:423               trace: alias expansion: pp => pull --prune
+17:01:08.753378 git.c:833               trace: exec: git pull --prune
+17:01:08.753385 run-command.c:673       trace: run_command: git pull --prune
+17:01:08.753400 run-command.c:765       trace: start_command: /opt/homebrew/opt/git/libexec/git-core/git pull --prune
+17:01:08.759826 git.c:476               trace: built-in: git pull --prune
+17:01:08.761350 run-command.c:673       trace: run_command: git fetch --update-head-ok --prune
+17:01:08.761369 run-command.c:765       trace: start_command: /opt/homebrew/opt/git/libexec/git-core/git fetch --update-head-ok --prune
+17:01:08.767769 git.c:476               trace: built-in: git fetch --update-head-ok --prune
+17:01:08.771569 run-command.c:673       trace: run_command: unset GIT_PREFIX; GIT_PROTOCOL=version=2 ssh -o SendEnv=GIT_PROTOCOL git@github.com 'git-upload-pack '\''bottled-time/project-grass.git'\'''
+17:01:08.771608 run-command.c:765       trace: start_command: /opt/homebrew/bin/ssh -o SendEnv=GIT_PROTOCOL git@github.com 'git-upload-pack '\''bottled-time/project-grass.git'\'''
+17:01:10.921713 run-command.c:673       trace: run_command: git rev-list --objects --stdin --not --exclude-hidden=fetch --all --quiet --alternate-refs
+17:01:10.921894 run-command.c:765       trace: start_command: /opt/homebrew/opt/git/libexec/git-core/git rev-list --objects --stdin --not --exclude-hidden=fetch --all --quiet --alternate-refs
+17:01:10.933755 git.c:476               trace: built-in: git rev-list --objects --stdin --not --exclude-hidden=fetch --all --quiet --alternate-refs
+17:01:11.134499 run-command.c:1541      run_processes_parallel: preparing to run up to 1 tasks
+17:01:11.134624 run-command.c:1568      run_processes_parallel: done
+17:01:11.134678 run-command.c:673       trace: run_command: git maintenance run --auto --no-quiet --detach
+17:01:11.134783 run-command.c:765       trace: start_command: /opt/homebrew/opt/git/libexec/git-core/git maintenance run --auto --no-quiet --detach
+17:01:11.152898 git.c:476               trace: built-in: git maintenance run --auto --no-quiet --detach
+17:01:11.159029 run-command.c:673       trace: run_command: git merge --ff-only FETCH_HEAD
+17:01:11.159070 run-command.c:765       trace: start_command: /opt/homebrew/opt/git/libexec/git-core/git merge --ff-only FETCH_HEAD
+17:01:11.163985 git.c:476               trace: built-in: git merge --ff-only FETCH_HEAD
+```
+
+`man git`에 수록되어 있다.
+
+>If this variable is set to "1", "2" or "true" (comparison is case
+>insensitive), trace messages will be printed to stderr.
+>
+>Alternatively, if the variable is set to an absolute path (starting
+>with a / character), Git will interpret this as a file path and
+>will try to append the trace messages to it.
+
+`1`, `2`, `true`는 stderror로 출력하지만, 절대 경로를 설정하면 파일로 출력한다.
+
+가끔 remote git server와 통신할 때, 지연되는 문제가 있어서 병목이 어딘지 확인하기 위해서 사용하게 되었다.
+`1` 보다는 파일로 출력하면 fg에서 방해받지 않고 사용할 수 있어 유용하다.
+
 ## Troubleshooting
 
 ### cannot lock ref 에러
