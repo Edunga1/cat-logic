@@ -126,3 +126,32 @@ Code가 subagent에 작업을 위임하는 것은 다음과 같은 장점이 있
   `claude -p "코드 리뷰 요청" --output-format stream-json --verbose`는 너무 많은 정보를 출력하기도 하고, Subagent가 아닌 메인 대화의 출력이 섞인다.
 - agent의 응답 포맷을 지정했지만, Claude Code -> subagent로 전달하는 구조라서 Code가 agent의 출력을 가공해 버린다.\
   에이전트의 description에 가공하지 말라고 명시해도 무시한다.
+
+### team
+
+team은 subagent 처럼 에이전트를 관리하는 기능이다.
+
+작업이 여러군데서 동시적으로 처리할 수 있다면 이 기능이 제격이다.
+
+![Claude code team example](./res/claude-team-example.png)
+
+2026년 3월 기준 실험적 기능으로, 2.1.32 버전 이상에서 별도로 설정을 활성화해야 한다.
+
+https://code.claude.com/docs/en/agent-teams
+
+Claude Code가 직접 팀원(teammate)을 구성하여 각 팀원 수 만큼 세션을 시작한다.
+subagent는 세션 내에서 agent를 호출하지만, 팀은 세션 자체를 분리한다는 점에서 다르다.\
+Code에게 작업을 위해서 팀을 만들고, 팀원 구성 정보를 알려주면 알아서 팀 구성 정보를 `~/.claude/teams`에 저장하고, 세션을 시작한다. \
+예시 이미지는 3개의 프로젝트에 각 팀원을 배정한 모습이다.
+
+macOS의 경우 tmux를 사용중이면 현재 창을 분할하여 세션이 각각의 창에서 실행되도록 자동화되어 있다.
+
+팀원 에이전트는 메인이나 다른 팀원과 직접 커뮤니케이션할 수 있다.
+세션이 별도로 분리되어 있기 때문에, 사용자도 팀원 에이전트의 세션에서 직접 대화할 수 있고,
+메인 세션에서 하청을 줄 수도 있다.
+
+에이전트 간에 끝말잇기를 시켜보았다.
+
+![Claude code team plays a word game](./res/claude-team-word-game.png)
+
+메인 에이전트가 강제로 참여 시키고, 팀원 에이전트간 대화하는 모습. 그리고 끝내기 제안까지.
