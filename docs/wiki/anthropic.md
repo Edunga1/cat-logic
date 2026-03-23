@@ -5,13 +5,13 @@ created: 2026-02-09
 
 Claude 제품군을 개발하는 AI 회사.
 
-OpenAI가 비 개발자에게 친숙하다면 Anthropic은 개발제에게 더 친화적인 제품을 만드는 회사로 볼 수 있다.
-특히 AI 도구 생태계의 발전을 주도적으로 이끌고 있다.
-특히 2025년과 2026년에 걸쳐서 에이전틱 도구에서는 Anthropic이 가장 활발한 업데이트를 하고 있다.
+OpenAI가 비 개발자에게 친숙하다면 Anthropic은 개발자에게 더 친화적인 제품을 만든다.
 
-Anthropic은 [MCP](/docs/wiki/model-context-protocol.md), [Skills](/docs/wiki/claude-skills.md), [Subagent](#subagent)을 고안하였는데,
+2025년과 2026년에 걸쳐서 AI 도구 생태계의 발전을 주도적으로 이끌어 다양한 에이전트 기능을 제안했다.
+
+[MCP](/docs/wiki/model-context-protocol.md), [Skills](/docs/wiki/claude-skills.md), [Subagent](#subagent)을 고안하였는데,
 이 셋은 모두 사용자의 의도에 반응하여 작업을 처리하는 개념으로 모두 같은 범주에 속한다고 볼 수 있다.
-아무래도 모델 컨텍스트가 제한되어 있기 때문에 이러한 개념들로 성능이 떨어지는 문제를 보완하려는 것으로 보인다.
+아무래도 현재로서는 모델의 컨텍스트가 제한되기 때문에, 이런 기능으로 성능이 떨어지는 문제를 보완하려는 듯한 움직임이다.
 
 ## Claude Code
 
@@ -19,15 +19,14 @@ Anthropic에서 제공하는 에이전트 코딩 **명령줄 도구**.
 
 https://code.claude.com/docs/en/overview
 
-macOS는 `brew install claude-code`로 설치하자, cask로 제공되기 때문.
-NPM `npm i @anthropic-ai/claude-code`로도 설치할 수 있지만, native installer를 사용하라는 안내가 뜬다.
+macOS는 `brew install claude-code`로 설치하자, 아쉽게도 cask로 제공되어 Linuxbrew에는 없다.
+NPM `npm i @anthropic-ai/claude-code`로도 설치할 수 있지만, native installer를 사용하는 것을 권장한다.
 
-플랫폼이 터미널 기반이고, [MCP](/docs/wiki/model-context-protocol.md) 클라이언트이기 때문에 아주 광범위한 작업을 처리할 수 있다.
-IDE에서 동작하는 다른 AI 도구와는 다르게, 명령줄 도구를 이용할 수 있다는 것이 큰 장점이다. 대부분의 OS 작업을 처리할 수 있다는 의미가 된다.
+터미널 기반이라 모든 명령줄 도구를 사용할 수 있어서 아주 광범위한 작업을 처리할 수 있다.
 
 **특징**
 
-- 대화가 길어지면 알아서 압축(compact)하고 새로운 세션에서 이어간다.
+- 대화가 길어지면 알아서 압축(compact)하고 새로운 세션에서 이어간다. 작업중에 압축이 시작되면 많은 시간이 소요되어 불편하다.
 - 이미지 분석 가능하다. Web URL을 직접 전달하면 처리하지 못하지만(저장 후 분석하라고 하면 가능할지도) 로컬 파일은 분석한다.
 - [세션을 분할하여](https://code.claude.com/docs/en/how-claude-code-works#resume-or-fork-sessions), 기존 세션을 분기할 수 있다.
 
@@ -38,11 +37,10 @@ IDE에서 동작하는 다른 AI 도구와는 다르게, 명령줄 도구를 이
 - 2025년 8월, [Team 플랜](https://www.reddit.com/r/Anthropic/comments/1mvvha9/claude_code_now_on_teams_plan/)에 포함되었다.
   다만 Premium Seat를 추가 구매해야 하는데 가격이 $150이고, 최소 5개 Seat를 구매해야 한다.
 - 2026년 1월 16일, [Team 플랜에 Claude Code가 기본 포함되도록 변경](https://www.linkedin.com/posts/claude_claude-code-is-now-included-with-every-team-activity-7418022583620505600-Vjm9)되었다. Premium Seat 구매가 필요없다.
-
-2026년 2월에는 Opus 4.6 모델의 [fast mode가 추가되었다](https://code.claude.com/docs/en/fast-mode).
-`/fast` 명령어로 전환할 수 있다.
-2.5배 더 빨라진다고 한다. 하지만 가격은 출력 토큰 기준으로 일반 모드가 $25/백만 토큰인 반면에 fast 모드는 $150/백만 토큰으로 [6배 비싸다](https://platform.claude.com/docs/en/about-claude/pricing#fast-mode-pricing). \
-Team Plan은 조직에서 활성화해야 한다.
+- 2026년 2월, Opus 4.6 모델의 [fast mode가 추가되었다](https://code.claude.com/docs/en/fast-mode).
+    - 2.5배 더 빨라진다고 한다. 하지만 가격은 출력 토큰 기준으로 일반 모드가 $25/백만 토큰인 반면에 fast 모드는 $150/백만 토큰으로 [6배 비싸다](https://platform.claude.com/docs/en/about-claude/pricing#fast-mode-pricing).
+    - `/fast` 명령어로 전환할 수 있다.
+    - Team Plan은 조직에서 활성화해야 한다.
 
 #### 출시 당시 정보
 
