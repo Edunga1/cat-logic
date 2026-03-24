@@ -21,8 +21,7 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 사설 서버를 Free Shard라고 부른다.
 
-이런 사설 서버들이 사용하는 서버 프로젝트로 [RunUO](https://github.com/runuo/runuo), [ServUO](https://github.com/ServUO/ServUO)가 있다.
-
+사설 서버들이 사용하는 서버 프로젝트로 [RunUO](https://github.com/runuo/runuo), [ServUO](https://github.com/ServUO/ServUO)가 있다.
 둘 다 C#으로 개발되었다. RunUO는 2020년 이후로 업데이트가 없는 것으로 보이며, ServUO는 아직도 업데이트가 이어지고 있다.
 
 #### ServUO
@@ -44,24 +43,23 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 [BaseCreature](https://github.com/Ultima-Lokai/ServUO-Test/blob/master/Scripts/Mobiles/BaseCreature.cs#L179)는 몬스터의 기반 클래스이다.
 
-[Zombie](https://github.com/ServUO/ServUO/blob/master/Scripts/Mobiles/Normal/Zombie.cs#L7) 몬스터의 경우\
-이름은 `a zombie`이고, `Body` 그래픽 ID는 `3`이다.
-
-[룻 품질](https://github.com/ServUO/ServUO/blob/master/Scripts/Mobiles/Normal/Zombie.cs#L49)은 [Meager](https://github.com/ServUO/ServUO/blob/master/Scripts/Misc/LootPack.cs#L503), 빈약한 품질을 가진다.
+[Zombie](https://github.com/ServUO/ServUO/blob/master/Scripts/Mobiles/Normal/Zombie.cs#L7) 몬스터의 경우
+이름은 `a zombie`이고, `Body` 그래픽 ID는 `3`으로 정의되어 있다.\
+[루팅 품질](https://github.com/ServUO/ServUO/blob/master/Scripts/Mobiles/Normal/Zombie.cs#L49)은 [빈약한 품질(Meager)](https://github.com/ServUO/ServUO/blob/master/Scripts/Misc/LootPack.cs#L503)을 가진다.
 
 ---
 
 [Mobile의 `Body`](https://github.com/ServUO/ServUO/blob/master/Server/Mobile.cs#L9178)가 클라이언트에 보여줄 그래픽이 아닌가 추정한다.\
-그러니까, 클라이언트와 서버가 약속으로 정한 번호로 보여줄 그래픽을 결정하는 거 같다.
+그러니까, 클라이언트와 서버가 약속한 번호로 보여줄 그래픽을 결정하는 거 같다.
 
-[Mobile의 `Deserialize`](https://github.com/ServUO/ServUO/blob/master/Server/Mobile.cs#L5394)는 데이터소스로부터 데이터를 읽어오는 메서드 같다.
+[Mobile의 `Deserialize`](https://github.com/ServUO/ServUO/blob/master/Server/Mobile.cs#L5394)는 데이터소스로부터 데이터를 읽어오는 메서드로 추정.
 
 ### Macro
 
-게임 자체가 장황한 행동(낭만)을 요구하기 때문에 수동으로 플레이하기 버거운 편이다.
+게임이 장황한 행동(낭만)을 요구하기 때문에 수동으로 플레이하기 버거운 편이다.\
 예를 들면 옷을 만들려면 양에게서 양모를 얻고, 베틀과 물레로 실을 만들고, 실로부터 천을 만들고, 천으로 옷을 만드는 과정을 거친다.
 
-이런 일련의 작업을 자동화하기 위한 매크로 프로그램이 많다.
+일련의 작업을 자동화하기 위한 매크로 프로그램이 많다.
 
 #### EasyUO
 
@@ -111,20 +109,22 @@ UO.Msg("Hi, my name is " .. UO.CharName .. "!\n")
 print("UO.CharName = " .. UO.CharName)
 ```
 
-`UO` 객체를 통해 게임에 접근한다.
+전역 객체인 `UO`를 통해 게임에 접근한다.
 
 #### UOSteam
 
-게임 Assist 프로그램이다. 자체 매크로 기능을 제공하는데 자체 스크립트 언어를 사용한다.
+게임 Assist 프로그램이다. 자체 스크립트 언어로 매크로를 작성한다.
 
 https://www.uosteam.com/
 
-이와같은 Assist 프로그램은 많이 있는데, 이 프로그램이 가장 유명하다.
+UOStream과 같은 Assist 프로그램이 많이 있는데, 그 중 가장 유명하다.
 게임 화면에 렌더링하기 전에 패킷을 가로채어(추정) 처리하기 때문에 매우 빠른 반응속도를 보인다.
 
 예를들면 사용자에게 다이얼로그(Gump라 부른다)를 보여주고 클릭하는 것을 클라이언트에서 렌더링하기 전에 처리한다.
 그러면 게임 클라이언트는 다이얼로그를 보여줄 필요 없이, 클릭한 내용을 서버로 전송한다.
 그래서 이 프로그램으로 캐릭터를 조작하면 프로그램을 사용하지 않는 사용자보다 훨씬 유리한 상황이 된다.
+
+다음은 `0xf6c` 타입의 아이템을 사용하고, 다이얼로그 대기(`waitforgump`), 다이얼로그 클릭(`replygump`)을 하는 스크립트.
 
 ```
 usetype '0xf6c' 'any' 'ground' '2'
