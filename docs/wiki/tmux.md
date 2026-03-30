@@ -57,6 +57,13 @@ Tmux의 단축어로 인해 접근성의 이점이 있다.
 set -g prefix C-a
 ```
 
+## 단축키
+
+- prefix + q: pane 번호를 표시한다. 표시 중 숫자 키를 입력하면 해당 pane으로 이동한다.
+- prefix + l: 마지막 pane으로 이동한다.
+- prefix + s: 세션 목록을 표시한다. 표시 중 숫자 키를 입력하면 해당 세션으로 이동한다.
+- prefix + z: 현재 pane을 전체 화면으로 토글한다.
+
 ## Tmuxinator
 
 tmux 설정을 파일로 관리하는 도구.
