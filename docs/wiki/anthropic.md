@@ -131,15 +131,14 @@ Code가 subagent에 작업을 위임하는 것은 다음과 같은 장점이 있
 
 ### team
 
-team은 subagent 처럼 에이전트를 관리하는 기능이다.
+Claude team은 여러개의 하위 세션을 동시 운용하는 기능이다.
+여러개의 subagent를 하나의 팀으로 관리한다.
 
-작업이 여러군데서 동시적으로 처리할 수 있다면 이 기능이 제격이다.
+https://code.claude.com/docs/en/agent-teams
 
 ![Claude code team example](./res/claude-team-example.png)
 
 2026년 3월 기준 실험적 기능으로, 2.1.32 버전 이상에서 별도로 설정을 활성화해야 한다.
-
-https://code.claude.com/docs/en/agent-teams
 
 Claude Code가 직접 팀원(teammate)을 구성하여 각 팀원 수 만큼 세션을 시작한다.
 subagent는 세션 내에서 agent를 호출하지만, 팀은 세션 자체를 분리한다는 점에서 다르다.\
@@ -157,3 +156,12 @@ macOS의 경우 tmux를 사용중이면 현재 창을 분할하여 세션이 각
 ![Claude code team plays a word game](./res/claude-team-word-game.png)
 
 메인 에이전트가 강제로 참여 시키고, 팀원 에이전트간 대화하는 모습. 그리고 끝내기 제안까지.
+
+#### 권한
+
+- 팀원마다 권한 승인이 발생한다. 여러개의 팀원이 있으면 다수 승인 요청으로 매우 피로하므로 아래 항목을 참고하자.
+- 팀원은 메인 세션의 권한을 그대로 상속받는다.
+    - 따라서 복잡하게 생각할 필요 없이 메인의 권한만 해결하면 된다.
+- 팀원이 작업해야 하는 경로가 다르면 전역 설정의 영향을 받지 않는다(허용 목록과 별개로 승인 필요).
+    - 이를 해결하기 위해서, 하위 경로에 메인과 팀원의 작업 경로를 두는 방법이 있다.
+    - 메인 세션을 `--dangerously-skip-permissions`로 실행하면 팀원도 권한 승인이 필요 없어지지만, 위험해 보인다.
