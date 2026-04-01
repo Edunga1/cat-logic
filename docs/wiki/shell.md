@@ -788,3 +788,36 @@ $ python -m http.server 8080
 zsh 설정을 도와주는 프레임워크.
 
 다만 [Oh My Zsh는 불필요한 부하를 추가함](https://news.hada.io/topic?id=25725)라는 글이 있듯이 플러그인을 추가하면서 성능 저하가 발생할 수 있다.
+
+## Terminal
+
+### SIGWINCH
+
+터미널 크기(column, row)가 변경될 때 발생하는 시그널이다.
+
+다음은 trap으로 SIGWINCH를 감지하여 터미널 크기가 변경될 때마다 너비 만큼 dash를 그리는 예제다.
+
+```bash
+#!/bin/bash
+
+printf "\033[?1049h"  # alternate screen buffer로 전환하는 이스케이프 시퀀스
+
+draw() {
+  printf "\033[2J\033[H"  # 화면 전체를 지우고 커서를 홈 위치로 이동하는 이스케이프 시퀀스
+  cols=$(tput cols)
+  printf '%*s' "$cols" '' | tr ' ' '-'  # 터미널 너비만큼 dash 그리기
+}
+
+cleanup() {
+  printf "\033[?1049l"  # 원래 터미널로 돌아가는 이스케이프 시퀀스
+  exit
+}
+
+trap 'draw' WINCH  # 터미널 크기 변경 시 draw 함수 실행
+trap 'cleanup' INT  # Ctrl+C로 종료 시 cleanup 함수 실행
+
+draw
+while true; do sleep 0.1; done
+```
+
+printf로 표준 출력에 이스케이프 시퀀스를 보내면, 단순 출력 대신 터미널의 동작을 제어할 수 있다.
