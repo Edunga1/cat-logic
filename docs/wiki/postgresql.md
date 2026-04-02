@@ -103,10 +103,12 @@ postgres=# select * from students;
 
 ## MySQL 쿼리 차이점
 
+### group_concat -> listagg, any_value
+
 MySQL과 다르게, group by로 aggregation 시 aggregation function을 사용하지 않는 컬럼을 select에 포함할 수 없다.
 
-이를 해결하기 위해서, 모든 값을 보고싶다면 `listagg`를 사용하자. MySQL의 `group_concat`와 비슷하다.\
-아무 값이나 보고 싶다면 `any_value`를 사용하자. MySQL의 그냥 컬럼을 select하는 것과 비슷하다.
+모든 값을 보고싶다면 `listagg`를 사용하자. MySQL의 `group_concat`와 비슷하다.
+임의 값은 `any_value`를 사용하자.
 
 ```sql
 select
@@ -127,7 +129,7 @@ select TIMESTAMP '2024-02-01 11:55:30' - TIMESTAMP '2024-01-30 04:11:05' as diff
 (1 row)
 ```
 
----
+### DATE_FORMAT -> DATE_TRUNC 또는 TO_CHAR
 
 group by, where 절 등에서 `DATE_FORMAT()` 사용한다면, PostgreSQL에서는 `DATE_TRUNC`를 고려하자.
 지정한 단위로 날짜를 잘라준다. 예를 들어 `MONTH`가 기준이라면 일자 아래는 가장 작은 값으로 변경된다.
