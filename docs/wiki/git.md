@@ -693,9 +693,9 @@ Date:  Fri Mar 25 22:49:24 2022 +0900
  3 files changed, 2 insertions(+), 238 deletions(-)
 ```
 
-`git bisect run` 명령은 good, bad를 자동 판단하는 스크립트를 작성하여, 커밋 탐색을 자동화하는 명령이다.
-good, bad 설정 후 `git bisect run bash test.sh`와 같이 사용한다.
-그러면 test.sh 스크립트를 각 커밋마다 실행하여, 스크립트의 종료 코드로 good, bad를 판단한다.
+수동으로 good, bad를 입력하는 대신, 판단을 자동화 할 수 있다. `git bisect run` 명령이다.\
+최초 good, bad 설정 후 `git bisect run bash test.sh`와 같이 사용한다.
+그러면 `bash test.sh`를 각 커밋마다 실행하여, 스크립트의 종료 코드로 good, bad를 판단한다.
 
 ### git-reset
 
