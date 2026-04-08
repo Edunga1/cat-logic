@@ -131,8 +131,9 @@ Code가 subagent에 작업을 위임하는 것은 다음과 같은 장점이 있
 
 ### Agent teams
 
-Claude code에서 제공하는 병렬 에이전트 운용 기능. 하위 세션 다수를 추가로 생성하는 방식이다.
+병렬 세션 운용 기능. 메인 세션에서 하위 세션을 추가로 생성한다.
 각 세션의 에이전트를 팀원(teammate)이라고 부르고, 팀으로 묶어서 관리한다.
+subagent는 단발성으로 작업을 끝나면 종료되지만, 팀원은 지속적으로 세션이 유지되며, 상호 소통할 수 있다.
 
 https://code.claude.com/docs/en/agent-teams
 
