@@ -706,6 +706,30 @@ $ lychee ./docs/wiki
 이 경우는 `-root-dir <PATH>` 옵션을 전달하여 파일의 경로 기준을 전달하면 해결된다. \
 예시: `lychee ./docs/wiki/**/*.md -root-dir $(pwd)`
 
+### scp
+
+Remote - Local 간 파일 전송 도구.
+
+```bash
+scp [옵션] <원본 파일 / 경로> <전송 위치 파일 / 경로>
+```
+
+Local to Remote
+
+```bash
+scp /home/myhome/abc.tar oracle@203.0.113.10:/home/oracle/
+```
+
+Remote to Local
+
+```bash
+scp root@203.0.113.10:/usr/local/abc.xml /home/oracle/
+```
+
+옵션
+
+- `-r`: (recursive) 폴더 전송
+
 ## python shell tools
 
 몇몇 파이썬 모듈은 CLI로 실행할 수 있는 기능을 제공한다.
