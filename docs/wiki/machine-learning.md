@@ -653,11 +653,11 @@ ref. https://news.hada.io/topic?id=9185
 
 ### llama.cpp
 
-LLM 추론 라이브러리.
+LLM 추론 라이브러리 및 CLI 도구 모음.
 
 https://github.com/ggml-org/llama.cpp
 
-양자화를 통해 모델 크기를 줄여서 PC에서도 실행할 수 있게 해준다.
+양자화를 통해 모델 크기를 줄여서 개인용 컴퓨터에서도 모델을 실행할 수 있다.
 
 `brew install llama.cpp`로 설치. `llama-`로 시작하는 명령어가 꽤 많다.
 
