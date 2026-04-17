@@ -11,13 +11,14 @@ Marksman은 markdown 파일을 위한 [Language Server](./language-server-protoc
 
 https://github.com/artempyanykh/marksman
 
-할 수 있는 것:
+**자주 사용하는 기능 및 특징**
 
-- Heading을 symbol로 등록한다. 그래서 에디터로 문서를 이동하거나 검색할 수 있다.
-    - 이 기능은 문서를 찾을 때 매우 편리한데, 문서 내용을 검색하는 대신 제목(heading)으로 검색할 수 있어서 문서 찾기가 쉽다.
-    예를 들어 링크에서 `Go to Definition`을 하면 해당 제목으로 이동하고, 링크 생성할 때 제목(`#` 포함)을 자동 완성해준다.
-- 내부 문서 링크를 지원한다. 링크 문서로 이동하거나, 미리보기를 제공한다.
-- 위키 링크 `[[...]]`, 마크다운 링크 `[ref]: http://example.com "Title"`를 지원한다.
+단축키는 vim 바인딩 기준이다.
+
+- document/workspace symbol로 heading 검색: `<space>o`/`<space>s`
+- 내부 문서 링크 hover로 미리보기 제공: `K`
+- 내부 문서 링크로 이동: `c-]`
+- 위키 링크 `[[...]]`, 마크다운 링크 `[ref]: http://example.com "Title"`를 지원
 
 [상대 경로를 자동 완성하지 못하는 문제](https://github.com/artempyanykh/marksman/issues/182)가 있다.
 항상 프로젝트 루트 기준으로 링크 완성을 해준다.
