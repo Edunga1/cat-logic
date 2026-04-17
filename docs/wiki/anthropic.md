@@ -116,18 +116,15 @@ Code가 subagent에 작업을 위임하는 것은 다음과 같은 장점이 있
 - 도메인 특화 시스템 프롬프트 사용
 - 더 빠르고 저렴한 모델로 라우팅
 
-#### Custom subagent 시도기
+#### Claude를 위한 지침을 만들 수 없는 문제
 
-깃 커밋 또는 푸시 전 hook으로 코드 리뷰를 하는 subagent를 만들려고 했다.
-프롬프트가 아닌 굳이 agent를 만드려는 이유는, Claude Code 대화 중에서도 재사용하기 위함이었다.
+frontmatter `description`은 Claude가 subagent에 위임할 때를 결정하는 데 사용된다. Claude에 대한 지침서인 것.
 
-사용 방식은 agent를 생성하고, `claude -p "마지막 커밋 리뷰해줘"` 명령어로 agent가 트리거되도록 하는 것이다.
-하지만, 이 방식엔 몇 가지 문제가 있었다.
+아쉽게도 `description`에 "subagent의 결과를 가공하지 말고 전달해줘" 같은 지시를 내릴 수 없다.
+subagent의 문서에 특정 형태의 출력을 요구하면 subagent는 그 형태로 출력하지만, Claude는 subagent의 출력을 그대로 전달하지 않고, 자신의 방식으로 가공해 버린다.
 
-- `claude -p`의 출력은 스트리밍되지 않는다. 즉, 모두 완료되어야 모든 출력이 나온다.\
-  `claude -p "코드 리뷰 요청" --output-format stream-json --verbose`는 너무 많은 정보를 출력하기도 하고, Subagent가 아닌 메인 대화의 출력이 섞인다.
-- agent의 응답 포맷을 지정했지만, Claude Code -> subagent로 전달하는 구조라서 Code가 agent의 출력을 가공해 버린다.\
-  에이전트의 description에 가공하지 말라고 명시해도 무시한다.
+아마도, Claude에게 매번 "subagent의 결과를 가공하지 말고 전달해줘"라고 지시해야 하는 듯.
+이런 사용 방법이 필요한 경우 Subagent 문서 하나만으로 해결되지 않는 점은 아쉽다.
 
 ### Agent teams
 
