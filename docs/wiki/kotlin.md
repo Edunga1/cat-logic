@@ -303,6 +303,19 @@ https://github.com/kotest/kotest/issues/2629 \
 
 `SpringTestExtension`을 잘 구현하면 가능할지도.
 
+#### 커스텀 스타일 지원 예정
+
+트랜잭션 문제를 해결하기 위해, 특정 단어로 시작하는 context만 트랜잭션을 시작하도록 `txcontext`라는 커스텀 스타일을 만들어 사용하고 있다.
+
+이 방법의 단점은, IntelliJ 플러그인에서 스타일을 인식하지 못해서 테스트 네비게이션이 제대로 동작하지 않는다.
+특정 context나 it에 대해서 실행할 수 없는 것이다.
+
+2026년 4월 21일 기준, 곧 사용할 수 있을 거 같다.
+
+https://github.com/kotest/kotest/issues/5353
+
+6.2 버전에서 제공할 예정이라고. 현재는 6.1.11 버전이 최신이다.
+
 ### MockK
 
 Kotlin Mocking 라이브러리.
