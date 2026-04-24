@@ -85,6 +85,10 @@ aws iam list-access-keys
 
 로컬 환경에서 AWS 클라우드 스택을 구축하는 도구이다.
 
+**주의: 2026년 3월, 오픈 소스 버전의 개발이 중단되었다.**\
+Docker 이미지 `localstack/localstack:4.4.0`가 마지막 커뮤니티 버전이다.\
+이후 버전부터는 클라우드 인증이 강제된다.
+
 https://github.com/localstack/localstack
 
 클라우드 기능을 사용하면 로컬 개발 환경을 구축하기 쉽지 않다.
