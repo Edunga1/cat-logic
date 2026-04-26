@@ -106,7 +106,7 @@ version: "3.8"
 
 services:
   localstack:
-    image: localstack/localstack
+    image: localstack/localstack:4.4.0
     ports:
       - "127.0.0.1:4566:4566"
       - "127.0.0.1:4510-4559:4510-4559"
