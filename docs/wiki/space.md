@@ -204,6 +204,49 @@ https://x.com/KingDomRedux/status/1880027949862384107
 - 2단부 동체에 스트레스를 줘서 얼만큼 버티는지 시험했다. 날개 일부가 떨어져 나갔지만 버텨냈다.
 - 2단부의 바다 착수를 성공했다.
 
+## SpaceX Falcon Heavy
+
+인공위성을 발사할 수 있는 스페이스X의 우주 로켓.
+
+https://www.spacex.com/vehicles/falcon-heavy
+
+구성은 다음과 같다.
+
+- 1단(first stage): 3개의 Falcon 9 로켓을 묶은 형태로, 2개는 사이드 부스터와 1개의 코어 부스터로 구성한다.
+  각 부스터는 궤도에 발사체를 올려놓으면 다시 회수한다!
+  각 로켓은 9개의 엔진이 달려있으므로, 총 27개의 엔진이 있다.
+- 2단(second stage): 1단이 분리된 후에 탑재체(payload)를 궤도에 올려놓는 역할을 한다.
+- 탑재체(payload)
+
+### Falcon Heavy VIASAT-3 F3 발사
+
+2026년 4월 29일 한국 시간 22시 경에 VIASAT-3 F3 위성을 발사했다.
+
+이미지는 안될과학 생중계 영상에서 캡처했다.
+
+![VISAT-3 F3 launching](./res/falcon-heavy-visat-3-f3-launching.png)
+
+오른쪽 하단에 3개의 부스터를 나타내는 텔레메트리 그래픽이 보인다.
+총 27개의 엔진을 나타내는 동그라미에 불이 들어온 것을 볼 수 있다.
+
+![VISAT-3 F3 seprating](./res/falcon-heavy-visat-3-f3-separating.png)
+
+사이드 부스터 분리를 위해 엔진을 끄는 모습.
+코어 부스터는 당분간 유지하는 모양이다.
+
+![VISAT-3 F3 separated](./res/falcon-heavy-visat-3-f3-separated.png)
+
+1단이 분리되어, 2단 엔진의 텔레메트리로 교체된 모습.
+이제 궤도로 진입한다.
+
+![VISAT-3 F3 side-booster landing](./res/falcon-heavy-visat-3-f3-booster-landing.png)
+
+사이드 부스터를 회수하기 위해 착륙하는 모습!
+왼쪽 사이드 부스터는 성공적으로 착륙, 오른쪽 사이드 부스터는 가운데 엔진만 점화된체 착륙중이다.
+
+이번 발사는 성공적으로 궤도에 탑재체를 올려놓았다.
+4시간 후에 인공위성 전개가 진행된다고 한다.
+
 ## Blue Origin
 
 아마존의 [블루 오리진](https://www.blueorigin.com/).
