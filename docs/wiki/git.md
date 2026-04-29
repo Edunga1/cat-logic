@@ -1054,7 +1054,7 @@ fatal: failed to write commit object
 17:01:11.163985 git.c:476               trace: built-in: git merge --ff-only FETCH_HEAD
 ```
 
-`man git`에 수록되어 있다.
+git manual `man git`에 GIT_TRACE 내용이 수록되어 있다.
 
 >If this variable is set to "1", "2" or "true" (comparison is case
 >insensitive), trace messages will be printed to stderr.
@@ -1065,8 +1065,11 @@ fatal: failed to write commit object
 
 `1`, `2`, `true`는 stderror로 출력하지만, 절대 경로를 설정하면 파일로 출력한다.
 
-가끔 remote git server와 통신할 때, 지연되는 문제가 있어서 병목이 어딘지 확인하기 위해서 사용하게 되었다.
-`1` 보다는 파일로 출력하면 fg에서 방해받지 않고 사용할 수 있어 유용하다.
+```bash
+export GIT_TRACE=/tmp/git_trace.log
+```
+
+가끔 remote git server와 통신할 때, 지연되는 문제가 있어 병목을 파악하는 용도로 처음 사용했다.
 
 ## Troubleshooting
 
