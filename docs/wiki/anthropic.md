@@ -51,10 +51,11 @@ NPM `npm i @anthropic-ai/claude-code`로도 설치할 수 있지만, native inst
 쿼리 2~3개에 $5 사용되었다고. 덧글에도 비슷한 경험을 한 사람들이 있다.
 비용이 적은 사람도 있는 걸 보면, 코드베이스의 크기에 따라 달라지는 것으로 추정.
 
-기존 프로젝트라면 `/init` 명령어로 분석하는 것을 공식적으로 추천한다.
-`CLAUDE.md`를 생성하여 프로젝트 개요와 주요 파일을 기록한다.
-`CLAUDE.md`는 copilot 또한 참조할 수 있다.
-요즘은 `AGENTS.md`로 에이전트 벤더에 종속되지 않는 것이 추세인 듯.
+기존 프로젝트라면 `/init` 명령어로 프로젝트 분석하고 `CLAUDE.md` 자동 생성을 공식적으로 추천하지만, 개인적으로 사용하지 않는 편.
+문서 내용이 너무 장황하여 사용자가 사후 관리가 어렵다.
+
+`CLAUDE.md`는 copilot 등 다른 에이전트도 참조할 수 있다.
+`AGENTS.md`로 에이전트 벤더에 종속되지 않는 형태를 제안하기도 했다.
 [codex는 AGENTS.md 파일을 참조한다](https://developers.openai.com/codex/guides/agents-md/).
 
 ### Insights
