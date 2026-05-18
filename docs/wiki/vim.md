@@ -902,6 +902,14 @@ endif
 {'sonokai': {'uri': 'https://git::@github.com/sainnhe/sonokai.git', 'dir': '/home/dupark/.local/share/nvim/plugged/sonokai/', 'frozen': 0, 'branch': ''}}
 ```
 
+### vim 시작 시 명령어 실행하기
+
+`+` 또는 `-c` 옵션으로 vim 시작 시 명령어를 실행할 수 있다.
+
+```bash
+vim +'call StartProfiling()' Posts.xml
+```
+
 ## 문제 해결
 
 ### Typescript filetype 문제
