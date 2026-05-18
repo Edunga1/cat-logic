@@ -1081,6 +1081,8 @@ set undofile
 autocmd BufReadPre * if getfsize(expand('<afile>')) > 10*1024*1024 | setlocal noundofile | endif
 ```
 
+[vim #18062 이슈](https://github.com/vim/vim/issues/18062)도 같은 증상을 보고한다.
+
 ## 관련 기사
 
 2023년 8월. ["Vim은 제 인생에서 매우 중요한 부분입니다."](https://yozm.wishket.com/magazine/detail/2183/) Vim 창시자 인터뷰.
