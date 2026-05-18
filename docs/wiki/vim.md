@@ -1068,6 +1068,19 @@ vim.lsp.config('ts_ls', {
 })
 ```
 
+### undofile 큰 파일에서 느려지는 문제
+
+`set undofile`은 undo 내역을 파일로 저장하는 기능이다.
+영구 저장하므로 새 세션에서도 undo를 사용할 수 있다.
+
+Mac M2 Pro에서 1.4GB 크기 약 100만 줄의 파일을 열 때 5초 가량 소요되는 문제가 있었다.
+그래서 `autocmd`로 파일 크기가 크면 `undofile`을 비활성화하도록 설정하여 해결했다.
+
+```bash
+set undofile
+autocmd BufReadPre * if getfsize(expand('<afile>')) > 10*1024*1024 | setlocal noundofile | endif
+```
+
 ## 관련 기사
 
 2023년 8월. ["Vim은 제 인생에서 매우 중요한 부분입니다."](https://yozm.wishket.com/magazine/detail/2183/) Vim 창시자 인터뷰.
