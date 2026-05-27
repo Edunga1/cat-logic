@@ -1,3 +1,6 @@
+---
+created: 2019-03-26
+---
 # Vue JS
 
 ## `<transition>`

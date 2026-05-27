@@ -1,3 +1,6 @@
+---
+created: 2018-07-28
+---
 # Google Analytics
 
 ## Google Analytics 수동 테스트하는데 활성화 사용자가 0으로 뜨는 현상. 트래픽 쫓아가기.

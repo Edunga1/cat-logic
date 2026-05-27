@@ -1,3 +1,6 @@
+---
+created: 2018-04-19
+---
 # Programming Paradigm
 
 ## Object Oriented Programming

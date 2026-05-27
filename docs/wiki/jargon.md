@@ -1,3 +1,6 @@
+---
+created: 2018-01-08
+---
 # 개발 용어
 
 ## Business Rule, Business Logic, Logic

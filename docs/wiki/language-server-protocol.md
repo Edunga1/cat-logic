@@ -1,3 +1,6 @@
+---
+created: 2022-11-28
+---
 # Language Server Protocol
 
 Microsoft에서 만든 IDE나 에디터와 언어 서버가 통신하기 위한 프로토콜이다.

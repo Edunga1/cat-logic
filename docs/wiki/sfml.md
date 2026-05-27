@@ -1,3 +1,6 @@
+---
+created: 2018-10-07
+---
 # SFML
 
 Simple and Fast Multimedia Library. 줄여서 SFML. C++ 멀티미디어 라이브러리다.

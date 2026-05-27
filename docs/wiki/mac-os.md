@@ -1,3 +1,6 @@
+---
+created: 2019-04-08
+---
 # Mac OS
 
 McIntosh 운영 체제. 보통 *macOS*로 줄여서 부른다.
