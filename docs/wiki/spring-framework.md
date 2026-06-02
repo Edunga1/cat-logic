@@ -646,3 +646,73 @@ https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initial
 2. host name resolver
 3. 내장된 transport 라이브러리들
 4. 보안과 관련된 라이브러리들
+
+### IntelliJ 서버 실행 시 콘솔 출력이 갑자기 중지되는 문제
+
+정확한 문제는 서버 시작 시 콘솔 로그가 잘 출력되다가, 어느 순간부터 로그 레벨 재조정이 발생하여 콘솔 출력이 필터링되는 문제.
+DEBUG 레벨로 설정했는데, logback 재설정으로 인해 WARN 레벨 이상으로 변경되어 대부분 로그를 확인할 수 없다.
+
+아직 해결하지 못했다.
+
+환경
+- macOS
+- IntelliJ 로컬 실행
+- logback.xml `<configuration scan="true">`
+
+문제 원인
+1. 서버 뜬 상태에서 지속적인 재빌드 발생하여 logback.xml의 mtime이 변경(`fswatch`로 확인)
+2. `scan="true"`로 인해 logback이 설정 파일이 변경된것으로 인식하여 설정을 다시 읽음(logback 로그 확인)
+3. logback reconfigure 과정에서 spring의 설정을 읽지 못해서 logback.xml의 나머지가 무시됨
+4. logback.xml의 콘솔 로그 등 설정이 무시되어 더 이상 콘솔 로그가 출력되지 않음
+
+**설정 파일 변경 감시**
+
+재빌드되는 것을 확인하기 위해 `fswatch`로 빌드 경로의 설정 파일 변경을 감시했다.
+
+fswatch는 `brew install fswatch`로 설치했다.
+
+`fswatch -t build/resources/main/logback-spring.xml`로 파일 변경을 감시한다.
+
+```
+$ fswatch -t build/resources/main/logback-spring.xml
+
+Tue Jun  2 18:18:23 2026 /Users/johndoe/workspace/my-project/build/resources/main/logback-spring.xml
+```
+
+**logback reconfigure 로그 확인**
+
+logback 로그는 `<configuration debug="true">`로 설정하면 볼 수 있다.
+
+설정 파일 변경으로 인해 logback이 재설정되는 것이 보인다:
+
+```
+18:05:51,623 |-INFO in ReconfigureOnChangeTask(born:1780391031617) - Detected change in configuration files.
+18:05:51,624 |-INFO in ReconfigureOnChangeTask(born:1780391031617) - Will reset and reconfigure context named [default]
+18:05:51,623 |-INFO in ReconfigureOnChangeTask(born:1780391031617) - Detected change in configuration files.
+18:05:51,624 |-INFO in ReconfigureOnChangeTask(born:1780391031617) - Will reset and reconfigure context named [default]
+```
+
+Spring 확장 설정을 읽지 못해서 무시된다:
+
+```
+18:05:51,637 |-WARN in ch.qos.logback.core.model.processor.ImplicitModelHandler - Ignoring unknown property [springProperty] in [ch.qos.logback.classic.LoggerContext]
+```
+
+재설정 종료와 함께 이제 WARN 미만 로그는 출력되지 않았다:
+
+```
+18:05:51,651 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+18:05:51,651 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@562c1bec - Propagating INFO level on Logger[ROOT] onto the JUL framework
+18:05:51,651 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[ROOT]
+18:05:51,651 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[ROOT]
+18:05:51,652 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [DATADOG-FILE] not referenced. Skipping further processing.
+18:05:51,652 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@3b6c8544 - End of configuration.
+18:05:51,652 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@1347e38c - Registering current configuration as safe fallback point
+```
+
+`scan="true"`를 제거함으로써 해결할 순 있겠지만, 원하는 방법은 아니다.
+재빌드하는 주체는 알지 못했으나, IntelliJ에서 코드 검색이나 파일 네비게이션 등으로 인해 조용하게 빌드하는 것으로 추정.
+logback 보단 개발 환경의 재빌드 트리거에 초점을 맞추는 중.
+
+재빌드되는 문제는 Spring DevTools의 hot swap 또한 트리거하여 서버가 재시작되는 문제도 야기했다.
+그래서 일부러 hot swap이 일어나지 않도록 프로퍼티 조정했다.
