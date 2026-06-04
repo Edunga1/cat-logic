@@ -649,20 +649,13 @@ https://projectreactor.io/docs/netty/release/reference/index.html#_eager_initial
 
 ### IntelliJ 서버 실행 시 콘솔 출력이 갑자기 중지되는 문제
 
-정확히는 서버 시작 시 콘솔 로그가 잘 출력되다가, 어느 순간부터 로그 레벨 재조정이 발생하여 콘솔 출력이 필터링되는 문제.
-DEBUG 레벨로 설정했는데, logback 재설정으로 인해 WARN 레벨 이상으로 변경되어 대부분 로그를 확인할 수 없게된다.
-아직 해결하지 못했다.
-
-환경
-- macOS
-- IntelliJ 로컬 실행
-- logback.xml `<configuration scan="true">`
+정확히는 특정 기점에서 로그 레벨이 재조정되는 문제.
+분명 DEBUG로 시작했지만, WARN으로 재조정되어 디버깅하기 어려워지는 문제였다.
 
 **문제 발생 과정**
-1. 서버 뜬 상태에서 지속적인 재빌드 발생하여 logback.xml의 mtime이 변경(`fswatch`로 확인)
+1. 서버 뜬 상태에서 지속적인 재빌드 발생하여 logback.xml 등 build/resources 내 파일의 mtime이 변경(`fswatch`로 확인)
 2. `scan="true"`로 인해 logback이 설정 파일이 변경된것으로 인식하여 설정을 다시 읽음(logback 로그 확인)
-3. logback reconfigure 과정에서 spring의 설정을 읽지 못해서 logback.xml의 나머지가 무시됨
-4. logback.xml의 콘솔 로그 등 설정이 무시되어 더 이상 콘솔 로그가 출력되지 않음
+3. logback reconfigure 과정에서 spring 확장 설정을 읽지 못하고 로그 레벨이 다른 설정으로 재조정됨(logback 로그 확인)
 
 **설정 파일 변경 확인하기**
 
@@ -674,7 +667,7 @@ $ fswatch -t build/resources/main/logback-spring.xml
 Tue Jun  2 18:18:23 2026 /Users/johndoe/workspace/my-project/build/resources/main/logback-spring.xml
 ```
 
-IntelliJ 사용 중 지속적으로 logback 설정 파일이 변경되었다.
+IntelliJ에서 focus out 되면 리소스가 업데이트 된다.
 
 **logback reconfigure 확인하기**
 
@@ -708,9 +701,11 @@ Spring 확장 설정을 읽지 못해서 무시된다는 로그도 확인했다:
 18:05:51,652 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@1347e38c - Registering current configuration as safe fallback point
 ```
 
-`scan="true"`를 제거함으로써 해결할 순 있겠지만, 원하는 방법은 아니다.
-재빌드하는 주체는 알지 못했으나, IntelliJ에서 코드 검색이나 파일 네비게이션 등으로 인해 조용하게 빌드하는 것으로 추정.
-logback 보단 개발 환경의 재빌드 트리거에 초점을 맞추는 중.
-
 재빌드되는 문제는 Spring DevTools의 hot swap 또한 트리거하여 서버가 재시작되는 문제도 야기했다.
 그래서 일부러 hot swap이 일어나지 않도록 프로퍼티 조정했다.
+
+원인은 IntelliJ Run Configuration의 `On frame deactivation`에 `Update resources`가 설정되어 있어서였다.
+IntelliJ에서 다른 앱으로 포커스 변경하는 순간 리소스 변경이 없음에도 업데이트가 발생한 것.
+`Do nothing`으로 변경하여 문제를 해결했다.
+
+related: https://intellij-support.jetbrains.com/hc/en-us/community/posts/360009588299
