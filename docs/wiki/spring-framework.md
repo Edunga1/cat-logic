@@ -708,4 +708,5 @@ Spring 확장 설정을 읽지 못해서 무시된다는 로그도 확인했다:
 IntelliJ에서 다른 앱으로 포커스 변경하는 순간 리소스 변경이 없음에도 업데이트가 발생한 것.
 `Do nothing`으로 변경하여 문제를 해결했다.
 
-related: https://intellij-support.jetbrains.com/hc/en-us/community/posts/360009588299
+[[Solved] IntelliJ keeps build files when focus out](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360009588299).\
+CMD + Tab으로 포커스 아웃 될 때마다 빌드된다는 글. 이 글로 문제를 해결했다.
