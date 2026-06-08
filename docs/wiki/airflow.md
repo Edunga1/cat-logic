@@ -15,6 +15,11 @@ created: 2023-02-08
 
 ### 데이터 주도
 
+**data interval start/end의 범위는 3.X 버전에서 Timetable 기본값 변경으로 더 이상 schedule 주기에 따라 결정되지 않는다.**\
+`CronDataIntervalTimetable`에서 `CronTriggerTimetable`로 변경되면서, start/end가 같은 시각인 스케쥴링된 시각이 된다.
+
+---
+
 Airflow 작업은 cron 표현식을 통해 주기를 결정한다.\
 cron은 해당 시각에 작업이 실행된다는 의미지만, Airflow는 스케줄 구간을 나눈다는 의미로 사용한다.\
 현재 시간이 구간을 지나면, 그 구간에 대한 작업이 실행된다.
