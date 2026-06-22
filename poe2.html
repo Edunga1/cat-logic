@@ -1,0 +1,124 @@
+<style>
+    /* 전체 페이지 레이아웃 */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        color: #e0e0e0;
+        background-color: #2c3e50;
+        margin: 0;
+        padding: 20px;
+    }
+    /* 콘텐츠를 감싸는 중앙 컨테이너 */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #34495e;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    /* 제목 스타일 */
+    h1, h2, h3 {
+        color: #1abc9c;
+        border-bottom: 2px solid #16a085;
+        padding-bottom: 10px;
+    }
+    h1 {
+        text-align: center;
+    }
+    /* 링크 스타일 */
+    a {
+        color: #3498db;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    /* 단락 스타일 */
+    p {
+        margin-bottom: 1.2em;
+    }
+    /* 코드 블록 스타일 */
+    code, pre {
+        background-color: #23313f;
+        border-radius: 4px;
+        font-family: "Fira Code", "Courier New", Courier, monospace;
+        padding: 2px 5px;
+    }
+    pre {
+        padding: 15px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    /* 키워드 하이라이트 스타일 */
+    .highlight-build {
+        background: rgba(52, 152, 219, 0.4);
+        border-bottom: 2px solid #3498db;
+        padding: 0 2px;
+        border-radius: 2px;
+    }
+    .highlight-item {
+        background: rgba(241, 196, 15, 0.4);
+        border-bottom: 2px solid #f1c40f;
+        padding: 0 2px;
+        border-radius: 2px;
+    }
+    .highlight-stat {
+        background: rgba(46, 204, 113, 0.4);
+        border-bottom: 2px solid #2ecc71;
+        padding: 0 2px;
+        border-radius: 2px;
+    }
+    .highlight-skill {
+        background: rgba(231, 76, 60, 0.4);
+        border-bottom: 2px solid #e74c3c;
+        padding: 0 2px;
+        border-radius: 2px;
+    }
+</style>
+
+<div class="container">
+    <h1>패스 오브 엑자일 2: 브루투스의 리드 스프링클러 스피릿 워커 빌드 가이드</h1>
+
+    <h2><a href="https://youtu.be/f4s1h2YETNY?t=0">1. 빌드 개요 및 특징</a></h2>
+    <p>안녕하세요, Philarus입니다. 오늘은 <span class="highlight-item">브루투스의 리드 스프링클러</span>를 활용한 <span class="highlight-build">스피릿 워커(Spirit Walker)</span> 빌드를 소개해 드리려고 합니다. 이 빌드는 <span class="highlight-build">젬링 군단병(Gemling Legionnaire)</span>으로도 플레이가 가능하지만, 스피릿 워커가 더 빠르고 강력한 고점이 가능합니다.</p>
+    <p>메이스 빌드임에도 불구하고 화면 전체를 덮는 <span class="highlight-stat">넓은 범위</span>와 준수한 <span class="highlight-stat">클리어 속도</span>를 자랑합니다. 생존력 또한 약 4,500에서 5,500의 생명력을 확보하여 상당히 안정적입니다.</p>
+
+    <h2><a href="https://youtu.be/f4s1h2YETNY?t=39">2. 보싱 및 대미지 성능</a></h2>
+    <p><span class="highlight-skill">볼타 방벽(Voltaic Barrier)</span>과 <span class="highlight-skill">용암 폭발(Molten Blast)</span>의 시너지를 통해 <span class="highlight-stat">단일 타겟 딜</span>이 매우 강력합니다. 영상에서 보시는 것처럼 아비터와 같은 피나클 보스들도 단 몇 초 만에 처치할 수 있습니다.</p>
+    <p>다만, <span class="highlight-stat">힘 스태킹</span> 빌드의 특성상 초기 자본이 어느 정도 필요합니다. 모든 저항을 챙기면서 높은 힘 수치를 확보해야 하기 때문입니다. 스피릿 워커의 경우 필수 전용 보조 젬 때문에 최소 50~60 디바인의 예산을 권장합니다.</p>
+
+    <h2><a href="https://youtu.be/f4s1h2YETNY?t=227">3. 핵심 매커니즘: 번개 피해 전환</a></h2>
+    <p>브루투스의 리드 스프링클러는 기본적으로 화염 피해를 주지만, 이 빌드는 <span class="highlight-item">발라코의 악덕(Valako's Vice)</span> 장갑을 사용하여 모든 화염 피해를 <span class="highlight-skill">번개 피해</span>로 전환합니다. 그 이유는 다음과 같습니다.</p>
+    <pre>
+1. 천둥의 전령(Herald of Thunder)이 재의 전령보다 클리어 시너지가 훨씬 좋습니다.
+2. 천둥/얼음의 전령은 "타격" 판정이라 무기의 용암 세례를 발동시킬 수 있습니다.
+3. 이를 통해 용암 세례가 전령을 터뜨리고, 전령이 다시 용암 세례를 발동시키는 무한 루프가 가능해집니다.</pre>
+
+    <h2><a href="https://youtu.be/f4s1h2YETNY?t=407">4. 사슴(Stags)과 감전의 시너지</a></h2>
+    <p>소환된 <span class="highlight-skill">사슴</span>들은 적에게 강력한 <span class="highlight-skill">감전(Shock)</span>을 부여합니다. 사슴의 도약 타격 역시 무기의 <span class="highlight-skill">용암 세례</span>를 발동시키기 때문에, 맵핑 중 일일이 스킬을 사용하지 않아도 주변 적들이 녹아내리는 쾌적한 플레이가 가능합니다.</p>
+    <p>또한 <span class="highlight-skill">신성모독(Blasphemy) - 척력(Repulsion)</span> 조합을 사용하여 적을 밀쳐내고 대미지를 주며 생존력을 높이는 동시에 추가적인 용암 세례 발동을 유도합니다.</p>
+
+    <h2><a href="https://youtu.be/f4s1h2YETNY?t=545">5. "사기적인" 단일 딜: 볼타 방벽</a></h2>
+    <p>이 빌드의 핵심 중 하나는 <span class="highlight-skill">볼타 방벽(Voltaic Barrier)</span>입니다. 이 스킬은 설치된 문을 통과하는 투사체를 강화하는데, 브루투스 빌드에서는 투사체 속도가 빨라지고 번개 대미지가 추가되어 어마어마한 딜 상승을 가져옵니다.</p>
+    <p><span class="highlight-skill">용암 세례</span>의 투사체들이 이 방벽을 통과하면서 강화되기 때문에 보스전에서 방벽만 깔아두면 보스가 순식간에 녹아내리는 것을 볼 수 있습니다.</p>
+
+    <h2><a href="https://youtu.be/f4s1h2YETNY?t=895">6. 유틸리티: 도약(Pounce)과 징표</a></h2>
+    <p>이동기로는 <span class="highlight-skill">도약(Pounce)</span>을 사용합니다. 늑대 형태로 변신하여 이동 속도가 상승하며, <span class="highlight-skill">성스러운 하강(Holy Descent)</span> 보조를 연결하여 착지 지점에 <span class="highlight-skill">신성한 지대</span>를 생성해 강력한 생명력 재생 효과를 얻습니다.</p>
+    <p>보스전에서는 <span class="highlight-skill">포식자의 징표(Predator's Mark)</span>가 매우 중요합니다. 주변에 소환수가 많아 항상 최대 효과(받는 피해 최대 60% 증가)를 받을 수 있어 단일 타겟 딜을 극대화합니다.</p>
+
+    <h2><a href="https://youtu.be/f4s1h2YETNY?t=1098">7. 영리한 분노(Rage) 및 스피릿 관리</a></h2>
+    <p><span class="highlight-item">탈리스만</span> 스왑을 활용하여 <span class="highlight-skill">사나운 포효(Ferocious Roar)</span>로 분노를 즉시 최대치로 채울 수 있습니다. 이를 통해 <span class="highlight-skill">영원한 분노</span> 스피릿 젬을 사용하지 않고도 무한 분노 유지가 가능해져, 남는 스피릿을 다른 유틸리티 젬에 투자할 수 있습니다.</p>
+    <p>또한 무기에 <span class="highlight-stat">타격 시 분노 획득</span> 타락 옵션을 챙기면 맵핑 중 분노가 절대 떨어지지 않습니다.</p>
+
+    <h2><a href="https://youtu.be/f4s1h2YETNY?t=1340">8. 장비 및 패시브 트리 팁</a></h2>
+    <ul>
+        <li><span class="highlight-item">검은 태양 문양(Black Sun Crest)</span>: 높은 힘 스탯을 확보하기 위해 필수적입니다.</li>
+        <li><span class="highlight-item">워리어 인빅터스(Warrior's Invictus)</span>: 생명력 재생을 위해 타이탄 쉘보다 권장합니다.</li>
+        <li><span class="highlight-stat">힘(Strength)</span>: 가능한 모든 부위에서 힘과 모든 능력치를 챙기세요.</li>
+        <li><span class="highlight-skill">용암 세례 소켓</span>: 거래소에서 무기를 검색할 때 반드시 용암 세례의 소켓 개수를 확인하세요. (5소켓 권장)</li>
+    </ul>
+    <p>상세한 패시브 트리와 아이템 세팅은 영상 설명란의 <span class="highlight-build">모빌리틱스(Mobalytics)</span> 링크를 참고해 주시기 바랍니다.</p>
+</div>

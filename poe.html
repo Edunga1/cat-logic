@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>패스 오브 엑자일 2: 무한 루프 빌드 가이드</title>
+    <style>
+        /* 전체 페이지 레이아웃 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #2c3e50;
+            margin: 0;
+            padding: 20px;
+        }
+        /* 콘텐츠를 감싸는 중앙 컨테이너 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #34495e;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        /* 제목 스타일 */
+        h1, h2, h3 {
+            color: #1abc9c;
+            border-bottom: 2px solid #16a085;
+            padding-bottom: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        /* 링크 스타일 */
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* 단락 스타일 */
+        p {
+            margin-bottom: 1.2em;
+        }
+        /* 코드 블록 스타일 */
+        code, pre {
+            background-color: #23313f;
+            border-radius: 4px;
+            font-family: "Fira Code", "Courier New", Courier, monospace;
+            padding: 2px 5px;
+        }
+        pre {
+            padding: 15px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        /* 키워드 하이라이트 스타일 */
+        .highlight-item {
+            background: rgba(255, 215, 0, 0.3);
+            border-bottom: 2px solid rgba(255, 215, 0, 0.8);
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+        .highlight-fire {
+            background: rgba(255, 69, 0, 0.3);
+            border-bottom: 2px solid rgba(255, 69, 0, 0.8);
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+        .highlight-cold {
+            background: rgba(0, 191, 255, 0.3);
+            border-bottom: 2px solid rgba(0, 191, 255, 0.8);
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+        .highlight-stat {
+            background: rgba(50, 205, 50, 0.3);
+            border-bottom: 2px solid rgba(50, 205, 50, 0.8);
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>패스 오브 엑자일 2: 브루투스의 리드 스프링클러 & 칼구르의 비 무한 루프 빌드</h1>
+
+        <h2><a href="https://youtu.be/oO1OUjtntGk?t=0">1. 빌드 소개 및 핵심 메커니즘</a></h2>
+        <p>
+            안녕하세요! 오늘은 <span class="highlight-item">생크곤(Shankgonne)</span> 부츠와 <span class="highlight-item">발 구르기(Stomping Ground)</span> 보조를 이용해 공격을 트리거하고, <span class="highlight-item">브루투스의 리드 스프링클러</span>와 새로운 칼구르 스킬인 <span class="highlight-item">칼구르의 비(Rain of Blades)</span>를 조합한 잠재적 <span class="highlight-stat">무한 루프 빌드</span>를 소개해 드리겠습니다.
+        </p>
+        <p>
+            이 빌드는 몇 가지 고유 아이템과 <span class="highlight-stat">룬 보호막(Runic Ward)</span>만 있다면, 여러분은 옆에서 보스가 녹아내리는 것을 지켜보기만 하면 됩니다. 단일 타겟 보스뿐만 아니라 균열(Breach)이나 의식(Ritual)처럼 몬스터가 끊임없이 쏟아지는 콘텐츠에서 압도적인 성능을 자랑합니다.
+        </p>
+
+        <h2><a href="https://youtu.be/oO1OUjtntGk?t=71">2. 빌드 철학과 작동 원리</a></h2>
+        <p>
+            제 빌드의 핵심은 적을 <span class="highlight-cold">동결</span>시키고, <span class="highlight-cold">얼음의 전령</span>과 <span class="highlight-item">칼구르의 비</span> 사이에서 <span class="highlight-fire">용암 세례(Molten Shower)</span>의 연쇄 반응을 일으키는 것입니다. <span class="highlight-item">청염 손목 보호대(Blueflame Bracers)</span>를 사용하여 화염 피해를 냉기 피해로 전환했기 때문에 가능한 일이죠.
+        </p>
+        <p>
+            이 루프를 유지하기 위한 조건은 세 가지입니다. 첫째, 충분한 <span class="highlight-stat">룬 보호막</span>과 재생이 필요합니다. 둘째, 대미지를 입으면 버프가 꺼질 수 있으므로 주의해야 합니다. 셋째, 보스가 투사체를 피하지 못하도록 <span class="highlight-cold">동결</span> 상태를 유지하는 것이 중요합니다.
+        </p>
+
+        <h2><a href="https://youtu.be/oO1OUjtntGk?t=120">3. 스킬 젬 세팅</a></h2>
+        <p>주요 스킬들의 구성은 다음과 같습니다.</p>
+        <pre>
+- 용암 세례 (Molten Shower): 주력 대미지 스킬. 브루투스 철퇴 이도류로 두 개 사용.
+  (보조: 원소 무장, 다중 발사, 범위 확대, 냉기 조율, 동결)
+- 블랙 파우더 블리츠 (Black Powder Blitz): 생크곤 부츠로 부여되는 주력 공격 스킬.
+- 발 구르기 (Stomping Ground): 생크곤의 트리거를 가능하게 하는 핵심 보조 젬.
+- 칼구르의 비 (Rain of Blades): 룬 보호막을 소모하여 루프를 만드는 핵심 칼구르 스킬.
+  (보조: 지속시간 증가, 효율, 원소 무장, 냉기 관통, 냉기 조율)
+- 얼음의 전령 & 동결 징표: 동결 확률과 대미지를 극대화합니다.
+- 신성모독 보조: 시간의 사슬과 원소 약화 저주를 오라로 사용합니다.
+        </pre>
+
+        <h2><a href="https://youtu.be/oO1OUjtntGk?t=350">4. 핵심 장비 구성</a></h2>
+        <p>
+            가장 중요한 무기는 <span class="highlight-item">브루투스의 리드 스프링클러</span>입니다. <span class="highlight-stat">힘 스태킹</span>을 통해 대미지를 비약적으로 상승시킬 수 있으며, 이도류를 추천합니다. <span class="highlight-stat">힘 500 이상</span>을 달성하면 용암 세례 트리거 확률이 100%가 됩니다.
+        </p>
+        <p>
+            방어 기제로는 <span class="highlight-stat">물질보다 정신(Mind Over Matter)</span>을 채택했습니다. 이 빌드의 스킬들은 마나를 거의 소모하지 않기 때문에 마나를 제2의 생명력으로 활용하여 매우 단단한 생존력을 갖출 수 있습니다.
+        </p>
+        <pre>
+- 무기: 브루투스의 리드 스프링클러 (룬 마법 부여 버전 추천)
+- 신발: 생크곤 (Shankgonne, 스타일과 트리거의 핵심)
+- 장갑: 청염 손목 보호대 (화염 -> 냉기 피해 전환 필수)
+- 투구: 알파의 포효 (오라 강화 및 능력치 제공)
+- 목걸이: 부재의 목걸이 (영원한 분노 부여 및 힘 스태킹)
+        </pre>
+
+        <h2><a href="https://youtu.be/oO1OUjtntGk?t=553">5. 패시브 트리와 전직</a></h2>
+        <p>
+            전직 클래스는 <span class="highlight-stat">타이탄(Titan)</span>을 선택했습니다. <span class="highlight-stat">거대한 형상(Hulking Form)</span> 노드를 통해 작은 패시브 효과를 50% 증폭시켜 힘, 재사용 대기시간 감소, 범위 등을 효율적으로 챙길 수 있습니다.
+        </p>
+        <p>
+            패시브 트리에서는 모든 <span class="highlight-stat">힘 노드</span>와 <span class="highlight-stat">재사용 대기시간 감소</span>, 그리고 많은 주얼 슬롯을 확보하는 데 집중했습니다. 특히 하단부의 능력치 클러스터와 '폭발 범위' 관련 노드들은 생크곤 빌드에 큰 도움이 됩니다.
+        </p>
+
+        <h2><a href="https://youtu.be/oO1OUjtntGk?t=703">6. T16 맵 플레이 및 마무리</a></h2>
+        <p>
+            세팅이 완료된 빌드의 위력을 확인해 보세요. <span class="highlight-stat">재사용 대기시간 감소 세팅</span> 덕분에 용암 세례의 대기시간이 0.12초까지 줄어들었습니다. 실제 전투에서는 끊임없이 쏟아지는 투사체와 폭발을 볼 수 있습니다.
+        </p>
+        <p>
+            이 빌드는 대미지를 조금 희생하더라도 편안한 매핑과 강력한 동결 성능을 원하는 분들께 최고의 선택이 될 것입니다. 가이드가 도움이 되셨다면 댓글로 의견을 남겨주세요!
+        </p>
+        <p align="center"><b>즐거운 파밍 되시길 바랍니다!</b></p>
+    </div>
+</body>
+</html>

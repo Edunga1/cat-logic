@@ -26,6 +26,8 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 #### ServUO
 
+"Ultima Online server emulator"라고 소개하고 있다.
+
 서버는 클라이언트를 컨트롤하기 위한 패킷을 보낸다.
 
 [게임 메시지](https://github.com/ServUO/ServUO/blob/8b75a7bbf5984585804c771078e5ba8427d2a5c5/Scripts/Items/Equipment/Weapons/ShepherdsCrook.cs#L48)를 보내거나
@@ -37,7 +39,7 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 내용이 방대해서 서버-클라이언트 모델을 가지는 게임을 개발하고 싶다면 학습하는데 좋은 예제가 될 것이다.
 
-##### ServUO 코드 분석
+##### 코드
 
 **BaseCreature**
 
