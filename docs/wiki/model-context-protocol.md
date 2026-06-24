@@ -193,3 +193,56 @@ MCP 서버 개발자가 `.dxt` 파일을 만들어서 배포하면, 사용자는
 실행되지 않는 것과 별개로, 사용자가 보는 입력과 실제 입력이 다른 것은 문제가 될 여지가 있다. \
 이 이슈는 [Anthropic의 Status 페이지](https://status.anthropic.com/incidents/1874wdtlmhwt)에 기록되어 있다.
 
+## MCP Servers
+
+### mcp-atlassian
+
+confluence와 [jira](jira.md)를 위한 MCP 서버 구현체.
+
+https://github.com/sooperset/mcp-atlassian
+
+명령어를 제공하지만, docker 이미지를 제공해서 사용중.
+아래는 Claude Code 설정.
+
+```json
+"mcp-atlassian": {
+  "type": "stdio",
+  "command": "docker",
+  "args": [
+    "run", "-i", "--rm",
+    "-e", "CONFLUENCE_URL",
+    "-e", "CONFLUENCE_USERNAME",
+    "-e", "CONFLUENCE_API_TOKEN",
+    "-e", "JIRA_URL",
+    "-e", "JIRA_USERNAME",
+    "-e", "JIRA_API_TOKEN",
+    "ghcr.io/sooperset/mcp-atlassian:0.21.0"
+  ],
+}
+```
+
+Claude Code 세션이 늘어나면, 도커 컨테이너가 여러 개 실행되므로 streamable-http를 사용하는 편이 낫다.
+
+하나의 컨테이너만 우선 실행.
+
+```bash
+docker run --rm -p 9000:9000 --name atl\
+  -e CONFLUENCE_URL\
+  -e CONFLUENCE_USERNAME\
+  -e CONFLUENCE_API_TOKEN\
+  -e JIRA_URL\
+  -e JIRA_USERNAME\
+  -e JIRA_API_TOKEN\
+  -d\
+  ghcr.io/sooperset/mcp-atlassian:0.21.0\
+  --transport streamable-http --stateless --port 9000 -vv
+```
+
+mcp type을 http로 변경한다.
+
+```json
+"mcp-atlassian": {
+  "type": "http",
+  "url": "http://localhost:9000/mcp"
+}
+```
