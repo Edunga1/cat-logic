@@ -251,7 +251,7 @@ https://code.claude.com/docs/en/agent-teams
 
 > each teammate gets its own pane. You can see everyone’s output at once and click into a pane to interact directly. Requires tmux, or iTerm2.
 
-tmux를 사용중이면 현재 창을 분할하여 세션이 각각의 창에서 실행되도록 자동화되어 있다.
+tmux를 사용중이면 `"teammateMode": "auto"`로 설정하면, 팀원 세션이 tmux 창으로 자동 분할된다.
 
 팀원, 메인 에이전트, 사용자는 상호 간에 자유롭게 대화할 수 있다.
 사용자는 각 팀원 세션에서 직접 대화하거나, 메인 세션에서 `@teammate_name`으로 팀원과 대화할 수 있다.
