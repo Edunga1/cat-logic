@@ -67,6 +67,7 @@ set -g prefix C-a
 ## Tmuxinator
 
 tmux 설정을 파일로 관리하는 도구.
+`tmuxinator` 명령어를 통해 tmux 설정을 yaml 파일로 관리 및 실행한다.
 
 https://github.com/tmuxinator/tmuxinator
 
@@ -120,6 +121,10 @@ $ tmuxinator  # or tmuxinator start
 ```
 
 start 시 설정 이름을 생략하면 `.tmuxinator.yml`을 찾는다.
+
+`tmuxinator new --local <name> <session_name>` 사용하면 현재 세션`<session_name>`을 기반으로 `.tmuxinator.yml`을 생성한다.
+인자가 헷갈리므로 `tmuxinator new --local foo foo`처럼 현재 세션 이름과 동일하게 사용하자.
+첫 번째 인자`<name>`은 설정으로 저장할 세션 이름인데 그냥 파일을 수정하면 된다.
 
 ### 전역적으로 사용할 경우
 
