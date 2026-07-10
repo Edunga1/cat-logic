@@ -169,48 +169,23 @@ export const pageQuery = graphql`
 
 ## Issues
 
-### 다른 `.md` 파일에 대한 링크를 생성할 수 없는 문제
+### 마크다운 파일간 링크를 변환하지 않음
 
 [Is it possible to create a link in a Gatsby .md file using the markdown path, not the eventual url?](https://stackoverflow.com/questions/62013570/is-it-possible-to-create-a-link-in-a-gatsby-md-file-using-the-markdown-path-no)
 
-내가 원하는 동작은 깃허브 내에서도 `.md` 간 링크가 동작하는 것이다. 링크 뿐만 아니라 다른 기능도 마찬가지. gatsby의 정적 사이트에서도 마찬가지로 동작해야 한다.
+GatsbyJS는 markdown 파일간 링크를 자동 변환해주지 않는다.
+이는 사용자가 slug를 생성하고, path를 지정하는데서 간접적으로 알게되는 부분.
 
 ```markdown
 [Link to another document](./another-doc.md)
 ```
 
-위 코드가 GitHub에서는 정상적으로 링크가 동작한다.\
-하지만 gatsby에서는 `./current-doc/another-doc.md`로 링크가 생성되고, 동작하지 않는다.
+빌드하면 `./current-doc/another-doc.md`로 링크가 생성되고, 이는 당연히 동작하지 않는다.
 
-내부 링크를 변경해주는 플러그인이 있긴 하지만, 이 이슈에 해결할 수 있는 플러그인은 없다.
-SO 질문도 이게 가능한지 묻는 것이고, 답변은 gatsby 빌드에 맞춰서 링크를 설정하라는 것이다.
-아쉬운 부분. 😢
+이를 처리하려면 Markdown AST를 순회, 링크를 찾아서 변환해야 한다.
 
-#### 해결 방법
-
-처리한 방법:\
-https://github.com/Edunga1/cat-logic/commit/b2762545eb481fde2dfc8deb5ebbade31fab38a7
-
-`replaceAll`을 이용해서 `.md`를 제거하고, `../`를 추가한다:
-```typescript
-// replace markdown links to wiki pages with internal links
-// e.g. <a href="./javascript.md"> -> <a href="../javascript">
-export default function replaceWikiLinks(text: string) {
-  const regex = /<a href="\.\/([^"]+)\.md">/g
-  return text.replaceAll(
-    regex,
-    (_, p1) => {
-      return `<a href="../${p1}">`
-    }
-  )
-}
-```
-
-`<a href="./javascript.md">`를 `<a href="../javascript">`로 변경하는 방법이다.
-
-와중에 주석만 작성하고, 코드는 copilot이 작성해줬다. 😎 (<- 이 부분도 copilot이 작성해줬다. 괄호 안에 있는 것도!)
-
-이 기능은 별도 플러그인으로 구현해 두었다: https://github.com/edunga1/gatsby-remark-relative-linker
+이를 위한 플러그인을 작성했다: \
+https://github.com/edunga1/gatsby-remark-relative-linker
 
 `npm install github:edunga1/gatsby-remark-relative-linker`로 설치하고,
 `gatsby-config.js`에 `gatsby-transformer-remark` 플러그인 옵션에 추가한다:
@@ -225,6 +200,9 @@ export default function replaceWikiLinks(text: string) {
   },
 }
 ```
+
+개인적으로 이 문제를 비롯하여, GatsbyJS가 특정 형태의 정적 페이지 말고는 사용하기 어렵겠다고 판단되어, 이주를 고려중이다.
+처리 방식은 분명 다양하게 있을텐데, 이건 꽤 오래된 이슈라서 개선할 가능성이 없어보인다.
 
 ### 사이트에 중간 경로가 있으면 이미지가 보여지지 않는 문제
 
