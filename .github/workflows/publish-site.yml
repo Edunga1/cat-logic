@@ -17,17 +17,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout current repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Checkout cat-logic-site repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           repository: Edunga1/cat-logic-site
           path: cat-logic-site
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 26
       - name: Install dependencies
         run: npm ci
         working-directory: ./cat-logic-site
