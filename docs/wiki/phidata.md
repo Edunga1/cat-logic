@@ -18,8 +18,6 @@ OPENAI_API_KEY를 제공하면 OpenAI의 모델을 사용한다.
 
 2025년 1월, Phidata에서 Agno로 [리브랜딩 했다](https://www.linkedin.com/posts/ashpreetbedi_phidata-is-now-agno-announcing-our-new-activity-7290750031312179200-mGAd).
 
-<!-- TBD: 예제 phidata -> agno로 변경 -->
-
 ## 공식 예제
 
 다음은 공식문서에서 소개하는 간단한 예제이다.
