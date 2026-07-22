@@ -483,13 +483,22 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 플러그인이 있었으나, 2026년 4월 4일 아카이브되었다.
-더 이상 개발을 진행하지 않는다.
+### nvim-treesitter
 
-내장 Treesitter는 파서 설치를 직접 처리해야 하는 불편함이 있다.
-nvim-treesitter는 [parsers.lua](https://github.com/nvim-treesitter/nvim-treesitter/blob/main/lua/nvim-treesitter/parsers.lua)를 통해 언어별 파서 설치 정보를 수작업으로 관리했었다.
+[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)은 treesitter를 통해 언어별 구문 강조, 텍스트 오브젝트 등 vim 기능을 확장하는 플러그인이다.
 
-- [Reddit - nvim-treesitter는 왜 아카이브 처리된 건가요?](https://www.reddit.com/r/neovim/comments/1sbrnir/what_happened_to_nvimtreesitter_why_did_it_get/)
+neovim 내장 Treesitter는 몇 가지 언어만 기본으로 제공하고, 추가 언어는 직접 설치하고 설정해야 한다.
+
+nvim-treesitter는 그런 수고를 줄여주는 유용한 플러그인이다.\
+[parsers.lua](https://github.com/nvim-treesitter/nvim-treesitter/blob/main/lua/nvim-treesitter/parsers.lua)를 통해 언어별 파서 설치 정보를 수작업으로 관리한다.
+저장소 관리자가 언어별 설정을 갱신해주는 덕분에 우리는 추상화된 플러그인 설정을 통해 매우 쉽게 파서를 관리할 수 있다.
+
+2026년 4월 3일 아카이브된 문제가 있었다.\
+[Reddit - nvim-treesitter는 왜 아카이브 처리된 건가요?](https://www.reddit.com/r/neovim/comments/1sbrnir/what_happened_to_nvimtreesitter_why_did_it_get/)
+
+다행히도 7월 19일, 다시 개발을 재개했다.\
+아카이브 된 후에 neovim 내장 Treesitter를 사용하고 있는데, text-object와 언어 지원이 부족하여 다시 nvim-treesitter로 돌아갈 예정이다.\
+[Reddit - nvim-treesitter is apparently back](https://www.reddit.com/r/neovim/comments/1v077us/nvimtreesitter_is_apparently_back/)
 
 ## 레지스터(Registers)
 
