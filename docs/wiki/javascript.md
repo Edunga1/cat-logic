@@ -35,7 +35,7 @@ https://vimeo.com/96425312
 
 #### null, falsiness에 대한 이야기
 
-자바스크립트에는 두 가지 [Bottom Type](https://en.wikipedia.org/wiki/Bottom_type)(값이 없는 타입)이 있다. **null**과 **undefined**.
+자바스크립트에는 두 가지 Bottom Value(값이 없음)이 있다. **null**과 **undefined**.
 둘 중 **undefined** 하나만 사용하기로 했다. 더 많이 입력해야 하지만 문제없다. (ㅋ)
 
 falsiness는 `false`를 나타내는 값들인데 대표적으로 빈 문자열 `''`, `0`, `NaN`, `undefined` 등이 있다. \
