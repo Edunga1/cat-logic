@@ -167,20 +167,20 @@ export const pageQuery = graphql`
 위 두 플러그인 문제가 아니더라도, GraphQL 쿼리에 정렬이 없다면 정렬 순서가 배포 환경에서는 달라질 수 있다.
 명시적으로 정렬하는 편이 좋겠다.
 
-## Issues
-
 ### 마크다운 파일간 링크를 변환하지 않음
+
+GatsbyJS는 markdown 파일간 링크를 자동 변환해주지 않는다.
 
 [Is it possible to create a link in a Gatsby .md file using the markdown path, not the eventual url?](https://stackoverflow.com/questions/62013570/is-it-possible-to-create-a-link-in-a-gatsby-md-file-using-the-markdown-path-no)
 
-GatsbyJS는 markdown 파일간 링크를 자동 변환해주지 않는다.
-이는 사용자가 slug를 생성하고, path를 지정하는데서 간접적으로 알게되는 부분.
+이는 사용자가 slug를 생성하고, path를 지정하는데서 간접적으로 알게되는 부분인데,
+md -> html 변환은 하지만, 내용의 링크까지 변환하지는 않는다.
+
+아래를 빌드하면 `./current-doc/another-doc.md`로 링크가 생성되고, 이는 당연히 동작하지 않는다.
 
 ```markdown
 [Link to another document](./another-doc.md)
 ```
-
-빌드하면 `./current-doc/another-doc.md`로 링크가 생성되고, 이는 당연히 동작하지 않는다.
 
 이를 처리하려면 Markdown AST를 순회, 링크를 찾아서 변환해야 한다.
 
@@ -201,8 +201,12 @@ https://github.com/edunga1/gatsby-remark-relative-linker
 }
 ```
 
-개인적으로 이 문제를 비롯하여, GatsbyJS가 특정 형태의 정적 페이지 말고는 사용하기 어렵겠다고 판단되어, 이주를 고려중이다.
-처리 방식은 분명 다양하게 있을텐데, 이건 꽤 오래된 이슈라서 개선할 가능성이 없어보인다.
+Jekyll 또한 파일간 링크를 변환하지 않는 것으로 보인다.
+[jekyll-relative-links](https://github.com/benbalter/jekyll-relative-links) 플러그인으로 처리하는 모양.
+
+프레임워크 의존이 아닌, 마크다운 등 문서 파일의 독립성을 중요시한다면 Jekyll은 Kramdown을 통해 고유 구문을 사용하기 때문에 적절하지 않다.
+
+## Issues
 
 ### 사이트에 중간 경로가 있으면 이미지가 보여지지 않는 문제
 
