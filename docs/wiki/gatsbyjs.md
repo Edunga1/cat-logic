@@ -9,6 +9,19 @@ React를 사용하는 정적 사이트 생성 도구.
 
 https://github.com/gatsbyjs/gatsby
 
+## 개발 환경
+
+![GatsbyJS GraphQL](res/gatsbyjs-graphql.png)
+
+빌드 시점에 GraphQL을 통해 문서의 데이터를 제공한다.
+
+개발 환경에서는 GraphQL Playground를 제공한다.
+HTML 생성에 필요한 데이터를 여기서 테스트할 수 있어서 빌드 전에 GraphQL 쿼리를 검증할 수 있다.
+
+[gatsby-transformer-remark](https://www.gatsbyjs.com/plugins/gatsby-transformer-remark/) 플러그인을 사용하면 마크다운 문서를 GraphQL 쿼리로 가져올 수 있다.
+이런식으로 사이트 생성에 필요한 데이터를 GraphQL 쿼리로 가져오고,
+필요한 데이터는 GraphQL에 적재하기 위한 파이프라인을 구성하도록 설계되어 있다.
+
 ## Slugify
 
 기본 튜토리얼을 따라 홈페이지를 만든다면 File System Route API를 사용하게 되는데,
