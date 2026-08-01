@@ -76,7 +76,9 @@ https://www.betterspecs.org/
 
 Better Specs는 테스트 작성에 대한 모범 사례(best practice) 모음이다.
 
-사이트에서는 Rails의 RSpec을 사용한 예제지만, 테스트 패턴에 대한 이야기이므로 다른 언어/프레임워크에도 적용할 수 있다.
+Rails의 [RSpec](https://rspec.info/features/3-12/rspec-core/)에 기반한 예제지만,
+테스트 패턴에 대한 이야기이므로 다른 언어/프레임워크에도 적용할 수 있다.
+[Kotest](/docs/wiki/kotlin.md#kotest)는 RSpec의 DCI 패턴을 지원한다.
 
 https://jakegoulding.com/presentations/rspec-structure/ \
 이 슬라이드는 Better Specs의 구조를 요약한다.
