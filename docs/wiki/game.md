@@ -26,6 +26,8 @@ https://en.wikipedia.org/wiki/Ultima_Online
 
 #### ServUO
 
+https://github.com/ServUO/ServUO
+
 "Ultima Online server emulator"라고 소개하고 있다.
 
 서버는 클라이언트를 컨트롤하기 위한 패킷을 보낸다.
@@ -393,9 +395,9 @@ hsreplay는 전장 모드의 통계 데이터로 승률을 제공하는 서드�
 
 ## 게임 개발 기술
 
-### 롤백 넷코드(rollback netcode)
+### 롤백 넷코드
 
-게임에서 네트워크 지연을 최소화하기 위한 기술이다.
+RollbacK Netcode는 게임에서 네트워크 지연을 최소화하기 위한 기술이다.
 
 [격투 게임의 새로운 패러다임, 롤백 넷코드가 뭘까?](https://yozm.wishket.com/magazine/detail/2944/) 글에서 롤백 넷코드에 대해 처음 알게 되었다.
 
