@@ -170,6 +170,18 @@ windows:
 [zoxide](https://github.com/ajeetdsouza/zoxide)를 사용하므로,
 터미널을 열고 `z my` 입력 후 `tmuxn`만 입력하면 개발 환경이 준비가 끝난다.
 
+## Oh my tmux
+
+Tmux 설정 세트.
+
+https://github.com/gpakosz/.tmux
+
+서드파티 도구가 아닌 단순 Tmux 설정 세트이다.
+저장소의 `.tmux.conf`와 `.tmux.conf.local`을 복사하면 끝.
+tmux 서버 재시작이나 설정 재적용하자.
+
+편안한 색상 테마와 단축키 등 편리한 기본 설정을 제공하므로 이 설정으로 시작하는 것을 추천.
+
 ## 플러그인
 
 Tmux 플러그인과 플러그인을 관리하는 매니저가 있다.
