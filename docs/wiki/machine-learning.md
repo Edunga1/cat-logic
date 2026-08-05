@@ -809,6 +809,19 @@ ti2v-5b 모델을 사용했는데, 가이드에 따르면 [5b 모델이 VRAM 8GB
 기본 설정으로는 거의 3시간 이상 소요된다.
 steps를 줄이면 품질이 매우 떨어지는 것을 확인했다.
 
+### CLIProxyAPI
+
+CLI만 지원하는 codex, claude code 등 명령줄 도구들을 래핑하여 API로 제공하는 도구.
+
+https://github.com/router-for-me/CLIProxyAPI
+
+`cliproxyapi` 명령어로 AI 제공자에 OAuth 인증하고, 데몬과 웹 서버를 통해서 대시보드와 API를 제공한다.
+
+Claude Code 구독 모델이더라도 CLIProxyAPI를 통해서 API로 사용할 수 있다.\
+**다만 구독 모델의 서드파티 사용은 Anthropic 정책상 허용되지 않을 확률이 높다!**\
+[3월에 Claude Code 구독 금지되었다는 사례](https://github.com/router-for-me/CLIProxyAPI/discussions/2244)가 많다.
+구독형 모델의 임의 사용은 [OpenClaw을 겨냥한 정책 변경](https://news.hada.io/topic?id=28190)이 먼저 있었다.
+
 ## Hugging Face
 
 머신러닝으로 어플리케이션을 구축하는 개발 도구를 만들고,
