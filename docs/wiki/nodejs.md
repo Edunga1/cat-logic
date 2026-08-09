@@ -3,7 +3,7 @@ created: 2016-11-06
 ---
 # Node JS
 
-크로스플랫폼 자바스크립트 런타임. 보통 서버 사이드에서 사용한다.
+크로스플랫폼 자바스크립트 런타임.
 
 node.js(2009)를 시작으로 Deno(2018), Bun(2023) 등 다양한 런타임이 나왔다.
 
@@ -11,11 +11,10 @@ node.js(2009)를 시작으로 Deno(2018), Bun(2023) 등 다양한 런타임이 �
 
 ---
 
-[NodeJS 소개 페이지에 따르면...](https://nodejs.org/en/about)
 
 > Node.js is similar in design to, and influenced by, systems like Ruby's [Event Machine](https://github.com/eventmachine/eventmachine) and Python's [Twisted](https://twisted.org/).
 
-Ruby의 Event Machine과 Python의 Twisted에 영향을 받았다고 한다.
+[NodeJS 소개 페이지에 따르면](https://nodejs.org/en/about) Ruby의 Event Machine과 Python의 Twisted에 영향을 받았다고 한다.
 두 라이브러리 모두 이벤트 기반 비동기 처리 라이브러리로 보인다.
 Node.JS가 이런 라이브러리들과 다른 점은 런타임 차원에서 제공해서 이벤트의 시작을 명시적으로 하지 않아도 된다고 한다.
 그래서 비동기 처리를 하는 이벤트루프가 사용자에게 숨겨진다고.
