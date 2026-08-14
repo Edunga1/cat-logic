@@ -3,9 +3,9 @@ created: 2016-12-12
 ---
 # Git
 
-the stupid content tracker.
+> the stupid content tracker.
 
-위는 `man git` 입력하면 볼 수 있는 Git을 설명하는 문구이다.
+`man git` 입력하면 볼 수 있는 Git을 설명하는 문구이다.
 
 Git은 2005년 4월 3일에 리누스 토발즈가 개발을 시작해서,
 17일 후인 4월 20일에 리눅스 2.6.12-rc3 커널을 [Git으로 공개](https://patrickcollison.com/fast)했다.
@@ -795,9 +795,7 @@ Linux, macOS는 `brew install git-lfs`로 설치 가능.
 최근 Huggingface에서 [모델](https://huggingface.co/Trelis/Llama-2-7b-chat-hf-function-calling-v2)을 다운로드 받고 실행해 보면서 처음 사용해 보았다.\
 `.git` 폴더는 모든 리비전에 대한 내용을 담고 있어서 그런지, 모델 저장소의 경우 용량이 매우 커졌다.
 
-대용량 파일을 업로드 할 일이 없어서 업로드에 대한 내용은 생략한다.
-
-git clone 전에 하거나 clone 후에 하는지에 따라 사용 방법이 다르다.
+git clone 이전과 이후에 따라 대용량 파일을 다운로드 받는 과정이 다르다.
 
 ---
 
@@ -817,15 +815,15 @@ git clone 전에 하거나 clone 후에 하는지에 따라 사용 방법이 다
 다운로드 진행 상황이 UI로 표시되지 않기 때문에 clone이 멈춘듯한 모습으로 보이지만,
 `du -sh .git` 명령어로 용량을 확인하면 계속 증가하는 것을 볼 수 있다.
 
-`git lfs install`을 하지 않고 clone을 받는 것과 비교하면 완료 속도가 다른 것을 체감할 수 있다.
+`git lfs install` 여부에 따라 clone을 해보면 완료 속도를 비교할 수 있다.
 
 ---
 
 **Clone 후**
 
-`git lfs pull`로 대용량 파일을 다운로드 받는다.
+`git lfs pull` 명령어로 대용량 파일을 다운로드 받는다.
 
-이 경우에도 멈춘듯한 모습으로 보이지만, 실제로는 다운로드가 진행된다.
+이 경우에도 멈춘 듯이 UI 표시는 모호하다.
 
 도움말 `git lfs pull --help`에 따르면 `git lfs fetch` 명령어와 같다고 한다.\
 아마도 특정 파일만 다운로드 받을 수도 있는 모양.
