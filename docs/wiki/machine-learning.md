@@ -634,6 +634,10 @@ $ ./llamafile \
 
 ### GitHub Models
 
+**2026년 7월 30일 [GitHub Models는 종료되었다.](https://docs.github.com/en/github-models.md)** 아래는 종료되기 전의 기록.
+
+---
+
 2024년 8월 1일. 깃허브에서 llama, gpt-4o 등 모델을 무료로 사용할 수 있는 플랫폼을 제공한다는 소식.
 
 - https://github.blog/news-insights/product-news/introducing-github-models/
