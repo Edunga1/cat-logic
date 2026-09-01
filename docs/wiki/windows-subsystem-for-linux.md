@@ -36,6 +36,9 @@ WSL 버전은 1, 2 두 가지가 있다.
 WSL2는 `Windows 11 또는 Windows 10, 버전 1903, 빌드 18362` 이상에서 사용할 수 있다.
 [1903 버전은 2019년 5월에 출시](https://learn.microsoft.com/ko-kr/lifecycle/announcements/windows-10-1903-end-of-servicing)되었다.
 
+[WSLg](https://github.com/microsoft/wslg)은 WSL이 GUI를 지원하도록 해주는 스택이다.
+덕분에 X11, Wayland 기반의 Linux GUI 앱을 윈도우에서 실행할 수 있다.
+
 ## vim 설정
 
 ### clipboard 공유
