@@ -127,7 +127,24 @@ You have not rebooted after updating a package which requires a reboot. Please r
 
 업그레이드 후에는 리붓 해야한다... :(
 
-## Clipboard에서 이미지 붙여넣기
+## Clipboard
+
+### wl-clipboard
+
+클립보드 제어를 위해 wl-clipboard 사용을 추천.
+`brew install wl-clipboard` 명령어로 설치 가능하다.
+
+macOS의 pbcopy, pbpaste 명령어와 비슷하게 동작한다.
+
+```bash
+$ cat file.txt | wl-copy
+$ wl-paste > file.txt
+```
+
+이미지 파일 생성은 현재 BMP 포맷만 지원한다.
+이 문제는 [WSLg #833 이슈로 보고되어 있다.](https://github.com/microsoft/wslg/issues/833)
+
+### Powershell로 이미지 붙여넣기
 
 Powershell 명령어를 통해서 클립보드에 있는 이미지를 파일로 저장할 수 있다.
 
