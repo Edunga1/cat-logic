@@ -10,7 +10,7 @@ publish on:
 
 [Hosted site on github pages](https://edunga1.github.io/cat-logic/) has some features.
 
-1. Each wiki page contains related documents. This is calculated by the cosine similarity of the document embeddings using the OpenAI API.
+1. Each wiki page contains related documents. This is calculated by the cosine similarity of the document embeddings.
 1. The logo is touchable. it's minor but I like it.
 1. The Search feature is implemented using fuse.js. not good but it works.
 
