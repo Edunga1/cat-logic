@@ -246,3 +246,28 @@ $ wc ./docs/wiki/**/*.md
    156    599   5738 ./docs/wiki/windows-subsystem-for-linux.md
  15534  65139 670242 total
 ```
+
+## Gemini Embedding 모델
+
+Gemini 모델은 Google에서 제공하며, 관대하게도 무료 티어를 제공한다.
+
+https://ai.google.dev/gemini-api/docs/embeddings
+
+26년 9월 기준 `gemini-embedding-2` 모델이 최신이다.
+
+### Task Types
+
+embedding-2 모델은 필요에 따라 프롬프트를 통해 임베딩을 수행할 수 있다.
+
+https://ai.google.dev/gemini-api/docs/embeddings#task-types-embeddings-2
+
+예를들어 유사도를 위해 임베딩이 필요한 경우 다음과 같이 프롬프트를 작성하면 된다.
+
+```
+task: sentence similarity | query: {content}
+```
+
+즉, 목적성을 가지고 임베딩할 수 있다.
+개인적으로 문서 유사도 계산을 위해서 사용했을 때,
+Task 없이 단순 임베딩을 하는 경우 문서간 유사도의 히트맵이 패턴이 나오는 등 이상한 결과가 나왔지만,
+위 Task를 지정해주니 OpenAI large 모델과 유사한 결과가 나왔다.
