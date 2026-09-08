@@ -143,6 +143,15 @@ https://openai.com/index/introducing-gpt-5-2/
 [GitHub copilot](/docs/wiki/github.md#github-copilot)에도 바로 적용되었다.
 0.0.362 버전에선 노출되지 않았는데, 0.0.369 버전에서 확인했다.
 
+### GPT-6 Astra
+
+2026년 9월 3일에 공개된 OpenAI 모델.
+AGI의 도래라고 평가하는 사람도 있다. 그만큼 성능이 뛰어나다.
+
+또다른 특징은 출력 토큰이 많이 줄였다는 것.
+[수능 벤치](https://gall.dcinside.com/thesingularity/1389937)를 보면 입력 토큰의 절반 정도라고 한다.
+다른 모델의 경우 대부분 출력 토큰이 입력 토큰을 상회한다.
+
 ### "나를 그려줘" 챌린지
 
 2024년 10월 즈음에 시작된 챌린지로 보이는, ChatGPT-4o를 이용한 챌린지.
