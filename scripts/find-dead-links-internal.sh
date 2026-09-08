@@ -6,4 +6,4 @@ then
     exit
 fi
 
-lychee ./docs/wiki/**/*.md --root-dir $(pwd) --offline --include-fragments
+lychee './docs/wiki/**/*.md' --root-dir $(pwd) --offline --include-fragments
