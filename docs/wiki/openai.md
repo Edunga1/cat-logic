@@ -176,9 +176,19 @@ Vim과 Kotlin 단어가 들어간 그림이다.
 
 2025년 8월 5일에 공개된 OpenAI의 오픈 소스 모델. [문서](/docs/wiki/large-language-model.md#gpt-oss) 참조.
 
-## MCP 지원
+### Sora
 
-ChatGPT의 [MCP](/docs/wiki/model-context-protocol.md) 지원은 꽤 늦었다.
-[개발 모드](https://platform.openai.com/docs/guides/developer-mode)를 통해 추가할 수 있으며,
-현재 Remote MCP 서버([SSE](/docs/wiki/web.md#server-sent-events), HTTP)만 지원한다. Pro, Plus 사용자에게만 공개되어 있다고 한다.
-하지만 Pro 계정이지만 아직 옵션이 보이지 않았다.
+OpenAI의 영상 생성 모델이 2024년 12월 9일에 출시되었다.
+
+https://openai.com/index/sora-is-here/
+
+Sora는 [10달 전에 공개](https://news.hada.io/topic?id=13383)되어 화제를 모았다.
+
+기본적으로 구독 플랜에 포함되어 유료이며, 월 20달러인 Plus 플랜은 1000 크레딧으로 50개의 동영상 분량이다.
+화질은 720p, 5초 길이로 제한된다.
+
+최근에 Plus 상위 플랜인 Pro 플랜이 추가되었다. 월 200달러로 10,000 크레딧을 제공한다.
+화질은 1080p, 20초 길이로 제한된다.
+
+Plus 모델에는 워터마크가 강제된다.
+
