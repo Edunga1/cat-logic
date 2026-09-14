@@ -93,9 +93,6 @@ https://brew.sh/
 Homebrew로 맥에서 어플리케이션(패키지)을 설치하는 도구이다.
 정확히는 Linux 또한 지원한다. linuxbrew로 구분한다.
 
-설치할 수 있는 앱은 크게 2가지로 나뉜다. MacOS 전용 앱과 터미널에서 사용할 수 있는 앱이다.
-전자는 `brew cask install`로 설치하고, 후자는 `brew install`로 설치한다.
-
 `brew install wget`과 같이 사용하며, 이건 `wget`을 설치하는 명령어이다.
 `wget`를 Homebrew에서는 `formula`라고 부른다:
 
@@ -130,6 +127,15 @@ MySQL is configured to only allow connections from localhost by default
 패키지의 버전 관리를 제공하지 않는다.
 이전에는 `versions` 명령어로 이전 버전을 설치할 수 있었지만, 현재는 최신 버전만 제공한다.
 또는 `node@18` 과 같이 Homebrew에서 명시적으로 버전을 제공하는 경우만 설치할 수 있다.
+
+터미널 도구뿐 아니라 GUI 애플리케이션도 설치할 수 있다. Cask라 부른다.
+
+2026년 9월 13일 [7.0.0 버전이 릴리즈](https://github.com/Homebrew/brew/releases/tag/7.0.0)되었다.
+[다운로드와 설치 준비를 병렬로 진행](https://news.hada.io/topic?id=33618)하여 설치 속도가 개선되었다고.
+
+![Homebrew GUI](res/homebrew-gui.png)
+
+2026년에는 MacOS 전용 [Homebrew GUI](https://github.com/Homebrew/BrewUI/releases) 또한 릴리즈되었으니, 시각적으로 더 편하게 패키지를 관리할 수 있게 되었다.
 
 ### 동작 원리
 
