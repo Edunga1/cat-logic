@@ -27,6 +27,15 @@ SELECT * FROM '~/Downloads/extract-2026*.csv'
 CREATE VIEW items AS select * from '~/Downloads/extract-2026*.csv'
 ```
 
+---
+
+"DuckDB"로 이름지은 이유가 재밌다.
+오리는 날기 걷기 수영을 할 수 있고, 어려운 환경에서의 탄력성과 울음소리는 사람을 살리고-_- 데이터베이스 연구에 영감을 주는 등 다재다능하고 복원성 있는 데이터 관리 시스템에 완벽한 마스코트라고.
+
+> Ducks are amazing animals. They can fly, walk and swim. They can also live off pretty much everything. They are quite resilient to environmental challenges. A duck's song will bring people back from the dead and [inspires database research](https://duckdb.org/images/wilbur.jpg). They are thus the perfect mascot for a versatile and resilient data management system.
+>
+> \- [*FAQ*](https://duckdb.org/faq)
+
 ## DuckDB UI
 
 `-ui` 옵션은 내장된 노트북을 호스팅한다. `duckdb -ui`:
