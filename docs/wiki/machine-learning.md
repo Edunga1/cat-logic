@@ -532,10 +532,6 @@ where
 
 ref. https://news.hada.io/topic?id=9185
 
-### Google Gemini
-
-[Google Gemini 문서 참조](/docs/wiki/google-gemini.md)
-
 ### Google Chrome
 
 크롬은 [125 버전부터 콘솔 에러를 Gemini로 해석해주는 기능을 추가](https://developer.chrome.com/docs/devtools/console/understand-messages)했다.
@@ -742,6 +738,31 @@ Claude Code 구독 모델이더라도 CLIProxyAPI를 통해서 API로 사용할 
 **다만 구독 모델의 서드파티 사용은 Anthropic 정책상 허용되지 않을 확률이 높다!**\
 [3월에 Claude Code 구독 금지되었다는 사례](https://github.com/router-for-me/CLIProxyAPI/discussions/2244)가 많다.
 구독형 모델의 임의 사용은 [OpenClaw을 겨냥한 정책 변경](https://news.hada.io/topic?id=28190)이 먼저 있었다.
+
+### TypeSafe Jev
+
+선택지를 입력하여 판단과 확률을 구조화하여 출력하는 모델.
+
+https://typesafe.ai/blog/introducing-system-one-models-and-jev
+
+문장을 출력하지 않고, 주어진 선택지에 대해서 판단하기 때문에 출력이 간단하다.
+그래서 출력 토큰의 가격은 무료다.
+
+> Input tokens: $0.042 / MTok ($42 per billion tokens).
+>
+> Output tokens: FREE (too cheap to meter).
+
+[성능](https://typesafe.ai/blog/introducing-system-one-models-and-jev#:~:text=System%20One%20Models!-,Workflow%20evals,-We%20made%20a)은 sonnet 5, gpt terra 정도라고 한다.
+
+용도는 한정되어 있다.
+[일반 모델과 비교](https://typesafe.ai/blog/introducing-system-one-models-and-jev#:~:text=as%20we%20can.-,Side%2Dby%2Dside%20demonstration,-Our%20side%2Dby)를 보면 매우 빠른 것을 볼 수 있는데,
+그래서 채팅이나 코딩 등 비결정적인 사항 보다는, 실시간 애플리케이션에 적합하다.
+최근 [Astra](/docs/wiki/openai.md#gpt-6-astra)의 게임 플레이가 이슈인데, Jev의 실시간 게임 플레이가 기대된다.
+
+GitHub 피드에 떠서 보게된 [jev-ultrafast](https://github.com/browser-use/jev-ultrafast).
+jev를 에이전트로 사용하는 브라우저로 보인다.
+README에 데모 영상이 있는데, 실시간 구글 항공편 검색하는 예제로 출발-도착지, 일정을 입력하는 흐름으로 되어있다.
+문장 입력할 수 없으니 광범위하게 사용되려면 다른 에이전트와 협력되어야 할 듯.
 
 ## Hugging Face
 
