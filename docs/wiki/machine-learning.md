@@ -754,10 +754,20 @@ https://typesafe.ai/blog/introducing-system-one-models-and-jev
 
 [성능](https://typesafe.ai/blog/introducing-system-one-models-and-jev#:~:text=System%20One%20Models!-,Workflow%20evals,-We%20made%20a)은 sonnet 5, gpt terra 정도라고 한다.
 
-용도는 한정되어 있다.
-[일반 모델과 비교](https://typesafe.ai/blog/introducing-system-one-models-and-jev#:~:text=as%20we%20can.-,Side%2Dby%2Dside%20demonstration,-Our%20side%2Dby)를 보면 매우 빠른 것을 볼 수 있는데,
-그래서 채팅이나 코딩 등 비결정적인 사항 보다는, 실시간 애플리케이션에 적합하다.
+[일반 모델과 비교 데모](https://typesafe.ai/blog/introducing-system-one-models-and-jev#:~:text=as%20we%20can.-,Side%2Dby%2Dside%20demonstration,-Our%20side%2Dby)를 보면 응답 시간이 매우 빠른 것을 보여준다.
+물론 기존 모델과 비교하는 것은 목적이 다르니 적절하지 않지만, 비교될 정도로 빠른 응답을 보여주는 단편적인 모습.
+
+목적에 따라 용도는 한정되어 있다.
+채팅이나 코딩 등 비선택적 사항 보다는, 실시간 애플리케이션에 적합하다.
 최근 [Astra](/docs/wiki/openai.md#gpt-6-astra)의 게임 플레이가 이슈인데, Jev의 실시간 게임 플레이가 기대된다.
+
+> End-to-end response time is 70ms-500ms for TypeSafe.
+
+응답 시간은 70ms~500ms.
+
+> Jev supports a cardinality up to 255. For the higher cardinality choices, we do a 2 stage-system of scoring independently then making an explicit choice, hence the occassional slowdown.
+
+최대 선택지 수는 255개로 보인다. 많으면 느려질 수 있다고.
 
 GitHub 피드에 떠서 보게된 [jev-ultrafast](https://github.com/browser-use/jev-ultrafast).
 jev를 에이전트로 사용하는 브라우저로 보인다.
