@@ -271,3 +271,22 @@ scratches 폴더 추가하는 것처럼 쿼리를 모아놓은 폴더를 추가�
 
 이 문제도 메뉴를 선택해도 무반응이며, 에러 메시지도 없다.
 
+## AI Chat 창이 제거되지 않는 문제
+
+프로젝트를 시작하면 사이드 패널의 AI Chat 프로모션 창이 항상 노출되는 매우 성가신 문제.
+
+![IntelliJ AI Chat window on start](res/intellij-ai-chat-window-on-start.png)
+
+아이콘 우클릭 -> Hide를 눌러도 재시작하면 복구되는 매우 성가신 문제.
+반면에 Gradle, Database 패널은 Hide를 누르면 영구 제거돼버린다.
+
+JetBrains YouTrack에 꽤 많이 언급된다.
+
+https://youtrack.jetbrains.com/issue/LLM-2639/Promotional-tool-window-opens-every-time-I-open-a-new-project \
+25년 9월에 올라온 이 글을 보면, Registry 기능에서 비활성화하라고 제안하는데, 26년 9월의 IJ 2026.2.3 기준 해결되지 않았다.
+`llm.ai.assistant.toolwindow.activation.on.start`, `llm.show.ai.promotion.window.on.start` 두 설정이 존재하는데, 둘 다 비활성화해도 문제는 재현된다. 그래서 어떤 설정인지 의문인 부분.
+이로인해 단순한 문제 수준을 벗어나서, 버그같다.
+
+IntelliJ 뿐만 아니라 다른 JetBrains의 IDE, Datagrip에서도 동일한 문제가 보고되었다.
+
+해결하지 못하고 일일이 닫고 있는 중.
