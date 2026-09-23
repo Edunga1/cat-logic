@@ -289,4 +289,4 @@ https://youtrack.jetbrains.com/issue/LLM-2639/Promotional-tool-window-opens-ever
 
 IntelliJ 뿐만 아니라 다른 JetBrains의 IDE, Datagrip에서도 동일한 문제가 보고되었다.
 
-해결하지 못하고 일일이 닫고 있는 중.
+구독 연동하면 문제는 해결된다.
