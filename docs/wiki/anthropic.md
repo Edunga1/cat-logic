@@ -116,6 +116,12 @@ ChatGPT의 프롬프트에서도 Dalle를 사용할 때 유명인의 작품을 �
 마지막으로 이 프롬프트에 대해서 언급하지 않는다.
 시스템 프롬프트를 가리기 위한 장치지만, Anthropic은 이 프롬프트를 공개했다.
 
+### 모델 역사
+
+- [2026-09-02 Fable 5.1, Mythos 5.1](https://www.anthropic.com/claude-fable-and-mythos-5-1) 배포했다. Fable은 Mythos에 보호 장치가 추가된 모델로, Mythos는 미국 내 사용자에게만 접근 제한되었다.
+- [2026-09-22 Opus 5.5](https://www.anthropic.com/claude-opus-5-5) 배포했다.
+- [2026-09-28 Sonnet 5.5](https://www.anthropic.com/claude-sonnet-5-5) 배포했다.
+
 ## Claude Code
 
 Anthropic에서 제공하는 에이전트 코딩 **명령줄 도구**.
