@@ -257,17 +257,22 @@ https://ai.google.dev/gemini-api/docs/embeddings
 
 ### Task Types
 
-embedding-2 모델은 필요에 따라 프롬프트를 통해 임베딩을 수행할 수 있다.
+embedding-2 모델은 정확도를 위해서 Task를 통해 임베딩 기준을 정한다.
 
 https://ai.google.dev/gemini-api/docs/embeddings#task-types-embeddings-2
 
-예를들어 유사도를 위해 임베딩이 필요한 경우 다음과 같이 프롬프트를 작성하면 된다.
+예를들어 의미적 유사도 기준으로 임베드하는 경우 다음과 같이 형식화한다.
 
 ```
 task: sentence similarity | query: {content}
 ```
 
-즉, 목적성을 가지고 임베딩할 수 있다.
-개인적으로 문서 유사도 계산을 위해서 사용했을 때,
-Task 없이 단순 임베딩을 하는 경우 문서간 유사도의 히트맵이 패턴이 나오는 등 이상한 결과가 나왔지만,
-위 Task를 지정해주니 OpenAI large 모델과 유사한 결과가 나왔다.
+"sentence similarity"를 보고 모델이 유사도 검색을 위해 문서의 특성을 분석하는진 모르겠지만, Task 유무의 차이는 꽤 크다.
+
+공식 문서에서도 Task 추가를 적극 권고한다.
+
+> For text-only tasks with `gemini-embedding-2`, we strongly recommend you add the task instruction in your prompt. This can be done by formatting the query and the document with the correct task prefix.
+
+일례로, [cat-logic](/docs/wiki/cat-logic.md)은 연관 문서를 제공하는데,
+text-embedding-ada-002에서 gemini-embedding-2로 이전하기 위해 task 유무를 비교해보니 task가 있는 편이 ada-002 모델과 흡사한 결과를 나타냈다.
+task가 없으면 문서간 관련도가 공감되지 않을 정도로 낮았다.
