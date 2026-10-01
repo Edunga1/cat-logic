@@ -41,3 +41,5 @@ CREATE VIEW items AS select * from '~/Downloads/extract-2026*.csv'
 `-ui` 옵션은 내장된 노트북을 호스팅한다. `duckdb -ui`:
 
 ![DuckDB UI](res/duckdb-ui.png)
+
+최초 실행 시 UI 확장 설치로 인해 약간의 시간이 소요된다.
