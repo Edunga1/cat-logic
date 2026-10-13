@@ -13,7 +13,7 @@ https://deepmind.google/technologies/gemini
 편집된 영상이라 정확히 확인되지 않지만, 매우 빠른 응답을 제공한다. 사용자와 실시간 대화할 정도.\
 실시간으로 사용자와 대화하고, vision 처리한다. 마치 아이언맨 자비스를 보는 느낌.
 
-Ultra, Pro, Nano 3가지 크기가 있다. Nano는 핸드폰과 같은 디바이스에 탑재될 모양.
+Ultra, Pro, Nano 3가지 크기가 있다. Nano는 핸드폰 등 저사양 디바이스의 엣지 컴퓨팅를 위한 모델이다.
 
 2023년 12월 13일에 Google Cloud에 공개된다.\
 Google Bard에 포함된다고 하는데, 같은 날짜인지는 모르겠다.
