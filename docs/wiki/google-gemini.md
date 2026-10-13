@@ -535,6 +535,23 @@ GPT-5.1과 함께 높은 점수를 기록했다.
 직접 슈퍼마리오 브라더스의 월드 1-1을 구현했는데, 꽤 빠르게 동작하는 [캔버스](https://codepen.io/Edunga1/pen/KwzqGRM)를 생성했다.
 다만 여러 세션에서 시도했는데, 모바일 패드 스타일이 비슷하게 나온 경우가 있어서, 기존에 학습된 코드가 사용된 것은 아닌가 의구심이 든다.
 
+## Gemini 4.0
+
+2026년 9월 30일에 발표하는 Gemini 4.0 모델이름은 Argon.
+
+10월 13일, 곧 출시된다는 루머가 무성함.
+
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/
+
+![Gemini 4.0 Argon benchmark](./res/gemini-argon-benchmark.png)
+
+공개된 벤치마크에 따르면 Astra, Fable 5.1, Opus 5.5와 견준다.
+
+> we are significantly expanding the model’s output token limit to an industry-leading 1M tokens, up from the previous 64K tokens. When the model has the headroom to think deeply and generate hundreds of thousands of tokens in a single trajectory, it adds a new level of depth in reasoning to solve tough problems in one go.
+
+출력 토큰이 64K에서 1M으로 증가했다고 한다.
+출력 토큰 제한이 늘어나면 더 복잡한 문제를 한 번에 해결할 수 있다고 설명한다.
+
 ## Gemini CLI
 
 Gemini CLI는 Gemini 모델을 터미널에서 사용할 수 있게 해주는 명령어를 제공한다.
