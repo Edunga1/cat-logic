@@ -756,6 +756,18 @@ $ git shortlog -s
 
 > You could omit `<branch>`, in which case the command degenerates to "check out the current branch", which is a glorified no-op with rather expensive side-effects to show only the tracking information
 
+### git-clean
+
+`git clean`은 untracked files를 제거한다.
+
+`git clean -df` 디렉토리와 함께 제거한다. 자주 사용하는 옵션 세트.
+실제 파일 제거를 위해서 `-f` 옵션은 필수이고, 디렉토리만 남길 이유는 거의 없으므로 `-d` 옵션도 함께 사용한다.
+
+`git clean -xdf` `.gitignore`에 포함된 파일까지 제거한다. 자주 사용하는 조합2.
+
+`-n` 옵션은 실제 제거하지 않고, 제거 후보를 보여주는 안전한 옵션.
+`git clean -ndf`, `git clean -nxdf`.
+
 ## Revisions
 
 revision은 `dae86e1950b1277e545cee180551750029cfe735`, `{upstream}`, `v1.7.4.2-679-g3bee7fb`, `master` 등 커밋을 가리키는 표현이다.
