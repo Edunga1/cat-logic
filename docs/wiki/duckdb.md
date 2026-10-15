@@ -27,6 +27,41 @@ SELECT * FROM '~/Downloads/extract-2026*.csv'
 CREATE VIEW items AS select * from '~/Downloads/extract-2026*.csv'
 ```
 
+pipeline으로 전달할 수도 있다:
+
+```sh
+$ ls -al | duckdb -c "select * from read_csv('/dev/stdin')"
+┌────────────────────────────────────────────────────────────────┐
+│                            total 48                            │
+│                            varchar                             │
+├────────────────────────────────────────────────────────────────┤
+│ drwxr-xr-x@ 14 uname  staff   448 Oct 12 17:05 .               │
+│ drwxr-xr-x@ 34 uname  staff  1088 Oct  6 15:17 ..              │
+│ drwxr-xr-x@  3 uname  staff    96 Mar  5  2026 .claude         │
+│ -rw-r--r--@  1 uname  staff    41 Mar 30  2026 .editorconfig   │
+│ drwxr-xr-x@ 17 uname  staff   544 Oct 15 16:06 .git            │
+│ drwxr-xr-x@  3 uname  staff    96 Mar 30  2026 .github         │
+│ -rw-r--r--@  1 uname  staff    72 Mar 30  2026 .gitignore      │
+```
+
+환경 변수도 읽을 수 있다.
+스프링 logback 로그를 읽어서, 각 줄을 행으로 변환한다:
+
+```sh
+$ duckdb -c "select unnest(string_split(content, E'\n')) from read_text(getenv('TMPDIR') || '/spring.log')"
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                      unnest(string_split("content", '\n'))                                      │
+│                                                     varchar                                                     │
+├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 2026-10-15T11:48:40.236+09:00 DEBUG 15039 --- [myapp] [background-preinit] org.jboss.logging                  … │
+│ 2026-10-15T11:48:40.244+09:00 DEBUG 15039 --- [myapp] [background-preinit] o.h.v.i.xml.config.ValidationXmlPar… │
+│ 2026-10-15T11:48:40.245+09:00 DEBUG 15039 --- [myapp] [background-preinit] o.h.v.i.xml.config.ResourceLoaderHe… │
+│ 2026-10-15T11:48:40.245+09:00 DEBUG 15039 --- [myapp] [background-preinit] o.h.v.i.xml.config.ResourceLoaderHe… │
+│ 2026-10-15T11:48:40.245+09:00 DEBUG 15039 --- [myapp] [background-preinit] o.h.v.i.xml.config.ValidationXmlPar… │
+│ 2026-10-15T11:48:40.251+09:00 DEBUG 15039 --- [myapp] [background-preinit] o.h.v.i.e.resolver.TraversableResol… │
+│ 2026-10-15T11:48:40.251+09:00 DEBUG 15039 --- [myapp] [background-preinit] o.h.v.i.e.resolver.TraversableResol… │
+```
+
 ---
 
 "DuckDB"로 이름지은 이유가 재밌다.
