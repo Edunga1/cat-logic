@@ -539,9 +539,8 @@ GPT-5.1과 함께 높은 점수를 기록했다.
 
 2026년 9월 30일에 발표하는 Gemini 4.0 모델이름은 Argon.
 
-10월 13일, 곧 출시된다는 루머가 무성함.
-
-https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/
+10월 13일 배포되었다.\
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
 
 ![Gemini 4.0 Argon benchmark](./res/gemini-argon-benchmark.png)
 
