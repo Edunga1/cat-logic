@@ -36,3 +36,13 @@ Traces 기능은 서비스간 호출에서 특정 API를 찾는 등 서비스간
 다만 단점은 `a`와 `b`의 항목을 조합하여 집계할 수 없다.
 예를 들어, `b`의 api를 호출하는 `a`의 서비스 이름을 찾을 수 없다.
 `using span from`에서 집계 대상 span을 바꿔가며 찾아야 한다.
+
+### MCP server
+
+https://docs.datadoghq.com/mcp_server/
+
+`https://mcp.datadoghq.com/v1/mcp`를 remote mcp server로 추가하는 것만으로 설정은 끝난다.
+OAuth를 지원하므로 별도 키를 발급할 필요 없이 브라우저를 통해 인증한다.OAuth를 지원하므로 별도 키를 발급할 필요 없이 브라우저를 통해 인증한다.
+
+datadog 웹은 특유의 렉과 복잡한 UI 대신 AI 위임하기 좋다.
+trace, span, logs 등 웹에서 할 수 있는 일은 모두 도구로 등록되어 있는 듯.
