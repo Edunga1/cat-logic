@@ -29,11 +29,6 @@ vim은 에디터를 개선해 나가는 즐거움을 준다.
 다른 에디터라면 버전업 될 때마다 설렘이 있겠지만, vim은 그 설렘이 나로부터 시작된다.
 불필요한 기능을 제거하는 것이 아니라, 필요한 기능을 추가한다는 점은 vim만의 차별화된 특성이다.
 
-vimscript라는 자체 스크립트를 제공하는데, 학습하기 꽤 어려운 언어이다.
-[어떤 글](https://www.reddit.com/r/neovim/comments/l1mne8/learning_vimscript_vs_lua/)에서는 정규식에 빗대어, 학습하는 것이 아니라 그냥 사용하는 것이라고 한다:
-
-> Vimscript is like regex, you don't learn it, just use it.
-
 창시자인 Bram Moolenaar의 [23년 인터뷰 중](https://yozm.wishket.com/magazine/detail/2183/)에서 플러그인을 많이 사용하지 않는다고 한다:
 
 > 사실 저는 배포판에 포함된 플러그인(matchit, termdebug 등)을 제외하고는 플러그인 자체를 많이 사용하지 않습니다. 필요한 기능이 있으면 간단한 것은 바로 만들거나 Vim 베이스에 추가하는 편입니다.
@@ -331,30 +326,6 @@ endfunction
 `s:`를 붙이면 local function이 된다.
 함수는 정의된 스크립트에서만 호출할 수 있다. 즉, `call MyFunction()`로 호출할 수 없다.
 vim은 많은 플러그인을 통해 함수가 정의되어 이름 충돌할 수 있으므로 local function을 사용하는 것이 좋다.
-
-### Fuzzy 매칭: `matchfuzzy()`
-
-`:h matchfuzzy()`
-
-```vim
-:echo matchfuzzy(['red apple', 'yellow banana'], 'ra')  " ['red apple']
-```
-
-dictionary를 검색할 수도 있다:
-
-```vim
-let s:lst = [
-  \ {'name': 'john', 'age': 20},
-  \ {'name': 'jane', 'age': 30},
-  \ {'name': 'joe', 'age': 40},
-  \ {'name': 'jill', 'age': 50},
-  \]
-
-echo s:lst->matchfuzzy('je', {'key': 'name'})
-" [{'age': 40, 'name': 'joe'}, {'age': 30, 'name': 'jane'}]
-```
-
-fuzzy search하는 함수.
 
 ### `:make` and `makeprg`
 
