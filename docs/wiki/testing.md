@@ -276,7 +276,7 @@ fun givenFooFailsToReserve() {
 ```
 
 위 테스트 코드에서 문제점을 바로 찾을 수 있을까?
-잘못된 점은 `baaseUrl + "/u/0/photos"` 부분이다.
+잘못된 점은 `baseUrl + "/u/0/photos"` 부분이다.
 
 ```java
 @Test public void shouldNavigateToPhotosPage() {
