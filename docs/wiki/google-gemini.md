@@ -551,6 +551,8 @@ https://blog.google/innovation-and-ai/models-and-research/gemini-models/introduc
 출력 토큰이 64K에서 1M으로 증가했다고 한다.
 출력 토큰 제한이 늘어나면 더 복잡한 문제를 한 번에 해결할 수 있다고 설명한다.
 
+뒤이어 10월 28일, 2주만에 동일 버전의 Argon을 기반으로 한 후속 모델 [Carbon이 공개](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/)되었다.
+
 ## Gemini CLI
 
 Gemini CLI는 Gemini 모델을 터미널에서 사용할 수 있게 해주는 명령어를 제공한다.
