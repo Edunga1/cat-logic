@@ -5,7 +5,7 @@ created: 2023-02-16
 
 ## 화이자 백신의 소스 코드 뜯어보기
 
-원문: https://berthub.eu/articles/posts/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/
+원문: https://berthub.eu/articles/posts/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/ \
 번역: https://www.notion.so/BioNTech-Pfizer-dc94f9a45e634bd5a136c7c94ad434d1
 
 - 화이자는 mRNA라는 기반으로 만들어진 백신이다.
@@ -37,3 +37,17 @@ https://korean.cdc.gov/coronavirus/2019-ncov/vaccines/different-vaccines/mrna.ht
 ![protein translation](res/protein-translation.gif)
 
 - 아래 검은색 띠가 RNA, 녹색 부분에서 점점 길어지는 검은색 띠가 단백질. 들락거리는 것이 RNA에 부합하는 어댑터. 어댑터가 단백질에 쓰일 아미노산을 가져온다.
+
+## 앤트로픽, 클로드 코드를 이용한 게임 복제 금지
+
+[앤트로픽, 클로드로 기존 게임 복제 금지…정상 작업까지 차단 논란 - AI타임스](https://www.aitimes.com/news/articleView.html?idxno=216862)
+2026년 11월 1일 기사로, 복제 금지 프롬프트가 추가되어 정상적인 게임 개발도 막는다는 논란이 있다.
+
+최근에는 스팀 데모 출시된 게임을 복제하여 먼저 출시하거나, 작은 게임을 로블록스에 복제하여 수익을 낸다는 사례가 있다.
+특히 포토샵의 복제 프로젝트인 [PhotoCraft](https://github.com/storytold/photocraft)를 필두로, 상용 제품을 복제하는 사례가 늘어났다.
+비싼 구독 비용의 반발심으로 큰 인기를 얻으며 많이 바이럴 되었다.
+
+[REA: Reverse Engineer Anything](https://github.com/morluto/rea.md) 프로젝트는 역공학을 전문으로 하는 AI 툴셋이다.
+2026년 7월에 본격적인 개발이 시작되어 4개월만에 약 42만개의 Star를 받았다.
+
+역공학의 폭발적인 수요는 저작권 문제라는 다음 과제로 넘어간다.
