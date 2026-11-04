@@ -131,6 +131,12 @@ Star가 1,500여개 이지만, 아직 8개의 배포만 있고 성숙한 저장�
 
 Insomnia 사태로 인해 Insomnium과 선택을 고민중인 API Client.
 
+2023년에는 유료 기능이 없었지만, 2026년엔 이야기가 달라졌다.
+[구독제 서비스](https://www.usebruno.com/pricing)를 제공한다.
+[Bruno discussion #3486](https://github.com/usebruno/bruno/discussions/3486)을 보면 2024년 11월에 원타임 결제을 이미 제공하다가, 구독제로 전환한 것으로 보인다.
+온라인 전송 정보가 없던 당시 시점과는 많이 바뀌었고, Postman과 같은 절차를 밟을지도 모른다.
+다행인점은 오픈소스로 남아있다는 것.
+
 https://github.com/usebruno/bruno
 
 Git Sync 기능을 제공한다.
