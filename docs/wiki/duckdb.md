@@ -71,6 +71,11 @@ $ duckdb -c "select unnest(string_split(content, E'\n')) from read_text(getenv('
 >
 > \- [*FAQ*](https://duckdb.org/faq)
 
+---
+
+2026년 10월에 배포된 2.0.0에서는 [AI를 위한 출력 형식을 개선한다.](https://duckdb.org/2026/10/21/announcing-duckdb-200#agent-mode-in-the-cli)
+cli 사용에서 AI 에이전트를 감지하여, markdown 테이블이나 json 형식으로 출력량을 최대 59% 줄였다고.
+
 ## DuckDB UI
 
 `-ui` 옵션은 내장된 노트북을 호스팅한다. `duckdb -ui`:
