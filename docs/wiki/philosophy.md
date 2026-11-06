@@ -33,13 +33,18 @@ created: 2016-11-24
 
 [TED - 리누스 토발즈(Linus Torvalds): 리눅스의 기본 철학](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=ko)
 
-리누스 토발즈가 TED에서 인터뷰 형식으로 진행하는 영상이다.
+2016년 리누스 토발즈가 TED에서 인터뷰한 영상이다.
 
 ### 좋은 코드
 
-14:20 장면을 보면 Linked List의 node를 제거하는 함수 구현 코드 2개를 비교한다.
+![Ted Talks remove_list_entry code](res/ted-talks-linus-torvalds-code-snippet.png)
+
+[14:20](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=ko&t=860)
+
+Linked List의 node를 제거하는 함수 구현 코드 2개를 비교한다.
 
 **Code 1**
+
 ```c
 remove_list_entry(entry)
 {
@@ -64,6 +69,7 @@ remove_list_entry(entry)
 ```
 
 **Code 2**
+
 ```c
 remove_list_entry(entry)
 {
@@ -83,7 +89,7 @@ remove_list_entry(entry)
 }
 ```
 
-차이점은 마지막 부분의 if-else 키워드의 유무이다.
+차이점은 마지막 부분의 if-else 분기 유무이다.
 
 첫 번째 코드는 조건문을 통해 제거하는 노드가 첫 번째인지 아닌지 `if (!prev)` 판단한다.
 반면에 두 번째 코드는 제거하려는 노드가 가리키는 주소를 다음 노드로 변경한다.
@@ -99,9 +105,11 @@ remove_list_entry(entry)
 
 ### 리누스 토발즈의 개발자 자세
 
-16:40 장면부터
+![Ted Talks i'm not a visionary](res/ted-talks-linus-torvalds-visionary.png)
 
-자신은 git, linux와 같은 프로젝트를 만들었음에도 예지자가 아니라고 한다.
+[16:40](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=ko&t=1000)
+
+자신은 git, linux와 같은 프로젝트를 만들었음에도 선지자(visionary)가 아니라고 한다.
 
 하늘을 보며 걷는(미래 지향적인) 사람들과 일하는 게 좋으며,
 자신은 그 **사람들이 구멍에 빠지지 않게 구멍을 메우는 일** 을 한다고 한다. Wow..
@@ -407,9 +415,9 @@ Lamport가 프로그램을 작성할 때 다음의 과정을 거친다:
 
 프로그래밍에서 버퍼는 데이터를 임시적으로 저장하는 공간이다.
 
-임시란 개념은 개발자에게 안심감을 준다.\
-예를들어, 셸에서 `cat foo.txt | awk '{print $1}' | sort -u | rg 'pattern'`와 같은 명령어 조합을 한 번에 도출해내기 어렵지만,
-각 단계마다 결과를 확인하면서 임시 결과를 확인하면 수월하게 도달할 수 있다.
+임시 처리는 개발자에게 편안함을 주는 요소이다. \
+예를들어, 셸에서 `cat foo.txt | awk '{print $1}' | sort -u | rg 'pattern'`와 같은 명령어 조합을 한 번에 도출해내기는 어렵지만,
+각 단계의 결과를 임시 확인하며 진행하면 수월하게 도달할 수 있다.
 
 [Factorio](/docs/wiki/game.md#factorio)는 이 버퍼 개념을 잘 녹여낸 게임이다.\
 생산 라인을 구축하는 게임으로써 한 번에 많은 퍼즐에 맞닥뜨린다.
