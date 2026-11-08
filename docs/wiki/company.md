@@ -142,6 +142,19 @@ POE1, POE2 모두 개발하는 것은 무리였는지 1과 2 모두 개발이 �
 이를 해결하기 위해서 [2025년 5월 인터뷰를 통해 4개월 확정 일정을 발표](https://gall.dcinside.com/mgallery/board/view/?id=poe2&no=210654)했다.
 이전에는 만족할 때까지 개발하고 거기에 출시일을 맞추는 방식이었다면, 이제는 출시는 확정하고 그에 맞춰 개발하는 방식으로 전환하겠다는 것이다.
 
+### POE와 함께한 나의 여정
+
+2026년 9월 30일에 열린 뉴질랜드 게임 개발자 컨퍼런스인 [NZGDC 2026](https://www.nzgdc.com/programme)에서 발표한 POE 창업자 [크리스 윌슨](https://www.youtube.com/@ChrisWilsonVideos)의 폐막 기조연설.
+
+https://www.youtube.com/watch?v=Gq2r7x5qgmg
+
+디시인사이드에 AI 요약본이 올라왔다:
+- [크리스 윌슨 - POE와 함께한 나의 여정 1부 - 패스 오브 엑자일 마이너 갤러리](https://gall.dcinside.com/mgallery/board/view/?id=pathofexile&no=1293825)https://gall.dcinside.com/mgallery/board/view/?id=pathofexile&no=1293825
+- [크리스 윌슨 - POE와 함께한 나의 여정 2부 - 패스 오브 엑자일 마이너 갤러리](https://gall.dcinside.com/mgallery/board/view/?id=pathofexile&no=1293826)
+
+주제는 뉴질랜드가 왜 게임 개발이 적합한 환경인가에 대한 이야기지만,
+크리스 윌슨이 뉴질랜드에서 GGG를 창업하고, POE를 개발하면서 겪은 경험을 재치있게 엮어서 이야기한다.
+
 ## 창업자 모드
 
 2024년 9월, YCombinator 행사에서 Airbnb CEO인 Brian Chesky가 이야기한 내용이 화두다.
