@@ -153,7 +153,7 @@ C++를 아주 싫어하는데, C++ 개발자를 배제하는 것만으로도 C�
 [하프라이프의 위대한 점을 설명하는 글](https://news.hada.io/topic?id=19387)에 따르면 2가지 원칙이 있는데, 게임에 스토리를 부여하는 것과 플레이어의 컨트롤을 뺏지 않는 것이라고 한다.
 
 이후에는 대표적인 게임 플랫폼인 스팀을 만들고, 게임으로는 포탈, 레프트4데드를 개발했다.
-연이어 성공적인 사업을 이룬 것을 보거나 [밸브의 조직 문화](/docs/wiki/valve.md)를 보면 원칙을 세우고 고수하는 것이 중요하지 않나 생각한다.
+연이어 성공적인 사업을 이룬 것을 보거나 [밸브의 조직 문화](company.md#valve)를 보면 원칙을 세우고 고수하는 것이 중요하지 않나 생각한다.
 
 [^1]: https://web.archive.org/web/20250105202241/https://www.neowin.net/news/gabe-newell-i-learned-more-in-three-months-at-microsoft-than-entire-time-at-harvard/
 
