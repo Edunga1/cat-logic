@@ -125,6 +125,84 @@ https://www.facebook.com/story.php?story_fbid=27006446892333407&id=1000018438480
 토큰은 단어, 단어 뭉치, 문자 하나가 될 수 있으며 추천 단위가 토큰이다.
 예를 들어 `Horses are my favorite` 문장을 입력하면 `animal`, `animals`, `\n`, `!` 등을 다음에 올 토큰으로 추천하는 식이다.
 
+## Decision Model
+
+판단 모델.
+프롬프트에서 입력한 후보를 선택하거나 Yes/No, 점수 등 판단과 관련된 일만 한다.
+
+Jev가 2026년 9월에 최초 공개했다.
+
+사고 모드(thinking) 과정이 생략되고, 짧은 출력 토큰을 가지므로 응답 속도가 매우 빠른 특징을 가진다.
+사고 모드는 구조화된 출력만 유지하면 활성화할 수 있겠지만 출력이 제한되어 깊은 추론이 불필요해 제거한 게 아닐까 싶다.
+
+광범위한 답변 보다는 제한된 답변을 선택하는 점은 구조화된 출력으로 가능하기 때문에,
+판단 모델을 적용하기 적절한 곳은 짧은 지연이 필요한 경우가 되겠다.
+게임의 경우 실시간 판단과 몇 가지 선택지로 제한되므로 잘 어울리는 경우이다.
+
+### TypeSafe Jev
+
+선택지를 입력하여 판단과 확률을 구조화하여 출력하는 모델.
+
+https://typesafe.ai/blog/introducing-system-one-models-and-jev
+
+문장을 출력하지 않고, 주어진 선택지에 대해서 판단하기 때문에 출력이 간단하다.
+그래서 출력 토큰의 가격은 무료다.
+
+> Input tokens: $0.042 / MTok ($42 per billion tokens).
+>
+> Output tokens: FREE (too cheap to meter).
+
+[성능](https://typesafe.ai/blog/introducing-system-one-models-and-jev#:~:text=System%20One%20Models!-,Workflow%20evals,-We%20made%20a)은 sonnet 5, gpt terra 정도라고 한다.
+
+[일반 모델과 비교 데모](https://typesafe.ai/blog/introducing-system-one-models-and-jev#:~:text=as%20we%20can.-,Side%2Dby%2Dside%20demonstration,-Our%20side%2Dby)를 보면 응답 시간이 매우 빠른 것을 보여준다.
+물론 기존 모델과 비교하는 것은 목적이 다르니 적절하지 않지만, 비교될 정도로 빠른 응답을 보여주는 단편적인 모습.
+
+목적에 따라 용도는 한정되어 있다.
+채팅이나 코딩 등 비선택적 사항 보다는, 실시간 애플리케이션에 적합하다.
+최근 [Astra](/docs/wiki/openai.md#gpt-6-astra)의 게임 플레이가 이슈인데, Jev의 실시간 게임 플레이가 기대된다.
+
+> End-to-end response time is 70ms-500ms for TypeSafe.
+
+응답 시간은 70ms~500ms.
+
+> Jev supports a cardinality up to 255. For the higher cardinality choices, we do a 2 stage-system of scoring independently then making an explicit choice, hence the occassional slowdown.
+
+최대 선택지 수는 255개로 보인다. 많으면 느려질 수 있다고.
+
+GitHub 피드에 떠서 보게된 [jev-ultrafast](https://github.com/browser-use/jev-ultrafast).
+jev를 에이전트로 사용하는 브라우저로 보인다.
+README에 데모 영상이 있는데, 실시간 구글 항공편 검색하는 예제로 출발-도착지, 일정을 입력하는 흐름으로 되어있다.
+문장 입력할 수 없으니 광범위하게 사용되려면 다른 에이전트와 협력되어야 할 듯.
+
+### Strands Decider
+
+[Strands Decider](https://huggingface.co/StrandsAgents/strands-decider-2B-qwen3.5-v1-2610)는 qwen 3.5 등 모델을
+판단 모델로 파인 튜닝한 프로젝트다.
+
+> The core idea is that we take a pre-trained LLM torso (Qwen3.5-2B), and remove the LM head, taking away its ability to generate text. The LM head is replaced with a pointer head which scores the answers offered by the torso for each option. It does this by scoring the hidden state at each option position against the hidden state at the `<answer>` position. This head is pretty small, just over a million total parameters. The torso is fine-tuned with a rank-16 LoRA adapter.
+
+본체가 되는 모델에서 텍스트 생성 기능을 제거하고 점수를 매기는 기능으로 교체했다고.
+[qwen 3.5 2B 2026년 10월 모델로 테스트해봤다.](https://github.com/Edunga1/strands-decider-start)
+가위바위보, 틱택토 등 상황으로 테스트했으며 영문이나 게임 룰을 설명해야 품질이 좋아지는 경험을 했다.
+
+아래는 상대방이 가위를 냈을 때 어떤 것을 내야 이길 수 있을까에 대한 실험.
+
+```sh
+$ strands-decider ask StrandsAgents/strands-decider-2B-qwen3.5-v1-2610 \
+  --state "Rock, paper, scissors. Rules: rock beats scissors. Scissors beats paper. Paper beats rock.
+The opponent played scissors." \
+  --choice "Which move beats the opponent's move?=scissors,rock,paper"
+Fetching 29 files: 100%|███████████████████████████████████████████████████████████████████| 29/29 [00:00<00:00, 4910.97it/s]
+Reconstruction complete: |                                                                      |  0.00B /  0.00B
+Download complete:                                                                                       |  0.00B
+W1112 16:43:23.923000 11197 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights: 100%|███████████████████████████████████████████████████████████████████| 320/320 [00:00<00:00, 6626.33it/s]
+choice_0 -> rock (confidence 0.891)
+    rock                     0.928
+    paper                    0.041
+    scissors                 0.032
+```
+
 ## Interesting Things
 
 ### 인공지능 제품의 프롬프트 유출
@@ -738,41 +816,6 @@ Claude Code 구독 모델이더라도 CLIProxyAPI를 통해서 API로 사용할 
 **다만 구독 모델의 서드파티 사용은 Anthropic 정책상 허용되지 않을 확률이 높다!**\
 [3월에 Claude Code 구독 금지되었다는 사례](https://github.com/router-for-me/CLIProxyAPI/discussions/2244)가 많다.
 구독형 모델의 임의 사용은 [OpenClaw을 겨냥한 정책 변경](https://news.hada.io/topic?id=28190)이 먼저 있었다.
-
-### TypeSafe Jev
-
-선택지를 입력하여 판단과 확률을 구조화하여 출력하는 모델.
-
-https://typesafe.ai/blog/introducing-system-one-models-and-jev
-
-문장을 출력하지 않고, 주어진 선택지에 대해서 판단하기 때문에 출력이 간단하다.
-그래서 출력 토큰의 가격은 무료다.
-
-> Input tokens: $0.042 / MTok ($42 per billion tokens).
->
-> Output tokens: FREE (too cheap to meter).
-
-[성능](https://typesafe.ai/blog/introducing-system-one-models-and-jev#:~:text=System%20One%20Models!-,Workflow%20evals,-We%20made%20a)은 sonnet 5, gpt terra 정도라고 한다.
-
-[일반 모델과 비교 데모](https://typesafe.ai/blog/introducing-system-one-models-and-jev#:~:text=as%20we%20can.-,Side%2Dby%2Dside%20demonstration,-Our%20side%2Dby)를 보면 응답 시간이 매우 빠른 것을 보여준다.
-물론 기존 모델과 비교하는 것은 목적이 다르니 적절하지 않지만, 비교될 정도로 빠른 응답을 보여주는 단편적인 모습.
-
-목적에 따라 용도는 한정되어 있다.
-채팅이나 코딩 등 비선택적 사항 보다는, 실시간 애플리케이션에 적합하다.
-최근 [Astra](/docs/wiki/openai.md#gpt-6-astra)의 게임 플레이가 이슈인데, Jev의 실시간 게임 플레이가 기대된다.
-
-> End-to-end response time is 70ms-500ms for TypeSafe.
-
-응답 시간은 70ms~500ms.
-
-> Jev supports a cardinality up to 255. For the higher cardinality choices, we do a 2 stage-system of scoring independently then making an explicit choice, hence the occassional slowdown.
-
-최대 선택지 수는 255개로 보인다. 많으면 느려질 수 있다고.
-
-GitHub 피드에 떠서 보게된 [jev-ultrafast](https://github.com/browser-use/jev-ultrafast).
-jev를 에이전트로 사용하는 브라우저로 보인다.
-README에 데모 영상이 있는데, 실시간 구글 항공편 검색하는 예제로 출발-도착지, 일정을 입력하는 흐름으로 되어있다.
-문장 입력할 수 없으니 광범위하게 사용되려면 다른 에이전트와 협력되어야 할 듯.
 
 ## Hugging Face
 
