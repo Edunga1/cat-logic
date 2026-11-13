@@ -139,6 +139,19 @@ Jev가 2026년 9월에 최초 공개했다.
 판단 모델을 적용하기 적절한 곳은 짧은 지연이 필요한 경우가 되겠다.
 게임의 경우 실시간 판단과 몇 가지 선택지로 제한되므로 잘 어울리는 경우이다.
 
+- 2026-09-15 TypeSafe Jev 공개
+- 2026-10-22 OpenAI [Decisions API 공개](https://openai.com/index/decisions-api/)
+- 2026-11-12 Google [Decisions API 공개](https://aistudio.google.com/docs/decisions-api)
+
+API에서 공통적으로 이름을 맞췄다.
+Yes/No의 *noul*, 후보 선택인 *choice*, 평가 척도인 *score*.
+OpenAI는 noul을 predicate로 지었지만.
+
+각 기능의 출력 값의 의미
+- noul: 0~1 사이의 값이며, true인 경우 확률을 의미한다.
+- choice: 선택된 후보와 각 후보의 확률 및 confidence(확신도)를 가진다. confidence는 선택된 후보의 확률이 랜덤 선택되는 확률과의 차이를 가지는데, 선택지가 많고, 선택된 후보의 확률이 높을수록 더 신뢰성있다고 볼 수 있다.
+- score: 평가 척도로써, 지문의 Level을 말한다. 지문과 함께 단계 라벨을 제공해야 하며, 각 단계의 가중치를 가진다.
+
 ### TypeSafe Jev
 
 선택지를 입력하여 판단과 확률을 구조화하여 출력하는 모델.
