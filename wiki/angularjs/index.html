@@ -212,7 +212,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <h4 id="컨트롤러" style="position:relative;"><a href="#%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC" aria-label="컨트롤러 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>컨트롤러</h4>
 <h5 id="controlleras와-vm-사용하기" style="position:relative;"><a href="#controlleras%EC%99%80-vm-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="controlleras와 vm 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>controllerAs와 vm 사용하기</h5>
 <p><a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032">https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#style-y032</a></p>
-<p>controllerAS + vm 사용하고 <code class="language-text">this</code> 변수에 담고 직접 사용하지 않는다.</p>
+<p>controllerAS + vm 사용하고 <code>this</code> 변수에 담고 직접 사용하지 않는다.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">/* avoid */</span>
 <span class="token keyword">function</span> <span class="token function">CustomerController</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -280,7 +280,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <li>데이터 저장소(server, local storage, memory)로부터 데이터 핸들링하는 코드가 더 명확해 진다.
 <ul>
 <li>http header를 포함하는 코드</li>
-<li><code class="language-text">$http</code>와 같은 다른 서비스나 데이터와 커뮤니케이션 하는 코드</li>
+<li><code>$http</code>와 같은 다른 서비스나 데이터와 커뮤니케이션 하는 코드</li>
 <li>컨트롤러와 같이 데이터 서비스를 호출자가 하나의 지점으로 통하게 하고 데이터를 감추어 캡슐화 함</li>
 </ul>
 </li>
@@ -300,10 +300,10 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <li>chai</li>
 <li>sinon</li>
 </ul>
-<p>karma의 경우 글로벌로 <code class="language-text">karma-cli</code>를 설치하라는 글들이 많이 보였지만</p>
-<p>로컬에 <code class="language-text">karma</code>만 설치하여 <code class="language-text">./node_modules/karma/bin/karma</code>로 명령어를 실행할 수 있었다.</p>
+<p>karma의 경우 글로벌로 <code>karma-cli</code>를 설치하라는 글들이 많이 보였지만</p>
+<p>로컬에 <code>karma</code>만 설치하여 <code>./node_modules/karma/bin/karma</code>로 명령어를 실행할 수 있었다.</p>
 <h3 id="karmaconfjs" style="position:relative;"><a href="#karmaconfjs" aria-label="karmaconfjs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>karma.conf.js</h3>
-<p><code class="language-text">karma init</code>을 통해 생성되는 카르마 설정파일을 수정한다.</p>
+<p><code>karma init</code>을 통해 생성되는 카르마 설정파일을 수정한다.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     config<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
         <span class="token comment">// ...</span>
@@ -338,9 +338,9 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <span class="token punctuation">}</span>
 </code></pre></div>
 <h3 id="실행" style="position:relative;"><a href="#%EC%8B%A4%ED%96%89" aria-label="실행 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>실행</h3>
-<p><code class="language-text">karma start</code> 또는 <code class="language-text"> ./node_modules/karma/bin/karma start</code></p>
+<p><code>karma start</code> 또는 <code> ./node_modules/karma/bin/karma start</code></p>
 <h2 id="type-hinting" style="position:relative;"><a href="#type-hinting" aria-label="type hinting permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>type hinting</h2>
-<p>컨트롤러 내에서 <code class="language-text">vm</code>(ViewModel)으로 뷰 모델을 관리 할 때 타입 힌트를 제대로 얻을 수 없다.</p>
+<p>컨트롤러 내에서 <code>vm</code>(ViewModel)으로 뷰 모델을 관리 할 때 타입 힌트를 제대로 얻을 수 없다.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">controller</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
 
@@ -354,7 +354,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
      */</span>
     vm<span class="token punctuation">.</span>list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// any</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p>따라서 뷰 모델에 <code class="language-text">@typedef</code>로 하위 모델들을 명시하면서 해결했다.</p>
+<p>따라서 뷰 모델에 <code>@typedef</code>로 하위 모델들을 명시하면서 해결했다.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">controller</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">/**
      * @typedef CustomType
@@ -446,6 +446,6 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

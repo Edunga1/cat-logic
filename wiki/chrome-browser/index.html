@@ -167,26 +167,26 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <p>특정 사이트에 들어갈 때마다 오른쪽 위에 뜨는 그것. 매우 성가시다.
 이 기능의 이름은 "Third-party sign-in"이다.</p>
 <p>검색해보면 <a href="https://myaccount.google.com/connections/settings">https://myaccount.google.com/connections/settings</a> 에서 비활성화 할 수 있다고 하는데, 이 방법은 동작하지 않는다.</p>
-<p>사실 이 기능은 팝업의 <code class="language-text">x</code> 버튼을 누르면 해당 사이트는 더 이상 뜨지 않는다.
-하지만 모든 사람이 마우스 커서를 올려서 <code class="language-text">x</code> 버튼을 누르는 수고를 하는 것은 아니다.
+<p>사실 이 기능은 팝업의 <code>x</code> 버튼을 누르면 해당 사이트는 더 이상 뜨지 않는다.
+하지만 모든 사람이 마우스 커서를 올려서 <code>x</code> 버튼을 누르는 수고를 하는 것은 아니다.
 귀찮아서 esc 키를 누르는데, 이러면 새로고침이나 재방문할 때마다 다시 뜬다.</p>
 <p>해결하기 위해선 2가지 방법이 있다.</p>
 <p><strong>첫 번째 방법. 크롬 설정에서 차단하기</strong></p>
 <ul>
-<li>브라우저에서 다음을 입력한다: <code class="language-text">chrome://settings/content/federatedIdentityApi</code></li>
-<li><code class="language-text">Block sign-in prompts from identity services</code> 라디오 버튼 선택하면 끝.</li>
+<li>브라우저에서 다음을 입력한다: <code>chrome://settings/content/federatedIdentityApi</code></li>
+<li><code>Block sign-in prompts from identity services</code> 라디오 버튼 선택하면 끝.</li>
 </ul>
 <p>위 URL 대신 직접 메뉴로 들어가려면: 설정 -> 개인 정보 보호 및 보안 -> 사이트 설정 -> 추가 콘텐츠 설정 -> 서드 파티 로그인</p>
 <p><strong>두 번재 방법. 광고 차단 프로그램 사용하기</strong></p>
-<p>uBlock Origin 기준으로 필터에 <code class="language-text">||accounts.google.com/gsi/*$xhr,script,3p</code> 추가하면 된다.</p>
+<p>uBlock Origin 기준으로 필터에 <code>||accounts.google.com/gsi/*$xhr,script,3p</code> 추가하면 된다.</p>
 <ul>
 <li>참조: <a href="https://www.reddit.com/r/chrome/comments/1cdsikx/how_to_disable_the_new_sign_in_popup/">https://www.reddit.com/r/chrome/comments/1cdsikx/how_to_disable_the_new_sign_in_popup/</a></li>
 <li>공식 문서: <a href="https://support.google.com/chrome/answer/14264742">https://support.google.com/chrome/answer/14264742</a></li>
 </ul>
 <h2 id="북마크" style="position:relative;"><a href="#%EB%B6%81%EB%A7%88%ED%81%AC" aria-label="북마크 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>북마크</h2>
 <p>파이어폭스와 달리 크롬은 북마크에 태그 기능이 없다.
-흉내는 낼 수 있는데, 북마크 저장할 때 이름에 <code class="language-text">#태그</code>를 붙이고 검색할 때 <code class="language-text">#태그</code>로 검색하는 것이다.
-주소창 등에서 fuzzy search가 되므로 <code class="language-text">#태그1 #태그2</code>로 어느정도 검색된다.</p>
+흉내는 낼 수 있는데, 북마크 저장할 때 이름에 <code>#태그</code>를 붙이고 검색할 때 <code>#태그</code>로 검색하는 것이다.
+주소창 등에서 fuzzy search가 되므로 <code>#태그1 #태그2</code>로 어느정도 검색된다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
@@ -226,7 +226,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <h2 id="검색-엔진" style="position:relative;"><a href="#%EA%B2%80%EC%83%89-%EC%97%94%EC%A7%84" aria-label="검색 엔진 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>검색 엔진</h2>
 <p>크롬에서 검색 엔진이라는 것은, 주소창에 입력했을 때 검색할 사이트를 말한다.
 여러개의 검색 엔진을 추가하고, shortcut을 지정하면 검색어를 원하는 사이트에서 빠르게 검색할 수 있다.</p>
-<p>주소창에 <code class="language-text">chrome://settings/searchEngines</code> 입력하면 관리 페이지로 이동한다.</p>
+<p>주소창에 <code>chrome://settings/searchEngines</code> 입력하면 관리 페이지로 이동한다.</p>
 <p>검색 엔진 추가 버튼을 누르면 다음과 같은 팝업이 뜬다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -260,43 +260,43 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
   </a>
     </span></p>
 <ul>
-<li><code class="language-text">Name</code> 필드는 주소창에 표기될 이름이라 중요하지 않다.</li>
-<li><code class="language-text">Shortcut</code>은 주소창에서 이 단어를 입력하고 Tab키를 누르면 진입한다. 일종의 시작어다.</li>
-<li><code class="language-text">URL with %s in place of query</code>는 검색어를 입력할 URL이다. <code class="language-text">%s</code>는 검색어가 들어갈 자리다.</li>
+<li><code>Name</code> 필드는 주소창에 표기될 이름이라 중요하지 않다.</li>
+<li><code>Shortcut</code>은 주소창에서 이 단어를 입력하고 Tab키를 누르면 진입한다. 일종의 시작어다.</li>
+<li><code>URL with %s in place of query</code>는 검색어를 입력할 URL이다. <code>%s</code>는 검색어가 들어갈 자리다.</li>
 </ul>
 <p><strong>내 사용 예시</strong> <br>
-위 이미지는 <code class="language-text">Perplexity</code>라는 검색 엔진을 추가하는 모습이다.
-크롬에서 <code class="language-text">Command + L</code>을 눌러 주소창에 포커스를 맞춘 후 <code class="language-text">q</code>, <code class="language-text">Tab</code>을 순서대로 누르면 <code class="language-text">Perplexity</code> 검색 엔진으로 진입한다.
+위 이미지는 <code>Perplexity</code>라는 검색 엔진을 추가하는 모습이다.
+크롬에서 <code>Command + L</code>을 눌러 주소창에 포커스를 맞춘 후 <code>q</code>, <code>Tab</code>을 순서대로 누르면 <code>Perplexity</code> 검색 엔진으로 진입한다.
 이제 검색어를 입력하면 Perplexity에서 검색된다.
 구글, Perplexity, 사전 등 자주 가는 사이트를 추가해두면 빠르게 해당 사이트에서 검색할 수 있다.</p>
 <h3 id="유용한-검색-엔진" style="position:relative;"><a href="#%EC%9C%A0%EC%9A%A9%ED%95%9C-%EA%B2%80%EC%83%89-%EC%97%94%EC%A7%84" aria-label="유용한 검색 엔진 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>유용한 검색 엔진</h3>
 <p>개인적으로 유용한 검색 엔진 설정이다.</p>
 <p><strong>Perplexity</strong></p>
 <ul>
-<li>Name: <code class="language-text">Perplexity</code></li>
-<li>Shortcut: <code class="language-text">q</code></li>
-<li>URL: <code class="language-text">https://www.perplexity.ai/search/?q=%s</code></li>
+<li>Name: <code>Perplexity</code></li>
+<li>Shortcut: <code>q</code></li>
+<li>URL: <code>https://www.perplexity.ai/search/?q=%s</code></li>
 </ul>
 <p><strong>네이버 영어사전</strong></p>
 <ul>
-<li>Name: <code class="language-text">Naver 사전</code></li>
-<li>Shortcut: <code class="language-text">dic</code></li>
-<li>URL: <code class="language-text">https://en.dict.naver.com/#/search?query=%s&amp;range=all</code></li>
+<li>Name: <code>Naver 사전</code></li>
+<li>Shortcut: <code>dic</code></li>
+<li>URL: <code>https://en.dict.naver.com/#/search?query=%s&#x26;range=all</code></li>
 </ul>
 <p><strong>Jira</strong> <br>
 지라 이슈 번호로 검색할 때 유용하다.
-<code class="language-text">COMPANY</code>를 도메인에 맞게 대체하자.</p>
+<code>COMPANY</code>를 도메인에 맞게 대체하자.</p>
 <ul>
-<li>Name: <code class="language-text">Jira</code></li>
-<li>Shortcut: <code class="language-text">jira</code></li>
-<li>URL: <code class="language-text">https://COMPANY.atlassian.net/browse/%s</code></li>
+<li>Name: <code>Jira</code></li>
+<li>Shortcut: <code>jira</code></li>
+<li>URL: <code>https://COMPANY.atlassian.net/browse/%s</code></li>
 </ul>
 <p><strong>Confluence</strong> <br>
-지라와 마찬가지로, <code class="language-text">COMPANY</code>를 도메인에 맞게 대체하자.</p>
+지라와 마찬가지로, <code>COMPANY</code>를 도메인에 맞게 대체하자.</p>
 <ul>
-<li>Name: <code class="language-text">Confluence</code></li>
-<li>Shortcut: <code class="language-text">conf</code></li>
-<li>URL: <code class="language-text">https://COMPANY.atlassian.net/wiki/search/?text=%s</code></li>
+<li>Name: <code>Confluence</code></li>
+<li>Shortcut: <code>conf</code></li>
+<li>URL: <code>https://COMPANY.atlassian.net/wiki/search/?text=%s</code></li>
 </ul>
 <h3 id="파이어폭스의-검색-엔진" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%B4%EC%96%B4%ED%8F%AD%EC%8A%A4%EC%9D%98-%EA%B2%80%EC%83%89-%EC%97%94%EC%A7%84" aria-label="파이어폭스의 검색 엔진 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파이어폭스의 검색 엔진</h3>
 <p>파이어폭스는 이 검색 엔진 기능의 지원이 매우 열악하다.
@@ -338,6 +338,6 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

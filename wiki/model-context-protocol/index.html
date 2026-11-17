@@ -198,7 +198,7 @@ Copilot Chat을 통해 <a href="../playwright/">Playwright</a>를 실행, 대화
 그래서 이를 API 별로 잘라서 도구를 구현해야 했다.
 문제는 이러면 도구 호출 승인의 횟수가 늘어나서, 승인해야 하는 피로도로 사용자 경험이 떨어진다.</p>
 <p>MCP 서버를 구현하다 보면 AI가 언제 호출해야 할지 유도하지 못하는 상황에 맞닥뜨린다.
-<code class="language-text">tools/list</code>로 도구 목록은 불러오지만, 제공하는 도구가 적재 적소에 사용되도록 안내하기는 어렵다.
+<code>tools/list</code>로 도구 목록은 불러오지만, 제공하는 도구가 적재 적소에 사용되도록 안내하기는 어렵다.
 그래서 의도적인 호출을 유도하기 위해서 "XX 도구로 YY 작업을 수행해줘"라는 식으로 부자연스러운 흐름을 만든다.
 이런 문제를 의식했는지, Anthropic은 <a href="../claude-skills/">Claude Skills</a>를 제안한다.</p>
 <h2 id="서비스별-도구-호출-제한" style="position:relative;"><a href="#%EC%84%9C%EB%B9%84%EC%8A%A4%EB%B3%84-%EB%8F%84%EA%B5%AC-%ED%98%B8%EC%B6%9C-%EC%A0%9C%ED%95%9C" aria-label="서비스별 도구 호출 제한 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>서비스별 도구 호출 제한</h2>
@@ -249,7 +249,7 @@ AI 도구 제공자가 MCP 클라이언트를 제공하는 것이 일반적이�
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
 <h3 id="notificationsinitialized" style="position:relative;"><a href="#notificationsinitialized" aria-label="notificationsinitialized permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>notifications/initialized</h3>
-<p>성공적으로 초기화가 완료되면, 클라이언트는 <code class="language-text">notifications/initialized</code>를 호출한다.</p>
+<p>성공적으로 초기화가 완료되면, 클라이언트는 <code>notifications/initialized</code>를 호출한다.</p>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"jsonrpc"</span><span class="token operator">:</span> <span class="token string">"2.0"</span><span class="token punctuation">,</span>
   <span class="token property">"method"</span><span class="token operator">:</span> <span class="token string">"notifications/initialized"</span>
@@ -296,19 +296,19 @@ AI 도구 제공자가 MCP 클라이언트를 제공하는 것이 일반적이�
 <li>Introduction: <a href="https://modelcontextprotocol.io/docs/tools/inspector">https://modelcontextprotocol.io/docs/tools/inspector</a></li>
 </ul>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">npx @modelcontextprotocol/inspector <span class="token operator">&lt;</span>command<span class="token operator">></span> <span class="token operator">&lt;</span>args<span class="token operator">></span></code></pre></div>
-<p>서버 시작 명령어를 함께 넘겨주거나, <code class="language-text">npx @modelcontextprotocol/inspector</code>로 실행하면 MCP Inspector가 시작된다.
+<p>서버 시작 명령어를 함께 넘겨주거나, <code>npx @modelcontextprotocol/inspector</code>로 실행하면 MCP Inspector가 시작된다.
 로컬 환경에서 서버가 시작되면, 웹 브라우저에서 서버를 테스트할 수 있다. 일종의 Web UI 기반 MCP 클라이언트인 셈.</p>
 <h2 id="claude-desktop-extension" style="position:relative;"><a href="#claude-desktop-extension" aria-label="claude desktop extension permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Claude Desktop Extension</h2>
 <p>Claude Desktop에서 설정에 진입하면 확장 프로그램을 관리할 수 있다.
 사실상 MCP 서버를 쉽게 추가할 수 있도록 도와주는 기능이다.</p>
-<p>MCP 서버 개발자가 <code class="language-text">.dxt</code> 파일을 만들어서 배포하면, 사용자는 이 파일을 확장 프로그램에 드래그 앤 드롭으로 설치할 수 있다.</p>
-<p><code class="language-text">.dxt</code> 파일은 MCP 서버의 코드(의존성 포함)와 manifest를 포함하는 압축 파일이다.</p>
+<p>MCP 서버 개발자가 <code>.dxt</code> 파일을 만들어서 배포하면, 사용자는 이 파일을 확장 프로그램에 드래그 앤 드롭으로 설치할 수 있다.</p>
+<p><code>.dxt</code> 파일은 MCP 서버의 코드(의존성 포함)와 manifest를 포함하는 압축 파일이다.</p>
 <p><a href="https://github.com/anthropics/dxt">anthropics/dxt</a>는 DXT 파일을 쉽게 만들 수 있는 도구이다.
-<code class="language-text">dxt init</code>으로 manifest를 생성하고, <code class="language-text">dxt pack</code>으로 <code class="language-text">.dxt</code> 파일을 생성한다.
-별도 빌드 프로세스는 없으므로, 개발 의존성을 제외한 상태에서 <code class="language-text">dxt pack</code>을 실행하자.</p>
+<code>dxt init</code>으로 manifest를 생성하고, <code>dxt pack</code>으로 <code>.dxt</code> 파일을 생성한다.
+별도 빌드 프로세스는 없으므로, 개발 의존성을 제외한 상태에서 <code>dxt pack</code>을 실행하자.</p>
 <p>2025-07-23, 클라이언트가 MCP 서버를 제대로 호출하지 못하는 문제가 발생했다.
 <a href="https://www.reddit.com/r/ClaudeAI/comments/1m6zckh/local_mcp_servers_just_stopped_working/">Reddit 에서도 같은 문제를 겪는 사용자들</a>이 많다.
-도구 호출 자체는 정상적이나, <code class="language-text">arguments</code>를 전달하지 않는 문제다. 사용자의 승인 창에서는 전달한다고 보여주지만, 실제로는 전달하지 않는다.
+도구 호출 자체는 정상적이나, <code>arguments</code>를 전달하지 않는 문제다. 사용자의 승인 창에서는 전달한다고 보여주지만, 실제로는 전달하지 않는다.
 실행되지 않는 것과 별개로, 사용자가 보는 입력과 실제 입력이 다른 것은 문제가 될 여지가 있다. <br>
 이 이슈는 <a href="https://status.anthropic.com/incidents/1874wdtlmhwt">Anthropic의 Status 페이지</a>에 기록되어 있다.</p>
 <h2 id="mcp-servers" style="position:relative;"><a href="#mcp-servers" aria-label="mcp servers permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MCP Servers</h2>
@@ -394,6 +394,6 @@ AI 도구 제공자가 MCP 클라이언트를 제공하는 것이 일반적이�
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -191,17 +191,17 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <p>Godot은 오픈소스 게임 엔진이다.</p>
 <p>Scene 저장 시 스크립트가 자동 포매팅된다.
 Godot 에디터 설정이 Tab 및 4칸이 기본 설정인데,
-<code class="language-text">Editor</code> > <code class="language-text">Editor Settings</code> > <code class="language-text">Text Editor</code> > <code class="language-text">Indent</code>에서 변경할 수 있다.
+<code>Editor</code> > <code>Editor Settings</code> > <code>Text Editor</code> > <code>Indent</code>에서 변경할 수 있다.
 다른 에디터의 기본 값과 다르면 불편하므로 변경하는 편이 좋다.</p>
 <p>에디터의 인상적인 부분은 먼저, 가볍다는 것이다.</p>
 <p>설치부터 portable 형태로 제공된다. 다운 받으면 추가적으로 다운로드 받을 것이 없다(Unity와는 다르다).
 용량은 약 120MB 정도이다. 적은 용량만큼 에디터의 반응 속도도 빠르다.</p>
-<p>Scene 파일인 <code class="language-text">.tscn</code>은 사람이 읽을 수 있는 형태로 저장된다.
+<p>Scene 파일인 <code>.tscn</code>은 사람이 읽을 수 있는 형태로 저장된다.
 변경되는 부분만 저장하므로 복잡하지 않다.
-변경 여부는 에디터 내에서도 <code class="language-text">3 Changes</code>와 같이 표시된다.
+변경 여부는 에디터 내에서도 <code>3 Changes</code>와 같이 표시된다.
 이러한 점은 에디터 없이도 개발할 수 있게 해줄 것이다.</p>
-<p>윈도우에서 설치 시 <code class="language-text">godot.exe</code> 바이너리를 제공한다.
-프로젝트 내에서 <code class="language-text">godot.exe</code>를 입력하면 프로젝트를 실행한다.</p>
+<p>윈도우에서 설치 시 <code>godot.exe</code> 바이너리를 제공한다.
+프로젝트 내에서 <code>godot.exe</code>를 입력하면 프로젝트를 실행한다.</p>
 <p>CLI에 대한 정보는: <a href="https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html">https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html</a></p>
 <p><a href="../language-server-protocol/">LSP</a>를 Godot 에디터가 지원한다.
 Godot 에디터에서 LSP 서버 실행 옵션을 킨 후 외부 에디터에서 연결하면 된다.
@@ -225,23 +225,23 @@ Godot 에디터의 버전이 업데이트 되면, 프로젝트 파일 등 에디
 유니티 프로젝트를 WSL 안에 두고 사용 시도를 했었는데, 잘 안되었던 것으로 기억한다.</p>
 <h4 id="language-server-protocol" style="position:relative;"><a href="#language-server-protocol" aria-label="language server protocol permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Language Server Protocol</h4>
 <p><a href="https://docs.godotengine.org/en/stable/tutorials/editor/external_editor.html">공식 문서</a>에서는 외부 에디터를 사용하는 방법으로 소개하고 있다.</p>
-<p>Godot 에디터에서 <code class="language-text">6005</code> 포트로 Language Server를 실행하고, 외부 에디터에서 LSP를 사용하는 구조이다.
-참고로 <a href="https://github.com/neovim/nvim-lspconfig/blob/16666f1bc40f69ce05eb1883fd8c0d076284d8a5/lua/lspconfig/configs/gdscript.lua">nvim-lspconfig의 gdscript 기본설정</a>도 <code class="language-text">6005</code> 포트에 연결하도록 기본 설정되어 있다.</p>
+<p>Godot 에디터에서 <code>6005</code> 포트로 Language Server를 실행하고, 외부 에디터에서 LSP를 사용하는 구조이다.
+참고로 <a href="https://github.com/neovim/nvim-lspconfig/blob/16666f1bc40f69ce05eb1883fd8c0d076284d8a5/lua/lspconfig/configs/gdscript.lua">nvim-lspconfig의 gdscript 기본설정</a>도 <code>6005</code> 포트에 연결하도록 기본 설정되어 있다.</p>
 <p>Windows 10 + WSL2 환경에서, 공식 문서에 따라 Godot에서 LSP를 활성화하고, Vim LSP 설정하였지만 윈도우 앱에서 오픈한 포트에 연결하지 못했다.
 윈도우 포트 정보에서는 확인되지만, WSL에서는 포트를 찾지 못했다. 아마도 WSL 이슈인 것 같다.</p>
 <p><strong>Windows 11 업그레이드하면서 다시 시도했고, 동작했다</strong>.
 WSL에서 포트 정보를 찾을 수 없는데도 잘 동작한다.
-이전과 다른 점은 <code class="language-text">winget</code>으로 Godot을 설치했다는 점인데, 관계가 있을지는 모르겠다.
+이전과 다른 점은 <code>winget</code>으로 Godot을 설치했다는 점인데, 관계가 있을지는 모르겠다.
 어쨌든 LSP가 잘 동작해서, Vim에서도 타입과 함수 정보를 볼 수 있다.</p>
 <p>정리하면:</p>
 <ul>
 <li>Godot에서 LSP를 활성화하고</li>
-<li>Vim에서 nvim-lspconfig로 <code class="language-text">gdscript</code> <a href="https://github.com/Edunga1/dotfiles/commit/9dbb085adc52f09a6f3592447dbd7ad01c9b37c9">설정만 했다</a>.</li>
+<li>Vim에서 nvim-lspconfig로 <code>gdscript</code> <a href="https://github.com/Edunga1/dotfiles/commit/9dbb085adc52f09a6f3592447dbd7ad01c9b37c9">설정만 했다</a>.</li>
 </ul>
 <h3 id="성가신-외부-파일-수정-팝업-끄기" style="position:relative;"><a href="#%EC%84%B1%EA%B0%80%EC%8B%A0-%EC%99%B8%EB%B6%80-%ED%8C%8C%EC%9D%BC-%EC%88%98%EC%A0%95-%ED%8C%9D%EC%97%85-%EB%81%84%EA%B8%B0" aria-label="성가신 외부 파일 수정 팝업 끄기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>성가신 외부 파일 수정 팝업 끄기</h3>
 <p>외부 에디터에서 파일을 수정하고 Godot 앱으로 돌아오면 수정된 파일을 다시 가져올 지, 버릴지 물어본다.
 수정할 때 마다 팝업이 떠서 불편한데, 설정을 통해 항상 수정 파일을 다시 가져오도록 할 수 있다.</p>
-<p>Editor -> Editor Settings -> Text Editor -> Behavior -> Files에서 <code class="language-text">Auto reload Scripts on External Change</code>를 체크하면 된다.</p>
+<p>Editor -> Editor Settings -> Text Editor -> Behavior -> Files에서 <code>Auto reload Scripts on External Change</code>를 체크하면 된다.</p>
 <h2 id="gdscript" style="position:relative;"><a href="#gdscript" aria-label="gdscript permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GDScript</h2>
 <p>GDScript는 Godot Engine이 제공하는 스크립트 언어이다.</p>
 <p><a href="https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting_languages.html#gdscript">https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting_languages.html#gdscript</a></p>
@@ -249,10 +249,10 @@ WSL에서 포트 정보를 찾을 수 없는데도 잘 동작한다.
 <p>GDScript looks like Python as you structure your code blocks using indentations, but it doesn't work the same way in practice. It's inspired by multiple languages, including Squirrel, Lua, and Python.</p>
 </blockquote>
 <p>파이썬과 유사한 문법을 가지지만, 같은 방식으로 동작하지 않으며 Squirrel, Lua, Python에 영감을 받았다고 한다.
-python과 같이 <code class="language-text">self</code>를 지원하지만, 함수 시그니처에서 <code class="language-text">self</code>를 명시적으로 사용하지 않아도 된다.</p>
-<p><code class="language-text">owner</code>는 부모 노드를 가리킨다. scene에서 노드를 추가할 일이 많기 때문에, 부모 노드를 참조할 일이 많다.</p>
+python과 같이 <code>self</code>를 지원하지만, 함수 시그니처에서 <code>self</code>를 명시적으로 사용하지 않아도 된다.</p>
+<p><code>owner</code>는 부모 노드를 가리킨다. scene에서 노드를 추가할 일이 많기 때문에, 부모 노드를 참조할 일이 많다.</p>
 <p>엔진과 커뮤니케이션하기 위한 지원이 포함되어 있는 듯.
-<code class="language-text">$</code>는 <code class="language-text">get_node()</code>의 단축어인데, <code class="language-text">$AnimatedSprite2D.play()</code>는 <code class="language-text">get_node("AnimatedSprite2D").play()</code>와 같다.<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>
+<code>$</code>는 <code>get_node()</code>의 단축어인데, <code>$AnimatedSprite2D.play()</code>는 <code>get_node("AnimatedSprite2D").play()</code>와 같다.<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>
 유니티의 컴포넌트 개념을 Godot에서는 노드로 표현하는데, 이 노드를 식별하기 위해 사용한다.</p>
 <h2 id="디자인-패턴" style="position:relative;"><a href="#%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4" aria-label="디자인 패턴 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>디자인 패턴</h2>
 <h3 id="signal" style="position:relative;"><a href="#signal" aria-label="signal permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Signal</h3>
@@ -260,21 +260,21 @@ python과 같이 <code class="language-text">self</code>를 지원하지만, 함
 <p>Signal은 Godot 버전의 옵저버 패턴이다.<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>
 Godot은 이를 내장하고 있다.</p>
 <p>부모 노드 -> 자식 노드로 커뮤니케이션은 자식 노드를 직접 참조하면 되는 반면에, <br>
-자식 노드 -> 부모 노드로 커뮤니케이션은 signal을 일반적으로 사용한다.(또 다른 방법은 <code class="language-text">owner</code>를 사용하는 것이다.)</p>
-<p>자식 노드에서는 <code class="language-text">signal</code>을 선언하고, observer에 <code class="language-text">emit()</code>을 통해 notification 한다.</p>
+자식 노드 -> 부모 노드로 커뮤니케이션은 signal을 일반적으로 사용한다.(또 다른 방법은 <code>owner</code>를 사용하는 것이다.)</p>
+<p>자식 노드에서는 <code>signal</code>을 선언하고, observer에 <code>emit()</code>을 통해 notification 한다.</p>
 <div class="gatsby-highlight" data-language="gd"><pre class="language-gd"><code class="language-gd">signal hit
 
 func _process(delta):
   if is_colliding():
     emit_signal(&quot;hit&quot;)</code></pre></div>
-<p>observer가 되는 노드에서는 <code class="language-text">connect()</code>를 통해 observer를 등록하거나, tscn 파일에서 observer 노드의 트리거 될 함수를 설정한다.</p>
+<p>observer가 되는 노드에서는 <code>connect()</code>를 통해 observer를 등록하거나, tscn 파일에서 observer 노드의 트리거 될 함수를 설정한다.</p>
 <div class="gatsby-highlight" data-language="gd"><pre class="language-gd"><code class="language-gd">func _on_Enemy_hit():
   queue_free()</code></pre></div>
-<p><code class="language-text">owner</code>를 사용하면 다음과 같이 사용할 수 있다.</p>
+<p><code>owner</code>를 사용하면 다음과 같이 사용할 수 있다.</p>
 <div class="gatsby-highlight" data-language="gd"><pre class="language-gd"><code class="language-gd">func _process(delta):
   if is_colliding():
     owner.on_hit()</code></pre></div>
-<p>다만 이 방식은 부모 노드가 <code class="language-text">on_hit</code> 함수를 가지고 있어야 한다.
+<p>다만 이 방식은 부모 노드가 <code>on_hit</code> 함수를 가지고 있어야 한다.
 안전한 처리를 위해서 ready 함수에서 부모 노드의 검증을 할 수 있다.</p>
 <div class="gatsby-highlight" data-language="gd"><pre class="language-gd"><code class="language-gd">func _ready():
   if not owner.has_method(&quot;on_hit&quot;):
@@ -290,38 +290,38 @@ func _process(delta):
 <p>1, 2는 한 번만 진행한다.</p>
 <p>Export Templates는 빌드를 위한 도구를 설치하는 과정이다.
 프로젝트 레벨이 아닌 Godot 엔진 레벨에서 설치하는 것으로 보인다.
-Editor -> Manage Export Templates...에서 <code class="language-text">Download and Install</code> 버튼을 클릭하기만 하면 설치된다.
+Editor -> Manage Export Templates...에서 <code>Download and Install</code> 버튼을 클릭하기만 하면 설치된다.
 CLI로 설치할 수 있는지는 모르겠다.</p>
 <p>Web Preset은 빌드 설정을 저장한다.
 웹, 데스크탑, AOS, IOS 등 플랫폼 별로 Preset을 만들면 export_presets.cfg에 설정이 저장된다.</p>
-<p>이제 에디터나 <code class="language-text">godot.exe</code> 또는 <code class="language-text">godot</code> cli로 export할 수 있다.
+<p>이제 에디터나 <code>godot.exe</code> 또는 <code>godot</code> cli로 export할 수 있다.
 다음은 CLI로 빌드하는 방법. WSL 및 godot.exe를 binary로 사용하고 있다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> build/web
 $ godot.exe --export-release <span class="token string">"HTML5"</span> ./build/web/index.html</code></pre></div>
 <p>godot.exe는 윈도우 앱 기반이라 그런지, Godot 엔진이 시작되고 빌드 후 종료된다.</p>
-<p>이제 <code class="language-text">build/web/index.html</code>을 서빙하면 실행된다.
-<code class="language-text">live-server build/web</code> 등 도구로 확인한다.</p>
+<p>이제 <code>build/web/index.html</code>을 서빙하면 실행된다.
+<code>live-server build/web</code> 등 도구로 확인한다.</p>
 <hr>
 <p>아래는 쓰레드를 사용한 고성능 웹 빌드에 대한 내용인데, 내 경우는 해당 기능을 사용하지 않는지 문제가 없다.</p>
 <p>기본적으로 웹 빌드하면 쓰레드 사용으로 SharedArrayBuffer와 이를 위한 CrossOriginIsolation의 활성화가 필요하다.
 하지만 github pages 등 대부분 호스팅 사이트에서는 이를 지원하지 않는다.
 이를 비활성화할 수 있는 방법이 있다고 한다.</p>
 <p><a href="https://forum.godotengine.org/t/godot-4-3-will-finally-fix-web-builds-no-sharedarraybuffers-required/38885">Godot 4.3 will FINALLY fix web builds, no SharedArrayBuffers required!</a><br>
-이 글에서는 <code class="language-text">THREADS_ENABLED</code>를 추가하면서 더 이상 SharedArrayBuffer가 필요하지 않다고 한다.</p>
+이 글에서는 <code>THREADS_ENABLED</code>를 추가하면서 더 이상 SharedArrayBuffer가 필요하지 않다고 한다.</p>
 <p>이 <a href="https://github.com/yet-another-lucas/plumbing-adventure/blob/main/.github/workflows/ci.yml">godot-ci</a> workflow를 사용한 프로젝트는 관련된 설정은 보이지 않지만, 웹에서 잘 동작한다.
 아마도 Base Workflows에서 이미 설정되어 있는 듯.</p>
 <h2 id="godot-mcp-server" style="position:relative;"><a href="#godot-mcp-server" aria-label="godot mcp server permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Godot MCP Server</h2>
 <p>고도 프로젝트를 에디터로 열거나 프로젝트를 실행 등 기능을 지원하는 <a href="../model-context-protocol/">MCP 서버</a>.</p>
 <p><a href="https://github.com/Coding-Solo/godot-mcp">https://github.com/Coding-Solo/godot-mcp</a></p>
-<p>설치는 프로젝트를 clone, <code class="language-text">npm install</code>, <code class="language-text">npm run build</code>를 통해 완료한다.</p>
+<p>설치는 프로젝트를 clone, <code>npm install</code>, <code>npm run build</code>를 통해 완료한다.</p>
 <p>MCP를 통해 프로젝트를 실행하면, 종료할 때, 에러 등 로그를 출력하는데 이 것을 AI가 확인하고 수정해주기 때문에 유용하다.
 그러니 직접 프로젝트를 실행하는 대신 MCP를 통해서 실행하자.</p>
 <p>gemini-2.5-pro로 개발을 진행했는데, tscn, 스크립트, 파일 경로 수정 등 모두 잘 처리했다.
 물론 한 번에 되지는 않고, 실행하고 종료를 통해 에러 로그를 확인을 반복했는데, 이 과정이 사용자의 개입이 필요하다.
 실시간 로그를 확인할 수 있다면 완전 자동화가 가능할지도. gemini2.5-pro와 도구의 조합이 만족스럽다.</p>
 <p><a href="../github/">GitHub</a> MCP 서버를 설정해놓고, Project에 이슈를 등록, "11번 이슈 처리해줘"와 같이 요청했다.
-그러면 알아서 이슈 정보를 확인하고, 필요한 파일을 수정한다. 커밋까지 <code class="language-text">Closes #11</code>을 추가하라고 하면 거의 자동화가 된다.</p>
-<p>WSL과 같이 리눅스로 인지하지만 윈도우 바이너리에 접근하는 경우 <code class="language-text">GODOT_PATH</code>로 경로를 직접 지정해주자.
+그러면 알아서 이슈 정보를 확인하고, 필요한 파일을 수정한다. 커밋까지 <code>Closes #11</code>을 추가하라고 하면 거의 자동화가 된다.</p>
+<p>WSL과 같이 리눅스로 인지하지만 윈도우 바이너리에 접근하는 경우 <code>GODOT_PATH</code>로 경로를 직접 지정해주자.
 하지만 프로세스 실행은 잘 되지만, 종료가 되지 않는 문제가 있다.</p>
 <h2 id="참고" style="position:relative;"><a href="#%EC%B0%B8%EA%B3%A0" aria-label="참고 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>참고</h2>
 <h3 id="node간-커뮤니케이션-방법" style="position:relative;"><a href="#node%EA%B0%84-%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98-%EB%B0%A9%EB%B2%95" aria-label="node간 커뮤니케이션 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Node간 커뮤니케이션 방법</h3>
@@ -347,7 +347,7 @@ Actions는 GitHub에서 트리거 되기전에 진행하기 어려운데, <a hre
 <hr>
 <ol>
 <li id="fn-1"><a href="https://docs.godotengine.org/en/stable/getting_started/first_2d_game/03.coding_the_player.html">https://docs.godotengine.org/en/stable/getting_started/first_2d_game/03.coding_the_player.html</a><a href="#fnref-1" class="footnote-backref">↩</a></li>
-<li id="fn-2"><code class="language-text">... As mentioned in the introduction, signals are Godot's version of the observer pattern.</code><a href="#fnref-2" class="footnote-backref">↩</a></li>
+<li id="fn-2"><code>... As mentioned in the introduction, signals are Godot's version of the observer pattern.</code><a href="#fnref-2" class="footnote-backref">↩</a></li>
 </ol>
 </div></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div><div class="PageLayout__Side-sc-11jfopf-3 lcfPgp"><div class="Wiki__RelatedLinksSide-sc-16q9onf-6 iCNRBr"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Related</summary><ul class="RelatedLinks__Links-sc-1y1aimd-0 fuujHb"><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vim/">Vim</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/unity3d/">Unity 3D</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/model-context-protocol/">Model Context Protocol(MCP)</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/github/">GitHub</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/google-gemini/">Google Gemini</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vimenter-2023/">VimEnter 2023</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/language-server-protocol/">Language Server Protocol</a></li></ul></details></div><div class="Toc__Container-sc-1f76i2s-0 kZGlWu Wiki__TocSide-sc-16q9onf-5 HhRYq"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Table of Contents</summary><div><ul>
 <li>
@@ -408,6 +408,6 @@ Actions는 GitHub에서 트리거 되기전에 진행하기 어려운데, <a hre
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

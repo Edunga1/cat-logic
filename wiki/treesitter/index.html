@@ -154,20 +154,20 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <p><a href="../vim/">nvim</a>에서 플러그인으로 사용하고 있다.
 문법 강조나 Text Object 확장을 제공한다.</p>
 <h2 id="query" style="position:relative;"><a href="#query" aria-label="query permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query</h2>
-<p>Treesitter의 표현식은 Scheme을 통해 정의되며, <code class="language-text">.scm</code> 확장자를 가진다.</p>
+<p>Treesitter의 표현식은 Scheme을 통해 정의되며, <code>.scm</code> 확장자를 가진다.</p>
 <blockquote>
-<p>... The default names for the query files use the <code class="language-text">.scm</code> file. We chose this extension because it commonly used for files written in <a href="https://en.wikipedia.org/wiki/Scheme_%28programming_language%29">Scheme</a>, a popular dialect of Lisp, and these query files use a Lisp-like syntax.</p>
+<p>... The default names for the query files use the <code>.scm</code> file. We chose this extension because it commonly used for files written in <a href="https://en.wikipedia.org/wiki/Scheme_%28programming_language%29">Scheme</a>, a popular dialect of Lisp, and these query files use a Lisp-like syntax.</p>
 <p>Alternatively, you can think of .scm as an acronym for “Source Code Matching”.</p>
 <p><a href="https://tree-sitter.github.io/tree-sitter/syntax-highlighting#queries">Queries</a> 중에서</p>
 </blockquote>
-<p>nvim에서 treesitter textobject 쿼리를 추가하려면 <code class="language-text">&lt;nvim-config>/queries/&lt;language>/textobjects.scm</code>을 생성하거나,
-nvim-treesitter의 <code class="language-text">:TSEditQuery textobjects</code> 명령어를 통해 내장된 쿼리를 수정한다.</p>
-<p>다음은 javascript에서 Object의 key를 <code class="language-text">@property</code>로, value를 <code class="language-text">@value</code>로 지정하는 쿼리이다.</p>
+<p>nvim에서 treesitter textobject 쿼리를 추가하려면 <code>&#x3C;nvim-config>/queries/&#x3C;language>/textobjects.scm</code>을 생성하거나,
+nvim-treesitter의 <code>:TSEditQuery textobjects</code> 명령어를 통해 내장된 쿼리를 수정한다.</p>
+<p>다음은 javascript에서 Object의 key를 <code>@property</code>로, value를 <code>@value</code>로 지정하는 쿼리이다.</p>
 <div class="gatsby-highlight" data-language="scheme"><pre class="language-scheme"><code class="language-scheme"><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">pair</span>
   key: <span class="token punctuation">(</span><span class="token function">property_identifier</span><span class="token punctuation">)</span> @property
   value: <span class="token punctuation">(</span><span class="token function">_</span><span class="token punctuation">)</span> @value<span class="token punctuation">)</span>
 <span class="token punctuation">)</span></code></pre></div>
-<p>내 설정 기준으로 <code class="language-text">~/.config/nvim/queries/javascript/textobjects.scm</code>에 저장하였다.</p>
+<p>내 설정 기준으로 <code>~/.config/nvim/queries/javascript/textobjects.scm</code>에 저장하였다.</p>
 <p>이제 nvim-treesitter 플러그인 설정에 다음을 추가한다.</p>
 <div class="gatsby-highlight" data-language="lua"><pre class="language-lua"><code class="language-lua">require<span class="token string">'nvim-treesitter.configs'</span><span class="token punctuation">.</span><span class="token function">setup</span> <span class="token punctuation">{</span>
   textobjects <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -181,7 +181,7 @@ nvim-treesitter의 <code class="language-text">:TSEditQuery textobjects</code> �
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p>이제 <code class="language-text">vap</code>로 <code class="language-text">key</code>를 선택하고, <code class="language-text">vav</code>로 <code class="language-text">'value'</code>를 선택할 수 있다.</p>
+<p>이제 <code>vap</code>로 <code>key</code>를 선택하고, <code>vav</code>로 <code>'value'</code>를 선택할 수 있다.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">'value'</span>
 <span class="token punctuation">}</span></code></pre></div>
@@ -193,14 +193,14 @@ nvim-treesitter의 <code class="language-text">:TSEditQuery textobjects</code> �
   <span class="token punctuation">(</span><span class="token function">pair</span>
     key: <span class="token punctuation">(</span><span class="token function">_</span><span class="token punctuation">)</span> @assignment.lhs
     value: <span class="token punctuation">(</span><span class="token function">_</span><span class="token punctuation">)</span> @assignment.inner @assignment.rhs<span class="token punctuation">)</span> @assignment.outer<span class="token punctuation">)</span></code></pre></div>
-<p><code class="language-text">@assignment.lhs</code>로 key를 선택하고, <code class="language-text">@assignment.rhs</code>로 value를 선택할 수 있다.
-<code class="language-text">@assignment.outer</code>로 key, value 모두 선택한다.</p>
+<p><code>@assignment.lhs</code>로 key를 선택하고, <code>@assignment.rhs</code>로 value를 선택할 수 있다.
+<code>@assignment.outer</code>로 key, value 모두 선택한다.</p>
 <p>주의할 점은 다음과 같이 다른 문맥에서 같은 이름을 사용하고 있어서, 커서 위치에 따라 선택되는 대상이 달라진다.</p>
 <div class="gatsby-highlight" data-language="scheme"><pre class="language-scheme"><code class="language-scheme"><span class="token punctuation">(</span><span class="token function">lexical_declaration</span>
   <span class="token punctuation">(</span><span class="token function">variable_declarator</span>
     name: <span class="token punctuation">(</span><span class="token function">_</span><span class="token punctuation">)</span> @assignment.lhs
     value: <span class="token punctuation">(</span><span class="token function">_</span><span class="token punctuation">)</span> @assignment.inner @assignment.rhs<span class="token punctuation">)</span><span class="token punctuation">)</span> @assignment.outer</code></pre></div>
-<p>커서 위치가 변수 선언문에 있으면 <code class="language-text">@assignment.lhs</code>로 변수명을 선택하고 <code class="language-text">@assignment.rhs</code>로 변수값을 선택하게 된다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div><div class="PageLayout__Side-sc-11jfopf-3 lcfPgp"><div class="Wiki__RelatedLinksSide-sc-16q9onf-6 iCNRBr"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Related</summary><ul class="RelatedLinks__Links-sc-1y1aimd-0 fuujHb"><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vim/">Vim</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vimenter-2023/">VimEnter 2023</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vim-script/">Vimscript</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vim-plugins/">Vim Plugins</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vimwiki/">VimWiki</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/markdown/">Markdown</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/language-server-protocol/">Language Server Protocol</a></li></ul></details></div><div class="Toc__Container-sc-1f76i2s-0 kZGlWu Wiki__TocSide-sc-16q9onf-5 HhRYq"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Table of Contents</summary><div><ul>
+<p>커서 위치가 변수 선언문에 있으면 <code>@assignment.lhs</code>로 변수명을 선택하고 <code>@assignment.rhs</code>로 변수값을 선택하게 된다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div><div class="PageLayout__Side-sc-11jfopf-3 lcfPgp"><div class="Wiki__RelatedLinksSide-sc-16q9onf-6 iCNRBr"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Related</summary><ul class="RelatedLinks__Links-sc-1y1aimd-0 fuujHb"><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vim/">Vim</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vimenter-2023/">VimEnter 2023</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vim-script/">Vimscript</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vim-plugins/">Vim Plugins</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vimwiki/">VimWiki</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/markdown/">Markdown</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/language-server-protocol/">Language Server Protocol</a></li></ul></details></div><div class="Toc__Container-sc-1f76i2s-0 kZGlWu Wiki__TocSide-sc-16q9onf-5 HhRYq"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Table of Contents</summary><div><ul>
 <li>
 <p><a href="#treesitter">Treesitter</a></p>
 <ul>
@@ -221,6 +221,6 @@ nvim-treesitter의 <code class="language-text">:TSEditQuery textobjects</code> �
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

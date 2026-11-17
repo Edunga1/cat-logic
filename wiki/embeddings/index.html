@@ -225,7 +225,7 @@ HTML, Markdown 등 구조화된 문서에는 의미론적 경계가 있으므로
 <blockquote>
 <p>The input must not exceed the max input tokens for the model (8192 tokens for text-embedding-ada-002) and cannot be an empty string.</p>
 </blockquote>
-<p><code class="language-text">text-embedding-ada-002</code>는 총 8192 토큰을 받을 수 있다. 단어나 구두점 등이 토큰으로 취급되니 긴 글은 초과할 수도 있겠다.</p>
+<p><code>text-embedding-ada-002</code>는 총 8192 토큰을 받을 수 있다. 단어나 구두점 등이 토큰으로 취급되니 긴 글은 초과할 수도 있겠다.</p>
 <p>검색을 좀 해보니, 한글 성능도 괜찮다고 한다.
 오히려 무료 한글 모델이 성능이 부족하다고 하니 로컬에서 우선적으로 테스트하는 용도로 사용해 볼 듯.</p>
 <hr>
@@ -239,7 +239,7 @@ HTML, Markdown 등 구조화된 문서에는 의미론적 경계가 있으므로
 <p>2023-11-05 <strong>임베딩을 직접 해봤다</strong>.</p>
 <p>KoBERT는 환경 구성이 번거로워서 포기했다.
 나중에 시간이 나면 해볼 생각이다.</p>
-<p>OpenAI의 <code class="language-text">text-embedding-ada-002</code> 모델을 사용해 보았다.
+<p>OpenAI의 <code>text-embedding-ada-002</code> 모델을 사용해 보았다.
 아쉽게도 ChatGPT를 예전부터 사용하고 있어서 무료 크레딧이 모두 만료되어 있었다. 총 $18 제공했었는데.</p>
 <p><a href="../cat-logic/">Cat Logic</a> 문서를 임베딩했고, Cosine 유사도를 계산해 보았다.
 OpenAI를 호출하고 csv로 저장하는 파이썬 코드를 모두 Cat Logic 저장소에 올려두었다:<br>
@@ -247,7 +247,7 @@ OpenAI를 호출하고 csv로 저장하는 파이썬 코드를 모두 Cat Logic 
 <p>총 83개의 문서를 처리했다. 한 번에 8천 개 토큰만큼만 호출할 수 있다.
 그래서 문서를 토큰 기준으로 자를 필요가 있다. 문자열 길이로 자르면 토큰 수 계산이 일정하게 되지 않는다.</p>
 <p><a href="https://pypi.org/project/tiktoken/">tiktoken</a>으로 토큰을 계산할 수 있다.</p>
-<p>한글은 단어당 토큰을 더 많이 사용한다. <code class="language-text">orange</code>는 1 토큰인 반면에 <code class="language-text">귤</code>은 2 토큰이다.
+<p>한글은 단어당 토큰을 더 많이 사용한다. <code>orange</code>는 1 토큰인 반면에 <code>귤</code>은 2 토큰이다.
 단어를 토큰화하면 일련의 숫자 배열인 토큰으로 변한다. 이것을 인코딩이라 한다.
 배열 크기가 토큰 수가 된다. 다시 디코딩하면 토큰이 단어로 변한다.
 인코딩과 디코딩을 통해 텍스트를 토큰 기준으로 자를 수 있다.
@@ -340,9 +340,9 @@ OpenAI를 호출하고 csv로 저장하는 파이썬 코드를 모두 Cat Logic 
 <span class="token number">77</span>  <span class="token punctuation">..</span>/docs/wiki/javascript.md                              <span class="token punctuation">..</span>/docs/wiki/redis.md    <span class="token number">0.758210</span>
 <span class="token number">33</span>  <span class="token punctuation">..</span>/docs/wiki/javascript.md                            <span class="token punctuation">..</span>/docs/wiki/airflow.md    <span class="token number">0.753884</span></code></pre></div>
 <p>자기 자신과의 유사도는 1이다. 1에 가까울수록 유사도가 높다.<br>
-<code class="language-text">javascript.md</code> 문서와 <code class="language-text">nodejs.md</code> 문서가 가장 유사하다.<br>
-<code class="language-text">javascript.md</code> 문서와 <code class="language-text">airflow.md</code> 문서가 가장 유사하지 않다.</p>
-<p>같은 자바스크립트 관련 문서인 <code class="language-text">nodejs.md</code>, <code class="language-text">reactjs.md</code>, <code class="language-text">angularjs.md</code>는 유사도가 높다.
+<code>javascript.md</code> 문서와 <code>nodejs.md</code> 문서가 가장 유사하다.<br>
+<code>javascript.md</code> 문서와 <code>airflow.md</code> 문서가 가장 유사하지 않다.</p>
+<p>같은 자바스크립트 관련 문서인 <code>nodejs.md</code>, <code>reactjs.md</code>, <code>angularjs.md</code>는 유사도가 높다.
 납득이 가는 결과라 만족스럽다.</p>
 <p>임베딩 API를 사용하는 데 총 0.03 달러가 소모되었다. 원화로 40원 정도다.
 <a href="https://wikidocs.net/200466">wikidocs</a> 문서에 따르면 ada-002 모델로 어린 왕자 책 분량인 4만 토큰을 임베딩하는 데 0.016 달러가 소모된다고 한다.</p>
@@ -378,10 +378,10 @@ OpenAI를 호출하고 csv로 저장하는 파이썬 코드를 모두 Cat Logic 
 </tr>
 </tbody>
 </table>
-<p>cat-logic은 <code class="language-text">text-embedding-ada-002</code> 모델을 사용해오다가 최근에 추가된 <code class="language-text">text-embedding-3-small</code> 모델로 변경했다.</p>
-<p><code class="language-text">small</code> 모델은 가격 대비 성능이 우수하다. OpenAI의 모델은 모두 한국어를 잘 처리하는 듯하다.</p>
+<p>cat-logic은 <code>text-embedding-ada-002</code> 모델을 사용해오다가 최근에 추가된 <code>text-embedding-3-small</code> 모델로 변경했다.</p>
+<p><code>small</code> 모델은 가격 대비 성능이 우수하다. OpenAI의 모델은 모두 한국어를 잘 처리하는 듯하다.</p>
 <p>cat-logic의 문서의 총 문자 수 67만 자 정도를 기준으로, 0.01 달러 미만으로 임베딩을 할 수 있었다.
-위 섹션 <code class="language-text">ada-002</code> 모델의 0.03 달러와 비교할 수 있겠다.</p>
+위 섹션 <code>ada-002</code> 모델의 0.03 달러와 비교할 수 있겠다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">wc</span> ./docs/wiki/**/*.md
    <span class="token number">353</span>   <span class="token number">1319</span>  <span class="token number">12715</span> ./docs/wiki/2016-08-27-gdg-webtech-workshop-nnn.md
    <span class="token punctuation">..</span>.
@@ -390,7 +390,7 @@ OpenAI를 호출하고 csv로 저장하는 파이썬 코드를 모두 Cat Logic 
 <h2 id="gemini-embedding-모델" style="position:relative;"><a href="#gemini-embedding-%EB%AA%A8%EB%8D%B8" aria-label="gemini embedding 모델 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gemini Embedding 모델</h2>
 <p>Gemini 모델은 Google에서 제공하며, 관대하게도 무료 티어를 제공한다.</p>
 <p><a href="https://ai.google.dev/gemini-api/docs/embeddings">https://ai.google.dev/gemini-api/docs/embeddings</a></p>
-<p>26년 9월 기준 <code class="language-text">gemini-embedding-2</code> 모델이 최신이다.</p>
+<p>26년 9월 기준 <code>gemini-embedding-2</code> 모델이 최신이다.</p>
 <h3 id="task-types" style="position:relative;"><a href="#task-types" aria-label="task types permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Task Types</h3>
 <p>embedding-2 모델은 정확도를 위해서 Task를 통해 임베딩 기준을 정한다.</p>
 <p><a href="https://ai.google.dev/gemini-api/docs/embeddings#task-types-embeddings-2">https://ai.google.dev/gemini-api/docs/embeddings#task-types-embeddings-2</a></p>
@@ -399,7 +399,7 @@ OpenAI를 호출하고 csv로 저장하는 파이썬 코드를 모두 Cat Logic 
 <p>"sentence similarity"를 보고 모델이 유사도 검색을 위해 문서의 특성을 분석하는진 모르겠지만, Task 유무의 차이는 꽤 크다.</p>
 <p>공식 문서에서도 Task 추가를 적극 권고한다.</p>
 <blockquote>
-<p>For text-only tasks with <code class="language-text">gemini-embedding-2</code>, we strongly recommend you add the task instruction in your prompt. This can be done by formatting the query and the document with the correct task prefix.</p>
+<p>For text-only tasks with <code>gemini-embedding-2</code>, we strongly recommend you add the task instruction in your prompt. This can be done by formatting the query and the document with the correct task prefix.</p>
 </blockquote>
 <p>일례로, <a href="../cat-logic/">cat-logic</a>은 연관 문서를 제공하는데,
 text-embedding-ada-002에서 gemini-embedding-2로 이전하기 위해 task 유무를 비교해보니 task가 있는 편이 ada-002 모델과 흡사한 결과를 나타냈다.
@@ -438,6 +438,6 @@ task가 없으면 문서간 관련도가 공감되지 않을 정도로 낮았다
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

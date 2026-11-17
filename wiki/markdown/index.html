@@ -168,27 +168,27 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <p><strong>자주 사용하는 기능 및 특징</strong></p>
 <p>단축키는 vim 바인딩 기준이다.</p>
 <ul>
-<li>document/workspace symbol로 heading 검색: <code class="language-text">&lt;space>o</code>/<code class="language-text">&lt;space>s</code></li>
-<li>내부 문서 링크 hover로 미리보기 제공: <code class="language-text">K</code></li>
-<li>내부 문서 링크로 이동: <code class="language-text">c-]</code></li>
-<li>위키 링크 <code class="language-text">[[...]]</code>, 마크다운 링크 <code class="language-text">[ref]: http://example.com "Title"</code>를 지원</li>
+<li>document/workspace symbol로 heading 검색: <code>&#x3C;space>o</code>/<code>&#x3C;space>s</code></li>
+<li>내부 문서 링크 hover로 미리보기 제공: <code>K</code></li>
+<li>내부 문서 링크로 이동: <code>c-]</code></li>
+<li>위키 링크 <code>[[...]]</code>, 마크다운 링크 <code>[ref]: http://example.com "Title"</code>를 지원</li>
 </ul>
 <p><a href="https://github.com/artempyanykh/marksman/issues/182">상대 경로를 자동 완성하지 못하는 문제</a>가 있다.
 항상 프로젝트 루트 기준으로 링크 완성을 해준다.</p>
 <p>한글이 포함되면 링크 자동완성을 못하는 문제가 있다.<br>
-예를 들어 <code class="language-text">한글 [link]()</code> 중 소괄호 내에서 자동완성이 안된다. <code class="language-text">한글 [link](</code> 중에서는 된다.</p>
+예를 들어 <code>한글 [link]()</code> 중 소괄호 내에서 자동완성이 안된다. <code>한글 [link](</code> 중에서는 된다.</p>
 <h3 id="상대-경로-자동-완성-불가-문제" style="position:relative;"><a href="#%EC%83%81%EB%8C%80-%EA%B2%BD%EB%A1%9C-%EC%9E%90%EB%8F%99-%EC%99%84%EC%84%B1-%EB%B6%88%EA%B0%80-%EB%AC%B8%EC%A0%9C" aria-label="상대 경로 자동 완성 불가 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>상대 경로 자동 완성 불가 문제</h3>
-<p>내부 문서 링크 시 <code class="language-text">[title](./docs/wiki/foo.md)</code>와 같이 상대 경로를 자동 완성하지 않는 문제.</p>
+<p>내부 문서 링크 시 <code>[title](./docs/wiki/foo.md)</code>와 같이 상대 경로를 자동 완성하지 않는 문제.</p>
 <p><a href="https://github.com/artempyanykh/marksman/issues/182">https://github.com/artempyanykh/marksman/issues/182</a></p>
 <p>항상 절대 경로를 기준으로 자동 완성한다.
-자동 완성 목록엔 <code class="language-text">docs/wiki/foo.md</code>로 보여주지만, 실제 삽입 시엔 <code class="language-text">/docs/wiki/foo.md</code>로 삽입된다.
-반면 Wiki 링크 스타일은 잘 동작하는데, 보여주는 것(<code class="language-text">foo</code>)과 삽입하는 것(<code class="language-text">[[foo]]</code>)이 일치한다.</p>
-<p>Marksman의 심볼 참조는 잘 동작해서, vim에서 <code class="language-text">ctrl-]</code>로 이동은 된다.
+자동 완성 목록엔 <code>docs/wiki/foo.md</code>로 보여주지만, 실제 삽입 시엔 <code>/docs/wiki/foo.md</code>로 삽입된다.
+반면 Wiki 링크 스타일은 잘 동작하는데, 보여주는 것(<code>foo</code>)과 삽입하는 것(<code>[[foo]]</code>)이 일치한다.</p>
+<p>Marksman의 심볼 참조는 잘 동작해서, vim에서 <code>ctrl-]</code>로 이동은 된다.
 하지만 markdown 도구들, wiki.vim을 주로 사용하는데 wiki.vim은 절대 경로 링크를 지원하지 않는다.</p>
 <p>이 문제는 23년 3월에 보고되어, 26년 1월에도 해결되지 않은 오래된 문제다.</p>
 <h2 id="vim-관련" style="position:relative;"><a href="#vim-%EA%B4%80%EB%A0%A8" aria-label="vim 관련 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vim 관련</h2>
 <p><a href="../vimwiki/">Vimwiki</a>에서 Text Object를 제공한다.
-예를 들어 <code class="language-text">vaH</code>는 하위 제목까지 포함한 내용을 선택한다.
+예를 들어 <code>vaH</code>는 하위 제목까지 포함한 내용을 선택한다.
 즉, Vimwiki로 마크다운 유틸 플러그인으로써 사용해도 좋다.</p>
 <h2 id="writerside-app" style="position:relative;"><a href="#writerside-app" aria-label="writerside app permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writerside App</h2>
 <p>JetBrains의 문서 작성 도구.</p>
@@ -236,6 +236,6 @@ Writerside는 현재 얼리 액세스 프로그램으로 배포되고 있으며 
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

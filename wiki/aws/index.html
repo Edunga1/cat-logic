@@ -202,19 +202,19 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 </li>
 </ul></div></details></div><div class="WikiContent__Container-sc-q3jb6a-0 bicHzB">
 <h2 id="awscli" style="position:relative;"><a href="#awscli" aria-label="awscli permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>awscli</h2>
-<p>Linux, macOS는 <code class="language-text">brew install awscli</code>로 설치하자.</p>
-<p>파이썬 패키지 관리자를 사용한다면, <code class="language-text">pip install awscli</code>도 가능하다.</p>
+<p>Linux, macOS는 <code>brew install awscli</code>로 설치하자.</p>
+<p>파이썬 패키지 관리자를 사용한다면, <code>pip install awscli</code>도 가능하다.</p>
 <h3 id="ecr-로그인하기" style="position:relative;"><a href="#ecr-%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%95%98%EA%B8%B0" aria-label="ecr 로그인하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ECR 로그인하기</h3>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">aws ecr get-login-password <span class="token parameter variable">--region</span> <span class="token operator">&lt;</span>REGION<span class="token operator">></span> <span class="token operator">|</span> <span class="token function">docker</span> login <span class="token parameter variable">--username</span> AWS --password-stdin <span class="token operator">&lt;</span>AWS_ACCOUNT_ID<span class="token operator">></span>.dkr.ecr.<span class="token operator">&lt;</span>REGION<span class="token operator">></span>.amazonaws.com</code></pre></div>
-<p><code class="language-text">REGION</code>은 서울 리전이라면 <code class="language-text">ap-northeast-2</code>. <br>
-<code class="language-text">AWS_ACCOUNT_ID</code>는 <code class="language-text">aws sts get-caller-identity</code> 명령어로 구할 수 있다. <code class="language-text">Account</code> 필드의 값이다.</p>
+<p><code>REGION</code>은 서울 리전이라면 <code>ap-northeast-2</code>. <br>
+<code>AWS_ACCOUNT_ID</code>는 <code>aws sts get-caller-identity</code> 명령어로 구할 수 있다. <code>Account</code> 필드의 값이다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ aws sts get-caller-identity
 <span class="token punctuation">{</span>
     <span class="token string">"UserId"</span><span class="token builtin class-name">:</span> <span class="token string">""</span>,
     <span class="token string">"Account"</span><span class="token builtin class-name">:</span> <span class="token string">""</span>,
     <span class="token string">"Arn"</span><span class="token builtin class-name">:</span> <span class="token string">""</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p>예를 들어 account id = <code class="language-text">1234</code>, region = <code class="language-text">ap-northeast-2</code> 라면 다음과 같이 입력한다:</p>
+<p>예를 들어 account id = <code>1234</code>, region = <code>ap-northeast-2</code> 라면 다음과 같이 입력한다:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">aws ecr get-login-password <span class="token parameter variable">--region</span> ap-northeast-2 <span class="token operator">|</span> <span class="token function">docker</span> login <span class="token parameter variable">--username</span> AWS --password-stdin <span class="token number">1234</span>.dkr.ecr.ap-northeast-2.amazonaws.com</code></pre></div>
 <p>ref:</p>
 <ul>
@@ -223,7 +223,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 </ul>
 <h3 id="iam-관련" style="position:relative;"><a href="#iam-%EA%B4%80%EB%A0%A8" aria-label="iam 관련 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IAM 관련</h3>
 <p><a href="https://docs.aws.amazon.com/cli/latest/reference/iam/change-password.html">비밀번호 변경</a>(응답 메시지 없음):<br>
-<code class="language-text">aws iam change-password --old-password &lt;OLD_PASSWORD> --new-password &lt;NEW_PASSWORD></code></p>
+<code>aws iam change-password --old-password &#x3C;OLD_PASSWORD> --new-password &#x3C;NEW_PASSWORD></code></p>
 <h4 id="access-key-교체" style="position:relative;"><a href="#access-key-%EA%B5%90%EC%B2%B4" aria-label="access key 교체 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access Key 교체</h4>
 <p><a href="https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_credentials_access-keys.html#rotating_access_keys_cli">Access Key 교체</a>
 플로우가 조금 복잡하다. 다음 순서로 진행한다.</p>
@@ -242,20 +242,20 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <li><a href="https://docs.aws.amazon.com/cli/latest/reference/configure/">새 access key로 도구 업데이트</a>:</li>
 </ol>
 <div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">aws configure</code></pre></div>
-<p>새 Access key가 잘 동작하는지 확인하자 <code class="language-text">aws sts get-caller-identity</code> 명령어로 확인한다.
-잘못되었다면 다음과 같은 에러가 발생한다: <code class="language-text">An error occurred (InvalidClientTokenId) when calling the GetCallerIdentity operation: The security token included in the request is invalid.</code></p>
+<p>새 Access key가 잘 동작하는지 확인하자 <code>aws sts get-caller-identity</code> 명령어로 확인한다.
+잘못되었다면 다음과 같은 에러가 발생한다: <code>An error occurred (InvalidClientTokenId) when calling the GetCallerIdentity operation: The security token included in the request is invalid.</code></p>
 <ol start="3">
 <li><a href="https://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html">기존 access key 비활성화</a>:</li>
 </ol>
 <div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">aws iam update-access-key --access-key-id <span class="token operator">&lt;</span>OLD_ACCESS_KEY_ID<span class="token operator">></span> <span class="token parameter variable">--status</span> Inactive</code></pre></div>
-<p>2번에서 <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/import.html">aws configure cli</a> 명령어로 <code class="language-text">--csv</code> 포맷의 파일을 읽어서 업데이트 할 수 있다.
+<p>2번에서 <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/import.html">aws configure cli</a> 명령어로 <code>--csv</code> 포맷의 파일을 읽어서 업데이트 할 수 있다.
 그러면 interactive로 secret key를 입력하지 않고 자동화할 수 있을 듯한데, 1번의 생성 명령어에서 csv 포맷을 제공하지 않는다.</p>
 <p>기존 access-key를 확인하려면 <a href="https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html">list-access-keys</a>를 사용하면 된다:</p>
 <div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">aws iam list-access-keys</code></pre></div>
 <h2 id="localstack" style="position:relative;"><a href="#localstack" aria-label="localstack permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LocalStack</h2>
 <p>로컬 환경에서 AWS 클라우드 스택을 구축하는 도구이다.</p>
 <p><strong>주의: 2026년 3월, 오픈 소스 버전의 개발이 중단되었다.</strong><br>
-Docker 이미지 <code class="language-text">localstack/localstack:4.4.0</code>가 마지막 커뮤니티 버전이다.<br>
+Docker 이미지 <code>localstack/localstack:4.4.0</code>가 마지막 커뮤니티 버전이다.<br>
 이후 버전부터는 클라우드 인증이 강제된다.</p>
 <p><a href="https://github.com/localstack/localstack">https://github.com/localstack/localstack</a></p>
 <p>클라우드 기능을 사용하면 로컬 개발 환경을 구축하기 쉽지 않다.
@@ -285,19 +285,19 @@ Docker 이미지 <code class="language-text">localstack/localstack:4.4.0</code>�
 aws --endpoint-url<span class="token operator">=</span>http://localhost:4566 kinesis create-stream --stream-name my-event-dev --shard-count <span class="token number">1</span> <span class="token parameter variable">--region</span> ap-northeast-2
 aws --endpoint-url<span class="token operator">=</span>http://localhost:4566 kinesis list-streams <span class="token parameter variable">--region</span> ap-northeast-2</code></pre></div>
 <p>hook은 localstack가 제공하는 라이프 사이클에 따라 실행되는 이벤트다.</p>
-<p><code class="language-text">ready.d</code> 디렉토리는 LocalStack이 준비되어 요청을 받을 수 있는 상태가 되었을 때 실행되는 READY 단계의 스크립트를 모아놓는다.</p>
+<p><code>ready.d</code> 디렉토리는 LocalStack이 준비되어 요청을 받을 수 있는 상태가 되었을 때 실행되는 READY 단계의 스크립트를 모아놓는다.</p>
 <p>hook에 대해선 다음 문서에서 설명한다:<br>
 <a href="https://docs.localstack.cloud/references/init-hooks/">https://docs.localstack.cloud/references/init-hooks/</a></p>
-<p>hook 스크립트를 보면 알 수 있듯이 <code class="language-text">aws</code> 명령어가 LocalStack과 잘 호환된다.
-<code class="language-text">--endpoint-url</code>을 통해서 LocalStack와 통신한다.
-<code class="language-text">awslocal</code> 명령어도 제공하는데, endpoint를 명시하지 않아도 된다.</p>
-<p>credentials 관련 오류가 있으면 <code class="language-text">awslocal</code> 명령을 사용하자. 그러면 credentials(<code class="language-text">~/.aws/credentials</code>)을 확인하지 않는다.</p>
-<p><code class="language-text">aws</code> 명령어를 사용해야 한다면 <code class="language-text">~/.aws/credentials</code> 파일을 임의로 생성하자.</p>
-<p><code class="language-text">~/.aws/credentials</code>:</p>
+<p>hook 스크립트를 보면 알 수 있듯이 <code>aws</code> 명령어가 LocalStack과 잘 호환된다.
+<code>--endpoint-url</code>을 통해서 LocalStack와 통신한다.
+<code>awslocal</code> 명령어도 제공하는데, endpoint를 명시하지 않아도 된다.</p>
+<p>credentials 관련 오류가 있으면 <code>awslocal</code> 명령을 사용하자. 그러면 credentials(<code>~/.aws/credentials</code>)을 확인하지 않는다.</p>
+<p><code>aws</code> 명령어를 사용해야 한다면 <code>~/.aws/credentials</code> 파일을 임의로 생성하자.</p>
+<p><code>~/.aws/credentials</code>:</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[default]
 aws_access_key_id = test
 aws_secret_access_key = test</code></pre></div>
-<p><code class="language-text">~/.aws/config</code>도 추가하면 지역 옵션 <code class="language-text">--region</code>을 생략할 수 있다.</p>
+<p><code>~/.aws/config</code>도 추가하면 지역 옵션 <code>--region</code>을 생략할 수 있다.</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[default]
 region = ap-northeast-2</code></pre></div>
 <p>환경 변수를 사용해도 된다:</p>
@@ -313,13 +313,13 @@ Producer 라이브러리를 KPL(Kinesis Producer Library)라고 부른다.
 <p>AWS 공식 예제는 <a href="https://docs.aws.amazon.com/streams/latest/dev/kcl2-standard-consumer-java-example.html">KCL 2.0 for Java</a>나
 <a href="https://github.com/awslabs/amazon-kinesis-client/blob/master/amazon-kinesis-client/src/test/java/software/amazon/kinesis/utils/TestRecordProcessor.java">amazon-kinesis-client 저장소의 테스트 코드</a>가 있다.</p>
 <p>내 localstack + consumer 예제: <a href="https://github.com/Edunga1/practice-localstack-kinesis">https://github.com/Edunga1/practice-localstack-kinesis</a> <br>
-docker-compose로 localstack + consumer를 실행하고, aws cli로 <code class="language-text">put-record</code>를 통해 데이터를 생성하도록 했다.</p>
+docker-compose로 localstack + consumer를 실행하고, aws cli로 <code>put-record</code>를 통해 데이터를 생성하도록 했다.</p>
 <p><strong>push model and pull model</strong></p>
 <p><a href="https://docs.aws.amazon.com/streams/latest/dev/developing-consumers-with-sdk.html#kinesis-using-sdk-java-get-data">https://docs.aws.amazon.com/streams/latest/dev/developing-consumers-with-sdk.html#kinesis-using-sdk-java-get-data</a></p>
 <blockquote>
 <p>The Kinesis Data Streams APIs include the getShardIterator and getRecords methods that you can invoke to retrieve records from a data stream. This is the pull model, where your code draws data records directly from the shards of the data stream.</p>
 </blockquote>
-<p>Kinesis Data Stream API의 <code class="language-text">getShardIterator</code>와 <code class="language-text">getRecords</code>를 사용하면 pull model로 데이터를 가져올 수 있다.</p>
+<p>Kinesis Data Stream API의 <code>getShardIterator</code>와 <code>getRecords</code>를 사용하면 pull model로 데이터를 가져올 수 있다.</p>
 <blockquote>
 <p>We recommend that you use the record processor support provided by KCL to retrieve records from your data streams. This is the push model, where you implement the code that processes the data.</p>
 </blockquote>
@@ -333,7 +333,7 @@ docker-compose로 localstack + consumer를 실행하고, aws cli로 <code class=
 <p>The shared fan-out consumers all share a shard’s 2 MB/second of read throughput and five transactions per second limits and require the use of the GetRecords API</p>
 </blockquote>
 <p>shared fan-out은 컨슈머간 공유되며, 초당 2 MB, 초당 5개의 transaction으로 제한된다.
-transaction은 <code class="language-text">GetRecords</code> API 호출을 의미하는 거 같다.</p>
+transaction은 <code>GetRecords</code> API 호출을 의미하는 거 같다.</p>
 <blockquote>
 <p>An enhanced fan-out consumer gets its own 2 MB/second allotment of read throughput, allowing multiple consumers to read data from the same stream in parallel, without contending for read throughput with other consumers.</p>
 </blockquote>
@@ -346,7 +346,7 @@ transaction은 <code class="language-text">GetRecords</code> API 호출을 의�
 <p>Node.js producer는 <a href="https://github.com/awslabs/amazon-kinesis-client-nodejs/">aws-sdk</a>를 사용한다.</p>
 <p>LocalStack으로 Node.js consumer는 구현하기 어려워 보인다.
 먼저, LocalStack와 커뮤니케이션 하려면 endpoint 설정이 필요한데
-KCL 2.0으로 업데이트되면서 <code class="language-text">kinesisEndpoint</code> <code class="language-text">dynamodbEndpoint</code> <a href="https://docs.aws.amazon.com/streams/latest/dev/kcl-migration.html#client-configuration-removals">설정이 제거</a>되었다.</p>
+KCL 2.0으로 업데이트되면서 <code>kinesisEndpoint</code> <code>dynamodbEndpoint</code> <a href="https://docs.aws.amazon.com/streams/latest/dev/kcl-migration.html#client-configuration-removals">설정이 제거</a>되었다.</p>
 <p>Client 생성 주체인 KCL for Node.js에서 진행해야 하지만, 여기엔 설정을 제공하지 않는다. 저장소가 거의 죽어있다.</p>
 <p>KCL for Java는 client builder를 통해서 endpoint를 설정할 수 있다. 저장소도 자주 업데이트 된다.</p>
 <div class="gatsby-highlight" data-language="java"><pre class="language-java"><code class="language-java"><span class="token class-name">KinesisAsyncClient</span><span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">endpointOverride</span><span class="token punctuation">(</span><span class="token constant">URI</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string">"https://&lt;kinesis endpoint>"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span></code></pre></div>
@@ -454,7 +454,7 @@ AWS에서는 99.999% 신뢰성 제공을 목적으로 설계 되며, 데이터�
 </ul>
 <p>AWS에서 자원 레벨은 Global과 Regional으로 나뉜다.
 EC2는 Regional 서비스에 포함된다.</p>
-<p>AWS에서는 Static의 반대되는 용어로 <code class="language-text">Elastic</code>을 사용한다.</p>
+<p>AWS에서는 Static의 반대되는 용어로 <code>Elastic</code>을 사용한다.</p>
 <h4 id="vpc---virtual-private-cloud" style="position:relative;"><a href="#vpc---virtual-private-cloud" aria-label="vpc   virtual private cloud permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>VPC - Virtual Private Cloud</h4>
 <p>독립된 가상 클라우드 네트워크. 나만의 네트워크라고 이해하면 된다.</p>
 <p>IP 대역은 CIDR(Classless Inter-Domain Routing) 블록 /16 ~ /28 까지 사용 가능하다.</p>
@@ -542,6 +542,6 @@ EC2는 Regional 서비스에 포함된다.</p>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

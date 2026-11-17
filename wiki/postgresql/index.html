@@ -172,8 +172,8 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <h2 id="샌드박스-환경" style="position:relative;"><a href="#%EC%83%8C%EB%93%9C%EB%B0%95%EC%8A%A4-%ED%99%98%EA%B2%BD" aria-label="샌드박스 환경 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>샌드박스 환경</h2>
 <p>도커로 Postgres를 실행해보자.</p>
 <div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">$ <span class="token function">docker</span> run <span class="token parameter variable">-it</span> <span class="token parameter variable">--rm</span> <span class="token parameter variable">--name</span> some-postgres <span class="token parameter variable">-e</span> <span class="token assign-left variable">POSTGRES_PASSWORD</span><span class="token operator">=</span>password postgres</code></pre></div>
-<p><code class="language-text">POSTGRES_PASSWORD</code>는 필수 환경 변수이다. 컨테이너 내에서 접속할 거라 외울 필요는 없다.</p>
-<p>이제 <code class="language-text">psql</code>로 접속한다.</p>
+<p><code>POSTGRES_PASSWORD</code>는 필수 환경 변수이다. 컨테이너 내에서 접속할 거라 외울 필요는 없다.</p>
+<p>이제 <code>psql</code>로 접속한다.</p>
 <div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh">$ <span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-ti</span> some-postgres psql <span class="token parameter variable">-U</span> postgres
 psql <span class="token punctuation">(</span><span class="token number">16.2</span> <span class="token punctuation">(</span>Debian <span class="token number">16.2</span>-1.pgdg120+2<span class="token punctuation">))</span>
 Type <span class="token string">"help"</span> <span class="token keyword">for</span> help.
@@ -186,7 +186,7 @@ Type:  <span class="token punctuation">\</span>copyright <span class="token keyw
        <span class="token punctuation">\</span>g or terminate with semicolon to execute query
        <span class="token punctuation">\</span>q to quit</code></pre></div>
 <h3 id="기본-명령어" style="position:relative;"><a href="#%EA%B8%B0%EB%B3%B8-%EB%AA%85%EB%A0%B9%EC%96%B4" aria-label="기본 명령어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>기본 명령어</h3>
-<p><code class="language-text">\l</code> : 데이터베이스 목록</p>
+<p><code>\l</code> : 데이터베이스 목록</p>
 <div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"><span class="token assign-left variable">postgres</span><span class="token operator">=</span><span class="token comment"># \l</span>
                                                       List of databases
    Name    <span class="token operator">|</span>  Owner   <span class="token operator">|</span> Encoding <span class="token operator">|</span> Locale Provider <span class="token operator">|</span>  Collate   <span class="token operator">|</span>   Ctype    <span class="token operator">|</span> ICU Locale <span class="token operator">|</span> ICU Rules <span class="token operator">|</span>   Access privileges
@@ -197,8 +197,8 @@ Type:  <span class="token punctuation">\</span>copyright <span class="token keyw
  template1 <span class="token operator">|</span> postgres <span class="token operator">|</span> UTF8     <span class="token operator">|</span> libc            <span class="token operator">|</span> en_US.utf8 <span class="token operator">|</span> en_US.utf8 <span class="token operator">|</span>            <span class="token operator">|</span>           <span class="token operator">|</span> <span class="token operator">=</span>c/postgres          +
            <span class="token operator">|</span>          <span class="token operator">|</span>          <span class="token operator">|</span>                 <span class="token operator">|</span>            <span class="token operator">|</span>            <span class="token operator">|</span>            <span class="token operator">|</span>           <span class="token operator">|</span> <span class="token assign-left variable">postgres</span><span class="token operator">=</span>CTc/postgres
 <span class="token punctuation">(</span><span class="token number">3</span> rows<span class="token punctuation">)</span></code></pre></div>
-<p><code class="language-text">\c</code> : 데이터베이스 접속<br>
-<code class="language-text">\d</code> : 테이블, 뷰, 시퀀스 목록</p>
+<p><code>\c</code> : 데이터베이스 접속<br>
+<code>\d</code> : 테이블, 뷰, 시퀀스 목록</p>
 <div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"><span class="token assign-left variable">postgres</span><span class="token operator">=</span><span class="token comment"># \c postgres</span>
 You are now connected to database <span class="token string">"postgres"</span> as user <span class="token string">"postgres"</span><span class="token builtin class-name">.</span>
 <span class="token assign-left variable">postgres</span><span class="token operator">=</span><span class="token comment"># \d</span>
@@ -225,7 +225,7 @@ CREATE TABLE
  public <span class="token operator">|</span> students        <span class="token operator">|</span> table    <span class="token operator">|</span> postgres
  public <span class="token operator">|</span> students_id_seq <span class="token operator">|</span> sequence <span class="token operator">|</span> postgres
 <span class="token punctuation">(</span><span class="token number">2</span> rows<span class="token punctuation">)</span></code></pre></div>
-<p>이제 <code class="language-text">\d</code>로 테이블이 생성되었음을 확인할 수 있다.</p>
+<p>이제 <code>\d</code>로 테이블이 생성되었음을 확인할 수 있다.</p>
 <div class="gatsby-highlight" data-language="sh"><pre class="language-sh"><code class="language-sh"><span class="token assign-left variable">postgres</span><span class="token operator">=</span><span class="token comment"># select * from students;</span>
  <span class="token function">id</span> <span class="token operator">|</span> name <span class="token operator">|</span> age <span class="token operator">|</span> gender
 ----+------+-----+--------
@@ -236,22 +236,22 @@ CREATE TABLE
 <h3 id="mysql-쿼리-차이점" style="position:relative;"><a href="#mysql-%EC%BF%BC%EB%A6%AC-%EC%B0%A8%EC%9D%B4%EC%A0%90" aria-label="mysql 쿼리 차이점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MySQL 쿼리 차이점</h3>
 <h4 id="group_concat---listagg-any_value" style="position:relative;"><a href="#group_concat---listagg-any_value" aria-label="group_concat   listagg any_value permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>group_concat -> listagg, any_value</h4>
 <p>MySQL과 다르게, group by로 aggregation 시 aggregation function을 사용하지 않는 컬럼을 select에 포함할 수 없다.</p>
-<p>모든 값을 보고싶다면 <code class="language-text">listagg</code>를 사용하자. MySQL의 <code class="language-text">group_concat</code>와 비슷하다.
-임의 값은 <code class="language-text">any_value</code>를 사용하자.</p>
+<p>모든 값을 보고싶다면 <code>listagg</code>를 사용하자. MySQL의 <code>group_concat</code>와 비슷하다.
+임의 값은 <code>any_value</code>를 사용하자.</p>
 <div class="gatsby-highlight" data-language="sql"><pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span>
   family<span class="token punctuation">,</span>
   listagg<span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token string">', '</span><span class="token punctuation">)</span> <span class="token keyword">as</span> names<span class="token punctuation">,</span>
   any_value<span class="token punctuation">(</span>age<span class="token punctuation">)</span> <span class="token keyword">as</span> age
 <span class="token keyword">from</span> users
 <span class="token keyword">group</span> <span class="token keyword">by</span> family<span class="token punctuation">;</span></code></pre></div>
-<p>날짜 차이를 구할때는 <code class="language-text">-</code> 연산자를 사용하면 human readable한 값으로 출력된다.</p>
+<p>날짜 차이를 구할때는 <code>-</code> 연산자를 사용하면 human readable한 값으로 출력된다.</p>
 <div class="gatsby-highlight" data-language="sql"><pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token keyword">TIMESTAMP</span> <span class="token string">'2024-02-01 11:55:30'</span> <span class="token operator">-</span> <span class="token keyword">TIMESTAMP</span> <span class="token string">'2024-01-30 04:11:05'</span> <span class="token keyword">as</span> diff<span class="token punctuation">;</span>
 <span class="token comment">###       diff</span>
  <span class="token number">2</span> days <span class="token number">07</span>:<span class="token number">44</span>:<span class="token number">25</span>
 <span class="token punctuation">(</span><span class="token number">1</span> <span class="token keyword">row</span><span class="token punctuation">)</span></code></pre></div>
 <h4 id="date_format---date_trunc-또는-to_char" style="position:relative;"><a href="#date_format---date_trunc-%EB%98%90%EB%8A%94-to_char" aria-label="date_format   date_trunc 또는 to_char permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DATE_FORMAT -> DATE_TRUNC 또는 TO_CHAR</h4>
-<p>group by, where 절 등에서 <code class="language-text">DATE_FORMAT()</code> 사용한다면, PostgreSQL에서는 <code class="language-text">DATE_TRUNC</code>를 고려하자.
-지정한 단위로 날짜를 잘라준다. 예를 들어 <code class="language-text">MONTH</code>가 기준이라면 일자 아래는 가장 작은 값으로 변경된다.</p>
+<p>group by, where 절 등에서 <code>DATE_FORMAT()</code> 사용한다면, PostgreSQL에서는 <code>DATE_TRUNC</code>를 고려하자.
+지정한 단위로 날짜를 잘라준다. 예를 들어 <code>MONTH</code>가 기준이라면 일자 아래는 가장 작은 값으로 변경된다.</p>
 <div class="gatsby-highlight" data-language="sql"><pre class="language-sql"><code class="language-sql">postgres<span class="token operator">=</span><span class="token comment"># select NOW(), DATE_TRUNC('YEAR', NOW());</span>
               now              <span class="token operator">|</span>       date_trunc
 <span class="token comment">-------------------------------+------------------------</span>
@@ -269,7 +269,7 @@ postgres<span class="token operator">=</span><span class="token comment"># selec
 <span class="token comment">-------------------------------+------------------------</span>
  <span class="token number">2024</span><span class="token operator">-</span><span class="token number">12</span><span class="token operator">-</span><span class="token number">16</span> <span class="token number">08</span>:<span class="token number">39</span>:<span class="token number">47.338668</span><span class="token operator">+</span><span class="token number">00</span> <span class="token operator">|</span> <span class="token number">2024</span><span class="token operator">-</span><span class="token number">12</span><span class="token operator">-</span><span class="token number">16</span> <span class="token number">08</span>:<span class="token number">00</span>:<span class="token number">00</span><span class="token operator">+</span><span class="token number">00</span>
 <span class="token punctuation">(</span><span class="token number">1</span> <span class="token keyword">row</span><span class="token punctuation">)</span></code></pre></div>
-<p><code class="language-text">DATE_FORMAT()</code>과 같은 기능이 필요하다면 <code class="language-text">TO_CHAR()</code>를 사용한다.</p>
+<p><code>DATE_FORMAT()</code>과 같은 기능이 필요하다면 <code>TO_CHAR()</code>를 사용한다.</p>
 <div class="gatsby-highlight" data-language="sql"><pre class="language-sql"><code class="language-sql">postgres<span class="token operator">=</span><span class="token comment"># select TO_CHAR(NOW(), 'YYYY-MM-DD HH24:MI:SS');</span>
 <span class="token comment">###        to_char</span>
  <span class="token number">2024</span><span class="token operator">-</span><span class="token number">12</span><span class="token operator">-</span><span class="token number">16</span> <span class="token number">08</span>:<span class="token number">45</span>:<span class="token number">27</span>
@@ -312,6 +312,6 @@ postgres<span class="token operator">=</span><span class="token comment"># selec
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

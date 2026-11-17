@@ -209,7 +209,7 @@ openSUSE-Tumbleweed             openSUSE Tumbleweed</code></pre></div>
 <p>WSL 버전은 1, 2 두 가지가 있다.
 대부분 글은 WSL2를 기준으로 작성되어 있다.
 <a href="https://learn.microsoft.com/ko-kr/windows/wsl/compare-versions">마이크로소프트의 공식 문서에서는 WSL2를 권장</a>한다.</p>
-<p>WSL2는 <code class="language-text">Windows 11 또는 Windows 10, 버전 1903, 빌드 18362</code> 이상에서 사용할 수 있다.
+<p>WSL2는 <code>Windows 11 또는 Windows 10, 버전 1903, 빌드 18362</code> 이상에서 사용할 수 있다.
 <a href="https://learn.microsoft.com/ko-kr/lifecycle/announcements/windows-10-1903-end-of-servicing">1903 버전은 2019년 5월에 출시</a>되었다.</p>
 <p><a href="https://github.com/microsoft/wslg">WSLg</a>은 WSL이 GUI를 지원하도록 해주는 스택이다.
 덕분에 X11, Wayland 기반의 Linux GUI 앱을 윈도우에서 실행할 수 있다.</p>
@@ -229,7 +229,7 @@ openSUSE-Tumbleweed             openSUSE Tumbleweed</code></pre></div>
   \   <span class="token string">'cache_enabled'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
   \ <span class="token punctuation">}</span></code></pre></div>
 <p><a href="https://github.com/equalsraf/win32yank">win32yank.exe</a> 실행파일이 필요하다.
-저장소 Release 페이지에서 다운로드 후 <code class="language-text">PATH</code>에 추가한다.</p>
+저장소 Release 페이지에서 다운로드 후 <code>PATH</code>에 추가한다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">curl</span> -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
 $ <span class="token function">unzip</span> <span class="token parameter variable">-p</span> /tmp/win32yank.zip win32yank.exe <span class="token operator">></span> /tmp/win32yank.exe
 $ <span class="token function">mv</span> /tmp/win32yank.exe ~/bin  <span class="token comment"># 나는 ~/bin을 $PATH에 추가했다.</span></code></pre></div>
@@ -251,32 +251,32 @@ $ <span class="token function">mv</span> /tmp/win32yank.exe ~/bin  <span class="
 <p>ref. <a href="https://github.com/Edunga1/dotfiles/blob/master/vim/vim-include/_wsl.vim">https://github.com/Edunga1/dotfiles/blob/master/vim/vim-include/_wsl.vim</a></p>
 <h2 id="ubuntu-버전-업그레이드" style="position:relative;"><a href="#ubuntu-%EB%B2%84%EC%A0%84-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C" aria-label="ubuntu 버전 업그레이드 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ubuntu 버전 업그레이드</h2>
 <p>18.04 -> 20.04로 업그레이드했다. 이슈가 하나 있었는데, WSL보다는 ubuntu 이슈라 봐도 될 듯.</p>
-<p>업그레이드를 위해선 <code class="language-text">sudo do-release-upgrade -d</code> 명령어만 입력하면 되는데..</p>
+<p>업그레이드를 위해선 <code>sudo do-release-upgrade -d</code> 명령어만 입력하면 되는데..</p>
 <p>문제는 <strong>설치된 패키지들을 모두 최신 버전으로 업데이트</strong> 해야 된다.</p>
 <p>명령어를 통해서 모든 패키지를 업데이트하자:</p>
 <ul>
-<li><code class="language-text">sudo apt update</code></li>
-<li><code class="language-text">sudo apt upgrade</code></li>
-<li><code class="language-text">sudo apt dist-upgrade</code></li>
+<li><code>sudo apt update</code></li>
+<li><code>sudo apt upgrade</code></li>
+<li><code>sudo apt dist-upgrade</code></li>
 </ul>
 <p>패키지 업데이트 도중 개인 패키지 저장소인 PPA(Personal Package Archive)를 추가한 적이 있고, 이 PPA가 사라졌으면 에러가 난다.
 404로 출력된다. 따라서 업데이트 하지 않도록 PPA를 제거해야 했다.</p>
-<p>나는 <code class="language-text">CMake</code>를 PPA를 통해서 설치했었는데. 이 PPA가 사라져서 에러가 발생했다.</p>
+<p>나는 <code>CMake</code>를 PPA를 통해서 설치했었는데. 이 PPA가 사라져서 에러가 발생했다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">Ubuntu <span class="token number">18.04</span> ppa.launchpad.net/george-edison55/cmake-3.x/ubuntu bionic Release <span class="token number">404</span> Not Found <span class="token punctuation">[</span>IP: <span class="token number">91.189</span>.95.83 <span class="token number">80</span><span class="token punctuation">]</span></code></pre></div>
 <p>제거하기 위해 2가지 방법이 있다.</p>
 <ul>
-<li>파일을 지운다: <code class="language-text">sudo rm /etc/apt/sources.list.d/george-edison55-ubuntu-cmake-3_x-bionic.list</code></li>
-<li>명령어를 통해 지운다: <code class="language-text">sudo add-apt-repository --remove ppa:whatever/ppa</code></li>
+<li>파일을 지운다: <code>sudo rm /etc/apt/sources.list.d/george-edison55-ubuntu-cmake-3_x-bionic.list</code></li>
+<li>명령어를 통해 지운다: <code>sudo add-apt-repository --remove ppa:whatever/ppa</code></li>
 </ul>
 <p>문제는 PPA 이름을 알아야 하는데, 에러 메시지에 출력되지 않는다. 패키지 이름만 포함될 뿐이다. 그냥 에러 메시지로 검색해서 지우는게 속편하다...</p>
-<p>이제 <code class="language-text">sudo do-release-upgrade -d</code> 하면 되는데..</p>
+<p>이제 <code>sudo do-release-upgrade -d</code> 하면 되는데..</p>
 <div class="gatsby-highlight" data-language="rust"><pre class="language-rust"><code class="language-rust"><span class="token class-name">Checking</span> <span class="token keyword">for</span> a new <span class="token class-name">Ubuntu</span> release
 <span class="token class-name">You</span> have not rebooted after updating a package which requires a reboot<span class="token punctuation">.</span> <span class="token class-name">Please</span> reboot before upgrading<span class="token punctuation">.</span></code></pre></div>
 <p>업그레이드 후에는 리붓 해야한다... :(</p>
 <h2 id="clipboard" style="position:relative;"><a href="#clipboard" aria-label="clipboard permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clipboard</h2>
 <h3 id="wl-clipboard" style="position:relative;"><a href="#wl-clipboard" aria-label="wl clipboard permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>wl-clipboard</h3>
 <p>클립보드 제어를 위해 wl-clipboard 사용을 추천.
-<code class="language-text">brew install wl-clipboard</code> 명령어로 설치 가능하다.</p>
+<code>brew install wl-clipboard</code> 명령어로 설치 가능하다.</p>
 <p>macOS의 pbcopy, pbpaste 명령어와 비슷하게 동작한다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">cat</span> file.txt <span class="token operator">|</span> wl-copy
 $ wl-paste <span class="token operator">></span> file.txt</code></pre></div>
@@ -285,7 +285,7 @@ $ wl-paste <span class="token operator">></span> file.txt</code></pre></div>
 <h3 id="powershell로-이미지-붙여넣기" style="position:relative;"><a href="#powershell%EB%A1%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B6%99%EC%97%AC%EB%84%A3%EA%B8%B0" aria-label="powershell로 이미지 붙여넣기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Powershell로 이미지 붙여넣기</h3>
 <p>Powershell 명령어를 통해서 클립보드에 있는 이미지를 파일로 저장할 수 있다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">powershell.exe <span class="token parameter variable">-NoProfile</span> <span class="token parameter variable">-Command</span> <span class="token string">"(Get-Clipboard -Format Image).Save('sample.png')"</span></code></pre></div>
-<p>Linux 계열인 경우 <code class="language-text">xclip</code> 명령어를 통해서 <a href="https://unix.stackexchange.com/a/145134">생성할 수 있다고 하는데</a>, WSL에서는 동작하지 않는다.</p>
+<p>Linux 계열인 경우 <code>xclip</code> 명령어를 통해서 <a href="https://unix.stackexchange.com/a/145134">생성할 수 있다고 하는데</a>, WSL에서는 동작하지 않는다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token comment"># image/png 타입이 누락되어 있다.</span>
 $ xclip <span class="token parameter variable">-selection</span> clipboard <span class="token parameter variable">-t</span> TARGETS <span class="token parameter variable">-o</span>
 TIMESTAMP
@@ -311,17 +311,17 @@ Error: target image/png not available</code></pre></div>
 이외에도 몇몇 앱에서 여는 포트에 접근하지 못했던 기억이 있다.</p>
 <p>몇 가지 확인 방법들.</p>
 <ul>
-<li><code class="language-text">Resource Monitor</code> 윈도우 앱에서, Network 탭 -> Listening Ports에서 모든 포트를 확인할 수 있다.
+<li><code>Resource Monitor</code> 윈도우 앱에서, Network 탭 -> Listening Ports에서 모든 포트를 확인할 수 있다.
 <ul>
 <li>WSL에서 오픈한 포트와 윈도우 앱에서 오픈한 포트는 모두 여기서 확인할 수 있다.</li>
 </ul>
 </li>
-<li><code class="language-text">cmd</code>에서 <code class="language-text">netstat -ano | find "LISTEN"</code> 명령어로도 모든 포트를 확인할 수 있다.
+<li><code>cmd</code>에서 <code>netstat -ano | find "LISTEN"</code> 명령어로도 모든 포트를 확인할 수 있다.
 <ul>
 <li>WSL에서 오픈한 포트와 윈도우 앱에서 오픈한 포트는 모두 여기서 확인할 수 있다.</li>
 </ul>
 </li>
-<li>WSL에서 <code class="language-text">lsof -i</code> 명령어로 열린 포트를 확인한다.
+<li>WSL에서 <code>lsof -i</code> 명령어로 열린 포트를 확인한다.
 <ul>
 <li><strong>WSL에서 오픈한 포트만 확인할 수 있다.</strong> 윈도우 앱에서 열린 포트는 노출되지 않는다.</li>
 <li>이 명령어로 해결 방법에 대한 검증을 하고있다.</li>
@@ -330,13 +330,13 @@ Error: target image/png not available</code></pre></div>
 <li>방화벽에서 inbound/outbound rule을 확인하라는 글도 있으나, 동작하지 않는다.</li>
 </ul>
 <h3 id="윈도우-마운트-경로에서-git-명령어가-느려지는-문제" style="position:relative;"><a href="#%EC%9C%88%EB%8F%84%EC%9A%B0-%EB%A7%88%EC%9A%B4%ED%8A%B8-%EA%B2%BD%EB%A1%9C%EC%97%90%EC%84%9C-git-%EB%AA%85%EB%A0%B9%EC%96%B4%EA%B0%80-%EB%8A%90%EB%A0%A4%EC%A7%80%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="윈도우 마운트 경로에서 git 명령어가 느려지는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>윈도우 마운트 경로에서 git 명령어가 느려지는 문제</h3>
-<p><code class="language-text">git status</code> 등 명령어가 <code class="language-text">/mnt</code> 경로에서 매우 느린 문제이다.</p>
+<p><code>git status</code> 등 명령어가 <code>/mnt</code> 경로에서 매우 느린 문제이다.</p>
 <p><a href="https://github.com/microsoft/WSL/issues/4197">https://github.com/microsoft/WSL/issues/4197</a></p>
 <p>2019년 리포트된 이슈인데, 2024년에도 오픈되어 있다.
-대안은 <code class="language-text">git.exe</code>를 설치하고 사용하는 것이다. 즉 두 벌의 binary를 사용하는 것.
-하지만 매우 번거롭다. 설정 파일이 분리되며, <code class="language-text">git</code> 명령어를 사용하기 위해선 별도 스크립트를 작성해야 한다.</p>
+대안은 <code>git.exe</code>를 설치하고 사용하는 것이다. 즉 두 벌의 binary를 사용하는 것.
+하지만 매우 번거롭다. 설정 파일이 분리되며, <code>git</code> 명령어를 사용하기 위해선 별도 스크립트를 작성해야 한다.</p>
 <h3 id="클립보드를-읽어서-이미지를-생성할-수-없는-문제해결하지-못함" style="position:relative;"><a href="#%ED%81%B4%EB%A6%BD%EB%B3%B4%EB%93%9C%EB%A5%BC-%EC%9D%BD%EC%96%B4%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94-%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%A8" aria-label="클립보드를 읽어서 이미지를 생성할 수 없는 문제해결하지 못함 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>클립보드를 읽어서 이미지를 생성할 수 없는 문제(해결하지 못함)</h3>
-<p><code class="language-text">xclip</code> 명령어로 클립보드를 읽어서 파일로 저장할 수 있다. 하지만 WSL에서는 그게 안된다.</p>
+<p><code>xclip</code> 명령어로 클립보드를 읽어서 파일로 저장할 수 있다. 하지만 WSL에서는 그게 안된다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ xclip <span class="token parameter variable">-selection</span> clipboard <span class="token parameter variable">-t</span> image/png <span class="token parameter variable">-out</span> <span class="token operator">></span> <span class="token string">"image.png"</span>
 Error: target image/png not available</code></pre></div>
 <p>원인은 클립보드와 관련되어 있는 것 같다.
@@ -361,19 +361,19 @@ hello world</code></pre></div>
 <p>WSL 버전이 업그레이드되면서 자연스레 해결된 것으로 보이는 것들.</p>
 <h4 id="http-관련-명령어가-동작하지-않는-문제" style="position:relative;"><a href="#http-%EA%B4%80%EB%A0%A8-%EB%AA%85%EB%A0%B9%EC%96%B4%EA%B0%80-%EB%8F%99%EC%9E%91%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="http 관련 명령어가 동작하지 않는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>http 관련 명령어가 동작하지 않는 문제</h4>
 <p>아래는 이전에 해결했던 기록이다.
-이제 더 이상 발생하지 않는데, <code class="language-text">/etc/resolv.conf</code> 파일은 WSL이 자동으로 생성하고 관리하는 것으로 보인다.</p>
+이제 더 이상 발생하지 않는데, <code>/etc/resolv.conf</code> 파일은 WSL이 자동으로 생성하고 관리하는 것으로 보인다.</p>
 <hr>
-<p><code class="language-text">curl</code> <code class="language-text">wget</code> <code class="language-text">docker pull</code>  <code class="language-text">npm install</code> 등 명령어가 일체 먹히지 않는다.
-<code class="language-text">git</code> 등 간접적으로 http를 사용하는 명령어도 동작하지 않는다.</p>
+<p><code>curl</code> <code>wget</code> <code>docker pull</code>  <code>npm install</code> 등 명령어가 일체 먹히지 않는다.
+<code>git</code> 등 간접적으로 http를 사용하는 명령어도 동작하지 않는다.</p>
 <p><a href="https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021">https://github.com/microsoft/WSL/issues/4285#issuecomment-522201021</a></p>
 <ol>
-<li><code class="language-text">/etc/wsl.conf</code> 파일을 만들고 아래 내용을 추가한다.</li>
+<li><code>/etc/wsl.conf</code> 파일을 만들고 아래 내용을 추가한다.</li>
 </ol>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[network]
 generateResolvConf = false</code></pre></div>
 <ol start="2">
-<li>Windows에서 <code class="language-text">wsl --shutdown</code> 실행하고 다시 wsl을 실행한다.</li>
-<li><code class="language-text">/etc/resolv.conf</code> 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.</li>
+<li>Windows에서 <code>wsl --shutdown</code> 실행하고 다시 wsl을 실행한다.</li>
+<li><code>/etc/resolv.conf</code> 파일을 만들거나, 존재한다면 내용을 아래와 같이 수정하고 2번을 반복한다.</li>
 </ol>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">nameserver 8.8.8.8</code></pre></div></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div><div class="PageLayout__Side-sc-11jfopf-3 lcfPgp"><div class="Wiki__RelatedLinksSide-sc-16q9onf-6 iCNRBr"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Related</summary><ul class="RelatedLinks__Links-sc-1y1aimd-0 fuujHb"><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/podman/">Podman</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/docker/">Docker</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/github/">GitHub</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/windows/">Windows</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/shell/">Shell 명령어</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vim/">Vim</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/mac-os/">Mac OS</a></li></ul></details></div><div class="Toc__Container-sc-1f76i2s-0 kZGlWu Wiki__TocSide-sc-16q9onf-5 HhRYq"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Table of Contents</summary><div><ul>
 <li>
@@ -431,6 +431,6 @@ generateResolvConf = false</code></pre></div>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

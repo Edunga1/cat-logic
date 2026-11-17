@@ -184,8 +184,8 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <span class="token hvariable">parseNonEmpty</span> <span class="token operator">::</span> <span class="token punctuation">[</span><span class="token hvariable">a</span><span class="token punctuation">]</span> <span class="token operator">-></span> <span class="token constant">IO</span> <span class="token punctuation">(</span><span class="token constant">NonEmpty</span> <span class="token hvariable">a</span><span class="token punctuation">)</span>
 <span class="token hvariable">parseNonEmpty</span> <span class="token punctuation">(</span><span class="token hvariable">x</span><span class="token operator">:</span><span class="token hvariable">xs</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token hvariable">pure</span> <span class="token punctuation">(</span><span class="token hvariable">x</span><span class="token operator">:|</span><span class="token hvariable">xs</span><span class="token punctuation">)</span>
 <span class="token hvariable">parseNonEmpty</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token hvariable">throwIO</span> <span class="token operator">$</span> <span class="token builtin">userError</span> <span class="token string">"list cannot be empty"</span></code></pre></div>
-<p><code class="language-text">validateNonEmpty</code>는 리스트가 비어있지 않은지 검증만 한다.<br>
-<code class="language-text">parseNonEmpty</code>는 비어있지 않은 리스트를 <code class="language-text">NonEmpty</code> 타입으로 변환한다. 타입 시스템이 요소가 존재함을 보장한다.
+<p><code>validateNonEmpty</code>는 리스트가 비어있지 않은지 검증만 한다.<br>
+<code>parseNonEmpty</code>는 비어있지 않은 리스트를 <code>NonEmpty</code> 타입으로 변환한다. 타입 시스템이 요소가 존재함을 보장한다.
 각 함수의 반환 값을 사용할 때, 검증 방식은 재검증에 대한 여지가 있지만 파싱 방식은 그렇지 않다.</p>
 <p>검증의 위험성은 처리 로직과 함께 사용될 때 드러난다.
 검증을 통과한 입력을 처리하다가, 다른 부분의 검증에 실패하면 이미 수정된 부분을 되돌리기 어렵다.
@@ -212,6 +212,6 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

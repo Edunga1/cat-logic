@@ -161,16 +161,16 @@ xz의 백도어 이슈를 타임라인 기반으로 정리한 글.</p>
 <p>메인테이너가 되기까지 과정에서 "Jigar Kumar"와 "Dennise Ens"라는 사람이 기존 xz의 유지보수에 대해 기존 메인테이너에게 압박을 가하며 "Jia Tan"이 메인테이너가 되도록 부추겼다.</p>
 <p>xz라이브러리 뿐만 아니라 oss-fuzz라는 보안 취약점을 찾아내는 프로젝트에 보안 옵션을 비활성화하는 PR을 보내며 백도어를 심기위한 물밑 작업도 했다.</p>
 <p>xz의 GitHub 저장소는 폐쇄되었다. 아카이브가 아닌 삭제처리 되었다.</p>
-<p>Homebrew를 사용한다면 의존성의 의존성으로써 xz가 설치되었을 확률이 높다. <code class="language-text">xz --version</code>으로 5.6.1 버전이면 백도어가 있는 버전. <code class="language-text">brew upgrade</code>로 이전 버전으로 다운그레이드 된다.</p>
+<p>Homebrew를 사용한다면 의존성의 의존성으로써 xz가 설치되었을 확률이 높다. <code>xz --version</code>으로 5.6.1 버전이면 백도어가 있는 버전. <code>brew upgrade</code>로 이전 버전으로 다운그레이드 된다.</p>
 <p><strong>흔적</strong></p>
 <p><a href="https://github.com/advisories/GHSA-rxwq-x6h5-x525">https://github.com/advisories/GHSA-rxwq-x6h5-x525</a> <br>
 xz의 백도어 발견을 보고한 GitHub Security Advisory.</p>
 <p><a href="https://github.com/google/oss-fuzz/pull/10667">https://github.com/google/oss-fuzz/pull/10667</a> <br>
 이 링크는 23년 7월, "Jia Tan"이 oss-fuzz 프로젝트에 ifuncs를 비활성화하는 Pull Request.<br>
-제목은 <code class="language-text">xz: Disable ifunc to fix Issue 60259</code> 인데, <code class="language-text">60259</code>라는 이슈 번호는 존재하지 않는다. 즉, 마치 필요하여 비활성화하는 것처럼 꾸며냈다.\</p>
+제목은 <code>xz: Disable ifunc to fix Issue 60259</code> 인데, <code>60259</code>라는 이슈 번호는 존재하지 않는다. 즉, 마치 필요하여 비활성화하는 것처럼 꾸며냈다.\</p>
 <p><a href="https://github.com/google/oss-fuzz/pull/10667#pullrequestreview-1518981986">https://github.com/google/oss-fuzz/pull/10667#pullrequestreview-1518981986</a> <br>
-안타깝게도 리뷰어는 <code class="language-text">lgtm</code>(looks good to me)와 함께 승인했다. 백도어 발견 후 리뷰어는 사실 lgtm이 아니었다며 후회의 뜻을 밝혔다.<br>
-(덧글 수정이 있어서, <code class="language-text">edited</code> 텍스트를 눌러 최초 버전을 확인하면 <code class="language-text">lgtm</code>을 볼 수 있다.)</p>
+안타깝게도 리뷰어는 <code>lgtm</code>(looks good to me)와 함께 승인했다. 백도어 발견 후 리뷰어는 사실 lgtm이 아니었다며 후회의 뜻을 밝혔다.<br>
+(덧글 수정이 있어서, <code>edited</code> 텍스트를 눌러 최초 버전을 확인하면 <code>lgtm</code>을 볼 수 있다.)</p>
 <p><a href="https://github.com/google/oss-fuzz/pull/10667#issuecomment-2027618608">https://github.com/google/oss-fuzz/pull/10667#issuecomment-2027618608</a> \</p>
 <blockquote>
 <p>In hindsight, this does not "look good to me" :-)
@@ -199,6 +199,6 @@ Homebrew의 xz 패키지의 버전을 5.6.1 -> 5.4.6 다운그레이드하는 �
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

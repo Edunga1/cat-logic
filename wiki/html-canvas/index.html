@@ -183,8 +183,8 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
     transform<span class="token punctuation">.</span><span class="token function">Rotate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token constructor-invocation class-name">Vector3</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Space<span class="token punctuation">.</span>World<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre></div>
 <p>처음에는 90도 회전을 하고, 4초 후에 40도 회전을 하고, 2초 후에 20도 회전을 하는 <a href="https://stackoverflow.com/questions/30056471/how-to-make-the-script-wait-sleep-in-a-simple-way-in-unity">예시</a>이다.</p>
-<p><code class="language-text">yield</code> 구문에서 X초간 suspend 되고, 그 후 다음 코드를 실행하고 있어서 매우 직관적인 코드를 작성할 수 있다.
-이러한 Coroutine은 <code class="language-text">WaitForSeconds</code> 이외에도 프레임 기반이나 실제 시간 기반으로 suspend하는 등 여러가지가 있다.</p>
+<p><code>yield</code> 구문에서 X초간 suspend 되고, 그 후 다음 코드를 실행하고 있어서 매우 직관적인 코드를 작성할 수 있다.
+이러한 Coroutine은 <code>WaitForSeconds</code> 이외에도 프레임 기반이나 실제 시간 기반으로 suspend하는 등 여러가지가 있다.</p>
 <p>이 방식을 비슷하게 구현해 보았다.</p>
 <p><a href="https://github.com/Edunga1/practice-canvas-coroutine">https://github.com/Edunga1/practice-canvas-coroutine</a></p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token operator">*</span><span class="token function">_update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -224,6 +224,6 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

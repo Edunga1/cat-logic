@@ -173,9 +173,9 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 속도 velocity, 질량 mass, 탄성 elasticity, 마찰 friction, 가속도 acceleration 요소를 고려하여 충돌 계산한다.</p>
 <p>매 프레임마다 다음 순서로 계산한다:</p>
 <ol>
-<li><code class="language-text">intersection</code> 충돌 여부 확인</li>
-<li><code class="language-text">penetration depth resolution</code> 겹침 해결</li>
-<li><code class="language-text">collision resolution</code> 충돌 계산</li>
+<li><code>intersection</code> 충돌 여부 확인</li>
+<li><code>penetration depth resolution</code> 겹침 해결</li>
+<li><code>collision resolution</code> 충돌 계산</li>
 </ol>
 <p>1에서 작용하지 않은 것으로 판단하면 2, 3을 진행하지 않는다.<br>
 2에서 다음 프레임까지의 Delta Time 및 속도에 따라 겹치는 정도가 다르다. 팅겨내기 전에 표면으로 돌려보내기 위한 계산이다.<br>
@@ -202,9 +202,9 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <p>Lerp는 선형보간(Linear Interpolation)으로, 두 지점 사이의 중간 지점을 계산한다.
 마찬가지로 deltaTime을 곱해주므로 프레임을 고려하며, 가속도가 적용되기 때문에 부드러운 이동이 가능하다.</p>
 <p>게임 케릭터를 구현을 위해 위 로직을 사용하면 어색하다.
-가속도가 없고 목표 지점을 넘어가지 않는 <code class="language-text">MoveTowards</code>를 사용하는 것이 좋다.</p>
+가속도가 없고 목표 지점을 넘어가지 않는 <code>MoveTowards</code>를 사용하는 것이 좋다.</p>
 <div class="gatsby-highlight" data-language="csharp"><pre class="language-csharp"><code class="language-csharp">transform<span class="token punctuation">.</span>position <span class="token operator">=</span> Vector3<span class="token punctuation">.</span><span class="token function">MoveTowards</span><span class="token punctuation">(</span>transform<span class="token punctuation">.</span>position<span class="token punctuation">,</span> target<span class="token punctuation">.</span>position<span class="token punctuation">,</span> Time<span class="token punctuation">.</span>deltaTime <span class="token operator">*</span> speed<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<p>케릭터의 속도 <code class="language-text">speed</code>를 고려하는 방식이다.</p>
+<p>케릭터의 속도 <code>speed</code>를 고려하는 방식이다.</p>
 <p>references:</p>
 <ul>
 <li><a href="https://ko.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-vectors/a/vector-magnitude-normalization">Khan Academy - 벡터 크기와 정규화</a></li>
@@ -238,6 +238,6 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

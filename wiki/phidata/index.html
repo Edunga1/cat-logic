@@ -164,7 +164,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <h2 id="공식-예제" style="position:relative;"><a href="#%EA%B3%B5%EC%8B%9D-%EC%98%88%EC%A0%9C" aria-label="공식 예제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>공식 예제</h2>
 <p>다음은 공식문서에서 소개하는 간단한 예제이다.
 OpenAI API 키가 필요하다.</p>
-<p>poetry를 사용하고 있어서 <code class="language-text">pyproject.toml</code>를 작성한다.</p>
+<p>poetry를 사용하고 있어서 <code>pyproject.toml</code>를 작성한다.</p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">tool.poetry</span><span class="token punctuation">]</span>
 <span class="token key property">name</span> <span class="token punctuation">=</span> <span class="token string">"phidata-start"</span>
 <span class="token key property">version</span> <span class="token punctuation">=</span> <span class="token string">"0.1.0"</span>
@@ -180,9 +180,9 @@ OpenAI API 키가 필요하다.</p>
 <span class="token punctuation">[</span><span class="token table class-name">build-system</span><span class="token punctuation">]</span>
 <span class="token key property">requires</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"poetry-core"</span><span class="token punctuation">]</span>
 <span class="token key property">build-backend</span> <span class="token punctuation">=</span> <span class="token string">"poetry.core.masonry.api"</span></code></pre></div>
-<p><code class="language-text">poetry shell</code>로 가상 환경을 만들고, <code class="language-text">poetry install</code>로 의존성을 설치한다.
-<code class="language-text">phidata</code>와 <code class="language-text">openai</code> 단 두개만 설치하면 된다.</p>
-<p>이제 스크립트를 작성하자 <code class="language-text">assistant.py</code>:</p>
+<p><code>poetry shell</code>로 가상 환경을 만들고, <code>poetry install</code>로 의존성을 설치한다.
+<code>phidata</code>와 <code>openai</code> 단 두개만 설치하면 된다.</p>
+<p>이제 스크립트를 작성하자 <code>assistant.py</code>:</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> phi<span class="token punctuation">.</span>assistant <span class="token keyword">import</span> Assistant
 
 assistant <span class="token operator">=</span> Assistant<span class="token punctuation">(</span>description<span class="token operator">=</span><span class="token string">"You help people with their health and fitness goals."</span><span class="token punctuation">)</span>
@@ -245,7 +245,7 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 ╰──────────┴───────────────────────────────────────────────────────────╯</code></pre></div>
 <p>다음은 duckduckgo를 이용해 AI가 검색하는 예시다.
 모델에게 함수를 사용하도록 지시하고, 함수 결과를 종합하여 답변하는 구조다.</p>
-<p><code class="language-text">duckduckgo-search</code> 모듈이 필요하다: <code class="language-text">poetry add duckduckgo-search</code></p>
+<p><code>duckduckgo-search</code> 모듈이 필요하다: <code>poetry add duckduckgo-search</code></p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> phi<span class="token punctuation">.</span>assistant <span class="token keyword">import</span> Assistant
 <span class="token keyword">from</span> phi<span class="token punctuation">.</span>tools<span class="token punctuation">.</span>duckduckgo <span class="token keyword">import</span> DuckDuckGo
 
@@ -296,7 +296,7 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 <h2 id="나만의-도구-만들기" style="position:relative;"><a href="#%EB%82%98%EB%A7%8C%EC%9D%98-%EB%8F%84%EA%B5%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0" aria-label="나만의 도구 만들기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>나만의 도구 만들기</h2>
 <p>Phidata는 내가 만든 함수를 사용할 수 있도록 도와준다.</p>
 <p>간단한 예제로 웹페이지의 HTML을 가져오는 도구를 만들어보자.</p>
-<p><code class="language-text">assistant.py</code>의 코드는 다음과 같다:</p>
+<p><code>assistant.py</code>의 코드는 다음과 같다:</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> phi<span class="token punctuation">.</span>assistant <span class="token keyword">import</span> Assistant
 <span class="token keyword">from</span> requests <span class="token keyword">import</span> get
 
@@ -314,7 +314,7 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 
 assistant <span class="token operator">=</span> Assistant<span class="token punctuation">(</span>tools<span class="token operator">=</span><span class="token punctuation">[</span>get_html<span class="token punctuation">]</span><span class="token punctuation">,</span> show_tools_calls<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 assistant<span class="token punctuation">.</span>print_response<span class="token punctuation">(</span><span class="token string">"`https://news.hada.io/topic?id=13436` 사이트의 내용을 3줄 요약해 주세요."</span><span class="token punctuation">,</span> markdown<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre></div>
-<p><code class="language-text">tools=</code>에 함수를 제공하면 되는데, docstring을 잘 작성하면 AI가 알아서 사용한다.</p>
+<p><code>tools=</code>에 함수를 제공하면 되는데, docstring을 잘 작성하면 AI가 알아서 사용한다.</p>
 <p>다음은 사용 결과:</p>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">phidata-start-G7rAPLlM-py3.10 ❯ python assistant.py
 ╭──────────┬───────────────────────────────────────────────────────────╮
@@ -388,8 +388,8 @@ assistant <span class="token operator">=</span> Assistant<span class="token punc
     llm<span class="token operator">=</span>Ollama<span class="token punctuation">(</span>model<span class="token operator">=</span><span class="token string">"llama2"</span><span class="token punctuation">,</span> host<span class="token operator">=</span><span class="token string">"localhost:11434"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token punctuation">)</span>
 assistant<span class="token punctuation">.</span>print_response<span class="token punctuation">(</span>message<span class="token punctuation">,</span> markdown<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre></div>
-<p>모델은 <code class="language-text">llama2</code>를 사용했다. 기존처럼 <code class="language-text">get_html</code> 함수를 사용해서 제공하면 오류가 난다.
-<code class="language-text">Toolkit</code>을 구현하면 오류가 나지 않는다.</p>
+<p>모델은 <code>llama2</code>를 사용했다. 기존처럼 <code>get_html</code> 함수를 사용해서 제공하면 오류가 난다.
+<code>Toolkit</code>을 구현하면 오류가 나지 않는다.</p>
 <p>Ollama는 docker로 띄우고 host로 제공했다.</p>
 <p>문제는 도구를 전혀 사용(function calling)하지 않는다. URL 자체를 기반한 답변을 하는데, 당연히 제대로된 답변을 못한다.
 아마도 모델 성능 문제인 거 같다. GPT-4의 경우에도 프롬프트의 해석에 따라서 도구를 사용하는 빈도가 달라졌기 때문.</p>
@@ -399,7 +399,7 @@ assistant<span class="token punctuation">.</span>print_response<span class="toke
 <p>But only GPT4 can do function calling reliably. local/oss models are great for completion therefore most of the examples you'll see with OSS models will be of RAG</p>
 </blockquote>
 <hr>
-<p>OpenAI의 <code class="language-text">GPT-3.5-turbo</code>도 잘 동작한다.</p>
+<p>OpenAI의 <code>GPT-3.5-turbo</code>도 잘 동작한다.</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_html</span><span class="token punctuation">(</span>url<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""Get the HTML of a webpage.
 
@@ -434,8 +434,8 @@ assistant <span class="token operator">=</span> Assistant<span class="token punc
     <span class="token punctuation">)</span>
 <span class="token punctuation">)</span>
 assistant<span class="token punctuation">.</span>print_response<span class="token punctuation">(</span>message<span class="token punctuation">,</span> markdown<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre></div>
-<p><code class="language-text">다른 링크는 방문하지 마세요.</code>라는 조건을 추가하지 않으면 엉뚱한 링크를 추가 방문하려고 한다.
-그러다 보니 토큰 초과로 실패하는 문제가 있었다. <code class="language-text">GPT-3.5-turbo-0125</code>의 최대 토큰은 <code class="language-text">16,385</code>.</p>
+<p><code>다른 링크는 방문하지 마세요.</code>라는 조건을 추가하지 않으면 엉뚱한 링크를 추가 방문하려고 한다.
+그러다 보니 토큰 초과로 실패하는 문제가 있었다. <code>GPT-3.5-turbo-0125</code>의 최대 토큰은 <code>16,385</code>.</p>
 <p>다음은 응답 결과이다:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ python assistant.py https://news.hada.io/topic<span class="token punctuation">\</span>?id<span class="token punctuation">\</span><span class="token operator">=</span><span class="token number">13464</span>
 Fetching HTML from https://news.hada.io/topic?id<span class="token operator">=</span><span class="token number">13464</span><span class="token punctuation">..</span>.
@@ -486,7 +486,7 @@ Fetching HTML from https://news.hada.io/topic?id<span class="token operator">=</
 │          │  • 덧글들은 경영자와 실무자 사이의 관점 차이, 필요한 부분에 대한     │
 │          │    언급, 글의 비판적 시각 등 다양한 의견이 포함되어 있습니다.        │
 ╰──────────┴──────────────────────────────────────────────────────────────────────╯</code></pre></div>
-<p><code class="language-text">GPT-3.5-turbo-0125</code>로 2번 성공, 2번 토큰 초과 실패하여 든 비용은 $0.02.
+<p><code>GPT-3.5-turbo-0125</code>로 2번 성공, 2번 토큰 초과 실패하여 든 비용은 $0.02.
 GPT-4와 비교하면 훨씬 저렴하기도 하지만, 사용 토큰 제한량에서 크게 차이가 나서 많이 사용할 수 없는 구조다.</p>
 <p>나중에 앱을 고도화 한다면 이 토큰 차이로 인해서 품질이 달라질 수도 있겠다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div><div class="PageLayout__Side-sc-11jfopf-3 lcfPgp"><div class="Wiki__RelatedLinksSide-sc-16q9onf-6 iCNRBr"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Related</summary><ul class="RelatedLinks__Links-sc-1y1aimd-0 fuujHb"><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/ollama/">Ollama</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/large-language-model/">Large Language Model</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/github/">GitHub</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/anthropic/">Anthropic</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/2025/">2025년</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/openai/">OpenAI</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/machine-learning/">Machine Learning</a></li></ul></details></div><div class="Toc__Container-sc-1f76i2s-0 kZGlWu Wiki__TocSide-sc-16q9onf-5 HhRYq"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Table of Contents</summary><div><ul>
 <li>
@@ -511,6 +511,6 @@ GPT-4와 비교하면 훨씬 저렴하기도 하지만, 사용 토큰 제한량�
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

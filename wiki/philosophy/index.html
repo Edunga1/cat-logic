@@ -280,7 +280,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
     <span class="token operator">*</span>indirect <span class="token operator">=</span> entry<span class="token operator">-></span>next<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre></div>
 <p>차이점은 마지막 부분의 if-else 분기 유무이다.</p>
-<p>첫 번째 코드는 조건문을 통해 제거하는 노드가 첫 번째인지 아닌지 <code class="language-text">if (!prev)</code> 판단한다.
+<p>첫 번째 코드는 조건문을 통해 제거하는 노드가 첫 번째인지 아닌지 <code>if (!prev)</code> 판단한다.
 반면에 두 번째 코드는 제거하려는 노드가 가리키는 주소를 다음 노드로 변경한다.</p>
 <p>리누스 토발즈가 말하는 것은 특수 조건이 사라지면서 코드가 더 간결해 진다는 것이다.</p>
 <p>물론 이 예시는 적절하지 않다고 한다. 너무 작은 규모이고, 단적인 예시이라는 것이다.
@@ -446,7 +446,7 @@ that in itself would be a huge reason to use C.</p>
 <p><a href="https://www.youtube.com/watch?v=k899IiwP-iw">윈도우의 자동 업데이트 밈</a>은 굳이 오래된 상황이 아니더라도 누구나 공감한다.</p>
 <p>다음은 급하게 노트북을 꺼내면서 마주한 불편한 점들.</p>
 <ol>
-<li>IntelliJ를 열먼서 마주한 수많은 알림창. 업데이트 알림은 이해해도 <code class="language-text">git</code> 설치하라는 것은 뭔지?</li>
+<li>IntelliJ를 열먼서 마주한 수많은 알림창. 업데이트 알림은 이해해도 <code>git</code> 설치하라는 것은 뭔지?</li>
 <li>awscli configure 갱신 -> python 버전 지원 문제로 버전업 -> pyenv를 Homebrew로 업데이트 해야 하는데.</li>
 <li>Homebrew는 모든 도구를 자동 업데이트를 해버린다. 수십분이 소요된다.</li>
 <li>크롬의 구글 계정 로그인 만료. 예상한 지점이지만, 구글 연동된 모든 사이트도 다시 재인증해야 한다. 사용하던 사이트가 이렇게나 많았나?</li>
@@ -527,7 +527,7 @@ Lamport는 이 부분이 코드를 복잡하기 만들어서 좋아하지 않는
 <h2 id="버퍼" style="position:relative;"><a href="#%EB%B2%84%ED%8D%BC" aria-label="버퍼 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>버퍼</h2>
 <p>프로그래밍에서 버퍼는 데이터를 임시적으로 저장하는 공간이다.</p>
 <p>임시 처리는 개발자에게 편안함을 주는 요소이다. <br>
-예를들어, 셸에서 <code class="language-text">cat foo.txt | awk '{print $1}' | sort -u | rg 'pattern'</code>와 같은 명령어 조합을 한 번에 도출해내기는 어렵지만,
+예를들어, 셸에서 <code>cat foo.txt | awk '{print $1}' | sort -u | rg 'pattern'</code>와 같은 명령어 조합을 한 번에 도출해내기는 어렵지만,
 각 단계의 결과를 임시 확인하며 진행하면 수월하게 도달할 수 있다.</p>
 <p><a href="../game/#factorio">Factorio</a>는 이 버퍼 개념을 잘 녹여낸 게임이다.<br>
 생산 라인을 구축하는 게임으로써 한 번에 많은 퍼즐에 맞닥뜨린다.
@@ -598,6 +598,6 @@ Lamport는 이 부분이 코드를 복잡하기 만들어서 좋아하지 않는
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

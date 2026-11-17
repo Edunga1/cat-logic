@@ -173,7 +173,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <h2 id="개념" style="position:relative;"><a href="#%EA%B0%9C%EB%85%90" aria-label="개념 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>개념</h2>
 <h3 id="데이터-주도" style="position:relative;"><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A3%BC%EB%8F%84" aria-label="데이터 주도 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>데이터 주도</h3>
 <p><strong>data interval start/end의 범위는 3.X 버전에서 Timetable 기본값 변경으로 더 이상 schedule 주기에 따라 결정되지 않는다.</strong><br>
-<code class="language-text">CronDataIntervalTimetable</code>에서 <code class="language-text">CronTriggerTimetable</code>로 변경되면서, start/end가 같은 시각인 스케쥴링된 시각이 된다.</p>
+<code>CronDataIntervalTimetable</code>에서 <code>CronTriggerTimetable</code>로 변경되면서, start/end가 같은 시각인 스케쥴링된 시각이 된다.</p>
 <hr>
 <p>Airflow 작업은 cron 표현식을 통해 주기를 결정한다.<br>
 cron은 해당 시각에 작업이 실행된다는 의미지만, Airflow는 스케줄 구간을 나눈다는 의미로 사용한다.<br>
@@ -303,7 +303,7 @@ Data Interval 11:00 ~ 11:10 구간의 시간 후인 11:21:05에 구간에 대한
 즉 이전 처리 시각인 11:21:05에서 겨우 30초 후에 다음 구간에 대한 작업이 실행됐다.<br>
 만약 현재 시각을 기준으로 데이터를 쿼리해서 처리한다면, 겨우 30초 밖에 지나지 않았기 때문에 처리할 데이터가 거의 없을 것이다.</p>
 <p>그래서 Airflow는 <a href="https://airflow.apache.org/docs/apache-airflow/stable/templates-ref.html#variables">Data Interval 변수를 제공한다</a>.<br>
-데이터 구간의 시작(<code class="language-text">{{ data_interval_start }}</code>)과 끝(<code class="language-text">{{ data_interval_end }}</code>) 시각을 이용하여 해당 구간의 데이터만 처리하도록 코드를 작성해야 한다.</p>
+데이터 구간의 시작(<code>{{ data_interval_start }}</code>)과 끝(<code>{{ data_interval_end }}</code>) 시각을 이용하여 해당 구간의 데이터만 처리하도록 코드를 작성해야 한다.</p>
 <p>이는 멱등성과 직결된다.</p>
 <h2 id="airflow-연습" style="position:relative;"><a href="#airflow-%EC%97%B0%EC%8A%B5" aria-label="airflow 연습 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Airflow 연습</h2>
 <p><a href="https://github.com/Edunga1/practice-airflow">https://github.com/Edunga1/practice-airflow</a></p>
@@ -314,7 +314,7 @@ Data Interval 11:00 ~ 11:10 구간의 시간 후인 11:21:05에 구간에 대한
 <blockquote>
 <p>When searching for DAGs inside the DAG_FOLDER, Airflow only considers Python files that contain the strings airflow and dag (case-insensitively) as an optimization.</p>
 </blockquote>
-<p><code class="language-text">airflow</code>와 <code class="language-text">dag</code> 문자열을 포함하는 파이썬 파일만 DAG 파일로 인식한다.</p>
+<p><code>airflow</code>와 <code>dag</code> 문자열을 포함하는 파이썬 파일만 DAG 파일로 인식한다.</p>
 <p>DAG 스크립트를 모듈화하여 DAG 생성을 분리한다면 DAG 파일을 인식하지 못할 수 있으니 주의해야 한다.</p>
 <blockquote>
 <p>To consider all Python files instead, disable the DAG_DISCOVERY_SAFE_MODE configuration flag.</p>
@@ -358,6 +358,6 @@ Data Interval 11:00 ~ 11:10 구간의 시간 후인 11:21:05에 구간에 대한
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

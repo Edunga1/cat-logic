@@ -157,16 +157,16 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 </ul></div></details></div><div class="WikiContent__Container-sc-q3jb6a-0 bicHzB">
 <p>URL로 데이터를 전송하거나 받을 수 있는 커맨드라인 도구.</p>
 <h2 id="재시도" style="position:relative;"><a href="#%EC%9E%AC%EC%8B%9C%EB%8F%84" aria-label="재시도 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>재시도</h2>
-<p><code class="language-text">--retry</code> 옵션은 특정 상태 코드를 받으면 재시도한다.
-메뉴얼에 따르면 <code class="language-text">408</code>, <code class="language-text">429</code>, <code class="language-text">500</code>, <code class="language-text">502</code>, <code class="language-text">503</code>, <code class="language-text">504</code>가 전부다.:</p>
+<p><code>--retry</code> 옵션은 특정 상태 코드를 받으면 재시도한다.
+메뉴얼에 따르면 <code>408</code>, <code>429</code>, <code>500</code>, <code>502</code>, <code>503</code>, <code>504</code>가 전부다.:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token parameter variable">--retry</span> <span class="token operator">&lt;</span>num<span class="token operator">></span>
       If a transient error is returned when <span class="token function">curl</span> tries to perform a transfer, it will retry this number of <span class="token builtin class-name">times</span> before giving up. Setting the number to <span class="token number">0</span> makes <span class="token function">curl</span> <span class="token keyword">do</span> no retries <span class="token punctuation">(</span>which is the
       default<span class="token punctuation">)</span>. Transient error means either: a timeout, an FTP 4xx response code or an HTTP <span class="token number">408</span>, <span class="token number">429</span>, <span class="token number">500</span>, <span class="token number">502</span>, <span class="token number">503</span> or <span class="token number">504</span> response code.</code></pre></div>
 <p>일시적인 오류(transient error)가 반환되면 재시도 한다고 한다.
 이 상태 코드들이 python requests와 같은 Http 라이브러리에서도 사용하는지는 확인하지 못했다.
-검색해보면 <code class="language-text">429</code>, <code class="language-text">500</code>, <code class="language-text">502</code>, <code class="language-text">503</code>, <code class="language-text">504</code>를 명시하여 재시도하는 예제 코드가 보인다.</p>
+검색해보면 <code>429</code>, <code>500</code>, <code>502</code>, <code>503</code>, <code>504</code>를 명시하여 재시도하는 예제 코드가 보인다.</p>
 <h2 id="url" style="position:relative;"><a href="#url" aria-label="url permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URL</h2>
-<p>URL에 <code class="language-text">[]</code> 사용하면 순차적으로 요청을 보낼 수 있다:</p>
+<p>URL에 <code>[]</code> 사용하면 순차적으로 요청을 보낼 수 있다:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">curl</span> http://httpbin.org/anything/<span class="token punctuation">\</span><span class="token punctuation">[</span><span class="token number">8</span>-11<span class="token punctuation">\</span><span class="token punctuation">]</span>.txt
 <span class="token punctuation">{</span>
   <span class="token string">"url"</span><span class="token builtin class-name">:</span> <span class="token string">"http://httpbin.org/anything/8.txt"</span>
@@ -180,7 +180,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <span class="token punctuation">{</span>
   <span class="token string">"url"</span><span class="token builtin class-name">:</span> <span class="token string">"http://httpbin.org/anything/11.txt"</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p><code class="language-text">[]</code>는 alphanumeric series를 받으며, leading zero도 사용할 수 있다.</p>
+<p><code>[]</code>는 alphanumeric series를 받으며, leading zero도 사용할 수 있다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">curl</span> http://httpbin.org/anything/<span class="token punctuation">\</span><span class="token punctuation">[</span>008-011<span class="token punctuation">\</span><span class="token punctuation">]</span>.txt
 <span class="token punctuation">{</span>
   <span class="token string">"url"</span><span class="token builtin class-name">:</span> <span class="token string">"http://httpbin.org/anything/008.txt"</span>
@@ -194,7 +194,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <span class="token punctuation">{</span>
   <span class="token string">"url"</span><span class="token builtin class-name">:</span> <span class="token string">"http://httpbin.org/anything/011.txt"</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p><code class="language-text">httpbin.org</code>는 HTTP 테스트하기 위한 사이트이므로 위 예제 코드를 바로 돌려볼 수 있다.</p>
+<p><code>httpbin.org</code>는 HTTP 테스트하기 위한 사이트이므로 위 예제 코드를 바로 돌려볼 수 있다.</p>
 <h2 id="curl-이용한-api-마이그레이션-응답-비교하기" style="position:relative;"><a href="#curl-%EC%9D%B4%EC%9A%A9%ED%95%9C-api-%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98-%EC%9D%91%EB%8B%B5-%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0" aria-label="curl 이용한 api 마이그레이션 응답 비교하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>curl 이용한 API 마이그레이션 응답 비교하기</h2>
 <p>API 이전할 때 기존 API의 응답과 새 API의 응답을 비교해야 할 때 주로 사용하는 스크립트이다.</p>
 <p>2개의 API 서버를 띄워놓고, 다량의 API를 각각 호출, 응답을 diff로 비교하는 로직이다.</p>
@@ -240,7 +240,7 @@ token3,baz
 token4,apple
 token5,banana
 token5,orange</code></pre></div>
-<p>이제 <code class="language-text">bash script.sh param.txt</code>와 같이 실행하면, 각 파라미터로 API를 호출하여 응답을 비교한다.</p>
+<p>이제 <code>bash script.sh param.txt</code>와 같이 실행하면, 각 파라미터로 API를 호출하여 응답을 비교한다.</p>
 <p>응답이 다른 경우 diff를 출력한다.</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">&lt;                     "field1": "do something"
 &lt;                 }
@@ -265,18 +265,18 @@ token5,orange</code></pre></div>
 21,30c21
 &lt;             },
 &lt;             "items": [</code></pre></div>
-<p>가장 마지막 호출은 <code class="language-text">diffc</code>, <code class="language-text">diffd</code> 파일에 각각 as-is, to-be API 응답을 저장한다.
+<p>가장 마지막 호출은 <code>diffc</code>, <code>diffd</code> 파일에 각각 as-is, to-be API 응답을 저장한다.
 표준 출력 또는 diff 파일을 보면서 차이를 확인한다.</p>
 <p>응답 없이 사이드 이펙트만 있는 API는 이 방법으로 테스트하기 어렵다.</p>
-<p>데이터를 <code class="language-text">,</code> 대신 다른 구분자로 나누고 싶으면 <code class="language-text">IFS</code>를 변경하면 된다.
-탭으로 구분된 파일이라면 <code class="language-text">IFS=$'\t'</code>로 변경하면 된다.</p>
+<p>데이터를 <code>,</code> 대신 다른 구분자로 나누고 싶으면 <code>IFS</code>를 변경하면 된다.
+탭으로 구분된 파일이라면 <code>IFS=$'\t'</code>로 변경하면 된다.</p>
 <p>python으로 json을 읽어서 비교하고 있는데, <a href="../shell/#jq">jq</a>를 사용하는 것도 좋은 방법이다.
 구문 강조가 제공되고, 필드 제거 등 jq의 기능을 활용할 수 있다.</p>
 <h2 id="options" style="position:relative;"><a href="#options" aria-label="options permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h2>
 <h2 id="--user" style="position:relative;"><a href="#--user" aria-label="  user permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>--user</h2>
-<p><code class="language-text">--user</code> 옵션은 기본 인증(Basic Authentication)을 위한 사용자 이름과 비밀번호를 지정한다.</p>
+<p><code>--user</code> 옵션은 기본 인증(Basic Authentication)을 위한 사용자 이름과 비밀번호를 지정한다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token string">'https://example.com'</span> <span class="token parameter variable">--user</span> <span class="token string">'username:password'</span></code></pre></div>
-<p>헤더의 <code class="language-text">Authorization: Basic &lt;base64-encoded-credentials></code> 형태로, <code class="language-text">username:password</code>를 base64로 인코딩하여 전송한다.
+<p>헤더의 <code>Authorization: Basic &#x3C;base64-encoded-credentials></code> 형태로, <code>username:password</code>를 base64로 인코딩하여 전송한다.
 즉, 해당 옵션 대신 직접 헤더에 인코딩하여 넣는 것과 동일하다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">curl</span> <span class="token parameter variable">-v</span> https://example.com <span class="token parameter variable">-u</span> foo:bar
 * Host example.com:443 was resolved.
@@ -288,7 +288,7 @@ token5,orange</code></pre></div>
 <span class="token operator">></span> Authorization: Basic <span class="token assign-left variable">Zm9vOmJhcg</span><span class="token operator">==</span>
 <span class="token operator">></span> User-Agent: curl/8.13.0
 <span class="token operator">></span> Accept: */*</code></pre></div>
-<p><code class="language-text">Zm9vOmJhcg==</code>는 <code class="language-text">foo:bar</code>를 base64로 인코딩한 값이다.</p>
+<p><code>Zm9vOmJhcg==</code>는 <code>foo:bar</code>를 base64로 인코딩한 값이다.</p>
 <h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <p><a href="https://antonz.org/mastering-curl/">https://antonz.org/mastering-curl/</a> <br>
 curl 가이드. 유용하지만 몰랐던 옵션들도 소개한다.
@@ -318,6 +318,6 @@ curl 가이드. 유용하지만 몰랐던 옵션들도 소개한다.
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

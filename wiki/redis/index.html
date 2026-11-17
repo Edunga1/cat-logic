@@ -157,36 +157,36 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <li><a href="https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode">https://redis.io/commands/setnx/#design-pattern-locking-with-codesetnxcode</a></li>
 <li><a href="https://redis.io/commands/set/">https://redis.io/commands/set/</a></li>
 </ul>
-<p><code class="language-text">2.6.12</code>부터 <code class="language-text">SETNX</code> Deprecated 되고, <code class="language-text">set</code>에 <code class="language-text">NX</code> 옵션이 추가되었다.</p>
+<p><code>2.6.12</code>부터 <code>SETNX</code> Deprecated 되고, <code>set</code>에 <code>NX</code> 옵션이 추가되었다.</p>
 <blockquote>
 <p>SETNX is short for "SET if Not eXists".</p>
 </blockquote>
-<p><code class="language-text">NX</code>는 <code class="language-text">Not eXists</code>의 약자로, 해당 키가 존재하지 않을 때만 <code class="language-text">SET</code>을 수행한다.</p>
+<p><code>NX</code>는 <code>Not eXists</code>의 약자로, 해당 키가 존재하지 않을 때만 <code>SET</code>을 수행한다.</p>
 <blockquote>
 <p>The command SET resource-name anystring NX EX max-lock-time is a simple way to implement a locking system with Redis.</p>
 </blockquote>
-<p><code class="language-text">SET resource-name anystring NX EX max-lock-time</code>와 같이 사용하는 것은 Redis에서 Locking System을 구현하는 간단한 방법이다.</p>
-<p><code class="language-text">EX max-lock-time</code>으로 인해 초 단위로 만료 시간을 지정할 수 있다.
-잘 설정되었다면 <code class="language-text">"OK"</code>를 반환하고, 만료 시간이 지나기 전에 다시 호출하면 <code class="language-text">nil</code>을 반환한다.</p>
+<p><code>SET resource-name anystring NX EX max-lock-time</code>와 같이 사용하는 것은 Redis에서 Locking System을 구현하는 간단한 방법이다.</p>
+<p><code>EX max-lock-time</code>으로 인해 초 단위로 만료 시간을 지정할 수 있다.
+잘 설정되었다면 <code>"OK"</code>를 반환하고, 만료 시간이 지나기 전에 다시 호출하면 <code>nil</code>을 반환한다.</p>
 <p>이 방식으로 간단한 분산 Locking System을 구현할 수 있다.</p>
 <p>클라이언트에서 각자 포인트를 적립, 차감하는 로직이 있다고 가정하자.</p>
 <p>Process:</p>
 <ul>
-<li>각 클라이언는 위 명령어로 포인트를 처리하기 전에 Locking 한다: <code class="language-text">SET point-user123 foo NX EX 60</code></li>
-<li>만약 Locking에 실패하면(<code class="language-text">nil</code>을 반환하면) "다른 클라이언트에서 처리 중입니다."와 같은 메시지를 반환한다.</li>
-<li>Locking에 성공하면(<code class="language-text">"OK"</code>를 반환하면) 포인트를 처리한다.</li>
-<li>처리가 끝나면 <code class="language-text">DEL point-user123</code>로 Locking을 해제한다.</li>
+<li>각 클라이언는 위 명령어로 포인트를 처리하기 전에 Locking 한다: <code>SET point-user123 foo NX EX 60</code></li>
+<li>만약 Locking에 실패하면(<code>nil</code>을 반환하면) "다른 클라이언트에서 처리 중입니다."와 같은 메시지를 반환한다.</li>
+<li>Locking에 성공하면(<code>"OK"</code>를 반환하면) 포인트를 처리한다.</li>
+<li>처리가 끝나면 <code>DEL point-user123</code>로 Locking을 해제한다.</li>
 </ul>
 <p>설령 클라이언트가 처리 중에 비정상 종료되더라도 60초 후에는 Locking이 해제되기 때문에 무한정 Locking 되는 것을 피할 수 있다.</p>
-<p>좀 더 견고하게 Unlocking 프로세스를 만들고 싶다면 <code class="language-text">DEL</code> 명령어를 직접 사용하지 않고, 일련의 해제 프로세스를 호출하는 것이 좋다:</p>
+<p>좀 더 견고하게 Unlocking 프로세스를 만들고 싶다면 <code>DEL</code> 명령어를 직접 사용하지 않고, 일련의 해제 프로세스를 호출하는 것이 좋다:</p>
 <ul>
-<li><code class="language-text">foo</code>와 같은 고정 문자열 대신, 랜덤한 문자열을 사용한다.</li>
+<li><code>foo</code>와 같은 고정 문자열 대신, 랜덤한 문자열을 사용한다.</li>
 <li>클라이언트은 포인트 처리 후 해제 프로세스에 위 문자열을 전달한다.</li>
-<li>해제 프로세스는 전달 받은 문자열과 <code class="language-text">GET</code> 명령어로 해당 키의 값을 비교한다.</li>
-<li>같으면 <code class="language-text">DEL</code> 명령어로 Locking을 해제한다.</li>
+<li>해제 프로세스는 전달 받은 문자열과 <code>GET</code> 명령어로 해당 키의 값을 비교한다.</li>
+<li>같으면 <code>DEL</code> 명령어로 Locking을 해제한다.</li>
 </ul>
 <p>각 클라이언트에서 직접 삭제하는 대신, 해제 프로세스에 위임하는 방법이다.<br>
-이러면 다른 클라이언트가 <code class="language-text">DEL</code> 명령어로 아무 배경없이 Locking 해제하는 것을 막을 수 있다.
+이러면 다른 클라이언트가 <code>DEL</code> 명령어로 아무 배경없이 Locking 해제하는 것을 막을 수 있다.
 Locking 처리한 클라이언트만 해제할 수 있는 일종의 보증 절차를 만드는 것이다.</p>
 <h2 id="라이선스를-bsd에서-sspl로-변경" style="position:relative;"><a href="#%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4%EB%A5%BC-bsd%EC%97%90%EC%84%9C-sspl%EB%A1%9C-%EB%B3%80%EA%B2%BD" aria-label="라이선스를 bsd에서 sspl로 변경 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>라이선스를 BSD에서 SSPL로 변경</h2>
 <p>24년 4월, 클라우드 서비스 대항격인 라이선스 변경을 발표했다.</p>
@@ -218,6 +218,6 @@ Locking 처리한 클라이언트만 해제할 수 있는 일종의 보증 절�
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

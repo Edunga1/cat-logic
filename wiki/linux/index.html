@@ -186,53 +186,53 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 │   ├── boot
 │   <span class="token punctuation">..</span>. many components</code></pre></div>
 <ul>
-<li><code class="language-text">src/</code> 폴더 내에 모든 소스코드가 위치한다.</li>
+<li><code>src/</code> 폴더 내에 모든 소스코드가 위치한다.</li>
 <li>많은 폴더가 있지만 크게 2분류인데, 각 컴포넌트에서 공유되는 4개의 폴더와 그 외 폴더로 나눌 수 있다. 4개 폴더는 공유 코드라 부른다.
 <ul>
-<li><code class="language-text">src/basic/</code>와 <code class="language-text">src/fundamental/</code>의 코드는 다른 모든 코드로부터 사용되는 초석인 코드이다.</li>
-<li><code class="language-text">src/libsystemd/</code>는 <code class="language-text">libsystemd.so</code> 공유 라이브러리를 구현하는 코드인데, 위 코드를 사용한다.</li>
-<li><code class="language-text">src/shared/</code>는 공유 라이브러리로 expose되는 컴포넌트들에서 사용되는 유틸리티와 코드를 제공한다.</li>
+<li><code>src/basic/</code>와 <code>src/fundamental/</code>의 코드는 다른 모든 코드로부터 사용되는 초석인 코드이다.</li>
+<li><code>src/libsystemd/</code>는 <code>libsystemd.so</code> 공유 라이브러리를 구현하는 코드인데, 위 코드를 사용한다.</li>
+<li><code>src/shared/</code>는 공유 라이브러리로 expose되는 컴포넌트들에서 사용되는 유틸리티와 코드를 제공한다.</li>
 </ul>
 </li>
 <li>위 공유 코드들은 다른 코드들의 초석이 되므로 외부의 코드를 사용할 수 없는데, 공유 코드간에도 의존 방향이 존재한다.
 <ul>
-<li><code class="language-text">fundamental</code> &#x3C;- <code class="language-text">basic</code> &#x3C;- <code class="language-text">libsystemd</code> &#x3C;- <code class="language-text">shared</code></li>
-<li>즉 <code class="language-text">fundamental</code>은 자체 내부 코드만 사용할 수 있고, 다른 모든 공유 코드도 사용할 수 없다.</li>
-<li><code class="language-text">shared</code>는 안쪽의 3개 공유 코드를 사용할 수 있다. 하지만 그 외부는 사용할 수 없다.</li>
+<li><code>fundamental</code> &#x3C;- <code>basic</code> &#x3C;- <code>libsystemd</code> &#x3C;- <code>shared</code></li>
+<li>즉 <code>fundamental</code>은 자체 내부 코드만 사용할 수 있고, 다른 모든 공유 코드도 사용할 수 없다.</li>
+<li><code>shared</code>는 안쪽의 3개 공유 코드를 사용할 수 있다. 하지만 그 외부는 사용할 수 없다.</li>
 </ul>
 </li>
-<li><code class="language-text">src/core/</code>는 systemd 서비스 매니저의 메인 로직을 구현한다.</li>
-<li><code class="language-text">src/core/bpf/</code>는 PID 1에서 사용된다.</li>
-<li><code class="language-text">src/udev/</code>는 <a href="https://ko.wikipedia.org/wiki/Udev">udev</a> 데몬 및 CLI 도구를 구현한다.</li>
+<li><code>src/core/</code>는 systemd 서비스 매니저의 메인 로직을 구현한다.</li>
+<li><code>src/core/bpf/</code>는 PID 1에서 사용된다.</li>
+<li><code>src/udev/</code>는 <a href="https://ko.wikipedia.org/wiki/Udev">udev</a> 데몬 및 CLI 도구를 구현한다.</li>
 </ul>
 <p><strong>유닛 테스트</strong></p>
 <ul>
-<li>유닛 테스트 코드는 <code class="language-text">src/test/</code>에 위치한다.</li>
+<li>유닛 테스트 코드는 <code>src/test/</code>에 위치한다.</li>
 <li>각 테스트 파일은 해당 모듈을 실행할 수 있도록 독립적으로 컴파일된다.</li>
 <li>대부분 테스트는 어떤 유저로든 실행할 수 있지만, 몇몇 테스트는 권한이 필요하며, 필요한 권한을 명확하게 로깅 시도한다.</li>
 <li>테스트들은 독립적(self-contained)이며 일반적으로 side-effect 없이 호스트에서 실행된다.</li>
-<li>이상적으로 <code class="language-text">src/basic</code>과 <code class="language-text">src/shared</code>는 <code class="language-text">src/test/</code>내에 대응하는 테스트가 있어야 한다.</li>
+<li>이상적으로 <code>src/basic</code>과 <code>src/shared</code>는 <code>src/test/</code>내에 대응하는 테스트가 있어야 한다.</li>
 <li>Fuzzer는 외부 입력으로부터 실행하는 유닛 테스트의 일종이다.</li>
-<li><code class="language-text">test/fuzz/</code>(src 외부의 test 폴더)는 fuzzer를 위한 입력 데이터가 있다.
+<li><code>test/fuzz/</code>(src 외부의 test 폴더)는 fuzzer를 위한 입력 데이터가 있다.
 <ul>
 <li>해당 폴더에는 leak, crash를 일으켰던 입력 샘플같은 실제 입력 예시를 가지고 있는 것으로 보인다.</li>
 </ul>
 </li>
-<li><code class="language-text">test/fuzz/*/</code> 폴더는 짧고, 의미 있는 이름을 사용해야 한다.</li>
+<li><code>test/fuzz/*/</code> 폴더는 짧고, 의미 있는 이름을 사용해야 한다.</li>
 </ul>
 <p><strong>통합 테스트</strong></p>
 <ul>
-<li><code class="language-text">src/TEST-*</code> 패턴으로 위치하며, 프로젝트가 제공하는 실행 파일, 라이브러리, 데몬의 시스템 레벨 테스트를 구현한다.</li>
-<li>실행하기 위한 권한이 필요하며, 호스트에서 직접 실행하면 안전하지 않다. 따라서 기본적으로 이미지를 빌드하여 <code class="language-text">qemu</code> 또는 <code class="language-text">systemd-nspawn</code>을 통해 테스트를 실행한다.
+<li><code>src/TEST-*</code> 패턴으로 위치하며, 프로젝트가 제공하는 실행 파일, 라이브러리, 데몬의 시스템 레벨 테스트를 구현한다.</li>
+<li>실행하기 위한 권한이 필요하며, 호스트에서 직접 실행하면 안전하지 않다. 따라서 기본적으로 이미지를 빌드하여 <code>qemu</code> 또는 <code>systemd-nspawn</code>을 통해 테스트를 실행한다.
 <ul>
 <li>이는 유닛 테스트와 대비된다. side-effect가 발생하는 것으로 보인다.</li>
 </ul>
 </li>
-<li>대부분은 <code class="language-text">qemu</code>보다 더 빠른 <code class="language-text">systemd-nspawn</code>을 통해서 실행될 수 있어야 한다.</li>
+<li>대부분은 <code>qemu</code>보다 더 빠른 <code>systemd-nspawn</code>을 통해서 실행될 수 있어야 한다.</li>
 </ul>
 <h2 id="debian" style="position:relative;"><a href="#debian" aria-label="debian permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debian</h2>
 <h3 id="dpkg---debian-package-manager" style="position:relative;"><a href="#dpkg---debian-package-manager" aria-label="dpkg   debian package manager permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dpkg - Debian package manager</h3>
-<p><code class="language-text">apt</code>로 패키지를 제공하지 않고 <code class="language-text">.deb</code> 파일로 설치해야 한다면 <code class="language-text">dpkg</code>를 사용한다.</p>
+<p><code>apt</code>로 패키지를 제공하지 않고 <code>.deb</code> 파일로 설치해야 한다면 <code>dpkg</code>를 사용한다.</p>
 <p>ripgrep의 설치 예시:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">curl</span> <span class="token parameter variable">-LO</span> https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -326,6 +326,6 @@ For <span class="token function">more</span> information try <span class="token 
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

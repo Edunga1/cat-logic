@@ -149,7 +149,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <li>
 <p><a href="#swagger-core">Swagger Core</a></p>
 <ul>
-<li><a href="#enum-class%EC%97%90%EC%84%9C-jackson-jsonformat%EC%9D%B4-%EC%A0%81%EC%9A%A9%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C">enum class에서 Jackson <code class="language-text">@JsonFormat</code>이 적용되지 않는 문제</a></li>
+<li><a href="#enum-class%EC%97%90%EC%84%9C-jackson-jsonformat%EC%9D%B4-%EC%A0%81%EC%9A%A9%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C">enum class에서 Jackson <code>@JsonFormat</code>이 적용되지 않는 문제</a></li>
 </ul>
 </li>
 </ul>
@@ -160,7 +160,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <p><a href="https://github.com/swagger-api/swagger-core">https://github.com/swagger-api/swagger-core</a></p>
 <p><a href="https://github.com/springdoc/springdoc-openapi">springdoc-openapi</a>는 Swagger Core를 기반으로 만들어졌다.
 따라서 <a href="../spring-framework/">Spring Framework</a>를 사용하는 경우 문서화에서 발생하는 이슈는 대부분 swagger-core와 관련이 있다.</p>
-<h3 id="enum-class에서-jackson-jsonformat이-적용되지-않는-문제" style="position:relative;"><a href="#enum-class%EC%97%90%EC%84%9C-jackson-jsonformat%EC%9D%B4-%EC%A0%81%EC%9A%A9%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="enum class에서 jackson jsonformat이 적용되지 않는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>enum class에서 Jackson <code class="language-text">@JsonFormat</code>이 적용되지 않는 문제</h3>
+<h3 id="enum-class에서-jackson-jsonformat이-적용되지-않는-문제" style="position:relative;"><a href="#enum-class%EC%97%90%EC%84%9C-jackson-jsonformat%EC%9D%B4-%EC%A0%81%EC%9A%A9%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="enum class에서 jackson jsonformat이 적용되지 않는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>enum class에서 Jackson <code>@JsonFormat</code>이 적용되지 않는 문제</h3>
 <p>GitHub Issue: <a href="https://github.com/swagger-api/swagger-core/issues/3691">https://github.com/swagger-api/swagger-core/issues/3691</a></p>
 <p>다음과 같이 kotlin 코드를 작성하였다.</p>
 <div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Response</span><span class="token punctuation">(</span>
@@ -185,7 +185,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
   <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"SUCCESS"</span><span class="token punctuation">,</span>
   <span class="token property">"data"</span><span class="token operator">:</span> <span class="token null keyword">null</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p><code class="language-text">@JsonUnwrapped</code>, <code class="language-text">@JsonFormat</code>이 적용되지 않았다.
+<p><code>@JsonUnwrapped</code>, <code>@JsonFormat</code>이 적용되지 않았다.
 아직 별다른 해결 방법이 없는 모양. 이슈에서 관련 로직을 <a href="https://github.com/utybo/Tegral/issues/55">재작성한다</a>는 거 같다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div><div class="PageLayout__Side-sc-11jfopf-3 lcfPgp"><div class="Wiki__RelatedLinksSide-sc-16q9onf-6 iCNRBr"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Related</summary><ul class="RelatedLinks__Links-sc-1y1aimd-0 fuujHb"><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/spring-framework/">Spring framework</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/web-browser/">웹 브라우저</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/kotlin/">Kotlin Programming Language</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/programming-convention/">Programming Convention</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/java/">Java Programming Language</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/architecture/">Architecture</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/logging/">Logging</a></li></ul></details></div><div class="Toc__Container-sc-1f76i2s-0 kZGlWu Wiki__TocSide-sc-16q9onf-5 HhRYq"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Table of Contents</summary><div><ul>
 <li>
 <p><a href="#swagger">Swagger</a></p>
@@ -193,7 +193,7 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 <li>
 <p><a href="#swagger-core">Swagger Core</a></p>
 <ul>
-<li><a href="#enum-class%EC%97%90%EC%84%9C-jackson-jsonformat%EC%9D%B4-%EC%A0%81%EC%9A%A9%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C">enum class에서 Jackson <code class="language-text">@JsonFormat</code>이 적용되지 않는 문제</a></li>
+<li><a href="#enum-class%EC%97%90%EC%84%9C-jackson-jsonformat%EC%9D%B4-%EC%A0%81%EC%9A%A9%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C">enum class에서 Jackson <code>@JsonFormat</code>이 적용되지 않는 문제</a></li>
 </ul>
 </li>
 </ul>
@@ -212,6 +212,6 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -214,10 +214,10 @@ Node.JS가 이런 라이브러리들과 다른 점은 런타임 차원에서 제
 <p>npm은 node.js의 패키지 관리자이다.
 node.js 설치하면 npm을 함께 포함한다.</p>
 <p>이 생태계에서 주로 사용하는 패키지매니저는 npm, yarn, pnpm이 있다.
-3개 모두 <code class="language-text">package.json</code>을 사용한다. 추가로 패키지매니저 별로 lock와 별도 설정 파일을 사용한다.</p>
+3개 모두 <code>package.json</code>을 사용한다. 추가로 패키지매니저 별로 lock와 별도 설정 파일을 사용한다.</p>
 <p>어떤 node.js 프로젝트를 확인할 때 패키지매니저 전용 파일을 확인하거나,
-<code class="language-text">package.json</code>의 <code class="language-text">packageManager</code> 필드를 확인하면 된다.
-e.g. <a href="https://github.com/jestjs/jest/blob/main/package.json">jest</a>는 <code class="language-text">"packageManager": "yarn@3.6.4"</code></p>
+<code>package.json</code>의 <code>packageManager</code> 필드를 확인하면 된다.
+e.g. <a href="https://github.com/jestjs/jest/blob/main/package.json">jest</a>는 <code>"packageManager": "yarn@3.6.4"</code></p>
 <p><strong>의존성 설치 속도 비교</strong></p>
 <p><a href="../cat-logic/">cat logic</a> sites 프로젝트의 의존성 설치 속도를 비교했다.</p>
 <table>
@@ -246,7 +246,7 @@ e.g. <a href="https://github.com/jestjs/jest/blob/main/package.json">jest</a>는
 github actions 환경에서 npm 40s, pnpm 19.3s 소요되었다.</p>
 <h3 id="yarn" style="position:relative;"><a href="#yarn" aria-label="yarn permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>yarn</h3>
 <p><a href="https://github.com/yarnpkg/yarn">yarn</a>은 v1과 그 이후 버전으로 프로젝트가 나뉜다.</p>
-<p>yarn은 <code class="language-text">yarn.lock</code>을 lock 파일로 사용한다.</p>
+<p>yarn은 <code>yarn.lock</code>을 lock 파일로 사용한다.</p>
 <hr>
 <p>2023-11 최근 yarn을 시도해 보았는데, 좋은 선택은 아닌 거 같다.
 일단 <a href="https://github.com/yarnpkg/yarn">yarn</a> v1은 22년 이후로 1.22.19로 종료되었다.</p>
@@ -257,23 +257,23 @@ cli는 yarn 이름을 같이 사용하지만 프로젝트가 달라서 Homebrew�
 이렇게 관리하는 것은 생태계에 혼란만 가져온다.</p>
 <p>반면에 npm은 지금까지도 한 프로젝트에서 관리되고 있다.
 그래서 혼란이 없다. node.js에 내장되어 있으므로 따로 설치할 필요도 없다.
-다만 <code class="language-text">npm audit</code>은 짜증만 난다. 이걸로 제대로 고쳐지는 경우가 많이 없는 것 같다.</p>
+다만 <code>npm audit</code>은 짜증만 난다. 이걸로 제대로 고쳐지는 경우가 많이 없는 것 같다.</p>
 <h3 id="pnpm" style="position:relative;"><a href="#pnpm" aria-label="pnpm permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pnpm</h3>
 <p><a href="https://github.com/pnpm/pnpm">pnpm</a> GitHub Star가 가장 많다.
 최근들어 흔하게 사용하는 거 같다.</p>
-<p>설치는 <code class="language-text">npm install -g pnpm</code> 또는 <code class="language-text">brew install pnpm</code>.</p>
+<p>설치는 <code>npm install -g pnpm</code> 또는 <code>brew install pnpm</code>.</p>
 <ul>
-<li><code class="language-text">pnpm-lock.yaml</code> lock 파일을 사용한다.</li>
-<li><code class="language-text">pnpm-workspace.yaml</code> Monorepositories 위한 <a href="https://pnpm.io/workspaces">workspace</a> 설정 파일을 사용한다.</li>
+<li><code>pnpm-lock.yaml</code> lock 파일을 사용한다.</li>
+<li><code>pnpm-workspace.yaml</code> Monorepositories 위한 <a href="https://pnpm.io/workspaces">workspace</a> 설정 파일을 사용한다.</li>
 </ul>
-<p>Monorepo가 아니라면 <code class="language-text">pnpm-workspace.yaml</code>은 필요 없는 것으로 보인다.
+<p>Monorepo가 아니라면 <code>pnpm-workspace.yaml</code>은 필요 없는 것으로 보인다.
 괜히 빈 내용으로 추가하면 패키지 설치 시 매번 root project 경고가 발생한다.</p>
-<p><code class="language-text">pnpm install</code> 시 warning이 줄어든 것을 확인할 수 있었다.
-단순히 숨긴건지는 모르겠지만 <code class="language-text">npm install</code> 경우에는 수 많은 peer dependency warning으로 신경이 쓰이는 반면에 pnpm은 warning이 없었다.</p>
+<p><code>pnpm install</code> 시 warning이 줄어든 것을 확인할 수 있었다.
+단순히 숨긴건지는 모르겠지만 <code>npm install</code> 경우에는 수 많은 peer dependency warning으로 신경이 쓰이는 반면에 pnpm은 warning이 없었다.</p>
 <hr>
-<p>다른 패키지매니저와 <code class="language-text">node_modules</code> 구조가 다른지, migration 아티클들을 보면 <code class="language-text">node_modules</code>를 삭제하고 시작한다.</p>
-<p><code class="language-text">node_modules</code> 구조는 <a href="https://pnpm.io/ko/blog/2020/05/27/flat-node-modules-is-not-the-only-way">평탄한 node_modules가 유일한 방법은 아닙니다.</a> 공식 블로그에서 설명한다.</p>
-<p>expressjs를 설치했을 때 <code class="language-text">node_modules</code> 구조를 비교해보면 다음과 같다:</p>
+<p>다른 패키지매니저와 <code>node_modules</code> 구조가 다른지, migration 아티클들을 보면 <code>node_modules</code>를 삭제하고 시작한다.</p>
+<p><code>node_modules</code> 구조는 <a href="https://pnpm.io/ko/blog/2020/05/27/flat-node-modules-is-not-the-only-way">평탄한 node_modules가 유일한 방법은 아닙니다.</a> 공식 블로그에서 설명한다.</p>
+<p>expressjs를 설치했을 때 <code>node_modules</code> 구조를 비교해보면 다음과 같다:</p>
 <p>npm은</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">.bin
 accepts
@@ -295,20 +295,20 @@ express</code></pre></div>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">.pnpm
 .modules.yaml
 express</code></pre></div>
-<p><code class="language-text">node_modules</code>를 평탄하게 유지하지 않는다. 또한 <code class="language-text">express</code> 폴더는 <strong>심볼릭 링크</strong>이다.</p>
+<p><code>node_modules</code>를 평탄하게 유지하지 않는다. 또한 <code>express</code> 폴더는 <strong>심볼릭 링크</strong>이다.</p>
 <h2 id="builit-in-modules" style="position:relative;"><a href="#builit-in-modules" aria-label="builit in modules permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Builit-in Modules</h2>
 <h3 id="fs---file-system" style="position:relative;"><a href="#fs---file-system" aria-label="fs   file system permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>fs - File System</h3>
 <h4 id="mkdtemp" style="position:relative;"><a href="#mkdtemp" aria-label="mkdtemp permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>mkdtemp</h4>
 <p><a href="https://nodejs.org/docs/v20.15.1/api/fs.html#fsmkdtempprefix-options-callback">fs.mkdtemp</a>는 임시 디렉토리를 생성한다.
 중복 이름을 피하여 생성해 줘서 편리하다.</p>
-<p>예를 들어 다음과 같이 사용하여 <code class="language-text">/tmp</code> 디렉토리에 임시 폴더를 생성할 수 있다.
+<p>예를 들어 다음과 같이 사용하여 <code>/tmp</code> 디렉토리에 임시 폴더를 생성할 수 있다.
 동기 버전을 사용했다.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> mkdtempSync <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> <span class="token punctuation">{</span> tmpdir <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'os'</span><span class="token punctuation">)</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">mkdtempSync</span><span class="token punctuation">(</span><span class="token function">tmpdir</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'/my-temp-folder-'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">// /tmp/my-temp-folder-GqR04W</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">mkdtempSync</span><span class="token punctuation">(</span><span class="token function">tmpdir</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'/my-temp-folder-'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">// /tmp/my-temp-folder-egRlg4</span></code></pre></div>
-<p>몇 번 실행하면 <code class="language-text">/tmp</code>에 임시 폴더가 많이 생성되어 있다.</p>
+<p>몇 번 실행하면 <code>/tmp</code>에 임시 폴더가 많이 생성되어 있다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token function">ls</span> /tmp <span class="token operator">|</span> <span class="token function">grep</span> my-temp
 my-temp-folder-egRlg4
 my-temp-folder-EqXLKK
@@ -334,7 +334,7 @@ v18.0.0, v16.17.0 부터 실험적 기능으로 추가되었다.</p>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>assert 라이브러리는 오래전부터 제공했었다.</p>
-<p><code class="language-text">describe()</code> - <code class="language-text">it()</code> 스타일도 지원한다.</p>
+<p><code>describe()</code> - <code>it()</code> 스타일도 지원한다.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'assert'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token punctuation">{</span> describe<span class="token punctuation">,</span> it <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'node:test'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -353,8 +353,8 @@ v18.0.0, v16.17.0 부터 실험적 기능으로 추가되었다.</p>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<p>실행은 <code class="language-text">node --test</code>로 실행한다.
-지켜보기 모드는 <code class="language-text">node --test --watch</code>.</p>
+<p>실행은 <code>node --test</code>로 실행한다.
+지켜보기 모드는 <code>node --test --watch</code>.</p>
 <p>Mocking 라이브러리도 제공한다고 하니 이제는 별도 라이브러리를 설치할 필요 없이 가능할 거 같다.</p>
 <hr>
 <p>관련 문서</p>
@@ -367,8 +367,8 @@ v18.0.0, v16.17.0 부터 실험적 기능으로 추가되었다.</p>
 다만 assertion 부분은 오래전부터 자체 제공했던 인터페이스를 유지하고 있어서, 모두 손봐야 했다.</p>
 <p>또한 jest가 제공하는 편리한 검증 함수에 비하면 node.js의 검증 도구는 협소하다.
 예를 들어 두 Object가 다른 한 쪽의 부분 집합인지 확인하는 함수가 없어서, 항상 전체가 같은지 확인해야 한다.
-부분 비교를 하고 싶으면 직접 구현하거나, <code class="language-text">lodash</code> 등 외부 라이브러리를 사용해야 하는데 테스트 때문에 추가해야 하는데 그러면 다른 테스트 도구를 사용하는 편이 낫겠다.</p>
-<p>또한 jest의 <code class="language-text">expect.any(String)</code> 같은 matcher의 지원이 없어서 테스트 코드의 가독성이 떨어진다.</p>
+부분 비교를 하고 싶으면 직접 구현하거나, <code>lodash</code> 등 외부 라이브러리를 사용해야 하는데 테스트 때문에 추가해야 하는데 그러면 다른 테스트 도구를 사용하는 편이 낫겠다.</p>
+<p>또한 jest의 <code>expect.any(String)</code> 같은 matcher의 지원이 없어서 테스트 코드의 가독성이 떨어진다.</p>
 <p>이런 Jest 코드가 있으면:</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token function">expect</span><span class="token punctuation">(</span>createNodeField<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenCalledWith</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   node<span class="token punctuation">,</span>
@@ -381,10 +381,10 @@ v18.0.0, v16.17.0 부터 실험적 기능으로 추가되었다.</p>
 assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> node<span class="token punctuation">)</span>
 assert<span class="token punctuation">.</span><span class="token function">strictEqual</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token string">"gitLogLatestHash"</span><span class="token punctuation">)</span>
 assert<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">)</span></code></pre></div>
-<p>또다른 이슈라면, 위 프로젝트는 esm을 사용하고 있어서 <code class="language-text">node</code> 명령어로 호출할 수 없다.
-<code class="language-text">babel-node</code>를 통해서 실행해야 한다. <code class="language-text">node -r @babel/register --test **/*.spec.js</code>로 실행한다.
-운영 코드를 <code class="language-text">.mjs</code>로 작성하거나 commonjs 모듈로 전환하면 babel-node를 사용하지 않아도 되겠지만.
-babel을 사용하지 않는다면 <code class="language-text">node --test **/*.spec.js</code>로 실행한다.</p>
+<p>또다른 이슈라면, 위 프로젝트는 esm을 사용하고 있어서 <code>node</code> 명령어로 호출할 수 없다.
+<code>babel-node</code>를 통해서 실행해야 한다. <code>node -r @babel/register --test **/*.spec.js</code>로 실행한다.
+운영 코드를 <code>.mjs</code>로 작성하거나 commonjs 모듈로 전환하면 babel-node를 사용하지 않아도 되겠지만.
+babel을 사용하지 않는다면 <code>node --test **/*.spec.js</code>로 실행한다.</p>
 <h2 id="third-party-testing-libraries" style="position:relative;"><a href="#third-party-testing-libraries" aria-label="third party testing libraries permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Third-party testing libraries</h2>
 <p>테스트 프레임워크인 mocha를 기반에 검증 라이브러리로 chai를 채택하는 라이브러리 조합 방식 대신,
 <a href="https://github.com/facebook/jest">Jest</a>를 사용하면 모든 기능을 한 번에 제공받을 수 있다.
@@ -392,8 +392,8 @@ babel을 사용하지 않는다면 <code class="language-text">node --test **/*.
 <p>아래 도구들은 Jest 이전에 주로 사용하던 도구들이다.</p>
 <h3 id="mocha---test-framework" style="position:relative;"><a href="#mocha---test-framework" aria-label="mocha   test framework permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mocha - Test Framework</h3>
 <p>테스트 구조를 제공한다.</p>
-<p>설치 : <code class="language-text">npm install mocha --save-dev</code></p>
-<p>테스트 스크립트 실행 : <code class="language-text">mocha &lt;PATH></code></p>
+<p>설치 : <code>npm install mocha --save-dev</code></p>
+<p>테스트 스크립트 실행 : <code>mocha &#x3C;PATH></code></p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'어떤 테스트를 할 것인지 대략적인 설명'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// 매 it() 마다 실행 할 코드</span>
@@ -405,7 +405,7 @@ babel을 사용하지 않는다면 <code class="language-text">node --test **/*.
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <h3 id="chai---assertion-library" style="position:relative;"><a href="#chai---assertion-library" aria-label="chai   assertion library permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Chai - Assertion Library</h3>
 <p>Assertion 라이브러리. 값 비교에 사용한다.</p>
-<p>설치 : <code class="language-text">npm install chai --save-dev</code></p>
+<p>설치 : <code>npm install chai --save-dev</code></p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'어떤 테스트를 할 것인지 대략적인 설명'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
     <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'테스트 단위 별 설명'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -420,18 +420,18 @@ babel을 사용하지 않는다면 <code class="language-text">node --test **/*.
 <p><a href="https://github.com/istanbuljs/nyc">https://github.com/istanbuljs/nyc</a></p>
 <p>기존 istanbul은 deprecated 되고, nyc로 새로운 프로젝트로 이전되었다. 아래 내용은 istanbul을 기준의 내용이다.</p>
 <hr>
-<p>설치: <code class="language-text">npm install istanbul --save-dev</code></p>
-<p>테스트 시 <code class="language-text">coverage/</code> 폴더가 생성되어 리포트 페이지(html)를 생성한다. 페이지를 통해서 실제 모듈이 얼마나 호출 되었는지, 어디까지 테스트 되었는지 확인한다.</p>
-<p>Mocha와 함께 실행: <code class="language-text">istanbul cover _mocha</code> (<code class="language-text">_mocha</code>인 이유는 Mocha의 프로세스 이름을 이용하기 때문)</p>
+<p>설치: <code>npm install istanbul --save-dev</code></p>
+<p>테스트 시 <code>coverage/</code> 폴더가 생성되어 리포트 페이지(html)를 생성한다. 페이지를 통해서 실제 모듈이 얼마나 호출 되었는지, 어디까지 테스트 되었는지 확인한다.</p>
+<p>Mocha와 함께 실행: <code>istanbul cover _mocha</code> (<code>_mocha</code>인 이유는 Mocha의 프로세스 이름을 이용하기 때문)</p>
 <h3 id="sinonjs---mocking-library" style="position:relative;"><a href="#sinonjs---mocking-library" aria-label="sinonjs   mocking library permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sinon.JS - Mocking Library</h3>
 <p>자바스크립트를 위한 테스트 spies, stubs, mocks.
 가짜 객체를 만들어서 기존 객체를 대체하여 테스트에 맞게 조작하는 도구이다.</p>
-<p><code class="language-text">new Date()</code> 조작하기</p>
+<p><code>new Date()</code> 조작하기</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> clock <span class="token operator">=</span> sinon<span class="token punctuation">.</span><span class="token function">useFakeTimers</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'1800-01-01 00:00:00'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Wed Jan 01 1800 00:00:00 GMT+0900 (KST)</span>
 clock<span class="token punctuation">.</span><span class="token function">restore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// now</span></code></pre></div>
-<p><code class="language-text">useFakeTimers()</code>로부터 반환되는 객체의 <code class="language-text">restore()</code>를 호출하여 조작된 시간을 복구할 수 있다.</p>
+<p><code>useFakeTimers()</code>로부터 반환되는 객체의 <code>restore()</code>를 호출하여 조작된 시간을 복구할 수 있다.</p>
 <p>주의할 점은 복구하지 않고 다시 조작하는 경우.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> clock1 <span class="token operator">=</span> sinon<span class="token punctuation">.</span><span class="token function">useFakeTimers</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'1800-01-01 00:00:00'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Wed Jan 01 1800 00:00:00 GMT+0900 (KST)</span>
@@ -442,7 +442,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 clock1<span class="token punctuation">.</span><span class="token function">restore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// now</span></code></pre></div>
 <p>나중에 조작한 시간을 복구해도 이전에 조작한 시간이 남아 있다.</p>
-<p><code class="language-text">clock1</code>을 바로 복구해도 돌아올 수 있다.</p>
+<p><code>clock1</code>을 바로 복구해도 돌아올 수 있다.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> clock1 <span class="token operator">=</span> sinon<span class="token punctuation">.</span><span class="token function">useFakeTimers</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'1800-01-01 00:00:00'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Wed Jan 01 1800 00:00:00 GMT+0900 (KST)</span>
 <span class="token keyword">var</span> clock2 <span class="token operator">=</span> sinon<span class="token punctuation">.</span><span class="token function">useFakeTimers</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'2000-12-01 00:00:00'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -476,8 +476,8 @@ Joi는 24년 9월 기준 Star 수가 20k로 인기있는 라이브러리이다. 
 <p><a href="https://stackoverflow.com/questions/14043926/node-js-connect-only-works-on-localhost">https://stackoverflow.com/questions/14043926/node-js-connect-only-works-on-localhost</a><br>
 여기에서 힌트를 얻었음</p>
 <p><a href="https://nodejs.org/api/net.html#net_server_listen_port_host_backlog_callback">https://nodejs.org/api/net.html#net_server_listen_port_host_backlog_callback</a><br>
-<code class="language-text">server.listen()</code> 스펙을 보면 포트 번호와 함께 host(ip)를 입력하면 해당 ip만 허용한다.</p>
-<p>기본값은 <code class="language-text">0.0.0.0</code>이고 '지정되지 않음'을 의미하며 외부 ip의 연결도 허용하지만, <code class="language-text">127.0.0.1</code>으로 두면 로컬 연결만 허용된다.</p>
+<code>server.listen()</code> 스펙을 보면 포트 번호와 함께 host(ip)를 입력하면 해당 ip만 허용한다.</p>
+<p>기본값은 <code>0.0.0.0</code>이고 '지정되지 않음'을 의미하며 외부 ip의 연결도 허용하지만, <code>127.0.0.1</code>으로 두면 로컬 연결만 허용된다.</p>
 <p>근데, 이렇게 로컬 요청을 구분하는 것은 좋지 않은 것으로 보인다.
 MSA 환경 구축하면 다른 머신의 연결도 있을테니까.
 virtual host 또는 방화벽으로 막는게 합리적으로 보인다.</p>
@@ -487,36 +487,36 @@ virtual host 또는 방화벽으로 막는게 합리적으로 보인다.</p>
 <p>Docker가 일반적으로 사용되기 전에는 pm2가 좋은 선택이었다.</p>
 <hr>
 <p><a href="http://pm2.keymetrics.io/docs/usage/deployment/#complete-tutorial">pm2 deploy tutorial</a>
-처럼 <code class="language-text">post-deploy</code>를 다음과 같이 저장하는 경우 조심해야 한다.</p>
+처럼 <code>post-deploy</code>를 다음과 같이 저장하는 경우 조심해야 한다.</p>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"post-deploy"</span><span class="token operator">:</span> <span class="token string">"npm install &amp;&amp; pm2 startOrRestart ecosystem.json --env production"</span></code></pre></div>
-<p><code class="language-text">pm2 deploy</code> 하면 다음 절차로 일이 발생한다:</p>
+<p><code>pm2 deploy</code> 하면 다음 절차로 일이 발생한다:</p>
 <ol>
-<li>로컬 <code class="language-text">ecosystem.json</code>과 같은 설정 파일을 읽어들임</li>
-<li>명세한 서버 정보(<code class="language-text">user</code>, <code class="language-text">host</code>)로 리모트 서버에 접속</li>
+<li>로컬 <code>ecosystem.json</code>과 같은 설정 파일을 읽어들임</li>
+<li>명세한 서버 정보(<code>user</code>, <code>host</code>)로 리모트 서버에 접속</li>
 <li>(리모트 서버에서) git pull</li>
 <li>(리모트 서버에서) npm install</li>
 <li>(리모트 서버에서) pm2 startOrRestart ecosystem.json --env production</li>
-<li>(리모트 서버에서) 위 명령어에 의한 <code class="language-text">ecosystem.json</code> 설정 파일을 읽어들임</li>
-<li><code class="language-text">apps</code> 명세에 따른 배포</li>
+<li>(리모트 서버에서) 위 명령어에 의한 <code>ecosystem.json</code> 설정 파일을 읽어들임</li>
+<li><code>apps</code> 명세에 따른 배포</li>
 </ol>
 <p>그러니까 설정 파일은 로컬에서, 리모트에서 총 2번 읽어들인다.</p>
-<p>그래서 pm2는 현재 브랜치가 트래킹 중인 리모트 브랜치와 달라지면 싱크를 맞추라고 한다: <code class="language-text">push your changes before deploying</code></p>
+<p>그래서 pm2는 현재 브랜치가 트래킹 중인 리모트 브랜치와 달라지면 싱크를 맞추라고 한다: <code>push your changes before deploying</code></p>
 <p>로컬과 서버의 설정 파일이 불일치하면 골치 아파진다. 서로 다른 설정 파일을 읽기 때문에 원하는 대로 작업이 이루어지지 않을 수도 있다.
-원인은 로컬에서 실행되는 명령어의 명세인 <code class="language-text">deploy</code>, 리모트 서버에서 실행되는 명령어의 명세인 <code class="language-text">apps</code>를 보통 하나의 파일에서 관리하고
+원인은 로컬에서 실행되는 명령어의 명세인 <code>deploy</code>, 리모트 서버에서 실행되는 명령어의 명세인 <code>apps</code>를 보통 하나의 파일에서 관리하고
 코드베이스에 포함하기 때문인데, 설정 파일을 다른 위치에 두면 로컬과 리모트의 설정 파일의 싱크를 보장할 수 없다.</p>
 <hr>
-<p>pm2로 배포 프로세스를 관리하고 싶어서 설정 파일을 작성하였으나, 데이터베이스 비밀번호를 <code class="language-text">env</code>에 저장하면 코드베이스에 포함되기 때문에,
+<p>pm2로 배포 프로세스를 관리하고 싶어서 설정 파일을 작성하였으나, 데이터베이스 비밀번호를 <code>env</code>에 저장하면 코드베이스에 포함되기 때문에,
 다른 repository로 분리하려 했다.</p>
-<p>그래서 <code class="language-text">npm run deploy</code>하면 셸 스크립트를 실행하도록 했다:</p>
+<p>그래서 <code>npm run deploy</code>하면 셸 스크립트를 실행하도록 했다:</p>
 <ol>
-<li>pm2 설정 파일을 가지는 저장소<code class="language-text">git clone git@github.com:user/repo.git .config</code></li>
-<li><code class="language-text">pm2 deploy .config/ecosystem.json production</code></li>
+<li>pm2 설정 파일을 가지는 저장소<code>git clone git@github.com:user/repo.git .config</code></li>
+<li><code>pm2 deploy .config/ecosystem.json production</code></li>
 </ol>
-<p>리모트 서버에는 <code class="language-text">config</code> 저장소를 하나 클론 받아놓고 적절한 곳에 두고
-<code class="language-text">post-deploy</code>를 <code class="language-text">"npm install &amp;&amp; pm2 startOrRestart /home/node/config/ecosystem.json --env production"</code>
+<p>리모트 서버에는 <code>config</code> 저장소를 하나 클론 받아놓고 적절한 곳에 두고
+<code>post-deploy</code>를 <code>"npm install &#x26;&#x26; pm2 startOrRestart /home/node/config/ecosystem.json --env production"</code>
 설정 파일의 위치를 해당 위치를 가리키도록 했다.</p>
 <p>이러다보니 설정 정보를 업데이트해도 리모트에서 다시 pull 하지 않으면 로컬에서는 최신 설정을, 리모트에서는 이전 설정을 사용하는 문제가 있다.</p>
-<p>따라서 리모트에서도 항상 <code class="language-text">config</code> 저장소를 clone 후 <code class="language-text">pm2 startOrRestart</code> 하도록 해야겠다.</p>
+<p>따라서 리모트에서도 항상 <code>config</code> 저장소를 clone 후 <code>pm2 startOrRestart</code> 하도록 해야겠다.</p>
 <h2 id="jupyter-notebook-사용하기" style="position:relative;"><a href="#jupyter-notebook-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="jupyter notebook 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jupyter notebook 사용하기</h2>
 <p><a href="../javascript/#jupyter-docker-stacks">Jupyter Docker Stacks</a></p>
 <h2 id="taming-architecture-complexity-in-v8" style="position:relative;"><a href="#taming-architecture-complexity-in-v8" aria-label="taming architecture complexity in v8 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Taming architecture complexity in v8</h2>
@@ -529,7 +529,7 @@ virtual host 또는 방화벽으로 막는게 합리적으로 보인다.</p>
 프레임워크처럼 C++ 매크로로 틀에 맞춰 작성하면,
 어셈블리 코드로 변환된다.</p>
 <p>테스트코드 또한 C++로 작성할 수 있다.</p>
-<p>문자열 객체에 길이를 구하는 <code class="language-text">GetStringLength</code> 함수를 작성하는
+<p>문자열 객체에 길이를 구하는 <code>GetStringLength</code> 함수를 작성하는
 자세한 예시를 보여주니 좋다.</p>
 <p>작성한 C++ 코드의 가독성이 좋아 보인다:</p>
 <div class="gatsby-highlight" data-language="cpp"><pre class="language-cpp"><code class="language-cpp"><span class="token function">TF_BUILTIN</span><span class="token punctuation">(</span>GetStringLength<span class="token punctuation">,</span> CodeStubAssembler<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -613,6 +613,6 @@ virtual host 또는 방화벽으로 막는게 합리적으로 보인다.</p>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

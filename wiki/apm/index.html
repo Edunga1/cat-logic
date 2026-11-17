@@ -196,7 +196,7 @@ Application Performance Management/Monitoring.</p>
   </a>
     </span></p>
 <p>검색 쿼리로 특정 서비스로의 호출을 찾을 때 이미지와 같이 사용하는데,
-MSA 환경이고 trace를 공유하고 있다면 <code class="language-text">Add another span query</code>로 두 번째 쿼리를 추가하여 <strong>A -> B 방향의 서비스 호출을 찾을 수 있다</strong>.</p>
+MSA 환경이고 trace를 공유하고 있다면 <code>Add another span query</code>로 두 번째 쿼리를 추가하여 <strong>A -> B 방향의 서비스 호출을 찾을 수 있다</strong>.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
@@ -229,9 +229,9 @@ MSA 환경이고 trace를 공유하고 있다면 <code class="language-text">Add
       />
   </a>
     </span></p>
-<p>각 검색 결과는 <code class="language-text">a</code>, <code class="language-text">b</code>로 이름 붙는데, <code class="language-text">Traces matching</code>을 통해 서비스 관계에 있는 trace를 찾을 수 있다.
-위 이미지에서는 모든 서비스에서 <code class="language-text">foo-api</code> 서비스로 호출하는 trace를 찾는데, 호출하는 서비스 이름(<code class="language-text">Service</code>)와 리소스 이름(<code class="language-text">Resource</code>)로 집계한다.</p>
-<p><code class="language-text">Traces matching</code>의 <code class="language-text">a => b</code>가 서비스 간 관계를 나타낸다. <code class="language-text">=></code> 말고도 다른 관계도 있다.</p>
+<p>각 검색 결과는 <code>a</code>, <code>b</code>로 이름 붙는데, <code>Traces matching</code>을 통해 서비스 관계에 있는 trace를 찾을 수 있다.
+위 이미지에서는 모든 서비스에서 <code>foo-api</code> 서비스로 호출하는 trace를 찾는데, 호출하는 서비스 이름(<code>Service</code>)와 리소스 이름(<code>Resource</code>)로 집계한다.</p>
+<p><code>Traces matching</code>의 <code>a => b</code>가 서비스 간 관계를 나타낸다. <code>=></code> 말고도 다른 관계도 있다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
@@ -265,12 +265,12 @@ MSA 환경이고 trace를 공유하고 있다면 <code class="language-text">Add
     </span></p>
 <p>차트를 이용하여 시각화도 가능하다.</p>
 <p>Traces 기능은 서비스간 호출에서 특정 API를 찾는 등 서비스간 관계를 분석할 때 유용하다.
-다만 단점은 <code class="language-text">a</code>와 <code class="language-text">b</code>의 항목을 조합하여 집계할 수 없다.
-예를 들어, <code class="language-text">b</code>의 api를 호출하는 <code class="language-text">a</code>의 서비스 이름을 찾을 수 없다.
-<code class="language-text">using span from</code>에서 집계 대상 span을 바꿔가며 찾아야 한다.</p>
+다만 단점은 <code>a</code>와 <code>b</code>의 항목을 조합하여 집계할 수 없다.
+예를 들어, <code>b</code>의 api를 호출하는 <code>a</code>의 서비스 이름을 찾을 수 없다.
+<code>using span from</code>에서 집계 대상 span을 바꿔가며 찾아야 한다.</p>
 <h3 id="mcp-server" style="position:relative;"><a href="#mcp-server" aria-label="mcp server permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MCP server</h3>
 <p><a href="https://docs.datadoghq.com/mcp_server/">https://docs.datadoghq.com/mcp_server/</a></p>
-<p><code class="language-text">https://mcp.datadoghq.com/v1/mcp</code>를 remote mcp server로 추가하는 것만으로 설정은 끝난다.
+<p><code>https://mcp.datadoghq.com/v1/mcp</code>를 remote mcp server로 추가하는 것만으로 설정은 끝난다.
 OAuth를 지원하므로 별도 키를 발급할 필요 없이 브라우저를 통해 인증한다.OAuth를 지원하므로 별도 키를 발급할 필요 없이 브라우저를 통해 인증한다.</p>
 <p>datadog 웹은 특유의 렉과 복잡한 UI 대신 AI 위임하기 좋다.
 trace, span, logs 등 웹에서 할 수 있는 일은 모두 도구로 등록되어 있는 듯.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div><div class="PageLayout__Side-sc-11jfopf-3 lcfPgp"><div class="Wiki__RelatedLinksSide-sc-16q9onf-6 iCNRBr"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Related</summary><ul class="RelatedLinks__Links-sc-1y1aimd-0 fuujHb"><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/model-context-protocol/">Model Context Protocol(MCP)</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/playwright/">Playwright</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/airflow/">Airflow</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/large-language-model/">Large Language Model</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/sentry/">Sentry - APM &amp; Error Tracking</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/spring-framework/">Spring framework</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/duckdb/">DuckDB</a></li></ul></details></div><div class="Toc__Container-sc-1f76i2s-0 kZGlWu Wiki__TocSide-sc-16q9onf-5 HhRYq"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Table of Contents</summary><div><ul>
@@ -300,6 +300,6 @@ trace, span, logs 등 웹에서 할 수 있는 일은 모두 도구로 등록되
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

@@ -207,14 +207,14 @@ Spring Bean은 프레임워크에 의해 생성 및 주입되기 때문에, IDE�
 <h3 id="wsl2에서-freezing-현상" style="position:relative;"><a href="#wsl2%EC%97%90%EC%84%9C-freezing-%ED%98%84%EC%83%81" aria-label="wsl2에서 freezing 현상 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WSL2에서 Freezing 현상</h3>
 <p>TL;DR: JetBrains Tool 경로를 Windows Defender의 검사 예외로 추가한다.</p>
 <ul>
-<li><code class="language-text">\\wsl$\Ubuntu</code></li>
-<li><code class="language-text">\\wsl.localhost\Ubuntu</code></li>
-<li><code class="language-text">C:\Program Files\JetBrains</code></li>
-<li><code class="language-text">%LOCALAPPDATA%\JetBrains</code></li>
-<li><code class="language-text">%APPDATA%\JetBrains</code></li>
+<li><code>\\wsl$\Ubuntu</code></li>
+<li><code>\\wsl.localhost\Ubuntu</code></li>
+<li><code>C:\Program Files\JetBrains</code></li>
+<li><code>%LOCALAPPDATA%\JetBrains</code></li>
+<li><code>%APPDATA%\JetBrains</code></li>
 </ul>
 <hr>
-<p><code class="language-text">scanning files to index</code> 단계에서 멈추는 증상.</p>
+<p><code>scanning files to index</code> 단계에서 멈추는 증상.</p>
 <p>프로그램 자체가 먹통이 되기도 한다.
 몇시간 기다려 보았는데, scanning이 너무 오래 걸려서 포기했다.</p>
 <p><a href="https://youtrack.jetbrains.com/issue/IDEA-293604/IntelliJ-is-slow-hanging-when-working-with-WSL-filesystem">https://youtrack.jetbrains.com/issue/IDEA-293604/IntelliJ-is-slow-hanging-when-working-with-WSL-filesystem</a></p>
@@ -260,10 +260,10 @@ Spring Bean은 프레임워크에 의해 생성 및 주입되기 때문에, IDE�
     <span class="token string-literal singleline"><span class="token string">"build/generated"</span></span><span class="token punctuation">,</span>
     <span class="token string-literal singleline"><span class="token string">"build/generated/sources/annotationProcessor"</span></span><span class="token punctuation">,</span>
 <span class="token punctuation">)</span></code></pre></div>
-<p><code class="language-text">build.gradle.kts</code>에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.</p>
+<p><code>build.gradle.kts</code>에 위와 같이 설정하면 IntelliJ가 인식은 하지만, macOS 또는 WSL가 아닌 환경에서는 추가 설정없이 잘 인식했었다.</p>
 <h3 id="http-파일-사용하기" style="position:relative;"><a href="#http-%ED%8C%8C%EC%9D%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="http 파일 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.http 파일 사용하기</h3>
 <p><a href="https://www.jetbrains.com/help/idea/exploring-http-syntax.html">https://www.jetbrains.com/help/idea/exploring-http-syntax.html</a></p>
-<p><code class="language-text">.http</code> 확장자 파일을 열면 에디터 내에서 http 요청을 보낼 수 있다.
+<p><code>.http</code> 확장자 파일을 열면 에디터 내에서 http 요청을 보낼 수 있다.
 또한 헤더 정보나 curl 파싱 등 편리한 기능이나 응답 결과를 전역 변수로 저장하고,
 전역 변수를 다른 요청의 파라미터로 전달도 가능하다(api chaining)</p>
 <p>버전마다 기능 제공이 조금씩 달라지는 듯 하다. 여기 내용은 2021.1.3 버전에 대한 내용임.</p>
@@ -273,7 +273,7 @@ Spring Bean은 프레임워크에 의해 생성 및 주입되기 때문에, IDE�
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"token"</span><span class="token operator">:</span> <span class="token string">"AA86811JjjaCD43"</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p><code class="language-text">.http</code> file:</p>
+<p><code>.http</code> file:</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">### 토큰 생성 API
 POST http://localhost:5000/generate-token
 
@@ -284,29 +284,29 @@ client.global.set("mtoken", response.body.token)
 ### 상품 조회 API
 GET http://localhost:5000/my-products
 X-APP-TOKEN: {{mtoken}}</code></pre></div>
-<p><code class="language-text">{% ... %}</code> 구문으로 호출 후에 대한 javascript 코드를 작성하고,
-<code class="language-text">{{VARIABLE}}</code> 구문으로 전역 변수에 접근한다.</p>
+<p><code>{% ... %}</code> 구문으로 호출 후에 대한 javascript 코드를 작성하고,
+<code>{{VARIABLE}}</code> 구문으로 전역 변수에 접근한다.</p>
 <p>스크립트 구문을 http 요청 전에 두면 호출 전에 대한 처리도 가능하다.</p>
 <h4 id="swagger와-openapi-스키마를-이용한-자동-완성" style="position:relative;"><a href="#swagger%EC%99%80-openapi-%EC%8A%A4%ED%82%A4%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%EC%99%84%EC%84%B1" aria-label="swagger와 openapi 스키마를 이용한 자동 완성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Swagger와 OpenAPI 스키마를 이용한 자동 완성</h4>
 <p><a href="https://www.jetbrains.com/idea/whatsnew/2023-2/">2023 버전부터</a> request body의 자동 완성도 제공한다.</p>
 <p><img src="https://www.jetbrains.com/idea/whatsnew/2023-2/img/2_Swagger_and_OpenAPI_schemas_in_the_HTTP_Client.png" alt="JetBrains schema completion"></p>
 <p>enum의 경우 특정 값만 받는 필드도 자동완성 된다.
-다만 enum class는 enum 이름을 자동 완성하기 때문에 <code class="language-text">@JsonValue</code>으로 역직렬화할 변수를 변경해도 enum 이름을 자동 완성했다.</p>
+다만 enum class는 enum 이름을 자동 완성하기 때문에 <code>@JsonValue</code>으로 역직렬화할 변수를 변경해도 enum 이름을 자동 완성했다.</p>
 <p>이 기능이 도입되면서 insomnia, postman과 비교했을 때 접근성 말고는 뚜렷한 장점이 없었는데,
 이제 intellij 만의 특별한 장점이 생겼다.</p>
 <h3 id="scratches" style="position:relative;"><a href="#scratches" aria-label="scratches permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scratches</h3>
 <p>프로젝트 생성 없이 간단하게 코드를 실행할 수 있는 파일을 scratch라 한다.
-위 단락의 <code class="language-text">.http</code> 파일도 scratch로 생성해서 관리하면 어느 프로젝트에서나 파일을 열어서 실행할 수 있다.</p>
+위 단락의 <code>.http</code> 파일도 scratch로 생성해서 관리하면 어느 프로젝트에서나 파일을 열어서 실행할 수 있다.</p>
 <p>구글 드라이브나 드랍박스 등 클라우드에 연동해서, 집에서나 회사에서나 접근 가능한 나만의 코드 조각 저장소로 가꾸는 방법도 좋다.
 나는 코드 리뷰 중 의심가는 코드 조각을 즉시 실행해보거나, 간단한 알고리즘을 테스트할 때 주로 사용한다.</p>
 <p>scratch 파일은 현재 프로젝트의 모듈을 기반으로 설정할 수 있다.(jvm 기반 언어라면 classpath를 현재 프로젝트로 설정한다.)
 이 말은 현재 프로젝트나 프로젝트가 참조하는 라이브러리의 모듈을 불러올 수 있다는 것이다.
 그래서 특정 프로젝트 기반으로 만든 scratch를 다른 프로젝트에서 열면 심볼을 못 찾을 수도 있다.</p>
-<p><code class="language-text">command + shift + n</code>으로 생성할 수 있고, Project View의 가장 하단에 <code class="language-text">Show Scratch Files</code> -> <code class="language-text">Scratches</code>에서 생성한 파일을 확인할 수 있다.
-Package View에서는 <code class="language-text">Scratches</code>가 보이지 않는다.</p>
-<p><code class="language-text">Show Scratch Files</code> 기능으로 새 창에서 파일 목록을 볼 수 있고, 파일 내용 검색도 가능하다.
-나는 Scratch 파일을 자주 사용하고 많이 관리하고 있어서, <code class="language-text">option + s</code>로 단축키를 지정해서 사용하고 있다.</p>
-<p><code class="language-text">Edit Custom Properties</code>으로 Scratch 파일 경로를 변경할 수 있는데, 나는 구글 드라이브의 공유 폴더를 설정해서 집, 회사 어디서나 접근 가능하게 사용하고 있다.</p>
+<p><code>command + shift + n</code>으로 생성할 수 있고, Project View의 가장 하단에 <code>Show Scratch Files</code> -> <code>Scratches</code>에서 생성한 파일을 확인할 수 있다.
+Package View에서는 <code>Scratches</code>가 보이지 않는다.</p>
+<p><code>Show Scratch Files</code> 기능으로 새 창에서 파일 목록을 볼 수 있고, 파일 내용 검색도 가능하다.
+나는 Scratch 파일을 자주 사용하고 많이 관리하고 있어서, <code>option + s</code>로 단축키를 지정해서 사용하고 있다.</p>
+<p><code>Edit Custom Properties</code>으로 Scratch 파일 경로를 변경할 수 있는데, 나는 구글 드라이브의 공유 폴더를 설정해서 집, 회사 어디서나 접근 가능하게 사용하고 있다.</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">idea.scratch.path/scratches=/Users/john/Library/CloudStorage/GoogleDrive-john@example.com/My Drive/dev-sync/scratches</code></pre></div>
 <h4 id="scratches-기능의-불안정성" style="position:relative;"><a href="#scratches-%EA%B8%B0%EB%8A%A5%EC%9D%98-%EB%B6%88%EC%95%88%EC%A0%95%EC%84%B1" aria-label="scratches 기능의 불안정성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scratches 기능의 불안정성</h4>
 <p>Kotlin Script(.kts)은 오류가 많이 발생한다.
@@ -315,7 +315,7 @@ Package View에서는 <code class="language-text">Scratches</code>가 보이지 
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Compilation failed: error: error processing script definition class org.jetbrains.kotlin.idea.core.script.k2.definitions.KotlinScratchScript: Unable to construct script definition: Unable to load base class org.jetbrains.kotlin.idea.core.script.k2.definitions.KotlinScratchScript</code></pre></div>
 <p>언어(kts) 기반의 문제 뿐 아니라, IntelliJ 고질병으로 Scratch 기능 자체가 불안정한 편이다.
 매 버전 업데이트마다 Scratch 관련된 기능이 동작하지 않는 문제는 매번 발생하고 고쳐진다.
-특히 <code class="language-text">Show Scratch Files</code>의 검색 기능은 검색되지 않거나, 한글 검색이 안되거나 둘 중 하나는 꼭 발생한다.</p>
+특히 <code>Show Scratch Files</code>의 검색 기능은 검색되지 않거나, 한글 검색이 안되거나 둘 중 하나는 꼭 발생한다.</p>
 <p>매번 이런 문제들이 발생할 때 마다 JetBrains Issue Tracker에서 검색하는데, Scratch 사용자가 적은지 리포트가 적다.</p>
 <p>Kotlin Scratch를 사용해야 한다면, Kotlin Notebook이 대안으로 괜찮아 보인다.
 Scratch 처럼 프로젝트를 의존성으로 추가할 수 있고, Interactive 실행이 가능하다.
@@ -325,8 +325,8 @@ Jupyter Notebook를 사용해보았다면 특히나.</p>
 쿼리 실행하는 데 있어서 실수할 여지를 줄여주는지, 쿼리 결과가 보기 편한지, 데이터 입력 및 추출이 편한지 등을 고려한 선택이다.
 그런 면에서 Workbench는 좋은 선택인데, 문제는 크래시 등 불안정한 면이 있는데 업데이트가 잘 이루어지지 않는다.</p>
 <h3 id="keymaps" style="position:relative;"><a href="#keymaps" aria-label="keymaps permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>keymaps</h3>
-<p>이 설정은 <code class="language-text">2024.1</code> 버전 기준이다.
-이전 버전에서는 <code class="language-text">Attach Data Source</code> 대신 <code class="language-text">Attach Session</code>을 사용했다.</p>
+<p>이 설정은 <code>2024.1</code> 버전 기준이다.
+이전 버전에서는 <code>Attach Data Source</code> 대신 <code>Attach Session</code>을 사용했다.</p>
 <table>
 <thead>
 <tr>
@@ -338,22 +338,22 @@ Jupyter Notebook를 사용해보았다면 특히나.</p>
 <tbody>
 <tr>
 <td align="left">Database Tools and SQL -> Attach Data Source</td>
-<td align="left"><code class="language-text">opt</code> <code class="language-text">o</code></td>
+<td align="left"><code>opt</code> <code>o</code></td>
 <td align="left">staging, prod, local 등 접속 환경의 변경이 잦은 경우 유용</td>
 </tr>
 <tr>
 <td align="left">Database Tools and SQL -> Transpose</td>
-<td align="left"><code class="language-text">opt</code> <code class="language-text">t</code></td>
+<td align="left"><code>opt</code> <code>t</code></td>
 <td align="left">열과 행 반전. 컬럼이 많은 경우 보기 편리</td>
 </tr>
 <tr>
 <td align="left">Other -> Pin Active Tab</td>
-<td align="left"><code class="language-text">opt</code> <code class="language-text">p</code></td>
+<td align="left"><code>opt</code> <code>p</code></td>
 <td align="left">탭 고정. 탭 여러개를 비교를 자주할 때 유용</td>
 </tr>
 <tr>
 <td align="left">Main Menu -> Navigate -> File Structure</td>
-<td align="left"><code class="language-text">opt</code> <code class="language-text">l</code></td>
+<td align="left"><code>opt</code> <code>l</code></td>
 <td align="left">(쿼리 결과에서) 컬럼 목록 및 이동. 컬럼이 많은 경우 검색으로 이동 가능</td>
 </tr>
 </tbody>
@@ -375,25 +375,25 @@ Jupyter Notebook를 사용해보았다면 특히나.</p>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>PinToolwindowTab<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keymap</span><span class="token punctuation">></span></span></code></pre></div>
-<p>위 설정을 <code class="language-text">~/Library/Application\ Support/JetBrains/DataGrip{version}/keymaps</code>에 <code class="language-text">name.xml</code> 파일로 두면, 프로그램 내에서 keymap 이름으로 찾을 수 있다.</p>
+<p>위 설정을 <code>~/Library/Application\ Support/JetBrains/DataGrip{version}/keymaps</code>에 <code>name.xml</code> 파일로 두면, 프로그램 내에서 keymap 이름으로 찾을 수 있다.</p>
 <h3 id="live-templates" style="position:relative;"><a href="#live-templates" aria-label="live templates permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Live Templates</h3>
 <p>Live Template은 Snippet의 일종이다.
-기본으로 제공되는 <code class="language-text">sel</code>, <code class="language-text">lim</code>을 특히 자주 사용한다.</p>
-<p>에디터에 <code class="language-text">sel</code>만 입력하면 <code class="language-text">select * from |;</code> 코드를 자동 완성하고, <code class="language-text">|</code>에 커서가 가면서 테이블 이름 목록을 보여준다.
+기본으로 제공되는 <code>sel</code>, <code>lim</code>을 특히 자주 사용한다.</p>
+<p>에디터에 <code>sel</code>만 입력하면 <code>select * from |;</code> 코드를 자동 완성하고, <code>|</code>에 커서가 가면서 테이블 이름 목록을 보여준다.
 설정 -> Editor -> Live Templates 메뉴에서 확인하고, 관리할 수 있다.</p>
-<p><code class="language-text">sel</code>의 경우 다음과 같이 작성되어 있다:</p>
+<p><code>sel</code>의 경우 다음과 같이 작성되어 있다:</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">select * from $table$$END$;</code></pre></div>
-<p><code class="language-text">$text$</code>가 예약어인데, <code class="language-text">$table$</code>은 테이블 목록을 보여주기 위함이고,
-<code class="language-text">$END$</code>는 입력란을 모두 채웠을 때 이동 할 커서 위치이다.</p>
+<p><code>$text$</code>가 예약어인데, <code>$table$</code>은 테이블 목록을 보여주기 위함이고,
+<code>$END$</code>는 입력란을 모두 채웠을 때 이동 할 커서 위치이다.</p>
 <p>응용하면 여러가지 편리한 템플릿을 만들 수 있다.</p>
 <ul>
-<li><code class="language-text">last</code>: <code class="language-text">select * from $table$ order by 1 desc$END$;</code></li>
-<li><code class="language-text">where</code>: <code class="language-text">select * from $table$ where $END$;</code></li>
-<li><code class="language-text">source</code>: <code class="language-text">select * from $table$ where source_type = '$value1$' and source_id = $value2$$END$;</code></li>
+<li><code>last</code>: <code>select * from $table$ order by 1 desc$END$;</code></li>
+<li><code>where</code>: <code>select * from $table$ where $END$;</code></li>
+<li><code>source</code>: <code>select * from $table$ where source_type = '$value1$' and source_id = $value2$$END$;</code></li>
 </ul>
-<p><code class="language-text">source</code>는 source id, type 구조로 복합키를 많이 사용해서 만들었다.</p>
+<p><code>source</code>는 source id, type 구조로 복합키를 많이 사용해서 만들었다.</p>
 <h2 id="intellij-idea-datagrip-버전을-fallback-버전으로-다운그레이드했다" style="position:relative;"><a href="#intellij-idea-datagrip-%EB%B2%84%EC%A0%84%EC%9D%84-fallback-%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EB%8B%A4%EC%9A%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%ED%96%88%EB%8B%A4" aria-label="intellij idea datagrip 버전을 fallback 버전으로 다운그레이드했다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IntelliJ IDEA, DataGrip 버전을 fallback 버전으로 다운그레이드했다.</h2>
-<p>회사 라이센스가 만료되어 <code class="language-text">2022.3</code> 버전에서 <code class="language-text">2021.1</code> 버전으로 돌아갔다.
+<p>회사 라이센스가 만료되어 <code>2022.3</code> 버전에서 <code>2021.1</code> 버전으로 돌아갔다.
 구매 요청하면 되지만, <a href="https://sales.jetbrains.com/hc/en-gb/articles/207240845-What-is-a-perpetual-fallback-license">perpetual 라이센스</a>를 제공해서 사용하겠다 했다.
 경험해보고 만족하면 개인적으로도 구매할 수 있을 거 같고, 최신 버전 사용하지 못한다고 해서 개발을 못한다고 생각하면 그건 또 자존심 상할 문제다.</p>
 <p>어쨌든.. 다운그레이드했고, 몇가지 문제점은 있었다.</p>
@@ -402,9 +402,9 @@ Jupyter Notebook를 사용해보았다면 특히나.</p>
 <p><a href="https://www.jetbrains.com/help/idea/scratches.html">scratches</a> 폴더를 내가 별도 설정하여 쓰고 있다.</p>
 <p>구글 드라이브의 공유 폴더였고, 간단한 코드 조각들을 집, 회사 모두에서 쉽게 볼 수 있게하는 것이 목적이었다.
 당시 kotlin 입문한 상황이라 이는 공부하는데 매우 유용한 방식이었다.</p>
-<p><code class="language-text">Edit Custom Properties</code> 기능으로 <code class="language-text">idea.scratch.path/scratches</code> 프로퍼티에 경로를 설정하였으나 먹히지 않았다.</p>
-<p>해당 변수는 <code class="language-text">2021.2</code> 버전부터 추가된 것으로 추정하고 있다.</p>
-<p><code class="language-text">2021.2</code> 이전 버전에서는 <code class="language-text">idea.scratch.path</code> 이 프로퍼티에 <code class="language-text">scratches</code> 디렉토리가 있는 폴더의 경로로 설정해야 한다.</p>
+<p><code>Edit Custom Properties</code> 기능으로 <code>idea.scratch.path/scratches</code> 프로퍼티에 경로를 설정하였으나 먹히지 않았다.</p>
+<p>해당 변수는 <code>2021.2</code> 버전부터 추가된 것으로 추정하고 있다.</p>
+<p><code>2021.2</code> 이전 버전에서는 <code>idea.scratch.path</code> 이 프로퍼티에 <code>scratches</code> 디렉토리가 있는 폴더의 경로로 설정해야 한다.</p>
 <h3 id="프로젝트-열면-즉시-멈추거나-꺼지는-문제" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%97%B4%EB%A9%B4-%EC%A6%89%EC%8B%9C-%EB%A9%88%EC%B6%94%EA%B1%B0%EB%82%98-%EA%BA%BC%EC%A7%80%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="프로젝트 열면 즉시 멈추거나 꺼지는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 열면 즉시 멈추거나 꺼지는 문제</h3>
 <p>처음에는 라이센스 문제인 줄 알았다. 현재 fallback license를 삭제하고 free tier로 하면 되었기 때문.</p>
 <p>정확한 문제는 fallback license를 사용하기 위해서 로그인하고, 로그인한 계정을 동기화하면서 발생했다.</p>
@@ -413,7 +413,7 @@ Jupyter Notebook를 사용해보았다면 특히나.</p>
 특히 문제가된 플러그인은 직접 설치한 것은 아닌 것으로 기억한다.</p>
 <h3 id="datagrip-디렉토리-추가-안-됨" style="position:relative;"><a href="#datagrip-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EC%B6%94%EA%B0%80-%EC%95%88-%EB%90%A8" aria-label="datagrip 디렉토리 추가 안 됨 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataGrip 디렉토리 추가 안 됨</h3>
 <p>scratches 폴더 추가하는 것처럼 쿼리를 모아놓은 폴더를 추가하여 사용 중이다.
-<code class="language-text">Attach directory to project</code> 메뉴로 그냥 추가하면 된다. 문제는 해당 기능을 눌러도 아무 반응이 없다.</p>
+<code>Attach directory to project</code> 메뉴로 그냥 추가하면 된다. 문제는 해당 기능을 눌러도 아무 반응이 없다.</p>
 <p>아직 이유를 찾지 못했지만, 새로운 프로젝트를 추가하여 재현해보면 잘 됐다. 그래서 거기다 추가하고 connection 정보도 옮겨서 사용했다.</p>
 <p>이 문제도 메뉴를 선택해도 무반응이며, 에러 메시지도 없다.</p>
 <h2 id="ai-chat-창이-제거되지-않는-문제" style="position:relative;"><a href="#ai-chat-%EC%B0%BD%EC%9D%B4-%EC%A0%9C%EA%B1%B0%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="ai chat 창이 제거되지 않는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AI Chat 창이 제거되지 않는 문제</h2>
@@ -456,7 +456,7 @@ Jupyter Notebook를 사용해보았다면 특히나.</p>
 <p>JetBrains YouTrack에 꽤 많이 언급된다.</p>
 <p><a href="https://youtrack.jetbrains.com/issue/LLM-2639/Promotional-tool-window-opens-every-time-I-open-a-new-project">https://youtrack.jetbrains.com/issue/LLM-2639/Promotional-tool-window-opens-every-time-I-open-a-new-project</a> <br>
 25년 9월에 올라온 이 글을 보면, Registry 기능에서 비활성화하라고 제안하는데, 26년 9월의 IJ 2026.2.3 기준 해결되지 않았다.
-<code class="language-text">llm.ai.assistant.toolwindow.activation.on.start</code>, <code class="language-text">llm.show.ai.promotion.window.on.start</code> 두 설정이 존재하는데, 둘 다 비활성화해도 문제는 재현된다. 그래서 어떤 설정인지 의문인 부분.
+<code>llm.ai.assistant.toolwindow.activation.on.start</code>, <code>llm.show.ai.promotion.window.on.start</code> 두 설정이 존재하는데, 둘 다 비활성화해도 문제는 재현된다. 그래서 어떤 설정인지 의문인 부분.
 이로인해 단순한 문제 수준을 벗어나서, 버그같다.</p>
 <p>IntelliJ 뿐만 아니라 다른 JetBrains의 IDE, Datagrip에서도 동일한 문제가 보고되었다.</p>
 <p>구독 연동하면 문제는 해결된다.</p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div><div class="PageLayout__Side-sc-11jfopf-3 lcfPgp"><div class="Wiki__RelatedLinksSide-sc-16q9onf-6 iCNRBr"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Related</summary><ul class="RelatedLinks__Links-sc-1y1aimd-0 fuujHb"><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/spring-framework/">Spring framework</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/github/">GitHub</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/tools/">개발/비개발 도구</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/kotlin/">Kotlin Programming Language</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/markdown/">Markdown</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/2025/">2025년</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/2026/">2026년</a></li></ul></details></div><div class="Toc__Container-sc-1f76i2s-0 kZGlWu Wiki__TocSide-sc-16q9onf-5 HhRYq"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Table of Contents</summary><div><ul>
@@ -521,6 +521,6 @@ Jupyter Notebook를 사용해보았다면 특히나.</p>
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

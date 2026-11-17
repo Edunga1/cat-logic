@@ -161,13 +161,13 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 </blockquote>
 <h2 id="인터넷-제어-메시지-프로토콜-icmp-internet-control-message-protocol" style="position:relative;"><a href="#%EC%9D%B8%ED%84%B0%EB%84%B7-%EC%A0%9C%EC%96%B4-%EB%A9%94%EC%8B%9C%EC%A7%80-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C-icmp-internet-control-message-protocol" aria-label="인터넷 제어 메시지 프로토콜 icmp internet control message protocol permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>인터넷 제어 메시지 프로토콜 (ICMP, Internet Control Message Protocol)</h2>
 <p><a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol">ICMP는 네트워크 계층 프로토콜이다.</a></p>
-<p><code class="language-text">ping</code> 명령어는 ICMP 프로토콜의 <code class="language-text">Echo Request</code> 메시지(8번)를 호스트에 전달하는 진단 도구이며, 호스트는 <code class="language-text">Echo Reply</code>로 응답한다.</p>
+<p><code>ping</code> 명령어는 ICMP 프로토콜의 <code>Echo Request</code> 메시지(8번)를 호스트에 전달하는 진단 도구이며, 호스트는 <code>Echo Reply</code>로 응답한다.</p>
 <blockquote>
-<p>Send ICMP ECHO_REQUEST packets to network hosts. -- <code class="language-text">man ping</code></p>
+<p>Send ICMP ECHO_REQUEST packets to network hosts. -- <code>man ping</code></p>
 </blockquote>
-<p>포트 번호는 Transport Layer부터 관리되므로, <code class="language-text">ping</code>은 포트 번호를 받지 않는 것으로 보인다.</p>
+<p>포트 번호는 Transport Layer부터 관리되므로, <code>ping</code>은 포트 번호를 받지 않는 것으로 보인다.</p>
 <h2 id="traceroute" style="position:relative;"><a href="#traceroute" aria-label="traceroute permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>traceroute</h2>
-<p><code class="language-text">traceroute</code> 명령어는 호스트까지 경로를 추적하는 도구이다.</p>
+<p><code>traceroute</code> 명령어는 호스트까지 경로를 추적하는 도구이다.</p>
 <p>traceroute는 IP 패킷의 TTL(Time To Live) 값을 조작하여 각 중간 라우터에서 응답을 받음으로써 경로를 추적한다.
 라우터 등 네트워크 장비 사이의 경로를 홉(Hop)이라고 부르는데, 각 홉을 지날 때 마다 TTL 값이 1씩 감소한다.
 TTL 값이 0이 되면 해당 패킷은 폐기되고, 해당 라우터는 출발지로 ICMP "Time Exceeded" 메시지를 보낸다.
@@ -182,12 +182,12 @@ TTL 값을 1부터 순차적으로 증가시키면서 패킷을 보내어 모든
     <span class="token punctuation">[</span>AS15169<span class="token punctuation">]</span> <span class="token number">216.239</span>.47.82  <span class="token number">46.079</span> ms
 <span class="token comment"># ... 생략</span></code></pre></div>
 <ul>
-<li><code class="language-text">-w 1</code>: 응답 대기 시간 1초</li>
-<li><code class="language-text">-n</code>: 도메인 네임 대신 IP 주소 출력</li>
-<li><code class="language-text">-a</code>: AS 번호 출력</li>
+<li><code>-w 1</code>: 응답 대기 시간 1초</li>
+<li><code>-n</code>: 도메인 네임 대신 IP 주소 출력</li>
+<li><code>-a</code>: AS 번호 출력</li>
 </ul>
-<p>기본적으로 <code class="language-text">64 hops max</code>로 TTL이 최대 64까지 증가한다.
-<code class="language-text">* * *</code>는 응답이 없음을 의미한다.</p>
+<p>기본적으로 <code>64 hops max</code>로 TTL이 최대 64까지 증가한다.
+<code>* * *</code>는 응답이 없음을 의미한다.</p>
 <p>관련</p>
 <ul>
 <li>how-did-i-get-here.net 사이트는 traceroute 결과를 시각화 및 설명해준다.</li>
@@ -214,6 +214,6 @@ TTL 값을 1부터 순차적으로 증가시키면서 패킷을 보내어 모든
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

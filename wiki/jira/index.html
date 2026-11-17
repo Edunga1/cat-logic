@@ -211,26 +211,26 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
       />
   </a>
     </span></p>
-<p>나의 <code class="language-text">Work In Progress</code> 필터는 다음과 같다.</p>
+<p>나의 <code>Work In Progress</code> 필터는 다음과 같다.</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">assignee = currentUser() AND (status not in (Backlog, Done, RELEASED) OR (status in (Done, RELEASED) AND updated > -1w)) ORDER BY status DESC, due ASC, created DESC</code></pre></div>
 <p>쿼리 의도:</p>
 <ul>
-<li><code class="language-text">assignee = currentUser()</code> : 나에게 할당된 이슈</li>
-<li><code class="language-text">status not in (Backlog, Done, RELEASED)</code> : Backlog, Done, RELEASED 상태가 아닌 이슈
+<li><code>assignee = currentUser()</code> : 나에게 할당된 이슈</li>
+<li><code>status not in (Backlog, Done, RELEASED)</code> : Backlog, Done, RELEASED 상태가 아닌 이슈
 <ul>
-<li><code class="language-text">Backlog</code>는 진행 계획이 없기 때문에 관심에 분리한다.</li>
+<li><code>Backlog</code>는 진행 계획이 없기 때문에 관심에 분리한다.</li>
 </ul>
 </li>
-<li><code class="language-text">status in (Done, RELEASED) AND updated > -1w</code> : Done, RELEASED 상태이면서 1주일 이내에 업데이트된 이슈
+<li><code>status in (Done, RELEASED) AND updated > -1w</code> : Done, RELEASED 상태이면서 1주일 이내에 업데이트된 이슈
 <ul>
-<li><code class="language-text">Done</code>과 <code class="language-text">RELEASED</code>는 작업이 완료된 이슈이기 때문에 종료하고 일주일 동안만 관심있다. 완료하고도 덧글을 통해서 관련 내용을 공유하더라.</li>
+<li><code>Done</code>과 <code>RELEASED</code>는 작업이 완료된 이슈이기 때문에 종료하고 일주일 동안만 관심있다. 완료하고도 덧글을 통해서 관련 내용을 공유하더라.</li>
 </ul>
 </li>
-<li><code class="language-text">ORDER BY status DESC, due ASC, created DESC</code> : 상태 내림차순, 마감일 오름차순, 생성일 내림차순
+<li><code>ORDER BY status DESC, due ASC, created DESC</code> : 상태 내림차순, 마감일 오름차순, 생성일 내림차순
 <ul>
-<li>상태<code class="language-text">status</code>로 우선 정렬해야 보기 편하다. 따라서 가장 중요하다. 순서는 위에서 언급한 상태 순서와 동일하다.</li>
-<li>마감일<code class="language-text">due</code>은 진행중일 때 특히 중요한데, 마감일이 가까운 순서대로 정렬해서 강조한다.</li>
-<li>생성일<code class="language-text">created</code>은 최근에 생성된 것이 더 중요하다고 생각한다.</li>
+<li>상태<code>status</code>로 우선 정렬해야 보기 편하다. 따라서 가장 중요하다. 순서는 위에서 언급한 상태 순서와 동일하다.</li>
+<li>마감일<code>due</code>은 진행중일 때 특히 중요한데, 마감일이 가까운 순서대로 정렬해서 강조한다.</li>
+<li>생성일<code>created</code>은 최근에 생성된 것이 더 중요하다고 생각한다.</li>
 </ul>
 </li>
 </ul>
@@ -242,19 +242,19 @@ data-styled.g22[id="sc-keyframes-kkmmjY"]{content:"kkmmjY,"}/*!sc*/
 brew <span class="token function">install</span> jira-cli</code></pre></div>
 <ol>
 <li>CLI를 사용하기 위해선 Jira API 토큰이 필요하다.
-Atlasian 계정 설정에서 API 토큰을 발급받고 환경 변수<code class="language-text">JIRA_API_TOKEN</code>로 저장해야 한다.</li>
-<li><code class="language-text">jira init</code>으로 최초 한 번 설정을 해야 한다.
-이 과정에서 Cloud 버전이라면 도메인을 입력해야 한다:  <code class="language-text">https://[your-domain].atlassian.net</code>.</li>
+Atlasian 계정 설정에서 API 토큰을 발급받고 환경 변수<code>JIRA_API_TOKEN</code>로 저장해야 한다.</li>
+<li><code>jira init</code>으로 최초 한 번 설정을 해야 한다.
+이 과정에서 Cloud 버전이라면 도메인을 입력해야 한다:  <code>https://[your-domain].atlassian.net</code>.</li>
 </ol>
-<p>이제 <code class="language-text">jira issue view [issue-key]</code>으로 이슈를 조회할 수 있다.
-<code class="language-text">--raw</code> 옵션으로 json 포맷으로 출력할 수 있다. 기본은 형태가 없어 파싱하기 어려운 구조.</p>
+<p>이제 <code>jira issue view [issue-key]</code>으로 이슈를 조회할 수 있다.
+<code>--raw</code> 옵션으로 json 포맷으로 출력할 수 있다. 기본은 형태가 없어 파싱하기 어려운 구조.</p>
 <h3 id="응용하기" style="position:relative;"><a href="#%EC%9D%91%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="응용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>응용하기</h3>
 <h4 id="브랜치-이름에서-이슈-키-추출" style="position:relative;"><a href="#%EB%B8%8C%EB%9E%9C%EC%B9%98-%EC%9D%B4%EB%A6%84%EC%97%90%EC%84%9C-%EC%9D%B4%EC%8A%88-%ED%82%A4-%EC%B6%94%EC%B6%9C" aria-label="브랜치 이름에서 이슈 키 추출 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>브랜치 이름에서 이슈 키 추출</h4>
 <p>작업 브랜치 이름에 이슈 키를 포함하는 정책을 사용한다면, 다음 명령어로 현재 브랜치의 이슈 키를 조회할 수 있다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">alias</span> jira-issue<span class="token operator">=</span><span class="token string">"git branch --show-current | grep -o '<span class="token entity" title="\b">\b</span>[[:upper:]]\+-\d\+<span class="token entity" title="\b">\b</span>'"</span></code></pre></div>
-<p><code class="language-text">jira-issue</code>를 입력하면 <code class="language-text">user/BP-1234</code> 양식의 브랜치 이름에서 <code class="language-text">BP-1234</code>를 추출한다.</p>
+<p><code>jira-issue</code>를 입력하면 <code>user/BP-1234</code> 양식의 브랜치 이름에서 <code>BP-1234</code>를 추출한다.</p>
 <h4 id="브랜치-이름으로-이슈-조회" style="position:relative;"><a href="#%EB%B8%8C%EB%9E%9C%EC%B9%98-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EC%9D%B4%EC%8A%88-%EC%A1%B0%ED%9A%8C" aria-label="브랜치 이름으로 이슈 조회 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>브랜치 이름으로 이슈 조회</h4>
-<p>다음은 현재 브랜치의 이슈를 조회하는 함수다. 위 <code class="language-text">jira-issue</code>를 사용한다.</p>
+<p>다음은 현재 브랜치의 이슈를 조회하는 함수다. 위 <code>jira-issue</code>를 사용한다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token keyword">function</span> <span class="token function-name function">jiras</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token builtin class-name">local</span> <span class="token assign-left variable">issuenum</span><span class="token operator">=</span><span class="token variable">${1<span class="token operator">:-</span>$(jira-issue)}</span>
   <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token variable">$issuenum</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
@@ -264,10 +264,10 @@ Atlasian 계정 설정에서 API 토큰을 발급받고 환경 변수<code class
     <span class="token builtin class-name">return</span> <span class="token number">1</span>
   <span class="token keyword">fi</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p><code class="language-text">jiras</code>를 입력하면 현재 브랜치의 이슈의 제목을 조회한다.
-<code class="language-text">jiras BP-1234</code>와 같이 이슈 키를 직접 입력해도 된다.</p>
+<p><code>jiras</code>를 입력하면 현재 브랜치의 이슈의 제목을 조회한다.
+<code>jiras BP-1234</code>와 같이 이슈 키를 직접 입력해도 된다.</p>
 <h4 id="브랜치-이름으로-이슈를-브라우저에서-열기" style="position:relative;"><a href="#%EB%B8%8C%EB%9E%9C%EC%B9%98-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EC%9D%B4%EC%8A%88%EB%A5%BC-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%97%90%EC%84%9C-%EC%97%B4%EA%B8%B0" aria-label="브랜치 이름으로 이슈를 브라우저에서 열기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>브랜치 이름으로 이슈를 브라우저에서 열기</h4>
-<p>다음은 현재 브랜치의 이슈를 브라우저에서 열어주는 함수다. 위 <code class="language-text">jira-issue</code>를 사용한다.</p>
+<p>다음은 현재 브랜치의 이슈를 브라우저에서 열어주는 함수다. 위 <code>jira-issue</code>를 사용한다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token keyword">function</span> <span class="token function-name function">jira-open</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token builtin class-name">local</span> <span class="token assign-left variable">issuenum</span><span class="token operator">=</span><span class="token variable">${1<span class="token operator">:-</span>$(jira-issue)}</span>
   <span class="token builtin class-name">local</span> <span class="token assign-left variable">jirahost</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> ~/.config/.jira/.config.yml <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'^server:'</span> <span class="token operator">|</span> <span class="token function">awk</span> -F<span class="token string">' '</span> <span class="token string">'{print $2}'</span><span class="token variable">)</span></span>
@@ -278,11 +278,11 @@ Atlasian 계정 설정에서 API 토큰을 발급받고 환경 변수<code class
     <span class="token builtin class-name">return</span> <span class="token number">1</span>
   <span class="token keyword">fi</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p><code class="language-text">jira-open</code>를 입력하면 현재 브랜치의 이슈를 브라우저에서 열어준다.
-<code class="language-text">jira-open BP-1234</code>와 같이 이슈 키를 직접 입력해도 된다.</p>
-<p><code class="language-text">open</code>은 macOS에서 제공하므로 OS에 따라 다른 명령어를 사용해야 한다.
-<a href="../windows-subsystem-for-linux/">WSL</a>에서는 <code class="language-text">explorer.exe</code>를 사용할 수 있다.
-<code class="language-text">alias open=explorer.exe</code>를 추가하면 자연스럽게 연동된다.</p>
+<p><code>jira-open</code>를 입력하면 현재 브랜치의 이슈를 브라우저에서 열어준다.
+<code>jira-open BP-1234</code>와 같이 이슈 키를 직접 입력해도 된다.</p>
+<p><code>open</code>은 macOS에서 제공하므로 OS에 따라 다른 명령어를 사용해야 한다.
+<a href="../windows-subsystem-for-linux/">WSL</a>에서는 <code>explorer.exe</code>를 사용할 수 있다.
+<code>alias open=explorer.exe</code>를 추가하면 자연스럽게 연동된다.</p>
 <p>내 셸 스크립트는 dotfiles에 업로드 하였다: <br>
 <a href="https://github.com/Edunga1/dotfiles/blob/f7805039ec1d2feeecdb5dd7ead5c30ad4460b59/shell/.zshrc#L168-L195">https://github.com/Edunga1/dotfiles/blob/f7805039ec1d2feeecdb5dd7ead5c30ad4460b59/shell/.zshrc#L168-L195</a></p></div><div class="Comments__Container-sc-1ajj4d9-0 gcJKrk"><hr/><div></div></div></div></div><div class="PageLayout__Side-sc-11jfopf-3 lcfPgp"><div class="Wiki__RelatedLinksSide-sc-16q9onf-6 iCNRBr"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Related</summary><ul class="RelatedLinks__Links-sc-1y1aimd-0 fuujHb"><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/shell/">Shell 명령어</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/bitbucket/">Bitbucket</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/tools/">개발/비개발 도구</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/github/">GitHub</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/windows-subsystem-for-linux/">Windows Subsystem for Linux (WSL)</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/jetbrains/">JetBrains</a></li><li><a class="Link__StyledGatsbyLink-sc-k1di17-0 bnsPSg" href="/cat-logic/wiki/vim-plugins/">Vim Plugins</a></li></ul></details></div><div class="Toc__Container-sc-1f76i2s-0 kZGlWu Wiki__TocSide-sc-16q9onf-5 HhRYq"><details open="" class="Details__StyledDetails-sc-xuhz27-1 ezBZTI"><summary class="Details__StyledSummary-sc-xuhz27-0 iFdrpX">Table of Contents</summary><div><ul>
 <li>
@@ -320,6 +320,6 @@ Atlasian 계정 설정에서 API 토큰을 발급받고 환경 변수<code class
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-30dd51d40d381b687ee6.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9c9fc6844540383a920b.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-78fd78c738c67db5772e.js\"],\"component---src-components-gatsby-templates-wiki-tsx\":[\"/component---src-components-gatsby-templates-wiki-tsx-b94334c17bcf42a00c46.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-10d51ee2f28b984f9269.js\"],\"component---src-pages-graph-tsx\":[\"/component---src-pages-graph-tsx-8f1e4cbb589bafbfa2a4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-17a006e571219d1a695f.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e8a711cd58c9c22e8e6e";</script><script src="/cat-logic/webpack-runtime-aa6b31588bd6734190f6.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-30dd51d40d381b687ee6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="8f126c09f03b27cb681d";</script><script src="/cat-logic/webpack-runtime-cbf2ded0cdcd9223804c.js" async></script><script src="/cat-logic/framework-f8140048836956380b1c.js" async></script><script src="/cat-logic/app-78fd78c738c67db5772e.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
