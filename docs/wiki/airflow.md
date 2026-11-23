@@ -72,11 +72,13 @@ Data Interval 11:00 ~ 11:10 구간의 시간 후인 11:21:05에 구간에 대한
 
 ## Airflow 연습
 
+[Airflow 공식 문서](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)는 [docker compose로 직접 테스트할 수 있는 설정](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#fetching-docker-compose-yaml)을 제공한다.
+다만 운영에서 사용하기엔 무리가 있으니, 운영 레벨에서 사용하기 위해선 Kubernetes Helm Chart를 이용하라고.
+
 https://github.com/Edunga1/practice-airflow
 
-docker-compose로 airflow 환경 구축하고 테스트할 수 있다.
-
-[Airflow 공식 문서](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)에서 docker로 실행하는 방법을 잘 설명해놓았다.
+구성은 데이터 적재를 위한 PostgreSQL, 스케쥴러에서 워커로 Task 실행 메시지를 위한 Redis 그리고 초기화 스크립트 서비스, 스케쥴러, Dag 프로세서, 웹 UI 등 많은 서비스가 있다.
+흐름 또한 Airflow 초기화 후 서비스 전체 실행하는 순서로 진행한다.
 
 ## Airflow가 DAG 파일을 인식하는 방식
 
