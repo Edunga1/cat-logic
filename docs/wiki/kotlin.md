@@ -359,7 +359,8 @@ clearAllMocks()
 checkUnnecessaryStub()  // Bad, always passes
 ```
 
-이 방식은 잘못되었는데,  `clearAllMocks()`가 먼저 실행되면 `checkUnnecessaryStub`는 항상 통과한다.
+위 방식은 잘못되었는데,  `clearAllMocks()`가 먼저 실행되면 `checkUnnecessaryStub`는 항상 통과한다.
+감지할 수 없게 되니 `checkUnnecessaryStub`을 클리어 전에 호출해야 한다.
 
 ```kotlin
 // afterContainer
@@ -384,6 +385,14 @@ context("upper") {
     }
 }
 ```
+
+나는 `confirmVerified`는 사용하지 않고, `checkUnnecessaryStub`만 주로 적용한다.
+`verify`를 강제하는 `confirmVerified`는 테스트 케이스가 많으면 반복되기 때문에 의도적으로 생략하기 때문이다.
+`checkUnncessaryStub`만 있어도 stubbing 자체가 verify의 역할도 수행하게 된다.
+
+stubbing 하지 않아서 에러가 발생하지만 전체 예외 무시하거나 비동기 처리로 인해 무시되는 경우는 mockk가 제공하는 함수만으로는 검증할 수 없다.
+테스트 로그엔 `no answer found`로 출력되고 있지만 테스트는 조용히 넘어가므로 주의해야 한다.
+`checkUnansweredCalls` 같은 함수가 필요한 시점이다.
 
 ##### 테스트 작성이 까다로워진다.
 
