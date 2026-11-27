@@ -298,3 +298,11 @@ tmux를 사용중이면 `"teammateMode": "auto"`로 설정하면, 팀원 세션�
 | feedbackDrafts | off   | Anthropic에 피드백 보내는 옵션. 사용자가 불만을 이야기 한다거나 하면 AI가 저장하는 듯 하다. 전송 알림이 성가신다 |
 
 <TBD>
+
+## 회의
+
+<TBD>
+- Google Meet 클로드 추가 버튼
+- claude.ai -> 회의(베타)
+- transcript, 화면 내용 기록
+- 채팅으로 회의록 정리
